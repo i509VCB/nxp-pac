@@ -1,0 +1,13 @@
+includes:
+- cm7.yaml
+- imxrt1062/renames.yaml
+- imxrt/adc_hc_r.yaml
+- imxrt/iomuxc.yaml
+- imxrt/gpio.yaml
+transforms:
+  - !DeleteUselessEnums
+
+  #! TODO: Consider merging CAN1 and CAN3?
+  #! TODO: FLEXIO1 merge to flexio::Flexio
+
+  - !Sort

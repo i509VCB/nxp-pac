@@ -1,0 +1,12 @@
+[package]
+name = "generator"
+version = "0.1.0"
+edition = "2024"
+publish = false
+license = "BSD-3-Clause"
+description = "Generator for nrf-pac"
+
+[dependencies]
+anyhow = "1.0.98"
+rayon = "1.10.0"
+temp-dir = "0.1.16"

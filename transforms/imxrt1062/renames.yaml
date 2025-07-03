@@ -1,0 +1,11 @@
+transforms:
+  #! DMA0 -> DMA
+  - !Rename
+      from: dma0::(.*)
+      to: dma::$1
+      type: All
+
+  - !Rename
+      from: dma::Dma0
+      to: dma::Dma
+      type: Block

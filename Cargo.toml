@@ -1,0 +1,34 @@
+[workspace]
+members = [ "generator" ]
+
+[package]
+name = "nxp-pac"
+version = "0.1.0"
+edition = "2024"
+license = "BSD-3-Clause"
+description = "Peripheral Access Crate (PAC) for NXP Semiconductor chips."
+keywords = [
+    "no-std",
+    "arm",
+    "cortex-m",
+    "peripherals",
+    "nxp",
+    "imxrt",
+]
+# repository = ""
+# documentation = "" 
+
+[dependencies]
+cortex-m = "0.7.1"
+cortex-m-rt = { version = ">=0.6.15,<0.8", optional = true }
+defmt = { version = "0.3.10", optional = true }
+
+[features]
+rt = ["cortex-m-rt/device"]
+defmt = ["dep:defmt"]
+
+#! Chip features
+
+## IMXRT
+mimxrt1011 = []
+mimxrt1062 = []

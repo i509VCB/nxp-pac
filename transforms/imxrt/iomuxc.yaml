@@ -1,0 +1,66 @@
+# Merge and clean up common enums
+transforms:
+  #! Resize all mux mode enums to maximum size (4 bits).
+  #!
+  #! RT1011 has 3 bits usable, with a single 1 bit entry.
+  - !ResizeEnums
+    enum: (iomuxc|iomuxc_snvs)::vals::SwMuxCtlPad(.*)?MuxMode
+    bit_size: 4
+
+  - !DeleteEnums
+    from: (iomuxc|iomuxc_snvs)::vals::SwMuxCtlPad(.*)?MuxMode
+    bit_size: 4
+
+  - !MergeEnums
+    from: (iomuxc|iomuxc_snvs)::vals::SwMuxCtlPad(.*)?Sion
+    to: $1::vals::Sion
+    check: Layout
+
+  - !MergeFieldsets
+    from: (iomuxc|iomuxc_snvs)::regs::SwMuxCtlPad(.*)?
+    to: $1::regs::MuxCtl
+
+  #! A large number of enums
+  - !MergeEnums
+    from: (iomuxc|iomuxc_snvs)::vals::SwPadCtlPad(.*)?\d+Speed
+    to: $1::vals::Speed
+    check: Layout
+
+  - !MergeEnums
+    from: (iomuxc|iomuxc_snvs)::vals::SwPadCtlPad(.*)?\d+Pus
+    to: $1::vals::Pus
+    check: Layout
+
+  - !MergeEnums
+    from: (iomuxc|iomuxc_snvs)::vals::SwPadCtlPad(.*)?\d+Dse
+    to: $1::vals::Dse
+    check: Layout
+
+  - !MergeEnums
+    from: (iomuxc|iomuxc_snvs)::vals::SwPadCtlPad(.*)?\d+Sre
+    to: $1::vals::Sre
+    check: Layout
+
+  - !MergeEnums
+    from: (iomuxc|iomuxc_snvs)::vals::SwPadCtlPad(.*)?\d+Hys
+    to: $1::vals::Hys
+    check: Layout
+
+  - !MergeEnums
+    from: (iomuxc|iomuxc_snvs)::vals::SwPadCtlPad(.*)?\d+Ode
+    to: $1::vals::Ode
+    check: Layout
+
+  - !MergeEnums
+    from: (iomuxc|iomuxc_snvs)::vals::SwPadCtlPad(.*)?\d+Pke
+    to: $1::vals::Pke
+    check: Layout
+
+  - !MergeEnums
+    from: (iomuxc|iomuxc_snvs)::vals::SwPadCtlPad(.*)?\d+Pue
+    to: $1::vals::Pue
+    check: Layout
+
+  - !MergeFieldsets
+    from: iomuxc::regs::SwPadCtlPad(.*)?
+    to: iomuxc::regs::Ctl

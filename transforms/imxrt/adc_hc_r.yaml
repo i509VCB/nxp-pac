@@ -1,0 +1,27 @@
+# There are two fields generated for hc and r. hc/r has a length of 7 and is offset by 1 (so it is
+# really [1..=7]). Then there is an explicit hc/r field for index 0. We want an array of length 8 
+# at the correct offset.
+#
+# However chiptool has no way to change the length and offset of a register, so replace the register.
+transforms:
+- !DeleteRegisters
+    block: adc::Adc
+    from: (hc0|hc|r|r0)
+
+- !AddRegisters
+    block: adc::Adc
+    registers:
+    - name: hc
+      description: Control register for hardware triggers
+      array:
+        len: 8
+        stride: 4
+      byte_offset: 0
+      register: adc::regs::Hc
+    - name: r
+      description: Data result register for HW triggers
+      array:
+        len: 8
+        stride: 4
+      byte_offset: 0x24
+      register: adc::regs::R

@@ -1,0 +1,44 @@
+transforms:
+  #! ADC1 -> ADC
+  - !Rename
+      from: adc1::(.*)
+      to: adc::$1
+      type: All
+
+  - !Rename
+      from: adc::Adc1
+      to: adc::Adc
+      type: Block
+
+  #! DMA0 -> DMA
+  - !Rename
+      from: dma0::(.*)
+      to: dma::$1
+      type: All
+
+  - !Rename
+      from: dma::Dma0
+      to: dma::Dma
+      type: Block
+
+  #! FLEXIO1 -> FLEXIO
+  - !Rename
+      from: flexio1::(.*)
+      to: flexio::$1
+      type: All
+
+  - !Rename
+      from: flexio::Flexio1
+      to: flexio::Flexio
+      type: Block
+
+  #! PWM1 -> PWM
+  - !Rename
+      from: pwm1::(.*)
+      to: pwm::$1
+      type: All
+
+  - !Rename
+      from: pwm::Pwm1
+      to: pwm::Pwm
+      type: Block

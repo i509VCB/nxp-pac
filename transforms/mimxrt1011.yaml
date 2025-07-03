@@ -1,0 +1,45 @@
+includes:
+- cm7.yaml
+# Must perform renames before fixing adc::hc/r due to ADC1 -> ADC
+- imxrt1011/renames.yaml
+- imxrt/adc_hc_r.yaml
+- imxrt/iomuxc.yaml
+- imxrt/gpio.yaml
+transforms:
+  - !DeleteUselessEnums
+
+  #! ADC HS::COCO is array
+  - !MakeFieldArray
+    fieldsets: adc::regs::Hs
+    from: coco\d+
+    to: coco
+
+  #! SAI1 is a superset of SAI3, therefore it can be merged (features not supported must be ignored by HAL
+  #! of course).
+  - !MergeBlocks
+    from: sai3::Sai3
+    to: sai1::Sai1
+    main: sai1::Sai1
+    check: Layout
+
+  - !DeleteEnumsUsedIn
+    fieldsets: sai3::.*
+
+  - !DeleteRegisters
+    block: sai3::.*
+    from: .*
+
+  - !Delete
+    from: sai3::.*
+
+  - !Rename
+      from: sai1::(.*)
+      to: sai::$1
+      type: All
+
+  - !Rename
+      from: sai::Sai1
+      to: sai::Sai
+      type: Block
+
+  - !Sort

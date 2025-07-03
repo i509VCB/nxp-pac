@@ -1,0 +1,43 @@
+# Delete anything provided by cortex-m
+transforms:
+  #! NVIC
+  - !DeleteEnumsUsedIn
+    fieldsets: nvic::.*
+
+  - !DeleteRegisters
+    block: nvic::.*
+    from: .*
+
+  - !Delete
+    from: nvic::.*
+
+  - !Delete
+    from: nvic::Nvic
+
+  #! System control
+  - !DeleteEnumsUsedIn
+    fieldsets: system_control::.*
+
+  - !DeleteRegisters
+    block: system_control::.*
+    from: .*
+
+  - !Delete
+    from: system_control::.*
+
+  - !Delete
+    from: system_control::SystemControl
+
+  #! MPU
+  - !DeleteEnumsUsedIn
+    fieldsets: mpu::.*
+
+  - !DeleteRegisters
+    block: mpu::.*
+    from: .*
+
+  - !Delete
+    from: mpu::.*
+
+  - !Delete
+    from: mpu::Mpu

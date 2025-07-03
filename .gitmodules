@@ -1,0 +1,3 @@
+[submodule "data/mcux-soc-svd"]
+	path = data/mcux-soc-svd
+	url = https://github.com/nxp-mcuxpresso/mcux-soc-svd

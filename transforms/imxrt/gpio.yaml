@@ -1,0 +1,20 @@
+transforms:
+  - !MakeRegisterArray
+    blocks: gpio::Gpio
+    from: icr\d+
+    to: icr
+
+  - !MergeFieldsets
+    from: gpio::regs::Icr(\d+)
+    to: gpio::regs::Icr
+    # ICR1 and ICR2 have the same layout.
+    check: NoCheck
+
+  - !MakeFieldArray
+    fieldsets: gpio::regs::Icr
+    from: icr\d+
+    to: pin
+
+  - !MergeEnums
+    from: gpio::vals::Icr\d+
+    to: gpio::vals::Icr
