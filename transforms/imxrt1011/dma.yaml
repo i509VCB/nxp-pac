@@ -1,0 +1,10 @@
+transforms:
+  # TCDx_ATTR::SMOD defines multiple values with the same "ENABLED" variant name.
+  # However this is really a divisor, so the enum is useless.
+  - !MergeEnums
+    from: dma::vals::Tcd(\d+)AttrSmod
+    to: dma::vals::TcdAttrSmod
+
+  - !DeleteEnums
+    from: dma::vals::TcdAttrSmod
+    bit_size: 5

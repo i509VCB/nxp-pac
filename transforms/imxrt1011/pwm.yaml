@@ -1,0 +1,7 @@
+transforms:
+# Some enum variants are with multiple values. However chiptool does not have a way to specify which
+# variant is renamed (based on value).
+#
+# FIXME: For now delete these
+- !DeleteEnums
+  from: pwm::vals::(Pwmafs|Pwmbfs|Pwmxfs)
