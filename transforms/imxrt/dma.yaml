@@ -1,0 +1,159 @@
+transforms:
+  # TCDx_ATTR::SMOD defines multiple values with the same "ENABLED" variant name.
+  # However this is really a divisor, so the enum is useless.
+  - !MergeEnums
+    from: dma::vals::Tcd(\d+)AttrSmod
+    to: dma::vals::TcdAttrSmod
+
+  - !DeleteEnums
+    from: dma::vals::TcdAttrSmod
+    bit_size: 5
+
+  # Useless, but also misspelled
+  - !DeleteEnums
+    from: dma::vals::Int6
+    bit_size: 1
+
+  # Duplicates
+  - !MergeEnums
+    from: dma::vals::Dchpri(\d+)Dpa
+    to: dma::vals::DchpriDpa
+
+  - !MergeEnums
+    from: dma::vals::Dchpri(\d+)Ecp
+    to: dma::vals::DchpriEcp
+
+  - !MergeEnums
+    from: dma::vals::Tcd(\d+)CsrEsg
+    to: dma::vals::TcdCsrEsg
+
+  - !MergeEnums
+    from: dma::vals::Tcd(\d+)AttrSsize
+    to: dma::vals::TcdAttrSsize
+
+  - !MergeEnums
+    from: dma::vals::Tcd(\d+)CsrBwc
+    to: dma::vals::TcdCsrBwc
+
+  - !MergeFieldsets
+    from: dma::regs::Tcd(\d+)Doff
+    to: dma::regs::TcdDoff
+
+  - !MergeFieldsets
+    from: dma::regs::Tcd(\d+)Dlastsga
+    to: dma::regs::TcdDlastsga
+
+  # These enums actually do not exist, but are useless and referenced by some fields.
+  - !DeleteEnums
+    from: dma::vals::Tcd(\d+)NbytesMloffno(Dmloe|Smloe)
+
+  - !MergeFieldsets
+    from: dma::regs::Tcd(\d+)NbytesMloffno
+    to: dma::regs::TcdNbytesMloffno
+
+  # These enums actually do not exist, but are useless and referenced by some fields.
+  - !DeleteEnums
+    from: dma::vals::Tcd(\d+)NbytesMloffyes(Dmloe|Smloe)
+
+  - !MergeFieldsets
+    from: dma::regs::Tcd(\d+)NbytesMloffyes
+    to: dma::regs::TcdNbytesMloffyes
+
+  - !MergeFieldsets
+    from: dma::regs::Tcd(\d+)Daddr
+    to: dma::regs::TcdDaddr
+
+  - !MergeFieldsets
+    from: dma::regs::Dchpri(\d+)
+    to: dma::regs::Dchpri
+
+  - !MergeFieldsets
+    from: dma::regs::Tcd(\d+)Saddr
+    to: dma::regs::TcdSaddr
+
+  - !MergeFieldsets
+    from: dma::regs::Tcd(\d+)Soff
+    to: dma::regs::TcdSoff
+
+  - !MergeFieldsets
+    from: dma::regs::Tcd(\d+)Slast
+    to: dma::regs::TcdSlast
+
+  # These enums actually do not exist, but are useless and referenced by some fields.
+  - !DeleteEnums
+    from: dma::vals::Tcd(\d+)Csr(Start|Intmajor|Inthalf|Dreq|Majorelink)
+    bit_size: 1
+
+  - !MergeFieldsets
+    from: dma::regs::Tcd(\d+)Csr
+    to: dma::regs::TcdCsr
+
+  - !MergeFieldsets
+    from: dma::regs::Tcd(\d+)NbytesMlno
+    to: dma::regs::TcdNbytesMlno
+
+  - !MergeFieldsets
+    from: dma::regs::Tcd(\d+)Attr
+    to: dma::regs::TcdAttr
+
+  # These enums actually do not exist, but are useless and referenced by some fields.
+  - !DeleteEnums
+    from: dma::vals::Tcd(\d+)CiterElinkyesElink
+    bit_size: 1
+
+  - !MergeFieldsets
+    from: dma::regs::Tcd(\d+)CiterElinkyes
+    to: dma::regs::TcdCiterElinkyes
+
+  # These enums actually do not exist, but are useless and referenced by some fields.
+  - !DeleteEnums
+    from: dma::vals::Tcd(\d+)CiterElinknoElink
+    bit_size: 1
+
+  - !MergeFieldsets
+    from: dma::regs::Tcd(\d+)CiterElinkno
+    to: dma::regs::TcdCiterElinkno
+
+  # These enums actually do not exist, but are useless and referenced by some fields.
+  - !DeleteEnums
+    from: dma::vals::Tcd(\d+)BiterElinkyesElink
+    bit_size: 1
+
+  - !MergeFieldsets
+    from: dma::regs::Tcd(\d+)BiterElinkyes
+    to: dma::regs::TcdBiterElinkyes
+
+  # These enums actually do not exist, but are useless and referenced by some fields.
+  - !DeleteEnums
+    from: dma::vals::Tcd(\d+)BiterElinknoElink
+    bit_size: 1
+
+  - !MergeFieldsets
+    from: dma::regs::Tcd(\d+)BiterElinkno
+    to: dma::regs::TcdBiterElinkno
+
+  #! And now we can actually arrayize things
+  - !MakeFieldArray
+    fieldsets: dma::regs::Ears
+    from: edreq_(\d+)
+    to: edreq
+
+  - !MakeFieldArray
+    fieldsets: dma::regs::Eei
+    from: eei(\d+)
+    to: eei
+
+  - !MakeFieldArray
+    fieldsets: dma::regs::Erq
+    from: erq(\d+)
+    to: erq
+
+  - !MakeFieldArray
+    fieldsets: dma::regs::Err
+    from: err(\d+)
+    to: err
+
+  - !MakeFieldArray
+    fieldsets: dma::regs::Hrs
+    from: hrs(\d+)
+    to: hrs

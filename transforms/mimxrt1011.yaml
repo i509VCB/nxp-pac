@@ -5,7 +5,7 @@ includes:
 - imxrt/adc_hc_r.yaml
 - imxrt/iomuxc.yaml
 - imxrt/gpio.yaml
-- imxrt1011/dma.yaml
+- imxrt/dma.yaml
 - imxrt1011/pwm.yaml
 transforms:
   - !DeleteUselessEnums

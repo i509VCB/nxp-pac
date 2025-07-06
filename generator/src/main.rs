@@ -46,8 +46,6 @@ fn main() -> anyhow::Result<()> {
     let current = env::current_dir()?;
 
     let chips = current.join("src").join("chips");
-    // Might not exist.
-    let _ = fs::remove_dir_all(chips);
 
     let mut args = env::args();
 
@@ -61,6 +59,9 @@ fn main() -> anyhow::Result<()> {
 
         vec![feature]
     } else {
+        // Might not exist.
+        let _ = fs::remove_dir_all(chips);
+
         GENERATE.iter().collect()
     };
 

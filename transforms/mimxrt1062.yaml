@@ -4,6 +4,7 @@ includes:
 - imxrt/adc_hc_r.yaml
 - imxrt/iomuxc.yaml
 - imxrt/gpio.yaml
+- imxrt/dma.yaml
 transforms:
   - !DeleteUselessEnums
 
