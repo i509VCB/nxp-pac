@@ -36,6 +36,8 @@ struct Feature {
 const GENERATE: &[Feature] = &[
     Feature { chip: "MIMXRT1011", cores: &["MIMXRT1011"] },
     Feature { chip: "MIMXRT1062", cores: &["MIMXRT1062"] },
+
+    Feature { chip: "MCXN947", cores: &["MCXN947_cm33_core0", "MCXN947_cm33_core1"]}
 ];
 
 fn main() -> anyhow::Result<()> {
@@ -82,6 +84,14 @@ fn main() -> anyhow::Result<()> {
         bail!("Failed to generate chips");
     }
 
+    println!("Formatting code");
+    Command::new("cargo")
+        .arg("fmt")
+        .current_dir(current)
+        .stdout(Stdio::piped())
+        .stderr(Stdio::piped())
+        .status()?;
+
     Ok(())
 }
 
@@ -89,7 +99,7 @@ fn verify_chiptool() -> anyhow::Result<()> {
     Command::new("chiptool")
         .stdout(Stdio::null())
         .stderr(Stdio::null())
-        .status()?;
+        .output()?;
     Ok(())
 }
 
@@ -145,27 +155,36 @@ fn generate_chip(current_dir: &Path, feature: &Feature) -> anyhow::Result<()> {
             );
         }
 
-        let lib = temp.path().join("lib.rs");
-        rustfmt(&lib)?;
-
+        let lib_temp = temp.path().join("lib.rs");
         let device_x = temp.path().join("device.x");
 
         let output_dir = current_dir
             .join("src")
             .join("chips")
             .join(core.to_lowercase());
-        let pac_rs = output_dir.join("pac.rs");
 
         fs::create_dir_all(&output_dir)?;
 
-        fs::copy(&lib, &pac_rs)?;
-        fs::copy(&device_x, output_dir.join("device.x"))?;
+        rustfmt(&lib_temp)?;
 
         // Remove #![no_std] attribute, as this is not lib.rs
-        let mut pac = fs::read_to_string(&pac_rs)?;
+        let mut pac = fs::read_to_string(&lib_temp)?;
         pac = pac.replace("#![no_std]\n", "");
 
-        fs::write(&pac_rs, pac)?;
+        fs::write(&lib_temp, pac)?;
+
+        fs::copy(&device_x, output_dir.join("device.x"))?;
+
+        Command::new("form")
+            .arg("-i")
+            .arg(lib_temp.canonicalize()?)
+            .arg("-o")
+            .arg(output_dir.canonicalize()?)
+            .stdout(Stdio::piped())
+            .stderr(Stdio::piped())
+            .status()?;
+
+        fs::rename(output_dir.join("lib.rs"), output_dir.join("mod.rs"))?;
     }
 
     Ok(())
