@@ -1373,386 +1373,18 @@ impl Int {
     #[doc = "Interrupt Request 0"]
     #[must_use]
     #[inline(always)]
-    pub const fn int0(&self) -> bool {
-        let val = (self.0 >> 0usize) & 0x01;
+    pub const fn int(&self, n: usize) -> bool {
+        assert!(n < 32usize);
+        let offs = 0usize + n * 1usize;
+        let val = (self.0 >> offs) & 0x01;
         val != 0
     }
     #[doc = "Interrupt Request 0"]
     #[inline(always)]
-    pub const fn set_int0(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-    }
-    #[doc = "Interrupt Request 1"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int1(&self) -> bool {
-        let val = (self.0 >> 1usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 1"]
-    #[inline(always)]
-    pub const fn set_int1(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-    }
-    #[doc = "Interrupt Request 2"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int2(&self) -> bool {
-        let val = (self.0 >> 2usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 2"]
-    #[inline(always)]
-    pub const fn set_int2(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-    }
-    #[doc = "Interrupt Request 3"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int3(&self) -> bool {
-        let val = (self.0 >> 3usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 3"]
-    #[inline(always)]
-    pub const fn set_int3(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-    }
-    #[doc = "Interrupt Request 4"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int4(&self) -> bool {
-        let val = (self.0 >> 4usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 4"]
-    #[inline(always)]
-    pub const fn set_int4(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-    }
-    #[doc = "Interrupt Request 5"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int5(&self) -> bool {
-        let val = (self.0 >> 5usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 5"]
-    #[inline(always)]
-    pub const fn set_int5(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-    }
-    #[doc = "Interrupt Request 6"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int6(&self) -> bool {
-        let val = (self.0 >> 6usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 6"]
-    #[inline(always)]
-    pub const fn set_int6(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-    }
-    #[doc = "Interrupt Request 7"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int7(&self) -> bool {
-        let val = (self.0 >> 7usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 7"]
-    #[inline(always)]
-    pub const fn set_int7(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-    }
-    #[doc = "Interrupt Request 8"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int8(&self) -> bool {
-        let val = (self.0 >> 8usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 8"]
-    #[inline(always)]
-    pub const fn set_int8(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-    }
-    #[doc = "Interrupt Request 9"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int9(&self) -> bool {
-        let val = (self.0 >> 9usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 9"]
-    #[inline(always)]
-    pub const fn set_int9(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
-    }
-    #[doc = "Interrupt Request 10"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int10(&self) -> bool {
-        let val = (self.0 >> 10usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 10"]
-    #[inline(always)]
-    pub const fn set_int10(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
-    }
-    #[doc = "Interrupt Request 11"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int11(&self) -> bool {
-        let val = (self.0 >> 11usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 11"]
-    #[inline(always)]
-    pub const fn set_int11(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
-    }
-    #[doc = "Interrupt Request 12"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int12(&self) -> bool {
-        let val = (self.0 >> 12usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 12"]
-    #[inline(always)]
-    pub const fn set_int12(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
-    }
-    #[doc = "Interrupt Request 13"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int13(&self) -> bool {
-        let val = (self.0 >> 13usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 13"]
-    #[inline(always)]
-    pub const fn set_int13(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
-    }
-    #[doc = "Interrupt Request 14"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int14(&self) -> bool {
-        let val = (self.0 >> 14usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 14"]
-    #[inline(always)]
-    pub const fn set_int14(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
-    }
-    #[doc = "Interrupt Request 15"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int15(&self) -> bool {
-        let val = (self.0 >> 15usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 15"]
-    #[inline(always)]
-    pub const fn set_int15(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
-    }
-    #[doc = "Interrupt Request 16"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int16(&self) -> bool {
-        let val = (self.0 >> 16usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 16"]
-    #[inline(always)]
-    pub const fn set_int16(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
-    }
-    #[doc = "Interrupt Request 17"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int17(&self) -> bool {
-        let val = (self.0 >> 17usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 17"]
-    #[inline(always)]
-    pub const fn set_int17(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
-    }
-    #[doc = "Interrupt Request 18"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int18(&self) -> bool {
-        let val = (self.0 >> 18usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 18"]
-    #[inline(always)]
-    pub const fn set_int18(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
-    }
-    #[doc = "Interrupt Request 19"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int19(&self) -> bool {
-        let val = (self.0 >> 19usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 19"]
-    #[inline(always)]
-    pub const fn set_int19(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
-    }
-    #[doc = "Interrupt Request 20"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int20(&self) -> bool {
-        let val = (self.0 >> 20usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 20"]
-    #[inline(always)]
-    pub const fn set_int20(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
-    }
-    #[doc = "Interrupt Request 21"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int21(&self) -> bool {
-        let val = (self.0 >> 21usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 21"]
-    #[inline(always)]
-    pub const fn set_int21(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
-    }
-    #[doc = "Interrupt Request 22"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int22(&self) -> bool {
-        let val = (self.0 >> 22usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 22"]
-    #[inline(always)]
-    pub const fn set_int22(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
-    }
-    #[doc = "Interrupt Request 23"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int23(&self) -> bool {
-        let val = (self.0 >> 23usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 23"]
-    #[inline(always)]
-    pub const fn set_int23(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
-    }
-    #[doc = "Interrupt Request 24"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int24(&self) -> bool {
-        let val = (self.0 >> 24usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 24"]
-    #[inline(always)]
-    pub const fn set_int24(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
-    }
-    #[doc = "Interrupt Request 25"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int25(&self) -> bool {
-        let val = (self.0 >> 25usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 25"]
-    #[inline(always)]
-    pub const fn set_int25(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
-    }
-    #[doc = "Interrupt Request 26"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int26(&self) -> bool {
-        let val = (self.0 >> 26usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 26"]
-    #[inline(always)]
-    pub const fn set_int26(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
-    }
-    #[doc = "Interrupt Request 27"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int27(&self) -> bool {
-        let val = (self.0 >> 27usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 27"]
-    #[inline(always)]
-    pub const fn set_int27(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
-    }
-    #[doc = "Interrupt Request 28"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int28(&self) -> bool {
-        let val = (self.0 >> 28usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 28"]
-    #[inline(always)]
-    pub const fn set_int28(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
-    }
-    #[doc = "Interrupt Request 29"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int29(&self) -> bool {
-        let val = (self.0 >> 29usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 29"]
-    #[inline(always)]
-    pub const fn set_int29(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
-    }
-    #[doc = "Interrupt Request 30"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int30(&self) -> bool {
-        let val = (self.0 >> 30usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 30"]
-    #[inline(always)]
-    pub const fn set_int30(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
-    }
-    #[doc = "Interrupt Request 31"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn int31(&self) -> bool {
-        let val = (self.0 >> 31usize) & 0x01;
-        val != 0
-    }
-    #[doc = "Interrupt Request 31"]
-    #[inline(always)]
-    pub const fn set_int31(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+    pub const fn set_int(&mut self, n: usize, val: bool) {
+        assert!(n < 32usize);
+        let offs = 0usize + n * 1usize;
+        self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
     }
 }
 impl Default for Int {
@@ -1764,38 +1396,38 @@ impl Default for Int {
 impl core::fmt::Debug for Int {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("Int")
-            .field("int0", &self.int0())
-            .field("int1", &self.int1())
-            .field("int2", &self.int2())
-            .field("int3", &self.int3())
-            .field("int4", &self.int4())
-            .field("int5", &self.int5())
-            .field("int6", &self.int6())
-            .field("int7", &self.int7())
-            .field("int8", &self.int8())
-            .field("int9", &self.int9())
-            .field("int10", &self.int10())
-            .field("int11", &self.int11())
-            .field("int12", &self.int12())
-            .field("int13", &self.int13())
-            .field("int14", &self.int14())
-            .field("int15", &self.int15())
-            .field("int16", &self.int16())
-            .field("int17", &self.int17())
-            .field("int18", &self.int18())
-            .field("int19", &self.int19())
-            .field("int20", &self.int20())
-            .field("int21", &self.int21())
-            .field("int22", &self.int22())
-            .field("int23", &self.int23())
-            .field("int24", &self.int24())
-            .field("int25", &self.int25())
-            .field("int26", &self.int26())
-            .field("int27", &self.int27())
-            .field("int28", &self.int28())
-            .field("int29", &self.int29())
-            .field("int30", &self.int30())
-            .field("int31", &self.int31())
+            .field("int[0]", &self.int(0usize))
+            .field("int[1]", &self.int(1usize))
+            .field("int[2]", &self.int(2usize))
+            .field("int[3]", &self.int(3usize))
+            .field("int[4]", &self.int(4usize))
+            .field("int[5]", &self.int(5usize))
+            .field("int[6]", &self.int(6usize))
+            .field("int[7]", &self.int(7usize))
+            .field("int[8]", &self.int(8usize))
+            .field("int[9]", &self.int(9usize))
+            .field("int[10]", &self.int(10usize))
+            .field("int[11]", &self.int(11usize))
+            .field("int[12]", &self.int(12usize))
+            .field("int[13]", &self.int(13usize))
+            .field("int[14]", &self.int(14usize))
+            .field("int[15]", &self.int(15usize))
+            .field("int[16]", &self.int(16usize))
+            .field("int[17]", &self.int(17usize))
+            .field("int[18]", &self.int(18usize))
+            .field("int[19]", &self.int(19usize))
+            .field("int[20]", &self.int(20usize))
+            .field("int[21]", &self.int(21usize))
+            .field("int[22]", &self.int(22usize))
+            .field("int[23]", &self.int(23usize))
+            .field("int[24]", &self.int(24usize))
+            .field("int[25]", &self.int(25usize))
+            .field("int[26]", &self.int(26usize))
+            .field("int[27]", &self.int(27usize))
+            .field("int[28]", &self.int(28usize))
+            .field("int[29]", &self.int(29usize))
+            .field("int[30]", &self.int(30usize))
+            .field("int[31]", &self.int(31usize))
             .finish()
     }
 }
@@ -1804,39 +1436,39 @@ impl defmt::Format for Int {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Int {{ int0: {=bool:?}, int1: {=bool:?}, int2: {=bool:?}, int3: {=bool:?}, int4: {=bool:?}, int5: {=bool:?}, int6: {=bool:?}, int7: {=bool:?}, int8: {=bool:?}, int9: {=bool:?}, int10: {=bool:?}, int11: {=bool:?}, int12: {=bool:?}, int13: {=bool:?}, int14: {=bool:?}, int15: {=bool:?}, int16: {=bool:?}, int17: {=bool:?}, int18: {=bool:?}, int19: {=bool:?}, int20: {=bool:?}, int21: {=bool:?}, int22: {=bool:?}, int23: {=bool:?}, int24: {=bool:?}, int25: {=bool:?}, int26: {=bool:?}, int27: {=bool:?}, int28: {=bool:?}, int29: {=bool:?}, int30: {=bool:?}, int31: {=bool:?} }}",
-            self.int0(),
-            self.int1(),
-            self.int2(),
-            self.int3(),
-            self.int4(),
-            self.int5(),
-            self.int6(),
-            self.int7(),
-            self.int8(),
-            self.int9(),
-            self.int10(),
-            self.int11(),
-            self.int12(),
-            self.int13(),
-            self.int14(),
-            self.int15(),
-            self.int16(),
-            self.int17(),
-            self.int18(),
-            self.int19(),
-            self.int20(),
-            self.int21(),
-            self.int22(),
-            self.int23(),
-            self.int24(),
-            self.int25(),
-            self.int26(),
-            self.int27(),
-            self.int28(),
-            self.int29(),
-            self.int30(),
-            self.int31()
+            "Int {{ int[0]: {=bool:?}, int[1]: {=bool:?}, int[2]: {=bool:?}, int[3]: {=bool:?}, int[4]: {=bool:?}, int[5]: {=bool:?}, int[6]: {=bool:?}, int[7]: {=bool:?}, int[8]: {=bool:?}, int[9]: {=bool:?}, int[10]: {=bool:?}, int[11]: {=bool:?}, int[12]: {=bool:?}, int[13]: {=bool:?}, int[14]: {=bool:?}, int[15]: {=bool:?}, int[16]: {=bool:?}, int[17]: {=bool:?}, int[18]: {=bool:?}, int[19]: {=bool:?}, int[20]: {=bool:?}, int[21]: {=bool:?}, int[22]: {=bool:?}, int[23]: {=bool:?}, int[24]: {=bool:?}, int[25]: {=bool:?}, int[26]: {=bool:?}, int[27]: {=bool:?}, int[28]: {=bool:?}, int[29]: {=bool:?}, int[30]: {=bool:?}, int[31]: {=bool:?} }}",
+            self.int(0usize),
+            self.int(1usize),
+            self.int(2usize),
+            self.int(3usize),
+            self.int(4usize),
+            self.int(5usize),
+            self.int(6usize),
+            self.int(7usize),
+            self.int(8usize),
+            self.int(9usize),
+            self.int(10usize),
+            self.int(11usize),
+            self.int(12usize),
+            self.int(13usize),
+            self.int(14usize),
+            self.int(15usize),
+            self.int(16usize),
+            self.int(17usize),
+            self.int(18usize),
+            self.int(19usize),
+            self.int(20usize),
+            self.int(21usize),
+            self.int(22usize),
+            self.int(23usize),
+            self.int(24usize),
+            self.int(25usize),
+            self.int(26usize),
+            self.int(27usize),
+            self.int(28usize),
+            self.int(29usize),
+            self.int(30usize),
+            self.int(31usize)
         )
     }
 }

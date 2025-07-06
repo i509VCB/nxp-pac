@@ -157,3 +157,8 @@ transforms:
     fieldsets: dma::regs::Hrs
     from: hrs(\d+)
     to: hrs
+
+  - !MakeFieldArray
+    fieldsets: dma::regs::Int
+    from: int(\d+)
+    to: int
