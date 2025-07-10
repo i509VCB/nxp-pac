@@ -12,6 +12,10 @@
 //! cargo run -p generator -- MIMXRT1011
 //! ```
 
+mod iomuxc;
+mod metadata;
+mod pac;
+
 use std::{
     env, fs,
     path::Path,
@@ -20,7 +24,6 @@ use std::{
 
 use anyhow::{Context, bail};
 use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
-use temp_dir::TempDir;
 
 struct Feature {
     /// The name of the chip to generate.
@@ -105,87 +108,19 @@ fn verify_chiptool() -> anyhow::Result<()> {
 }
 
 fn generate_chip(current_dir: &Path, feature: &Feature) -> anyhow::Result<()> {
-    let chip_dir = current_dir
+    let chip_src_dir = current_dir
         .join("data")
         .join("mcux-soc-svd")
         .join(feature.chip);
 
     for core in feature.cores {
+        let svd = chip_src_dir.join(core).with_extension("xml");
+        let transforms_dir = current_dir.join("transforms");
+        let chips_dir = current_dir.join("src").join("chips");
+
         println!("Generating {}/{}", feature.chip, core);
-
-        let svd = chip_dir.join(core).with_extension("xml");
-
-        if !fs::exists(&svd)? {
-            bail!(
-                "SVD file for {} does not exist. help: did you clone submodules?",
-                feature.chip
-            );
-        }
-
-        let transform = current_dir
-            .join("transforms")
-            .join(core.to_lowercase())
-            .with_extension("yaml");
-
-        if !fs::exists(&transform)? {
-            bail!(
-                "transform for core \"{}\" does not exist?",
-                core.to_lowercase()
-            );
-        }
-
-        let temp = TempDir::new()
-            .context("Creating temp dir")?
-            .dont_delete_on_drop();
-
-        let output = Command::new("chiptool")
-            .arg("generate")
-            .arg("--svd")
-            .arg(svd.canonicalize()?)
-            .arg("--transform")
-            .arg(transform.canonicalize()?)
-            .stdout(Stdio::piped())
-            .stderr(Stdio::piped())
-            .current_dir(temp.path())
-            .output()?;
-
-        if !output.status.success() {
-            bail!(
-                "Error generating {core}:\nSTDERR:\n{}",
-                String::from_utf8_lossy(&output.stderr)
-            );
-        }
-
-        let lib_temp = temp.path().join("lib.rs");
-        let device_x = temp.path().join("device.x");
-
-        let output_dir = current_dir
-            .join("src")
-            .join("chips")
-            .join(core.to_lowercase());
-
-        fs::create_dir_all(&output_dir)?;
-
-        rustfmt(&lib_temp)?;
-
-        // Remove #![no_std] attribute, as this is not lib.rs
-        let mut pac = fs::read_to_string(&lib_temp)?;
-        pac = pac.replace("#![no_std]\n", "");
-
-        fs::write(&lib_temp, pac)?;
-
-        fs::copy(&device_x, output_dir.join("device.x"))?;
-
-        Command::new("form")
-            .arg("-i")
-            .arg(lib_temp.canonicalize()?)
-            .arg("-o")
-            .arg(output_dir.canonicalize()?)
-            .stdout(Stdio::piped())
-            .stderr(Stdio::piped())
-            .status()?;
-
-        fs::rename(output_dir.join("lib.rs"), output_dir.join("mod.rs"))?;
+        pac::generate_core(&svd, &chips_dir, &transforms_dir, &core).context("Generating PAC")?;
+        metadata::generate_core(&svd, &chips_dir, &core).context("Generating metadata")?;
     }
 
     Ok(())

@@ -23,10 +23,15 @@ cortex-m = "0.7.1"
 cortex-m-rt = { version = ">=0.6.15,<0.8", optional = true }
 defmt = { version = "0.3.10", optional = true }
 
+[build-dependencies]
+cfg_aliases = "0.2.1"
+
 [features]
-default = []
+default = ["mimxrt1011", "metadata"]
 rt = ["cortex-m-rt/device"]
 defmt = ["dep:defmt"]
+
+metadata = []
 
 #! Chip features
 

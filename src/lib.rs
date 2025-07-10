@@ -16,3 +16,6 @@
 )]
 mod pac;
 pub use pac::*;
+
+#[cfg(feature = "metadata")]
+pub mod metadata;
