@@ -27,7 +27,7 @@ defmt = { version = "0.3.10", optional = true }
 cfg_aliases = "0.2.1"
 
 [features]
-default = ["mimxrt1011", "metadata"]
+default = []
 rt = ["cortex-m-rt/device"]
 defmt = ["dep:defmt"]
 

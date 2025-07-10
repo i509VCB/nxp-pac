@@ -3,7 +3,10 @@ use std::{fmt::Write, fs, path::Path};
 use proc_macro2::{Literal, TokenStream};
 use quote::quote;
 
-use crate::iomuxc::{self, IomuxcRegisters};
+use crate::{
+    iomuxc::{self, IomuxcRegisters},
+    rustfmt,
+};
 
 pub fn generate_core(svd: &Path, chips_dir: &Path, core: &str) -> anyhow::Result<()> {
     // IMXRT10xx and 11xx require extra metadata for IOMUXC
@@ -19,7 +22,8 @@ pub fn generate_core(svd: &Path, chips_dir: &Path, core: &str) -> anyhow::Result
     }
 
     let metadata_rs = chips_dir.join(core.to_lowercase()).join("metadata.rs");
-    fs::write(metadata_rs, metadata)?;
+    fs::write(&metadata_rs, metadata)?;
+    rustfmt(&metadata_rs)?;
 
     Ok(())
 }
