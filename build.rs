@@ -1,11 +1,12 @@
+use std::env;
 #[allow(unused)]
-use std::{env, path::PathBuf};
+use std::path::PathBuf;
 
 fn main() {
     #[cfg(any(feature = "rt"))]
     let crate_dir = PathBuf::from(env::var_os("CARGO_MANIFEST_DIR").unwrap());
 
-    #[cfg(any(feature = "rt"))]
+    #[allow(unused)]
     let chip_name = match env::vars()
         .map(|(a, _)| a)
         .filter(|x| x.starts_with("CARGO_FEATURE_MIMXRT") || x.starts_with("CARGO_FEATURE_MCX"))
