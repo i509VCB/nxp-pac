@@ -18,3 +18,101 @@ transforms:
   - !MergeEnums
     from: gpio::vals::Icr\d+
     to: gpio::vals::Icr
+
+# TODO: A single transform to allow turning a fieldset into a an array of bits.
+  # Make each bit of DR, DR_CLEAR, DR_SET, DR_TOGGLE, EDGE_SEL, GDIR, IMR, ISR and PSR a separate value in an array.
+  # First delete the old fields.
+  - !DeleteFields
+    fieldset: gpio::regs::(Dr|DrClear|DrSet|DrToggle|EdgeSel|Gdir|Imr|Isr|Psr)
+    from: .*
+
+  # Then create new fields
+  - !AddFields
+    fieldset: gpio::regs::Dr
+    fields:
+    - name: dr
+      bit_offset: 0
+      bit_size: 1
+      array:
+        len: 32
+        stride: 1
+
+  - !AddFields
+    fieldset: gpio::regs::DrClear
+    fields:
+    - name: dr_clear
+      bit_offset: 0
+      bit_size: 1
+      array:
+        len: 32
+        stride: 1
+
+  - !AddFields
+    fieldset: gpio::regs::DrSet
+    fields:
+    - name: dr_set
+      bit_offset: 0
+      bit_size: 1
+      array:
+        len: 32
+        stride: 1
+
+  - !AddFields
+    fieldset: gpio::regs::DrToggle
+    fields:
+    - name: dr_toggle
+      bit_offset: 0
+      bit_size: 1
+      array:
+        len: 32
+        stride: 1
+
+  - !AddFields
+    fieldset: gpio::regs::EdgeSel
+    fields:
+    - name: edge_sel
+      bit_offset: 0
+      bit_size: 1
+      array:
+        len: 32
+        stride: 1
+
+  - !AddFields
+    fieldset: gpio::regs::Gdir
+    fields:
+    - name: gdir
+      bit_offset: 0
+      bit_size: 1
+      array:
+        len: 32
+        stride: 1
+
+  - !AddFields
+    fieldset: gpio::regs::Imr
+    fields:
+    - name: imr
+      bit_offset: 0
+      bit_size: 1
+      array:
+        len: 32
+        stride: 1
+
+  - !AddFields
+    fieldset: gpio::regs::Isr
+    fields:
+    - name: isr
+      bit_offset: 0
+      bit_size: 1
+      array:
+        len: 32
+        stride: 1
+
+  - !AddFields
+    fieldset: gpio::regs::Psr
+    fields:
+    - name: psr
+      bit_offset: 0
+      bit_size: 1
+      array:
+        len: 32
+        stride: 1
