@@ -19,7 +19,6 @@ transforms:
     from: gpio::vals::Icr\d+
     to: gpio::vals::Icr
 
-# TODO: A single transform to allow turning a fieldset into a an array of bits.
   # Make each bit of DR, DR_CLEAR, DR_SET, DR_TOGGLE, EDGE_SEL, GDIR, IMR, ISR and PSR a separate value in an array.
   # First delete the old fields.
   - !DeleteFields

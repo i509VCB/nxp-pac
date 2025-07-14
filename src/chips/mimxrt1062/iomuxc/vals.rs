@@ -2623,37 +2623,6 @@ impl From<Gpt2IppIndClkinSelectInputDaisy> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Hys {
-    #[doc = "Hysteresis Disabled"]
-    HYS_0_HYSTERESIS_DISABLED = 0x0,
-    #[doc = "Hysteresis Enabled"]
-    HYS_1_HYSTERESIS_ENABLED = 0x01,
-}
-impl Hys {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Hys {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Hys {
-    #[inline(always)]
-    fn from(val: u8) -> Hys {
-        Hys::from_bits(val)
-    }
-}
-impl From<Hys> for u8 {
-    #[inline(always)]
-    fn from(val: Hys) -> u8 {
-        Hys::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpi2c1SclSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_04 for Mode: ALT2"]
     GPIO_SD_B1_04_ALT2 = 0x0,
@@ -3918,99 +3887,6 @@ impl From<NmiSelectInputDaisy> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Ode {
-    #[doc = "Open Drain Disabled"]
-    ODE_0_OPEN_DRAIN_DISABLED = 0x0,
-    #[doc = "Open Drain Enabled"]
-    ODE_1_OPEN_DRAIN_ENABLED = 0x01,
-}
-impl Ode {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Ode {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Ode {
-    #[inline(always)]
-    fn from(val: u8) -> Ode {
-        Ode::from_bits(val)
-    }
-}
-impl From<Ode> for u8 {
-    #[inline(always)]
-    fn from(val: Ode) -> u8 {
-        Ode::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Pke {
-    #[doc = "Pull/Keeper Disabled"]
-    PKE_0_PULL_KEEPER_DISABLED = 0x0,
-    #[doc = "Pull/Keeper Enabled"]
-    PKE_1_PULL_KEEPER_ENABLED = 0x01,
-}
-impl Pke {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Pke {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Pke {
-    #[inline(always)]
-    fn from(val: u8) -> Pke {
-        Pke::from_bits(val)
-    }
-}
-impl From<Pke> for u8 {
-    #[inline(always)]
-    fn from(val: Pke) -> u8 {
-        Pke::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Pue {
-    #[doc = "Keeper"]
-    PUE_0_KEEPER = 0x0,
-    #[doc = "Pull"]
-    PUE_1_PULL = 0x01,
-}
-impl Pue {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Pue {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Pue {
-    #[inline(always)]
-    fn from(val: u8) -> Pue {
-        Pue::from_bits(val)
-    }
-}
-impl From<Pue> for u8 {
-    #[inline(always)]
-    fn from(val: Pue) -> u8 {
-        Pue::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pus {
     #[doc = "100K Ohm Pull Down"]
     PUS_0_100K_OHM_PULL_DOWN = 0x0,
@@ -5071,37 +4947,6 @@ impl From<Speed> for u8 {
     #[inline(always)]
     fn from(val: Speed) -> u8 {
         Speed::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Sre {
-    #[doc = "Slow Slew Rate"]
-    SRE_0_SLOW_SLEW_RATE = 0x0,
-    #[doc = "Fast Slew Rate"]
-    SRE_1_FAST_SLEW_RATE = 0x01,
-}
-impl Sre {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Sre {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Sre {
-    #[inline(always)]
-    fn from(val: u8) -> Sre {
-        Sre::from_bits(val)
-    }
-}
-impl From<Sre> for u8 {
-    #[inline(always)]
-    fn from(val: Sre) -> u8 {
-        Sre::to_bits(val)
     }
 }
 #[repr(u8)]

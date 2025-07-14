@@ -573,14 +573,14 @@ impl Ctl {
     #[doc = "Slew Rate Field"]
     #[must_use]
     #[inline(always)]
-    pub const fn sre(&self) -> super::vals::Sre {
+    pub const fn sre(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sre::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Slew Rate Field"]
     #[inline(always)]
-    pub const fn set_sre(&mut self, val: super::vals::Sre) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_sre(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Drive Strength Field"]
     #[must_use]
@@ -609,38 +609,38 @@ impl Ctl {
     #[doc = "Open Drain Enable Field"]
     #[must_use]
     #[inline(always)]
-    pub const fn ode(&self) -> super::vals::Ode {
+    pub const fn ode(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Ode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Open Drain Enable Field"]
     #[inline(always)]
-    pub const fn set_ode(&mut self, val: super::vals::Ode) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_ode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Pull / Keep Enable Field"]
     #[must_use]
     #[inline(always)]
-    pub const fn pke(&self) -> super::vals::Pke {
+    pub const fn pke(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Pke::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Pull / Keep Enable Field"]
     #[inline(always)]
-    pub const fn set_pke(&mut self, val: super::vals::Pke) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_pke(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Pull / Keep Select Field"]
     #[must_use]
     #[inline(always)]
-    pub const fn pue(&self) -> super::vals::Pue {
+    pub const fn pue(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Pue::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Pull / Keep Select Field"]
     #[inline(always)]
-    pub const fn set_pue(&mut self, val: super::vals::Pue) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_pue(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Pull Up / Down Config. Field"]
     #[must_use]
@@ -657,14 +657,14 @@ impl Ctl {
     #[doc = "Hyst. Enable Field"]
     #[must_use]
     #[inline(always)]
-    pub const fn hys(&self) -> super::vals::Hys {
+    pub const fn hys(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Hys::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Hyst. Enable Field"]
     #[inline(always)]
-    pub const fn set_hys(&mut self, val: super::vals::Hys) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_hys(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
 }
 impl Default for Ctl {
@@ -692,7 +692,7 @@ impl defmt::Format for Ctl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctl {{ sre: {:?}, dse: {:?}, speed: {:?}, ode: {:?}, pke: {:?}, pue: {:?}, pus: {:?}, hys: {:?} }}",
+            "Ctl {{ sre: {=bool:?}, dse: {:?}, speed: {:?}, ode: {=bool:?}, pke: {=bool:?}, pue: {=bool:?}, pus: {:?}, hys: {=bool:?} }}",
             self.sre(),
             self.dse(),
             self.speed(),
