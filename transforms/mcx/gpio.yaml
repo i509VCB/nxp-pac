@@ -13,18 +13,17 @@ transforms:
     check: Layout
 
   - !Rename
-    from: gpio0::(.*)
-    to: gpio::$1
+    from: gpio0_alias(\d+)::(.*)
+    to: gpio::$2
     type: All
 
   - !Rename
-    from: gpio::Gpio0
+    from: gpio0::Gpio0
     to: gpio::Gpio
-    type: Block
+    type: All
 
   - !Delete
     from: gpio(\d+)(_alias(\d+))?::(.*)
-    
 
 #  - !Rename
 #      from: sai1::(.*)
