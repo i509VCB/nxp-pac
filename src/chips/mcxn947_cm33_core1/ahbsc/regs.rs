@@ -9547,230 +9547,230 @@ impl SecVioInfoValid {
     #[doc = "Violation information valid flag for AHB port 0"]
     #[must_use]
     #[inline(always)]
-    pub const fn vio_info_valid0(&self) -> super::vals::VioInfoValid0 {
+    pub const fn vio_info_valid0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::VioInfoValid0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Violation information valid flag for AHB port 0"]
     #[inline(always)]
-    pub const fn set_vio_info_valid0(&mut self, val: super::vals::VioInfoValid0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_vio_info_valid0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Violation information valid flag for AHB port 1"]
     #[must_use]
     #[inline(always)]
-    pub const fn vio_info_valid1(&self) -> super::vals::VioInfoValid1 {
+    pub const fn vio_info_valid1(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::VioInfoValid1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Violation information valid flag for AHB port 1"]
     #[inline(always)]
-    pub const fn set_vio_info_valid1(&mut self, val: super::vals::VioInfoValid1) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_vio_info_valid1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Violation information valid flag for AHB port 2"]
     #[must_use]
     #[inline(always)]
-    pub const fn vio_info_valid2(&self) -> super::vals::VioInfoValid2 {
+    pub const fn vio_info_valid2(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::VioInfoValid2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Violation information valid flag for AHB port 2"]
     #[inline(always)]
-    pub const fn set_vio_info_valid2(&mut self, val: super::vals::VioInfoValid2) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_vio_info_valid2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Violation information valid flag for AHB port 3"]
     #[must_use]
     #[inline(always)]
-    pub const fn vio_info_valid3(&self) -> super::vals::VioInfoValid3 {
+    pub const fn vio_info_valid3(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::VioInfoValid3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Violation information valid flag for AHB port 3"]
     #[inline(always)]
-    pub const fn set_vio_info_valid3(&mut self, val: super::vals::VioInfoValid3) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_vio_info_valid3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Violation information valid flag for AHB port 4"]
     #[must_use]
     #[inline(always)]
-    pub const fn vio_info_valid4(&self) -> super::vals::VioInfoValid4 {
+    pub const fn vio_info_valid4(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::VioInfoValid4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Violation information valid flag for AHB port 4"]
     #[inline(always)]
-    pub const fn set_vio_info_valid4(&mut self, val: super::vals::VioInfoValid4) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_vio_info_valid4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Violation information valid flag for AHB port 5"]
     #[must_use]
     #[inline(always)]
-    pub const fn vio_info_valid5(&self) -> super::vals::VioInfoValid5 {
+    pub const fn vio_info_valid5(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::VioInfoValid5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Violation information valid flag for AHB port 5"]
     #[inline(always)]
-    pub const fn set_vio_info_valid5(&mut self, val: super::vals::VioInfoValid5) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_vio_info_valid5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Violation information valid flag for AHB port 6"]
     #[must_use]
     #[inline(always)]
-    pub const fn vio_info_valid6(&self) -> super::vals::VioInfoValid6 {
+    pub const fn vio_info_valid6(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::VioInfoValid6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Violation information valid flag for AHB port 6"]
     #[inline(always)]
-    pub const fn set_vio_info_valid6(&mut self, val: super::vals::VioInfoValid6) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_vio_info_valid6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Violation information valid flag for AHB port 7"]
     #[must_use]
     #[inline(always)]
-    pub const fn vio_info_valid7(&self) -> super::vals::VioInfoValid7 {
+    pub const fn vio_info_valid7(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::VioInfoValid7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Violation information valid flag for AHB port 7"]
     #[inline(always)]
-    pub const fn set_vio_info_valid7(&mut self, val: super::vals::VioInfoValid7) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_vio_info_valid7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Violation information valid flag for AHB port 8"]
     #[must_use]
     #[inline(always)]
-    pub const fn vio_info_valid8(&self) -> super::vals::VioInfoValid8 {
+    pub const fn vio_info_valid8(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::VioInfoValid8::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Violation information valid flag for AHB port 8"]
     #[inline(always)]
-    pub const fn set_vio_info_valid8(&mut self, val: super::vals::VioInfoValid8) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_vio_info_valid8(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Violation information valid flag for AHB port 9"]
     #[must_use]
     #[inline(always)]
-    pub const fn vio_info_valid9(&self) -> super::vals::VioInfoValid9 {
+    pub const fn vio_info_valid9(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::VioInfoValid9::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Violation information valid flag for AHB port 9"]
     #[inline(always)]
-    pub const fn set_vio_info_valid9(&mut self, val: super::vals::VioInfoValid9) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_vio_info_valid9(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Violation information valid flag for AHB port 10"]
     #[must_use]
     #[inline(always)]
-    pub const fn vio_info_valid10(&self) -> super::vals::VioInfoValid10 {
+    pub const fn vio_info_valid10(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::VioInfoValid10::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Violation information valid flag for AHB port 10"]
     #[inline(always)]
-    pub const fn set_vio_info_valid10(&mut self, val: super::vals::VioInfoValid10) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_vio_info_valid10(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Violation information valid flag for AHB port 11"]
     #[must_use]
     #[inline(always)]
-    pub const fn vio_info_valid11(&self) -> super::vals::VioInfoValid11 {
+    pub const fn vio_info_valid11(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::VioInfoValid11::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Violation information valid flag for AHB port 11"]
     #[inline(always)]
-    pub const fn set_vio_info_valid11(&mut self, val: super::vals::VioInfoValid11) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_vio_info_valid11(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Violation information valid flag for AHB port 12"]
     #[must_use]
     #[inline(always)]
-    pub const fn vio_info_valid12(&self) -> super::vals::VioInfoValid12 {
+    pub const fn vio_info_valid12(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::VioInfoValid12::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Violation information valid flag for AHB port 12"]
     #[inline(always)]
-    pub const fn set_vio_info_valid12(&mut self, val: super::vals::VioInfoValid12) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_vio_info_valid12(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Violation information valid flag for AHB port 13"]
     #[must_use]
     #[inline(always)]
-    pub const fn vio_info_valid13(&self) -> super::vals::VioInfoValid13 {
+    pub const fn vio_info_valid13(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::VioInfoValid13::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Violation information valid flag for AHB port 13"]
     #[inline(always)]
-    pub const fn set_vio_info_valid13(&mut self, val: super::vals::VioInfoValid13) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_vio_info_valid13(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Violation information valid flag for AHB port 14"]
     #[must_use]
     #[inline(always)]
-    pub const fn vio_info_valid14(&self) -> super::vals::VioInfoValid14 {
+    pub const fn vio_info_valid14(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::VioInfoValid14::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Violation information valid flag for AHB port 14"]
     #[inline(always)]
-    pub const fn set_vio_info_valid14(&mut self, val: super::vals::VioInfoValid14) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_vio_info_valid14(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Violation information valid flag for AHB port 15"]
     #[must_use]
     #[inline(always)]
-    pub const fn vio_info_valid15(&self) -> super::vals::VioInfoValid15 {
+    pub const fn vio_info_valid15(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::VioInfoValid15::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Violation information valid flag for AHB port 15"]
     #[inline(always)]
-    pub const fn set_vio_info_valid15(&mut self, val: super::vals::VioInfoValid15) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_vio_info_valid15(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "Violation information valid flag for AHB port 16"]
     #[must_use]
     #[inline(always)]
-    pub const fn vio_info_valid16(&self) -> super::vals::VioInfoValid16 {
+    pub const fn vio_info_valid16(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::VioInfoValid16::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Violation information valid flag for AHB port 16"]
     #[inline(always)]
-    pub const fn set_vio_info_valid16(&mut self, val: super::vals::VioInfoValid16) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_vio_info_valid16(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Violation information valid flag for AHB port 17"]
     #[must_use]
     #[inline(always)]
-    pub const fn vio_info_valid17(&self) -> super::vals::VioInfoValid17 {
+    pub const fn vio_info_valid17(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::VioInfoValid17::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Violation information valid flag for AHB port 17"]
     #[inline(always)]
-    pub const fn set_vio_info_valid17(&mut self, val: super::vals::VioInfoValid17) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_vio_info_valid17(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Violation information valid flag for AHB port 18"]
     #[must_use]
     #[inline(always)]
-    pub const fn vio_info_valid18(&self) -> super::vals::VioInfoValid18 {
+    pub const fn vio_info_valid18(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::VioInfoValid18::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Violation information valid flag for AHB port 18"]
     #[inline(always)]
-    pub const fn set_vio_info_valid18(&mut self, val: super::vals::VioInfoValid18) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_vio_info_valid18(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
 }
 impl Default for SecVioInfoValid {
@@ -9809,7 +9809,7 @@ impl defmt::Format for SecVioInfoValid {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "SecVioInfoValid {{ vio_info_valid0: {:?}, vio_info_valid1: {:?}, vio_info_valid2: {:?}, vio_info_valid3: {:?}, vio_info_valid4: {:?}, vio_info_valid5: {:?}, vio_info_valid6: {:?}, vio_info_valid7: {:?}, vio_info_valid8: {:?}, vio_info_valid9: {:?}, vio_info_valid10: {:?}, vio_info_valid11: {:?}, vio_info_valid12: {:?}, vio_info_valid13: {:?}, vio_info_valid14: {:?}, vio_info_valid15: {:?}, vio_info_valid16: {:?}, vio_info_valid17: {:?}, vio_info_valid18: {:?} }}",
+            "SecVioInfoValid {{ vio_info_valid0: {=bool:?}, vio_info_valid1: {=bool:?}, vio_info_valid2: {=bool:?}, vio_info_valid3: {=bool:?}, vio_info_valid4: {=bool:?}, vio_info_valid5: {=bool:?}, vio_info_valid6: {=bool:?}, vio_info_valid7: {=bool:?}, vio_info_valid8: {=bool:?}, vio_info_valid9: {=bool:?}, vio_info_valid10: {=bool:?}, vio_info_valid11: {=bool:?}, vio_info_valid12: {=bool:?}, vio_info_valid13: {=bool:?}, vio_info_valid14: {=bool:?}, vio_info_valid15: {=bool:?}, vio_info_valid16: {=bool:?}, vio_info_valid17: {=bool:?}, vio_info_valid18: {=bool:?} }}",
             self.vio_info_valid0(),
             self.vio_info_valid1(),
             self.vio_info_valid2(),

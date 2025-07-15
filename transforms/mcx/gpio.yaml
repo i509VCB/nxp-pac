@@ -1,0 +1,37 @@
+transforms:
+# MCX parts duplicate GPIO peripherals... Merge them all
+  - !MergeBlocks
+    from: gpio(\d+)::Gpio(\d+)
+    to: gpio0::Gpio0
+    main: gpio0::Gpio0
+    check: Layout
+
+  - !MergeBlocks
+    from: gpio(\d+)_alias(\d+)::Gpio(\d+)Alias(\d+)
+    to: gpio0::Gpio0
+    main: gpio0::Gpio0
+    check: Layout
+
+  - !Rename
+    from: gpio0::(.*)
+    to: gpio::$1
+    type: All
+
+  - !Rename
+    from: gpio::Gpio0
+    to: gpio::Gpio
+    type: Block
+
+  - !Delete
+    from: gpio(\d+)(_alias(\d+))?::(.*)
+    
+
+#  - !Rename
+#      from: sai1::(.*)
+#      to: sai::$1
+#      type: All
+#
+#  - !Rename
+#      from: sai::Sai1
+#      to: sai::Sai
+#      type: Block

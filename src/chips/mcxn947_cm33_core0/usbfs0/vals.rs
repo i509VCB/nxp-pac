@@ -900,37 +900,6 @@ impl From<Hostwohub> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Iehost {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Iehost {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Iehost {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Iehost {
-    #[inline(always)]
-    fn from(val: u8) -> Iehost {
-        Iehost::from_bits(val)
-    }
-}
-impl From<Iehost> for u8 {
-    #[inline(always)]
-    fn from(val: Iehost) -> u8 {
-        Iehost::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum IrcEn {
     #[doc = "Disable"]
     DIS_IRC = 0x0,
@@ -957,37 +926,6 @@ impl From<IrcEn> for u8 {
     #[inline(always)]
     fn from(val: IrcEn) -> u8 {
         IrcEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum KeepAliveEn {
-    #[doc = "Everything remains same as before."]
-    DE_ASSERTED = 0x0,
-    #[doc = "USB shall enter USB_KEEP_ALIVE mode after asserting ipg_stop."]
-    ASSERTED = 0x01,
-}
-impl KeepAliveEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> KeepAliveEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for KeepAliveEn {
-    #[inline(always)]
-    fn from(val: u8) -> KeepAliveEn {
-        KeepAliveEn::from_bits(val)
-    }
-}
-impl From<KeepAliveEn> for u8 {
-    #[inline(always)]
-    fn from(val: KeepAliveEn) -> u8 {
-        KeepAliveEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1484,37 +1422,6 @@ impl From<Piderren> for u8 {
     #[inline(always)]
     fn from(val: Piderren) -> u8 {
         Piderren::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Reset {
-    #[doc = "Disable"]
-    DISABLE = 0x0,
-    #[doc = "Enable"]
-    ENABLE = 0x01,
-}
-impl Reset {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Reset {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Reset {
-    #[inline(always)]
-    fn from(val: u8) -> Reset {
-        Reset::from_bits(val)
-    }
-}
-impl From<Reset> for u8 {
-    #[inline(always)]
-    fn from(val: Reset) -> u8 {
-        Reset::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -3483,36 +3390,6 @@ impl From<Usbrsten> for u8 {
     #[inline(always)]
     fn from(val: Usbrsten) -> u8 {
         Usbrsten::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum VbusSourceSel {
-    _RESERVED_0 = 0x0,
-    #[doc = "Resistive divider attached to a GPIO pin"]
-    RESISTIVE = 0x01,
-}
-impl VbusSourceSel {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> VbusSourceSel {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for VbusSourceSel {
-    #[inline(always)]
-    fn from(val: u8) -> VbusSourceSel {
-        VbusSourceSel::from_bits(val)
-    }
-}
-impl From<VbusSourceSel> for u8 {
-    #[inline(always)]
-    fn from(val: VbusSourceSel) -> u8 {
-        VbusSourceSel::to_bits(val)
     }
 }
 #[repr(u8)]

@@ -1,68 +1,6 @@
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum DebugEn {
-    #[doc = "Disabled"]
-    DISABLE = 0x0,
-    #[doc = "Enabled"]
-    ENABLE = 0x01,
-}
-impl DebugEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> DebugEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for DebugEn {
-    #[inline(always)]
-    fn from(val: u8) -> DebugEn {
-        DebugEn::from_bits(val)
-    }
-}
-impl From<DebugEn> for u8 {
-    #[inline(always)]
-    fn from(val: DebugEn) -> u8 {
-        DebugEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Lock {
-    #[doc = "No Lock"]
-    NO_LOCK = 0x0,
-    #[doc = "Lock"]
-    LOCK = 0x01,
-}
-impl Lock {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Lock {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Lock {
-    #[inline(always)]
-    fn from(val: u8) -> Lock {
-        Lock::from_bits(val)
-    }
-}
-impl From<Lock> for u8 {
-    #[inline(always)]
-    fn from(val: Lock) -> u8 {
-        Lock::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wden {
     #[doc = "Timer stopped"]
     STOP = 0x0,
@@ -89,37 +27,6 @@ impl From<Wden> for u8 {
     #[inline(always)]
     fn from(val: Wden) -> u8 {
         Wden::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Wdint {
-    #[doc = "No flag"]
-    NO_FLAG = 0x0,
-    #[doc = "Flag"]
-    FLAG = 0x01,
-}
-impl Wdint {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Wdint {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Wdint {
-    #[inline(always)]
-    fn from(val: u8) -> Wdint {
-        Wdint::from_bits(val)
-    }
-}
-impl From<Wdint> for u8 {
-    #[inline(always)]
-    fn from(val: Wdint) -> u8 {
-        Wdint::to_bits(val)
     }
 }
 #[repr(u8)]

@@ -78,29 +78,26 @@ impl ActiveCfg {
     #[doc = "Glitch Detect Disable"]
     #[must_use]
     #[inline(always)]
-    pub const fn glitch_detect_disable(&self) -> super::vals::ActiveCfgGlitchDetectDisable {
+    pub const fn glitch_detect_disable(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::ActiveCfgGlitchDetectDisable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Glitch Detect Disable"]
     #[inline(always)]
-    pub const fn set_glitch_detect_disable(
-        &mut self,
-        val: super::vals::ActiveCfgGlitchDetectDisable,
-    ) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_glitch_detect_disable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "CMP Bandgap Buffer Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn lpbuff_en(&self) -> super::vals::ActiveCfgLpbuffEn {
+    pub const fn lpbuff_en(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::ActiveCfgLpbuffEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CMP Bandgap Buffer Enable"]
     #[inline(always)]
-    pub const fn set_lpbuff_en(&mut self, val: super::vals::ActiveCfgLpbuffEn) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_lpbuff_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Bandgap Mode"]
     #[must_use]
@@ -129,74 +126,74 @@ impl ActiveCfg {
     #[doc = "Core Low-Voltage Detection Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn core_lvde(&self) -> super::vals::ActiveCfgCoreLvde {
+    pub const fn core_lvde(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::ActiveCfgCoreLvde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Core Low-Voltage Detection Enable"]
     #[inline(always)]
-    pub const fn set_core_lvde(&mut self, val: super::vals::ActiveCfgCoreLvde) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_core_lvde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "System Low-Voltage Detection Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn sys_lvde(&self) -> super::vals::ActiveCfgSysLvde {
+    pub const fn sys_lvde(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::ActiveCfgSysLvde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "System Low-Voltage Detection Enable"]
     #[inline(always)]
-    pub const fn set_sys_lvde(&mut self, val: super::vals::ActiveCfgSysLvde) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_sys_lvde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "IO Low-Voltage Detection Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn io_lvde(&self) -> super::vals::ActiveCfgIoLvde {
+    pub const fn io_lvde(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::ActiveCfgIoLvde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IO Low-Voltage Detection Enable"]
     #[inline(always)]
-    pub const fn set_io_lvde(&mut self, val: super::vals::ActiveCfgIoLvde) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_io_lvde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "Core High-Voltage Detection Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn core_hvde(&self) -> super::vals::ActiveCfgCoreHvde {
+    pub const fn core_hvde(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::ActiveCfgCoreHvde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Core High-Voltage Detection Enable"]
     #[inline(always)]
-    pub const fn set_core_hvde(&mut self, val: super::vals::ActiveCfgCoreHvde) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_core_hvde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
     #[doc = "System High-Voltage Detection Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn sys_hvde(&self) -> super::vals::ActiveCfgSysHvde {
+    pub const fn sys_hvde(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::ActiveCfgSysHvde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "System High-Voltage Detection Enable"]
     #[inline(always)]
-    pub const fn set_sys_hvde(&mut self, val: super::vals::ActiveCfgSysHvde) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_sys_hvde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "IO High-Voltage Detection Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn io_hvde(&self) -> super::vals::ActiveCfgIoHvde {
+    pub const fn io_hvde(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::ActiveCfgIoHvde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IO High-Voltage Detection Enable"]
     #[inline(always)]
-    pub const fn set_io_hvde(&mut self, val: super::vals::ActiveCfgIoHvde) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_io_hvde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
 }
 impl Default for ActiveCfg {
@@ -232,7 +229,7 @@ impl defmt::Format for ActiveCfg {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "ActiveCfg {{ coreldo_vdd_ds: {:?}, coreldo_vdd_lvl: {:?}, sysldo_vdd_ds: {:?}, sysldo_vdd_lvl: {:?}, dcdc_vdd_ds: {:?}, dcdc_vdd_lvl: {:?}, glitch_detect_disable: {:?}, lpbuff_en: {:?}, bgmode: {:?}, vdd_vd_disable: {:?}, core_lvde: {:?}, sys_lvde: {:?}, io_lvde: {:?}, core_hvde: {:?}, sys_hvde: {:?}, io_hvde: {:?} }}",
+            "ActiveCfg {{ coreldo_vdd_ds: {:?}, coreldo_vdd_lvl: {:?}, sysldo_vdd_ds: {:?}, sysldo_vdd_lvl: {:?}, dcdc_vdd_ds: {:?}, dcdc_vdd_lvl: {:?}, glitch_detect_disable: {=bool:?}, lpbuff_en: {=bool:?}, bgmode: {:?}, vdd_vd_disable: {:?}, core_lvde: {=bool:?}, sys_lvde: {=bool:?}, io_lvde: {=bool:?}, core_hvde: {=bool:?}, sys_hvde: {=bool:?}, io_hvde: {=bool:?} }}",
             self.coreldo_vdd_ds(),
             self.coreldo_vdd_lvl(),
             self.sysldo_vdd_ds(),
@@ -338,38 +335,38 @@ impl Cntrl {
     #[doc = "LDO_CORE Regulator Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn coreldo_en(&self) -> super::vals::CoreldoEn {
+    pub const fn coreldo_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::CoreldoEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LDO_CORE Regulator Enable"]
     #[inline(always)]
-    pub const fn set_coreldo_en(&mut self, val: super::vals::CoreldoEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_coreldo_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "LDO_SYS Regulator Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn sysldo_en(&self) -> super::vals::SysldoEn {
+    pub const fn sysldo_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::SysldoEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LDO_SYS Regulator Enable"]
     #[inline(always)]
-    pub const fn set_sysldo_en(&mut self, val: super::vals::SysldoEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_sysldo_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "DCDC_CORE Regulator Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dcdc_en(&self) -> super::vals::DcdcEn {
+    pub const fn dcdc_en(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::DcdcEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DCDC_CORE Regulator Enable"]
     #[inline(always)]
-    pub const fn set_dcdc_en(&mut self, val: super::vals::DcdcEn) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_dcdc_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
 }
 impl Default for Cntrl {
@@ -392,7 +389,7 @@ impl defmt::Format for Cntrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cntrl {{ coreldo_en: {:?}, sysldo_en: {:?}, dcdc_en: {:?} }}",
+            "Cntrl {{ coreldo_en: {=bool:?}, sysldo_en: {=bool:?}, dcdc_en: {=bool:?} }}",
             self.coreldo_en(),
             self.sysldo_en(),
             self.dcdc_en()
@@ -407,14 +404,14 @@ impl CoreldoCfg {
     #[doc = "LDO_CORE Deep Power Down Pulldown Disable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dpdown_pulldown_disable(&self) -> super::vals::DpdownPulldownDisable {
+    pub const fn dpdown_pulldown_disable(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::DpdownPulldownDisable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LDO_CORE Deep Power Down Pulldown Disable"]
     #[inline(always)]
-    pub const fn set_dpdown_pulldown_disable(&mut self, val: super::vals::DpdownPulldownDisable) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_dpdown_pulldown_disable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
 }
 impl Default for CoreldoCfg {
@@ -435,7 +432,7 @@ impl defmt::Format for CoreldoCfg {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "CoreldoCfg {{ dpdown_pulldown_disable: {:?} }}",
+            "CoreldoCfg {{ dpdown_pulldown_disable: {=bool:?} }}",
             self.dpdown_pulldown_disable()
         )
     }
@@ -460,14 +457,14 @@ impl DcdcBurstCfg {
     #[doc = "External Burst Request Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ext_burst_en(&self) -> super::vals::ExtBurstEn {
+    pub const fn ext_burst_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::ExtBurstEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "External Burst Request Enable"]
     #[inline(always)]
-    pub const fn set_ext_burst_en(&mut self, val: super::vals::ExtBurstEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_ext_burst_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Burst Acknowledge Flag"]
     #[must_use]
@@ -515,7 +512,7 @@ impl defmt::Format for DcdcBurstCfg {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "DcdcBurstCfg {{ burst_req: {:?}, ext_burst_en: {:?}, burst_ack: {:?}, pulse_refresh_cnt: {=u16:?} }}",
+            "DcdcBurstCfg {{ burst_req: {:?}, ext_burst_en: {=bool:?}, burst_ack: {:?}, pulse_refresh_cnt: {=u16:?} }}",
             self.burst_req(),
             self.ext_burst_en(),
             self.burst_ack(),
@@ -531,14 +528,14 @@ impl DcdcCfg {
     #[doc = "DCDC Burst Frequency Control Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn freq_cntrl_on(&self) -> super::vals::FreqCntrlOn {
+    pub const fn freq_cntrl_on(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::FreqCntrlOn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DCDC Burst Frequency Control Enable"]
     #[inline(always)]
-    pub const fn set_freq_cntrl_on(&mut self, val: super::vals::FreqCntrlOn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_freq_cntrl_on(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "DCDC Burst Frequency Control"]
     #[must_use]
@@ -585,7 +582,7 @@ impl defmt::Format for DcdcCfg {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "DcdcCfg {{ freq_cntrl_on: {:?}, freq_cntrl: {=u8:?}, bleed_en: {:?} }}",
+            "DcdcCfg {{ freq_cntrl_on: {=bool:?}, freq_cntrl: {=u8:?}, bleed_en: {:?} }}",
             self.freq_cntrl_on(),
             self.freq_cntrl(),
             self.bleed_en()
@@ -693,26 +690,26 @@ impl GlitchDetectSc {
     #[doc = "Glitch Detect Reset Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn re(&self) -> super::vals::Re {
+    pub const fn re(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Re::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Glitch Detect Reset Enable"]
     #[inline(always)]
-    pub const fn set_re(&mut self, val: super::vals::Re) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_re(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Glitch Detect Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ie(&self) -> super::vals::Ie {
+    pub const fn ie(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Glitch Detect Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ie(&mut self, val: super::vals::Ie) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "GLITCH_DETECT_FLAG"]
     #[must_use]
@@ -729,14 +726,14 @@ impl GlitchDetectSc {
     #[doc = "Glitch Detect Reset Enable Lock Bit"]
     #[must_use]
     #[inline(always)]
-    pub const fn lock(&self) -> super::vals::GlitchDetectScLock {
+    pub const fn lock(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::GlitchDetectScLock::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Glitch Detect Reset Enable Lock Bit"]
     #[inline(always)]
-    pub const fn set_lock(&mut self, val: super::vals::GlitchDetectScLock) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_lock(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
 }
 impl Default for GlitchDetectSc {
@@ -762,7 +759,7 @@ impl defmt::Format for GlitchDetectSc {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "GlitchDetectSc {{ cnt_select: {:?}, timeout: {=u8:?}, re: {:?}, ie: {:?}, glitch_detect_flag: {=u8:?}, lock: {:?} }}",
+            "GlitchDetectSc {{ cnt_select: {:?}, timeout: {=u8:?}, re: {=bool:?}, ie: {=bool:?}, glitch_detect_flag: {=u8:?}, lock: {=bool:?} }}",
             self.cnt_select(),
             self.timeout(),
             self.re(),
@@ -852,26 +849,26 @@ impl LpCfg {
     #[doc = "CORE VDD Internal Voltage Scaling (IVS) Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn corevdd_ivs_en(&self) -> super::vals::CorevddIvsEn {
+    pub const fn corevdd_ivs_en(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::CorevddIvsEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CORE VDD Internal Voltage Scaling (IVS) Enable"]
     #[inline(always)]
-    pub const fn set_corevdd_ivs_en(&mut self, val: super::vals::CorevddIvsEn) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_corevdd_ivs_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "CMP Bandgap Buffer Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn lpbuff_en(&self) -> super::vals::LpCfgLpbuffEn {
+    pub const fn lpbuff_en(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::LpCfgLpbuffEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CMP Bandgap Buffer Enable"]
     #[inline(always)]
-    pub const fn set_lpbuff_en(&mut self, val: super::vals::LpCfgLpbuffEn) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_lpbuff_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Bandgap Mode"]
     #[must_use]
@@ -888,86 +885,86 @@ impl LpCfg {
     #[doc = "Low-Power IREF Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn lp_irefen(&self) -> super::vals::LpIrefen {
+    pub const fn lp_irefen(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::LpIrefen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Low-Power IREF Enable"]
     #[inline(always)]
-    pub const fn set_lp_irefen(&mut self, val: super::vals::LpIrefen) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_lp_irefen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "Core Low Voltage Detect Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn core_lvde(&self) -> super::vals::LpCfgCoreLvde {
+    pub const fn core_lvde(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::LpCfgCoreLvde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Core Low Voltage Detect Enable"]
     #[inline(always)]
-    pub const fn set_core_lvde(&mut self, val: super::vals::LpCfgCoreLvde) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_core_lvde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "System Low Voltage Detect Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn sys_lvde(&self) -> super::vals::LpCfgSysLvde {
+    pub const fn sys_lvde(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::LpCfgSysLvde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "System Low Voltage Detect Enable"]
     #[inline(always)]
-    pub const fn set_sys_lvde(&mut self, val: super::vals::LpCfgSysLvde) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_sys_lvde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "IO Low Voltage Detect Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn io_lvde(&self) -> super::vals::LpCfgIoLvde {
+    pub const fn io_lvde(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::LpCfgIoLvde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IO Low Voltage Detect Enable"]
     #[inline(always)]
-    pub const fn set_io_lvde(&mut self, val: super::vals::LpCfgIoLvde) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_io_lvde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "Core High Voltage Detect Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn core_hvde(&self) -> super::vals::LpCfgCoreHvde {
+    pub const fn core_hvde(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::LpCfgCoreHvde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Core High Voltage Detect Enable"]
     #[inline(always)]
-    pub const fn set_core_hvde(&mut self, val: super::vals::LpCfgCoreHvde) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_core_hvde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
     #[doc = "System High Voltage Detect Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn sys_hvde(&self) -> super::vals::LpCfgSysHvde {
+    pub const fn sys_hvde(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::LpCfgSysHvde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "System High Voltage Detect Enable"]
     #[inline(always)]
-    pub const fn set_sys_hvde(&mut self, val: super::vals::LpCfgSysHvde) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_sys_hvde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "IO High Voltage Detect Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn io_hvde(&self) -> super::vals::LpCfgIoHvde {
+    pub const fn io_hvde(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::LpCfgIoHvde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IO High Voltage Detect Enable"]
     #[inline(always)]
-    pub const fn set_io_hvde(&mut self, val: super::vals::LpCfgIoHvde) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_io_hvde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
 }
 impl Default for LpCfg {
@@ -1003,7 +1000,7 @@ impl defmt::Format for LpCfg {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "LpCfg {{ coreldo_vdd_ds: {:?}, coreldo_vdd_lvl: {:?}, sysldo_vdd_ds: {:?}, dcdc_vdd_ds: {:?}, dcdc_vdd_lvl: {:?}, glitch_detect_disable: {:?}, corevdd_ivs_en: {:?}, lpbuff_en: {:?}, bgmode: {:?}, lp_irefen: {:?}, core_lvde: {:?}, sys_lvde: {:?}, io_lvde: {:?}, core_hvde: {:?}, sys_hvde: {:?}, io_hvde: {:?} }}",
+            "LpCfg {{ coreldo_vdd_ds: {:?}, coreldo_vdd_lvl: {:?}, sysldo_vdd_ds: {:?}, dcdc_vdd_ds: {:?}, dcdc_vdd_lvl: {:?}, glitch_detect_disable: {:?}, corevdd_ivs_en: {=bool:?}, lpbuff_en: {=bool:?}, bgmode: {:?}, lp_irefen: {=bool:?}, core_lvde: {=bool:?}, sys_lvde: {=bool:?}, io_lvde: {=bool:?}, core_hvde: {=bool:?}, sys_hvde: {=bool:?}, io_hvde: {=bool:?} }}",
             self.coreldo_vdd_ds(),
             self.coreldo_vdd_lvl(),
             self.sysldo_vdd_ds(),
@@ -1068,14 +1065,14 @@ impl LpreqCfg {
     #[doc = "Low-Power Request Output Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn lpreqoe(&self) -> super::vals::Lpreqoe {
+    pub const fn lpreqoe(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Lpreqoe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Low-Power Request Output Enable"]
     #[inline(always)]
-    pub const fn set_lpreqoe(&mut self, val: super::vals::Lpreqoe) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_lpreqoe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Low-Power Request Output Pin Polarity Control"]
     #[must_use]
@@ -1122,7 +1119,7 @@ impl defmt::Format for LpreqCfg {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "LpreqCfg {{ lpreqoe: {:?}, lpreqpol: {:?}, lpreqov: {:?} }}",
+            "LpreqCfg {{ lpreqoe: {=bool:?}, lpreqpol: {:?}, lpreqov: {:?} }}",
             self.lpreqoe(),
             self.lpreqpol(),
             self.lpreqov()
@@ -1399,14 +1396,14 @@ impl SysldoCfg {
     #[doc = "Current Sink Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn isinken(&self) -> super::vals::Isinken {
+    pub const fn isinken(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Isinken::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Current Sink Enable"]
     #[inline(always)]
-    pub const fn set_isinken(&mut self, val: super::vals::Isinken) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_isinken(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for SysldoCfg {
@@ -1425,7 +1422,7 @@ impl core::fmt::Debug for SysldoCfg {
 #[cfg(feature = "defmt")]
 impl defmt::Format for SysldoCfg {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "SysldoCfg {{ isinken: {:?} }}", self.isinken())
+        defmt::write!(f, "SysldoCfg {{ isinken: {=bool:?} }}", self.isinken())
     }
 }
 #[doc = "Core Voltage Detect Configuration"]
@@ -1436,50 +1433,50 @@ impl VdCoreCfg {
     #[doc = "Core LVD Reset Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn lvdre(&self) -> super::vals::VdCoreCfgLvdre {
+    pub const fn lvdre(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::VdCoreCfgLvdre::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Core LVD Reset Enable"]
     #[inline(always)]
-    pub const fn set_lvdre(&mut self, val: super::vals::VdCoreCfgLvdre) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_lvdre(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Core LVD Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn lvdie(&self) -> super::vals::VdCoreCfgLvdie {
+    pub const fn lvdie(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::VdCoreCfgLvdie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Core LVD Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_lvdie(&mut self, val: super::vals::VdCoreCfgLvdie) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_lvdie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Core VDD HVD Reset Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn hvdre(&self) -> super::vals::VdCoreCfgHvdre {
+    pub const fn hvdre(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::VdCoreCfgHvdre::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Core VDD HVD Reset Enable"]
     #[inline(always)]
-    pub const fn set_hvdre(&mut self, val: super::vals::VdCoreCfgHvdre) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_hvdre(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Core VDD HVD Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn hvdie(&self) -> super::vals::VdCoreCfgHvdie {
+    pub const fn hvdie(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::VdCoreCfgHvdie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Core VDD HVD Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_hvdie(&mut self, val: super::vals::VdCoreCfgHvdie) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_hvdie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Core Voltage Detect Reset Enable Lock"]
     #[must_use]
@@ -1516,7 +1513,7 @@ impl defmt::Format for VdCoreCfg {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "VdCoreCfg {{ lvdre: {:?}, lvdie: {:?}, hvdre: {:?}, hvdie: {:?}, lock: {:?} }}",
+            "VdCoreCfg {{ lvdre: {=bool:?}, lvdie: {=bool:?}, hvdre: {=bool:?}, hvdie: {=bool:?}, lock: {:?} }}",
             self.lvdre(),
             self.lvdie(),
             self.hvdre(),
@@ -1533,50 +1530,50 @@ impl VdIoCfg {
     #[doc = "IO VDD LVD Reset Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn lvdre(&self) -> super::vals::VdIoCfgLvdre {
+    pub const fn lvdre(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::VdIoCfgLvdre::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IO VDD LVD Reset Enable"]
     #[inline(always)]
-    pub const fn set_lvdre(&mut self, val: super::vals::VdIoCfgLvdre) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_lvdre(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "IO VDD LVD Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn lvdie(&self) -> super::vals::VdIoCfgLvdie {
+    pub const fn lvdie(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::VdIoCfgLvdie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IO VDD LVD Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_lvdie(&mut self, val: super::vals::VdIoCfgLvdie) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_lvdie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "IO VDD HVD Reset Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn hvdre(&self) -> super::vals::VdIoCfgHvdre {
+    pub const fn hvdre(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::VdIoCfgHvdre::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IO VDD HVD Reset Enable"]
     #[inline(always)]
-    pub const fn set_hvdre(&mut self, val: super::vals::VdIoCfgHvdre) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_hvdre(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "IO VDD HVD Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn hvdie(&self) -> super::vals::VdIoCfgHvdie {
+    pub const fn hvdie(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::VdIoCfgHvdie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IO VDD HVD Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_hvdie(&mut self, val: super::vals::VdIoCfgHvdie) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_hvdie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "IO VDD Low-Voltage Level Select"]
     #[must_use]
@@ -1626,7 +1623,7 @@ impl defmt::Format for VdIoCfg {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "VdIoCfg {{ lvdre: {:?}, lvdie: {:?}, hvdre: {:?}, hvdie: {:?}, lvsel: {:?}, lock: {:?} }}",
+            "VdIoCfg {{ lvdre: {=bool:?}, lvdie: {=bool:?}, hvdre: {=bool:?}, hvdie: {=bool:?}, lvsel: {:?}, lock: {:?} }}",
             self.lvdre(),
             self.lvdie(),
             self.hvdre(),
@@ -1755,50 +1752,50 @@ impl VdSysCfg {
     #[doc = "System LVD Reset Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn lvdre(&self) -> super::vals::VdSysCfgLvdre {
+    pub const fn lvdre(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::VdSysCfgLvdre::from_bits(val as u8)
+        val != 0
     }
     #[doc = "System LVD Reset Enable"]
     #[inline(always)]
-    pub const fn set_lvdre(&mut self, val: super::vals::VdSysCfgLvdre) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_lvdre(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "System LVD Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn lvdie(&self) -> super::vals::VdSysCfgLvdie {
+    pub const fn lvdie(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::VdSysCfgLvdie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "System LVD Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_lvdie(&mut self, val: super::vals::VdSysCfgLvdie) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_lvdie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "System HVD Reset Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn hvdre(&self) -> super::vals::VdSysCfgHvdre {
+    pub const fn hvdre(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::VdSysCfgHvdre::from_bits(val as u8)
+        val != 0
     }
     #[doc = "System HVD Reset Enable"]
     #[inline(always)]
-    pub const fn set_hvdre(&mut self, val: super::vals::VdSysCfgHvdre) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_hvdre(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "System HVD Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn hvdie(&self) -> super::vals::VdSysCfgHvdie {
+    pub const fn hvdie(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::VdSysCfgHvdie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "System HVD Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_hvdie(&mut self, val: super::vals::VdSysCfgHvdie) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_hvdie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "System Voltage Detect Reset Enable Lock"]
     #[must_use]
@@ -1835,7 +1832,7 @@ impl defmt::Format for VdSysCfg {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "VdSysCfg {{ lvdre: {:?}, lvdie: {:?}, hvdre: {:?}, hvdie: {:?}, lock: {:?} }}",
+            "VdSysCfg {{ lvdre: {=bool:?}, lvdie: {=bool:?}, hvdre: {=bool:?}, hvdie: {=bool:?}, lock: {:?} }}",
             self.lvdre(),
             self.lvdie(),
             self.hvdre(),

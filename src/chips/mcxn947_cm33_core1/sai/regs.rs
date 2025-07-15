@@ -18,14 +18,14 @@ impl Mcr {
     #[doc = "MCLK Post Divide Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn diven(&self) -> super::vals::Diven {
+    pub const fn diven(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Diven::from_bits(val as u8)
+        val != 0
     }
     #[doc = "MCLK Post Divide Enable"]
     #[inline(always)]
-    pub const fn set_diven(&mut self, val: super::vals::Diven) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_diven(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "MCLK Select"]
     #[must_use]
@@ -73,7 +73,7 @@ impl defmt::Format for Mcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mcr {{ div: {=u8:?}, diven: {:?}, msel: {:?}, moe: {:?} }}",
+            "Mcr {{ div: {=u8:?}, diven: {=bool:?}, msel: {:?}, moe: {:?} }}",
             self.div(),
             self.diven(),
             self.msel(),
@@ -205,14 +205,14 @@ impl Rcr2 {
     #[doc = "Bit Clock Bypass"]
     #[must_use]
     #[inline(always)]
-    pub const fn byp(&self) -> super::vals::Rcr2Byp {
+    pub const fn byp(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Rcr2Byp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bit Clock Bypass"]
     #[inline(always)]
-    pub const fn set_byp(&mut self, val: super::vals::Rcr2Byp) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_byp(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "Bit Clock Direction"]
     #[must_use]
@@ -312,7 +312,7 @@ impl defmt::Format for Rcr2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Rcr2 {{ div: {=u8:?}, byp: {:?}, bcd: {:?}, bcp: {:?}, msel: {:?}, bci: {:?}, bcs: {:?}, sync: {:?} }}",
+            "Rcr2 {{ div: {=u8:?}, byp: {=bool:?}, bcd: {:?}, bcp: {:?}, msel: {:?}, bci: {:?}, bcs: {:?}, sync: {:?} }}",
             self.div(),
             self.byp(),
             self.bcd(),
@@ -425,38 +425,38 @@ impl Rcr4 {
     #[doc = "On-Demand Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn ondem(&self) -> super::vals::Rcr4Ondem {
+    pub const fn ondem(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Rcr4Ondem::from_bits(val as u8)
+        val != 0
     }
     #[doc = "On-Demand Mode"]
     #[inline(always)]
-    pub const fn set_ondem(&mut self, val: super::vals::Rcr4Ondem) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_ondem(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Frame Sync Early"]
     #[must_use]
     #[inline(always)]
-    pub const fn fse(&self) -> super::vals::Rcr4Fse {
+    pub const fn fse(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Rcr4Fse::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Frame Sync Early"]
     #[inline(always)]
-    pub const fn set_fse(&mut self, val: super::vals::Rcr4Fse) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_fse(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "MSB First"]
     #[must_use]
     #[inline(always)]
-    pub const fn mf(&self) -> super::vals::Rcr4Mf {
+    pub const fn mf(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Rcr4Mf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "MSB First"]
     #[inline(always)]
-    pub const fn set_mf(&mut self, val: super::vals::Rcr4Mf) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_mf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Sync Width"]
     #[must_use]
@@ -509,14 +509,14 @@ impl Rcr4 {
     #[doc = "FIFO Continue on Error"]
     #[must_use]
     #[inline(always)]
-    pub const fn fcont(&self) -> super::vals::Rcr4Fcont {
+    pub const fn fcont(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Rcr4Fcont::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Continue on Error"]
     #[inline(always)]
-    pub const fn set_fcont(&mut self, val: super::vals::Rcr4Fcont) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_fcont(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
 }
 impl Default for Rcr4 {
@@ -546,7 +546,7 @@ impl defmt::Format for Rcr4 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Rcr4 {{ fsd: {:?}, fsp: {:?}, ondem: {:?}, fse: {:?}, mf: {:?}, sywd: {:?}, frsz: {:?}, fpack: {:?}, fcomb: {:?}, fcont: {:?} }}",
+            "Rcr4 {{ fsd: {:?}, fsp: {:?}, ondem: {=bool:?}, fse: {=bool:?}, mf: {=bool:?}, sywd: {:?}, frsz: {:?}, fpack: {:?}, fcomb: {:?}, fcont: {=bool:?} }}",
             self.fsd(),
             self.fsp(),
             self.ondem(),
@@ -637,86 +637,86 @@ impl Rcsr {
     #[doc = "FIFO Request DMA Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn frde(&self) -> super::vals::RcsrFrde {
+    pub const fn frde(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::RcsrFrde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Request DMA Enable"]
     #[inline(always)]
-    pub const fn set_frde(&mut self, val: super::vals::RcsrFrde) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_frde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "FIFO Warning DMA Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn fwde(&self) -> super::vals::RcsrFwde {
+    pub const fn fwde(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::RcsrFwde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Warning DMA Enable"]
     #[inline(always)]
-    pub const fn set_fwde(&mut self, val: super::vals::RcsrFwde) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_fwde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "FIFO Request Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn frie(&self) -> super::vals::RcsrFrie {
+    pub const fn frie(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::RcsrFrie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Request Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_frie(&mut self, val: super::vals::RcsrFrie) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_frie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "FIFO Warning Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn fwie(&self) -> super::vals::RcsrFwie {
+    pub const fn fwie(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::RcsrFwie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Warning Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_fwie(&mut self, val: super::vals::RcsrFwie) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_fwie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "FIFO Error Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn feie(&self) -> super::vals::RcsrFeie {
+    pub const fn feie(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::RcsrFeie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Error Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_feie(&mut self, val: super::vals::RcsrFeie) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_feie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Sync Error Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn seie(&self) -> super::vals::RcsrSeie {
+    pub const fn seie(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::RcsrSeie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Sync Error Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_seie(&mut self, val: super::vals::RcsrSeie) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_seie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Word Start Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn wsie(&self) -> super::vals::RcsrWsie {
+    pub const fn wsie(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::RcsrWsie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Word Start Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_wsie(&mut self, val: super::vals::RcsrWsie) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_wsie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "FIFO Request Flag"]
     #[must_use]
@@ -733,50 +733,50 @@ impl Rcsr {
     #[doc = "FIFO Warning Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn fwf(&self) -> super::vals::RcsrFwf {
+    pub const fn fwf(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::RcsrFwf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Warning Flag"]
     #[inline(always)]
-    pub const fn set_fwf(&mut self, val: super::vals::RcsrFwf) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_fwf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "FIFO Error Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn fef(&self) -> super::vals::RcsrFef {
+    pub const fn fef(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::RcsrFef::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Error Flag"]
     #[inline(always)]
-    pub const fn set_fef(&mut self, val: super::vals::RcsrFef) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_fef(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Sync Error Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn sef(&self) -> super::vals::RcsrSef {
+    pub const fn sef(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::RcsrSef::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Sync Error Flag"]
     #[inline(always)]
-    pub const fn set_sef(&mut self, val: super::vals::RcsrSef) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_sef(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "Word Start Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn wsf(&self) -> super::vals::RcsrWsf {
+    pub const fn wsf(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::RcsrWsf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Word Start Flag"]
     #[inline(always)]
-    pub const fn set_wsf(&mut self, val: super::vals::RcsrWsf) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_wsf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "Software Reset"]
     #[must_use]
@@ -805,50 +805,50 @@ impl Rcsr {
     #[doc = "Bit Clock Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn bce(&self) -> super::vals::RcsrBce {
+    pub const fn bce(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::RcsrBce::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bit Clock Enable"]
     #[inline(always)]
-    pub const fn set_bce(&mut self, val: super::vals::RcsrBce) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_bce(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Debug Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dbge(&self) -> super::vals::RcsrDbge {
+    pub const fn dbge(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::RcsrDbge::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Debug Enable"]
     #[inline(always)]
-    pub const fn set_dbge(&mut self, val: super::vals::RcsrDbge) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_dbge(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "Stop Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn stope(&self) -> super::vals::RcsrStope {
+    pub const fn stope(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::RcsrStope::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Stop Enable"]
     #[inline(always)]
-    pub const fn set_stope(&mut self, val: super::vals::RcsrStope) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_stope(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Receiver Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn re(&self) -> super::vals::Re {
+    pub const fn re(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Re::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Receiver Enable"]
     #[inline(always)]
-    pub const fn set_re(&mut self, val: super::vals::Re) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_re(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Rcsr {
@@ -886,7 +886,7 @@ impl defmt::Format for Rcsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Rcsr {{ frde: {:?}, fwde: {:?}, frie: {:?}, fwie: {:?}, feie: {:?}, seie: {:?}, wsie: {:?}, frf: {:?}, fwf: {:?}, fef: {:?}, sef: {:?}, wsf: {:?}, sr: {:?}, fr: {:?}, bce: {:?}, dbge: {:?}, stope: {:?}, re: {:?} }}",
+            "Rcsr {{ frde: {=bool:?}, fwde: {=bool:?}, frie: {=bool:?}, fwie: {=bool:?}, feie: {=bool:?}, seie: {=bool:?}, wsie: {=bool:?}, frf: {:?}, fwf: {=bool:?}, fef: {=bool:?}, sef: {=bool:?}, wsf: {=bool:?}, sr: {:?}, fr: {:?}, bce: {=bool:?}, dbge: {=bool:?}, stope: {=bool:?}, re: {=bool:?} }}",
             self.frde(),
             self.fwde(),
             self.frie(),
@@ -963,14 +963,14 @@ impl Rfr {
     #[doc = "Read Channel Pointer"]
     #[must_use]
     #[inline(always)]
-    pub const fn rcp(&self) -> super::vals::Rcp {
+    pub const fn rcp(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Rcp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Read Channel Pointer"]
     #[inline(always)]
-    pub const fn set_rcp(&mut self, val: super::vals::Rcp) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_rcp(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "Write FIFO Pointer"]
     #[must_use]
@@ -1005,7 +1005,7 @@ impl defmt::Format for Rfr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Rfr {{ rfp: {=u8:?}, rcp: {:?}, wfp: {=u8:?} }}",
+            "Rfr {{ rfp: {=u8:?}, rcp: {=bool:?}, wfp: {=u8:?} }}",
             self.rfp(),
             self.rcp(),
             self.wfp()
@@ -1103,14 +1103,14 @@ impl Tcr2 {
     #[doc = "Bit Clock Bypass"]
     #[must_use]
     #[inline(always)]
-    pub const fn byp(&self) -> super::vals::Tcr2Byp {
+    pub const fn byp(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Tcr2Byp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bit Clock Bypass"]
     #[inline(always)]
-    pub const fn set_byp(&mut self, val: super::vals::Tcr2Byp) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_byp(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "Bit Clock Direction"]
     #[must_use]
@@ -1151,26 +1151,26 @@ impl Tcr2 {
     #[doc = "Bit Clock Input"]
     #[must_use]
     #[inline(always)]
-    pub const fn bci(&self) -> super::vals::Tcr2Bci {
+    pub const fn bci(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Tcr2Bci::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bit Clock Input"]
     #[inline(always)]
-    pub const fn set_bci(&mut self, val: super::vals::Tcr2Bci) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_bci(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Bit Clock Swap"]
     #[must_use]
     #[inline(always)]
-    pub const fn bcs(&self) -> super::vals::Tcr2Bcs {
+    pub const fn bcs(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::Tcr2Bcs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bit Clock Swap"]
     #[inline(always)]
-    pub const fn set_bcs(&mut self, val: super::vals::Tcr2Bcs) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_bcs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "Synchronous Mode"]
     #[must_use]
@@ -1210,7 +1210,7 @@ impl defmt::Format for Tcr2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tcr2 {{ div: {=u8:?}, byp: {:?}, bcd: {:?}, bcp: {:?}, msel: {:?}, bci: {:?}, bcs: {:?}, sync: {:?} }}",
+            "Tcr2 {{ div: {=u8:?}, byp: {=bool:?}, bcd: {:?}, bcp: {:?}, msel: {:?}, bci: {=bool:?}, bcs: {=bool:?}, sync: {:?} }}",
             self.div(),
             self.byp(),
             self.bcd(),
@@ -1335,26 +1335,26 @@ impl Tcr4 {
     #[doc = "Frame Sync Early"]
     #[must_use]
     #[inline(always)]
-    pub const fn fse(&self) -> super::vals::Tcr4Fse {
+    pub const fn fse(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Tcr4Fse::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Frame Sync Early"]
     #[inline(always)]
-    pub const fn set_fse(&mut self, val: super::vals::Tcr4Fse) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_fse(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "MSB First"]
     #[must_use]
     #[inline(always)]
-    pub const fn mf(&self) -> super::vals::Tcr4Mf {
+    pub const fn mf(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Tcr4Mf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "MSB First"]
     #[inline(always)]
-    pub const fn set_mf(&mut self, val: super::vals::Tcr4Mf) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_mf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Channel Mode"]
     #[must_use]
@@ -1419,14 +1419,14 @@ impl Tcr4 {
     #[doc = "FIFO Continue on Error"]
     #[must_use]
     #[inline(always)]
-    pub const fn fcont(&self) -> super::vals::Tcr4Fcont {
+    pub const fn fcont(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Tcr4Fcont::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Continue on Error"]
     #[inline(always)]
-    pub const fn set_fcont(&mut self, val: super::vals::Tcr4Fcont) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_fcont(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
 }
 impl Default for Tcr4 {
@@ -1457,7 +1457,7 @@ impl defmt::Format for Tcr4 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tcr4 {{ fsd: {:?}, fsp: {:?}, ondem: {:?}, fse: {:?}, mf: {:?}, chmod: {:?}, sywd: {=u8:?}, frsz: {=u8:?}, fpack: {:?}, fcomb: {:?}, fcont: {:?} }}",
+            "Tcr4 {{ fsd: {:?}, fsp: {:?}, ondem: {:?}, fse: {=bool:?}, mf: {=bool:?}, chmod: {:?}, sywd: {=u8:?}, frsz: {=u8:?}, fpack: {:?}, fcomb: {:?}, fcont: {=bool:?} }}",
             self.fsd(),
             self.fsp(),
             self.ondem(),
@@ -1549,158 +1549,158 @@ impl Tcsr {
     #[doc = "FIFO Request DMA Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn frde(&self) -> super::vals::TcsrFrde {
+    pub const fn frde(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::TcsrFrde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Request DMA Enable"]
     #[inline(always)]
-    pub const fn set_frde(&mut self, val: super::vals::TcsrFrde) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_frde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "FIFO Warning DMA Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn fwde(&self) -> super::vals::TcsrFwde {
+    pub const fn fwde(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::TcsrFwde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Warning DMA Enable"]
     #[inline(always)]
-    pub const fn set_fwde(&mut self, val: super::vals::TcsrFwde) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_fwde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "FIFO Request Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn frie(&self) -> super::vals::TcsrFrie {
+    pub const fn frie(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::TcsrFrie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Request Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_frie(&mut self, val: super::vals::TcsrFrie) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_frie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "FIFO Warning Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn fwie(&self) -> super::vals::TcsrFwie {
+    pub const fn fwie(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::TcsrFwie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Warning Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_fwie(&mut self, val: super::vals::TcsrFwie) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_fwie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "FIFO Error Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn feie(&self) -> super::vals::TcsrFeie {
+    pub const fn feie(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::TcsrFeie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Error Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_feie(&mut self, val: super::vals::TcsrFeie) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_feie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Sync Error Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn seie(&self) -> super::vals::TcsrSeie {
+    pub const fn seie(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::TcsrSeie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Sync Error Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_seie(&mut self, val: super::vals::TcsrSeie) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_seie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Word Start Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn wsie(&self) -> super::vals::TcsrWsie {
+    pub const fn wsie(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::TcsrWsie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Word Start Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_wsie(&mut self, val: super::vals::TcsrWsie) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_wsie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "FIFO Request Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn frf(&self) -> super::vals::TcsrFrf {
+    pub const fn frf(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::TcsrFrf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Request Flag"]
     #[inline(always)]
-    pub const fn set_frf(&mut self, val: super::vals::TcsrFrf) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_frf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "FIFO Warning Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn fwf(&self) -> super::vals::TcsrFwf {
+    pub const fn fwf(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::TcsrFwf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Warning Flag"]
     #[inline(always)]
-    pub const fn set_fwf(&mut self, val: super::vals::TcsrFwf) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_fwf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "FIFO Error Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn fef(&self) -> super::vals::TcsrFef {
+    pub const fn fef(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::TcsrFef::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Error Flag"]
     #[inline(always)]
-    pub const fn set_fef(&mut self, val: super::vals::TcsrFef) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_fef(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Sync Error Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn sef(&self) -> super::vals::TcsrSef {
+    pub const fn sef(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::TcsrSef::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Sync Error Flag"]
     #[inline(always)]
-    pub const fn set_sef(&mut self, val: super::vals::TcsrSef) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_sef(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "Word Start Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn wsf(&self) -> super::vals::TcsrWsf {
+    pub const fn wsf(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::TcsrWsf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Word Start Flag"]
     #[inline(always)]
-    pub const fn set_wsf(&mut self, val: super::vals::TcsrWsf) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_wsf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "Software Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn sr(&self) -> super::vals::TcsrSr {
+    pub const fn sr(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::TcsrSr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software Reset"]
     #[inline(always)]
-    pub const fn set_sr(&mut self, val: super::vals::TcsrSr) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_sr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "FIFO Reset"]
     #[must_use]
@@ -1717,50 +1717,50 @@ impl Tcsr {
     #[doc = "Bit Clock Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn bce(&self) -> super::vals::TcsrBce {
+    pub const fn bce(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::TcsrBce::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bit Clock Enable"]
     #[inline(always)]
-    pub const fn set_bce(&mut self, val: super::vals::TcsrBce) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_bce(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Debug Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dbge(&self) -> super::vals::TcsrDbge {
+    pub const fn dbge(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::TcsrDbge::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Debug Enable"]
     #[inline(always)]
-    pub const fn set_dbge(&mut self, val: super::vals::TcsrDbge) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_dbge(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "Stop Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn stope(&self) -> super::vals::TcsrStope {
+    pub const fn stope(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::TcsrStope::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Stop Enable"]
     #[inline(always)]
-    pub const fn set_stope(&mut self, val: super::vals::TcsrStope) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_stope(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Transmitter Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn te(&self) -> super::vals::Te {
+    pub const fn te(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Te::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Transmitter Enable"]
     #[inline(always)]
-    pub const fn set_te(&mut self, val: super::vals::Te) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_te(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Tcsr {
@@ -1798,7 +1798,7 @@ impl defmt::Format for Tcsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tcsr {{ frde: {:?}, fwde: {:?}, frie: {:?}, fwie: {:?}, feie: {:?}, seie: {:?}, wsie: {:?}, frf: {:?}, fwf: {:?}, fef: {:?}, sef: {:?}, wsf: {:?}, sr: {:?}, fr: {:?}, bce: {:?}, dbge: {:?}, stope: {:?}, te: {:?} }}",
+            "Tcsr {{ frde: {=bool:?}, fwde: {=bool:?}, frie: {=bool:?}, fwie: {=bool:?}, feie: {=bool:?}, seie: {=bool:?}, wsie: {=bool:?}, frf: {=bool:?}, fwf: {=bool:?}, fef: {=bool:?}, sef: {=bool:?}, wsf: {=bool:?}, sr: {=bool:?}, fr: {:?}, bce: {=bool:?}, dbge: {=bool:?}, stope: {=bool:?}, te: {=bool:?} }}",
             self.frde(),
             self.fwde(),
             self.frie(),
@@ -1887,14 +1887,14 @@ impl Tfr {
     #[doc = "Write Channel Pointer"]
     #[must_use]
     #[inline(always)]
-    pub const fn wcp(&self) -> super::vals::Wcp {
+    pub const fn wcp(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Wcp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Write Channel Pointer"]
     #[inline(always)]
-    pub const fn set_wcp(&mut self, val: super::vals::Wcp) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_wcp(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Tfr {
@@ -1917,7 +1917,7 @@ impl defmt::Format for Tfr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tfr {{ rfp: {=u8:?}, wfp: {=u8:?}, wcp: {:?} }}",
+            "Tfr {{ rfp: {=u8:?}, wfp: {=u8:?}, wcp: {=bool:?} }}",
             self.rfp(),
             self.wfp(),
             self.wcp()

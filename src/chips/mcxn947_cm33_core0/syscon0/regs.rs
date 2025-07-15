@@ -246,338 +246,338 @@ impl Ahbclkctrl0 {
     #[doc = "Enables the clock for the ROM"]
     #[must_use]
     #[inline(always)]
-    pub const fn rom(&self) -> super::vals::Rom {
+    pub const fn rom(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Rom::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for the ROM"]
     #[inline(always)]
-    pub const fn set_rom(&mut self, val: super::vals::Rom) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_rom(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Enables the clock for the RAMB Controller"]
     #[must_use]
     #[inline(always)]
-    pub const fn ramb_ctrl(&self) -> super::vals::Ahbclkctrl0RambCtrl {
+    pub const fn ramb_ctrl(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Ahbclkctrl0RambCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for the RAMB Controller"]
     #[inline(always)]
-    pub const fn set_ramb_ctrl(&mut self, val: super::vals::Ahbclkctrl0RambCtrl) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_ramb_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Enables the clock for the RAMC Controller"]
     #[must_use]
     #[inline(always)]
-    pub const fn ramc_ctrl(&self) -> super::vals::Ahbclkctrl0RamcCtrl {
+    pub const fn ramc_ctrl(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Ahbclkctrl0RamcCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for the RAMC Controller"]
     #[inline(always)]
-    pub const fn set_ramc_ctrl(&mut self, val: super::vals::Ahbclkctrl0RamcCtrl) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_ramc_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Enables the clock for the RAMD Controller"]
     #[must_use]
     #[inline(always)]
-    pub const fn ramd_ctrl(&self) -> super::vals::Ahbclkctrl0RamdCtrl {
+    pub const fn ramd_ctrl(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Ahbclkctrl0RamdCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for the RAMD Controller"]
     #[inline(always)]
-    pub const fn set_ramd_ctrl(&mut self, val: super::vals::Ahbclkctrl0RamdCtrl) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_ramd_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Enables the clock for the RAME Controller"]
     #[must_use]
     #[inline(always)]
-    pub const fn rame_ctrl(&self) -> super::vals::Ahbclkctrl0RameCtrl {
+    pub const fn rame_ctrl(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Ahbclkctrl0RameCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for the RAME Controller"]
     #[inline(always)]
-    pub const fn set_rame_ctrl(&mut self, val: super::vals::Ahbclkctrl0RameCtrl) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_rame_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Enables the clock for the RAMF Controller"]
     #[must_use]
     #[inline(always)]
-    pub const fn ramf_ctrl(&self) -> super::vals::Ahbclkctrl0RamfCtrl {
+    pub const fn ramf_ctrl(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Ahbclkctrl0RamfCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for the RAMF Controller"]
     #[inline(always)]
-    pub const fn set_ramf_ctrl(&mut self, val: super::vals::Ahbclkctrl0RamfCtrl) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_ramf_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Enables the clock for the RAMG Controller"]
     #[must_use]
     #[inline(always)]
-    pub const fn ramg_ctrl(&self) -> super::vals::Ahbclkctrl0RamgCtrl {
+    pub const fn ramg_ctrl(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Ahbclkctrl0RamgCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for the RAMG Controller"]
     #[inline(always)]
-    pub const fn set_ramg_ctrl(&mut self, val: super::vals::Ahbclkctrl0RamgCtrl) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_ramg_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Enables the clock for the RAMH Controller"]
     #[must_use]
     #[inline(always)]
-    pub const fn ramh_ctrl(&self) -> super::vals::Ahbclkctrl0RamhCtrl {
+    pub const fn ramh_ctrl(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Ahbclkctrl0RamhCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for the RAMH Controller"]
     #[inline(always)]
-    pub const fn set_ramh_ctrl(&mut self, val: super::vals::Ahbclkctrl0RamhCtrl) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_ramh_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Enables the clock for the Flash Management Unit"]
     #[must_use]
     #[inline(always)]
-    pub const fn fmu(&self) -> super::vals::Fmu {
+    pub const fn fmu(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Fmu::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for the Flash Management Unit"]
     #[inline(always)]
-    pub const fn set_fmu(&mut self, val: super::vals::Fmu) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_fmu(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Enables the clock for the Flash Memory Controller"]
     #[must_use]
     #[inline(always)]
-    pub const fn fmc(&self) -> super::vals::Fmc {
+    pub const fn fmc(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Fmc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for the Flash Memory Controller"]
     #[inline(always)]
-    pub const fn set_fmc(&mut self, val: super::vals::Fmc) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_fmc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Enables the clock for FlexSPI"]
     #[must_use]
     #[inline(always)]
-    pub const fn flexspi(&self) -> super::vals::Flexspi {
+    pub const fn flexspi(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Flexspi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for FlexSPI"]
     #[inline(always)]
-    pub const fn set_flexspi(&mut self, val: super::vals::Flexspi) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_flexspi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Enables the clock for INPUTMUX"]
     #[must_use]
     #[inline(always)]
-    pub const fn mux(&self) -> super::vals::Mux {
+    pub const fn mux(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Mux::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for INPUTMUX"]
     #[inline(always)]
-    pub const fn set_mux(&mut self, val: super::vals::Mux) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_mux(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Enables the clock for PORT0 controller"]
     #[must_use]
     #[inline(always)]
-    pub const fn port0(&self) -> super::vals::Port0 {
+    pub const fn port0(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Port0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for PORT0 controller"]
     #[inline(always)]
-    pub const fn set_port0(&mut self, val: super::vals::Port0) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_port0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Enables the clock for PORT1"]
     #[must_use]
     #[inline(always)]
-    pub const fn port1(&self) -> super::vals::Port1 {
+    pub const fn port1(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Port1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for PORT1"]
     #[inline(always)]
-    pub const fn set_port1(&mut self, val: super::vals::Port1) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_port1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Enables the clock for PORT2"]
     #[must_use]
     #[inline(always)]
-    pub const fn port2(&self) -> super::vals::Port2 {
+    pub const fn port2(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Port2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for PORT2"]
     #[inline(always)]
-    pub const fn set_port2(&mut self, val: super::vals::Port2) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_port2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "Enables the clock for PORT3"]
     #[must_use]
     #[inline(always)]
-    pub const fn port3(&self) -> super::vals::Port3 {
+    pub const fn port3(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Port3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for PORT3"]
     #[inline(always)]
-    pub const fn set_port3(&mut self, val: super::vals::Port3) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_port3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Enables the clock for PORT4"]
     #[must_use]
     #[inline(always)]
-    pub const fn port4(&self) -> super::vals::Port4 {
+    pub const fn port4(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Port4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for PORT4"]
     #[inline(always)]
-    pub const fn set_port4(&mut self, val: super::vals::Port4) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_port4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Enables the clock for GPIO0"]
     #[must_use]
     #[inline(always)]
-    pub const fn gpio0(&self) -> super::vals::Gpio0 {
+    pub const fn gpio0(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Gpio0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for GPIO0"]
     #[inline(always)]
-    pub const fn set_gpio0(&mut self, val: super::vals::Gpio0) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_gpio0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "Enables the clock for GPIO1"]
     #[must_use]
     #[inline(always)]
-    pub const fn gpio1(&self) -> super::vals::Gpio1 {
+    pub const fn gpio1(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::Gpio1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for GPIO1"]
     #[inline(always)]
-    pub const fn set_gpio1(&mut self, val: super::vals::Gpio1) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_gpio1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "Enables the clock for GPIO2"]
     #[must_use]
     #[inline(always)]
-    pub const fn gpio2(&self) -> super::vals::Gpio2 {
+    pub const fn gpio2(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Gpio2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for GPIO2"]
     #[inline(always)]
-    pub const fn set_gpio2(&mut self, val: super::vals::Gpio2) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_gpio2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "Enables the clock for GPIO3"]
     #[must_use]
     #[inline(always)]
-    pub const fn gpio3(&self) -> super::vals::Gpio3 {
+    pub const fn gpio3(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Gpio3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for GPIO3"]
     #[inline(always)]
-    pub const fn set_gpio3(&mut self, val: super::vals::Gpio3) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_gpio3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "Enables the clock for GPIO4"]
     #[must_use]
     #[inline(always)]
-    pub const fn gpio4(&self) -> super::vals::Gpio4 {
+    pub const fn gpio4(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Gpio4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for GPIO4"]
     #[inline(always)]
-    pub const fn set_gpio4(&mut self, val: super::vals::Gpio4) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_gpio4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "Enables the clock for PINT"]
     #[must_use]
     #[inline(always)]
-    pub const fn pint(&self) -> super::vals::Pint {
+    pub const fn pint(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Pint::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for PINT"]
     #[inline(always)]
-    pub const fn set_pint(&mut self, val: super::vals::Pint) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_pint(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "Enables the clock for DMA0"]
     #[must_use]
     #[inline(always)]
-    pub const fn dma0(&self) -> super::vals::Ahbclkctrl0Dma0 {
+    pub const fn dma0(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::Ahbclkctrl0Dma0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for DMA0"]
     #[inline(always)]
-    pub const fn set_dma0(&mut self, val: super::vals::Ahbclkctrl0Dma0) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_dma0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "Enables the clock for CRC"]
     #[must_use]
     #[inline(always)]
-    pub const fn crc(&self) -> super::vals::Crc {
+    pub const fn crc(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::Crc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for CRC"]
     #[inline(always)]
-    pub const fn set_crc(&mut self, val: super::vals::Crc) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_crc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
     #[doc = "Enables the clock for WWDT0"]
     #[must_use]
     #[inline(always)]
-    pub const fn wwdt0(&self) -> super::vals::Wwdt0 {
+    pub const fn wwdt0(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Wwdt0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for WWDT0"]
     #[inline(always)]
-    pub const fn set_wwdt0(&mut self, val: super::vals::Wwdt0) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_wwdt0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Enables the clock for WWDT1"]
     #[must_use]
     #[inline(always)]
-    pub const fn wwdt1(&self) -> super::vals::Wwdt1 {
+    pub const fn wwdt1(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::Wwdt1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for WWDT1"]
     #[inline(always)]
-    pub const fn set_wwdt1(&mut self, val: super::vals::Wwdt1) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_wwdt1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "Enables the clock for the Inter CPU communication Mailbox."]
     #[must_use]
     #[inline(always)]
-    pub const fn mailbox(&self) -> super::vals::Mailbox {
+    pub const fn mailbox(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Mailbox::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for the Inter CPU communication Mailbox."]
     #[inline(always)]
-    pub const fn set_mailbox(&mut self, val: super::vals::Mailbox) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_mailbox(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Ahbclkctrl0 {
@@ -625,7 +625,7 @@ impl defmt::Format for Ahbclkctrl0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ahbclkctrl0 {{ rom: {:?}, ramb_ctrl: {:?}, ramc_ctrl: {:?}, ramd_ctrl: {:?}, rame_ctrl: {:?}, ramf_ctrl: {:?}, ramg_ctrl: {:?}, ramh_ctrl: {:?}, fmu: {:?}, fmc: {:?}, flexspi: {:?}, mux: {:?}, port0: {:?}, port1: {:?}, port2: {:?}, port3: {:?}, port4: {:?}, gpio0: {:?}, gpio1: {:?}, gpio2: {:?}, gpio3: {:?}, gpio4: {:?}, pint: {:?}, dma0: {:?}, crc: {:?}, wwdt0: {:?}, wwdt1: {:?}, mailbox: {:?} }}",
+            "Ahbclkctrl0 {{ rom: {=bool:?}, ramb_ctrl: {=bool:?}, ramc_ctrl: {=bool:?}, ramd_ctrl: {=bool:?}, rame_ctrl: {=bool:?}, ramf_ctrl: {=bool:?}, ramg_ctrl: {=bool:?}, ramh_ctrl: {=bool:?}, fmu: {=bool:?}, fmc: {=bool:?}, flexspi: {=bool:?}, mux: {=bool:?}, port0: {=bool:?}, port1: {=bool:?}, port2: {=bool:?}, port3: {=bool:?}, port4: {=bool:?}, gpio0: {=bool:?}, gpio1: {=bool:?}, gpio2: {=bool:?}, gpio3: {=bool:?}, gpio4: {=bool:?}, pint: {=bool:?}, dma0: {=bool:?}, crc: {=bool:?}, wwdt0: {=bool:?}, wwdt1: {=bool:?}, mailbox: {=bool:?} }}",
             self.rom(),
             self.ramb_ctrl(),
             self.ramc_ctrl(),
@@ -665,338 +665,338 @@ impl Ahbclkctrl1 {
     #[doc = "Enables the clock for MRT"]
     #[must_use]
     #[inline(always)]
-    pub const fn mrt(&self) -> super::vals::Mrt {
+    pub const fn mrt(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Mrt::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for MRT"]
     #[inline(always)]
-    pub const fn set_mrt(&mut self, val: super::vals::Mrt) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_mrt(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Enables the clock for the OS Event Timer"]
     #[must_use]
     #[inline(always)]
-    pub const fn ostimer(&self) -> super::vals::Ostimer {
+    pub const fn ostimer(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Ostimer::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for the OS Event Timer"]
     #[inline(always)]
-    pub const fn set_ostimer(&mut self, val: super::vals::Ostimer) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_ostimer(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Enables the clock for SCT"]
     #[must_use]
     #[inline(always)]
-    pub const fn sct(&self) -> super::vals::Sct {
+    pub const fn sct(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Sct::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for SCT"]
     #[inline(always)]
-    pub const fn set_sct(&mut self, val: super::vals::Sct) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_sct(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Enables the clock for ADC0"]
     #[must_use]
     #[inline(always)]
-    pub const fn adc0(&self) -> super::vals::Adc0 {
+    pub const fn adc0(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Adc0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for ADC0"]
     #[inline(always)]
-    pub const fn set_adc0(&mut self, val: super::vals::Adc0) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_adc0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Enables the clock for ADC1"]
     #[must_use]
     #[inline(always)]
-    pub const fn adc1(&self) -> super::vals::Adc1 {
+    pub const fn adc1(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Adc1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for ADC1"]
     #[inline(always)]
-    pub const fn set_adc1(&mut self, val: super::vals::Adc1) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_adc1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Enables the clock for DAC0"]
     #[must_use]
     #[inline(always)]
-    pub const fn dac0(&self) -> super::vals::Dac0 {
+    pub const fn dac0(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Dac0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for DAC0"]
     #[inline(always)]
-    pub const fn set_dac0(&mut self, val: super::vals::Dac0) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_dac0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Enables the clock for RTC"]
     #[must_use]
     #[inline(always)]
-    pub const fn rtc(&self) -> super::vals::Rtc {
+    pub const fn rtc(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Rtc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for RTC"]
     #[inline(always)]
-    pub const fn set_rtc(&mut self, val: super::vals::Rtc) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_rtc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Enables the clock for EVSIM0"]
     #[must_use]
     #[inline(always)]
-    pub const fn evsim0(&self) -> super::vals::Evsim0 {
+    pub const fn evsim0(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Evsim0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for EVSIM0"]
     #[inline(always)]
-    pub const fn set_evsim0(&mut self, val: super::vals::Evsim0) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_evsim0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Enables the clock for EVSIM1"]
     #[must_use]
     #[inline(always)]
-    pub const fn evsim1(&self) -> super::vals::Evsim1 {
+    pub const fn evsim1(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Evsim1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for EVSIM1"]
     #[inline(always)]
-    pub const fn set_evsim1(&mut self, val: super::vals::Evsim1) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_evsim1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Enables the clock for UTICK"]
     #[must_use]
     #[inline(always)]
-    pub const fn utick(&self) -> super::vals::Utick {
+    pub const fn utick(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Utick::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for UTICK"]
     #[inline(always)]
-    pub const fn set_utick(&mut self, val: super::vals::Utick) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_utick(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Enables the clock for LP_FLEXCOMM0"]
     #[must_use]
     #[inline(always)]
-    pub const fn fc0(&self) -> super::vals::Fc0 {
+    pub const fn fc0(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Fc0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for LP_FLEXCOMM0"]
     #[inline(always)]
-    pub const fn set_fc0(&mut self, val: super::vals::Fc0) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_fc0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Enables the clock for LP_FLEXCOMM1"]
     #[must_use]
     #[inline(always)]
-    pub const fn fc1(&self) -> super::vals::Fc1 {
+    pub const fn fc1(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Fc1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for LP_FLEXCOMM1"]
     #[inline(always)]
-    pub const fn set_fc1(&mut self, val: super::vals::Fc1) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_fc1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Enables the clock for LP_FLEXCOMM2"]
     #[must_use]
     #[inline(always)]
-    pub const fn fc2(&self) -> super::vals::Fc2 {
+    pub const fn fc2(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Fc2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for LP_FLEXCOMM2"]
     #[inline(always)]
-    pub const fn set_fc2(&mut self, val: super::vals::Fc2) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_fc2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Enables the clock for LP_FLEXCOMM3"]
     #[must_use]
     #[inline(always)]
-    pub const fn fc3(&self) -> super::vals::Fc3 {
+    pub const fn fc3(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Fc3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for LP_FLEXCOMM3"]
     #[inline(always)]
-    pub const fn set_fc3(&mut self, val: super::vals::Fc3) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_fc3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Enables the clock for LP_FLEXCOMM4"]
     #[must_use]
     #[inline(always)]
-    pub const fn fc4(&self) -> super::vals::Fc4 {
+    pub const fn fc4(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Fc4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for LP_FLEXCOMM4"]
     #[inline(always)]
-    pub const fn set_fc4(&mut self, val: super::vals::Fc4) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_fc4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "Enables the clock for LP_FLEXCOMM5"]
     #[must_use]
     #[inline(always)]
-    pub const fn fc5(&self) -> super::vals::Fc5 {
+    pub const fn fc5(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Fc5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for LP_FLEXCOMM5"]
     #[inline(always)]
-    pub const fn set_fc5(&mut self, val: super::vals::Fc5) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_fc5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Enables the clock for LP_FLEXCOMM6"]
     #[must_use]
     #[inline(always)]
-    pub const fn fc6(&self) -> super::vals::Fc6 {
+    pub const fn fc6(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Fc6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for LP_FLEXCOMM6"]
     #[inline(always)]
-    pub const fn set_fc6(&mut self, val: super::vals::Fc6) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_fc6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Enables the clock for LP_FLEXCOMM7"]
     #[must_use]
     #[inline(always)]
-    pub const fn fc7(&self) -> super::vals::Fc7 {
+    pub const fn fc7(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::Fc7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for LP_FLEXCOMM7"]
     #[inline(always)]
-    pub const fn set_fc7(&mut self, val: super::vals::Fc7) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_fc7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Enables the clock for LP_FLEXCOMM8"]
     #[must_use]
     #[inline(always)]
-    pub const fn fc8(&self) -> super::vals::Fc8 {
+    pub const fn fc8(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Fc8::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for LP_FLEXCOMM8"]
     #[inline(always)]
-    pub const fn set_fc8(&mut self, val: super::vals::Fc8) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_fc8(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "Enables the clock for LP_FLEXCOMM9"]
     #[must_use]
     #[inline(always)]
-    pub const fn fc9(&self) -> super::vals::Fc9 {
+    pub const fn fc9(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::Fc9::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for LP_FLEXCOMM9"]
     #[inline(always)]
-    pub const fn set_fc9(&mut self, val: super::vals::Fc9) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_fc9(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "Enables the clock for MICFIL"]
     #[must_use]
     #[inline(always)]
-    pub const fn micfil(&self) -> super::vals::Micfil {
+    pub const fn micfil(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Micfil::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for MICFIL"]
     #[inline(always)]
-    pub const fn set_micfil(&mut self, val: super::vals::Micfil) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_micfil(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "Enables the clock for CTIMER2"]
     #[must_use]
     #[inline(always)]
-    pub const fn timer2(&self) -> super::vals::Timer2 {
+    pub const fn timer2(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Timer2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for CTIMER2"]
     #[inline(always)]
-    pub const fn set_timer2(&mut self, val: super::vals::Timer2) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_timer2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "Enables the clock for USB-FS DCD"]
     #[must_use]
     #[inline(always)]
-    pub const fn usb0_fs_dcd(&self) -> super::vals::Usb0FsDcd {
+    pub const fn usb0_fs_dcd(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::Usb0FsDcd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for USB-FS DCD"]
     #[inline(always)]
-    pub const fn set_usb0_fs_dcd(&mut self, val: super::vals::Usb0FsDcd) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_usb0_fs_dcd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "Enables the clock for USB-FS"]
     #[must_use]
     #[inline(always)]
-    pub const fn usb0_fs(&self) -> super::vals::Usb0Fs {
+    pub const fn usb0_fs(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Usb0Fs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for USB-FS"]
     #[inline(always)]
-    pub const fn set_usb0_fs(&mut self, val: super::vals::Usb0Fs) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_usb0_fs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "Enables the clock for CTIMER0"]
     #[must_use]
     #[inline(always)]
-    pub const fn timer0(&self) -> super::vals::Timer0 {
+    pub const fn timer0(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::Timer0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for CTIMER0"]
     #[inline(always)]
-    pub const fn set_timer0(&mut self, val: super::vals::Timer0) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_timer0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "Enables the clock for CTIMER1"]
     #[must_use]
     #[inline(always)]
-    pub const fn timer1(&self) -> super::vals::Timer1 {
+    pub const fn timer1(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::Timer1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for CTIMER1"]
     #[inline(always)]
-    pub const fn set_timer1(&mut self, val: super::vals::Timer1) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_timer1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
     #[doc = "Enables the clock for PKC RAM"]
     #[must_use]
     #[inline(always)]
-    pub const fn pkc_ram(&self) -> super::vals::PkcRam {
+    pub const fn pkc_ram(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::PkcRam::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for PKC RAM"]
     #[inline(always)]
-    pub const fn set_pkc_ram(&mut self, val: super::vals::PkcRam) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_pkc_ram(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "Enables the clock for SmartDMA"]
     #[must_use]
     #[inline(always)]
-    pub const fn smart_dma(&self) -> super::vals::SmartDma {
+    pub const fn smart_dma(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::SmartDma::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for SmartDMA"]
     #[inline(always)]
-    pub const fn set_smart_dma(&mut self, val: super::vals::SmartDma) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_smart_dma(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Ahbclkctrl1 {
@@ -1044,7 +1044,7 @@ impl defmt::Format for Ahbclkctrl1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ahbclkctrl1 {{ mrt: {:?}, ostimer: {:?}, sct: {:?}, adc0: {:?}, adc1: {:?}, dac0: {:?}, rtc: {:?}, evsim0: {:?}, evsim1: {:?}, utick: {:?}, fc0: {:?}, fc1: {:?}, fc2: {:?}, fc3: {:?}, fc4: {:?}, fc5: {:?}, fc6: {:?}, fc7: {:?}, fc8: {:?}, fc9: {:?}, micfil: {:?}, timer2: {:?}, usb0_fs_dcd: {:?}, usb0_fs: {:?}, timer0: {:?}, timer1: {:?}, pkc_ram: {:?}, smart_dma: {:?} }}",
+            "Ahbclkctrl1 {{ mrt: {=bool:?}, ostimer: {=bool:?}, sct: {=bool:?}, adc0: {=bool:?}, adc1: {=bool:?}, dac0: {=bool:?}, rtc: {=bool:?}, evsim0: {=bool:?}, evsim1: {=bool:?}, utick: {=bool:?}, fc0: {=bool:?}, fc1: {=bool:?}, fc2: {=bool:?}, fc3: {=bool:?}, fc4: {=bool:?}, fc5: {=bool:?}, fc6: {=bool:?}, fc7: {=bool:?}, fc8: {=bool:?}, fc9: {=bool:?}, micfil: {=bool:?}, timer2: {=bool:?}, usb0_fs_dcd: {=bool:?}, usb0_fs: {=bool:?}, timer0: {=bool:?}, timer1: {=bool:?}, pkc_ram: {=bool:?}, smart_dma: {=bool:?} }}",
             self.mrt(),
             self.ostimer(),
             self.sct(),
@@ -1084,278 +1084,278 @@ impl Ahbclkctrl2 {
     #[doc = "Enables the clock for DMA1"]
     #[must_use]
     #[inline(always)]
-    pub const fn dma1(&self) -> super::vals::Ahbclkctrl2Dma1 {
+    pub const fn dma1(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Ahbclkctrl2Dma1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for DMA1"]
     #[inline(always)]
-    pub const fn set_dma1(&mut self, val: super::vals::Ahbclkctrl2Dma1) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_dma1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Enables the clock for Ethernet"]
     #[must_use]
     #[inline(always)]
-    pub const fn enet(&self) -> super::vals::Enet {
+    pub const fn enet(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Enet::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for Ethernet"]
     #[inline(always)]
-    pub const fn set_enet(&mut self, val: super::vals::Enet) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_enet(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Enables the clock for uSDHC"]
     #[must_use]
     #[inline(always)]
-    pub const fn u_sdhc(&self) -> super::vals::USdhc {
+    pub const fn u_sdhc(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::USdhc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for uSDHC"]
     #[inline(always)]
-    pub const fn set_u_sdhc(&mut self, val: super::vals::USdhc) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_u_sdhc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Enables the clock for Flexio"]
     #[must_use]
     #[inline(always)]
-    pub const fn flexio(&self) -> super::vals::Flexio {
+    pub const fn flexio(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Flexio::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for Flexio"]
     #[inline(always)]
-    pub const fn set_flexio(&mut self, val: super::vals::Flexio) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_flexio(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Enables the clock for SAI0"]
     #[must_use]
     #[inline(always)]
-    pub const fn sai0(&self) -> super::vals::Sai0 {
+    pub const fn sai0(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Sai0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for SAI0"]
     #[inline(always)]
-    pub const fn set_sai0(&mut self, val: super::vals::Sai0) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_sai0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Enables the clock for SAI1"]
     #[must_use]
     #[inline(always)]
-    pub const fn sai1(&self) -> super::vals::Sai1 {
+    pub const fn sai1(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Sai1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for SAI1"]
     #[inline(always)]
-    pub const fn set_sai1(&mut self, val: super::vals::Sai1) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_sai1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Enables the clock for TRO"]
     #[must_use]
     #[inline(always)]
-    pub const fn tro(&self) -> super::vals::Tro {
+    pub const fn tro(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Tro::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for TRO"]
     #[inline(always)]
-    pub const fn set_tro(&mut self, val: super::vals::Tro) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_tro(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Enables the clock for the Frequency meter"]
     #[must_use]
     #[inline(always)]
-    pub const fn freqme(&self) -> super::vals::Freqme {
+    pub const fn freqme(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Freqme::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for the Frequency meter"]
     #[inline(always)]
-    pub const fn set_freqme(&mut self, val: super::vals::Freqme) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_freqme(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Enables the clock for TRNG"]
     #[must_use]
     #[inline(always)]
-    pub const fn trng(&self) -> super::vals::Trng {
+    pub const fn trng(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Trng::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for TRNG"]
     #[inline(always)]
-    pub const fn set_trng(&mut self, val: super::vals::Trng) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_trng(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Enables the clock for FLEXCAN0"]
     #[must_use]
     #[inline(always)]
-    pub const fn flexcan0(&self) -> super::vals::Flexcan0 {
+    pub const fn flexcan0(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Flexcan0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for FLEXCAN0"]
     #[inline(always)]
-    pub const fn set_flexcan0(&mut self, val: super::vals::Flexcan0) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_flexcan0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Enables the clock for FLEXCAN1"]
     #[must_use]
     #[inline(always)]
-    pub const fn flexcan1(&self) -> super::vals::Flexcan1 {
+    pub const fn flexcan1(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Flexcan1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for FLEXCAN1"]
     #[inline(always)]
-    pub const fn set_flexcan1(&mut self, val: super::vals::Flexcan1) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_flexcan1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "Enables the clock for USB HS"]
     #[must_use]
     #[inline(always)]
-    pub const fn usb_hs(&self) -> super::vals::UsbHs {
+    pub const fn usb_hs(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::UsbHs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for USB HS"]
     #[inline(always)]
-    pub const fn set_usb_hs(&mut self, val: super::vals::UsbHs) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_usb_hs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Enables the clock for USB HS PHY"]
     #[must_use]
     #[inline(always)]
-    pub const fn usb_hs_phy(&self) -> super::vals::UsbHsPhy {
+    pub const fn usb_hs_phy(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::UsbHsPhy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for USB HS PHY"]
     #[inline(always)]
-    pub const fn set_usb_hs_phy(&mut self, val: super::vals::UsbHsPhy) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_usb_hs_phy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Enables the clock for ELS"]
     #[must_use]
     #[inline(always)]
-    pub const fn els(&self) -> super::vals::Els {
+    pub const fn els(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::Els::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for ELS"]
     #[inline(always)]
-    pub const fn set_els(&mut self, val: super::vals::Els) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_els(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Enables the clock for Powerquad"]
     #[must_use]
     #[inline(always)]
-    pub const fn pq(&self) -> super::vals::Pq {
+    pub const fn pq(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Pq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for Powerquad"]
     #[inline(always)]
-    pub const fn set_pq(&mut self, val: super::vals::Pq) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_pq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "Enables the clock for PLU_LUT"]
     #[must_use]
     #[inline(always)]
-    pub const fn plu_lut(&self) -> super::vals::PluLut {
+    pub const fn plu_lut(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::PluLut::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for PLU_LUT"]
     #[inline(always)]
-    pub const fn set_plu_lut(&mut self, val: super::vals::PluLut) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_plu_lut(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "Enables the clock for CTIMER3"]
     #[must_use]
     #[inline(always)]
-    pub const fn timer3(&self) -> super::vals::Timer3 {
+    pub const fn timer3(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Timer3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for CTIMER3"]
     #[inline(always)]
-    pub const fn set_timer3(&mut self, val: super::vals::Timer3) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_timer3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "Enables the clock for CTIMER4"]
     #[must_use]
     #[inline(always)]
-    pub const fn timer4(&self) -> super::vals::Timer4 {
+    pub const fn timer4(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Timer4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for CTIMER4"]
     #[inline(always)]
-    pub const fn set_timer4(&mut self, val: super::vals::Timer4) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_timer4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "Enables the clock for PUF"]
     #[must_use]
     #[inline(always)]
-    pub const fn puf(&self) -> super::vals::Puf {
+    pub const fn puf(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Puf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for PUF"]
     #[inline(always)]
-    pub const fn set_puf(&mut self, val: super::vals::Puf) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_puf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "Enables the clock for PKC"]
     #[must_use]
     #[inline(always)]
-    pub const fn pkc(&self) -> super::vals::Pkc {
+    pub const fn pkc(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::Pkc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for PKC"]
     #[inline(always)]
-    pub const fn set_pkc(&mut self, val: super::vals::Pkc) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_pkc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "Enables the clock for SCG"]
     #[must_use]
     #[inline(always)]
-    pub const fn scg(&self) -> super::vals::Scg {
+    pub const fn scg(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::Scg::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for SCG"]
     #[inline(always)]
-    pub const fn set_scg(&mut self, val: super::vals::Scg) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_scg(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "Enables the clock for GDET0 and GDET1"]
     #[must_use]
     #[inline(always)]
-    pub const fn gdet(&self) -> super::vals::Gdet {
+    pub const fn gdet(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::Gdet::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for GDET0 and GDET1"]
     #[inline(always)]
-    pub const fn set_gdet(&mut self, val: super::vals::Gdet) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_gdet(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "Enables the clock for SM3"]
     #[must_use]
     #[inline(always)]
-    pub const fn sm3(&self) -> super::vals::Sm3 {
+    pub const fn sm3(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Sm3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for SM3"]
     #[inline(always)]
-    pub const fn set_sm3(&mut self, val: super::vals::Sm3) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_sm3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
 }
 impl Default for Ahbclkctrl2 {
@@ -1398,7 +1398,7 @@ impl defmt::Format for Ahbclkctrl2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ahbclkctrl2 {{ dma1: {:?}, enet: {:?}, u_sdhc: {:?}, flexio: {:?}, sai0: {:?}, sai1: {:?}, tro: {:?}, freqme: {:?}, trng: {:?}, flexcan0: {:?}, flexcan1: {:?}, usb_hs: {:?}, usb_hs_phy: {:?}, els: {:?}, pq: {:?}, plu_lut: {:?}, timer3: {:?}, timer4: {:?}, puf: {:?}, pkc: {:?}, scg: {:?}, gdet: {:?}, sm3: {:?} }}",
+            "Ahbclkctrl2 {{ dma1: {=bool:?}, enet: {=bool:?}, u_sdhc: {=bool:?}, flexio: {=bool:?}, sai0: {=bool:?}, sai1: {=bool:?}, tro: {=bool:?}, freqme: {=bool:?}, trng: {=bool:?}, flexcan0: {=bool:?}, flexcan1: {=bool:?}, usb_hs: {=bool:?}, usb_hs_phy: {=bool:?}, els: {=bool:?}, pq: {=bool:?}, plu_lut: {=bool:?}, timer3: {=bool:?}, timer4: {=bool:?}, puf: {=bool:?}, pkc: {=bool:?}, scg: {=bool:?}, gdet: {=bool:?}, sm3: {=bool:?} }}",
             self.dma1(),
             self.enet(),
             self.u_sdhc(),
@@ -1433,290 +1433,290 @@ impl Ahbclkctrl3 {
     #[doc = "Enables the clock for I3C0"]
     #[must_use]
     #[inline(always)]
-    pub const fn i3c0(&self) -> super::vals::I3c0 {
+    pub const fn i3c0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::I3c0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for I3C0"]
     #[inline(always)]
-    pub const fn set_i3c0(&mut self, val: super::vals::I3c0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_i3c0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Enables the clock for I3C1"]
     #[must_use]
     #[inline(always)]
-    pub const fn i3c1(&self) -> super::vals::I3c1 {
+    pub const fn i3c1(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::I3c1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for I3C1"]
     #[inline(always)]
-    pub const fn set_i3c1(&mut self, val: super::vals::I3c1) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_i3c1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Enables the clock for SINC"]
     #[must_use]
     #[inline(always)]
-    pub const fn sinc(&self) -> super::vals::Sinc {
+    pub const fn sinc(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Sinc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for SINC"]
     #[inline(always)]
-    pub const fn set_sinc(&mut self, val: super::vals::Sinc) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_sinc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Enables the clock for CoolFlux"]
     #[must_use]
     #[inline(always)]
-    pub const fn coolflux(&self) -> super::vals::Coolflux {
+    pub const fn coolflux(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Coolflux::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for CoolFlux"]
     #[inline(always)]
-    pub const fn set_coolflux(&mut self, val: super::vals::Coolflux) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_coolflux(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Enables the clock for QDC0"]
     #[must_use]
     #[inline(always)]
-    pub const fn qdc0(&self) -> super::vals::Qdc0 {
+    pub const fn qdc0(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Qdc0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for QDC0"]
     #[inline(always)]
-    pub const fn set_qdc0(&mut self, val: super::vals::Qdc0) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_qdc0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Enables the clock for QDC1"]
     #[must_use]
     #[inline(always)]
-    pub const fn qdc1(&self) -> super::vals::Qdc1 {
+    pub const fn qdc1(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Qdc1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for QDC1"]
     #[inline(always)]
-    pub const fn set_qdc1(&mut self, val: super::vals::Qdc1) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_qdc1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Enables the clock for PWM0"]
     #[must_use]
     #[inline(always)]
-    pub const fn pwm0(&self) -> super::vals::Pwm0 {
+    pub const fn pwm0(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Pwm0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for PWM0"]
     #[inline(always)]
-    pub const fn set_pwm0(&mut self, val: super::vals::Pwm0) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_pwm0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Enables the clock for PWM1"]
     #[must_use]
     #[inline(always)]
-    pub const fn pwm1(&self) -> super::vals::Pwm1 {
+    pub const fn pwm1(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Pwm1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for PWM1"]
     #[inline(always)]
-    pub const fn set_pwm1(&mut self, val: super::vals::Pwm1) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_pwm1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Enables the clock for EVTG"]
     #[must_use]
     #[inline(always)]
-    pub const fn evtg(&self) -> super::vals::Evtg {
+    pub const fn evtg(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Evtg::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for EVTG"]
     #[inline(always)]
-    pub const fn set_evtg(&mut self, val: super::vals::Evtg) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_evtg(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Enables the clock for DAC1"]
     #[must_use]
     #[inline(always)]
-    pub const fn dac1(&self) -> super::vals::Dac1 {
+    pub const fn dac1(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Dac1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for DAC1"]
     #[inline(always)]
-    pub const fn set_dac1(&mut self, val: super::vals::Dac1) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_dac1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Enables the clock for DAC2"]
     #[must_use]
     #[inline(always)]
-    pub const fn dac2(&self) -> super::vals::Dac2 {
+    pub const fn dac2(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Dac2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for DAC2"]
     #[inline(always)]
-    pub const fn set_dac2(&mut self, val: super::vals::Dac2) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_dac2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Enables the clock for OPAMP0"]
     #[must_use]
     #[inline(always)]
-    pub const fn opamp0(&self) -> super::vals::Opamp0 {
+    pub const fn opamp0(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Opamp0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for OPAMP0"]
     #[inline(always)]
-    pub const fn set_opamp0(&mut self, val: super::vals::Opamp0) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_opamp0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Enables the clock for OPAMP1"]
     #[must_use]
     #[inline(always)]
-    pub const fn opamp1(&self) -> super::vals::Opamp1 {
+    pub const fn opamp1(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Opamp1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for OPAMP1"]
     #[inline(always)]
-    pub const fn set_opamp1(&mut self, val: super::vals::Opamp1) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_opamp1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Enables the clock for OPAMP2"]
     #[must_use]
     #[inline(always)]
-    pub const fn opamp2(&self) -> super::vals::Opamp2 {
+    pub const fn opamp2(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Opamp2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for OPAMP2"]
     #[inline(always)]
-    pub const fn set_opamp2(&mut self, val: super::vals::Opamp2) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_opamp2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "Enables the clock for CMP2"]
     #[must_use]
     #[inline(always)]
-    pub const fn cmp2(&self) -> super::vals::Cmp2 {
+    pub const fn cmp2(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::Cmp2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for CMP2"]
     #[inline(always)]
-    pub const fn set_cmp2(&mut self, val: super::vals::Cmp2) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_cmp2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Enables the clock for VREF"]
     #[must_use]
     #[inline(always)]
-    pub const fn vref(&self) -> super::vals::Vref {
+    pub const fn vref(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Vref::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for VREF"]
     #[inline(always)]
-    pub const fn set_vref(&mut self, val: super::vals::Vref) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_vref(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "Enables the clock for CoolFlux APB"]
     #[must_use]
     #[inline(always)]
-    pub const fn coolflux_apb(&self) -> super::vals::CoolfluxApb {
+    pub const fn coolflux_apb(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::CoolfluxApb::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for CoolFlux APB"]
     #[inline(always)]
-    pub const fn set_coolflux_apb(&mut self, val: super::vals::CoolfluxApb) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_coolflux_apb(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "Enables the clock for NPU"]
     #[must_use]
     #[inline(always)]
-    pub const fn npu(&self) -> super::vals::Npu {
+    pub const fn npu(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Npu::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for NPU"]
     #[inline(always)]
-    pub const fn set_npu(&mut self, val: super::vals::Npu) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_npu(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "Enables the clock for TSI"]
     #[must_use]
     #[inline(always)]
-    pub const fn tsi(&self) -> super::vals::Tsi {
+    pub const fn tsi(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Tsi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for TSI"]
     #[inline(always)]
-    pub const fn set_tsi(&mut self, val: super::vals::Tsi) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_tsi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "Enables the clock for EWM"]
     #[must_use]
     #[inline(always)]
-    pub const fn ewm(&self) -> super::vals::Ewm {
+    pub const fn ewm(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Ewm::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for EWM"]
     #[inline(always)]
-    pub const fn set_ewm(&mut self, val: super::vals::Ewm) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_ewm(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "Enables the clock for EIM"]
     #[must_use]
     #[inline(always)]
-    pub const fn eim(&self) -> super::vals::Eim {
+    pub const fn eim(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::Eim::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for EIM"]
     #[inline(always)]
-    pub const fn set_eim(&mut self, val: super::vals::Eim) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_eim(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "Enables the clock for ERM"]
     #[must_use]
     #[inline(always)]
-    pub const fn erm(&self) -> super::vals::Erm {
+    pub const fn erm(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Erm::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for ERM"]
     #[inline(always)]
-    pub const fn set_erm(&mut self, val: super::vals::Erm) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_erm(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "Enables the clock for INTM"]
     #[must_use]
     #[inline(always)]
-    pub const fn intm(&self) -> super::vals::Intm {
+    pub const fn intm(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::Intm::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for INTM"]
     #[inline(always)]
-    pub const fn set_intm(&mut self, val: super::vals::Intm) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_intm(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "Enables the clock for Semaphore"]
     #[must_use]
     #[inline(always)]
-    pub const fn sema42(&self) -> super::vals::Sema42 {
+    pub const fn sema42(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::Sema42::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clock for Semaphore"]
     #[inline(always)]
-    pub const fn set_sema42(&mut self, val: super::vals::Sema42) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_sema42(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
 }
 impl Default for Ahbclkctrl3 {
@@ -1760,7 +1760,7 @@ impl defmt::Format for Ahbclkctrl3 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ahbclkctrl3 {{ i3c0: {:?}, i3c1: {:?}, sinc: {:?}, coolflux: {:?}, qdc0: {:?}, qdc1: {:?}, pwm0: {:?}, pwm1: {:?}, evtg: {:?}, dac1: {:?}, dac2: {:?}, opamp0: {:?}, opamp1: {:?}, opamp2: {:?}, cmp2: {:?}, vref: {:?}, coolflux_apb: {:?}, npu: {:?}, tsi: {:?}, ewm: {:?}, eim: {:?}, erm: {:?}, intm: {:?}, sema42: {:?} }}",
+            "Ahbclkctrl3 {{ i3c0: {=bool:?}, i3c1: {=bool:?}, sinc: {=bool:?}, coolflux: {=bool:?}, qdc0: {=bool:?}, qdc1: {=bool:?}, pwm0: {=bool:?}, pwm1: {=bool:?}, evtg: {=bool:?}, dac1: {=bool:?}, dac2: {=bool:?}, opamp0: {=bool:?}, opamp1: {=bool:?}, opamp2: {=bool:?}, cmp2: {=bool:?}, vref: {=bool:?}, coolflux_apb: {=bool:?}, npu: {=bool:?}, tsi: {=bool:?}, ewm: {=bool:?}, eim: {=bool:?}, erm: {=bool:?}, intm: {=bool:?}, sema42: {=bool:?} }}",
             self.i3c0(),
             self.i3c1(),
             self.sinc(),
@@ -2168,86 +2168,86 @@ impl Autoclkgateoverride {
     #[doc = "Controls automatic clock gating for the RAMB Controller"]
     #[must_use]
     #[inline(always)]
-    pub const fn ramb_ctrl(&self) -> super::vals::AutoclkgateoverrideRambCtrl {
+    pub const fn ramb_ctrl(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::AutoclkgateoverrideRambCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Controls automatic clock gating for the RAMB Controller"]
     #[inline(always)]
-    pub const fn set_ramb_ctrl(&mut self, val: super::vals::AutoclkgateoverrideRambCtrl) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_ramb_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Controls automatic clock gating for the RAMC Controller"]
     #[must_use]
     #[inline(always)]
-    pub const fn ramc_ctrl(&self) -> super::vals::AutoclkgateoverrideRamcCtrl {
+    pub const fn ramc_ctrl(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::AutoclkgateoverrideRamcCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Controls automatic clock gating for the RAMC Controller"]
     #[inline(always)]
-    pub const fn set_ramc_ctrl(&mut self, val: super::vals::AutoclkgateoverrideRamcCtrl) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_ramc_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Controls automatic clock gating for the RAMD Controller"]
     #[must_use]
     #[inline(always)]
-    pub const fn ramd_ctrl(&self) -> super::vals::AutoclkgateoverrideRamdCtrl {
+    pub const fn ramd_ctrl(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::AutoclkgateoverrideRamdCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Controls automatic clock gating for the RAMD Controller"]
     #[inline(always)]
-    pub const fn set_ramd_ctrl(&mut self, val: super::vals::AutoclkgateoverrideRamdCtrl) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_ramd_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Controls automatic clock gating for the RAMD Controller."]
     #[must_use]
     #[inline(always)]
-    pub const fn rame_ctrl(&self) -> super::vals::AutoclkgateoverrideRameCtrl {
+    pub const fn rame_ctrl(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::AutoclkgateoverrideRameCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Controls automatic clock gating for the RAMD Controller."]
     #[inline(always)]
-    pub const fn set_rame_ctrl(&mut self, val: super::vals::AutoclkgateoverrideRameCtrl) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_rame_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Controls automatic clock gating for the RAMF Controller"]
     #[must_use]
     #[inline(always)]
-    pub const fn ramf_ctrl(&self) -> super::vals::AutoclkgateoverrideRamfCtrl {
+    pub const fn ramf_ctrl(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::AutoclkgateoverrideRamfCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Controls automatic clock gating for the RAMF Controller"]
     #[inline(always)]
-    pub const fn set_ramf_ctrl(&mut self, val: super::vals::AutoclkgateoverrideRamfCtrl) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_ramf_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Controls automatic clock gating for the RAMG Controller"]
     #[must_use]
     #[inline(always)]
-    pub const fn ramg_ctrl(&self) -> super::vals::AutoclkgateoverrideRamgCtrl {
+    pub const fn ramg_ctrl(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::AutoclkgateoverrideRamgCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Controls automatic clock gating for the RAMG Controller"]
     #[inline(always)]
-    pub const fn set_ramg_ctrl(&mut self, val: super::vals::AutoclkgateoverrideRamgCtrl) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_ramg_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Controls automatic clock gating for the RAMG Controller"]
     #[must_use]
     #[inline(always)]
-    pub const fn ramh_ctrl(&self) -> super::vals::AutoclkgateoverrideRamhCtrl {
+    pub const fn ramh_ctrl(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::AutoclkgateoverrideRamhCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Controls automatic clock gating for the RAMG Controller"]
     #[inline(always)]
-    pub const fn set_ramh_ctrl(&mut self, val: super::vals::AutoclkgateoverrideRamhCtrl) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_ramh_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
 }
 impl Default for Autoclkgateoverride {
@@ -2274,7 +2274,7 @@ impl defmt::Format for Autoclkgateoverride {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Autoclkgateoverride {{ ramb_ctrl: {:?}, ramc_ctrl: {:?}, ramd_ctrl: {:?}, rame_ctrl: {:?}, ramf_ctrl: {:?}, ramg_ctrl: {:?}, ramh_ctrl: {:?} }}",
+            "Autoclkgateoverride {{ ramb_ctrl: {=bool:?}, ramc_ctrl: {=bool:?}, ramd_ctrl: {=bool:?}, rame_ctrl: {=bool:?}, ramf_ctrl: {=bool:?}, ramg_ctrl: {=bool:?}, ramh_ctrl: {=bool:?} }}",
             self.ramb_ctrl(),
             self.ramc_ctrl(),
             self.ramd_ctrl(),
@@ -2293,26 +2293,26 @@ impl Autoclkgateoverridec {
     #[doc = "Controls automatic clock gating of the RAMX controller"]
     #[must_use]
     #[inline(always)]
-    pub const fn ramx(&self) -> super::vals::Ramx {
+    pub const fn ramx(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Ramx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Controls automatic clock gating of the RAMX controller"]
     #[inline(always)]
-    pub const fn set_ramx(&mut self, val: super::vals::Ramx) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_ramx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Controls automatic clock gating of the RAMA controller"]
     #[must_use]
     #[inline(always)]
-    pub const fn rama(&self) -> super::vals::Rama {
+    pub const fn rama(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Rama::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Controls automatic clock gating of the RAMA controller"]
     #[inline(always)]
-    pub const fn set_rama(&mut self, val: super::vals::Rama) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_rama(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Autoclkgateoverridec {
@@ -2334,7 +2334,7 @@ impl defmt::Format for Autoclkgateoverridec {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Autoclkgateoverridec {{ ramx: {:?}, rama: {:?} }}",
+            "Autoclkgateoverridec {{ ramx: {=bool:?}, rama: {=bool:?} }}",
             self.ramx(),
             self.rama()
         )
@@ -2642,86 +2642,86 @@ impl ClockCtrl {
     #[doc = "Enables the clk_in clock for the Frequency Measurement, USB HS and LPTMR0/1 modules."]
     #[must_use]
     #[inline(always)]
-    pub const fn clkin_ena_fm_usbh_lpt(&self) -> super::vals::ClkinEnaFmUsbhLpt {
+    pub const fn clkin_ena_fm_usbh_lpt(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::ClkinEnaFmUsbhLpt::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the clk_in clock for the Frequency Measurement, USB HS and LPTMR0/1 modules."]
     #[inline(always)]
-    pub const fn set_clkin_ena_fm_usbh_lpt(&mut self, val: super::vals::ClkinEnaFmUsbhLpt) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_clkin_ena_fm_usbh_lpt(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Enables the FRO_1MHz clock for RTC module and for UTICK"]
     #[must_use]
     #[inline(always)]
-    pub const fn fro1mhz_ena(&self) -> super::vals::Fro1mhzEna {
+    pub const fn fro1mhz_ena(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Fro1mhzEna::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the FRO_1MHz clock for RTC module and for UTICK"]
     #[inline(always)]
-    pub const fn set_fro1mhz_ena(&mut self, val: super::vals::Fro1mhzEna) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_fro1mhz_ena(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Enables the FRO_12MHz clock for the Flash, LPTMR0/1, and Frequency Measurement modules"]
     #[must_use]
     #[inline(always)]
-    pub const fn fro12mhz_ena(&self) -> super::vals::Fro12mhzEna {
+    pub const fn fro12mhz_ena(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Fro12mhzEna::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the FRO_12MHz clock for the Flash, LPTMR0/1, and Frequency Measurement modules"]
     #[inline(always)]
-    pub const fn set_fro12mhz_ena(&mut self, val: super::vals::Fro12mhzEna) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_fro12mhz_ena(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Enables FRO HF clock for the Frequency Measure module"]
     #[must_use]
     #[inline(always)]
-    pub const fn fro_hf_ena(&self) -> super::vals::FroHfEna {
+    pub const fn fro_hf_ena(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::FroHfEna::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables FRO HF clock for the Frequency Measure module"]
     #[inline(always)]
-    pub const fn set_fro_hf_ena(&mut self, val: super::vals::FroHfEna) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_fro_hf_ena(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Enables clk_in clock for MICFIL, CAN0/1, I3C0/1, SAI0/1, clkout."]
     #[must_use]
     #[inline(always)]
-    pub const fn clkin_ena(&self) -> super::vals::ClkinEna {
+    pub const fn clkin_ena(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::ClkinEna::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables clk_in clock for MICFIL, CAN0/1, I3C0/1, SAI0/1, clkout."]
     #[inline(always)]
-    pub const fn set_clkin_ena(&mut self, val: super::vals::ClkinEna) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_clkin_ena(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Enables FRO_1MHz clock for clock muxing in clock gen"]
     #[must_use]
     #[inline(always)]
-    pub const fn fro1mhz_clk_ena(&self) -> super::vals::Fro1mhzClkEna {
+    pub const fn fro1mhz_clk_ena(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Fro1mhzClkEna::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables FRO_1MHz clock for clock muxing in clock gen"]
     #[inline(always)]
-    pub const fn set_fro1mhz_clk_ena(&mut self, val: super::vals::Fro1mhzClkEna) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_fro1mhz_clk_ena(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Enables clocks FRO_1MHz and FRO_12MHz for PLU deglitching."]
     #[must_use]
     #[inline(always)]
-    pub const fn plu_deglitch_clk_ena(&self) -> super::vals::PluDeglitchClkEna {
+    pub const fn plu_deglitch_clk_ena(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::PluDeglitchClkEna::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables clocks FRO_1MHz and FRO_12MHz for PLU deglitching."]
     #[inline(always)]
-    pub const fn set_plu_deglitch_clk_ena(&mut self, val: super::vals::PluDeglitchClkEna) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_plu_deglitch_clk_ena(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
 }
 impl Default for ClockCtrl {
@@ -2748,7 +2748,7 @@ impl defmt::Format for ClockCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "ClockCtrl {{ clkin_ena_fm_usbh_lpt: {:?}, fro1mhz_ena: {:?}, fro12mhz_ena: {:?}, fro_hf_ena: {:?}, clkin_ena: {:?}, fro1mhz_clk_ena: {:?}, plu_deglitch_clk_ena: {:?} }}",
+            "ClockCtrl {{ clkin_ena_fm_usbh_lpt: {=bool:?}, fro1mhz_ena: {=bool:?}, fro12mhz_ena: {=bool:?}, fro_hf_ena: {=bool:?}, clkin_ena: {=bool:?}, fro1mhz_clk_ena: {=bool:?}, plu_deglitch_clk_ena: {=bool:?} }}",
             self.clkin_ena_fm_usbh_lpt(),
             self.fro1mhz_ena(),
             self.fro12mhz_ena(),
@@ -3731,14 +3731,14 @@ impl Cpuctrl {
     #[doc = "Enables the CPU1 clock"]
     #[must_use]
     #[inline(always)]
-    pub const fn cpu1clken(&self) -> super::vals::Cpu1clken {
+    pub const fn cpu1clken(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Cpu1clken::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the CPU1 clock"]
     #[inline(always)]
-    pub const fn set_cpu1clken(&mut self, val: super::vals::Cpu1clken) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_cpu1clken(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "CPU1 reset"]
     #[must_use]
@@ -3785,7 +3785,7 @@ impl defmt::Format for Cpuctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cpuctrl {{ cpu1clken: {:?}, cpu1rsten: {:?}, prot: {:?} }}",
+            "Cpuctrl {{ cpu1clken: {=bool:?}, cpu1rsten: {:?}, prot: {:?} }}",
             self.cpu1clken(),
             self.cpu1rsten(),
             self.prot()
@@ -3895,14 +3895,14 @@ impl Ctimerclkdiv {
     #[doc = "Resets the divider counter"]
     #[must_use]
     #[inline(always)]
-    pub const fn reset(&self) -> super::vals::CtimerclkdivReset {
+    pub const fn reset(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::CtimerclkdivReset::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Resets the divider counter"]
     #[inline(always)]
-    pub const fn set_reset(&mut self, val: super::vals::CtimerclkdivReset) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_reset(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "Halts the divider counter"]
     #[must_use]
@@ -3950,7 +3950,7 @@ impl defmt::Format for Ctimerclkdiv {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctimerclkdiv {{ div: {=u8:?}, reset: {:?}, halt: {:?}, unstab: {:?} }}",
+            "Ctimerclkdiv {{ div: {=u8:?}, reset: {=bool:?}, halt: {:?}, unstab: {:?} }}",
             self.div(),
             self.reset(),
             self.halt(),
@@ -4003,62 +4003,62 @@ impl Ctimerglobalstarten {
     #[doc = "Enables the CTIMER0 function clock"]
     #[must_use]
     #[inline(always)]
-    pub const fn ctimer0_clk_en(&self) -> super::vals::Ctimer0ClkEn {
+    pub const fn ctimer0_clk_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Ctimer0ClkEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the CTIMER0 function clock"]
     #[inline(always)]
-    pub const fn set_ctimer0_clk_en(&mut self, val: super::vals::Ctimer0ClkEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_ctimer0_clk_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Enables the CTIMER1 function clock"]
     #[must_use]
     #[inline(always)]
-    pub const fn ctimer1_clk_en(&self) -> super::vals::Ctimer1ClkEn {
+    pub const fn ctimer1_clk_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Ctimer1ClkEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the CTIMER1 function clock"]
     #[inline(always)]
-    pub const fn set_ctimer1_clk_en(&mut self, val: super::vals::Ctimer1ClkEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_ctimer1_clk_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Enables the CTIMER2 function clock"]
     #[must_use]
     #[inline(always)]
-    pub const fn ctimer2_clk_en(&self) -> super::vals::Ctimer2ClkEn {
+    pub const fn ctimer2_clk_en(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Ctimer2ClkEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the CTIMER2 function clock"]
     #[inline(always)]
-    pub const fn set_ctimer2_clk_en(&mut self, val: super::vals::Ctimer2ClkEn) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_ctimer2_clk_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Enables the CTIMER3 function clock"]
     #[must_use]
     #[inline(always)]
-    pub const fn ctimer3_clk_en(&self) -> super::vals::Ctimer3ClkEn {
+    pub const fn ctimer3_clk_en(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Ctimer3ClkEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the CTIMER3 function clock"]
     #[inline(always)]
-    pub const fn set_ctimer3_clk_en(&mut self, val: super::vals::Ctimer3ClkEn) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_ctimer3_clk_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Enables the CTIMER4 function clock"]
     #[must_use]
     #[inline(always)]
-    pub const fn ctimer4_clk_en(&self) -> super::vals::Ctimer4ClkEn {
+    pub const fn ctimer4_clk_en(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Ctimer4ClkEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the CTIMER4 function clock"]
     #[inline(always)]
-    pub const fn set_ctimer4_clk_en(&mut self, val: super::vals::Ctimer4ClkEn) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_ctimer4_clk_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
 }
 impl Default for Ctimerglobalstarten {
@@ -4083,7 +4083,7 @@ impl defmt::Format for Ctimerglobalstarten {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctimerglobalstarten {{ ctimer0_clk_en: {:?}, ctimer1_clk_en: {:?}, ctimer2_clk_en: {:?}, ctimer3_clk_en: {:?}, ctimer4_clk_en: {:?} }}",
+            "Ctimerglobalstarten {{ ctimer0_clk_en: {=bool:?}, ctimer1_clk_en: {=bool:?}, ctimer2_clk_en: {=bool:?}, ctimer3_clk_en: {=bool:?}, ctimer4_clk_en: {=bool:?} }}",
             self.ctimer0_clk_en(),
             self.ctimer1_clk_en(),
             self.ctimer2_clk_en(),
@@ -4935,50 +4935,50 @@ impl EccEnableCtrl {
     #[doc = "RAMA ECC enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn rama_ecc_enable(&self) -> super::vals::RamaEccEnable {
+    pub const fn rama_ecc_enable(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::RamaEccEnable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RAMA ECC enable"]
     #[inline(always)]
-    pub const fn set_rama_ecc_enable(&mut self, val: super::vals::RamaEccEnable) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_rama_ecc_enable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "RAMB and RAMX ECC enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ramb_ramx_ecc_enable(&self) -> super::vals::RambRamxEccEnable {
+    pub const fn ramb_ramx_ecc_enable(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::RambRamxEccEnable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RAMB and RAMX ECC enable"]
     #[inline(always)]
-    pub const fn set_ramb_ramx_ecc_enable(&mut self, val: super::vals::RambRamxEccEnable) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_ramb_ramx_ecc_enable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "RAMD and RAMC ECC enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ramd_ramc_ecc_enable(&self) -> super::vals::RamdRamcEccEnable {
+    pub const fn ramd_ramc_ecc_enable(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::RamdRamcEccEnable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RAMD and RAMC ECC enable"]
     #[inline(always)]
-    pub const fn set_ramd_ramc_ecc_enable(&mut self, val: super::vals::RamdRamcEccEnable) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_ramd_ramc_ecc_enable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "RAMF and RAME ECC enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ramf_rame_ecc_enable(&self) -> super::vals::RamfRameEccEnable {
+    pub const fn ramf_rame_ecc_enable(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::RamfRameEccEnable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RAMF and RAME ECC enable"]
     #[inline(always)]
-    pub const fn set_ramf_rame_ecc_enable(&mut self, val: super::vals::RamfRameEccEnable) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_ramf_rame_ecc_enable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
 }
 impl Default for EccEnableCtrl {
@@ -5002,7 +5002,7 @@ impl defmt::Format for EccEnableCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "EccEnableCtrl {{ rama_ecc_enable: {:?}, ramb_ramx_ecc_enable: {:?}, ramd_ramc_ecc_enable: {:?}, ramf_rame_ecc_enable: {:?} }}",
+            "EccEnableCtrl {{ rama_ecc_enable: {=bool:?}, ramb_ramx_ecc_enable: {=bool:?}, ramd_ramc_ecc_enable: {=bool:?}, ramf_rame_ecc_enable: {=bool:?} }}",
             self.rama_ecc_enable(),
             self.ramb_ramx_ecc_enable(),
             self.ramd_ramc_ecc_enable(),
@@ -6211,349 +6211,326 @@ impl ElsAsFlag0 {
     #[doc = "This flag bit is set as 1 when DAP enables AP0 for CPU0 (CM33) debug access. The register is cleared 0 by PMC reset event."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_ap_enable_cpu0(&self) -> super::vals::FlagApEnableCpu0 {
+    pub const fn flag_ap_enable_cpu0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::FlagApEnableCpu0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when DAP enables AP0 for CPU0 (CM33) debug access. The register is cleared 0 by PMC reset event."]
     #[inline(always)]
-    pub const fn set_flag_ap_enable_cpu0(&mut self, val: super::vals::FlagApEnableCpu0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_flag_ap_enable_cpu0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "This flag bit is set as 1 when DAP enables AP1 for CPU1 (CM33) debug access. The register is cleared 0 by PMC reset event."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_ap_enable_cpu1(&self) -> super::vals::FlagApEnableCpu1 {
+    pub const fn flag_ap_enable_cpu1(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::FlagApEnableCpu1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when DAP enables AP1 for CPU1 (CM33) debug access. The register is cleared 0 by PMC reset event."]
     #[inline(always)]
-    pub const fn set_flag_ap_enable_cpu1(&mut self, val: super::vals::FlagApEnableCpu1) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_flag_ap_enable_cpu1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "This flag bit is set as 1 when DAP enables AP3 for DSP (CoolFlux) debug access. The register is cleared 0 by PMC reset event."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_ap_enable_dsp(&self) -> super::vals::FlagApEnableDsp {
+    pub const fn flag_ap_enable_dsp(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::FlagApEnableDsp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when DAP enables AP3 for DSP (CoolFlux) debug access. The register is cleared 0 by PMC reset event."]
     #[inline(always)]
-    pub const fn set_flag_ap_enable_dsp(&mut self, val: super::vals::FlagApEnableDsp) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_flag_ap_enable_dsp(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "OTPC can output attack_detect signal when it detects attack when load shadow registers. The output will be cleared by reset. ELS_AS_FLAG is reset by PoR, so the status can be recorded."]
     #[must_use]
     #[inline(always)]
-    pub const fn efuse_attack_detect(&self) -> super::vals::EfuseAttackDetect {
+    pub const fn efuse_attack_detect(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::EfuseAttackDetect::from_bits(val as u8)
+        val != 0
     }
     #[doc = "OTPC can output attack_detect signal when it detects attack when load shadow registers. The output will be cleared by reset. ELS_AS_FLAG is reset by PoR, so the status can be recorded."]
     #[inline(always)]
-    pub const fn set_efuse_attack_detect(&mut self, val: super::vals::EfuseAttackDetect) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_efuse_attack_detect(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "This flag register is set 1 when VDD_CORE LVD event is triggered. This register is cleared 0 by PMC reset event."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_lvd_core_occured(&self) -> super::vals::FlagLvdCoreOccured {
+    pub const fn flag_lvd_core_occured(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::FlagLvdCoreOccured::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag register is set 1 when VDD_CORE LVD event is triggered. This register is cleared 0 by PMC reset event."]
     #[inline(always)]
-    pub const fn set_flag_lvd_core_occured(&mut self, val: super::vals::FlagLvdCoreOccured) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_flag_lvd_core_occured(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "This flag bit is set as 1 when WatchDog Timer 0 reset is enabled and reset event is triggered. This register is cleared 0 by AO domain POR."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_wdt0_reset_occured(&self) -> super::vals::FlagWdt0ResetOccured {
+    pub const fn flag_wdt0_reset_occured(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::FlagWdt0ResetOccured::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when WatchDog Timer 0 reset is enabled and reset event is triggered. This register is cleared 0 by AO domain POR."]
     #[inline(always)]
-    pub const fn set_flag_wdt0_reset_occured(&mut self, val: super::vals::FlagWdt0ResetOccured) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_flag_wdt0_reset_occured(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "This flag bit is set as 1 when Code WatchDog Timer 0 reset is enabled and reset event is triggered. This register is cleared 0 by AO domain POR."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_cwdt0_reset_occured(&self) -> super::vals::FlagCwdt0ResetOccured {
+    pub const fn flag_cwdt0_reset_occured(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::FlagCwdt0ResetOccured::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when Code WatchDog Timer 0 reset is enabled and reset event is triggered. This register is cleared 0 by AO domain POR."]
     #[inline(always)]
-    pub const fn set_flag_cwdt0_reset_occured(&mut self, val: super::vals::FlagCwdt0ResetOccured) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_flag_cwdt0_reset_occured(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "This flag bit is set as 1 when WatchDog Timer 0 IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_wdt0_irq_occured(&self) -> super::vals::FlagWdt0IrqOccured {
+    pub const fn flag_wdt0_irq_occured(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::FlagWdt0IrqOccured::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when WatchDog Timer 0 IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event."]
     #[inline(always)]
-    pub const fn set_flag_wdt0_irq_occured(&mut self, val: super::vals::FlagWdt0IrqOccured) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_flag_wdt0_irq_occured(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "This flag bit is set as 1 when Code WatchDog Timer 0 IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_cwdt0_irq_occured(&self) -> super::vals::FlagCwdt0IrqOccured {
+    pub const fn flag_cwdt0_irq_occured(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::FlagCwdt0IrqOccured::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when Code WatchDog Timer 0 IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event."]
     #[inline(always)]
-    pub const fn set_flag_cwdt0_irq_occured(&mut self, val: super::vals::FlagCwdt0IrqOccured) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_flag_cwdt0_irq_occured(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "This flag bit is set as 1 when QK_ERROR is flagged from QK PUF block. This register is cleared 0 by PMC reset event."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_qk_error(&self) -> super::vals::FlagQkError {
+    pub const fn flag_qk_error(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::FlagQkError::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when QK_ERROR is flagged from QK PUF block. This register is cleared 0 by PMC reset event."]
     #[inline(always)]
-    pub const fn set_flag_qk_error(&mut self, val: super::vals::FlagQkError) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_flag_qk_error(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "This flag bit is set as 1 when GDET error is flagged. This register is cleared 0 by PMC reset event."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_els_glitch_detected(&self) -> super::vals::FlagElsGlitchDetected {
+    pub const fn flag_els_glitch_detected(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::FlagElsGlitchDetected::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when GDET error is flagged. This register is cleared 0 by PMC reset event."]
     #[inline(always)]
-    pub const fn set_flag_els_glitch_detected(&mut self, val: super::vals::FlagElsGlitchDetected) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_flag_els_glitch_detected(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "This flag bit is set as 1 when ANALOG GDET error is flagged in SYSCON block. This register is cleared 0 by PMC reset event."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_ana_glitch_detected(&self) -> super::vals::FlagAnaGlitchDetected {
+    pub const fn flag_ana_glitch_detected(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::FlagAnaGlitchDetected::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when ANALOG GDET error is flagged in SYSCON block. This register is cleared 0 by PMC reset event."]
     #[inline(always)]
-    pub const fn set_flag_ana_glitch_detected(&mut self, val: super::vals::FlagAnaGlitchDetected) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_flag_ana_glitch_detected(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "This flag bit is set as 1 when tamper event is flagged from TDET. This register is cleared 0 by AO domain POR or by PMC reset event, if tamper detection event is cleared by software."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_tamper_event_detected(&self) -> super::vals::FlagTamperEventDetected {
+    pub const fn flag_tamper_event_detected(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::FlagTamperEventDetected::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when tamper event is flagged from TDET. This register is cleared 0 by AO domain POR or by PMC reset event, if tamper detection event is cleared by software."]
     #[inline(always)]
-    pub const fn set_flag_tamper_event_detected(
-        &mut self,
-        val: super::vals::FlagTamperEventDetected,
-    ) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_flag_tamper_event_detected(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "This flag bit is set as 1 when FLASH controller indicates ECC error. This register is cleared 0 by PMC reset event."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_flash_ecc_invalid(&self) -> super::vals::FlagFlashEccInvalid {
+    pub const fn flag_flash_ecc_invalid(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::FlagFlashEccInvalid::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when FLASH controller indicates ECC error. This register is cleared 0 by PMC reset event."]
     #[inline(always)]
-    pub const fn set_flag_flash_ecc_invalid(&mut self, val: super::vals::FlagFlashEccInvalid) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_flag_flash_ecc_invalid(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "This flag bit is set as 1 when security violation is indicated from FLASH sub-system or AHB bus matrix."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_sec_viol_irq_ocurred(&self) -> super::vals::FlagSecViolIrqOcurred {
+    pub const fn flag_sec_viol_irq_ocurred(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::FlagSecViolIrqOcurred::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when security violation is indicated from FLASH sub-system or AHB bus matrix."]
     #[inline(always)]
-    pub const fn set_flag_sec_viol_irq_ocurred(&mut self, val: super::vals::FlagSecViolIrqOcurred) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_flag_sec_viol_irq_ocurred(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "This flag bit is set as 1 when CPU0 (CM33) makes non-secure code transactions. This register is cleared 0 by PMC reset event."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_cpu0_ns_c_acc_occured(&self) -> super::vals::FlagCpu0NsCAccOccured {
+    pub const fn flag_cpu0_ns_c_acc_occured(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::FlagCpu0NsCAccOccured::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when CPU0 (CM33) makes non-secure code transactions. This register is cleared 0 by PMC reset event."]
     #[inline(always)]
-    pub const fn set_flag_cpu0_ns_c_acc_occured(
-        &mut self,
-        val: super::vals::FlagCpu0NsCAccOccured,
-    ) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_flag_cpu0_ns_c_acc_occured(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "This flag bit is set as 1 when CPU0 (CM33) makes non-secure data transactions. This register is cleared 0 by PMC reset event."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_cpu0_ns_d_acc_occured(&self) -> super::vals::FlagCpu0NsDAccOccured {
+    pub const fn flag_cpu0_ns_d_acc_occured(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::FlagCpu0NsDAccOccured::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when CPU0 (CM33) makes non-secure data transactions. This register is cleared 0 by PMC reset event."]
     #[inline(always)]
-    pub const fn set_flag_cpu0_ns_d_acc_occured(
-        &mut self,
-        val: super::vals::FlagCpu0NsDAccOccured,
-    ) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_flag_cpu0_ns_d_acc_occured(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "This flag register is set 1 when VDD_SYS LVD event is triggered. This register is cleared 0 by PMC reset event."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_lvd_vsys_occured(&self) -> super::vals::FlagLvdVsysOccured {
+    pub const fn flag_lvd_vsys_occured(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::FlagLvdVsysOccured::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag register is set 1 when VDD_SYS LVD event is triggered. This register is cleared 0 by PMC reset event."]
     #[inline(always)]
-    pub const fn set_flag_lvd_vsys_occured(&mut self, val: super::vals::FlagLvdVsysOccured) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_flag_lvd_vsys_occured(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "This flag register is set 1 when VDD LVD event is triggered. This register is cleared 0 by PMC reset event."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_lvd_vddio_occured(&self) -> super::vals::FlagLvdVddioOccured {
+    pub const fn flag_lvd_vddio_occured(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::FlagLvdVddioOccured::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag register is set 1 when VDD LVD event is triggered. This register is cleared 0 by PMC reset event."]
     #[inline(always)]
-    pub const fn set_flag_lvd_vddio_occured(&mut self, val: super::vals::FlagLvdVddioOccured) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_flag_lvd_vddio_occured(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "This flag bit is set as 1 when WatchDog Timer 1 reset is enabled and reset event is triggered. This register is cleared 0 by AO domain POR."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_wdt1_reset_occured(&self) -> super::vals::FlagWdt1ResetOccured {
+    pub const fn flag_wdt1_reset_occured(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::FlagWdt1ResetOccured::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when WatchDog Timer 1 reset is enabled and reset event is triggered. This register is cleared 0 by AO domain POR."]
     #[inline(always)]
-    pub const fn set_flag_wdt1_reset_occured(&mut self, val: super::vals::FlagWdt1ResetOccured) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_flag_wdt1_reset_occured(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "This flag bit is set as 1 when Code WatchDog Timer 1 reset is enabled and reset event is triggered. This register is cleared 0 by AO domain POR."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_cwdt1_reset_occured(&self) -> super::vals::FlagCwdt1ResetOccured {
+    pub const fn flag_cwdt1_reset_occured(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::FlagCwdt1ResetOccured::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when Code WatchDog Timer 1 reset is enabled and reset event is triggered. This register is cleared 0 by AO domain POR."]
     #[inline(always)]
-    pub const fn set_flag_cwdt1_reset_occured(&mut self, val: super::vals::FlagCwdt1ResetOccured) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_flag_cwdt1_reset_occured(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "This flag bit is set as 1 when WatchDog Timer 1 IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_wdt1_irq_occured(&self) -> super::vals::FlagWdt1IrqOccured {
+    pub const fn flag_wdt1_irq_occured(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::FlagWdt1IrqOccured::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when WatchDog Timer 1 IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event."]
     #[inline(always)]
-    pub const fn set_flag_wdt1_irq_occured(&mut self, val: super::vals::FlagWdt1IrqOccured) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_flag_wdt1_irq_occured(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "This flag bit is set as 1 when Code WatchDog Timer 1 IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_cwdt1_irq_occured(&self) -> super::vals::FlagCwdt1IrqOccured {
+    pub const fn flag_cwdt1_irq_occured(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::FlagCwdt1IrqOccured::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when Code WatchDog Timer 1 IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event."]
     #[inline(always)]
-    pub const fn set_flag_cwdt1_irq_occured(&mut self, val: super::vals::FlagCwdt1IrqOccured) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_flag_cwdt1_irq_occured(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "This flag bit is set as 1 when temperature temper IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_temptamper_det_irq_occured(
-        &self,
-    ) -> super::vals::FlagTemptamperDetIrqOccured {
+    pub const fn flag_temptamper_det_irq_occured(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::FlagTemptamperDetIrqOccured::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when temperature temper IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event."]
     #[inline(always)]
-    pub const fn set_flag_temptamper_det_irq_occured(
-        &mut self,
-        val: super::vals::FlagTemptamperDetIrqOccured,
-    ) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_flag_temptamper_det_irq_occured(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "This flag bit is set as 1 when voltage temper IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_voltamper_det_irq_occured(&self) -> super::vals::FlagVoltamperDetIrqOccured {
+    pub const fn flag_voltamper_det_irq_occured(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::FlagVoltamperDetIrqOccured::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when voltage temper IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event."]
     #[inline(always)]
-    pub const fn set_flag_voltamper_det_irq_occured(
-        &mut self,
-        val: super::vals::FlagVoltamperDetIrqOccured,
-    ) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_flag_voltamper_det_irq_occured(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
     #[doc = "This flag bit is set as 1 when light temper IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_lhttamper_det_irq_occured(&self) -> super::vals::FlagLhttamperDetIrqOccured {
+    pub const fn flag_lhttamper_det_irq_occured(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::FlagLhttamperDetIrqOccured::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when light temper IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event."]
     #[inline(always)]
-    pub const fn set_flag_lhttamper_det_irq_occured(
-        &mut self,
-        val: super::vals::FlagLhttamperDetIrqOccured,
-    ) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_flag_lhttamper_det_irq_occured(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "This flag bit is set as 1 when clock temper IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_clktamper_det_irq_occured(&self) -> super::vals::FlagClktamperDetIrqOccured {
+    pub const fn flag_clktamper_det_irq_occured(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::FlagClktamperDetIrqOccured::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when clock temper IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event."]
     #[inline(always)]
-    pub const fn set_flag_clktamper_det_irq_occured(
-        &mut self,
-        val: super::vals::FlagClktamperDetIrqOccured,
-    ) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_flag_clktamper_det_irq_occured(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
 }
 impl Default for ElsAsFlag0 {
@@ -6624,7 +6601,7 @@ impl defmt::Format for ElsAsFlag0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "ElsAsFlag0 {{ flag_ap_enable_cpu0: {:?}, flag_ap_enable_cpu1: {:?}, flag_ap_enable_dsp: {:?}, efuse_attack_detect: {:?}, flag_lvd_core_occured: {:?}, flag_wdt0_reset_occured: {:?}, flag_cwdt0_reset_occured: {:?}, flag_wdt0_irq_occured: {:?}, flag_cwdt0_irq_occured: {:?}, flag_qk_error: {:?}, flag_els_glitch_detected: {:?}, flag_ana_glitch_detected: {:?}, flag_tamper_event_detected: {:?}, flag_flash_ecc_invalid: {:?}, flag_sec_viol_irq_ocurred: {:?}, flag_cpu0_ns_c_acc_occured: {:?}, flag_cpu0_ns_d_acc_occured: {:?}, flag_lvd_vsys_occured: {:?}, flag_lvd_vddio_occured: {:?}, flag_wdt1_reset_occured: {:?}, flag_cwdt1_reset_occured: {:?}, flag_wdt1_irq_occured: {:?}, flag_cwdt1_irq_occured: {:?}, flag_temptamper_det_irq_occured: {:?}, flag_voltamper_det_irq_occured: {:?}, flag_lhttamper_det_irq_occured: {:?}, flag_clktamper_det_irq_occured: {:?} }}",
+            "ElsAsFlag0 {{ flag_ap_enable_cpu0: {=bool:?}, flag_ap_enable_cpu1: {=bool:?}, flag_ap_enable_dsp: {=bool:?}, efuse_attack_detect: {=bool:?}, flag_lvd_core_occured: {=bool:?}, flag_wdt0_reset_occured: {=bool:?}, flag_cwdt0_reset_occured: {=bool:?}, flag_wdt0_irq_occured: {=bool:?}, flag_cwdt0_irq_occured: {=bool:?}, flag_qk_error: {=bool:?}, flag_els_glitch_detected: {=bool:?}, flag_ana_glitch_detected: {=bool:?}, flag_tamper_event_detected: {=bool:?}, flag_flash_ecc_invalid: {=bool:?}, flag_sec_viol_irq_ocurred: {=bool:?}, flag_cpu0_ns_c_acc_occured: {=bool:?}, flag_cpu0_ns_d_acc_occured: {=bool:?}, flag_lvd_vsys_occured: {=bool:?}, flag_lvd_vddio_occured: {=bool:?}, flag_wdt1_reset_occured: {=bool:?}, flag_cwdt1_reset_occured: {=bool:?}, flag_wdt1_irq_occured: {=bool:?}, flag_cwdt1_irq_occured: {=bool:?}, flag_temptamper_det_irq_occured: {=bool:?}, flag_voltamper_det_irq_occured: {=bool:?}, flag_lhttamper_det_irq_occured: {=bool:?}, flag_clktamper_det_irq_occured: {=bool:?} }}",
             self.flag_ap_enable_cpu0(),
             self.flag_ap_enable_cpu1(),
             self.flag_ap_enable_dsp(),
@@ -6663,38 +6640,38 @@ impl ElsAsFlag1 {
     #[doc = "This flag bit is set as 1 when HVD from VDD_CORE power domain is triggered."]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_hvd_core_occured(&self) -> super::vals::FlagHvdCoreOccured {
+    pub const fn flag_hvd_core_occured(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::FlagHvdCoreOccured::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when HVD from VDD_CORE power domain is triggered."]
     #[inline(always)]
-    pub const fn set_flag_hvd_core_occured(&mut self, val: super::vals::FlagHvdCoreOccured) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_flag_hvd_core_occured(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "This flag bit is set as 1 when HVD from VDD_SYS power domain is triggered"]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_hvd_vsys_occured(&self) -> super::vals::FlagHvdVsysOccured {
+    pub const fn flag_hvd_vsys_occured(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::FlagHvdVsysOccured::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when HVD from VDD_SYS power domain is triggered"]
     #[inline(always)]
-    pub const fn set_flag_hvd_vsys_occured(&mut self, val: super::vals::FlagHvdVsysOccured) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_flag_hvd_vsys_occured(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "This flag bit is set as 1 when HVD from VDD power domain is triggered"]
     #[must_use]
     #[inline(always)]
-    pub const fn flag_hvd_vddio_occured(&self) -> super::vals::FlagHvdVddioOccured {
+    pub const fn flag_hvd_vddio_occured(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::FlagHvdVddioOccured::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This flag bit is set as 1 when HVD from VDD power domain is triggered"]
     #[inline(always)]
-    pub const fn set_flag_hvd_vddio_occured(&mut self, val: super::vals::FlagHvdVddioOccured) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_flag_hvd_vddio_occured(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for ElsAsFlag1 {
@@ -6717,7 +6694,7 @@ impl defmt::Format for ElsAsFlag1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "ElsAsFlag1 {{ flag_hvd_core_occured: {:?}, flag_hvd_vsys_occured: {:?}, flag_hvd_vddio_occured: {:?} }}",
+            "ElsAsFlag1 {{ flag_hvd_core_occured: {=bool:?}, flag_hvd_vsys_occured: {=bool:?}, flag_hvd_vddio_occured: {=bool:?} }}",
             self.flag_hvd_core_occured(),
             self.flag_hvd_vsys_occured(),
             self.flag_hvd_vddio_occured()
@@ -7678,26 +7655,26 @@ impl EnetSbdFlowCtrl {
     #[doc = "Sideband Flow Control for channel0"]
     #[must_use]
     #[inline(always)]
-    pub const fn sel_ch0(&self) -> super::vals::SelCh0 {
+    pub const fn sel_ch0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::SelCh0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Sideband Flow Control for channel0"]
     #[inline(always)]
-    pub const fn set_sel_ch0(&mut self, val: super::vals::SelCh0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_sel_ch0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Sideband Flow Control for channel1"]
     #[must_use]
     #[inline(always)]
-    pub const fn sel_ch1(&self) -> super::vals::SelCh1 {
+    pub const fn sel_ch1(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::SelCh1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Sideband Flow Control for channel1"]
     #[inline(always)]
-    pub const fn set_sel_ch1(&mut self, val: super::vals::SelCh1) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_sel_ch1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
 }
 impl Default for EnetSbdFlowCtrl {
@@ -7719,7 +7696,7 @@ impl defmt::Format for EnetSbdFlowCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "EnetSbdFlowCtrl {{ sel_ch0: {:?}, sel_ch1: {:?} }}",
+            "EnetSbdFlowCtrl {{ sel_ch0: {=bool:?}, sel_ch1: {=bool:?} }}",
             self.sel_ch0(),
             self.sel_ch1()
         )
@@ -7973,14 +7950,14 @@ impl EtbCounterCtrl {
     #[doc = "Enables the ETB counter"]
     #[must_use]
     #[inline(always)]
-    pub const fn cnten(&self) -> super::vals::Cnten {
+    pub const fn cnten(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Cnten::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the ETB counter"]
     #[inline(always)]
-    pub const fn set_cnten(&mut self, val: super::vals::Cnten) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_cnten(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Response Type"]
     #[must_use]
@@ -7997,14 +7974,14 @@ impl EtbCounterCtrl {
     #[doc = "Reload request"]
     #[must_use]
     #[inline(always)]
-    pub const fn rlrq(&self) -> super::vals::Rlrq {
+    pub const fn rlrq(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Rlrq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reload request"]
     #[inline(always)]
-    pub const fn set_rlrq(&mut self, val: super::vals::Rlrq) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_rlrq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
 }
 impl Default for EtbCounterCtrl {
@@ -8027,7 +8004,7 @@ impl defmt::Format for EtbCounterCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "EtbCounterCtrl {{ cnten: {:?}, rspt: {:?}, rlrq: {:?} }}",
+            "EtbCounterCtrl {{ cnten: {=bool:?}, rspt: {:?}, rlrq: {=bool:?} }}",
             self.cnten(),
             self.rspt(),
             self.rlrq()
@@ -8120,38 +8097,38 @@ impl EtbStatus {
     #[doc = "ETB Interrupt"]
     #[must_use]
     #[inline(always)]
-    pub const fn irq(&self) -> super::vals::Irq {
+    pub const fn irq(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Irq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ETB Interrupt"]
     #[inline(always)]
-    pub const fn set_irq(&mut self, val: super::vals::Irq) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_irq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "ETB NMI"]
     #[must_use]
     #[inline(always)]
-    pub const fn nmi(&self) -> super::vals::Nmi {
+    pub const fn nmi(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Nmi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ETB NMI"]
     #[inline(always)]
-    pub const fn set_nmi(&mut self, val: super::vals::Nmi) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_nmi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Debug halt request"]
     #[must_use]
     #[inline(always)]
-    pub const fn dbg_halt_req(&self) -> super::vals::DbgHaltReq {
+    pub const fn dbg_halt_req(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::DbgHaltReq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Debug halt request"]
     #[inline(always)]
-    pub const fn set_dbg_halt_req(&mut self, val: super::vals::DbgHaltReq) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_dbg_halt_req(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
 }
 impl Default for EtbStatus {
@@ -8174,7 +8151,7 @@ impl defmt::Format for EtbStatus {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "EtbStatus {{ irq: {:?}, nmi: {:?}, dbg_halt_req: {:?} }}",
+            "EtbStatus {{ irq: {=bool:?}, nmi: {=bool:?}, dbg_halt_req: {=bool:?} }}",
             self.irq(),
             self.nmi(),
             self.dbg_halt_req()
@@ -8895,26 +8872,26 @@ impl GdetCtrl {
     #[doc = "Controls the GDET clean event counter"]
     #[must_use]
     #[inline(always)]
-    pub const fn gdet_evtcnt_clr(&self) -> super::vals::GdetEvtcntClr {
+    pub const fn gdet_evtcnt_clr(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::GdetEvtcntClr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Controls the GDET clean event counter"]
     #[inline(always)]
-    pub const fn set_gdet_evtcnt_clr(&mut self, val: super::vals::GdetEvtcntClr) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_gdet_evtcnt_clr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Clears GDET error status"]
     #[must_use]
     #[inline(always)]
-    pub const fn gdet_err_clr(&self) -> super::vals::GdetErrClr {
+    pub const fn gdet_err_clr(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::GdetErrClr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Clears GDET error status"]
     #[inline(always)]
-    pub const fn set_gdet_err_clr(&mut self, val: super::vals::GdetErrClr) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_gdet_err_clr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "GDET isolation control"]
     #[must_use]
@@ -8943,38 +8920,38 @@ impl GdetCtrl {
     #[doc = "Positive glitch detected"]
     #[must_use]
     #[inline(always)]
-    pub const fn pos_sync(&self) -> super::vals::PosSync {
+    pub const fn pos_sync(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::PosSync::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Positive glitch detected"]
     #[inline(always)]
-    pub const fn set_pos_sync(&mut self, val: super::vals::PosSync) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_pos_sync(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Negative glitch detected"]
     #[must_use]
     #[inline(always)]
-    pub const fn neg_sync(&self) -> super::vals::NegSync {
+    pub const fn neg_sync(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::NegSync::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Negative glitch detected"]
     #[inline(always)]
-    pub const fn set_neg_sync(&mut self, val: super::vals::NegSync) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_neg_sync(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Event counter cleared"]
     #[must_use]
     #[inline(always)]
-    pub const fn event_clr_flag(&self) -> super::vals::EventClrFlag {
+    pub const fn event_clr_flag(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::EventClrFlag::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event counter cleared"]
     #[inline(always)]
-    pub const fn set_event_clr_flag(&mut self, val: super::vals::EventClrFlag) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_event_clr_flag(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
 }
 impl Default for GdetCtrl {
@@ -9001,7 +8978,7 @@ impl defmt::Format for GdetCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "GdetCtrl {{ gdet_evtcnt_clr: {:?}, gdet_err_clr: {:?}, gdet_iso_sw: {:?}, event_cnt: {=u8:?}, pos_sync: {:?}, neg_sync: {:?}, event_clr_flag: {:?} }}",
+            "GdetCtrl {{ gdet_evtcnt_clr: {=bool:?}, gdet_err_clr: {=bool:?}, gdet_iso_sw: {:?}, event_cnt: {=u8:?}, pos_sync: {=bool:?}, neg_sync: {=bool:?}, event_clr_flag: {=bool:?} }}",
             self.gdet_evtcnt_clr(),
             self.gdet_err_clr(),
             self.gdet_iso_sw(),
@@ -9859,50 +9836,50 @@ impl KeyRetainCtrl {
     #[doc = "Indicates if the PUF key has been retained in the VBAT domain and has not been reset or otherwise invalidated by software."]
     #[must_use]
     #[inline(always)]
-    pub const fn key_retain_valid(&self) -> super::vals::KeyRetainValid {
+    pub const fn key_retain_valid(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::KeyRetainValid::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates if the PUF key has been retained in the VBAT domain and has not been reset or otherwise invalidated by software."]
     #[inline(always)]
-    pub const fn set_key_retain_valid(&mut self, val: super::vals::KeyRetainValid) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_key_retain_valid(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Indicates the successful completion of the key_save or key_load routine. Once set, to clear the key_retain_done flag, both key_save and key_load should be cleared by software."]
     #[must_use]
     #[inline(always)]
-    pub const fn key_retain_done(&self) -> super::vals::KeyRetainDone {
+    pub const fn key_retain_done(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::KeyRetainDone::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates the successful completion of the key_save or key_load routine. Once set, to clear the key_retain_done flag, both key_save and key_load should be cleared by software."]
     #[inline(always)]
-    pub const fn set_key_retain_done(&mut self, val: super::vals::KeyRetainDone) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_key_retain_done(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Do not set both KEY_SAVE and KEY_LOAD at the same time"]
     #[must_use]
     #[inline(always)]
-    pub const fn key_save(&self) -> super::vals::KeySave {
+    pub const fn key_save(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::KeySave::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Do not set both KEY_SAVE and KEY_LOAD at the same time"]
     #[inline(always)]
-    pub const fn set_key_save(&mut self, val: super::vals::KeySave) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_key_save(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Do not set both KEY_SAVE and KEY_LOAD at the same time"]
     #[must_use]
     #[inline(always)]
-    pub const fn key_load(&self) -> super::vals::KeyLoad {
+    pub const fn key_load(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::KeyLoad::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Do not set both KEY_SAVE and KEY_LOAD at the same time"]
     #[inline(always)]
-    pub const fn set_key_load(&mut self, val: super::vals::KeyLoad) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_key_load(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
 }
 impl Default for KeyRetainCtrl {
@@ -9926,7 +9903,7 @@ impl defmt::Format for KeyRetainCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "KeyRetainCtrl {{ key_retain_valid: {:?}, key_retain_done: {:?}, key_save: {:?}, key_load: {:?} }}",
+            "KeyRetainCtrl {{ key_retain_valid: {=bool:?}, key_retain_done: {=bool:?}, key_save: {=bool:?}, key_load: {=bool:?} }}",
             self.key_retain_valid(),
             self.key_retain_done(),
             self.key_save(),
@@ -9978,62 +9955,62 @@ impl LpcacCtrl {
     #[doc = "Enables parity miss."]
     #[must_use]
     #[inline(always)]
-    pub const fn parity_miss_en(&self) -> super::vals::ParityMissEn {
+    pub const fn parity_miss_en(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::ParityMissEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables parity miss."]
     #[inline(always)]
-    pub const fn set_parity_miss_en(&mut self, val: super::vals::ParityMissEn) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_parity_miss_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Disable LPCAC Write Through Buffer."]
     #[must_use]
     #[inline(always)]
-    pub const fn dis_lpcac_wtbf(&self) -> super::vals::DisLpcacWtbf {
+    pub const fn dis_lpcac_wtbf(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::DisLpcacWtbf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Disable LPCAC Write Through Buffer."]
     #[inline(always)]
-    pub const fn set_dis_lpcac_wtbf(&mut self, val: super::vals::DisLpcacWtbf) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_dis_lpcac_wtbf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Limit LPCAC Write Through Buffer."]
     #[must_use]
     #[inline(always)]
-    pub const fn lim_lpcac_wtbf(&self) -> super::vals::LimLpcacWtbf {
+    pub const fn lim_lpcac_wtbf(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::LimLpcacWtbf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Limit LPCAC Write Through Buffer."]
     #[inline(always)]
-    pub const fn set_lim_lpcac_wtbf(&mut self, val: super::vals::LimLpcacWtbf) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_lim_lpcac_wtbf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Enable parity error report."]
     #[must_use]
     #[inline(always)]
-    pub const fn parity_fault_en(&self) -> super::vals::ParityFaultEn {
+    pub const fn parity_fault_en(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::ParityFaultEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable parity error report."]
     #[inline(always)]
-    pub const fn set_parity_fault_en(&mut self, val: super::vals::ParityFaultEn) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_parity_fault_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "LPCAC XOM(eXecute-Only-Memory) attribute control"]
     #[must_use]
     #[inline(always)]
-    pub const fn lpcac_xom(&self) -> super::vals::LpcacXom {
+    pub const fn lpcac_xom(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::LpcacXom::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LPCAC XOM(eXecute-Only-Memory) attribute control"]
     #[inline(always)]
-    pub const fn set_lpcac_xom(&mut self, val: super::vals::LpcacXom) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_lpcac_xom(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
 }
 impl Default for LpcacCtrl {
@@ -10061,7 +10038,7 @@ impl defmt::Format for LpcacCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "LpcacCtrl {{ dis_lpcac: {:?}, clr_lpcac: {:?}, frc_no_alloc: {:?}, parity_miss_en: {:?}, dis_lpcac_wtbf: {:?}, lim_lpcac_wtbf: {:?}, parity_fault_en: {:?}, lpcac_xom: {:?} }}",
+            "LpcacCtrl {{ dis_lpcac: {:?}, clr_lpcac: {:?}, frc_no_alloc: {:?}, parity_miss_en: {=bool:?}, dis_lpcac_wtbf: {=bool:?}, lim_lpcac_wtbf: {=bool:?}, parity_fault_en: {=bool:?}, lpcac_xom: {=bool:?} }}",
             self.dis_lpcac(),
             self.clr_lpcac(),
             self.frc_no_alloc(),
@@ -10225,26 +10202,26 @@ impl Nmisrc {
     #[doc = "Enables the Non-Maskable Interrupt (NMI) source selected by IRQCPU1."]
     #[must_use]
     #[inline(always)]
-    pub const fn nmiencpu1(&self) -> super::vals::Nmiencpu1 {
+    pub const fn nmiencpu1(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Nmiencpu1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the Non-Maskable Interrupt (NMI) source selected by IRQCPU1."]
     #[inline(always)]
-    pub const fn set_nmiencpu1(&mut self, val: super::vals::Nmiencpu1) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_nmiencpu1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Enables the Non-Maskable Interrupt (NMI) source selected by IRQCPU0."]
     #[must_use]
     #[inline(always)]
-    pub const fn nmiencpu0(&self) -> super::vals::Nmiencpu0 {
+    pub const fn nmiencpu0(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Nmiencpu0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the Non-Maskable Interrupt (NMI) source selected by IRQCPU0."]
     #[inline(always)]
-    pub const fn set_nmiencpu0(&mut self, val: super::vals::Nmiencpu0) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_nmiencpu0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Nmisrc {
@@ -10268,7 +10245,7 @@ impl defmt::Format for Nmisrc {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Nmisrc {{ irqcpu0: {=u8:?}, irqcpu1: {=u8:?}, nmiencpu1: {:?}, nmiencpu0: {:?} }}",
+            "Nmisrc {{ irqcpu0: {=u8:?}, irqcpu1: {=u8:?}, nmiencpu1: {=bool:?}, nmiencpu0: {=bool:?} }}",
             self.irqcpu0(),
             self.irqcpu1(),
             self.nmiencpu1(),
@@ -12461,26 +12438,26 @@ impl RefClkCtrl {
     #[doc = "GDET reference clock enable bit"]
     #[must_use]
     #[inline(always)]
-    pub const fn gdet_refclk_en(&self) -> super::vals::GdetRefclkEn {
+    pub const fn gdet_refclk_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::GdetRefclkEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "GDET reference clock enable bit"]
     #[inline(always)]
-    pub const fn set_gdet_refclk_en(&mut self, val: super::vals::GdetRefclkEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_gdet_refclk_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "ELS TRNG reference clock enable bit"]
     #[must_use]
     #[inline(always)]
-    pub const fn trng_refclk_en(&self) -> super::vals::TrngRefclkEn {
+    pub const fn trng_refclk_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::TrngRefclkEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ELS TRNG reference clock enable bit"]
     #[inline(always)]
-    pub const fn set_trng_refclk_en(&mut self, val: super::vals::TrngRefclkEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_trng_refclk_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
 }
 impl Default for RefClkCtrl {
@@ -12502,7 +12479,7 @@ impl defmt::Format for RefClkCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "RefClkCtrl {{ gdet_refclk_en: {:?}, trng_refclk_en: {:?} }}",
+            "RefClkCtrl {{ gdet_refclk_en: {=bool:?}, trng_refclk_en: {=bool:?} }}",
             self.gdet_refclk_en(),
             self.trng_refclk_en()
         )
@@ -12516,26 +12493,26 @@ impl RefClkCtrlClr {
     #[doc = "GDET reference clock enable clear bit"]
     #[must_use]
     #[inline(always)]
-    pub const fn gdet_refclk_en_clr(&self) -> super::vals::GdetRefclkEnClr {
+    pub const fn gdet_refclk_en_clr(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::GdetRefclkEnClr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "GDET reference clock enable clear bit"]
     #[inline(always)]
-    pub const fn set_gdet_refclk_en_clr(&mut self, val: super::vals::GdetRefclkEnClr) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_gdet_refclk_en_clr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "ELS TRNG reference clock enable clear bit"]
     #[must_use]
     #[inline(always)]
-    pub const fn trng_refclk_en_clr(&self) -> super::vals::TrngRefclkEnClr {
+    pub const fn trng_refclk_en_clr(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::TrngRefclkEnClr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ELS TRNG reference clock enable clear bit"]
     #[inline(always)]
-    pub const fn set_trng_refclk_en_clr(&mut self, val: super::vals::TrngRefclkEnClr) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_trng_refclk_en_clr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
 }
 impl Default for RefClkCtrlClr {
@@ -12557,7 +12534,7 @@ impl defmt::Format for RefClkCtrlClr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "RefClkCtrlClr {{ gdet_refclk_en_clr: {:?}, trng_refclk_en_clr: {:?} }}",
+            "RefClkCtrlClr {{ gdet_refclk_en_clr: {=bool:?}, trng_refclk_en_clr: {=bool:?} }}",
             self.gdet_refclk_en_clr(),
             self.trng_refclk_en_clr()
         )
@@ -12571,26 +12548,26 @@ impl RefClkCtrlSet {
     #[doc = "GDET reference clock enable set bit"]
     #[must_use]
     #[inline(always)]
-    pub const fn gdet_refclk_en_set(&self) -> super::vals::GdetRefclkEnSet {
+    pub const fn gdet_refclk_en_set(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::GdetRefclkEnSet::from_bits(val as u8)
+        val != 0
     }
     #[doc = "GDET reference clock enable set bit"]
     #[inline(always)]
-    pub const fn set_gdet_refclk_en_set(&mut self, val: super::vals::GdetRefclkEnSet) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_gdet_refclk_en_set(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "ELS TRNG reference clock enable set bit"]
     #[must_use]
     #[inline(always)]
-    pub const fn trng_refclk_en_set(&self) -> super::vals::TrngRefclkEnSet {
+    pub const fn trng_refclk_en_set(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::TrngRefclkEnSet::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ELS TRNG reference clock enable set bit"]
     #[inline(always)]
-    pub const fn set_trng_refclk_en_set(&mut self, val: super::vals::TrngRefclkEnSet) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_trng_refclk_en_set(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
 }
 impl Default for RefClkCtrlSet {
@@ -12612,7 +12589,7 @@ impl defmt::Format for RefClkCtrlSet {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "RefClkCtrlSet {{ gdet_refclk_en_set: {:?}, trng_refclk_en_set: {:?} }}",
+            "RefClkCtrlSet {{ gdet_refclk_en_set: {=bool:?}, trng_refclk_en_set: {=bool:?} }}",
             self.gdet_refclk_en_set(),
             self.trng_refclk_en_set()
         )
@@ -12626,14 +12603,14 @@ impl Romcr {
     #[doc = "ROM waiting Arm core and other masters for one cycle"]
     #[must_use]
     #[inline(always)]
-    pub const fn rom_wait(&self) -> super::vals::RomWait {
+    pub const fn rom_wait(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::RomWait::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ROM waiting Arm core and other masters for one cycle"]
     #[inline(always)]
-    pub const fn set_rom_wait(&mut self, val: super::vals::RomWait) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_rom_wait(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Romcr {
@@ -12652,7 +12629,7 @@ impl core::fmt::Debug for Romcr {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Romcr {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Romcr {{ rom_wait: {:?} }}", self.rom_wait())
+        defmt::write!(f, "Romcr {{ rom_wait: {=bool:?} }}", self.rom_wait())
     }
 }
 #[doc = "SAI0 Function Clock Division"]
@@ -13129,290 +13106,290 @@ impl SmartDmaint {
     #[doc = "SmartDMA hijack NVIC IRQ1"]
     #[must_use]
     #[inline(always)]
-    pub const fn int0(&self) -> super::vals::Int0 {
+    pub const fn int0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Int0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ1"]
     #[inline(always)]
-    pub const fn set_int0(&mut self, val: super::vals::Int0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_int0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ17"]
     #[must_use]
     #[inline(always)]
-    pub const fn int1(&self) -> super::vals::Int1 {
+    pub const fn int1(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Int1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ17"]
     #[inline(always)]
-    pub const fn set_int1(&mut self, val: super::vals::Int1) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_int1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ18"]
     #[must_use]
     #[inline(always)]
-    pub const fn int2(&self) -> super::vals::Int2 {
+    pub const fn int2(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Int2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ18"]
     #[inline(always)]
-    pub const fn set_int2(&mut self, val: super::vals::Int2) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_int2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ29"]
     #[must_use]
     #[inline(always)]
-    pub const fn int3(&self) -> super::vals::Int3 {
+    pub const fn int3(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Int3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ29"]
     #[inline(always)]
-    pub const fn set_int3(&mut self, val: super::vals::Int3) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_int3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ30"]
     #[must_use]
     #[inline(always)]
-    pub const fn int4(&self) -> super::vals::Int4 {
+    pub const fn int4(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Int4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ30"]
     #[inline(always)]
-    pub const fn set_int4(&mut self, val: super::vals::Int4) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_int4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ31"]
     #[must_use]
     #[inline(always)]
-    pub const fn int5(&self) -> super::vals::Int5 {
+    pub const fn int5(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Int5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ31"]
     #[inline(always)]
-    pub const fn set_int5(&mut self, val: super::vals::Int5) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_int5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ32"]
     #[must_use]
     #[inline(always)]
-    pub const fn int6(&self) -> super::vals::Int6 {
+    pub const fn int6(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Int6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ32"]
     #[inline(always)]
-    pub const fn set_int6(&mut self, val: super::vals::Int6) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_int6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ33"]
     #[must_use]
     #[inline(always)]
-    pub const fn int7(&self) -> super::vals::Int7 {
+    pub const fn int7(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Int7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ33"]
     #[inline(always)]
-    pub const fn set_int7(&mut self, val: super::vals::Int7) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_int7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ34"]
     #[must_use]
     #[inline(always)]
-    pub const fn int8(&self) -> super::vals::Int8 {
+    pub const fn int8(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Int8::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ34"]
     #[inline(always)]
-    pub const fn set_int8(&mut self, val: super::vals::Int8) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_int8(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ35"]
     #[must_use]
     #[inline(always)]
-    pub const fn int9(&self) -> super::vals::Int9 {
+    pub const fn int9(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Int9::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ35"]
     #[inline(always)]
-    pub const fn set_int9(&mut self, val: super::vals::Int9) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_int9(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ36"]
     #[must_use]
     #[inline(always)]
-    pub const fn int10(&self) -> super::vals::Int10 {
+    pub const fn int10(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Int10::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ36"]
     #[inline(always)]
-    pub const fn set_int10(&mut self, val: super::vals::Int10) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_int10(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ37"]
     #[must_use]
     #[inline(always)]
-    pub const fn int11(&self) -> super::vals::Int11 {
+    pub const fn int11(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Int11::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ37"]
     #[inline(always)]
-    pub const fn set_int11(&mut self, val: super::vals::Int11) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_int11(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ38"]
     #[must_use]
     #[inline(always)]
-    pub const fn int12(&self) -> super::vals::Int12 {
+    pub const fn int12(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Int12::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ38"]
     #[inline(always)]
-    pub const fn set_int12(&mut self, val: super::vals::Int12) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_int12(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ39"]
     #[must_use]
     #[inline(always)]
-    pub const fn int13(&self) -> super::vals::Int13 {
+    pub const fn int13(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Int13::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ39"]
     #[inline(always)]
-    pub const fn set_int13(&mut self, val: super::vals::Int13) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_int13(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ40"]
     #[must_use]
     #[inline(always)]
-    pub const fn int14(&self) -> super::vals::Int14 {
+    pub const fn int14(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Int14::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ40"]
     #[inline(always)]
-    pub const fn set_int14(&mut self, val: super::vals::Int14) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_int14(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ41"]
     #[must_use]
     #[inline(always)]
-    pub const fn int15(&self) -> super::vals::Int15 {
+    pub const fn int15(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Int15::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ41"]
     #[inline(always)]
-    pub const fn set_int15(&mut self, val: super::vals::Int15) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_int15(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ42"]
     #[must_use]
     #[inline(always)]
-    pub const fn int16(&self) -> super::vals::Int16 {
+    pub const fn int16(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Int16::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ42"]
     #[inline(always)]
-    pub const fn set_int16(&mut self, val: super::vals::Int16) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_int16(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ45"]
     #[must_use]
     #[inline(always)]
-    pub const fn int17(&self) -> super::vals::Int17 {
+    pub const fn int17(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Int17::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ45"]
     #[inline(always)]
-    pub const fn set_int17(&mut self, val: super::vals::Int17) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_int17(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ47"]
     #[must_use]
     #[inline(always)]
-    pub const fn int18(&self) -> super::vals::Int18 {
+    pub const fn int18(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::Int18::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ47"]
     #[inline(always)]
-    pub const fn set_int18(&mut self, val: super::vals::Int18) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_int18(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ50"]
     #[must_use]
     #[inline(always)]
-    pub const fn int19(&self) -> super::vals::Int19 {
+    pub const fn int19(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Int19::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ50"]
     #[inline(always)]
-    pub const fn set_int19(&mut self, val: super::vals::Int19) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_int19(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ51"]
     #[must_use]
     #[inline(always)]
-    pub const fn int20(&self) -> super::vals::Int20 {
+    pub const fn int20(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::Int20::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ51"]
     #[inline(always)]
-    pub const fn set_int20(&mut self, val: super::vals::Int20) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_int20(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ66"]
     #[must_use]
     #[inline(always)]
-    pub const fn int21(&self) -> super::vals::Int21 {
+    pub const fn int21(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Int21::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ66"]
     #[inline(always)]
-    pub const fn set_int21(&mut self, val: super::vals::Int21) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_int21(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ67"]
     #[must_use]
     #[inline(always)]
-    pub const fn int22(&self) -> super::vals::Int22 {
+    pub const fn int22(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Int22::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ67"]
     #[inline(always)]
-    pub const fn set_int22(&mut self, val: super::vals::Int22) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_int22(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "SmartDMA hijack NVIC IRQ77"]
     #[must_use]
     #[inline(always)]
-    pub const fn int23(&self) -> super::vals::Int23 {
+    pub const fn int23(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Int23::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SmartDMA hijack NVIC IRQ77"]
     #[inline(always)]
-    pub const fn set_int23(&mut self, val: super::vals::Int23) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_int23(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
 }
 impl Default for SmartDmaint {
@@ -13456,7 +13433,7 @@ impl defmt::Format for SmartDmaint {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "SmartDmaint {{ int0: {:?}, int1: {:?}, int2: {:?}, int3: {:?}, int4: {:?}, int5: {:?}, int6: {:?}, int7: {:?}, int8: {:?}, int9: {:?}, int10: {:?}, int11: {:?}, int12: {:?}, int13: {:?}, int14: {:?}, int15: {:?}, int16: {:?}, int17: {:?}, int18: {:?}, int19: {:?}, int20: {:?}, int21: {:?}, int22: {:?}, int23: {:?} }}",
+            "SmartDmaint {{ int0: {=bool:?}, int1: {=bool:?}, int2: {=bool:?}, int3: {=bool:?}, int4: {=bool:?}, int5: {=bool:?}, int6: {=bool:?}, int7: {=bool:?}, int8: {=bool:?}, int9: {=bool:?}, int10: {=bool:?}, int11: {=bool:?}, int12: {=bool:?}, int13: {=bool:?}, int14: {=bool:?}, int15: {=bool:?}, int16: {=bool:?}, int17: {=bool:?}, int18: {=bool:?}, int19: {=bool:?}, int20: {=bool:?}, int21: {=bool:?}, int22: {=bool:?}, int23: {=bool:?} }}",
             self.int0(),
             self.int1(),
             self.int2(),

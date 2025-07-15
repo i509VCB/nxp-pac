@@ -6,38 +6,38 @@ impl ApllOvrd {
     #[doc = "APLL Power Enable Override if APLL_OVRD_EN=1"]
     #[must_use]
     #[inline(always)]
-    pub const fn apllpwren_ovrd(&self) -> super::vals::ApllpwrenOvrd {
+    pub const fn apllpwren_ovrd(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::ApllpwrenOvrd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "APLL Power Enable Override if APLL_OVRD_EN=1"]
     #[inline(always)]
-    pub const fn set_apllpwren_ovrd(&mut self, val: super::vals::ApllpwrenOvrd) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_apllpwren_ovrd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "APLL Clock Enable Override if APLL_OVRD_EN=1"]
     #[must_use]
     #[inline(always)]
-    pub const fn apllclken_ovrd(&self) -> super::vals::ApllclkenOvrd {
+    pub const fn apllclken_ovrd(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::ApllclkenOvrd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "APLL Clock Enable Override if APLL_OVRD_EN=1"]
     #[inline(always)]
-    pub const fn set_apllclken_ovrd(&mut self, val: super::vals::ApllclkenOvrd) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_apllclken_ovrd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "APLL Override Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn apll_ovrd_en(&self) -> super::vals::ApllOvrdEn {
+    pub const fn apll_ovrd_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::ApllOvrdEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "APLL Override Enable"]
     #[inline(always)]
-    pub const fn set_apll_ovrd_en(&mut self, val: super::vals::ApllOvrdEn) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_apll_ovrd_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for ApllOvrd {
@@ -60,7 +60,7 @@ impl defmt::Format for ApllOvrd {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "ApllOvrd {{ apllpwren_ovrd: {:?}, apllclken_ovrd: {:?}, apll_ovrd_en: {:?} }}",
+            "ApllOvrd {{ apllpwren_ovrd: {=bool:?}, apllclken_ovrd: {=bool:?}, apll_ovrd_en: {=bool:?} }}",
             self.apllpwren_ovrd(),
             self.apllclken_ovrd(),
             self.apll_ovrd_en()
@@ -75,26 +75,26 @@ impl Apllcsr {
     #[doc = "APLL Power Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn apllpwren(&self) -> super::vals::Apllpwren {
+    pub const fn apllpwren(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Apllpwren::from_bits(val as u8)
+        val != 0
     }
     #[doc = "APLL Power Enable"]
     #[inline(always)]
-    pub const fn set_apllpwren(&mut self, val: super::vals::Apllpwren) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_apllpwren(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "APLL Clock Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn apllclken(&self) -> super::vals::Apllclken {
+    pub const fn apllclken(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Apllclken::from_bits(val as u8)
+        val != 0
     }
     #[doc = "APLL Clock Enable"]
     #[inline(always)]
-    pub const fn set_apllclken(&mut self, val: super::vals::Apllclken) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_apllclken(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "APLL Stop Enable"]
     #[must_use]
@@ -111,14 +111,14 @@ impl Apllcsr {
     #[doc = "APLL Clock Monitor"]
     #[must_use]
     #[inline(always)]
-    pub const fn apllcm(&self) -> super::vals::Apllcm {
+    pub const fn apllcm(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Apllcm::from_bits(val as u8)
+        val != 0
     }
     #[doc = "APLL Clock Monitor"]
     #[inline(always)]
-    pub const fn set_apllcm(&mut self, val: super::vals::Apllcm) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_apllcm(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "APLL Clock Monitor Reset Enable"]
     #[must_use]
@@ -159,14 +159,14 @@ impl Apllcsr {
     #[doc = "APLL Selected"]
     #[must_use]
     #[inline(always)]
-    pub const fn apllsel(&self) -> super::vals::Apllsel {
+    pub const fn apllsel(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Apllsel::from_bits(val as u8)
+        val != 0
     }
     #[doc = "APLL Selected"]
     #[inline(always)]
-    pub const fn set_apllsel(&mut self, val: super::vals::Apllsel) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_apllsel(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "APLL Clock Error"]
     #[must_use]
@@ -183,14 +183,14 @@ impl Apllcsr {
     #[doc = "APLL LOCK Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn apll_lock_ie(&self) -> super::vals::ApllLockIe {
+    pub const fn apll_lock_ie(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::ApllLockIe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "APLL LOCK Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_apll_lock_ie(&mut self, val: super::vals::ApllLockIe) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_apll_lock_ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
 }
 impl Default for Apllcsr {
@@ -220,7 +220,7 @@ impl defmt::Format for Apllcsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Apllcsr {{ apllpwren: {:?}, apllclken: {:?}, apllsten: {:?}, apllcm: {:?}, apllcmre: {:?}, lk: {:?}, apll_lock: {:?}, apllsel: {:?}, apllerr: {:?}, apll_lock_ie: {:?} }}",
+            "Apllcsr {{ apllpwren: {=bool:?}, apllclken: {=bool:?}, apllsten: {:?}, apllcm: {=bool:?}, apllcmre: {:?}, lk: {:?}, apll_lock: {:?}, apllsel: {=bool:?}, apllerr: {:?}, apll_lock_ie: {=bool:?} }}",
             self.apllpwren(),
             self.apllclken(),
             self.apllsten(),
@@ -278,62 +278,62 @@ impl Apllctrl {
     #[doc = "Bypass of Divide-by-2 Divider"]
     #[must_use]
     #[inline(always)]
-    pub const fn bypasspostdiv2(&self) -> super::vals::ApllctrlBypasspostdiv2 {
+    pub const fn bypasspostdiv2(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::ApllctrlBypasspostdiv2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bypass of Divide-by-2 Divider"]
     #[inline(always)]
-    pub const fn set_bypasspostdiv2(&mut self, val: super::vals::ApllctrlBypasspostdiv2) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_bypasspostdiv2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Up Limiter"]
     #[must_use]
     #[inline(always)]
-    pub const fn limupoff(&self) -> super::vals::ApllctrlLimupoff {
+    pub const fn limupoff(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::ApllctrlLimupoff::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Up Limiter"]
     #[inline(always)]
-    pub const fn set_limupoff(&mut self, val: super::vals::ApllctrlLimupoff) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_limupoff(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Control of the bandwidth of the PLL."]
     #[must_use]
     #[inline(always)]
-    pub const fn banddirect(&self) -> super::vals::ApllctrlBanddirect {
+    pub const fn banddirect(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::ApllctrlBanddirect::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Control of the bandwidth of the PLL."]
     #[inline(always)]
-    pub const fn set_banddirect(&mut self, val: super::vals::ApllctrlBanddirect) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_banddirect(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Bypass of the predivider"]
     #[must_use]
     #[inline(always)]
-    pub const fn bypassprediv(&self) -> super::vals::ApllctrlBypassprediv {
+    pub const fn bypassprediv(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::ApllctrlBypassprediv::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bypass of the predivider"]
     #[inline(always)]
-    pub const fn set_bypassprediv(&mut self, val: super::vals::ApllctrlBypassprediv) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_bypassprediv(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "Bypass of the postdivider"]
     #[must_use]
     #[inline(always)]
-    pub const fn bypasspostdiv(&self) -> super::vals::ApllctrlBypasspostdiv {
+    pub const fn bypasspostdiv(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::ApllctrlBypasspostdiv::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bypass of the postdivider"]
     #[inline(always)]
-    pub const fn set_bypasspostdiv(&mut self, val: super::vals::ApllctrlBypasspostdiv) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_bypasspostdiv(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "Clock Source"]
     #[must_use]
@@ -374,7 +374,7 @@ impl defmt::Format for Apllctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Apllctrl {{ selr: {=u8:?}, seli: {=u8:?}, selp: {=u8:?}, bypasspostdiv2: {:?}, limupoff: {:?}, banddirect: {:?}, bypassprediv: {:?}, bypasspostdiv: {:?}, source: {:?} }}",
+            "Apllctrl {{ selr: {=u8:?}, seli: {=u8:?}, selp: {=u8:?}, bypasspostdiv2: {=bool:?}, limupoff: {=bool:?}, banddirect: {=bool:?}, bypassprediv: {=bool:?}, bypasspostdiv: {=bool:?}, source: {:?} }}",
             self.selr(),
             self.seli(),
             self.selp(),
@@ -448,14 +448,14 @@ impl Apllmdiv {
     #[doc = "Feedback ratio change request."]
     #[must_use]
     #[inline(always)]
-    pub const fn mreq(&self) -> super::vals::ApllmdivMreq {
+    pub const fn mreq(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::ApllmdivMreq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Feedback ratio change request."]
     #[inline(always)]
-    pub const fn set_mreq(&mut self, val: super::vals::ApllmdivMreq) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_mreq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Apllmdiv {
@@ -477,7 +477,7 @@ impl defmt::Format for Apllmdiv {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Apllmdiv {{ mdiv: {=u16:?}, mreq: {:?} }}",
+            "Apllmdiv {{ mdiv: {=u16:?}, mreq: {=bool:?} }}",
             self.mdiv(),
             self.mreq()
         )
@@ -503,14 +503,14 @@ impl Apllndiv {
     #[doc = "Predivider ratio change request."]
     #[must_use]
     #[inline(always)]
-    pub const fn nreq(&self) -> super::vals::ApllndivNreq {
+    pub const fn nreq(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::ApllndivNreq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Predivider ratio change request."]
     #[inline(always)]
-    pub const fn set_nreq(&mut self, val: super::vals::ApllndivNreq) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_nreq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Apllndiv {
@@ -532,7 +532,7 @@ impl defmt::Format for Apllndiv {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Apllndiv {{ ndiv: {=u8:?}, nreq: {:?} }}",
+            "Apllndiv {{ ndiv: {=u8:?}, nreq: {=bool:?} }}",
             self.ndiv(),
             self.nreq()
         )
@@ -558,14 +558,14 @@ impl Apllpdiv {
     #[doc = "Postdivider ratio change request"]
     #[must_use]
     #[inline(always)]
-    pub const fn preq(&self) -> super::vals::ApllpdivPreq {
+    pub const fn preq(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::ApllpdivPreq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Postdivider ratio change request"]
     #[inline(always)]
-    pub const fn set_preq(&mut self, val: super::vals::ApllpdivPreq) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_preq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Apllpdiv {
@@ -587,7 +587,7 @@ impl defmt::Format for Apllpdiv {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Apllpdiv {{ pdiv: {=u8:?}, preq: {:?} }}",
+            "Apllpdiv {{ pdiv: {=u8:?}, preq: {=bool:?} }}",
             self.pdiv(),
             self.preq()
         )
@@ -654,14 +654,14 @@ impl Apllsscg1 {
     #[doc = "SS_MDIV\\[32:0\\] change request."]
     #[must_use]
     #[inline(always)]
-    pub const fn ss_mdiv_req(&self) -> super::vals::Apllsscg1SsMdivReq {
+    pub const fn ss_mdiv_req(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Apllsscg1SsMdivReq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SS_MDIV\\[32:0\\] change request."]
     #[inline(always)]
-    pub const fn set_ss_mdiv_req(&mut self, val: super::vals::Apllsscg1SsMdivReq) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_ss_mdiv_req(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Modulation Frequency Control"]
     #[must_use]
@@ -702,38 +702,38 @@ impl Apllsscg1 {
     #[doc = "Dither Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dither(&self) -> super::vals::Apllsscg1Dither {
+    pub const fn dither(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Apllsscg1Dither::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Dither Enable"]
     #[inline(always)]
-    pub const fn set_dither(&mut self, val: super::vals::Apllsscg1Dither) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_dither(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "SS_MDIV select."]
     #[must_use]
     #[inline(always)]
-    pub const fn sel_ss_mdiv(&self) -> super::vals::Apllsscg1SelSsMdiv {
+    pub const fn sel_ss_mdiv(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Apllsscg1SelSsMdiv::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SS_MDIV select."]
     #[inline(always)]
-    pub const fn set_sel_ss_mdiv(&mut self, val: super::vals::Apllsscg1SelSsMdiv) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_sel_ss_mdiv(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "SSCG Power Down"]
     #[must_use]
     #[inline(always)]
-    pub const fn ss_pd(&self) -> super::vals::Apllsscg1SsPd {
+    pub const fn ss_pd(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Apllsscg1SsPd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SSCG Power Down"]
     #[inline(always)]
-    pub const fn set_ss_pd(&mut self, val: super::vals::Apllsscg1SsPd) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_ss_pd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Apllsscg1 {
@@ -761,7 +761,7 @@ impl defmt::Format for Apllsscg1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Apllsscg1 {{ ss_mdiv_msb: {=bool:?}, ss_mdiv_req: {:?}, mf: {=u8:?}, mr: {=u8:?}, mc: {:?}, dither: {:?}, sel_ss_mdiv: {:?}, ss_pd: {:?} }}",
+            "Apllsscg1 {{ ss_mdiv_msb: {=bool:?}, ss_mdiv_req: {=bool:?}, mf: {=u8:?}, mr: {=u8:?}, mc: {:?}, dither: {=bool:?}, sel_ss_mdiv: {=bool:?}, ss_pd: {=bool:?} }}",
             self.ss_mdiv_msb(),
             self.ss_mdiv_req(),
             self.mf(),
@@ -781,14 +781,14 @@ impl Apllsscgstat {
     #[doc = "SS_MDIV change acknowledge"]
     #[must_use]
     #[inline(always)]
-    pub const fn ss_mdiv_ack(&self) -> super::vals::ApllsscgstatSsMdivAck {
+    pub const fn ss_mdiv_ack(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::ApllsscgstatSsMdivAck::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SS_MDIV change acknowledge"]
     #[inline(always)]
-    pub const fn set_ss_mdiv_ack(&mut self, val: super::vals::ApllsscgstatSsMdivAck) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_ss_mdiv_ack(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Apllsscgstat {
@@ -809,7 +809,7 @@ impl defmt::Format for Apllsscgstat {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Apllsscgstat {{ ss_mdiv_ack: {:?} }}",
+            "Apllsscgstat {{ ss_mdiv_ack: {=bool:?} }}",
             self.ss_mdiv_ack()
         )
     }
@@ -822,38 +822,38 @@ impl Apllstat {
     #[doc = "Predivider(N) ratio change acknowledge."]
     #[must_use]
     #[inline(always)]
-    pub const fn ndivack(&self) -> super::vals::ApllstatNdivack {
+    pub const fn ndivack(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::ApllstatNdivack::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Predivider(N) ratio change acknowledge."]
     #[inline(always)]
-    pub const fn set_ndivack(&mut self, val: super::vals::ApllstatNdivack) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_ndivack(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Feedback(M) divider ratio change acknowledge."]
     #[must_use]
     #[inline(always)]
-    pub const fn mdivack(&self) -> super::vals::ApllstatMdivack {
+    pub const fn mdivack(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::ApllstatMdivack::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Feedback(M) divider ratio change acknowledge."]
     #[inline(always)]
-    pub const fn set_mdivack(&mut self, val: super::vals::ApllstatMdivack) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_mdivack(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Postdivider(P) ratio change acknowledge."]
     #[must_use]
     #[inline(always)]
-    pub const fn pdivack(&self) -> super::vals::ApllstatPdivack {
+    pub const fn pdivack(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::ApllstatPdivack::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Postdivider(P) ratio change acknowledge."]
     #[inline(always)]
-    pub const fn set_pdivack(&mut self, val: super::vals::ApllstatPdivack) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_pdivack(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
 }
 impl Default for Apllstat {
@@ -876,7 +876,7 @@ impl defmt::Format for Apllstat {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Apllstat {{ ndivack: {:?}, mdivack: {:?}, pdivack: {:?} }}",
+            "Apllstat {{ ndivack: {=bool:?}, mdivack: {=bool:?}, pdivack: {=bool:?} }}",
             self.ndivack(),
             self.mdivack(),
             self.pdivack()
@@ -963,14 +963,14 @@ impl Firccsr {
     #[doc = "FIRC Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn fircen(&self) -> super::vals::Fircen {
+    pub const fn fircen(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Fircen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIRC Enable"]
     #[inline(always)]
-    pub const fn set_fircen(&mut self, val: super::vals::Fircen) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_fircen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "FIRC Stop Enable"]
     #[must_use]
@@ -987,50 +987,50 @@ impl Firccsr {
     #[doc = "FIRC 48 MHz Clock to peripherals Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn firc_sclk_periph_en(&self) -> super::vals::FircSclkPeriphEn {
+    pub const fn firc_sclk_periph_en(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::FircSclkPeriphEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIRC 48 MHz Clock to peripherals Enable"]
     #[inline(always)]
-    pub const fn set_firc_sclk_periph_en(&mut self, val: super::vals::FircSclkPeriphEn) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_firc_sclk_periph_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "FIRC 144 MHz Clock to peripherals Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn firc_fclk_periph_en(&self) -> super::vals::FircFclkPeriphEn {
+    pub const fn firc_fclk_periph_en(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::FircFclkPeriphEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIRC 144 MHz Clock to peripherals Enable"]
     #[inline(always)]
-    pub const fn set_firc_fclk_periph_en(&mut self, val: super::vals::FircFclkPeriphEn) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_firc_fclk_periph_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "FIRC 144 MHz Trim Enable (FIRCCFG\\[RANGE\\]=1)"]
     #[must_use]
     #[inline(always)]
-    pub const fn firctren(&self) -> super::vals::Firctren {
+    pub const fn firctren(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Firctren::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIRC 144 MHz Trim Enable (FIRCCFG\\[RANGE\\]=1)"]
     #[inline(always)]
-    pub const fn set_firctren(&mut self, val: super::vals::Firctren) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_firctren(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "FIRC Trim Update"]
     #[must_use]
     #[inline(always)]
-    pub const fn firctrup(&self) -> super::vals::Firctrup {
+    pub const fn firctrup(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Firctrup::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIRC Trim Update"]
     #[inline(always)]
-    pub const fn set_firctrup(&mut self, val: super::vals::Firctrup) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_firctrup(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "FIRC TRIM LOCK"]
     #[must_use]
@@ -1047,14 +1047,14 @@ impl Firccsr {
     #[doc = "Coarse Auto Trim Bypass"]
     #[must_use]
     #[inline(always)]
-    pub const fn coarse_trim_bypass(&self) -> super::vals::FirccsrCoarseTrimBypass {
+    pub const fn coarse_trim_bypass(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::FirccsrCoarseTrimBypass::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Coarse Auto Trim Bypass"]
     #[inline(always)]
-    pub const fn set_coarse_trim_bypass(&mut self, val: super::vals::FirccsrCoarseTrimBypass) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_coarse_trim_bypass(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Lock Register"]
     #[must_use]
@@ -1083,14 +1083,14 @@ impl Firccsr {
     #[doc = "FIRC Selected"]
     #[must_use]
     #[inline(always)]
-    pub const fn fircsel(&self) -> super::vals::Fircsel {
+    pub const fn fircsel(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Fircsel::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIRC Selected"]
     #[inline(always)]
-    pub const fn set_fircsel(&mut self, val: super::vals::Fircsel) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_fircsel(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "FIRC Clock Error"]
     #[must_use]
@@ -1173,7 +1173,7 @@ impl defmt::Format for Firccsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Firccsr {{ fircen: {:?}, fircsten: {:?}, firc_sclk_periph_en: {:?}, firc_fclk_periph_en: {:?}, firctren: {:?}, firctrup: {:?}, trim_lock: {:?}, coarse_trim_bypass: {:?}, lk: {:?}, fircvld: {:?}, fircsel: {:?}, fircerr: {:?}, fircerr_ie: {:?}, fircacc_ie: {:?}, fircacc: {:?} }}",
+            "Firccsr {{ fircen: {=bool:?}, fircsten: {:?}, firc_sclk_periph_en: {=bool:?}, firc_fclk_periph_en: {=bool:?}, firctren: {=bool:?}, firctrup: {=bool:?}, trim_lock: {:?}, coarse_trim_bypass: {=bool:?}, lk: {:?}, fircvld: {:?}, fircsel: {=bool:?}, fircerr: {:?}, fircerr_ie: {:?}, fircacc_ie: {:?}, fircacc: {:?} }}",
             self.fircen(),
             self.fircsten(),
             self.firc_sclk_periph_en(),
@@ -1393,14 +1393,14 @@ impl Ldocsr {
     #[doc = "LDO Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ldoen(&self) -> super::vals::Ldoen {
+    pub const fn ldoen(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Ldoen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LDO Enable"]
     #[inline(always)]
-    pub const fn set_ldoen(&mut self, val: super::vals::Ldoen) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_ldoen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "LDO output voltage select"]
     #[must_use]
@@ -1417,26 +1417,26 @@ impl Ldocsr {
     #[doc = "LDO Bypass"]
     #[must_use]
     #[inline(always)]
-    pub const fn ldobypass(&self) -> super::vals::Ldobypass {
+    pub const fn ldobypass(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Ldobypass::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LDO Bypass"]
     #[inline(always)]
-    pub const fn set_ldobypass(&mut self, val: super::vals::Ldobypass) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_ldobypass(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "LDO VOUT OK Inform."]
     #[must_use]
     #[inline(always)]
-    pub const fn vout_ok(&self) -> super::vals::VoutOk {
+    pub const fn vout_ok(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::VoutOk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LDO VOUT OK Inform."]
     #[inline(always)]
-    pub const fn set_vout_ok(&mut self, val: super::vals::VoutOk) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_vout_ok(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Ldocsr {
@@ -1460,7 +1460,7 @@ impl defmt::Format for Ldocsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ldocsr {{ ldoen: {:?}, vout_sel: {:?}, ldobypass: {:?}, vout_ok: {:?} }}",
+            "Ldocsr {{ ldoen: {=bool:?}, vout_sel: {:?}, ldobypass: {=bool:?}, vout_ok: {=bool:?} }}",
             self.ldoen(),
             self.vout_sel(),
             self.ldobypass(),
@@ -1476,86 +1476,86 @@ impl Param {
     #[doc = "SOSC Clock Present"]
     #[must_use]
     #[inline(always)]
-    pub const fn soscclkpres(&self) -> super::vals::Soscclkpres {
+    pub const fn soscclkpres(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Soscclkpres::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SOSC Clock Present"]
     #[inline(always)]
-    pub const fn set_soscclkpres(&mut self, val: super::vals::Soscclkpres) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_soscclkpres(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "SIRC Clock Present"]
     #[must_use]
     #[inline(always)]
-    pub const fn sircclkpres(&self) -> super::vals::Sircclkpres {
+    pub const fn sircclkpres(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Sircclkpres::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SIRC Clock Present"]
     #[inline(always)]
-    pub const fn set_sircclkpres(&mut self, val: super::vals::Sircclkpres) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_sircclkpres(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "FIRC Clock Present"]
     #[must_use]
     #[inline(always)]
-    pub const fn fircclkpres(&self) -> super::vals::Fircclkpres {
+    pub const fn fircclkpres(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Fircclkpres::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIRC Clock Present"]
     #[inline(always)]
-    pub const fn set_fircclkpres(&mut self, val: super::vals::Fircclkpres) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_fircclkpres(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "ROSC Clock Present"]
     #[must_use]
     #[inline(always)]
-    pub const fn roscclkpres(&self) -> super::vals::Roscclkpres {
+    pub const fn roscclkpres(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Roscclkpres::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ROSC Clock Present"]
     #[inline(always)]
-    pub const fn set_roscclkpres(&mut self, val: super::vals::Roscclkpres) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_roscclkpres(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "APLL Clock Present"]
     #[must_use]
     #[inline(always)]
-    pub const fn apllclkpres(&self) -> super::vals::Apllclkpres {
+    pub const fn apllclkpres(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Apllclkpres::from_bits(val as u8)
+        val != 0
     }
     #[doc = "APLL Clock Present"]
     #[inline(always)]
-    pub const fn set_apllclkpres(&mut self, val: super::vals::Apllclkpres) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_apllclkpres(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "SPLL Clock Present"]
     #[must_use]
     #[inline(always)]
-    pub const fn spllclkpres(&self) -> super::vals::Spllclkpres {
+    pub const fn spllclkpres(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Spllclkpres::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SPLL Clock Present"]
     #[inline(always)]
-    pub const fn set_spllclkpres(&mut self, val: super::vals::Spllclkpres) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_spllclkpres(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "UPLL Clock Present"]
     #[must_use]
     #[inline(always)]
-    pub const fn upllclkpres(&self) -> super::vals::Upllclkpres {
+    pub const fn upllclkpres(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Upllclkpres::from_bits(val as u8)
+        val != 0
     }
     #[doc = "UPLL Clock Present"]
     #[inline(always)]
-    pub const fn set_upllclkpres(&mut self, val: super::vals::Upllclkpres) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_upllclkpres(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
 }
 impl Default for Param {
@@ -1582,7 +1582,7 @@ impl defmt::Format for Param {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Param {{ soscclkpres: {:?}, sircclkpres: {:?}, fircclkpres: {:?}, roscclkpres: {:?}, apllclkpres: {:?}, spllclkpres: {:?}, upllclkpres: {:?} }}",
+            "Param {{ soscclkpres: {=bool:?}, sircclkpres: {=bool:?}, fircclkpres: {=bool:?}, roscclkpres: {=bool:?}, apllclkpres: {=bool:?}, spllclkpres: {=bool:?}, upllclkpres: {=bool:?} }}",
             self.soscclkpres(),
             self.sircclkpres(),
             self.fircclkpres(),
@@ -1636,14 +1636,14 @@ impl Rosccsr {
     #[doc = "ROSC Clock Monitor"]
     #[must_use]
     #[inline(always)]
-    pub const fn rosccm(&self) -> super::vals::Rosccm {
+    pub const fn rosccm(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Rosccm::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ROSC Clock Monitor"]
     #[inline(always)]
-    pub const fn set_rosccm(&mut self, val: super::vals::Rosccm) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_rosccm(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "ROSC Clock Monitor Reset Enable"]
     #[must_use]
@@ -1684,14 +1684,14 @@ impl Rosccsr {
     #[doc = "ROSC Selected"]
     #[must_use]
     #[inline(always)]
-    pub const fn roscsel(&self) -> super::vals::Roscsel {
+    pub const fn roscsel(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Roscsel::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ROSC Selected"]
     #[inline(always)]
-    pub const fn set_roscsel(&mut self, val: super::vals::Roscsel) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_roscsel(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "ROSC Clock Error"]
     #[must_use]
@@ -1729,7 +1729,7 @@ impl defmt::Format for Rosccsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Rosccsr {{ rosccm: {:?}, rosccmre: {:?}, lk: {:?}, roscvld: {:?}, roscsel: {:?}, roscerr: {:?} }}",
+            "Rosccsr {{ rosccm: {=bool:?}, rosccmre: {:?}, lk: {:?}, roscvld: {:?}, roscsel: {=bool:?}, roscerr: {:?} }}",
             self.rosccm(),
             self.rosccmre(),
             self.lk(),
@@ -1747,50 +1747,50 @@ impl Sirccsr {
     #[doc = "SIRC Stop Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn sircsten(&self) -> super::vals::Sircsten {
+    pub const fn sircsten(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Sircsten::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SIRC Stop Enable"]
     #[inline(always)]
-    pub const fn set_sircsten(&mut self, val: super::vals::Sircsten) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_sircsten(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "SIRC Clock to Peripherals Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn sirc_clk_periph_en(&self) -> super::vals::SircClkPeriphEn {
+    pub const fn sirc_clk_periph_en(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::SircClkPeriphEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SIRC Clock to Peripherals Enable"]
     #[inline(always)]
-    pub const fn set_sirc_clk_periph_en(&mut self, val: super::vals::SircClkPeriphEn) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_sirc_clk_periph_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "SIRC 12 MHz Trim Enable (SIRCCFG\\[RANGE\\]=1)"]
     #[must_use]
     #[inline(always)]
-    pub const fn sirctren(&self) -> super::vals::Sirctren {
+    pub const fn sirctren(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Sirctren::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SIRC 12 MHz Trim Enable (SIRCCFG\\[RANGE\\]=1)"]
     #[inline(always)]
-    pub const fn set_sirctren(&mut self, val: super::vals::Sirctren) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_sirctren(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "SIRC Trim Update"]
     #[must_use]
     #[inline(always)]
-    pub const fn sirctrup(&self) -> super::vals::Sirctrup {
+    pub const fn sirctrup(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Sirctrup::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SIRC Trim Update"]
     #[inline(always)]
-    pub const fn set_sirctrup(&mut self, val: super::vals::Sirctrup) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_sirctrup(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "SIRC TRIM LOCK"]
     #[must_use]
@@ -1807,14 +1807,14 @@ impl Sirccsr {
     #[doc = "Coarse Auto Trim Bypass"]
     #[must_use]
     #[inline(always)]
-    pub const fn coarse_trim_bypass(&self) -> super::vals::SirccsrCoarseTrimBypass {
+    pub const fn coarse_trim_bypass(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::SirccsrCoarseTrimBypass::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Coarse Auto Trim Bypass"]
     #[inline(always)]
-    pub const fn set_coarse_trim_bypass(&mut self, val: super::vals::SirccsrCoarseTrimBypass) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_coarse_trim_bypass(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Lock Register"]
     #[must_use]
@@ -1843,14 +1843,14 @@ impl Sirccsr {
     #[doc = "SIRC Selected"]
     #[must_use]
     #[inline(always)]
-    pub const fn sircsel(&self) -> super::vals::Sircsel {
+    pub const fn sircsel(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Sircsel::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SIRC Selected"]
     #[inline(always)]
-    pub const fn set_sircsel(&mut self, val: super::vals::Sircsel) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_sircsel(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "SIRC Clock Error"]
     #[must_use]
@@ -1905,7 +1905,7 @@ impl defmt::Format for Sirccsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sirccsr {{ sircsten: {:?}, sirc_clk_periph_en: {:?}, sirctren: {:?}, sirctrup: {:?}, trim_lock: {:?}, coarse_trim_bypass: {:?}, lk: {:?}, sircvld: {:?}, sircsel: {:?}, sircerr: {:?}, sircerr_ie: {:?} }}",
+            "Sirccsr {{ sircsten: {=bool:?}, sirc_clk_periph_en: {=bool:?}, sirctren: {=bool:?}, sirctrup: {=bool:?}, trim_lock: {:?}, coarse_trim_bypass: {=bool:?}, lk: {:?}, sircvld: {:?}, sircsel: {=bool:?}, sircerr: {:?}, sircerr_ie: {:?} }}",
             self.sircsten(),
             self.sirc_clk_periph_en(),
             self.sirctren(),
@@ -2176,38 +2176,38 @@ impl Sosccsr {
     #[doc = "SOSC Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn soscen(&self) -> super::vals::Soscen {
+    pub const fn soscen(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Soscen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SOSC Enable"]
     #[inline(always)]
-    pub const fn set_soscen(&mut self, val: super::vals::Soscen) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_soscen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "SOSC Stop Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn soscsten(&self) -> super::vals::Soscsten {
+    pub const fn soscsten(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Soscsten::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SOSC Stop Enable"]
     #[inline(always)]
-    pub const fn set_soscsten(&mut self, val: super::vals::Soscsten) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_soscsten(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "SOSC Clock Monitor Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn sosccm(&self) -> super::vals::Sosccm {
+    pub const fn sosccm(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Sosccm::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SOSC Clock Monitor Enable"]
     #[inline(always)]
-    pub const fn set_sosccm(&mut self, val: super::vals::Sosccm) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_sosccm(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "SOSC Clock Monitor Reset Enable"]
     #[must_use]
@@ -2236,26 +2236,26 @@ impl Sosccsr {
     #[doc = "SOSC Valid"]
     #[must_use]
     #[inline(always)]
-    pub const fn soscvld(&self) -> super::vals::Soscvld {
+    pub const fn soscvld(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::Soscvld::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SOSC Valid"]
     #[inline(always)]
-    pub const fn set_soscvld(&mut self, val: super::vals::Soscvld) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_soscvld(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "SOSC Selected"]
     #[must_use]
     #[inline(always)]
-    pub const fn soscsel(&self) -> super::vals::Soscsel {
+    pub const fn soscsel(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Soscsel::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SOSC Selected"]
     #[inline(always)]
-    pub const fn set_soscsel(&mut self, val: super::vals::Soscsel) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_soscsel(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "SOSC Clock Error"]
     #[must_use]
@@ -2272,14 +2272,14 @@ impl Sosccsr {
     #[doc = "SOSC Valid Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn soscvld_ie(&self) -> super::vals::SoscvldIe {
+    pub const fn soscvld_ie(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::SoscvldIe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SOSC Valid Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_soscvld_ie(&mut self, val: super::vals::SoscvldIe) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_soscvld_ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
 }
 impl Default for Sosccsr {
@@ -2308,7 +2308,7 @@ impl defmt::Format for Sosccsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sosccsr {{ soscen: {:?}, soscsten: {:?}, sosccm: {:?}, sosccmre: {:?}, lk: {:?}, soscvld: {:?}, soscsel: {:?}, soscerr: {:?}, soscvld_ie: {:?} }}",
+            "Sosccsr {{ soscen: {=bool:?}, soscsten: {=bool:?}, sosccm: {=bool:?}, sosccmre: {:?}, lk: {:?}, soscvld: {=bool:?}, soscsel: {=bool:?}, soscerr: {:?}, soscvld_ie: {=bool:?} }}",
             self.soscen(),
             self.soscsten(),
             self.sosccm(),
@@ -2329,38 +2329,38 @@ impl SpllOvrd {
     #[doc = "SPLL Power Enable Override if SPLL_OVRD_EN=1"]
     #[must_use]
     #[inline(always)]
-    pub const fn spllpwren_ovrd(&self) -> super::vals::SpllpwrenOvrd {
+    pub const fn spllpwren_ovrd(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::SpllpwrenOvrd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SPLL Power Enable Override if SPLL_OVRD_EN=1"]
     #[inline(always)]
-    pub const fn set_spllpwren_ovrd(&mut self, val: super::vals::SpllpwrenOvrd) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_spllpwren_ovrd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "SPLL Clock Enable Override if SPLL_OVRD_EN=1"]
     #[must_use]
     #[inline(always)]
-    pub const fn spllclken_ovrd(&self) -> super::vals::SpllclkenOvrd {
+    pub const fn spllclken_ovrd(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::SpllclkenOvrd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SPLL Clock Enable Override if SPLL_OVRD_EN=1"]
     #[inline(always)]
-    pub const fn set_spllclken_ovrd(&mut self, val: super::vals::SpllclkenOvrd) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_spllclken_ovrd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "SPLL Override Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn spll_ovrd_en(&self) -> super::vals::SpllOvrdEn {
+    pub const fn spll_ovrd_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::SpllOvrdEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SPLL Override Enable"]
     #[inline(always)]
-    pub const fn set_spll_ovrd_en(&mut self, val: super::vals::SpllOvrdEn) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_spll_ovrd_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for SpllOvrd {
@@ -2383,7 +2383,7 @@ impl defmt::Format for SpllOvrd {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "SpllOvrd {{ spllpwren_ovrd: {:?}, spllclken_ovrd: {:?}, spll_ovrd_en: {:?} }}",
+            "SpllOvrd {{ spllpwren_ovrd: {=bool:?}, spllclken_ovrd: {=bool:?}, spll_ovrd_en: {=bool:?} }}",
             self.spllpwren_ovrd(),
             self.spllclken_ovrd(),
             self.spll_ovrd_en()
@@ -2398,26 +2398,26 @@ impl Spllcsr {
     #[doc = "SPLL Power Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn spllpwren(&self) -> super::vals::Spllpwren {
+    pub const fn spllpwren(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Spllpwren::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SPLL Power Enable"]
     #[inline(always)]
-    pub const fn set_spllpwren(&mut self, val: super::vals::Spllpwren) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_spllpwren(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "SPLL Clock Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn spllclken(&self) -> super::vals::Spllclken {
+    pub const fn spllclken(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Spllclken::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SPLL Clock Enable"]
     #[inline(always)]
-    pub const fn set_spllclken(&mut self, val: super::vals::Spllclken) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_spllclken(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "SPLL Stop Enable"]
     #[must_use]
@@ -2434,14 +2434,14 @@ impl Spllcsr {
     #[doc = "SPLL Clock Monitor"]
     #[must_use]
     #[inline(always)]
-    pub const fn spllcm(&self) -> super::vals::Spllcm {
+    pub const fn spllcm(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Spllcm::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SPLL Clock Monitor"]
     #[inline(always)]
-    pub const fn set_spllcm(&mut self, val: super::vals::Spllcm) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_spllcm(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "SPLL Clock Monitor Reset Enable"]
     #[must_use]
@@ -2482,14 +2482,14 @@ impl Spllcsr {
     #[doc = "SPLL Selected"]
     #[must_use]
     #[inline(always)]
-    pub const fn spllsel(&self) -> super::vals::Spllsel {
+    pub const fn spllsel(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Spllsel::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SPLL Selected"]
     #[inline(always)]
-    pub const fn set_spllsel(&mut self, val: super::vals::Spllsel) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_spllsel(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "SPLL Clock Error"]
     #[must_use]
@@ -2506,14 +2506,14 @@ impl Spllcsr {
     #[doc = "SPLL LOCK Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn spll_lock_ie(&self) -> super::vals::SpllLockIe {
+    pub const fn spll_lock_ie(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::SpllLockIe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SPLL LOCK Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_spll_lock_ie(&mut self, val: super::vals::SpllLockIe) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_spll_lock_ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
 }
 impl Default for Spllcsr {
@@ -2543,7 +2543,7 @@ impl defmt::Format for Spllcsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Spllcsr {{ spllpwren: {:?}, spllclken: {:?}, spllsten: {:?}, spllcm: {:?}, spllcmre: {:?}, lk: {:?}, spll_lock: {:?}, spllsel: {:?}, spllerr: {:?}, spll_lock_ie: {:?} }}",
+            "Spllcsr {{ spllpwren: {=bool:?}, spllclken: {=bool:?}, spllsten: {:?}, spllcm: {=bool:?}, spllcmre: {:?}, lk: {:?}, spll_lock: {:?}, spllsel: {=bool:?}, spllerr: {:?}, spll_lock_ie: {=bool:?} }}",
             self.spllpwren(),
             self.spllclken(),
             self.spllsten(),
@@ -2601,62 +2601,62 @@ impl Spllctrl {
     #[doc = "Bypass of Divide-by-2 Divider"]
     #[must_use]
     #[inline(always)]
-    pub const fn bypasspostdiv2(&self) -> super::vals::SpllctrlBypasspostdiv2 {
+    pub const fn bypasspostdiv2(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::SpllctrlBypasspostdiv2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bypass of Divide-by-2 Divider"]
     #[inline(always)]
-    pub const fn set_bypasspostdiv2(&mut self, val: super::vals::SpllctrlBypasspostdiv2) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_bypasspostdiv2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Up Limiter."]
     #[must_use]
     #[inline(always)]
-    pub const fn limupoff(&self) -> super::vals::SpllctrlLimupoff {
+    pub const fn limupoff(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::SpllctrlLimupoff::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Up Limiter."]
     #[inline(always)]
-    pub const fn set_limupoff(&mut self, val: super::vals::SpllctrlLimupoff) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_limupoff(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Control of the bandwidth of the PLL."]
     #[must_use]
     #[inline(always)]
-    pub const fn banddirect(&self) -> super::vals::SpllctrlBanddirect {
+    pub const fn banddirect(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::SpllctrlBanddirect::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Control of the bandwidth of the PLL."]
     #[inline(always)]
-    pub const fn set_banddirect(&mut self, val: super::vals::SpllctrlBanddirect) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_banddirect(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Bypass of the predivider."]
     #[must_use]
     #[inline(always)]
-    pub const fn bypassprediv(&self) -> super::vals::SpllctrlBypassprediv {
+    pub const fn bypassprediv(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::SpllctrlBypassprediv::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bypass of the predivider."]
     #[inline(always)]
-    pub const fn set_bypassprediv(&mut self, val: super::vals::SpllctrlBypassprediv) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_bypassprediv(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "Bypass of the postdivider."]
     #[must_use]
     #[inline(always)]
-    pub const fn bypasspostdiv(&self) -> super::vals::SpllctrlBypasspostdiv {
+    pub const fn bypasspostdiv(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::SpllctrlBypasspostdiv::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bypass of the postdivider."]
     #[inline(always)]
-    pub const fn set_bypasspostdiv(&mut self, val: super::vals::SpllctrlBypasspostdiv) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_bypasspostdiv(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "Clock Source"]
     #[must_use]
@@ -2697,7 +2697,7 @@ impl defmt::Format for Spllctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Spllctrl {{ selr: {=u8:?}, seli: {=u8:?}, selp: {=u8:?}, bypasspostdiv2: {:?}, limupoff: {:?}, banddirect: {:?}, bypassprediv: {:?}, bypasspostdiv: {:?}, source: {:?} }}",
+            "Spllctrl {{ selr: {=u8:?}, seli: {=u8:?}, selp: {=u8:?}, bypasspostdiv2: {=bool:?}, limupoff: {=bool:?}, banddirect: {=bool:?}, bypassprediv: {=bool:?}, bypasspostdiv: {=bool:?}, source: {:?} }}",
             self.selr(),
             self.seli(),
             self.selp(),
@@ -2771,14 +2771,14 @@ impl Spllmdiv {
     #[doc = "Feedback ratio change request."]
     #[must_use]
     #[inline(always)]
-    pub const fn mreq(&self) -> super::vals::SpllmdivMreq {
+    pub const fn mreq(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::SpllmdivMreq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Feedback ratio change request."]
     #[inline(always)]
-    pub const fn set_mreq(&mut self, val: super::vals::SpllmdivMreq) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_mreq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Spllmdiv {
@@ -2800,7 +2800,7 @@ impl defmt::Format for Spllmdiv {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Spllmdiv {{ mdiv: {=u16:?}, mreq: {:?} }}",
+            "Spllmdiv {{ mdiv: {=u16:?}, mreq: {=bool:?} }}",
             self.mdiv(),
             self.mreq()
         )
@@ -2826,14 +2826,14 @@ impl Spllndiv {
     #[doc = "Predivider ratio change request."]
     #[must_use]
     #[inline(always)]
-    pub const fn nreq(&self) -> super::vals::SpllndivNreq {
+    pub const fn nreq(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::SpllndivNreq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Predivider ratio change request."]
     #[inline(always)]
-    pub const fn set_nreq(&mut self, val: super::vals::SpllndivNreq) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_nreq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Spllndiv {
@@ -2855,7 +2855,7 @@ impl defmt::Format for Spllndiv {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Spllndiv {{ ndiv: {=u8:?}, nreq: {:?} }}",
+            "Spllndiv {{ ndiv: {=u8:?}, nreq: {=bool:?} }}",
             self.ndiv(),
             self.nreq()
         )
@@ -2881,14 +2881,14 @@ impl Spllpdiv {
     #[doc = "Postdivider ratio change request"]
     #[must_use]
     #[inline(always)]
-    pub const fn preq(&self) -> super::vals::SpllpdivPreq {
+    pub const fn preq(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::SpllpdivPreq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Postdivider ratio change request"]
     #[inline(always)]
-    pub const fn set_preq(&mut self, val: super::vals::SpllpdivPreq) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_preq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Spllpdiv {
@@ -2910,7 +2910,7 @@ impl defmt::Format for Spllpdiv {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Spllpdiv {{ pdiv: {=u8:?}, preq: {:?} }}",
+            "Spllpdiv {{ pdiv: {=u8:?}, preq: {=bool:?} }}",
             self.pdiv(),
             self.preq()
         )
@@ -2977,14 +2977,14 @@ impl Spllsscg1 {
     #[doc = "SS_MDIV\\[32:0\\] change request."]
     #[must_use]
     #[inline(always)]
-    pub const fn ss_mdiv_req(&self) -> super::vals::Spllsscg1SsMdivReq {
+    pub const fn ss_mdiv_req(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Spllsscg1SsMdivReq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SS_MDIV\\[32:0\\] change request."]
     #[inline(always)]
-    pub const fn set_ss_mdiv_req(&mut self, val: super::vals::Spllsscg1SsMdivReq) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_ss_mdiv_req(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Modulation Frequency Control"]
     #[must_use]
@@ -3025,38 +3025,38 @@ impl Spllsscg1 {
     #[doc = "Dither Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dither(&self) -> super::vals::Spllsscg1Dither {
+    pub const fn dither(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Spllsscg1Dither::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Dither Enable"]
     #[inline(always)]
-    pub const fn set_dither(&mut self, val: super::vals::Spllsscg1Dither) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_dither(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "SS_MDIV select."]
     #[must_use]
     #[inline(always)]
-    pub const fn sel_ss_mdiv(&self) -> super::vals::Spllsscg1SelSsMdiv {
+    pub const fn sel_ss_mdiv(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Spllsscg1SelSsMdiv::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SS_MDIV select."]
     #[inline(always)]
-    pub const fn set_sel_ss_mdiv(&mut self, val: super::vals::Spllsscg1SelSsMdiv) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_sel_ss_mdiv(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "SSCG Power Down"]
     #[must_use]
     #[inline(always)]
-    pub const fn ss_pd(&self) -> super::vals::Spllsscg1SsPd {
+    pub const fn ss_pd(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Spllsscg1SsPd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SSCG Power Down"]
     #[inline(always)]
-    pub const fn set_ss_pd(&mut self, val: super::vals::Spllsscg1SsPd) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_ss_pd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Spllsscg1 {
@@ -3084,7 +3084,7 @@ impl defmt::Format for Spllsscg1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Spllsscg1 {{ ss_mdiv_msb: {=bool:?}, ss_mdiv_req: {:?}, mf: {=u8:?}, mr: {=u8:?}, mc: {:?}, dither: {:?}, sel_ss_mdiv: {:?}, ss_pd: {:?} }}",
+            "Spllsscg1 {{ ss_mdiv_msb: {=bool:?}, ss_mdiv_req: {=bool:?}, mf: {=u8:?}, mr: {=u8:?}, mc: {:?}, dither: {=bool:?}, sel_ss_mdiv: {=bool:?}, ss_pd: {=bool:?} }}",
             self.ss_mdiv_msb(),
             self.ss_mdiv_req(),
             self.mf(),
@@ -3104,14 +3104,14 @@ impl Spllsscgstat {
     #[doc = "SS_MDIV change acknowledge"]
     #[must_use]
     #[inline(always)]
-    pub const fn ss_mdiv_ack(&self) -> super::vals::SpllsscgstatSsMdivAck {
+    pub const fn ss_mdiv_ack(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::SpllsscgstatSsMdivAck::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SS_MDIV change acknowledge"]
     #[inline(always)]
-    pub const fn set_ss_mdiv_ack(&mut self, val: super::vals::SpllsscgstatSsMdivAck) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_ss_mdiv_ack(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Spllsscgstat {
@@ -3132,7 +3132,7 @@ impl defmt::Format for Spllsscgstat {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Spllsscgstat {{ ss_mdiv_ack: {:?} }}",
+            "Spllsscgstat {{ ss_mdiv_ack: {=bool:?} }}",
             self.ss_mdiv_ack()
         )
     }
@@ -3145,38 +3145,38 @@ impl Spllstat {
     #[doc = "Predivider (N) ratio change acknowledge"]
     #[must_use]
     #[inline(always)]
-    pub const fn ndivack(&self) -> super::vals::SpllstatNdivack {
+    pub const fn ndivack(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::SpllstatNdivack::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Predivider (N) ratio change acknowledge"]
     #[inline(always)]
-    pub const fn set_ndivack(&mut self, val: super::vals::SpllstatNdivack) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_ndivack(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Feedback (M) divider ratio change acknowledge"]
     #[must_use]
     #[inline(always)]
-    pub const fn mdivack(&self) -> super::vals::SpllstatMdivack {
+    pub const fn mdivack(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::SpllstatMdivack::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Feedback (M) divider ratio change acknowledge"]
     #[inline(always)]
-    pub const fn set_mdivack(&mut self, val: super::vals::SpllstatMdivack) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_mdivack(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Postdivider (P) ratio change acknowledge"]
     #[must_use]
     #[inline(always)]
-    pub const fn pdivack(&self) -> super::vals::SpllstatPdivack {
+    pub const fn pdivack(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::SpllstatPdivack::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Postdivider (P) ratio change acknowledge"]
     #[inline(always)]
-    pub const fn set_pdivack(&mut self, val: super::vals::SpllstatPdivack) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_pdivack(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
 }
 impl Default for Spllstat {
@@ -3199,7 +3199,7 @@ impl defmt::Format for Spllstat {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Spllstat {{ ndivack: {:?}, mdivack: {:?}, pdivack: {:?} }}",
+            "Spllstat {{ ndivack: {=bool:?}, mdivack: {=bool:?}, pdivack: {=bool:?} }}",
             self.ndivack(),
             self.mdivack(),
             self.pdivack()
@@ -3283,14 +3283,14 @@ impl Upllcsr {
     #[doc = "UPLL Clock Monitor"]
     #[must_use]
     #[inline(always)]
-    pub const fn upllcm(&self) -> super::vals::Upllcm {
+    pub const fn upllcm(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Upllcm::from_bits(val as u8)
+        val != 0
     }
     #[doc = "UPLL Clock Monitor"]
     #[inline(always)]
-    pub const fn set_upllcm(&mut self, val: super::vals::Upllcm) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_upllcm(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "UPLL Clock Monitor Reset Enable"]
     #[must_use]
@@ -3331,14 +3331,14 @@ impl Upllcsr {
     #[doc = "UPLL Selected"]
     #[must_use]
     #[inline(always)]
-    pub const fn upllsel(&self) -> super::vals::Upllsel {
+    pub const fn upllsel(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Upllsel::from_bits(val as u8)
+        val != 0
     }
     #[doc = "UPLL Selected"]
     #[inline(always)]
-    pub const fn set_upllsel(&mut self, val: super::vals::Upllsel) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_upllsel(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "UPLL Clock Error"]
     #[must_use]
@@ -3376,7 +3376,7 @@ impl defmt::Format for Upllcsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Upllcsr {{ upllcm: {:?}, upllcmre: {:?}, lk: {:?}, upllvld: {:?}, upllsel: {:?}, upllerr: {:?} }}",
+            "Upllcsr {{ upllcm: {=bool:?}, upllcmre: {:?}, lk: {:?}, upllvld: {:?}, upllsel: {=bool:?}, upllerr: {:?} }}",
             self.upllcm(),
             self.upllcmre(),
             self.lk(),

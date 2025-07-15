@@ -1766,122 +1766,122 @@ impl Conen {
     #[doc = "No Change Conflict Event and Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ncen0(&self) -> super::vals::Ncen0 {
+    pub const fn ncen0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Ncen0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "No Change Conflict Event and Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ncen0(&mut self, val: super::vals::Ncen0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_ncen0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "No Change Conflict Event and Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ncen1(&self) -> super::vals::Ncen1 {
+    pub const fn ncen1(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Ncen1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "No Change Conflict Event and Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ncen1(&mut self, val: super::vals::Ncen1) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_ncen1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "No Change Conflict Event and Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ncen2(&self) -> super::vals::Ncen2 {
+    pub const fn ncen2(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Ncen2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "No Change Conflict Event and Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ncen2(&mut self, val: super::vals::Ncen2) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_ncen2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "No Change Conflict Event and Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ncen3(&self) -> super::vals::Ncen3 {
+    pub const fn ncen3(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Ncen3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "No Change Conflict Event and Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ncen3(&mut self, val: super::vals::Ncen3) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_ncen3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "No Change Conflict Event and Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ncen4(&self) -> super::vals::Ncen4 {
+    pub const fn ncen4(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Ncen4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "No Change Conflict Event and Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ncen4(&mut self, val: super::vals::Ncen4) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_ncen4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "No Change Conflict Event and Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ncen5(&self) -> super::vals::Ncen5 {
+    pub const fn ncen5(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Ncen5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "No Change Conflict Event and Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ncen5(&mut self, val: super::vals::Ncen5) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_ncen5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "No Change Conflict Event and Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ncen6(&self) -> super::vals::Ncen6 {
+    pub const fn ncen6(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Ncen6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "No Change Conflict Event and Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ncen6(&mut self, val: super::vals::Ncen6) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_ncen6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "No Change Conflict Event and Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ncen7(&self) -> super::vals::Ncen7 {
+    pub const fn ncen7(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Ncen7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "No Change Conflict Event and Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ncen7(&mut self, val: super::vals::Ncen7) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_ncen7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "No Change Conflict Event and Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ncen8(&self) -> super::vals::Ncen8 {
+    pub const fn ncen8(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Ncen8::from_bits(val as u8)
+        val != 0
     }
     #[doc = "No Change Conflict Event and Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ncen8(&mut self, val: super::vals::Ncen8) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_ncen8(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "No Change Conflict Event and Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ncen9(&self) -> super::vals::Ncen9 {
+    pub const fn ncen9(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Ncen9::from_bits(val as u8)
+        val != 0
     }
     #[doc = "No Change Conflict Event and Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ncen9(&mut self, val: super::vals::Ncen9) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_ncen9(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
 }
 impl Default for Conen {
@@ -1911,7 +1911,7 @@ impl defmt::Format for Conen {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Conen {{ ncen0: {:?}, ncen1: {:?}, ncen2: {:?}, ncen3: {:?}, ncen4: {:?}, ncen5: {:?}, ncen6: {:?}, ncen7: {:?}, ncen8: {:?}, ncen9: {:?} }}",
+            "Conen {{ ncen0: {=bool:?}, ncen1: {=bool:?}, ncen2: {=bool:?}, ncen3: {=bool:?}, ncen4: {=bool:?}, ncen5: {=bool:?}, ncen6: {=bool:?}, ncen7: {=bool:?}, ncen8: {=bool:?}, ncen9: {=bool:?} }}",
             self.ncen0(),
             self.ncen1(),
             self.ncen2(),
@@ -2005,26 +2005,26 @@ impl Config {
     #[doc = "Auto Limit Lower"]
     #[must_use]
     #[inline(always)]
-    pub const fn autolimit_l(&self) -> super::vals::AutolimitL {
+    pub const fn autolimit_l(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::AutolimitL::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Auto Limit Lower"]
     #[inline(always)]
-    pub const fn set_autolimit_l(&mut self, val: super::vals::AutolimitL) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_autolimit_l(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Auto Limit Higher"]
     #[must_use]
     #[inline(always)]
-    pub const fn autolimit_h(&self) -> super::vals::AutolimitH {
+    pub const fn autolimit_h(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::AutolimitH::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Auto Limit Higher"]
     #[inline(always)]
-    pub const fn set_autolimit_h(&mut self, val: super::vals::AutolimitH) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_autolimit_h(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
 }
 impl Default for Config {
@@ -2052,7 +2052,7 @@ impl defmt::Format for Config {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Config {{ unify: {:?}, clkmode: {:?}, cksel: {:?}, noreload_l: {:?}, noreload_h: {:?}, insync: {=u8:?}, autolimit_l: {:?}, autolimit_h: {:?} }}",
+            "Config {{ unify: {:?}, clkmode: {:?}, cksel: {:?}, noreload_l: {:?}, noreload_h: {:?}, insync: {=u8:?}, autolimit_l: {=bool:?}, autolimit_h: {=bool:?} }}",
             self.unify(),
             self.clkmode(),
             self.cksel(),
@@ -2072,122 +2072,122 @@ impl Conflag {
     #[doc = "No Change Conflict Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn ncflag0(&self) -> super::vals::Ncflag0 {
+    pub const fn ncflag0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Ncflag0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "No Change Conflict Event Flag"]
     #[inline(always)]
-    pub const fn set_ncflag0(&mut self, val: super::vals::Ncflag0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_ncflag0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "No Change Conflict Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn ncflag1(&self) -> super::vals::Ncflag1 {
+    pub const fn ncflag1(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Ncflag1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "No Change Conflict Event Flag"]
     #[inline(always)]
-    pub const fn set_ncflag1(&mut self, val: super::vals::Ncflag1) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_ncflag1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "No Change Conflict Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn ncflag2(&self) -> super::vals::Ncflag2 {
+    pub const fn ncflag2(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Ncflag2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "No Change Conflict Event Flag"]
     #[inline(always)]
-    pub const fn set_ncflag2(&mut self, val: super::vals::Ncflag2) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_ncflag2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "No Change Conflict Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn ncflag3(&self) -> super::vals::Ncflag3 {
+    pub const fn ncflag3(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Ncflag3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "No Change Conflict Event Flag"]
     #[inline(always)]
-    pub const fn set_ncflag3(&mut self, val: super::vals::Ncflag3) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_ncflag3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "No Change Conflict Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn ncflag4(&self) -> super::vals::Ncflag4 {
+    pub const fn ncflag4(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Ncflag4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "No Change Conflict Event Flag"]
     #[inline(always)]
-    pub const fn set_ncflag4(&mut self, val: super::vals::Ncflag4) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_ncflag4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "No Change Conflict Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn ncflag5(&self) -> super::vals::Ncflag5 {
+    pub const fn ncflag5(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Ncflag5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "No Change Conflict Event Flag"]
     #[inline(always)]
-    pub const fn set_ncflag5(&mut self, val: super::vals::Ncflag5) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_ncflag5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "No Change Conflict Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn ncflag6(&self) -> super::vals::Ncflag6 {
+    pub const fn ncflag6(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Ncflag6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "No Change Conflict Event Flag"]
     #[inline(always)]
-    pub const fn set_ncflag6(&mut self, val: super::vals::Ncflag6) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_ncflag6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "No Change Conflict Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn ncflag7(&self) -> super::vals::Ncflag7 {
+    pub const fn ncflag7(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Ncflag7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "No Change Conflict Event Flag"]
     #[inline(always)]
-    pub const fn set_ncflag7(&mut self, val: super::vals::Ncflag7) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_ncflag7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "No Change Conflict Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn ncflag8(&self) -> super::vals::Ncflag8 {
+    pub const fn ncflag8(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Ncflag8::from_bits(val as u8)
+        val != 0
     }
     #[doc = "No Change Conflict Event Flag"]
     #[inline(always)]
-    pub const fn set_ncflag8(&mut self, val: super::vals::Ncflag8) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_ncflag8(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "No Change Conflict Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn ncflag9(&self) -> super::vals::Ncflag9 {
+    pub const fn ncflag9(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Ncflag9::from_bits(val as u8)
+        val != 0
     }
     #[doc = "No Change Conflict Event Flag"]
     #[inline(always)]
-    pub const fn set_ncflag9(&mut self, val: super::vals::Ncflag9) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_ncflag9(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Bus Error Low or Unified"]
     #[must_use]
@@ -2243,7 +2243,7 @@ impl defmt::Format for Conflag {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Conflag {{ ncflag0: {:?}, ncflag1: {:?}, ncflag2: {:?}, ncflag3: {:?}, ncflag4: {:?}, ncflag5: {:?}, ncflag6: {:?}, ncflag7: {:?}, ncflag8: {:?}, ncflag9: {:?}, buserrl: {=bool:?}, buserrh: {=bool:?} }}",
+            "Conflag {{ ncflag0: {=bool:?}, ncflag1: {=bool:?}, ncflag2: {=bool:?}, ncflag3: {=bool:?}, ncflag4: {=bool:?}, ncflag5: {=bool:?}, ncflag6: {=bool:?}, ncflag7: {=bool:?}, ncflag8: {=bool:?}, ncflag9: {=bool:?}, buserrl: {=bool:?}, buserrh: {=bool:?} }}",
             self.ncflag0(),
             self.ncflag1(),
             self.ncflag2(),
@@ -2334,26 +2334,26 @@ impl Ctrl {
     #[doc = "Stop Counter Low"]
     #[must_use]
     #[inline(always)]
-    pub const fn stop_l(&self) -> super::vals::StopL {
+    pub const fn stop_l(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::StopL::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Stop Counter Low"]
     #[inline(always)]
-    pub const fn set_stop_l(&mut self, val: super::vals::StopL) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_stop_l(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Halt Counter Low"]
     #[must_use]
     #[inline(always)]
-    pub const fn halt_l(&self) -> super::vals::HaltL {
+    pub const fn halt_l(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::HaltL::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Halt Counter Low"]
     #[inline(always)]
-    pub const fn set_halt_l(&mut self, val: super::vals::HaltL) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_halt_l(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Clear Counter Low"]
     #[must_use]
@@ -2406,26 +2406,26 @@ impl Ctrl {
     #[doc = "Stop Counter High"]
     #[must_use]
     #[inline(always)]
-    pub const fn stop_h(&self) -> super::vals::StopH {
+    pub const fn stop_h(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::StopH::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Stop Counter High"]
     #[inline(always)]
-    pub const fn set_stop_h(&mut self, val: super::vals::StopH) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_stop_h(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Halt Counter High"]
     #[must_use]
     #[inline(always)]
-    pub const fn halt_h(&self) -> super::vals::HaltH {
+    pub const fn halt_h(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::HaltH::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Halt Counter High"]
     #[inline(always)]
-    pub const fn set_halt_h(&mut self, val: super::vals::HaltH) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_halt_h(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Clear Counter High"]
     #[must_use]
@@ -2493,7 +2493,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ down_l: {:?}, stop_l: {:?}, halt_l: {:?}, clrctr_l: {=bool:?}, bidir_l: {:?}, pre_l: {=u8:?}, down_h: {:?}, stop_h: {:?}, halt_h: {:?}, clrctr_h: {=bool:?}, bidir_h: {:?}, pre_h: {=u8:?} }}",
+            "Ctrl {{ down_l: {:?}, stop_l: {=bool:?}, halt_l: {=bool:?}, clrctr_l: {=bool:?}, bidir_l: {:?}, pre_l: {=u8:?}, down_h: {:?}, stop_h: {=bool:?}, halt_h: {=bool:?}, clrctr_h: {=bool:?}, bidir_h: {:?}, pre_h: {=u8:?} }}",
             self.down_l(),
             self.stop_l(),
             self.halt_l(),
@@ -3334,194 +3334,194 @@ impl Even {
     #[doc = "Event Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ien0(&self) -> super::vals::Ien0 {
+    pub const fn ien0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Ien0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ien0(&mut self, val: super::vals::Ien0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_ien0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Event Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ien1(&self) -> super::vals::Ien1 {
+    pub const fn ien1(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Ien1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ien1(&mut self, val: super::vals::Ien1) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_ien1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Event Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ien2(&self) -> super::vals::Ien2 {
+    pub const fn ien2(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Ien2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ien2(&mut self, val: super::vals::Ien2) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_ien2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Event Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ien3(&self) -> super::vals::Ien3 {
+    pub const fn ien3(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Ien3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ien3(&mut self, val: super::vals::Ien3) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_ien3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Event Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ien4(&self) -> super::vals::Ien4 {
+    pub const fn ien4(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Ien4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ien4(&mut self, val: super::vals::Ien4) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_ien4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Event Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ien5(&self) -> super::vals::Ien5 {
+    pub const fn ien5(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Ien5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ien5(&mut self, val: super::vals::Ien5) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_ien5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Event Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ien6(&self) -> super::vals::Ien6 {
+    pub const fn ien6(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Ien6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ien6(&mut self, val: super::vals::Ien6) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_ien6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Event Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ien7(&self) -> super::vals::Ien7 {
+    pub const fn ien7(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Ien7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ien7(&mut self, val: super::vals::Ien7) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_ien7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Event Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ien8(&self) -> super::vals::Ien8 {
+    pub const fn ien8(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Ien8::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ien8(&mut self, val: super::vals::Ien8) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_ien8(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Event Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ien9(&self) -> super::vals::Ien9 {
+    pub const fn ien9(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Ien9::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ien9(&mut self, val: super::vals::Ien9) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_ien9(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Event Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ien10(&self) -> super::vals::Ien10 {
+    pub const fn ien10(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Ien10::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ien10(&mut self, val: super::vals::Ien10) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_ien10(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Event Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ien11(&self) -> super::vals::Ien11 {
+    pub const fn ien11(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Ien11::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ien11(&mut self, val: super::vals::Ien11) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_ien11(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Event Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ien12(&self) -> super::vals::Ien12 {
+    pub const fn ien12(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Ien12::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ien12(&mut self, val: super::vals::Ien12) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_ien12(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Event Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ien13(&self) -> super::vals::Ien13 {
+    pub const fn ien13(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Ien13::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ien13(&mut self, val: super::vals::Ien13) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_ien13(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Event Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ien14(&self) -> super::vals::Ien14 {
+    pub const fn ien14(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Ien14::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ien14(&mut self, val: super::vals::Ien14) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_ien14(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Event Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ien15(&self) -> super::vals::Ien15 {
+    pub const fn ien15(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Ien15::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ien15(&mut self, val: super::vals::Ien15) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_ien15(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
 }
 impl Default for Even {
@@ -3557,7 +3557,7 @@ impl defmt::Format for Even {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Even {{ ien0: {:?}, ien1: {:?}, ien2: {:?}, ien3: {:?}, ien4: {:?}, ien5: {:?}, ien6: {:?}, ien7: {:?}, ien8: {:?}, ien9: {:?}, ien10: {:?}, ien11: {:?}, ien12: {:?}, ien13: {:?}, ien14: {:?}, ien15: {:?} }}",
+            "Even {{ ien0: {=bool:?}, ien1: {=bool:?}, ien2: {=bool:?}, ien3: {=bool:?}, ien4: {=bool:?}, ien5: {=bool:?}, ien6: {=bool:?}, ien7: {=bool:?}, ien8: {=bool:?}, ien9: {=bool:?}, ien10: {=bool:?}, ien11: {=bool:?}, ien12: {=bool:?}, ien13: {=bool:?}, ien14: {=bool:?}, ien15: {=bool:?} }}",
             self.ien0(),
             self.ien1(),
             self.ien2(),
@@ -3585,194 +3585,194 @@ impl Evflag {
     #[doc = "Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn flag0(&self) -> super::vals::Flag0 {
+    pub const fn flag0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Flag0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Flag"]
     #[inline(always)]
-    pub const fn set_flag0(&mut self, val: super::vals::Flag0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_flag0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn flag1(&self) -> super::vals::Flag1 {
+    pub const fn flag1(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Flag1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Flag"]
     #[inline(always)]
-    pub const fn set_flag1(&mut self, val: super::vals::Flag1) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_flag1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn flag2(&self) -> super::vals::Flag2 {
+    pub const fn flag2(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Flag2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Flag"]
     #[inline(always)]
-    pub const fn set_flag2(&mut self, val: super::vals::Flag2) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_flag2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn flag3(&self) -> super::vals::Flag3 {
+    pub const fn flag3(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Flag3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Flag"]
     #[inline(always)]
-    pub const fn set_flag3(&mut self, val: super::vals::Flag3) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_flag3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn flag4(&self) -> super::vals::Flag4 {
+    pub const fn flag4(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Flag4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Flag"]
     #[inline(always)]
-    pub const fn set_flag4(&mut self, val: super::vals::Flag4) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_flag4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn flag5(&self) -> super::vals::Flag5 {
+    pub const fn flag5(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Flag5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Flag"]
     #[inline(always)]
-    pub const fn set_flag5(&mut self, val: super::vals::Flag5) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_flag5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn flag6(&self) -> super::vals::Flag6 {
+    pub const fn flag6(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Flag6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Flag"]
     #[inline(always)]
-    pub const fn set_flag6(&mut self, val: super::vals::Flag6) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_flag6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn flag7(&self) -> super::vals::Flag7 {
+    pub const fn flag7(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Flag7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Flag"]
     #[inline(always)]
-    pub const fn set_flag7(&mut self, val: super::vals::Flag7) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_flag7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn flag8(&self) -> super::vals::Flag8 {
+    pub const fn flag8(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Flag8::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Flag"]
     #[inline(always)]
-    pub const fn set_flag8(&mut self, val: super::vals::Flag8) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_flag8(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn flag9(&self) -> super::vals::Flag9 {
+    pub const fn flag9(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Flag9::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Flag"]
     #[inline(always)]
-    pub const fn set_flag9(&mut self, val: super::vals::Flag9) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_flag9(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn flag10(&self) -> super::vals::Flag10 {
+    pub const fn flag10(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Flag10::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Flag"]
     #[inline(always)]
-    pub const fn set_flag10(&mut self, val: super::vals::Flag10) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_flag10(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn flag11(&self) -> super::vals::Flag11 {
+    pub const fn flag11(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Flag11::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Flag"]
     #[inline(always)]
-    pub const fn set_flag11(&mut self, val: super::vals::Flag11) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_flag11(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn flag12(&self) -> super::vals::Flag12 {
+    pub const fn flag12(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Flag12::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Flag"]
     #[inline(always)]
-    pub const fn set_flag12(&mut self, val: super::vals::Flag12) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_flag12(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn flag13(&self) -> super::vals::Flag13 {
+    pub const fn flag13(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Flag13::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Flag"]
     #[inline(always)]
-    pub const fn set_flag13(&mut self, val: super::vals::Flag13) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_flag13(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn flag14(&self) -> super::vals::Flag14 {
+    pub const fn flag14(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Flag14::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Flag"]
     #[inline(always)]
-    pub const fn set_flag14(&mut self, val: super::vals::Flag14) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_flag14(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Event Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn flag15(&self) -> super::vals::Flag15 {
+    pub const fn flag15(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Flag15::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Flag"]
     #[inline(always)]
-    pub const fn set_flag15(&mut self, val: super::vals::Flag15) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_flag15(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
 }
 impl Default for Evflag {
@@ -3808,7 +3808,7 @@ impl defmt::Format for Evflag {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Evflag {{ flag0: {:?}, flag1: {:?}, flag2: {:?}, flag3: {:?}, flag4: {:?}, flag5: {:?}, flag6: {:?}, flag7: {:?}, flag8: {:?}, flag9: {:?}, flag10: {:?}, flag11: {:?}, flag12: {:?}, flag13: {:?}, flag14: {:?}, flag15: {:?} }}",
+            "Evflag {{ flag0: {=bool:?}, flag1: {=bool:?}, flag2: {=bool:?}, flag3: {=bool:?}, flag4: {=bool:?}, flag5: {=bool:?}, flag6: {=bool:?}, flag7: {=bool:?}, flag8: {=bool:?}, flag9: {=bool:?}, flag10: {=bool:?}, flag11: {=bool:?}, flag12: {=bool:?}, flag13: {=bool:?}, flag14: {=bool:?}, flag15: {=bool:?} }}",
             self.flag0(),
             self.flag1(),
             self.flag2(),

@@ -32,37 +32,6 @@ impl From<Active> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Ahbbustimeout {
-    #[doc = "Interrupt condition has not occurred"]
-    NO_INTERRUPT = 0x0,
-    #[doc = "Interrupt condition has occurred"]
-    INTERRUPT = 0x01,
-}
-impl Ahbbustimeout {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Ahbbustimeout {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Ahbbustimeout {
-    #[inline(always)]
-    fn from(val: u8) -> Ahbbustimeout {
-        Ahbbustimeout::from_bits(val)
-    }
-}
-impl From<Ahbbustimeout> for u8 {
-    #[inline(always)]
-    fn from(val: Ahbbustimeout) -> u8 {
-        Ahbbustimeout::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ahbbustimeouten {
     #[doc = "Disable interrupt or no impact"]
     VALUE0 = 0x0,
@@ -89,37 +58,6 @@ impl From<Ahbbustimeouten> for u8 {
     #[inline(always)]
     fn from(val: Ahbbustimeouten) -> u8 {
         Ahbbustimeouten::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Ahbcmderr {
-    #[doc = "Interrupt condition has not occurred"]
-    NO_INTERRUPT = 0x0,
-    #[doc = "Interrupt condition has occurred"]
-    INTERRUPT = 0x01,
-}
-impl Ahbcmderr {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Ahbcmderr {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Ahbcmderr {
-    #[inline(always)]
-    fn from(val: u8) -> Ahbcmderr {
-        Ahbcmderr::from_bits(val)
-    }
-}
-impl From<Ahbcmderr> for u8 {
-    #[inline(always)]
-    fn from(val: Ahbcmderr) -> u8 {
-        Ahbcmderr::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -205,37 +143,6 @@ impl From<Ahbcmderren> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Ahbcmdge {
-    #[doc = "Interrupt condition has not occurred"]
-    NO_INTERRUPT = 0x0,
-    #[doc = "Interrupt condition has occurred"]
-    INTERRUPT = 0x01,
-}
-impl Ahbcmdge {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Ahbcmdge {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Ahbcmdge {
-    #[inline(always)]
-    fn from(val: u8) -> Ahbcmdge {
-        Ahbcmdge::from_bits(val)
-    }
-}
-impl From<Ahbcmdge> for u8 {
-    #[inline(always)]
-    fn from(val: Ahbcmdge) -> u8 {
-        Ahbcmdge::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ahbcmdgeen {
     #[doc = "Disable interrupt or no impact"]
     VALUE0 = 0x0,
@@ -293,37 +200,6 @@ impl From<AhbcrPrefetchen> for u8 {
     #[inline(always)]
     fn from(val: AhbcrPrefetchen) -> u8 {
         AhbcrPrefetchen::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Ahbgcmerr {
-    #[doc = "Interrupt condition has not occurred"]
-    NO_INTERRUPT = 0x0,
-    #[doc = "Interrupt condition has occurred"]
-    INTERRUPT = 0x01,
-}
-impl Ahbgcmerr {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Ahbgcmerr {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Ahbgcmerr {
-    #[inline(always)]
-    fn from(val: u8) -> Ahbgcmerr {
-        Ahbgcmerr::from_bits(val)
-    }
-}
-impl From<Ahbgcmerr> for u8 {
-    #[inline(always)]
-    fn from(val: Ahbgcmerr) -> u8 {
-        Ahbgcmerr::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1589,37 +1465,6 @@ impl From<Clrlearnphase> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Combinationen {
-    #[doc = "Disable"]
-    DISABLE = 0x0,
-    #[doc = "Enable"]
-    ENABLE = 0x01,
-}
-impl Combinationen {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Combinationen {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Combinationen {
-    #[inline(always)]
-    fn from(val: u8) -> Combinationen {
-        Combinationen::from_bits(val)
-    }
-}
-impl From<Combinationen> for u8 {
-    #[inline(always)]
-    fn from(val: Combinationen) -> u8 {
-        Combinationen::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Config {
     #[doc = "Fully pipelined"]
     VAL0 = 0x0,
@@ -1677,37 +1522,6 @@ impl From<Csintervalunit> for u8 {
     #[inline(always)]
     fn from(val: Csintervalunit) -> u8 {
         Csintervalunit::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Datalearnfail {
-    #[doc = "Interrupt condition has not occurred"]
-    NO_INTERRUPT = 0x0,
-    #[doc = "Interrupt condition has occurred"]
-    INTERRUPT = 0x01,
-}
-impl Datalearnfail {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Datalearnfail {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Datalearnfail {
-    #[inline(always)]
-    fn from(val: u8) -> Datalearnfail {
-        Datalearnfail::from_bits(val)
-    }
-}
-impl From<Datalearnfail> for u8 {
-    #[inline(always)]
-    fn from(val: Datalearnfail) -> u8 {
-        Datalearnfail::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1837,378 +1651,6 @@ impl From<Dozeen> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Flsha1cr0Addrshift {
-    #[doc = "Disabled"]
-    DISABLE = 0x0,
-    #[doc = "Enabled"]
-    ENABLE = 0x01,
-}
-impl Flsha1cr0Addrshift {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Flsha1cr0Addrshift {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Flsha1cr0Addrshift {
-    #[inline(always)]
-    fn from(val: u8) -> Flsha1cr0Addrshift {
-        Flsha1cr0Addrshift::from_bits(val)
-    }
-}
-impl From<Flsha1cr0Addrshift> for u8 {
-    #[inline(always)]
-    fn from(val: Flsha1cr0Addrshift) -> u8 {
-        Flsha1cr0Addrshift::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Flsha1cr0Splitrden {
-    #[doc = "Disable"]
-    DISABLE = 0x0,
-    #[doc = "Enable"]
-    ENABLE = 0x01,
-}
-impl Flsha1cr0Splitrden {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Flsha1cr0Splitrden {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Flsha1cr0Splitrden {
-    #[inline(always)]
-    fn from(val: u8) -> Flsha1cr0Splitrden {
-        Flsha1cr0Splitrden::from_bits(val)
-    }
-}
-impl From<Flsha1cr0Splitrden> for u8 {
-    #[inline(always)]
-    fn from(val: Flsha1cr0Splitrden) -> u8 {
-        Flsha1cr0Splitrden::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Flsha1cr0Splitwren {
-    #[doc = "Disable"]
-    DISABLE = 0x0,
-    #[doc = "Enable"]
-    ENABLE = 0x01,
-}
-impl Flsha1cr0Splitwren {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Flsha1cr0Splitwren {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Flsha1cr0Splitwren {
-    #[inline(always)]
-    fn from(val: u8) -> Flsha1cr0Splitwren {
-        Flsha1cr0Splitwren::from_bits(val)
-    }
-}
-impl From<Flsha1cr0Splitwren> for u8 {
-    #[inline(always)]
-    fn from(val: Flsha1cr0Splitwren) -> u8 {
-        Flsha1cr0Splitwren::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Flsha2cr0Addrshift {
-    #[doc = "Disabled"]
-    DISABLE = 0x0,
-    #[doc = "Enabled"]
-    ENABLE = 0x01,
-}
-impl Flsha2cr0Addrshift {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Flsha2cr0Addrshift {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Flsha2cr0Addrshift {
-    #[inline(always)]
-    fn from(val: u8) -> Flsha2cr0Addrshift {
-        Flsha2cr0Addrshift::from_bits(val)
-    }
-}
-impl From<Flsha2cr0Addrshift> for u8 {
-    #[inline(always)]
-    fn from(val: Flsha2cr0Addrshift) -> u8 {
-        Flsha2cr0Addrshift::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Flsha2cr0Splitrden {
-    #[doc = "Disable"]
-    DISABLE = 0x0,
-    #[doc = "Enable"]
-    ENABLE = 0x01,
-}
-impl Flsha2cr0Splitrden {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Flsha2cr0Splitrden {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Flsha2cr0Splitrden {
-    #[inline(always)]
-    fn from(val: u8) -> Flsha2cr0Splitrden {
-        Flsha2cr0Splitrden::from_bits(val)
-    }
-}
-impl From<Flsha2cr0Splitrden> for u8 {
-    #[inline(always)]
-    fn from(val: Flsha2cr0Splitrden) -> u8 {
-        Flsha2cr0Splitrden::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Flsha2cr0Splitwren {
-    #[doc = "Disable"]
-    DISABLE = 0x0,
-    #[doc = "Enable"]
-    ENABLE = 0x01,
-}
-impl Flsha2cr0Splitwren {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Flsha2cr0Splitwren {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Flsha2cr0Splitwren {
-    #[inline(always)]
-    fn from(val: u8) -> Flsha2cr0Splitwren {
-        Flsha2cr0Splitwren::from_bits(val)
-    }
-}
-impl From<Flsha2cr0Splitwren> for u8 {
-    #[inline(always)]
-    fn from(val: Flsha2cr0Splitwren) -> u8 {
-        Flsha2cr0Splitwren::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Flshb1cr0Addrshift {
-    #[doc = "Disabled"]
-    DISABLE = 0x0,
-    #[doc = "Enabled"]
-    ENABLE = 0x01,
-}
-impl Flshb1cr0Addrshift {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Flshb1cr0Addrshift {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Flshb1cr0Addrshift {
-    #[inline(always)]
-    fn from(val: u8) -> Flshb1cr0Addrshift {
-        Flshb1cr0Addrshift::from_bits(val)
-    }
-}
-impl From<Flshb1cr0Addrshift> for u8 {
-    #[inline(always)]
-    fn from(val: Flshb1cr0Addrshift) -> u8 {
-        Flshb1cr0Addrshift::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Flshb1cr0Splitrden {
-    #[doc = "Disable"]
-    DISABLE = 0x0,
-    #[doc = "Enable"]
-    ENABLE = 0x01,
-}
-impl Flshb1cr0Splitrden {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Flshb1cr0Splitrden {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Flshb1cr0Splitrden {
-    #[inline(always)]
-    fn from(val: u8) -> Flshb1cr0Splitrden {
-        Flshb1cr0Splitrden::from_bits(val)
-    }
-}
-impl From<Flshb1cr0Splitrden> for u8 {
-    #[inline(always)]
-    fn from(val: Flshb1cr0Splitrden) -> u8 {
-        Flshb1cr0Splitrden::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Flshb1cr0Splitwren {
-    #[doc = "Disable"]
-    DISABLE = 0x0,
-    #[doc = "Enable"]
-    ENABLE = 0x01,
-}
-impl Flshb1cr0Splitwren {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Flshb1cr0Splitwren {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Flshb1cr0Splitwren {
-    #[inline(always)]
-    fn from(val: u8) -> Flshb1cr0Splitwren {
-        Flshb1cr0Splitwren::from_bits(val)
-    }
-}
-impl From<Flshb1cr0Splitwren> for u8 {
-    #[inline(always)]
-    fn from(val: Flshb1cr0Splitwren) -> u8 {
-        Flshb1cr0Splitwren::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Flshb2cr0Addrshift {
-    #[doc = "Disabled"]
-    DISABLE = 0x0,
-    #[doc = "Enabled"]
-    ENABLE = 0x01,
-}
-impl Flshb2cr0Addrshift {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Flshb2cr0Addrshift {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Flshb2cr0Addrshift {
-    #[inline(always)]
-    fn from(val: u8) -> Flshb2cr0Addrshift {
-        Flshb2cr0Addrshift::from_bits(val)
-    }
-}
-impl From<Flshb2cr0Addrshift> for u8 {
-    #[inline(always)]
-    fn from(val: Flshb2cr0Addrshift) -> u8 {
-        Flshb2cr0Addrshift::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Flshb2cr0Splitrden {
-    #[doc = "Disable"]
-    DISABLE = 0x0,
-    #[doc = "Enable"]
-    ENABLE = 0x01,
-}
-impl Flshb2cr0Splitrden {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Flshb2cr0Splitrden {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Flshb2cr0Splitrden {
-    #[inline(always)]
-    fn from(val: u8) -> Flshb2cr0Splitrden {
-        Flshb2cr0Splitrden::from_bits(val)
-    }
-}
-impl From<Flshb2cr0Splitrden> for u8 {
-    #[inline(always)]
-    fn from(val: Flshb2cr0Splitrden) -> u8 {
-        Flshb2cr0Splitrden::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Flshb2cr0Splitwren {
-    #[doc = "Disable"]
-    DISABLE = 0x0,
-    #[doc = "Enable"]
-    ENABLE = 0x01,
-}
-impl Flshb2cr0Splitwren {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Flshb2cr0Splitwren {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Flshb2cr0Splitwren {
-    #[inline(always)]
-    fn from(val: u8) -> Flshb2cr0Splitwren {
-        Flshb2cr0Splitwren::from_bits(val)
-    }
-}
-impl From<Flshb2cr0Splitwren> for u8 {
-    #[inline(always)]
-    fn from(val: Flshb2cr0Splitwren) -> u8 {
-        Flshb2cr0Splitwren::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hsen {
     #[doc = "Disable"]
     VAL0 = 0x0,
@@ -2235,37 +1677,6 @@ impl From<Hsen> for u8 {
     #[inline(always)]
     fn from(val: Hsen) -> u8 {
         Hsen::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Iparen {
-    #[doc = "Disabled. Flash memory is accessed in Individual mode."]
-    DISABLE = 0x0,
-    #[doc = "Enabled. Flash memory is accessed in Parallel mode."]
-    ENABLE = 0x01,
-}
-impl Iparen {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Iparen {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Iparen {
-    #[inline(always)]
-    fn from(val: u8) -> Iparen {
-        Iparen::from_bits(val)
-    }
-}
-impl From<Iparen> for u8 {
-    #[inline(always)]
-    fn from(val: Iparen) -> u8 {
-        Iparen::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -2364,37 +1775,6 @@ impl From<Ipblkallahb> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Ipcmddone {
-    #[doc = "Interrupt condition has not occurred"]
-    NO_INTERRUPT = 0x0,
-    #[doc = "Interrupt condition has occurred"]
-    INTERRUPT = 0x01,
-}
-impl Ipcmddone {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Ipcmddone {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Ipcmddone {
-    #[inline(always)]
-    fn from(val: u8) -> Ipcmddone {
-        Ipcmddone::from_bits(val)
-    }
-}
-impl From<Ipcmddone> for u8 {
-    #[inline(always)]
-    fn from(val: Ipcmddone) -> u8 {
-        Ipcmddone::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ipcmddoneen {
     #[doc = "Disable interrupt or no impact"]
     VALUE0 = 0x0,
@@ -2421,37 +1801,6 @@ impl From<Ipcmddoneen> for u8 {
     #[inline(always)]
     fn from(val: Ipcmddoneen) -> u8 {
         Ipcmddoneen::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Ipcmderr {
-    #[doc = "Interrupt condition has not occurred"]
-    NO_INTERRUPT = 0x0,
-    #[doc = "Interrupt condition has occurred"]
-    INTERRUPT = 0x01,
-}
-impl Ipcmderr {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Ipcmderr {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Ipcmderr {
-    #[inline(always)]
-    fn from(val: u8) -> Ipcmderr {
-        Ipcmderr::from_bits(val)
-    }
-}
-impl From<Ipcmderr> for u8 {
-    #[inline(always)]
-    fn from(val: Ipcmderr) -> u8 {
-        Ipcmderr::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -2539,37 +1888,6 @@ impl From<Ipcmderren> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Ipcmdge {
-    #[doc = "Interrupt condition has not occurred"]
-    NO_INTERRUPT = 0x0,
-    #[doc = "Interrupt condition has occurred"]
-    INTERRUPT = 0x01,
-}
-impl Ipcmdge {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Ipcmdge {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Ipcmdge {
-    #[inline(always)]
-    fn from(val: u8) -> Ipcmdge {
-        Ipcmdge::from_bits(val)
-    }
-}
-impl From<Ipcmdge> for u8 {
-    #[inline(always)]
-    fn from(val: Ipcmdge) -> u8 {
-        Ipcmdge::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ipcmdgeen {
     #[doc = "Disable interrupt or no impact"]
     VALUE0 = 0x0,
@@ -2596,37 +1914,6 @@ impl From<Ipcmdgeen> for u8 {
     #[inline(always)]
     fn from(val: Ipcmdgeen) -> u8 {
         Ipcmdgeen::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Ipcmdsecurevio {
-    #[doc = "Interrupt condition has not occurred"]
-    NO_INTERRUPT = 0x0,
-    #[doc = "Interrupt condition has occurred"]
-    INTERRUPT = 0x01,
-}
-impl Ipcmdsecurevio {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Ipcmdsecurevio {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Ipcmdsecurevio {
-    #[inline(always)]
-    fn from(val: u8) -> Ipcmdsecurevio {
-        Ipcmdsecurevio::from_bits(val)
-    }
-}
-impl From<Ipcmdsecurevio> for u8 {
-    #[inline(always)]
-    fn from(val: Ipcmdsecurevio) -> u8 {
-        Ipcmdsecurevio::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -3221,37 +2508,6 @@ impl From<Ipgcmwr> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Iprxwa {
-    #[doc = "Interrupt condition has not occurred"]
-    NO_INTERRUPT = 0x0,
-    #[doc = "Interrupt condition has occurred"]
-    INTERRUPT = 0x01,
-}
-impl Iprxwa {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Iprxwa {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Iprxwa {
-    #[inline(always)]
-    fn from(val: u8) -> Iprxwa {
-        Iprxwa::from_bits(val)
-    }
-}
-impl From<Iprxwa> for u8 {
-    #[inline(always)]
-    fn from(val: Iprxwa) -> u8 {
-        Iprxwa::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Iprxwaen {
     #[doc = "Disable interrupt or no impact"]
     VALUE0 = 0x0,
@@ -3278,37 +2534,6 @@ impl From<Iprxwaen> for u8 {
     #[inline(always)]
     fn from(val: Iprxwaen) -> u8 {
         Iprxwaen::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Iptxwe {
-    #[doc = "Interrupt condition has not occurred"]
-    NO_INTERRUPT = 0x0,
-    #[doc = "Interrupt condition has occurred"]
-    INTERRUPT = 0x01,
-}
-impl Iptxwe {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Iptxwe {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Iptxwe {
-    #[inline(always)]
-    fn from(val: u8) -> Iptxwe {
-        Iptxwe::from_bits(val)
-    }
-}
-impl From<Iptxwe> for u8 {
-    #[inline(always)]
-    fn from(val: Iptxwe) -> u8 {
-        Iptxwe::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -3371,37 +2596,6 @@ impl From<IpwrEn> for u8 {
     #[inline(always)]
     fn from(val: IpwrEn) -> u8 {
         IpwrEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Learnen {
-    #[doc = "Disable"]
-    DISABLE = 0x0,
-    #[doc = "Enable"]
-    ENABLE = 0x01,
-}
-impl Learnen {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Learnen {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Learnen {
-    #[inline(always)]
-    fn from(val: u8) -> Learnen {
-        Learnen::from_bits(val)
-    }
-}
-impl From<Learnen> for u8 {
-    #[inline(always)]
-    fn from(val: Learnen) -> u8 {
-        Learnen::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -3849,68 +3043,6 @@ impl From<Sckbdiffopt> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Sckfreerunen {
-    #[doc = "Disable"]
-    DISABLE = 0x0,
-    #[doc = "Enable"]
-    ENABLE = 0x01,
-}
-impl Sckfreerunen {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Sckfreerunen {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Sckfreerunen {
-    #[inline(always)]
-    fn from(val: u8) -> Sckfreerunen {
-        Sckfreerunen::from_bits(val)
-    }
-}
-impl From<Sckfreerunen> for u8 {
-    #[inline(always)]
-    fn from(val: Sckfreerunen) -> u8 {
-        Sckfreerunen::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Sckstopbyrd {
-    #[doc = "Interrupt condition has not occurred"]
-    NO_INTERRUPT = 0x0,
-    #[doc = "Interrupt condition has occurred"]
-    INTERRUPT = 0x01,
-}
-impl Sckstopbyrd {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Sckstopbyrd {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Sckstopbyrd {
-    #[inline(always)]
-    fn from(val: u8) -> Sckstopbyrd {
-        Sckstopbyrd::from_bits(val)
-    }
-}
-impl From<Sckstopbyrd> for u8 {
-    #[inline(always)]
-    fn from(val: Sckstopbyrd) -> u8 {
-        Sckstopbyrd::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sckstopbyrden {
     #[doc = "Disable interrupt or no impact"]
     VALUE0 = 0x0,
@@ -3937,37 +3069,6 @@ impl From<Sckstopbyrden> for u8 {
     #[inline(always)]
     fn from(val: Sckstopbyrden) -> u8 {
         Sckstopbyrden::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Sckstopbywr {
-    #[doc = "Interrupt condition has not occurred"]
-    NO_INTERRUPT = 0x0,
-    #[doc = "Interrupt condition has occurred"]
-    INTERRUPT = 0x01,
-}
-impl Sckstopbywr {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Sckstopbywr {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Sckstopbywr {
-    #[inline(always)]
-    fn from(val: u8) -> Sckstopbywr {
-        Sckstopbywr::from_bits(val)
-    }
-}
-impl From<Sckstopbywr> for u8 {
-    #[inline(always)]
-    fn from(val: Sckstopbywr) -> u8 {
-        Sckstopbywr::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -4030,37 +3131,6 @@ impl From<Seqidle> for u8 {
     #[inline(always)]
     fn from(val: Seqidle) -> u8 {
         Seqidle::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Seqtimeout {
-    #[doc = "Interrupt condition has not occurred"]
-    NO_INTERRUPT = 0x0,
-    #[doc = "Interrupt condition has occurred"]
-    INTERRUPT = 0x01,
-}
-impl Seqtimeout {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Seqtimeout {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Seqtimeout {
-    #[inline(always)]
-    fn from(val: u8) -> Seqtimeout {
-        Seqtimeout::from_bits(val)
-    }
-}
-impl From<Seqtimeout> for u8 {
-    #[inline(always)]
-    fn from(val: Seqtimeout) -> u8 {
-        Seqtimeout::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -4352,36 +3422,5 @@ impl From<Wmenb> for u8 {
     #[inline(always)]
     fn from(val: Wmenb) -> u8 {
         Wmenb::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Wmopt1 {
-    #[doc = "When writing to an external device, DQS pin is used as write mask. When flash memory is accessed in individual mode, AHB or IP write burst start address alignment is not limited."]
-    DISABLE = 0x0,
-    #[doc = "When writing to an external device, DQS pin is not used as write mask. When flash memory is accessed in individual mode, AHB or IP write burst start address alignment is limited."]
-    ENABLE = 0x01,
-}
-impl Wmopt1 {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Wmopt1 {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Wmopt1 {
-    #[inline(always)]
-    fn from(val: u8) -> Wmopt1 {
-        Wmopt1::from_bits(val)
-    }
-}
-impl From<Wmopt1> for u8 {
-    #[inline(always)]
-    fn from(val: Wmopt1) -> u8 {
-        Wmopt1::to_bits(val)
     }
 }

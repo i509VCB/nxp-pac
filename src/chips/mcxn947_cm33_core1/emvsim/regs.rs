@@ -157,38 +157,38 @@ impl Ctrl {
     #[doc = "Initial Character Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn icm(&self) -> super::vals::Icm {
+    pub const fn icm(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Icm::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Initial Character Mode"]
     #[inline(always)]
-    pub const fn set_icm(&mut self, val: super::vals::Icm) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_icm(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Auto NACK Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn anack(&self) -> super::vals::Anack {
+    pub const fn anack(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Anack::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Auto NACK Enable"]
     #[inline(always)]
-    pub const fn set_anack(&mut self, val: super::vals::Anack) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_anack(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Overrun NACK Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn onack(&self) -> super::vals::Onack {
+    pub const fn onack(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Onack::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Overrun NACK Enable"]
     #[inline(always)]
-    pub const fn set_onack(&mut self, val: super::vals::Onack) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_onack(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Flush Receiver"]
     #[must_use]
@@ -265,26 +265,26 @@ impl Ctrl {
     #[doc = "Receiver Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn rcv_en(&self) -> super::vals::RcvEn {
+    pub const fn rcv_en(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::RcvEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Receiver Enable"]
     #[inline(always)]
-    pub const fn set_rcv_en(&mut self, val: super::vals::RcvEn) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_rcv_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Transmitter Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn xmt_en(&self) -> super::vals::XmtEn {
+    pub const fn xmt_en(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::XmtEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Transmitter Enable"]
     #[inline(always)]
-    pub const fn set_xmt_en(&mut self, val: super::vals::XmtEn) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_xmt_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Receiver 11 ETU Mode Enable"]
     #[must_use]
@@ -301,122 +301,122 @@ impl Ctrl {
     #[doc = "Receive DMA Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn rx_dma_en(&self) -> super::vals::RxDmaEn {
+    pub const fn rx_dma_en(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::RxDmaEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Receive DMA Enable"]
     #[inline(always)]
-    pub const fn set_rx_dma_en(&mut self, val: super::vals::RxDmaEn) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_rx_dma_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "Transmit DMA Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tx_dma_en(&self) -> super::vals::TxDmaEn {
+    pub const fn tx_dma_en(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::TxDmaEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Transmit DMA Enable"]
     #[inline(always)]
-    pub const fn set_tx_dma_en(&mut self, val: super::vals::TxDmaEn) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_tx_dma_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "Invert CRC Output Value Bits"]
     #[must_use]
     #[inline(always)]
-    pub const fn inv_crc_val(&self) -> super::vals::InvCrcVal {
+    pub const fn inv_crc_val(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::InvCrcVal::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Invert CRC Output Value Bits"]
     #[inline(always)]
-    pub const fn set_inv_crc_val(&mut self, val: super::vals::InvCrcVal) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_inv_crc_val(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "CRC Output Value Bit Reversal Or Flip Control"]
     #[must_use]
     #[inline(always)]
-    pub const fn crc_out_flip(&self) -> super::vals::CrcOutFlip {
+    pub const fn crc_out_flip(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::CrcOutFlip::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CRC Output Value Bit Reversal Or Flip Control"]
     #[inline(always)]
-    pub const fn set_crc_out_flip(&mut self, val: super::vals::CrcOutFlip) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_crc_out_flip(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "CRC Input Byte's Bit Reversal Or Flip Control"]
     #[must_use]
     #[inline(always)]
-    pub const fn crc_in_flip(&self) -> super::vals::CrcInFlip {
+    pub const fn crc_in_flip(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::CrcInFlip::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CRC Input Byte's Bit Reversal Or Flip Control"]
     #[inline(always)]
-    pub const fn set_crc_in_flip(&mut self, val: super::vals::CrcInFlip) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_crc_in_flip(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "CWT Counter Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cwt_en(&self) -> super::vals::CwtEn {
+    pub const fn cwt_en(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::CwtEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CWT Counter Enable"]
     #[inline(always)]
-    pub const fn set_cwt_en(&mut self, val: super::vals::CwtEn) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_cwt_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
     #[doc = "LRC Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn lrc_en(&self) -> super::vals::LrcEn {
+    pub const fn lrc_en(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::LrcEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LRC Enable"]
     #[inline(always)]
-    pub const fn set_lrc_en(&mut self, val: super::vals::LrcEn) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_lrc_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "CRC Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn crc_en(&self) -> super::vals::CrcEn {
+    pub const fn crc_en(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::CrcEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CRC Enable"]
     #[inline(always)]
-    pub const fn set_crc_en(&mut self, val: super::vals::CrcEn) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_crc_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "Transmit CRC or LRC Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn xmt_crc_lrc(&self) -> super::vals::XmtCrcLrc {
+    pub const fn xmt_crc_lrc(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::XmtCrcLrc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Transmit CRC or LRC Enable"]
     #[inline(always)]
-    pub const fn set_xmt_crc_lrc(&mut self, val: super::vals::XmtCrcLrc) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_xmt_crc_lrc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Block Wait Time Counter Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn bwt_en(&self) -> super::vals::BwtEn {
+    pub const fn bwt_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::BwtEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block Wait Time Counter Enable"]
     #[inline(always)]
-    pub const fn set_bwt_en(&mut self, val: super::vals::BwtEn) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_bwt_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Ctrl {
@@ -459,7 +459,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ ic: {:?}, icm: {:?}, anack: {:?}, onack: {:?}, flsh_rx: {:?}, flsh_tx: {:?}, sw_rst: {:?}, kill_clocks: {:?}, doze_en: {:?}, stop_en: {:?}, rcv_en: {:?}, xmt_en: {:?}, rcvr_11: {:?}, rx_dma_en: {:?}, tx_dma_en: {:?}, inv_crc_val: {:?}, crc_out_flip: {:?}, crc_in_flip: {:?}, cwt_en: {:?}, lrc_en: {:?}, crc_en: {:?}, xmt_crc_lrc: {:?}, bwt_en: {:?} }}",
+            "Ctrl {{ ic: {:?}, icm: {=bool:?}, anack: {=bool:?}, onack: {=bool:?}, flsh_rx: {:?}, flsh_tx: {:?}, sw_rst: {:?}, kill_clocks: {:?}, doze_en: {:?}, stop_en: {:?}, rcv_en: {=bool:?}, xmt_en: {=bool:?}, rcvr_11: {:?}, rx_dma_en: {=bool:?}, tx_dma_en: {=bool:?}, inv_crc_val: {=bool:?}, crc_out_flip: {=bool:?}, crc_in_flip: {=bool:?}, cwt_en: {=bool:?}, lrc_en: {=bool:?}, crc_en: {=bool:?}, xmt_crc_lrc: {=bool:?}, bwt_en: {=bool:?} }}",
             self.ic(),
             self.icm(),
             self.anack(),
@@ -946,26 +946,26 @@ impl Pcsr {
     #[doc = "Auto Power Down Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn sapd(&self) -> super::vals::Sapd {
+    pub const fn sapd(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sapd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Auto Power Down Enable"]
     #[inline(always)]
-    pub const fn set_sapd(&mut self, val: super::vals::Sapd) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_sapd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Vcc Enable for Smart Card"]
     #[must_use]
     #[inline(always)]
-    pub const fn svcc_en(&self) -> super::vals::SvccEn {
+    pub const fn svcc_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::SvccEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Vcc Enable for Smart Card"]
     #[inline(always)]
-    pub const fn set_svcc_en(&mut self, val: super::vals::SvccEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_svcc_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "VCC Enable Polarity Control"]
     #[must_use]
@@ -994,14 +994,14 @@ impl Pcsr {
     #[doc = "Clock Enable for Smart Card"]
     #[must_use]
     #[inline(always)]
-    pub const fn scen(&self) -> super::vals::Scen {
+    pub const fn scen(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Scen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Clock Enable for Smart Card"]
     #[inline(always)]
-    pub const fn set_scen(&mut self, val: super::vals::Scen) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_scen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Smart Card Clock Stop Polarity"]
     #[must_use]
@@ -1042,14 +1042,14 @@ impl Pcsr {
     #[doc = "Smart Card Presence Detect Interrupt Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn spdif(&self) -> super::vals::Spdif {
+    pub const fn spdif(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Spdif::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Smart Card Presence Detect Interrupt Flag"]
     #[inline(always)]
-    pub const fn set_spdif(&mut self, val: super::vals::Spdif) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_spdif(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "Smart Card Presence Detect Pin Status"]
     #[must_use]
@@ -1104,7 +1104,7 @@ impl defmt::Format for Pcsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Pcsr {{ sapd: {:?}, svcc_en: {:?}, vccenp: {:?}, srst: {:?}, scen: {:?}, scsp: {:?}, spd: {:?}, spdim: {:?}, spdif: {:?}, spdp: {:?}, spdes: {:?} }}",
+            "Pcsr {{ sapd: {=bool:?}, svcc_en: {=bool:?}, vccenp: {:?}, srst: {:?}, scen: {=bool:?}, scsp: {:?}, spd: {:?}, spdim: {:?}, spdif: {=bool:?}, spdp: {:?}, spdes: {:?} }}",
             self.sapd(),
             self.svcc_en(),
             self.vccenp(),
@@ -1176,14 +1176,14 @@ impl RxStatus {
     #[doc = "Receive Data Interrupt Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rx_data(&self) -> super::vals::RxData {
+    pub const fn rx_data(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::RxData::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Receive Data Interrupt Flag"]
     #[inline(always)]
-    pub const fn set_rx_data(&mut self, val: super::vals::RxData) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_rx_data(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Receive Data Threshold Interrupt Flag"]
     #[must_use]
@@ -1224,14 +1224,14 @@ impl RxStatus {
     #[doc = "Character Wait Time Error Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn cwt_err(&self) -> super::vals::CwtErr {
+    pub const fn cwt_err(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::CwtErr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Character Wait Time Error Flag"]
     #[inline(always)]
-    pub const fn set_cwt_err(&mut self, val: super::vals::CwtErr) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_cwt_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Received NACK Threshold Error Flag"]
     #[must_use]
@@ -1272,26 +1272,26 @@ impl RxStatus {
     #[doc = "Parity Error Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn pef(&self) -> super::vals::Pef {
+    pub const fn pef(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Pef::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Parity Error Flag"]
     #[inline(always)]
-    pub const fn set_pef(&mut self, val: super::vals::Pef) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_pef(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Frame Error Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn fef(&self) -> super::vals::Fef {
+    pub const fn fef(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Fef::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Frame Error Flag"]
     #[inline(always)]
-    pub const fn set_fef(&mut self, val: super::vals::Fef) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_fef(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Receive FIFO Write Pointer Value"]
     #[must_use]
@@ -1348,7 +1348,7 @@ impl defmt::Format for RxStatus {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "RxStatus {{ rfo: {:?}, rx_data: {:?}, rdtf: {:?}, lrc_ok: {:?}, crc_ok: {:?}, cwt_err: {:?}, rte: {:?}, bwt_err: {:?}, bgt_err: {:?}, pef: {:?}, fef: {:?}, rx_wptr: {=u8:?}, rx_cnt: {:?} }}",
+            "RxStatus {{ rfo: {:?}, rx_data: {=bool:?}, rdtf: {:?}, lrc_ok: {:?}, crc_ok: {:?}, cwt_err: {=bool:?}, rte: {:?}, bwt_err: {:?}, bgt_err: {:?}, pef: {=bool:?}, fef: {=bool:?}, rx_wptr: {=u8:?}, rx_cnt: {:?} }}",
             self.rfo(),
             self.rx_data(),
             self.rdtf(),

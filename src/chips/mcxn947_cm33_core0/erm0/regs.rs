@@ -376,194 +376,194 @@ impl Cr0 {
     #[doc = "ENCIE7"]
     #[must_use]
     #[inline(always)]
-    pub const fn encie7(&self) -> super::vals::Encie7 {
+    pub const fn encie7(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Encie7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ENCIE7"]
     #[inline(always)]
-    pub const fn set_encie7(&mut self, val: super::vals::Encie7) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_encie7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "ESCIE7"]
     #[must_use]
     #[inline(always)]
-    pub const fn escie7(&self) -> super::vals::Escie7 {
+    pub const fn escie7(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Escie7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ESCIE7"]
     #[inline(always)]
-    pub const fn set_escie7(&mut self, val: super::vals::Escie7) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_escie7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "ENCIE6"]
     #[must_use]
     #[inline(always)]
-    pub const fn encie6(&self) -> super::vals::Encie6 {
+    pub const fn encie6(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Encie6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ENCIE6"]
     #[inline(always)]
-    pub const fn set_encie6(&mut self, val: super::vals::Encie6) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_encie6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "ESCIE6"]
     #[must_use]
     #[inline(always)]
-    pub const fn escie6(&self) -> super::vals::Escie6 {
+    pub const fn escie6(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Escie6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ESCIE6"]
     #[inline(always)]
-    pub const fn set_escie6(&mut self, val: super::vals::Escie6) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_escie6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "ENCIE5"]
     #[must_use]
     #[inline(always)]
-    pub const fn encie5(&self) -> super::vals::Encie5 {
+    pub const fn encie5(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Encie5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ENCIE5"]
     #[inline(always)]
-    pub const fn set_encie5(&mut self, val: super::vals::Encie5) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_encie5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "ESCIE5"]
     #[must_use]
     #[inline(always)]
-    pub const fn escie5(&self) -> super::vals::Escie5 {
+    pub const fn escie5(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Escie5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ESCIE5"]
     #[inline(always)]
-    pub const fn set_escie5(&mut self, val: super::vals::Escie5) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_escie5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "ENCIE4"]
     #[must_use]
     #[inline(always)]
-    pub const fn encie4(&self) -> super::vals::Encie4 {
+    pub const fn encie4(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Encie4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ENCIE4"]
     #[inline(always)]
-    pub const fn set_encie4(&mut self, val: super::vals::Encie4) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_encie4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "ESCIE4"]
     #[must_use]
     #[inline(always)]
-    pub const fn escie4(&self) -> super::vals::Escie4 {
+    pub const fn escie4(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Escie4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ESCIE4"]
     #[inline(always)]
-    pub const fn set_escie4(&mut self, val: super::vals::Escie4) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_escie4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "ENCIE3"]
     #[must_use]
     #[inline(always)]
-    pub const fn encie3(&self) -> super::vals::Encie3 {
+    pub const fn encie3(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::Encie3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ENCIE3"]
     #[inline(always)]
-    pub const fn set_encie3(&mut self, val: super::vals::Encie3) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_encie3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "ESCIE3"]
     #[must_use]
     #[inline(always)]
-    pub const fn escie3(&self) -> super::vals::Escie3 {
+    pub const fn escie3(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Escie3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ESCIE3"]
     #[inline(always)]
-    pub const fn set_escie3(&mut self, val: super::vals::Escie3) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_escie3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "ENCIE2"]
     #[must_use]
     #[inline(always)]
-    pub const fn encie2(&self) -> super::vals::Encie2 {
+    pub const fn encie2(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Encie2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ENCIE2"]
     #[inline(always)]
-    pub const fn set_encie2(&mut self, val: super::vals::Encie2) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_encie2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "ESCIE2"]
     #[must_use]
     #[inline(always)]
-    pub const fn escie2(&self) -> super::vals::Escie2 {
+    pub const fn escie2(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Escie2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ESCIE2"]
     #[inline(always)]
-    pub const fn set_escie2(&mut self, val: super::vals::Escie2) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_escie2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "ENCIE1"]
     #[must_use]
     #[inline(always)]
-    pub const fn encie1(&self) -> super::vals::Encie1 {
+    pub const fn encie1(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::Encie1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ENCIE1"]
     #[inline(always)]
-    pub const fn set_encie1(&mut self, val: super::vals::Encie1) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_encie1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "ESCIE1"]
     #[must_use]
     #[inline(always)]
-    pub const fn escie1(&self) -> super::vals::Escie1 {
+    pub const fn escie1(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::Escie1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ESCIE1"]
     #[inline(always)]
-    pub const fn set_escie1(&mut self, val: super::vals::Escie1) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_escie1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
     #[doc = "ENCIE0"]
     #[must_use]
     #[inline(always)]
-    pub const fn encie0(&self) -> super::vals::Encie0 {
+    pub const fn encie0(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Encie0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ENCIE0"]
     #[inline(always)]
-    pub const fn set_encie0(&mut self, val: super::vals::Encie0) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_encie0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "ESCIE0"]
     #[must_use]
     #[inline(always)]
-    pub const fn escie0(&self) -> super::vals::Escie0 {
+    pub const fn escie0(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Escie0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ESCIE0"]
     #[inline(always)]
-    pub const fn set_escie0(&mut self, val: super::vals::Escie0) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_escie0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Cr0 {
@@ -599,7 +599,7 @@ impl defmt::Format for Cr0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cr0 {{ encie7: {:?}, escie7: {:?}, encie6: {:?}, escie6: {:?}, encie5: {:?}, escie5: {:?}, encie4: {:?}, escie4: {:?}, encie3: {:?}, escie3: {:?}, encie2: {:?}, escie2: {:?}, encie1: {:?}, escie1: {:?}, encie0: {:?}, escie0: {:?} }}",
+            "Cr0 {{ encie7: {=bool:?}, escie7: {=bool:?}, encie6: {=bool:?}, escie6: {=bool:?}, encie5: {=bool:?}, escie5: {=bool:?}, encie4: {=bool:?}, escie4: {=bool:?}, encie3: {=bool:?}, escie3: {=bool:?}, encie2: {=bool:?}, escie2: {=bool:?}, encie1: {=bool:?}, escie1: {=bool:?}, encie0: {=bool:?}, escie0: {=bool:?} }}",
             self.encie7(),
             self.escie7(),
             self.encie6(),
@@ -627,50 +627,50 @@ impl Cr1 {
     #[doc = "ENCIE9"]
     #[must_use]
     #[inline(always)]
-    pub const fn encie9(&self) -> super::vals::Encie9 {
+    pub const fn encie9(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::Encie9::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ENCIE9"]
     #[inline(always)]
-    pub const fn set_encie9(&mut self, val: super::vals::Encie9) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_encie9(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "ESCIE9"]
     #[must_use]
     #[inline(always)]
-    pub const fn escie9(&self) -> super::vals::Escie9 {
+    pub const fn escie9(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::Escie9::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ESCIE9"]
     #[inline(always)]
-    pub const fn set_escie9(&mut self, val: super::vals::Escie9) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_escie9(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
     #[doc = "ENCIE8"]
     #[must_use]
     #[inline(always)]
-    pub const fn encie8(&self) -> super::vals::Encie8 {
+    pub const fn encie8(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Encie8::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ENCIE8"]
     #[inline(always)]
-    pub const fn set_encie8(&mut self, val: super::vals::Encie8) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_encie8(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "ESCIE8"]
     #[must_use]
     #[inline(always)]
-    pub const fn escie8(&self) -> super::vals::Escie8 {
+    pub const fn escie8(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Escie8::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ESCIE8"]
     #[inline(always)]
-    pub const fn set_escie8(&mut self, val: super::vals::Escie8) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_escie8(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Cr1 {
@@ -694,7 +694,7 @@ impl defmt::Format for Cr1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cr1 {{ encie9: {:?}, escie9: {:?}, encie8: {:?}, escie8: {:?} }}",
+            "Cr1 {{ encie9: {=bool:?}, escie9: {=bool:?}, encie8: {=bool:?}, escie8: {=bool:?} }}",
             self.encie9(),
             self.escie9(),
             self.encie8(),
@@ -955,62 +955,62 @@ impl Sr0 {
     #[doc = "NCE7"]
     #[must_use]
     #[inline(always)]
-    pub const fn nce7(&self) -> super::vals::Nce7 {
+    pub const fn nce7(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Nce7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NCE7"]
     #[inline(always)]
-    pub const fn set_nce7(&mut self, val: super::vals::Nce7) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_nce7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "SBC7"]
     #[must_use]
     #[inline(always)]
-    pub const fn sbc7(&self) -> super::vals::Sbc7 {
+    pub const fn sbc7(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Sbc7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SBC7"]
     #[inline(always)]
-    pub const fn set_sbc7(&mut self, val: super::vals::Sbc7) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_sbc7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "NCE6"]
     #[must_use]
     #[inline(always)]
-    pub const fn nce6(&self) -> super::vals::Nce6 {
+    pub const fn nce6(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Nce6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NCE6"]
     #[inline(always)]
-    pub const fn set_nce6(&mut self, val: super::vals::Nce6) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_nce6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "SBC6"]
     #[must_use]
     #[inline(always)]
-    pub const fn sbc6(&self) -> super::vals::Sbc6 {
+    pub const fn sbc6(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Sbc6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SBC6"]
     #[inline(always)]
-    pub const fn set_sbc6(&mut self, val: super::vals::Sbc6) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_sbc6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "NCE5"]
     #[must_use]
     #[inline(always)]
-    pub const fn nce5(&self) -> super::vals::Nce5 {
+    pub const fn nce5(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Nce5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NCE5"]
     #[inline(always)]
-    pub const fn set_nce5(&mut self, val: super::vals::Nce5) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_nce5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "SBC5"]
     #[must_use]
@@ -1027,122 +1027,122 @@ impl Sr0 {
     #[doc = "NCE4"]
     #[must_use]
     #[inline(always)]
-    pub const fn nce4(&self) -> super::vals::Nce4 {
+    pub const fn nce4(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Nce4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NCE4"]
     #[inline(always)]
-    pub const fn set_nce4(&mut self, val: super::vals::Nce4) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_nce4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "SBC4"]
     #[must_use]
     #[inline(always)]
-    pub const fn sbc4(&self) -> super::vals::Sbc4 {
+    pub const fn sbc4(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Sbc4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SBC4"]
     #[inline(always)]
-    pub const fn set_sbc4(&mut self, val: super::vals::Sbc4) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_sbc4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "NCE3"]
     #[must_use]
     #[inline(always)]
-    pub const fn nce3(&self) -> super::vals::Nce3 {
+    pub const fn nce3(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::Nce3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NCE3"]
     #[inline(always)]
-    pub const fn set_nce3(&mut self, val: super::vals::Nce3) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_nce3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "SBC3"]
     #[must_use]
     #[inline(always)]
-    pub const fn sbc3(&self) -> super::vals::Sbc3 {
+    pub const fn sbc3(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Sbc3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SBC3"]
     #[inline(always)]
-    pub const fn set_sbc3(&mut self, val: super::vals::Sbc3) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_sbc3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "NCE2"]
     #[must_use]
     #[inline(always)]
-    pub const fn nce2(&self) -> super::vals::Nce2 {
+    pub const fn nce2(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Nce2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NCE2"]
     #[inline(always)]
-    pub const fn set_nce2(&mut self, val: super::vals::Nce2) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_nce2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "SBC2"]
     #[must_use]
     #[inline(always)]
-    pub const fn sbc2(&self) -> super::vals::Sbc2 {
+    pub const fn sbc2(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Sbc2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SBC2"]
     #[inline(always)]
-    pub const fn set_sbc2(&mut self, val: super::vals::Sbc2) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_sbc2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "NCE1"]
     #[must_use]
     #[inline(always)]
-    pub const fn nce1(&self) -> super::vals::Nce1 {
+    pub const fn nce1(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::Nce1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NCE1"]
     #[inline(always)]
-    pub const fn set_nce1(&mut self, val: super::vals::Nce1) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_nce1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "SBC1"]
     #[must_use]
     #[inline(always)]
-    pub const fn sbc1(&self) -> super::vals::Sbc1 {
+    pub const fn sbc1(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::Sbc1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SBC1"]
     #[inline(always)]
-    pub const fn set_sbc1(&mut self, val: super::vals::Sbc1) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_sbc1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
     #[doc = "NCE0"]
     #[must_use]
     #[inline(always)]
-    pub const fn nce0(&self) -> super::vals::Nce0 {
+    pub const fn nce0(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Nce0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NCE0"]
     #[inline(always)]
-    pub const fn set_nce0(&mut self, val: super::vals::Nce0) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_nce0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "SBC0"]
     #[must_use]
     #[inline(always)]
-    pub const fn sbc0(&self) -> super::vals::Sbc0 {
+    pub const fn sbc0(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Sbc0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SBC0"]
     #[inline(always)]
-    pub const fn set_sbc0(&mut self, val: super::vals::Sbc0) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_sbc0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Sr0 {
@@ -1178,7 +1178,7 @@ impl defmt::Format for Sr0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sr0 {{ nce7: {:?}, sbc7: {:?}, nce6: {:?}, sbc6: {:?}, nce5: {:?}, sbc5: {:?}, nce4: {:?}, sbc4: {:?}, nce3: {:?}, sbc3: {:?}, nce2: {:?}, sbc2: {:?}, nce1: {:?}, sbc1: {:?}, nce0: {:?}, sbc0: {:?} }}",
+            "Sr0 {{ nce7: {=bool:?}, sbc7: {=bool:?}, nce6: {=bool:?}, sbc6: {=bool:?}, nce5: {=bool:?}, sbc5: {:?}, nce4: {=bool:?}, sbc4: {=bool:?}, nce3: {=bool:?}, sbc3: {=bool:?}, nce2: {=bool:?}, sbc2: {=bool:?}, nce1: {=bool:?}, sbc1: {=bool:?}, nce0: {=bool:?}, sbc0: {=bool:?} }}",
             self.nce7(),
             self.sbc7(),
             self.nce6(),
@@ -1206,50 +1206,50 @@ impl Sr1 {
     #[doc = "NCE9"]
     #[must_use]
     #[inline(always)]
-    pub const fn nce9(&self) -> super::vals::Nce9 {
+    pub const fn nce9(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::Nce9::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NCE9"]
     #[inline(always)]
-    pub const fn set_nce9(&mut self, val: super::vals::Nce9) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_nce9(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "SBC9"]
     #[must_use]
     #[inline(always)]
-    pub const fn sbc9(&self) -> super::vals::Sbc9 {
+    pub const fn sbc9(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::Sbc9::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SBC9"]
     #[inline(always)]
-    pub const fn set_sbc9(&mut self, val: super::vals::Sbc9) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_sbc9(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
     #[doc = "NCE8"]
     #[must_use]
     #[inline(always)]
-    pub const fn nce8(&self) -> super::vals::Nce8 {
+    pub const fn nce8(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Nce8::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NCE8"]
     #[inline(always)]
-    pub const fn set_nce8(&mut self, val: super::vals::Nce8) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_nce8(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "SBC8"]
     #[must_use]
     #[inline(always)]
-    pub const fn sbc8(&self) -> super::vals::Sbc8 {
+    pub const fn sbc8(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Sbc8::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SBC8"]
     #[inline(always)]
-    pub const fn set_sbc8(&mut self, val: super::vals::Sbc8) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_sbc8(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Sr1 {
@@ -1273,7 +1273,7 @@ impl defmt::Format for Sr1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sr1 {{ nce9: {:?}, sbc9: {:?}, nce8: {:?}, sbc8: {:?} }}",
+            "Sr1 {{ nce9: {=bool:?}, sbc9: {=bool:?}, nce8: {=bool:?}, sbc8: {=bool:?} }}",
             self.nce9(),
             self.sbc9(),
             self.nce8(),

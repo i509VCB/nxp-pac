@@ -116,4 +116,3 @@ impl Eim0 {
     }
 }
 pub mod regs;
-pub mod vals;

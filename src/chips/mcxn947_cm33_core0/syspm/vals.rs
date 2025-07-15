@@ -35,37 +35,6 @@ impl From<Cmode> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Menb {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Menb {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Menb {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Menb {
-    #[inline(always)]
-    fn from(val: u8) -> Menb {
-        Menb::from_bits(val)
-    }
-}
-impl From<Menb> for u8 {
-    #[inline(always)]
-    fn from(val: Menb) -> u8 {
-        Menb::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rectr1 {
     #[doc = "Run normally"]
     RUN = 0x0,

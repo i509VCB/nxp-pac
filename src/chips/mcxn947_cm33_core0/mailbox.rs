@@ -59,4 +59,3 @@ impl Mailbox {
     }
 }
 pub mod regs;
-pub mod vals;

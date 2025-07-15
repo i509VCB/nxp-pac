@@ -116,26 +116,26 @@ impl Cfg {
     #[doc = "Trigger Resume Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tres(&self) -> super::vals::Tres {
+    pub const fn tres(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Tres::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger Resume Enable"]
     #[inline(always)]
-    pub const fn set_tres(&mut self, val: super::vals::Tres) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_tres(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Trigger Command Resume"]
     #[must_use]
     #[inline(always)]
-    pub const fn tcmdres(&self) -> super::vals::Tcmdres {
+    pub const fn tcmdres(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Tcmdres::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger Command Resume"]
     #[inline(always)]
-    pub const fn set_tcmdres(&mut self, val: super::vals::Tcmdres) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_tcmdres(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "High-Priority Trigger Exception Disable"]
     #[must_use]
@@ -164,14 +164,14 @@ impl Cfg {
     #[doc = "ADC Analog Pre-Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn pwren(&self) -> super::vals::Pwren {
+    pub const fn pwren(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Pwren::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ADC Analog Pre-Enable"]
     #[inline(always)]
-    pub const fn set_pwren(&mut self, val: super::vals::Pwren) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_pwren(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
 }
 impl Default for Cfg {
@@ -199,7 +199,7 @@ impl defmt::Format for Cfg {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cfg {{ tprictrl: {:?}, pwrsel: {:?}, refsel: {:?}, tres: {:?}, tcmdres: {:?}, hpt_exdi: {:?}, pudly: {=u8:?}, pwren: {:?} }}",
+            "Cfg {{ tprictrl: {:?}, pwrsel: {:?}, refsel: {:?}, tres: {=bool:?}, tcmdres: {=bool:?}, hpt_exdi: {:?}, pudly: {=u8:?}, pwren: {=bool:?} }}",
             self.tprictrl(),
             self.pwrsel(),
             self.refsel(),
@@ -231,26 +231,26 @@ impl Cmdh1 {
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[must_use]
     #[inline(always)]
-    pub const fn wait_trig(&self) -> super::vals::Cmdh1WaitTrig {
+    pub const fn wait_trig(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Cmdh1WaitTrig::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[inline(always)]
-    pub const fn set_wait_trig(&mut self, val: super::vals::Cmdh1WaitTrig) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_wait_trig(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Loop with Increment"]
     #[must_use]
     #[inline(always)]
-    pub const fn lwi(&self) -> super::vals::Cmdh1Lwi {
+    pub const fn lwi(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Cmdh1Lwi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Loop with Increment"]
     #[inline(always)]
-    pub const fn set_lwi(&mut self, val: super::vals::Cmdh1Lwi) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_lwi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Sample Time Select"]
     #[must_use]
@@ -325,7 +325,7 @@ impl defmt::Format for Cmdh1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdh1 {{ cmpen: {:?}, wait_trig: {:?}, lwi: {:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
+            "Cmdh1 {{ cmpen: {:?}, wait_trig: {=bool:?}, lwi: {=bool:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
             self.cmpen(),
             self.wait_trig(),
             self.lwi(),
@@ -356,26 +356,26 @@ impl Cmdh10 {
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[must_use]
     #[inline(always)]
-    pub const fn wait_trig(&self) -> super::vals::Cmdh10WaitTrig {
+    pub const fn wait_trig(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Cmdh10WaitTrig::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[inline(always)]
-    pub const fn set_wait_trig(&mut self, val: super::vals::Cmdh10WaitTrig) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_wait_trig(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Loop with Increment"]
     #[must_use]
     #[inline(always)]
-    pub const fn lwi(&self) -> super::vals::Cmdh10Lwi {
+    pub const fn lwi(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Cmdh10Lwi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Loop with Increment"]
     #[inline(always)]
-    pub const fn set_lwi(&mut self, val: super::vals::Cmdh10Lwi) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_lwi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Sample Time Select"]
     #[must_use]
@@ -450,7 +450,7 @@ impl defmt::Format for Cmdh10 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdh10 {{ cmpen: {:?}, wait_trig: {:?}, lwi: {:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
+            "Cmdh10 {{ cmpen: {:?}, wait_trig: {=bool:?}, lwi: {=bool:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
             self.cmpen(),
             self.wait_trig(),
             self.lwi(),
@@ -481,26 +481,26 @@ impl Cmdh11 {
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[must_use]
     #[inline(always)]
-    pub const fn wait_trig(&self) -> super::vals::Cmdh11WaitTrig {
+    pub const fn wait_trig(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Cmdh11WaitTrig::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[inline(always)]
-    pub const fn set_wait_trig(&mut self, val: super::vals::Cmdh11WaitTrig) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_wait_trig(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Loop with Increment"]
     #[must_use]
     #[inline(always)]
-    pub const fn lwi(&self) -> super::vals::Cmdh11Lwi {
+    pub const fn lwi(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Cmdh11Lwi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Loop with Increment"]
     #[inline(always)]
-    pub const fn set_lwi(&mut self, val: super::vals::Cmdh11Lwi) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_lwi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Sample Time Select"]
     #[must_use]
@@ -575,7 +575,7 @@ impl defmt::Format for Cmdh11 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdh11 {{ cmpen: {:?}, wait_trig: {:?}, lwi: {:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
+            "Cmdh11 {{ cmpen: {:?}, wait_trig: {=bool:?}, lwi: {=bool:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
             self.cmpen(),
             self.wait_trig(),
             self.lwi(),
@@ -606,26 +606,26 @@ impl Cmdh12 {
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[must_use]
     #[inline(always)]
-    pub const fn wait_trig(&self) -> super::vals::Cmdh12WaitTrig {
+    pub const fn wait_trig(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Cmdh12WaitTrig::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[inline(always)]
-    pub const fn set_wait_trig(&mut self, val: super::vals::Cmdh12WaitTrig) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_wait_trig(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Loop with Increment"]
     #[must_use]
     #[inline(always)]
-    pub const fn lwi(&self) -> super::vals::Cmdh12Lwi {
+    pub const fn lwi(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Cmdh12Lwi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Loop with Increment"]
     #[inline(always)]
-    pub const fn set_lwi(&mut self, val: super::vals::Cmdh12Lwi) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_lwi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Sample Time Select"]
     #[must_use]
@@ -700,7 +700,7 @@ impl defmt::Format for Cmdh12 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdh12 {{ cmpen: {:?}, wait_trig: {:?}, lwi: {:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
+            "Cmdh12 {{ cmpen: {:?}, wait_trig: {=bool:?}, lwi: {=bool:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
             self.cmpen(),
             self.wait_trig(),
             self.lwi(),
@@ -731,26 +731,26 @@ impl Cmdh13 {
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[must_use]
     #[inline(always)]
-    pub const fn wait_trig(&self) -> super::vals::Cmdh13WaitTrig {
+    pub const fn wait_trig(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Cmdh13WaitTrig::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[inline(always)]
-    pub const fn set_wait_trig(&mut self, val: super::vals::Cmdh13WaitTrig) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_wait_trig(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Loop with Increment"]
     #[must_use]
     #[inline(always)]
-    pub const fn lwi(&self) -> super::vals::Cmdh13Lwi {
+    pub const fn lwi(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Cmdh13Lwi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Loop with Increment"]
     #[inline(always)]
-    pub const fn set_lwi(&mut self, val: super::vals::Cmdh13Lwi) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_lwi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Sample Time Select"]
     #[must_use]
@@ -825,7 +825,7 @@ impl defmt::Format for Cmdh13 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdh13 {{ cmpen: {:?}, wait_trig: {:?}, lwi: {:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
+            "Cmdh13 {{ cmpen: {:?}, wait_trig: {=bool:?}, lwi: {=bool:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
             self.cmpen(),
             self.wait_trig(),
             self.lwi(),
@@ -856,26 +856,26 @@ impl Cmdh14 {
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[must_use]
     #[inline(always)]
-    pub const fn wait_trig(&self) -> super::vals::Cmdh14WaitTrig {
+    pub const fn wait_trig(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Cmdh14WaitTrig::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[inline(always)]
-    pub const fn set_wait_trig(&mut self, val: super::vals::Cmdh14WaitTrig) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_wait_trig(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Loop with Increment"]
     #[must_use]
     #[inline(always)]
-    pub const fn lwi(&self) -> super::vals::Cmdh14Lwi {
+    pub const fn lwi(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Cmdh14Lwi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Loop with Increment"]
     #[inline(always)]
-    pub const fn set_lwi(&mut self, val: super::vals::Cmdh14Lwi) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_lwi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Sample Time Select"]
     #[must_use]
@@ -950,7 +950,7 @@ impl defmt::Format for Cmdh14 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdh14 {{ cmpen: {:?}, wait_trig: {:?}, lwi: {:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
+            "Cmdh14 {{ cmpen: {:?}, wait_trig: {=bool:?}, lwi: {=bool:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
             self.cmpen(),
             self.wait_trig(),
             self.lwi(),
@@ -981,26 +981,26 @@ impl Cmdh15 {
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[must_use]
     #[inline(always)]
-    pub const fn wait_trig(&self) -> super::vals::Cmdh15WaitTrig {
+    pub const fn wait_trig(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Cmdh15WaitTrig::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[inline(always)]
-    pub const fn set_wait_trig(&mut self, val: super::vals::Cmdh15WaitTrig) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_wait_trig(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Loop with Increment"]
     #[must_use]
     #[inline(always)]
-    pub const fn lwi(&self) -> super::vals::Cmdh15Lwi {
+    pub const fn lwi(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Cmdh15Lwi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Loop with Increment"]
     #[inline(always)]
-    pub const fn set_lwi(&mut self, val: super::vals::Cmdh15Lwi) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_lwi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Sample Time Select"]
     #[must_use]
@@ -1075,7 +1075,7 @@ impl defmt::Format for Cmdh15 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdh15 {{ cmpen: {:?}, wait_trig: {:?}, lwi: {:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
+            "Cmdh15 {{ cmpen: {:?}, wait_trig: {=bool:?}, lwi: {=bool:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
             self.cmpen(),
             self.wait_trig(),
             self.lwi(),
@@ -1106,26 +1106,26 @@ impl Cmdh2 {
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[must_use]
     #[inline(always)]
-    pub const fn wait_trig(&self) -> super::vals::Cmdh2WaitTrig {
+    pub const fn wait_trig(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Cmdh2WaitTrig::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[inline(always)]
-    pub const fn set_wait_trig(&mut self, val: super::vals::Cmdh2WaitTrig) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_wait_trig(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Loop with Increment"]
     #[must_use]
     #[inline(always)]
-    pub const fn lwi(&self) -> super::vals::Cmdh2Lwi {
+    pub const fn lwi(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Cmdh2Lwi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Loop with Increment"]
     #[inline(always)]
-    pub const fn set_lwi(&mut self, val: super::vals::Cmdh2Lwi) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_lwi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Sample Time Select"]
     #[must_use]
@@ -1200,7 +1200,7 @@ impl defmt::Format for Cmdh2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdh2 {{ cmpen: {:?}, wait_trig: {:?}, lwi: {:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
+            "Cmdh2 {{ cmpen: {:?}, wait_trig: {=bool:?}, lwi: {=bool:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
             self.cmpen(),
             self.wait_trig(),
             self.lwi(),
@@ -1231,26 +1231,26 @@ impl Cmdh3 {
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[must_use]
     #[inline(always)]
-    pub const fn wait_trig(&self) -> super::vals::Cmdh3WaitTrig {
+    pub const fn wait_trig(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Cmdh3WaitTrig::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[inline(always)]
-    pub const fn set_wait_trig(&mut self, val: super::vals::Cmdh3WaitTrig) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_wait_trig(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Loop with Increment"]
     #[must_use]
     #[inline(always)]
-    pub const fn lwi(&self) -> super::vals::Cmdh3Lwi {
+    pub const fn lwi(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Cmdh3Lwi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Loop with Increment"]
     #[inline(always)]
-    pub const fn set_lwi(&mut self, val: super::vals::Cmdh3Lwi) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_lwi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Sample Time Select"]
     #[must_use]
@@ -1325,7 +1325,7 @@ impl defmt::Format for Cmdh3 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdh3 {{ cmpen: {:?}, wait_trig: {:?}, lwi: {:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
+            "Cmdh3 {{ cmpen: {:?}, wait_trig: {=bool:?}, lwi: {=bool:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
             self.cmpen(),
             self.wait_trig(),
             self.lwi(),
@@ -1356,26 +1356,26 @@ impl Cmdh4 {
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[must_use]
     #[inline(always)]
-    pub const fn wait_trig(&self) -> super::vals::Cmdh4WaitTrig {
+    pub const fn wait_trig(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Cmdh4WaitTrig::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[inline(always)]
-    pub const fn set_wait_trig(&mut self, val: super::vals::Cmdh4WaitTrig) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_wait_trig(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Loop with Increment"]
     #[must_use]
     #[inline(always)]
-    pub const fn lwi(&self) -> super::vals::Cmdh4Lwi {
+    pub const fn lwi(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Cmdh4Lwi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Loop with Increment"]
     #[inline(always)]
-    pub const fn set_lwi(&mut self, val: super::vals::Cmdh4Lwi) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_lwi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Sample Time Select"]
     #[must_use]
@@ -1450,7 +1450,7 @@ impl defmt::Format for Cmdh4 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdh4 {{ cmpen: {:?}, wait_trig: {:?}, lwi: {:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
+            "Cmdh4 {{ cmpen: {:?}, wait_trig: {=bool:?}, lwi: {=bool:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
             self.cmpen(),
             self.wait_trig(),
             self.lwi(),
@@ -1481,26 +1481,26 @@ impl Cmdh5 {
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[must_use]
     #[inline(always)]
-    pub const fn wait_trig(&self) -> super::vals::Cmdh5WaitTrig {
+    pub const fn wait_trig(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Cmdh5WaitTrig::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[inline(always)]
-    pub const fn set_wait_trig(&mut self, val: super::vals::Cmdh5WaitTrig) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_wait_trig(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Loop with Increment"]
     #[must_use]
     #[inline(always)]
-    pub const fn lwi(&self) -> super::vals::Cmdh5Lwi {
+    pub const fn lwi(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Cmdh5Lwi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Loop with Increment"]
     #[inline(always)]
-    pub const fn set_lwi(&mut self, val: super::vals::Cmdh5Lwi) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_lwi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Sample Time Select"]
     #[must_use]
@@ -1575,7 +1575,7 @@ impl defmt::Format for Cmdh5 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdh5 {{ cmpen: {:?}, wait_trig: {:?}, lwi: {:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
+            "Cmdh5 {{ cmpen: {:?}, wait_trig: {=bool:?}, lwi: {=bool:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
             self.cmpen(),
             self.wait_trig(),
             self.lwi(),
@@ -1606,26 +1606,26 @@ impl Cmdh6 {
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[must_use]
     #[inline(always)]
-    pub const fn wait_trig(&self) -> super::vals::Cmdh6WaitTrig {
+    pub const fn wait_trig(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Cmdh6WaitTrig::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[inline(always)]
-    pub const fn set_wait_trig(&mut self, val: super::vals::Cmdh6WaitTrig) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_wait_trig(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Loop with Increment"]
     #[must_use]
     #[inline(always)]
-    pub const fn lwi(&self) -> super::vals::Cmdh6Lwi {
+    pub const fn lwi(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Cmdh6Lwi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Loop with Increment"]
     #[inline(always)]
-    pub const fn set_lwi(&mut self, val: super::vals::Cmdh6Lwi) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_lwi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Sample Time Select"]
     #[must_use]
@@ -1700,7 +1700,7 @@ impl defmt::Format for Cmdh6 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdh6 {{ cmpen: {:?}, wait_trig: {:?}, lwi: {:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
+            "Cmdh6 {{ cmpen: {:?}, wait_trig: {=bool:?}, lwi: {=bool:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
             self.cmpen(),
             self.wait_trig(),
             self.lwi(),
@@ -1731,26 +1731,26 @@ impl Cmdh7 {
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[must_use]
     #[inline(always)]
-    pub const fn wait_trig(&self) -> super::vals::Cmdh7WaitTrig {
+    pub const fn wait_trig(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Cmdh7WaitTrig::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[inline(always)]
-    pub const fn set_wait_trig(&mut self, val: super::vals::Cmdh7WaitTrig) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_wait_trig(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Loop with Increment"]
     #[must_use]
     #[inline(always)]
-    pub const fn lwi(&self) -> super::vals::Cmdh7Lwi {
+    pub const fn lwi(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Cmdh7Lwi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Loop with Increment"]
     #[inline(always)]
-    pub const fn set_lwi(&mut self, val: super::vals::Cmdh7Lwi) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_lwi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Sample Time Select"]
     #[must_use]
@@ -1825,7 +1825,7 @@ impl defmt::Format for Cmdh7 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdh7 {{ cmpen: {:?}, wait_trig: {:?}, lwi: {:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
+            "Cmdh7 {{ cmpen: {:?}, wait_trig: {=bool:?}, lwi: {=bool:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
             self.cmpen(),
             self.wait_trig(),
             self.lwi(),
@@ -1856,26 +1856,26 @@ impl Cmdh8 {
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[must_use]
     #[inline(always)]
-    pub const fn wait_trig(&self) -> super::vals::Cmdh8WaitTrig {
+    pub const fn wait_trig(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Cmdh8WaitTrig::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[inline(always)]
-    pub const fn set_wait_trig(&mut self, val: super::vals::Cmdh8WaitTrig) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_wait_trig(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Loop with Increment"]
     #[must_use]
     #[inline(always)]
-    pub const fn lwi(&self) -> super::vals::Cmdh8Lwi {
+    pub const fn lwi(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Cmdh8Lwi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Loop with Increment"]
     #[inline(always)]
-    pub const fn set_lwi(&mut self, val: super::vals::Cmdh8Lwi) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_lwi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Sample Time Select"]
     #[must_use]
@@ -1950,7 +1950,7 @@ impl defmt::Format for Cmdh8 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdh8 {{ cmpen: {:?}, wait_trig: {:?}, lwi: {:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
+            "Cmdh8 {{ cmpen: {:?}, wait_trig: {=bool:?}, lwi: {=bool:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
             self.cmpen(),
             self.wait_trig(),
             self.lwi(),
@@ -1981,26 +1981,26 @@ impl Cmdh9 {
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[must_use]
     #[inline(always)]
-    pub const fn wait_trig(&self) -> super::vals::Cmdh9WaitTrig {
+    pub const fn wait_trig(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Cmdh9WaitTrig::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wait for Trigger Assertion Before Execution"]
     #[inline(always)]
-    pub const fn set_wait_trig(&mut self, val: super::vals::Cmdh9WaitTrig) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_wait_trig(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Loop with Increment"]
     #[must_use]
     #[inline(always)]
-    pub const fn lwi(&self) -> super::vals::Cmdh9Lwi {
+    pub const fn lwi(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Cmdh9Lwi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Loop with Increment"]
     #[inline(always)]
-    pub const fn set_lwi(&mut self, val: super::vals::Cmdh9Lwi) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_lwi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Sample Time Select"]
     #[must_use]
@@ -2075,7 +2075,7 @@ impl defmt::Format for Cmdh9 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdh9 {{ cmpen: {:?}, wait_trig: {:?}, lwi: {:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
+            "Cmdh9 {{ cmpen: {:?}, wait_trig: {=bool:?}, lwi: {=bool:?}, sts: {:?}, avgs: {:?}, loop_: {:?}, next: {:?} }}",
             self.cmpen(),
             self.wait_trig(),
             self.lwi(),
@@ -2142,14 +2142,14 @@ impl Cmdl1 {
     #[doc = "Alternate Channel B Select Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn altben(&self) -> super::vals::Cmdl1Altben {
+    pub const fn altben(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Cmdl1Altben::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Alternate Channel B Select Enable"]
     #[inline(always)]
-    pub const fn set_altben(&mut self, val: super::vals::Cmdl1Altben) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_altben(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
 }
 impl Default for Cmdl1 {
@@ -2174,7 +2174,7 @@ impl defmt::Format for Cmdl1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdl1 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {:?} }}",
+            "Cmdl1 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {=bool:?} }}",
             self.adch(),
             self.ctype(),
             self.mode(),
@@ -2239,14 +2239,14 @@ impl Cmdl10 {
     #[doc = "Alternate Channel B Select Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn altben(&self) -> super::vals::Cmdl10Altben {
+    pub const fn altben(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Cmdl10Altben::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Alternate Channel B Select Enable"]
     #[inline(always)]
-    pub const fn set_altben(&mut self, val: super::vals::Cmdl10Altben) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_altben(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
 }
 impl Default for Cmdl10 {
@@ -2271,7 +2271,7 @@ impl defmt::Format for Cmdl10 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdl10 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {:?} }}",
+            "Cmdl10 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {=bool:?} }}",
             self.adch(),
             self.ctype(),
             self.mode(),
@@ -2336,14 +2336,14 @@ impl Cmdl11 {
     #[doc = "Alternate Channel B Select Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn altben(&self) -> super::vals::Cmdl11Altben {
+    pub const fn altben(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Cmdl11Altben::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Alternate Channel B Select Enable"]
     #[inline(always)]
-    pub const fn set_altben(&mut self, val: super::vals::Cmdl11Altben) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_altben(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
 }
 impl Default for Cmdl11 {
@@ -2368,7 +2368,7 @@ impl defmt::Format for Cmdl11 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdl11 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {:?} }}",
+            "Cmdl11 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {=bool:?} }}",
             self.adch(),
             self.ctype(),
             self.mode(),
@@ -2433,14 +2433,14 @@ impl Cmdl12 {
     #[doc = "Alternate Channel B Select Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn altben(&self) -> super::vals::Cmdl12Altben {
+    pub const fn altben(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Cmdl12Altben::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Alternate Channel B Select Enable"]
     #[inline(always)]
-    pub const fn set_altben(&mut self, val: super::vals::Cmdl12Altben) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_altben(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
 }
 impl Default for Cmdl12 {
@@ -2465,7 +2465,7 @@ impl defmt::Format for Cmdl12 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdl12 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {:?} }}",
+            "Cmdl12 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {=bool:?} }}",
             self.adch(),
             self.ctype(),
             self.mode(),
@@ -2530,14 +2530,14 @@ impl Cmdl13 {
     #[doc = "Alternate Channel B Select Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn altben(&self) -> super::vals::Cmdl13Altben {
+    pub const fn altben(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Cmdl13Altben::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Alternate Channel B Select Enable"]
     #[inline(always)]
-    pub const fn set_altben(&mut self, val: super::vals::Cmdl13Altben) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_altben(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
 }
 impl Default for Cmdl13 {
@@ -2562,7 +2562,7 @@ impl defmt::Format for Cmdl13 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdl13 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {:?} }}",
+            "Cmdl13 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {=bool:?} }}",
             self.adch(),
             self.ctype(),
             self.mode(),
@@ -2627,14 +2627,14 @@ impl Cmdl14 {
     #[doc = "Alternate Channel B Select Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn altben(&self) -> super::vals::Cmdl14Altben {
+    pub const fn altben(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Cmdl14Altben::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Alternate Channel B Select Enable"]
     #[inline(always)]
-    pub const fn set_altben(&mut self, val: super::vals::Cmdl14Altben) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_altben(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
 }
 impl Default for Cmdl14 {
@@ -2659,7 +2659,7 @@ impl defmt::Format for Cmdl14 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdl14 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {:?} }}",
+            "Cmdl14 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {=bool:?} }}",
             self.adch(),
             self.ctype(),
             self.mode(),
@@ -2724,14 +2724,14 @@ impl Cmdl15 {
     #[doc = "Alternate Channel B Select Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn altben(&self) -> super::vals::Cmdl15Altben {
+    pub const fn altben(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Cmdl15Altben::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Alternate Channel B Select Enable"]
     #[inline(always)]
-    pub const fn set_altben(&mut self, val: super::vals::Cmdl15Altben) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_altben(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
 }
 impl Default for Cmdl15 {
@@ -2756,7 +2756,7 @@ impl defmt::Format for Cmdl15 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdl15 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {:?} }}",
+            "Cmdl15 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {=bool:?} }}",
             self.adch(),
             self.ctype(),
             self.mode(),
@@ -2821,14 +2821,14 @@ impl Cmdl2 {
     #[doc = "Alternate Channel B Select Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn altben(&self) -> super::vals::Cmdl2Altben {
+    pub const fn altben(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Cmdl2Altben::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Alternate Channel B Select Enable"]
     #[inline(always)]
-    pub const fn set_altben(&mut self, val: super::vals::Cmdl2Altben) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_altben(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
 }
 impl Default for Cmdl2 {
@@ -2853,7 +2853,7 @@ impl defmt::Format for Cmdl2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdl2 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {:?} }}",
+            "Cmdl2 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {=bool:?} }}",
             self.adch(),
             self.ctype(),
             self.mode(),
@@ -2918,14 +2918,14 @@ impl Cmdl3 {
     #[doc = "Alternate Channel B Select Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn altben(&self) -> super::vals::Cmdl3Altben {
+    pub const fn altben(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Cmdl3Altben::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Alternate Channel B Select Enable"]
     #[inline(always)]
-    pub const fn set_altben(&mut self, val: super::vals::Cmdl3Altben) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_altben(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
 }
 impl Default for Cmdl3 {
@@ -2950,7 +2950,7 @@ impl defmt::Format for Cmdl3 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdl3 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {:?} }}",
+            "Cmdl3 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {=bool:?} }}",
             self.adch(),
             self.ctype(),
             self.mode(),
@@ -3015,14 +3015,14 @@ impl Cmdl4 {
     #[doc = "Alternate Channel B Select Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn altben(&self) -> super::vals::Cmdl4Altben {
+    pub const fn altben(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Cmdl4Altben::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Alternate Channel B Select Enable"]
     #[inline(always)]
-    pub const fn set_altben(&mut self, val: super::vals::Cmdl4Altben) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_altben(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
 }
 impl Default for Cmdl4 {
@@ -3047,7 +3047,7 @@ impl defmt::Format for Cmdl4 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdl4 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {:?} }}",
+            "Cmdl4 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {=bool:?} }}",
             self.adch(),
             self.ctype(),
             self.mode(),
@@ -3112,14 +3112,14 @@ impl Cmdl5 {
     #[doc = "Alternate Channel B Select Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn altben(&self) -> super::vals::Cmdl5Altben {
+    pub const fn altben(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Cmdl5Altben::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Alternate Channel B Select Enable"]
     #[inline(always)]
-    pub const fn set_altben(&mut self, val: super::vals::Cmdl5Altben) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_altben(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
 }
 impl Default for Cmdl5 {
@@ -3144,7 +3144,7 @@ impl defmt::Format for Cmdl5 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdl5 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {:?} }}",
+            "Cmdl5 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {=bool:?} }}",
             self.adch(),
             self.ctype(),
             self.mode(),
@@ -3209,14 +3209,14 @@ impl Cmdl6 {
     #[doc = "Alternate Channel B Select Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn altben(&self) -> super::vals::Cmdl6Altben {
+    pub const fn altben(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Cmdl6Altben::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Alternate Channel B Select Enable"]
     #[inline(always)]
-    pub const fn set_altben(&mut self, val: super::vals::Cmdl6Altben) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_altben(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
 }
 impl Default for Cmdl6 {
@@ -3241,7 +3241,7 @@ impl defmt::Format for Cmdl6 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdl6 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {:?} }}",
+            "Cmdl6 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {=bool:?} }}",
             self.adch(),
             self.ctype(),
             self.mode(),
@@ -3306,14 +3306,14 @@ impl Cmdl7 {
     #[doc = "Alternate Channel B Select Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn altben(&self) -> super::vals::Cmdl7Altben {
+    pub const fn altben(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Cmdl7Altben::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Alternate Channel B Select Enable"]
     #[inline(always)]
-    pub const fn set_altben(&mut self, val: super::vals::Cmdl7Altben) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_altben(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
 }
 impl Default for Cmdl7 {
@@ -3338,7 +3338,7 @@ impl defmt::Format for Cmdl7 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdl7 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {:?} }}",
+            "Cmdl7 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {=bool:?} }}",
             self.adch(),
             self.ctype(),
             self.mode(),
@@ -3403,14 +3403,14 @@ impl Cmdl8 {
     #[doc = "Alternate Channel B Select Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn altben(&self) -> super::vals::Cmdl8Altben {
+    pub const fn altben(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Cmdl8Altben::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Alternate Channel B Select Enable"]
     #[inline(always)]
-    pub const fn set_altben(&mut self, val: super::vals::Cmdl8Altben) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_altben(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
 }
 impl Default for Cmdl8 {
@@ -3435,7 +3435,7 @@ impl defmt::Format for Cmdl8 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdl8 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {:?} }}",
+            "Cmdl8 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {=bool:?} }}",
             self.adch(),
             self.ctype(),
             self.mode(),
@@ -3500,14 +3500,14 @@ impl Cmdl9 {
     #[doc = "Alternate Channel B Select Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn altben(&self) -> super::vals::Cmdl9Altben {
+    pub const fn altben(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Cmdl9Altben::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Alternate Channel B Select Enable"]
     #[inline(always)]
-    pub const fn set_altben(&mut self, val: super::vals::Cmdl9Altben) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_altben(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
 }
 impl Default for Cmdl9 {
@@ -3532,7 +3532,7 @@ impl defmt::Format for Cmdl9 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmdl9 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {:?} }}",
+            "Cmdl9 {{ adch: {:?}, ctype: {:?}, mode: {:?}, altb_adch: {:?}, altben: {=bool:?} }}",
             self.adch(),
             self.ctype(),
             self.mode(),
@@ -3549,14 +3549,14 @@ impl Ctrl {
     #[doc = "ADC Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn adcen(&self) -> super::vals::Adcen {
+    pub const fn adcen(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Adcen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ADC Enable"]
     #[inline(always)]
-    pub const fn set_adcen(&mut self, val: super::vals::Adcen) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_adcen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Software Reset"]
     #[must_use]
@@ -3668,7 +3668,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ adcen: {:?}, rst: {:?}, dozen: {:?}, cal_req: {:?}, calofs: {:?}, rstfifo0: {:?}, rstfifo1: {:?}, cal_avgs: {:?} }}",
+            "Ctrl {{ adcen: {=bool:?}, rst: {:?}, dozen: {:?}, cal_req: {:?}, calofs: {:?}, rstfifo0: {:?}, rstfifo1: {:?}, cal_avgs: {:?} }}",
             self.adcen(),
             self.rst(),
             self.dozen(),
@@ -3743,26 +3743,26 @@ impl De {
     #[doc = "FIFO 0 Watermark DMA Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn fwmde0(&self) -> super::vals::Fwmde0 {
+    pub const fn fwmde0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Fwmde0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO 0 Watermark DMA Enable"]
     #[inline(always)]
-    pub const fn set_fwmde0(&mut self, val: super::vals::Fwmde0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_fwmde0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "FIFO1 Watermark DMA Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn fwmde1(&self) -> super::vals::Fwmde1 {
+    pub const fn fwmde1(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Fwmde1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO1 Watermark DMA Enable"]
     #[inline(always)]
-    pub const fn set_fwmde1(&mut self, val: super::vals::Fwmde1) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_fwmde1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
 }
 impl Default for De {
@@ -3784,7 +3784,7 @@ impl defmt::Format for De {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "De {{ fwmde0: {:?}, fwmde1: {:?} }}",
+            "De {{ fwmde0: {=bool:?}, fwmde1: {=bool:?} }}",
             self.fwmde0(),
             self.fwmde1()
         )
@@ -3920,14 +3920,14 @@ impl Gcr {
     #[doc = "Gain Calculation Ready"]
     #[must_use]
     #[inline(always)]
-    pub const fn rdy(&self) -> super::vals::GcrRdy {
+    pub const fn rdy(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::GcrRdy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Gain Calculation Ready"]
     #[inline(always)]
-    pub const fn set_rdy(&mut self, val: super::vals::GcrRdy) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_rdy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
 }
 impl Default for Gcr {
@@ -3949,7 +3949,7 @@ impl defmt::Format for Gcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Gcr {{ gcalr: {=u16:?}, rdy: {:?} }}",
+            "Gcr {{ gcalr: {=u16:?}, rdy: {=bool:?} }}",
             self.gcalr(),
             self.rdy()
         )
@@ -3963,62 +3963,62 @@ impl Ie {
     #[doc = "FIFO 0 Watermark Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn fwmie0(&self) -> super::vals::Fwmie0 {
+    pub const fn fwmie0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Fwmie0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO 0 Watermark Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_fwmie0(&mut self, val: super::vals::Fwmie0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_fwmie0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Result FIFO 0 Overflow Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn fofie0(&self) -> super::vals::Fofie0 {
+    pub const fn fofie0(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Fofie0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Result FIFO 0 Overflow Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_fofie0(&mut self, val: super::vals::Fofie0) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_fofie0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "FIFO1 Watermark Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn fwmie1(&self) -> super::vals::Fwmie1 {
+    pub const fn fwmie1(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Fwmie1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO1 Watermark Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_fwmie1(&mut self, val: super::vals::Fwmie1) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_fwmie1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Result FIFO1 Overflow Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn fofie1(&self) -> super::vals::Fofie1 {
+    pub const fn fofie1(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Fofie1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Result FIFO1 Overflow Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_fofie1(&mut self, val: super::vals::Fofie1) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_fofie1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Trigger Exception Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn texc_ie(&self) -> super::vals::TexcIe {
+    pub const fn texc_ie(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::TexcIe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger Exception Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_texc_ie(&mut self, val: super::vals::TexcIe) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_texc_ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Trigger Completion Interrupt Enable"]
     #[must_use]
@@ -4056,7 +4056,7 @@ impl defmt::Format for Ie {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ie {{ fwmie0: {:?}, fofie0: {:?}, fwmie1: {:?}, fofie1: {:?}, texc_ie: {:?}, tcomp_ie: {:?} }}",
+            "Ie {{ fwmie0: {=bool:?}, fofie0: {=bool:?}, fwmie1: {=bool:?}, fofie1: {=bool:?}, texc_ie: {=bool:?}, tcomp_ie: {:?} }}",
             self.fwmie0(),
             self.fofie0(),
             self.fwmie1(),
@@ -4224,14 +4224,14 @@ impl Pause {
     #[doc = "Pause Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn pauseen(&self) -> super::vals::Pauseen {
+    pub const fn pauseen(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Pauseen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Pause Enable"]
     #[inline(always)]
-    pub const fn set_pauseen(&mut self, val: super::vals::Pauseen) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_pauseen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Pause {
@@ -4253,7 +4253,7 @@ impl defmt::Format for Pause {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Pause {{ pausedly: {=u16:?}, pauseen: {:?} }}",
+            "Pause {{ pausedly: {=u16:?}, pauseen: {=bool:?} }}",
             self.pausedly(),
             self.pauseen()
         )
@@ -4315,14 +4315,14 @@ impl Resfifo {
     #[doc = "FIFO Entry is Valid"]
     #[must_use]
     #[inline(always)]
-    pub const fn valid(&self) -> super::vals::Valid {
+    pub const fn valid(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Valid::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Entry is Valid"]
     #[inline(always)]
-    pub const fn set_valid(&mut self, val: super::vals::Valid) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_valid(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Resfifo {
@@ -4347,7 +4347,7 @@ impl defmt::Format for Resfifo {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Resfifo {{ d: {=u16:?}, tsrc: {:?}, loopcnt: {:?}, cmdsrc: {:?}, valid: {:?} }}",
+            "Resfifo {{ d: {=u16:?}, tsrc: {:?}, loopcnt: {:?}, cmdsrc: {:?}, valid: {=bool:?} }}",
             self.d(),
             self.tsrc(),
             self.loopcnt(),
@@ -4614,14 +4614,14 @@ impl Tctrl {
     #[doc = "Trigger Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn hten(&self) -> super::vals::Hten {
+    pub const fn hten(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Hten::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger Enable"]
     #[inline(always)]
-    pub const fn set_hten(&mut self, val: super::vals::Hten) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_hten(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "SAR Result Destination for Channel A"]
     #[must_use]
@@ -4662,14 +4662,14 @@ impl Tctrl {
     #[doc = "Trigger Resync"]
     #[must_use]
     #[inline(always)]
-    pub const fn rsync(&self) -> super::vals::Rsync {
+    pub const fn rsync(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Rsync::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger Resync"]
     #[inline(always)]
-    pub const fn set_rsync(&mut self, val: super::vals::Rsync) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_rsync(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "Trigger Delay Select"]
     #[must_use]
@@ -4720,7 +4720,7 @@ impl defmt::Format for Tctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tctrl {{ hten: {:?}, fifo_sel_a: {:?}, fifo_sel_b: {:?}, tpri: {:?}, rsync: {:?}, tdly: {=u8:?}, tcmd: {:?} }}",
+            "Tctrl {{ hten: {=bool:?}, fifo_sel_a: {:?}, fifo_sel_b: {:?}, tpri: {:?}, rsync: {=bool:?}, tdly: {=u8:?}, tcmd: {:?} }}",
             self.hten(),
             self.fifo_sel_a(),
             self.fifo_sel_b(),

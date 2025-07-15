@@ -54,14 +54,14 @@ impl Baseline {
     #[doc = "Threshold Trace Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn threshold_trace_en(&self) -> super::vals::ThresholdTraceEn {
+    pub const fn threshold_trace_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::ThresholdTraceEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Threshold Trace Enable"]
     #[inline(always)]
-    pub const fn set_threshold_trace_en(&mut self, val: super::vals::ThresholdTraceEn) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_threshold_trace_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Baseline {
@@ -86,7 +86,7 @@ impl defmt::Format for Baseline {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Baseline {{ baseline: {=u16:?}, base_trace_debounce: {:?}, base_trace_en: {=bool:?}, theshold_ratio: {:?}, threshold_trace_en: {:?} }}",
+            "Baseline {{ baseline: {=u16:?}, base_trace_debounce: {:?}, base_trace_en: {=bool:?}, theshold_ratio: {:?}, threshold_trace_en: {=bool:?} }}",
             self.baseline(),
             self.base_trace_debounce(),
             self.base_trace_en(),
@@ -169,14 +169,14 @@ impl Config {
     #[doc = "Self-Capacitance Noise Cancelation"]
     #[must_use]
     #[inline(always)]
-    pub const fn s_noise(&self) -> super::vals::SNoise {
+    pub const fn s_noise(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::SNoise::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Self-Capacitance Noise Cancelation"]
     #[inline(always)]
-    pub const fn set_s_noise(&mut self, val: super::vals::SNoise) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_s_noise(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "Self-Capacitance Charge Current Multiple"]
     #[must_use]
@@ -217,14 +217,14 @@ impl Config {
     #[doc = "Self-Capacitance Sensitivity Boost"]
     #[must_use]
     #[inline(always)]
-    pub const fn s_sen(&self) -> super::vals::SSen {
+    pub const fn s_sen(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::SSen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Self-Capacitance Sensitivity Boost"]
     #[inline(always)]
-    pub const fn set_s_sen(&mut self, val: super::vals::SSen) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_s_sen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
     #[doc = "Self-Capacitance Discharge Current Multiple"]
     #[must_use]
@@ -241,14 +241,14 @@ impl Config {
     #[doc = "S_XIN Adjust Ratio"]
     #[must_use]
     #[inline(always)]
-    pub const fn s_xin_add(&self) -> super::vals::SXinAdd {
+    pub const fn s_xin_add(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::SXinAdd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "S_XIN Adjust Ratio"]
     #[inline(always)]
-    pub const fn set_s_xin_add(&mut self, val: super::vals::SXinAdd) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_s_xin_add(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Config {
@@ -277,7 +277,7 @@ impl defmt::Format for Config {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Config {{ mode: {:?}, tsich: {:?}, s_noise: {:?}, s_xch: {:?}, s_xin: {:?}, s_ctrim: {:?}, s_sen: {:?}, s_xdn: {:?}, s_xin_add: {:?} }}",
+            "Config {{ mode: {:?}, tsich: {:?}, s_noise: {=bool:?}, s_xch: {:?}, s_xin: {:?}, s_ctrim: {:?}, s_sen: {=bool:?}, s_xdn: {:?}, s_xin_add: {=bool:?} }}",
             self.mode(),
             self.tsich(),
             self.s_noise(),
@@ -370,26 +370,26 @@ impl ConfigMutual {
     #[doc = "Mutual-Capacitance Counter Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn m_cnt_en(&self) -> super::vals::MCntEn {
+    pub const fn m_cnt_en(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::MCntEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Mutual-Capacitance Counter Enable"]
     #[inline(always)]
-    pub const fn set_m_cnt_en(&mut self, val: super::vals::MCntEn) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_m_cnt_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Mutual-Capacitance TX Pulldown Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn m_tx_pd_en(&self) -> super::vals::MTxPdEn {
+    pub const fn m_tx_pd_en(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::MTxPdEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Mutual-Capacitance TX Pulldown Enable"]
     #[inline(always)]
-    pub const fn set_m_tx_pd_en(&mut self, val: super::vals::MTxPdEn) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_m_tx_pd_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Mutual-Capacitance Sensitivity Boost"]
     #[must_use]
@@ -456,7 +456,7 @@ impl defmt::Format for ConfigMutual {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "ConfigMutual {{ mode: {:?}, m_nmirror: {:?}, m_pmirrorr: {:?}, m_pmirrorl: {:?}, m_sel_rx: {:?}, m_sel_tx: {:?}, m_cnt_en: {:?}, m_tx_pd_en: {:?}, m_sen_boost: {:?}, m_pre_res: {:?}, m_pre_current: {:?} }}",
+            "ConfigMutual {{ mode: {:?}, m_nmirror: {:?}, m_pmirrorr: {:?}, m_pmirrorl: {:?}, m_sel_rx: {:?}, m_sel_tx: {:?}, m_cnt_en: {=bool:?}, m_tx_pd_en: {=bool:?}, m_sen_boost: {:?}, m_pre_res: {:?}, m_pre_current: {:?} }}",
             self.mode(),
             self.m_nmirror(),
             self.m_pmirrorr(),
@@ -503,14 +503,14 @@ impl Data {
     #[doc = "Overrun Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn overrunf(&self) -> super::vals::Overrunf {
+    pub const fn overrunf(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::Overrunf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Overrun Flag"]
     #[inline(always)]
-    pub const fn set_overrunf(&mut self, val: super::vals::Overrunf) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_overrunf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "Out-of-Range Flag"]
     #[must_use]
@@ -546,7 +546,7 @@ impl defmt::Format for Data {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Data {{ tsicnt: {=u16:?}, eosf: {=bool:?}, overrunf: {:?}, outrgf: {=bool:?} }}",
+            "Data {{ tsicnt: {=u16:?}, eosf: {=bool:?}, overrunf: {=bool:?}, outrgf: {=bool:?} }}",
             self.tsicnt(),
             self.eosf(),
             self.overrunf(),
@@ -562,26 +562,26 @@ impl Gencs {
     #[doc = "In-Progress DMA Transfer Request Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dmaen_eos(&self) -> super::vals::DmaenEos {
+    pub const fn dmaen_eos(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::DmaenEos::from_bits(val as u8)
+        val != 0
     }
     #[doc = "In-Progress DMA Transfer Request Enable"]
     #[inline(always)]
-    pub const fn set_dmaen_eos(&mut self, val: super::vals::DmaenEos) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_dmaen_eos(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Out-of-Range DMA Transfer Request Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dmaen_outrg(&self) -> super::vals::DmaenOutrg {
+    pub const fn dmaen_outrg(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::DmaenOutrg::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Out-of-Range DMA Transfer Request Enable"]
     #[inline(always)]
-    pub const fn set_dmaen_outrg(&mut self, val: super::vals::DmaenOutrg) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_dmaen_outrg(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Scan Trigger Mode"]
     #[must_use]
@@ -598,38 +598,38 @@ impl Gencs {
     #[doc = "TSI Stop Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn stpe(&self) -> super::vals::Stpe {
+    pub const fn stpe(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Stpe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TSI Stop Enable"]
     #[inline(always)]
-    pub const fn set_stpe(&mut self, val: super::vals::Stpe) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_stpe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "TSI Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tsien(&self) -> super::vals::Tsien {
+    pub const fn tsien(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Tsien::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TSI Enable"]
     #[inline(always)]
-    pub const fn set_tsien(&mut self, val: super::vals::Tsien) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_tsien(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Software Trigger Start"]
     #[must_use]
     #[inline(always)]
-    pub const fn swts(&self) -> super::vals::Swts {
+    pub const fn swts(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Swts::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software Trigger Start"]
     #[inline(always)]
-    pub const fn set_swts(&mut self, val: super::vals::Swts) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_swts(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Capacitor Fine Trim"]
     #[must_use]
@@ -670,14 +670,14 @@ impl Gencs {
     #[doc = "Proximity Enable Signal"]
     #[must_use]
     #[inline(always)]
-    pub const fn s_prox_en(&self) -> super::vals::SProxEn {
+    pub const fn s_prox_en(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::SProxEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Proximity Enable Signal"]
     #[inline(always)]
-    pub const fn set_s_prox_en(&mut self, val: super::vals::SProxEn) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_s_prox_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "Set Clock"]
     #[must_use]
@@ -694,26 +694,26 @@ impl Gencs {
     #[doc = "End-of-Scan Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn esor(&self) -> super::vals::Esor {
+    pub const fn esor(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::Esor::from_bits(val as u8)
+        val != 0
     }
     #[doc = "End-of-Scan Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_esor(&mut self, val: super::vals::Esor) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_esor(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
     #[doc = "Out-of-Range Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn outrg_en(&self) -> super::vals::OutrgEn {
+    pub const fn outrg_en(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::OutrgEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Out-of-Range Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_outrg_en(&mut self, val: super::vals::OutrgEn) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_outrg_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
 }
 impl Default for Gencs {
@@ -746,7 +746,7 @@ impl defmt::Format for Gencs {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Gencs {{ dmaen_eos: {:?}, dmaen_outrg: {:?}, stm: {:?}, stpe: {:?}, tsien: {:?}, swts: {:?}, ctrim_fine: {:?}, dvolt: {:?}, debounce: {:?}, s_prox_en: {:?}, setclk: {:?}, esor: {:?}, outrg_en: {:?} }}",
+            "Gencs {{ dmaen_eos: {=bool:?}, dmaen_outrg: {=bool:?}, stm: {:?}, stpe: {=bool:?}, tsien: {=bool:?}, swts: {=bool:?}, ctrim_fine: {:?}, dvolt: {:?}, debounce: {:?}, s_prox_en: {=bool:?}, setclk: {:?}, esor: {=bool:?}, outrg_en: {=bool:?} }}",
             self.dmaen_eos(),
             self.dmaen_outrg(),
             self.stm(),
@@ -795,14 +795,14 @@ impl Misc {
     #[doc = "Test Finger Function Enable Signals"]
     #[must_use]
     #[inline(always)]
-    pub const fn test_finger_en(&self) -> super::vals::TestFingerEn {
+    pub const fn test_finger_en(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::TestFingerEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Test Finger Function Enable Signals"]
     #[inline(always)]
-    pub const fn set_test_finger_en(&mut self, val: super::vals::TestFingerEn) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_test_finger_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "TSI Clock Divider"]
     #[must_use]
@@ -838,7 +838,7 @@ impl defmt::Format for Misc {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Misc {{ osc_clk_sel: {:?}, test_finger: {:?}, test_finger_en: {:?}, clkdivider: {=u8:?} }}",
+            "Misc {{ osc_clk_sel: {:?}, test_finger: {:?}, test_finger_en: {=bool:?}, clkdivider: {=u8:?} }}",
             self.osc_clk_sel(),
             self.test_finger(),
             self.test_finger_en(),
@@ -1006,50 +1006,50 @@ impl Sinc {
     #[doc = "SSC Output Control"]
     #[must_use]
     #[inline(always)]
-    pub const fn ssc_control_out(&self) -> super::vals::SscControlOut {
+    pub const fn ssc_control_out(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::SscControlOut::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SSC Output Control"]
     #[inline(always)]
-    pub const fn set_ssc_control_out(&mut self, val: super::vals::SscControlOut) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_ssc_control_out(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "SINC Valid"]
     #[must_use]
     #[inline(always)]
-    pub const fn sinc_valid(&self) -> super::vals::SincValid {
+    pub const fn sinc_valid(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::SincValid::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SINC Valid"]
     #[inline(always)]
-    pub const fn set_sinc_valid(&mut self, val: super::vals::SincValid) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_sinc_valid(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "SINC Overflow Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn sinc_overflow_flag(&self) -> super::vals::SincOverflowFlag {
+    pub const fn sinc_overflow_flag(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::SincOverflowFlag::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SINC Overflow Flag"]
     #[inline(always)]
-    pub const fn set_sinc_overflow_flag(&mut self, val: super::vals::SincOverflowFlag) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_sinc_overflow_flag(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Switch Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn switch_enable(&self) -> super::vals::SwitchEnable {
+    pub const fn switch_enable(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::SwitchEnable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Switch Enable"]
     #[inline(always)]
-    pub const fn set_switch_enable(&mut self, val: super::vals::SwitchEnable) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_switch_enable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Decimation"]
     #[must_use]
@@ -1112,7 +1112,7 @@ impl defmt::Format for Sinc {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sinc {{ ssc_control_out: {:?}, sinc_valid: {:?}, sinc_overflow_flag: {:?}, switch_enable: {:?}, decimation: {:?}, order: {:?}, cutoff: {:?} }}",
+            "Sinc {{ ssc_control_out: {=bool:?}, sinc_valid: {=bool:?}, sinc_overflow_flag: {=bool:?}, switch_enable: {=bool:?}, decimation: {:?}, order: {:?}, cutoff: {:?} }}",
             self.ssc_control_out(),
             self.sinc_valid(),
             self.sinc_overflow_flag(),
@@ -1432,14 +1432,14 @@ impl Trig {
     #[doc = "Trigger Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn trig_en(&self) -> super::vals::TrigEn {
+    pub const fn trig_en(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::TrigEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger Enable"]
     #[inline(always)]
-    pub const fn set_trig_en(&mut self, val: super::vals::TrigEn) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_trig_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Trigger Clock Select"]
     #[must_use]
@@ -1475,7 +1475,7 @@ impl defmt::Format for Trig {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig {{ trig_period_counter: {=u32:?}, trig_clk_divider: {:?}, trig_en: {:?}, trig_clk_sel: {:?} }}",
+            "Trig {{ trig_period_counter: {=u32:?}, trig_clk_divider: {:?}, trig_en: {=bool:?}, trig_clk_sel: {:?} }}",
             self.trig_period_counter(),
             self.trig_clk_divider(),
             self.trig_en(),

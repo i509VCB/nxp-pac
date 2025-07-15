@@ -154,38 +154,38 @@ impl Ctrl {
     #[doc = "EWM Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ewmen(&self) -> super::vals::Ewmen {
+    pub const fn ewmen(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Ewmen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "EWM Enable"]
     #[inline(always)]
-    pub const fn set_ewmen(&mut self, val: super::vals::Ewmen) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u8) & 0x01) << 0usize);
+    pub const fn set_ewmen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u8) & 0x01) << 0usize);
     }
     #[doc = "Assertion State Select"]
     #[must_use]
     #[inline(always)]
-    pub const fn assin(&self) -> super::vals::Assin {
+    pub const fn assin(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Assin::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Assertion State Select"]
     #[inline(always)]
-    pub const fn set_assin(&mut self, val: super::vals::Assin) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u8) & 0x01) << 1usize);
+    pub const fn set_assin(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u8) & 0x01) << 1usize);
     }
     #[doc = "Input Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn inen(&self) -> super::vals::Inen {
+    pub const fn inen(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Inen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Input Enable"]
     #[inline(always)]
-    pub const fn set_inen(&mut self, val: super::vals::Inen) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u8) & 0x01) << 2usize);
+    pub const fn set_inen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u8) & 0x01) << 2usize);
     }
     #[doc = "Interrupt Enable"]
     #[must_use]
@@ -221,7 +221,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ ewmen: {:?}, assin: {:?}, inen: {:?}, inten: {:?} }}",
+            "Ctrl {{ ewmen: {=bool:?}, assin: {=bool:?}, inen: {=bool:?}, inten: {:?} }}",
             self.ewmen(),
             self.assin(),
             self.inen(),

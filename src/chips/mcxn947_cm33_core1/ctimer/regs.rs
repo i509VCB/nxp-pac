@@ -1110,50 +1110,50 @@ impl Tcr {
     #[doc = "Counter Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cen(&self) -> super::vals::Cen {
+    pub const fn cen(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Cen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Counter Enable"]
     #[inline(always)]
-    pub const fn set_cen(&mut self, val: super::vals::Cen) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_cen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Counter Reset Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn crst(&self) -> super::vals::Crst {
+    pub const fn crst(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Crst::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Counter Reset Enable"]
     #[inline(always)]
-    pub const fn set_crst(&mut self, val: super::vals::Crst) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_crst(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Allow Global Count Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn agcen(&self) -> super::vals::Agcen {
+    pub const fn agcen(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Agcen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Allow Global Count Enable"]
     #[inline(always)]
-    pub const fn set_agcen(&mut self, val: super::vals::Agcen) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_agcen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Allow Trigger Count Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn atcen(&self) -> super::vals::Atcen {
+    pub const fn atcen(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Atcen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Allow Trigger Count Enable"]
     #[inline(always)]
-    pub const fn set_atcen(&mut self, val: super::vals::Atcen) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_atcen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
 }
 impl Default for Tcr {
@@ -1177,7 +1177,7 @@ impl defmt::Format for Tcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tcr {{ cen: {:?}, crst: {:?}, agcen: {:?}, atcen: {:?} }}",
+            "Tcr {{ cen: {=bool:?}, crst: {=bool:?}, agcen: {=bool:?}, atcen: {=bool:?} }}",
             self.cen(),
             self.crst(),
             self.agcen(),

@@ -32,37 +32,6 @@ impl From<I2cm> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum I2cpresent {
-    #[doc = "Not supported"]
-    FALSE = 0x0,
-    #[doc = "Supported"]
-    TRUE = 0x01,
-}
-impl I2cpresent {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> I2cpresent {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for I2cpresent {
-    #[inline(always)]
-    fn from(val: u8) -> I2cpresent {
-        I2cpresent::from_bits(val)
-    }
-}
-impl From<I2cpresent> for u8 {
-    #[inline(always)]
-    fn from(val: I2cpresent) -> u8 {
-        I2cpresent::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum I2cs {
     #[doc = "Clear"]
     CLR = 0x0,
@@ -89,37 +58,6 @@ impl From<I2cs> for u8 {
     #[inline(always)]
     fn from(val: I2cs) -> u8 {
         I2cs::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Lock {
-    #[doc = "PERSEL is writable"]
-    FALSE = 0x0,
-    #[doc = "PERSEL is not writable"]
-    TRUE = 0x01,
-}
-impl Lock {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Lock {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Lock {
-    #[inline(always)]
-    fn from(val: u8) -> Lock {
-        Lock::from_bits(val)
-    }
-}
-impl From<Lock> for u8 {
-    #[inline(always)]
-    fn from(val: Lock) -> u8 {
-        Lock::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -191,68 +129,6 @@ impl From<Spi> for u8 {
     #[inline(always)]
     fn from(val: Spi) -> u8 {
         Spi::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Spipresent {
-    #[doc = "Not supported"]
-    FALSE = 0x0,
-    #[doc = "Supported"]
-    TRUE = 0x01,
-}
-impl Spipresent {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Spipresent {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Spipresent {
-    #[inline(always)]
-    fn from(val: u8) -> Spipresent {
-        Spipresent::from_bits(val)
-    }
-}
-impl From<Spipresent> for u8 {
-    #[inline(always)]
-    fn from(val: Spipresent) -> u8 {
-        Spipresent::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Uartpresent {
-    #[doc = "Not supported"]
-    FALSE = 0x0,
-    #[doc = "Supported"]
-    TRUE = 0x01,
-}
-impl Uartpresent {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Uartpresent {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Uartpresent {
-    #[inline(always)]
-    fn from(val: u8) -> Uartpresent {
-        Uartpresent::from_bits(val)
-    }
-}
-impl From<Uartpresent> for u8 {
-    #[inline(always)]
-    fn from(val: Uartpresent) -> u8 {
-        Uartpresent::to_bits(val)
     }
 }
 #[repr(u8)]

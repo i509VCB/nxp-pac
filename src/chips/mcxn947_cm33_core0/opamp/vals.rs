@@ -1,68 +1,6 @@
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Adcsw1 {
-    #[doc = "Measure negative gain resistor ladder voltage switch off"]
-    OFF = 0x0,
-    #[doc = "Measure negative gain resistor ladder voltage switch on"]
-    ON = 0x01,
-}
-impl Adcsw1 {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Adcsw1 {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Adcsw1 {
-    #[inline(always)]
-    fn from(val: u8) -> Adcsw1 {
-        Adcsw1::from_bits(val)
-    }
-}
-impl From<Adcsw1> for u8 {
-    #[inline(always)]
-    fn from(val: Adcsw1) -> u8 {
-        Adcsw1::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Adcsw2 {
-    #[doc = "Measure positive gain resistor ladder reference voltage switch off"]
-    DISABLE = 0x0,
-    #[doc = "Measure positive gain resistor ladder reference voltage switch on"]
-    ENABLE = 0x01,
-}
-impl Adcsw2 {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Adcsw2 {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Adcsw2 {
-    #[inline(always)]
-    fn from(val: u8) -> Adcsw2 {
-        Adcsw2::from_bits(val)
-    }
-}
-impl From<Adcsw2> for u8 {
-    #[inline(always)]
-    fn from(val: Adcsw2) -> u8 {
-        Adcsw2::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Biasc {
     #[doc = "Default"]
     DEF = 0x0,
@@ -93,68 +31,6 @@ impl From<Biasc> for u8 {
     #[inline(always)]
     fn from(val: Biasc) -> u8 {
         Biasc::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Bufen {
-    #[doc = "Disables"]
-    DISABLE = 0x0,
-    #[doc = "Enables"]
-    ENABLE = 0x01,
-}
-impl Bufen {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Bufen {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Bufen {
-    #[inline(always)]
-    fn from(val: u8) -> Bufen {
-        Bufen::from_bits(val)
-    }
-}
-impl From<Bufen> for u8 {
-    #[inline(always)]
-    fn from(val: Bufen) -> u8 {
-        Bufen::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum En {
-    #[doc = "Disable"]
-    DISABLE = 0x0,
-    #[doc = "Enable"]
-    ENABLE = 0x01,
-}
-impl En {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> En {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for En {
-    #[inline(always)]
-    fn from(val: u8) -> En {
-        En::from_bits(val)
-    }
-}
-impl From<En> for u8 {
-    #[inline(always)]
-    fn from(val: En) -> u8 {
-        En::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -331,37 +207,6 @@ impl From<Ngain> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Outsw {
-    #[doc = "OPAMP out to negative gain resistor ladder switch off"]
-    OFF = 0x0,
-    #[doc = "OPAMP out to negative gain resistor ladder switch on"]
-    ON = 0x01,
-}
-impl Outsw {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Outsw {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Outsw {
-    #[inline(always)]
-    fn from(val: u8) -> Outsw {
-        Outsw::from_bits(val)
-    }
-}
-impl From<Outsw> for u8 {
-    #[inline(always)]
-    fn from(val: Outsw) -> u8 {
-        Outsw::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PgaFunction {
     #[doc = "Core amplifier enabled"]
     CORE_AMP = 0x0,
@@ -466,36 +311,5 @@ impl From<Pref> for u8 {
     #[inline(always)]
     fn from(val: Pref) -> u8 {
         Pref::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Trigmd {
-    #[doc = "Disable"]
-    DISABLE = 0x0,
-    #[doc = "Enable"]
-    ENABLE = 0x01,
-}
-impl Trigmd {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Trigmd {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Trigmd {
-    #[inline(always)]
-    fn from(val: u8) -> Trigmd {
-        Trigmd::from_bits(val)
-    }
-}
-impl From<Trigmd> for u8 {
-    #[inline(always)]
-    fn from(val: Trigmd) -> u8 {
-        Trigmd::to_bits(val)
     }
 }

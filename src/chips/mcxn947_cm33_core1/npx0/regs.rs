@@ -385,386 +385,386 @@ impl VmapctxWd {
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val0(&self) -> super::vals::Val0 {
+    pub const fn val0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Val0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val0(&mut self, val: super::vals::Val0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_val0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val1(&self) -> super::vals::Val1 {
+    pub const fn val1(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Val1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val1(&mut self, val: super::vals::Val1) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_val1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val2(&self) -> super::vals::Val2 {
+    pub const fn val2(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Val2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val2(&mut self, val: super::vals::Val2) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_val2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val3(&self) -> super::vals::Val3 {
+    pub const fn val3(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Val3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val3(&mut self, val: super::vals::Val3) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_val3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val4(&self) -> super::vals::Val4 {
+    pub const fn val4(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Val4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val4(&mut self, val: super::vals::Val4) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_val4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val5(&self) -> super::vals::Val5 {
+    pub const fn val5(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Val5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val5(&mut self, val: super::vals::Val5) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_val5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val6(&self) -> super::vals::Val6 {
+    pub const fn val6(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Val6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val6(&mut self, val: super::vals::Val6) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_val6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val7(&self) -> super::vals::Val7 {
+    pub const fn val7(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Val7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val7(&mut self, val: super::vals::Val7) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_val7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val8(&self) -> super::vals::Val8 {
+    pub const fn val8(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Val8::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val8(&mut self, val: super::vals::Val8) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_val8(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val9(&self) -> super::vals::Val9 {
+    pub const fn val9(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Val9::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val9(&mut self, val: super::vals::Val9) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_val9(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val10(&self) -> super::vals::Val10 {
+    pub const fn val10(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Val10::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val10(&mut self, val: super::vals::Val10) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_val10(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val11(&self) -> super::vals::Val11 {
+    pub const fn val11(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Val11::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val11(&mut self, val: super::vals::Val11) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_val11(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val12(&self) -> super::vals::Val12 {
+    pub const fn val12(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Val12::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val12(&mut self, val: super::vals::Val12) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_val12(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val13(&self) -> super::vals::Val13 {
+    pub const fn val13(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Val13::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val13(&mut self, val: super::vals::Val13) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_val13(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val14(&self) -> super::vals::Val14 {
+    pub const fn val14(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Val14::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val14(&mut self, val: super::vals::Val14) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_val14(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val15(&self) -> super::vals::Val15 {
+    pub const fn val15(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Val15::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val15(&mut self, val: super::vals::Val15) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_val15(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val16(&self) -> super::vals::Val16 {
+    pub const fn val16(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Val16::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val16(&mut self, val: super::vals::Val16) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_val16(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val17(&self) -> super::vals::Val17 {
+    pub const fn val17(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Val17::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val17(&mut self, val: super::vals::Val17) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_val17(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val18(&self) -> super::vals::Val18 {
+    pub const fn val18(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::Val18::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val18(&mut self, val: super::vals::Val18) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_val18(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val19(&self) -> super::vals::Val19 {
+    pub const fn val19(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Val19::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val19(&mut self, val: super::vals::Val19) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_val19(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val20(&self) -> super::vals::Val20 {
+    pub const fn val20(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::Val20::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val20(&mut self, val: super::vals::Val20) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_val20(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val21(&self) -> super::vals::Val21 {
+    pub const fn val21(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Val21::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val21(&mut self, val: super::vals::Val21) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_val21(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val22(&self) -> super::vals::Val22 {
+    pub const fn val22(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Val22::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val22(&mut self, val: super::vals::Val22) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_val22(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val23(&self) -> super::vals::Val23 {
+    pub const fn val23(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Val23::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val23(&mut self, val: super::vals::Val23) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_val23(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val24(&self) -> super::vals::Val24 {
+    pub const fn val24(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::Val24::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val24(&mut self, val: super::vals::Val24) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_val24(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val25(&self) -> super::vals::Val25 {
+    pub const fn val25(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Val25::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val25(&mut self, val: super::vals::Val25) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_val25(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val26(&self) -> super::vals::Val26 {
+    pub const fn val26(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::Val26::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val26(&mut self, val: super::vals::Val26) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_val26(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val27(&self) -> super::vals::Val27 {
+    pub const fn val27(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::Val27::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val27(&mut self, val: super::vals::Val27) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_val27(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val28(&self) -> super::vals::Val28 {
+    pub const fn val28(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Val28::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val28(&mut self, val: super::vals::Val28) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_val28(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val29(&self) -> super::vals::Val29 {
+    pub const fn val29(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::Val29::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val29(&mut self, val: super::vals::Val29) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_val29(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val30(&self) -> super::vals::Val30 {
+    pub const fn val30(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Val30::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val30(&mut self, val: super::vals::Val30) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_val30(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn val31(&self) -> super::vals::Val31 {
+    pub const fn val31(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Val31::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Block valid enable for encryption/decryption"]
     #[inline(always)]
-    pub const fn set_val31(&mut self, val: super::vals::Val31) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_val31(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for VmapctxWd {
@@ -816,7 +816,7 @@ impl defmt::Format for VmapctxWd {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "VmapctxWd {{ val0: {:?}, val1: {:?}, val2: {:?}, val3: {:?}, val4: {:?}, val5: {:?}, val6: {:?}, val7: {:?}, val8: {:?}, val9: {:?}, val10: {:?}, val11: {:?}, val12: {:?}, val13: {:?}, val14: {:?}, val15: {:?}, val16: {:?}, val17: {:?}, val18: {:?}, val19: {:?}, val20: {:?}, val21: {:?}, val22: {:?}, val23: {:?}, val24: {:?}, val25: {:?}, val26: {:?}, val27: {:?}, val28: {:?}, val29: {:?}, val30: {:?}, val31: {:?} }}",
+            "VmapctxWd {{ val0: {=bool:?}, val1: {=bool:?}, val2: {=bool:?}, val3: {=bool:?}, val4: {=bool:?}, val5: {=bool:?}, val6: {=bool:?}, val7: {=bool:?}, val8: {=bool:?}, val9: {=bool:?}, val10: {=bool:?}, val11: {=bool:?}, val12: {=bool:?}, val13: {=bool:?}, val14: {=bool:?}, val15: {=bool:?}, val16: {=bool:?}, val17: {=bool:?}, val18: {=bool:?}, val19: {=bool:?}, val20: {=bool:?}, val21: {=bool:?}, val22: {=bool:?}, val23: {=bool:?}, val24: {=bool:?}, val25: {=bool:?}, val26: {=bool:?}, val27: {=bool:?}, val28: {=bool:?}, val29: {=bool:?}, val30: {=bool:?}, val31: {=bool:?} }}",
             self.val0(),
             self.val1(),
             self.val2(),

@@ -115,50 +115,50 @@ impl Pselid {
     #[doc = "Lock"]
     #[must_use]
     #[inline(always)]
-    pub const fn lock(&self) -> super::vals::Lock {
+    pub const fn lock(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Lock::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Lock"]
     #[inline(always)]
-    pub const fn set_lock(&mut self, val: super::vals::Lock) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_lock(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "UART Present"]
     #[must_use]
     #[inline(always)]
-    pub const fn uartpresent(&self) -> super::vals::Uartpresent {
+    pub const fn uartpresent(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Uartpresent::from_bits(val as u8)
+        val != 0
     }
     #[doc = "UART Present"]
     #[inline(always)]
-    pub const fn set_uartpresent(&mut self, val: super::vals::Uartpresent) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_uartpresent(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "SPI Present"]
     #[must_use]
     #[inline(always)]
-    pub const fn spipresent(&self) -> super::vals::Spipresent {
+    pub const fn spipresent(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Spipresent::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SPI Present"]
     #[inline(always)]
-    pub const fn set_spipresent(&mut self, val: super::vals::Spipresent) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_spipresent(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "I2C Present"]
     #[must_use]
     #[inline(always)]
-    pub const fn i2cpresent(&self) -> super::vals::I2cpresent {
+    pub const fn i2cpresent(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::I2cpresent::from_bits(val as u8)
+        val != 0
     }
     #[doc = "I2C Present"]
     #[inline(always)]
-    pub const fn set_i2cpresent(&mut self, val: super::vals::I2cpresent) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_i2cpresent(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "LP_FLEXCOMM interface ID"]
     #[must_use]
@@ -196,7 +196,7 @@ impl defmt::Format for Pselid {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Pselid {{ persel: {:?}, lock: {:?}, uartpresent: {:?}, spipresent: {:?}, i2cpresent: {:?}, id: {=u32:?} }}",
+            "Pselid {{ persel: {:?}, lock: {=bool:?}, uartpresent: {=bool:?}, spipresent: {=bool:?}, i2cpresent: {=bool:?}, id: {=u32:?} }}",
             self.persel(),
             self.lock(),
             self.uartpresent(),

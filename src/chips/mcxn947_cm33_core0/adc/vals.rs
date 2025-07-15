@@ -32,37 +32,6 @@ impl From<AdcActive> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Adcen {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Adcen {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Adcen {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Adcen {
-    #[inline(always)]
-    fn from(val: u8) -> Adcen {
-        Adcen::from_bits(val)
-    }
-}
-impl From<Adcen> for u8 {
-    #[inline(always)]
-    fn from(val: Adcen) -> u8 {
-        Adcen::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CalAvgs {
     #[doc = "Single conversion."]
     NO_AVERAGE = 0x0,
@@ -436,37 +405,6 @@ impl From<Cmdh10Loop> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh10Lwi {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Cmdh10Lwi {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh10Lwi {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh10Lwi {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh10Lwi {
-        Cmdh10Lwi::from_bits(val)
-    }
-}
-impl From<Cmdh10Lwi> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh10Lwi) -> u8 {
-        Cmdh10Lwi::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdh10Next {
     #[doc = "No next command defined. Terminate conversions at completion of current command. If lower priority trigger pending, begin command associated with lower priority trigger."]
     NO_NEXT_CMD_TERMINATE_ON_FINISH = 0x0,
@@ -559,37 +497,6 @@ impl From<Cmdh10Sts> for u8 {
     #[inline(always)]
     fn from(val: Cmdh10Sts) -> u8 {
         Cmdh10Sts::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh10WaitTrig {
-    #[doc = "Command executes automatically."]
-    DISABLED = 0x0,
-    #[doc = "Active trigger must be asserted again before executing this command."]
-    ENABLED = 0x01,
-}
-impl Cmdh10WaitTrig {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh10WaitTrig {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh10WaitTrig {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh10WaitTrig {
-        Cmdh10WaitTrig::from_bits(val)
-    }
-}
-impl From<Cmdh10WaitTrig> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh10WaitTrig) -> u8 {
-        Cmdh10WaitTrig::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -737,37 +644,6 @@ impl From<Cmdh11Loop> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh11Lwi {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Cmdh11Lwi {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh11Lwi {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh11Lwi {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh11Lwi {
-        Cmdh11Lwi::from_bits(val)
-    }
-}
-impl From<Cmdh11Lwi> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh11Lwi) -> u8 {
-        Cmdh11Lwi::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdh11Next {
     #[doc = "No next command defined. Terminate conversions at completion of current command. If lower priority trigger pending, begin command associated with lower priority trigger."]
     NO_NEXT_CMD_TERMINATE_ON_FINISH = 0x0,
@@ -860,37 +736,6 @@ impl From<Cmdh11Sts> for u8 {
     #[inline(always)]
     fn from(val: Cmdh11Sts) -> u8 {
         Cmdh11Sts::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh11WaitTrig {
-    #[doc = "Command executes automatically."]
-    DISABLED = 0x0,
-    #[doc = "Active trigger must be asserted again before executing this command."]
-    ENABLED = 0x01,
-}
-impl Cmdh11WaitTrig {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh11WaitTrig {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh11WaitTrig {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh11WaitTrig {
-        Cmdh11WaitTrig::from_bits(val)
-    }
-}
-impl From<Cmdh11WaitTrig> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh11WaitTrig) -> u8 {
-        Cmdh11WaitTrig::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1038,37 +883,6 @@ impl From<Cmdh12Loop> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh12Lwi {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Cmdh12Lwi {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh12Lwi {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh12Lwi {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh12Lwi {
-        Cmdh12Lwi::from_bits(val)
-    }
-}
-impl From<Cmdh12Lwi> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh12Lwi) -> u8 {
-        Cmdh12Lwi::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdh12Next {
     #[doc = "No next command defined. Terminate conversions at completion of current command. If lower priority trigger pending, begin command associated with lower priority trigger."]
     NO_NEXT_CMD_TERMINATE_ON_FINISH = 0x0,
@@ -1161,37 +975,6 @@ impl From<Cmdh12Sts> for u8 {
     #[inline(always)]
     fn from(val: Cmdh12Sts) -> u8 {
         Cmdh12Sts::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh12WaitTrig {
-    #[doc = "Command executes automatically."]
-    DISABLED = 0x0,
-    #[doc = "Active trigger must be asserted again before executing this command."]
-    ENABLED = 0x01,
-}
-impl Cmdh12WaitTrig {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh12WaitTrig {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh12WaitTrig {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh12WaitTrig {
-        Cmdh12WaitTrig::from_bits(val)
-    }
-}
-impl From<Cmdh12WaitTrig> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh12WaitTrig) -> u8 {
-        Cmdh12WaitTrig::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1339,37 +1122,6 @@ impl From<Cmdh13Loop> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh13Lwi {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Cmdh13Lwi {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh13Lwi {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh13Lwi {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh13Lwi {
-        Cmdh13Lwi::from_bits(val)
-    }
-}
-impl From<Cmdh13Lwi> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh13Lwi) -> u8 {
-        Cmdh13Lwi::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdh13Next {
     #[doc = "No next command defined. Terminate conversions at completion of current command. If lower priority trigger pending, begin command associated with lower priority trigger."]
     NO_NEXT_CMD_TERMINATE_ON_FINISH = 0x0,
@@ -1462,37 +1214,6 @@ impl From<Cmdh13Sts> for u8 {
     #[inline(always)]
     fn from(val: Cmdh13Sts) -> u8 {
         Cmdh13Sts::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh13WaitTrig {
-    #[doc = "Command executes automatically."]
-    DISABLED = 0x0,
-    #[doc = "Active trigger must be asserted again before executing this command."]
-    ENABLED = 0x01,
-}
-impl Cmdh13WaitTrig {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh13WaitTrig {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh13WaitTrig {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh13WaitTrig {
-        Cmdh13WaitTrig::from_bits(val)
-    }
-}
-impl From<Cmdh13WaitTrig> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh13WaitTrig) -> u8 {
-        Cmdh13WaitTrig::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1640,37 +1361,6 @@ impl From<Cmdh14Loop> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh14Lwi {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Cmdh14Lwi {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh14Lwi {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh14Lwi {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh14Lwi {
-        Cmdh14Lwi::from_bits(val)
-    }
-}
-impl From<Cmdh14Lwi> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh14Lwi) -> u8 {
-        Cmdh14Lwi::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdh14Next {
     #[doc = "No next command defined. Terminate conversions at completion of current command. If lower priority trigger pending, begin command associated with lower priority trigger."]
     NO_NEXT_CMD_TERMINATE_ON_FINISH = 0x0,
@@ -1763,37 +1453,6 @@ impl From<Cmdh14Sts> for u8 {
     #[inline(always)]
     fn from(val: Cmdh14Sts) -> u8 {
         Cmdh14Sts::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh14WaitTrig {
-    #[doc = "Command executes automatically."]
-    DISABLED = 0x0,
-    #[doc = "Active trigger must be asserted again before executing this command."]
-    ENABLED = 0x01,
-}
-impl Cmdh14WaitTrig {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh14WaitTrig {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh14WaitTrig {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh14WaitTrig {
-        Cmdh14WaitTrig::from_bits(val)
-    }
-}
-impl From<Cmdh14WaitTrig> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh14WaitTrig) -> u8 {
-        Cmdh14WaitTrig::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1941,37 +1600,6 @@ impl From<Cmdh15Loop> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh15Lwi {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Cmdh15Lwi {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh15Lwi {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh15Lwi {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh15Lwi {
-        Cmdh15Lwi::from_bits(val)
-    }
-}
-impl From<Cmdh15Lwi> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh15Lwi) -> u8 {
-        Cmdh15Lwi::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdh15Next {
     #[doc = "No next command defined. Terminate conversions at completion of current command. If lower priority trigger pending, begin command associated with lower priority trigger."]
     NO_NEXT_CMD_TERMINATE_ON_FINISH = 0x0,
@@ -2064,37 +1692,6 @@ impl From<Cmdh15Sts> for u8 {
     #[inline(always)]
     fn from(val: Cmdh15Sts) -> u8 {
         Cmdh15Sts::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh15WaitTrig {
-    #[doc = "Command executes automatically."]
-    DISABLED = 0x0,
-    #[doc = "Active trigger must be asserted again before executing this command."]
-    ENABLED = 0x01,
-}
-impl Cmdh15WaitTrig {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh15WaitTrig {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh15WaitTrig {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh15WaitTrig {
-        Cmdh15WaitTrig::from_bits(val)
-    }
-}
-impl From<Cmdh15WaitTrig> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh15WaitTrig) -> u8 {
-        Cmdh15WaitTrig::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -2242,37 +1839,6 @@ impl From<Cmdh1Loop> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh1Lwi {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Cmdh1Lwi {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh1Lwi {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh1Lwi {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh1Lwi {
-        Cmdh1Lwi::from_bits(val)
-    }
-}
-impl From<Cmdh1Lwi> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh1Lwi) -> u8 {
-        Cmdh1Lwi::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdh1Next {
     #[doc = "No next command defined. Terminate conversions at completion of current command. If lower priority trigger pending, begin command associated with lower priority trigger."]
     NO_NEXT_CMD_TERMINATE_ON_FINISH = 0x0,
@@ -2365,37 +1931,6 @@ impl From<Cmdh1Sts> for u8 {
     #[inline(always)]
     fn from(val: Cmdh1Sts) -> u8 {
         Cmdh1Sts::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh1WaitTrig {
-    #[doc = "Command executes automatically."]
-    DISABLED = 0x0,
-    #[doc = "Active trigger must be asserted again before executing this command."]
-    ENABLED = 0x01,
-}
-impl Cmdh1WaitTrig {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh1WaitTrig {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh1WaitTrig {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh1WaitTrig {
-        Cmdh1WaitTrig::from_bits(val)
-    }
-}
-impl From<Cmdh1WaitTrig> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh1WaitTrig) -> u8 {
-        Cmdh1WaitTrig::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -2543,37 +2078,6 @@ impl From<Cmdh2Loop> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh2Lwi {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Cmdh2Lwi {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh2Lwi {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh2Lwi {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh2Lwi {
-        Cmdh2Lwi::from_bits(val)
-    }
-}
-impl From<Cmdh2Lwi> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh2Lwi) -> u8 {
-        Cmdh2Lwi::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdh2Next {
     #[doc = "No next command defined. Terminate conversions at completion of current command. If lower priority trigger pending, begin command associated with lower priority trigger."]
     NO_NEXT_CMD_TERMINATE_ON_FINISH = 0x0,
@@ -2666,37 +2170,6 @@ impl From<Cmdh2Sts> for u8 {
     #[inline(always)]
     fn from(val: Cmdh2Sts) -> u8 {
         Cmdh2Sts::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh2WaitTrig {
-    #[doc = "Command executes automatically."]
-    DISABLED = 0x0,
-    #[doc = "Active trigger must be asserted again before executing this command."]
-    ENABLED = 0x01,
-}
-impl Cmdh2WaitTrig {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh2WaitTrig {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh2WaitTrig {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh2WaitTrig {
-        Cmdh2WaitTrig::from_bits(val)
-    }
-}
-impl From<Cmdh2WaitTrig> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh2WaitTrig) -> u8 {
-        Cmdh2WaitTrig::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -2844,37 +2317,6 @@ impl From<Cmdh3Loop> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh3Lwi {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Cmdh3Lwi {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh3Lwi {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh3Lwi {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh3Lwi {
-        Cmdh3Lwi::from_bits(val)
-    }
-}
-impl From<Cmdh3Lwi> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh3Lwi) -> u8 {
-        Cmdh3Lwi::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdh3Next {
     #[doc = "No next command defined. Terminate conversions at completion of current command. If lower priority trigger pending, begin command associated with lower priority trigger."]
     NO_NEXT_CMD_TERMINATE_ON_FINISH = 0x0,
@@ -2967,37 +2409,6 @@ impl From<Cmdh3Sts> for u8 {
     #[inline(always)]
     fn from(val: Cmdh3Sts) -> u8 {
         Cmdh3Sts::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh3WaitTrig {
-    #[doc = "Command executes automatically."]
-    DISABLED = 0x0,
-    #[doc = "Active trigger must be asserted again before executing this command."]
-    ENABLED = 0x01,
-}
-impl Cmdh3WaitTrig {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh3WaitTrig {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh3WaitTrig {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh3WaitTrig {
-        Cmdh3WaitTrig::from_bits(val)
-    }
-}
-impl From<Cmdh3WaitTrig> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh3WaitTrig) -> u8 {
-        Cmdh3WaitTrig::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -3145,37 +2556,6 @@ impl From<Cmdh4Loop> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh4Lwi {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Cmdh4Lwi {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh4Lwi {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh4Lwi {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh4Lwi {
-        Cmdh4Lwi::from_bits(val)
-    }
-}
-impl From<Cmdh4Lwi> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh4Lwi) -> u8 {
-        Cmdh4Lwi::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdh4Next {
     #[doc = "No next command defined. Terminate conversions at completion of current command. If lower priority trigger pending, begin command associated with lower priority trigger."]
     NO_NEXT_CMD_TERMINATE_ON_FINISH = 0x0,
@@ -3268,37 +2648,6 @@ impl From<Cmdh4Sts> for u8 {
     #[inline(always)]
     fn from(val: Cmdh4Sts) -> u8 {
         Cmdh4Sts::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh4WaitTrig {
-    #[doc = "Command executes automatically."]
-    DISABLED = 0x0,
-    #[doc = "Active trigger must be asserted again before executing this command."]
-    ENABLED = 0x01,
-}
-impl Cmdh4WaitTrig {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh4WaitTrig {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh4WaitTrig {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh4WaitTrig {
-        Cmdh4WaitTrig::from_bits(val)
-    }
-}
-impl From<Cmdh4WaitTrig> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh4WaitTrig) -> u8 {
-        Cmdh4WaitTrig::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -3446,37 +2795,6 @@ impl From<Cmdh5Loop> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh5Lwi {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Cmdh5Lwi {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh5Lwi {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh5Lwi {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh5Lwi {
-        Cmdh5Lwi::from_bits(val)
-    }
-}
-impl From<Cmdh5Lwi> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh5Lwi) -> u8 {
-        Cmdh5Lwi::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdh5Next {
     #[doc = "No next command defined. Terminate conversions at completion of current command. If lower priority trigger pending, begin command associated with lower priority trigger."]
     NO_NEXT_CMD_TERMINATE_ON_FINISH = 0x0,
@@ -3569,37 +2887,6 @@ impl From<Cmdh5Sts> for u8 {
     #[inline(always)]
     fn from(val: Cmdh5Sts) -> u8 {
         Cmdh5Sts::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh5WaitTrig {
-    #[doc = "Command executes automatically."]
-    DISABLED = 0x0,
-    #[doc = "Active trigger must be asserted again before executing this command."]
-    ENABLED = 0x01,
-}
-impl Cmdh5WaitTrig {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh5WaitTrig {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh5WaitTrig {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh5WaitTrig {
-        Cmdh5WaitTrig::from_bits(val)
-    }
-}
-impl From<Cmdh5WaitTrig> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh5WaitTrig) -> u8 {
-        Cmdh5WaitTrig::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -3747,37 +3034,6 @@ impl From<Cmdh6Loop> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh6Lwi {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Cmdh6Lwi {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh6Lwi {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh6Lwi {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh6Lwi {
-        Cmdh6Lwi::from_bits(val)
-    }
-}
-impl From<Cmdh6Lwi> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh6Lwi) -> u8 {
-        Cmdh6Lwi::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdh6Next {
     #[doc = "No next command defined. Terminate conversions at completion of current command. If lower priority trigger pending, begin command associated with lower priority trigger."]
     NO_NEXT_CMD_TERMINATE_ON_FINISH = 0x0,
@@ -3870,37 +3126,6 @@ impl From<Cmdh6Sts> for u8 {
     #[inline(always)]
     fn from(val: Cmdh6Sts) -> u8 {
         Cmdh6Sts::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh6WaitTrig {
-    #[doc = "Command executes automatically."]
-    DISABLED = 0x0,
-    #[doc = "Active trigger must be asserted again before executing this command."]
-    ENABLED = 0x01,
-}
-impl Cmdh6WaitTrig {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh6WaitTrig {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh6WaitTrig {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh6WaitTrig {
-        Cmdh6WaitTrig::from_bits(val)
-    }
-}
-impl From<Cmdh6WaitTrig> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh6WaitTrig) -> u8 {
-        Cmdh6WaitTrig::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -4048,37 +3273,6 @@ impl From<Cmdh7Loop> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh7Lwi {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Cmdh7Lwi {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh7Lwi {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh7Lwi {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh7Lwi {
-        Cmdh7Lwi::from_bits(val)
-    }
-}
-impl From<Cmdh7Lwi> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh7Lwi) -> u8 {
-        Cmdh7Lwi::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdh7Next {
     #[doc = "No next command defined. Terminate conversions at completion of current command. If lower priority trigger pending, begin command associated with lower priority trigger."]
     NO_NEXT_CMD_TERMINATE_ON_FINISH = 0x0,
@@ -4171,37 +3365,6 @@ impl From<Cmdh7Sts> for u8 {
     #[inline(always)]
     fn from(val: Cmdh7Sts) -> u8 {
         Cmdh7Sts::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh7WaitTrig {
-    #[doc = "Command executes automatically."]
-    DISABLED = 0x0,
-    #[doc = "Active trigger must be asserted again before executing this command."]
-    ENABLED = 0x01,
-}
-impl Cmdh7WaitTrig {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh7WaitTrig {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh7WaitTrig {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh7WaitTrig {
-        Cmdh7WaitTrig::from_bits(val)
-    }
-}
-impl From<Cmdh7WaitTrig> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh7WaitTrig) -> u8 {
-        Cmdh7WaitTrig::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -4349,37 +3512,6 @@ impl From<Cmdh8Loop> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh8Lwi {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Cmdh8Lwi {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh8Lwi {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh8Lwi {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh8Lwi {
-        Cmdh8Lwi::from_bits(val)
-    }
-}
-impl From<Cmdh8Lwi> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh8Lwi) -> u8 {
-        Cmdh8Lwi::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdh8Next {
     #[doc = "No next command defined. Terminate conversions at completion of current command. If lower priority trigger pending, begin command associated with lower priority trigger."]
     NO_NEXT_CMD_TERMINATE_ON_FINISH = 0x0,
@@ -4472,37 +3604,6 @@ impl From<Cmdh8Sts> for u8 {
     #[inline(always)]
     fn from(val: Cmdh8Sts) -> u8 {
         Cmdh8Sts::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh8WaitTrig {
-    #[doc = "Command executes automatically."]
-    DISABLED = 0x0,
-    #[doc = "Active trigger must be asserted again before executing this command."]
-    ENABLED = 0x01,
-}
-impl Cmdh8WaitTrig {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh8WaitTrig {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh8WaitTrig {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh8WaitTrig {
-        Cmdh8WaitTrig::from_bits(val)
-    }
-}
-impl From<Cmdh8WaitTrig> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh8WaitTrig) -> u8 {
-        Cmdh8WaitTrig::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -4650,37 +3751,6 @@ impl From<Cmdh9Loop> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh9Lwi {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Cmdh9Lwi {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh9Lwi {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh9Lwi {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh9Lwi {
-        Cmdh9Lwi::from_bits(val)
-    }
-}
-impl From<Cmdh9Lwi> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh9Lwi) -> u8 {
-        Cmdh9Lwi::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdh9Next {
     #[doc = "No next command defined. Terminate conversions at completion of current command. If lower priority trigger pending, begin command associated with lower priority trigger."]
     NO_NEXT_CMD_TERMINATE_ON_FINISH = 0x0,
@@ -4773,37 +3843,6 @@ impl From<Cmdh9Sts> for u8 {
     #[inline(always)]
     fn from(val: Cmdh9Sts) -> u8 {
         Cmdh9Sts::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdh9WaitTrig {
-    #[doc = "Command executes automatically."]
-    DISABLED = 0x0,
-    #[doc = "Active trigger must be asserted again before executing this command."]
-    ENABLED = 0x01,
-}
-impl Cmdh9WaitTrig {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdh9WaitTrig {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdh9WaitTrig {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdh9WaitTrig {
-        Cmdh9WaitTrig::from_bits(val)
-    }
-}
-impl From<Cmdh9WaitTrig> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdh9WaitTrig) -> u8 {
-        Cmdh9WaitTrig::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -4946,37 +3985,6 @@ impl From<Cmdl10AltbAdch> for u8 {
     #[inline(always)]
     fn from(val: Cmdl10AltbAdch) -> u8 {
         Cmdl10AltbAdch::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdl10Altben {
-    #[doc = "ALTBEN_ADCH disabled. Channel-A and Channel-B inputs are selected based on ADCH settings."]
-    DISABLED = 0x0,
-    #[doc = "ALTBEN_ADCH enabled. Channel-A inputs are selected by ADCH setting and Channel-B inputs are selected by ALTB_ADCH setting."]
-    ENABLED = 0x01,
-}
-impl Cmdl10Altben {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdl10Altben {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdl10Altben {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdl10Altben {
-        Cmdl10Altben::from_bits(val)
-    }
-}
-impl From<Cmdl10Altben> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdl10Altben) -> u8 {
-        Cmdl10Altben::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -5190,37 +4198,6 @@ impl From<Cmdl11AltbAdch> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdl11Altben {
-    #[doc = "ALTBEN_ADCH disabled. Channel-A and Channel-B inputs are selected based on ADCH settings."]
-    DISABLED = 0x0,
-    #[doc = "ALTBEN_ADCH enabled. Channel-A inputs are selected by ADCH setting and Channel-B inputs are selected by ALTB_ADCH setting."]
-    ENABLED = 0x01,
-}
-impl Cmdl11Altben {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdl11Altben {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdl11Altben {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdl11Altben {
-        Cmdl11Altben::from_bits(val)
-    }
-}
-impl From<Cmdl11Altben> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdl11Altben) -> u8 {
-        Cmdl11Altben::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdl11Ctype {
     #[doc = "Single-Ended mode. Only A-side channel is converted."]
     SINGLE_ENDED_A_SIDE_CHANNEL = 0x0,
@@ -5424,37 +4401,6 @@ impl From<Cmdl12AltbAdch> for u8 {
     #[inline(always)]
     fn from(val: Cmdl12AltbAdch) -> u8 {
         Cmdl12AltbAdch::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdl12Altben {
-    #[doc = "ALTBEN_ADCH disabled. Channel-A and Channel-B inputs are selected based on ADCH settings."]
-    DISABLED = 0x0,
-    #[doc = "ALTBEN_ADCH enabled. Channel-A inputs are selected by ADCH setting and Channel-B inputs are selected by ALTB_ADCH setting."]
-    ENABLED = 0x01,
-}
-impl Cmdl12Altben {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdl12Altben {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdl12Altben {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdl12Altben {
-        Cmdl12Altben::from_bits(val)
-    }
-}
-impl From<Cmdl12Altben> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdl12Altben) -> u8 {
-        Cmdl12Altben::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -5668,37 +4614,6 @@ impl From<Cmdl13AltbAdch> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdl13Altben {
-    #[doc = "ALTBEN_ADCH disabled. Channel-A and Channel-B inputs are selected based on ADCH settings."]
-    DISABLED = 0x0,
-    #[doc = "ALTBEN_ADCH enabled. Channel-A inputs are selected by ADCH setting and Channel-B inputs are selected by ALTB_ADCH setting."]
-    ENABLED = 0x01,
-}
-impl Cmdl13Altben {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdl13Altben {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdl13Altben {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdl13Altben {
-        Cmdl13Altben::from_bits(val)
-    }
-}
-impl From<Cmdl13Altben> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdl13Altben) -> u8 {
-        Cmdl13Altben::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdl13Ctype {
     #[doc = "Single-Ended mode. Only A-side channel is converted."]
     SINGLE_ENDED_A_SIDE_CHANNEL = 0x0,
@@ -5902,37 +4817,6 @@ impl From<Cmdl14AltbAdch> for u8 {
     #[inline(always)]
     fn from(val: Cmdl14AltbAdch) -> u8 {
         Cmdl14AltbAdch::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdl14Altben {
-    #[doc = "ALTBEN_ADCH disabled. Channel-A and Channel-B inputs are selected based on ADCH settings."]
-    DISABLED = 0x0,
-    #[doc = "ALTBEN_ADCH enabled. Channel-A inputs are selected by ADCH setting and Channel-B inputs are selected by ALTB_ADCH setting."]
-    ENABLED = 0x01,
-}
-impl Cmdl14Altben {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdl14Altben {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdl14Altben {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdl14Altben {
-        Cmdl14Altben::from_bits(val)
-    }
-}
-impl From<Cmdl14Altben> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdl14Altben) -> u8 {
-        Cmdl14Altben::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -6146,37 +5030,6 @@ impl From<Cmdl15AltbAdch> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdl15Altben {
-    #[doc = "ALTBEN_ADCH disabled. Channel-A and Channel-B inputs are selected based on ADCH settings."]
-    DISABLED = 0x0,
-    #[doc = "ALTBEN_ADCH enabled. Channel-A inputs are selected by ADCH setting and Channel-B inputs are selected by ALTB_ADCH setting."]
-    ENABLED = 0x01,
-}
-impl Cmdl15Altben {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdl15Altben {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdl15Altben {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdl15Altben {
-        Cmdl15Altben::from_bits(val)
-    }
-}
-impl From<Cmdl15Altben> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdl15Altben) -> u8 {
-        Cmdl15Altben::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdl15Ctype {
     #[doc = "Single-Ended mode. Only A-side channel is converted."]
     SINGLE_ENDED_A_SIDE_CHANNEL = 0x0,
@@ -6380,37 +5233,6 @@ impl From<Cmdl1AltbAdch> for u8 {
     #[inline(always)]
     fn from(val: Cmdl1AltbAdch) -> u8 {
         Cmdl1AltbAdch::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdl1Altben {
-    #[doc = "ALTBEN_ADCH disabled. Channel-A and Channel-B inputs are selected based on ADCH settings."]
-    DISABLED = 0x0,
-    #[doc = "ALTBEN_ADCH enabled. Channel-A inputs are selected by ADCH setting and Channel-B inputs are selected by ALTB_ADCH setting."]
-    ENABLED = 0x01,
-}
-impl Cmdl1Altben {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdl1Altben {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdl1Altben {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdl1Altben {
-        Cmdl1Altben::from_bits(val)
-    }
-}
-impl From<Cmdl1Altben> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdl1Altben) -> u8 {
-        Cmdl1Altben::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -6624,37 +5446,6 @@ impl From<Cmdl2AltbAdch> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdl2Altben {
-    #[doc = "ALTBEN_ADCH disabled. Channel-A and Channel-B inputs are selected based on ADCH settings."]
-    DISABLED = 0x0,
-    #[doc = "ALTBEN_ADCH enabled. Channel-A inputs are selected by ADCH setting and Channel-B inputs are selected by ALTB_ADCH setting."]
-    ENABLED = 0x01,
-}
-impl Cmdl2Altben {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdl2Altben {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdl2Altben {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdl2Altben {
-        Cmdl2Altben::from_bits(val)
-    }
-}
-impl From<Cmdl2Altben> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdl2Altben) -> u8 {
-        Cmdl2Altben::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdl2Ctype {
     #[doc = "Single-Ended mode. Only A-side channel is converted."]
     SINGLE_ENDED_A_SIDE_CHANNEL = 0x0,
@@ -6858,37 +5649,6 @@ impl From<Cmdl3AltbAdch> for u8 {
     #[inline(always)]
     fn from(val: Cmdl3AltbAdch) -> u8 {
         Cmdl3AltbAdch::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdl3Altben {
-    #[doc = "ALTBEN_ADCH disabled. Channel-A and Channel-B inputs are selected based on ADCH settings."]
-    DISABLED = 0x0,
-    #[doc = "ALTBEN_ADCH enabled. Channel-A inputs are selected by ADCH setting and Channel-B inputs are selected by ALTB_ADCH setting."]
-    ENABLED = 0x01,
-}
-impl Cmdl3Altben {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdl3Altben {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdl3Altben {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdl3Altben {
-        Cmdl3Altben::from_bits(val)
-    }
-}
-impl From<Cmdl3Altben> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdl3Altben) -> u8 {
-        Cmdl3Altben::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -7102,37 +5862,6 @@ impl From<Cmdl4AltbAdch> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdl4Altben {
-    #[doc = "ALTBEN_ADCH disabled. Channel-A and Channel-B inputs are selected based on ADCH settings."]
-    DISABLED = 0x0,
-    #[doc = "ALTBEN_ADCH enabled. Channel-A inputs are selected by ADCH setting and Channel-B inputs are selected by ALTB_ADCH setting."]
-    ENABLED = 0x01,
-}
-impl Cmdl4Altben {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdl4Altben {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdl4Altben {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdl4Altben {
-        Cmdl4Altben::from_bits(val)
-    }
-}
-impl From<Cmdl4Altben> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdl4Altben) -> u8 {
-        Cmdl4Altben::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdl4Ctype {
     #[doc = "Single-Ended mode. Only A-side channel is converted."]
     SINGLE_ENDED_A_SIDE_CHANNEL = 0x0,
@@ -7336,37 +6065,6 @@ impl From<Cmdl5AltbAdch> for u8 {
     #[inline(always)]
     fn from(val: Cmdl5AltbAdch) -> u8 {
         Cmdl5AltbAdch::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdl5Altben {
-    #[doc = "ALTBEN_ADCH disabled. Channel-A and Channel-B inputs are selected based on ADCH settings."]
-    DISABLED = 0x0,
-    #[doc = "ALTBEN_ADCH enabled. Channel-A inputs are selected by ADCH setting and Channel-B inputs are selected by ALTB_ADCH setting."]
-    ENABLED = 0x01,
-}
-impl Cmdl5Altben {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdl5Altben {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdl5Altben {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdl5Altben {
-        Cmdl5Altben::from_bits(val)
-    }
-}
-impl From<Cmdl5Altben> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdl5Altben) -> u8 {
-        Cmdl5Altben::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -7580,37 +6278,6 @@ impl From<Cmdl6AltbAdch> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdl6Altben {
-    #[doc = "ALTBEN_ADCH disabled. Channel-A and Channel-B inputs are selected based on ADCH settings."]
-    DISABLED = 0x0,
-    #[doc = "ALTBEN_ADCH enabled. Channel-A inputs are selected by ADCH setting and Channel-B inputs are selected by ALTB_ADCH setting."]
-    ENABLED = 0x01,
-}
-impl Cmdl6Altben {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdl6Altben {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdl6Altben {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdl6Altben {
-        Cmdl6Altben::from_bits(val)
-    }
-}
-impl From<Cmdl6Altben> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdl6Altben) -> u8 {
-        Cmdl6Altben::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdl6Ctype {
     #[doc = "Single-Ended mode. Only A-side channel is converted."]
     SINGLE_ENDED_A_SIDE_CHANNEL = 0x0,
@@ -7814,37 +6481,6 @@ impl From<Cmdl7AltbAdch> for u8 {
     #[inline(always)]
     fn from(val: Cmdl7AltbAdch) -> u8 {
         Cmdl7AltbAdch::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdl7Altben {
-    #[doc = "ALTBEN_ADCH disabled. Channel-A and Channel-B inputs are selected based on ADCH settings."]
-    DISABLED = 0x0,
-    #[doc = "ALTBEN_ADCH enabled. Channel-A inputs are selected by ADCH setting and Channel-B inputs are selected by ALTB_ADCH setting."]
-    ENABLED = 0x01,
-}
-impl Cmdl7Altben {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdl7Altben {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdl7Altben {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdl7Altben {
-        Cmdl7Altben::from_bits(val)
-    }
-}
-impl From<Cmdl7Altben> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdl7Altben) -> u8 {
-        Cmdl7Altben::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -8058,37 +6694,6 @@ impl From<Cmdl8AltbAdch> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdl8Altben {
-    #[doc = "ALTBEN_ADCH disabled. Channel-A and Channel-B inputs are selected based on ADCH settings."]
-    DISABLED = 0x0,
-    #[doc = "ALTBEN_ADCH enabled. Channel-A inputs are selected by ADCH setting and Channel-B inputs are selected by ALTB_ADCH setting."]
-    ENABLED = 0x01,
-}
-impl Cmdl8Altben {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdl8Altben {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdl8Altben {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdl8Altben {
-        Cmdl8Altben::from_bits(val)
-    }
-}
-impl From<Cmdl8Altben> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdl8Altben) -> u8 {
-        Cmdl8Altben::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdl8Ctype {
     #[doc = "Single-Ended mode. Only A-side channel is converted."]
     SINGLE_ENDED_A_SIDE_CHANNEL = 0x0,
@@ -8292,37 +6897,6 @@ impl From<Cmdl9AltbAdch> for u8 {
     #[inline(always)]
     fn from(val: Cmdl9AltbAdch) -> u8 {
         Cmdl9AltbAdch::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmdl9Altben {
-    #[doc = "ALTBEN_ADCH disabled. Channel-A and Channel-B inputs are selected based on ADCH settings."]
-    DISABLED = 0x0,
-    #[doc = "ALTBEN_ADCH enabled. Channel-A inputs are selected by ADCH setting and Channel-B inputs are selected by ALTB_ADCH setting."]
-    ENABLED = 0x01,
-}
-impl Cmdl9Altben {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmdl9Altben {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmdl9Altben {
-    #[inline(always)]
-    fn from(val: u8) -> Cmdl9Altben {
-        Cmdl9Altben::from_bits(val)
-    }
-}
-impl From<Cmdl9Altben> for u8 {
-    #[inline(always)]
-    fn from(val: Cmdl9Altben) -> u8 {
-        Cmdl9Altben::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -8736,192 +7310,6 @@ impl From<Fof1> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Fofie0 {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Fofie0 {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Fofie0 {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Fofie0 {
-    #[inline(always)]
-    fn from(val: u8) -> Fofie0 {
-        Fofie0::from_bits(val)
-    }
-}
-impl From<Fofie0> for u8 {
-    #[inline(always)]
-    fn from(val: Fofie0) -> u8 {
-        Fofie0::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Fofie1 {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Fofie1 {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Fofie1 {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Fofie1 {
-    #[inline(always)]
-    fn from(val: u8) -> Fofie1 {
-        Fofie1::from_bits(val)
-    }
-}
-impl From<Fofie1> for u8 {
-    #[inline(always)]
-    fn from(val: Fofie1) -> u8 {
-        Fofie1::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Fwmde0 {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Fwmde0 {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Fwmde0 {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Fwmde0 {
-    #[inline(always)]
-    fn from(val: u8) -> Fwmde0 {
-        Fwmde0::from_bits(val)
-    }
-}
-impl From<Fwmde0> for u8 {
-    #[inline(always)]
-    fn from(val: Fwmde0) -> u8 {
-        Fwmde0::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Fwmde1 {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Fwmde1 {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Fwmde1 {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Fwmde1 {
-    #[inline(always)]
-    fn from(val: u8) -> Fwmde1 {
-        Fwmde1::from_bits(val)
-    }
-}
-impl From<Fwmde1> for u8 {
-    #[inline(always)]
-    fn from(val: Fwmde1) -> u8 {
-        Fwmde1::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Fwmie0 {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Fwmie0 {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Fwmie0 {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Fwmie0 {
-    #[inline(always)]
-    fn from(val: u8) -> Fwmie0 {
-        Fwmie0::from_bits(val)
-    }
-}
-impl From<Fwmie0> for u8 {
-    #[inline(always)]
-    fn from(val: Fwmie0) -> u8 {
-        Fwmie0::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Fwmie1 {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Fwmie1 {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Fwmie1 {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Fwmie1 {
-    #[inline(always)]
-    fn from(val: u8) -> Fwmie1 {
-        Fwmie1::from_bits(val)
-    }
-}
-impl From<Fwmie1> for u8 {
-    #[inline(always)]
-    fn from(val: Fwmie1) -> u8 {
-        Fwmie1::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum GccRdy {
     #[doc = "Invalid"]
     GAIN_CAL_NOT_VALID = 0x0,
@@ -8953,37 +7341,6 @@ impl From<GccRdy> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum GcrRdy {
-    #[doc = "Invalid"]
-    NOT_VALID = 0x0,
-    #[doc = "Valid"]
-    VALID = 0x01,
-}
-impl GcrRdy {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> GcrRdy {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for GcrRdy {
-    #[inline(always)]
-    fn from(val: u8) -> GcrRdy {
-        GcrRdy::from_bits(val)
-    }
-}
-impl From<GcrRdy> for u8 {
-    #[inline(always)]
-    fn from(val: GcrRdy) -> u8 {
-        GcrRdy::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HptExdi {
     #[doc = "Enabled"]
     ENABLED = 0x0,
@@ -9010,37 +7367,6 @@ impl From<HptExdi> for u8 {
     #[inline(always)]
     fn from(val: HptExdi) -> u8 {
         HptExdi::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Hten {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Hten {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Hten {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Hten {
-    #[inline(always)]
-    fn from(val: u8) -> Hten {
-        Hten::from_bits(val)
-    }
-}
-impl From<Hten> for u8 {
-    #[inline(always)]
-    fn from(val: Hten) -> u8 {
-        Hten::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -9228,68 +7554,6 @@ impl From<NumSec> for u8 {
     #[inline(always)]
     fn from(val: NumSec) -> u8 {
         NumSec::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Pauseen {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl Pauseen {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Pauseen {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Pauseen {
-    #[inline(always)]
-    fn from(val: u8) -> Pauseen {
-        Pauseen::from_bits(val)
-    }
-}
-impl From<Pauseen> for u8 {
-    #[inline(always)]
-    fn from(val: Pauseen) -> u8 {
-        Pauseen::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Pwren {
-    #[doc = "ADC analog circuits are only enabled while conversions are active. Analog startup delays affect performance."]
-    NOT_PRE_ENABLED = 0x0,
-    #[doc = "ADC analog circuits are pre-enabled and ready to execute conversions without startup delays, at the cost of higher DC current consumption. A single power-up delay (CFG\\[PUDLY\\]) is executed immediately once PWREN is set. No detected triggers begin ADC operation until the power-up delay time has passed. After this initial delay expires, the analog circuits remain pre-enabled, and no additional delays are executed."]
-    PRE_ENABLED = 0x01,
-}
-impl Pwren {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Pwren {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Pwren {
-    #[inline(always)]
-    fn from(val: u8) -> Pwren {
-        Pwren::from_bits(val)
-    }
-}
-impl From<Pwren> for u8 {
-    #[inline(always)]
-    fn from(val: Pwren) -> u8 {
-        Pwren::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -9548,37 +7812,6 @@ impl From<Rstfifo1> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Rsync {
-    #[doc = "Disable"]
-    DISABLE = 0x0,
-    #[doc = "Enable"]
-    ENABLE = 0x01,
-}
-impl Rsync {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Rsync {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Rsync {
-    #[inline(always)]
-    fn from(val: u8) -> Rsync {
-        Rsync::from_bits(val)
-    }
-}
-impl From<Rsync> for u8 {
-    #[inline(always)]
-    fn from(val: Rsync) -> u8 {
-        Rsync::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swt0 {
     #[doc = "No trigger 0 event generated."]
     NO_TRIGGER = 0x0,
@@ -9757,37 +7990,6 @@ impl From<Tcmd> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Tcmdres {
-    #[doc = "Trigger sequence automatically restarted."]
-    DISABLED = 0x0,
-    #[doc = "Trigger sequence resumed from the command that was executed prior to the exception."]
-    ENABLED = 0x01,
-}
-impl Tcmdres {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Tcmdres {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Tcmdres {
-    #[inline(always)]
-    fn from(val: u8) -> Tcmdres {
-        Tcmdres::from_bits(val)
-    }
-}
-impl From<Tcmdres> for u8 {
-    #[inline(always)]
-    fn from(val: Tcmdres) -> u8 {
-        Tcmdres::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TcompFlag {
     #[doc = "No triggers have been completed. Trigger completion interrupts are disabled."]
     NO_TRIGGER = 0x0,
@@ -9922,37 +8124,6 @@ impl From<TcompInt> for u8 {
     #[inline(always)]
     fn from(val: TcompInt) -> u8 {
         TcompInt::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum TexcIe {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl TexcIe {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> TexcIe {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for TexcIe {
-    #[inline(always)]
-    fn from(val: u8) -> TexcIe {
-        TexcIe::from_bits(val)
-    }
-}
-impl From<TexcIe> for u8 {
-    #[inline(always)]
-    fn from(val: TexcIe) -> u8 {
-        TexcIe::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -10112,37 +8283,6 @@ impl From<Tprictrl> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Tres {
-    #[doc = "Not automatically resumed or restarted"]
-    DISABLED = 0x0,
-    #[doc = "Automatically resumed or restarted"]
-    ENABLED = 0x01,
-}
-impl Tres {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Tres {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Tres {
-    #[inline(always)]
-    fn from(val: u8) -> Tres {
-        Tres::from_bits(val)
-    }
-}
-impl From<Tres> for u8 {
-    #[inline(always)]
-    fn from(val: Tres) -> u8 {
-        Tres::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trgact {
     #[doc = "Command (sequence) associated with Trigger 0 currently being executed."]
     TRIG_0 = 0x0,
@@ -10208,37 +8348,6 @@ impl From<Tsrc> for u8 {
     #[inline(always)]
     fn from(val: Tsrc) -> u8 {
         Tsrc::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Valid {
-    #[doc = "FIFO is empty. Discard any read from RESFIFO."]
-    NOT_VALID = 0x0,
-    #[doc = "FIFO contains data. FIFO record read from RESFIFO is valid."]
-    VALID = 0x01,
-}
-impl Valid {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Valid {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Valid {
-    #[inline(always)]
-    fn from(val: u8) -> Valid {
-        Valid::from_bits(val)
-    }
-}
-impl From<Valid> for u8 {
-    #[inline(always)]
-    fn from(val: Valid) -> u8 {
-        Valid::to_bits(val)
     }
 }
 #[repr(u8)]

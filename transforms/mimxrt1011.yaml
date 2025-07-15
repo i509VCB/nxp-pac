@@ -1,4 +1,5 @@
 includes:
+- useless.yaml
 - cm7.yaml
 # Must perform renames before fixing adc::hc/r due to ADC1 -> ADC
 - imxrt1011/renames.yaml
@@ -8,8 +9,6 @@ includes:
 - imxrt/dma.yaml
 - imxrt1011/pwm.yaml
 transforms:
-  - !DeleteUselessEnums
-
   #! ADC HS::COCO is array
   - !MakeFieldArray
     fieldsets: adc::regs::Hs

@@ -66,14 +66,14 @@ impl Cbt {
     #[doc = "Bit Timing Format Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn btf(&self) -> super::vals::Btf {
+    pub const fn btf(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Btf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bit Timing Format Enable"]
     #[inline(always)]
-    pub const fn set_btf(&mut self, val: super::vals::Btf) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_btf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Cbt {
@@ -99,7 +99,7 @@ impl defmt::Format for Cbt {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cbt {{ epseg2: {=u8:?}, epseg1: {=u8:?}, epropseg: {=u8:?}, erjw: {=u8:?}, epresdiv: {=u16:?}, btf: {:?} }}",
+            "Cbt {{ epseg2: {=u8:?}, epseg1: {=u8:?}, epropseg: {=u8:?}, erjw: {=u8:?}, epresdiv: {=u16:?}, btf: {=bool:?} }}",
             self.epseg2(),
             self.epseg1(),
             self.epropseg(),
@@ -5353,26 +5353,26 @@ impl Ctrl1Pn {
     #[doc = "Wake-up by Matching Flag Mask"]
     #[must_use]
     #[inline(always)]
-    pub const fn wumf_msk(&self) -> super::vals::WumfMsk {
+    pub const fn wumf_msk(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::WumfMsk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up by Matching Flag Mask"]
     #[inline(always)]
-    pub const fn set_wumf_msk(&mut self, val: super::vals::WumfMsk) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_wumf_msk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Wake-up by Timeout Flag Mask"]
     #[must_use]
     #[inline(always)]
-    pub const fn wtof_msk(&self) -> super::vals::WtofMsk {
+    pub const fn wtof_msk(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::WtofMsk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up by Timeout Flag Mask"]
     #[inline(always)]
-    pub const fn set_wtof_msk(&mut self, val: super::vals::WtofMsk) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_wtof_msk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
 }
 impl Default for Ctrl1Pn {
@@ -5398,7 +5398,7 @@ impl defmt::Format for Ctrl1Pn {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl1Pn {{ fcs: {:?}, idfs: {:?}, plfs: {:?}, nmatch: {:?}, wumf_msk: {:?}, wtof_msk: {:?} }}",
+            "Ctrl1Pn {{ fcs: {:?}, idfs: {:?}, plfs: {:?}, nmatch: {:?}, wumf_msk: {=bool:?}, wtof_msk: {=bool:?} }}",
             self.fcs(),
             self.idfs(),
             self.plfs(),
@@ -5440,26 +5440,26 @@ impl Ctrl2 {
     #[doc = "Bit Timing Expansion Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn bte(&self) -> super::vals::Bte {
+    pub const fn bte(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Bte::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bit Timing Expansion Enable"]
     #[inline(always)]
-    pub const fn set_bte(&mut self, val: super::vals::Bte) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_bte(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Protocol Exception Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn prexcen(&self) -> super::vals::Prexcen {
+    pub const fn prexcen(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Prexcen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Protocol Exception Enable"]
     #[inline(always)]
-    pub const fn set_prexcen(&mut self, val: super::vals::Prexcen) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_prexcen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Entire Frame Arbitration Field Comparison Enable for RX Message Buffers"]
     #[must_use]
@@ -5524,26 +5524,26 @@ impl Ctrl2 {
     #[doc = "Bus Off Done Interrupt Mask"]
     #[must_use]
     #[inline(always)]
-    pub const fn boffdonemsk(&self) -> super::vals::Boffdonemsk {
+    pub const fn boffdonemsk(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Boffdonemsk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bus Off Done Interrupt Mask"]
     #[inline(always)]
-    pub const fn set_boffdonemsk(&mut self, val: super::vals::Boffdonemsk) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_boffdonemsk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Error Interrupt Mask for Errors Detected in the Data Phase of Fast CAN FD Frames"]
     #[must_use]
     #[inline(always)]
-    pub const fn errmsk_fast(&self) -> super::vals::ErrmskFast {
+    pub const fn errmsk_fast(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::ErrmskFast::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Error Interrupt Mask for Errors Detected in the Data Phase of Fast CAN FD Frames"]
     #[inline(always)]
-    pub const fn set_errmsk_fast(&mut self, val: super::vals::ErrmskFast) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_errmsk_fast(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Ctrl2 {
@@ -5574,7 +5574,7 @@ impl defmt::Format for Ctrl2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl2 {{ edfltdis: {:?}, isocanfden: {:?}, bte: {:?}, prexcen: {:?}, eacen: {:?}, rrs: {:?}, mrp: {:?}, tasd: {=u8:?}, rffn: {=u8:?}, boffdonemsk: {:?}, errmsk_fast: {:?} }}",
+            "Ctrl2 {{ edfltdis: {:?}, isocanfden: {:?}, bte: {=bool:?}, prexcen: {=bool:?}, eacen: {:?}, rrs: {:?}, mrp: {:?}, tasd: {=u8:?}, rffn: {=u8:?}, boffdonemsk: {=bool:?}, errmsk_fast: {=bool:?} }}",
             self.edfltdis(),
             self.isocanfden(),
             self.bte(),
@@ -5958,14 +5958,14 @@ impl Erfcr {
     #[doc = "Enhanced RX FIFO enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn erfen(&self) -> super::vals::Erfen {
+    pub const fn erfen(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Erfen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enhanced RX FIFO enable"]
     #[inline(always)]
-    pub const fn set_erfen(&mut self, val: super::vals::Erfen) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_erfen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Erfcr {
@@ -5990,7 +5990,7 @@ impl defmt::Format for Erfcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Erfcr {{ erfwm: {=u8:?}, nfe: {=u8:?}, nexif: {=u8:?}, dmalw: {=u8:?}, erfen: {:?} }}",
+            "Erfcr {{ erfwm: {=u8:?}, nfe: {=u8:?}, nexif: {=u8:?}, dmalw: {=u8:?}, erfen: {=bool:?} }}",
             self.erfwm(),
             self.nfe(),
             self.nexif(),
@@ -6042,50 +6042,50 @@ impl Erfier {
     #[doc = "Enhanced RX FIFO Data Available Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn erfdaie(&self) -> super::vals::Erfdaie {
+    pub const fn erfdaie(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Erfdaie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enhanced RX FIFO Data Available Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_erfdaie(&mut self, val: super::vals::Erfdaie) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_erfdaie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Enhanced RX FIFO Watermark Indication Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn erfwmiie(&self) -> super::vals::Erfwmiie {
+    pub const fn erfwmiie(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::Erfwmiie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enhanced RX FIFO Watermark Indication Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_erfwmiie(&mut self, val: super::vals::Erfwmiie) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_erfwmiie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "Enhanced RX FIFO Overflow Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn erfovfie(&self) -> super::vals::Erfovfie {
+    pub const fn erfovfie(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Erfovfie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enhanced RX FIFO Overflow Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_erfovfie(&mut self, val: super::vals::Erfovfie) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_erfovfie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Enhanced RX FIFO Underflow Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn erfufwie(&self) -> super::vals::Erfufwie {
+    pub const fn erfufwie(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Erfufwie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enhanced RX FIFO Underflow Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_erfufwie(&mut self, val: super::vals::Erfufwie) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_erfufwie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Erfier {
@@ -6109,7 +6109,7 @@ impl defmt::Format for Erfier {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Erfier {{ erfdaie: {:?}, erfwmiie: {:?}, erfovfie: {:?}, erfufwie: {:?} }}",
+            "Erfier {{ erfdaie: {=bool:?}, erfwmiie: {=bool:?}, erfovfie: {=bool:?}, erfufwie: {=bool:?} }}",
             self.erfdaie(),
             self.erfwmiie(),
             self.erfovfie(),
@@ -6137,26 +6137,26 @@ impl Erfsr {
     #[doc = "Enhanced RX FIFO Full Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn erff(&self) -> super::vals::Erff {
+    pub const fn erff(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Erff::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enhanced RX FIFO Full Flag"]
     #[inline(always)]
-    pub const fn set_erff(&mut self, val: super::vals::Erff) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_erff(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Enhanced RX FIFO Empty Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn erfe(&self) -> super::vals::Erfe {
+    pub const fn erfe(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Erfe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enhanced RX FIFO Empty Flag"]
     #[inline(always)]
-    pub const fn set_erfe(&mut self, val: super::vals::Erfe) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_erfe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Enhanced RX FIFO Clear"]
     #[must_use]
@@ -6173,14 +6173,14 @@ impl Erfsr {
     #[doc = "Enhanced RX FIFO Data Available Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn erfda(&self) -> super::vals::Erfda {
+    pub const fn erfda(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Erfda::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enhanced RX FIFO Data Available Flag"]
     #[inline(always)]
-    pub const fn set_erfda(&mut self, val: super::vals::Erfda) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_erfda(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Enhanced RX FIFO Watermark Indication Flag"]
     #[must_use]
@@ -6197,26 +6197,26 @@ impl Erfsr {
     #[doc = "Enhanced RX FIFO Overflow Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn erfovf(&self) -> super::vals::Erfovf {
+    pub const fn erfovf(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Erfovf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enhanced RX FIFO Overflow Flag"]
     #[inline(always)]
-    pub const fn set_erfovf(&mut self, val: super::vals::Erfovf) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_erfovf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Enhanced RX FIFO Underflow Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn erfufw(&self) -> super::vals::Erfufw {
+    pub const fn erfufw(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Erfufw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enhanced RX FIFO Underflow Flag"]
     #[inline(always)]
-    pub const fn set_erfufw(&mut self, val: super::vals::Erfufw) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_erfufw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Erfsr {
@@ -6244,7 +6244,7 @@ impl defmt::Format for Erfsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Erfsr {{ erfel: {=u8:?}, erff: {:?}, erfe: {:?}, erfclr: {:?}, erfda: {:?}, erfwmi: {:?}, erfovf: {:?}, erfufw: {:?} }}",
+            "Erfsr {{ erfel: {=u8:?}, erff: {=bool:?}, erfe: {=bool:?}, erfclr: {:?}, erfda: {=bool:?}, erfwmi: {:?}, erfovf: {=bool:?}, erfufw: {=bool:?} }}",
             self.erfel(),
             self.erff(),
             self.erfe(),
@@ -6264,50 +6264,50 @@ impl Esr1 {
     #[doc = "Wake-up Interrupt Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn wakint(&self) -> super::vals::Wakint {
+    pub const fn wakint(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Wakint::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Interrupt Flag"]
     #[inline(always)]
-    pub const fn set_wakint(&mut self, val: super::vals::Wakint) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_wakint(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Error Interrupt Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn errint(&self) -> super::vals::Errint {
+    pub const fn errint(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Errint::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Error Interrupt Flag"]
     #[inline(always)]
-    pub const fn set_errint(&mut self, val: super::vals::Errint) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_errint(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Bus Off Interrupt Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn boffint(&self) -> super::vals::Boffint {
+    pub const fn boffint(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Boffint::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bus Off Interrupt Flag"]
     #[inline(always)]
-    pub const fn set_boffint(&mut self, val: super::vals::Boffint) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_boffint(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "FlexCAN in Reception Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rx(&self) -> super::vals::Rx {
+    pub const fn rx(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Rx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FlexCAN in Reception Flag"]
     #[inline(always)]
-    pub const fn set_rx(&mut self, val: super::vals::Rx) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_rx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Fault Confinement State"]
     #[must_use]
@@ -6617,7 +6617,7 @@ impl defmt::Format for Esr1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Esr1 {{ wakint: {:?}, errint: {:?}, boffint: {:?}, rx: {:?}, fltconf: {:?}, tx: {:?}, idle: {:?}, rxwrn: {:?}, txwrn: {:?}, stferr: {:?}, frmerr: {:?}, crcerr: {:?}, ackerr: {:?}, bit0err: {:?}, bit1err: {:?}, rwrnint: {:?}, twrnint: {:?}, synch: {:?}, boffdoneint: {:?}, errint_fast: {:?}, errovr: {:?}, stferr_fast: {:?}, frmerr_fast: {:?}, crcerr_fast: {:?}, bit0err_fast: {:?}, bit1err_fast: {:?} }}",
+            "Esr1 {{ wakint: {=bool:?}, errint: {=bool:?}, boffint: {=bool:?}, rx: {=bool:?}, fltconf: {:?}, tx: {:?}, idle: {:?}, rxwrn: {:?}, txwrn: {:?}, stferr: {:?}, frmerr: {:?}, crcerr: {:?}, ackerr: {:?}, bit0err: {:?}, bit1err: {:?}, rwrnint: {:?}, twrnint: {:?}, synch: {:?}, boffdoneint: {:?}, errint_fast: {:?}, errovr: {:?}, stferr_fast: {:?}, frmerr_fast: {:?}, crcerr_fast: {:?}, bit0err_fast: {:?}, bit1err_fast: {:?} }}",
             self.wakint(),
             self.errint(),
             self.boffint(),
@@ -6667,14 +6667,14 @@ impl Esr2 {
     #[doc = "Valid Priority Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn vps(&self) -> super::vals::Vps {
+    pub const fn vps(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Vps::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Valid Priority Status"]
     #[inline(always)]
-    pub const fn set_vps(&mut self, val: super::vals::Vps) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_vps(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Lowest Priority TX Message Buffer"]
     #[must_use]
@@ -6709,7 +6709,7 @@ impl defmt::Format for Esr2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Esr2 {{ imb: {:?}, vps: {:?}, lptm: {=u8:?} }}",
+            "Esr2 {{ imb: {:?}, vps: {=bool:?}, lptm: {=u8:?} }}",
             self.imb(),
             self.vps(),
             self.lptm()
@@ -6772,14 +6772,14 @@ impl Etdc {
     #[doc = "Transceiver Delay Compensation Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn etdcen(&self) -> super::vals::Etdcen {
+    pub const fn etdcen(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Etdcen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Transceiver Delay Compensation Enable"]
     #[inline(always)]
-    pub const fn set_etdcen(&mut self, val: super::vals::Etdcen) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_etdcen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Etdc {
@@ -6804,7 +6804,7 @@ impl defmt::Format for Etdc {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Etdc {{ etdcval: {=u8:?}, etdcfail: {:?}, etdcoff: {=u8:?}, tdmdis: {:?}, etdcen: {:?} }}",
+            "Etdc {{ etdcval: {=u8:?}, etdcfail: {:?}, etdcoff: {=u8:?}, tdmdis: {:?}, etdcen: {=bool:?} }}",
             self.etdcval(),
             self.etdcfail(),
             self.etdcoff(),
@@ -7009,14 +7009,14 @@ impl Fdctrl {
     #[doc = "Transceiver Delay Compensation Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tdcen(&self) -> super::vals::Tdcen {
+    pub const fn tdcen(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Tdcen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Transceiver Delay Compensation Enable"]
     #[inline(always)]
-    pub const fn set_tdcen(&mut self, val: super::vals::Tdcen) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_tdcen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "Message Buffer Data Size for Region 0"]
     #[must_use]
@@ -7066,7 +7066,7 @@ impl defmt::Format for Fdctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Fdctrl {{ tdcval: {=u8:?}, tdcoff: {=u8:?}, tdcfail: {:?}, tdcen: {:?}, mbdsr0: {:?}, fdrate: {:?} }}",
+            "Fdctrl {{ tdcval: {=u8:?}, tdcoff: {=u8:?}, tdcfail: {:?}, tdcen: {=bool:?}, mbdsr0: {:?}, fdrate: {:?} }}",
             self.tdcval(),
             self.tdcoff(),
             self.tdcfail(),
@@ -55273,14 +55273,14 @@ impl Mcr {
     #[doc = "Wake-Up Source"]
     #[must_use]
     #[inline(always)]
-    pub const fn waksrc(&self) -> super::vals::Waksrc {
+    pub const fn waksrc(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Waksrc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-Up Source"]
     #[inline(always)]
-    pub const fn set_waksrc(&mut self, val: super::vals::Waksrc) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_waksrc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "Low-Power Mode Acknowledge"]
     #[must_use]
@@ -55453,7 +55453,7 @@ impl defmt::Format for Mcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mcr {{ maxmb: {=u8:?}, idam: {:?}, fden: {:?}, aen: {:?}, lprioen: {:?}, pnet_en: {:?}, dma: {:?}, irmq: {:?}, srxdis: {:?}, waksrc: {:?}, lpmack: {:?}, wrnen: {:?}, slfwak: {:?}, frzack: {:?}, softrst: {:?}, wakmsk: {:?}, notrdy: {:?}, halt: {:?}, rfen: {:?}, frz: {:?}, mdis: {:?} }}",
+            "Mcr {{ maxmb: {=u8:?}, idam: {:?}, fden: {:?}, aen: {:?}, lprioen: {:?}, pnet_en: {:?}, dma: {:?}, irmq: {:?}, srxdis: {:?}, waksrc: {=bool:?}, lpmack: {:?}, wrnen: {:?}, slfwak: {:?}, frzack: {:?}, softrst: {:?}, wakmsk: {:?}, notrdy: {:?}, halt: {:?}, rfen: {:?}, frz: {:?}, mdis: {:?} }}",
             self.maxmb(),
             self.idam(),
             self.fden(),
@@ -56085,14 +56085,14 @@ impl WmbCs {
     #[doc = "Remote Transmission Request"]
     #[must_use]
     #[inline(always)]
-    pub const fn rtr(&self) -> super::vals::Rtr {
+    pub const fn rtr(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::Rtr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Remote Transmission Request"]
     #[inline(always)]
-    pub const fn set_rtr(&mut self, val: super::vals::Rtr) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_rtr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "ID Extended Bit"]
     #[must_use]
@@ -56140,7 +56140,7 @@ impl defmt::Format for WmbCs {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "WmbCs {{ dlc: {=u8:?}, rtr: {:?}, ide: {:?}, srr: {:?} }}",
+            "WmbCs {{ dlc: {=u8:?}, rtr: {=bool:?}, ide: {:?}, srr: {:?} }}",
             self.dlc(),
             self.rtr(),
             self.ide(),
@@ -61681,26 +61681,26 @@ impl WuMtc {
     #[doc = "Wake-up by Match Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn wumf(&self) -> super::vals::Wumf {
+    pub const fn wumf(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Wumf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up by Match Flag"]
     #[inline(always)]
-    pub const fn set_wumf(&mut self, val: super::vals::Wumf) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_wumf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Wake-up by Timeout Flag Bit"]
     #[must_use]
     #[inline(always)]
-    pub const fn wtof(&self) -> super::vals::Wtof {
+    pub const fn wtof(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Wtof::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up by Timeout Flag Bit"]
     #[inline(always)]
-    pub const fn set_wtof(&mut self, val: super::vals::Wtof) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_wtof(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
 }
 impl Default for WuMtc {
@@ -61723,7 +61723,7 @@ impl defmt::Format for WuMtc {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "WuMtc {{ mcounter: {=u8:?}, wumf: {:?}, wtof: {:?} }}",
+            "WuMtc {{ mcounter: {=u8:?}, wumf: {=bool:?}, wtof: {=bool:?} }}",
             self.mcounter(),
             self.wumf(),
             self.wtof()

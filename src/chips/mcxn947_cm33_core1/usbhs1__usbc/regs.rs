@@ -392,14 +392,14 @@ impl Endptctrl0 {
     #[doc = "RX Endpoint Stall"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxs(&self) -> super::vals::Endptctrl0Rxs {
+    pub const fn rxs(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Endptctrl0Rxs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Stall"]
     #[inline(always)]
-    pub const fn set_rxs(&mut self, val: super::vals::Endptctrl0Rxs) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_rxs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "RX Endpoint Type"]
     #[must_use]
@@ -416,26 +416,26 @@ impl Endptctrl0 {
     #[doc = "RX Endpoint Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxe(&self) -> super::vals::Endptctrl0Rxe {
+    pub const fn rxe(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Endptctrl0Rxe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Enable"]
     #[inline(always)]
-    pub const fn set_rxe(&mut self, val: super::vals::Endptctrl0Rxe) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_rxe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "TX Endpoint Stall"]
     #[must_use]
     #[inline(always)]
-    pub const fn txs(&self) -> super::vals::Endptctrl0Txs {
+    pub const fn txs(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Endptctrl0Txs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Stall"]
     #[inline(always)]
-    pub const fn set_txs(&mut self, val: super::vals::Endptctrl0Txs) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_txs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "TX Endpoint Type"]
     #[must_use]
@@ -452,14 +452,14 @@ impl Endptctrl0 {
     #[doc = "TX Endpoint Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn txe(&self) -> super::vals::Endptctrl0Txe {
+    pub const fn txe(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Endptctrl0Txe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Enable"]
     #[inline(always)]
-    pub const fn set_txe(&mut self, val: super::vals::Endptctrl0Txe) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_txe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
 }
 impl Default for Endptctrl0 {
@@ -485,7 +485,7 @@ impl defmt::Format for Endptctrl0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Endptctrl0 {{ rxs: {:?}, rxt: {:?}, rxe: {:?}, txs: {:?}, txt: {:?}, txe: {:?} }}",
+            "Endptctrl0 {{ rxs: {=bool:?}, rxt: {:?}, rxe: {=bool:?}, txs: {=bool:?}, txt: {:?}, txe: {=bool:?} }}",
             self.rxs(),
             self.rxt(),
             self.rxe(),
@@ -503,26 +503,26 @@ impl Endptctrl1 {
     #[doc = "RX Endpoint Stall"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxs(&self) -> super::vals::Endptctrl1Rxs {
+    pub const fn rxs(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Endptctrl1Rxs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Stall"]
     #[inline(always)]
-    pub const fn set_rxs(&mut self, val: super::vals::Endptctrl1Rxs) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_rxs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "RX Endpoint Data Sink"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxd(&self) -> super::vals::Endptctrl1Rxd {
+    pub const fn rxd(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Endptctrl1Rxd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Data Sink"]
     #[inline(always)]
-    pub const fn set_rxd(&mut self, val: super::vals::Endptctrl1Rxd) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_rxd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "RX Endpoint Type"]
     #[must_use]
@@ -539,62 +539,62 @@ impl Endptctrl1 {
     #[doc = "RX Data Toggle Inhibit"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxi(&self) -> super::vals::Endptctrl1Rxi {
+    pub const fn rxi(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Endptctrl1Rxi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Data Toggle Inhibit"]
     #[inline(always)]
-    pub const fn set_rxi(&mut self, val: super::vals::Endptctrl1Rxi) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_rxi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "RX Data Toggle Reset (WS)"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxr(&self) -> super::vals::Endptctrl1Rxr {
+    pub const fn rxr(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Endptctrl1Rxr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Data Toggle Reset (WS)"]
     #[inline(always)]
-    pub const fn set_rxr(&mut self, val: super::vals::Endptctrl1Rxr) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_rxr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "RX Endpoint Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxe(&self) -> super::vals::Endptctrl1Rxe {
+    pub const fn rxe(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Endptctrl1Rxe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Enable"]
     #[inline(always)]
-    pub const fn set_rxe(&mut self, val: super::vals::Endptctrl1Rxe) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_rxe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "TX Endpoint Stall"]
     #[must_use]
     #[inline(always)]
-    pub const fn txs(&self) -> super::vals::Endptctrl1Txs {
+    pub const fn txs(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Endptctrl1Txs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Stall"]
     #[inline(always)]
-    pub const fn set_txs(&mut self, val: super::vals::Endptctrl1Txs) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_txs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "TX Endpoint Data Source"]
     #[must_use]
     #[inline(always)]
-    pub const fn txd(&self) -> super::vals::Endptctrl1Txd {
+    pub const fn txd(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Endptctrl1Txd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Data Source"]
     #[inline(always)]
-    pub const fn set_txd(&mut self, val: super::vals::Endptctrl1Txd) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_txd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "TX Endpoint Type"]
     #[must_use]
@@ -623,26 +623,26 @@ impl Endptctrl1 {
     #[doc = "TX Data Toggle Reset (WS)"]
     #[must_use]
     #[inline(always)]
-    pub const fn txr(&self) -> super::vals::Endptctrl1Txr {
+    pub const fn txr(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Endptctrl1Txr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Data Toggle Reset (WS)"]
     #[inline(always)]
-    pub const fn set_txr(&mut self, val: super::vals::Endptctrl1Txr) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_txr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "TX Endpoint Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn txe(&self) -> super::vals::Endptctrl1Txe {
+    pub const fn txe(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Endptctrl1Txe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Enable"]
     #[inline(always)]
-    pub const fn set_txe(&mut self, val: super::vals::Endptctrl1Txe) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_txe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
 }
 impl Default for Endptctrl1 {
@@ -674,7 +674,7 @@ impl defmt::Format for Endptctrl1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Endptctrl1 {{ rxs: {:?}, rxd: {:?}, rxt: {:?}, rxi: {:?}, rxr: {:?}, rxe: {:?}, txs: {:?}, txd: {:?}, txt: {:?}, txi: {:?}, txr: {:?}, txe: {:?} }}",
+            "Endptctrl1 {{ rxs: {=bool:?}, rxd: {=bool:?}, rxt: {:?}, rxi: {=bool:?}, rxr: {=bool:?}, rxe: {=bool:?}, txs: {=bool:?}, txd: {=bool:?}, txt: {:?}, txi: {:?}, txr: {=bool:?}, txe: {=bool:?} }}",
             self.rxs(),
             self.rxd(),
             self.rxt(),
@@ -698,26 +698,26 @@ impl Endptctrl2 {
     #[doc = "RX Endpoint Stall"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxs(&self) -> super::vals::Endptctrl2Rxs {
+    pub const fn rxs(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Endptctrl2Rxs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Stall"]
     #[inline(always)]
-    pub const fn set_rxs(&mut self, val: super::vals::Endptctrl2Rxs) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_rxs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "RX Endpoint Data Sink"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxd(&self) -> super::vals::Endptctrl2Rxd {
+    pub const fn rxd(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Endptctrl2Rxd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Data Sink"]
     #[inline(always)]
-    pub const fn set_rxd(&mut self, val: super::vals::Endptctrl2Rxd) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_rxd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "RX Endpoint Type"]
     #[must_use]
@@ -734,62 +734,62 @@ impl Endptctrl2 {
     #[doc = "RX Data Toggle Inhibit"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxi(&self) -> super::vals::Endptctrl2Rxi {
+    pub const fn rxi(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Endptctrl2Rxi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Data Toggle Inhibit"]
     #[inline(always)]
-    pub const fn set_rxi(&mut self, val: super::vals::Endptctrl2Rxi) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_rxi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "RX Data Toggle Reset (WS)"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxr(&self) -> super::vals::Endptctrl2Rxr {
+    pub const fn rxr(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Endptctrl2Rxr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Data Toggle Reset (WS)"]
     #[inline(always)]
-    pub const fn set_rxr(&mut self, val: super::vals::Endptctrl2Rxr) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_rxr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "RX Endpoint Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxe(&self) -> super::vals::Endptctrl2Rxe {
+    pub const fn rxe(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Endptctrl2Rxe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Enable"]
     #[inline(always)]
-    pub const fn set_rxe(&mut self, val: super::vals::Endptctrl2Rxe) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_rxe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "TX Endpoint Stall"]
     #[must_use]
     #[inline(always)]
-    pub const fn txs(&self) -> super::vals::Endptctrl2Txs {
+    pub const fn txs(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Endptctrl2Txs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Stall"]
     #[inline(always)]
-    pub const fn set_txs(&mut self, val: super::vals::Endptctrl2Txs) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_txs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "TX Endpoint Data Source"]
     #[must_use]
     #[inline(always)]
-    pub const fn txd(&self) -> super::vals::Endptctrl2Txd {
+    pub const fn txd(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Endptctrl2Txd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Data Source"]
     #[inline(always)]
-    pub const fn set_txd(&mut self, val: super::vals::Endptctrl2Txd) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_txd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "TX Endpoint Type"]
     #[must_use]
@@ -818,26 +818,26 @@ impl Endptctrl2 {
     #[doc = "TX Data Toggle Reset (WS)"]
     #[must_use]
     #[inline(always)]
-    pub const fn txr(&self) -> super::vals::Endptctrl2Txr {
+    pub const fn txr(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Endptctrl2Txr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Data Toggle Reset (WS)"]
     #[inline(always)]
-    pub const fn set_txr(&mut self, val: super::vals::Endptctrl2Txr) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_txr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "TX Endpoint Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn txe(&self) -> super::vals::Endptctrl2Txe {
+    pub const fn txe(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Endptctrl2Txe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Enable"]
     #[inline(always)]
-    pub const fn set_txe(&mut self, val: super::vals::Endptctrl2Txe) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_txe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
 }
 impl Default for Endptctrl2 {
@@ -869,7 +869,7 @@ impl defmt::Format for Endptctrl2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Endptctrl2 {{ rxs: {:?}, rxd: {:?}, rxt: {:?}, rxi: {:?}, rxr: {:?}, rxe: {:?}, txs: {:?}, txd: {:?}, txt: {:?}, txi: {:?}, txr: {:?}, txe: {:?} }}",
+            "Endptctrl2 {{ rxs: {=bool:?}, rxd: {=bool:?}, rxt: {:?}, rxi: {=bool:?}, rxr: {=bool:?}, rxe: {=bool:?}, txs: {=bool:?}, txd: {=bool:?}, txt: {:?}, txi: {:?}, txr: {=bool:?}, txe: {=bool:?} }}",
             self.rxs(),
             self.rxd(),
             self.rxt(),
@@ -893,26 +893,26 @@ impl Endptctrl3 {
     #[doc = "RX Endpoint Stall"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxs(&self) -> super::vals::Endptctrl3Rxs {
+    pub const fn rxs(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Endptctrl3Rxs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Stall"]
     #[inline(always)]
-    pub const fn set_rxs(&mut self, val: super::vals::Endptctrl3Rxs) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_rxs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "RX Endpoint Data Sink"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxd(&self) -> super::vals::Endptctrl3Rxd {
+    pub const fn rxd(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Endptctrl3Rxd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Data Sink"]
     #[inline(always)]
-    pub const fn set_rxd(&mut self, val: super::vals::Endptctrl3Rxd) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_rxd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "RX Endpoint Type"]
     #[must_use]
@@ -929,62 +929,62 @@ impl Endptctrl3 {
     #[doc = "RX Data Toggle Inhibit"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxi(&self) -> super::vals::Endptctrl3Rxi {
+    pub const fn rxi(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Endptctrl3Rxi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Data Toggle Inhibit"]
     #[inline(always)]
-    pub const fn set_rxi(&mut self, val: super::vals::Endptctrl3Rxi) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_rxi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "RX Data Toggle Reset (WS)"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxr(&self) -> super::vals::Endptctrl3Rxr {
+    pub const fn rxr(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Endptctrl3Rxr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Data Toggle Reset (WS)"]
     #[inline(always)]
-    pub const fn set_rxr(&mut self, val: super::vals::Endptctrl3Rxr) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_rxr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "RX Endpoint Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxe(&self) -> super::vals::Endptctrl3Rxe {
+    pub const fn rxe(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Endptctrl3Rxe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Enable"]
     #[inline(always)]
-    pub const fn set_rxe(&mut self, val: super::vals::Endptctrl3Rxe) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_rxe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "TX Endpoint Stall"]
     #[must_use]
     #[inline(always)]
-    pub const fn txs(&self) -> super::vals::Endptctrl3Txs {
+    pub const fn txs(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Endptctrl3Txs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Stall"]
     #[inline(always)]
-    pub const fn set_txs(&mut self, val: super::vals::Endptctrl3Txs) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_txs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "TX Endpoint Data Source"]
     #[must_use]
     #[inline(always)]
-    pub const fn txd(&self) -> super::vals::Endptctrl3Txd {
+    pub const fn txd(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Endptctrl3Txd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Data Source"]
     #[inline(always)]
-    pub const fn set_txd(&mut self, val: super::vals::Endptctrl3Txd) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_txd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "TX Endpoint Type"]
     #[must_use]
@@ -1013,26 +1013,26 @@ impl Endptctrl3 {
     #[doc = "TX Data Toggle Reset (WS)"]
     #[must_use]
     #[inline(always)]
-    pub const fn txr(&self) -> super::vals::Endptctrl3Txr {
+    pub const fn txr(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Endptctrl3Txr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Data Toggle Reset (WS)"]
     #[inline(always)]
-    pub const fn set_txr(&mut self, val: super::vals::Endptctrl3Txr) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_txr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "TX Endpoint Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn txe(&self) -> super::vals::Endptctrl3Txe {
+    pub const fn txe(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Endptctrl3Txe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Enable"]
     #[inline(always)]
-    pub const fn set_txe(&mut self, val: super::vals::Endptctrl3Txe) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_txe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
 }
 impl Default for Endptctrl3 {
@@ -1064,7 +1064,7 @@ impl defmt::Format for Endptctrl3 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Endptctrl3 {{ rxs: {:?}, rxd: {:?}, rxt: {:?}, rxi: {:?}, rxr: {:?}, rxe: {:?}, txs: {:?}, txd: {:?}, txt: {:?}, txi: {:?}, txr: {:?}, txe: {:?} }}",
+            "Endptctrl3 {{ rxs: {=bool:?}, rxd: {=bool:?}, rxt: {:?}, rxi: {=bool:?}, rxr: {=bool:?}, rxe: {=bool:?}, txs: {=bool:?}, txd: {=bool:?}, txt: {:?}, txi: {:?}, txr: {=bool:?}, txe: {=bool:?} }}",
             self.rxs(),
             self.rxd(),
             self.rxt(),
@@ -1088,26 +1088,26 @@ impl Endptctrl4 {
     #[doc = "RX Endpoint Stall"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxs(&self) -> super::vals::Endptctrl4Rxs {
+    pub const fn rxs(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Endptctrl4Rxs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Stall"]
     #[inline(always)]
-    pub const fn set_rxs(&mut self, val: super::vals::Endptctrl4Rxs) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_rxs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "RX Endpoint Data Sink"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxd(&self) -> super::vals::Endptctrl4Rxd {
+    pub const fn rxd(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Endptctrl4Rxd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Data Sink"]
     #[inline(always)]
-    pub const fn set_rxd(&mut self, val: super::vals::Endptctrl4Rxd) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_rxd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "RX Endpoint Type"]
     #[must_use]
@@ -1124,62 +1124,62 @@ impl Endptctrl4 {
     #[doc = "RX Data Toggle Inhibit"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxi(&self) -> super::vals::Endptctrl4Rxi {
+    pub const fn rxi(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Endptctrl4Rxi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Data Toggle Inhibit"]
     #[inline(always)]
-    pub const fn set_rxi(&mut self, val: super::vals::Endptctrl4Rxi) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_rxi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "RX Data Toggle Reset (WS)"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxr(&self) -> super::vals::Endptctrl4Rxr {
+    pub const fn rxr(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Endptctrl4Rxr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Data Toggle Reset (WS)"]
     #[inline(always)]
-    pub const fn set_rxr(&mut self, val: super::vals::Endptctrl4Rxr) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_rxr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "RX Endpoint Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxe(&self) -> super::vals::Endptctrl4Rxe {
+    pub const fn rxe(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Endptctrl4Rxe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Enable"]
     #[inline(always)]
-    pub const fn set_rxe(&mut self, val: super::vals::Endptctrl4Rxe) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_rxe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "TX Endpoint Stall"]
     #[must_use]
     #[inline(always)]
-    pub const fn txs(&self) -> super::vals::Endptctrl4Txs {
+    pub const fn txs(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Endptctrl4Txs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Stall"]
     #[inline(always)]
-    pub const fn set_txs(&mut self, val: super::vals::Endptctrl4Txs) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_txs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "TX Endpoint Data Source"]
     #[must_use]
     #[inline(always)]
-    pub const fn txd(&self) -> super::vals::Endptctrl4Txd {
+    pub const fn txd(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Endptctrl4Txd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Data Source"]
     #[inline(always)]
-    pub const fn set_txd(&mut self, val: super::vals::Endptctrl4Txd) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_txd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "TX Endpoint Type"]
     #[must_use]
@@ -1208,26 +1208,26 @@ impl Endptctrl4 {
     #[doc = "TX Data Toggle Reset (WS)"]
     #[must_use]
     #[inline(always)]
-    pub const fn txr(&self) -> super::vals::Endptctrl4Txr {
+    pub const fn txr(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Endptctrl4Txr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Data Toggle Reset (WS)"]
     #[inline(always)]
-    pub const fn set_txr(&mut self, val: super::vals::Endptctrl4Txr) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_txr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "TX Endpoint Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn txe(&self) -> super::vals::Endptctrl4Txe {
+    pub const fn txe(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Endptctrl4Txe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Enable"]
     #[inline(always)]
-    pub const fn set_txe(&mut self, val: super::vals::Endptctrl4Txe) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_txe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
 }
 impl Default for Endptctrl4 {
@@ -1259,7 +1259,7 @@ impl defmt::Format for Endptctrl4 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Endptctrl4 {{ rxs: {:?}, rxd: {:?}, rxt: {:?}, rxi: {:?}, rxr: {:?}, rxe: {:?}, txs: {:?}, txd: {:?}, txt: {:?}, txi: {:?}, txr: {:?}, txe: {:?} }}",
+            "Endptctrl4 {{ rxs: {=bool:?}, rxd: {=bool:?}, rxt: {:?}, rxi: {=bool:?}, rxr: {=bool:?}, rxe: {=bool:?}, txs: {=bool:?}, txd: {=bool:?}, txt: {:?}, txi: {:?}, txr: {=bool:?}, txe: {=bool:?} }}",
             self.rxs(),
             self.rxd(),
             self.rxt(),
@@ -1283,26 +1283,26 @@ impl Endptctrl5 {
     #[doc = "RX Endpoint Stall"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxs(&self) -> super::vals::Endptctrl5Rxs {
+    pub const fn rxs(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Endptctrl5Rxs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Stall"]
     #[inline(always)]
-    pub const fn set_rxs(&mut self, val: super::vals::Endptctrl5Rxs) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_rxs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "RX Endpoint Data Sink"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxd(&self) -> super::vals::Endptctrl5Rxd {
+    pub const fn rxd(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Endptctrl5Rxd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Data Sink"]
     #[inline(always)]
-    pub const fn set_rxd(&mut self, val: super::vals::Endptctrl5Rxd) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_rxd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "RX Endpoint Type"]
     #[must_use]
@@ -1319,62 +1319,62 @@ impl Endptctrl5 {
     #[doc = "RX Data Toggle Inhibit"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxi(&self) -> super::vals::Endptctrl5Rxi {
+    pub const fn rxi(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Endptctrl5Rxi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Data Toggle Inhibit"]
     #[inline(always)]
-    pub const fn set_rxi(&mut self, val: super::vals::Endptctrl5Rxi) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_rxi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "RX Data Toggle Reset (WS)"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxr(&self) -> super::vals::Endptctrl5Rxr {
+    pub const fn rxr(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Endptctrl5Rxr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Data Toggle Reset (WS)"]
     #[inline(always)]
-    pub const fn set_rxr(&mut self, val: super::vals::Endptctrl5Rxr) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_rxr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "RX Endpoint Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxe(&self) -> super::vals::Endptctrl5Rxe {
+    pub const fn rxe(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Endptctrl5Rxe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Enable"]
     #[inline(always)]
-    pub const fn set_rxe(&mut self, val: super::vals::Endptctrl5Rxe) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_rxe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "TX Endpoint Stall"]
     #[must_use]
     #[inline(always)]
-    pub const fn txs(&self) -> super::vals::Endptctrl5Txs {
+    pub const fn txs(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Endptctrl5Txs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Stall"]
     #[inline(always)]
-    pub const fn set_txs(&mut self, val: super::vals::Endptctrl5Txs) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_txs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "TX Endpoint Data Source"]
     #[must_use]
     #[inline(always)]
-    pub const fn txd(&self) -> super::vals::Endptctrl5Txd {
+    pub const fn txd(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Endptctrl5Txd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Data Source"]
     #[inline(always)]
-    pub const fn set_txd(&mut self, val: super::vals::Endptctrl5Txd) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_txd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "TX Endpoint Type"]
     #[must_use]
@@ -1403,26 +1403,26 @@ impl Endptctrl5 {
     #[doc = "TX Data Toggle Reset (WS)"]
     #[must_use]
     #[inline(always)]
-    pub const fn txr(&self) -> super::vals::Endptctrl5Txr {
+    pub const fn txr(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Endptctrl5Txr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Data Toggle Reset (WS)"]
     #[inline(always)]
-    pub const fn set_txr(&mut self, val: super::vals::Endptctrl5Txr) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_txr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "TX Endpoint Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn txe(&self) -> super::vals::Endptctrl5Txe {
+    pub const fn txe(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Endptctrl5Txe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Enable"]
     #[inline(always)]
-    pub const fn set_txe(&mut self, val: super::vals::Endptctrl5Txe) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_txe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
 }
 impl Default for Endptctrl5 {
@@ -1454,7 +1454,7 @@ impl defmt::Format for Endptctrl5 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Endptctrl5 {{ rxs: {:?}, rxd: {:?}, rxt: {:?}, rxi: {:?}, rxr: {:?}, rxe: {:?}, txs: {:?}, txd: {:?}, txt: {:?}, txi: {:?}, txr: {:?}, txe: {:?} }}",
+            "Endptctrl5 {{ rxs: {=bool:?}, rxd: {=bool:?}, rxt: {:?}, rxi: {=bool:?}, rxr: {=bool:?}, rxe: {=bool:?}, txs: {=bool:?}, txd: {=bool:?}, txt: {:?}, txi: {:?}, txr: {=bool:?}, txe: {=bool:?} }}",
             self.rxs(),
             self.rxd(),
             self.rxt(),
@@ -1478,26 +1478,26 @@ impl Endptctrl6 {
     #[doc = "RX Endpoint Stall"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxs(&self) -> super::vals::Endptctrl6Rxs {
+    pub const fn rxs(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Endptctrl6Rxs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Stall"]
     #[inline(always)]
-    pub const fn set_rxs(&mut self, val: super::vals::Endptctrl6Rxs) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_rxs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "RX Endpoint Data Sink"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxd(&self) -> super::vals::Endptctrl6Rxd {
+    pub const fn rxd(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Endptctrl6Rxd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Data Sink"]
     #[inline(always)]
-    pub const fn set_rxd(&mut self, val: super::vals::Endptctrl6Rxd) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_rxd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "RX Endpoint Type"]
     #[must_use]
@@ -1514,62 +1514,62 @@ impl Endptctrl6 {
     #[doc = "RX Data Toggle Inhibit"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxi(&self) -> super::vals::Endptctrl6Rxi {
+    pub const fn rxi(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Endptctrl6Rxi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Data Toggle Inhibit"]
     #[inline(always)]
-    pub const fn set_rxi(&mut self, val: super::vals::Endptctrl6Rxi) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_rxi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "RX Data Toggle Reset (WS)"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxr(&self) -> super::vals::Endptctrl6Rxr {
+    pub const fn rxr(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Endptctrl6Rxr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Data Toggle Reset (WS)"]
     #[inline(always)]
-    pub const fn set_rxr(&mut self, val: super::vals::Endptctrl6Rxr) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_rxr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "RX Endpoint Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxe(&self) -> super::vals::Endptctrl6Rxe {
+    pub const fn rxe(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Endptctrl6Rxe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Enable"]
     #[inline(always)]
-    pub const fn set_rxe(&mut self, val: super::vals::Endptctrl6Rxe) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_rxe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "TX Endpoint Stall"]
     #[must_use]
     #[inline(always)]
-    pub const fn txs(&self) -> super::vals::Endptctrl6Txs {
+    pub const fn txs(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Endptctrl6Txs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Stall"]
     #[inline(always)]
-    pub const fn set_txs(&mut self, val: super::vals::Endptctrl6Txs) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_txs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "TX Endpoint Data Source"]
     #[must_use]
     #[inline(always)]
-    pub const fn txd(&self) -> super::vals::Endptctrl6Txd {
+    pub const fn txd(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Endptctrl6Txd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Data Source"]
     #[inline(always)]
-    pub const fn set_txd(&mut self, val: super::vals::Endptctrl6Txd) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_txd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "TX Endpoint Type"]
     #[must_use]
@@ -1598,26 +1598,26 @@ impl Endptctrl6 {
     #[doc = "TX Data Toggle Reset (WS)"]
     #[must_use]
     #[inline(always)]
-    pub const fn txr(&self) -> super::vals::Endptctrl6Txr {
+    pub const fn txr(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Endptctrl6Txr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Data Toggle Reset (WS)"]
     #[inline(always)]
-    pub const fn set_txr(&mut self, val: super::vals::Endptctrl6Txr) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_txr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "TX Endpoint Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn txe(&self) -> super::vals::Endptctrl6Txe {
+    pub const fn txe(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Endptctrl6Txe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Enable"]
     #[inline(always)]
-    pub const fn set_txe(&mut self, val: super::vals::Endptctrl6Txe) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_txe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
 }
 impl Default for Endptctrl6 {
@@ -1649,7 +1649,7 @@ impl defmt::Format for Endptctrl6 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Endptctrl6 {{ rxs: {:?}, rxd: {:?}, rxt: {:?}, rxi: {:?}, rxr: {:?}, rxe: {:?}, txs: {:?}, txd: {:?}, txt: {:?}, txi: {:?}, txr: {:?}, txe: {:?} }}",
+            "Endptctrl6 {{ rxs: {=bool:?}, rxd: {=bool:?}, rxt: {:?}, rxi: {=bool:?}, rxr: {=bool:?}, rxe: {=bool:?}, txs: {=bool:?}, txd: {=bool:?}, txt: {:?}, txi: {:?}, txr: {=bool:?}, txe: {=bool:?} }}",
             self.rxs(),
             self.rxd(),
             self.rxt(),
@@ -1673,26 +1673,26 @@ impl Endptctrl7 {
     #[doc = "RX Endpoint Stall"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxs(&self) -> super::vals::Endptctrl7Rxs {
+    pub const fn rxs(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Endptctrl7Rxs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Stall"]
     #[inline(always)]
-    pub const fn set_rxs(&mut self, val: super::vals::Endptctrl7Rxs) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_rxs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "RX Endpoint Data Sink"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxd(&self) -> super::vals::Endptctrl7Rxd {
+    pub const fn rxd(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Endptctrl7Rxd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Data Sink"]
     #[inline(always)]
-    pub const fn set_rxd(&mut self, val: super::vals::Endptctrl7Rxd) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_rxd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "RX Endpoint Type"]
     #[must_use]
@@ -1709,62 +1709,62 @@ impl Endptctrl7 {
     #[doc = "RX Data Toggle Inhibit"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxi(&self) -> super::vals::Endptctrl7Rxi {
+    pub const fn rxi(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Endptctrl7Rxi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Data Toggle Inhibit"]
     #[inline(always)]
-    pub const fn set_rxi(&mut self, val: super::vals::Endptctrl7Rxi) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_rxi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "RX Data Toggle Reset (WS)"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxr(&self) -> super::vals::Endptctrl7Rxr {
+    pub const fn rxr(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Endptctrl7Rxr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Data Toggle Reset (WS)"]
     #[inline(always)]
-    pub const fn set_rxr(&mut self, val: super::vals::Endptctrl7Rxr) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_rxr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "RX Endpoint Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxe(&self) -> super::vals::Endptctrl7Rxe {
+    pub const fn rxe(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Endptctrl7Rxe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX Endpoint Enable"]
     #[inline(always)]
-    pub const fn set_rxe(&mut self, val: super::vals::Endptctrl7Rxe) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_rxe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "TX Endpoint Stall"]
     #[must_use]
     #[inline(always)]
-    pub const fn txs(&self) -> super::vals::Endptctrl7Txs {
+    pub const fn txs(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Endptctrl7Txs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Stall"]
     #[inline(always)]
-    pub const fn set_txs(&mut self, val: super::vals::Endptctrl7Txs) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_txs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "TX Endpoint Data Source"]
     #[must_use]
     #[inline(always)]
-    pub const fn txd(&self) -> super::vals::Endptctrl7Txd {
+    pub const fn txd(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Endptctrl7Txd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Data Source"]
     #[inline(always)]
-    pub const fn set_txd(&mut self, val: super::vals::Endptctrl7Txd) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_txd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "TX Endpoint Type"]
     #[must_use]
@@ -1793,26 +1793,26 @@ impl Endptctrl7 {
     #[doc = "TX Data Toggle Reset (WS)"]
     #[must_use]
     #[inline(always)]
-    pub const fn txr(&self) -> super::vals::Endptctrl7Txr {
+    pub const fn txr(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Endptctrl7Txr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Data Toggle Reset (WS)"]
     #[inline(always)]
-    pub const fn set_txr(&mut self, val: super::vals::Endptctrl7Txr) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_txr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "TX Endpoint Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn txe(&self) -> super::vals::Endptctrl7Txe {
+    pub const fn txe(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Endptctrl7Txe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX Endpoint Enable"]
     #[inline(always)]
-    pub const fn set_txe(&mut self, val: super::vals::Endptctrl7Txe) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_txe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
 }
 impl Default for Endptctrl7 {
@@ -1844,7 +1844,7 @@ impl defmt::Format for Endptctrl7 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Endptctrl7 {{ rxs: {:?}, rxd: {:?}, rxt: {:?}, rxi: {:?}, rxr: {:?}, rxe: {:?}, txs: {:?}, txd: {:?}, txt: {:?}, txi: {:?}, txr: {:?}, txe: {:?} }}",
+            "Endptctrl7 {{ rxs: {=bool:?}, rxd: {=bool:?}, rxt: {:?}, rxi: {=bool:?}, rxr: {=bool:?}, rxe: {=bool:?}, txs: {=bool:?}, txd: {=bool:?}, txt: {:?}, txi: {:?}, txr: {=bool:?}, txe: {=bool:?} }}",
             self.rxs(),
             self.rxd(),
             self.rxt(),
@@ -3167,26 +3167,26 @@ impl Otgsc {
     #[doc = "ID Pullup"]
     #[must_use]
     #[inline(always)]
-    pub const fn idpu(&self) -> super::vals::Idpu {
+    pub const fn idpu(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Idpu::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ID Pullup"]
     #[inline(always)]
-    pub const fn set_idpu(&mut self, val: super::vals::Idpu) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_idpu(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "USB ID"]
     #[must_use]
     #[inline(always)]
-    pub const fn id(&self) -> super::vals::Id {
+    pub const fn id(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Id::from_bits(val as u8)
+        val != 0
     }
     #[doc = "USB ID"]
     #[inline(always)]
-    pub const fn set_id(&mut self, val: super::vals::Id) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_id(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "A VBus Valid"]
     #[must_use]
@@ -3472,7 +3472,7 @@ impl defmt::Format for Otgsc {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Otgsc {{ vd: {=bool:?}, vc: {=bool:?}, ot: {=bool:?}, dp: {=bool:?}, idpu: {:?}, id: {:?}, avv: {=bool:?}, asv: {=bool:?}, bsv: {=bool:?}, bse: {=bool:?}, tog_1ms: {=bool:?}, dps: {=bool:?}, idis: {=bool:?}, avvis: {=bool:?}, asvis: {=bool:?}, bsvis: {=bool:?}, bseis: {=bool:?}, status_1ms: {=bool:?}, dpis: {=bool:?}, idie: {=bool:?}, avvie: {=bool:?}, asvie: {=bool:?}, bsvie: {=bool:?}, bseie: {=bool:?}, en_1ms: {=bool:?}, dpie: {=bool:?} }}",
+            "Otgsc {{ vd: {=bool:?}, vc: {=bool:?}, ot: {=bool:?}, dp: {=bool:?}, idpu: {=bool:?}, id: {=bool:?}, avv: {=bool:?}, asv: {=bool:?}, bsv: {=bool:?}, bse: {=bool:?}, tog_1ms: {=bool:?}, dps: {=bool:?}, idis: {=bool:?}, avvis: {=bool:?}, asvis: {=bool:?}, bsvis: {=bool:?}, bseis: {=bool:?}, status_1ms: {=bool:?}, dpis: {=bool:?}, idie: {=bool:?}, avvie: {=bool:?}, asvie: {=bool:?}, bsvie: {=bool:?}, bseie: {=bool:?}, en_1ms: {=bool:?}, dpie: {=bool:?} }}",
             self.vd(),
             self.vc(),
             self.ot(),
@@ -3551,62 +3551,62 @@ impl Portsc1 {
     #[doc = "Current Connect Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn ccs(&self) -> super::vals::Ccs {
+    pub const fn ccs(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Ccs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Current Connect Status"]
     #[inline(always)]
-    pub const fn set_ccs(&mut self, val: super::vals::Ccs) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_ccs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Connect Status Change"]
     #[must_use]
     #[inline(always)]
-    pub const fn csc(&self) -> super::vals::Csc {
+    pub const fn csc(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Csc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Connect Status Change"]
     #[inline(always)]
-    pub const fn set_csc(&mut self, val: super::vals::Csc) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_csc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Port Enabled/Disabled"]
     #[must_use]
     #[inline(always)]
-    pub const fn pe(&self) -> super::vals::Pe {
+    pub const fn pe(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Pe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Port Enabled/Disabled"]
     #[inline(always)]
-    pub const fn set_pe(&mut self, val: super::vals::Pe) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_pe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Port Enable/Disable Change"]
     #[must_use]
     #[inline(always)]
-    pub const fn pec(&self) -> super::vals::Pec {
+    pub const fn pec(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Pec::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Port Enable/Disable Change"]
     #[inline(always)]
-    pub const fn set_pec(&mut self, val: super::vals::Pec) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_pec(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Over-Current Active"]
     #[must_use]
     #[inline(always)]
-    pub const fn oca(&self) -> super::vals::Oca {
+    pub const fn oca(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Oca::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Over-Current Active"]
     #[inline(always)]
-    pub const fn set_oca(&mut self, val: super::vals::Oca) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_oca(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Over-current Change"]
     #[must_use]
@@ -3623,38 +3623,38 @@ impl Portsc1 {
     #[doc = "Force Port Resume"]
     #[must_use]
     #[inline(always)]
-    pub const fn fpr(&self) -> super::vals::Fpr {
+    pub const fn fpr(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Fpr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Force Port Resume"]
     #[inline(always)]
-    pub const fn set_fpr(&mut self, val: super::vals::Fpr) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_fpr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Suspend"]
     #[must_use]
     #[inline(always)]
-    pub const fn susp(&self) -> super::vals::Susp {
+    pub const fn susp(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Susp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Suspend"]
     #[inline(always)]
-    pub const fn set_susp(&mut self, val: super::vals::Susp) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_susp(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Port Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn pr(&self) -> super::vals::Pr {
+    pub const fn pr(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Pr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Port Reset"]
     #[inline(always)]
-    pub const fn set_pr(&mut self, val: super::vals::Pr) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_pr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "High-Speed Port"]
     #[must_use]
@@ -3827,14 +3827,14 @@ impl Portsc1 {
     #[doc = "Serial Transceiver Select"]
     #[must_use]
     #[inline(always)]
-    pub const fn sts(&self) -> super::vals::Sts {
+    pub const fn sts(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::Sts::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Serial Transceiver Select"]
     #[inline(always)]
-    pub const fn set_sts(&mut self, val: super::vals::Sts) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_sts(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "Parallel Transceiver Select"]
     #[must_use]
@@ -3891,7 +3891,7 @@ impl defmt::Format for Portsc1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Portsc1 {{ ccs: {:?}, csc: {:?}, pe: {:?}, pec: {:?}, oca: {:?}, occ: {=bool:?}, fpr: {:?}, susp: {:?}, pr: {:?}, hsp: {=bool:?}, ls: {:?}, pp: {=bool:?}, po: {=bool:?}, pic: {:?}, ptc: {:?}, wkcn: {=bool:?}, wkdc: {=bool:?}, wkoc: {=bool:?}, phcd: {:?}, pfsc: {:?}, pts_2: {=bool:?}, pspd: {:?}, ptw: {:?}, sts: {:?}, pts_1: {=u8:?} }}",
+            "Portsc1 {{ ccs: {=bool:?}, csc: {=bool:?}, pe: {=bool:?}, pec: {=bool:?}, oca: {=bool:?}, occ: {=bool:?}, fpr: {=bool:?}, susp: {=bool:?}, pr: {=bool:?}, hsp: {=bool:?}, ls: {:?}, pp: {=bool:?}, po: {=bool:?}, pic: {:?}, ptc: {:?}, wkcn: {=bool:?}, wkdc: {=bool:?}, wkoc: {=bool:?}, phcd: {:?}, pfsc: {:?}, pts_2: {=bool:?}, pspd: {:?}, ptw: {:?}, sts: {=bool:?}, pts_1: {=u8:?} }}",
             self.ccs(),
             self.csc(),
             self.pe(),
@@ -4034,14 +4034,14 @@ impl Usbcmd {
     #[doc = "Run/Stop"]
     #[must_use]
     #[inline(always)]
-    pub const fn rs(&self) -> super::vals::Rs {
+    pub const fn rs(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Rs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Run/Stop"]
     #[inline(always)]
-    pub const fn set_rs(&mut self, val: super::vals::Rs) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_rs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Controller Reset"]
     #[must_use]
@@ -4205,7 +4205,7 @@ impl defmt::Format for Usbcmd {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Usbcmd {{ rs: {:?}, rst: {=bool:?}, fs_1: {=u8:?}, pse: {:?}, ase: {:?}, iaa: {=bool:?}, asp: {=u8:?}, aspe: {=bool:?}, sutw: {=bool:?}, atdtw: {=bool:?}, fs_2: {=bool:?}, itc: {:?} }}",
+            "Usbcmd {{ rs: {=bool:?}, rst: {=bool:?}, fs_1: {=u8:?}, pse: {:?}, ase: {:?}, iaa: {=bool:?}, asp: {=u8:?}, aspe: {=bool:?}, sutw: {=bool:?}, atdtw: {=bool:?}, fs_2: {=bool:?}, itc: {:?} }}",
             self.rs(),
             self.rst(),
             self.fs_1(),
@@ -4488,14 +4488,14 @@ impl Usbmode {
     #[doc = "Stream Disable Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn sdis(&self) -> super::vals::Sdis {
+    pub const fn sdis(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Sdis::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Stream Disable Mode"]
     #[inline(always)]
-    pub const fn set_sdis(&mut self, val: super::vals::Sdis) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_sdis(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
 }
 impl Default for Usbmode {
@@ -4519,7 +4519,7 @@ impl defmt::Format for Usbmode {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Usbmode {{ cm: {:?}, es: {:?}, slom: {:?}, sdis: {:?} }}",
+            "Usbmode {{ cm: {:?}, es: {:?}, slom: {:?}, sdis: {=bool:?} }}",
             self.cm(),
             self.es(),
             self.slom(),

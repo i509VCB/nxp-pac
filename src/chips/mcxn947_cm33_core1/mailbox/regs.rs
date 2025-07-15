@@ -117,14 +117,14 @@ impl Mutex {
     #[doc = "Mutual Exclusion Request"]
     #[must_use]
     #[inline(always)]
-    pub const fn ex(&self) -> super::vals::Ex {
+    pub const fn ex(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Ex::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Mutual Exclusion Request"]
     #[inline(always)]
-    pub const fn set_ex(&mut self, val: super::vals::Ex) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_ex(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Mutex {
@@ -141,6 +141,6 @@ impl core::fmt::Debug for Mutex {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Mutex {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Mutex {{ ex: {:?} }}", self.ex())
+        defmt::write!(f, "Mutex {{ ex: {=bool:?} }}", self.ex())
     }
 }

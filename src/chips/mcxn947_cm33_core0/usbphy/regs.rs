@@ -282,38 +282,38 @@ impl Ctrl {
     #[doc = "OTG ID Change Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn enotg_id_chg_irq(&self) -> super::vals::EnotgIdChgIrq {
+    pub const fn enotg_id_chg_irq(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::EnotgIdChgIrq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "OTG ID Change Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_enotg_id_chg_irq(&mut self, val: super::vals::EnotgIdChgIrq) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_enotg_id_chg_irq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Host Disconnect Detection Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn enhostdiscondetect(&self) -> super::vals::Enhostdiscondetect {
+    pub const fn enhostdiscondetect(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Enhostdiscondetect::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Host Disconnect Detection Enable"]
     #[inline(always)]
-    pub const fn set_enhostdiscondetect(&mut self, val: super::vals::Enhostdiscondetect) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_enhostdiscondetect(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Enable Interrupt for Host Disconnect"]
     #[must_use]
     #[inline(always)]
-    pub const fn enirqhostdiscon(&self) -> super::vals::Enirqhostdiscon {
+    pub const fn enirqhostdiscon(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Enirqhostdiscon::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Interrupt for Host Disconnect"]
     #[inline(always)]
-    pub const fn set_enirqhostdiscon(&mut self, val: super::vals::Enirqhostdiscon) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_enirqhostdiscon(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Host Disconnect Detection Interrupt"]
     #[must_use]
@@ -354,14 +354,14 @@ impl Ctrl {
     #[doc = "OTG ID Change Interrupt"]
     #[must_use]
     #[inline(always)]
-    pub const fn otg_id_chg_irq(&self) -> super::vals::OtgIdChgIrq {
+    pub const fn otg_id_chg_irq(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::OtgIdChgIrq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "OTG ID Change Interrupt"]
     #[inline(always)]
-    pub const fn set_otg_id_chg_irq(&mut self, val: super::vals::OtgIdChgIrq) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_otg_id_chg_irq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Enable Internal OTG ID Detector"]
     #[must_use]
@@ -378,50 +378,50 @@ impl Ctrl {
     #[doc = "Resume Interrupt Sticky"]
     #[must_use]
     #[inline(always)]
-    pub const fn resumeirqsticky(&self) -> super::vals::Resumeirqsticky {
+    pub const fn resumeirqsticky(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Resumeirqsticky::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Resume Interrupt Sticky"]
     #[inline(always)]
-    pub const fn set_resumeirqsticky(&mut self, val: super::vals::Resumeirqsticky) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_resumeirqsticky(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Resume Detection Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn enirqresumedetect(&self) -> super::vals::Enirqresumedetect {
+    pub const fn enirqresumedetect(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Enirqresumedetect::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Resume Detection Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_enirqresumedetect(&mut self, val: super::vals::Enirqresumedetect) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_enirqresumedetect(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Resume Interrupt"]
     #[must_use]
     #[inline(always)]
-    pub const fn resume_irq(&self) -> super::vals::ResumeIrq {
+    pub const fn resume_irq(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::ResumeIrq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Resume Interrupt"]
     #[inline(always)]
-    pub const fn set_resume_irq(&mut self, val: super::vals::ResumeIrq) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_resume_irq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Enable Interrupt for Nonstandard Resistive Plugged-In Detection"]
     #[must_use]
     #[inline(always)]
-    pub const fn enirqdevplugin(&self) -> super::vals::Enirqdevplugin {
+    pub const fn enirqdevplugin(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Enirqdevplugin::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Interrupt for Nonstandard Resistive Plugged-In Detection"]
     #[inline(always)]
-    pub const fn set_enirqdevplugin(&mut self, val: super::vals::Enirqdevplugin) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_enirqdevplugin(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Device Plug-In Interrupt"]
     #[must_use]
@@ -450,38 +450,38 @@ impl Ctrl {
     #[doc = "UTMI Level 2 Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn enutmilevel2(&self) -> super::vals::Enutmilevel2 {
+    pub const fn enutmilevel2(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Enutmilevel2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "UTMI Level 2 Enable"]
     #[inline(always)]
-    pub const fn set_enutmilevel2(&mut self, val: super::vals::Enutmilevel2) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_enutmilevel2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "UTMI Level 3 Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn enutmilevel3(&self) -> super::vals::Enutmilevel3 {
+    pub const fn enutmilevel3(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Enutmilevel3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "UTMI Level 3 Enable"]
     #[inline(always)]
-    pub const fn set_enutmilevel3(&mut self, val: super::vals::Enutmilevel3) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_enutmilevel3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "Wake-Up Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn enirqwakeup(&self) -> super::vals::Enirqwakeup {
+    pub const fn enirqwakeup(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Enirqwakeup::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-Up Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_enirqwakeup(&mut self, val: super::vals::Enirqwakeup) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_enirqwakeup(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Wake-Up Interrupt"]
     #[must_use]
@@ -498,38 +498,38 @@ impl Ctrl {
     #[doc = "Autoresume Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn autoresume_en(&self) -> super::vals::AutoresumeEn {
+    pub const fn autoresume_en(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::AutoresumeEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Autoresume Enable"]
     #[inline(always)]
-    pub const fn set_autoresume_en(&mut self, val: super::vals::AutoresumeEn) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_autoresume_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Autoclear Clock Gate Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn enautoclr_clkgate(&self) -> super::vals::EnautoclrClkgate {
+    pub const fn enautoclr_clkgate(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::EnautoclrClkgate::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Autoclear Clock Gate Enable"]
     #[inline(always)]
-    pub const fn set_enautoclr_clkgate(&mut self, val: super::vals::EnautoclrClkgate) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_enautoclr_clkgate(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "PHY PWD Autoclear Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn enautoclr_phy_pwd(&self) -> super::vals::EnautoclrPhyPwd {
+    pub const fn enautoclr_phy_pwd(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::EnautoclrPhyPwd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PHY PWD Autoclear Enable"]
     #[inline(always)]
-    pub const fn set_enautoclr_phy_pwd(&mut self, val: super::vals::EnautoclrPhyPwd) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_enautoclr_phy_pwd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "OTG ID Value"]
     #[must_use]
@@ -546,14 +546,14 @@ impl Ctrl {
     #[doc = "UTMI Suspend"]
     #[must_use]
     #[inline(always)]
-    pub const fn utmi_suspendm(&self) -> super::vals::UtmiSuspendm {
+    pub const fn utmi_suspendm(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::UtmiSuspendm::from_bits(val as u8)
+        val != 0
     }
     #[doc = "UTMI Suspend"]
     #[inline(always)]
-    pub const fn set_utmi_suspendm(&mut self, val: super::vals::UtmiSuspendm) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_utmi_suspendm(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "UTMI Clock Gate"]
     #[must_use]
@@ -622,7 +622,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ enotg_id_chg_irq: {:?}, enhostdiscondetect: {:?}, enirqhostdiscon: {:?}, hostdiscondetect_irq: {:?}, endevplugindetect: {:?}, devplugin_polarity: {:?}, otg_id_chg_irq: {:?}, enotgiddetect: {:?}, resumeirqsticky: {:?}, enirqresumedetect: {:?}, resume_irq: {:?}, enirqdevplugin: {:?}, devplugin_irq: {=bool:?}, data_on_lradc: {=bool:?}, enutmilevel2: {:?}, enutmilevel3: {:?}, enirqwakeup: {:?}, wakeup_irq: {=bool:?}, autoresume_en: {:?}, enautoclr_clkgate: {:?}, enautoclr_phy_pwd: {:?}, otg_id_value: {:?}, utmi_suspendm: {:?}, clkgate: {:?}, sftrst: {:?} }}",
+            "Ctrl {{ enotg_id_chg_irq: {=bool:?}, enhostdiscondetect: {=bool:?}, enirqhostdiscon: {=bool:?}, hostdiscondetect_irq: {:?}, endevplugindetect: {:?}, devplugin_polarity: {:?}, otg_id_chg_irq: {=bool:?}, enotgiddetect: {:?}, resumeirqsticky: {=bool:?}, enirqresumedetect: {=bool:?}, resume_irq: {=bool:?}, enirqdevplugin: {=bool:?}, devplugin_irq: {=bool:?}, data_on_lradc: {=bool:?}, enutmilevel2: {=bool:?}, enutmilevel3: {=bool:?}, enirqwakeup: {=bool:?}, wakeup_irq: {=bool:?}, autoresume_en: {=bool:?}, enautoclr_clkgate: {=bool:?}, enautoclr_phy_pwd: {=bool:?}, otg_id_value: {:?}, utmi_suspendm: {=bool:?}, clkgate: {:?}, sftrst: {:?} }}",
             self.enotg_id_chg_irq(),
             self.enhostdiscondetect(),
             self.enirqhostdiscon(),
@@ -2266,14 +2266,14 @@ impl Pfda {
     #[doc = "PFD0 Stable Signal"]
     #[must_use]
     #[inline(always)]
-    pub const fn pfd0_stable(&self) -> super::vals::Pfd0Stable {
+    pub const fn pfd0_stable(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Pfd0Stable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PFD0 Stable Signal"]
     #[inline(always)]
-    pub const fn set_pfd0_stable(&mut self, val: super::vals::Pfd0Stable) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_pfd0_stable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
 }
 impl Default for Pfda {
@@ -2296,7 +2296,7 @@ impl defmt::Format for Pfda {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Pfda {{ pfd0_clkgate: {:?}, pfd0_frac: {=u8:?}, pfd0_stable: {:?} }}",
+            "Pfda {{ pfd0_clkgate: {:?}, pfd0_frac: {=u8:?}, pfd0_stable: {=bool:?} }}",
             self.pfd0_clkgate(),
             self.pfd0_frac(),
             self.pfd0_stable()
@@ -3918,14 +3918,14 @@ impl Status {
     #[doc = "Host Disconnect Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn hostdiscondetect_status(&self) -> super::vals::HostdiscondetectStatus {
+    pub const fn hostdiscondetect_status(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::HostdiscondetectStatus::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Host Disconnect Status"]
     #[inline(always)]
-    pub const fn set_hostdiscondetect_status(&mut self, val: super::vals::HostdiscondetectStatus) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_hostdiscondetect_status(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Status Indicator for Nonstandard Resistive Plugged-In Detection"]
     #[must_use]
@@ -3986,7 +3986,7 @@ impl defmt::Format for Status {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Status {{ ok_status_3v: {:?}, hostdiscondetect_status: {:?}, devplugin_status: {:?}, otgid_status: {:?}, resume_status: {=bool:?} }}",
+            "Status {{ ok_status_3v: {:?}, hostdiscondetect_status: {=bool:?}, devplugin_status: {:?}, otgid_status: {:?}, resume_status: {=bool:?} }}",
             self.ok_status_3v(),
             self.hostdiscondetect_status(),
             self.devplugin_status(),

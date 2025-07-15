@@ -6,50 +6,50 @@ impl ChCsr {
     #[doc = "Enable DMA Request"]
     #[must_use]
     #[inline(always)]
-    pub const fn erq(&self) -> super::vals::Erq {
+    pub const fn erq(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Erq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable DMA Request"]
     #[inline(always)]
-    pub const fn set_erq(&mut self, val: super::vals::Erq) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_erq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Enable Asynchronous DMA Request"]
     #[must_use]
     #[inline(always)]
-    pub const fn earq(&self) -> super::vals::Earq {
+    pub const fn earq(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Earq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Asynchronous DMA Request"]
     #[inline(always)]
-    pub const fn set_earq(&mut self, val: super::vals::Earq) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_earq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Enable Error Interrupt"]
     #[must_use]
     #[inline(always)]
-    pub const fn eei(&self) -> super::vals::Eei {
+    pub const fn eei(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Eei::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Error Interrupt"]
     #[inline(always)]
-    pub const fn set_eei(&mut self, val: super::vals::Eei) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_eei(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Enable Buffered Writes"]
     #[must_use]
     #[inline(always)]
-    pub const fn ebw(&self) -> super::vals::Ebw {
+    pub const fn ebw(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Ebw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Buffered Writes"]
     #[inline(always)]
-    pub const fn set_ebw(&mut self, val: super::vals::Ebw) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_ebw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Channel Done"]
     #[must_use]
@@ -99,7 +99,7 @@ impl defmt::Format for ChCsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "ChCsr {{ erq: {:?}, earq: {:?}, eei: {:?}, ebw: {:?}, done: {=bool:?}, active: {=bool:?} }}",
+            "ChCsr {{ erq: {=bool:?}, earq: {=bool:?}, eei: {=bool:?}, ebw: {=bool:?}, done: {=bool:?}, active: {=bool:?} }}",
             self.erq(),
             self.earq(),
             self.eei(),
@@ -117,110 +117,110 @@ impl ChEs {
     #[doc = "Destination Bus Error"]
     #[must_use]
     #[inline(always)]
-    pub const fn dbe(&self) -> super::vals::Dbe {
+    pub const fn dbe(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Dbe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Destination Bus Error"]
     #[inline(always)]
-    pub const fn set_dbe(&mut self, val: super::vals::Dbe) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_dbe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Source Bus Error"]
     #[must_use]
     #[inline(always)]
-    pub const fn sbe(&self) -> super::vals::Sbe {
+    pub const fn sbe(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Sbe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Source Bus Error"]
     #[inline(always)]
-    pub const fn set_sbe(&mut self, val: super::vals::Sbe) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_sbe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Scatter/Gather Configuration Error"]
     #[must_use]
     #[inline(always)]
-    pub const fn sge(&self) -> super::vals::Sge {
+    pub const fn sge(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Sge::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Scatter/Gather Configuration Error"]
     #[inline(always)]
-    pub const fn set_sge(&mut self, val: super::vals::Sge) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_sge(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "NBYTES/CITER Configuration Error"]
     #[must_use]
     #[inline(always)]
-    pub const fn nce(&self) -> super::vals::Nce {
+    pub const fn nce(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Nce::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NBYTES/CITER Configuration Error"]
     #[inline(always)]
-    pub const fn set_nce(&mut self, val: super::vals::Nce) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_nce(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Destination Offset Error"]
     #[must_use]
     #[inline(always)]
-    pub const fn doe(&self) -> super::vals::Doe {
+    pub const fn doe(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Doe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Destination Offset Error"]
     #[inline(always)]
-    pub const fn set_doe(&mut self, val: super::vals::Doe) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_doe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Destination Address Error"]
     #[must_use]
     #[inline(always)]
-    pub const fn dae(&self) -> super::vals::Dae {
+    pub const fn dae(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Dae::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Destination Address Error"]
     #[inline(always)]
-    pub const fn set_dae(&mut self, val: super::vals::Dae) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_dae(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Source Offset Error"]
     #[must_use]
     #[inline(always)]
-    pub const fn soe(&self) -> super::vals::Soe {
+    pub const fn soe(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Soe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Source Offset Error"]
     #[inline(always)]
-    pub const fn set_soe(&mut self, val: super::vals::Soe) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_soe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Source Address Error"]
     #[must_use]
     #[inline(always)]
-    pub const fn sae(&self) -> super::vals::Sae {
+    pub const fn sae(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Sae::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Source Address Error"]
     #[inline(always)]
-    pub const fn set_sae(&mut self, val: super::vals::Sae) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_sae(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Error In Channel"]
     #[must_use]
     #[inline(always)]
-    pub const fn err(&self) -> super::vals::Err {
+    pub const fn err(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Err::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Error In Channel"]
     #[inline(always)]
-    pub const fn set_err(&mut self, val: super::vals::Err) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for ChEs {
@@ -249,7 +249,7 @@ impl defmt::Format for ChEs {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "ChEs {{ dbe: {:?}, sbe: {:?}, sge: {:?}, nce: {:?}, doe: {:?}, dae: {:?}, soe: {:?}, sae: {:?}, err: {:?} }}",
+            "ChEs {{ dbe: {=bool:?}, sbe: {=bool:?}, sge: {=bool:?}, nce: {=bool:?}, doe: {=bool:?}, dae: {=bool:?}, soe: {=bool:?}, sae: {=bool:?}, err: {=bool:?} }}",
             self.dbe(),
             self.sbe(),
             self.sge(),
@@ -445,14 +445,14 @@ impl ChSbr {
     #[doc = "Enable Master ID Replication"]
     #[must_use]
     #[inline(always)]
-    pub const fn emi(&self) -> super::vals::Emi {
+    pub const fn emi(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Emi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Master ID Replication"]
     #[inline(always)]
-    pub const fn set_emi(&mut self, val: super::vals::Emi) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_emi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
 }
 impl Default for ChSbr {
@@ -476,7 +476,7 @@ impl defmt::Format for ChSbr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "ChSbr {{ mid: {=u8:?}, sec: {:?}, pal: {:?}, emi: {:?} }}",
+            "ChSbr {{ mid: {=u8:?}, sec: {:?}, pal: {:?}, emi: {=bool:?} }}",
             self.mid(),
             self.sec(),
             self.pal(),
@@ -587,14 +587,14 @@ impl TcdBiterElinkno {
     #[doc = "Enables Link"]
     #[must_use]
     #[inline(always)]
-    pub const fn elink(&self) -> super::vals::TcdBiterElinknoElink {
+    pub const fn elink(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::TcdBiterElinknoElink::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables Link"]
     #[inline(always)]
-    pub const fn set_elink(&mut self, val: super::vals::TcdBiterElinknoElink) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u16) & 0x01) << 15usize);
+    pub const fn set_elink(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u16) & 0x01) << 15usize);
     }
 }
 impl Default for TcdBiterElinkno {
@@ -616,7 +616,7 @@ impl defmt::Format for TcdBiterElinkno {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "TcdBiterElinkno {{ biter: {=u16:?}, elink: {:?} }}",
+            "TcdBiterElinkno {{ biter: {=u16:?}, elink: {=bool:?} }}",
             self.biter(),
             self.elink()
         )
@@ -654,14 +654,14 @@ impl TcdBiterElinkyes {
     #[doc = "Enable Link"]
     #[must_use]
     #[inline(always)]
-    pub const fn elink(&self) -> super::vals::TcdBiterElinkyesElink {
+    pub const fn elink(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::TcdBiterElinkyesElink::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Link"]
     #[inline(always)]
-    pub const fn set_elink(&mut self, val: super::vals::TcdBiterElinkyesElink) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u16) & 0x01) << 15usize);
+    pub const fn set_elink(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u16) & 0x01) << 15usize);
     }
 }
 impl Default for TcdBiterElinkyes {
@@ -684,7 +684,7 @@ impl defmt::Format for TcdBiterElinkyes {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "TcdBiterElinkyes {{ biter: {=u16:?}, linkch: {=u8:?}, elink: {:?} }}",
+            "TcdBiterElinkyes {{ biter: {=u16:?}, linkch: {=u8:?}, elink: {=bool:?} }}",
             self.biter(),
             self.linkch(),
             self.elink()
@@ -711,14 +711,14 @@ impl TcdCiterElinkno {
     #[doc = "Enable Link"]
     #[must_use]
     #[inline(always)]
-    pub const fn elink(&self) -> super::vals::TcdCiterElinknoElink {
+    pub const fn elink(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::TcdCiterElinknoElink::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Link"]
     #[inline(always)]
-    pub const fn set_elink(&mut self, val: super::vals::TcdCiterElinknoElink) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u16) & 0x01) << 15usize);
+    pub const fn set_elink(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u16) & 0x01) << 15usize);
     }
 }
 impl Default for TcdCiterElinkno {
@@ -740,7 +740,7 @@ impl defmt::Format for TcdCiterElinkno {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "TcdCiterElinkno {{ citer: {=u16:?}, elink: {:?} }}",
+            "TcdCiterElinkno {{ citer: {=u16:?}, elink: {=bool:?} }}",
             self.citer(),
             self.elink()
         )
@@ -778,14 +778,14 @@ impl TcdCiterElinkyes {
     #[doc = "Enable Link"]
     #[must_use]
     #[inline(always)]
-    pub const fn elink(&self) -> super::vals::TcdCiterElinkyesElink {
+    pub const fn elink(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::TcdCiterElinkyesElink::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Link"]
     #[inline(always)]
-    pub const fn set_elink(&mut self, val: super::vals::TcdCiterElinkyesElink) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u16) & 0x01) << 15usize);
+    pub const fn set_elink(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u16) & 0x01) << 15usize);
     }
 }
 impl Default for TcdCiterElinkyes {
@@ -808,7 +808,7 @@ impl defmt::Format for TcdCiterElinkyes {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "TcdCiterElinkyes {{ citer: {=u16:?}, linkch: {=u8:?}, elink: {:?} }}",
+            "TcdCiterElinkyes {{ citer: {=u16:?}, linkch: {=u8:?}, elink: {=bool:?} }}",
             self.citer(),
             self.linkch(),
             self.elink()
@@ -835,26 +835,26 @@ impl TcdCsr {
     #[doc = "Enable Interrupt If Major count complete"]
     #[must_use]
     #[inline(always)]
-    pub const fn intmajor(&self) -> super::vals::Intmajor {
+    pub const fn intmajor(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Intmajor::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Interrupt If Major count complete"]
     #[inline(always)]
-    pub const fn set_intmajor(&mut self, val: super::vals::Intmajor) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u16) & 0x01) << 1usize);
+    pub const fn set_intmajor(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
     }
     #[doc = "Enable Interrupt If Major Counter Half-complete"]
     #[must_use]
     #[inline(always)]
-    pub const fn inthalf(&self) -> super::vals::Inthalf {
+    pub const fn inthalf(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Inthalf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Interrupt If Major Counter Half-complete"]
     #[inline(always)]
-    pub const fn set_inthalf(&mut self, val: super::vals::Inthalf) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u16) & 0x01) << 2usize);
+    pub const fn set_inthalf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u16) & 0x01) << 2usize);
     }
     #[doc = "Disable Request"]
     #[must_use]
@@ -883,38 +883,38 @@ impl TcdCsr {
     #[doc = "Enable Link When Major Loop Complete"]
     #[must_use]
     #[inline(always)]
-    pub const fn majorelink(&self) -> super::vals::Majorelink {
+    pub const fn majorelink(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Majorelink::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Link When Major Loop Complete"]
     #[inline(always)]
-    pub const fn set_majorelink(&mut self, val: super::vals::Majorelink) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u16) & 0x01) << 5usize);
+    pub const fn set_majorelink(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u16) & 0x01) << 5usize);
     }
     #[doc = "Enable End-Of-Packet Processing"]
     #[must_use]
     #[inline(always)]
-    pub const fn eeop(&self) -> super::vals::Eeop {
+    pub const fn eeop(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Eeop::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable End-Of-Packet Processing"]
     #[inline(always)]
-    pub const fn set_eeop(&mut self, val: super::vals::Eeop) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u16) & 0x01) << 6usize);
+    pub const fn set_eeop(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u16) & 0x01) << 6usize);
     }
     #[doc = "Enable Store Destination Address"]
     #[must_use]
     #[inline(always)]
-    pub const fn esda(&self) -> super::vals::Esda {
+    pub const fn esda(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Esda::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Store Destination Address"]
     #[inline(always)]
-    pub const fn set_esda(&mut self, val: super::vals::Esda) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_esda(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "Major Loop Link Channel Number"]
     #[must_use]
@@ -968,7 +968,7 @@ impl defmt::Format for TcdCsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "TcdCsr {{ start: {:?}, intmajor: {:?}, inthalf: {:?}, dreq: {:?}, esg: {:?}, majorelink: {:?}, eeop: {:?}, esda: {:?}, majorlinkch: {=u8:?}, bwc: {:?} }}",
+            "TcdCsr {{ start: {:?}, intmajor: {=bool:?}, inthalf: {=bool:?}, dreq: {:?}, esg: {:?}, majorelink: {=bool:?}, eeop: {=bool:?}, esda: {=bool:?}, majorlinkch: {=u8:?}, bwc: {:?} }}",
             self.start(),
             self.intmajor(),
             self.inthalf(),

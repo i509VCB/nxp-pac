@@ -6,38 +6,38 @@ impl Ccr {
     #[doc = "Cache Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn encache(&self) -> super::vals::Encache {
+    pub const fn encache(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Encache::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Cache Enable"]
     #[inline(always)]
-    pub const fn set_encache(&mut self, val: super::vals::Encache) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_encache(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Enable Write Buffer"]
     #[must_use]
     #[inline(always)]
-    pub const fn enwrbuf(&self) -> super::vals::Enwrbuf {
+    pub const fn enwrbuf(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Enwrbuf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Write Buffer"]
     #[inline(always)]
-    pub const fn set_enwrbuf(&mut self, val: super::vals::Enwrbuf) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_enwrbuf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Force Write Through Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn frcwt(&self) -> super::vals::Frcwt {
+    pub const fn frcwt(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Frcwt::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Force Write Through Mode"]
     #[inline(always)]
-    pub const fn set_frcwt(&mut self, val: super::vals::Frcwt) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_frcwt(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Forces No Allocation On Cache Misses"]
     #[must_use]
@@ -138,7 +138,7 @@ impl defmt::Format for Ccr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ccr {{ encache: {:?}, enwrbuf: {:?}, frcwt: {:?}, frcnoallc: {:?}, invw0: {:?}, pushw0: {:?}, invw1: {:?}, pushw1: {:?}, go: {:?} }}",
+            "Ccr {{ encache: {=bool:?}, enwrbuf: {=bool:?}, frcwt: {=bool:?}, frcnoallc: {:?}, invw0: {:?}, pushw0: {:?}, invw1: {:?}, pushw1: {:?}, go: {:?} }}",
             self.encache(),
             self.enwrbuf(),
             self.frcwt(),

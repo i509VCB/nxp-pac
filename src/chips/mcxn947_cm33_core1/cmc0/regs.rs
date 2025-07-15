@@ -88,14 +88,14 @@ impl Ckctrl {
     #[doc = "Lock"]
     #[must_use]
     #[inline(always)]
-    pub const fn lock(&self) -> super::vals::CkctrlLock {
+    pub const fn lock(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::CkctrlLock::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Lock"]
     #[inline(always)]
-    pub const fn set_lock(&mut self, val: super::vals::CkctrlLock) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_lock(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Ckctrl {
@@ -117,7 +117,7 @@ impl defmt::Format for Ckctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ckctrl {{ ckmode: {:?}, lock: {:?} }}",
+            "Ckctrl {{ ckmode: {:?}, lock: {=bool:?} }}",
             self.ckmode(),
             self.lock()
         )
@@ -155,14 +155,14 @@ impl Ckstat {
     #[doc = "Clock Status Valid"]
     #[must_use]
     #[inline(always)]
-    pub const fn valid(&self) -> super::vals::Valid {
+    pub const fn valid(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Valid::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Clock Status Valid"]
     #[inline(always)]
-    pub const fn set_valid(&mut self, val: super::vals::Valid) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_valid(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Ckstat {
@@ -185,7 +185,7 @@ impl defmt::Format for Ckstat {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ckstat {{ ckmode: {:?}, wakeup: {=u8:?}, valid: {:?} }}",
+            "Ckstat {{ ckmode: {:?}, wakeup: {=u8:?}, valid: {=bool:?} }}",
             self.ckmode(),
             self.wakeup(),
             self.valid()
@@ -200,14 +200,14 @@ impl Corectl {
     #[doc = "Non-maskable Pin Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn npie(&self) -> super::vals::Npie {
+    pub const fn npie(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Npie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Non-maskable Pin Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_npie(&mut self, val: super::vals::Npie) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_npie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Corectl {
@@ -226,7 +226,7 @@ impl core::fmt::Debug for Corectl {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Corectl {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Corectl {{ npie: {:?} }}", self.npie())
+        defmt::write!(f, "Corectl {{ npie: {=bool:?} }}", self.npie())
     }
 }
 #[doc = "Debug Control"]
@@ -237,14 +237,14 @@ impl Dbgctl {
     #[doc = "Sleep Or Debug"]
     #[must_use]
     #[inline(always)]
-    pub const fn sod(&self) -> super::vals::Sod {
+    pub const fn sod(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sod::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Sleep Or Debug"]
     #[inline(always)]
-    pub const fn set_sod(&mut self, val: super::vals::Sod) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_sod(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Dbgctl {
@@ -261,7 +261,7 @@ impl core::fmt::Debug for Dbgctl {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Dbgctl {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Dbgctl {{ sod: {:?} }}", self.sod())
+        defmt::write!(f, "Dbgctl {{ sod: {=bool:?} }}", self.sod())
     }
 }
 #[doc = "Flash Control"]
@@ -272,26 +272,26 @@ impl Flashcr {
     #[doc = "Flash Disable"]
     #[must_use]
     #[inline(always)]
-    pub const fn flashdis(&self) -> super::vals::Flashdis {
+    pub const fn flashdis(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Flashdis::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Flash Disable"]
     #[inline(always)]
-    pub const fn set_flashdis(&mut self, val: super::vals::Flashdis) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_flashdis(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Flash Doze"]
     #[must_use]
     #[inline(always)]
-    pub const fn flashdoze(&self) -> super::vals::Flashdoze {
+    pub const fn flashdoze(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Flashdoze::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Flash Doze"]
     #[inline(always)]
-    pub const fn set_flashdoze(&mut self, val: super::vals::Flashdoze) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_flashdoze(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
 }
 impl Default for Flashcr {
@@ -313,7 +313,7 @@ impl defmt::Format for Flashcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Flashcr {{ flashdis: {:?}, flashdoze: {:?} }}",
+            "Flashcr {{ flashdis: {=bool:?}, flashdoze: {=bool:?} }}",
             self.flashdis(),
             self.flashdoze()
         )
@@ -327,14 +327,14 @@ impl Fm0 {
     #[doc = "Boot Configuration"]
     #[must_use]
     #[inline(always)]
-    pub const fn forcecfg(&self) -> super::vals::Forcecfg {
+    pub const fn forcecfg(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Forcecfg::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Boot Configuration"]
     #[inline(always)]
-    pub const fn set_forcecfg(&mut self, val: super::vals::Forcecfg) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_forcecfg(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Fm0 {
@@ -353,7 +353,7 @@ impl core::fmt::Debug for Fm0 {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Fm0 {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Fm0 {{ forcecfg: {:?} }}", self.forcecfg())
+        defmt::write!(f, "Fm0 {{ forcecfg: {=bool:?} }}", self.forcecfg())
     }
 }
 #[doc = "Global Power Mode Control"]
@@ -524,14 +524,14 @@ impl Pmprot {
     #[doc = "Lock Register"]
     #[must_use]
     #[inline(always)]
-    pub const fn lock(&self) -> super::vals::PmprotLock {
+    pub const fn lock(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::PmprotLock::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Lock Register"]
     #[inline(always)]
-    pub const fn set_lock(&mut self, val: super::vals::PmprotLock) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_lock(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Pmprot {
@@ -553,7 +553,7 @@ impl defmt::Format for Pmprot {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Pmprot {{ lpmode: {:?}, lock: {:?} }}",
+            "Pmprot {{ lpmode: {:?}, lock: {=bool:?} }}",
             self.lpmode(),
             self.lock()
         )
@@ -579,26 +579,26 @@ impl Rpc {
     #[doc = "Filter Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn filten(&self) -> super::vals::Filten {
+    pub const fn filten(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Filten::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Filter Enable"]
     #[inline(always)]
-    pub const fn set_filten(&mut self, val: super::vals::Filten) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_filten(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Low-Power Filter Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn lpfen(&self) -> super::vals::Lpfen {
+    pub const fn lpfen(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Lpfen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Low-Power Filter Enable"]
     #[inline(always)]
-    pub const fn set_lpfen(&mut self, val: super::vals::Lpfen) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_lpfen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
 }
 impl Default for Rpc {
@@ -621,7 +621,7 @@ impl defmt::Format for Rpc {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Rpc {{ filtcfg: {=u8:?}, filten: {:?}, lpfen: {:?} }}",
+            "Rpc {{ filtcfg: {=u8:?}, filten: {=bool:?}, lpfen: {=bool:?} }}",
             self.filtcfg(),
             self.filten(),
             self.lpfen()
@@ -1623,146 +1623,146 @@ impl Srie {
     #[doc = "Pin Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn pin(&self) -> super::vals::SriePin {
+    pub const fn pin(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::SriePin::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Pin Reset"]
     #[inline(always)]
-    pub const fn set_pin(&mut self, val: super::vals::SriePin) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_pin(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "DAP Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn dap(&self) -> super::vals::SrieDap {
+    pub const fn dap(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::SrieDap::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DAP Reset"]
     #[inline(always)]
-    pub const fn set_dap(&mut self, val: super::vals::SrieDap) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_dap(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Low Power Acknowledge Timeout Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn lpack(&self) -> super::vals::SrieLpack {
+    pub const fn lpack(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::SrieLpack::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Low Power Acknowledge Timeout Reset"]
     #[inline(always)]
-    pub const fn set_lpack(&mut self, val: super::vals::SrieLpack) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_lpack(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "System Clock Generation Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn scg(&self) -> super::vals::SrieScg {
+    pub const fn scg(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::SrieScg::from_bits(val as u8)
+        val != 0
     }
     #[doc = "System Clock Generation Reset"]
     #[inline(always)]
-    pub const fn set_scg(&mut self, val: super::vals::SrieScg) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_scg(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Windowed Watchdog 0 Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn wwdt0(&self) -> super::vals::SrieWwdt0 {
+    pub const fn wwdt0(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::SrieWwdt0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Windowed Watchdog 0 Reset"]
     #[inline(always)]
-    pub const fn set_wwdt0(&mut self, val: super::vals::SrieWwdt0) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_wwdt0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Software Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn sw(&self) -> super::vals::SrieSw {
+    pub const fn sw(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::SrieSw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software Reset"]
     #[inline(always)]
-    pub const fn set_sw(&mut self, val: super::vals::SrieSw) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_sw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Lockup Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn lockup(&self) -> super::vals::SrieLockup {
+    pub const fn lockup(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::SrieLockup::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Lockup Reset"]
     #[inline(always)]
-    pub const fn set_lockup(&mut self, val: super::vals::SrieLockup) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_lockup(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "CPU1 Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn cpu1(&self) -> super::vals::SrieCpu1 {
+    pub const fn cpu1(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::SrieCpu1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CPU1 Reset"]
     #[inline(always)]
-    pub const fn set_cpu1(&mut self, val: super::vals::SrieCpu1) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_cpu1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "VBAT System Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn vbat(&self) -> super::vals::SrieVbat {
+    pub const fn vbat(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::SrieVbat::from_bits(val as u8)
+        val != 0
     }
     #[doc = "VBAT System Reset"]
     #[inline(always)]
-    pub const fn set_vbat(&mut self, val: super::vals::SrieVbat) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_vbat(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "Windowed Watchdog 1 Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn wwdt1(&self) -> super::vals::SrieWwdt1 {
+    pub const fn wwdt1(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::SrieWwdt1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Windowed Watchdog 1 Reset"]
     #[inline(always)]
-    pub const fn set_wwdt1(&mut self, val: super::vals::SrieWwdt1) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_wwdt1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "Code Watchdog 0 Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn cdog0(&self) -> super::vals::SrieCdog0 {
+    pub const fn cdog0(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::SrieCdog0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Code Watchdog 0 Reset"]
     #[inline(always)]
-    pub const fn set_cdog0(&mut self, val: super::vals::SrieCdog0) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_cdog0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "Code Watchdog 1 Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn cdog1(&self) -> super::vals::SrieCdog1 {
+    pub const fn cdog1(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::SrieCdog1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Code Watchdog 1 Reset"]
     #[inline(always)]
-    pub const fn set_cdog1(&mut self, val: super::vals::SrieCdog1) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_cdog1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
 }
 impl Default for Srie {
@@ -1794,7 +1794,7 @@ impl defmt::Format for Srie {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Srie {{ pin: {:?}, dap: {:?}, lpack: {:?}, scg: {:?}, wwdt0: {:?}, sw: {:?}, lockup: {:?}, cpu1: {:?}, vbat: {:?}, wwdt1: {:?}, cdog0: {:?}, cdog1: {:?} }}",
+            "Srie {{ pin: {=bool:?}, dap: {=bool:?}, lpack: {=bool:?}, scg: {=bool:?}, wwdt0: {=bool:?}, sw: {=bool:?}, lockup: {=bool:?}, cpu1: {=bool:?}, vbat: {=bool:?}, wwdt1: {=bool:?}, cdog0: {=bool:?}, cdog1: {=bool:?} }}",
             self.pin(),
             self.dap(),
             self.lpack(),
@@ -1818,134 +1818,134 @@ impl Srif {
     #[doc = "Pin Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn pin(&self) -> super::vals::SrifPin {
+    pub const fn pin(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::SrifPin::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Pin Reset"]
     #[inline(always)]
-    pub const fn set_pin(&mut self, val: super::vals::SrifPin) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_pin(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "DAP Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn dap(&self) -> super::vals::SrifDap {
+    pub const fn dap(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::SrifDap::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DAP Reset"]
     #[inline(always)]
-    pub const fn set_dap(&mut self, val: super::vals::SrifDap) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_dap(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Low Power Acknowledge Timeout Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn lpack(&self) -> super::vals::SrifLpack {
+    pub const fn lpack(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::SrifLpack::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Low Power Acknowledge Timeout Reset"]
     #[inline(always)]
-    pub const fn set_lpack(&mut self, val: super::vals::SrifLpack) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_lpack(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Windowed Watchdog 0 Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn wwdt0(&self) -> super::vals::SrifWwdt0 {
+    pub const fn wwdt0(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::SrifWwdt0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Windowed Watchdog 0 Reset"]
     #[inline(always)]
-    pub const fn set_wwdt0(&mut self, val: super::vals::SrifWwdt0) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_wwdt0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Software Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn sw(&self) -> super::vals::SrifSw {
+    pub const fn sw(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::SrifSw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software Reset"]
     #[inline(always)]
-    pub const fn set_sw(&mut self, val: super::vals::SrifSw) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_sw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Lockup Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn lockup(&self) -> super::vals::SrifLockup {
+    pub const fn lockup(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::SrifLockup::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Lockup Reset"]
     #[inline(always)]
-    pub const fn set_lockup(&mut self, val: super::vals::SrifLockup) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_lockup(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "CPU1 Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn cpu1(&self) -> super::vals::SrifCpu1 {
+    pub const fn cpu1(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::SrifCpu1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CPU1 Reset"]
     #[inline(always)]
-    pub const fn set_cpu1(&mut self, val: super::vals::SrifCpu1) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_cpu1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "VBAT System Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn vbat(&self) -> super::vals::SrifVbat {
+    pub const fn vbat(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::SrifVbat::from_bits(val as u8)
+        val != 0
     }
     #[doc = "VBAT System Reset"]
     #[inline(always)]
-    pub const fn set_vbat(&mut self, val: super::vals::SrifVbat) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_vbat(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "Windowed Watchdog 1 Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn wwdt1(&self) -> super::vals::SrifWwdt1 {
+    pub const fn wwdt1(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::SrifWwdt1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Windowed Watchdog 1 Reset"]
     #[inline(always)]
-    pub const fn set_wwdt1(&mut self, val: super::vals::SrifWwdt1) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_wwdt1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "Code Watchdog 0 Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn cdog0(&self) -> super::vals::SrifCdog0 {
+    pub const fn cdog0(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::SrifCdog0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Code Watchdog 0 Reset"]
     #[inline(always)]
-    pub const fn set_cdog0(&mut self, val: super::vals::SrifCdog0) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_cdog0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "Code Watchdog 1 Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn cdog1(&self) -> super::vals::SrifCdog1 {
+    pub const fn cdog1(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::SrifCdog1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Code Watchdog 1 Reset"]
     #[inline(always)]
-    pub const fn set_cdog1(&mut self, val: super::vals::SrifCdog1) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_cdog1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
 }
 impl Default for Srif {
@@ -1976,7 +1976,7 @@ impl defmt::Format for Srif {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Srif {{ pin: {:?}, dap: {:?}, lpack: {:?}, wwdt0: {:?}, sw: {:?}, lockup: {:?}, cpu1: {:?}, vbat: {:?}, wwdt1: {:?}, cdog0: {:?}, cdog1: {:?} }}",
+            "Srif {{ pin: {=bool:?}, dap: {=bool:?}, lpack: {=bool:?}, wwdt0: {=bool:?}, sw: {=bool:?}, lockup: {=bool:?}, cpu1: {=bool:?}, vbat: {=bool:?}, wwdt1: {=bool:?}, cdog0: {=bool:?}, cdog1: {=bool:?} }}",
             self.pin(),
             self.dap(),
             self.lpack(),
@@ -1999,254 +1999,254 @@ impl Srs {
     #[doc = "Wake-up Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn wakeup(&self) -> super::vals::SrsWakeup {
+    pub const fn wakeup(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::SrsWakeup::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Reset"]
     #[inline(always)]
-    pub const fn set_wakeup(&mut self, val: super::vals::SrsWakeup) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_wakeup(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Power-on Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn por(&self) -> super::vals::SrsPor {
+    pub const fn por(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::SrsPor::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Power-on Reset"]
     #[inline(always)]
-    pub const fn set_por(&mut self, val: super::vals::SrsPor) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_por(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Voltage Detect Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn vd(&self) -> super::vals::SrsVd {
+    pub const fn vd(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::SrsVd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Voltage Detect Reset"]
     #[inline(always)]
-    pub const fn set_vd(&mut self, val: super::vals::SrsVd) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_vd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Warm Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn warm(&self) -> super::vals::SrsWarm {
+    pub const fn warm(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::SrsWarm::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Warm Reset"]
     #[inline(always)]
-    pub const fn set_warm(&mut self, val: super::vals::SrsWarm) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_warm(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Fatal Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn fatal(&self) -> super::vals::SrsFatal {
+    pub const fn fatal(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::SrsFatal::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fatal Reset"]
     #[inline(always)]
-    pub const fn set_fatal(&mut self, val: super::vals::SrsFatal) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_fatal(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Pin Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn pin(&self) -> super::vals::SrsPin {
+    pub const fn pin(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::SrsPin::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Pin Reset"]
     #[inline(always)]
-    pub const fn set_pin(&mut self, val: super::vals::SrsPin) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_pin(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Debug Access Port Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn dap(&self) -> super::vals::SrsDap {
+    pub const fn dap(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::SrsDap::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Debug Access Port Reset"]
     #[inline(always)]
-    pub const fn set_dap(&mut self, val: super::vals::SrsDap) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_dap(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Reset Timeout"]
     #[must_use]
     #[inline(always)]
-    pub const fn rstack(&self) -> super::vals::SrsRstack {
+    pub const fn rstack(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::SrsRstack::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reset Timeout"]
     #[inline(always)]
-    pub const fn set_rstack(&mut self, val: super::vals::SrsRstack) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_rstack(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Low Power Acknowledge Timeout Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn lpack(&self) -> super::vals::SrsLpack {
+    pub const fn lpack(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::SrsLpack::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Low Power Acknowledge Timeout Reset"]
     #[inline(always)]
-    pub const fn set_lpack(&mut self, val: super::vals::SrsLpack) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_lpack(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "System Clock Generation Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn scg(&self) -> super::vals::SrsScg {
+    pub const fn scg(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::SrsScg::from_bits(val as u8)
+        val != 0
     }
     #[doc = "System Clock Generation Reset"]
     #[inline(always)]
-    pub const fn set_scg(&mut self, val: super::vals::SrsScg) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_scg(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Windowed Watchdog 0 Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn wwdt0(&self) -> super::vals::SrsWwdt0 {
+    pub const fn wwdt0(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::SrsWwdt0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Windowed Watchdog 0 Reset"]
     #[inline(always)]
-    pub const fn set_wwdt0(&mut self, val: super::vals::SrsWwdt0) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_wwdt0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Software Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn sw(&self) -> super::vals::SrsSw {
+    pub const fn sw(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::SrsSw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software Reset"]
     #[inline(always)]
-    pub const fn set_sw(&mut self, val: super::vals::SrsSw) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_sw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Lockup Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn lockup(&self) -> super::vals::SrsLockup {
+    pub const fn lockup(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::SrsLockup::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Lockup Reset"]
     #[inline(always)]
-    pub const fn set_lockup(&mut self, val: super::vals::SrsLockup) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_lockup(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "CPU1 System Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn cpu1(&self) -> super::vals::SrsCpu1 {
+    pub const fn cpu1(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::SrsCpu1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CPU1 System Reset"]
     #[inline(always)]
-    pub const fn set_cpu1(&mut self, val: super::vals::SrsCpu1) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_cpu1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "VBAT System Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn vbat(&self) -> super::vals::SrsVbat {
+    pub const fn vbat(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::SrsVbat::from_bits(val as u8)
+        val != 0
     }
     #[doc = "VBAT System Reset"]
     #[inline(always)]
-    pub const fn set_vbat(&mut self, val: super::vals::SrsVbat) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_vbat(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "Windowed Watchdog 1 Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn wwdt1(&self) -> super::vals::SrsWwdt1 {
+    pub const fn wwdt1(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::SrsWwdt1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Windowed Watchdog 1 Reset"]
     #[inline(always)]
-    pub const fn set_wwdt1(&mut self, val: super::vals::SrsWwdt1) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_wwdt1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "Code Watchdog 0 Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn cdog0(&self) -> super::vals::SrsCdog0 {
+    pub const fn cdog0(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::SrsCdog0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Code Watchdog 0 Reset"]
     #[inline(always)]
-    pub const fn set_cdog0(&mut self, val: super::vals::SrsCdog0) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_cdog0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "Code Watchdog 1 Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn cdog1(&self) -> super::vals::SrsCdog1 {
+    pub const fn cdog1(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::SrsCdog1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Code Watchdog 1 Reset"]
     #[inline(always)]
-    pub const fn set_cdog1(&mut self, val: super::vals::SrsCdog1) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_cdog1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
     #[doc = "JTAG System Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn jtag(&self) -> super::vals::SrsJtag {
+    pub const fn jtag(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::SrsJtag::from_bits(val as u8)
+        val != 0
     }
     #[doc = "JTAG System Reset"]
     #[inline(always)]
-    pub const fn set_jtag(&mut self, val: super::vals::SrsJtag) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_jtag(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Security Violation Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn secvio(&self) -> super::vals::SrsSecvio {
+    pub const fn secvio(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::SrsSecvio::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Security Violation Reset"]
     #[inline(always)]
-    pub const fn set_secvio(&mut self, val: super::vals::SrsSecvio) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_secvio(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Tamper Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn tamper(&self) -> super::vals::SrsTamper {
+    pub const fn tamper(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::SrsTamper::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Reset"]
     #[inline(always)]
-    pub const fn set_tamper(&mut self, val: super::vals::SrsTamper) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_tamper(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Srs {
@@ -2287,7 +2287,7 @@ impl defmt::Format for Srs {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Srs {{ wakeup: {:?}, por: {:?}, vd: {:?}, warm: {:?}, fatal: {:?}, pin: {:?}, dap: {:?}, rstack: {:?}, lpack: {:?}, scg: {:?}, wwdt0: {:?}, sw: {:?}, lockup: {:?}, cpu1: {:?}, vbat: {:?}, wwdt1: {:?}, cdog0: {:?}, cdog1: {:?}, jtag: {:?}, secvio: {:?}, tamper: {:?} }}",
+            "Srs {{ wakeup: {=bool:?}, por: {=bool:?}, vd: {=bool:?}, warm: {=bool:?}, fatal: {=bool:?}, pin: {=bool:?}, dap: {=bool:?}, rstack: {=bool:?}, lpack: {=bool:?}, scg: {=bool:?}, wwdt0: {=bool:?}, sw: {=bool:?}, lockup: {=bool:?}, cpu1: {=bool:?}, vbat: {=bool:?}, wwdt1: {=bool:?}, cdog0: {=bool:?}, cdog1: {=bool:?}, jtag: {=bool:?}, secvio: {=bool:?}, tamper: {=bool:?} }}",
             self.wakeup(),
             self.por(),
             self.vd(),
@@ -2320,254 +2320,254 @@ impl Ssrs {
     #[doc = "Wake-up Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn wakeup(&self) -> super::vals::SsrsWakeup {
+    pub const fn wakeup(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::SsrsWakeup::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Reset"]
     #[inline(always)]
-    pub const fn set_wakeup(&mut self, val: super::vals::SsrsWakeup) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_wakeup(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Power-on Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn por(&self) -> super::vals::SsrsPor {
+    pub const fn por(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::SsrsPor::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Power-on Reset"]
     #[inline(always)]
-    pub const fn set_por(&mut self, val: super::vals::SsrsPor) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_por(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Voltage Detect Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn vd(&self) -> super::vals::SsrsVd {
+    pub const fn vd(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::SsrsVd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Voltage Detect Reset"]
     #[inline(always)]
-    pub const fn set_vd(&mut self, val: super::vals::SsrsVd) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_vd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Warm Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn warm(&self) -> super::vals::SsrsWarm {
+    pub const fn warm(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::SsrsWarm::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Warm Reset"]
     #[inline(always)]
-    pub const fn set_warm(&mut self, val: super::vals::SsrsWarm) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_warm(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Fatal Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn fatal(&self) -> super::vals::SsrsFatal {
+    pub const fn fatal(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::SsrsFatal::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fatal Reset"]
     #[inline(always)]
-    pub const fn set_fatal(&mut self, val: super::vals::SsrsFatal) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_fatal(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Pin Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn pin(&self) -> super::vals::SsrsPin {
+    pub const fn pin(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::SsrsPin::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Pin Reset"]
     #[inline(always)]
-    pub const fn set_pin(&mut self, val: super::vals::SsrsPin) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_pin(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "DAP Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn dap(&self) -> super::vals::SsrsDap {
+    pub const fn dap(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::SsrsDap::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DAP Reset"]
     #[inline(always)]
-    pub const fn set_dap(&mut self, val: super::vals::SsrsDap) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_dap(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Reset Timeout"]
     #[must_use]
     #[inline(always)]
-    pub const fn rstack(&self) -> super::vals::SsrsRstack {
+    pub const fn rstack(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::SsrsRstack::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reset Timeout"]
     #[inline(always)]
-    pub const fn set_rstack(&mut self, val: super::vals::SsrsRstack) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_rstack(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Low Power Acknowledge Timeout Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn lpack(&self) -> super::vals::SsrsLpack {
+    pub const fn lpack(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::SsrsLpack::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Low Power Acknowledge Timeout Reset"]
     #[inline(always)]
-    pub const fn set_lpack(&mut self, val: super::vals::SsrsLpack) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_lpack(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "System Clock Generation Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn scg(&self) -> super::vals::SsrsScg {
+    pub const fn scg(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::SsrsScg::from_bits(val as u8)
+        val != 0
     }
     #[doc = "System Clock Generation Reset"]
     #[inline(always)]
-    pub const fn set_scg(&mut self, val: super::vals::SsrsScg) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_scg(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Windowed Watchdog 0 Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn wwdt0(&self) -> super::vals::SsrsWwdt0 {
+    pub const fn wwdt0(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::SsrsWwdt0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Windowed Watchdog 0 Reset"]
     #[inline(always)]
-    pub const fn set_wwdt0(&mut self, val: super::vals::SsrsWwdt0) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_wwdt0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Software Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn sw(&self) -> super::vals::SsrsSw {
+    pub const fn sw(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::SsrsSw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software Reset"]
     #[inline(always)]
-    pub const fn set_sw(&mut self, val: super::vals::SsrsSw) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_sw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Lockup Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn lockup(&self) -> super::vals::SsrsLockup {
+    pub const fn lockup(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::SsrsLockup::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Lockup Reset"]
     #[inline(always)]
-    pub const fn set_lockup(&mut self, val: super::vals::SsrsLockup) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_lockup(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "CPU1 Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn cpu1(&self) -> super::vals::SsrsCpu1 {
+    pub const fn cpu1(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::SsrsCpu1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CPU1 Reset"]
     #[inline(always)]
-    pub const fn set_cpu1(&mut self, val: super::vals::SsrsCpu1) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_cpu1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "VBAT System Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn vbat(&self) -> super::vals::SsrsVbat {
+    pub const fn vbat(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::SsrsVbat::from_bits(val as u8)
+        val != 0
     }
     #[doc = "VBAT System Reset"]
     #[inline(always)]
-    pub const fn set_vbat(&mut self, val: super::vals::SsrsVbat) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_vbat(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "Windowed Watchdog 1 Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn wwdt1(&self) -> super::vals::SsrsWwdt1 {
+    pub const fn wwdt1(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::SsrsWwdt1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Windowed Watchdog 1 Reset"]
     #[inline(always)]
-    pub const fn set_wwdt1(&mut self, val: super::vals::SsrsWwdt1) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_wwdt1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "Code Watchdog 0 Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn cdog0(&self) -> super::vals::SsrsCdog0 {
+    pub const fn cdog0(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::SsrsCdog0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Code Watchdog 0 Reset"]
     #[inline(always)]
-    pub const fn set_cdog0(&mut self, val: super::vals::SsrsCdog0) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_cdog0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "Code Watchdog 1 Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn cdog1(&self) -> super::vals::SsrsCdog1 {
+    pub const fn cdog1(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::SsrsCdog1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Code Watchdog 1 Reset"]
     #[inline(always)]
-    pub const fn set_cdog1(&mut self, val: super::vals::SsrsCdog1) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_cdog1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
     #[doc = "JTAG System Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn jtag(&self) -> super::vals::SsrsJtag {
+    pub const fn jtag(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::SsrsJtag::from_bits(val as u8)
+        val != 0
     }
     #[doc = "JTAG System Reset"]
     #[inline(always)]
-    pub const fn set_jtag(&mut self, val: super::vals::SsrsJtag) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_jtag(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Security Violation Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn secvio(&self) -> super::vals::SsrsSecvio {
+    pub const fn secvio(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::SsrsSecvio::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Security Violation Reset"]
     #[inline(always)]
-    pub const fn set_secvio(&mut self, val: super::vals::SsrsSecvio) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_secvio(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Tamper Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn tamper(&self) -> super::vals::SsrsTamper {
+    pub const fn tamper(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::SsrsTamper::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Reset"]
     #[inline(always)]
-    pub const fn set_tamper(&mut self, val: super::vals::SsrsTamper) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_tamper(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Ssrs {
@@ -2608,7 +2608,7 @@ impl defmt::Format for Ssrs {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ssrs {{ wakeup: {:?}, por: {:?}, vd: {:?}, warm: {:?}, fatal: {:?}, pin: {:?}, dap: {:?}, rstack: {:?}, lpack: {:?}, scg: {:?}, wwdt0: {:?}, sw: {:?}, lockup: {:?}, cpu1: {:?}, vbat: {:?}, wwdt1: {:?}, cdog0: {:?}, cdog1: {:?}, jtag: {:?}, secvio: {:?}, tamper: {:?} }}",
+            "Ssrs {{ wakeup: {=bool:?}, por: {=bool:?}, vd: {=bool:?}, warm: {=bool:?}, fatal: {=bool:?}, pin: {=bool:?}, dap: {=bool:?}, rstack: {=bool:?}, lpack: {=bool:?}, scg: {=bool:?}, wwdt0: {=bool:?}, sw: {=bool:?}, lockup: {=bool:?}, cpu1: {=bool:?}, vbat: {=bool:?}, wwdt1: {=bool:?}, cdog0: {=bool:?}, cdog1: {=bool:?}, jtag: {=bool:?}, secvio: {=bool:?}, tamper: {=bool:?} }}",
             self.wakeup(),
             self.por(),
             self.vd(),

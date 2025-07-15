@@ -114,14 +114,14 @@ impl Ctrl1 {
     #[doc = "Wake-up Interrupt Request"]
     #[must_use]
     #[inline(always)]
-    pub const fn wir(&self) -> super::vals::Wir {
+    pub const fn wir(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Wir::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Interrupt Request"]
     #[inline(always)]
-    pub const fn set_wir(&mut self, val: super::vals::Wir) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_wir(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Ctrl1 {
@@ -151,7 +151,7 @@ impl defmt::Format for Ctrl1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl1 {{ over_cur_dis: {:?}, over_cur_pol: {:?}, pwr_pol: {:?}, wie: {:?}, wkup_sw_en: {:?}, wkup_sw: {:?}, wkup_id_en: {:?}, wkup_vbus_en: {:?}, wkup_dpdm_en: {:?}, wir: {:?} }}",
+            "Ctrl1 {{ over_cur_dis: {:?}, over_cur_pol: {:?}, pwr_pol: {:?}, wie: {:?}, wkup_sw_en: {:?}, wkup_sw: {:?}, wkup_id_en: {:?}, wkup_vbus_en: {:?}, wkup_dpdm_en: {:?}, wir: {=bool:?} }}",
             self.over_cur_dis(),
             self.over_cur_pol(),
             self.pwr_pol(),
@@ -185,38 +185,38 @@ impl Ctrl2 {
     #[doc = "Auto Resume Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn auturesume_en(&self) -> super::vals::AuturesumeEn {
+    pub const fn auturesume_en(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::AuturesumeEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Auto Resume Enable"]
     #[inline(always)]
-    pub const fn set_auturesume_en(&mut self, val: super::vals::AuturesumeEn) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_auturesume_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Low Speed Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn lowspeed_en(&self) -> super::vals::LowspeedEn {
+    pub const fn lowspeed_en(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::LowspeedEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Low Speed Enable"]
     #[inline(always)]
-    pub const fn set_lowspeed_en(&mut self, val: super::vals::LowspeedEn) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_lowspeed_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "UTMI Clock Valid"]
     #[must_use]
     #[inline(always)]
-    pub const fn utmi_clk_vld(&self) -> super::vals::UtmiClkVld {
+    pub const fn utmi_clk_vld(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::UtmiClkVld::from_bits(val as u8)
+        val != 0
     }
     #[doc = "UTMI Clock Valid"]
     #[inline(always)]
-    pub const fn set_utmi_clk_vld(&mut self, val: super::vals::UtmiClkVld) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_utmi_clk_vld(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Ctrl2 {
@@ -240,7 +240,7 @@ impl defmt::Format for Ctrl2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl2 {{ vbus_source_sel: {:?}, auturesume_en: {:?}, lowspeed_en: {:?}, utmi_clk_vld: {:?} }}",
+            "Ctrl2 {{ vbus_source_sel: {:?}, auturesume_en: {=bool:?}, lowspeed_en: {=bool:?}, utmi_clk_vld: {=bool:?} }}",
             self.vbus_source_sel(),
             self.auturesume_en(),
             self.lowspeed_en(),
@@ -256,38 +256,38 @@ impl HsicCtrl {
     #[doc = "HSIC Clock ON"]
     #[must_use]
     #[inline(always)]
-    pub const fn hsic_clk_on(&self) -> super::vals::HsicClkOn {
+    pub const fn hsic_clk_on(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::HsicClkOn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "HSIC Clock ON"]
     #[inline(always)]
-    pub const fn set_hsic_clk_on(&mut self, val: super::vals::HsicClkOn) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_hsic_clk_on(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Host HSIC Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn hsic_en(&self) -> super::vals::HsicEn {
+    pub const fn hsic_en(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::HsicEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Host HSIC Enable"]
     #[inline(always)]
-    pub const fn set_hsic_en(&mut self, val: super::vals::HsicEn) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_hsic_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Clock Valid"]
     #[must_use]
     #[inline(always)]
-    pub const fn clk_vld(&self) -> super::vals::ClkVld {
+    pub const fn clk_vld(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::ClkVld::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Clock Valid"]
     #[inline(always)]
-    pub const fn set_clk_vld(&mut self, val: super::vals::ClkVld) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_clk_vld(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for HsicCtrl {
@@ -310,7 +310,7 @@ impl defmt::Format for HsicCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "HsicCtrl {{ hsic_clk_on: {:?}, hsic_en: {:?}, clk_vld: {:?} }}",
+            "HsicCtrl {{ hsic_clk_on: {=bool:?}, hsic_en: {=bool:?}, clk_vld: {=bool:?} }}",
             self.hsic_clk_on(),
             self.hsic_en(),
             self.clk_vld()

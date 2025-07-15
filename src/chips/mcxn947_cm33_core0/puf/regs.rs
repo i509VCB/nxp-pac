@@ -6,137 +6,134 @@ impl Ar {
     #[doc = "Enroll operation"]
     #[must_use]
     #[inline(always)]
-    pub const fn allow_enroll(&self) -> super::vals::AllowEnroll {
+    pub const fn allow_enroll(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::AllowEnroll::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enroll operation"]
     #[inline(always)]
-    pub const fn set_allow_enroll(&mut self, val: super::vals::AllowEnroll) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_allow_enroll(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Start operation"]
     #[must_use]
     #[inline(always)]
-    pub const fn allow_start(&self) -> super::vals::AllowStart {
+    pub const fn allow_start(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::AllowStart::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Start operation"]
     #[inline(always)]
-    pub const fn set_allow_start(&mut self, val: super::vals::AllowStart) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_allow_start(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Reconstruct operation"]
     #[must_use]
     #[inline(always)]
-    pub const fn allow_reconstruct(&self) -> super::vals::AllowReconstruct {
+    pub const fn allow_reconstruct(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::AllowReconstruct::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reconstruct operation"]
     #[inline(always)]
-    pub const fn set_allow_reconstruct(&mut self, val: super::vals::AllowReconstruct) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_allow_reconstruct(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Stop operation"]
     #[must_use]
     #[inline(always)]
-    pub const fn allow_stop(&self) -> super::vals::AllowStop {
+    pub const fn allow_stop(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::AllowStop::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Stop operation"]
     #[inline(always)]
-    pub const fn set_allow_stop(&mut self, val: super::vals::AllowStop) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_allow_stop(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Get Key operation"]
     #[must_use]
     #[inline(always)]
-    pub const fn allow_get_key(&self) -> super::vals::AllowGetKey {
+    pub const fn allow_get_key(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::AllowGetKey::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Get Key operation"]
     #[inline(always)]
-    pub const fn set_allow_get_key(&mut self, val: super::vals::AllowGetKey) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_allow_get_key(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Unwrap operation"]
     #[must_use]
     #[inline(always)]
-    pub const fn allow_unwrap(&self) -> super::vals::AllowUnwrap {
+    pub const fn allow_unwrap(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::AllowUnwrap::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Unwrap operation"]
     #[inline(always)]
-    pub const fn set_allow_unwrap(&mut self, val: super::vals::AllowUnwrap) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_allow_unwrap(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Wrap Generated Random operation"]
     #[must_use]
     #[inline(always)]
-    pub const fn allow_wrap_generated_random(&self) -> super::vals::AllowWrapGeneratedRandom {
+    pub const fn allow_wrap_generated_random(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::AllowWrapGeneratedRandom::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wrap Generated Random operation"]
     #[inline(always)]
-    pub const fn set_allow_wrap_generated_random(
-        &mut self,
-        val: super::vals::AllowWrapGeneratedRandom,
-    ) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_allow_wrap_generated_random(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Wrap operation"]
     #[must_use]
     #[inline(always)]
-    pub const fn allow_wrap(&self) -> super::vals::AllowWrap {
+    pub const fn allow_wrap(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::AllowWrap::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wrap operation"]
     #[inline(always)]
-    pub const fn set_allow_wrap(&mut self, val: super::vals::AllowWrap) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_allow_wrap(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Generate Random operation"]
     #[must_use]
     #[inline(always)]
-    pub const fn allow_generate_random(&self) -> super::vals::AllowGenerateRandom {
+    pub const fn allow_generate_random(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::AllowGenerateRandom::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Generate Random operation"]
     #[inline(always)]
-    pub const fn set_allow_generate_random(&mut self, val: super::vals::AllowGenerateRandom) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_allow_generate_random(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "no description available"]
     #[must_use]
     #[inline(always)]
-    pub const fn allow_test_memory(&self) -> super::vals::AllowTestMemory {
+    pub const fn allow_test_memory(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::AllowTestMemory::from_bits(val as u8)
+        val != 0
     }
     #[doc = "no description available"]
     #[inline(always)]
-    pub const fn set_allow_test_memory(&mut self, val: super::vals::AllowTestMemory) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_allow_test_memory(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Test PUF operation"]
     #[must_use]
     #[inline(always)]
-    pub const fn allow_test_puf(&self) -> super::vals::AllowTestPuf {
+    pub const fn allow_test_puf(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::AllowTestPuf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Test PUF operation"]
     #[inline(always)]
-    pub const fn set_allow_test_puf(&mut self, val: super::vals::AllowTestPuf) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_allow_test_puf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Ar {
@@ -170,7 +167,7 @@ impl defmt::Format for Ar {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ar {{ allow_enroll: {:?}, allow_start: {:?}, allow_reconstruct: {:?}, allow_stop: {:?}, allow_get_key: {:?}, allow_unwrap: {:?}, allow_wrap_generated_random: {:?}, allow_wrap: {:?}, allow_generate_random: {:?}, allow_test_memory: {:?}, allow_test_puf: {:?} }}",
+            "Ar {{ allow_enroll: {=bool:?}, allow_start: {=bool:?}, allow_reconstruct: {=bool:?}, allow_stop: {=bool:?}, allow_get_key: {=bool:?}, allow_unwrap: {=bool:?}, allow_wrap_generated_random: {=bool:?}, allow_wrap: {=bool:?}, allow_generate_random: {=bool:?}, allow_test_memory: {=bool:?}, allow_test_puf: {=bool:?} }}",
             self.allow_enroll(),
             self.allow_start(),
             self.allow_reconstruct(),
@@ -877,14 +874,14 @@ impl Ier {
     #[doc = "Interrupt enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn int_en(&self) -> super::vals::IntEn {
+    pub const fn int_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::IntEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt enable"]
     #[inline(always)]
-    pub const fn set_int_en(&mut self, val: super::vals::IntEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_int_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Ier {
@@ -903,7 +900,7 @@ impl core::fmt::Debug for Ier {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Ier {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Ier {{ int_en: {:?} }}", self.int_en())
+        defmt::write!(f, "Ier {{ int_en: {=bool:?} }}", self.int_en())
     }
 }
 #[doc = "Interface Status"]
@@ -1201,14 +1198,14 @@ impl Misc {
     #[doc = "Defines the endianness of data in DIR and DOR:"]
     #[must_use]
     #[inline(always)]
-    pub const fn data_endianness(&self) -> super::vals::DataEndianness {
+    pub const fn data_endianness(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::DataEndianness::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Defines the endianness of data in DIR and DOR:"]
     #[inline(always)]
-    pub const fn set_data_endianness(&mut self, val: super::vals::DataEndianness) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_data_endianness(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Misc {
@@ -1229,7 +1226,7 @@ impl defmt::Format for Misc {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Misc {{ data_endianness: {:?} }}",
+            "Misc {{ data_endianness: {=bool:?} }}",
             self.data_endianness()
         )
     }
@@ -1459,26 +1456,26 @@ impl SramCfg {
     #[doc = "PUF SRAM Controller activation"]
     #[must_use]
     #[inline(always)]
-    pub const fn enable(&self) -> super::vals::Enable {
+    pub const fn enable(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Enable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PUF SRAM Controller activation"]
     #[inline(always)]
-    pub const fn set_enable(&mut self, val: super::vals::Enable) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_enable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "PUF SRAM Clock Gating control"]
     #[must_use]
     #[inline(always)]
-    pub const fn ckgating(&self) -> super::vals::Ckgating {
+    pub const fn ckgating(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Ckgating::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PUF SRAM Clock Gating control"]
     #[inline(always)]
-    pub const fn set_ckgating(&mut self, val: super::vals::Ckgating) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_ckgating(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
 }
 impl Default for SramCfg {
@@ -1500,7 +1497,7 @@ impl defmt::Format for SramCfg {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "SramCfg {{ enable: {:?}, ckgating: {:?} }}",
+            "SramCfg {{ enable: {=bool:?}, ckgating: {=bool:?} }}",
             self.enable(),
             self.ckgating()
         )
@@ -1581,14 +1578,14 @@ impl SramIntClrStatus {
     #[doc = "APB_ERR Interrupt Status Clear"]
     #[must_use]
     #[inline(always)]
-    pub const fn apb_err(&self) -> super::vals::SramIntClrStatusApbErr {
+    pub const fn apb_err(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::SramIntClrStatusApbErr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "APB_ERR Interrupt Status Clear"]
     #[inline(always)]
-    pub const fn set_apb_err(&mut self, val: super::vals::SramIntClrStatusApbErr) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_apb_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
 }
 impl Default for SramIntClrStatus {
@@ -1610,7 +1607,7 @@ impl defmt::Format for SramIntClrStatus {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "SramIntClrStatus {{ ready: {=bool:?}, apb_err: {:?} }}",
+            "SramIntClrStatus {{ ready: {=bool:?}, apb_err: {=bool:?} }}",
             self.ready(),
             self.apb_err()
         )
@@ -1624,26 +1621,26 @@ impl SramIntEnable {
     #[doc = "READY Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ready(&self) -> super::vals::Ready {
+    pub const fn ready(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Ready::from_bits(val as u8)
+        val != 0
     }
     #[doc = "READY Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ready(&mut self, val: super::vals::Ready) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_ready(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "APB_ERR Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn sram_apb_err(&self) -> super::vals::SramApbErr {
+    pub const fn sram_apb_err(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::SramApbErr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "APB_ERR Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_sram_apb_err(&mut self, val: super::vals::SramApbErr) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_sram_apb_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
 }
 impl Default for SramIntEnable {
@@ -1665,7 +1662,7 @@ impl defmt::Format for SramIntEnable {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "SramIntEnable {{ ready: {:?}, sram_apb_err: {:?} }}",
+            "SramIntEnable {{ ready: {=bool:?}, sram_apb_err: {=bool:?} }}",
             self.ready(),
             self.sram_apb_err()
         )
@@ -1746,14 +1743,14 @@ impl SramIntSetStatus {
     #[doc = "APB_ERR Interrupt Status Set"]
     #[must_use]
     #[inline(always)]
-    pub const fn apb_err(&self) -> super::vals::SramIntSetStatusApbErr {
+    pub const fn apb_err(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::SramIntSetStatusApbErr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "APB_ERR Interrupt Status Set"]
     #[inline(always)]
-    pub const fn set_apb_err(&mut self, val: super::vals::SramIntSetStatusApbErr) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_apb_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
 }
 impl Default for SramIntSetStatus {
@@ -1775,7 +1772,7 @@ impl defmt::Format for SramIntSetStatus {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "SramIntSetStatus {{ ready: {=bool:?}, apb_err: {:?} }}",
+            "SramIntSetStatus {{ ready: {=bool:?}, apb_err: {=bool:?} }}",
             self.ready(),
             self.apb_err()
         )

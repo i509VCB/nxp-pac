@@ -63,68 +63,6 @@ impl From<CsarLgo> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Encache {
-    #[doc = "Disables"]
-    DISABLED = 0x0,
-    #[doc = "Enables"]
-    ENABLED = 0x01,
-}
-impl Encache {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Encache {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Encache {
-    #[inline(always)]
-    fn from(val: u8) -> Encache {
-        Encache::from_bits(val)
-    }
-}
-impl From<Encache> for u8 {
-    #[inline(always)]
-    fn from(val: Encache) -> u8 {
-        Encache::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Enwrbuf {
-    #[doc = "Disables"]
-    DISABLED = 0x0,
-    #[doc = "Enables"]
-    ENABLED = 0x01,
-}
-impl Enwrbuf {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Enwrbuf {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Enwrbuf {
-    #[inline(always)]
-    fn from(val: u8) -> Enwrbuf {
-        Enwrbuf::from_bits(val)
-    }
-}
-impl From<Enwrbuf> for u8 {
-    #[inline(always)]
-    fn from(val: Enwrbuf) -> u8 {
-        Enwrbuf::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Frcnoallc {
     #[doc = "Allocation on cache misses"]
     ALLCONCACHE = 0x0,
@@ -151,37 +89,6 @@ impl From<Frcnoallc> for u8 {
     #[inline(always)]
     fn from(val: Frcnoallc) -> u8 {
         Frcnoallc::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Frcwt {
-    #[doc = "Does not force"]
-    NOTFORCE = 0x0,
-    #[doc = "Force"]
-    FORCE = 0x01,
-}
-impl Frcwt {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Frcwt {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Frcwt {
-    #[inline(always)]
-    fn from(val: u8) -> Frcwt {
-        Frcwt::from_bits(val)
-    }
-}
-impl From<Frcwt> for u8 {
-    #[inline(always)]
-    fn from(val: Frcwt) -> u8 {
-        Frcwt::to_bits(val)
     }
 }
 #[repr(u8)]

@@ -67,14 +67,14 @@ impl Control {
     #[doc = "Instruction Busy"]
     #[must_use]
     #[inline(always)]
-    pub const fn inst_busy(&self) -> super::vals::InstBusy {
+    pub const fn inst_busy(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::InstBusy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Instruction Busy"]
     #[inline(always)]
-    pub const fn set_inst_busy(&mut self, val: super::vals::InstBusy) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_inst_busy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Control {
@@ -97,7 +97,7 @@ impl defmt::Format for Control {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Control {{ decode_opcode: {=u8:?}, decode_machine: {:?}, inst_busy: {:?} }}",
+            "Control {{ decode_opcode: {=u8:?}, decode_machine: {:?}, inst_busy: {=bool:?} }}",
             self.decode_opcode(),
             self.decode_machine(),
             self.inst_busy()
@@ -247,14 +247,14 @@ impl Cppre {
     #[doc = "Saturation"]
     #[must_use]
     #[inline(always)]
-    pub const fn cppre_sat(&self) -> super::vals::CppreSat {
+    pub const fn cppre_sat(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::CppreSat::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Saturation"]
     #[inline(always)]
-    pub const fn set_cppre_sat(&mut self, val: super::vals::CppreSat) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_cppre_sat(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Saturation 8"]
     #[must_use]
@@ -290,7 +290,7 @@ impl defmt::Format for Cppre {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cppre {{ cppre_in: {=u8:?}, cppre_out: {=u8:?}, cppre_sat: {:?}, cppre_sat8: {:?} }}",
+            "Cppre {{ cppre_in: {=u8:?}, cppre_out: {=u8:?}, cppre_sat: {=bool:?}, cppre_sat8: {:?} }}",
             self.cppre_in(),
             self.cppre_out(),
             self.cppre_sat(),
@@ -306,14 +306,14 @@ impl Cursory {
     #[doc = "Cursory Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn cursory(&self) -> super::vals::Cursory {
+    pub const fn cursory(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Cursory::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Cursory Mode"]
     #[inline(always)]
-    pub const fn set_cursory(&mut self, val: super::vals::Cursory) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_cursory(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Cursory {
@@ -332,7 +332,7 @@ impl core::fmt::Debug for Cursory {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Cursory {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Cursory {{ cursory: {:?} }}", self.cursory())
+        defmt::write!(f, "Cursory {{ cursory: {=bool:?} }}", self.cursory())
     }
 }
 #[doc = "Error Status"]
@@ -343,62 +343,62 @@ impl Errstat {
     #[doc = "Floating-point Overflow"]
     #[must_use]
     #[inline(always)]
-    pub const fn overflow(&self) -> super::vals::Overflow {
+    pub const fn overflow(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Overflow::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Floating-point Overflow"]
     #[inline(always)]
-    pub const fn set_overflow(&mut self, val: super::vals::Overflow) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_overflow(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Floating-Point Not-a-Number (NaN)"]
     #[must_use]
     #[inline(always)]
-    pub const fn nan(&self) -> super::vals::Nan {
+    pub const fn nan(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Nan::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Floating-Point Not-a-Number (NaN)"]
     #[inline(always)]
-    pub const fn set_nan(&mut self, val: super::vals::Nan) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_nan(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Fixed-point Overflow"]
     #[must_use]
     #[inline(always)]
-    pub const fn fixedoverflow(&self) -> super::vals::Fixedoverflow {
+    pub const fn fixedoverflow(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Fixedoverflow::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fixed-point Overflow"]
     #[inline(always)]
-    pub const fn set_fixedoverflow(&mut self, val: super::vals::Fixedoverflow) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_fixedoverflow(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Underflow"]
     #[must_use]
     #[inline(always)]
-    pub const fn underflow(&self) -> super::vals::Underflow {
+    pub const fn underflow(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Underflow::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Underflow"]
     #[inline(always)]
-    pub const fn set_underflow(&mut self, val: super::vals::Underflow) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_underflow(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Bus Error"]
     #[must_use]
     #[inline(always)]
-    pub const fn buserror(&self) -> super::vals::Buserror {
+    pub const fn buserror(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Buserror::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bus Error"]
     #[inline(always)]
-    pub const fn set_buserror(&mut self, val: super::vals::Buserror) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_buserror(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
 }
 impl Default for Errstat {
@@ -423,7 +423,7 @@ impl defmt::Format for Errstat {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Errstat {{ overflow: {:?}, nan: {:?}, fixedoverflow: {:?}, underflow: {:?}, buserror: {:?} }}",
+            "Errstat {{ overflow: {=bool:?}, nan: {=bool:?}, fixedoverflow: {=bool:?}, underflow: {=bool:?}, buserror: {=bool:?} }}",
             self.overflow(),
             self.nan(),
             self.fixedoverflow(),
@@ -440,74 +440,74 @@ impl Eventen {
     #[doc = "Event Trigger on Floating-point Overflow"]
     #[must_use]
     #[inline(always)]
-    pub const fn event_oflow(&self) -> super::vals::EventOflow {
+    pub const fn event_oflow(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::EventOflow::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Trigger on Floating-point Overflow"]
     #[inline(always)]
-    pub const fn set_event_oflow(&mut self, val: super::vals::EventOflow) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_event_oflow(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Event Trigger on Floating-Point NaN"]
     #[must_use]
     #[inline(always)]
-    pub const fn event_nan(&self) -> super::vals::EventNan {
+    pub const fn event_nan(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::EventNan::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Trigger on Floating-Point NaN"]
     #[inline(always)]
-    pub const fn set_event_nan(&mut self, val: super::vals::EventNan) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_event_nan(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Event Trigger on Fixed-point Overflow"]
     #[must_use]
     #[inline(always)]
-    pub const fn event_fixed(&self) -> super::vals::EventFixed {
+    pub const fn event_fixed(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::EventFixed::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Trigger on Fixed-point Overflow"]
     #[inline(always)]
-    pub const fn set_event_fixed(&mut self, val: super::vals::EventFixed) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_event_fixed(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Event Trigger on Underflow"]
     #[must_use]
     #[inline(always)]
-    pub const fn event_uflow(&self) -> super::vals::EventUflow {
+    pub const fn event_uflow(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::EventUflow::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Trigger on Underflow"]
     #[inline(always)]
-    pub const fn set_event_uflow(&mut self, val: super::vals::EventUflow) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_event_uflow(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Event Trigger on AHBM Bus Error"]
     #[must_use]
     #[inline(always)]
-    pub const fn event_berr(&self) -> super::vals::EventBerr {
+    pub const fn event_berr(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::EventBerr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Trigger on AHBM Bus Error"]
     #[inline(always)]
-    pub const fn set_event_berr(&mut self, val: super::vals::EventBerr) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_event_berr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Event Trigger on Instruction Completion"]
     #[must_use]
     #[inline(always)]
-    pub const fn event_comp(&self) -> super::vals::EventComp {
+    pub const fn event_comp(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::EventComp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Event Trigger on Instruction Completion"]
     #[inline(always)]
-    pub const fn set_event_comp(&mut self, val: super::vals::EventComp) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_event_comp(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
 }
 impl Default for Eventen {
@@ -533,7 +533,7 @@ impl defmt::Format for Eventen {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Eventen {{ event_oflow: {:?}, event_nan: {:?}, event_fixed: {:?}, event_uflow: {:?}, event_berr: {:?}, event_comp: {:?} }}",
+            "Eventen {{ event_oflow: {=bool:?}, event_nan: {=bool:?}, event_fixed: {=bool:?}, event_uflow: {=bool:?}, event_berr: {=bool:?}, event_comp: {=bool:?} }}",
             self.event_oflow(),
             self.event_nan(),
             self.event_fixed(),
@@ -800,74 +800,74 @@ impl Intren {
     #[doc = "Interrupt Floating-point Overflow"]
     #[must_use]
     #[inline(always)]
-    pub const fn intr_oflow(&self) -> super::vals::IntrOflow {
+    pub const fn intr_oflow(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::IntrOflow::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt Floating-point Overflow"]
     #[inline(always)]
-    pub const fn set_intr_oflow(&mut self, val: super::vals::IntrOflow) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_intr_oflow(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Interrupt Floating-point NaN"]
     #[must_use]
     #[inline(always)]
-    pub const fn intr_nan(&self) -> super::vals::IntrNan {
+    pub const fn intr_nan(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::IntrNan::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt Floating-point NaN"]
     #[inline(always)]
-    pub const fn set_intr_nan(&mut self, val: super::vals::IntrNan) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_intr_nan(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Interrupt on Fixed-point Overflow"]
     #[must_use]
     #[inline(always)]
-    pub const fn intr_fixed(&self) -> super::vals::IntrFixed {
+    pub const fn intr_fixed(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::IntrFixed::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt on Fixed-point Overflow"]
     #[inline(always)]
-    pub const fn set_intr_fixed(&mut self, val: super::vals::IntrFixed) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_intr_fixed(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Interrupt on Underflow"]
     #[must_use]
     #[inline(always)]
-    pub const fn intr_uflow(&self) -> super::vals::IntrUflow {
+    pub const fn intr_uflow(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::IntrUflow::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt on Underflow"]
     #[inline(always)]
-    pub const fn set_intr_uflow(&mut self, val: super::vals::IntrUflow) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_intr_uflow(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Interrupt on AHBM Bus Error"]
     #[must_use]
     #[inline(always)]
-    pub const fn intr_berr(&self) -> super::vals::IntrBerr {
+    pub const fn intr_berr(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::IntrBerr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt on AHBM Bus Error"]
     #[inline(always)]
-    pub const fn set_intr_berr(&mut self, val: super::vals::IntrBerr) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_intr_berr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Interrupt on Instruction Completion"]
     #[must_use]
     #[inline(always)]
-    pub const fn intr_comp(&self) -> super::vals::IntrComp {
+    pub const fn intr_comp(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::IntrComp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt on Instruction Completion"]
     #[inline(always)]
-    pub const fn set_intr_comp(&mut self, val: super::vals::IntrComp) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_intr_comp(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
 }
 impl Default for Intren {
@@ -893,7 +893,7 @@ impl defmt::Format for Intren {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Intren {{ intr_oflow: {:?}, intr_nan: {:?}, intr_fixed: {:?}, intr_uflow: {:?}, intr_berr: {:?}, intr_comp: {:?} }}",
+            "Intren {{ intr_oflow: {=bool:?}, intr_nan: {=bool:?}, intr_fixed: {=bool:?}, intr_uflow: {=bool:?}, intr_berr: {=bool:?}, intr_comp: {=bool:?} }}",
             self.intr_oflow(),
             self.intr_nan(),
             self.intr_fixed(),
@@ -911,14 +911,14 @@ impl Intrstat {
     #[doc = "Interrupt Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn intr_stat(&self) -> super::vals::IntrStat {
+    pub const fn intr_stat(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::IntrStat::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt Status"]
     #[inline(always)]
-    pub const fn set_intr_stat(&mut self, val: super::vals::IntrStat) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_intr_stat(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Intrstat {
@@ -937,7 +937,7 @@ impl core::fmt::Debug for Intrstat {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Intrstat {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Intrstat {{ intr_stat: {:?} }}", self.intr_stat())
+        defmt::write!(f, "Intrstat {{ intr_stat: {=bool:?} }}", self.intr_stat())
     }
 }
 #[doc = "Length"]

@@ -54,14 +54,14 @@ impl Ctrl1 {
     #[doc = "Frame Synchronization Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn fsyncen(&self) -> super::vals::Fsyncen {
+    pub const fn fsyncen(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Fsyncen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Frame Synchronization Enable"]
     #[inline(always)]
-    pub const fn set_fsyncen(&mut self, val: super::vals::Fsyncen) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_fsyncen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Decimation Filter Enable in Stop"]
     #[must_use]
@@ -78,14 +78,14 @@ impl Ctrl1 {
     #[doc = "Error Interruption Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn erren(&self) -> super::vals::Erren {
+    pub const fn erren(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Erren::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Error Interruption Enable"]
     #[inline(always)]
-    pub const fn set_erren(&mut self, val: super::vals::Erren) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_erren(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "DMA Interrupt Selection"]
     #[must_use]
@@ -102,14 +102,14 @@ impl Ctrl1 {
     #[doc = "Module Enable in Debug"]
     #[must_use]
     #[inline(always)]
-    pub const fn dbge(&self) -> super::vals::Dbge {
+    pub const fn dbge(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::Dbge::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Module Enable in Debug"]
     #[inline(always)]
-    pub const fn set_dbge(&mut self, val: super::vals::Dbge) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_dbge(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "Software Reset"]
     #[must_use]
@@ -150,14 +150,14 @@ impl Ctrl1 {
     #[doc = "Stop Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dozen(&self) -> super::vals::Dozen {
+    pub const fn dozen(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Dozen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Stop Enable"]
     #[inline(always)]
-    pub const fn set_dozen(&mut self, val: super::vals::Dozen) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_dozen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Module Disable"]
     #[must_use]
@@ -203,7 +203,7 @@ impl defmt::Format for Ctrl1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl1 {{ ch0en: {=bool:?}, ch1en: {=bool:?}, ch2en: {=bool:?}, ch3en: {=bool:?}, fsyncen: {:?}, decfils: {:?}, erren: {:?}, disel: {:?}, dbge: {:?}, sres: {:?}, dbg: {:?}, pdmien: {:?}, dozen: {:?}, mdis: {:?} }}",
+            "Ctrl1 {{ ch0en: {=bool:?}, ch1en: {=bool:?}, ch2en: {=bool:?}, ch3en: {=bool:?}, fsyncen: {=bool:?}, decfils: {:?}, erren: {=bool:?}, disel: {:?}, dbge: {=bool:?}, sres: {:?}, dbg: {:?}, pdmien: {:?}, dozen: {=bool:?}, mdis: {:?} }}",
             self.ch0en(),
             self.ch1en(),
             self.ch2en(),
@@ -552,98 +552,98 @@ impl FifoStat {
     #[doc = "FIFO Overflow Exception Flag for Channel 0"]
     #[must_use]
     #[inline(always)]
-    pub const fn fifoovf0(&self) -> super::vals::Fifoovf0 {
+    pub const fn fifoovf0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Fifoovf0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Overflow Exception Flag for Channel 0"]
     #[inline(always)]
-    pub const fn set_fifoovf0(&mut self, val: super::vals::Fifoovf0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_fifoovf0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "FIFO Overflow Exception Flag for Channel 1"]
     #[must_use]
     #[inline(always)]
-    pub const fn fifoovf1(&self) -> super::vals::Fifoovf1 {
+    pub const fn fifoovf1(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Fifoovf1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Overflow Exception Flag for Channel 1"]
     #[inline(always)]
-    pub const fn set_fifoovf1(&mut self, val: super::vals::Fifoovf1) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_fifoovf1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "FIFO Overflow Exception Flag for Channel 2"]
     #[must_use]
     #[inline(always)]
-    pub const fn fifoovf2(&self) -> super::vals::Fifoovf2 {
+    pub const fn fifoovf2(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Fifoovf2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Overflow Exception Flag for Channel 2"]
     #[inline(always)]
-    pub const fn set_fifoovf2(&mut self, val: super::vals::Fifoovf2) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_fifoovf2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "FIFO Overflow Exception Flag for Channel 3"]
     #[must_use]
     #[inline(always)]
-    pub const fn fifoovf3(&self) -> super::vals::Fifoovf3 {
+    pub const fn fifoovf3(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Fifoovf3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Overflow Exception Flag for Channel 3"]
     #[inline(always)]
-    pub const fn set_fifoovf3(&mut self, val: super::vals::Fifoovf3) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_fifoovf3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "FIFO Underflow Exception Flag for Channel 0"]
     #[must_use]
     #[inline(always)]
-    pub const fn fifound0(&self) -> super::vals::Fifound0 {
+    pub const fn fifound0(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Fifound0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Underflow Exception Flag for Channel 0"]
     #[inline(always)]
-    pub const fn set_fifound0(&mut self, val: super::vals::Fifound0) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_fifound0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "FIFO Underflow Exception Flag for Channel 1"]
     #[must_use]
     #[inline(always)]
-    pub const fn fifound1(&self) -> super::vals::Fifound1 {
+    pub const fn fifound1(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Fifound1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Underflow Exception Flag for Channel 1"]
     #[inline(always)]
-    pub const fn set_fifound1(&mut self, val: super::vals::Fifound1) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_fifound1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "FIFO Underflow Exception Flag for Channel 2"]
     #[must_use]
     #[inline(always)]
-    pub const fn fifound2(&self) -> super::vals::Fifound2 {
+    pub const fn fifound2(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Fifound2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Underflow Exception Flag for Channel 2"]
     #[inline(always)]
-    pub const fn set_fifound2(&mut self, val: super::vals::Fifound2) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_fifound2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "FIFO Underflow Exception Flag for Channel 3"]
     #[must_use]
     #[inline(always)]
-    pub const fn fifound3(&self) -> super::vals::Fifound3 {
+    pub const fn fifound3(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Fifound3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Underflow Exception Flag for Channel 3"]
     #[inline(always)]
-    pub const fn set_fifound3(&mut self, val: super::vals::Fifound3) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_fifound3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
 }
 impl Default for FifoStat {
@@ -671,7 +671,7 @@ impl defmt::Format for FifoStat {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "FifoStat {{ fifoovf0: {:?}, fifoovf1: {:?}, fifoovf2: {:?}, fifoovf3: {:?}, fifound0: {:?}, fifound1: {:?}, fifound2: {:?}, fifound3: {:?} }}",
+            "FifoStat {{ fifoovf0: {=bool:?}, fifoovf1: {=bool:?}, fifoovf2: {=bool:?}, fifoovf3: {=bool:?}, fifound0: {=bool:?}, fifound1: {=bool:?}, fifound2: {=bool:?}, fifound3: {=bool:?} }}",
             self.fifoovf0(),
             self.fifoovf1(),
             self.fifoovf2(),
@@ -764,14 +764,14 @@ impl Param {
     #[doc = "Low-Power Decimation Filter"]
     #[must_use]
     #[inline(always)]
-    pub const fn low_power(&self) -> super::vals::LowPower {
+    pub const fn low_power(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::LowPower::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Low-Power Decimation Filter"]
     #[inline(always)]
-    pub const fn set_low_power(&mut self, val: super::vals::LowPower) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_low_power(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Input DC Remover Bypass"]
     #[must_use]
@@ -821,7 +821,7 @@ impl defmt::Format for Param {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Param {{ npair: {:?}, fifo_ptrwid: {:?}, fil_out_width_24b: {:?}, low_power: {:?}, dc_bypass: {:?}, dc_out_bypass: {:?} }}",
+            "Param {{ npair: {:?}, fifo_ptrwid: {:?}, fil_out_width_24b: {:?}, low_power: {=bool:?}, dc_bypass: {:?}, dc_out_bypass: {:?} }}",
             self.npair(),
             self.fifo_ptrwid(),
             self.fil_out_width_24b(),
@@ -922,98 +922,98 @@ impl RangeStat {
     #[doc = "Channel 0 Range Overflow Error Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rangeovf0(&self) -> super::vals::Rangeovf0 {
+    pub const fn rangeovf0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Rangeovf0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 0 Range Overflow Error Flag"]
     #[inline(always)]
-    pub const fn set_rangeovf0(&mut self, val: super::vals::Rangeovf0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_rangeovf0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Channel 1 Range Overflow Error Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rangeovf1(&self) -> super::vals::Rangeovf1 {
+    pub const fn rangeovf1(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Rangeovf1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 1 Range Overflow Error Flag"]
     #[inline(always)]
-    pub const fn set_rangeovf1(&mut self, val: super::vals::Rangeovf1) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_rangeovf1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Channel 2 Range Overflow Error Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rangeovf2(&self) -> super::vals::Rangeovf2 {
+    pub const fn rangeovf2(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Rangeovf2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 2 Range Overflow Error Flag"]
     #[inline(always)]
-    pub const fn set_rangeovf2(&mut self, val: super::vals::Rangeovf2) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_rangeovf2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Channel 3 Range Overflow Error Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rangeovf3(&self) -> super::vals::Rangeovf3 {
+    pub const fn rangeovf3(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Rangeovf3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 3 Range Overflow Error Flag"]
     #[inline(always)]
-    pub const fn set_rangeovf3(&mut self, val: super::vals::Rangeovf3) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_rangeovf3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Channel 0 Range Underflow Error Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rangeunf0(&self) -> super::vals::Rangeunf0 {
+    pub const fn rangeunf0(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Rangeunf0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 0 Range Underflow Error Flag"]
     #[inline(always)]
-    pub const fn set_rangeunf0(&mut self, val: super::vals::Rangeunf0) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_rangeunf0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Channel 1 Range Underflow Error Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rangeunf1(&self) -> super::vals::Rangeunf1 {
+    pub const fn rangeunf1(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Rangeunf1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 1 Range Underflow Error Flag"]
     #[inline(always)]
-    pub const fn set_rangeunf1(&mut self, val: super::vals::Rangeunf1) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_rangeunf1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Channel 2 Range Underflow Error Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rangeunf2(&self) -> super::vals::Rangeunf2 {
+    pub const fn rangeunf2(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::Rangeunf2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 2 Range Underflow Error Flag"]
     #[inline(always)]
-    pub const fn set_rangeunf2(&mut self, val: super::vals::Rangeunf2) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_rangeunf2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Channel 3 Range Underflow Error Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rangeunf3(&self) -> super::vals::Rangeunf3 {
+    pub const fn rangeunf3(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Rangeunf3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 3 Range Underflow Error Flag"]
     #[inline(always)]
-    pub const fn set_rangeunf3(&mut self, val: super::vals::Rangeunf3) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_rangeunf3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
 }
 impl Default for RangeStat {
@@ -1041,7 +1041,7 @@ impl defmt::Format for RangeStat {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "RangeStat {{ rangeovf0: {:?}, rangeovf1: {:?}, rangeovf2: {:?}, rangeovf3: {:?}, rangeunf0: {:?}, rangeunf1: {:?}, rangeunf2: {:?}, rangeunf3: {:?} }}",
+            "RangeStat {{ rangeovf0: {=bool:?}, rangeovf1: {=bool:?}, rangeovf2: {=bool:?}, rangeovf3: {=bool:?}, rangeunf0: {=bool:?}, rangeunf1: {=bool:?}, rangeunf2: {=bool:?}, rangeunf3: {=bool:?} }}",
             self.rangeovf0(),
             self.rangeovf1(),
             self.rangeovf2(),

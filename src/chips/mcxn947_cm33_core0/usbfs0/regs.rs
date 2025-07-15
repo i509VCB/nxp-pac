@@ -6,14 +6,14 @@ impl Addinfo {
     #[doc = "Host Mode Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn iehost(&self) -> super::vals::Iehost {
+    pub const fn iehost(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Iehost::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Host Mode Enable"]
     #[inline(always)]
-    pub const fn set_iehost(&mut self, val: super::vals::Iehost) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u8) & 0x01) << 0usize);
+    pub const fn set_iehost(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u8) & 0x01) << 0usize);
     }
 }
 impl Default for Addinfo {
@@ -32,7 +32,7 @@ impl core::fmt::Debug for Addinfo {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Addinfo {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Addinfo {{ iehost: {:?} }}", self.iehost())
+        defmt::write!(f, "Addinfo {{ iehost: {=bool:?} }}", self.iehost())
     }
 }
 #[doc = "Address"]
@@ -411,14 +411,14 @@ impl Control {
     #[doc = "VBUS Monitoring Source Select"]
     #[must_use]
     #[inline(always)]
-    pub const fn vbus_source_sel(&self) -> super::vals::VbusSourceSel {
+    pub const fn vbus_source_sel(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::VbusSourceSel::from_bits(val as u8)
+        val != 0
     }
     #[doc = "VBUS Monitoring Source Select"]
     #[inline(always)]
-    pub const fn set_vbus_source_sel(&mut self, val: super::vals::VbusSourceSel) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u8) & 0x01) << 0usize);
+    pub const fn set_vbus_source_sel(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u8) & 0x01) << 0usize);
     }
     #[doc = "VBUS Session Valid status"]
     #[must_use]
@@ -465,7 +465,7 @@ impl defmt::Format for Control {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Control {{ vbus_source_sel: {:?}, sess_vld: {:?}, dppullupnonotg: {:?} }}",
+            "Control {{ vbus_source_sel: {=bool:?}, sess_vld: {:?}, dppullupnonotg: {:?} }}",
             self.vbus_source_sel(),
             self.sess_vld(),
             self.dppullupnonotg()
@@ -528,14 +528,14 @@ impl Ctl {
     #[doc = "Reset Signaling Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn reset(&self) -> super::vals::Reset {
+    pub const fn reset(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Reset::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reset Signaling Enable"]
     #[inline(always)]
-    pub const fn set_reset(&mut self, val: super::vals::Reset) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u8) & 0x01) << 4usize);
+    pub const fn set_reset(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
     }
     #[doc = "TXD Suspend And Token Busy"]
     #[must_use]
@@ -599,7 +599,7 @@ impl defmt::Format for Ctl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctl {{ usbensofen: {:?}, oddrst: {=bool:?}, resume: {=bool:?}, hostmodeen: {:?}, reset: {:?}, txsuspendtokenbusy: {=bool:?}, se0: {=bool:?}, jstate: {=bool:?} }}",
+            "Ctl {{ usbensofen: {:?}, oddrst: {=bool:?}, resume: {=bool:?}, hostmodeen: {:?}, reset: {=bool:?}, txsuspendtokenbusy: {=bool:?}, se0: {=bool:?}, jstate: {=bool:?} }}",
             self.usbensofen(),
             self.oddrst(),
             self.resume(),
@@ -1405,14 +1405,14 @@ impl KeepAliveCtrl {
     #[doc = "Keep Alive Mode Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn keep_alive_en(&self) -> super::vals::KeepAliveEn {
+    pub const fn keep_alive_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::KeepAliveEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Keep Alive Mode Enable"]
     #[inline(always)]
-    pub const fn set_keep_alive_en(&mut self, val: super::vals::KeepAliveEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u8) & 0x01) << 0usize);
+    pub const fn set_keep_alive_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u8) & 0x01) << 0usize);
     }
     #[doc = "OWN Bit Override Enable"]
     #[must_use]
@@ -1511,7 +1511,7 @@ impl defmt::Format for KeepAliveCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "KeepAliveCtrl {{ keep_alive_en: {:?}, own_overrd_en: {=bool:?}, stop_ack_dly_en: {:?}, wake_req_en: {:?}, wake_int_en: {=bool:?}, keep_alive_sts: {:?}, wake_int_sts: {:?} }}",
+            "KeepAliveCtrl {{ keep_alive_en: {=bool:?}, own_overrd_en: {=bool:?}, stop_ack_dly_en: {:?}, wake_req_en: {:?}, wake_int_en: {=bool:?}, keep_alive_sts: {:?}, wake_int_sts: {:?} }}",
             self.keep_alive_en(),
             self.own_overrd_en(),
             self.stop_ack_dly_en(),

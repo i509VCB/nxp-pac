@@ -18,14 +18,14 @@ impl Cap {
     #[doc = "Captured Value Valid Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn valid(&self) -> super::vals::Valid {
+    pub const fn valid(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Valid::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Captured Value Valid Flag"]
     #[inline(always)]
-    pub const fn set_valid(&mut self, val: super::vals::Valid) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_valid(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Cap {
@@ -47,7 +47,7 @@ impl defmt::Format for Cap {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cap {{ cap_value: {=u32:?}, valid: {:?} }}",
+            "Cap {{ cap_value: {=u32:?}, valid: {=bool:?} }}",
             self.cap_value(),
             self.valid()
         )
@@ -338,14 +338,14 @@ impl Stat {
     #[doc = "Interrupt Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn intr(&self) -> super::vals::Intr {
+    pub const fn intr(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Intr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt Flag"]
     #[inline(always)]
-    pub const fn set_intr(&mut self, val: super::vals::Intr) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_intr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Timer Active Flag"]
     #[must_use]
@@ -379,7 +379,7 @@ impl defmt::Format for Stat {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Stat {{ intr: {:?}, active: {:?} }}",
+            "Stat {{ intr: {=bool:?}, active: {:?} }}",
             self.intr(),
             self.active()
         )

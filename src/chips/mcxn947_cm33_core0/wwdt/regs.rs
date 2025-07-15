@@ -77,14 +77,14 @@ impl Mod {
     #[doc = "Warning Interrupt Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn wdint(&self) -> super::vals::Wdint {
+    pub const fn wdint(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Wdint::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Warning Interrupt Flag"]
     #[inline(always)]
-    pub const fn set_wdint(&mut self, val: super::vals::Wdint) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_wdint(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Watchdog Update Mode"]
     #[must_use]
@@ -101,26 +101,26 @@ impl Mod {
     #[doc = "Lock"]
     #[must_use]
     #[inline(always)]
-    pub const fn lock(&self) -> super::vals::Lock {
+    pub const fn lock(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Lock::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Lock"]
     #[inline(always)]
-    pub const fn set_lock(&mut self, val: super::vals::Lock) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_lock(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Debug Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn debug_en(&self) -> super::vals::DebugEn {
+    pub const fn debug_en(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::DebugEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Debug Enable"]
     #[inline(always)]
-    pub const fn set_debug_en(&mut self, val: super::vals::DebugEn) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_debug_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
 }
 impl Default for Mod {
@@ -147,7 +147,7 @@ impl defmt::Format for Mod {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mod {{ wden: {:?}, wdreset: {:?}, wdtof: {:?}, wdint: {:?}, wdprotect: {:?}, lock: {:?}, debug_en: {:?} }}",
+            "Mod {{ wden: {:?}, wdreset: {:?}, wdtof: {:?}, wdint: {=bool:?}, wdprotect: {:?}, lock: {=bool:?}, debug_en: {=bool:?} }}",
             self.wden(),
             self.wdreset(),
             self.wdtof(),

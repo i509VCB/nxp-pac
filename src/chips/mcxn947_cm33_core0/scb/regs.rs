@@ -312,110 +312,110 @@ impl Nsacr {
     #[doc = "CP0 access."]
     #[must_use]
     #[inline(always)]
-    pub const fn cp0(&self) -> super::vals::NsacrCp0 {
+    pub const fn cp0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::NsacrCp0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CP0 access."]
     #[inline(always)]
-    pub const fn set_cp0(&mut self, val: super::vals::NsacrCp0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_cp0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "CP1 access."]
     #[must_use]
     #[inline(always)]
-    pub const fn cp1(&self) -> super::vals::NsacrCp1 {
+    pub const fn cp1(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::NsacrCp1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CP1 access."]
     #[inline(always)]
-    pub const fn set_cp1(&mut self, val: super::vals::NsacrCp1) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_cp1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "CP2 access."]
     #[must_use]
     #[inline(always)]
-    pub const fn cp2(&self) -> super::vals::NsacrCp2 {
+    pub const fn cp2(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::NsacrCp2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CP2 access."]
     #[inline(always)]
-    pub const fn set_cp2(&mut self, val: super::vals::NsacrCp2) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_cp2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "CP3 access."]
     #[must_use]
     #[inline(always)]
-    pub const fn cp3(&self) -> super::vals::NsacrCp3 {
+    pub const fn cp3(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::NsacrCp3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CP3 access."]
     #[inline(always)]
-    pub const fn set_cp3(&mut self, val: super::vals::NsacrCp3) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_cp3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "CP4 access."]
     #[must_use]
     #[inline(always)]
-    pub const fn cp4(&self) -> super::vals::NsacrCp4 {
+    pub const fn cp4(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::NsacrCp4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CP4 access."]
     #[inline(always)]
-    pub const fn set_cp4(&mut self, val: super::vals::NsacrCp4) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_cp4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "CP5 access."]
     #[must_use]
     #[inline(always)]
-    pub const fn cp5(&self) -> super::vals::NsacrCp5 {
+    pub const fn cp5(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::NsacrCp5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CP5 access."]
     #[inline(always)]
-    pub const fn set_cp5(&mut self, val: super::vals::NsacrCp5) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_cp5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "CP6 access."]
     #[must_use]
     #[inline(always)]
-    pub const fn cp6(&self) -> super::vals::NsacrCp6 {
+    pub const fn cp6(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::NsacrCp6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CP6 access."]
     #[inline(always)]
-    pub const fn set_cp6(&mut self, val: super::vals::NsacrCp6) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_cp6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "CP7 access."]
     #[must_use]
     #[inline(always)]
-    pub const fn cp7(&self) -> super::vals::NsacrCp7 {
+    pub const fn cp7(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::NsacrCp7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CP7 access."]
     #[inline(always)]
-    pub const fn set_cp7(&mut self, val: super::vals::NsacrCp7) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_cp7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "CP10 access."]
     #[must_use]
     #[inline(always)]
-    pub const fn cp10(&self) -> super::vals::NsacrCp10 {
+    pub const fn cp10(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::NsacrCp10::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CP10 access."]
     #[inline(always)]
-    pub const fn set_cp10(&mut self, val: super::vals::NsacrCp10) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_cp10(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "CP11 access."]
     #[must_use]
@@ -457,7 +457,7 @@ impl defmt::Format for Nsacr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Nsacr {{ cp0: {:?}, cp1: {:?}, cp2: {:?}, cp3: {:?}, cp4: {:?}, cp5: {:?}, cp6: {:?}, cp7: {:?}, cp10: {:?}, cp11: {=bool:?} }}",
+            "Nsacr {{ cp0: {=bool:?}, cp1: {=bool:?}, cp2: {=bool:?}, cp3: {=bool:?}, cp4: {=bool:?}, cp5: {=bool:?}, cp6: {=bool:?}, cp7: {=bool:?}, cp10: {=bool:?}, cp11: {=bool:?} }}",
             self.cp0(),
             self.cp1(),
             self.cp2(),
@@ -479,14 +479,14 @@ impl Scr {
     #[doc = "Indicates sleep-on-exit when returning from Handler mode to Thread mode. Setting this bit to 1 enables an interrupt driven application to avoid returning to an empty main application. This bit is banked between Security states."]
     #[must_use]
     #[inline(always)]
-    pub const fn sleeponexit(&self) -> super::vals::Sleeponexit {
+    pub const fn sleeponexit(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Sleeponexit::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates sleep-on-exit when returning from Handler mode to Thread mode. Setting this bit to 1 enables an interrupt driven application to avoid returning to an empty main application. This bit is banked between Security states."]
     #[inline(always)]
-    pub const fn set_sleeponexit(&mut self, val: super::vals::Sleeponexit) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_sleeponexit(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Controls whether the processor uses sleep or deep sleep as its low-power mode. This bit is not banked between Security states."]
     #[must_use]
@@ -546,7 +546,7 @@ impl defmt::Format for Scr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Scr {{ sleeponexit: {:?}, sleepdeep: {:?}, sleepdeeps: {:?}, sevonpend: {:?} }}",
+            "Scr {{ sleeponexit: {=bool:?}, sleepdeep: {:?}, sleepdeeps: {:?}, sevonpend: {:?} }}",
             self.sleeponexit(),
             self.sleepdeep(),
             self.sleepdeeps(),
@@ -562,242 +562,242 @@ impl Shcsr {
     #[doc = "MemManage exception active."]
     #[must_use]
     #[inline(always)]
-    pub const fn memfaultact(&self) -> super::vals::Memfaultact {
+    pub const fn memfaultact(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Memfaultact::from_bits(val as u8)
+        val != 0
     }
     #[doc = "MemManage exception active."]
     #[inline(always)]
-    pub const fn set_memfaultact(&mut self, val: super::vals::Memfaultact) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_memfaultact(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "BusFault exception active."]
     #[must_use]
     #[inline(always)]
-    pub const fn busfaultact(&self) -> super::vals::Busfaultact {
+    pub const fn busfaultact(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Busfaultact::from_bits(val as u8)
+        val != 0
     }
     #[doc = "BusFault exception active."]
     #[inline(always)]
-    pub const fn set_busfaultact(&mut self, val: super::vals::Busfaultact) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_busfaultact(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "HardFault exception active."]
     #[must_use]
     #[inline(always)]
-    pub const fn hardfaultact(&self) -> super::vals::Hardfaultact {
+    pub const fn hardfaultact(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Hardfaultact::from_bits(val as u8)
+        val != 0
     }
     #[doc = "HardFault exception active."]
     #[inline(always)]
-    pub const fn set_hardfaultact(&mut self, val: super::vals::Hardfaultact) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_hardfaultact(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "UsageFault exception active."]
     #[must_use]
     #[inline(always)]
-    pub const fn usgfaultact(&self) -> super::vals::Usgfaultact {
+    pub const fn usgfaultact(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Usgfaultact::from_bits(val as u8)
+        val != 0
     }
     #[doc = "UsageFault exception active."]
     #[inline(always)]
-    pub const fn set_usgfaultact(&mut self, val: super::vals::Usgfaultact) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_usgfaultact(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "SecureFault exception active"]
     #[must_use]
     #[inline(always)]
-    pub const fn securefaultact(&self) -> super::vals::Securefaultact {
+    pub const fn securefaultact(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Securefaultact::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureFault exception active"]
     #[inline(always)]
-    pub const fn set_securefaultact(&mut self, val: super::vals::Securefaultact) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_securefaultact(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "NMI exception active."]
     #[must_use]
     #[inline(always)]
-    pub const fn nmiact(&self) -> super::vals::Nmiact {
+    pub const fn nmiact(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Nmiact::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NMI exception active."]
     #[inline(always)]
-    pub const fn set_nmiact(&mut self, val: super::vals::Nmiact) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_nmiact(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "SVCall active."]
     #[must_use]
     #[inline(always)]
-    pub const fn svcallact(&self) -> super::vals::Svcallact {
+    pub const fn svcallact(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Svcallact::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SVCall active."]
     #[inline(always)]
-    pub const fn set_svcallact(&mut self, val: super::vals::Svcallact) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_svcallact(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Debug monitor active."]
     #[must_use]
     #[inline(always)]
-    pub const fn monitoract(&self) -> super::vals::Monitoract {
+    pub const fn monitoract(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Monitoract::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Debug monitor active."]
     #[inline(always)]
-    pub const fn set_monitoract(&mut self, val: super::vals::Monitoract) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_monitoract(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "PendSV exception active."]
     #[must_use]
     #[inline(always)]
-    pub const fn pendsvact(&self) -> super::vals::Pendsvact {
+    pub const fn pendsvact(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Pendsvact::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PendSV exception active."]
     #[inline(always)]
-    pub const fn set_pendsvact(&mut self, val: super::vals::Pendsvact) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_pendsvact(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "SysTick exception active."]
     #[must_use]
     #[inline(always)]
-    pub const fn systickact(&self) -> super::vals::Systickact {
+    pub const fn systickact(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Systickact::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SysTick exception active."]
     #[inline(always)]
-    pub const fn set_systickact(&mut self, val: super::vals::Systickact) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_systickact(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "UsageFault exception pending."]
     #[must_use]
     #[inline(always)]
-    pub const fn usgfaultpended(&self) -> super::vals::Usgfaultpended {
+    pub const fn usgfaultpended(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Usgfaultpended::from_bits(val as u8)
+        val != 0
     }
     #[doc = "UsageFault exception pending."]
     #[inline(always)]
-    pub const fn set_usgfaultpended(&mut self, val: super::vals::Usgfaultpended) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_usgfaultpended(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "MemManage exception pending."]
     #[must_use]
     #[inline(always)]
-    pub const fn memfaultpended(&self) -> super::vals::Memfaultpended {
+    pub const fn memfaultpended(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Memfaultpended::from_bits(val as u8)
+        val != 0
     }
     #[doc = "MemManage exception pending."]
     #[inline(always)]
-    pub const fn set_memfaultpended(&mut self, val: super::vals::Memfaultpended) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_memfaultpended(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "BusFault exception pending."]
     #[must_use]
     #[inline(always)]
-    pub const fn busfaultpended(&self) -> super::vals::Busfaultpended {
+    pub const fn busfaultpended(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Busfaultpended::from_bits(val as u8)
+        val != 0
     }
     #[doc = "BusFault exception pending."]
     #[inline(always)]
-    pub const fn set_busfaultpended(&mut self, val: super::vals::Busfaultpended) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_busfaultpended(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "SVCall pending."]
     #[must_use]
     #[inline(always)]
-    pub const fn svcallpended(&self) -> super::vals::Svcallpended {
+    pub const fn svcallpended(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Svcallpended::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SVCall pending."]
     #[inline(always)]
-    pub const fn set_svcallpended(&mut self, val: super::vals::Svcallpended) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_svcallpended(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "MemManage enable."]
     #[must_use]
     #[inline(always)]
-    pub const fn memfaultena(&self) -> super::vals::Memfaultena {
+    pub const fn memfaultena(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Memfaultena::from_bits(val as u8)
+        val != 0
     }
     #[doc = "MemManage enable."]
     #[inline(always)]
-    pub const fn set_memfaultena(&mut self, val: super::vals::Memfaultena) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_memfaultena(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "BusFault enable."]
     #[must_use]
     #[inline(always)]
-    pub const fn busfaultena(&self) -> super::vals::Busfaultena {
+    pub const fn busfaultena(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Busfaultena::from_bits(val as u8)
+        val != 0
     }
     #[doc = "BusFault enable."]
     #[inline(always)]
-    pub const fn set_busfaultena(&mut self, val: super::vals::Busfaultena) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_busfaultena(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "UsageFault enable."]
     #[must_use]
     #[inline(always)]
-    pub const fn usgfaultena(&self) -> super::vals::Usgfaultena {
+    pub const fn usgfaultena(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::Usgfaultena::from_bits(val as u8)
+        val != 0
     }
     #[doc = "UsageFault enable."]
     #[inline(always)]
-    pub const fn set_usgfaultena(&mut self, val: super::vals::Usgfaultena) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_usgfaultena(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "SecureFault exception enable."]
     #[must_use]
     #[inline(always)]
-    pub const fn securefaultena(&self) -> super::vals::Securefaultena {
+    pub const fn securefaultena(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Securefaultena::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureFault exception enable."]
     #[inline(always)]
-    pub const fn set_securefaultena(&mut self, val: super::vals::Securefaultena) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_securefaultena(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "SecureFault exception pended state bit."]
     #[must_use]
     #[inline(always)]
-    pub const fn securefaultpended(&self) -> super::vals::Securefaultpended {
+    pub const fn securefaultpended(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::Securefaultpended::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureFault exception pended state bit."]
     #[inline(always)]
-    pub const fn set_securefaultpended(&mut self, val: super::vals::Securefaultpended) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_securefaultpended(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "HardFault exception pended state"]
     #[must_use]
     #[inline(always)]
-    pub const fn hardfaultpended(&self) -> super::vals::Hardfaultpended {
+    pub const fn hardfaultpended(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Hardfaultpended::from_bits(val as u8)
+        val != 0
     }
     #[doc = "HardFault exception pended state"]
     #[inline(always)]
-    pub const fn set_hardfaultpended(&mut self, val: super::vals::Hardfaultpended) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_hardfaultpended(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
 }
 impl Default for Shcsr {
@@ -837,7 +837,7 @@ impl defmt::Format for Shcsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Shcsr {{ memfaultact: {:?}, busfaultact: {:?}, hardfaultact: {:?}, usgfaultact: {:?}, securefaultact: {:?}, nmiact: {:?}, svcallact: {:?}, monitoract: {:?}, pendsvact: {:?}, systickact: {:?}, usgfaultpended: {:?}, memfaultpended: {:?}, busfaultpended: {:?}, svcallpended: {:?}, memfaultena: {:?}, busfaultena: {:?}, usgfaultena: {:?}, securefaultena: {:?}, securefaultpended: {:?}, hardfaultpended: {:?} }}",
+            "Shcsr {{ memfaultact: {=bool:?}, busfaultact: {=bool:?}, hardfaultact: {=bool:?}, usgfaultact: {=bool:?}, securefaultact: {=bool:?}, nmiact: {=bool:?}, svcallact: {=bool:?}, monitoract: {=bool:?}, pendsvact: {=bool:?}, systickact: {=bool:?}, usgfaultpended: {=bool:?}, memfaultpended: {=bool:?}, busfaultpended: {=bool:?}, svcallpended: {=bool:?}, memfaultena: {=bool:?}, busfaultena: {=bool:?}, usgfaultena: {=bool:?}, securefaultena: {=bool:?}, securefaultpended: {=bool:?}, hardfaultpended: {=bool:?} }}",
             self.memfaultact(),
             self.busfaultact(),
             self.hardfaultact(),

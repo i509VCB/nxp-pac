@@ -554,14 +554,14 @@ impl Rwc {
     #[doc = "Read update"]
     #[must_use]
     #[inline(always)]
-    pub const fn read_update(&self) -> super::vals::ReadUpdate {
+    pub const fn read_update(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::ReadUpdate::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Read update"]
     #[inline(always)]
-    pub const fn set_read_update(&mut self, val: super::vals::ReadUpdate) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_read_update(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Write Unlock"]
     #[must_use]
@@ -598,7 +598,7 @@ impl defmt::Format for Rwc {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Rwc {{ addr: {=u8:?}, wr_all1s: {:?}, read_efuse: {:?}, read_update: {:?}, wr_unlock: {=u16:?} }}",
+            "Rwc {{ addr: {=u8:?}, wr_all1s: {:?}, read_efuse: {:?}, read_update: {=bool:?}, wr_unlock: {=u16:?} }}",
             self.addr(),
             self.wr_all1s(),
             self.read_efuse(),
@@ -687,194 +687,194 @@ impl Sr {
     #[doc = "Busy status"]
     #[must_use]
     #[inline(always)]
-    pub const fn busy(&self) -> super::vals::Busy {
+    pub const fn busy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Busy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Busy status"]
     #[inline(always)]
-    pub const fn set_busy(&mut self, val: super::vals::Busy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_busy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Error flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn error(&self) -> super::vals::Error {
+    pub const fn error(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Error::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Error flag"]
     #[inline(always)]
-    pub const fn set_error(&mut self, val: super::vals::Error) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_error(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "ECC single fault"]
     #[must_use]
     #[inline(always)]
-    pub const fn ecc_sf(&self) -> super::vals::EccSf {
+    pub const fn ecc_sf(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::EccSf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ECC single fault"]
     #[inline(always)]
-    pub const fn set_ecc_sf(&mut self, val: super::vals::EccSf) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_ecc_sf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "ECC double fault"]
     #[must_use]
     #[inline(always)]
-    pub const fn ecc_df(&self) -> super::vals::EccDf {
+    pub const fn ecc_df(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::EccDf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ECC double fault"]
     #[inline(always)]
-    pub const fn set_ecc_df(&mut self, val: super::vals::EccDf) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_ecc_df(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Triple voting fault"]
     #[must_use]
     #[inline(always)]
-    pub const fn tri_f(&self) -> super::vals::TriF {
+    pub const fn tri_f(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::TriF::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Triple voting fault"]
     #[inline(always)]
-    pub const fn set_tri_f(&mut self, val: super::vals::TriF) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_tri_f(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Read fuse lock error"]
     #[must_use]
     #[inline(always)]
-    pub const fn rd_fuse_lock(&self) -> super::vals::RdFuseLock {
+    pub const fn rd_fuse_lock(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::RdFuseLock::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Read fuse lock error"]
     #[inline(always)]
-    pub const fn set_rd_fuse_lock(&mut self, val: super::vals::RdFuseLock) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_rd_fuse_lock(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Write fuse lock error"]
     #[must_use]
     #[inline(always)]
-    pub const fn wr_fuse_lock(&self) -> super::vals::WrFuseLock {
+    pub const fn wr_fuse_lock(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::WrFuseLock::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Write fuse lock error"]
     #[inline(always)]
-    pub const fn set_wr_fuse_lock(&mut self, val: super::vals::WrFuseLock) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_wr_fuse_lock(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Read register lock error"]
     #[must_use]
     #[inline(always)]
-    pub const fn rd_reg_lock(&self) -> super::vals::RdRegLock {
+    pub const fn rd_reg_lock(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::RdRegLock::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Read register lock error"]
     #[inline(always)]
-    pub const fn set_rd_reg_lock(&mut self, val: super::vals::RdRegLock) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_rd_reg_lock(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Write register lock error"]
     #[must_use]
     #[inline(always)]
-    pub const fn wr_reg_lock(&self) -> super::vals::WrRegLock {
+    pub const fn wr_reg_lock(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::WrRegLock::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Write register lock error"]
     #[inline(always)]
-    pub const fn set_wr_reg_lock(&mut self, val: super::vals::WrRegLock) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_wr_reg_lock(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Write register when busy error"]
     #[must_use]
     #[inline(always)]
-    pub const fn wr_reg_busy(&self) -> super::vals::WrRegBusy {
+    pub const fn wr_reg_busy(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::WrRegBusy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Write register when busy error"]
     #[inline(always)]
-    pub const fn set_wr_reg_busy(&mut self, val: super::vals::WrRegBusy) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_wr_reg_busy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Write when power off error"]
     #[must_use]
     #[inline(always)]
-    pub const fn wr_power_off(&self) -> super::vals::WrPowerOff {
+    pub const fn wr_power_off(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::WrPowerOff::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Write when power off error"]
     #[inline(always)]
-    pub const fn set_wr_power_off(&mut self, val: super::vals::WrPowerOff) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_wr_power_off(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Finite-state machine error"]
     #[must_use]
     #[inline(always)]
-    pub const fn fsm(&self) -> super::vals::Fsm {
+    pub const fn fsm(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Fsm::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Finite-state machine error"]
     #[inline(always)]
-    pub const fn set_fsm(&mut self, val: super::vals::Fsm) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_fsm(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Fuse load counter error"]
     #[must_use]
     #[inline(always)]
-    pub const fn flc(&self) -> super::vals::Flc {
+    pub const fn flc(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Flc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fuse load counter error"]
     #[inline(always)]
-    pub const fn set_flc(&mut self, val: super::vals::Flc) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_flc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Address and data compare error"]
     #[must_use]
     #[inline(always)]
-    pub const fn adc(&self) -> super::vals::Adc {
+    pub const fn adc(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::Adc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Address and data compare error"]
     #[inline(always)]
-    pub const fn set_adc(&mut self, val: super::vals::Adc) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_adc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Inverted register compare error"]
     #[must_use]
     #[inline(always)]
-    pub const fn irc(&self) -> super::vals::Irc {
+    pub const fn irc(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Irc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Inverted register compare error"]
     #[inline(always)]
-    pub const fn set_irc(&mut self, val: super::vals::Irc) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_irc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "Fuse and shadow register compare error"]
     #[must_use]
     #[inline(always)]
-    pub const fn fsc(&self) -> super::vals::Fsc {
+    pub const fn fsc(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::Fsc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fuse and shadow register compare error"]
     #[inline(always)]
-    pub const fn set_fsc(&mut self, val: super::vals::Fsc) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_fsc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
 }
 impl Default for Sr {
@@ -910,7 +910,7 @@ impl defmt::Format for Sr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sr {{ busy: {:?}, error: {:?}, ecc_sf: {:?}, ecc_df: {:?}, tri_f: {:?}, rd_fuse_lock: {:?}, wr_fuse_lock: {:?}, rd_reg_lock: {:?}, wr_reg_lock: {:?}, wr_reg_busy: {:?}, wr_power_off: {:?}, fsm: {:?}, flc: {:?}, adc: {:?}, irc: {:?}, fsc: {:?} }}",
+            "Sr {{ busy: {=bool:?}, error: {=bool:?}, ecc_sf: {=bool:?}, ecc_df: {=bool:?}, tri_f: {=bool:?}, rd_fuse_lock: {=bool:?}, wr_fuse_lock: {=bool:?}, rd_reg_lock: {=bool:?}, wr_reg_lock: {=bool:?}, wr_reg_busy: {=bool:?}, wr_power_off: {=bool:?}, fsm: {=bool:?}, flc: {=bool:?}, adc: {=bool:?}, irc: {=bool:?}, fsc: {=bool:?} }}",
             self.busy(),
             self.error(),
             self.ecc_sf(),

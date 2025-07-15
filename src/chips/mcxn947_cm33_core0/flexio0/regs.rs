@@ -6,26 +6,26 @@ impl Ctrl {
     #[doc = "FLEXIO Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn flexen(&self) -> super::vals::Flexen {
+    pub const fn flexen(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Flexen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FLEXIO Enable"]
     #[inline(always)]
-    pub const fn set_flexen(&mut self, val: super::vals::Flexen) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_flexen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Software Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn swrst(&self) -> super::vals::Swrst {
+    pub const fn swrst(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Swrst::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software Reset"]
     #[inline(always)]
-    pub const fn set_swrst(&mut self, val: super::vals::Swrst) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_swrst(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Fast Access"]
     #[must_use]
@@ -86,7 +86,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ flexen: {:?}, swrst: {:?}, fastacc: {:?}, dbge: {:?}, dozen: {:?} }}",
+            "Ctrl {{ flexen: {=bool:?}, swrst: {=bool:?}, fastacc: {:?}, dbge: {:?}, dozen: {:?} }}",
             self.flexen(),
             self.swrst(),
             self.fastacc(),
@@ -1436,14 +1436,14 @@ impl Timcfg {
     #[doc = "Timer Start"]
     #[must_use]
     #[inline(always)]
-    pub const fn tstart(&self) -> super::vals::Tstart {
+    pub const fn tstart(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Tstart::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Timer Start"]
     #[inline(always)]
-    pub const fn set_tstart(&mut self, val: super::vals::Tstart) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_tstart(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Timer Stop"]
     #[must_use]
@@ -1542,7 +1542,7 @@ impl defmt::Format for Timcfg {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Timcfg {{ tstart: {:?}, tstop: {:?}, timena: {:?}, timdis: {:?}, timrst: {:?}, timdec: {:?}, timout: {:?} }}",
+            "Timcfg {{ tstart: {=bool:?}, tstop: {:?}, timena: {:?}, timdis: {:?}, timrst: {:?}, timdec: {:?}, timout: {:?} }}",
             self.tstart(),
             self.tstop(),
             self.timena(),
@@ -1608,14 +1608,14 @@ impl Timctl {
     #[doc = "Timer One Time Operation"]
     #[must_use]
     #[inline(always)]
-    pub const fn onetim(&self) -> super::vals::Onetim {
+    pub const fn onetim(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Onetim::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Timer One Time Operation"]
     #[inline(always)]
-    pub const fn set_onetim(&mut self, val: super::vals::Onetim) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_onetim(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Timer Pin Input Select"]
     #[must_use]
@@ -1728,7 +1728,7 @@ impl defmt::Format for Timctl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Timctl {{ timod: {:?}, onetim: {:?}, pinins: {:?}, pinpol: {:?}, pinsel: {=u8:?}, pincfg: {:?}, trgsrc: {:?}, trgpol: {:?}, trgsel: {=u8:?} }}",
+            "Timctl {{ timod: {:?}, onetim: {=bool:?}, pinins: {:?}, pinpol: {:?}, pinsel: {=u8:?}, pincfg: {:?}, trgsrc: {:?}, trgpol: {:?}, trgsel: {=u8:?} }}",
             self.timod(),
             self.onetim(),
             self.pinins(),

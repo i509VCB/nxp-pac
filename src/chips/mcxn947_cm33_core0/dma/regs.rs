@@ -43,26 +43,26 @@ impl MpCsr {
     #[doc = "Enable Debug"]
     #[must_use]
     #[inline(always)]
-    pub const fn edbg(&self) -> super::vals::Edbg {
+    pub const fn edbg(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Edbg::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Debug"]
     #[inline(always)]
-    pub const fn set_edbg(&mut self, val: super::vals::Edbg) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_edbg(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Enable Round Robin Channel Arbitration"]
     #[must_use]
     #[inline(always)]
-    pub const fn erca(&self) -> super::vals::Erca {
+    pub const fn erca(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Erca::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Round Robin Channel Arbitration"]
     #[inline(always)]
-    pub const fn set_erca(&mut self, val: super::vals::Erca) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_erca(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Halt After Error"]
     #[must_use]
@@ -91,26 +91,26 @@ impl MpCsr {
     #[doc = "Global Channel Linking Control"]
     #[must_use]
     #[inline(always)]
-    pub const fn gclc(&self) -> super::vals::Gclc {
+    pub const fn gclc(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Gclc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Global Channel Linking Control"]
     #[inline(always)]
-    pub const fn set_gclc(&mut self, val: super::vals::Gclc) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_gclc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Global Master ID Replication Control"]
     #[must_use]
     #[inline(always)]
-    pub const fn gmrc(&self) -> super::vals::Gmrc {
+    pub const fn gmrc(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Gmrc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Global Master ID Replication Control"]
     #[inline(always)]
-    pub const fn set_gmrc(&mut self, val: super::vals::Gmrc) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_gmrc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Cancel Transfer With Error"]
     #[must_use]
@@ -188,7 +188,7 @@ impl defmt::Format for MpCsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "MpCsr {{ edbg: {:?}, erca: {:?}, hae: {:?}, halt: {:?}, gclc: {:?}, gmrc: {:?}, ecx: {:?}, cx: {:?}, active_id: {=u8:?}, active: {:?} }}",
+            "MpCsr {{ edbg: {=bool:?}, erca: {=bool:?}, hae: {:?}, halt: {:?}, gclc: {=bool:?}, gmrc: {=bool:?}, ecx: {:?}, cx: {:?}, active_id: {=u8:?}, active: {:?} }}",
             self.edbg(),
             self.erca(),
             self.hae(),

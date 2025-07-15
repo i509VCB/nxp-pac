@@ -259,26 +259,26 @@ impl Ctrl {
     #[doc = "Fine Compensation Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn fineen(&self) -> super::vals::Fineen {
+    pub const fn fineen(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Fineen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fine Compensation Enable"]
     #[inline(always)]
-    pub const fn set_fineen(&mut self, val: super::vals::Fineen) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_fineen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "Compensation Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn comp_en(&self) -> super::vals::CompEn {
+    pub const fn comp_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::CompEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Compensation Enable"]
     #[inline(always)]
-    pub const fn set_comp_en(&mut self, val: super::vals::CompEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u16) & 0x01) << 1usize);
+    pub const fn set_comp_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
     }
     #[doc = "Alarm Match"]
     #[must_use]
@@ -295,14 +295,14 @@ impl Ctrl {
     #[doc = "Daylight Saving Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dst_en(&self) -> super::vals::DstEn {
+    pub const fn dst_en(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::DstEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Daylight Saving Enable"]
     #[inline(always)]
-    pub const fn set_dst_en(&mut self, val: super::vals::DstEn) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u16) & 0x01) << 6usize);
+    pub const fn set_dst_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u16) & 0x01) << 6usize);
     }
     #[doc = "Software Reset"]
     #[must_use]
@@ -378,7 +378,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ fineen: {:?}, comp_en: {:?}, alm_match: {:?}, dst_en: {:?}, swr: {:?}, clk_sel: {:?}, clko_dis: {:?}, clkout: {:?} }}",
+            "Ctrl {{ fineen: {=bool:?}, comp_en: {=bool:?}, alm_match: {:?}, dst_en: {=bool:?}, swr: {:?}, clk_sel: {:?}, clko_dis: {:?}, clkout: {:?} }}",
             self.fineen(),
             self.comp_en(),
             self.alm_match(),
@@ -673,170 +673,170 @@ impl Ier {
     #[doc = "Alarm Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn alm_ie(&self) -> super::vals::AlmIe {
+    pub const fn alm_ie(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::AlmIe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Alarm Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_alm_ie(&mut self, val: super::vals::AlmIe) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u16) & 0x01) << 2usize);
+    pub const fn set_alm_ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u16) & 0x01) << 2usize);
     }
     #[doc = "Days Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn day_ie(&self) -> super::vals::DayIe {
+    pub const fn day_ie(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::DayIe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Days Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_day_ie(&mut self, val: super::vals::DayIe) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u16) & 0x01) << 3usize);
+    pub const fn set_day_ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u16) & 0x01) << 3usize);
     }
     #[doc = "Hours Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn hour_ie(&self) -> super::vals::HourIe {
+    pub const fn hour_ie(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::HourIe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Hours Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_hour_ie(&mut self, val: super::vals::HourIe) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u16) & 0x01) << 4usize);
+    pub const fn set_hour_ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u16) & 0x01) << 4usize);
     }
     #[doc = "Minutes Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn min_ie(&self) -> super::vals::MinIe {
+    pub const fn min_ie(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::MinIe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Minutes Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_min_ie(&mut self, val: super::vals::MinIe) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u16) & 0x01) << 5usize);
+    pub const fn set_min_ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u16) & 0x01) << 5usize);
     }
     #[doc = "1 Hz Interval Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ie_1hz(&self) -> super::vals::Ie1hz {
+    pub const fn ie_1hz(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Ie1hz::from_bits(val as u8)
+        val != 0
     }
     #[doc = "1 Hz Interval Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ie_1hz(&mut self, val: super::vals::Ie1hz) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u16) & 0x01) << 6usize);
+    pub const fn set_ie_1hz(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u16) & 0x01) << 6usize);
     }
     #[doc = "2 Hz Interval Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ie_2hz(&self) -> super::vals::Ie2hz {
+    pub const fn ie_2hz(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Ie2hz::from_bits(val as u8)
+        val != 0
     }
     #[doc = "2 Hz Interval Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ie_2hz(&mut self, val: super::vals::Ie2hz) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_ie_2hz(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "4 Hz Interval Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ie_4hz(&self) -> super::vals::Ie4hz {
+    pub const fn ie_4hz(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Ie4hz::from_bits(val as u8)
+        val != 0
     }
     #[doc = "4 Hz Interval Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ie_4hz(&mut self, val: super::vals::Ie4hz) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u16) & 0x01) << 8usize);
+    pub const fn set_ie_4hz(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
     }
     #[doc = "8 Hz Interval Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ie_8hz(&self) -> super::vals::Ie8hz {
+    pub const fn ie_8hz(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Ie8hz::from_bits(val as u8)
+        val != 0
     }
     #[doc = "8 Hz Interval Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ie_8hz(&mut self, val: super::vals::Ie8hz) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u16) & 0x01) << 9usize);
+    pub const fn set_ie_8hz(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
     }
     #[doc = "16 Hz Interval Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ie_16hz(&self) -> super::vals::Ie16hz {
+    pub const fn ie_16hz(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Ie16hz::from_bits(val as u8)
+        val != 0
     }
     #[doc = "16 Hz Interval Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ie_16hz(&mut self, val: super::vals::Ie16hz) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u16) & 0x01) << 10usize);
+    pub const fn set_ie_16hz(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
     }
     #[doc = "32 Hz Interval Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ie_32hz(&self) -> super::vals::Ie32hz {
+    pub const fn ie_32hz(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Ie32hz::from_bits(val as u8)
+        val != 0
     }
     #[doc = "32 Hz Interval Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ie_32hz(&mut self, val: super::vals::Ie32hz) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u16) & 0x01) << 11usize);
+    pub const fn set_ie_32hz(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u16) & 0x01) << 11usize);
     }
     #[doc = "64 Hz Interval Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ie_64hz(&self) -> super::vals::Ie64hz {
+    pub const fn ie_64hz(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Ie64hz::from_bits(val as u8)
+        val != 0
     }
     #[doc = "64 Hz Interval Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ie_64hz(&mut self, val: super::vals::Ie64hz) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u16) & 0x01) << 12usize);
+    pub const fn set_ie_64hz(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u16) & 0x01) << 12usize);
     }
     #[doc = "128 Hz Interval Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ie_128hz(&self) -> super::vals::Ie128hz {
+    pub const fn ie_128hz(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Ie128hz::from_bits(val as u8)
+        val != 0
     }
     #[doc = "128 Hz Interval Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ie_128hz(&mut self, val: super::vals::Ie128hz) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u16) & 0x01) << 13usize);
+    pub const fn set_ie_128hz(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u16) & 0x01) << 13usize);
     }
     #[doc = "256 Hz Interval Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ie_256hz(&self) -> super::vals::Ie256hz {
+    pub const fn ie_256hz(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Ie256hz::from_bits(val as u8)
+        val != 0
     }
     #[doc = "256 Hz Interval Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ie_256hz(&mut self, val: super::vals::Ie256hz) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u16) & 0x01) << 14usize);
+    pub const fn set_ie_256hz(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u16) & 0x01) << 14usize);
     }
     #[doc = "512 Hz Interval Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ie_512hz(&self) -> super::vals::Ie512hz {
+    pub const fn ie_512hz(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Ie512hz::from_bits(val as u8)
+        val != 0
     }
     #[doc = "512 Hz Interval Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ie_512hz(&mut self, val: super::vals::Ie512hz) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u16) & 0x01) << 15usize);
+    pub const fn set_ie_512hz(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u16) & 0x01) << 15usize);
     }
 }
 impl Default for Ier {
@@ -870,7 +870,7 @@ impl defmt::Format for Ier {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ier {{ alm_ie: {:?}, day_ie: {:?}, hour_ie: {:?}, min_ie: {:?}, ie_1hz: {:?}, ie_2hz: {:?}, ie_4hz: {:?}, ie_8hz: {:?}, ie_16hz: {:?}, ie_32hz: {:?}, ie_64hz: {:?}, ie_128hz: {:?}, ie_256hz: {:?}, ie_512hz: {:?} }}",
+            "Ier {{ alm_ie: {=bool:?}, day_ie: {=bool:?}, hour_ie: {=bool:?}, min_ie: {=bool:?}, ie_1hz: {=bool:?}, ie_2hz: {=bool:?}, ie_4hz: {=bool:?}, ie_8hz: {=bool:?}, ie_16hz: {=bool:?}, ie_32hz: {=bool:?}, ie_64hz: {=bool:?}, ie_128hz: {=bool:?}, ie_256hz: {=bool:?}, ie_512hz: {=bool:?} }}",
             self.alm_ie(),
             self.day_ie(),
             self.hour_ie(),
@@ -896,170 +896,170 @@ impl Isr {
     #[doc = "Alarm Interrupt Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn alm_is(&self) -> super::vals::AlmIs {
+    pub const fn alm_is(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::AlmIs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Alarm Interrupt Status"]
     #[inline(always)]
-    pub const fn set_alm_is(&mut self, val: super::vals::AlmIs) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u16) & 0x01) << 2usize);
+    pub const fn set_alm_is(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u16) & 0x01) << 2usize);
     }
     #[doc = "Days Interrupt Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn day_is(&self) -> super::vals::DayIs {
+    pub const fn day_is(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::DayIs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Days Interrupt Status"]
     #[inline(always)]
-    pub const fn set_day_is(&mut self, val: super::vals::DayIs) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u16) & 0x01) << 3usize);
+    pub const fn set_day_is(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u16) & 0x01) << 3usize);
     }
     #[doc = "Hours Interrupt Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn hour_is(&self) -> super::vals::HourIs {
+    pub const fn hour_is(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::HourIs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Hours Interrupt Status"]
     #[inline(always)]
-    pub const fn set_hour_is(&mut self, val: super::vals::HourIs) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u16) & 0x01) << 4usize);
+    pub const fn set_hour_is(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u16) & 0x01) << 4usize);
     }
     #[doc = "Minutes Interrupt Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn min_is(&self) -> super::vals::MinIs {
+    pub const fn min_is(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::MinIs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Minutes Interrupt Status"]
     #[inline(always)]
-    pub const fn set_min_is(&mut self, val: super::vals::MinIs) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u16) & 0x01) << 5usize);
+    pub const fn set_min_is(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u16) & 0x01) << 5usize);
     }
     #[doc = "1 Hz Interval Interrupt Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn is_1hz(&self) -> super::vals::Is1hz {
+    pub const fn is_1hz(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Is1hz::from_bits(val as u8)
+        val != 0
     }
     #[doc = "1 Hz Interval Interrupt Status"]
     #[inline(always)]
-    pub const fn set_is_1hz(&mut self, val: super::vals::Is1hz) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u16) & 0x01) << 6usize);
+    pub const fn set_is_1hz(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u16) & 0x01) << 6usize);
     }
     #[doc = "2 Hz Interval Interrupt Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn is_2hz(&self) -> super::vals::Is2hz {
+    pub const fn is_2hz(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Is2hz::from_bits(val as u8)
+        val != 0
     }
     #[doc = "2 Hz Interval Interrupt Status"]
     #[inline(always)]
-    pub const fn set_is_2hz(&mut self, val: super::vals::Is2hz) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_is_2hz(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "4 Hz Interval Interrupt Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn is_4hz(&self) -> super::vals::Is4hz {
+    pub const fn is_4hz(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Is4hz::from_bits(val as u8)
+        val != 0
     }
     #[doc = "4 Hz Interval Interrupt Status"]
     #[inline(always)]
-    pub const fn set_is_4hz(&mut self, val: super::vals::Is4hz) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u16) & 0x01) << 8usize);
+    pub const fn set_is_4hz(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
     }
     #[doc = "8 Hz Interval Interrupt Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn is_8hz(&self) -> super::vals::Is8hz {
+    pub const fn is_8hz(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Is8hz::from_bits(val as u8)
+        val != 0
     }
     #[doc = "8 Hz Interval Interrupt Status"]
     #[inline(always)]
-    pub const fn set_is_8hz(&mut self, val: super::vals::Is8hz) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u16) & 0x01) << 9usize);
+    pub const fn set_is_8hz(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
     }
     #[doc = "16 Hz Interval Interrupt Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn is_16hz(&self) -> super::vals::Is16hz {
+    pub const fn is_16hz(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Is16hz::from_bits(val as u8)
+        val != 0
     }
     #[doc = "16 Hz Interval Interrupt Status"]
     #[inline(always)]
-    pub const fn set_is_16hz(&mut self, val: super::vals::Is16hz) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u16) & 0x01) << 10usize);
+    pub const fn set_is_16hz(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
     }
     #[doc = "32 Hz Interval Interrupt Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn is_32hz(&self) -> super::vals::Is32hz {
+    pub const fn is_32hz(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Is32hz::from_bits(val as u8)
+        val != 0
     }
     #[doc = "32 Hz Interval Interrupt Status"]
     #[inline(always)]
-    pub const fn set_is_32hz(&mut self, val: super::vals::Is32hz) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u16) & 0x01) << 11usize);
+    pub const fn set_is_32hz(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u16) & 0x01) << 11usize);
     }
     #[doc = "64 Hz Interval Interrupt Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn is_64hz(&self) -> super::vals::Is64hz {
+    pub const fn is_64hz(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Is64hz::from_bits(val as u8)
+        val != 0
     }
     #[doc = "64 Hz Interval Interrupt Status"]
     #[inline(always)]
-    pub const fn set_is_64hz(&mut self, val: super::vals::Is64hz) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u16) & 0x01) << 12usize);
+    pub const fn set_is_64hz(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u16) & 0x01) << 12usize);
     }
     #[doc = "128 Hz Interval Interrupt Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn is_128hz(&self) -> super::vals::Is128hz {
+    pub const fn is_128hz(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Is128hz::from_bits(val as u8)
+        val != 0
     }
     #[doc = "128 Hz Interval Interrupt Status"]
     #[inline(always)]
-    pub const fn set_is_128hz(&mut self, val: super::vals::Is128hz) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u16) & 0x01) << 13usize);
+    pub const fn set_is_128hz(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u16) & 0x01) << 13usize);
     }
     #[doc = "256 Hz Interval Interrupt Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn is_256hz(&self) -> super::vals::Is256hz {
+    pub const fn is_256hz(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Is256hz::from_bits(val as u8)
+        val != 0
     }
     #[doc = "256 Hz Interval Interrupt Status"]
     #[inline(always)]
-    pub const fn set_is_256hz(&mut self, val: super::vals::Is256hz) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u16) & 0x01) << 14usize);
+    pub const fn set_is_256hz(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u16) & 0x01) << 14usize);
     }
     #[doc = "512 Hz Interval Interrupt Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn is_512hz(&self) -> super::vals::Is512hz {
+    pub const fn is_512hz(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Is512hz::from_bits(val as u8)
+        val != 0
     }
     #[doc = "512 Hz Interval Interrupt Status"]
     #[inline(always)]
-    pub const fn set_is_512hz(&mut self, val: super::vals::Is512hz) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u16) & 0x01) << 15usize);
+    pub const fn set_is_512hz(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u16) & 0x01) << 15usize);
     }
 }
 impl Default for Isr {
@@ -1093,7 +1093,7 @@ impl defmt::Format for Isr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Isr {{ alm_is: {:?}, day_is: {:?}, hour_is: {:?}, min_is: {:?}, is_1hz: {:?}, is_2hz: {:?}, is_4hz: {:?}, is_8hz: {:?}, is_16hz: {:?}, is_32hz: {:?}, is_64hz: {:?}, is_128hz: {:?}, is_256hz: {:?}, is_512hz: {:?} }}",
+            "Isr {{ alm_is: {=bool:?}, day_is: {=bool:?}, hour_is: {=bool:?}, min_is: {=bool:?}, is_1hz: {=bool:?}, is_2hz: {=bool:?}, is_4hz: {=bool:?}, is_8hz: {=bool:?}, is_16hz: {=bool:?}, is_32hz: {=bool:?}, is_64hz: {=bool:?}, is_128hz: {=bool:?}, is_256hz: {=bool:?}, is_512hz: {=bool:?} }}",
             self.alm_is(),
             self.day_is(),
             self.hour_is(),
@@ -1209,14 +1209,14 @@ impl Status {
     #[doc = "Write Protect Enable Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn write_prot_en(&self) -> super::vals::WriteProtEn {
+    pub const fn write_prot_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::WriteProtEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Write Protect Enable Status"]
     #[inline(always)]
-    pub const fn set_write_prot_en(&mut self, val: super::vals::WriteProtEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u16) & 0x01) << 1usize);
+    pub const fn set_write_prot_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
     }
     #[doc = "Compensation Interval"]
     #[must_use]
@@ -1257,14 +1257,14 @@ impl Status {
     #[doc = "Compensation Done"]
     #[must_use]
     #[inline(always)]
-    pub const fn cmp_done(&self) -> super::vals::CmpDone {
+    pub const fn cmp_done(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::CmpDone::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Compensation Done"]
     #[inline(always)]
-    pub const fn set_cmp_done(&mut self, val: super::vals::CmpDone) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u16) & 0x01) << 11usize);
+    pub const fn set_cmp_done(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u16) & 0x01) << 11usize);
     }
 }
 impl Default for Status {
@@ -1290,7 +1290,7 @@ impl defmt::Format for Status {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Status {{ inval_bit: {:?}, write_prot_en: {:?}, cmp_int: {=bool:?}, we: {:?}, bus_err: {:?}, cmp_done: {:?} }}",
+            "Status {{ inval_bit: {:?}, write_prot_en: {=bool:?}, cmp_int: {=bool:?}, we: {:?}, bus_err: {:?}, cmp_done: {=bool:?} }}",
             self.inval_bit(),
             self.write_prot_en(),
             self.cmp_int(),

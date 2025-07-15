@@ -4650,146 +4650,146 @@ impl Mbc0MemnGlbac0 {
     #[doc = "NonsecureUser Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn nux(&self) -> super::vals::Mbc0MemnGlbac0Nux {
+    pub const fn nux(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Mbc0MemnGlbac0Nux::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Execute"]
     #[inline(always)]
-    pub const fn set_nux(&mut self, val: super::vals::Mbc0MemnGlbac0Nux) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_nux(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "NonsecureUser Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn nuw(&self) -> super::vals::Mbc0MemnGlbac0Nuw {
+    pub const fn nuw(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Mbc0MemnGlbac0Nuw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Write"]
     #[inline(always)]
-    pub const fn set_nuw(&mut self, val: super::vals::Mbc0MemnGlbac0Nuw) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_nuw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "NonsecureUser Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn nur(&self) -> super::vals::Mbc0MemnGlbac0Nur {
+    pub const fn nur(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Mbc0MemnGlbac0Nur::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Read"]
     #[inline(always)]
-    pub const fn set_nur(&mut self, val: super::vals::Mbc0MemnGlbac0Nur) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_nur(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "NonsecurePriv Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn npx(&self) -> super::vals::Mbc0MemnGlbac0Npx {
+    pub const fn npx(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Mbc0MemnGlbac0Npx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Execute"]
     #[inline(always)]
-    pub const fn set_npx(&mut self, val: super::vals::Mbc0MemnGlbac0Npx) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_npx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "NonsecurePriv Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn npw(&self) -> super::vals::Mbc0MemnGlbac0Npw {
+    pub const fn npw(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Mbc0MemnGlbac0Npw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Write"]
     #[inline(always)]
-    pub const fn set_npw(&mut self, val: super::vals::Mbc0MemnGlbac0Npw) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_npw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "NonsecurePriv Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn npr(&self) -> super::vals::Mbc0MemnGlbac0Npr {
+    pub const fn npr(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Mbc0MemnGlbac0Npr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Read"]
     #[inline(always)]
-    pub const fn set_npr(&mut self, val: super::vals::Mbc0MemnGlbac0Npr) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_npr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "SecureUser Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn sux(&self) -> super::vals::Mbc0MemnGlbac0Sux {
+    pub const fn sux(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Mbc0MemnGlbac0Sux::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Execute"]
     #[inline(always)]
-    pub const fn set_sux(&mut self, val: super::vals::Mbc0MemnGlbac0Sux) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_sux(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "SecureUser Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn suw(&self) -> super::vals::Mbc0MemnGlbac0Suw {
+    pub const fn suw(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Mbc0MemnGlbac0Suw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Write"]
     #[inline(always)]
-    pub const fn set_suw(&mut self, val: super::vals::Mbc0MemnGlbac0Suw) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_suw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "SecureUser Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn sur(&self) -> super::vals::Mbc0MemnGlbac0Sur {
+    pub const fn sur(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Mbc0MemnGlbac0Sur::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Read"]
     #[inline(always)]
-    pub const fn set_sur(&mut self, val: super::vals::Mbc0MemnGlbac0Sur) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_sur(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "SecurePriv Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn spx(&self) -> super::vals::Mbc0MemnGlbac0Spx {
+    pub const fn spx(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Mbc0MemnGlbac0Spx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Execute"]
     #[inline(always)]
-    pub const fn set_spx(&mut self, val: super::vals::Mbc0MemnGlbac0Spx) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_spx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "SecurePriv Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn spw(&self) -> super::vals::Mbc0MemnGlbac0Spw {
+    pub const fn spw(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Mbc0MemnGlbac0Spw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Write"]
     #[inline(always)]
-    pub const fn set_spw(&mut self, val: super::vals::Mbc0MemnGlbac0Spw) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_spw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "SecurePriv Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn spr(&self) -> super::vals::Mbc0MemnGlbac0Spr {
+    pub const fn spr(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Mbc0MemnGlbac0Spr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Read"]
     #[inline(always)]
-    pub const fn set_spr(&mut self, val: super::vals::Mbc0MemnGlbac0Spr) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_spr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
 }
 impl Default for Mbc0MemnGlbac0 {
@@ -4821,7 +4821,7 @@ impl defmt::Format for Mbc0MemnGlbac0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mbc0MemnGlbac0 {{ nux: {:?}, nuw: {:?}, nur: {:?}, npx: {:?}, npw: {:?}, npr: {:?}, sux: {:?}, suw: {:?}, sur: {:?}, spx: {:?}, spw: {:?}, spr: {:?} }}",
+            "Mbc0MemnGlbac0 {{ nux: {=bool:?}, nuw: {=bool:?}, nur: {=bool:?}, npx: {=bool:?}, npw: {=bool:?}, npr: {=bool:?}, sux: {=bool:?}, suw: {=bool:?}, sur: {=bool:?}, spx: {=bool:?}, spw: {=bool:?}, spr: {=bool:?} }}",
             self.nux(),
             self.nuw(),
             self.nur(),
@@ -4845,158 +4845,158 @@ impl Mbc0MemnGlbac1 {
     #[doc = "NonsecureUser Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn nux(&self) -> super::vals::Mbc0MemnGlbac1Nux {
+    pub const fn nux(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Mbc0MemnGlbac1Nux::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Execute"]
     #[inline(always)]
-    pub const fn set_nux(&mut self, val: super::vals::Mbc0MemnGlbac1Nux) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_nux(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "NonsecureUser Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn nuw(&self) -> super::vals::Mbc0MemnGlbac1Nuw {
+    pub const fn nuw(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Mbc0MemnGlbac1Nuw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Write"]
     #[inline(always)]
-    pub const fn set_nuw(&mut self, val: super::vals::Mbc0MemnGlbac1Nuw) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_nuw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "NonsecureUser Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn nur(&self) -> super::vals::Mbc0MemnGlbac1Nur {
+    pub const fn nur(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Mbc0MemnGlbac1Nur::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Read"]
     #[inline(always)]
-    pub const fn set_nur(&mut self, val: super::vals::Mbc0MemnGlbac1Nur) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_nur(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "NonsecurePriv Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn npx(&self) -> super::vals::Mbc0MemnGlbac1Npx {
+    pub const fn npx(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Mbc0MemnGlbac1Npx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Execute"]
     #[inline(always)]
-    pub const fn set_npx(&mut self, val: super::vals::Mbc0MemnGlbac1Npx) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_npx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "NonsecurePriv Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn npw(&self) -> super::vals::Mbc0MemnGlbac1Npw {
+    pub const fn npw(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Mbc0MemnGlbac1Npw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Write"]
     #[inline(always)]
-    pub const fn set_npw(&mut self, val: super::vals::Mbc0MemnGlbac1Npw) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_npw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "NonsecurePriv Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn npr(&self) -> super::vals::Mbc0MemnGlbac1Npr {
+    pub const fn npr(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Mbc0MemnGlbac1Npr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Read"]
     #[inline(always)]
-    pub const fn set_npr(&mut self, val: super::vals::Mbc0MemnGlbac1Npr) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_npr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "SecureUser Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn sux(&self) -> super::vals::Mbc0MemnGlbac1Sux {
+    pub const fn sux(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Mbc0MemnGlbac1Sux::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Execute"]
     #[inline(always)]
-    pub const fn set_sux(&mut self, val: super::vals::Mbc0MemnGlbac1Sux) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_sux(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "SecureUser Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn suw(&self) -> super::vals::Mbc0MemnGlbac1Suw {
+    pub const fn suw(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Mbc0MemnGlbac1Suw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Write"]
     #[inline(always)]
-    pub const fn set_suw(&mut self, val: super::vals::Mbc0MemnGlbac1Suw) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_suw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "SecureUser Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn sur(&self) -> super::vals::Mbc0MemnGlbac1Sur {
+    pub const fn sur(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Mbc0MemnGlbac1Sur::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Read"]
     #[inline(always)]
-    pub const fn set_sur(&mut self, val: super::vals::Mbc0MemnGlbac1Sur) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_sur(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "SecurePriv Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn spx(&self) -> super::vals::Mbc0MemnGlbac1Spx {
+    pub const fn spx(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Mbc0MemnGlbac1Spx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Execute"]
     #[inline(always)]
-    pub const fn set_spx(&mut self, val: super::vals::Mbc0MemnGlbac1Spx) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_spx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "SecurePriv Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn spw(&self) -> super::vals::Mbc0MemnGlbac1Spw {
+    pub const fn spw(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Mbc0MemnGlbac1Spw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Write"]
     #[inline(always)]
-    pub const fn set_spw(&mut self, val: super::vals::Mbc0MemnGlbac1Spw) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_spw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "SecurePriv Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn spr(&self) -> super::vals::Mbc0MemnGlbac1Spr {
+    pub const fn spr(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Mbc0MemnGlbac1Spr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Read"]
     #[inline(always)]
-    pub const fn set_spr(&mut self, val: super::vals::Mbc0MemnGlbac1Spr) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_spr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "LOCK"]
     #[must_use]
     #[inline(always)]
-    pub const fn lk(&self) -> super::vals::Mbc0MemnGlbac1Lk {
+    pub const fn lk(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Mbc0MemnGlbac1Lk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LOCK"]
     #[inline(always)]
-    pub const fn set_lk(&mut self, val: super::vals::Mbc0MemnGlbac1Lk) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_lk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Mbc0MemnGlbac1 {
@@ -5029,7 +5029,7 @@ impl defmt::Format for Mbc0MemnGlbac1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mbc0MemnGlbac1 {{ nux: {:?}, nuw: {:?}, nur: {:?}, npx: {:?}, npw: {:?}, npr: {:?}, sux: {:?}, suw: {:?}, sur: {:?}, spx: {:?}, spw: {:?}, spr: {:?}, lk: {:?} }}",
+            "Mbc0MemnGlbac1 {{ nux: {=bool:?}, nuw: {=bool:?}, nur: {=bool:?}, npx: {=bool:?}, npw: {=bool:?}, npr: {=bool:?}, sux: {=bool:?}, suw: {=bool:?}, sur: {=bool:?}, spx: {=bool:?}, spw: {=bool:?}, spr: {=bool:?}, lk: {=bool:?} }}",
             self.nux(),
             self.nuw(),
             self.nur(),
@@ -5054,158 +5054,158 @@ impl Mbc0MemnGlbac2 {
     #[doc = "NonsecureUser Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn nux(&self) -> super::vals::Mbc0MemnGlbac2Nux {
+    pub const fn nux(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Mbc0MemnGlbac2Nux::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Execute"]
     #[inline(always)]
-    pub const fn set_nux(&mut self, val: super::vals::Mbc0MemnGlbac2Nux) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_nux(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "NonsecureUser Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn nuw(&self) -> super::vals::Mbc0MemnGlbac2Nuw {
+    pub const fn nuw(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Mbc0MemnGlbac2Nuw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Write"]
     #[inline(always)]
-    pub const fn set_nuw(&mut self, val: super::vals::Mbc0MemnGlbac2Nuw) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_nuw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "NonsecureUser Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn nur(&self) -> super::vals::Mbc0MemnGlbac2Nur {
+    pub const fn nur(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Mbc0MemnGlbac2Nur::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Read"]
     #[inline(always)]
-    pub const fn set_nur(&mut self, val: super::vals::Mbc0MemnGlbac2Nur) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_nur(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "NonsecurePriv Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn npx(&self) -> super::vals::Mbc0MemnGlbac2Npx {
+    pub const fn npx(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Mbc0MemnGlbac2Npx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Execute"]
     #[inline(always)]
-    pub const fn set_npx(&mut self, val: super::vals::Mbc0MemnGlbac2Npx) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_npx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "NonsecurePriv Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn npw(&self) -> super::vals::Mbc0MemnGlbac2Npw {
+    pub const fn npw(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Mbc0MemnGlbac2Npw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Write"]
     #[inline(always)]
-    pub const fn set_npw(&mut self, val: super::vals::Mbc0MemnGlbac2Npw) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_npw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "NonsecurePriv Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn npr(&self) -> super::vals::Mbc0MemnGlbac2Npr {
+    pub const fn npr(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Mbc0MemnGlbac2Npr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Read"]
     #[inline(always)]
-    pub const fn set_npr(&mut self, val: super::vals::Mbc0MemnGlbac2Npr) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_npr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "SecureUser Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn sux(&self) -> super::vals::Mbc0MemnGlbac2Sux {
+    pub const fn sux(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Mbc0MemnGlbac2Sux::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Execute"]
     #[inline(always)]
-    pub const fn set_sux(&mut self, val: super::vals::Mbc0MemnGlbac2Sux) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_sux(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "SecureUser Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn suw(&self) -> super::vals::Mbc0MemnGlbac2Suw {
+    pub const fn suw(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Mbc0MemnGlbac2Suw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Write"]
     #[inline(always)]
-    pub const fn set_suw(&mut self, val: super::vals::Mbc0MemnGlbac2Suw) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_suw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "SecureUser Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn sur(&self) -> super::vals::Mbc0MemnGlbac2Sur {
+    pub const fn sur(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Mbc0MemnGlbac2Sur::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Read"]
     #[inline(always)]
-    pub const fn set_sur(&mut self, val: super::vals::Mbc0MemnGlbac2Sur) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_sur(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "SecurePriv Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn spx(&self) -> super::vals::Mbc0MemnGlbac2Spx {
+    pub const fn spx(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Mbc0MemnGlbac2Spx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Execute"]
     #[inline(always)]
-    pub const fn set_spx(&mut self, val: super::vals::Mbc0MemnGlbac2Spx) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_spx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "SecurePriv Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn spw(&self) -> super::vals::Mbc0MemnGlbac2Spw {
+    pub const fn spw(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Mbc0MemnGlbac2Spw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Write"]
     #[inline(always)]
-    pub const fn set_spw(&mut self, val: super::vals::Mbc0MemnGlbac2Spw) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_spw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "SecurePriv Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn spr(&self) -> super::vals::Mbc0MemnGlbac2Spr {
+    pub const fn spr(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Mbc0MemnGlbac2Spr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Read"]
     #[inline(always)]
-    pub const fn set_spr(&mut self, val: super::vals::Mbc0MemnGlbac2Spr) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_spr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "LOCK"]
     #[must_use]
     #[inline(always)]
-    pub const fn lk(&self) -> super::vals::Mbc0MemnGlbac2Lk {
+    pub const fn lk(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Mbc0MemnGlbac2Lk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LOCK"]
     #[inline(always)]
-    pub const fn set_lk(&mut self, val: super::vals::Mbc0MemnGlbac2Lk) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_lk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Mbc0MemnGlbac2 {
@@ -5238,7 +5238,7 @@ impl defmt::Format for Mbc0MemnGlbac2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mbc0MemnGlbac2 {{ nux: {:?}, nuw: {:?}, nur: {:?}, npx: {:?}, npw: {:?}, npr: {:?}, sux: {:?}, suw: {:?}, sur: {:?}, spx: {:?}, spw: {:?}, spr: {:?}, lk: {:?} }}",
+            "Mbc0MemnGlbac2 {{ nux: {=bool:?}, nuw: {=bool:?}, nur: {=bool:?}, npx: {=bool:?}, npw: {=bool:?}, npr: {=bool:?}, sux: {=bool:?}, suw: {=bool:?}, sur: {=bool:?}, spx: {=bool:?}, spw: {=bool:?}, spr: {=bool:?}, lk: {=bool:?} }}",
             self.nux(),
             self.nuw(),
             self.nur(),
@@ -5263,158 +5263,158 @@ impl Mbc0MemnGlbac3 {
     #[doc = "NonsecureUser Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn nux(&self) -> super::vals::Mbc0MemnGlbac3Nux {
+    pub const fn nux(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Mbc0MemnGlbac3Nux::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Execute"]
     #[inline(always)]
-    pub const fn set_nux(&mut self, val: super::vals::Mbc0MemnGlbac3Nux) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_nux(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "NonsecureUser Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn nuw(&self) -> super::vals::Mbc0MemnGlbac3Nuw {
+    pub const fn nuw(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Mbc0MemnGlbac3Nuw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Write"]
     #[inline(always)]
-    pub const fn set_nuw(&mut self, val: super::vals::Mbc0MemnGlbac3Nuw) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_nuw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "NonsecureUser Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn nur(&self) -> super::vals::Mbc0MemnGlbac3Nur {
+    pub const fn nur(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Mbc0MemnGlbac3Nur::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Read"]
     #[inline(always)]
-    pub const fn set_nur(&mut self, val: super::vals::Mbc0MemnGlbac3Nur) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_nur(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "NonsecurePriv Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn npx(&self) -> super::vals::Mbc0MemnGlbac3Npx {
+    pub const fn npx(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Mbc0MemnGlbac3Npx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Execute"]
     #[inline(always)]
-    pub const fn set_npx(&mut self, val: super::vals::Mbc0MemnGlbac3Npx) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_npx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "NonsecurePriv Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn npw(&self) -> super::vals::Mbc0MemnGlbac3Npw {
+    pub const fn npw(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Mbc0MemnGlbac3Npw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Write"]
     #[inline(always)]
-    pub const fn set_npw(&mut self, val: super::vals::Mbc0MemnGlbac3Npw) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_npw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "NonsecurePriv Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn npr(&self) -> super::vals::Mbc0MemnGlbac3Npr {
+    pub const fn npr(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Mbc0MemnGlbac3Npr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Read"]
     #[inline(always)]
-    pub const fn set_npr(&mut self, val: super::vals::Mbc0MemnGlbac3Npr) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_npr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "SecureUser Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn sux(&self) -> super::vals::Mbc0MemnGlbac3Sux {
+    pub const fn sux(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Mbc0MemnGlbac3Sux::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Execute"]
     #[inline(always)]
-    pub const fn set_sux(&mut self, val: super::vals::Mbc0MemnGlbac3Sux) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_sux(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "SecureUser Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn suw(&self) -> super::vals::Mbc0MemnGlbac3Suw {
+    pub const fn suw(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Mbc0MemnGlbac3Suw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Write"]
     #[inline(always)]
-    pub const fn set_suw(&mut self, val: super::vals::Mbc0MemnGlbac3Suw) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_suw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "SecureUser Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn sur(&self) -> super::vals::Mbc0MemnGlbac3Sur {
+    pub const fn sur(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Mbc0MemnGlbac3Sur::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Read"]
     #[inline(always)]
-    pub const fn set_sur(&mut self, val: super::vals::Mbc0MemnGlbac3Sur) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_sur(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "SecurePriv Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn spx(&self) -> super::vals::Mbc0MemnGlbac3Spx {
+    pub const fn spx(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Mbc0MemnGlbac3Spx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Execute"]
     #[inline(always)]
-    pub const fn set_spx(&mut self, val: super::vals::Mbc0MemnGlbac3Spx) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_spx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "SecurePriv Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn spw(&self) -> super::vals::Mbc0MemnGlbac3Spw {
+    pub const fn spw(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Mbc0MemnGlbac3Spw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Write"]
     #[inline(always)]
-    pub const fn set_spw(&mut self, val: super::vals::Mbc0MemnGlbac3Spw) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_spw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "SecurePriv Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn spr(&self) -> super::vals::Mbc0MemnGlbac3Spr {
+    pub const fn spr(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Mbc0MemnGlbac3Spr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Read"]
     #[inline(always)]
-    pub const fn set_spr(&mut self, val: super::vals::Mbc0MemnGlbac3Spr) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_spr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "LOCK"]
     #[must_use]
     #[inline(always)]
-    pub const fn lk(&self) -> super::vals::Mbc0MemnGlbac3Lk {
+    pub const fn lk(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Mbc0MemnGlbac3Lk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LOCK"]
     #[inline(always)]
-    pub const fn set_lk(&mut self, val: super::vals::Mbc0MemnGlbac3Lk) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_lk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Mbc0MemnGlbac3 {
@@ -5447,7 +5447,7 @@ impl defmt::Format for Mbc0MemnGlbac3 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mbc0MemnGlbac3 {{ nux: {:?}, nuw: {:?}, nur: {:?}, npx: {:?}, npw: {:?}, npr: {:?}, sux: {:?}, suw: {:?}, sur: {:?}, spx: {:?}, spw: {:?}, spr: {:?}, lk: {:?} }}",
+            "Mbc0MemnGlbac3 {{ nux: {=bool:?}, nuw: {=bool:?}, nur: {=bool:?}, npx: {=bool:?}, npw: {=bool:?}, npr: {=bool:?}, sux: {=bool:?}, suw: {=bool:?}, sur: {=bool:?}, spx: {=bool:?}, spw: {=bool:?}, spr: {=bool:?}, lk: {=bool:?} }}",
             self.nux(),
             self.nuw(),
             self.nur(),
@@ -5472,158 +5472,158 @@ impl Mbc0MemnGlbac4 {
     #[doc = "NonsecureUser Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn nux(&self) -> super::vals::Mbc0MemnGlbac4Nux {
+    pub const fn nux(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Mbc0MemnGlbac4Nux::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Execute"]
     #[inline(always)]
-    pub const fn set_nux(&mut self, val: super::vals::Mbc0MemnGlbac4Nux) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_nux(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "NonsecureUser Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn nuw(&self) -> super::vals::Mbc0MemnGlbac4Nuw {
+    pub const fn nuw(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Mbc0MemnGlbac4Nuw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Write"]
     #[inline(always)]
-    pub const fn set_nuw(&mut self, val: super::vals::Mbc0MemnGlbac4Nuw) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_nuw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "NonsecureUser Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn nur(&self) -> super::vals::Mbc0MemnGlbac4Nur {
+    pub const fn nur(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Mbc0MemnGlbac4Nur::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Read"]
     #[inline(always)]
-    pub const fn set_nur(&mut self, val: super::vals::Mbc0MemnGlbac4Nur) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_nur(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "NonsecurePriv Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn npx(&self) -> super::vals::Mbc0MemnGlbac4Npx {
+    pub const fn npx(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Mbc0MemnGlbac4Npx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Execute"]
     #[inline(always)]
-    pub const fn set_npx(&mut self, val: super::vals::Mbc0MemnGlbac4Npx) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_npx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "NonsecurePriv Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn npw(&self) -> super::vals::Mbc0MemnGlbac4Npw {
+    pub const fn npw(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Mbc0MemnGlbac4Npw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Write"]
     #[inline(always)]
-    pub const fn set_npw(&mut self, val: super::vals::Mbc0MemnGlbac4Npw) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_npw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "NonsecurePriv Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn npr(&self) -> super::vals::Mbc0MemnGlbac4Npr {
+    pub const fn npr(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Mbc0MemnGlbac4Npr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Read"]
     #[inline(always)]
-    pub const fn set_npr(&mut self, val: super::vals::Mbc0MemnGlbac4Npr) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_npr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "SecureUser Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn sux(&self) -> super::vals::Mbc0MemnGlbac4Sux {
+    pub const fn sux(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Mbc0MemnGlbac4Sux::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Execute"]
     #[inline(always)]
-    pub const fn set_sux(&mut self, val: super::vals::Mbc0MemnGlbac4Sux) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_sux(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "SecureUser Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn suw(&self) -> super::vals::Mbc0MemnGlbac4Suw {
+    pub const fn suw(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Mbc0MemnGlbac4Suw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Write"]
     #[inline(always)]
-    pub const fn set_suw(&mut self, val: super::vals::Mbc0MemnGlbac4Suw) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_suw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "SecureUser Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn sur(&self) -> super::vals::Mbc0MemnGlbac4Sur {
+    pub const fn sur(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Mbc0MemnGlbac4Sur::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Read"]
     #[inline(always)]
-    pub const fn set_sur(&mut self, val: super::vals::Mbc0MemnGlbac4Sur) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_sur(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "SecurePriv Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn spx(&self) -> super::vals::Mbc0MemnGlbac4Spx {
+    pub const fn spx(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Mbc0MemnGlbac4Spx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Execute"]
     #[inline(always)]
-    pub const fn set_spx(&mut self, val: super::vals::Mbc0MemnGlbac4Spx) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_spx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "SecurePriv Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn spw(&self) -> super::vals::Mbc0MemnGlbac4Spw {
+    pub const fn spw(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Mbc0MemnGlbac4Spw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Write"]
     #[inline(always)]
-    pub const fn set_spw(&mut self, val: super::vals::Mbc0MemnGlbac4Spw) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_spw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "SecurePriv Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn spr(&self) -> super::vals::Mbc0MemnGlbac4Spr {
+    pub const fn spr(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Mbc0MemnGlbac4Spr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Read"]
     #[inline(always)]
-    pub const fn set_spr(&mut self, val: super::vals::Mbc0MemnGlbac4Spr) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_spr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "LOCK"]
     #[must_use]
     #[inline(always)]
-    pub const fn lk(&self) -> super::vals::Mbc0MemnGlbac4Lk {
+    pub const fn lk(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Mbc0MemnGlbac4Lk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LOCK"]
     #[inline(always)]
-    pub const fn set_lk(&mut self, val: super::vals::Mbc0MemnGlbac4Lk) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_lk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Mbc0MemnGlbac4 {
@@ -5656,7 +5656,7 @@ impl defmt::Format for Mbc0MemnGlbac4 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mbc0MemnGlbac4 {{ nux: {:?}, nuw: {:?}, nur: {:?}, npx: {:?}, npw: {:?}, npr: {:?}, sux: {:?}, suw: {:?}, sur: {:?}, spx: {:?}, spw: {:?}, spr: {:?}, lk: {:?} }}",
+            "Mbc0MemnGlbac4 {{ nux: {=bool:?}, nuw: {=bool:?}, nur: {=bool:?}, npx: {=bool:?}, npw: {=bool:?}, npr: {=bool:?}, sux: {=bool:?}, suw: {=bool:?}, sur: {=bool:?}, spx: {=bool:?}, spw: {=bool:?}, spr: {=bool:?}, lk: {=bool:?} }}",
             self.nux(),
             self.nuw(),
             self.nur(),
@@ -5681,158 +5681,158 @@ impl Mbc0MemnGlbac5 {
     #[doc = "NonsecureUser Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn nux(&self) -> super::vals::Mbc0MemnGlbac5Nux {
+    pub const fn nux(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Mbc0MemnGlbac5Nux::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Execute"]
     #[inline(always)]
-    pub const fn set_nux(&mut self, val: super::vals::Mbc0MemnGlbac5Nux) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_nux(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "NonsecureUser Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn nuw(&self) -> super::vals::Mbc0MemnGlbac5Nuw {
+    pub const fn nuw(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Mbc0MemnGlbac5Nuw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Write"]
     #[inline(always)]
-    pub const fn set_nuw(&mut self, val: super::vals::Mbc0MemnGlbac5Nuw) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_nuw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "NonsecureUser Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn nur(&self) -> super::vals::Mbc0MemnGlbac5Nur {
+    pub const fn nur(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Mbc0MemnGlbac5Nur::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Read"]
     #[inline(always)]
-    pub const fn set_nur(&mut self, val: super::vals::Mbc0MemnGlbac5Nur) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_nur(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "NonsecurePriv Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn npx(&self) -> super::vals::Mbc0MemnGlbac5Npx {
+    pub const fn npx(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Mbc0MemnGlbac5Npx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Execute"]
     #[inline(always)]
-    pub const fn set_npx(&mut self, val: super::vals::Mbc0MemnGlbac5Npx) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_npx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "NonsecurePriv Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn npw(&self) -> super::vals::Mbc0MemnGlbac5Npw {
+    pub const fn npw(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Mbc0MemnGlbac5Npw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Write"]
     #[inline(always)]
-    pub const fn set_npw(&mut self, val: super::vals::Mbc0MemnGlbac5Npw) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_npw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "NonsecurePriv Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn npr(&self) -> super::vals::Mbc0MemnGlbac5Npr {
+    pub const fn npr(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Mbc0MemnGlbac5Npr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Read"]
     #[inline(always)]
-    pub const fn set_npr(&mut self, val: super::vals::Mbc0MemnGlbac5Npr) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_npr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "SecureUser Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn sux(&self) -> super::vals::Mbc0MemnGlbac5Sux {
+    pub const fn sux(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Mbc0MemnGlbac5Sux::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Execute"]
     #[inline(always)]
-    pub const fn set_sux(&mut self, val: super::vals::Mbc0MemnGlbac5Sux) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_sux(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "SecureUser Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn suw(&self) -> super::vals::Mbc0MemnGlbac5Suw {
+    pub const fn suw(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Mbc0MemnGlbac5Suw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Write"]
     #[inline(always)]
-    pub const fn set_suw(&mut self, val: super::vals::Mbc0MemnGlbac5Suw) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_suw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "SecureUser Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn sur(&self) -> super::vals::Mbc0MemnGlbac5Sur {
+    pub const fn sur(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Mbc0MemnGlbac5Sur::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Read"]
     #[inline(always)]
-    pub const fn set_sur(&mut self, val: super::vals::Mbc0MemnGlbac5Sur) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_sur(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "SecurePriv Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn spx(&self) -> super::vals::Mbc0MemnGlbac5Spx {
+    pub const fn spx(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Mbc0MemnGlbac5Spx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Execute"]
     #[inline(always)]
-    pub const fn set_spx(&mut self, val: super::vals::Mbc0MemnGlbac5Spx) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_spx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "SecurePriv Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn spw(&self) -> super::vals::Mbc0MemnGlbac5Spw {
+    pub const fn spw(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Mbc0MemnGlbac5Spw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Write"]
     #[inline(always)]
-    pub const fn set_spw(&mut self, val: super::vals::Mbc0MemnGlbac5Spw) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_spw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "SecurePriv Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn spr(&self) -> super::vals::Mbc0MemnGlbac5Spr {
+    pub const fn spr(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Mbc0MemnGlbac5Spr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Read"]
     #[inline(always)]
-    pub const fn set_spr(&mut self, val: super::vals::Mbc0MemnGlbac5Spr) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_spr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "LOCK"]
     #[must_use]
     #[inline(always)]
-    pub const fn lk(&self) -> super::vals::Mbc0MemnGlbac5Lk {
+    pub const fn lk(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Mbc0MemnGlbac5Lk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LOCK"]
     #[inline(always)]
-    pub const fn set_lk(&mut self, val: super::vals::Mbc0MemnGlbac5Lk) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_lk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Mbc0MemnGlbac5 {
@@ -5865,7 +5865,7 @@ impl defmt::Format for Mbc0MemnGlbac5 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mbc0MemnGlbac5 {{ nux: {:?}, nuw: {:?}, nur: {:?}, npx: {:?}, npw: {:?}, npr: {:?}, sux: {:?}, suw: {:?}, sur: {:?}, spx: {:?}, spw: {:?}, spr: {:?}, lk: {:?} }}",
+            "Mbc0MemnGlbac5 {{ nux: {=bool:?}, nuw: {=bool:?}, nur: {=bool:?}, npx: {=bool:?}, npw: {=bool:?}, npr: {=bool:?}, sux: {=bool:?}, suw: {=bool:?}, sur: {=bool:?}, spx: {=bool:?}, spw: {=bool:?}, spr: {=bool:?}, lk: {=bool:?} }}",
             self.nux(),
             self.nuw(),
             self.nur(),
@@ -5890,158 +5890,158 @@ impl Mbc0MemnGlbac6 {
     #[doc = "NonsecureUser Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn nux(&self) -> super::vals::Mbc0MemnGlbac6Nux {
+    pub const fn nux(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Mbc0MemnGlbac6Nux::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Execute"]
     #[inline(always)]
-    pub const fn set_nux(&mut self, val: super::vals::Mbc0MemnGlbac6Nux) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_nux(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "NonsecureUser Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn nuw(&self) -> super::vals::Mbc0MemnGlbac6Nuw {
+    pub const fn nuw(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Mbc0MemnGlbac6Nuw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Write"]
     #[inline(always)]
-    pub const fn set_nuw(&mut self, val: super::vals::Mbc0MemnGlbac6Nuw) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_nuw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "NonsecureUser Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn nur(&self) -> super::vals::Mbc0MemnGlbac6Nur {
+    pub const fn nur(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Mbc0MemnGlbac6Nur::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Read"]
     #[inline(always)]
-    pub const fn set_nur(&mut self, val: super::vals::Mbc0MemnGlbac6Nur) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_nur(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "NonsecurePriv Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn npx(&self) -> super::vals::Mbc0MemnGlbac6Npx {
+    pub const fn npx(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Mbc0MemnGlbac6Npx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Execute"]
     #[inline(always)]
-    pub const fn set_npx(&mut self, val: super::vals::Mbc0MemnGlbac6Npx) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_npx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "NonsecurePriv Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn npw(&self) -> super::vals::Mbc0MemnGlbac6Npw {
+    pub const fn npw(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Mbc0MemnGlbac6Npw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Write"]
     #[inline(always)]
-    pub const fn set_npw(&mut self, val: super::vals::Mbc0MemnGlbac6Npw) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_npw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "NonsecurePriv Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn npr(&self) -> super::vals::Mbc0MemnGlbac6Npr {
+    pub const fn npr(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Mbc0MemnGlbac6Npr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Read"]
     #[inline(always)]
-    pub const fn set_npr(&mut self, val: super::vals::Mbc0MemnGlbac6Npr) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_npr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "SecureUser Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn sux(&self) -> super::vals::Mbc0MemnGlbac6Sux {
+    pub const fn sux(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Mbc0MemnGlbac6Sux::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Execute"]
     #[inline(always)]
-    pub const fn set_sux(&mut self, val: super::vals::Mbc0MemnGlbac6Sux) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_sux(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "SecureUser Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn suw(&self) -> super::vals::Mbc0MemnGlbac6Suw {
+    pub const fn suw(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Mbc0MemnGlbac6Suw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Write"]
     #[inline(always)]
-    pub const fn set_suw(&mut self, val: super::vals::Mbc0MemnGlbac6Suw) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_suw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "SecureUser Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn sur(&self) -> super::vals::Mbc0MemnGlbac6Sur {
+    pub const fn sur(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Mbc0MemnGlbac6Sur::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Read"]
     #[inline(always)]
-    pub const fn set_sur(&mut self, val: super::vals::Mbc0MemnGlbac6Sur) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_sur(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "SecurePriv Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn spx(&self) -> super::vals::Mbc0MemnGlbac6Spx {
+    pub const fn spx(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Mbc0MemnGlbac6Spx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Execute"]
     #[inline(always)]
-    pub const fn set_spx(&mut self, val: super::vals::Mbc0MemnGlbac6Spx) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_spx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "SecurePriv Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn spw(&self) -> super::vals::Mbc0MemnGlbac6Spw {
+    pub const fn spw(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Mbc0MemnGlbac6Spw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Write"]
     #[inline(always)]
-    pub const fn set_spw(&mut self, val: super::vals::Mbc0MemnGlbac6Spw) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_spw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "SecurePriv Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn spr(&self) -> super::vals::Mbc0MemnGlbac6Spr {
+    pub const fn spr(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Mbc0MemnGlbac6Spr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Read"]
     #[inline(always)]
-    pub const fn set_spr(&mut self, val: super::vals::Mbc0MemnGlbac6Spr) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_spr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "LOCK"]
     #[must_use]
     #[inline(always)]
-    pub const fn lk(&self) -> super::vals::Mbc0MemnGlbac6Lk {
+    pub const fn lk(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Mbc0MemnGlbac6Lk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LOCK"]
     #[inline(always)]
-    pub const fn set_lk(&mut self, val: super::vals::Mbc0MemnGlbac6Lk) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_lk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Mbc0MemnGlbac6 {
@@ -6074,7 +6074,7 @@ impl defmt::Format for Mbc0MemnGlbac6 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mbc0MemnGlbac6 {{ nux: {:?}, nuw: {:?}, nur: {:?}, npx: {:?}, npw: {:?}, npr: {:?}, sux: {:?}, suw: {:?}, sur: {:?}, spx: {:?}, spw: {:?}, spr: {:?}, lk: {:?} }}",
+            "Mbc0MemnGlbac6 {{ nux: {=bool:?}, nuw: {=bool:?}, nur: {=bool:?}, npx: {=bool:?}, npw: {=bool:?}, npr: {=bool:?}, sux: {=bool:?}, suw: {=bool:?}, sur: {=bool:?}, spx: {=bool:?}, spw: {=bool:?}, spr: {=bool:?}, lk: {=bool:?} }}",
             self.nux(),
             self.nuw(),
             self.nur(),
@@ -6099,158 +6099,158 @@ impl Mbc0MemnGlbac7 {
     #[doc = "NonsecureUser Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn nux(&self) -> super::vals::Mbc0MemnGlbac7Nux {
+    pub const fn nux(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Mbc0MemnGlbac7Nux::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Execute"]
     #[inline(always)]
-    pub const fn set_nux(&mut self, val: super::vals::Mbc0MemnGlbac7Nux) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_nux(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "NonsecureUser Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn nuw(&self) -> super::vals::Mbc0MemnGlbac7Nuw {
+    pub const fn nuw(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Mbc0MemnGlbac7Nuw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Write"]
     #[inline(always)]
-    pub const fn set_nuw(&mut self, val: super::vals::Mbc0MemnGlbac7Nuw) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_nuw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "NonsecureUser Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn nur(&self) -> super::vals::Mbc0MemnGlbac7Nur {
+    pub const fn nur(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Mbc0MemnGlbac7Nur::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecureUser Read"]
     #[inline(always)]
-    pub const fn set_nur(&mut self, val: super::vals::Mbc0MemnGlbac7Nur) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_nur(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "NonsecurePriv Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn npx(&self) -> super::vals::Mbc0MemnGlbac7Npx {
+    pub const fn npx(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Mbc0MemnGlbac7Npx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Execute"]
     #[inline(always)]
-    pub const fn set_npx(&mut self, val: super::vals::Mbc0MemnGlbac7Npx) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_npx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "NonsecurePriv Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn npw(&self) -> super::vals::Mbc0MemnGlbac7Npw {
+    pub const fn npw(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Mbc0MemnGlbac7Npw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Write"]
     #[inline(always)]
-    pub const fn set_npw(&mut self, val: super::vals::Mbc0MemnGlbac7Npw) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_npw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "NonsecurePriv Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn npr(&self) -> super::vals::Mbc0MemnGlbac7Npr {
+    pub const fn npr(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Mbc0MemnGlbac7Npr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "NonsecurePriv Read"]
     #[inline(always)]
-    pub const fn set_npr(&mut self, val: super::vals::Mbc0MemnGlbac7Npr) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_npr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "SecureUser Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn sux(&self) -> super::vals::Mbc0MemnGlbac7Sux {
+    pub const fn sux(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Mbc0MemnGlbac7Sux::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Execute"]
     #[inline(always)]
-    pub const fn set_sux(&mut self, val: super::vals::Mbc0MemnGlbac7Sux) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_sux(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "SecureUser Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn suw(&self) -> super::vals::Mbc0MemnGlbac7Suw {
+    pub const fn suw(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Mbc0MemnGlbac7Suw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Write"]
     #[inline(always)]
-    pub const fn set_suw(&mut self, val: super::vals::Mbc0MemnGlbac7Suw) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_suw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "SecureUser Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn sur(&self) -> super::vals::Mbc0MemnGlbac7Sur {
+    pub const fn sur(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Mbc0MemnGlbac7Sur::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecureUser Read"]
     #[inline(always)]
-    pub const fn set_sur(&mut self, val: super::vals::Mbc0MemnGlbac7Sur) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_sur(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "SecurePriv Execute"]
     #[must_use]
     #[inline(always)]
-    pub const fn spx(&self) -> super::vals::Mbc0MemnGlbac7Spx {
+    pub const fn spx(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Mbc0MemnGlbac7Spx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Execute"]
     #[inline(always)]
-    pub const fn set_spx(&mut self, val: super::vals::Mbc0MemnGlbac7Spx) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_spx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "SecurePriv Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn spw(&self) -> super::vals::Mbc0MemnGlbac7Spw {
+    pub const fn spw(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Mbc0MemnGlbac7Spw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Write"]
     #[inline(always)]
-    pub const fn set_spw(&mut self, val: super::vals::Mbc0MemnGlbac7Spw) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_spw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "SecurePriv Read"]
     #[must_use]
     #[inline(always)]
-    pub const fn spr(&self) -> super::vals::Mbc0MemnGlbac7Spr {
+    pub const fn spr(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Mbc0MemnGlbac7Spr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SecurePriv Read"]
     #[inline(always)]
-    pub const fn set_spr(&mut self, val: super::vals::Mbc0MemnGlbac7Spr) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_spr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "LOCK"]
     #[must_use]
     #[inline(always)]
-    pub const fn lk(&self) -> super::vals::Mbc0MemnGlbac7Lk {
+    pub const fn lk(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Mbc0MemnGlbac7Lk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LOCK"]
     #[inline(always)]
-    pub const fn set_lk(&mut self, val: super::vals::Mbc0MemnGlbac7Lk) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_lk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Mbc0MemnGlbac7 {
@@ -6283,7 +6283,7 @@ impl defmt::Format for Mbc0MemnGlbac7 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mbc0MemnGlbac7 {{ nux: {:?}, nuw: {:?}, nur: {:?}, npx: {:?}, npw: {:?}, npr: {:?}, sux: {:?}, suw: {:?}, sur: {:?}, spx: {:?}, spw: {:?}, spr: {:?}, lk: {:?} }}",
+            "Mbc0MemnGlbac7 {{ nux: {=bool:?}, nuw: {=bool:?}, nur: {=bool:?}, npx: {=bool:?}, npw: {=bool:?}, npr: {=bool:?}, sux: {=bool:?}, suw: {=bool:?}, sur: {=bool:?}, spx: {=bool:?}, spw: {=bool:?}, spr: {=bool:?}, lk: {=bool:?} }}",
             self.nux(),
             self.nuw(),
             self.nur(),

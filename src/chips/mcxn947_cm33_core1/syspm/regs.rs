@@ -6,14 +6,14 @@ impl Pmcr {
     #[doc = "Module Is Enabled"]
     #[must_use]
     #[inline(always)]
-    pub const fn menb(&self) -> super::vals::Menb {
+    pub const fn menb(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Menb::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Module Is Enabled"]
     #[inline(always)]
-    pub const fn set_menb(&mut self, val: super::vals::Menb) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_menb(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Start and Stop Control"]
     #[must_use]
@@ -138,7 +138,7 @@ impl defmt::Format for Pmcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Pmcr {{ menb: {:?}, ssc: {:?}, cmode: {:?}, rectr1: {:?}, rectr2: {:?}, rectr3: {:?}, selevt1: {=u8:?}, selevt2: {=u8:?}, selevt3: {=u8:?} }}",
+            "Pmcr {{ menb: {=bool:?}, ssc: {:?}, cmode: {:?}, rectr1: {:?}, rectr2: {:?}, rectr3: {:?}, selevt1: {=u8:?}, selevt2: {=u8:?}, selevt3: {=u8:?} }}",
             self.menb(),
             self.ssc(),
             self.cmode(),

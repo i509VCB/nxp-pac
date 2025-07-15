@@ -6,14 +6,14 @@ impl OpampCtr {
     #[doc = "OPAMP Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn en(&self) -> super::vals::En {
+    pub const fn en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "OPAMP Enable"]
     #[inline(always)]
-    pub const fn set_en(&mut self, val: super::vals::En) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Mode Selection"]
     #[must_use]
@@ -54,14 +54,14 @@ impl OpampCtr {
     #[doc = "Trigger Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn trigmd(&self) -> super::vals::Trigmd {
+    pub const fn trigmd(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Trigmd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger Mode"]
     #[inline(always)]
-    pub const fn set_trigmd(&mut self, val: super::vals::Trigmd) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_trigmd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Positive Input Channel Selection"]
     #[must_use]
@@ -90,14 +90,14 @@ impl OpampCtr {
     #[doc = "Reference Buffer"]
     #[must_use]
     #[inline(always)]
-    pub const fn bufen(&self) -> super::vals::Bufen {
+    pub const fn bufen(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Bufen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reference Buffer"]
     #[inline(always)]
-    pub const fn set_bufen(&mut self, val: super::vals::Bufen) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_bufen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Positive Reference Voltage Selection"]
     #[must_use]
@@ -114,38 +114,38 @@ impl OpampCtr {
     #[doc = "Measure Switch 1"]
     #[must_use]
     #[inline(always)]
-    pub const fn adcsw1(&self) -> super::vals::Adcsw1 {
+    pub const fn adcsw1(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::Adcsw1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Measure Switch 1"]
     #[inline(always)]
-    pub const fn set_adcsw1(&mut self, val: super::vals::Adcsw1) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_adcsw1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "Measure Switch 2"]
     #[must_use]
     #[inline(always)]
-    pub const fn adcsw2(&self) -> super::vals::Adcsw2 {
+    pub const fn adcsw2(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Adcsw2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Measure Switch 2"]
     #[inline(always)]
-    pub const fn set_adcsw2(&mut self, val: super::vals::Adcsw2) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_adcsw2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "Output Switch"]
     #[must_use]
     #[inline(always)]
-    pub const fn outsw(&self) -> super::vals::Outsw {
+    pub const fn outsw(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Outsw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Output Switch"]
     #[inline(always)]
-    pub const fn set_outsw(&mut self, val: super::vals::Outsw) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_outsw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "Positive PGA Selection"]
     #[must_use]
@@ -203,7 +203,7 @@ impl defmt::Format for OpampCtr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "OpampCtr {{ en: {:?}, mode: {:?}, biasc: {:?}, intref: {:?}, trigmd: {:?}, inpsel: {:?}, inpf: {:?}, bufen: {:?}, pref: {:?}, adcsw1: {:?}, adcsw2: {:?}, outsw: {:?}, pgain: {:?}, ngain: {:?} }}",
+            "OpampCtr {{ en: {=bool:?}, mode: {:?}, biasc: {:?}, intref: {:?}, trigmd: {=bool:?}, inpsel: {:?}, inpf: {:?}, bufen: {=bool:?}, pref: {:?}, adcsw1: {=bool:?}, adcsw2: {=bool:?}, outsw: {=bool:?}, pgain: {:?}, ngain: {:?} }}",
             self.en(),
             self.mode(),
             self.biasc(),

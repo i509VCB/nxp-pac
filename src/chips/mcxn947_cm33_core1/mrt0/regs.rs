@@ -6,14 +6,14 @@ impl Ctrl {
     #[doc = "Interrupt request"]
     #[must_use]
     #[inline(always)]
-    pub const fn inten(&self) -> super::vals::Inten {
+    pub const fn inten(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Inten::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt request"]
     #[inline(always)]
-    pub const fn set_inten(&mut self, val: super::vals::Inten) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_inten(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "MRT Operating mode"]
     #[must_use]
@@ -47,7 +47,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ inten: {:?}, mode: {:?} }}",
+            "Ctrl {{ inten: {=bool:?}, mode: {:?} }}",
             self.inten(),
             self.mode()
         )
@@ -110,14 +110,14 @@ impl Intval {
     #[doc = "Force Load Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn load(&self) -> super::vals::Load {
+    pub const fn load(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Load::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Force Load Enable"]
     #[inline(always)]
-    pub const fn set_load(&mut self, val: super::vals::Load) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_load(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Intval {
@@ -139,7 +139,7 @@ impl defmt::Format for Intval {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Intval {{ ivalue: {=u32:?}, load: {:?} }}",
+            "Intval {{ ivalue: {=u32:?}, load: {=bool:?} }}",
             self.ivalue(),
             self.load()
         )
@@ -153,14 +153,14 @@ impl IrqFlag {
     #[doc = "Interrupt Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn gflag0(&self) -> super::vals::Gflag0 {
+    pub const fn gflag0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Gflag0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt Flag"]
     #[inline(always)]
-    pub const fn set_gflag0(&mut self, val: super::vals::Gflag0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_gflag0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Interrupt Flag"]
     #[must_use]
@@ -220,7 +220,7 @@ impl defmt::Format for IrqFlag {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "IrqFlag {{ gflag0: {:?}, gflag1: {=bool:?}, gflag2: {=bool:?}, gflag3: {=bool:?} }}",
+            "IrqFlag {{ gflag0: {=bool:?}, gflag1: {=bool:?}, gflag2: {=bool:?}, gflag3: {=bool:?} }}",
             self.gflag0(),
             self.gflag1(),
             self.gflag2(),
@@ -305,14 +305,14 @@ impl Stat {
     #[doc = "Interrupt Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn intflag(&self) -> super::vals::Intflag {
+    pub const fn intflag(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Intflag::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt Flag"]
     #[inline(always)]
-    pub const fn set_intflag(&mut self, val: super::vals::Intflag) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_intflag(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Timer n State"]
     #[must_use]
@@ -329,14 +329,14 @@ impl Stat {
     #[doc = "Channel-In-Use flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn inuse(&self) -> super::vals::Inuse {
+    pub const fn inuse(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Inuse::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel-In-Use flag"]
     #[inline(always)]
-    pub const fn set_inuse(&mut self, val: super::vals::Inuse) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_inuse(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
 }
 impl Default for Stat {
@@ -359,7 +359,7 @@ impl defmt::Format for Stat {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Stat {{ intflag: {:?}, run: {:?}, inuse: {:?} }}",
+            "Stat {{ intflag: {=bool:?}, run: {:?}, inuse: {=bool:?} }}",
             self.intflag(),
             self.run(),
             self.inuse()

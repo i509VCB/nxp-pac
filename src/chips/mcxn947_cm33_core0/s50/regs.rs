@@ -172,14 +172,14 @@ impl Ctrl {
     #[doc = "ELS enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn els_en(&self) -> super::vals::ElsEn {
+    pub const fn els_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::ElsEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ELS enable"]
     #[inline(always)]
-    pub const fn set_els_en(&mut self, val: super::vals::ElsEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_els_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Write to 1 to start an ELS operation. Writing 0 has no effect."]
     #[must_use]
@@ -252,7 +252,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ els_en: {:?}, els_start: {=bool:?}, els_reset: {=bool:?}, els_cmd: {=u8:?}, byte_order: {:?} }}",
+            "Ctrl {{ els_en: {=bool:?}, els_start: {=bool:?}, els_reset: {=bool:?}, els_cmd: {=u8:?}, byte_order: {:?} }}",
             self.els_en(),
             self.els_start(),
             self.els_reset(),
@@ -8401,74 +8401,74 @@ impl ErrStatus {
     #[doc = "Indicates public or private bus access error."]
     #[must_use]
     #[inline(always)]
-    pub const fn bus_err(&self) -> super::vals::BusErr {
+    pub const fn bus_err(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::BusErr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates public or private bus access error."]
     #[inline(always)]
-    pub const fn set_bus_err(&mut self, val: super::vals::BusErr) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_bus_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Indicates operational error, that is, ELS has been incorrectly operated."]
     #[must_use]
     #[inline(always)]
-    pub const fn opn_err(&self) -> super::vals::OpnErr {
+    pub const fn opn_err(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::OpnErr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates operational error, that is, ELS has been incorrectly operated."]
     #[inline(always)]
-    pub const fn set_opn_err(&mut self, val: super::vals::OpnErr) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_opn_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Indicates algorithm error; an internal algorithm has produced an unexpected result."]
     #[must_use]
     #[inline(always)]
-    pub const fn alg_err(&self) -> super::vals::AlgErr {
+    pub const fn alg_err(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::AlgErr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates algorithm error; an internal algorithm has produced an unexpected result."]
     #[inline(always)]
-    pub const fn set_alg_err(&mut self, val: super::vals::AlgErr) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_alg_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Indicates data integrity error, that is, internal data integrity check has failed."]
     #[must_use]
     #[inline(always)]
-    pub const fn itg_err(&self) -> super::vals::ItgErr {
+    pub const fn itg_err(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::ItgErr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates data integrity error, that is, internal data integrity check has failed."]
     #[inline(always)]
-    pub const fn set_itg_err(&mut self, val: super::vals::ItgErr) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_itg_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Indicates hardware fault error; an attempt to change the value of an internal register."]
     #[must_use]
     #[inline(always)]
-    pub const fn flt_err(&self) -> super::vals::FltErr {
+    pub const fn flt_err(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::FltErr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates hardware fault error; an attempt to change the value of an internal register."]
     #[inline(always)]
-    pub const fn set_flt_err(&mut self, val: super::vals::FltErr) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_flt_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Indicates user read of PRNG_DATOUT when STATUS\\[PRNG_RDY\\] is 0."]
     #[must_use]
     #[inline(always)]
-    pub const fn prng_err(&self) -> super::vals::PrngErr {
+    pub const fn prng_err(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::PrngErr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates user read of PRNG_DATOUT when STATUS\\[PRNG_RDY\\] is 0."]
     #[inline(always)]
-    pub const fn set_prng_err(&mut self, val: super::vals::PrngErr) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_prng_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Indicates the triggered error level: 0, 1 ,2."]
     #[must_use]
@@ -8485,14 +8485,14 @@ impl ErrStatus {
     #[doc = "TRNG unable to gather entropy with the current configuration"]
     #[must_use]
     #[inline(always)]
-    pub const fn dtrng_err(&self) -> super::vals::DtrngErr {
+    pub const fn dtrng_err(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::DtrngErr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRNG unable to gather entropy with the current configuration"]
     #[inline(always)]
-    pub const fn set_dtrng_err(&mut self, val: super::vals::DtrngErr) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_dtrng_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
 }
 impl Default for ErrStatus {
@@ -8520,7 +8520,7 @@ impl defmt::Format for ErrStatus {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "ErrStatus {{ bus_err: {:?}, opn_err: {:?}, alg_err: {:?}, itg_err: {:?}, flt_err: {:?}, prng_err: {:?}, err_lvl: {=u8:?}, dtrng_err: {:?} }}",
+            "ErrStatus {{ bus_err: {=bool:?}, opn_err: {=bool:?}, alg_err: {=bool:?}, itg_err: {=bool:?}, flt_err: {=bool:?}, prng_err: {=bool:?}, err_lvl: {=u8:?}, dtrng_err: {=bool:?} }}",
             self.bus_err(),
             self.opn_err(),
             self.alg_err(),
@@ -8577,14 +8577,14 @@ impl IntEnable {
     #[doc = "Enables or disables the operation of the ELS interrupt output port."]
     #[must_use]
     #[inline(always)]
-    pub const fn int_en(&self) -> super::vals::IntEn {
+    pub const fn int_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::IntEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables or disables the operation of the ELS interrupt output port."]
     #[inline(always)]
-    pub const fn set_int_en(&mut self, val: super::vals::IntEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_int_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for IntEnable {
@@ -8603,7 +8603,7 @@ impl core::fmt::Debug for IntEnable {
 #[cfg(feature = "defmt")]
 impl defmt::Format for IntEnable {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "IntEnable {{ int_en: {:?} }}", self.int_en())
+        defmt::write!(f, "IntEnable {{ int_en: {=bool:?} }}", self.int_en())
     }
 }
 #[doc = "Interrupt Status Clear"]
@@ -9035,14 +9035,14 @@ impl Status {
     #[doc = "When set, it indicates TRNG is gathering entropy"]
     #[must_use]
     #[inline(always)]
-    pub const fn dtrng_busy(&self) -> super::vals::DtrngBusy {
+    pub const fn dtrng_busy(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::DtrngBusy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "When set, it indicates TRNG is gathering entropy"]
     #[inline(always)]
-    pub const fn set_dtrng_busy(&mut self, val: super::vals::DtrngBusy) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_dtrng_busy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "When set, indicates that ELS is locked by a master"]
     #[must_use]
@@ -9083,7 +9083,7 @@ impl defmt::Format for Status {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Status {{ els_busy: {:?}, els_irq: {:?}, els_err: {:?}, prng_rdy: {:?}, ecdsa_vfy_status: {:?}, pprot: {:?}, drbg_ent_lvl: {:?}, dtrng_busy: {:?}, els_locked: {:?} }}",
+            "Status {{ els_busy: {:?}, els_irq: {:?}, els_err: {:?}, prng_rdy: {:?}, ecdsa_vfy_status: {:?}, pprot: {:?}, drbg_ent_lvl: {:?}, dtrng_busy: {=bool:?}, els_locked: {:?} }}",
             self.els_busy(),
             self.els_irq(),
             self.els_err(),

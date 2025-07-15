@@ -43,14 +43,14 @@ impl Froctla {
     #[doc = "FRO16K Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn fro_en(&self) -> super::vals::FroEn {
+    pub const fn fro_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::FroEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FRO16K Enable"]
     #[inline(always)]
-    pub const fn set_fro_en(&mut self, val: super::vals::FroEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_fro_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Froctla {
@@ -69,7 +69,7 @@ impl core::fmt::Debug for Froctla {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Froctla {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Froctla {{ fro_en: {:?} }}", self.fro_en())
+        defmt::write!(f, "Froctla {{ fro_en: {=bool:?} }}", self.fro_en())
     }
 }
 #[doc = "FRO16K Control B"]
@@ -117,14 +117,14 @@ impl Frolcka {
     #[doc = "Lock"]
     #[must_use]
     #[inline(always)]
-    pub const fn lock(&self) -> super::vals::FrolckaLock {
+    pub const fn lock(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::FrolckaLock::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Lock"]
     #[inline(always)]
-    pub const fn set_lock(&mut self, val: super::vals::FrolckaLock) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_lock(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Frolcka {
@@ -143,7 +143,7 @@ impl core::fmt::Debug for Frolcka {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Frolcka {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Frolcka {{ lock: {:?} }}", self.lock())
+        defmt::write!(f, "Frolcka {{ lock: {=bool:?} }}", self.lock())
     }
 }
 #[doc = "FRO16K Lock B"]
@@ -191,14 +191,14 @@ impl Irqena {
     #[doc = "POR Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn por_det(&self) -> super::vals::IrqenaPorDet {
+    pub const fn por_det(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::IrqenaPorDet::from_bits(val as u8)
+        val != 0
     }
     #[doc = "POR Detect"]
     #[inline(always)]
-    pub const fn set_por_det(&mut self, val: super::vals::IrqenaPorDet) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_por_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Wakeup Pin Flag"]
     #[must_use]
@@ -215,62 +215,62 @@ impl Irqena {
     #[doc = "Bandgap Timer 0"]
     #[must_use]
     #[inline(always)]
-    pub const fn timer0_flag(&self) -> super::vals::IrqenaTimer0Flag {
+    pub const fn timer0_flag(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::IrqenaTimer0Flag::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bandgap Timer 0"]
     #[inline(always)]
-    pub const fn set_timer0_flag(&mut self, val: super::vals::IrqenaTimer0Flag) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_timer0_flag(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Bandgap Timer 2"]
     #[must_use]
     #[inline(always)]
-    pub const fn timer1_flag(&self) -> super::vals::IrqenaTimer1Flag {
+    pub const fn timer1_flag(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::IrqenaTimer1Flag::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bandgap Timer 2"]
     #[inline(always)]
-    pub const fn set_timer1_flag(&mut self, val: super::vals::IrqenaTimer1Flag) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_timer1_flag(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "LDO Ready"]
     #[must_use]
     #[inline(always)]
-    pub const fn ldo_rdy(&self) -> super::vals::IrqenaLdoRdy {
+    pub const fn ldo_rdy(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::IrqenaLdoRdy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LDO Ready"]
     #[inline(always)]
-    pub const fn set_ldo_rdy(&mut self, val: super::vals::IrqenaLdoRdy) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_ldo_rdy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "OSC32k Ready"]
     #[must_use]
     #[inline(always)]
-    pub const fn osc_rdy(&self) -> super::vals::IrqenaOscRdy {
+    pub const fn osc_rdy(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::IrqenaOscRdy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "OSC32k Ready"]
     #[inline(always)]
-    pub const fn set_osc_rdy(&mut self, val: super::vals::IrqenaOscRdy) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_osc_rdy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Clock Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn clock_det(&self) -> super::vals::IrqenaClockDet {
+    pub const fn clock_det(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::IrqenaClockDet::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Clock Detect"]
     #[inline(always)]
-    pub const fn set_clock_det(&mut self, val: super::vals::IrqenaClockDet) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_clock_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Configuration Detect"]
     #[must_use]
@@ -287,98 +287,98 @@ impl Irqena {
     #[doc = "Voltage Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn volt_det(&self) -> super::vals::IrqenaVoltDet {
+    pub const fn volt_det(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::IrqenaVoltDet::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Voltage Detect"]
     #[inline(always)]
-    pub const fn set_volt_det(&mut self, val: super::vals::IrqenaVoltDet) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_volt_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Temperature Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn temp_det(&self) -> super::vals::IrqenaTempDet {
+    pub const fn temp_det(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::IrqenaTempDet::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Temperature Detect"]
     #[inline(always)]
-    pub const fn set_temp_det(&mut self, val: super::vals::IrqenaTempDet) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_temp_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Light Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn light_det(&self) -> super::vals::IrqenaLightDet {
+    pub const fn light_det(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::IrqenaLightDet::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Light Detect"]
     #[inline(always)]
-    pub const fn set_light_det(&mut self, val: super::vals::IrqenaLightDet) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_light_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Input 0 Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn sec0_det(&self) -> super::vals::IrqenaSec0Det {
+    pub const fn sec0_det(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::IrqenaSec0Det::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Input 0 Detect"]
     #[inline(always)]
-    pub const fn set_sec0_det(&mut self, val: super::vals::IrqenaSec0Det) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_sec0_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Interrupt 0 Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn irq0_det(&self) -> super::vals::IrqenaIrq0Det {
+    pub const fn irq0_det(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::IrqenaIrq0Det::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt 0 Detect"]
     #[inline(always)]
-    pub const fn set_irq0_det(&mut self, val: super::vals::IrqenaIrq0Det) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_irq0_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Interrupt 1 Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn irq1_det(&self) -> super::vals::IrqenaIrq1Det {
+    pub const fn irq1_det(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::IrqenaIrq1Det::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt 1 Detect"]
     #[inline(always)]
-    pub const fn set_irq1_det(&mut self, val: super::vals::IrqenaIrq1Det) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_irq1_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Interrupt 2 Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn irq2_det(&self) -> super::vals::IrqenaIrq2Det {
+    pub const fn irq2_det(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::IrqenaIrq2Det::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt 2 Detect"]
     #[inline(always)]
-    pub const fn set_irq2_det(&mut self, val: super::vals::IrqenaIrq2Det) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_irq2_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Interrupt 3 Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn irq3_det(&self) -> super::vals::IrqenaIrq3Det {
+    pub const fn irq3_det(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::IrqenaIrq3Det::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt 3 Detect"]
     #[inline(always)]
-    pub const fn set_irq3_det(&mut self, val: super::vals::IrqenaIrq3Det) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_irq3_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
 }
 impl Default for Irqena {
@@ -414,7 +414,7 @@ impl defmt::Format for Irqena {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Irqena {{ por_det: {:?}, wakeup_flag: {:?}, timer0_flag: {:?}, timer1_flag: {:?}, ldo_rdy: {:?}, osc_rdy: {:?}, clock_det: {:?}, config_det: {:?}, volt_det: {:?}, temp_det: {:?}, light_det: {:?}, sec0_det: {:?}, irq0_det: {:?}, irq1_det: {:?}, irq2_det: {:?}, irq3_det: {:?} }}",
+            "Irqena {{ por_det: {=bool:?}, wakeup_flag: {:?}, timer0_flag: {=bool:?}, timer1_flag: {=bool:?}, ldo_rdy: {=bool:?}, osc_rdy: {=bool:?}, clock_det: {=bool:?}, config_det: {:?}, volt_det: {=bool:?}, temp_det: {=bool:?}, light_det: {=bool:?}, sec0_det: {=bool:?}, irq0_det: {=bool:?}, irq1_det: {=bool:?}, irq2_det: {=bool:?}, irq3_det: {=bool:?} }}",
             self.por_det(),
             self.wakeup_flag(),
             self.timer0_flag(),
@@ -479,38 +479,38 @@ impl Ldoctla {
     #[doc = "Bandgap Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn bg_en(&self) -> super::vals::BgEn {
+    pub const fn bg_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::BgEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bandgap Enable"]
     #[inline(always)]
-    pub const fn set_bg_en(&mut self, val: super::vals::BgEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_bg_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "LDO Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ldo_en(&self) -> super::vals::LdoEn {
+    pub const fn ldo_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::LdoEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LDO Enable"]
     #[inline(always)]
-    pub const fn set_ldo_en(&mut self, val: super::vals::LdoEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_ldo_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Refresh Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn refresh_en(&self) -> super::vals::RefreshEn {
+    pub const fn refresh_en(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::RefreshEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Refresh Enable"]
     #[inline(always)]
-    pub const fn set_refresh_en(&mut self, val: super::vals::RefreshEn) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_refresh_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
 }
 impl Default for Ldoctla {
@@ -533,7 +533,7 @@ impl defmt::Format for Ldoctla {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ldoctla {{ bg_en: {:?}, ldo_en: {:?}, refresh_en: {:?} }}",
+            "Ldoctla {{ bg_en: {=bool:?}, ldo_en: {=bool:?}, refresh_en: {=bool:?} }}",
             self.bg_en(),
             self.ldo_en(),
             self.refresh_en()
@@ -585,14 +585,14 @@ impl Ldolcka {
     #[doc = "Lock"]
     #[must_use]
     #[inline(always)]
-    pub const fn lock(&self) -> super::vals::LdolckaLock {
+    pub const fn lock(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::LdolckaLock::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Lock"]
     #[inline(always)]
-    pub const fn set_lock(&mut self, val: super::vals::LdolckaLock) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_lock(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Ldolcka {
@@ -611,7 +611,7 @@ impl core::fmt::Debug for Ldolcka {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Ldolcka {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Ldolcka {{ lock: {:?} }}", self.lock())
+        defmt::write!(f, "Ldolcka {{ lock: {=bool:?} }}", self.lock())
     }
 }
 #[doc = "LDO_RAM Lock B"]
@@ -659,74 +659,74 @@ impl Ldoramc {
     #[doc = "Isolate SRAM"]
     #[must_use]
     #[inline(always)]
-    pub const fn iso(&self) -> super::vals::Iso {
+    pub const fn iso(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Iso::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Isolate SRAM"]
     #[inline(always)]
-    pub const fn set_iso(&mut self, val: super::vals::Iso) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_iso(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Switch SRAM"]
     #[must_use]
     #[inline(always)]
-    pub const fn swi(&self) -> super::vals::Swi {
+    pub const fn swi(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Swi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Switch SRAM"]
     #[inline(always)]
-    pub const fn set_swi(&mut self, val: super::vals::Swi) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_swi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Retention"]
     #[must_use]
     #[inline(always)]
-    pub const fn ret0(&self) -> super::vals::Ret0 {
+    pub const fn ret0(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Ret0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Retention"]
     #[inline(always)]
-    pub const fn set_ret0(&mut self, val: super::vals::Ret0) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_ret0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Retention"]
     #[must_use]
     #[inline(always)]
-    pub const fn ret1(&self) -> super::vals::Ret1 {
+    pub const fn ret1(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Ret1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Retention"]
     #[inline(always)]
-    pub const fn set_ret1(&mut self, val: super::vals::Ret1) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_ret1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Retention"]
     #[must_use]
     #[inline(always)]
-    pub const fn ret2(&self) -> super::vals::Ret2 {
+    pub const fn ret2(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Ret2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Retention"]
     #[inline(always)]
-    pub const fn set_ret2(&mut self, val: super::vals::Ret2) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_ret2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Retention"]
     #[must_use]
     #[inline(always)]
-    pub const fn ret3(&self) -> super::vals::Ret3 {
+    pub const fn ret3(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Ret3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Retention"]
     #[inline(always)]
-    pub const fn set_ret3(&mut self, val: super::vals::Ret3) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_ret3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
 }
 impl Default for Ldoramc {
@@ -752,7 +752,7 @@ impl defmt::Format for Ldoramc {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ldoramc {{ iso: {:?}, swi: {:?}, ret0: {:?}, ret1: {:?}, ret2: {:?}, ret3: {:?} }}",
+            "Ldoramc {{ iso: {=bool:?}, swi: {=bool:?}, ret0: {=bool:?}, ret1: {=bool:?}, ret2: {=bool:?}, ret3: {=bool:?} }}",
             self.iso(),
             self.swi(),
             self.ret0(),
@@ -782,14 +782,14 @@ impl Ldotimer0 {
     #[doc = "Bandgap Timeout Period Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn timen(&self) -> super::vals::Ldotimer0Timen {
+    pub const fn timen(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Ldotimer0Timen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bandgap Timeout Period Enable"]
     #[inline(always)]
-    pub const fn set_timen(&mut self, val: super::vals::Ldotimer0Timen) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_timen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Ldotimer0 {
@@ -811,7 +811,7 @@ impl defmt::Format for Ldotimer0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ldotimer0 {{ timcfg: {:?}, timen: {:?} }}",
+            "Ldotimer0 {{ timcfg: {:?}, timen: {=bool:?} }}",
             self.timcfg(),
             self.timen()
         )
@@ -837,14 +837,14 @@ impl Ldotimer1 {
     #[doc = "Bandgap Timeout Period Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn timen(&self) -> super::vals::Ldotimer1Timen {
+    pub const fn timen(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Ldotimer1Timen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bandgap Timeout Period Enable"]
     #[inline(always)]
-    pub const fn set_timen(&mut self, val: super::vals::Ldotimer1Timen) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_timen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Ldotimer1 {
@@ -866,7 +866,7 @@ impl defmt::Format for Ldotimer1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ldotimer1 {{ timcfg: {=u32:?}, timen: {:?} }}",
+            "Ldotimer1 {{ timcfg: {=u32:?}, timen: {=bool:?} }}",
             self.timcfg(),
             self.timen()
         )
@@ -880,14 +880,14 @@ impl Locka {
     #[doc = "Lock"]
     #[must_use]
     #[inline(always)]
-    pub const fn lock(&self) -> super::vals::LockaLock {
+    pub const fn lock(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::LockaLock::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Lock"]
     #[inline(always)]
-    pub const fn set_lock(&mut self, val: super::vals::LockaLock) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_lock(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Locka {
@@ -904,7 +904,7 @@ impl core::fmt::Debug for Locka {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Locka {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Locka {{ lock: {:?} }}", self.lock())
+        defmt::write!(f, "Locka {{ lock: {=bool:?} }}", self.lock())
     }
 }
 #[doc = "Lock B"]
@@ -1056,14 +1056,14 @@ impl Monctla {
     #[doc = "CLKMON Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn mon_en(&self) -> super::vals::MonEn {
+    pub const fn mon_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::MonEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CLKMON Enable"]
     #[inline(always)]
-    pub const fn set_mon_en(&mut self, val: super::vals::MonEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_mon_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Monctla {
@@ -1082,7 +1082,7 @@ impl core::fmt::Debug for Monctla {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Monctla {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Monctla {{ mon_en: {:?} }}", self.mon_en())
+        defmt::write!(f, "Monctla {{ mon_en: {=bool:?} }}", self.mon_en())
     }
 }
 #[doc = "CLKMON Control B"]
@@ -1130,14 +1130,14 @@ impl Monlcka {
     #[doc = "Lock"]
     #[must_use]
     #[inline(always)]
-    pub const fn lock(&self) -> super::vals::MonlckaLock {
+    pub const fn lock(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::MonlckaLock::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Lock"]
     #[inline(always)]
-    pub const fn set_lock(&mut self, val: super::vals::MonlckaLock) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_lock(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Monlcka {
@@ -1156,7 +1156,7 @@ impl core::fmt::Debug for Monlcka {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Monlcka {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Monlcka {{ lock: {:?} }}", self.lock())
+        defmt::write!(f, "Monlcka {{ lock: {=bool:?} }}", self.lock())
     }
 }
 #[doc = "CLKMON Lock B"]
@@ -1375,26 +1375,26 @@ impl Oscctla {
     #[doc = "Crystal Oscillator Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn osc_en(&self) -> super::vals::OscEn {
+    pub const fn osc_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::OscEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Crystal Oscillator Enable"]
     #[inline(always)]
-    pub const fn set_osc_en(&mut self, val: super::vals::OscEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_osc_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Crystal Oscillator Bypass Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn osc_byp_en(&self) -> super::vals::OscBypEn {
+    pub const fn osc_byp_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::OscBypEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Crystal Oscillator Bypass Enable"]
     #[inline(always)]
-    pub const fn set_osc_byp_en(&mut self, val: super::vals::OscBypEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_osc_byp_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Amplifier gain adjustment bits to allow the use of a wide range of external crystal ESR values See the device datasheet for the ranges supported by this device"]
     #[must_use]
@@ -1411,14 +1411,14 @@ impl Oscctla {
     #[doc = "Crystal Load Capacitance Selection Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cap_sel_en(&self) -> super::vals::CapSelEn {
+    pub const fn cap_sel_en(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::CapSelEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Crystal Load Capacitance Selection Enable"]
     #[inline(always)]
-    pub const fn set_cap_sel_en(&mut self, val: super::vals::CapSelEn) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_cap_sel_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Crystal Load Capacitance Selection"]
     #[must_use]
@@ -1494,7 +1494,7 @@ impl defmt::Format for Oscctla {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Oscctla {{ osc_en: {:?}, osc_byp_en: {:?}, coarse_amp_gain: {:?}, cap_sel_en: {:?}, extal_cap_sel: {:?}, xtal_cap_sel: {:?}, mode_en: {:?}, supply_det: {:?} }}",
+            "Oscctla {{ osc_en: {=bool:?}, osc_byp_en: {=bool:?}, coarse_amp_gain: {:?}, cap_sel_en: {=bool:?}, extal_cap_sel: {:?}, xtal_cap_sel: {:?}, mode_en: {:?}, supply_det: {:?} }}",
             self.osc_en(),
             self.osc_byp_en(),
             self.coarse_amp_gain(),
@@ -1551,14 +1551,14 @@ impl Osclcka {
     #[doc = "Lock"]
     #[must_use]
     #[inline(always)]
-    pub const fn lock(&self) -> super::vals::OsclckaLock {
+    pub const fn lock(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::OsclckaLock::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Lock"]
     #[inline(always)]
-    pub const fn set_lock(&mut self, val: super::vals::OsclckaLock) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_lock(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Osclcka {
@@ -1577,7 +1577,7 @@ impl core::fmt::Debug for Osclcka {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Osclcka {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Osclcka {{ lock: {:?} }}", self.lock())
+        defmt::write!(f, "Osclcka {{ lock: {=bool:?} }}", self.lock())
     }
 }
 #[doc = "Oscillator Lock B"]
@@ -1913,26 +1913,26 @@ impl Swictla {
     #[doc = "Switch Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn swi_en(&self) -> super::vals::SwiEn {
+    pub const fn swi_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::SwiEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Switch Enable"]
     #[inline(always)]
-    pub const fn set_swi_en(&mut self, val: super::vals::SwiEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_swi_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Low Power Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn lp_en(&self) -> super::vals::LpEn {
+    pub const fn lp_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::LpEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Low Power Enable"]
     #[inline(always)]
-    pub const fn set_lp_en(&mut self, val: super::vals::LpEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_lp_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
 }
 impl Default for Swictla {
@@ -1954,7 +1954,7 @@ impl defmt::Format for Swictla {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Swictla {{ swi_en: {:?}, lp_en: {:?} }}",
+            "Swictla {{ swi_en: {=bool:?}, lp_en: {=bool:?} }}",
             self.swi_en(),
             self.lp_en()
         )
@@ -2005,14 +2005,14 @@ impl Swilcka {
     #[doc = "Lock"]
     #[must_use]
     #[inline(always)]
-    pub const fn lock(&self) -> super::vals::SwilckaLock {
+    pub const fn lock(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::SwilckaLock::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Lock"]
     #[inline(always)]
-    pub const fn set_lock(&mut self, val: super::vals::SwilckaLock) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_lock(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Swilcka {
@@ -2031,7 +2031,7 @@ impl core::fmt::Debug for Swilcka {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Swilcka {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Swilcka {{ lock: {:?} }}", self.lock())
+        defmt::write!(f, "Swilcka {{ lock: {=bool:?} }}", self.lock())
     }
 }
 #[doc = "Switch Lock B"]
@@ -2079,38 +2079,38 @@ impl Tamctla {
     #[doc = "Voltage Detect Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn volt_en(&self) -> super::vals::VoltEn {
+    pub const fn volt_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::VoltEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Voltage Detect Enable"]
     #[inline(always)]
-    pub const fn set_volt_en(&mut self, val: super::vals::VoltEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_volt_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Temperature Detect Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn temp_en(&self) -> super::vals::TempEn {
+    pub const fn temp_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::TempEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Temperature Detect Enable"]
     #[inline(always)]
-    pub const fn set_temp_en(&mut self, val: super::vals::TempEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_temp_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Light Detect Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn light_en(&self) -> super::vals::LightEn {
+    pub const fn light_en(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::LightEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Light Detect Enable"]
     #[inline(always)]
-    pub const fn set_light_en(&mut self, val: super::vals::LightEn) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_light_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
 }
 impl Default for Tamctla {
@@ -2133,7 +2133,7 @@ impl defmt::Format for Tamctla {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tamctla {{ volt_en: {:?}, temp_en: {:?}, light_en: {:?} }}",
+            "Tamctla {{ volt_en: {=bool:?}, temp_en: {=bool:?}, light_en: {=bool:?} }}",
             self.volt_en(),
             self.temp_en(),
             self.light_en()
@@ -2185,14 +2185,14 @@ impl Tamlcka {
     #[doc = "Lock"]
     #[must_use]
     #[inline(always)]
-    pub const fn lock(&self) -> super::vals::TamlckaLock {
+    pub const fn lock(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::TamlckaLock::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Lock"]
     #[inline(always)]
-    pub const fn set_lock(&mut self, val: super::vals::TamlckaLock) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_lock(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Tamlcka {
@@ -2211,7 +2211,7 @@ impl core::fmt::Debug for Tamlcka {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Tamlcka {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Tamlcka {{ lock: {:?} }}", self.lock())
+        defmt::write!(f, "Tamlcka {{ lock: {=bool:?} }}", self.lock())
     }
 }
 #[doc = "TAMPER Lock B"]
@@ -2259,26 +2259,26 @@ impl Tampera {
     #[doc = "POR Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn por_det(&self) -> super::vals::TamperaPorDet {
+    pub const fn por_det(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::TamperaPorDet::from_bits(val as u8)
+        val != 0
     }
     #[doc = "POR Detect"]
     #[inline(always)]
-    pub const fn set_por_det(&mut self, val: super::vals::TamperaPorDet) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_por_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Clock Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn clock_det(&self) -> super::vals::TamperaClockDet {
+    pub const fn clock_det(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::TamperaClockDet::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Clock Detect"]
     #[inline(always)]
-    pub const fn set_clock_det(&mut self, val: super::vals::TamperaClockDet) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_clock_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Configuration Detect"]
     #[must_use]
@@ -2295,50 +2295,50 @@ impl Tampera {
     #[doc = "Voltage Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn volt_det(&self) -> super::vals::TamperaVoltDet {
+    pub const fn volt_det(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::TamperaVoltDet::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Voltage Detect"]
     #[inline(always)]
-    pub const fn set_volt_det(&mut self, val: super::vals::TamperaVoltDet) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_volt_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Temperature Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn temp_det(&self) -> super::vals::TamperaTempDet {
+    pub const fn temp_det(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::TamperaTempDet::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Temperature Detect"]
     #[inline(always)]
-    pub const fn set_temp_det(&mut self, val: super::vals::TamperaTempDet) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_temp_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Light Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn light_det(&self) -> super::vals::TamperaLightDet {
+    pub const fn light_det(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::TamperaLightDet::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Light Detect"]
     #[inline(always)]
-    pub const fn set_light_det(&mut self, val: super::vals::TamperaLightDet) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_light_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Input 0 Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn sec0_det(&self) -> super::vals::TamperaSec0Det {
+    pub const fn sec0_det(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::TamperaSec0Det::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Input 0 Detect"]
     #[inline(always)]
-    pub const fn set_sec0_det(&mut self, val: super::vals::TamperaSec0Det) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_sec0_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
 }
 impl Default for Tampera {
@@ -2365,7 +2365,7 @@ impl defmt::Format for Tampera {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tampera {{ por_det: {:?}, clock_det: {:?}, config_det: {:?}, volt_det: {:?}, temp_det: {:?}, light_det: {:?}, sec0_det: {:?} }}",
+            "Tampera {{ por_det: {=bool:?}, clock_det: {=bool:?}, config_det: {:?}, volt_det: {=bool:?}, temp_det: {=bool:?}, light_det: {=bool:?}, sec0_det: {=bool:?} }}",
             self.por_det(),
             self.clock_det(),
             self.config_det(),
@@ -2525,14 +2525,14 @@ impl Wakena {
     #[doc = "POR Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn por_det(&self) -> super::vals::WakenaPorDet {
+    pub const fn por_det(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::WakenaPorDet::from_bits(val as u8)
+        val != 0
     }
     #[doc = "POR Detect"]
     #[inline(always)]
-    pub const fn set_por_det(&mut self, val: super::vals::WakenaPorDet) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_por_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Wake-up Pin Flag"]
     #[must_use]
@@ -2549,62 +2549,62 @@ impl Wakena {
     #[doc = "Bandgap Timer 0"]
     #[must_use]
     #[inline(always)]
-    pub const fn timer0_flag(&self) -> super::vals::WakenaTimer0Flag {
+    pub const fn timer0_flag(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::WakenaTimer0Flag::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bandgap Timer 0"]
     #[inline(always)]
-    pub const fn set_timer0_flag(&mut self, val: super::vals::WakenaTimer0Flag) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_timer0_flag(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Bandgap Timer 2"]
     #[must_use]
     #[inline(always)]
-    pub const fn timer1_flag(&self) -> super::vals::WakenaTimer1Flag {
+    pub const fn timer1_flag(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::WakenaTimer1Flag::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bandgap Timer 2"]
     #[inline(always)]
-    pub const fn set_timer1_flag(&mut self, val: super::vals::WakenaTimer1Flag) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_timer1_flag(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "LDO Ready"]
     #[must_use]
     #[inline(always)]
-    pub const fn ldo_rdy(&self) -> super::vals::WakenaLdoRdy {
+    pub const fn ldo_rdy(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::WakenaLdoRdy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LDO Ready"]
     #[inline(always)]
-    pub const fn set_ldo_rdy(&mut self, val: super::vals::WakenaLdoRdy) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_ldo_rdy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "OSC32K Ready"]
     #[must_use]
     #[inline(always)]
-    pub const fn osc_rdy(&self) -> super::vals::WakenaOscRdy {
+    pub const fn osc_rdy(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::WakenaOscRdy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "OSC32K Ready"]
     #[inline(always)]
-    pub const fn set_osc_rdy(&mut self, val: super::vals::WakenaOscRdy) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_osc_rdy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Clock Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn clock_det(&self) -> super::vals::WakenaClockDet {
+    pub const fn clock_det(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::WakenaClockDet::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Clock Detect"]
     #[inline(always)]
-    pub const fn set_clock_det(&mut self, val: super::vals::WakenaClockDet) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_clock_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Configuration Detect"]
     #[must_use]
@@ -2621,98 +2621,98 @@ impl Wakena {
     #[doc = "Voltage Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn volt_det(&self) -> super::vals::WakenaVoltDet {
+    pub const fn volt_det(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::WakenaVoltDet::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Voltage Detect"]
     #[inline(always)]
-    pub const fn set_volt_det(&mut self, val: super::vals::WakenaVoltDet) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_volt_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Temperature Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn temp_det(&self) -> super::vals::WakenaTempDet {
+    pub const fn temp_det(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::WakenaTempDet::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Temperature Detect"]
     #[inline(always)]
-    pub const fn set_temp_det(&mut self, val: super::vals::WakenaTempDet) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_temp_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Light Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn light_det(&self) -> super::vals::WakenaLightDet {
+    pub const fn light_det(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::WakenaLightDet::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Light Detect"]
     #[inline(always)]
-    pub const fn set_light_det(&mut self, val: super::vals::WakenaLightDet) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_light_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Input 0 Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn sec0_det(&self) -> super::vals::WakenaSec0Det {
+    pub const fn sec0_det(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::WakenaSec0Det::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Input 0 Detect"]
     #[inline(always)]
-    pub const fn set_sec0_det(&mut self, val: super::vals::WakenaSec0Det) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_sec0_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Interrupt 0 Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn irq0_det(&self) -> super::vals::WakenaIrq0Det {
+    pub const fn irq0_det(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::WakenaIrq0Det::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt 0 Detect"]
     #[inline(always)]
-    pub const fn set_irq0_det(&mut self, val: super::vals::WakenaIrq0Det) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_irq0_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Interrupt 1 Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn irq1_det(&self) -> super::vals::WakenaIrq1Det {
+    pub const fn irq1_det(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::WakenaIrq1Det::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt 1 Detect"]
     #[inline(always)]
-    pub const fn set_irq1_det(&mut self, val: super::vals::WakenaIrq1Det) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_irq1_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Interrupt 2 Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn irq2_det(&self) -> super::vals::WakenaIrq2Det {
+    pub const fn irq2_det(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::WakenaIrq2Det::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt 2 Detect"]
     #[inline(always)]
-    pub const fn set_irq2_det(&mut self, val: super::vals::WakenaIrq2Det) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_irq2_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Interrupt 3 Detect"]
     #[must_use]
     #[inline(always)]
-    pub const fn irq3_det(&self) -> super::vals::WakenaIrq3Det {
+    pub const fn irq3_det(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::WakenaIrq3Det::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt 3 Detect"]
     #[inline(always)]
-    pub const fn set_irq3_det(&mut self, val: super::vals::WakenaIrq3Det) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_irq3_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
 }
 impl Default for Wakena {
@@ -2748,7 +2748,7 @@ impl defmt::Format for Wakena {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Wakena {{ por_det: {:?}, wakeup_flag: {:?}, timer0_flag: {:?}, timer1_flag: {:?}, ldo_rdy: {:?}, osc_rdy: {:?}, clock_det: {:?}, config_det: {:?}, volt_det: {:?}, temp_det: {:?}, light_det: {:?}, sec0_det: {:?}, irq0_det: {:?}, irq1_det: {:?}, irq2_det: {:?}, irq3_det: {:?} }}",
+            "Wakena {{ por_det: {=bool:?}, wakeup_flag: {:?}, timer0_flag: {=bool:?}, timer1_flag: {=bool:?}, ldo_rdy: {=bool:?}, osc_rdy: {=bool:?}, clock_det: {=bool:?}, config_det: {:?}, volt_det: {=bool:?}, temp_det: {=bool:?}, light_det: {=bool:?}, sec0_det: {=bool:?}, irq0_det: {=bool:?}, irq1_det: {=bool:?}, irq2_det: {=bool:?}, irq3_det: {=bool:?} }}",
             self.por_det(),
             self.wakeup_flag(),
             self.timer0_flag(),
@@ -2885,14 +2885,14 @@ impl Waklcka {
     #[doc = "Lock"]
     #[must_use]
     #[inline(always)]
-    pub const fn lock(&self) -> super::vals::WaklckaLock {
+    pub const fn lock(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::WaklckaLock::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Lock"]
     #[inline(always)]
-    pub const fn set_lock(&mut self, val: super::vals::WaklckaLock) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_lock(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Waklcka {
@@ -2911,7 +2911,7 @@ impl core::fmt::Debug for Waklcka {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Waklcka {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Waklcka {{ lock: {:?} }}", self.lock())
+        defmt::write!(f, "Waklcka {{ lock: {=bool:?} }}", self.lock())
     }
 }
 #[doc = "Wakeup Lock B"]

@@ -324,86 +324,86 @@ impl Flags {
     #[doc = "TIMEOUT fault flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn to_flag(&self) -> super::vals::ToFlag {
+    pub const fn to_flag(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::ToFlag::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TIMEOUT fault flag"]
     #[inline(always)]
-    pub const fn set_to_flag(&mut self, val: super::vals::ToFlag) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_to_flag(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "MISCOMPARE fault flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn miscom_flag(&self) -> super::vals::MiscomFlag {
+    pub const fn miscom_flag(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::MiscomFlag::from_bits(val as u8)
+        val != 0
     }
     #[doc = "MISCOMPARE fault flag"]
     #[inline(always)]
-    pub const fn set_miscom_flag(&mut self, val: super::vals::MiscomFlag) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_miscom_flag(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "SEQUENCE fault flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn seq_flag(&self) -> super::vals::SeqFlag {
+    pub const fn seq_flag(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::SeqFlag::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SEQUENCE fault flag"]
     #[inline(always)]
-    pub const fn set_seq_flag(&mut self, val: super::vals::SeqFlag) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_seq_flag(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "CONTROL fault flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn cnt_flag(&self) -> super::vals::CntFlag {
+    pub const fn cnt_flag(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::CntFlag::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CONTROL fault flag"]
     #[inline(always)]
-    pub const fn set_cnt_flag(&mut self, val: super::vals::CntFlag) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_cnt_flag(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "STATE fault flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn state_flag(&self) -> super::vals::StateFlag {
+    pub const fn state_flag(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::StateFlag::from_bits(val as u8)
+        val != 0
     }
     #[doc = "STATE fault flag"]
     #[inline(always)]
-    pub const fn set_state_flag(&mut self, val: super::vals::StateFlag) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_state_flag(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "ADDRESS fault flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn addr_flag(&self) -> super::vals::AddrFlag {
+    pub const fn addr_flag(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::AddrFlag::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ADDRESS fault flag"]
     #[inline(always)]
-    pub const fn set_addr_flag(&mut self, val: super::vals::AddrFlag) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_addr_flag(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Power-on reset flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn por_flag(&self) -> super::vals::PorFlag {
+    pub const fn por_flag(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::PorFlag::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Power-on reset flag"]
     #[inline(always)]
-    pub const fn set_por_flag(&mut self, val: super::vals::PorFlag) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_por_flag(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
 }
 impl Default for Flags {
@@ -430,7 +430,7 @@ impl defmt::Format for Flags {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Flags {{ to_flag: {:?}, miscom_flag: {:?}, seq_flag: {:?}, cnt_flag: {:?}, state_flag: {:?}, addr_flag: {:?}, por_flag: {:?} }}",
+            "Flags {{ to_flag: {=bool:?}, miscom_flag: {=bool:?}, seq_flag: {=bool:?}, cnt_flag: {=bool:?}, state_flag: {=bool:?}, addr_flag: {=bool:?}, por_flag: {=bool:?} }}",
             self.to_flag(),
             self.miscom_flag(),
             self.seq_flag(),

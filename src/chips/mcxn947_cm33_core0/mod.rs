@@ -398,10 +398,9 @@ pub const SMARTDMA0: smartdma0::Smartdma0 =
 #[doc = "Programmable Logic Unit (PLU)"]
 pub const PLU0: plu0::Plu0 = unsafe { plu0::Plu0::from_ptr(0x4003_4000usize as _) };
 #[doc = "GPIO"]
-pub const GPIO5: gpio5::Gpio5 = unsafe { gpio5::Gpio5::from_ptr(0x4004_0000usize as _) };
+pub const GPIO5: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4004_0000usize as _) };
 #[doc = "GPIO"]
-pub const GPIO5_ALIAS1: gpio5_alias1::Gpio5Alias1 =
-    unsafe { gpio5_alias1::Gpio5Alias1::from_ptr(0x4004_1000usize as _) };
+pub const GPIO5_ALIAS1: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4004_1000usize as _) };
 #[doc = "PORT"]
 pub const PORT5: port5::Port5 = unsafe { port5::Port5::from_ptr(0x4004_2000usize as _) };
 #[doc = "Flash"]
@@ -499,30 +498,25 @@ pub const LP_FLEXCOMM3: lp_flexcomm::LpFlexcomm =
 #[doc = "Low-Power Inter-Integrated Circuit"]
 pub const LPI2C3: lpi2c::Lpi2c = unsafe { lpi2c::Lpi2c::from_ptr(0x4009_5800usize as _) };
 #[doc = "GPIO"]
-pub const GPIO0: gpio0::Gpio0 = unsafe { gpio0::Gpio0::from_ptr(0x4009_6000usize as _) };
+pub const GPIO0: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4009_6000usize as _) };
 #[doc = "GPIO"]
-pub const GPIO0_ALIAS1: gpio0_alias1::Gpio0Alias1 =
-    unsafe { gpio0_alias1::Gpio0Alias1::from_ptr(0x4009_7000usize as _) };
+pub const GPIO0_ALIAS1: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4009_7000usize as _) };
 #[doc = "GPIO"]
-pub const GPIO1: gpio1::Gpio1 = unsafe { gpio1::Gpio1::from_ptr(0x4009_8000usize as _) };
+pub const GPIO1: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4009_8000usize as _) };
 #[doc = "GPIO"]
-pub const GPIO1_ALIAS1: gpio1_alias1::Gpio1Alias1 =
-    unsafe { gpio1_alias1::Gpio1Alias1::from_ptr(0x4009_9000usize as _) };
+pub const GPIO1_ALIAS1: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4009_9000usize as _) };
 #[doc = "GPIO"]
-pub const GPIO2: gpio2::Gpio2 = unsafe { gpio2::Gpio2::from_ptr(0x4009_a000usize as _) };
+pub const GPIO2: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4009_a000usize as _) };
 #[doc = "GPIO"]
-pub const GPIO2_ALIAS1: gpio2_alias1::Gpio2Alias1 =
-    unsafe { gpio2_alias1::Gpio2Alias1::from_ptr(0x4009_b000usize as _) };
+pub const GPIO2_ALIAS1: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4009_b000usize as _) };
 #[doc = "GPIO"]
-pub const GPIO3: gpio3::Gpio3 = unsafe { gpio3::Gpio3::from_ptr(0x4009_c000usize as _) };
+pub const GPIO3: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4009_c000usize as _) };
 #[doc = "GPIO"]
-pub const GPIO3_ALIAS1: gpio3_alias1::Gpio3Alias1 =
-    unsafe { gpio3_alias1::Gpio3Alias1::from_ptr(0x4009_d000usize as _) };
+pub const GPIO3_ALIAS1: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4009_d000usize as _) };
 #[doc = "GPIO"]
-pub const GPIO4: gpio4::Gpio4 = unsafe { gpio4::Gpio4::from_ptr(0x4009_e000usize as _) };
+pub const GPIO4: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4009_e000usize as _) };
 #[doc = "GPIO"]
-pub const GPIO4_ALIAS1: gpio4_alias1::Gpio4Alias1 =
-    unsafe { gpio4_alias1::Gpio4Alias1::from_ptr(0x4009_f000usize as _) };
+pub const GPIO4_ALIAS1: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4009_f000usize as _) };
 #[doc = "DMA MP"]
 pub const DMA1: dma::Dma = unsafe { dma::Dma::from_ptr(0x400a_0000usize as _) };
 #[doc = "DMA TCD"]
@@ -747,18 +741,7 @@ pub mod fmu0test;
 pub mod freqme0;
 pub mod gdet0;
 pub mod gdet1;
-pub mod gpio0;
-pub mod gpio0_alias1;
-pub mod gpio1;
-pub mod gpio1_alias1;
-pub mod gpio2;
-pub mod gpio2_alias1;
-pub mod gpio3;
-pub mod gpio3_alias1;
-pub mod gpio4;
-pub mod gpio4_alias1;
-pub mod gpio5;
-pub mod gpio5_alias1;
+pub mod gpio;
 pub mod i3c;
 pub mod inputmux0;
 pub mod intm0;

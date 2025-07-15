@@ -506,14 +506,14 @@ impl Pmctrl {
     #[doc = "Enables the RXEV output to the CPU and/or to a GPIO output, when the specified Boolean expression evaluates to true. If this value is 0b, RXEV output to the CPU is disabled. If this value is 1b, RXEV output to the CPU is enabled."]
     #[must_use]
     #[inline(always)]
-    pub const fn ena_rxev(&self) -> super::vals::EnaRxev {
+    pub const fn ena_rxev(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::EnaRxev::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the RXEV output to the CPU and/or to a GPIO output, when the specified Boolean expression evaluates to true. If this value is 0b, RXEV output to the CPU is disabled. If this value is 1b, RXEV output to the CPU is enabled."]
     #[inline(always)]
-    pub const fn set_ena_rxev(&mut self, val: super::vals::EnaRxev) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_ena_rxev(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Pattern Matches"]
     #[must_use]
@@ -548,7 +548,7 @@ impl defmt::Format for Pmctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Pmctrl {{ sel_pmatch: {:?}, ena_rxev: {:?}, pmat: {:?} }}",
+            "Pmctrl {{ sel_pmatch: {:?}, ena_rxev: {=bool:?}, pmat: {:?} }}",
             self.sel_pmatch(),
             self.ena_rxev(),
             self.pmat()

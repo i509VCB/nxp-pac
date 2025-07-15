@@ -532,68 +532,6 @@ impl From<Decimation> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum DmaenEos {
-    #[doc = "Disables"]
-    DISABLED = 0x0,
-    #[doc = "Enables"]
-    ENABLED = 0x01,
-}
-impl DmaenEos {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> DmaenEos {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for DmaenEos {
-    #[inline(always)]
-    fn from(val: u8) -> DmaenEos {
-        DmaenEos::from_bits(val)
-    }
-}
-impl From<DmaenEos> for u8 {
-    #[inline(always)]
-    fn from(val: DmaenEos) -> u8 {
-        DmaenEos::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum DmaenOutrg {
-    #[doc = "Disables"]
-    DISABLED = 0x0,
-    #[doc = "Enables"]
-    ENABLED = 0x01,
-}
-impl DmaenOutrg {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> DmaenOutrg {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for DmaenOutrg {
-    #[inline(always)]
-    fn from(val: u8) -> DmaenOutrg {
-        DmaenOutrg::from_bits(val)
-    }
-}
-impl From<DmaenOutrg> for u8 {
-    #[inline(always)]
-    fn from(val: DmaenOutrg) -> u8 {
-        DmaenOutrg::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dvolt {
     #[doc = "Vm = 0.6 V, Vp = 1.7 V"]
     VOLT_17 = 0x0,
@@ -630,68 +568,6 @@ impl From<Dvolt> for u8 {
     #[inline(always)]
     fn from(val: Dvolt) -> u8 {
         Dvolt::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Esor {
-    #[doc = "Disables"]
-    DISABLED = 0x0,
-    #[doc = "Enables"]
-    ENABLED = 0x01,
-}
-impl Esor {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Esor {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Esor {
-    #[inline(always)]
-    fn from(val: u8) -> Esor {
-        Esor::from_bits(val)
-    }
-}
-impl From<Esor> for u8 {
-    #[inline(always)]
-    fn from(val: Esor) -> u8 {
-        Esor::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum MCntEn {
-    #[doc = "Disables"]
-    DISABLED = 0x0,
-    #[doc = "Enables"]
-    ENABLED = 0x01,
-}
-impl MCntEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> MCntEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for MCntEn {
-    #[inline(always)]
-    fn from(val: u8) -> MCntEn {
-        MCntEn::from_bits(val)
-    }
-}
-impl From<MCntEn> for u8 {
-    #[inline(always)]
-    fn from(val: MCntEn) -> u8 {
-        MCntEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1241,37 +1117,6 @@ impl From<MTrimCap> for u8 {
         MTrimCap::to_bits(val)
     }
 }
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum MTxPdEn {
-    #[doc = "Disables"]
-    DISABLED = 0x0,
-    #[doc = "Enables"]
-    ENABLED = 0x01,
-}
-impl MTxPdEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> MTxPdEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for MTxPdEn {
-    #[inline(always)]
-    fn from(val: u8) -> MTxPdEn {
-        MTxPdEn::from_bits(val)
-    }
-}
-impl From<MTxPdEn> for u8 {
-    #[inline(always)]
-    fn from(val: MTxPdEn) -> u8 {
-        MTxPdEn::to_bits(val)
-    }
-}
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
 pub struct MTxUsed(u8);
@@ -1584,68 +1429,6 @@ impl From<OscClkSel> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum OutrgEn {
-    #[doc = "Disables"]
-    DISABLED = 0x0,
-    #[doc = "Enables"]
-    ENABLED = 0x01,
-}
-impl OutrgEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> OutrgEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for OutrgEn {
-    #[inline(always)]
-    fn from(val: u8) -> OutrgEn {
-        OutrgEn::from_bits(val)
-    }
-}
-impl From<OutrgEn> for u8 {
-    #[inline(always)]
-    fn from(val: OutrgEn) -> u8 {
-        OutrgEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Overrunf {
-    #[doc = "No"]
-    DISABLED = 0x0,
-    #[doc = "Yes"]
-    ENABLED = 0x01,
-}
-impl Overrunf {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Overrunf {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Overrunf {
-    #[inline(always)]
-    fn from(val: u8) -> Overrunf {
-        Overrunf::from_bits(val)
-    }
-}
-impl From<Overrunf> for u8 {
-    #[inline(always)]
-    fn from(val: Overrunf) -> u8 {
-        Overrunf::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PrbsOutsel {
     #[doc = "Do not use"]
     NC1 = 0x0,
@@ -1743,99 +1526,6 @@ impl From<SCtrim> for u8 {
     #[inline(always)]
     fn from(val: SCtrim) -> u8 {
         SCtrim::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum SNoise {
-    #[doc = "Disables"]
-    DISABLED = 0x0,
-    #[doc = "Enables"]
-    ENABLED = 0x01,
-}
-impl SNoise {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> SNoise {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for SNoise {
-    #[inline(always)]
-    fn from(val: u8) -> SNoise {
-        SNoise::from_bits(val)
-    }
-}
-impl From<SNoise> for u8 {
-    #[inline(always)]
-    fn from(val: SNoise) -> u8 {
-        SNoise::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum SProxEn {
-    #[doc = "Disables"]
-    DISABLED = 0x0,
-    #[doc = "Enables"]
-    ENABLED = 0x01,
-}
-impl SProxEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> SProxEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for SProxEn {
-    #[inline(always)]
-    fn from(val: u8) -> SProxEn {
-        SProxEn::from_bits(val)
-    }
-}
-impl From<SProxEn> for u8 {
-    #[inline(always)]
-    fn from(val: SProxEn) -> u8 {
-        SProxEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum SSen {
-    #[doc = "Disables"]
-    DISABLED = 0x0,
-    #[doc = "Enables"]
-    ENABLED = 0x01,
-}
-impl SSen {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> SSen {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for SSen {
-    #[inline(always)]
-    fn from(val: u8) -> SSen {
-        SSen::from_bits(val)
-    }
-}
-impl From<SSen> for u8 {
-    #[inline(always)]
-    fn from(val: SSen) -> u8 {
-        SSen::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1950,37 +1640,6 @@ impl From<SXin> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum SXinAdd {
-    #[doc = "Disables; S_XIN = 0 for 1 / 4, S_XIN = 1 for 1 / 8"]
-    DISABLED = 0x0,
-    #[doc = "Enables; S_XIN = 0 for 1 / 8, S_XIN = 1 for 1 / 16"]
-    ENABLED = 0x01,
-}
-impl SXinAdd {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> SXinAdd {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for SXinAdd {
-    #[inline(always)]
-    fn from(val: u8) -> SXinAdd {
-        SXinAdd::from_bits(val)
-    }
-}
-impl From<SXinAdd> for u8 {
-    #[inline(always)]
-    fn from(val: SXinAdd) -> u8 {
-        SXinAdd::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclk {
     #[doc = "27.37 MHz"]
     SETCLK_2737 = 0x0,
@@ -2064,99 +1723,6 @@ impl From<ShieldEnable> for u8 {
     #[inline(always)]
     fn from(val: ShieldEnable) -> u8 {
         ShieldEnable::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum SincOverflowFlag {
-    #[doc = "No overflow"]
-    DISABLED = 0x0,
-    #[doc = "Overflow"]
-    ENABLED = 0x01,
-}
-impl SincOverflowFlag {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> SincOverflowFlag {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for SincOverflowFlag {
-    #[inline(always)]
-    fn from(val: u8) -> SincOverflowFlag {
-        SincOverflowFlag::from_bits(val)
-    }
-}
-impl From<SincOverflowFlag> for u8 {
-    #[inline(always)]
-    fn from(val: SincOverflowFlag) -> u8 {
-        SincOverflowFlag::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum SincValid {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl SincValid {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> SincValid {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for SincValid {
-    #[inline(always)]
-    fn from(val: u8) -> SincValid {
-        SincValid::from_bits(val)
-    }
-}
-impl From<SincValid> for u8 {
-    #[inline(always)]
-    fn from(val: SincValid) -> u8 {
-        SincValid::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum SscControlOut {
-    #[doc = "0"]
-    DISABLED = 0x0,
-    #[doc = "1"]
-    ENABLED = 0x01,
-}
-impl SscControlOut {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> SscControlOut {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for SscControlOut {
-    #[inline(always)]
-    fn from(val: u8) -> SscControlOut {
-        SscControlOut::from_bits(val)
-    }
-}
-impl From<SscControlOut> for u8 {
-    #[inline(always)]
-    fn from(val: SscControlOut) -> u8 {
-        SscControlOut::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -2335,99 +1901,6 @@ impl From<Stm> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Stpe {
-    #[doc = "Disables"]
-    DISABLED = 0x0,
-    #[doc = "Enables"]
-    ENABLED = 0x01,
-}
-impl Stpe {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Stpe {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Stpe {
-    #[inline(always)]
-    fn from(val: u8) -> Stpe {
-        Stpe::from_bits(val)
-    }
-}
-impl From<Stpe> for u8 {
-    #[inline(always)]
-    fn from(val: Stpe) -> u8 {
-        Stpe::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum SwitchEnable {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl SwitchEnable {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> SwitchEnable {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for SwitchEnable {
-    #[inline(always)]
-    fn from(val: u8) -> SwitchEnable {
-        SwitchEnable::from_bits(val)
-    }
-}
-impl From<SwitchEnable> for u8 {
-    #[inline(always)]
-    fn from(val: SwitchEnable) -> u8 {
-        SwitchEnable::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Swts {
-    #[doc = "No effect"]
-    DISABLED = 0x0,
-    #[doc = "Takes effect"]
-    ENABLED = 0x01,
-}
-impl Swts {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Swts {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Swts {
-    #[inline(always)]
-    fn from(val: u8) -> Swts {
-        Swts::from_bits(val)
-    }
-}
-impl From<Swts> for u8 {
-    #[inline(always)]
-    fn from(val: Swts) -> u8 {
-        Swts::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TestFinger {
     #[doc = "Finger capacitor is 148 pF"]
     FIN_148 = 0x0,
@@ -2471,37 +1944,6 @@ impl From<TestFinger> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum TestFingerEn {
-    #[doc = "Disables"]
-    DISABLED = 0x0,
-    #[doc = "Enables"]
-    ENABLED = 0x01,
-}
-impl TestFingerEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> TestFingerEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for TestFingerEn {
-    #[inline(always)]
-    fn from(val: u8) -> TestFingerEn {
-        TestFingerEn::from_bits(val)
-    }
-}
-impl From<TestFingerEn> for u8 {
-    #[inline(always)]
-    fn from(val: TestFingerEn) -> u8 {
-        TestFingerEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ThesholdRatio {
     #[doc = "thresholdh = (baseline + counter) / 2 and thresholdl = (baseline - counter) / 2"]
     TSHD_2 = 0x0,
@@ -2540,37 +1982,6 @@ impl From<ThesholdRatio> for u8 {
     #[inline(always)]
     fn from(val: ThesholdRatio) -> u8 {
         ThesholdRatio::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum ThresholdTraceEn {
-    #[doc = "Disables"]
-    DISABLED = 0x0,
-    #[doc = "Enables"]
-    ENABLED = 0x01,
-}
-impl ThresholdTraceEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> ThresholdTraceEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for ThresholdTraceEn {
-    #[inline(always)]
-    fn from(val: u8) -> ThresholdTraceEn {
-        ThresholdTraceEn::from_bits(val)
-    }
-}
-impl From<ThresholdTraceEn> for u8 {
-    #[inline(always)]
-    fn from(val: ThresholdTraceEn) -> u8 {
-        ThresholdTraceEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -2671,37 +2082,6 @@ impl From<TrigClkSel> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum TrigEn {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl TrigEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> TrigEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for TrigEn {
-    #[inline(always)]
-    fn from(val: u8) -> TrigEn {
-        TrigEn::from_bits(val)
-    }
-}
-impl From<TrigEn> for u8 {
-    #[inline(always)]
-    fn from(val: TrigEn) -> u8 {
-        TrigEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tsich {
     #[doc = "Channel 0"]
     SELF_CP_0 = 0x0,
@@ -2781,36 +2161,5 @@ impl From<Tsich> for u8 {
     #[inline(always)]
     fn from(val: Tsich) -> u8 {
         Tsich::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Tsien {
-    #[doc = "Disables"]
-    DISABLED = 0x0,
-    #[doc = "Enables"]
-    ENABLED = 0x01,
-}
-impl Tsien {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Tsien {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Tsien {
-    #[inline(always)]
-    fn from(val: u8) -> Tsien {
-        Tsien::from_bits(val)
-    }
-}
-impl From<Tsien> for u8 {
-    #[inline(always)]
-    fn from(val: Tsien) -> u8 {
-        Tsien::to_bits(val)
     }
 }

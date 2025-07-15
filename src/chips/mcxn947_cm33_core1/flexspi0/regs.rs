@@ -1518,38 +1518,38 @@ impl Flsha1cr0 {
     #[doc = "AHB Address Shift Function control"]
     #[must_use]
     #[inline(always)]
-    pub const fn addrshift(&self) -> super::vals::Flsha1cr0Addrshift {
+    pub const fn addrshift(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::Flsha1cr0Addrshift::from_bits(val as u8)
+        val != 0
     }
     #[doc = "AHB Address Shift Function control"]
     #[inline(always)]
-    pub const fn set_addrshift(&mut self, val: super::vals::Flsha1cr0Addrshift) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_addrshift(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "AHB Write Access Split Function Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn splitwren(&self) -> super::vals::Flsha1cr0Splitwren {
+    pub const fn splitwren(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Flsha1cr0Splitwren::from_bits(val as u8)
+        val != 0
     }
     #[doc = "AHB Write Access Split Function Enable"]
     #[inline(always)]
-    pub const fn set_splitwren(&mut self, val: super::vals::Flsha1cr0Splitwren) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_splitwren(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "AHB Read Access Split Function Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn splitrden(&self) -> super::vals::Flsha1cr0Splitrden {
+    pub const fn splitrden(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Flsha1cr0Splitrden::from_bits(val as u8)
+        val != 0
     }
     #[doc = "AHB Read Access Split Function Enable"]
     #[inline(always)]
-    pub const fn set_splitrden(&mut self, val: super::vals::Flsha1cr0Splitrden) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_splitrden(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Flsha1cr0 {
@@ -1573,7 +1573,7 @@ impl defmt::Format for Flsha1cr0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Flsha1cr0 {{ flshsz: {=u32:?}, addrshift: {:?}, splitwren: {:?}, splitrden: {:?} }}",
+            "Flsha1cr0 {{ flshsz: {=u32:?}, addrshift: {=bool:?}, splitwren: {=bool:?}, splitrden: {=bool:?} }}",
             self.flshsz(),
             self.addrshift(),
             self.splitwren(),
@@ -1601,38 +1601,38 @@ impl Flsha2cr0 {
     #[doc = "AHB Address Shift Function control"]
     #[must_use]
     #[inline(always)]
-    pub const fn addrshift(&self) -> super::vals::Flsha2cr0Addrshift {
+    pub const fn addrshift(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::Flsha2cr0Addrshift::from_bits(val as u8)
+        val != 0
     }
     #[doc = "AHB Address Shift Function control"]
     #[inline(always)]
-    pub const fn set_addrshift(&mut self, val: super::vals::Flsha2cr0Addrshift) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_addrshift(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "AHB Write Access Split Function Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn splitwren(&self) -> super::vals::Flsha2cr0Splitwren {
+    pub const fn splitwren(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Flsha2cr0Splitwren::from_bits(val as u8)
+        val != 0
     }
     #[doc = "AHB Write Access Split Function Enable"]
     #[inline(always)]
-    pub const fn set_splitwren(&mut self, val: super::vals::Flsha2cr0Splitwren) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_splitwren(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "AHB Read Access Split Function Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn splitrden(&self) -> super::vals::Flsha2cr0Splitrden {
+    pub const fn splitrden(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Flsha2cr0Splitrden::from_bits(val as u8)
+        val != 0
     }
     #[doc = "AHB Read Access Split Function Enable"]
     #[inline(always)]
-    pub const fn set_splitrden(&mut self, val: super::vals::Flsha2cr0Splitrden) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_splitrden(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Flsha2cr0 {
@@ -1656,7 +1656,7 @@ impl defmt::Format for Flsha2cr0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Flsha2cr0 {{ flshsz: {=u32:?}, addrshift: {:?}, splitwren: {:?}, splitrden: {:?} }}",
+            "Flsha2cr0 {{ flshsz: {=u32:?}, addrshift: {=bool:?}, splitwren: {=bool:?}, splitrden: {=bool:?} }}",
             self.flshsz(),
             self.addrshift(),
             self.splitwren(),
@@ -1684,38 +1684,38 @@ impl Flshb1cr0 {
     #[doc = "AHB Address Shift Function control"]
     #[must_use]
     #[inline(always)]
-    pub const fn addrshift(&self) -> super::vals::Flshb1cr0Addrshift {
+    pub const fn addrshift(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::Flshb1cr0Addrshift::from_bits(val as u8)
+        val != 0
     }
     #[doc = "AHB Address Shift Function control"]
     #[inline(always)]
-    pub const fn set_addrshift(&mut self, val: super::vals::Flshb1cr0Addrshift) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_addrshift(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "AHB Write Access Split Function Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn splitwren(&self) -> super::vals::Flshb1cr0Splitwren {
+    pub const fn splitwren(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Flshb1cr0Splitwren::from_bits(val as u8)
+        val != 0
     }
     #[doc = "AHB Write Access Split Function Enable"]
     #[inline(always)]
-    pub const fn set_splitwren(&mut self, val: super::vals::Flshb1cr0Splitwren) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_splitwren(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "AHB Read Access Split Function Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn splitrden(&self) -> super::vals::Flshb1cr0Splitrden {
+    pub const fn splitrden(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Flshb1cr0Splitrden::from_bits(val as u8)
+        val != 0
     }
     #[doc = "AHB Read Access Split Function Enable"]
     #[inline(always)]
-    pub const fn set_splitrden(&mut self, val: super::vals::Flshb1cr0Splitrden) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_splitrden(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Flshb1cr0 {
@@ -1739,7 +1739,7 @@ impl defmt::Format for Flshb1cr0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Flshb1cr0 {{ flshsz: {=u32:?}, addrshift: {:?}, splitwren: {:?}, splitrden: {:?} }}",
+            "Flshb1cr0 {{ flshsz: {=u32:?}, addrshift: {=bool:?}, splitwren: {=bool:?}, splitrden: {=bool:?} }}",
             self.flshsz(),
             self.addrshift(),
             self.splitwren(),
@@ -1767,38 +1767,38 @@ impl Flshb2cr0 {
     #[doc = "AHB Address Shift Function control"]
     #[must_use]
     #[inline(always)]
-    pub const fn addrshift(&self) -> super::vals::Flshb2cr0Addrshift {
+    pub const fn addrshift(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::Flshb2cr0Addrshift::from_bits(val as u8)
+        val != 0
     }
     #[doc = "AHB Address Shift Function control"]
     #[inline(always)]
-    pub const fn set_addrshift(&mut self, val: super::vals::Flshb2cr0Addrshift) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_addrshift(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "AHB Write Access Split Function Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn splitwren(&self) -> super::vals::Flshb2cr0Splitwren {
+    pub const fn splitwren(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Flshb2cr0Splitwren::from_bits(val as u8)
+        val != 0
     }
     #[doc = "AHB Write Access Split Function Enable"]
     #[inline(always)]
-    pub const fn set_splitwren(&mut self, val: super::vals::Flshb2cr0Splitwren) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_splitwren(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "AHB Read Access Split Function Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn splitrden(&self) -> super::vals::Flshb2cr0Splitrden {
+    pub const fn splitrden(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Flshb2cr0Splitrden::from_bits(val as u8)
+        val != 0
     }
     #[doc = "AHB Read Access Split Function Enable"]
     #[inline(always)]
-    pub const fn set_splitrden(&mut self, val: super::vals::Flshb2cr0Splitrden) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_splitrden(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Flshb2cr0 {
@@ -1822,7 +1822,7 @@ impl defmt::Format for Flshb2cr0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Flshb2cr0 {{ flshsz: {=u32:?}, addrshift: {:?}, splitwren: {:?}, splitrden: {:?} }}",
+            "Flshb2cr0 {{ flshsz: {=u32:?}, addrshift: {=bool:?}, splitwren: {=bool:?}, splitrden: {=bool:?} }}",
             self.flshsz(),
             self.addrshift(),
             self.splitwren(),
@@ -2074,14 +2074,14 @@ impl Flshcr4 {
     #[doc = "Write Mask Option 1"]
     #[must_use]
     #[inline(always)]
-    pub const fn wmopt1(&self) -> super::vals::Wmopt1 {
+    pub const fn wmopt1(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Wmopt1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Write Mask Option 1"]
     #[inline(always)]
-    pub const fn set_wmopt1(&mut self, val: super::vals::Wmopt1) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_wmopt1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Write Mask Enable for Port A"]
     #[must_use]
@@ -2128,7 +2128,7 @@ impl defmt::Format for Flshcr4 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Flshcr4 {{ wmopt1: {:?}, wmena: {:?}, wmenb: {:?} }}",
+            "Flshcr4 {{ wmopt1: {=bool:?}, wmena: {:?}, wmenb: {:?} }}",
             self.wmopt1(),
             self.wmena(),
             self.wmenb()
@@ -2499,170 +2499,170 @@ impl Intr {
     #[doc = "IP-Triggered Command Sequences Execution Finished"]
     #[must_use]
     #[inline(always)]
-    pub const fn ipcmddone(&self) -> super::vals::Ipcmddone {
+    pub const fn ipcmddone(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Ipcmddone::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IP-Triggered Command Sequences Execution Finished"]
     #[inline(always)]
-    pub const fn set_ipcmddone(&mut self, val: super::vals::Ipcmddone) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_ipcmddone(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "IP-Triggered Command Sequences Grant Timeout"]
     #[must_use]
     #[inline(always)]
-    pub const fn ipcmdge(&self) -> super::vals::Ipcmdge {
+    pub const fn ipcmdge(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Ipcmdge::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IP-Triggered Command Sequences Grant Timeout"]
     #[inline(always)]
-    pub const fn set_ipcmdge(&mut self, val: super::vals::Ipcmdge) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_ipcmdge(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "AHB-Triggered Command Sequences Grant Timeout"]
     #[must_use]
     #[inline(always)]
-    pub const fn ahbcmdge(&self) -> super::vals::Ahbcmdge {
+    pub const fn ahbcmdge(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Ahbcmdge::from_bits(val as u8)
+        val != 0
     }
     #[doc = "AHB-Triggered Command Sequences Grant Timeout"]
     #[inline(always)]
-    pub const fn set_ahbcmdge(&mut self, val: super::vals::Ahbcmdge) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_ahbcmdge(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "IP-Triggered Command Sequences Error"]
     #[must_use]
     #[inline(always)]
-    pub const fn ipcmderr(&self) -> super::vals::Ipcmderr {
+    pub const fn ipcmderr(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Ipcmderr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IP-Triggered Command Sequences Error"]
     #[inline(always)]
-    pub const fn set_ipcmderr(&mut self, val: super::vals::Ipcmderr) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_ipcmderr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "AHB-Triggered Command Sequences Error"]
     #[must_use]
     #[inline(always)]
-    pub const fn ahbcmderr(&self) -> super::vals::Ahbcmderr {
+    pub const fn ahbcmderr(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Ahbcmderr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "AHB-Triggered Command Sequences Error"]
     #[inline(always)]
-    pub const fn set_ahbcmderr(&mut self, val: super::vals::Ahbcmderr) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_ahbcmderr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "IP Receive FIFO Watermark Available"]
     #[must_use]
     #[inline(always)]
-    pub const fn iprxwa(&self) -> super::vals::Iprxwa {
+    pub const fn iprxwa(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Iprxwa::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IP Receive FIFO Watermark Available"]
     #[inline(always)]
-    pub const fn set_iprxwa(&mut self, val: super::vals::Iprxwa) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_iprxwa(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "IP Transmit FIFO Watermark Empty"]
     #[must_use]
     #[inline(always)]
-    pub const fn iptxwe(&self) -> super::vals::Iptxwe {
+    pub const fn iptxwe(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Iptxwe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IP Transmit FIFO Watermark Empty"]
     #[inline(always)]
-    pub const fn set_iptxwe(&mut self, val: super::vals::Iptxwe) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_iptxwe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Data Learning Failed"]
     #[must_use]
     #[inline(always)]
-    pub const fn datalearnfail(&self) -> super::vals::Datalearnfail {
+    pub const fn datalearnfail(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Datalearnfail::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Data Learning Failed"]
     #[inline(always)]
-    pub const fn set_datalearnfail(&mut self, val: super::vals::Datalearnfail) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_datalearnfail(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "SCLK Stopped Due To Full Receive FIFO"]
     #[must_use]
     #[inline(always)]
-    pub const fn sckstopbyrd(&self) -> super::vals::Sckstopbyrd {
+    pub const fn sckstopbyrd(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Sckstopbyrd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SCLK Stopped Due To Full Receive FIFO"]
     #[inline(always)]
-    pub const fn set_sckstopbyrd(&mut self, val: super::vals::Sckstopbyrd) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_sckstopbyrd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "SCLK Stopped Due To Empty Transmit FIFO"]
     #[must_use]
     #[inline(always)]
-    pub const fn sckstopbywr(&self) -> super::vals::Sckstopbywr {
+    pub const fn sckstopbywr(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Sckstopbywr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SCLK Stopped Due To Empty Transmit FIFO"]
     #[inline(always)]
-    pub const fn set_sckstopbywr(&mut self, val: super::vals::Sckstopbywr) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_sckstopbywr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "AHB Bus Timeout"]
     #[must_use]
     #[inline(always)]
-    pub const fn ahbbustimeout(&self) -> super::vals::Ahbbustimeout {
+    pub const fn ahbbustimeout(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Ahbbustimeout::from_bits(val as u8)
+        val != 0
     }
     #[doc = "AHB Bus Timeout"]
     #[inline(always)]
-    pub const fn set_ahbbustimeout(&mut self, val: super::vals::Ahbbustimeout) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_ahbbustimeout(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Sequence Execution Timeout"]
     #[must_use]
     #[inline(always)]
-    pub const fn seqtimeout(&self) -> super::vals::Seqtimeout {
+    pub const fn seqtimeout(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Seqtimeout::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Sequence Execution Timeout"]
     #[inline(always)]
-    pub const fn set_seqtimeout(&mut self, val: super::vals::Seqtimeout) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_seqtimeout(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "IP Command Security Violation"]
     #[must_use]
     #[inline(always)]
-    pub const fn ipcmdsecurevio(&self) -> super::vals::Ipcmdsecurevio {
+    pub const fn ipcmdsecurevio(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Ipcmdsecurevio::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IP Command Security Violation"]
     #[inline(always)]
-    pub const fn set_ipcmdsecurevio(&mut self, val: super::vals::Ipcmdsecurevio) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_ipcmdsecurevio(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "AHB Read GCM Error"]
     #[must_use]
     #[inline(always)]
-    pub const fn ahbgcmerr(&self) -> super::vals::Ahbgcmerr {
+    pub const fn ahbgcmerr(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Ahbgcmerr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "AHB Read GCM Error"]
     #[inline(always)]
-    pub const fn set_ahbgcmerr(&mut self, val: super::vals::Ahbgcmerr) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_ahbgcmerr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
 }
 impl Default for Intr {
@@ -2696,7 +2696,7 @@ impl defmt::Format for Intr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Intr {{ ipcmddone: {:?}, ipcmdge: {:?}, ahbcmdge: {:?}, ipcmderr: {:?}, ahbcmderr: {:?}, iprxwa: {:?}, iptxwe: {:?}, datalearnfail: {:?}, sckstopbyrd: {:?}, sckstopbywr: {:?}, ahbbustimeout: {:?}, seqtimeout: {:?}, ipcmdsecurevio: {:?}, ahbgcmerr: {:?} }}",
+            "Intr {{ ipcmddone: {=bool:?}, ipcmdge: {=bool:?}, ahbcmdge: {=bool:?}, ipcmderr: {=bool:?}, ahbcmderr: {=bool:?}, iprxwa: {=bool:?}, iptxwe: {=bool:?}, datalearnfail: {=bool:?}, sckstopbyrd: {=bool:?}, sckstopbywr: {=bool:?}, ahbbustimeout: {=bool:?}, seqtimeout: {=bool:?}, ipcmdsecurevio: {=bool:?}, ahbgcmerr: {=bool:?} }}",
             self.ipcmddone(),
             self.ipcmdge(),
             self.ahbcmdge(),
@@ -2828,14 +2828,14 @@ impl Ipcr1 {
     #[doc = "Parallel Mode Enable for IP Commands"]
     #[must_use]
     #[inline(always)]
-    pub const fn iparen(&self) -> super::vals::Iparen {
+    pub const fn iparen(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Iparen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Parallel Mode Enable for IP Commands"]
     #[inline(always)]
-    pub const fn set_iparen(&mut self, val: super::vals::Iparen) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_iparen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Ipcr1 {
@@ -2859,7 +2859,7 @@ impl defmt::Format for Ipcr1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ipcr1 {{ idatsz: {=u16:?}, iseqid: {=u8:?}, iseqnum: {=u8:?}, iparen: {:?} }}",
+            "Ipcr1 {{ idatsz: {=u16:?}, iseqid: {=u8:?}, iseqnum: {=u8:?}, iparen: {=bool:?} }}",
             self.idatsz(),
             self.iseqid(),
             self.iseqnum(),
@@ -5946,38 +5946,38 @@ impl Mcr0 {
     #[doc = "Combination Mode Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn combinationen(&self) -> super::vals::Combinationen {
+    pub const fn combinationen(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Combinationen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Combination Mode Enable"]
     #[inline(always)]
-    pub const fn set_combinationen(&mut self, val: super::vals::Combinationen) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_combinationen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "SCLK Free-running Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn sckfreerunen(&self) -> super::vals::Sckfreerunen {
+    pub const fn sckfreerunen(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Sckfreerunen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SCLK Free-running Enable"]
     #[inline(always)]
-    pub const fn set_sckfreerunen(&mut self, val: super::vals::Sckfreerunen) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_sckfreerunen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Data Learning Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn learnen(&self) -> super::vals::Learnen {
+    pub const fn learnen(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Learnen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Data Learning Enable"]
     #[inline(always)]
-    pub const fn set_learnen(&mut self, val: super::vals::Learnen) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_learnen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "Timeout Wait Cycle for IP Command Grant"]
     #[must_use]
@@ -6034,7 +6034,7 @@ impl defmt::Format for Mcr0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mcr0 {{ swreset: {:?}, mdis: {:?}, rxclksrc: {:?}, ardfen: {:?}, atdfen: {:?}, serclkdiv: {:?}, hsen: {:?}, dozeen: {:?}, combinationen: {:?}, sckfreerunen: {:?}, learnen: {:?}, ipgrantwait: {=u8:?}, ahbgrantwait: {=u8:?} }}",
+            "Mcr0 {{ swreset: {:?}, mdis: {:?}, rxclksrc: {:?}, ardfen: {:?}, atdfen: {:?}, serclkdiv: {:?}, hsen: {:?}, dozeen: {:?}, combinationen: {=bool:?}, sckfreerunen: {=bool:?}, learnen: {=bool:?}, ipgrantwait: {=u8:?}, ahbgrantwait: {=u8:?} }}",
             self.swreset(),
             self.mdis(),
             self.rxclksrc(),

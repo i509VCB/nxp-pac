@@ -117,14 +117,14 @@ impl IntmMm {
     #[doc = "Monitor Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn mm(&self) -> super::vals::Mm {
+    pub const fn mm(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Mm::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Monitor Mode"]
     #[inline(always)]
-    pub const fn set_mm(&mut self, val: super::vals::Mm) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_mm(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for IntmMm {
@@ -141,7 +141,7 @@ impl core::fmt::Debug for IntmMm {
 #[cfg(feature = "defmt")]
 impl defmt::Format for IntmMm {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "IntmMm {{ mm: {:?} }}", self.mm())
+        defmt::write!(f, "IntmMm {{ mm: {=bool:?} }}", self.mm())
     }
 }
 #[doc = "Status for Monitor mon_index"]

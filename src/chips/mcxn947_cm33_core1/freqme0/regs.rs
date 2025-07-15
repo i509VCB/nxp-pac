@@ -97,50 +97,50 @@ impl CtrlW {
     #[doc = "Less Than Minimum Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn lt_min_int_en(&self) -> super::vals::CtrlWLtMinIntEn {
+    pub const fn lt_min_int_en(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::CtrlWLtMinIntEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Less Than Minimum Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_lt_min_int_en(&mut self, val: super::vals::CtrlWLtMinIntEn) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_lt_min_int_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Greater Than Maximum Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn gt_max_int_en(&self) -> super::vals::CtrlWGtMaxIntEn {
+    pub const fn gt_max_int_en(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::CtrlWGtMaxIntEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Greater Than Maximum Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_gt_max_int_en(&mut self, val: super::vals::CtrlWGtMaxIntEn) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_gt_max_int_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Result Ready Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn result_ready_int_en(&self) -> super::vals::CtrlWResultReadyIntEn {
+    pub const fn result_ready_int_en(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::CtrlWResultReadyIntEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Result Ready Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_result_ready_int_en(&mut self, val: super::vals::CtrlWResultReadyIntEn) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_result_ready_int_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Continuous Mode Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn continuous_mode_en(&self) -> super::vals::CtrlWContinuousModeEn {
+    pub const fn continuous_mode_en(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::CtrlWContinuousModeEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Continuous Mode Enable"]
     #[inline(always)]
-    pub const fn set_continuous_mode_en(&mut self, val: super::vals::CtrlWContinuousModeEn) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_continuous_mode_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Measurement In Progress"]
     #[must_use]
@@ -180,7 +180,7 @@ impl defmt::Format for CtrlW {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "CtrlW {{ ref_scale: {=u8:?}, pulse_mode: {:?}, pulse_pol: {:?}, lt_min_int_en: {:?}, gt_max_int_en: {:?}, result_ready_int_en: {:?}, continuous_mode_en: {:?}, measure_in_progress: {:?} }}",
+            "CtrlW {{ ref_scale: {=u8:?}, pulse_mode: {:?}, pulse_pol: {:?}, lt_min_int_en: {=bool:?}, gt_max_int_en: {=bool:?}, result_ready_int_en: {=bool:?}, continuous_mode_en: {=bool:?}, measure_in_progress: {:?} }}",
             self.ref_scale(),
             self.pulse_mode(),
             self.pulse_pol(),
@@ -236,38 +236,38 @@ impl Ctrlstat {
     #[doc = "Less Than Minimum Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn lt_min_int_en(&self) -> super::vals::CtrlstatLtMinIntEn {
+    pub const fn lt_min_int_en(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::CtrlstatLtMinIntEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Less Than Minimum Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_lt_min_int_en(&mut self, val: super::vals::CtrlstatLtMinIntEn) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_lt_min_int_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Greater Than Maximum Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn gt_max_int_en(&self) -> super::vals::CtrlstatGtMaxIntEn {
+    pub const fn gt_max_int_en(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::CtrlstatGtMaxIntEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Greater Than Maximum Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_gt_max_int_en(&mut self, val: super::vals::CtrlstatGtMaxIntEn) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_gt_max_int_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Result Ready Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn result_ready_int_en(&self) -> super::vals::CtrlstatResultReadyIntEn {
+    pub const fn result_ready_int_en(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::CtrlstatResultReadyIntEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Result Ready Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_result_ready_int_en(&mut self, val: super::vals::CtrlstatResultReadyIntEn) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_result_ready_int_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Less Than Minimum Results Status"]
     #[must_use]
@@ -296,26 +296,26 @@ impl Ctrlstat {
     #[doc = "Result Ready Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn result_ready_stat(&self) -> super::vals::ResultReadyStat {
+    pub const fn result_ready_stat(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::ResultReadyStat::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Result Ready Status"]
     #[inline(always)]
-    pub const fn set_result_ready_stat(&mut self, val: super::vals::ResultReadyStat) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_result_ready_stat(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "Continuous Mode Enable Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn continuous_mode_en(&self) -> super::vals::CtrlstatContinuousModeEn {
+    pub const fn continuous_mode_en(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::CtrlstatContinuousModeEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Continuous Mode Enable Status"]
     #[inline(always)]
-    pub const fn set_continuous_mode_en(&mut self, val: super::vals::CtrlstatContinuousModeEn) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_continuous_mode_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Measurement in Progress Status"]
     #[must_use]
@@ -358,7 +358,7 @@ impl defmt::Format for Ctrlstat {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrlstat {{ ref_scale: {=u8:?}, pulse_mode: {:?}, pulse_pol: {:?}, lt_min_int_en: {:?}, gt_max_int_en: {:?}, result_ready_int_en: {:?}, lt_min_stat: {:?}, gt_max_stat: {:?}, result_ready_stat: {:?}, continuous_mode_en: {:?}, measure_in_progress: {:?} }}",
+            "Ctrlstat {{ ref_scale: {=u8:?}, pulse_mode: {:?}, pulse_pol: {:?}, lt_min_int_en: {=bool:?}, gt_max_int_en: {=bool:?}, result_ready_int_en: {=bool:?}, lt_min_stat: {:?}, gt_max_stat: {:?}, result_ready_stat: {=bool:?}, continuous_mode_en: {=bool:?}, measure_in_progress: {:?} }}",
             self.ref_scale(),
             self.pulse_mode(),
             self.pulse_pol(),

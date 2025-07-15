@@ -1,0 +1,3 @@
+# This is a separate transform so that it can be included first, before any other passes.
+transforms:
+  - !DeleteUselessEnums

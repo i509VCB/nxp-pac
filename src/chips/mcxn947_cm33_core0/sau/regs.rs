@@ -6,14 +6,14 @@ impl Ctrl {
     #[doc = "Enable. Enables the SAU. This bit is RAZ/WI when the Security Extension is implemented without an SAU region."]
     #[must_use]
     #[inline(always)]
-    pub const fn enable(&self) -> super::vals::CtrlEnable {
+    pub const fn enable(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::CtrlEnable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable. Enables the SAU. This bit is RAZ/WI when the Security Extension is implemented without an SAU region."]
     #[inline(always)]
-    pub const fn set_enable(&mut self, val: super::vals::CtrlEnable) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_enable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "All Non-secure."]
     #[must_use]
@@ -47,7 +47,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ enable: {:?}, allns: {:?} }}",
+            "Ctrl {{ enable: {=bool:?}, allns: {:?} }}",
             self.enable(),
             self.allns()
         )
@@ -110,14 +110,14 @@ impl Rlar {
     #[doc = "Non-secure callable. Controls whether Non-secure state is permitted to execute an SG instruction from this region."]
     #[must_use]
     #[inline(always)]
-    pub const fn nsc(&self) -> super::vals::Nsc {
+    pub const fn nsc(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Nsc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Non-secure callable. Controls whether Non-secure state is permitted to execute an SG instruction from this region."]
     #[inline(always)]
-    pub const fn set_nsc(&mut self, val: super::vals::Nsc) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_nsc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Limit address. Holds bits\\[31:5\\] of the limit address for the selected SAU region. Bits\\[4:0\\] of the limit address are defined as 0x1F."]
     #[must_use]
@@ -152,7 +152,7 @@ impl defmt::Format for Rlar {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Rlar {{ enable: {:?}, nsc: {:?}, laddr: {=u32:?} }}",
+            "Rlar {{ enable: {:?}, nsc: {=bool:?}, laddr: {=u32:?} }}",
             self.enable(),
             self.nsc(),
             self.laddr()
@@ -241,98 +241,98 @@ impl Sfsr {
     #[doc = "Invalid entry point."]
     #[must_use]
     #[inline(always)]
-    pub const fn invep(&self) -> super::vals::Invep {
+    pub const fn invep(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Invep::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Invalid entry point."]
     #[inline(always)]
-    pub const fn set_invep(&mut self, val: super::vals::Invep) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_invep(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Invalid integrity signature flag."]
     #[must_use]
     #[inline(always)]
-    pub const fn invis(&self) -> super::vals::Invis {
+    pub const fn invis(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Invis::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Invalid integrity signature flag."]
     #[inline(always)]
-    pub const fn set_invis(&mut self, val: super::vals::Invis) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_invis(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Invalid exception return flag."]
     #[must_use]
     #[inline(always)]
-    pub const fn inver(&self) -> super::vals::Inver {
+    pub const fn inver(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Inver::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Invalid exception return flag."]
     #[inline(always)]
-    pub const fn set_inver(&mut self, val: super::vals::Inver) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_inver(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Attribution unit violation flag."]
     #[must_use]
     #[inline(always)]
-    pub const fn auviol(&self) -> super::vals::Auviol {
+    pub const fn auviol(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Auviol::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Attribution unit violation flag."]
     #[inline(always)]
-    pub const fn set_auviol(&mut self, val: super::vals::Auviol) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_auviol(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Invalid transition flag."]
     #[must_use]
     #[inline(always)]
-    pub const fn invtran(&self) -> super::vals::Invtran {
+    pub const fn invtran(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Invtran::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Invalid transition flag."]
     #[inline(always)]
-    pub const fn set_invtran(&mut self, val: super::vals::Invtran) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_invtran(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Lazy state preservation error flag."]
     #[must_use]
     #[inline(always)]
-    pub const fn lsperr(&self) -> super::vals::Lsperr {
+    pub const fn lsperr(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Lsperr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Lazy state preservation error flag."]
     #[inline(always)]
-    pub const fn set_lsperr(&mut self, val: super::vals::Lsperr) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_lsperr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Secure fault address valid."]
     #[must_use]
     #[inline(always)]
-    pub const fn sfarvalid(&self) -> super::vals::Sfarvalid {
+    pub const fn sfarvalid(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Sfarvalid::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Secure fault address valid."]
     #[inline(always)]
-    pub const fn set_sfarvalid(&mut self, val: super::vals::Sfarvalid) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_sfarvalid(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Lazy state error flag."]
     #[must_use]
     #[inline(always)]
-    pub const fn lserr(&self) -> super::vals::Lserr {
+    pub const fn lserr(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Lserr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Lazy state error flag."]
     #[inline(always)]
-    pub const fn set_lserr(&mut self, val: super::vals::Lserr) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_lserr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
 }
 impl Default for Sfsr {
@@ -360,7 +360,7 @@ impl defmt::Format for Sfsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sfsr {{ invep: {:?}, invis: {:?}, inver: {:?}, auviol: {:?}, invtran: {:?}, lsperr: {:?}, sfarvalid: {:?}, lserr: {:?} }}",
+            "Sfsr {{ invep: {=bool:?}, invis: {=bool:?}, inver: {=bool:?}, auviol: {=bool:?}, invtran: {=bool:?}, lsperr: {=bool:?}, sfarvalid: {=bool:?}, lserr: {=bool:?} }}",
             self.invep(),
             self.invis(),
             self.inver(),

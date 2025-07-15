@@ -1,68 +1,6 @@
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum AlgErr {
-    #[doc = "No error"]
-    DIS = 0x0,
-    #[doc = "Error occurred"]
-    EN = 0x01,
-}
-impl AlgErr {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> AlgErr {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for AlgErr {
-    #[inline(always)]
-    fn from(val: u8) -> AlgErr {
-        AlgErr::from_bits(val)
-    }
-}
-impl From<AlgErr> for u8 {
-    #[inline(always)]
-    fn from(val: AlgErr) -> u8 {
-        AlgErr::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum BusErr {
-    #[doc = "No error"]
-    DIS = 0x0,
-    #[doc = "Error occurred"]
-    EN = 0x01,
-}
-impl BusErr {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> BusErr {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for BusErr {
-    #[inline(always)]
-    fn from(val: u8) -> BusErr {
-        BusErr::from_bits(val)
-    }
-}
-impl From<BusErr> for u8 {
-    #[inline(always)]
-    fn from(val: BusErr) -> u8 {
-        BusErr::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ByteOrder {
     #[doc = "Little endian"]
     LIT = 0x0,
@@ -191,68 +129,6 @@ impl From<DrbgEntLvl> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum DtrngBusy {
-    #[doc = "Not gathering entropy"]
-    NOTENT = 0x0,
-    #[doc = "Gathering entropy"]
-    ENT = 0x01,
-}
-impl DtrngBusy {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> DtrngBusy {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for DtrngBusy {
-    #[inline(always)]
-    fn from(val: u8) -> DtrngBusy {
-        DtrngBusy::from_bits(val)
-    }
-}
-impl From<DtrngBusy> for u8 {
-    #[inline(always)]
-    fn from(val: DtrngBusy) -> u8 {
-        DtrngBusy::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum DtrngErr {
-    #[doc = "No error"]
-    DIS = 0x0,
-    #[doc = "TRNG error occurred"]
-    EN = 0x01,
-}
-impl DtrngErr {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> DtrngErr {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for DtrngErr {
-    #[inline(always)]
-    fn from(val: u8) -> DtrngErr {
-        DtrngErr::from_bits(val)
-    }
-}
-impl From<DtrngErr> for u8 {
-    #[inline(always)]
-    fn from(val: DtrngErr) -> u8 {
-        DtrngErr::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EcdsaVfyStatus {
     #[doc = "No verify run"]
     NO_V_RUN = 0x0,
@@ -314,37 +190,6 @@ impl From<ElsBusy> for u8 {
     #[inline(always)]
     fn from(val: ElsBusy) -> u8 {
         ElsBusy::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum ElsEn {
-    #[doc = "Disabled"]
-    DIS = 0x0,
-    #[doc = "Enabled"]
-    EN = 0x01,
-}
-impl ElsEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> ElsEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for ElsEn {
-    #[inline(always)]
-    fn from(val: u8) -> ElsEn {
-        ElsEn::from_bits(val)
-    }
-}
-impl From<ElsEn> for u8 {
-    #[inline(always)]
-    fn from(val: ElsEn) -> u8 {
-        ElsEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -469,99 +314,6 @@ impl From<ErrClr> for u8 {
     #[inline(always)]
     fn from(val: ErrClr) -> u8 {
         ErrClr::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum FltErr {
-    #[doc = "No error"]
-    DIS = 0x0,
-    #[doc = "Error occurred"]
-    EN = 0x01,
-}
-impl FltErr {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> FltErr {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for FltErr {
-    #[inline(always)]
-    fn from(val: u8) -> FltErr {
-        FltErr::from_bits(val)
-    }
-}
-impl From<FltErr> for u8 {
-    #[inline(always)]
-    fn from(val: FltErr) -> u8 {
-        FltErr::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum IntEn {
-    #[doc = "Disables"]
-    DIS = 0x0,
-    #[doc = "Enables"]
-    EN = 0x01,
-}
-impl IntEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> IntEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for IntEn {
-    #[inline(always)]
-    fn from(val: u8) -> IntEn {
-        IntEn::from_bits(val)
-    }
-}
-impl From<IntEn> for u8 {
-    #[inline(always)]
-    fn from(val: IntEn) -> u8 {
-        IntEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum ItgErr {
-    #[doc = "No error"]
-    DIS = 0x0,
-    #[doc = "Error occurred"]
-    EN = 0x01,
-}
-impl ItgErr {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> ItgErr {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for ItgErr {
-    #[inline(always)]
-    fn from(val: u8) -> ItgErr {
-        ItgErr::from_bits(val)
-    }
-}
-impl From<ItgErr> for u8 {
-    #[inline(always)]
-    fn from(val: ItgErr) -> u8 {
-        ItgErr::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1227,37 +979,6 @@ impl From<Ks9Ksize> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum OpnErr {
-    #[doc = "No error"]
-    DIS = 0x0,
-    #[doc = "Error occurred"]
-    EN = 0x01,
-}
-impl OpnErr {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> OpnErr {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for OpnErr {
-    #[inline(always)]
-    fn from(val: u8) -> OpnErr {
-        OpnErr::from_bits(val)
-    }
-}
-impl From<OpnErr> for u8 {
-    #[inline(always)]
-    fn from(val: OpnErr) -> u8 {
-        OpnErr::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pprot {
     #[doc = "Secure, non-privileged"]
     SECNP = 0x0,
@@ -1288,37 +1009,6 @@ impl From<Pprot> for u8 {
     #[inline(always)]
     fn from(val: Pprot) -> u8 {
         Pprot::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum PrngErr {
-    #[doc = "No error"]
-    DIS = 0x0,
-    #[doc = "Error occurred"]
-    EN = 0x01,
-}
-impl PrngErr {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> PrngErr {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for PrngErr {
-    #[inline(always)]
-    fn from(val: u8) -> PrngErr {
-        PrngErr::from_bits(val)
-    }
-}
-impl From<PrngErr> for u8 {
-    #[inline(always)]
-    fn from(val: PrngErr) -> u8 {
-        PrngErr::to_bits(val)
     }
 }
 #[repr(u8)]

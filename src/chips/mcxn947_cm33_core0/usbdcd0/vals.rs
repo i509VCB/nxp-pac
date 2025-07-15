@@ -147,37 +147,6 @@ impl From<ClockUnit> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Err {
-    #[doc = "No sequence errors."]
-    NO_SEQ_ERR = 0x0,
-    #[doc = "Error in the detection sequence."]
-    SEQ_ERR = 0x01,
-}
-impl Err {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Err {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Err {
-    #[inline(always)]
-    fn from(val: u8) -> Err {
-        Err::from_bits(val)
-    }
-}
-impl From<Err> for u8 {
-    #[inline(always)]
-    fn from(val: Err) -> u8 {
-        Err::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Iack {
     #[doc = "Do not clear the interrupt."]
     INT_NOCLEAR = 0x0,
@@ -407,37 +376,6 @@ impl From<Sr> for u8 {
         Sr::to_bits(val)
     }
 }
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Start {
-    #[doc = "Do not start the sequence. Writes of this value have no effect."]
-    NO_START = 0x0,
-    #[doc = "Initiate the charger detection sequence. If the sequence is already running, writes of this value have no effect."]
-    START = 0x01,
-}
-impl Start {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Start {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Start {
-    #[inline(always)]
-    fn from(val: u8) -> Start {
-        Start::from_bits(val)
-    }
-}
-impl From<Start> for u8 {
-    #[inline(always)]
-    fn from(val: Start) -> u8 {
-        Start::to_bits(val)
-    }
-}
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
 pub struct TdcdDbnc(u16);
@@ -516,37 +454,6 @@ impl From<TdcdDbnc> for u16 {
     #[inline(always)]
     fn from(val: TdcdDbnc) -> u16 {
         TdcdDbnc::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum To {
-    #[doc = "The detection sequence is not running for over 1 s."]
-    NO_TIMEOUT = 0x0,
-    #[doc = "It is over 1 s since the data pin contact was detected and debounced."]
-    TIMEOUT = 0x01,
-}
-impl To {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> To {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for To {
-    #[inline(always)]
-    fn from(val: u8) -> To {
-        To::from_bits(val)
-    }
-}
-impl From<To> for u8 {
-    #[inline(always)]
-    fn from(val: To) -> u8 {
-        To::to_bits(val)
     }
 }
 #[repr(transparent)]

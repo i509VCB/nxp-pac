@@ -6,50 +6,50 @@ impl Csw {
     #[doc = "Resynchronization Request"]
     #[must_use]
     #[inline(always)]
-    pub const fn resynch_req(&self) -> super::vals::ResynchReq {
+    pub const fn resynch_req(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::ResynchReq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Resynchronization Request"]
     #[inline(always)]
-    pub const fn set_resynch_req(&mut self, val: super::vals::ResynchReq) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_resynch_req(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Request Pending"]
     #[must_use]
     #[inline(always)]
-    pub const fn req_pending(&self) -> super::vals::ReqPending {
+    pub const fn req_pending(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::ReqPending::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Request Pending"]
     #[inline(always)]
-    pub const fn set_req_pending(&mut self, val: super::vals::ReqPending) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_req_pending(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "DBGMB Overrun Error"]
     #[must_use]
     #[inline(always)]
-    pub const fn dbg_or_err(&self) -> super::vals::DbgOrErr {
+    pub const fn dbg_or_err(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::DbgOrErr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DBGMB Overrun Error"]
     #[inline(always)]
-    pub const fn set_dbg_or_err(&mut self, val: super::vals::DbgOrErr) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_dbg_or_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "AHB Overrun Error"]
     #[must_use]
     #[inline(always)]
-    pub const fn ahb_or_err(&self) -> super::vals::AhbOrErr {
+    pub const fn ahb_or_err(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::AhbOrErr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "AHB Overrun Error"]
     #[inline(always)]
-    pub const fn set_ahb_or_err(&mut self, val: super::vals::AhbOrErr) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_ahb_or_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Soft Reset"]
     #[must_use]
@@ -99,7 +99,7 @@ impl defmt::Format for Csw {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Csw {{ resynch_req: {:?}, req_pending: {:?}, dbg_or_err: {:?}, ahb_or_err: {:?}, soft_reset: {=bool:?}, chip_reset_req: {=bool:?} }}",
+            "Csw {{ resynch_req: {=bool:?}, req_pending: {=bool:?}, dbg_or_err: {=bool:?}, ahb_or_err: {=bool:?}, soft_reset: {=bool:?}, chip_reset_req: {=bool:?} }}",
             self.resynch_req(),
             self.req_pending(),
             self.dbg_or_err(),

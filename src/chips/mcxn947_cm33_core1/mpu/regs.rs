@@ -18,14 +18,14 @@ impl Ctrl {
     #[doc = "Enables the operation of MPU during HardFault and NMI handlers"]
     #[must_use]
     #[inline(always)]
-    pub const fn hfnmiena(&self) -> super::vals::Hfnmiena {
+    pub const fn hfnmiena(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Hfnmiena::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables the operation of MPU during HardFault and NMI handlers"]
     #[inline(always)]
-    pub const fn set_hfnmiena(&mut self, val: super::vals::Hfnmiena) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_hfnmiena(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "no description available"]
     #[must_use]
@@ -60,7 +60,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ enable: {:?}, hfnmiena: {:?}, privdefena: {:?} }}",
+            "Ctrl {{ enable: {:?}, hfnmiena: {=bool:?}, privdefena: {:?} }}",
             self.enable(),
             self.hfnmiena(),
             self.privdefena()
@@ -573,14 +573,14 @@ impl Rlar {
     #[doc = "Enables this region."]
     #[must_use]
     #[inline(always)]
-    pub const fn en(&self) -> super::vals::RlarEn {
+    pub const fn en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::RlarEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables this region."]
     #[inline(always)]
-    pub const fn set_en(&mut self, val: super::vals::RlarEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Attribute index. Associates a set of attributes in the MPU_MAIR0 and MPU_MAIR1 fields."]
     #[must_use]
@@ -627,7 +627,7 @@ impl defmt::Format for Rlar {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Rlar {{ en: {:?}, attrindx: {=u8:?}, limit: {=u32:?} }}",
+            "Rlar {{ en: {=bool:?}, attrindx: {=u8:?}, limit: {=u32:?} }}",
             self.en(),
             self.attrindx(),
             self.limit()
@@ -642,14 +642,14 @@ impl RlarA1 {
     #[doc = "Enables this region."]
     #[must_use]
     #[inline(always)]
-    pub const fn en(&self) -> super::vals::RlarA1En {
+    pub const fn en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::RlarA1En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables this region."]
     #[inline(always)]
-    pub const fn set_en(&mut self, val: super::vals::RlarA1En) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Attribute index. Associates a set of attributes in the MPU_MAIR0 and MPU_MAIR1 fields."]
     #[must_use]
@@ -696,7 +696,7 @@ impl defmt::Format for RlarA1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "RlarA1 {{ en: {:?}, attrindx: {=u8:?}, limit: {=u32:?} }}",
+            "RlarA1 {{ en: {=bool:?}, attrindx: {=u8:?}, limit: {=u32:?} }}",
             self.en(),
             self.attrindx(),
             self.limit()
@@ -711,14 +711,14 @@ impl RlarA2 {
     #[doc = "Enables this region."]
     #[must_use]
     #[inline(always)]
-    pub const fn en(&self) -> super::vals::RlarA2En {
+    pub const fn en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::RlarA2En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables this region."]
     #[inline(always)]
-    pub const fn set_en(&mut self, val: super::vals::RlarA2En) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Attribute index. Associates a set of attributes in the MPU_MAIR0 and MPU_MAIR1 fields."]
     #[must_use]
@@ -765,7 +765,7 @@ impl defmt::Format for RlarA2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "RlarA2 {{ en: {:?}, attrindx: {=u8:?}, limit: {=u32:?} }}",
+            "RlarA2 {{ en: {=bool:?}, attrindx: {=u8:?}, limit: {=u32:?} }}",
             self.en(),
             self.attrindx(),
             self.limit()
@@ -780,14 +780,14 @@ impl RlarA3 {
     #[doc = "Enables this region."]
     #[must_use]
     #[inline(always)]
-    pub const fn en(&self) -> super::vals::RlarA3En {
+    pub const fn en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::RlarA3En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables this region."]
     #[inline(always)]
-    pub const fn set_en(&mut self, val: super::vals::RlarA3En) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Attribute index. Associates a set of attributes in the MPU_MAIR0 and MPU_MAIR1 fields."]
     #[must_use]
@@ -834,7 +834,7 @@ impl defmt::Format for RlarA3 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "RlarA3 {{ en: {:?}, attrindx: {=u8:?}, limit: {=u32:?} }}",
+            "RlarA3 {{ en: {=bool:?}, attrindx: {=u8:?}, limit: {=u32:?} }}",
             self.en(),
             self.attrindx(),
             self.limit()

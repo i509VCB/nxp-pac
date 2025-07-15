@@ -6,122 +6,122 @@ impl De {
     #[doc = "DMA/Trigger Wake-up Enable for Module 0"]
     #[must_use]
     #[inline(always)]
-    pub const fn wude0(&self) -> super::vals::Wude0 {
+    pub const fn wude0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Wude0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA/Trigger Wake-up Enable for Module 0"]
     #[inline(always)]
-    pub const fn set_wude0(&mut self, val: super::vals::Wude0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_wude0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "DMA/Trigger Wake-up Enable for Module 1"]
     #[must_use]
     #[inline(always)]
-    pub const fn wude1(&self) -> super::vals::Wude1 {
+    pub const fn wude1(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Wude1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA/Trigger Wake-up Enable for Module 1"]
     #[inline(always)]
-    pub const fn set_wude1(&mut self, val: super::vals::Wude1) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_wude1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "DMA/Trigger Wake-up Enable for Module 2"]
     #[must_use]
     #[inline(always)]
-    pub const fn wude2(&self) -> super::vals::Wude2 {
+    pub const fn wude2(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Wude2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA/Trigger Wake-up Enable for Module 2"]
     #[inline(always)]
-    pub const fn set_wude2(&mut self, val: super::vals::Wude2) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_wude2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "DMA/Trigger Wake-up Enable for Module 3"]
     #[must_use]
     #[inline(always)]
-    pub const fn wude3(&self) -> super::vals::Wude3 {
+    pub const fn wude3(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Wude3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA/Trigger Wake-up Enable for Module 3"]
     #[inline(always)]
-    pub const fn set_wude3(&mut self, val: super::vals::Wude3) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_wude3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "DMA/Trigger Wake-up Enable for Module 4"]
     #[must_use]
     #[inline(always)]
-    pub const fn wude4(&self) -> super::vals::Wude4 {
+    pub const fn wude4(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Wude4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA/Trigger Wake-up Enable for Module 4"]
     #[inline(always)]
-    pub const fn set_wude4(&mut self, val: super::vals::Wude4) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_wude4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "DMA/Trigger Wake-up Enable for Module 5"]
     #[must_use]
     #[inline(always)]
-    pub const fn wude5(&self) -> super::vals::Wude5 {
+    pub const fn wude5(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Wude5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA/Trigger Wake-up Enable for Module 5"]
     #[inline(always)]
-    pub const fn set_wude5(&mut self, val: super::vals::Wude5) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_wude5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "DMA/Trigger Wake-up Enable for Module 6"]
     #[must_use]
     #[inline(always)]
-    pub const fn wude6(&self) -> super::vals::Wude6 {
+    pub const fn wude6(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Wude6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA/Trigger Wake-up Enable for Module 6"]
     #[inline(always)]
-    pub const fn set_wude6(&mut self, val: super::vals::Wude6) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_wude6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "DMA/Trigger Wake-up Enable for Module 7"]
     #[must_use]
     #[inline(always)]
-    pub const fn wude7(&self) -> super::vals::Wude7 {
+    pub const fn wude7(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Wude7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA/Trigger Wake-up Enable for Module 7"]
     #[inline(always)]
-    pub const fn set_wude7(&mut self, val: super::vals::Wude7) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_wude7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "DMA/Trigger Wake-up Enable for Module 8"]
     #[must_use]
     #[inline(always)]
-    pub const fn wude8(&self) -> super::vals::Wude8 {
+    pub const fn wude8(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Wude8::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA/Trigger Wake-up Enable for Module 8"]
     #[inline(always)]
-    pub const fn set_wude8(&mut self, val: super::vals::Wude8) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_wude8(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "DMA/Trigger Wake-up Enable for Module 9"]
     #[must_use]
     #[inline(always)]
-    pub const fn wude9(&self) -> super::vals::Wude9 {
+    pub const fn wude9(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Wude9::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA/Trigger Wake-up Enable for Module 9"]
     #[inline(always)]
-    pub const fn set_wude9(&mut self, val: super::vals::Wude9) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_wude9(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
 }
 impl Default for De {
@@ -151,7 +151,7 @@ impl defmt::Format for De {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "De {{ wude0: {:?}, wude1: {:?}, wude2: {:?}, wude3: {:?}, wude4: {:?}, wude5: {:?}, wude6: {:?}, wude7: {:?}, wude8: {:?}, wude9: {:?} }}",
+            "De {{ wude0: {=bool:?}, wude1: {=bool:?}, wude2: {=bool:?}, wude3: {=bool:?}, wude4: {=bool:?}, wude5: {=bool:?}, wude6: {=bool:?}, wude7: {=bool:?}, wude8: {=bool:?}, wude9: {=bool:?} }}",
             self.wude0(),
             self.wude1(),
             self.wude2(),
@@ -252,14 +252,14 @@ impl Filt {
     #[doc = "Filter 1 Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn filtf1(&self) -> super::vals::Filtf1 {
+    pub const fn filtf1(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Filtf1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Filter 1 Flag"]
     #[inline(always)]
-    pub const fn set_filtf1(&mut self, val: super::vals::Filtf1) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_filtf1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Filter 2 Pin Select"]
     #[must_use]
@@ -288,14 +288,14 @@ impl Filt {
     #[doc = "Filter 2 Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn filtf2(&self) -> super::vals::Filtf2 {
+    pub const fn filtf2(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Filtf2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Filter 2 Flag"]
     #[inline(always)]
-    pub const fn set_filtf2(&mut self, val: super::vals::Filtf2) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_filtf2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
 }
 impl Default for Filt {
@@ -321,7 +321,7 @@ impl defmt::Format for Filt {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Filt {{ filtsel1: {=u8:?}, filte1: {:?}, filtf1: {:?}, filtsel2: {=u8:?}, filte2: {:?}, filtf2: {:?} }}",
+            "Filt {{ filtsel1: {=u8:?}, filte1: {:?}, filtf1: {=bool:?}, filtsel2: {=u8:?}, filte2: {:?}, filtf2: {=bool:?} }}",
             self.filtsel1(),
             self.filte1(),
             self.filtf1(),
@@ -394,122 +394,122 @@ impl Me {
     #[doc = "Module Interrupt Wake-up Enable for Module 0"]
     #[must_use]
     #[inline(always)]
-    pub const fn wume0(&self) -> super::vals::Wume0 {
+    pub const fn wume0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Wume0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Module Interrupt Wake-up Enable for Module 0"]
     #[inline(always)]
-    pub const fn set_wume0(&mut self, val: super::vals::Wume0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_wume0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Module Interrupt Wake-up Enable for Module 1"]
     #[must_use]
     #[inline(always)]
-    pub const fn wume1(&self) -> super::vals::Wume1 {
+    pub const fn wume1(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Wume1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Module Interrupt Wake-up Enable for Module 1"]
     #[inline(always)]
-    pub const fn set_wume1(&mut self, val: super::vals::Wume1) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_wume1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Module Interrupt Wake-up Enable for Module 2"]
     #[must_use]
     #[inline(always)]
-    pub const fn wume2(&self) -> super::vals::Wume2 {
+    pub const fn wume2(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Wume2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Module Interrupt Wake-up Enable for Module 2"]
     #[inline(always)]
-    pub const fn set_wume2(&mut self, val: super::vals::Wume2) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_wume2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Module Interrupt Wake-up Enable for Module 3"]
     #[must_use]
     #[inline(always)]
-    pub const fn wume3(&self) -> super::vals::Wume3 {
+    pub const fn wume3(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Wume3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Module Interrupt Wake-up Enable for Module 3"]
     #[inline(always)]
-    pub const fn set_wume3(&mut self, val: super::vals::Wume3) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_wume3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Module Interrupt Wake-up Enable for Module 4"]
     #[must_use]
     #[inline(always)]
-    pub const fn wume4(&self) -> super::vals::Wume4 {
+    pub const fn wume4(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Wume4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Module Interrupt Wake-up Enable for Module 4"]
     #[inline(always)]
-    pub const fn set_wume4(&mut self, val: super::vals::Wume4) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_wume4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Module Interrupt Wake-up Enable for Module 5"]
     #[must_use]
     #[inline(always)]
-    pub const fn wume5(&self) -> super::vals::Wume5 {
+    pub const fn wume5(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Wume5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Module Interrupt Wake-up Enable for Module 5"]
     #[inline(always)]
-    pub const fn set_wume5(&mut self, val: super::vals::Wume5) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_wume5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Module Interrupt Wake-up Enable for Module 6"]
     #[must_use]
     #[inline(always)]
-    pub const fn wume6(&self) -> super::vals::Wume6 {
+    pub const fn wume6(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Wume6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Module Interrupt Wake-up Enable for Module 6"]
     #[inline(always)]
-    pub const fn set_wume6(&mut self, val: super::vals::Wume6) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_wume6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Module Interrupt Wake-up Enable for Module 7"]
     #[must_use]
     #[inline(always)]
-    pub const fn wume7(&self) -> super::vals::Wume7 {
+    pub const fn wume7(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Wume7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Module Interrupt Wake-up Enable for Module 7"]
     #[inline(always)]
-    pub const fn set_wume7(&mut self, val: super::vals::Wume7) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_wume7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Module Interrupt Wake-up Enable for Module 8"]
     #[must_use]
     #[inline(always)]
-    pub const fn wume8(&self) -> super::vals::Wume8 {
+    pub const fn wume8(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Wume8::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Module Interrupt Wake-up Enable for Module 8"]
     #[inline(always)]
-    pub const fn set_wume8(&mut self, val: super::vals::Wume8) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_wume8(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Module Interrupt Wake-up Enable for Module 9"]
     #[must_use]
     #[inline(always)]
-    pub const fn wume9(&self) -> super::vals::Wume9 {
+    pub const fn wume9(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Wume9::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Module Interrupt Wake-up Enable for Module 9"]
     #[inline(always)]
-    pub const fn set_wume9(&mut self, val: super::vals::Wume9) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_wume9(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
 }
 impl Default for Me {
@@ -539,7 +539,7 @@ impl defmt::Format for Me {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Me {{ wume0: {:?}, wume1: {:?}, wume2: {:?}, wume3: {:?}, wume4: {:?}, wume5: {:?}, wume6: {:?}, wume7: {:?}, wume8: {:?}, wume9: {:?} }}",
+            "Me {{ wume0: {=bool:?}, wume1: {=bool:?}, wume2: {=bool:?}, wume3: {=bool:?}, wume4: {=bool:?}, wume5: {=bool:?}, wume6: {=bool:?}, wume7: {=bool:?}, wume8: {=bool:?}, wume9: {=bool:?} }}",
             self.wume0(),
             self.wume1(),
             self.wume2(),
@@ -1648,386 +1648,386 @@ impl Pf {
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf0(&self) -> super::vals::Wuf0 {
+    pub const fn wuf0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Wuf0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf0(&mut self, val: super::vals::Wuf0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_wuf0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf1(&self) -> super::vals::Wuf1 {
+    pub const fn wuf1(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Wuf1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf1(&mut self, val: super::vals::Wuf1) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_wuf1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf2(&self) -> super::vals::Wuf2 {
+    pub const fn wuf2(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Wuf2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf2(&mut self, val: super::vals::Wuf2) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_wuf2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf3(&self) -> super::vals::Wuf3 {
+    pub const fn wuf3(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Wuf3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf3(&mut self, val: super::vals::Wuf3) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_wuf3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf4(&self) -> super::vals::Wuf4 {
+    pub const fn wuf4(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Wuf4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf4(&mut self, val: super::vals::Wuf4) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_wuf4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf5(&self) -> super::vals::Wuf5 {
+    pub const fn wuf5(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Wuf5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf5(&mut self, val: super::vals::Wuf5) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_wuf5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf6(&self) -> super::vals::Wuf6 {
+    pub const fn wuf6(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Wuf6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf6(&mut self, val: super::vals::Wuf6) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_wuf6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf7(&self) -> super::vals::Wuf7 {
+    pub const fn wuf7(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Wuf7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf7(&mut self, val: super::vals::Wuf7) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_wuf7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf8(&self) -> super::vals::Wuf8 {
+    pub const fn wuf8(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Wuf8::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf8(&mut self, val: super::vals::Wuf8) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_wuf8(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf9(&self) -> super::vals::Wuf9 {
+    pub const fn wuf9(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Wuf9::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf9(&mut self, val: super::vals::Wuf9) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_wuf9(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf10(&self) -> super::vals::Wuf10 {
+    pub const fn wuf10(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Wuf10::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf10(&mut self, val: super::vals::Wuf10) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_wuf10(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf11(&self) -> super::vals::Wuf11 {
+    pub const fn wuf11(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Wuf11::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf11(&mut self, val: super::vals::Wuf11) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_wuf11(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf12(&self) -> super::vals::Wuf12 {
+    pub const fn wuf12(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Wuf12::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf12(&mut self, val: super::vals::Wuf12) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_wuf12(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf13(&self) -> super::vals::Wuf13 {
+    pub const fn wuf13(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Wuf13::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf13(&mut self, val: super::vals::Wuf13) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_wuf13(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf14(&self) -> super::vals::Wuf14 {
+    pub const fn wuf14(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Wuf14::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf14(&mut self, val: super::vals::Wuf14) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_wuf14(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf15(&self) -> super::vals::Wuf15 {
+    pub const fn wuf15(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Wuf15::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf15(&mut self, val: super::vals::Wuf15) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_wuf15(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf16(&self) -> super::vals::Wuf16 {
+    pub const fn wuf16(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Wuf16::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf16(&mut self, val: super::vals::Wuf16) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_wuf16(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf17(&self) -> super::vals::Wuf17 {
+    pub const fn wuf17(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Wuf17::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf17(&mut self, val: super::vals::Wuf17) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_wuf17(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf18(&self) -> super::vals::Wuf18 {
+    pub const fn wuf18(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::Wuf18::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf18(&mut self, val: super::vals::Wuf18) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_wuf18(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf19(&self) -> super::vals::Wuf19 {
+    pub const fn wuf19(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Wuf19::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf19(&mut self, val: super::vals::Wuf19) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_wuf19(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf20(&self) -> super::vals::Wuf20 {
+    pub const fn wuf20(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::Wuf20::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf20(&mut self, val: super::vals::Wuf20) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_wuf20(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf21(&self) -> super::vals::Wuf21 {
+    pub const fn wuf21(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Wuf21::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf21(&mut self, val: super::vals::Wuf21) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_wuf21(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf22(&self) -> super::vals::Wuf22 {
+    pub const fn wuf22(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Wuf22::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf22(&mut self, val: super::vals::Wuf22) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_wuf22(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf23(&self) -> super::vals::Wuf23 {
+    pub const fn wuf23(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Wuf23::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf23(&mut self, val: super::vals::Wuf23) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_wuf23(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf24(&self) -> super::vals::Wuf24 {
+    pub const fn wuf24(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::Wuf24::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf24(&mut self, val: super::vals::Wuf24) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_wuf24(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf25(&self) -> super::vals::Wuf25 {
+    pub const fn wuf25(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Wuf25::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf25(&mut self, val: super::vals::Wuf25) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_wuf25(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf26(&self) -> super::vals::Wuf26 {
+    pub const fn wuf26(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::Wuf26::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf26(&mut self, val: super::vals::Wuf26) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_wuf26(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf27(&self) -> super::vals::Wuf27 {
+    pub const fn wuf27(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::Wuf27::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf27(&mut self, val: super::vals::Wuf27) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_wuf27(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf28(&self) -> super::vals::Wuf28 {
+    pub const fn wuf28(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Wuf28::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf28(&mut self, val: super::vals::Wuf28) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_wuf28(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf29(&self) -> super::vals::Wuf29 {
+    pub const fn wuf29(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::Wuf29::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf29(&mut self, val: super::vals::Wuf29) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_wuf29(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf30(&self) -> super::vals::Wuf30 {
+    pub const fn wuf30(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Wuf30::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf30(&mut self, val: super::vals::Wuf30) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_wuf30(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[must_use]
     #[inline(always)]
-    pub const fn wuf31(&self) -> super::vals::Wuf31 {
+    pub const fn wuf31(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Wuf31::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up Flag for WUU_Pn"]
     #[inline(always)]
-    pub const fn set_wuf31(&mut self, val: super::vals::Wuf31) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_wuf31(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Pf {
@@ -2079,7 +2079,7 @@ impl defmt::Format for Pf {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Pf {{ wuf0: {:?}, wuf1: {:?}, wuf2: {:?}, wuf3: {:?}, wuf4: {:?}, wuf5: {:?}, wuf6: {:?}, wuf7: {:?}, wuf8: {:?}, wuf9: {:?}, wuf10: {:?}, wuf11: {:?}, wuf12: {:?}, wuf13: {:?}, wuf14: {:?}, wuf15: {:?}, wuf16: {:?}, wuf17: {:?}, wuf18: {:?}, wuf19: {:?}, wuf20: {:?}, wuf21: {:?}, wuf22: {:?}, wuf23: {:?}, wuf24: {:?}, wuf25: {:?}, wuf26: {:?}, wuf27: {:?}, wuf28: {:?}, wuf29: {:?}, wuf30: {:?}, wuf31: {:?} }}",
+            "Pf {{ wuf0: {=bool:?}, wuf1: {=bool:?}, wuf2: {=bool:?}, wuf3: {=bool:?}, wuf4: {=bool:?}, wuf5: {=bool:?}, wuf6: {=bool:?}, wuf7: {=bool:?}, wuf8: {=bool:?}, wuf9: {=bool:?}, wuf10: {=bool:?}, wuf11: {=bool:?}, wuf12: {=bool:?}, wuf13: {=bool:?}, wuf14: {=bool:?}, wuf15: {=bool:?}, wuf16: {=bool:?}, wuf17: {=bool:?}, wuf18: {=bool:?}, wuf19: {=bool:?}, wuf20: {=bool:?}, wuf21: {=bool:?}, wuf22: {=bool:?}, wuf23: {=bool:?}, wuf24: {=bool:?}, wuf25: {=bool:?}, wuf26: {=bool:?}, wuf27: {=bool:?}, wuf28: {=bool:?}, wuf29: {=bool:?}, wuf30: {=bool:?}, wuf31: {=bool:?} }}",
             self.wuf0(),
             self.wuf1(),
             self.wuf2(),

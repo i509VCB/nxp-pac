@@ -744,110 +744,110 @@ impl Eichen {
     #[doc = "Error Injection Channel 8 Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn eich8en(&self) -> super::vals::Eich8en {
+    pub const fn eich8en(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Eich8en::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Error Injection Channel 8 Enable"]
     #[inline(always)]
-    pub const fn set_eich8en(&mut self, val: super::vals::Eich8en) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_eich8en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "Error Injection Channel 7 Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn eich7en(&self) -> super::vals::Eich7en {
+    pub const fn eich7en(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::Eich7en::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Error Injection Channel 7 Enable"]
     #[inline(always)]
-    pub const fn set_eich7en(&mut self, val: super::vals::Eich7en) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_eich7en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "Error Injection Channel 6 Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn eich6en(&self) -> super::vals::Eich6en {
+    pub const fn eich6en(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Eich6en::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Error Injection Channel 6 Enable"]
     #[inline(always)]
-    pub const fn set_eich6en(&mut self, val: super::vals::Eich6en) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_eich6en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "Error Injection Channel 5 Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn eich5en(&self) -> super::vals::Eich5en {
+    pub const fn eich5en(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::Eich5en::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Error Injection Channel 5 Enable"]
     #[inline(always)]
-    pub const fn set_eich5en(&mut self, val: super::vals::Eich5en) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_eich5en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "Error Injection Channel 4 Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn eich4en(&self) -> super::vals::Eich4en {
+    pub const fn eich4en(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::Eich4en::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Error Injection Channel 4 Enable"]
     #[inline(always)]
-    pub const fn set_eich4en(&mut self, val: super::vals::Eich4en) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_eich4en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
     #[doc = "Error Injection Channel 3 Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn eich3en(&self) -> super::vals::Eich3en {
+    pub const fn eich3en(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Eich3en::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Error Injection Channel 3 Enable"]
     #[inline(always)]
-    pub const fn set_eich3en(&mut self, val: super::vals::Eich3en) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_eich3en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Error Injection Channel 2 Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn eich2en(&self) -> super::vals::Eich2en {
+    pub const fn eich2en(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::Eich2en::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Error Injection Channel 2 Enable"]
     #[inline(always)]
-    pub const fn set_eich2en(&mut self, val: super::vals::Eich2en) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_eich2en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "Error Injection Channel 1 Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn eich1en(&self) -> super::vals::Eich1en {
+    pub const fn eich1en(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Eich1en::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Error Injection Channel 1 Enable"]
     #[inline(always)]
-    pub const fn set_eich1en(&mut self, val: super::vals::Eich1en) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_eich1en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Error Injection Channel 0 Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn eich0en(&self) -> super::vals::Eich0en {
+    pub const fn eich0en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Eich0en::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Error Injection Channel 0 Enable"]
     #[inline(always)]
-    pub const fn set_eich0en(&mut self, val: super::vals::Eich0en) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_eich0en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Eichen {
@@ -876,7 +876,7 @@ impl defmt::Format for Eichen {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Eichen {{ eich8en: {:?}, eich7en: {:?}, eich6en: {:?}, eich5en: {:?}, eich4en: {:?}, eich3en: {:?}, eich2en: {:?}, eich1en: {:?}, eich0en: {:?} }}",
+            "Eichen {{ eich8en: {=bool:?}, eich7en: {=bool:?}, eich6en: {=bool:?}, eich5en: {=bool:?}, eich4en: {=bool:?}, eich3en: {=bool:?}, eich2en: {=bool:?}, eich1en: {=bool:?}, eich0en: {=bool:?} }}",
             self.eich8en(),
             self.eich7en(),
             self.eich6en(),
@@ -897,14 +897,14 @@ impl Eimcr {
     #[doc = "Global Error Injection Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn geien(&self) -> super::vals::Geien {
+    pub const fn geien(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Geien::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Global Error Injection Enable"]
     #[inline(always)]
-    pub const fn set_geien(&mut self, val: super::vals::Geien) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_geien(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Eimcr {
@@ -923,6 +923,6 @@ impl core::fmt::Debug for Eimcr {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Eimcr {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Eimcr {{ geien: {:?} }}", self.geien())
+        defmt::write!(f, "Eimcr {{ geien: {=bool:?} }}", self.geien())
     }
 }

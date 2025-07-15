@@ -109,14 +109,14 @@ impl Control {
     #[doc = "Start Change Detection Sequence"]
     #[must_use]
     #[inline(always)]
-    pub const fn start(&self) -> super::vals::Start {
+    pub const fn start(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::Start::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Start Change Detection Sequence"]
     #[inline(always)]
-    pub const fn set_start(&mut self, val: super::vals::Start) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_start(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "Software Reset"]
     #[must_use]
@@ -154,7 +154,7 @@ impl defmt::Format for Control {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Control {{ iack: {:?}, if_: {:?}, ie: {:?}, bc12: {:?}, start: {:?}, sr: {:?} }}",
+            "Control {{ iack: {:?}, if_: {:?}, ie: {:?}, bc12: {:?}, start: {=bool:?}, sr: {:?} }}",
             self.iack(),
             self.if_(),
             self.ie(),
@@ -233,26 +233,26 @@ impl Status {
     #[doc = "Error Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn err(&self) -> super::vals::Err {
+    pub const fn err(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::Err::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Error Flag"]
     #[inline(always)]
-    pub const fn set_err(&mut self, val: super::vals::Err) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "Timeout Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn to(&self) -> super::vals::To {
+    pub const fn to(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::To::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Timeout Flag"]
     #[inline(always)]
-    pub const fn set_to(&mut self, val: super::vals::To) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_to(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "Active Status Indicator"]
     #[must_use]
@@ -289,7 +289,7 @@ impl defmt::Format for Status {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Status {{ seq_res: {:?}, seq_stat: {:?}, err: {:?}, to: {:?}, active: {:?} }}",
+            "Status {{ seq_res: {:?}, seq_stat: {:?}, err: {=bool:?}, to: {=bool:?}, active: {:?} }}",
             self.seq_res(),
             self.seq_stat(),
             self.err(),

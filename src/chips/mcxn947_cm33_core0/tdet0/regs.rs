@@ -73,26 +73,26 @@ impl Cr {
     #[doc = "Digital Tamper Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn den(&self) -> super::vals::Den {
+    pub const fn den(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Den::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Digital Tamper Enable"]
     #[inline(always)]
-    pub const fn set_den(&mut self, val: super::vals::Den) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_den(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Tamper Force System Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn tfsr(&self) -> super::vals::Tfsr {
+    pub const fn tfsr(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Tfsr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Force System Reset"]
     #[inline(always)]
-    pub const fn set_tfsr(&mut self, val: super::vals::Tfsr) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_tfsr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Update Mode"]
     #[must_use]
@@ -180,7 +180,7 @@ impl defmt::Format for Cr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cr {{ swr: {:?}, den: {:?}, tfsr: {:?}, um: {:?}, atcs0: {:?}, atcs1: {:?}, distam: {:?}, dpr: {=u16:?} }}",
+            "Cr {{ swr: {:?}, den: {=bool:?}, tfsr: {=bool:?}, um: {:?}, atcs0: {:?}, atcs1: {:?}, distam: {:?}, dpr: {=u16:?} }}",
             self.swr(),
             self.den(),
             self.tfsr(),
@@ -200,230 +200,230 @@ impl Ier {
     #[doc = "Digital Tamper Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dtie(&self) -> super::vals::Dtie {
+    pub const fn dtie(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Dtie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Digital Tamper Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_dtie(&mut self, val: super::vals::Dtie) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_dtie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Tamper Input n Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tiie0(&self) -> super::vals::Tiie0 {
+    pub const fn tiie0(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Tiie0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input n Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tiie0(&mut self, val: super::vals::Tiie0) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_tiie0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Tamper Input n Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tiie1(&self) -> super::vals::Tiie1 {
+    pub const fn tiie1(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Tiie1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input n Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tiie1(&mut self, val: super::vals::Tiie1) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_tiie1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Tamper Input n Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tiie2(&self) -> super::vals::Tiie2 {
+    pub const fn tiie2(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Tiie2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input n Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tiie2(&mut self, val: super::vals::Tiie2) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_tiie2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Tamper Input n Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tiie3(&self) -> super::vals::Tiie3 {
+    pub const fn tiie3(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Tiie3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input n Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tiie3(&mut self, val: super::vals::Tiie3) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_tiie3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Tamper Input n Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tiie4(&self) -> super::vals::Tiie4 {
+    pub const fn tiie4(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Tiie4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input n Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tiie4(&mut self, val: super::vals::Tiie4) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_tiie4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Tamper Input n Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tiie5(&self) -> super::vals::Tiie5 {
+    pub const fn tiie5(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Tiie5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input n Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tiie5(&mut self, val: super::vals::Tiie5) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_tiie5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Tamper Input n Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tiie6(&self) -> super::vals::Tiie6 {
+    pub const fn tiie6(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Tiie6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input n Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tiie6(&mut self, val: super::vals::Tiie6) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_tiie6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Tamper Input n Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tiie7(&self) -> super::vals::Tiie7 {
+    pub const fn tiie7(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Tiie7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input n Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tiie7(&mut self, val: super::vals::Tiie7) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_tiie7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Tamper Input n Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tiie8(&self) -> super::vals::Tiie8 {
+    pub const fn tiie8(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Tiie8::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input n Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tiie8(&mut self, val: super::vals::Tiie8) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_tiie8(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Tamper Input n Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tiie9(&self) -> super::vals::Tiie9 {
+    pub const fn tiie9(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Tiie9::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input n Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tiie9(&mut self, val: super::vals::Tiie9) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_tiie9(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Tamper Pin n Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpie0(&self) -> super::vals::Tpie0 {
+    pub const fn tpie0(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Tpie0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tpie0(&mut self, val: super::vals::Tpie0) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_tpie0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Tamper Pin n Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpie1(&self) -> super::vals::Tpie1 {
+    pub const fn tpie1(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Tpie1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tpie1(&mut self, val: super::vals::Tpie1) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_tpie1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Tamper Pin n Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpie2(&self) -> super::vals::Tpie2 {
+    pub const fn tpie2(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::Tpie2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tpie2(&mut self, val: super::vals::Tpie2) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_tpie2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Tamper Pin n Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpie3(&self) -> super::vals::Tpie3 {
+    pub const fn tpie3(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Tpie3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tpie3(&mut self, val: super::vals::Tpie3) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_tpie3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "Tamper Pin n Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpie4(&self) -> super::vals::Tpie4 {
+    pub const fn tpie4(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::Tpie4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tpie4(&mut self, val: super::vals::Tpie4) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_tpie4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "Tamper Pin n Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpie5(&self) -> super::vals::Tpie5 {
+    pub const fn tpie5(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Tpie5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tpie5(&mut self, val: super::vals::Tpie5) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_tpie5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "Tamper Pin n Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpie6(&self) -> super::vals::Tpie6 {
+    pub const fn tpie6(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Tpie6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tpie6(&mut self, val: super::vals::Tpie6) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_tpie6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "Tamper Pin n Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpie7(&self) -> super::vals::Tpie7 {
+    pub const fn tpie7(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Tpie7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tpie7(&mut self, val: super::vals::Tpie7) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_tpie7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
 }
 impl Default for Ier {
@@ -462,7 +462,7 @@ impl defmt::Format for Ier {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ier {{ dtie: {:?}, tiie0: {:?}, tiie1: {:?}, tiie2: {:?}, tiie3: {:?}, tiie4: {:?}, tiie5: {:?}, tiie6: {:?}, tiie7: {:?}, tiie8: {:?}, tiie9: {:?}, tpie0: {:?}, tpie1: {:?}, tpie2: {:?}, tpie3: {:?}, tpie4: {:?}, tpie5: {:?}, tpie6: {:?}, tpie7: {:?} }}",
+            "Ier {{ dtie: {=bool:?}, tiie0: {=bool:?}, tiie1: {=bool:?}, tiie2: {=bool:?}, tiie3: {=bool:?}, tiie4: {=bool:?}, tiie5: {=bool:?}, tiie6: {=bool:?}, tiie7: {=bool:?}, tiie8: {=bool:?}, tiie9: {=bool:?}, tpie0: {=bool:?}, tpie1: {=bool:?}, tpie2: {=bool:?}, tpie3: {=bool:?}, tpie4: {=bool:?}, tpie5: {=bool:?}, tpie6: {=bool:?}, tpie7: {=bool:?} }}",
             self.dtie(),
             self.tiie0(),
             self.tiie1(),
@@ -1095,14 +1095,14 @@ impl Pgfr {
     #[doc = "Tamper Pull Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpe(&self) -> super::vals::Tpe {
+    pub const fn tpe(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::Tpe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pull Enable"]
     #[inline(always)]
-    pub const fn set_tpe(&mut self, val: super::vals::Tpe) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_tpe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "Tamper Pull Select"]
     #[must_use]
@@ -1142,7 +1142,7 @@ impl defmt::Format for Pgfr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Pgfr {{ gfw: {=u8:?}, gfp: {:?}, gfe: {:?}, tpsw: {:?}, tpsf: {:?}, tpex: {:?}, tpe: {:?}, tps: {:?} }}",
+            "Pgfr {{ gfw: {=u8:?}, gfp: {:?}, gfe: {:?}, tpsw: {:?}, tpsf: {:?}, tpex: {:?}, tpe: {=bool:?}, tps: {:?} }}",
             self.gfw(),
             self.gfp(),
             self.gfe(),
@@ -1162,98 +1162,98 @@ impl Ppr {
     #[doc = "Tamper Pin n Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpp0(&self) -> super::vals::Tpp0 {
+    pub const fn tpp0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Tpp0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Polarity"]
     #[inline(always)]
-    pub const fn set_tpp0(&mut self, val: super::vals::Tpp0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_tpp0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Tamper Pin n Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpp1(&self) -> super::vals::Tpp1 {
+    pub const fn tpp1(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Tpp1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Polarity"]
     #[inline(always)]
-    pub const fn set_tpp1(&mut self, val: super::vals::Tpp1) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_tpp1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Tamper Pin n Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpp2(&self) -> super::vals::Tpp2 {
+    pub const fn tpp2(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Tpp2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Polarity"]
     #[inline(always)]
-    pub const fn set_tpp2(&mut self, val: super::vals::Tpp2) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_tpp2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Tamper Pin n Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpp3(&self) -> super::vals::Tpp3 {
+    pub const fn tpp3(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Tpp3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Polarity"]
     #[inline(always)]
-    pub const fn set_tpp3(&mut self, val: super::vals::Tpp3) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_tpp3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Tamper Pin n Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpp4(&self) -> super::vals::Tpp4 {
+    pub const fn tpp4(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Tpp4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Polarity"]
     #[inline(always)]
-    pub const fn set_tpp4(&mut self, val: super::vals::Tpp4) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_tpp4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Tamper Pin n Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpp5(&self) -> super::vals::Tpp5 {
+    pub const fn tpp5(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Tpp5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Polarity"]
     #[inline(always)]
-    pub const fn set_tpp5(&mut self, val: super::vals::Tpp5) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_tpp5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Tamper Pin n Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpp6(&self) -> super::vals::Tpp6 {
+    pub const fn tpp6(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Tpp6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Polarity"]
     #[inline(always)]
-    pub const fn set_tpp6(&mut self, val: super::vals::Tpp6) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_tpp6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Tamper Pin n Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpp7(&self) -> super::vals::Tpp7 {
+    pub const fn tpp7(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Tpp7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Polarity"]
     #[inline(always)]
-    pub const fn set_tpp7(&mut self, val: super::vals::Tpp7) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_tpp7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Tamper Pin n Input Data"]
     #[must_use]
@@ -1385,7 +1385,7 @@ impl defmt::Format for Ppr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ppr {{ tpp0: {:?}, tpp1: {:?}, tpp2: {:?}, tpp3: {:?}, tpp4: {:?}, tpp5: {:?}, tpp6: {:?}, tpp7: {:?}, tpid0: {:?}, tpid1: {:?}, tpid2: {:?}, tpid3: {:?}, tpid4: {:?}, tpid5: {:?}, tpid6: {:?}, tpid7: {:?} }}",
+            "Ppr {{ tpp0: {=bool:?}, tpp1: {=bool:?}, tpp2: {=bool:?}, tpp3: {=bool:?}, tpp4: {=bool:?}, tpp5: {=bool:?}, tpp6: {=bool:?}, tpp7: {=bool:?}, tpid0: {:?}, tpid1: {:?}, tpid2: {:?}, tpid3: {:?}, tpid4: {:?}, tpid5: {:?}, tpid6: {:?}, tpid7: {:?} }}",
             self.tpp0(),
             self.tpp1(),
             self.tpp2(),
@@ -1413,242 +1413,242 @@ impl Sr {
     #[doc = "Digital Tamper Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn dtf(&self) -> super::vals::Dtf {
+    pub const fn dtf(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Dtf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Digital Tamper Flag"]
     #[inline(always)]
-    pub const fn set_dtf(&mut self, val: super::vals::Dtf) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_dtf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Tamper Acknowledge Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn taf(&self) -> super::vals::Taf {
+    pub const fn taf(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Taf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Acknowledge Flag"]
     #[inline(always)]
-    pub const fn set_taf(&mut self, val: super::vals::Taf) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_taf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Tamper Input n Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tif0(&self) -> super::vals::Tif0 {
+    pub const fn tif0(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Tif0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input n Flag"]
     #[inline(always)]
-    pub const fn set_tif0(&mut self, val: super::vals::Tif0) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_tif0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Tamper Input n Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tif1(&self) -> super::vals::Tif1 {
+    pub const fn tif1(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Tif1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input n Flag"]
     #[inline(always)]
-    pub const fn set_tif1(&mut self, val: super::vals::Tif1) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_tif1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Tamper Input n Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tif2(&self) -> super::vals::Tif2 {
+    pub const fn tif2(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Tif2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input n Flag"]
     #[inline(always)]
-    pub const fn set_tif2(&mut self, val: super::vals::Tif2) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_tif2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Tamper Input n Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tif3(&self) -> super::vals::Tif3 {
+    pub const fn tif3(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Tif3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input n Flag"]
     #[inline(always)]
-    pub const fn set_tif3(&mut self, val: super::vals::Tif3) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_tif3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Tamper Input n Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tif4(&self) -> super::vals::Tif4 {
+    pub const fn tif4(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Tif4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input n Flag"]
     #[inline(always)]
-    pub const fn set_tif4(&mut self, val: super::vals::Tif4) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_tif4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Tamper Input n Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tif5(&self) -> super::vals::Tif5 {
+    pub const fn tif5(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Tif5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input n Flag"]
     #[inline(always)]
-    pub const fn set_tif5(&mut self, val: super::vals::Tif5) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_tif5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Tamper Input n Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tif6(&self) -> super::vals::Tif6 {
+    pub const fn tif6(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Tif6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input n Flag"]
     #[inline(always)]
-    pub const fn set_tif6(&mut self, val: super::vals::Tif6) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_tif6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Tamper Input n Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tif7(&self) -> super::vals::Tif7 {
+    pub const fn tif7(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Tif7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input n Flag"]
     #[inline(always)]
-    pub const fn set_tif7(&mut self, val: super::vals::Tif7) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_tif7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Tamper Input n Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tif8(&self) -> super::vals::Tif8 {
+    pub const fn tif8(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Tif8::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input n Flag"]
     #[inline(always)]
-    pub const fn set_tif8(&mut self, val: super::vals::Tif8) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_tif8(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Tamper Input n Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tif9(&self) -> super::vals::Tif9 {
+    pub const fn tif9(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Tif9::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input n Flag"]
     #[inline(always)]
-    pub const fn set_tif9(&mut self, val: super::vals::Tif9) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_tif9(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Tamper Pin n Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpf0(&self) -> super::vals::Tpf0 {
+    pub const fn tpf0(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Tpf0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Flag"]
     #[inline(always)]
-    pub const fn set_tpf0(&mut self, val: super::vals::Tpf0) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_tpf0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Tamper Pin n Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpf1(&self) -> super::vals::Tpf1 {
+    pub const fn tpf1(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Tpf1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Flag"]
     #[inline(always)]
-    pub const fn set_tpf1(&mut self, val: super::vals::Tpf1) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_tpf1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Tamper Pin n Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpf2(&self) -> super::vals::Tpf2 {
+    pub const fn tpf2(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::Tpf2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Flag"]
     #[inline(always)]
-    pub const fn set_tpf2(&mut self, val: super::vals::Tpf2) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_tpf2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Tamper Pin n Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpf3(&self) -> super::vals::Tpf3 {
+    pub const fn tpf3(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Tpf3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Flag"]
     #[inline(always)]
-    pub const fn set_tpf3(&mut self, val: super::vals::Tpf3) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_tpf3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "Tamper Pin n Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpf4(&self) -> super::vals::Tpf4 {
+    pub const fn tpf4(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::Tpf4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Flag"]
     #[inline(always)]
-    pub const fn set_tpf4(&mut self, val: super::vals::Tpf4) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_tpf4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "Tamper Pin n Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpf5(&self) -> super::vals::Tpf5 {
+    pub const fn tpf5(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Tpf5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Flag"]
     #[inline(always)]
-    pub const fn set_tpf5(&mut self, val: super::vals::Tpf5) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_tpf5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "Tamper Pin n Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpf6(&self) -> super::vals::Tpf6 {
+    pub const fn tpf6(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Tpf6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Flag"]
     #[inline(always)]
-    pub const fn set_tpf6(&mut self, val: super::vals::Tpf6) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_tpf6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "Tamper Pin n Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpf7(&self) -> super::vals::Tpf7 {
+    pub const fn tpf7(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Tpf7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin n Flag"]
     #[inline(always)]
-    pub const fn set_tpf7(&mut self, val: super::vals::Tpf7) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_tpf7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
 }
 impl Default for Sr {
@@ -1688,7 +1688,7 @@ impl defmt::Format for Sr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sr {{ dtf: {:?}, taf: {:?}, tif0: {:?}, tif1: {:?}, tif2: {:?}, tif3: {:?}, tif4: {:?}, tif5: {:?}, tif6: {:?}, tif7: {:?}, tif8: {:?}, tif9: {:?}, tpf0: {:?}, tpf1: {:?}, tpf2: {:?}, tpf3: {:?}, tpf4: {:?}, tpf5: {:?}, tpf6: {:?}, tpf7: {:?} }}",
+            "Sr {{ dtf: {=bool:?}, taf: {=bool:?}, tif0: {=bool:?}, tif1: {=bool:?}, tif2: {=bool:?}, tif3: {=bool:?}, tif4: {=bool:?}, tif5: {=bool:?}, tif6: {=bool:?}, tif7: {=bool:?}, tif8: {=bool:?}, tif9: {=bool:?}, tpf0: {=bool:?}, tpf1: {=bool:?}, tpf2: {=bool:?}, tpf3: {=bool:?}, tpf4: {=bool:?}, tpf5: {=bool:?}, tpf6: {=bool:?}, tpf7: {=bool:?} }}",
             self.dtf(),
             self.taf(),
             self.tif0(),
@@ -1720,218 +1720,218 @@ impl Ter {
     #[doc = "Tamper Input Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tie0(&self) -> super::vals::Tie0 {
+    pub const fn tie0(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Tie0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input Enable"]
     #[inline(always)]
-    pub const fn set_tie0(&mut self, val: super::vals::Tie0) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_tie0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Tamper Input Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tie1(&self) -> super::vals::Tie1 {
+    pub const fn tie1(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Tie1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input Enable"]
     #[inline(always)]
-    pub const fn set_tie1(&mut self, val: super::vals::Tie1) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_tie1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Tamper Input Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tie2(&self) -> super::vals::Tie2 {
+    pub const fn tie2(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Tie2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input Enable"]
     #[inline(always)]
-    pub const fn set_tie2(&mut self, val: super::vals::Tie2) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_tie2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Tamper Input Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tie3(&self) -> super::vals::Tie3 {
+    pub const fn tie3(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Tie3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input Enable"]
     #[inline(always)]
-    pub const fn set_tie3(&mut self, val: super::vals::Tie3) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_tie3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Tamper Input Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tie4(&self) -> super::vals::Tie4 {
+    pub const fn tie4(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Tie4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input Enable"]
     #[inline(always)]
-    pub const fn set_tie4(&mut self, val: super::vals::Tie4) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_tie4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Tamper Input Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tie5(&self) -> super::vals::Tie5 {
+    pub const fn tie5(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Tie5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input Enable"]
     #[inline(always)]
-    pub const fn set_tie5(&mut self, val: super::vals::Tie5) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_tie5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Tamper Input Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tie6(&self) -> super::vals::Tie6 {
+    pub const fn tie6(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Tie6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input Enable"]
     #[inline(always)]
-    pub const fn set_tie6(&mut self, val: super::vals::Tie6) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_tie6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Tamper Input Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tie7(&self) -> super::vals::Tie7 {
+    pub const fn tie7(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Tie7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input Enable"]
     #[inline(always)]
-    pub const fn set_tie7(&mut self, val: super::vals::Tie7) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_tie7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Tamper Input Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tie8(&self) -> super::vals::Tie8 {
+    pub const fn tie8(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Tie8::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input Enable"]
     #[inline(always)]
-    pub const fn set_tie8(&mut self, val: super::vals::Tie8) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_tie8(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Tamper Input Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tie9(&self) -> super::vals::Tie9 {
+    pub const fn tie9(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Tie9::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Input Enable"]
     #[inline(always)]
-    pub const fn set_tie9(&mut self, val: super::vals::Tie9) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_tie9(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Tamper Pin Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpe0(&self) -> super::vals::Tpe0 {
+    pub const fn tpe0(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Tpe0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin Enable"]
     #[inline(always)]
-    pub const fn set_tpe0(&mut self, val: super::vals::Tpe0) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_tpe0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Tamper Pin Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpe1(&self) -> super::vals::Tpe1 {
+    pub const fn tpe1(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Tpe1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin Enable"]
     #[inline(always)]
-    pub const fn set_tpe1(&mut self, val: super::vals::Tpe1) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_tpe1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Tamper Pin Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpe2(&self) -> super::vals::Tpe2 {
+    pub const fn tpe2(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::Tpe2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin Enable"]
     #[inline(always)]
-    pub const fn set_tpe2(&mut self, val: super::vals::Tpe2) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_tpe2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Tamper Pin Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpe3(&self) -> super::vals::Tpe3 {
+    pub const fn tpe3(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Tpe3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin Enable"]
     #[inline(always)]
-    pub const fn set_tpe3(&mut self, val: super::vals::Tpe3) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_tpe3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "Tamper Pin Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpe4(&self) -> super::vals::Tpe4 {
+    pub const fn tpe4(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::Tpe4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin Enable"]
     #[inline(always)]
-    pub const fn set_tpe4(&mut self, val: super::vals::Tpe4) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_tpe4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "Tamper Pin Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpe5(&self) -> super::vals::Tpe5 {
+    pub const fn tpe5(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Tpe5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin Enable"]
     #[inline(always)]
-    pub const fn set_tpe5(&mut self, val: super::vals::Tpe5) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_tpe5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "Tamper Pin Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpe6(&self) -> super::vals::Tpe6 {
+    pub const fn tpe6(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Tpe6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin Enable"]
     #[inline(always)]
-    pub const fn set_tpe6(&mut self, val: super::vals::Tpe6) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_tpe6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "Tamper Pin Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tpe7(&self) -> super::vals::Tpe7 {
+    pub const fn tpe7(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Tpe7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tamper Pin Enable"]
     #[inline(always)]
-    pub const fn set_tpe7(&mut self, val: super::vals::Tpe7) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_tpe7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
 }
 impl Default for Ter {
@@ -1969,7 +1969,7 @@ impl defmt::Format for Ter {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ter {{ tie0: {:?}, tie1: {:?}, tie2: {:?}, tie3: {:?}, tie4: {:?}, tie5: {:?}, tie6: {:?}, tie7: {:?}, tie8: {:?}, tie9: {:?}, tpe0: {:?}, tpe1: {:?}, tpe2: {:?}, tpe3: {:?}, tpe4: {:?}, tpe5: {:?}, tpe6: {:?}, tpe7: {:?} }}",
+            "Ter {{ tie0: {=bool:?}, tie1: {=bool:?}, tie2: {=bool:?}, tie3: {=bool:?}, tie4: {=bool:?}, tie5: {=bool:?}, tie6: {=bool:?}, tie7: {=bool:?}, tie8: {=bool:?}, tie9: {=bool:?}, tpe0: {=bool:?}, tpe1: {=bool:?}, tpe2: {=bool:?}, tpe3: {=bool:?}, tpe4: {=bool:?}, tpe5: {=bool:?}, tpe6: {=bool:?}, tpe7: {=bool:?} }}",
             self.tie0(),
             self.tie1(),
             self.tie2(),

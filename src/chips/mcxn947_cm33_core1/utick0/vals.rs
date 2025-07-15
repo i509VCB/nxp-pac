@@ -404,37 +404,6 @@ impl From<Cappol3> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Intr {
-    #[doc = "Not pending"]
-    NOPENDINGINTERRUPT = 0x0,
-    #[doc = "Pending"]
-    PENDINGINTERRUPT = 0x01,
-}
-impl Intr {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Intr {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Intr {
-    #[inline(always)]
-    fn from(val: u8) -> Intr {
-        Intr::from_bits(val)
-    }
-}
-impl From<Intr> for u8 {
-    #[inline(always)]
-    fn from(val: Intr) -> u8 {
-        Intr::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Repeat {
     #[doc = "One-time delay"]
     DELAYONCE = 0x0,
@@ -461,36 +430,5 @@ impl From<Repeat> for u8 {
     #[inline(always)]
     fn from(val: Repeat) -> u8 {
         Repeat::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Valid {
-    #[doc = "Valid value not captured"]
-    NOTVALID = 0x0,
-    #[doc = "Valid value captured"]
-    VALID = 0x01,
-}
-impl Valid {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Valid {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Valid {
-    #[inline(always)]
-    fn from(val: u8) -> Valid {
-        Valid::from_bits(val)
-    }
-}
-impl From<Valid> for u8 {
-    #[inline(always)]
-    fn from(val: Valid) -> u8 {
-        Valid::to_bits(val)
     }
 }

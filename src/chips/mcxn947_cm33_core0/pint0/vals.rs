@@ -438,37 +438,6 @@ impl From<Cfg7> for u8 {
         Cfg7::to_bits(val)
     }
 }
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum EnaRxev {
-    #[doc = "Disabled"]
-    DISABLED = 0x0,
-    #[doc = "Enabled"]
-    ENABLED = 0x01,
-}
-impl EnaRxev {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> EnaRxev {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for EnaRxev {
-    #[inline(always)]
-    fn from(val: u8) -> EnaRxev {
-        EnaRxev::from_bits(val)
-    }
-}
-impl From<EnaRxev> for u8 {
-    #[inline(always)]
-    fn from(val: EnaRxev) -> u8 {
-        EnaRxev::to_bits(val)
-    }
-}
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
 pub struct Enaf(u8);

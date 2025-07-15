@@ -6,14 +6,14 @@ impl Ccr0 {
     #[doc = "Comparator Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cmp_en(&self) -> super::vals::CmpEn {
+    pub const fn cmp_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::CmpEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Comparator Enable"]
     #[inline(always)]
-    pub const fn set_cmp_en(&mut self, val: super::vals::CmpEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_cmp_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Ccr0 {
@@ -32,7 +32,7 @@ impl core::fmt::Debug for Ccr0 {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Ccr0 {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Ccr0 {{ cmp_en: {:?} }}", self.cmp_en())
+        defmt::write!(f, "Ccr0 {{ cmp_en: {=bool:?} }}", self.cmp_en())
     }
 }
 #[doc = "Comparator Control Register 1"]
@@ -43,50 +43,50 @@ impl Ccr1 {
     #[doc = "Windowing Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn window_en(&self) -> super::vals::WindowEn {
+    pub const fn window_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::WindowEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Windowing Enable"]
     #[inline(always)]
-    pub const fn set_window_en(&mut self, val: super::vals::WindowEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_window_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Sampling Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn sample_en(&self) -> super::vals::SampleEn {
+    pub const fn sample_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::SampleEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Sampling Enable"]
     #[inline(always)]
-    pub const fn set_sample_en(&mut self, val: super::vals::SampleEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_sample_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "DMA Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dma_en(&self) -> super::vals::DmaEn {
+    pub const fn dma_en(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::DmaEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA Enable"]
     #[inline(always)]
-    pub const fn set_dma_en(&mut self, val: super::vals::DmaEn) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_dma_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Comparator Invert"]
     #[must_use]
     #[inline(always)]
-    pub const fn cout_inv(&self) -> super::vals::CoutInv {
+    pub const fn cout_inv(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::CoutInv::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Comparator Invert"]
     #[inline(always)]
-    pub const fn set_cout_inv(&mut self, val: super::vals::CoutInv) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_cout_inv(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Comparator Output Select"]
     #[must_use]
@@ -103,14 +103,14 @@ impl Ccr1 {
     #[doc = "Comparator Output Pin Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cout_pen(&self) -> super::vals::CoutPen {
+    pub const fn cout_pen(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::CoutPen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Comparator Output Pin Enable"]
     #[inline(always)]
-    pub const fn set_cout_pen(&mut self, val: super::vals::CoutPen) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_cout_pen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "COUTA_OW Enable"]
     #[must_use]
@@ -139,26 +139,26 @@ impl Ccr1 {
     #[doc = "WINDOW/SAMPLE Signal Invert"]
     #[must_use]
     #[inline(always)]
-    pub const fn window_inv(&self) -> super::vals::WindowInv {
+    pub const fn window_inv(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::WindowInv::from_bits(val as u8)
+        val != 0
     }
     #[doc = "WINDOW/SAMPLE Signal Invert"]
     #[inline(always)]
-    pub const fn set_window_inv(&mut self, val: super::vals::WindowInv) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_window_inv(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "COUT Event Window Close"]
     #[must_use]
     #[inline(always)]
-    pub const fn window_cls(&self) -> super::vals::WindowCls {
+    pub const fn window_cls(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::WindowCls::from_bits(val as u8)
+        val != 0
     }
     #[doc = "COUT Event Window Close"]
     #[inline(always)]
-    pub const fn set_window_cls(&mut self, val: super::vals::WindowCls) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_window_cls(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "COUT Event Select"]
     #[must_use]
@@ -240,7 +240,7 @@ impl defmt::Format for Ccr1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ccr1 {{ window_en: {:?}, sample_en: {:?}, dma_en: {:?}, cout_inv: {:?}, cout_sel: {:?}, cout_pen: {:?}, couta_owen: {:?}, couta_ow: {:?}, window_inv: {:?}, window_cls: {:?}, evt_sel: {:?}, func_clk_sel: {:?}, filt_cnt: {:?}, filt_per: {=u8:?} }}",
+            "Ccr1 {{ window_en: {=bool:?}, sample_en: {=bool:?}, dma_en: {=bool:?}, cout_inv: {=bool:?}, cout_sel: {:?}, cout_pen: {=bool:?}, couta_owen: {:?}, couta_ow: {:?}, window_inv: {=bool:?}, window_cls: {=bool:?}, evt_sel: {:?}, func_clk_sel: {:?}, filt_cnt: {:?}, filt_per: {=u8:?} }}",
             self.window_en(),
             self.sample_en(),
             self.dma_en(),
@@ -278,14 +278,14 @@ impl Ccr2 {
     #[doc = "CMP Nano Power Mode Select"]
     #[must_use]
     #[inline(always)]
-    pub const fn cmp_npmd(&self) -> super::vals::CmpNpmd {
+    pub const fn cmp_npmd(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::CmpNpmd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CMP Nano Power Mode Select"]
     #[inline(always)]
-    pub const fn set_cmp_npmd(&mut self, val: super::vals::CmpNpmd) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_cmp_npmd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Comparator Hysteresis Control"]
     #[must_use]
@@ -346,7 +346,7 @@ impl defmt::Format for Ccr2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ccr2 {{ cmp_hpmd: {:?}, cmp_npmd: {:?}, hystctr: {:?}, psel: {:?}, msel: {:?} }}",
+            "Ccr2 {{ cmp_hpmd: {:?}, cmp_npmd: {=bool:?}, hystctr: {:?}, psel: {:?}, msel: {:?} }}",
             self.cmp_hpmd(),
             self.cmp_npmd(),
             self.hystctr(),
@@ -363,38 +363,38 @@ impl Csr {
     #[doc = "Analog Comparator Flag Rising"]
     #[must_use]
     #[inline(always)]
-    pub const fn cfr(&self) -> super::vals::Cfr {
+    pub const fn cfr(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Cfr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Analog Comparator Flag Rising"]
     #[inline(always)]
-    pub const fn set_cfr(&mut self, val: super::vals::Cfr) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_cfr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Analog Comparator Flag Falling"]
     #[must_use]
     #[inline(always)]
-    pub const fn cff(&self) -> super::vals::Cff {
+    pub const fn cff(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Cff::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Analog Comparator Flag Falling"]
     #[inline(always)]
-    pub const fn set_cff(&mut self, val: super::vals::Cff) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_cff(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Round-Robin Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rrf(&self) -> super::vals::Rrf {
+    pub const fn rrf(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Rrf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Round-Robin Flag"]
     #[inline(always)]
-    pub const fn set_rrf(&mut self, val: super::vals::Rrf) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_rrf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Analog Comparator Output"]
     #[must_use]
@@ -430,7 +430,7 @@ impl defmt::Format for Csr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Csr {{ cfr: {:?}, cff: {:?}, rrf: {:?}, cout: {=bool:?} }}",
+            "Csr {{ cfr: {=bool:?}, cff: {=bool:?}, rrf: {=bool:?}, cout: {=bool:?} }}",
             self.cfr(),
             self.cff(),
             self.rrf(),
@@ -446,26 +446,26 @@ impl Dcr {
     #[doc = "DAC Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dac_en(&self) -> super::vals::DacEn {
+    pub const fn dac_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::DacEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DAC Enable"]
     #[inline(always)]
-    pub const fn set_dac_en(&mut self, val: super::vals::DacEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_dac_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "DAC High Power Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn dac_hpmd(&self) -> super::vals::DacHpmd {
+    pub const fn dac_hpmd(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::DacHpmd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DAC High Power Mode"]
     #[inline(always)]
-    pub const fn set_dac_hpmd(&mut self, val: super::vals::DacHpmd) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_dac_hpmd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "DAC Reference High Voltage Source Select"]
     #[must_use]
@@ -513,7 +513,7 @@ impl defmt::Format for Dcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Dcr {{ dac_en: {:?}, dac_hpmd: {:?}, vrsel: {:?}, dac_data: {=u8:?} }}",
+            "Dcr {{ dac_en: {=bool:?}, dac_hpmd: {=bool:?}, vrsel: {:?}, dac_data: {=u8:?} }}",
             self.dac_en(),
             self.dac_hpmd(),
             self.vrsel(),
@@ -529,38 +529,38 @@ impl Ier {
     #[doc = "Comparator Flag Rising Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cfr_ie(&self) -> super::vals::CfrIe {
+    pub const fn cfr_ie(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::CfrIe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Comparator Flag Rising Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_cfr_ie(&mut self, val: super::vals::CfrIe) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_cfr_ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Comparator Flag Falling Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cff_ie(&self) -> super::vals::CffIe {
+    pub const fn cff_ie(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::CffIe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Comparator Flag Falling Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_cff_ie(&mut self, val: super::vals::CffIe) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_cff_ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Round-Robin Flag Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn rrf_ie(&self) -> super::vals::RrfIe {
+    pub const fn rrf_ie(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::RrfIe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Round-Robin Flag Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_rrf_ie(&mut self, val: super::vals::RrfIe) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_rrf_ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
 }
 impl Default for Ier {
@@ -583,7 +583,7 @@ impl defmt::Format for Ier {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ier {{ cfr_ie: {:?}, cff_ie: {:?}, rrf_ie: {:?} }}",
+            "Ier {{ cfr_ie: {=bool:?}, cff_ie: {=bool:?}, rrf_ie: {=bool:?} }}",
             self.cfr_ie(),
             self.cff_ie(),
             self.rrf_ie()
@@ -635,14 +635,14 @@ impl Rrcr0 {
     #[doc = "Round-Robin Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn rr_en(&self) -> super::vals::RrEn {
+    pub const fn rr_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::RrEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Round-Robin Enable"]
     #[inline(always)]
-    pub const fn set_rr_en(&mut self, val: super::vals::RrEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_rr_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Round-Robin Trigger Select"]
     #[must_use]
@@ -741,7 +741,7 @@ impl defmt::Format for Rrcr0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Rrcr0 {{ rr_en: {:?}, rr_trg_sel: {:?}, rr_nsam: {:?}, rr_clk_sel: {:?}, rr_initmod: {:?}, rr_sample_cnt: {:?}, rr_sample_threshold: {:?} }}",
+            "Rrcr0 {{ rr_en: {=bool:?}, rr_trg_sel: {:?}, rr_nsam: {:?}, rr_clk_sel: {:?}, rr_initmod: {:?}, rr_sample_cnt: {:?}, rr_sample_threshold: {:?} }}",
             self.rr_en(),
             self.rr_trg_sel(),
             self.rr_nsam(),
@@ -760,98 +760,98 @@ impl Rrcr1 {
     #[doc = "Channel 0 Input Enable in Trigger Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn rr_ch0en(&self) -> super::vals::RrCh0en {
+    pub const fn rr_ch0en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::RrCh0en::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 0 Input Enable in Trigger Mode"]
     #[inline(always)]
-    pub const fn set_rr_ch0en(&mut self, val: super::vals::RrCh0en) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_rr_ch0en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Channel 1 Input Enable in Trigger Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn rr_ch1en(&self) -> super::vals::RrCh1en {
+    pub const fn rr_ch1en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::RrCh1en::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 1 Input Enable in Trigger Mode"]
     #[inline(always)]
-    pub const fn set_rr_ch1en(&mut self, val: super::vals::RrCh1en) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_rr_ch1en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Channel 2 Input Enable in Trigger Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn rr_ch2en(&self) -> super::vals::RrCh2en {
+    pub const fn rr_ch2en(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::RrCh2en::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 2 Input Enable in Trigger Mode"]
     #[inline(always)]
-    pub const fn set_rr_ch2en(&mut self, val: super::vals::RrCh2en) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_rr_ch2en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Channel 3 Input Enable in Trigger Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn rr_ch3en(&self) -> super::vals::RrCh3en {
+    pub const fn rr_ch3en(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::RrCh3en::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 3 Input Enable in Trigger Mode"]
     #[inline(always)]
-    pub const fn set_rr_ch3en(&mut self, val: super::vals::RrCh3en) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_rr_ch3en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Channel 4 Input Enable in Trigger Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn rr_ch4en(&self) -> super::vals::RrCh4en {
+    pub const fn rr_ch4en(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::RrCh4en::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 4 Input Enable in Trigger Mode"]
     #[inline(always)]
-    pub const fn set_rr_ch4en(&mut self, val: super::vals::RrCh4en) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_rr_ch4en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Channel 5 Input Enable in Trigger Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn rr_ch5en(&self) -> super::vals::RrCh5en {
+    pub const fn rr_ch5en(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::RrCh5en::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 5 Input Enable in Trigger Mode"]
     #[inline(always)]
-    pub const fn set_rr_ch5en(&mut self, val: super::vals::RrCh5en) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_rr_ch5en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Channel 6 Input Enable in Trigger Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn rr_ch6en(&self) -> super::vals::RrCh6en {
+    pub const fn rr_ch6en(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::RrCh6en::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 6 Input Enable in Trigger Mode"]
     #[inline(always)]
-    pub const fn set_rr_ch6en(&mut self, val: super::vals::RrCh6en) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_rr_ch6en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Channel 7 Input Enable in Trigger Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn rr_ch7en(&self) -> super::vals::RrCh7en {
+    pub const fn rr_ch7en(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::RrCh7en::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 7 Input Enable in Trigger Mode"]
     #[inline(always)]
-    pub const fn set_rr_ch7en(&mut self, val: super::vals::RrCh7en) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_rr_ch7en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Fixed Port"]
     #[must_use]
@@ -905,7 +905,7 @@ impl defmt::Format for Rrcr1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Rrcr1 {{ rr_ch0en: {:?}, rr_ch1en: {:?}, rr_ch2en: {:?}, rr_ch3en: {:?}, rr_ch4en: {:?}, rr_ch5en: {:?}, rr_ch6en: {:?}, rr_ch7en: {:?}, fixp: {:?}, fixch: {:?} }}",
+            "Rrcr1 {{ rr_ch0en: {=bool:?}, rr_ch1en: {=bool:?}, rr_ch2en: {=bool:?}, rr_ch3en: {=bool:?}, rr_ch4en: {=bool:?}, rr_ch5en: {=bool:?}, rr_ch6en: {=bool:?}, rr_ch7en: {=bool:?}, fixp: {:?}, fixch: {:?} }}",
             self.rr_ch0en(),
             self.rr_ch1en(),
             self.rr_ch2en(),
@@ -939,14 +939,14 @@ impl Rrcr2 {
     #[doc = "Round-Robin Internal Timer Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn rr_timer_en(&self) -> super::vals::RrTimerEn {
+    pub const fn rr_timer_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::RrTimerEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Round-Robin Internal Timer Enable"]
     #[inline(always)]
-    pub const fn set_rr_timer_en(&mut self, val: super::vals::RrTimerEn) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_rr_timer_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Rrcr2 {
@@ -968,7 +968,7 @@ impl defmt::Format for Rrcr2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Rrcr2 {{ rr_timer_reload: {=u32:?}, rr_timer_en: {:?} }}",
+            "Rrcr2 {{ rr_timer_reload: {=u32:?}, rr_timer_en: {=bool:?} }}",
             self.rr_timer_reload(),
             self.rr_timer_en()
         )
@@ -1121,98 +1121,98 @@ impl Rrsr {
     #[doc = "Channel 0 Input Changed Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rr_ch0f(&self) -> super::vals::RrCh0f {
+    pub const fn rr_ch0f(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::RrCh0f::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 0 Input Changed Flag"]
     #[inline(always)]
-    pub const fn set_rr_ch0f(&mut self, val: super::vals::RrCh0f) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_rr_ch0f(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Channel 1 Input Changed Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rr_ch1f(&self) -> super::vals::RrCh1f {
+    pub const fn rr_ch1f(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::RrCh1f::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 1 Input Changed Flag"]
     #[inline(always)]
-    pub const fn set_rr_ch1f(&mut self, val: super::vals::RrCh1f) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_rr_ch1f(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Channel 2 Input Changed Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rr_ch2f(&self) -> super::vals::RrCh2f {
+    pub const fn rr_ch2f(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::RrCh2f::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 2 Input Changed Flag"]
     #[inline(always)]
-    pub const fn set_rr_ch2f(&mut self, val: super::vals::RrCh2f) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_rr_ch2f(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Channel 3 Input Changed Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rr_ch3f(&self) -> super::vals::RrCh3f {
+    pub const fn rr_ch3f(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::RrCh3f::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 3 Input Changed Flag"]
     #[inline(always)]
-    pub const fn set_rr_ch3f(&mut self, val: super::vals::RrCh3f) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_rr_ch3f(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Channel 4 Input Changed Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rr_ch4f(&self) -> super::vals::RrCh4f {
+    pub const fn rr_ch4f(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::RrCh4f::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 4 Input Changed Flag"]
     #[inline(always)]
-    pub const fn set_rr_ch4f(&mut self, val: super::vals::RrCh4f) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_rr_ch4f(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Channel 5 Input Changed Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rr_ch5f(&self) -> super::vals::RrCh5f {
+    pub const fn rr_ch5f(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::RrCh5f::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 5 Input Changed Flag"]
     #[inline(always)]
-    pub const fn set_rr_ch5f(&mut self, val: super::vals::RrCh5f) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_rr_ch5f(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Channel 6 Input Changed Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rr_ch6f(&self) -> super::vals::RrCh6f {
+    pub const fn rr_ch6f(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::RrCh6f::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 6 Input Changed Flag"]
     #[inline(always)]
-    pub const fn set_rr_ch6f(&mut self, val: super::vals::RrCh6f) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_rr_ch6f(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Channel 7 Input Changed Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rr_ch7f(&self) -> super::vals::RrCh7f {
+    pub const fn rr_ch7f(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::RrCh7f::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Channel 7 Input Changed Flag"]
     #[inline(always)]
-    pub const fn set_rr_ch7f(&mut self, val: super::vals::RrCh7f) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_rr_ch7f(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
 }
 impl Default for Rrsr {
@@ -1240,7 +1240,7 @@ impl defmt::Format for Rrsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Rrsr {{ rr_ch0f: {:?}, rr_ch1f: {:?}, rr_ch2f: {:?}, rr_ch3f: {:?}, rr_ch4f: {:?}, rr_ch5f: {:?}, rr_ch6f: {:?}, rr_ch7f: {:?} }}",
+            "Rrsr {{ rr_ch0f: {=bool:?}, rr_ch1f: {=bool:?}, rr_ch2f: {=bool:?}, rr_ch3f: {=bool:?}, rr_ch4f: {=bool:?}, rr_ch5f: {=bool:?}, rr_ch6f: {=bool:?}, rr_ch7f: {=bool:?} }}",
             self.rr_ch0f(),
             self.rr_ch1f(),
             self.rr_ch2f(),

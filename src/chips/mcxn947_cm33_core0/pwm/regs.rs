@@ -289,14 +289,14 @@ impl Ffilt0 {
     #[doc = "Fault Glitch Stretch Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn gstr(&self) -> super::vals::Gstr {
+    pub const fn gstr(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Gstr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fault Glitch Stretch Enable"]
     #[inline(always)]
-    pub const fn set_gstr(&mut self, val: super::vals::Gstr) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u16) & 0x01) << 15usize);
+    pub const fn set_gstr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u16) & 0x01) << 15usize);
     }
 }
 impl Default for Ffilt0 {
@@ -319,7 +319,7 @@ impl defmt::Format for Ffilt0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ffilt0 {{ filt_per: {=u8:?}, filt_cnt: {=u8:?}, gstr: {:?} }}",
+            "Ffilt0 {{ filt_per: {=u8:?}, filt_cnt: {=u8:?}, gstr: {=bool:?} }}",
             self.filt_per(),
             self.filt_cnt(),
             self.gstr()
@@ -417,14 +417,14 @@ impl Ftst0 {
     #[doc = "Fault Test"]
     #[must_use]
     #[inline(always)]
-    pub const fn ftest(&self) -> super::vals::Ftest {
+    pub const fn ftest(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Ftest::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fault Test"]
     #[inline(always)]
-    pub const fn set_ftest(&mut self, val: super::vals::Ftest) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_ftest(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
 }
 impl Default for Ftst0 {
@@ -443,7 +443,7 @@ impl core::fmt::Debug for Ftst0 {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Ftst0 {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Ftst0 {{ ftest: {:?} }}", self.ftest())
+        defmt::write!(f, "Ftst0 {{ ftest: {=bool:?} }}", self.ftest())
     }
 }
 #[doc = "Mask Register"]
@@ -909,14 +909,14 @@ impl Sm0captctrla {
     #[doc = "Arm A"]
     #[must_use]
     #[inline(always)]
-    pub const fn arma(&self) -> super::vals::Sm0captctrlaArma {
+    pub const fn arma(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sm0captctrlaArma::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Arm A"]
     #[inline(always)]
-    pub const fn set_arma(&mut self, val: super::vals::Sm0captctrlaArma) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_arma(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "One Shot Mode A"]
     #[must_use]
@@ -969,14 +969,14 @@ impl Sm0captctrla {
     #[doc = "Edge Counter A Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn edgcnta_en(&self) -> super::vals::Sm0captctrlaEdgcntaEn {
+    pub const fn edgcnta_en(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Sm0captctrlaEdgcntaEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Edge Counter A Enable"]
     #[inline(always)]
-    pub const fn set_edgcnta_en(&mut self, val: super::vals::Sm0captctrlaEdgcntaEn) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_edgcnta_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "Capture A FIFOs Water Mark"]
     #[must_use]
@@ -1041,7 +1041,7 @@ impl defmt::Format for Sm0captctrla {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm0captctrla {{ arma: {:?}, oneshota: {:?}, edga0: {:?}, edga1: {:?}, inp_sela: {:?}, edgcnta_en: {:?}, cfawm: {=u8:?}, ca0cnt: {=u8:?}, ca1cnt: {=u8:?} }}",
+            "Sm0captctrla {{ arma: {=bool:?}, oneshota: {:?}, edga0: {:?}, edga1: {:?}, inp_sela: {:?}, edgcnta_en: {=bool:?}, cfawm: {=u8:?}, ca0cnt: {=u8:?}, ca1cnt: {=u8:?} }}",
             self.arma(),
             self.oneshota(),
             self.edga0(),
@@ -1062,14 +1062,14 @@ impl Sm0captctrlb {
     #[doc = "Arm B"]
     #[must_use]
     #[inline(always)]
-    pub const fn armb(&self) -> super::vals::Sm0captctrlbArmb {
+    pub const fn armb(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sm0captctrlbArmb::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Arm B"]
     #[inline(always)]
-    pub const fn set_armb(&mut self, val: super::vals::Sm0captctrlbArmb) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_armb(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "One Shot Mode B"]
     #[must_use]
@@ -1122,14 +1122,14 @@ impl Sm0captctrlb {
     #[doc = "Edge Counter B Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn edgcntb_en(&self) -> super::vals::Sm0captctrlbEdgcntbEn {
+    pub const fn edgcntb_en(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Sm0captctrlbEdgcntbEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Edge Counter B Enable"]
     #[inline(always)]
-    pub const fn set_edgcntb_en(&mut self, val: super::vals::Sm0captctrlbEdgcntbEn) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_edgcntb_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "Capture B FIFOs Water Mark"]
     #[must_use]
@@ -1194,7 +1194,7 @@ impl defmt::Format for Sm0captctrlb {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm0captctrlb {{ armb: {:?}, oneshotb: {:?}, edgb0: {:?}, edgb1: {:?}, inp_selb: {:?}, edgcntb_en: {:?}, cfbwm: {=u8:?}, cb0cnt: {=u8:?}, cb1cnt: {=u8:?} }}",
+            "Sm0captctrlb {{ armb: {=bool:?}, oneshotb: {:?}, edgb0: {:?}, edgb1: {:?}, inp_selb: {:?}, edgcntb_en: {=bool:?}, cfbwm: {=u8:?}, cb0cnt: {=u8:?}, cb1cnt: {=u8:?} }}",
             self.armb(),
             self.oneshotb(),
             self.edgb0(),
@@ -1215,14 +1215,14 @@ impl Sm0captctrlx {
     #[doc = "Arm X"]
     #[must_use]
     #[inline(always)]
-    pub const fn armx(&self) -> super::vals::Sm0captctrlxArmx {
+    pub const fn armx(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sm0captctrlxArmx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Arm X"]
     #[inline(always)]
-    pub const fn set_armx(&mut self, val: super::vals::Sm0captctrlxArmx) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_armx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "One Shot Mode Aux"]
     #[must_use]
@@ -1275,14 +1275,14 @@ impl Sm0captctrlx {
     #[doc = "Edge Counter X Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn edgcntx_en(&self) -> super::vals::Sm0captctrlxEdgcntxEn {
+    pub const fn edgcntx_en(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Sm0captctrlxEdgcntxEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Edge Counter X Enable"]
     #[inline(always)]
-    pub const fn set_edgcntx_en(&mut self, val: super::vals::Sm0captctrlxEdgcntxEn) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_edgcntx_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "Capture X FIFOs Water Mark"]
     #[must_use]
@@ -1347,7 +1347,7 @@ impl defmt::Format for Sm0captctrlx {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm0captctrlx {{ armx: {:?}, oneshotx: {:?}, edgx0: {:?}, edgx1: {:?}, inp_selx: {:?}, edgcntx_en: {:?}, cfxwm: {=u8:?}, cx0cnt: {=u8:?}, cx1cnt: {=u8:?} }}",
+            "Sm0captctrlx {{ armx: {=bool:?}, oneshotx: {:?}, edgx0: {:?}, edgx1: {:?}, inp_selx: {:?}, edgcntx_en: {=bool:?}, cfxwm: {=u8:?}, cx0cnt: {=u8:?}, cx1cnt: {=u8:?} }}",
             self.armx(),
             self.oneshotx(),
             self.edgx0(),
@@ -1568,26 +1568,26 @@ impl Sm0ctrl {
     #[doc = "Double Switching Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dblen(&self) -> super::vals::Sm0ctrlDblen {
+    pub const fn dblen(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sm0ctrlDblen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Double Switching Enable"]
     #[inline(always)]
-    pub const fn set_dblen(&mut self, val: super::vals::Sm0ctrlDblen) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_dblen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "PWM_X Double Switching Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dblx(&self) -> super::vals::Sm0ctrlDblx {
+    pub const fn dblx(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Sm0ctrlDblx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PWM_X Double Switching Enable"]
     #[inline(always)]
-    pub const fn set_dblx(&mut self, val: super::vals::Sm0ctrlDblx) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u16) & 0x01) << 1usize);
+    pub const fn set_dblx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
     }
     #[doc = "Load Mode Select"]
     #[must_use]
@@ -1604,14 +1604,14 @@ impl Sm0ctrl {
     #[doc = "Split the DBLPWM signal to PWM_A and PWM_B"]
     #[must_use]
     #[inline(always)]
-    pub const fn split(&self) -> super::vals::Sm0ctrlSplit {
+    pub const fn split(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Sm0ctrlSplit::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Split the DBLPWM signal to PWM_A and PWM_B"]
     #[inline(always)]
-    pub const fn set_split(&mut self, val: super::vals::Sm0ctrlSplit) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u16) & 0x01) << 3usize);
+    pub const fn set_split(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u16) & 0x01) << 3usize);
     }
     #[doc = "Prescaler"]
     #[must_use]
@@ -1652,26 +1652,26 @@ impl Sm0ctrl {
     #[doc = "Full Cycle Reload"]
     #[must_use]
     #[inline(always)]
-    pub const fn full(&self) -> super::vals::Sm0ctrlFull {
+    pub const fn full(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Sm0ctrlFull::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Full Cycle Reload"]
     #[inline(always)]
-    pub const fn set_full(&mut self, val: super::vals::Sm0ctrlFull) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u16) & 0x01) << 10usize);
+    pub const fn set_full(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
     }
     #[doc = "Half Cycle Reload"]
     #[must_use]
     #[inline(always)]
-    pub const fn half(&self) -> super::vals::Sm0ctrlHalf {
+    pub const fn half(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Sm0ctrlHalf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Half Cycle Reload"]
     #[inline(always)]
-    pub const fn set_half(&mut self, val: super::vals::Sm0ctrlHalf) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u16) & 0x01) << 11usize);
+    pub const fn set_half(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u16) & 0x01) << 11usize);
     }
     #[doc = "Load Frequency"]
     #[must_use]
@@ -1713,7 +1713,7 @@ impl defmt::Format for Sm0ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm0ctrl {{ dblen: {:?}, dblx: {:?}, ldmod: {:?}, split: {:?}, prsc: {:?}, compmode: {:?}, dt: {=u8:?}, full: {:?}, half: {:?}, ldfq: {:?} }}",
+            "Sm0ctrl {{ dblen: {=bool:?}, dblx: {=bool:?}, ldmod: {:?}, split: {=bool:?}, prsc: {:?}, compmode: {:?}, dt: {=u8:?}, full: {=bool:?}, half: {=bool:?}, ldfq: {:?} }}",
             self.dblen(),
             self.dblx(),
             self.ldmod(),
@@ -1783,14 +1783,14 @@ impl Sm0ctrl2 {
     #[doc = "Force Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn frcen(&self) -> super::vals::Sm0ctrl2Frcen {
+    pub const fn frcen(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Sm0ctrl2Frcen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Force Enable"]
     #[inline(always)]
-    pub const fn set_frcen(&mut self, val: super::vals::Sm0ctrl2Frcen) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_frcen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "Initialization Control Select"]
     #[must_use]
@@ -1893,7 +1893,7 @@ impl defmt::Format for Sm0ctrl2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm0ctrl2 {{ clk_sel: {:?}, reload_sel: {:?}, force_sel: {:?}, force: {=bool:?}, frcen: {:?}, init_sel: {:?}, pwmx_init: {=bool:?}, pwm45_init: {=bool:?}, pwm23_init: {=bool:?}, indep: {:?}, dbgen: {=bool:?} }}",
+            "Sm0ctrl2 {{ clk_sel: {:?}, reload_sel: {:?}, force_sel: {:?}, force: {=bool:?}, frcen: {=bool:?}, init_sel: {:?}, pwmx_init: {=bool:?}, pwm45_init: {=bool:?}, pwm23_init: {=bool:?}, indep: {:?}, dbgen: {=bool:?} }}",
             self.clk_sel(),
             self.reload_sel(),
             self.force_sel(),
@@ -2525,14 +2525,14 @@ impl Sm0dmaen {
     #[doc = "Value Registers DMA Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn valde(&self) -> super::vals::Sm0dmaenValde {
+    pub const fn valde(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Sm0dmaenValde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Value Registers DMA Enable"]
     #[inline(always)]
-    pub const fn set_valde(&mut self, val: super::vals::Sm0dmaenValde) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u16) & 0x01) << 9usize);
+    pub const fn set_valde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
     }
 }
 impl Default for Sm0dmaen {
@@ -2561,7 +2561,7 @@ impl defmt::Format for Sm0dmaen {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm0dmaen {{ cx0de: {=bool:?}, cx1de: {=bool:?}, cb0de: {=bool:?}, cb1de: {=bool:?}, ca0de: {=bool:?}, ca1de: {=bool:?}, captde: {:?}, fand: {:?}, valde: {:?} }}",
+            "Sm0dmaen {{ cx0de: {=bool:?}, cx1de: {=bool:?}, cb0de: {=bool:?}, cb1de: {=bool:?}, ca0de: {=bool:?}, ca1de: {=bool:?}, captde: {:?}, fand: {:?}, valde: {=bool:?} }}",
             self.cx0de(),
             self.cx1de(),
             self.cb0de(),
@@ -2841,38 +2841,38 @@ impl Sm0frctrl {
     #[doc = "Fractional Cycle PWM Period Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn frac1_en(&self) -> super::vals::Sm0frctrlFrac1En {
+    pub const fn frac1_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Sm0frctrlFrac1En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fractional Cycle PWM Period Enable"]
     #[inline(always)]
-    pub const fn set_frac1_en(&mut self, val: super::vals::Sm0frctrlFrac1En) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u16) & 0x01) << 1usize);
+    pub const fn set_frac1_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
     }
     #[doc = "Fractional Cycle Placement Enable for PWM_A"]
     #[must_use]
     #[inline(always)]
-    pub const fn frac23_en(&self) -> super::vals::Sm0frctrlFrac23En {
+    pub const fn frac23_en(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Sm0frctrlFrac23En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fractional Cycle Placement Enable for PWM_A"]
     #[inline(always)]
-    pub const fn set_frac23_en(&mut self, val: super::vals::Sm0frctrlFrac23En) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u16) & 0x01) << 2usize);
+    pub const fn set_frac23_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u16) & 0x01) << 2usize);
     }
     #[doc = "Fractional Cycle Placement Enable for PWM_B"]
     #[must_use]
     #[inline(always)]
-    pub const fn frac45_en(&self) -> super::vals::Sm0frctrlFrac45En {
+    pub const fn frac45_en(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Sm0frctrlFrac45En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fractional Cycle Placement Enable for PWM_B"]
     #[inline(always)]
-    pub const fn set_frac45_en(&mut self, val: super::vals::Sm0frctrlFrac45En) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u16) & 0x01) << 4usize);
+    pub const fn set_frac45_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u16) & 0x01) << 4usize);
     }
     #[doc = "Test Status Bit"]
     #[must_use]
@@ -2908,7 +2908,7 @@ impl defmt::Format for Sm0frctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm0frctrl {{ frac1_en: {:?}, frac23_en: {:?}, frac45_en: {:?}, test: {=bool:?} }}",
+            "Sm0frctrl {{ frac1_en: {=bool:?}, frac23_en: {=bool:?}, frac45_en: {=bool:?}, test: {=bool:?} }}",
             self.frac1_en(),
             self.frac23_en(),
             self.frac45_en(),
@@ -2973,98 +2973,98 @@ impl Sm0inten {
     #[doc = "Capture X 0 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cx0ie(&self) -> super::vals::Sm0intenCx0ie {
+    pub const fn cx0ie(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Sm0intenCx0ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture X 0 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_cx0ie(&mut self, val: super::vals::Sm0intenCx0ie) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u16) & 0x01) << 6usize);
+    pub const fn set_cx0ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u16) & 0x01) << 6usize);
     }
     #[doc = "Capture X 1 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cx1ie(&self) -> super::vals::Sm0intenCx1ie {
+    pub const fn cx1ie(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Sm0intenCx1ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture X 1 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_cx1ie(&mut self, val: super::vals::Sm0intenCx1ie) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_cx1ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "Capture B 0 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cb0ie(&self) -> super::vals::Sm0intenCb0ie {
+    pub const fn cb0ie(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Sm0intenCb0ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture B 0 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_cb0ie(&mut self, val: super::vals::Sm0intenCb0ie) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u16) & 0x01) << 8usize);
+    pub const fn set_cb0ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
     }
     #[doc = "Capture B 1 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cb1ie(&self) -> super::vals::Sm0intenCb1ie {
+    pub const fn cb1ie(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Sm0intenCb1ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture B 1 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_cb1ie(&mut self, val: super::vals::Sm0intenCb1ie) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u16) & 0x01) << 9usize);
+    pub const fn set_cb1ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
     }
     #[doc = "Capture A 0 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ca0ie(&self) -> super::vals::Sm0intenCa0ie {
+    pub const fn ca0ie(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Sm0intenCa0ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture A 0 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ca0ie(&mut self, val: super::vals::Sm0intenCa0ie) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u16) & 0x01) << 10usize);
+    pub const fn set_ca0ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
     }
     #[doc = "Capture A 1 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ca1ie(&self) -> super::vals::Sm0intenCa1ie {
+    pub const fn ca1ie(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Sm0intenCa1ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture A 1 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ca1ie(&mut self, val: super::vals::Sm0intenCa1ie) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u16) & 0x01) << 11usize);
+    pub const fn set_ca1ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u16) & 0x01) << 11usize);
     }
     #[doc = "Reload Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn rie(&self) -> super::vals::Sm0intenRie {
+    pub const fn rie(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Sm0intenRie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reload Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_rie(&mut self, val: super::vals::Sm0intenRie) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u16) & 0x01) << 12usize);
+    pub const fn set_rie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u16) & 0x01) << 12usize);
     }
     #[doc = "Reload Error Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn reie(&self) -> super::vals::Sm0intenReie {
+    pub const fn reie(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Sm0intenReie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reload Error Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_reie(&mut self, val: super::vals::Sm0intenReie) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u16) & 0x01) << 13usize);
+    pub const fn set_reie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u16) & 0x01) << 13usize);
     }
 }
 impl Default for Sm0inten {
@@ -3093,7 +3093,7 @@ impl defmt::Format for Sm0inten {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm0inten {{ cmpie: {:?}, cx0ie: {:?}, cx1ie: {:?}, cb0ie: {:?}, cb1ie: {:?}, ca0ie: {:?}, ca1ie: {:?}, rie: {:?}, reie: {:?} }}",
+            "Sm0inten {{ cmpie: {:?}, cx0ie: {=bool:?}, cx1ie: {=bool:?}, cb0ie: {=bool:?}, cb1ie: {=bool:?}, ca0ie: {=bool:?}, ca1ie: {=bool:?}, rie: {=bool:?}, reie: {=bool:?} }}",
             self.cmpie(),
             self.cx0ie(),
             self.cx1ie(),
@@ -3150,38 +3150,38 @@ impl Sm0octrl {
     #[doc = "PWM_X Output Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn polx(&self) -> super::vals::Sm0octrlPolx {
+    pub const fn polx(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Sm0octrlPolx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PWM_X Output Polarity"]
     #[inline(always)]
-    pub const fn set_polx(&mut self, val: super::vals::Sm0octrlPolx) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u16) & 0x01) << 8usize);
+    pub const fn set_polx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
     }
     #[doc = "PWM_B Output Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn polb(&self) -> super::vals::Sm0octrlPolb {
+    pub const fn polb(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Sm0octrlPolb::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PWM_B Output Polarity"]
     #[inline(always)]
-    pub const fn set_polb(&mut self, val: super::vals::Sm0octrlPolb) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u16) & 0x01) << 9usize);
+    pub const fn set_polb(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
     }
     #[doc = "PWM_A Output Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn pola(&self) -> super::vals::Sm0octrlPola {
+    pub const fn pola(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Sm0octrlPola::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PWM_A Output Polarity"]
     #[inline(always)]
-    pub const fn set_pola(&mut self, val: super::vals::Sm0octrlPola) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u16) & 0x01) << 10usize);
+    pub const fn set_pola(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
     }
     #[doc = "PWM_X Input"]
     #[must_use]
@@ -3246,7 +3246,7 @@ impl defmt::Format for Sm0octrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm0octrl {{ pwmxfs: {:?}, pwmbfs: {:?}, pwmafs: {:?}, polx: {:?}, polb: {:?}, pola: {:?}, pwmx_in: {=bool:?}, pwmb_in: {=bool:?}, pwma_in: {=bool:?} }}",
+            "Sm0octrl {{ pwmxfs: {:?}, pwmbfs: {:?}, pwmafs: {:?}, polx: {=bool:?}, polb: {=bool:?}, pola: {=bool:?}, pwmx_in: {=bool:?}, pwmb_in: {=bool:?}, pwma_in: {=bool:?} }}",
             self.pwmxfs(),
             self.pwmbfs(),
             self.pwmafs(),
@@ -3351,38 +3351,38 @@ impl Sm0sts {
     #[doc = "Reload Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rf(&self) -> super::vals::Sm0stsRf {
+    pub const fn rf(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Sm0stsRf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reload Flag"]
     #[inline(always)]
-    pub const fn set_rf(&mut self, val: super::vals::Sm0stsRf) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u16) & 0x01) << 12usize);
+    pub const fn set_rf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u16) & 0x01) << 12usize);
     }
     #[doc = "Reload Error Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn ref_(&self) -> super::vals::Sm0stsRef {
+    pub const fn ref_(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Sm0stsRef::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reload Error Flag"]
     #[inline(always)]
-    pub const fn set_ref_(&mut self, val: super::vals::Sm0stsRef) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u16) & 0x01) << 13usize);
+    pub const fn set_ref_(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u16) & 0x01) << 13usize);
     }
     #[doc = "Registers Updated Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn ruf(&self) -> super::vals::Sm0stsRuf {
+    pub const fn ruf(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Sm0stsRuf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Registers Updated Flag"]
     #[inline(always)]
-    pub const fn set_ruf(&mut self, val: super::vals::Sm0stsRuf) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u16) & 0x01) << 14usize);
+    pub const fn set_ruf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u16) & 0x01) << 14usize);
     }
 }
 impl Default for Sm0sts {
@@ -3412,7 +3412,7 @@ impl defmt::Format for Sm0sts {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm0sts {{ cmpf: {:?}, cfx0: {=bool:?}, cfx1: {=bool:?}, cfb0: {=bool:?}, cfb1: {=bool:?}, cfa0: {=bool:?}, cfa1: {=bool:?}, rf: {:?}, ref_: {:?}, ruf: {:?} }}",
+            "Sm0sts {{ cmpf: {:?}, cfx0: {=bool:?}, cfx1: {=bool:?}, cfb0: {=bool:?}, cfb1: {=bool:?}, cfa0: {=bool:?}, cfa1: {=bool:?}, rf: {=bool:?}, ref_: {=bool:?}, ruf: {=bool:?} }}",
             self.cmpf(),
             self.cfx0(),
             self.cfx1(),
@@ -3904,14 +3904,14 @@ impl Sm1captctrla {
     #[doc = "Arm A"]
     #[must_use]
     #[inline(always)]
-    pub const fn arma(&self) -> super::vals::Sm1captctrlaArma {
+    pub const fn arma(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sm1captctrlaArma::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Arm A"]
     #[inline(always)]
-    pub const fn set_arma(&mut self, val: super::vals::Sm1captctrlaArma) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_arma(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "One Shot Mode A"]
     #[must_use]
@@ -3964,14 +3964,14 @@ impl Sm1captctrla {
     #[doc = "Edge Counter A Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn edgcnta_en(&self) -> super::vals::Sm1captctrlaEdgcntaEn {
+    pub const fn edgcnta_en(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Sm1captctrlaEdgcntaEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Edge Counter A Enable"]
     #[inline(always)]
-    pub const fn set_edgcnta_en(&mut self, val: super::vals::Sm1captctrlaEdgcntaEn) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_edgcnta_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "Capture A FIFOs Water Mark"]
     #[must_use]
@@ -4036,7 +4036,7 @@ impl defmt::Format for Sm1captctrla {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm1captctrla {{ arma: {:?}, oneshota: {:?}, edga0: {:?}, edga1: {:?}, inp_sela: {:?}, edgcnta_en: {:?}, cfawm: {=u8:?}, ca0cnt: {=u8:?}, ca1cnt: {=u8:?} }}",
+            "Sm1captctrla {{ arma: {=bool:?}, oneshota: {:?}, edga0: {:?}, edga1: {:?}, inp_sela: {:?}, edgcnta_en: {=bool:?}, cfawm: {=u8:?}, ca0cnt: {=u8:?}, ca1cnt: {=u8:?} }}",
             self.arma(),
             self.oneshota(),
             self.edga0(),
@@ -4057,14 +4057,14 @@ impl Sm1captctrlb {
     #[doc = "Arm B"]
     #[must_use]
     #[inline(always)]
-    pub const fn armb(&self) -> super::vals::Sm1captctrlbArmb {
+    pub const fn armb(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sm1captctrlbArmb::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Arm B"]
     #[inline(always)]
-    pub const fn set_armb(&mut self, val: super::vals::Sm1captctrlbArmb) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_armb(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "One Shot Mode B"]
     #[must_use]
@@ -4117,14 +4117,14 @@ impl Sm1captctrlb {
     #[doc = "Edge Counter B Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn edgcntb_en(&self) -> super::vals::Sm1captctrlbEdgcntbEn {
+    pub const fn edgcntb_en(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Sm1captctrlbEdgcntbEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Edge Counter B Enable"]
     #[inline(always)]
-    pub const fn set_edgcntb_en(&mut self, val: super::vals::Sm1captctrlbEdgcntbEn) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_edgcntb_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "Capture B FIFOs Water Mark"]
     #[must_use]
@@ -4189,7 +4189,7 @@ impl defmt::Format for Sm1captctrlb {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm1captctrlb {{ armb: {:?}, oneshotb: {:?}, edgb0: {:?}, edgb1: {:?}, inp_selb: {:?}, edgcntb_en: {:?}, cfbwm: {=u8:?}, cb0cnt: {=u8:?}, cb1cnt: {=u8:?} }}",
+            "Sm1captctrlb {{ armb: {=bool:?}, oneshotb: {:?}, edgb0: {:?}, edgb1: {:?}, inp_selb: {:?}, edgcntb_en: {=bool:?}, cfbwm: {=u8:?}, cb0cnt: {=u8:?}, cb1cnt: {=u8:?} }}",
             self.armb(),
             self.oneshotb(),
             self.edgb0(),
@@ -4210,14 +4210,14 @@ impl Sm1captctrlx {
     #[doc = "Arm X"]
     #[must_use]
     #[inline(always)]
-    pub const fn armx(&self) -> super::vals::Sm1captctrlxArmx {
+    pub const fn armx(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sm1captctrlxArmx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Arm X"]
     #[inline(always)]
-    pub const fn set_armx(&mut self, val: super::vals::Sm1captctrlxArmx) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_armx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "One Shot Mode Aux"]
     #[must_use]
@@ -4270,14 +4270,14 @@ impl Sm1captctrlx {
     #[doc = "Edge Counter X Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn edgcntx_en(&self) -> super::vals::Sm1captctrlxEdgcntxEn {
+    pub const fn edgcntx_en(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Sm1captctrlxEdgcntxEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Edge Counter X Enable"]
     #[inline(always)]
-    pub const fn set_edgcntx_en(&mut self, val: super::vals::Sm1captctrlxEdgcntxEn) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_edgcntx_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "Capture X FIFOs Water Mark"]
     #[must_use]
@@ -4342,7 +4342,7 @@ impl defmt::Format for Sm1captctrlx {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm1captctrlx {{ armx: {:?}, oneshotx: {:?}, edgx0: {:?}, edgx1: {:?}, inp_selx: {:?}, edgcntx_en: {:?}, cfxwm: {=u8:?}, cx0cnt: {=u8:?}, cx1cnt: {=u8:?} }}",
+            "Sm1captctrlx {{ armx: {=bool:?}, oneshotx: {:?}, edgx0: {:?}, edgx1: {:?}, inp_selx: {:?}, edgcntx_en: {=bool:?}, cfxwm: {=u8:?}, cx0cnt: {=u8:?}, cx1cnt: {=u8:?} }}",
             self.armx(),
             self.oneshotx(),
             self.edgx0(),
@@ -4563,26 +4563,26 @@ impl Sm1ctrl {
     #[doc = "Double Switching Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dblen(&self) -> super::vals::Sm1ctrlDblen {
+    pub const fn dblen(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sm1ctrlDblen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Double Switching Enable"]
     #[inline(always)]
-    pub const fn set_dblen(&mut self, val: super::vals::Sm1ctrlDblen) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_dblen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "PWM_X Double Switching Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dblx(&self) -> super::vals::Sm1ctrlDblx {
+    pub const fn dblx(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Sm1ctrlDblx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PWM_X Double Switching Enable"]
     #[inline(always)]
-    pub const fn set_dblx(&mut self, val: super::vals::Sm1ctrlDblx) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u16) & 0x01) << 1usize);
+    pub const fn set_dblx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
     }
     #[doc = "Load Mode Select"]
     #[must_use]
@@ -4599,14 +4599,14 @@ impl Sm1ctrl {
     #[doc = "Split the DBLPWM signal to PWM_A and PWM_B"]
     #[must_use]
     #[inline(always)]
-    pub const fn split(&self) -> super::vals::Sm1ctrlSplit {
+    pub const fn split(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Sm1ctrlSplit::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Split the DBLPWM signal to PWM_A and PWM_B"]
     #[inline(always)]
-    pub const fn set_split(&mut self, val: super::vals::Sm1ctrlSplit) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u16) & 0x01) << 3usize);
+    pub const fn set_split(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u16) & 0x01) << 3usize);
     }
     #[doc = "Prescaler"]
     #[must_use]
@@ -4647,26 +4647,26 @@ impl Sm1ctrl {
     #[doc = "Full Cycle Reload"]
     #[must_use]
     #[inline(always)]
-    pub const fn full(&self) -> super::vals::Sm1ctrlFull {
+    pub const fn full(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Sm1ctrlFull::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Full Cycle Reload"]
     #[inline(always)]
-    pub const fn set_full(&mut self, val: super::vals::Sm1ctrlFull) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u16) & 0x01) << 10usize);
+    pub const fn set_full(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
     }
     #[doc = "Half Cycle Reload"]
     #[must_use]
     #[inline(always)]
-    pub const fn half(&self) -> super::vals::Sm1ctrlHalf {
+    pub const fn half(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Sm1ctrlHalf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Half Cycle Reload"]
     #[inline(always)]
-    pub const fn set_half(&mut self, val: super::vals::Sm1ctrlHalf) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u16) & 0x01) << 11usize);
+    pub const fn set_half(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u16) & 0x01) << 11usize);
     }
     #[doc = "Load Frequency"]
     #[must_use]
@@ -4708,7 +4708,7 @@ impl defmt::Format for Sm1ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm1ctrl {{ dblen: {:?}, dblx: {:?}, ldmod: {:?}, split: {:?}, prsc: {:?}, compmode: {:?}, dt: {=u8:?}, full: {:?}, half: {:?}, ldfq: {:?} }}",
+            "Sm1ctrl {{ dblen: {=bool:?}, dblx: {=bool:?}, ldmod: {:?}, split: {=bool:?}, prsc: {:?}, compmode: {:?}, dt: {=u8:?}, full: {=bool:?}, half: {=bool:?}, ldfq: {:?} }}",
             self.dblen(),
             self.dblx(),
             self.ldmod(),
@@ -4778,14 +4778,14 @@ impl Sm1ctrl2 {
     #[doc = "Force Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn frcen(&self) -> super::vals::Sm1ctrl2Frcen {
+    pub const fn frcen(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Sm1ctrl2Frcen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Force Enable"]
     #[inline(always)]
-    pub const fn set_frcen(&mut self, val: super::vals::Sm1ctrl2Frcen) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_frcen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "Initialization Control Select"]
     #[must_use]
@@ -4888,7 +4888,7 @@ impl defmt::Format for Sm1ctrl2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm1ctrl2 {{ clk_sel: {:?}, reload_sel: {:?}, force_sel: {:?}, force: {=bool:?}, frcen: {:?}, init_sel: {:?}, pwmx_init: {=bool:?}, pwm45_init: {=bool:?}, pwm23_init: {=bool:?}, indep: {:?}, dbgen: {=bool:?} }}",
+            "Sm1ctrl2 {{ clk_sel: {:?}, reload_sel: {:?}, force_sel: {:?}, force: {=bool:?}, frcen: {=bool:?}, init_sel: {:?}, pwmx_init: {=bool:?}, pwm45_init: {=bool:?}, pwm23_init: {=bool:?}, indep: {:?}, dbgen: {=bool:?} }}",
             self.clk_sel(),
             self.reload_sel(),
             self.force_sel(),
@@ -5520,14 +5520,14 @@ impl Sm1dmaen {
     #[doc = "Value Registers DMA Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn valde(&self) -> super::vals::Sm1dmaenValde {
+    pub const fn valde(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Sm1dmaenValde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Value Registers DMA Enable"]
     #[inline(always)]
-    pub const fn set_valde(&mut self, val: super::vals::Sm1dmaenValde) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u16) & 0x01) << 9usize);
+    pub const fn set_valde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
     }
 }
 impl Default for Sm1dmaen {
@@ -5556,7 +5556,7 @@ impl defmt::Format for Sm1dmaen {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm1dmaen {{ cx0de: {=bool:?}, cx1de: {=bool:?}, cb0de: {=bool:?}, cb1de: {=bool:?}, ca0de: {=bool:?}, ca1de: {=bool:?}, captde: {:?}, fand: {:?}, valde: {:?} }}",
+            "Sm1dmaen {{ cx0de: {=bool:?}, cx1de: {=bool:?}, cb0de: {=bool:?}, cb1de: {=bool:?}, ca0de: {=bool:?}, ca1de: {=bool:?}, captde: {:?}, fand: {:?}, valde: {=bool:?} }}",
             self.cx0de(),
             self.cx1de(),
             self.cb0de(),
@@ -5836,38 +5836,38 @@ impl Sm1frctrl {
     #[doc = "Fractional Cycle PWM Period Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn frac1_en(&self) -> super::vals::Sm1frctrlFrac1En {
+    pub const fn frac1_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Sm1frctrlFrac1En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fractional Cycle PWM Period Enable"]
     #[inline(always)]
-    pub const fn set_frac1_en(&mut self, val: super::vals::Sm1frctrlFrac1En) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u16) & 0x01) << 1usize);
+    pub const fn set_frac1_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
     }
     #[doc = "Fractional Cycle Placement Enable for PWM_A"]
     #[must_use]
     #[inline(always)]
-    pub const fn frac23_en(&self) -> super::vals::Sm1frctrlFrac23En {
+    pub const fn frac23_en(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Sm1frctrlFrac23En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fractional Cycle Placement Enable for PWM_A"]
     #[inline(always)]
-    pub const fn set_frac23_en(&mut self, val: super::vals::Sm1frctrlFrac23En) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u16) & 0x01) << 2usize);
+    pub const fn set_frac23_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u16) & 0x01) << 2usize);
     }
     #[doc = "Fractional Cycle Placement Enable for PWM_B"]
     #[must_use]
     #[inline(always)]
-    pub const fn frac45_en(&self) -> super::vals::Sm1frctrlFrac45En {
+    pub const fn frac45_en(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Sm1frctrlFrac45En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fractional Cycle Placement Enable for PWM_B"]
     #[inline(always)]
-    pub const fn set_frac45_en(&mut self, val: super::vals::Sm1frctrlFrac45En) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u16) & 0x01) << 4usize);
+    pub const fn set_frac45_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u16) & 0x01) << 4usize);
     }
     #[doc = "Test Status Bit"]
     #[must_use]
@@ -5903,7 +5903,7 @@ impl defmt::Format for Sm1frctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm1frctrl {{ frac1_en: {:?}, frac23_en: {:?}, frac45_en: {:?}, test: {=bool:?} }}",
+            "Sm1frctrl {{ frac1_en: {=bool:?}, frac23_en: {=bool:?}, frac45_en: {=bool:?}, test: {=bool:?} }}",
             self.frac1_en(),
             self.frac23_en(),
             self.frac45_en(),
@@ -5968,98 +5968,98 @@ impl Sm1inten {
     #[doc = "Capture X 0 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cx0ie(&self) -> super::vals::Sm1intenCx0ie {
+    pub const fn cx0ie(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Sm1intenCx0ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture X 0 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_cx0ie(&mut self, val: super::vals::Sm1intenCx0ie) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u16) & 0x01) << 6usize);
+    pub const fn set_cx0ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u16) & 0x01) << 6usize);
     }
     #[doc = "Capture X 1 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cx1ie(&self) -> super::vals::Sm1intenCx1ie {
+    pub const fn cx1ie(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Sm1intenCx1ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture X 1 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_cx1ie(&mut self, val: super::vals::Sm1intenCx1ie) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_cx1ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "Capture B 0 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cb0ie(&self) -> super::vals::Sm1intenCb0ie {
+    pub const fn cb0ie(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Sm1intenCb0ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture B 0 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_cb0ie(&mut self, val: super::vals::Sm1intenCb0ie) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u16) & 0x01) << 8usize);
+    pub const fn set_cb0ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
     }
     #[doc = "Capture B 1 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cb1ie(&self) -> super::vals::Sm1intenCb1ie {
+    pub const fn cb1ie(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Sm1intenCb1ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture B 1 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_cb1ie(&mut self, val: super::vals::Sm1intenCb1ie) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u16) & 0x01) << 9usize);
+    pub const fn set_cb1ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
     }
     #[doc = "Capture A 0 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ca0ie(&self) -> super::vals::Sm1intenCa0ie {
+    pub const fn ca0ie(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Sm1intenCa0ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture A 0 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ca0ie(&mut self, val: super::vals::Sm1intenCa0ie) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u16) & 0x01) << 10usize);
+    pub const fn set_ca0ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
     }
     #[doc = "Capture A 1 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ca1ie(&self) -> super::vals::Sm1intenCa1ie {
+    pub const fn ca1ie(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Sm1intenCa1ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture A 1 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ca1ie(&mut self, val: super::vals::Sm1intenCa1ie) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u16) & 0x01) << 11usize);
+    pub const fn set_ca1ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u16) & 0x01) << 11usize);
     }
     #[doc = "Reload Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn rie(&self) -> super::vals::Sm1intenRie {
+    pub const fn rie(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Sm1intenRie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reload Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_rie(&mut self, val: super::vals::Sm1intenRie) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u16) & 0x01) << 12usize);
+    pub const fn set_rie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u16) & 0x01) << 12usize);
     }
     #[doc = "Reload Error Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn reie(&self) -> super::vals::Sm1intenReie {
+    pub const fn reie(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Sm1intenReie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reload Error Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_reie(&mut self, val: super::vals::Sm1intenReie) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u16) & 0x01) << 13usize);
+    pub const fn set_reie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u16) & 0x01) << 13usize);
     }
 }
 impl Default for Sm1inten {
@@ -6088,7 +6088,7 @@ impl defmt::Format for Sm1inten {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm1inten {{ cmpie: {:?}, cx0ie: {:?}, cx1ie: {:?}, cb0ie: {:?}, cb1ie: {:?}, ca0ie: {:?}, ca1ie: {:?}, rie: {:?}, reie: {:?} }}",
+            "Sm1inten {{ cmpie: {:?}, cx0ie: {=bool:?}, cx1ie: {=bool:?}, cb0ie: {=bool:?}, cb1ie: {=bool:?}, ca0ie: {=bool:?}, ca1ie: {=bool:?}, rie: {=bool:?}, reie: {=bool:?} }}",
             self.cmpie(),
             self.cx0ie(),
             self.cx1ie(),
@@ -6145,38 +6145,38 @@ impl Sm1octrl {
     #[doc = "PWM_X Output Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn polx(&self) -> super::vals::Sm1octrlPolx {
+    pub const fn polx(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Sm1octrlPolx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PWM_X Output Polarity"]
     #[inline(always)]
-    pub const fn set_polx(&mut self, val: super::vals::Sm1octrlPolx) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u16) & 0x01) << 8usize);
+    pub const fn set_polx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
     }
     #[doc = "PWM_B Output Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn polb(&self) -> super::vals::Sm1octrlPolb {
+    pub const fn polb(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Sm1octrlPolb::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PWM_B Output Polarity"]
     #[inline(always)]
-    pub const fn set_polb(&mut self, val: super::vals::Sm1octrlPolb) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u16) & 0x01) << 9usize);
+    pub const fn set_polb(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
     }
     #[doc = "PWM_A Output Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn pola(&self) -> super::vals::Sm1octrlPola {
+    pub const fn pola(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Sm1octrlPola::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PWM_A Output Polarity"]
     #[inline(always)]
-    pub const fn set_pola(&mut self, val: super::vals::Sm1octrlPola) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u16) & 0x01) << 10usize);
+    pub const fn set_pola(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
     }
     #[doc = "PWM_X Input"]
     #[must_use]
@@ -6241,7 +6241,7 @@ impl defmt::Format for Sm1octrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm1octrl {{ pwmxfs: {:?}, pwmbfs: {:?}, pwmafs: {:?}, polx: {:?}, polb: {:?}, pola: {:?}, pwmx_in: {=bool:?}, pwmb_in: {=bool:?}, pwma_in: {=bool:?} }}",
+            "Sm1octrl {{ pwmxfs: {:?}, pwmbfs: {:?}, pwmafs: {:?}, polx: {=bool:?}, polb: {=bool:?}, pola: {=bool:?}, pwmx_in: {=bool:?}, pwmb_in: {=bool:?}, pwma_in: {=bool:?} }}",
             self.pwmxfs(),
             self.pwmbfs(),
             self.pwmafs(),
@@ -6383,38 +6383,38 @@ impl Sm1sts {
     #[doc = "Reload Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rf(&self) -> super::vals::Sm1stsRf {
+    pub const fn rf(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Sm1stsRf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reload Flag"]
     #[inline(always)]
-    pub const fn set_rf(&mut self, val: super::vals::Sm1stsRf) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u16) & 0x01) << 12usize);
+    pub const fn set_rf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u16) & 0x01) << 12usize);
     }
     #[doc = "Reload Error Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn ref_(&self) -> super::vals::Sm1stsRef {
+    pub const fn ref_(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Sm1stsRef::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reload Error Flag"]
     #[inline(always)]
-    pub const fn set_ref_(&mut self, val: super::vals::Sm1stsRef) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u16) & 0x01) << 13usize);
+    pub const fn set_ref_(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u16) & 0x01) << 13usize);
     }
     #[doc = "Registers Updated Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn ruf(&self) -> super::vals::Sm1stsRuf {
+    pub const fn ruf(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Sm1stsRuf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Registers Updated Flag"]
     #[inline(always)]
-    pub const fn set_ruf(&mut self, val: super::vals::Sm1stsRuf) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u16) & 0x01) << 14usize);
+    pub const fn set_ruf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u16) & 0x01) << 14usize);
     }
 }
 impl Default for Sm1sts {
@@ -6444,7 +6444,7 @@ impl defmt::Format for Sm1sts {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm1sts {{ cmpf: {:?}, cfx0: {=bool:?}, cfx1: {=bool:?}, cfb0: {=bool:?}, cfb1: {=bool:?}, cfa0: {=bool:?}, cfa1: {=bool:?}, rf: {:?}, ref_: {:?}, ruf: {:?} }}",
+            "Sm1sts {{ cmpf: {:?}, cfx0: {=bool:?}, cfx1: {=bool:?}, cfb0: {=bool:?}, cfb1: {=bool:?}, cfa0: {=bool:?}, cfa1: {=bool:?}, rf: {=bool:?}, ref_: {=bool:?}, ruf: {=bool:?} }}",
             self.cmpf(),
             self.cfx0(),
             self.cfx1(),
@@ -6936,14 +6936,14 @@ impl Sm2captctrla {
     #[doc = "Arm A"]
     #[must_use]
     #[inline(always)]
-    pub const fn arma(&self) -> super::vals::Sm2captctrlaArma {
+    pub const fn arma(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sm2captctrlaArma::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Arm A"]
     #[inline(always)]
-    pub const fn set_arma(&mut self, val: super::vals::Sm2captctrlaArma) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_arma(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "One Shot Mode A"]
     #[must_use]
@@ -6996,14 +6996,14 @@ impl Sm2captctrla {
     #[doc = "Edge Counter A Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn edgcnta_en(&self) -> super::vals::Sm2captctrlaEdgcntaEn {
+    pub const fn edgcnta_en(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Sm2captctrlaEdgcntaEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Edge Counter A Enable"]
     #[inline(always)]
-    pub const fn set_edgcnta_en(&mut self, val: super::vals::Sm2captctrlaEdgcntaEn) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_edgcnta_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "Capture A FIFOs Water Mark"]
     #[must_use]
@@ -7068,7 +7068,7 @@ impl defmt::Format for Sm2captctrla {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm2captctrla {{ arma: {:?}, oneshota: {:?}, edga0: {:?}, edga1: {:?}, inp_sela: {:?}, edgcnta_en: {:?}, cfawm: {=u8:?}, ca0cnt: {=u8:?}, ca1cnt: {=u8:?} }}",
+            "Sm2captctrla {{ arma: {=bool:?}, oneshota: {:?}, edga0: {:?}, edga1: {:?}, inp_sela: {:?}, edgcnta_en: {=bool:?}, cfawm: {=u8:?}, ca0cnt: {=u8:?}, ca1cnt: {=u8:?} }}",
             self.arma(),
             self.oneshota(),
             self.edga0(),
@@ -7089,14 +7089,14 @@ impl Sm2captctrlb {
     #[doc = "Arm B"]
     #[must_use]
     #[inline(always)]
-    pub const fn armb(&self) -> super::vals::Sm2captctrlbArmb {
+    pub const fn armb(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sm2captctrlbArmb::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Arm B"]
     #[inline(always)]
-    pub const fn set_armb(&mut self, val: super::vals::Sm2captctrlbArmb) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_armb(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "One Shot Mode B"]
     #[must_use]
@@ -7149,14 +7149,14 @@ impl Sm2captctrlb {
     #[doc = "Edge Counter B Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn edgcntb_en(&self) -> super::vals::Sm2captctrlbEdgcntbEn {
+    pub const fn edgcntb_en(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Sm2captctrlbEdgcntbEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Edge Counter B Enable"]
     #[inline(always)]
-    pub const fn set_edgcntb_en(&mut self, val: super::vals::Sm2captctrlbEdgcntbEn) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_edgcntb_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "Capture B FIFOs Water Mark"]
     #[must_use]
@@ -7221,7 +7221,7 @@ impl defmt::Format for Sm2captctrlb {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm2captctrlb {{ armb: {:?}, oneshotb: {:?}, edgb0: {:?}, edgb1: {:?}, inp_selb: {:?}, edgcntb_en: {:?}, cfbwm: {=u8:?}, cb0cnt: {=u8:?}, cb1cnt: {=u8:?} }}",
+            "Sm2captctrlb {{ armb: {=bool:?}, oneshotb: {:?}, edgb0: {:?}, edgb1: {:?}, inp_selb: {:?}, edgcntb_en: {=bool:?}, cfbwm: {=u8:?}, cb0cnt: {=u8:?}, cb1cnt: {=u8:?} }}",
             self.armb(),
             self.oneshotb(),
             self.edgb0(),
@@ -7242,14 +7242,14 @@ impl Sm2captctrlx {
     #[doc = "Arm X"]
     #[must_use]
     #[inline(always)]
-    pub const fn armx(&self) -> super::vals::Sm2captctrlxArmx {
+    pub const fn armx(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sm2captctrlxArmx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Arm X"]
     #[inline(always)]
-    pub const fn set_armx(&mut self, val: super::vals::Sm2captctrlxArmx) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_armx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "One Shot Mode Aux"]
     #[must_use]
@@ -7302,14 +7302,14 @@ impl Sm2captctrlx {
     #[doc = "Edge Counter X Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn edgcntx_en(&self) -> super::vals::Sm2captctrlxEdgcntxEn {
+    pub const fn edgcntx_en(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Sm2captctrlxEdgcntxEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Edge Counter X Enable"]
     #[inline(always)]
-    pub const fn set_edgcntx_en(&mut self, val: super::vals::Sm2captctrlxEdgcntxEn) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_edgcntx_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "Capture X FIFOs Water Mark"]
     #[must_use]
@@ -7374,7 +7374,7 @@ impl defmt::Format for Sm2captctrlx {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm2captctrlx {{ armx: {:?}, oneshotx: {:?}, edgx0: {:?}, edgx1: {:?}, inp_selx: {:?}, edgcntx_en: {:?}, cfxwm: {=u8:?}, cx0cnt: {=u8:?}, cx1cnt: {=u8:?} }}",
+            "Sm2captctrlx {{ armx: {=bool:?}, oneshotx: {:?}, edgx0: {:?}, edgx1: {:?}, inp_selx: {:?}, edgcntx_en: {=bool:?}, cfxwm: {=u8:?}, cx0cnt: {=u8:?}, cx1cnt: {=u8:?} }}",
             self.armx(),
             self.oneshotx(),
             self.edgx0(),
@@ -7595,26 +7595,26 @@ impl Sm2ctrl {
     #[doc = "Double Switching Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dblen(&self) -> super::vals::Sm2ctrlDblen {
+    pub const fn dblen(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sm2ctrlDblen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Double Switching Enable"]
     #[inline(always)]
-    pub const fn set_dblen(&mut self, val: super::vals::Sm2ctrlDblen) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_dblen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "PWM_X Double Switching Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dblx(&self) -> super::vals::Sm2ctrlDblx {
+    pub const fn dblx(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Sm2ctrlDblx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PWM_X Double Switching Enable"]
     #[inline(always)]
-    pub const fn set_dblx(&mut self, val: super::vals::Sm2ctrlDblx) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u16) & 0x01) << 1usize);
+    pub const fn set_dblx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
     }
     #[doc = "Load Mode Select"]
     #[must_use]
@@ -7631,14 +7631,14 @@ impl Sm2ctrl {
     #[doc = "Split the DBLPWM signal to PWM_A and PWM_B"]
     #[must_use]
     #[inline(always)]
-    pub const fn split(&self) -> super::vals::Sm2ctrlSplit {
+    pub const fn split(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Sm2ctrlSplit::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Split the DBLPWM signal to PWM_A and PWM_B"]
     #[inline(always)]
-    pub const fn set_split(&mut self, val: super::vals::Sm2ctrlSplit) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u16) & 0x01) << 3usize);
+    pub const fn set_split(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u16) & 0x01) << 3usize);
     }
     #[doc = "Prescaler"]
     #[must_use]
@@ -7679,26 +7679,26 @@ impl Sm2ctrl {
     #[doc = "Full Cycle Reload"]
     #[must_use]
     #[inline(always)]
-    pub const fn full(&self) -> super::vals::Sm2ctrlFull {
+    pub const fn full(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Sm2ctrlFull::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Full Cycle Reload"]
     #[inline(always)]
-    pub const fn set_full(&mut self, val: super::vals::Sm2ctrlFull) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u16) & 0x01) << 10usize);
+    pub const fn set_full(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
     }
     #[doc = "Half Cycle Reload"]
     #[must_use]
     #[inline(always)]
-    pub const fn half(&self) -> super::vals::Sm2ctrlHalf {
+    pub const fn half(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Sm2ctrlHalf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Half Cycle Reload"]
     #[inline(always)]
-    pub const fn set_half(&mut self, val: super::vals::Sm2ctrlHalf) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u16) & 0x01) << 11usize);
+    pub const fn set_half(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u16) & 0x01) << 11usize);
     }
     #[doc = "Load Frequency"]
     #[must_use]
@@ -7740,7 +7740,7 @@ impl defmt::Format for Sm2ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm2ctrl {{ dblen: {:?}, dblx: {:?}, ldmod: {:?}, split: {:?}, prsc: {:?}, compmode: {:?}, dt: {=u8:?}, full: {:?}, half: {:?}, ldfq: {:?} }}",
+            "Sm2ctrl {{ dblen: {=bool:?}, dblx: {=bool:?}, ldmod: {:?}, split: {=bool:?}, prsc: {:?}, compmode: {:?}, dt: {=u8:?}, full: {=bool:?}, half: {=bool:?}, ldfq: {:?} }}",
             self.dblen(),
             self.dblx(),
             self.ldmod(),
@@ -7810,14 +7810,14 @@ impl Sm2ctrl2 {
     #[doc = "Force Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn frcen(&self) -> super::vals::Sm2ctrl2Frcen {
+    pub const fn frcen(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Sm2ctrl2Frcen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Force Enable"]
     #[inline(always)]
-    pub const fn set_frcen(&mut self, val: super::vals::Sm2ctrl2Frcen) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_frcen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "Initialization Control Select"]
     #[must_use]
@@ -7920,7 +7920,7 @@ impl defmt::Format for Sm2ctrl2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm2ctrl2 {{ clk_sel: {:?}, reload_sel: {:?}, force_sel: {:?}, force: {=bool:?}, frcen: {:?}, init_sel: {:?}, pwmx_init: {=bool:?}, pwm45_init: {=bool:?}, pwm23_init: {=bool:?}, indep: {:?}, dbgen: {=bool:?} }}",
+            "Sm2ctrl2 {{ clk_sel: {:?}, reload_sel: {:?}, force_sel: {:?}, force: {=bool:?}, frcen: {=bool:?}, init_sel: {:?}, pwmx_init: {=bool:?}, pwm45_init: {=bool:?}, pwm23_init: {=bool:?}, indep: {:?}, dbgen: {=bool:?} }}",
             self.clk_sel(),
             self.reload_sel(),
             self.force_sel(),
@@ -8552,14 +8552,14 @@ impl Sm2dmaen {
     #[doc = "Value Registers DMA Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn valde(&self) -> super::vals::Sm2dmaenValde {
+    pub const fn valde(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Sm2dmaenValde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Value Registers DMA Enable"]
     #[inline(always)]
-    pub const fn set_valde(&mut self, val: super::vals::Sm2dmaenValde) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u16) & 0x01) << 9usize);
+    pub const fn set_valde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
     }
 }
 impl Default for Sm2dmaen {
@@ -8588,7 +8588,7 @@ impl defmt::Format for Sm2dmaen {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm2dmaen {{ cx0de: {=bool:?}, cx1de: {=bool:?}, cb0de: {=bool:?}, cb1de: {=bool:?}, ca0de: {=bool:?}, ca1de: {=bool:?}, captde: {:?}, fand: {:?}, valde: {:?} }}",
+            "Sm2dmaen {{ cx0de: {=bool:?}, cx1de: {=bool:?}, cb0de: {=bool:?}, cb1de: {=bool:?}, ca0de: {=bool:?}, ca1de: {=bool:?}, captde: {:?}, fand: {:?}, valde: {=bool:?} }}",
             self.cx0de(),
             self.cx1de(),
             self.cb0de(),
@@ -8868,38 +8868,38 @@ impl Sm2frctrl {
     #[doc = "Fractional Cycle PWM Period Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn frac1_en(&self) -> super::vals::Sm2frctrlFrac1En {
+    pub const fn frac1_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Sm2frctrlFrac1En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fractional Cycle PWM Period Enable"]
     #[inline(always)]
-    pub const fn set_frac1_en(&mut self, val: super::vals::Sm2frctrlFrac1En) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u16) & 0x01) << 1usize);
+    pub const fn set_frac1_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
     }
     #[doc = "Fractional Cycle Placement Enable for PWM_A"]
     #[must_use]
     #[inline(always)]
-    pub const fn frac23_en(&self) -> super::vals::Sm2frctrlFrac23En {
+    pub const fn frac23_en(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Sm2frctrlFrac23En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fractional Cycle Placement Enable for PWM_A"]
     #[inline(always)]
-    pub const fn set_frac23_en(&mut self, val: super::vals::Sm2frctrlFrac23En) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u16) & 0x01) << 2usize);
+    pub const fn set_frac23_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u16) & 0x01) << 2usize);
     }
     #[doc = "Fractional Cycle Placement Enable for PWM_B"]
     #[must_use]
     #[inline(always)]
-    pub const fn frac45_en(&self) -> super::vals::Sm2frctrlFrac45En {
+    pub const fn frac45_en(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Sm2frctrlFrac45En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fractional Cycle Placement Enable for PWM_B"]
     #[inline(always)]
-    pub const fn set_frac45_en(&mut self, val: super::vals::Sm2frctrlFrac45En) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u16) & 0x01) << 4usize);
+    pub const fn set_frac45_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u16) & 0x01) << 4usize);
     }
     #[doc = "Test Status Bit"]
     #[must_use]
@@ -8935,7 +8935,7 @@ impl defmt::Format for Sm2frctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm2frctrl {{ frac1_en: {:?}, frac23_en: {:?}, frac45_en: {:?}, test: {=bool:?} }}",
+            "Sm2frctrl {{ frac1_en: {=bool:?}, frac23_en: {=bool:?}, frac45_en: {=bool:?}, test: {=bool:?} }}",
             self.frac1_en(),
             self.frac23_en(),
             self.frac45_en(),
@@ -9000,98 +9000,98 @@ impl Sm2inten {
     #[doc = "Capture X 0 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cx0ie(&self) -> super::vals::Sm2intenCx0ie {
+    pub const fn cx0ie(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Sm2intenCx0ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture X 0 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_cx0ie(&mut self, val: super::vals::Sm2intenCx0ie) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u16) & 0x01) << 6usize);
+    pub const fn set_cx0ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u16) & 0x01) << 6usize);
     }
     #[doc = "Capture X 1 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cx1ie(&self) -> super::vals::Sm2intenCx1ie {
+    pub const fn cx1ie(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Sm2intenCx1ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture X 1 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_cx1ie(&mut self, val: super::vals::Sm2intenCx1ie) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_cx1ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "Capture B 0 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cb0ie(&self) -> super::vals::Sm2intenCb0ie {
+    pub const fn cb0ie(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Sm2intenCb0ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture B 0 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_cb0ie(&mut self, val: super::vals::Sm2intenCb0ie) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u16) & 0x01) << 8usize);
+    pub const fn set_cb0ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
     }
     #[doc = "Capture B 1 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cb1ie(&self) -> super::vals::Sm2intenCb1ie {
+    pub const fn cb1ie(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Sm2intenCb1ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture B 1 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_cb1ie(&mut self, val: super::vals::Sm2intenCb1ie) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u16) & 0x01) << 9usize);
+    pub const fn set_cb1ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
     }
     #[doc = "Capture A 0 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ca0ie(&self) -> super::vals::Sm2intenCa0ie {
+    pub const fn ca0ie(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Sm2intenCa0ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture A 0 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ca0ie(&mut self, val: super::vals::Sm2intenCa0ie) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u16) & 0x01) << 10usize);
+    pub const fn set_ca0ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
     }
     #[doc = "Capture A 1 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ca1ie(&self) -> super::vals::Sm2intenCa1ie {
+    pub const fn ca1ie(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Sm2intenCa1ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture A 1 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ca1ie(&mut self, val: super::vals::Sm2intenCa1ie) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u16) & 0x01) << 11usize);
+    pub const fn set_ca1ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u16) & 0x01) << 11usize);
     }
     #[doc = "Reload Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn rie(&self) -> super::vals::Sm2intenRie {
+    pub const fn rie(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Sm2intenRie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reload Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_rie(&mut self, val: super::vals::Sm2intenRie) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u16) & 0x01) << 12usize);
+    pub const fn set_rie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u16) & 0x01) << 12usize);
     }
     #[doc = "Reload Error Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn reie(&self) -> super::vals::Sm2intenReie {
+    pub const fn reie(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Sm2intenReie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reload Error Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_reie(&mut self, val: super::vals::Sm2intenReie) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u16) & 0x01) << 13usize);
+    pub const fn set_reie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u16) & 0x01) << 13usize);
     }
 }
 impl Default for Sm2inten {
@@ -9120,7 +9120,7 @@ impl defmt::Format for Sm2inten {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm2inten {{ cmpie: {:?}, cx0ie: {:?}, cx1ie: {:?}, cb0ie: {:?}, cb1ie: {:?}, ca0ie: {:?}, ca1ie: {:?}, rie: {:?}, reie: {:?} }}",
+            "Sm2inten {{ cmpie: {:?}, cx0ie: {=bool:?}, cx1ie: {=bool:?}, cb0ie: {=bool:?}, cb1ie: {=bool:?}, ca0ie: {=bool:?}, ca1ie: {=bool:?}, rie: {=bool:?}, reie: {=bool:?} }}",
             self.cmpie(),
             self.cx0ie(),
             self.cx1ie(),
@@ -9177,38 +9177,38 @@ impl Sm2octrl {
     #[doc = "PWM_X Output Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn polx(&self) -> super::vals::Sm2octrlPolx {
+    pub const fn polx(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Sm2octrlPolx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PWM_X Output Polarity"]
     #[inline(always)]
-    pub const fn set_polx(&mut self, val: super::vals::Sm2octrlPolx) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u16) & 0x01) << 8usize);
+    pub const fn set_polx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
     }
     #[doc = "PWM_B Output Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn polb(&self) -> super::vals::Sm2octrlPolb {
+    pub const fn polb(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Sm2octrlPolb::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PWM_B Output Polarity"]
     #[inline(always)]
-    pub const fn set_polb(&mut self, val: super::vals::Sm2octrlPolb) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u16) & 0x01) << 9usize);
+    pub const fn set_polb(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
     }
     #[doc = "PWM_A Output Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn pola(&self) -> super::vals::Sm2octrlPola {
+    pub const fn pola(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Sm2octrlPola::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PWM_A Output Polarity"]
     #[inline(always)]
-    pub const fn set_pola(&mut self, val: super::vals::Sm2octrlPola) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u16) & 0x01) << 10usize);
+    pub const fn set_pola(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
     }
     #[doc = "PWM_X Input"]
     #[must_use]
@@ -9273,7 +9273,7 @@ impl defmt::Format for Sm2octrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm2octrl {{ pwmxfs: {:?}, pwmbfs: {:?}, pwmafs: {:?}, polx: {:?}, polb: {:?}, pola: {:?}, pwmx_in: {=bool:?}, pwmb_in: {=bool:?}, pwma_in: {=bool:?} }}",
+            "Sm2octrl {{ pwmxfs: {:?}, pwmbfs: {:?}, pwmafs: {:?}, polx: {=bool:?}, polb: {=bool:?}, pola: {=bool:?}, pwmx_in: {=bool:?}, pwmb_in: {=bool:?}, pwma_in: {=bool:?} }}",
             self.pwmxfs(),
             self.pwmbfs(),
             self.pwmafs(),
@@ -9415,38 +9415,38 @@ impl Sm2sts {
     #[doc = "Reload Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rf(&self) -> super::vals::Sm2stsRf {
+    pub const fn rf(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Sm2stsRf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reload Flag"]
     #[inline(always)]
-    pub const fn set_rf(&mut self, val: super::vals::Sm2stsRf) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u16) & 0x01) << 12usize);
+    pub const fn set_rf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u16) & 0x01) << 12usize);
     }
     #[doc = "Reload Error Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn ref_(&self) -> super::vals::Sm2stsRef {
+    pub const fn ref_(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Sm2stsRef::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reload Error Flag"]
     #[inline(always)]
-    pub const fn set_ref_(&mut self, val: super::vals::Sm2stsRef) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u16) & 0x01) << 13usize);
+    pub const fn set_ref_(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u16) & 0x01) << 13usize);
     }
     #[doc = "Registers Updated Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn ruf(&self) -> super::vals::Sm2stsRuf {
+    pub const fn ruf(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Sm2stsRuf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Registers Updated Flag"]
     #[inline(always)]
-    pub const fn set_ruf(&mut self, val: super::vals::Sm2stsRuf) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u16) & 0x01) << 14usize);
+    pub const fn set_ruf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u16) & 0x01) << 14usize);
     }
 }
 impl Default for Sm2sts {
@@ -9476,7 +9476,7 @@ impl defmt::Format for Sm2sts {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm2sts {{ cmpf: {:?}, cfx0: {=bool:?}, cfx1: {=bool:?}, cfb0: {=bool:?}, cfb1: {=bool:?}, cfa0: {=bool:?}, cfa1: {=bool:?}, rf: {:?}, ref_: {:?}, ruf: {:?} }}",
+            "Sm2sts {{ cmpf: {:?}, cfx0: {=bool:?}, cfx1: {=bool:?}, cfb0: {=bool:?}, cfb1: {=bool:?}, cfa0: {=bool:?}, cfa1: {=bool:?}, rf: {=bool:?}, ref_: {=bool:?}, ruf: {=bool:?} }}",
             self.cmpf(),
             self.cfx0(),
             self.cfx1(),
@@ -9968,14 +9968,14 @@ impl Sm3captctrla {
     #[doc = "Arm A"]
     #[must_use]
     #[inline(always)]
-    pub const fn arma(&self) -> super::vals::Sm3captctrlaArma {
+    pub const fn arma(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sm3captctrlaArma::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Arm A"]
     #[inline(always)]
-    pub const fn set_arma(&mut self, val: super::vals::Sm3captctrlaArma) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_arma(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "One Shot Mode A"]
     #[must_use]
@@ -10028,14 +10028,14 @@ impl Sm3captctrla {
     #[doc = "Edge Counter A Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn edgcnta_en(&self) -> super::vals::Sm3captctrlaEdgcntaEn {
+    pub const fn edgcnta_en(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Sm3captctrlaEdgcntaEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Edge Counter A Enable"]
     #[inline(always)]
-    pub const fn set_edgcnta_en(&mut self, val: super::vals::Sm3captctrlaEdgcntaEn) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_edgcnta_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "Capture A FIFOs Water Mark"]
     #[must_use]
@@ -10100,7 +10100,7 @@ impl defmt::Format for Sm3captctrla {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm3captctrla {{ arma: {:?}, oneshota: {:?}, edga0: {:?}, edga1: {:?}, inp_sela: {:?}, edgcnta_en: {:?}, cfawm: {=u8:?}, ca0cnt: {=u8:?}, ca1cnt: {=u8:?} }}",
+            "Sm3captctrla {{ arma: {=bool:?}, oneshota: {:?}, edga0: {:?}, edga1: {:?}, inp_sela: {:?}, edgcnta_en: {=bool:?}, cfawm: {=u8:?}, ca0cnt: {=u8:?}, ca1cnt: {=u8:?} }}",
             self.arma(),
             self.oneshota(),
             self.edga0(),
@@ -10121,14 +10121,14 @@ impl Sm3captctrlb {
     #[doc = "Arm B"]
     #[must_use]
     #[inline(always)]
-    pub const fn armb(&self) -> super::vals::Sm3captctrlbArmb {
+    pub const fn armb(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sm3captctrlbArmb::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Arm B"]
     #[inline(always)]
-    pub const fn set_armb(&mut self, val: super::vals::Sm3captctrlbArmb) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_armb(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "One Shot Mode B"]
     #[must_use]
@@ -10181,14 +10181,14 @@ impl Sm3captctrlb {
     #[doc = "Edge Counter B Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn edgcntb_en(&self) -> super::vals::Sm3captctrlbEdgcntbEn {
+    pub const fn edgcntb_en(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Sm3captctrlbEdgcntbEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Edge Counter B Enable"]
     #[inline(always)]
-    pub const fn set_edgcntb_en(&mut self, val: super::vals::Sm3captctrlbEdgcntbEn) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_edgcntb_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "Capture B FIFOs Water Mark"]
     #[must_use]
@@ -10253,7 +10253,7 @@ impl defmt::Format for Sm3captctrlb {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm3captctrlb {{ armb: {:?}, oneshotb: {:?}, edgb0: {:?}, edgb1: {:?}, inp_selb: {:?}, edgcntb_en: {:?}, cfbwm: {=u8:?}, cb0cnt: {=u8:?}, cb1cnt: {=u8:?} }}",
+            "Sm3captctrlb {{ armb: {=bool:?}, oneshotb: {:?}, edgb0: {:?}, edgb1: {:?}, inp_selb: {:?}, edgcntb_en: {=bool:?}, cfbwm: {=u8:?}, cb0cnt: {=u8:?}, cb1cnt: {=u8:?} }}",
             self.armb(),
             self.oneshotb(),
             self.edgb0(),
@@ -10274,14 +10274,14 @@ impl Sm3captctrlx {
     #[doc = "Arm X"]
     #[must_use]
     #[inline(always)]
-    pub const fn armx(&self) -> super::vals::Sm3captctrlxArmx {
+    pub const fn armx(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sm3captctrlxArmx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Arm X"]
     #[inline(always)]
-    pub const fn set_armx(&mut self, val: super::vals::Sm3captctrlxArmx) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_armx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "One Shot Mode Aux"]
     #[must_use]
@@ -10334,14 +10334,14 @@ impl Sm3captctrlx {
     #[doc = "Edge Counter X Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn edgcntx_en(&self) -> super::vals::Sm3captctrlxEdgcntxEn {
+    pub const fn edgcntx_en(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Sm3captctrlxEdgcntxEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Edge Counter X Enable"]
     #[inline(always)]
-    pub const fn set_edgcntx_en(&mut self, val: super::vals::Sm3captctrlxEdgcntxEn) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_edgcntx_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "Capture X FIFOs Water Mark"]
     #[must_use]
@@ -10406,7 +10406,7 @@ impl defmt::Format for Sm3captctrlx {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm3captctrlx {{ armx: {:?}, oneshotx: {:?}, edgx0: {:?}, edgx1: {:?}, inp_selx: {:?}, edgcntx_en: {:?}, cfxwm: {=u8:?}, cx0cnt: {=u8:?}, cx1cnt: {=u8:?} }}",
+            "Sm3captctrlx {{ armx: {=bool:?}, oneshotx: {:?}, edgx0: {:?}, edgx1: {:?}, inp_selx: {:?}, edgcntx_en: {=bool:?}, cfxwm: {=u8:?}, cx0cnt: {=u8:?}, cx1cnt: {=u8:?} }}",
             self.armx(),
             self.oneshotx(),
             self.edgx0(),
@@ -10627,26 +10627,26 @@ impl Sm3ctrl {
     #[doc = "Double Switching Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dblen(&self) -> super::vals::Sm3ctrlDblen {
+    pub const fn dblen(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sm3ctrlDblen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Double Switching Enable"]
     #[inline(always)]
-    pub const fn set_dblen(&mut self, val: super::vals::Sm3ctrlDblen) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_dblen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "PWM_X Double Switching Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dblx(&self) -> super::vals::Sm3ctrlDblx {
+    pub const fn dblx(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Sm3ctrlDblx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PWM_X Double Switching Enable"]
     #[inline(always)]
-    pub const fn set_dblx(&mut self, val: super::vals::Sm3ctrlDblx) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u16) & 0x01) << 1usize);
+    pub const fn set_dblx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
     }
     #[doc = "Load Mode Select"]
     #[must_use]
@@ -10663,14 +10663,14 @@ impl Sm3ctrl {
     #[doc = "Split the DBLPWM signal to PWM_A and PWM_B"]
     #[must_use]
     #[inline(always)]
-    pub const fn split(&self) -> super::vals::Sm3ctrlSplit {
+    pub const fn split(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Sm3ctrlSplit::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Split the DBLPWM signal to PWM_A and PWM_B"]
     #[inline(always)]
-    pub const fn set_split(&mut self, val: super::vals::Sm3ctrlSplit) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u16) & 0x01) << 3usize);
+    pub const fn set_split(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u16) & 0x01) << 3usize);
     }
     #[doc = "Prescaler"]
     #[must_use]
@@ -10711,26 +10711,26 @@ impl Sm3ctrl {
     #[doc = "Full Cycle Reload"]
     #[must_use]
     #[inline(always)]
-    pub const fn full(&self) -> super::vals::Sm3ctrlFull {
+    pub const fn full(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Sm3ctrlFull::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Full Cycle Reload"]
     #[inline(always)]
-    pub const fn set_full(&mut self, val: super::vals::Sm3ctrlFull) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u16) & 0x01) << 10usize);
+    pub const fn set_full(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
     }
     #[doc = "Half Cycle Reload"]
     #[must_use]
     #[inline(always)]
-    pub const fn half(&self) -> super::vals::Sm3ctrlHalf {
+    pub const fn half(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Sm3ctrlHalf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Half Cycle Reload"]
     #[inline(always)]
-    pub const fn set_half(&mut self, val: super::vals::Sm3ctrlHalf) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u16) & 0x01) << 11usize);
+    pub const fn set_half(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u16) & 0x01) << 11usize);
     }
     #[doc = "Load Frequency"]
     #[must_use]
@@ -10772,7 +10772,7 @@ impl defmt::Format for Sm3ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm3ctrl {{ dblen: {:?}, dblx: {:?}, ldmod: {:?}, split: {:?}, prsc: {:?}, compmode: {:?}, dt: {=u8:?}, full: {:?}, half: {:?}, ldfq: {:?} }}",
+            "Sm3ctrl {{ dblen: {=bool:?}, dblx: {=bool:?}, ldmod: {:?}, split: {=bool:?}, prsc: {:?}, compmode: {:?}, dt: {=u8:?}, full: {=bool:?}, half: {=bool:?}, ldfq: {:?} }}",
             self.dblen(),
             self.dblx(),
             self.ldmod(),
@@ -10842,14 +10842,14 @@ impl Sm3ctrl2 {
     #[doc = "Force Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn frcen(&self) -> super::vals::Sm3ctrl2Frcen {
+    pub const fn frcen(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Sm3ctrl2Frcen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Force Enable"]
     #[inline(always)]
-    pub const fn set_frcen(&mut self, val: super::vals::Sm3ctrl2Frcen) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_frcen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "Initialization Control Select"]
     #[must_use]
@@ -10952,7 +10952,7 @@ impl defmt::Format for Sm3ctrl2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm3ctrl2 {{ clk_sel: {:?}, reload_sel: {:?}, force_sel: {:?}, force: {=bool:?}, frcen: {:?}, init_sel: {:?}, pwmx_init: {=bool:?}, pwm45_init: {=bool:?}, pwm23_init: {=bool:?}, indep: {:?}, dbgen: {=bool:?} }}",
+            "Sm3ctrl2 {{ clk_sel: {:?}, reload_sel: {:?}, force_sel: {:?}, force: {=bool:?}, frcen: {=bool:?}, init_sel: {:?}, pwmx_init: {=bool:?}, pwm45_init: {=bool:?}, pwm23_init: {=bool:?}, indep: {:?}, dbgen: {=bool:?} }}",
             self.clk_sel(),
             self.reload_sel(),
             self.force_sel(),
@@ -11584,14 +11584,14 @@ impl Sm3dmaen {
     #[doc = "Value Registers DMA Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn valde(&self) -> super::vals::Sm3dmaenValde {
+    pub const fn valde(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Sm3dmaenValde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Value Registers DMA Enable"]
     #[inline(always)]
-    pub const fn set_valde(&mut self, val: super::vals::Sm3dmaenValde) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u16) & 0x01) << 9usize);
+    pub const fn set_valde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
     }
 }
 impl Default for Sm3dmaen {
@@ -11620,7 +11620,7 @@ impl defmt::Format for Sm3dmaen {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm3dmaen {{ cx0de: {=bool:?}, cx1de: {=bool:?}, cb0de: {=bool:?}, cb1de: {=bool:?}, ca0de: {=bool:?}, ca1de: {=bool:?}, captde: {:?}, fand: {:?}, valde: {:?} }}",
+            "Sm3dmaen {{ cx0de: {=bool:?}, cx1de: {=bool:?}, cb0de: {=bool:?}, cb1de: {=bool:?}, ca0de: {=bool:?}, ca1de: {=bool:?}, captde: {:?}, fand: {:?}, valde: {=bool:?} }}",
             self.cx0de(),
             self.cx1de(),
             self.cb0de(),
@@ -11900,38 +11900,38 @@ impl Sm3frctrl {
     #[doc = "Fractional Cycle PWM Period Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn frac1_en(&self) -> super::vals::Sm3frctrlFrac1En {
+    pub const fn frac1_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Sm3frctrlFrac1En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fractional Cycle PWM Period Enable"]
     #[inline(always)]
-    pub const fn set_frac1_en(&mut self, val: super::vals::Sm3frctrlFrac1En) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u16) & 0x01) << 1usize);
+    pub const fn set_frac1_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
     }
     #[doc = "Fractional Cycle Placement Enable for PWM_A"]
     #[must_use]
     #[inline(always)]
-    pub const fn frac23_en(&self) -> super::vals::Sm3frctrlFrac23En {
+    pub const fn frac23_en(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Sm3frctrlFrac23En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fractional Cycle Placement Enable for PWM_A"]
     #[inline(always)]
-    pub const fn set_frac23_en(&mut self, val: super::vals::Sm3frctrlFrac23En) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u16) & 0x01) << 2usize);
+    pub const fn set_frac23_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u16) & 0x01) << 2usize);
     }
     #[doc = "Fractional Cycle Placement Enable for PWM_B"]
     #[must_use]
     #[inline(always)]
-    pub const fn frac45_en(&self) -> super::vals::Sm3frctrlFrac45En {
+    pub const fn frac45_en(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Sm3frctrlFrac45En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fractional Cycle Placement Enable for PWM_B"]
     #[inline(always)]
-    pub const fn set_frac45_en(&mut self, val: super::vals::Sm3frctrlFrac45En) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u16) & 0x01) << 4usize);
+    pub const fn set_frac45_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u16) & 0x01) << 4usize);
     }
     #[doc = "Test Status Bit"]
     #[must_use]
@@ -11967,7 +11967,7 @@ impl defmt::Format for Sm3frctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm3frctrl {{ frac1_en: {:?}, frac23_en: {:?}, frac45_en: {:?}, test: {=bool:?} }}",
+            "Sm3frctrl {{ frac1_en: {=bool:?}, frac23_en: {=bool:?}, frac45_en: {=bool:?}, test: {=bool:?} }}",
             self.frac1_en(),
             self.frac23_en(),
             self.frac45_en(),
@@ -12032,98 +12032,98 @@ impl Sm3inten {
     #[doc = "Capture X 0 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cx0ie(&self) -> super::vals::Sm3intenCx0ie {
+    pub const fn cx0ie(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Sm3intenCx0ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture X 0 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_cx0ie(&mut self, val: super::vals::Sm3intenCx0ie) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u16) & 0x01) << 6usize);
+    pub const fn set_cx0ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u16) & 0x01) << 6usize);
     }
     #[doc = "Capture X 1 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cx1ie(&self) -> super::vals::Sm3intenCx1ie {
+    pub const fn cx1ie(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Sm3intenCx1ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture X 1 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_cx1ie(&mut self, val: super::vals::Sm3intenCx1ie) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_cx1ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "Capture B 0 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cb0ie(&self) -> super::vals::Sm3intenCb0ie {
+    pub const fn cb0ie(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Sm3intenCb0ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture B 0 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_cb0ie(&mut self, val: super::vals::Sm3intenCb0ie) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u16) & 0x01) << 8usize);
+    pub const fn set_cb0ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
     }
     #[doc = "Capture B 1 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cb1ie(&self) -> super::vals::Sm3intenCb1ie {
+    pub const fn cb1ie(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Sm3intenCb1ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture B 1 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_cb1ie(&mut self, val: super::vals::Sm3intenCb1ie) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u16) & 0x01) << 9usize);
+    pub const fn set_cb1ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
     }
     #[doc = "Capture A 0 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ca0ie(&self) -> super::vals::Sm3intenCa0ie {
+    pub const fn ca0ie(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Sm3intenCa0ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture A 0 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ca0ie(&mut self, val: super::vals::Sm3intenCa0ie) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u16) & 0x01) << 10usize);
+    pub const fn set_ca0ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
     }
     #[doc = "Capture A 1 Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ca1ie(&self) -> super::vals::Sm3intenCa1ie {
+    pub const fn ca1ie(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Sm3intenCa1ie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture A 1 Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ca1ie(&mut self, val: super::vals::Sm3intenCa1ie) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u16) & 0x01) << 11usize);
+    pub const fn set_ca1ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u16) & 0x01) << 11usize);
     }
     #[doc = "Reload Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn rie(&self) -> super::vals::Sm3intenRie {
+    pub const fn rie(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Sm3intenRie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reload Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_rie(&mut self, val: super::vals::Sm3intenRie) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u16) & 0x01) << 12usize);
+    pub const fn set_rie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u16) & 0x01) << 12usize);
     }
     #[doc = "Reload Error Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn reie(&self) -> super::vals::Sm3intenReie {
+    pub const fn reie(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Sm3intenReie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reload Error Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_reie(&mut self, val: super::vals::Sm3intenReie) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u16) & 0x01) << 13usize);
+    pub const fn set_reie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u16) & 0x01) << 13usize);
     }
 }
 impl Default for Sm3inten {
@@ -12152,7 +12152,7 @@ impl defmt::Format for Sm3inten {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm3inten {{ cmpie: {:?}, cx0ie: {:?}, cx1ie: {:?}, cb0ie: {:?}, cb1ie: {:?}, ca0ie: {:?}, ca1ie: {:?}, rie: {:?}, reie: {:?} }}",
+            "Sm3inten {{ cmpie: {:?}, cx0ie: {=bool:?}, cx1ie: {=bool:?}, cb0ie: {=bool:?}, cb1ie: {=bool:?}, ca0ie: {=bool:?}, ca1ie: {=bool:?}, rie: {=bool:?}, reie: {=bool:?} }}",
             self.cmpie(),
             self.cx0ie(),
             self.cx1ie(),
@@ -12209,38 +12209,38 @@ impl Sm3octrl {
     #[doc = "PWM_X Output Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn polx(&self) -> super::vals::Sm3octrlPolx {
+    pub const fn polx(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Sm3octrlPolx::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PWM_X Output Polarity"]
     #[inline(always)]
-    pub const fn set_polx(&mut self, val: super::vals::Sm3octrlPolx) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u16) & 0x01) << 8usize);
+    pub const fn set_polx(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
     }
     #[doc = "PWM_B Output Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn polb(&self) -> super::vals::Sm3octrlPolb {
+    pub const fn polb(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Sm3octrlPolb::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PWM_B Output Polarity"]
     #[inline(always)]
-    pub const fn set_polb(&mut self, val: super::vals::Sm3octrlPolb) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u16) & 0x01) << 9usize);
+    pub const fn set_polb(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
     }
     #[doc = "PWM_A Output Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn pola(&self) -> super::vals::Sm3octrlPola {
+    pub const fn pola(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Sm3octrlPola::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PWM_A Output Polarity"]
     #[inline(always)]
-    pub const fn set_pola(&mut self, val: super::vals::Sm3octrlPola) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u16) & 0x01) << 10usize);
+    pub const fn set_pola(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
     }
     #[doc = "PWM_X Input"]
     #[must_use]
@@ -12305,7 +12305,7 @@ impl defmt::Format for Sm3octrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm3octrl {{ pwmxfs: {:?}, pwmbfs: {:?}, pwmafs: {:?}, polx: {:?}, polb: {:?}, pola: {:?}, pwmx_in: {=bool:?}, pwmb_in: {=bool:?}, pwma_in: {=bool:?} }}",
+            "Sm3octrl {{ pwmxfs: {:?}, pwmbfs: {:?}, pwmafs: {:?}, polx: {=bool:?}, polb: {=bool:?}, pola: {=bool:?}, pwmx_in: {=bool:?}, pwmb_in: {=bool:?}, pwma_in: {=bool:?} }}",
             self.pwmxfs(),
             self.pwmbfs(),
             self.pwmafs(),
@@ -12447,38 +12447,38 @@ impl Sm3sts {
     #[doc = "Reload Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn rf(&self) -> super::vals::Sm3stsRf {
+    pub const fn rf(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Sm3stsRf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reload Flag"]
     #[inline(always)]
-    pub const fn set_rf(&mut self, val: super::vals::Sm3stsRf) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u16) & 0x01) << 12usize);
+    pub const fn set_rf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u16) & 0x01) << 12usize);
     }
     #[doc = "Reload Error Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn ref_(&self) -> super::vals::Sm3stsRef {
+    pub const fn ref_(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Sm3stsRef::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reload Error Flag"]
     #[inline(always)]
-    pub const fn set_ref_(&mut self, val: super::vals::Sm3stsRef) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u16) & 0x01) << 13usize);
+    pub const fn set_ref_(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u16) & 0x01) << 13usize);
     }
     #[doc = "Registers Updated Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn ruf(&self) -> super::vals::Sm3stsRuf {
+    pub const fn ruf(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Sm3stsRuf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Registers Updated Flag"]
     #[inline(always)]
-    pub const fn set_ruf(&mut self, val: super::vals::Sm3stsRuf) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u16) & 0x01) << 14usize);
+    pub const fn set_ruf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u16) & 0x01) << 14usize);
     }
 }
 impl Default for Sm3sts {
@@ -12508,7 +12508,7 @@ impl defmt::Format for Sm3sts {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sm3sts {{ cmpf: {:?}, cfx0: {=bool:?}, cfx1: {=bool:?}, cfb0: {=bool:?}, cfb1: {=bool:?}, cfa0: {=bool:?}, cfa1: {=bool:?}, rf: {:?}, ref_: {:?}, ruf: {:?} }}",
+            "Sm3sts {{ cmpf: {:?}, cfx0: {=bool:?}, cfx1: {=bool:?}, cfb0: {=bool:?}, cfb1: {=bool:?}, cfa0: {=bool:?}, cfa1: {=bool:?}, rf: {=bool:?}, ref_: {=bool:?}, ruf: {=bool:?} }}",
             self.cmpf(),
             self.cfx0(),
             self.cfx1(),
