@@ -33,41 +33,6 @@ impl defmt::Format for Cval {
         defmt::write!(f, "Cval {{ tvl: {=u32:?} }}", self.tvl())
     }
 }
-#[doc = "Timer Load Value Register"]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Ldval(pub u32);
-impl Ldval {
-    #[doc = "Timer Start Value"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn tsv(&self) -> u32 {
-        let val = (self.0 >> 0usize) & 0xffff_ffff;
-        val as u32
-    }
-    #[doc = "Timer Start Value"]
-    #[inline(always)]
-    pub const fn set_tsv(&mut self, val: u32) {
-        self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-    }
-}
-impl Default for Ldval {
-    #[inline(always)]
-    fn default() -> Ldval {
-        Ldval(0)
-    }
-}
-impl core::fmt::Debug for Ldval {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Ldval").field("tsv", &self.tsv()).finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for Ldval {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Ldval {{ tsv: {=u32:?} }}", self.tsv())
-    }
-}
 #[doc = "PIT Upper Lifetime Timer Register"]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
@@ -158,14 +123,14 @@ impl Mcr {
     #[doc = "Module Disable for PIT"]
     #[must_use]
     #[inline(always)]
-    pub const fn mdis(&self) -> super::vals::Mdis {
+    pub const fn mdis(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Mdis::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Module Disable for PIT"]
     #[inline(always)]
-    pub const fn set_mdis(&mut self, val: super::vals::Mdis) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_mdis(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
 }
 impl Default for Mcr {
@@ -187,7 +152,7 @@ impl defmt::Format for Mcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mcr {{ frz: {:?}, mdis: {:?} }}",
+            "Mcr {{ frz: {:?}, mdis: {=bool:?} }}",
             self.frz(),
             self.mdis()
         )
@@ -201,38 +166,38 @@ impl Tctrl {
     #[doc = "Timer Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ten(&self) -> super::vals::Ten {
+    pub const fn ten(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Ten::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Timer Enable"]
     #[inline(always)]
-    pub const fn set_ten(&mut self, val: super::vals::Ten) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_ten(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Timer Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tie(&self) -> super::vals::Tie {
+    pub const fn tie(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Tie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Timer Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tie(&mut self, val: super::vals::Tie) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_tie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Chain Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn chn(&self) -> super::vals::Chn {
+    pub const fn chn(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Chn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Chain Mode"]
     #[inline(always)]
-    pub const fn set_chn(&mut self, val: super::vals::Chn) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_chn(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
 }
 impl Default for Tctrl {
@@ -255,7 +220,7 @@ impl defmt::Format for Tctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tctrl {{ ten: {:?}, tie: {:?}, chn: {:?} }}",
+            "Tctrl {{ ten: {=bool:?}, tie: {=bool:?}, chn: {=bool:?} }}",
             self.ten(),
             self.tie(),
             self.chn()
@@ -270,14 +235,14 @@ impl Tflg {
     #[doc = "Timer Interrupt Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tif(&self) -> super::vals::Tif {
+    pub const fn tif(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Tif::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Timer Interrupt Flag"]
     #[inline(always)]
-    pub const fn set_tif(&mut self, val: super::vals::Tif) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_tif(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Tflg {
@@ -294,6 +259,6 @@ impl core::fmt::Debug for Tflg {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Tflg {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Tflg {{ tif: {:?} }}", self.tif())
+        defmt::write!(f, "Tflg {{ tif: {=bool:?} }}", self.tif())
     }
 }

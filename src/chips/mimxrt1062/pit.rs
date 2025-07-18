@@ -54,7 +54,7 @@ impl Timer {
     }
     #[doc = "Timer Load Value Register"]
     #[inline(always)]
-    pub const fn ldval(self) -> crate::common::Reg<regs::Ldval, crate::common::RW> {
+    pub const fn ldval(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[doc = "Current Timer Value Register"]

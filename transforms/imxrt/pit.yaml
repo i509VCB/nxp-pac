@@ -1,0 +1,9 @@
+transforms:
+  # Delete useless enums with nonsense variant names
+  - !DeleteEnums
+    from: pit::vals::(Mdis|Chn|Ten|Tie|Tif)
+    bit_size: 1
+
+  # Ldval is just a u32 wrapper.
+  - !DeleteFieldsets
+    from: pit::regs::Ldval

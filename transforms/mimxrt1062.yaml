@@ -6,6 +6,7 @@ includes:
 - imxrt/iomuxc.yaml
 - imxrt/gpio.yaml
 - imxrt/dma.yaml
+- imxrt/pit.yaml
 transforms:
   #! TODO: Consider merging CAN1 and CAN3?
   #! TODO: FLEXIO1 merge to flexio::Flexio
