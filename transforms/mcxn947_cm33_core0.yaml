@@ -6,5 +6,6 @@ includes:
 - mcx/inputmux.yaml
 - mcx/syscon0.yaml
 - mcx/port.yaml
+- mcx/ahbsc.yaml
 transforms:
   - !Sort

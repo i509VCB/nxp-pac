@@ -50,3 +50,31 @@ transforms:
     from: syscon0::regs::Pwm(\d+)subctl
     to: syscon0::regs::Pwmsubctl
     check: Layout
+
+  # Merge Port reset enums
+  - !MergeEnums
+    from: syscon0::vals::Port(\d+)Rst
+    to: syscon0::vals::PortRst
+    check: Layout
+
+  # Delete all boolean reset enums to convert to bool
+  - !DeleteEnums
+    from: syscon0::vals::\w+Rst
+    bit_size: 1
+
+  # Delete clock divider boolean enums
+  - !DeleteEnums
+    from: syscon0::vals::\w+(Reset|Halt|Unstab)
+    bit_size: 1
+
+  # Make port reset functions into an array
+  - !MakeFieldArray
+    fieldsets: syscon0::regs::Presetctrl0
+    from: port(\d+)_rst
+    to: port_rst
+
+  # Make port clock enable functions into an array
+  - !MakeFieldArray
+    fieldsets: syscon0::regs::Ahbclkctrl0
+    from: port(\d+)
+    to: port

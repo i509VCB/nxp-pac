@@ -4,3 +4,15 @@ transforms:
     to: port0::Port0
     main: port0::Port0
     check: Layout
+
+  # Rename port0 module to port
+  - !Rename
+    from: port0::(.*)
+    to: port::$1
+    type: All
+
+  # Rename Port0 type to Port
+  - !Rename
+    from: port::Port0
+    to: port::Port
+    type: Block
