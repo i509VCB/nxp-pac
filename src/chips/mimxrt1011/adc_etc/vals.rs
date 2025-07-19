@@ -1,37 +1,6 @@
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum DmaModeSel {
-    #[doc = "Trig DMA_REQ with latched signal, REQ will be cleared when ACK and source request cleared."]
-    DMA_MODE_SEL_0 = 0x0,
-    #[doc = "Trig DMA_REQ with pulsed signal, REQ will be cleared by ACK only."]
-    DMA_MODE_SEL_1 = 0x01,
-}
-impl DmaModeSel {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> DmaModeSel {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for DmaModeSel {
-    #[inline(always)]
-    fn from(val: u8) -> DmaModeSel {
-        DmaModeSel::from_bits(val)
-    }
-}
-impl From<DmaModeSel> for u8 {
-    #[inline(always)]
-    fn from(val: DmaModeSel) -> u8 {
-        DmaModeSel::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain10Csel0 {
     #[doc = "ADC Channel 0 selected"]
     CSEL0_0 = 0x0,
@@ -1392,37 +1361,6 @@ impl From<Trig0Chain76Ie7> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Trig0CtrlSyncMode {
-    #[doc = "Synchronization mode disabled, TRIGa and TRIG(a+4) are triggered independently."]
-    SYNC_MODE_0 = 0x0,
-    #[doc = "Synchronization mode enabled, TRIGa and TRIG(a+4) are triggered by TRIGa source synchronously."]
-    SYNC_MODE_1 = 0x01,
-}
-impl Trig0CtrlSyncMode {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Trig0CtrlSyncMode {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Trig0CtrlSyncMode {
-    #[inline(always)]
-    fn from(val: u8) -> Trig0CtrlSyncMode {
-        Trig0CtrlSyncMode::from_bits(val)
-    }
-}
-impl From<Trig0CtrlSyncMode> for u8 {
-    #[inline(always)]
-    fn from(val: Trig0CtrlSyncMode) -> u8 {
-        Trig0CtrlSyncMode::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0CtrlTrigChain {
     #[doc = "Trigger chain length is 1"]
     TRIG_CHAIN_0 = 0x0,
@@ -1461,37 +1399,6 @@ impl From<Trig0CtrlTrigChain> for u8 {
     #[inline(always)]
     fn from(val: Trig0CtrlTrigChain) -> u8 {
         Trig0CtrlTrigChain::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Trig0CtrlTrigMode {
-    #[doc = "Hardware trigger. The softerware trigger will be ignored."]
-    TRIG_MODE_0 = 0x0,
-    #[doc = "Software trigger. The hardware trigger will be ignored."]
-    TRIG_MODE_1 = 0x01,
-}
-impl Trig0CtrlTrigMode {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Trig0CtrlTrigMode {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Trig0CtrlTrigMode {
-    #[inline(always)]
-    fn from(val: u8) -> Trig0CtrlTrigMode {
-        Trig0CtrlTrigMode::from_bits(val)
-    }
-}
-impl From<Trig0CtrlTrigMode> for u8 {
-    #[inline(always)]
-    fn from(val: Trig0CtrlTrigMode) -> u8 {
-        Trig0CtrlTrigMode::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -2857,37 +2764,6 @@ impl From<Trig1Chain76Ie7> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Trig1CtrlSyncMode {
-    #[doc = "Synchronization mode disabled, TRIGa and TRIG(a+4) are triggered independently."]
-    SYNC_MODE_0 = 0x0,
-    #[doc = "Synchronization mode enabled, TRIGa and TRIG(a+4) are triggered by TRIGa source synchronously."]
-    SYNC_MODE_1 = 0x01,
-}
-impl Trig1CtrlSyncMode {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Trig1CtrlSyncMode {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Trig1CtrlSyncMode {
-    #[inline(always)]
-    fn from(val: u8) -> Trig1CtrlSyncMode {
-        Trig1CtrlSyncMode::from_bits(val)
-    }
-}
-impl From<Trig1CtrlSyncMode> for u8 {
-    #[inline(always)]
-    fn from(val: Trig1CtrlSyncMode) -> u8 {
-        Trig1CtrlSyncMode::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1CtrlTrigChain {
     #[doc = "Trigger chain length is 1"]
     TRIG_CHAIN_0 = 0x0,
@@ -2926,37 +2802,6 @@ impl From<Trig1CtrlTrigChain> for u8 {
     #[inline(always)]
     fn from(val: Trig1CtrlTrigChain) -> u8 {
         Trig1CtrlTrigChain::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Trig1CtrlTrigMode {
-    #[doc = "Hardware trigger. The softerware trigger will be ignored."]
-    TRIG_MODE_0 = 0x0,
-    #[doc = "Software trigger. The hardware trigger will be ignored."]
-    TRIG_MODE_1 = 0x01,
-}
-impl Trig1CtrlTrigMode {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Trig1CtrlTrigMode {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Trig1CtrlTrigMode {
-    #[inline(always)]
-    fn from(val: u8) -> Trig1CtrlTrigMode {
-        Trig1CtrlTrigMode::from_bits(val)
-    }
-}
-impl From<Trig1CtrlTrigMode> for u8 {
-    #[inline(always)]
-    fn from(val: Trig1CtrlTrigMode) -> u8 {
-        Trig1CtrlTrigMode::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -4322,37 +4167,6 @@ impl From<Trig2Chain76Ie7> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Trig2CtrlSyncMode {
-    #[doc = "Synchronization mode disabled, TRIGa and TRIG(a+4) are triggered independently."]
-    SYNC_MODE_0 = 0x0,
-    #[doc = "Synchronization mode enabled, TRIGa and TRIG(a+4) are triggered by TRIGa source synchronously."]
-    SYNC_MODE_1 = 0x01,
-}
-impl Trig2CtrlSyncMode {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Trig2CtrlSyncMode {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Trig2CtrlSyncMode {
-    #[inline(always)]
-    fn from(val: u8) -> Trig2CtrlSyncMode {
-        Trig2CtrlSyncMode::from_bits(val)
-    }
-}
-impl From<Trig2CtrlSyncMode> for u8 {
-    #[inline(always)]
-    fn from(val: Trig2CtrlSyncMode) -> u8 {
-        Trig2CtrlSyncMode::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2CtrlTrigChain {
     #[doc = "Trigger chain length is 1"]
     TRIG_CHAIN_0 = 0x0,
@@ -4391,37 +4205,6 @@ impl From<Trig2CtrlTrigChain> for u8 {
     #[inline(always)]
     fn from(val: Trig2CtrlTrigChain) -> u8 {
         Trig2CtrlTrigChain::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Trig2CtrlTrigMode {
-    #[doc = "Hardware trigger. The softerware trigger will be ignored."]
-    TRIG_MODE_0 = 0x0,
-    #[doc = "Software trigger. The hardware trigger will be ignored."]
-    TRIG_MODE_1 = 0x01,
-}
-impl Trig2CtrlTrigMode {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Trig2CtrlTrigMode {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Trig2CtrlTrigMode {
-    #[inline(always)]
-    fn from(val: u8) -> Trig2CtrlTrigMode {
-        Trig2CtrlTrigMode::from_bits(val)
-    }
-}
-impl From<Trig2CtrlTrigMode> for u8 {
-    #[inline(always)]
-    fn from(val: Trig2CtrlTrigMode) -> u8 {
-        Trig2CtrlTrigMode::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -5787,37 +5570,6 @@ impl From<Trig3Chain76Ie7> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Trig3CtrlSyncMode {
-    #[doc = "Synchronization mode disabled, TRIGa and TRIG(a+4) are triggered independently."]
-    SYNC_MODE_0 = 0x0,
-    #[doc = "Synchronization mode enabled, TRIGa and TRIG(a+4) are triggered by TRIGa source synchronously."]
-    SYNC_MODE_1 = 0x01,
-}
-impl Trig3CtrlSyncMode {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Trig3CtrlSyncMode {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Trig3CtrlSyncMode {
-    #[inline(always)]
-    fn from(val: u8) -> Trig3CtrlSyncMode {
-        Trig3CtrlSyncMode::from_bits(val)
-    }
-}
-impl From<Trig3CtrlSyncMode> for u8 {
-    #[inline(always)]
-    fn from(val: Trig3CtrlSyncMode) -> u8 {
-        Trig3CtrlSyncMode::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3CtrlTrigChain {
     #[doc = "Trigger chain length is 1"]
     TRIG_CHAIN_0 = 0x0,
@@ -5856,37 +5608,6 @@ impl From<Trig3CtrlTrigChain> for u8 {
     #[inline(always)]
     fn from(val: Trig3CtrlTrigChain) -> u8 {
         Trig3CtrlTrigChain::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Trig3CtrlTrigMode {
-    #[doc = "Hardware trigger. The softerware trigger will be ignored."]
-    TRIG_MODE_0 = 0x0,
-    #[doc = "Software trigger. The hardware trigger will be ignored."]
-    TRIG_MODE_1 = 0x01,
-}
-impl Trig3CtrlTrigMode {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Trig3CtrlTrigMode {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Trig3CtrlTrigMode {
-    #[inline(always)]
-    fn from(val: u8) -> Trig3CtrlTrigMode {
-        Trig3CtrlTrigMode::from_bits(val)
-    }
-}
-impl From<Trig3CtrlTrigMode> for u8 {
-    #[inline(always)]
-    fn from(val: Trig3CtrlTrigMode) -> u8 {
-        Trig3CtrlTrigMode::to_bits(val)
     }
 }
 #[repr(transparent)]

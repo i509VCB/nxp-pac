@@ -78,14 +78,14 @@ impl Ctrl {
     #[doc = "Select the trigger type of the DMA_REQ."]
     #[must_use]
     #[inline(always)]
-    pub const fn dma_mode_sel(&self) -> super::vals::DmaModeSel {
+    pub const fn dma_mode_sel(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::DmaModeSel::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Select the trigger type of the DMA_REQ."]
     #[inline(always)]
-    pub const fn set_dma_mode_sel(&mut self, val: super::vals::DmaModeSel) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_dma_mode_sel(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "TSC Bypass To use ADC2, this bit should be cleared."]
     #[must_use]
@@ -138,7 +138,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ trig_enable: {:?}, ext0_trig_enable: {:?}, ext0_trig_priority: {=u8:?}, ext1_trig_enable: {:?}, ext1_trig_priority: {=u8:?}, pre_divider: {=u8:?}, dma_mode_sel: {:?}, tsc_bypass: {:?}, softrst: {=bool:?} }}",
+            "Ctrl {{ trig_enable: {:?}, ext0_trig_enable: {:?}, ext0_trig_priority: {=u8:?}, ext1_trig_enable: {:?}, ext1_trig_priority: {=u8:?}, pre_divider: {=u8:?}, dma_mode_sel: {=bool:?}, tsc_bypass: {:?}, softrst: {=bool:?} }}",
             self.trig_enable(),
             self.ext0_trig_enable(),
             self.ext0_trig_priority(),
@@ -1535,14 +1535,14 @@ impl Trig0Ctrl {
     #[doc = "Trigger mode selection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig_mode(&self) -> super::vals::Trig0CtrlTrigMode {
+    pub const fn trig_mode(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Trig0CtrlTrigMode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger mode selection."]
     #[inline(always)]
-    pub const fn set_trig_mode(&mut self, val: super::vals::Trig0CtrlTrigMode) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_trig_mode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "The number of segments inside the trigger chain of TRIGa."]
     #[must_use]
@@ -1571,14 +1571,14 @@ impl Trig0Ctrl {
     #[doc = "Trigger synchronization mode selection"]
     #[must_use]
     #[inline(always)]
-    pub const fn sync_mode(&self) -> super::vals::Trig0CtrlSyncMode {
+    pub const fn sync_mode(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Trig0CtrlSyncMode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger synchronization mode selection"]
     #[inline(always)]
-    pub const fn set_sync_mode(&mut self, val: super::vals::Trig0CtrlSyncMode) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_sync_mode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
 }
 impl Default for Trig0Ctrl {
@@ -1603,7 +1603,7 @@ impl defmt::Format for Trig0Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig0Ctrl {{ sw_trig: {=bool:?}, trig_mode: {:?}, trig_chain: {:?}, trig_priority: {=u8:?}, sync_mode: {:?} }}",
+            "Trig0Ctrl {{ sw_trig: {=bool:?}, trig_mode: {=bool:?}, trig_chain: {:?}, trig_priority: {=u8:?}, sync_mode: {=bool:?} }}",
             self.sw_trig(),
             self.trig_mode(),
             self.trig_chain(),
@@ -2463,14 +2463,14 @@ impl Trig1Ctrl {
     #[doc = "Trigger mode selection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig_mode(&self) -> super::vals::Trig1CtrlTrigMode {
+    pub const fn trig_mode(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Trig1CtrlTrigMode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger mode selection."]
     #[inline(always)]
-    pub const fn set_trig_mode(&mut self, val: super::vals::Trig1CtrlTrigMode) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_trig_mode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "The number of segments inside the trigger chain of TRIGa."]
     #[must_use]
@@ -2499,14 +2499,14 @@ impl Trig1Ctrl {
     #[doc = "Trigger synchronization mode selection"]
     #[must_use]
     #[inline(always)]
-    pub const fn sync_mode(&self) -> super::vals::Trig1CtrlSyncMode {
+    pub const fn sync_mode(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Trig1CtrlSyncMode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger synchronization mode selection"]
     #[inline(always)]
-    pub const fn set_sync_mode(&mut self, val: super::vals::Trig1CtrlSyncMode) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_sync_mode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
 }
 impl Default for Trig1Ctrl {
@@ -2531,7 +2531,7 @@ impl defmt::Format for Trig1Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig1Ctrl {{ sw_trig: {=bool:?}, trig_mode: {:?}, trig_chain: {:?}, trig_priority: {=u8:?}, sync_mode: {:?} }}",
+            "Trig1Ctrl {{ sw_trig: {=bool:?}, trig_mode: {=bool:?}, trig_chain: {:?}, trig_priority: {=u8:?}, sync_mode: {=bool:?} }}",
             self.sw_trig(),
             self.trig_mode(),
             self.trig_chain(),
@@ -3391,14 +3391,14 @@ impl Trig2Ctrl {
     #[doc = "Trigger mode selection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig_mode(&self) -> super::vals::Trig2CtrlTrigMode {
+    pub const fn trig_mode(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Trig2CtrlTrigMode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger mode selection."]
     #[inline(always)]
-    pub const fn set_trig_mode(&mut self, val: super::vals::Trig2CtrlTrigMode) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_trig_mode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "The number of segments inside the trigger chain of TRIGa."]
     #[must_use]
@@ -3427,14 +3427,14 @@ impl Trig2Ctrl {
     #[doc = "Trigger synchronization mode selection"]
     #[must_use]
     #[inline(always)]
-    pub const fn sync_mode(&self) -> super::vals::Trig2CtrlSyncMode {
+    pub const fn sync_mode(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Trig2CtrlSyncMode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger synchronization mode selection"]
     #[inline(always)]
-    pub const fn set_sync_mode(&mut self, val: super::vals::Trig2CtrlSyncMode) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_sync_mode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
 }
 impl Default for Trig2Ctrl {
@@ -3459,7 +3459,7 @@ impl defmt::Format for Trig2Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig2Ctrl {{ sw_trig: {=bool:?}, trig_mode: {:?}, trig_chain: {:?}, trig_priority: {=u8:?}, sync_mode: {:?} }}",
+            "Trig2Ctrl {{ sw_trig: {=bool:?}, trig_mode: {=bool:?}, trig_chain: {:?}, trig_priority: {=u8:?}, sync_mode: {=bool:?} }}",
             self.sw_trig(),
             self.trig_mode(),
             self.trig_chain(),
@@ -4319,14 +4319,14 @@ impl Trig3Ctrl {
     #[doc = "Trigger mode selection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig_mode(&self) -> super::vals::Trig3CtrlTrigMode {
+    pub const fn trig_mode(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Trig3CtrlTrigMode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger mode selection."]
     #[inline(always)]
-    pub const fn set_trig_mode(&mut self, val: super::vals::Trig3CtrlTrigMode) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_trig_mode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "The number of segments inside the trigger chain of TRIGa."]
     #[must_use]
@@ -4355,14 +4355,14 @@ impl Trig3Ctrl {
     #[doc = "Trigger synchronization mode selection"]
     #[must_use]
     #[inline(always)]
-    pub const fn sync_mode(&self) -> super::vals::Trig3CtrlSyncMode {
+    pub const fn sync_mode(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Trig3CtrlSyncMode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger synchronization mode selection"]
     #[inline(always)]
-    pub const fn set_sync_mode(&mut self, val: super::vals::Trig3CtrlSyncMode) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_sync_mode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
 }
 impl Default for Trig3Ctrl {
@@ -4387,7 +4387,7 @@ impl defmt::Format for Trig3Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig3Ctrl {{ sw_trig: {=bool:?}, trig_mode: {:?}, trig_chain: {:?}, trig_priority: {=u8:?}, sync_mode: {:?} }}",
+            "Trig3Ctrl {{ sw_trig: {=bool:?}, trig_mode: {=bool:?}, trig_chain: {:?}, trig_priority: {=u8:?}, sync_mode: {=bool:?} }}",
             self.sw_trig(),
             self.trig_mode(),
             self.trig_chain(),

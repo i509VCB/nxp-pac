@@ -1,6 +1,3 @@
-# Boolean enum transforms for CAN peripheral
-# Converts single-bit enums with _0/_1 patterns to proper boolean types
-
 transforms:
   - !DeleteEnums
     from: can::vals::(Aen|Eacen|Boffmsk|Errmsk|Imb|Lom|Lpb|Lprioen|Mdis|Rfen|Rwrnmsk|Slfwak|Srxdis|Twrnmsk|Wakmsk|Wrmfrz|Wrnen)

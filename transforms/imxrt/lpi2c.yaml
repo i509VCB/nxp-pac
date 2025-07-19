@@ -1,6 +1,3 @@
-# Boolean enum transforms for LPI2C peripheral
-# Converts single-bit enums with _0/_1 patterns to proper boolean types
-
 transforms:
   - !DeleteEnums
     from: lpi2c::vals::(Dozen|Filtdz|McrRrf|McrRtf|MierFeie|Scfgr1Ignack|ScrRrf|ScrRtf)

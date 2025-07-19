@@ -1,5 +1,16 @@
 transforms:
-  # Delete useless enums with nonsense variant names that should be booleans
   - !DeleteEnums
     from: gpt::vals::(Dbgen|Dozeen|En|En24m|Enmod|Fo3|Frr|If2|If2ie|Of3|Of3ie|Rov|Rovie|Stopen|Swr|Waiten)
     bit_size: 1
+
+  # Merge input capture registers
+  - !MergeFieldsets
+    from: gpt0::regs::Icr(\d+)
+    to: gpt0::regs::Icr
+    check: Layout
+
+  # Merge output compare registers
+  - !MergeFieldsets
+    from: gpt0::regs::Ocr(\d+)
+    to: gpt0::regs::Ocr
+    check: Layout

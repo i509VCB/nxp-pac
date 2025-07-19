@@ -32,99 +32,6 @@ impl From<Adc0Rst> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Adc0clkdivHalt {
-    #[doc = "Divider clock is running"]
-    RUN = 0x0,
-    #[doc = "Divider clock is stopped"]
-    HALT = 0x01,
-}
-impl Adc0clkdivHalt {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Adc0clkdivHalt {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Adc0clkdivHalt {
-    #[inline(always)]
-    fn from(val: u8) -> Adc0clkdivHalt {
-        Adc0clkdivHalt::from_bits(val)
-    }
-}
-impl From<Adc0clkdivHalt> for u8 {
-    #[inline(always)]
-    fn from(val: Adc0clkdivHalt) -> u8 {
-        Adc0clkdivHalt::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Adc0clkdivReset {
-    #[doc = "Divider is not reset"]
-    RELEASED = 0x0,
-    #[doc = "Divider is reset"]
-    ASSERTED = 0x01,
-}
-impl Adc0clkdivReset {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Adc0clkdivReset {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Adc0clkdivReset {
-    #[inline(always)]
-    fn from(val: u8) -> Adc0clkdivReset {
-        Adc0clkdivReset::from_bits(val)
-    }
-}
-impl From<Adc0clkdivReset> for u8 {
-    #[inline(always)]
-    fn from(val: Adc0clkdivReset) -> u8 {
-        Adc0clkdivReset::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Adc0clkdivUnstab {
-    #[doc = "Divider clock is stable"]
-    STABLE = 0x0,
-    #[doc = "Clock frequency is not stable"]
-    ONGOING = 0x01,
-}
-impl Adc0clkdivUnstab {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Adc0clkdivUnstab {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Adc0clkdivUnstab {
-    #[inline(always)]
-    fn from(val: u8) -> Adc0clkdivUnstab {
-        Adc0clkdivUnstab::from_bits(val)
-    }
-}
-impl From<Adc0clkdivUnstab> for u8 {
-    #[inline(always)]
-    fn from(val: Adc0clkdivUnstab) -> u8 {
-        Adc0clkdivUnstab::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Adc0clkselSel {
     #[doc = "No clock"]
     ENUM_0X0 = 0x0,
@@ -199,99 +106,6 @@ impl From<Adc1Rst> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Adc1clkdivHalt {
-    #[doc = "Divider clock is running"]
-    RUN = 0x0,
-    #[doc = "Divider clock is stopped"]
-    HALT = 0x01,
-}
-impl Adc1clkdivHalt {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Adc1clkdivHalt {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Adc1clkdivHalt {
-    #[inline(always)]
-    fn from(val: u8) -> Adc1clkdivHalt {
-        Adc1clkdivHalt::from_bits(val)
-    }
-}
-impl From<Adc1clkdivHalt> for u8 {
-    #[inline(always)]
-    fn from(val: Adc1clkdivHalt) -> u8 {
-        Adc1clkdivHalt::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Adc1clkdivReset {
-    #[doc = "Divider is not reset"]
-    RELEASED = 0x0,
-    #[doc = "Divider is reset"]
-    ASSERTED = 0x01,
-}
-impl Adc1clkdivReset {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Adc1clkdivReset {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Adc1clkdivReset {
-    #[inline(always)]
-    fn from(val: u8) -> Adc1clkdivReset {
-        Adc1clkdivReset::from_bits(val)
-    }
-}
-impl From<Adc1clkdivReset> for u8 {
-    #[inline(always)]
-    fn from(val: Adc1clkdivReset) -> u8 {
-        Adc1clkdivReset::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Adc1clkdivUnstab {
-    #[doc = "Divider clock is stable"]
-    STABLE = 0x0,
-    #[doc = "Clock frequency is not stable"]
-    ONGOING = 0x01,
-}
-impl Adc1clkdivUnstab {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Adc1clkdivUnstab {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Adc1clkdivUnstab {
-    #[inline(always)]
-    fn from(val: u8) -> Adc1clkdivUnstab {
-        Adc1clkdivUnstab::from_bits(val)
-    }
-}
-impl From<Adc1clkdivUnstab> for u8 {
-    #[inline(always)]
-    fn from(val: Adc1clkdivUnstab) -> u8 {
-        Adc1clkdivUnstab::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Adc1clkselSel {
     #[doc = "No clock"]
     ENUM_0X0 = 0x0,
@@ -330,6 +144,99 @@ impl From<Adc1clkselSel> for u8 {
     #[inline(always)]
     fn from(val: Adc1clkselSel) -> u8 {
         Adc1clkselSel::to_bits(val)
+    }
+}
+#[repr(u8)]
+#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+pub enum AdcclkdivHalt {
+    #[doc = "Divider clock is running"]
+    RUN = 0x0,
+    #[doc = "Divider clock is stopped"]
+    HALT = 0x01,
+}
+impl AdcclkdivHalt {
+    #[inline(always)]
+    pub const fn from_bits(val: u8) -> AdcclkdivHalt {
+        unsafe { core::mem::transmute(val & 0x01) }
+    }
+    #[inline(always)]
+    pub const fn to_bits(self) -> u8 {
+        unsafe { core::mem::transmute(self) }
+    }
+}
+impl From<u8> for AdcclkdivHalt {
+    #[inline(always)]
+    fn from(val: u8) -> AdcclkdivHalt {
+        AdcclkdivHalt::from_bits(val)
+    }
+}
+impl From<AdcclkdivHalt> for u8 {
+    #[inline(always)]
+    fn from(val: AdcclkdivHalt) -> u8 {
+        AdcclkdivHalt::to_bits(val)
+    }
+}
+#[repr(u8)]
+#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+pub enum AdcclkdivReset {
+    #[doc = "Divider is not reset"]
+    RELEASED = 0x0,
+    #[doc = "Divider is reset"]
+    ASSERTED = 0x01,
+}
+impl AdcclkdivReset {
+    #[inline(always)]
+    pub const fn from_bits(val: u8) -> AdcclkdivReset {
+        unsafe { core::mem::transmute(val & 0x01) }
+    }
+    #[inline(always)]
+    pub const fn to_bits(self) -> u8 {
+        unsafe { core::mem::transmute(self) }
+    }
+}
+impl From<u8> for AdcclkdivReset {
+    #[inline(always)]
+    fn from(val: u8) -> AdcclkdivReset {
+        AdcclkdivReset::from_bits(val)
+    }
+}
+impl From<AdcclkdivReset> for u8 {
+    #[inline(always)]
+    fn from(val: AdcclkdivReset) -> u8 {
+        AdcclkdivReset::to_bits(val)
+    }
+}
+#[repr(u8)]
+#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+pub enum AdcclkdivUnstab {
+    #[doc = "Divider clock is stable"]
+    STABLE = 0x0,
+    #[doc = "Clock frequency is not stable"]
+    ONGOING = 0x01,
+}
+impl AdcclkdivUnstab {
+    #[inline(always)]
+    pub const fn from_bits(val: u8) -> AdcclkdivUnstab {
+        unsafe { core::mem::transmute(val & 0x01) }
+    }
+    #[inline(always)]
+    pub const fn to_bits(self) -> u8 {
+        unsafe { core::mem::transmute(self) }
+    }
+}
+impl From<u8> for AdcclkdivUnstab {
+    #[inline(always)]
+    fn from(val: u8) -> AdcclkdivUnstab {
+        AdcclkdivUnstab::from_bits(val)
+    }
+}
+impl From<AdcclkdivUnstab> for u8 {
+    #[inline(always)]
+    fn from(val: AdcclkdivUnstab) -> u8 {
+        AdcclkdivUnstab::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -769,99 +676,6 @@ impl From<ClrLpcac> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmp0fclkdivHalt {
-    #[doc = "Divider clock is running"]
-    RUN = 0x0,
-    #[doc = "Divider clock is stopped"]
-    HALT = 0x01,
-}
-impl Cmp0fclkdivHalt {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmp0fclkdivHalt {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmp0fclkdivHalt {
-    #[inline(always)]
-    fn from(val: u8) -> Cmp0fclkdivHalt {
-        Cmp0fclkdivHalt::from_bits(val)
-    }
-}
-impl From<Cmp0fclkdivHalt> for u8 {
-    #[inline(always)]
-    fn from(val: Cmp0fclkdivHalt) -> u8 {
-        Cmp0fclkdivHalt::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmp0fclkdivReset {
-    #[doc = "Divider is not reset"]
-    RELEASED = 0x0,
-    #[doc = "Divider is reset"]
-    ASSERTED = 0x01,
-}
-impl Cmp0fclkdivReset {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmp0fclkdivReset {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmp0fclkdivReset {
-    #[inline(always)]
-    fn from(val: u8) -> Cmp0fclkdivReset {
-        Cmp0fclkdivReset::from_bits(val)
-    }
-}
-impl From<Cmp0fclkdivReset> for u8 {
-    #[inline(always)]
-    fn from(val: Cmp0fclkdivReset) -> u8 {
-        Cmp0fclkdivReset::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmp0fclkdivUnstab {
-    #[doc = "Divider clock is stable"]
-    STABLE = 0x0,
-    #[doc = "Clock frequency is not stable"]
-    ONGOING = 0x01,
-}
-impl Cmp0fclkdivUnstab {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmp0fclkdivUnstab {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmp0fclkdivUnstab {
-    #[inline(always)]
-    fn from(val: u8) -> Cmp0fclkdivUnstab {
-        Cmp0fclkdivUnstab::from_bits(val)
-    }
-}
-impl From<Cmp0fclkdivUnstab> for u8 {
-    #[inline(always)]
-    fn from(val: Cmp0fclkdivUnstab) -> u8 {
-        Cmp0fclkdivUnstab::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmp0fclkselSel {
     #[doc = "No clock"]
     ENUM0 = 0x0,
@@ -1036,99 +850,6 @@ impl From<Cmp0rrclkselSel> for u8 {
     #[inline(always)]
     fn from(val: Cmp0rrclkselSel) -> u8 {
         Cmp0rrclkselSel::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmp1fclkdivHalt {
-    #[doc = "Divider clock is running"]
-    RUN = 0x0,
-    #[doc = "Divider clock is stopped"]
-    HALT = 0x01,
-}
-impl Cmp1fclkdivHalt {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmp1fclkdivHalt {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmp1fclkdivHalt {
-    #[inline(always)]
-    fn from(val: u8) -> Cmp1fclkdivHalt {
-        Cmp1fclkdivHalt::from_bits(val)
-    }
-}
-impl From<Cmp1fclkdivHalt> for u8 {
-    #[inline(always)]
-    fn from(val: Cmp1fclkdivHalt) -> u8 {
-        Cmp1fclkdivHalt::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmp1fclkdivReset {
-    #[doc = "Divider is not reset"]
-    RELEASED = 0x0,
-    #[doc = "Divider is reset"]
-    ASSERTED = 0x01,
-}
-impl Cmp1fclkdivReset {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmp1fclkdivReset {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmp1fclkdivReset {
-    #[inline(always)]
-    fn from(val: u8) -> Cmp1fclkdivReset {
-        Cmp1fclkdivReset::from_bits(val)
-    }
-}
-impl From<Cmp1fclkdivReset> for u8 {
-    #[inline(always)]
-    fn from(val: Cmp1fclkdivReset) -> u8 {
-        Cmp1fclkdivReset::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmp1fclkdivUnstab {
-    #[doc = "Divider clock is stable"]
-    STABLE = 0x0,
-    #[doc = "Clock frequency is not stable"]
-    ONGOING = 0x01,
-}
-impl Cmp1fclkdivUnstab {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmp1fclkdivUnstab {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmp1fclkdivUnstab {
-    #[inline(always)]
-    fn from(val: u8) -> Cmp1fclkdivUnstab {
-        Cmp1fclkdivUnstab::from_bits(val)
-    }
-}
-impl From<Cmp1fclkdivUnstab> for u8 {
-    #[inline(always)]
-    fn from(val: Cmp1fclkdivUnstab) -> u8 {
-        Cmp1fclkdivUnstab::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1344,99 +1065,6 @@ impl From<Cmp2Rst> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmp2fclkdivHalt {
-    #[doc = "Divider clock is running"]
-    RUN = 0x0,
-    #[doc = "Divider clock is stopped"]
-    HALT = 0x01,
-}
-impl Cmp2fclkdivHalt {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmp2fclkdivHalt {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmp2fclkdivHalt {
-    #[inline(always)]
-    fn from(val: u8) -> Cmp2fclkdivHalt {
-        Cmp2fclkdivHalt::from_bits(val)
-    }
-}
-impl From<Cmp2fclkdivHalt> for u8 {
-    #[inline(always)]
-    fn from(val: Cmp2fclkdivHalt) -> u8 {
-        Cmp2fclkdivHalt::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmp2fclkdivReset {
-    #[doc = "Divider is not reset"]
-    RELEASED = 0x0,
-    #[doc = "Divider is reset"]
-    ASSERTED = 0x01,
-}
-impl Cmp2fclkdivReset {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmp2fclkdivReset {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmp2fclkdivReset {
-    #[inline(always)]
-    fn from(val: u8) -> Cmp2fclkdivReset {
-        Cmp2fclkdivReset::from_bits(val)
-    }
-}
-impl From<Cmp2fclkdivReset> for u8 {
-    #[inline(always)]
-    fn from(val: Cmp2fclkdivReset) -> u8 {
-        Cmp2fclkdivReset::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Cmp2fclkdivUnstab {
-    #[doc = "Divider clock is stable"]
-    STABLE = 0x0,
-    #[doc = "Clock frequency is not stable"]
-    ONGOING = 0x01,
-}
-impl Cmp2fclkdivUnstab {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Cmp2fclkdivUnstab {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Cmp2fclkdivUnstab {
-    #[inline(always)]
-    fn from(val: u8) -> Cmp2fclkdivUnstab {
-        Cmp2fclkdivUnstab::from_bits(val)
-    }
-}
-impl From<Cmp2fclkdivUnstab> for u8 {
-    #[inline(always)]
-    fn from(val: Cmp2fclkdivUnstab) -> u8 {
-        Cmp2fclkdivUnstab::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmp2fclkselSel {
     #[doc = "No clock"]
     ENUM0 = 0x0,
@@ -1611,6 +1239,99 @@ impl From<Cmp2rrclkselSel> for u8 {
     #[inline(always)]
     fn from(val: Cmp2rrclkselSel) -> u8 {
         Cmp2rrclkselSel::to_bits(val)
+    }
+}
+#[repr(u8)]
+#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+pub enum CmpfclkdivHalt {
+    #[doc = "Divider clock is running"]
+    RUN = 0x0,
+    #[doc = "Divider clock is stopped"]
+    HALT = 0x01,
+}
+impl CmpfclkdivHalt {
+    #[inline(always)]
+    pub const fn from_bits(val: u8) -> CmpfclkdivHalt {
+        unsafe { core::mem::transmute(val & 0x01) }
+    }
+    #[inline(always)]
+    pub const fn to_bits(self) -> u8 {
+        unsafe { core::mem::transmute(self) }
+    }
+}
+impl From<u8> for CmpfclkdivHalt {
+    #[inline(always)]
+    fn from(val: u8) -> CmpfclkdivHalt {
+        CmpfclkdivHalt::from_bits(val)
+    }
+}
+impl From<CmpfclkdivHalt> for u8 {
+    #[inline(always)]
+    fn from(val: CmpfclkdivHalt) -> u8 {
+        CmpfclkdivHalt::to_bits(val)
+    }
+}
+#[repr(u8)]
+#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+pub enum CmpfclkdivReset {
+    #[doc = "Divider is not reset"]
+    RELEASED = 0x0,
+    #[doc = "Divider is reset"]
+    ASSERTED = 0x01,
+}
+impl CmpfclkdivReset {
+    #[inline(always)]
+    pub const fn from_bits(val: u8) -> CmpfclkdivReset {
+        unsafe { core::mem::transmute(val & 0x01) }
+    }
+    #[inline(always)]
+    pub const fn to_bits(self) -> u8 {
+        unsafe { core::mem::transmute(self) }
+    }
+}
+impl From<u8> for CmpfclkdivReset {
+    #[inline(always)]
+    fn from(val: u8) -> CmpfclkdivReset {
+        CmpfclkdivReset::from_bits(val)
+    }
+}
+impl From<CmpfclkdivReset> for u8 {
+    #[inline(always)]
+    fn from(val: CmpfclkdivReset) -> u8 {
+        CmpfclkdivReset::to_bits(val)
+    }
+}
+#[repr(u8)]
+#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+pub enum CmpfclkdivUnstab {
+    #[doc = "Divider clock is stable"]
+    STABLE = 0x0,
+    #[doc = "Clock frequency is not stable"]
+    ONGOING = 0x01,
+}
+impl CmpfclkdivUnstab {
+    #[inline(always)]
+    pub const fn from_bits(val: u8) -> CmpfclkdivUnstab {
+        unsafe { core::mem::transmute(val & 0x01) }
+    }
+    #[inline(always)]
+    pub const fn to_bits(self) -> u8 {
+        unsafe { core::mem::transmute(self) }
+    }
+}
+impl From<u8> for CmpfclkdivUnstab {
+    #[inline(always)]
+    fn from(val: u8) -> CmpfclkdivUnstab {
+        CmpfclkdivUnstab::from_bits(val)
+    }
+}
+impl From<CmpfclkdivUnstab> for u8 {
+    #[inline(always)]
+    fn from(val: CmpfclkdivUnstab) -> u8 {
+        CmpfclkdivUnstab::to_bits(val)
     }
 }
 #[repr(u8)]

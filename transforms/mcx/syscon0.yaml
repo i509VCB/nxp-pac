@@ -1,0 +1,52 @@
+transforms:
+  # First merge all the enums that are referenced by fields
+  - !MergeEnums
+    from: syscon0::vals::Adc(\d+)clkdivReset
+    to: syscon0::vals::AdcclkdivReset
+    check: Layout
+
+  - !MergeEnums
+    from: syscon0::vals::Adc(\d+)clkdivHalt
+    to: syscon0::vals::AdcclkdivHalt
+    check: Layout
+
+  - !MergeEnums
+    from: syscon0::vals::Adc(\d+)clkdivUnstab
+    to: syscon0::vals::AdcclkdivUnstab
+    check: Layout
+
+  - !MergeEnums
+    from: syscon0::vals::Cmp(\d+)fclkdivReset
+    to: syscon0::vals::CmpfclkdivReset
+    check: Layout
+
+  - !MergeEnums
+    from: syscon0::vals::Cmp(\d+)fclkdivHalt
+    to: syscon0::vals::CmpfclkdivHalt
+    check: Layout
+
+  - !MergeEnums
+    from: syscon0::vals::Cmp(\d+)fclkdivUnstab
+    to: syscon0::vals::CmpfclkdivUnstab
+    check: Layout
+
+  - !MergeEnums
+    from: syscon0::vals::Pwm(\d+)subctlClk(\d+)en
+    to: syscon0::vals::PwmsubctlClken
+    check: Layout
+
+  # Then merge the fieldsets
+  - !MergeFieldsets
+    from: syscon0::regs::Adc(\d+)clkdiv
+    to: syscon0::regs::Adcclkdiv
+    check: Layout
+
+  - !MergeFieldsets
+    from: syscon0::regs::Cmp(\d+)fclkdiv
+    to: syscon0::regs::Cmpfclkdiv
+    check: Layout
+
+  - !MergeFieldsets
+    from: syscon0::regs::Pwm(\d+)subctl
+    to: syscon0::regs::Pwmsubctl
+    check: Layout

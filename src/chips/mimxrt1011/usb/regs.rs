@@ -135,14 +135,14 @@ impl Configflag {
     #[doc = "Configure Flag Host software sets this bit as the last action in its process of configuring the Host Controller"]
     #[must_use]
     #[inline(always)]
-    pub const fn cf(&self) -> bool {
+    pub const fn cf(&self) -> super::vals::Cf {
         let val = (self.0 >> 0usize) & 0x01;
-        val != 0
+        super::vals::Cf::from_bits(val as u8)
     }
     #[doc = "Configure Flag Host software sets this bit as the last action in its process of configuring the Host Controller"]
     #[inline(always)]
-    pub const fn set_cf(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+    pub const fn set_cf(&mut self, val: super::vals::Cf) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Configflag {
@@ -161,7 +161,7 @@ impl core::fmt::Debug for Configflag {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Configflag {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Configflag {{ cf: {=bool:?} }}", self.cf())
+        defmt::write!(f, "Configflag {{ cf: {:?} }}", self.cf())
     }
 }
 #[doc = "Device Controller Capability Parameters"]
@@ -387,8 +387,8 @@ impl defmt::Format for Endptcomplete {
 #[doc = "Endpoint Control0"]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Endptctrl0(pub u32);
-impl Endptctrl0 {
+pub struct EndptctrlX(pub u32);
+impl EndptctrlX {
     #[doc = "RX Endpoint Stall - Read/Write 0 End Point OK"]
     #[must_use]
     #[inline(always)]
@@ -462,15 +462,15 @@ impl Endptctrl0 {
         self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
 }
-impl Default for Endptctrl0 {
+impl Default for EndptctrlX {
     #[inline(always)]
-    fn default() -> Endptctrl0 {
-        Endptctrl0(0)
+    fn default() -> EndptctrlX {
+        EndptctrlX(0)
     }
 }
-impl core::fmt::Debug for Endptctrl0 {
+impl core::fmt::Debug for EndptctrlX {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Endptctrl0")
+        f.debug_struct("EndptctrlX")
             .field("rxs", &self.rxs())
             .field("rxt", &self.rxt())
             .field("rxe", &self.rxe())
@@ -481,1381 +481,16 @@ impl core::fmt::Debug for Endptctrl0 {
     }
 }
 #[cfg(feature = "defmt")]
-impl defmt::Format for Endptctrl0 {
+impl defmt::Format for EndptctrlX {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Endptctrl0 {{ rxs: {=bool:?}, rxt: {=u8:?}, rxe: {=bool:?}, txs: {=bool:?}, txt: {=u8:?}, txe: {=bool:?} }}",
+            "EndptctrlX {{ rxs: {=bool:?}, rxt: {=u8:?}, rxe: {=bool:?}, txs: {=bool:?}, txt: {=u8:?}, txe: {=bool:?} }}",
             self.rxs(),
             self.rxt(),
             self.rxe(),
             self.txs(),
             self.txt(),
-            self.txe()
-        )
-    }
-}
-#[doc = "Endpoint Control 1"]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Endptctrl1(pub u32);
-impl Endptctrl1 {
-    #[doc = "RX Endpoint Stall - Read/Write 0 End Point OK"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxs(&self) -> bool {
-        let val = (self.0 >> 0usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Endpoint Stall - Read/Write 0 End Point OK"]
-    #[inline(always)]
-    pub const fn set_rxs(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-    }
-    #[doc = "RX Endpoint Data Sink - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[Default\\] Should always be written as zero"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxd(&self) -> bool {
-        let val = (self.0 >> 1usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Endpoint Data Sink - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[Default\\] Should always be written as zero"]
-    #[inline(always)]
-    pub const fn set_rxd(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-    }
-    #[doc = "RX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxt(&self) -> u8 {
-        let val = (self.0 >> 2usize) & 0x03;
-        val as u8
-    }
-    #[doc = "RX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[inline(always)]
-    pub const fn set_rxt(&mut self, val: u8) {
-        self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
-    }
-    #[doc = "RX Data Toggle Inhibit 0 Disabled \\[Default\\] 1 Enabled This bit is only used for test and should always be written as zero"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxi(&self) -> bool {
-        let val = (self.0 >> 5usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Data Toggle Inhibit 0 Disabled \\[Default\\] 1 Enabled This bit is only used for test and should always be written as zero"]
-    #[inline(always)]
-    pub const fn set_rxi(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-    }
-    #[doc = "RX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the host and device"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxr(&self) -> bool {
-        let val = (self.0 >> 6usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the host and device"]
-    #[inline(always)]
-    pub const fn set_rxr(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-    }
-    #[doc = "RX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxe(&self) -> bool {
-        let val = (self.0 >> 7usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[inline(always)]
-    pub const fn set_rxe(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-    }
-    #[doc = "TX Endpoint Stall - Read/Write 0 End Point OK 1 End Point Stalled This bit will be cleared automatically upon receipt of a SETUP request if this Endpoint is configured as a Control Endpoint and this bit will continue to be cleared by hardware until the associated ENDPTSETUPSTAT bit is cleared"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txs(&self) -> bool {
-        let val = (self.0 >> 16usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Endpoint Stall - Read/Write 0 End Point OK 1 End Point Stalled This bit will be cleared automatically upon receipt of a SETUP request if this Endpoint is configured as a Control Endpoint and this bit will continue to be cleared by hardware until the associated ENDPTSETUPSTAT bit is cleared"]
-    #[inline(always)]
-    pub const fn set_txs(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
-    }
-    #[doc = "TX Endpoint Data Source - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[DEFAULT\\] Should always be written as 0"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txd(&self) -> bool {
-        let val = (self.0 >> 17usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Endpoint Data Source - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[DEFAULT\\] Should always be written as 0"]
-    #[inline(always)]
-    pub const fn set_txd(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
-    }
-    #[doc = "TX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txt(&self) -> u8 {
-        let val = (self.0 >> 18usize) & 0x03;
-        val as u8
-    }
-    #[doc = "TX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[inline(always)]
-    pub const fn set_txt(&mut self, val: u8) {
-        self.0 = (self.0 & !(0x03 << 18usize)) | (((val as u32) & 0x03) << 18usize);
-    }
-    #[doc = "TX Data Toggle Inhibit 0 PID Sequencing Enabled"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txi(&self) -> bool {
-        let val = (self.0 >> 21usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Data Toggle Inhibit 0 PID Sequencing Enabled"]
-    #[inline(always)]
-    pub const fn set_txi(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
-    }
-    #[doc = "TX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the Host and device"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txr(&self) -> bool {
-        let val = (self.0 >> 22usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the Host and device"]
-    #[inline(always)]
-    pub const fn set_txr(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
-    }
-    #[doc = "TX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txe(&self) -> bool {
-        let val = (self.0 >> 23usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[inline(always)]
-    pub const fn set_txe(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
-    }
-}
-impl Default for Endptctrl1 {
-    #[inline(always)]
-    fn default() -> Endptctrl1 {
-        Endptctrl1(0)
-    }
-}
-impl core::fmt::Debug for Endptctrl1 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Endptctrl1")
-            .field("rxs", &self.rxs())
-            .field("rxd", &self.rxd())
-            .field("rxt", &self.rxt())
-            .field("rxi", &self.rxi())
-            .field("rxr", &self.rxr())
-            .field("rxe", &self.rxe())
-            .field("txs", &self.txs())
-            .field("txd", &self.txd())
-            .field("txt", &self.txt())
-            .field("txi", &self.txi())
-            .field("txr", &self.txr())
-            .field("txe", &self.txe())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for Endptctrl1 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(
-            f,
-            "Endptctrl1 {{ rxs: {=bool:?}, rxd: {=bool:?}, rxt: {=u8:?}, rxi: {=bool:?}, rxr: {=bool:?}, rxe: {=bool:?}, txs: {=bool:?}, txd: {=bool:?}, txt: {=u8:?}, txi: {=bool:?}, txr: {=bool:?}, txe: {=bool:?} }}",
-            self.rxs(),
-            self.rxd(),
-            self.rxt(),
-            self.rxi(),
-            self.rxr(),
-            self.rxe(),
-            self.txs(),
-            self.txd(),
-            self.txt(),
-            self.txi(),
-            self.txr(),
-            self.txe()
-        )
-    }
-}
-#[doc = "Endpoint Control 2"]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Endptctrl2(pub u32);
-impl Endptctrl2 {
-    #[doc = "RX Endpoint Stall - Read/Write 0 End Point OK"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxs(&self) -> bool {
-        let val = (self.0 >> 0usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Endpoint Stall - Read/Write 0 End Point OK"]
-    #[inline(always)]
-    pub const fn set_rxs(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-    }
-    #[doc = "RX Endpoint Data Sink - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[Default\\] Should always be written as zero"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxd(&self) -> bool {
-        let val = (self.0 >> 1usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Endpoint Data Sink - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[Default\\] Should always be written as zero"]
-    #[inline(always)]
-    pub const fn set_rxd(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-    }
-    #[doc = "RX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxt(&self) -> u8 {
-        let val = (self.0 >> 2usize) & 0x03;
-        val as u8
-    }
-    #[doc = "RX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[inline(always)]
-    pub const fn set_rxt(&mut self, val: u8) {
-        self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
-    }
-    #[doc = "RX Data Toggle Inhibit 0 Disabled \\[Default\\] 1 Enabled This bit is only used for test and should always be written as zero"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxi(&self) -> bool {
-        let val = (self.0 >> 5usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Data Toggle Inhibit 0 Disabled \\[Default\\] 1 Enabled This bit is only used for test and should always be written as zero"]
-    #[inline(always)]
-    pub const fn set_rxi(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-    }
-    #[doc = "RX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the host and device"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxr(&self) -> bool {
-        let val = (self.0 >> 6usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the host and device"]
-    #[inline(always)]
-    pub const fn set_rxr(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-    }
-    #[doc = "RX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxe(&self) -> bool {
-        let val = (self.0 >> 7usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[inline(always)]
-    pub const fn set_rxe(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-    }
-    #[doc = "TX Endpoint Stall - Read/Write 0 End Point OK 1 End Point Stalled This bit will be cleared automatically upon receipt of a SETUP request if this Endpoint is configured as a Control Endpoint and this bit will continue to be cleared by hardware until the associated ENDPTSETUPSTAT bit is cleared"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txs(&self) -> bool {
-        let val = (self.0 >> 16usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Endpoint Stall - Read/Write 0 End Point OK 1 End Point Stalled This bit will be cleared automatically upon receipt of a SETUP request if this Endpoint is configured as a Control Endpoint and this bit will continue to be cleared by hardware until the associated ENDPTSETUPSTAT bit is cleared"]
-    #[inline(always)]
-    pub const fn set_txs(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
-    }
-    #[doc = "TX Endpoint Data Source - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[DEFAULT\\] Should always be written as 0"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txd(&self) -> bool {
-        let val = (self.0 >> 17usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Endpoint Data Source - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[DEFAULT\\] Should always be written as 0"]
-    #[inline(always)]
-    pub const fn set_txd(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
-    }
-    #[doc = "TX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txt(&self) -> u8 {
-        let val = (self.0 >> 18usize) & 0x03;
-        val as u8
-    }
-    #[doc = "TX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[inline(always)]
-    pub const fn set_txt(&mut self, val: u8) {
-        self.0 = (self.0 & !(0x03 << 18usize)) | (((val as u32) & 0x03) << 18usize);
-    }
-    #[doc = "TX Data Toggle Inhibit 0 PID Sequencing Enabled"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txi(&self) -> bool {
-        let val = (self.0 >> 21usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Data Toggle Inhibit 0 PID Sequencing Enabled"]
-    #[inline(always)]
-    pub const fn set_txi(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
-    }
-    #[doc = "TX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the Host and device"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txr(&self) -> bool {
-        let val = (self.0 >> 22usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the Host and device"]
-    #[inline(always)]
-    pub const fn set_txr(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
-    }
-    #[doc = "TX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txe(&self) -> bool {
-        let val = (self.0 >> 23usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[inline(always)]
-    pub const fn set_txe(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
-    }
-}
-impl Default for Endptctrl2 {
-    #[inline(always)]
-    fn default() -> Endptctrl2 {
-        Endptctrl2(0)
-    }
-}
-impl core::fmt::Debug for Endptctrl2 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Endptctrl2")
-            .field("rxs", &self.rxs())
-            .field("rxd", &self.rxd())
-            .field("rxt", &self.rxt())
-            .field("rxi", &self.rxi())
-            .field("rxr", &self.rxr())
-            .field("rxe", &self.rxe())
-            .field("txs", &self.txs())
-            .field("txd", &self.txd())
-            .field("txt", &self.txt())
-            .field("txi", &self.txi())
-            .field("txr", &self.txr())
-            .field("txe", &self.txe())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for Endptctrl2 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(
-            f,
-            "Endptctrl2 {{ rxs: {=bool:?}, rxd: {=bool:?}, rxt: {=u8:?}, rxi: {=bool:?}, rxr: {=bool:?}, rxe: {=bool:?}, txs: {=bool:?}, txd: {=bool:?}, txt: {=u8:?}, txi: {=bool:?}, txr: {=bool:?}, txe: {=bool:?} }}",
-            self.rxs(),
-            self.rxd(),
-            self.rxt(),
-            self.rxi(),
-            self.rxr(),
-            self.rxe(),
-            self.txs(),
-            self.txd(),
-            self.txt(),
-            self.txi(),
-            self.txr(),
-            self.txe()
-        )
-    }
-}
-#[doc = "Endpoint Control 3"]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Endptctrl3(pub u32);
-impl Endptctrl3 {
-    #[doc = "RX Endpoint Stall - Read/Write 0 End Point OK"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxs(&self) -> bool {
-        let val = (self.0 >> 0usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Endpoint Stall - Read/Write 0 End Point OK"]
-    #[inline(always)]
-    pub const fn set_rxs(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-    }
-    #[doc = "RX Endpoint Data Sink - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[Default\\] Should always be written as zero"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxd(&self) -> bool {
-        let val = (self.0 >> 1usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Endpoint Data Sink - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[Default\\] Should always be written as zero"]
-    #[inline(always)]
-    pub const fn set_rxd(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-    }
-    #[doc = "RX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxt(&self) -> u8 {
-        let val = (self.0 >> 2usize) & 0x03;
-        val as u8
-    }
-    #[doc = "RX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[inline(always)]
-    pub const fn set_rxt(&mut self, val: u8) {
-        self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
-    }
-    #[doc = "RX Data Toggle Inhibit 0 Disabled \\[Default\\] 1 Enabled This bit is only used for test and should always be written as zero"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxi(&self) -> bool {
-        let val = (self.0 >> 5usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Data Toggle Inhibit 0 Disabled \\[Default\\] 1 Enabled This bit is only used for test and should always be written as zero"]
-    #[inline(always)]
-    pub const fn set_rxi(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-    }
-    #[doc = "RX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the host and device"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxr(&self) -> bool {
-        let val = (self.0 >> 6usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the host and device"]
-    #[inline(always)]
-    pub const fn set_rxr(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-    }
-    #[doc = "RX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxe(&self) -> bool {
-        let val = (self.0 >> 7usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[inline(always)]
-    pub const fn set_rxe(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-    }
-    #[doc = "TX Endpoint Stall - Read/Write 0 End Point OK 1 End Point Stalled This bit will be cleared automatically upon receipt of a SETUP request if this Endpoint is configured as a Control Endpoint and this bit will continue to be cleared by hardware until the associated ENDPTSETUPSTAT bit is cleared"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txs(&self) -> bool {
-        let val = (self.0 >> 16usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Endpoint Stall - Read/Write 0 End Point OK 1 End Point Stalled This bit will be cleared automatically upon receipt of a SETUP request if this Endpoint is configured as a Control Endpoint and this bit will continue to be cleared by hardware until the associated ENDPTSETUPSTAT bit is cleared"]
-    #[inline(always)]
-    pub const fn set_txs(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
-    }
-    #[doc = "TX Endpoint Data Source - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[DEFAULT\\] Should always be written as 0"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txd(&self) -> bool {
-        let val = (self.0 >> 17usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Endpoint Data Source - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[DEFAULT\\] Should always be written as 0"]
-    #[inline(always)]
-    pub const fn set_txd(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
-    }
-    #[doc = "TX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txt(&self) -> u8 {
-        let val = (self.0 >> 18usize) & 0x03;
-        val as u8
-    }
-    #[doc = "TX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[inline(always)]
-    pub const fn set_txt(&mut self, val: u8) {
-        self.0 = (self.0 & !(0x03 << 18usize)) | (((val as u32) & 0x03) << 18usize);
-    }
-    #[doc = "TX Data Toggle Inhibit 0 PID Sequencing Enabled"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txi(&self) -> bool {
-        let val = (self.0 >> 21usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Data Toggle Inhibit 0 PID Sequencing Enabled"]
-    #[inline(always)]
-    pub const fn set_txi(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
-    }
-    #[doc = "TX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the Host and device"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txr(&self) -> bool {
-        let val = (self.0 >> 22usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the Host and device"]
-    #[inline(always)]
-    pub const fn set_txr(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
-    }
-    #[doc = "TX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txe(&self) -> bool {
-        let val = (self.0 >> 23usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[inline(always)]
-    pub const fn set_txe(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
-    }
-}
-impl Default for Endptctrl3 {
-    #[inline(always)]
-    fn default() -> Endptctrl3 {
-        Endptctrl3(0)
-    }
-}
-impl core::fmt::Debug for Endptctrl3 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Endptctrl3")
-            .field("rxs", &self.rxs())
-            .field("rxd", &self.rxd())
-            .field("rxt", &self.rxt())
-            .field("rxi", &self.rxi())
-            .field("rxr", &self.rxr())
-            .field("rxe", &self.rxe())
-            .field("txs", &self.txs())
-            .field("txd", &self.txd())
-            .field("txt", &self.txt())
-            .field("txi", &self.txi())
-            .field("txr", &self.txr())
-            .field("txe", &self.txe())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for Endptctrl3 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(
-            f,
-            "Endptctrl3 {{ rxs: {=bool:?}, rxd: {=bool:?}, rxt: {=u8:?}, rxi: {=bool:?}, rxr: {=bool:?}, rxe: {=bool:?}, txs: {=bool:?}, txd: {=bool:?}, txt: {=u8:?}, txi: {=bool:?}, txr: {=bool:?}, txe: {=bool:?} }}",
-            self.rxs(),
-            self.rxd(),
-            self.rxt(),
-            self.rxi(),
-            self.rxr(),
-            self.rxe(),
-            self.txs(),
-            self.txd(),
-            self.txt(),
-            self.txi(),
-            self.txr(),
-            self.txe()
-        )
-    }
-}
-#[doc = "Endpoint Control 4"]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Endptctrl4(pub u32);
-impl Endptctrl4 {
-    #[doc = "RX Endpoint Stall - Read/Write 0 End Point OK"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxs(&self) -> bool {
-        let val = (self.0 >> 0usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Endpoint Stall - Read/Write 0 End Point OK"]
-    #[inline(always)]
-    pub const fn set_rxs(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-    }
-    #[doc = "RX Endpoint Data Sink - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[Default\\] Should always be written as zero"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxd(&self) -> bool {
-        let val = (self.0 >> 1usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Endpoint Data Sink - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[Default\\] Should always be written as zero"]
-    #[inline(always)]
-    pub const fn set_rxd(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-    }
-    #[doc = "RX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxt(&self) -> u8 {
-        let val = (self.0 >> 2usize) & 0x03;
-        val as u8
-    }
-    #[doc = "RX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[inline(always)]
-    pub const fn set_rxt(&mut self, val: u8) {
-        self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
-    }
-    #[doc = "RX Data Toggle Inhibit 0 Disabled \\[Default\\] 1 Enabled This bit is only used for test and should always be written as zero"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxi(&self) -> bool {
-        let val = (self.0 >> 5usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Data Toggle Inhibit 0 Disabled \\[Default\\] 1 Enabled This bit is only used for test and should always be written as zero"]
-    #[inline(always)]
-    pub const fn set_rxi(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-    }
-    #[doc = "RX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the host and device"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxr(&self) -> bool {
-        let val = (self.0 >> 6usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the host and device"]
-    #[inline(always)]
-    pub const fn set_rxr(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-    }
-    #[doc = "RX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxe(&self) -> bool {
-        let val = (self.0 >> 7usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[inline(always)]
-    pub const fn set_rxe(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-    }
-    #[doc = "TX Endpoint Stall - Read/Write 0 End Point OK 1 End Point Stalled This bit will be cleared automatically upon receipt of a SETUP request if this Endpoint is configured as a Control Endpoint and this bit will continue to be cleared by hardware until the associated ENDPTSETUPSTAT bit is cleared"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txs(&self) -> bool {
-        let val = (self.0 >> 16usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Endpoint Stall - Read/Write 0 End Point OK 1 End Point Stalled This bit will be cleared automatically upon receipt of a SETUP request if this Endpoint is configured as a Control Endpoint and this bit will continue to be cleared by hardware until the associated ENDPTSETUPSTAT bit is cleared"]
-    #[inline(always)]
-    pub const fn set_txs(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
-    }
-    #[doc = "TX Endpoint Data Source - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[DEFAULT\\] Should always be written as 0"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txd(&self) -> bool {
-        let val = (self.0 >> 17usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Endpoint Data Source - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[DEFAULT\\] Should always be written as 0"]
-    #[inline(always)]
-    pub const fn set_txd(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
-    }
-    #[doc = "TX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txt(&self) -> u8 {
-        let val = (self.0 >> 18usize) & 0x03;
-        val as u8
-    }
-    #[doc = "TX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[inline(always)]
-    pub const fn set_txt(&mut self, val: u8) {
-        self.0 = (self.0 & !(0x03 << 18usize)) | (((val as u32) & 0x03) << 18usize);
-    }
-    #[doc = "TX Data Toggle Inhibit 0 PID Sequencing Enabled"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txi(&self) -> bool {
-        let val = (self.0 >> 21usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Data Toggle Inhibit 0 PID Sequencing Enabled"]
-    #[inline(always)]
-    pub const fn set_txi(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
-    }
-    #[doc = "TX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the Host and device"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txr(&self) -> bool {
-        let val = (self.0 >> 22usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the Host and device"]
-    #[inline(always)]
-    pub const fn set_txr(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
-    }
-    #[doc = "TX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txe(&self) -> bool {
-        let val = (self.0 >> 23usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[inline(always)]
-    pub const fn set_txe(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
-    }
-}
-impl Default for Endptctrl4 {
-    #[inline(always)]
-    fn default() -> Endptctrl4 {
-        Endptctrl4(0)
-    }
-}
-impl core::fmt::Debug for Endptctrl4 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Endptctrl4")
-            .field("rxs", &self.rxs())
-            .field("rxd", &self.rxd())
-            .field("rxt", &self.rxt())
-            .field("rxi", &self.rxi())
-            .field("rxr", &self.rxr())
-            .field("rxe", &self.rxe())
-            .field("txs", &self.txs())
-            .field("txd", &self.txd())
-            .field("txt", &self.txt())
-            .field("txi", &self.txi())
-            .field("txr", &self.txr())
-            .field("txe", &self.txe())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for Endptctrl4 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(
-            f,
-            "Endptctrl4 {{ rxs: {=bool:?}, rxd: {=bool:?}, rxt: {=u8:?}, rxi: {=bool:?}, rxr: {=bool:?}, rxe: {=bool:?}, txs: {=bool:?}, txd: {=bool:?}, txt: {=u8:?}, txi: {=bool:?}, txr: {=bool:?}, txe: {=bool:?} }}",
-            self.rxs(),
-            self.rxd(),
-            self.rxt(),
-            self.rxi(),
-            self.rxr(),
-            self.rxe(),
-            self.txs(),
-            self.txd(),
-            self.txt(),
-            self.txi(),
-            self.txr(),
-            self.txe()
-        )
-    }
-}
-#[doc = "Endpoint Control 5"]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Endptctrl5(pub u32);
-impl Endptctrl5 {
-    #[doc = "RX Endpoint Stall - Read/Write 0 End Point OK"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxs(&self) -> bool {
-        let val = (self.0 >> 0usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Endpoint Stall - Read/Write 0 End Point OK"]
-    #[inline(always)]
-    pub const fn set_rxs(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-    }
-    #[doc = "RX Endpoint Data Sink - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[Default\\] Should always be written as zero"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxd(&self) -> bool {
-        let val = (self.0 >> 1usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Endpoint Data Sink - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[Default\\] Should always be written as zero"]
-    #[inline(always)]
-    pub const fn set_rxd(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-    }
-    #[doc = "RX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxt(&self) -> u8 {
-        let val = (self.0 >> 2usize) & 0x03;
-        val as u8
-    }
-    #[doc = "RX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[inline(always)]
-    pub const fn set_rxt(&mut self, val: u8) {
-        self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
-    }
-    #[doc = "RX Data Toggle Inhibit 0 Disabled \\[Default\\] 1 Enabled This bit is only used for test and should always be written as zero"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxi(&self) -> bool {
-        let val = (self.0 >> 5usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Data Toggle Inhibit 0 Disabled \\[Default\\] 1 Enabled This bit is only used for test and should always be written as zero"]
-    #[inline(always)]
-    pub const fn set_rxi(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-    }
-    #[doc = "RX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the host and device"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxr(&self) -> bool {
-        let val = (self.0 >> 6usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the host and device"]
-    #[inline(always)]
-    pub const fn set_rxr(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-    }
-    #[doc = "RX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxe(&self) -> bool {
-        let val = (self.0 >> 7usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[inline(always)]
-    pub const fn set_rxe(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-    }
-    #[doc = "TX Endpoint Stall - Read/Write 0 End Point OK 1 End Point Stalled This bit will be cleared automatically upon receipt of a SETUP request if this Endpoint is configured as a Control Endpoint and this bit will continue to be cleared by hardware until the associated ENDPTSETUPSTAT bit is cleared"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txs(&self) -> bool {
-        let val = (self.0 >> 16usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Endpoint Stall - Read/Write 0 End Point OK 1 End Point Stalled This bit will be cleared automatically upon receipt of a SETUP request if this Endpoint is configured as a Control Endpoint and this bit will continue to be cleared by hardware until the associated ENDPTSETUPSTAT bit is cleared"]
-    #[inline(always)]
-    pub const fn set_txs(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
-    }
-    #[doc = "TX Endpoint Data Source - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[DEFAULT\\] Should always be written as 0"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txd(&self) -> bool {
-        let val = (self.0 >> 17usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Endpoint Data Source - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[DEFAULT\\] Should always be written as 0"]
-    #[inline(always)]
-    pub const fn set_txd(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
-    }
-    #[doc = "TX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txt(&self) -> u8 {
-        let val = (self.0 >> 18usize) & 0x03;
-        val as u8
-    }
-    #[doc = "TX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[inline(always)]
-    pub const fn set_txt(&mut self, val: u8) {
-        self.0 = (self.0 & !(0x03 << 18usize)) | (((val as u32) & 0x03) << 18usize);
-    }
-    #[doc = "TX Data Toggle Inhibit 0 PID Sequencing Enabled"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txi(&self) -> bool {
-        let val = (self.0 >> 21usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Data Toggle Inhibit 0 PID Sequencing Enabled"]
-    #[inline(always)]
-    pub const fn set_txi(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
-    }
-    #[doc = "TX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the Host and device"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txr(&self) -> bool {
-        let val = (self.0 >> 22usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the Host and device"]
-    #[inline(always)]
-    pub const fn set_txr(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
-    }
-    #[doc = "TX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txe(&self) -> bool {
-        let val = (self.0 >> 23usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[inline(always)]
-    pub const fn set_txe(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
-    }
-}
-impl Default for Endptctrl5 {
-    #[inline(always)]
-    fn default() -> Endptctrl5 {
-        Endptctrl5(0)
-    }
-}
-impl core::fmt::Debug for Endptctrl5 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Endptctrl5")
-            .field("rxs", &self.rxs())
-            .field("rxd", &self.rxd())
-            .field("rxt", &self.rxt())
-            .field("rxi", &self.rxi())
-            .field("rxr", &self.rxr())
-            .field("rxe", &self.rxe())
-            .field("txs", &self.txs())
-            .field("txd", &self.txd())
-            .field("txt", &self.txt())
-            .field("txi", &self.txi())
-            .field("txr", &self.txr())
-            .field("txe", &self.txe())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for Endptctrl5 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(
-            f,
-            "Endptctrl5 {{ rxs: {=bool:?}, rxd: {=bool:?}, rxt: {=u8:?}, rxi: {=bool:?}, rxr: {=bool:?}, rxe: {=bool:?}, txs: {=bool:?}, txd: {=bool:?}, txt: {=u8:?}, txi: {=bool:?}, txr: {=bool:?}, txe: {=bool:?} }}",
-            self.rxs(),
-            self.rxd(),
-            self.rxt(),
-            self.rxi(),
-            self.rxr(),
-            self.rxe(),
-            self.txs(),
-            self.txd(),
-            self.txt(),
-            self.txi(),
-            self.txr(),
-            self.txe()
-        )
-    }
-}
-#[doc = "Endpoint Control 6"]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Endptctrl6(pub u32);
-impl Endptctrl6 {
-    #[doc = "RX Endpoint Stall - Read/Write 0 End Point OK"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxs(&self) -> bool {
-        let val = (self.0 >> 0usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Endpoint Stall - Read/Write 0 End Point OK"]
-    #[inline(always)]
-    pub const fn set_rxs(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-    }
-    #[doc = "RX Endpoint Data Sink - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[Default\\] Should always be written as zero"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxd(&self) -> bool {
-        let val = (self.0 >> 1usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Endpoint Data Sink - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[Default\\] Should always be written as zero"]
-    #[inline(always)]
-    pub const fn set_rxd(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-    }
-    #[doc = "RX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxt(&self) -> u8 {
-        let val = (self.0 >> 2usize) & 0x03;
-        val as u8
-    }
-    #[doc = "RX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[inline(always)]
-    pub const fn set_rxt(&mut self, val: u8) {
-        self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
-    }
-    #[doc = "RX Data Toggle Inhibit 0 Disabled \\[Default\\] 1 Enabled This bit is only used for test and should always be written as zero"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxi(&self) -> bool {
-        let val = (self.0 >> 5usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Data Toggle Inhibit 0 Disabled \\[Default\\] 1 Enabled This bit is only used for test and should always be written as zero"]
-    #[inline(always)]
-    pub const fn set_rxi(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-    }
-    #[doc = "RX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the host and device"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxr(&self) -> bool {
-        let val = (self.0 >> 6usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the host and device"]
-    #[inline(always)]
-    pub const fn set_rxr(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-    }
-    #[doc = "RX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxe(&self) -> bool {
-        let val = (self.0 >> 7usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[inline(always)]
-    pub const fn set_rxe(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-    }
-    #[doc = "TX Endpoint Stall - Read/Write 0 End Point OK 1 End Point Stalled This bit will be cleared automatically upon receipt of a SETUP request if this Endpoint is configured as a Control Endpoint and this bit will continue to be cleared by hardware until the associated ENDPTSETUPSTAT bit is cleared"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txs(&self) -> bool {
-        let val = (self.0 >> 16usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Endpoint Stall - Read/Write 0 End Point OK 1 End Point Stalled This bit will be cleared automatically upon receipt of a SETUP request if this Endpoint is configured as a Control Endpoint and this bit will continue to be cleared by hardware until the associated ENDPTSETUPSTAT bit is cleared"]
-    #[inline(always)]
-    pub const fn set_txs(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
-    }
-    #[doc = "TX Endpoint Data Source - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[DEFAULT\\] Should always be written as 0"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txd(&self) -> bool {
-        let val = (self.0 >> 17usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Endpoint Data Source - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[DEFAULT\\] Should always be written as 0"]
-    #[inline(always)]
-    pub const fn set_txd(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
-    }
-    #[doc = "TX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txt(&self) -> u8 {
-        let val = (self.0 >> 18usize) & 0x03;
-        val as u8
-    }
-    #[doc = "TX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[inline(always)]
-    pub const fn set_txt(&mut self, val: u8) {
-        self.0 = (self.0 & !(0x03 << 18usize)) | (((val as u32) & 0x03) << 18usize);
-    }
-    #[doc = "TX Data Toggle Inhibit 0 PID Sequencing Enabled"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txi(&self) -> bool {
-        let val = (self.0 >> 21usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Data Toggle Inhibit 0 PID Sequencing Enabled"]
-    #[inline(always)]
-    pub const fn set_txi(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
-    }
-    #[doc = "TX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the Host and device"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txr(&self) -> bool {
-        let val = (self.0 >> 22usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the Host and device"]
-    #[inline(always)]
-    pub const fn set_txr(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
-    }
-    #[doc = "TX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txe(&self) -> bool {
-        let val = (self.0 >> 23usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[inline(always)]
-    pub const fn set_txe(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
-    }
-}
-impl Default for Endptctrl6 {
-    #[inline(always)]
-    fn default() -> Endptctrl6 {
-        Endptctrl6(0)
-    }
-}
-impl core::fmt::Debug for Endptctrl6 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Endptctrl6")
-            .field("rxs", &self.rxs())
-            .field("rxd", &self.rxd())
-            .field("rxt", &self.rxt())
-            .field("rxi", &self.rxi())
-            .field("rxr", &self.rxr())
-            .field("rxe", &self.rxe())
-            .field("txs", &self.txs())
-            .field("txd", &self.txd())
-            .field("txt", &self.txt())
-            .field("txi", &self.txi())
-            .field("txr", &self.txr())
-            .field("txe", &self.txe())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for Endptctrl6 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(
-            f,
-            "Endptctrl6 {{ rxs: {=bool:?}, rxd: {=bool:?}, rxt: {=u8:?}, rxi: {=bool:?}, rxr: {=bool:?}, rxe: {=bool:?}, txs: {=bool:?}, txd: {=bool:?}, txt: {=u8:?}, txi: {=bool:?}, txr: {=bool:?}, txe: {=bool:?} }}",
-            self.rxs(),
-            self.rxd(),
-            self.rxt(),
-            self.rxi(),
-            self.rxr(),
-            self.rxe(),
-            self.txs(),
-            self.txd(),
-            self.txt(),
-            self.txi(),
-            self.txr(),
-            self.txe()
-        )
-    }
-}
-#[doc = "Endpoint Control 7"]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Endptctrl7(pub u32);
-impl Endptctrl7 {
-    #[doc = "RX Endpoint Stall - Read/Write 0 End Point OK"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxs(&self) -> bool {
-        let val = (self.0 >> 0usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Endpoint Stall - Read/Write 0 End Point OK"]
-    #[inline(always)]
-    pub const fn set_rxs(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-    }
-    #[doc = "RX Endpoint Data Sink - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[Default\\] Should always be written as zero"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxd(&self) -> bool {
-        let val = (self.0 >> 1usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Endpoint Data Sink - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[Default\\] Should always be written as zero"]
-    #[inline(always)]
-    pub const fn set_rxd(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-    }
-    #[doc = "RX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxt(&self) -> u8 {
-        let val = (self.0 >> 2usize) & 0x03;
-        val as u8
-    }
-    #[doc = "RX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[inline(always)]
-    pub const fn set_rxt(&mut self, val: u8) {
-        self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
-    }
-    #[doc = "RX Data Toggle Inhibit 0 Disabled \\[Default\\] 1 Enabled This bit is only used for test and should always be written as zero"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxi(&self) -> bool {
-        let val = (self.0 >> 5usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Data Toggle Inhibit 0 Disabled \\[Default\\] 1 Enabled This bit is only used for test and should always be written as zero"]
-    #[inline(always)]
-    pub const fn set_rxi(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-    }
-    #[doc = "RX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the host and device"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxr(&self) -> bool {
-        let val = (self.0 >> 6usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the host and device"]
-    #[inline(always)]
-    pub const fn set_rxr(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-    }
-    #[doc = "RX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn rxe(&self) -> bool {
-        let val = (self.0 >> 7usize) & 0x01;
-        val != 0
-    }
-    #[doc = "RX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[inline(always)]
-    pub const fn set_rxe(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-    }
-    #[doc = "TX Endpoint Stall - Read/Write 0 End Point OK 1 End Point Stalled This bit will be cleared automatically upon receipt of a SETUP request if this Endpoint is configured as a Control Endpoint and this bit will continue to be cleared by hardware until the associated ENDPTSETUPSTAT bit is cleared"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txs(&self) -> bool {
-        let val = (self.0 >> 16usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Endpoint Stall - Read/Write 0 End Point OK 1 End Point Stalled This bit will be cleared automatically upon receipt of a SETUP request if this Endpoint is configured as a Control Endpoint and this bit will continue to be cleared by hardware until the associated ENDPTSETUPSTAT bit is cleared"]
-    #[inline(always)]
-    pub const fn set_txs(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
-    }
-    #[doc = "TX Endpoint Data Source - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[DEFAULT\\] Should always be written as 0"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txd(&self) -> bool {
-        let val = (self.0 >> 17usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Endpoint Data Source - Read/Write 0 Dual Port Memory Buffer/DMA Engine \\[DEFAULT\\] Should always be written as 0"]
-    #[inline(always)]
-    pub const fn set_txd(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
-    }
-    #[doc = "TX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txt(&self) -> u8 {
-        let val = (self.0 >> 18usize) & 0x03;
-        val as u8
-    }
-    #[doc = "TX Endpoint Type - Read/Write 00 Control 01 Isochronous 10 Bulk 11 Interrupt"]
-    #[inline(always)]
-    pub const fn set_txt(&mut self, val: u8) {
-        self.0 = (self.0 & !(0x03 << 18usize)) | (((val as u32) & 0x03) << 18usize);
-    }
-    #[doc = "TX Data Toggle Inhibit 0 PID Sequencing Enabled"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txi(&self) -> bool {
-        let val = (self.0 >> 21usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Data Toggle Inhibit 0 PID Sequencing Enabled"]
-    #[inline(always)]
-    pub const fn set_txi(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
-    }
-    #[doc = "TX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the Host and device"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txr(&self) -> bool {
-        let val = (self.0 >> 22usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Data Toggle Reset (WS) Write 1 - Reset PID Sequence Whenever a configuration event is received for this Endpoint, software must write a one to this bit in order to synchronize the data PID's between the Host and device"]
-    #[inline(always)]
-    pub const fn set_txr(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
-    }
-    #[doc = "TX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn txe(&self) -> bool {
-        let val = (self.0 >> 23usize) & 0x01;
-        val != 0
-    }
-    #[doc = "TX Endpoint Enable 0 Disabled \\[Default\\] 1 Enabled An Endpoint should be enabled only after it has been configured"]
-    #[inline(always)]
-    pub const fn set_txe(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
-    }
-}
-impl Default for Endptctrl7 {
-    #[inline(always)]
-    fn default() -> Endptctrl7 {
-        Endptctrl7(0)
-    }
-}
-impl core::fmt::Debug for Endptctrl7 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Endptctrl7")
-            .field("rxs", &self.rxs())
-            .field("rxd", &self.rxd())
-            .field("rxt", &self.rxt())
-            .field("rxi", &self.rxi())
-            .field("rxr", &self.rxr())
-            .field("rxe", &self.rxe())
-            .field("txs", &self.txs())
-            .field("txd", &self.txd())
-            .field("txt", &self.txt())
-            .field("txi", &self.txi())
-            .field("txr", &self.txr())
-            .field("txe", &self.txe())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for Endptctrl7 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(
-            f,
-            "Endptctrl7 {{ rxs: {=bool:?}, rxd: {=bool:?}, rxt: {=u8:?}, rxi: {=bool:?}, rxr: {=bool:?}, rxe: {=bool:?}, txs: {=bool:?}, txd: {=bool:?}, txt: {=u8:?}, txi: {=bool:?}, txr: {=bool:?}, txe: {=bool:?} }}",
-            self.rxs(),
-            self.rxd(),
-            self.rxt(),
-            self.rxi(),
-            self.rxr(),
-            self.rxe(),
-            self.txs(),
-            self.txd(),
-            self.txt(),
-            self.txi(),
-            self.txr(),
             self.txe()
         )
     }
@@ -2270,38 +905,38 @@ impl Gptimer0ctrl {
     #[doc = "General Purpose Timer Mode In one shot mode, the timer will count down to zero, generate an interrupt, and stop until the counter is reset by software; In repeat mode, the timer will count down to zero, generate an interrupt and automatically reload the counter value from GPTLD bits to start again"]
     #[must_use]
     #[inline(always)]
-    pub const fn gptmode(&self) -> bool {
+    pub const fn gptmode(&self) -> super::vals::Gptimer0ctrlGptmode {
         let val = (self.0 >> 24usize) & 0x01;
-        val != 0
+        super::vals::Gptimer0ctrlGptmode::from_bits(val as u8)
     }
     #[doc = "General Purpose Timer Mode In one shot mode, the timer will count down to zero, generate an interrupt, and stop until the counter is reset by software; In repeat mode, the timer will count down to zero, generate an interrupt and automatically reload the counter value from GPTLD bits to start again"]
     #[inline(always)]
-    pub const fn set_gptmode(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
+    pub const fn set_gptmode(&mut self, val: super::vals::Gptimer0ctrlGptmode) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
     }
     #[doc = "General Purpose Timer Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn gptrst(&self) -> bool {
+    pub const fn gptrst(&self) -> super::vals::Gptimer0ctrlGptrst {
         let val = (self.0 >> 30usize) & 0x01;
-        val != 0
+        super::vals::Gptimer0ctrlGptrst::from_bits(val as u8)
     }
     #[doc = "General Purpose Timer Reset"]
     #[inline(always)]
-    pub const fn set_gptrst(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
+    pub const fn set_gptrst(&mut self, val: super::vals::Gptimer0ctrlGptrst) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
     }
     #[doc = "General Purpose Timer Run GPTCNT bits are not effected when setting or clearing this bit."]
     #[must_use]
     #[inline(always)]
-    pub const fn gptrun(&self) -> bool {
+    pub const fn gptrun(&self) -> super::vals::Gptimer0ctrlGptrun {
         let val = (self.0 >> 31usize) & 0x01;
-        val != 0
+        super::vals::Gptimer0ctrlGptrun::from_bits(val as u8)
     }
     #[doc = "General Purpose Timer Run GPTCNT bits are not effected when setting or clearing this bit."]
     #[inline(always)]
-    pub const fn set_gptrun(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+    pub const fn set_gptrun(&mut self, val: super::vals::Gptimer0ctrlGptrun) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Gptimer0ctrl {
@@ -2325,7 +960,7 @@ impl defmt::Format for Gptimer0ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Gptimer0ctrl {{ gptcnt: {=u32:?}, gptmode: {=bool:?}, gptrst: {=bool:?}, gptrun: {=bool:?} }}",
+            "Gptimer0ctrl {{ gptcnt: {=u32:?}, gptmode: {:?}, gptrst: {:?}, gptrun: {:?} }}",
             self.gptcnt(),
             self.gptmode(),
             self.gptrst(),
@@ -2390,38 +1025,38 @@ impl Gptimer1ctrl {
     #[doc = "General Purpose Timer Mode In one shot mode, the timer will count down to zero, generate an interrupt, and stop until the counter is reset by software"]
     #[must_use]
     #[inline(always)]
-    pub const fn gptmode(&self) -> bool {
+    pub const fn gptmode(&self) -> super::vals::Gptimer1ctrlGptmode {
         let val = (self.0 >> 24usize) & 0x01;
-        val != 0
+        super::vals::Gptimer1ctrlGptmode::from_bits(val as u8)
     }
     #[doc = "General Purpose Timer Mode In one shot mode, the timer will count down to zero, generate an interrupt, and stop until the counter is reset by software"]
     #[inline(always)]
-    pub const fn set_gptmode(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
+    pub const fn set_gptmode(&mut self, val: super::vals::Gptimer1ctrlGptmode) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
     }
     #[doc = "General Purpose Timer Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn gptrst(&self) -> bool {
+    pub const fn gptrst(&self) -> super::vals::Gptimer1ctrlGptrst {
         let val = (self.0 >> 30usize) & 0x01;
-        val != 0
+        super::vals::Gptimer1ctrlGptrst::from_bits(val as u8)
     }
     #[doc = "General Purpose Timer Reset"]
     #[inline(always)]
-    pub const fn set_gptrst(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
+    pub const fn set_gptrst(&mut self, val: super::vals::Gptimer1ctrlGptrst) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
     }
     #[doc = "General Purpose Timer Run GPTCNT bits are not effected when setting or clearing this bit."]
     #[must_use]
     #[inline(always)]
-    pub const fn gptrun(&self) -> bool {
+    pub const fn gptrun(&self) -> super::vals::Gptimer1ctrlGptrun {
         let val = (self.0 >> 31usize) & 0x01;
-        val != 0
+        super::vals::Gptimer1ctrlGptrun::from_bits(val as u8)
     }
     #[doc = "General Purpose Timer Run GPTCNT bits are not effected when setting or clearing this bit."]
     #[inline(always)]
-    pub const fn set_gptrun(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+    pub const fn set_gptrun(&mut self, val: super::vals::Gptimer1ctrlGptrun) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Gptimer1ctrl {
@@ -2445,7 +1080,7 @@ impl defmt::Format for Gptimer1ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Gptimer1ctrl {{ gptcnt: {=u32:?}, gptmode: {=bool:?}, gptrst: {=bool:?}, gptrun: {=bool:?} }}",
+            "Gptimer1ctrl {{ gptcnt: {=u32:?}, gptmode: {:?}, gptrst: {:?}, gptrun: {:?} }}",
             self.gptcnt(),
             self.gptmode(),
             self.gptrst(),
@@ -2761,14 +1396,14 @@ impl Hwdevice {
     #[doc = "Device Capable. Indicating whether device operation mode is supported or not."]
     #[must_use]
     #[inline(always)]
-    pub const fn dc(&self) -> bool {
+    pub const fn dc(&self) -> super::vals::Dc {
         let val = (self.0 >> 0usize) & 0x01;
-        val != 0
+        super::vals::Dc::from_bits(val as u8)
     }
     #[doc = "Device Capable. Indicating whether device operation mode is supported or not."]
     #[inline(always)]
-    pub const fn set_dc(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+    pub const fn set_dc(&mut self, val: super::vals::Dc) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
     }
     #[doc = "Device Endpoint Number"]
     #[must_use]
@@ -2802,7 +1437,7 @@ impl defmt::Format for Hwdevice {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Hwdevice {{ dc: {=bool:?}, devep: {=u8:?} }}",
+            "Hwdevice {{ dc: {:?}, devep: {=u8:?} }}",
             self.dc(),
             self.devep()
         )
@@ -2885,14 +1520,14 @@ impl Hwhost {
     #[doc = "Host Capable. Indicating whether host operation mode is supported or not."]
     #[must_use]
     #[inline(always)]
-    pub const fn hc(&self) -> bool {
+    pub const fn hc(&self) -> super::vals::Hc {
         let val = (self.0 >> 0usize) & 0x01;
-        val != 0
+        super::vals::Hc::from_bits(val as u8)
     }
     #[doc = "Host Capable. Indicating whether host operation mode is supported or not."]
     #[inline(always)]
-    pub const fn set_hc(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+    pub const fn set_hc(&mut self, val: super::vals::Hc) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
     }
     #[doc = "The Nmber of downstream ports supported by the host controller is (NPORT+1)"]
     #[must_use]
@@ -2926,7 +1561,7 @@ impl defmt::Format for Hwhost {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Hwhost {{ hc: {=bool:?}, nport: {=u8:?} }}",
+            "Hwhost {{ hc: {:?}, nport: {=u8:?} }}",
             self.hc(),
             self.nport()
         )
@@ -3599,14 +2234,14 @@ impl Portsc1 {
     #[doc = "Over-current Active-Read Only"]
     #[must_use]
     #[inline(always)]
-    pub const fn oca(&self) -> bool {
+    pub const fn oca(&self) -> super::vals::Oca {
         let val = (self.0 >> 4usize) & 0x01;
-        val != 0
+        super::vals::Oca::from_bits(val as u8)
     }
     #[doc = "Over-current Active-Read Only"]
     #[inline(always)]
-    pub const fn set_oca(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+    pub const fn set_oca(&mut self, val: super::vals::Oca) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
     }
     #[doc = "Over-current Change-R/WC"]
     #[must_use]
@@ -3767,26 +2402,26 @@ impl Portsc1 {
     #[doc = "PHY Low Power Suspend - Clock Disable (PLPSCD) - Read/Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn phcd(&self) -> bool {
+    pub const fn phcd(&self) -> super::vals::Phcd {
         let val = (self.0 >> 23usize) & 0x01;
-        val != 0
+        super::vals::Phcd::from_bits(val as u8)
     }
     #[doc = "PHY Low Power Suspend - Clock Disable (PLPSCD) - Read/Write"]
     #[inline(always)]
-    pub const fn set_phcd(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+    pub const fn set_phcd(&mut self, val: super::vals::Phcd) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
     }
     #[doc = "Port Force Full Speed Connect - Read/Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn pfsc(&self) -> bool {
+    pub const fn pfsc(&self) -> super::vals::Pfsc {
         let val = (self.0 >> 24usize) & 0x01;
-        val != 0
+        super::vals::Pfsc::from_bits(val as u8)
     }
     #[doc = "Port Force Full Speed Connect - Read/Write"]
     #[inline(always)]
-    pub const fn set_pfsc(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
+    pub const fn set_pfsc(&mut self, val: super::vals::Pfsc) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
     }
     #[doc = "See description at bits 31-30"]
     #[must_use]
@@ -3815,14 +2450,14 @@ impl Portsc1 {
     #[doc = "Parallel Transceiver Width This bit has no effect if serial interface engine is used"]
     #[must_use]
     #[inline(always)]
-    pub const fn ptw(&self) -> bool {
+    pub const fn ptw(&self) -> super::vals::Ptw {
         let val = (self.0 >> 28usize) & 0x01;
-        val != 0
+        super::vals::Ptw::from_bits(val as u8)
     }
     #[doc = "Parallel Transceiver Width This bit has no effect if serial interface engine is used"]
     #[inline(always)]
-    pub const fn set_ptw(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
+    pub const fn set_ptw(&mut self, val: super::vals::Ptw) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
     }
     #[doc = "Serial Transceiver Select 1 Serial Interface Engine is selected 0 Parallel Interface signals is selected Serial Interface Engine can be used in combination with UTMI+/ULPI physical interface to provide FS/LS signaling instead of the parallel interface signals"]
     #[must_use]
@@ -3891,7 +2526,7 @@ impl defmt::Format for Portsc1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Portsc1 {{ ccs: {=bool:?}, csc: {=bool:?}, pe: {=bool:?}, pec: {=bool:?}, oca: {=bool:?}, occ: {=bool:?}, fpr: {=bool:?}, susp: {=bool:?}, pr: {=bool:?}, hsp: {=bool:?}, ls: {:?}, pp: {=bool:?}, po: {=bool:?}, pic: {:?}, ptc: {:?}, wkcn: {=bool:?}, wkdc: {=bool:?}, wkoc: {=bool:?}, phcd: {=bool:?}, pfsc: {=bool:?}, pts_2: {=bool:?}, pspd: {:?}, ptw: {=bool:?}, sts: {=bool:?}, pts_1: {=u8:?} }}",
+            "Portsc1 {{ ccs: {=bool:?}, csc: {=bool:?}, pe: {=bool:?}, pec: {=bool:?}, oca: {:?}, occ: {=bool:?}, fpr: {=bool:?}, susp: {=bool:?}, pr: {=bool:?}, hsp: {=bool:?}, ls: {:?}, pp: {=bool:?}, po: {=bool:?}, pic: {:?}, ptc: {:?}, wkcn: {=bool:?}, wkdc: {=bool:?}, wkoc: {=bool:?}, phcd: {:?}, pfsc: {:?}, pts_2: {=bool:?}, pspd: {:?}, ptw: {:?}, sts: {=bool:?}, pts_1: {=u8:?} }}",
             self.ccs(),
             self.csc(),
             self.pe(),
@@ -4070,26 +2705,26 @@ impl Usbcmd {
     #[doc = "Periodic Schedule Enable- Read/Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn pse(&self) -> bool {
+    pub const fn pse(&self) -> super::vals::Pse {
         let val = (self.0 >> 4usize) & 0x01;
-        val != 0
+        super::vals::Pse::from_bits(val as u8)
     }
     #[doc = "Periodic Schedule Enable- Read/Write"]
     #[inline(always)]
-    pub const fn set_pse(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+    pub const fn set_pse(&mut self, val: super::vals::Pse) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
     }
     #[doc = "Asynchronous Schedule Enable - Read/Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn ase(&self) -> bool {
+    pub const fn ase(&self) -> super::vals::Ase {
         let val = (self.0 >> 5usize) & 0x01;
-        val != 0
+        super::vals::Ase::from_bits(val as u8)
     }
     #[doc = "Asynchronous Schedule Enable - Read/Write"]
     #[inline(always)]
-    pub const fn set_ase(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+    pub const fn set_ase(&mut self, val: super::vals::Ase) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
     }
     #[doc = "Interrupt on Async Advance Doorbell - Read/Write"]
     #[must_use]
@@ -4154,14 +2789,14 @@ impl Usbcmd {
     #[doc = "Frame List Size - (Read/Write or Read Only)"]
     #[must_use]
     #[inline(always)]
-    pub const fn fs_2(&self) -> bool {
+    pub const fn fs_2(&self) -> super::vals::Fs2 {
         let val = (self.0 >> 15usize) & 0x01;
-        val != 0
+        super::vals::Fs2::from_bits(val as u8)
     }
     #[doc = "Frame List Size - (Read/Write or Read Only)"]
     #[inline(always)]
-    pub const fn set_fs_2(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+    pub const fn set_fs_2(&mut self, val: super::vals::Fs2) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
     }
     #[doc = "Interrupt Threshold Control -Read/Write"]
     #[must_use]
@@ -4205,7 +2840,7 @@ impl defmt::Format for Usbcmd {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Usbcmd {{ rs: {=bool:?}, rst: {=bool:?}, fs_1: {=u8:?}, pse: {=bool:?}, ase: {=bool:?}, iaa: {=bool:?}, asp: {=u8:?}, aspe: {=bool:?}, sutw: {=bool:?}, atdtw: {=bool:?}, fs_2: {=bool:?}, itc: {:?} }}",
+            "Usbcmd {{ rs: {=bool:?}, rst: {=bool:?}, fs_1: {=u8:?}, pse: {:?}, ase: {:?}, iaa: {=bool:?}, asp: {=u8:?}, aspe: {=bool:?}, sutw: {=bool:?}, atdtw: {=bool:?}, fs_2: {:?}, itc: {:?} }}",
             self.rs(),
             self.rst(),
             self.fs_1(),
@@ -4478,26 +3113,26 @@ impl Usbmode {
     #[doc = "Endian Select - Read/Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn es(&self) -> bool {
+    pub const fn es(&self) -> super::vals::Es {
         let val = (self.0 >> 2usize) & 0x01;
-        val != 0
+        super::vals::Es::from_bits(val as u8)
     }
     #[doc = "Endian Select - Read/Write"]
     #[inline(always)]
-    pub const fn set_es(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+    pub const fn set_es(&mut self, val: super::vals::Es) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
     }
     #[doc = "Setup Lockout Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn slom(&self) -> bool {
+    pub const fn slom(&self) -> super::vals::Slom {
         let val = (self.0 >> 3usize) & 0x01;
-        val != 0
+        super::vals::Slom::from_bits(val as u8)
     }
     #[doc = "Setup Lockout Mode"]
     #[inline(always)]
-    pub const fn set_slom(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+    pub const fn set_slom(&mut self, val: super::vals::Slom) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
     }
     #[doc = "Stream Disable Mode"]
     #[must_use]
@@ -4533,7 +3168,7 @@ impl defmt::Format for Usbmode {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Usbmode {{ cm: {:?}, es: {=bool:?}, slom: {=bool:?}, sdis: {=bool:?} }}",
+            "Usbmode {{ cm: {:?}, es: {:?}, slom: {:?}, sdis: {=bool:?} }}",
             self.cm(),
             self.es(),
             self.slom(),

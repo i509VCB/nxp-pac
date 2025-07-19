@@ -1,4 +1,22 @@
 transforms:
-  - !DeleteEnums
-    from: flexspi::vals::(Aparen|Ardfen|Atdfen|Bufferableen|Cachableen|Dozeen|Hsen|Rxdmaen|Samedeviceen|Txdmaen|Wmena|Wmenb)
-    bit_size: 1
+  - !MergeFieldsets
+    from: flexspi::regs::Ahbrxbuf(\d+)cr0
+    to: flexspi::regs::AhbrxbufCr0
+    check: NoCheck
+
+  - !MergeFieldsets
+    from: flexspi0::regs::Ahbrxbuf(\d+)cr0
+    to: flexspi0::regs::AhbrxbufCr0
+    check: NoCheck
+
+  # Merge flash A control registers
+  - !MergeFieldsets
+    from: flexspi0::regs::Flsha(\d+)cr0
+    to: flexspi0::regs::FlshaCr0
+    check: Layout
+
+  # Merge flash B control registers
+  - !MergeFieldsets
+    from: flexspi0::regs::Flshb(\d+)cr0
+    to: flexspi0::regs::FlshbCr0
+    check: Layout
