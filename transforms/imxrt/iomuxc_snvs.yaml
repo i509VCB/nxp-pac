@@ -3,5 +3,5 @@
 
 transforms:
   - !DeleteEnums
-    from: iomuxc_snvs::vals::(SwPadCtlPadOnoffHys|SwPadCtlPadOnoffOde|SwPadCtlPadOnoffPke|SwPadCtlPadOnoffPue|SwPadCtlPadOnoffSre|SwPadCtlPadPmicOnReqHys|SwPadCtlPadPmicOnReqOde|SwPadCtlPadPmicOnReqPke|SwPadCtlPadPmicOnReqPue|SwPadCtlPadPmicOnReqSre|SwPadCtlPadPorBHys|SwPadCtlPadPorBOde|SwPadCtlPadPorBPke|SwPadCtlPadPorBPue|SwPadCtlPadPorBSre|SwPadCtlPadTestModeHys|SwPadCtlPadTestModeOde|SwPadCtlPadTestModePke|SwPadCtlPadTestModePue|SwPadCtlPadTestModeSre)
+    from: iomuxc_snvs::vals::SwPadCtlPad(Onoff|PmicOnReq|PorB|TestMode)(Hys|Ode|Pke|Pue|Sre)
     bit_size: 1

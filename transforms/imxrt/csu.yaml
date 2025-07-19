@@ -2,6 +2,12 @@
 # Converts single-bit enums with _0/_1 patterns to proper boolean types
 
 transforms:
+  # Delete peripheral security control enums
   - !DeleteEnums
-    from: csu::vals::(Hp0LCsi|Hp0LDcp|Hp0LDma|Hp0LEnet|Hp0LLcdif|Hp0LPxp|Hp0LTpsmp|Hp0LUsb|Hp0LUsdhc1|Hp0LUsdhc2|HpCsi|HpDcp|HpDma|HpEnet|HpLcdif|HpPxp|HpTpsmp|HpUsb|HpUsdhc1|HpUsdhc2|HpcCsi|HpcDcp|HpcDma|HpcEnet|HpcLcdif|HpcPxp|HpcTpsmp|HpcUsb|HpcUsdhc1|HpcUsdhc2|Hpcontrol0LCsi|Hpcontrol0LDcp|Hpcontrol0LDma|Hpcontrol0LEnet|Hpcontrol0LLcdif|Hpcontrol0LPxp|Hpcontrol0LTpsmp|Hpcontrol0LUsb|Hpcontrol0LUsdhc1|Hpcontrol0LUsdhc2|LockS1|LockS2|NsaCsi|NsaDcp|NsaDma|NsaEnet|NsaLcdif|NsaPxp|NsaTpsmp|NsaUsb|NsaUsdhc1|NsaUsdhc2|NsrS1|NsrS2|NswS1|NswS2|NurS1|NurS2|NuwS1|NuwS2|SaLCsi|SaLDcp|SaLDma|SaLEnet|SaLLcdif|SaLPxp|SaLTpsmp|SaLUsb|SaLUsdhc1|SaLUsdhc2|SsrS1|SsrS2|SswS1|SswS2|SurS1|SurS2|SuwS1|SuwS2)
+    from: csu::vals::(Hp0L|Hp|Hpc|Hpcontrol0L|Nsa|SaL)(Csi|Dcp|Dma|Enet|Lcdif|Pxp|Tpsmp|Usb|Usdhc[12])
+    bit_size: 1
+
+  # Delete security access control enums
+  - !DeleteEnums
+    from: csu::vals::(Lock|Nsr|Nsw|Nur|Nuw|Ssr|Ssw|Sur|Suw)S[12]
     bit_size: 1

@@ -45,15 +45,12 @@ transforms:
 
   # These enums actually do not exist, but are useless and referenced by some fields.
   - !DeleteEnums
-    from: dma::vals::Tcd(\d+)NbytesMloffno(Dmloe|Smloe)
+    from: dma::vals::Tcd(\d+)NbytesMloff(no|yes)(Dmloe|Smloe)
 
   - !MergeFieldsets
     from: dma::regs::Tcd(\d+)NbytesMloffno
     to: dma::regs::TcdNbytesMloffno
 
-  # These enums actually do not exist, but are useless and referenced by some fields.
-  - !DeleteEnums
-    from: dma::vals::Tcd(\d+)NbytesMloffyes(Dmloe|Smloe)
 
   - !MergeFieldsets
     from: dma::regs::Tcd(\d+)NbytesMloffyes
@@ -81,7 +78,7 @@ transforms:
 
   # These enums actually do not exist, but are useless and referenced by some fields.
   - !DeleteEnums
-    from: dma::vals::Tcd(\d+)Csr(Start|Intmajor|Inthalf|Dreq|Majorelink)
+    from: dma::vals::Tcd(\d+)(Csr(Start|Intmajor|Inthalf|Dreq|Majorelink)|(Citer|Biter)Elink(yes|no)Elink)
     bit_size: 1
 
   - !MergeFieldsets
@@ -96,37 +93,17 @@ transforms:
     from: dma::regs::Tcd(\d+)Attr
     to: dma::regs::TcdAttr
 
-  # These enums actually do not exist, but are useless and referenced by some fields.
-  - !DeleteEnums
-    from: dma::vals::Tcd(\d+)CiterElinkyesElink
-    bit_size: 1
-
   - !MergeFieldsets
     from: dma::regs::Tcd(\d+)CiterElinkyes
     to: dma::regs::TcdCiterElinkyes
-
-  # These enums actually do not exist, but are useless and referenced by some fields.
-  - !DeleteEnums
-    from: dma::vals::Tcd(\d+)CiterElinknoElink
-    bit_size: 1
 
   - !MergeFieldsets
     from: dma::regs::Tcd(\d+)CiterElinkno
     to: dma::regs::TcdCiterElinkno
 
-  # These enums actually do not exist, but are useless and referenced by some fields.
-  - !DeleteEnums
-    from: dma::vals::Tcd(\d+)BiterElinkyesElink
-    bit_size: 1
-
   - !MergeFieldsets
     from: dma::regs::Tcd(\d+)BiterElinkyes
     to: dma::regs::TcdBiterElinkyes
-
-  # These enums actually do not exist, but are useless and referenced by some fields.
-  - !DeleteEnums
-    from: dma::vals::Tcd(\d+)BiterElinknoElink
-    bit_size: 1
 
   - !MergeFieldsets
     from: dma::regs::Tcd(\d+)BiterElinkno

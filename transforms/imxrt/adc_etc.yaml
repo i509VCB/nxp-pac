@@ -2,6 +2,17 @@
 # Converts single-bit enums with _0/_1 patterns to proper boolean types
 
 transforms:
+  # Delete misc control enums
   - !DeleteEnums
-    from: adc_etc::vals::(DmaModeSel|Softrst|Trig0Chain10B2b0|Trig0Chain10B2b1|Trig0Chain10Ie0En|Trig0Chain10Ie1En|Trig0Chain32B2b2|Trig0Chain32B2b3|Trig0Chain32Ie2En|Trig0Chain32Ie3En|Trig0Chain54B2b4|Trig0Chain54B2b5|Trig0Chain54Ie4En|Trig0Chain54Ie5En|Trig0Chain76B2b6|Trig0Chain76B2b7|Trig0Chain76Ie6En|Trig0Chain76Ie7En|Trig0CtrlSwTrig|Trig0CtrlSyncMode|Trig0CtrlTrigMode|Trig0Done0|Trig0Done1|Trig0Done2|Trig0Done3|Trig0Enable|Trig0Err|Trig0Req|Trig1Chain10B2b0|Trig1Chain10B2b1|Trig1Chain10Ie0En|Trig1Chain10Ie1En|Trig1Chain32B2b2|Trig1Chain32B2b3|Trig1Chain32Ie2En|Trig1Chain32Ie3En|Trig1Chain54B2b4|Trig1Chain54B2b5|Trig1Chain54Ie4En|Trig1Chain54Ie5En|Trig1Chain76B2b6|Trig1Chain76B2b7|Trig1Chain76Ie6En|Trig1Chain76Ie7En|Trig1CtrlSwTrig|Trig1CtrlSyncMode|Trig1CtrlTrigMode|Trig1Done0|Trig1Done1|Trig1Done2|Trig1Done3|Trig1Enable|Trig1Err|Trig1Req|Trig2Chain10B2b0|Trig2Chain10B2b1|Trig2Chain10Ie0En|Trig2Chain10Ie1En|Trig2Chain32B2b2|Trig2Chain32B2b3|Trig2Chain32Ie2En|Trig2Chain32Ie3En|Trig2Chain54B2b4|Trig2Chain54B2b5|Trig2Chain54Ie4En|Trig2Chain54Ie5En|Trig2Chain76B2b6|Trig2Chain76B2b7|Trig2Chain76Ie6En|Trig2Chain76Ie7En|Trig2CtrlSwTrig|Trig2CtrlSyncMode|Trig2CtrlTrigMode|Trig2Done0|Trig2Done1|Trig2Done2|Trig2Done3|Trig2Enable|Trig2Err|Trig2Req|Trig3Chain10B2b0|Trig3Chain10B2b1|Trig3Chain10Ie0En|Trig3Chain10Ie1En|Trig3Chain32B2b2|Trig3Chain32B2b3|Trig3Chain32Ie2En|Trig3Chain32Ie3En|Trig3Chain54B2b4|Trig3Chain54B2b5|Trig3Chain54Ie4En|Trig3Chain54Ie5En|Trig3Chain76B2b6|Trig3Chain76B2b7|Trig3Chain76Ie6En|Trig3Chain76Ie7En|Trig3CtrlSwTrig|Trig3CtrlSyncMode|Trig3CtrlTrigMode|Trig3Done0|Trig3Done1|Trig3Done2|Trig3Done3|Trig3Enable|Trig3Err|Trig3Req|Trig4Done0|Trig4Done1|Trig4Done2|Trig4Done3|Trig4Enable|Trig4Err|Trig4Req|Trig5Done0|Trig5Done1|Trig5Done2|Trig5Done3|Trig5Enable|Trig5Err|Trig5Req|Trig6Done0|Trig6Done1|Trig6Done2|Trig6Done3|Trig6Enable|Trig6Err|Trig6Req|Trig7Done0|Trig7Done1|Trig7Done2|Trig7Done3|Trig7Enable|Trig7Err|Trig7Req)
+    from: adc_etc::vals::(DmaModeSel|Softrst)
+    bit_size: 1
+
+  # Delete trigger chain enums (Trig0-3 have all patterns, Trig4-7 only have some)
+  - !DeleteEnums
+    from: adc_etc::vals::Trig[0-3](Chain\d+B2b\d+|Chain\d+Ie\dEn|Ctrl(SwTrig|SyncMode|TrigMode)|Done\d+|Enable|Err|Req)
+    bit_size: 1
+
+  # Delete trigger enums for Trig4-7 (limited patterns)
+  - !DeleteEnums
+    from: adc_etc::vals::Trig[4-7](Done\d+|Enable|Err|Req)
     bit_size: 1

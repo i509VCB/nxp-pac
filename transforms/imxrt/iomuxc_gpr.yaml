@@ -2,6 +2,17 @@
 # Converts single-bit enums with _0/_1 patterns to proper boolean types
 
 transforms:
+  # Delete peripheral stop/doze control enums
   - !DeleteEnums
-    from: iomuxc_gpr::vals::(AxbsPForceRoundRobin|AxbsPM0HighPriority|AxbsPM1HighPriority|CacheUsb|Cm7ForceHclkEn|DbgEn|DcpKeySel|DcpkeyOcotpOrKeymux|EdmaStopAck|EdmaStopReq|ExcMon|Flexio1IpgDoze|Flexio1IpgStopMode|Flexio1StopAck|Flexio1StopReq|FlexramBankCfgSel|FlexspiStopAck|FlexspiStopReq|Gint|L2MemDeepsleep|L2MemEnPowersaving|LockDbgEn|LockDcpkeyOcotpOrKeymux|LockM7ApcAcR0Bot|LockM7ApcAcR0Top|LockM7ApcAcR1Bot|LockM7ApcAcR1Top|LockM7ApcAcR2Bot|LockM7ApcAcR2Top|LockM7ApcAcR3Bot|LockM7ApcAcR3Top|LockNiden|LockOcramTzEn|LockSecErrResp|LockVtor|Lpi2c1IpgDoze|Lpi2c1IpgStopMode|Lpi2c1StopAck|Lpi2c1StopReq|Lpi2c2IpgDoze|Lpi2c2IpgStopMode|Lpi2c2StopAck|Lpi2c2StopReq|Lpspi1IpgDoze|Lpspi1IpgStopMode|Lpspi1StopAck|Lpspi1StopReq|Lpspi2IpgDoze|Lpspi2IpgStopMode|Lpspi2StopAck|Lpspi2StopReq|Lpuart1IpgDoze|Lpuart1IpgStopMode|Lpuart1StopAck|Lpuart1StopReq|Lpuart2IpgDoze|Lpuart2IpgStopMode|Lpuart2StopAck|Lpuart2StopReq|Lpuart3IpgDoze|Lpuart3IpgStopMode|Lpuart3StopAck|Lpuart3StopReq|Lpuart4IpgDoze|Lpuart4IpgStopMode|Lpuart4StopAck|Lpuart4StopReq|MqsEn|MqsOversample|MqsSwRst|Niden|OcramTzEn|PitStopAck|PitStopReq|RamAutoClkGatingEn|Sai1StopAck|Sai1StopReq|Sai3StopAck|Sai3StopReq|SecErrResp|TrngStopAck|TrngStopReq|Vref1mClkGpt1|Vref1mClkGpt2|Wdog1Mask|Wdog2Mask)
+    from: iomuxc_gpr::vals::(Edma|Flexio1|Flexspi|Lpi2c[12]|Lpspi[12]|Lpuart[1-4]|Pit|Sai[13]|Trng)(IpgDoze|IpgStopMode|StopAck|StopReq)
+    bit_size: 1
+
+  # Delete lock control enums
+  - !DeleteEnums
+    from: iomuxc_gpr::vals::Lock(DbgEn|DcpkeyOcotpOrKeymux|M7ApcAcR[0-3](Bot|Top)|Niden|OcramTzEn|SecErrResp|Vtor)
+    bit_size: 1
+
+  # Delete misc control enums
+  - !DeleteEnums
+    from: iomuxc_gpr::vals::(AxbsP(ForceRoundRobin|M[01]HighPriority)|CacheUsb|Cm7ForceHclkEn|DbgEn|DcpKeySel|DcpkeyOcotpOrKeymux|ExcMon|FlexramBankCfgSel|Gint|L2Mem(Deepsleep|EnPowersaving)|Mqs(En|Oversample|SwRst)|Niden|OcramTzEn|RamAutoClkGatingEn|SecErrResp|Vref1mClkGpt[12]|Wdog[12]Mask)
     bit_size: 1

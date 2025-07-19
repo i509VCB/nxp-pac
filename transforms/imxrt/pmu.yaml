@@ -2,6 +2,12 @@
 # Converts single-bit enums with _0/_1 patterns to proper boolean types
 
 transforms:
+  # Delete Misc0 register control enums
   - !DeleteEnums
-    from: pmu::vals::(Misc0ClkgateCtrl|Misc0ClrClkgateCtrl|Misc0ClrDisconHighSnvs|Misc0ClrReftopSelfbiasoff|Misc0DisconHighSnvs|Misc0ReftopSelfbiasoff|Misc0SetClkgateCtrl|Misc0SetDisconHighSnvs|Misc0SetReftopSelfbiasoff|Misc0TogClkgateCtrl|Misc0TogDisconHighSnvs|Misc0TogReftopSelfbiasoff|Reg1p1ClrSelrefWeakLinreg|Reg1p1SelrefWeakLinreg|Reg1p1SetSelrefWeakLinreg|Reg1p1TogSelrefWeakLinreg)
+    from: pmu::vals::Misc0(Clr|Set|Tog)?(ClkgateCtrl|DisconHighSnvs|ReftopSelfbiasoff)
+    bit_size: 1
+
+  # Delete Reg1p1 control enums
+  - !DeleteEnums
+    from: pmu::vals::Reg1p1(Clr|Set|Tog)?SelrefWeakLinreg
     bit_size: 1
