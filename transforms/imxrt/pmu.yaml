@@ -1,0 +1,7 @@
+# Boolean enum transforms for PMU peripheral
+# Converts single-bit enums with _0/_1 patterns to proper boolean types
+
+transforms:
+  - !DeleteEnums
+    from: pmu::vals::(Misc0ClkgateCtrl|Misc0ClrClkgateCtrl|Misc0ClrDisconHighSnvs|Misc0ClrReftopSelfbiasoff|Misc0DisconHighSnvs|Misc0ReftopSelfbiasoff|Misc0SetClkgateCtrl|Misc0SetDisconHighSnvs|Misc0SetReftopSelfbiasoff|Misc0TogClkgateCtrl|Misc0TogDisconHighSnvs|Misc0TogReftopSelfbiasoff|Reg1p1ClrSelrefWeakLinreg|Reg1p1SelrefWeakLinreg|Reg1p1SetSelrefWeakLinreg|Reg1p1TogSelrefWeakLinreg)
+    bit_size: 1

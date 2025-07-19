@@ -524,68 +524,6 @@ impl From<CtrlClrCscDataSwizzle> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CtrlClrDataFormat18Bit {
-    #[doc = "Data input to the block is in 18 bpp format, such that lower 18 bits contain RGB 666 and upper 14 bits do not contain any useful data."]
-    LOWER_18_BITS_VALID = 0x0,
-    #[doc = "Data input to the block is in 18 bpp format, such that upper 18 bits contain RGB 666 and lower 14 bits do not contain any useful data."]
-    UPPER_18_BITS_VALID = 0x01,
-}
-impl CtrlClrDataFormat18Bit {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CtrlClrDataFormat18Bit {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CtrlClrDataFormat18Bit {
-    #[inline(always)]
-    fn from(val: u8) -> CtrlClrDataFormat18Bit {
-        CtrlClrDataFormat18Bit::from_bits(val)
-    }
-}
-impl From<CtrlClrDataFormat18Bit> for u8 {
-    #[inline(always)]
-    fn from(val: CtrlClrDataFormat18Bit) -> u8 {
-        CtrlClrDataFormat18Bit::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CtrlClrDataFormat24Bit {
-    #[doc = "Data input to the block is in 24 bpp format, such that all RGB 888 data is contained in 24 bits."]
-    ALL_24_BITS_VALID = 0x0,
-    #[doc = "Data input to the block is actually RGB 18 bpp, but there is 1 color per byte, hence the upper 2 bits in each byte do not contain any useful data, and should be dropped."]
-    DROP_UPPER_2_BITS_PER_BYTE = 0x01,
-}
-impl CtrlClrDataFormat24Bit {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CtrlClrDataFormat24Bit {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CtrlClrDataFormat24Bit {
-    #[inline(always)]
-    fn from(val: u8) -> CtrlClrDataFormat24Bit {
-        CtrlClrDataFormat24Bit::from_bits(val)
-    }
-}
-impl From<CtrlClrDataFormat24Bit> for u8 {
-    #[inline(always)]
-    fn from(val: CtrlClrDataFormat24Bit) -> u8 {
-        CtrlClrDataFormat24Bit::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CtrlClrDataShiftDir {
     #[doc = "Data to be transmitted is shifted LEFT by SHIFT_NUM_BITS bits."]
     TXDATA_SHIFT_LEFT = 0x0,
@@ -757,68 +695,6 @@ impl From<CtrlCscDataSwizzle> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CtrlDataFormat18Bit {
-    #[doc = "Data input to the block is in 18 bpp format, such that lower 18 bits contain RGB 666 and upper 14 bits do not contain any useful data."]
-    LOWER_18_BITS_VALID = 0x0,
-    #[doc = "Data input to the block is in 18 bpp format, such that upper 18 bits contain RGB 666 and lower 14 bits do not contain any useful data."]
-    UPPER_18_BITS_VALID = 0x01,
-}
-impl CtrlDataFormat18Bit {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CtrlDataFormat18Bit {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CtrlDataFormat18Bit {
-    #[inline(always)]
-    fn from(val: u8) -> CtrlDataFormat18Bit {
-        CtrlDataFormat18Bit::from_bits(val)
-    }
-}
-impl From<CtrlDataFormat18Bit> for u8 {
-    #[inline(always)]
-    fn from(val: CtrlDataFormat18Bit) -> u8 {
-        CtrlDataFormat18Bit::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CtrlDataFormat24Bit {
-    #[doc = "Data input to the block is in 24 bpp format, such that all RGB 888 data is contained in 24 bits."]
-    ALL_24_BITS_VALID = 0x0,
-    #[doc = "Data input to the block is actually RGB 18 bpp, but there is 1 color per byte, hence the upper 2 bits in each byte do not contain any useful data, and should be dropped."]
-    DROP_UPPER_2_BITS_PER_BYTE = 0x01,
-}
-impl CtrlDataFormat24Bit {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CtrlDataFormat24Bit {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CtrlDataFormat24Bit {
-    #[inline(always)]
-    fn from(val: u8) -> CtrlDataFormat24Bit {
-        CtrlDataFormat24Bit::from_bits(val)
-    }
-}
-impl From<CtrlDataFormat24Bit> for u8 {
-    #[inline(always)]
-    fn from(val: CtrlDataFormat24Bit) -> u8 {
-        CtrlDataFormat24Bit::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CtrlDataShiftDir {
     #[doc = "Data to be transmitted is shifted LEFT by SHIFT_NUM_BITS bits."]
     TXDATA_SHIFT_LEFT = 0x0,
@@ -950,68 +826,6 @@ impl From<CtrlSetCscDataSwizzle> for u8 {
     #[inline(always)]
     fn from(val: CtrlSetCscDataSwizzle) -> u8 {
         CtrlSetCscDataSwizzle::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CtrlSetDataFormat18Bit {
-    #[doc = "Data input to the block is in 18 bpp format, such that lower 18 bits contain RGB 666 and upper 14 bits do not contain any useful data."]
-    LOWER_18_BITS_VALID = 0x0,
-    #[doc = "Data input to the block is in 18 bpp format, such that upper 18 bits contain RGB 666 and lower 14 bits do not contain any useful data."]
-    UPPER_18_BITS_VALID = 0x01,
-}
-impl CtrlSetDataFormat18Bit {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CtrlSetDataFormat18Bit {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CtrlSetDataFormat18Bit {
-    #[inline(always)]
-    fn from(val: u8) -> CtrlSetDataFormat18Bit {
-        CtrlSetDataFormat18Bit::from_bits(val)
-    }
-}
-impl From<CtrlSetDataFormat18Bit> for u8 {
-    #[inline(always)]
-    fn from(val: CtrlSetDataFormat18Bit) -> u8 {
-        CtrlSetDataFormat18Bit::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CtrlSetDataFormat24Bit {
-    #[doc = "Data input to the block is in 24 bpp format, such that all RGB 888 data is contained in 24 bits."]
-    ALL_24_BITS_VALID = 0x0,
-    #[doc = "Data input to the block is actually RGB 18 bpp, but there is 1 color per byte, hence the upper 2 bits in each byte do not contain any useful data, and should be dropped."]
-    DROP_UPPER_2_BITS_PER_BYTE = 0x01,
-}
-impl CtrlSetDataFormat24Bit {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CtrlSetDataFormat24Bit {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CtrlSetDataFormat24Bit {
-    #[inline(always)]
-    fn from(val: u8) -> CtrlSetDataFormat24Bit {
-        CtrlSetDataFormat24Bit::from_bits(val)
-    }
-}
-impl From<CtrlSetDataFormat24Bit> for u8 {
-    #[inline(always)]
-    fn from(val: CtrlSetDataFormat24Bit) -> u8 {
-        CtrlSetDataFormat24Bit::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1183,68 +997,6 @@ impl From<CtrlTogCscDataSwizzle> for u8 {
     #[inline(always)]
     fn from(val: CtrlTogCscDataSwizzle) -> u8 {
         CtrlTogCscDataSwizzle::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CtrlTogDataFormat18Bit {
-    #[doc = "Data input to the block is in 18 bpp format, such that lower 18 bits contain RGB 666 and upper 14 bits do not contain any useful data."]
-    LOWER_18_BITS_VALID = 0x0,
-    #[doc = "Data input to the block is in 18 bpp format, such that upper 18 bits contain RGB 666 and lower 14 bits do not contain any useful data."]
-    UPPER_18_BITS_VALID = 0x01,
-}
-impl CtrlTogDataFormat18Bit {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CtrlTogDataFormat18Bit {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CtrlTogDataFormat18Bit {
-    #[inline(always)]
-    fn from(val: u8) -> CtrlTogDataFormat18Bit {
-        CtrlTogDataFormat18Bit::from_bits(val)
-    }
-}
-impl From<CtrlTogDataFormat18Bit> for u8 {
-    #[inline(always)]
-    fn from(val: CtrlTogDataFormat18Bit) -> u8 {
-        CtrlTogDataFormat18Bit::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CtrlTogDataFormat24Bit {
-    #[doc = "Data input to the block is in 24 bpp format, such that all RGB 888 data is contained in 24 bits."]
-    ALL_24_BITS_VALID = 0x0,
-    #[doc = "Data input to the block is actually RGB 18 bpp, but there is 1 color per byte, hence the upper 2 bits in each byte do not contain any useful data, and should be dropped."]
-    DROP_UPPER_2_BITS_PER_BYTE = 0x01,
-}
-impl CtrlTogDataFormat24Bit {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CtrlTogDataFormat24Bit {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CtrlTogDataFormat24Bit {
-    #[inline(always)]
-    fn from(val: u8) -> CtrlTogDataFormat24Bit {
-        CtrlTogDataFormat24Bit::from_bits(val)
-    }
-}
-impl From<CtrlTogDataFormat24Bit> for u8 {
-    #[inline(always)]
-    fn from(val: CtrlTogDataFormat24Bit) -> u8 {
-        CtrlTogDataFormat24Bit::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1502,37 +1254,6 @@ impl From<Pigeon00MaskCntSel> for u8 {
     #[inline(always)]
     fn from(val: Pigeon00MaskCntSel) -> u8 {
         Pigeon00MaskCntSel::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Pigeon00Pol {
-    #[doc = "Normal Signal (Active high)"]
-    ACTIVE_HIGH = 0x0,
-    #[doc = "Inverted signal (Active low)"]
-    ACTIVE_LOW = 0x01,
-}
-impl Pigeon00Pol {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Pigeon00Pol {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Pigeon00Pol {
-    #[inline(always)]
-    fn from(val: u8) -> Pigeon00Pol {
-        Pigeon00Pol::from_bits(val)
-    }
-}
-impl From<Pigeon00Pol> for u8 {
-    #[inline(always)]
-    fn from(val: Pigeon00Pol) -> u8 {
-        Pigeon00Pol::to_bits(val)
     }
 }
 #[repr(transparent)]
@@ -1888,37 +1609,6 @@ impl From<Pigeon100MaskCntSel> for u8 {
         Pigeon100MaskCntSel::to_bits(val)
     }
 }
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Pigeon100Pol {
-    #[doc = "Normal Signal (Active high)"]
-    ACTIVE_HIGH = 0x0,
-    #[doc = "Inverted signal (Active low)"]
-    ACTIVE_LOW = 0x01,
-}
-impl Pigeon100Pol {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Pigeon100Pol {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Pigeon100Pol {
-    #[inline(always)]
-    fn from(val: u8) -> Pigeon100Pol {
-        Pigeon100Pol::from_bits(val)
-    }
-}
-impl From<Pigeon100Pol> for u8 {
-    #[inline(always)]
-    fn from(val: Pigeon100Pol) -> u8 {
-        Pigeon100Pol::to_bits(val)
-    }
-}
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
 pub struct Pigeon100StateMask(u8);
@@ -2272,37 +1962,6 @@ impl From<Pigeon10MaskCntSel> for u8 {
         Pigeon10MaskCntSel::to_bits(val)
     }
 }
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Pigeon10Pol {
-    #[doc = "Normal Signal (Active high)"]
-    ACTIVE_HIGH = 0x0,
-    #[doc = "Inverted signal (Active low)"]
-    ACTIVE_LOW = 0x01,
-}
-impl Pigeon10Pol {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Pigeon10Pol {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Pigeon10Pol {
-    #[inline(always)]
-    fn from(val: u8) -> Pigeon10Pol {
-        Pigeon10Pol::from_bits(val)
-    }
-}
-impl From<Pigeon10Pol> for u8 {
-    #[inline(always)]
-    fn from(val: Pigeon10Pol) -> u8 {
-        Pigeon10Pol::to_bits(val)
-    }
-}
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
 pub struct Pigeon10StateMask(u8);
@@ -2459,37 +2118,6 @@ impl From<Pigeon110MaskCntSel> for u8 {
     #[inline(always)]
     fn from(val: Pigeon110MaskCntSel) -> u8 {
         Pigeon110MaskCntSel::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Pigeon110Pol {
-    #[doc = "Normal Signal (Active high)"]
-    ACTIVE_HIGH = 0x0,
-    #[doc = "Inverted signal (Active low)"]
-    ACTIVE_LOW = 0x01,
-}
-impl Pigeon110Pol {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Pigeon110Pol {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Pigeon110Pol {
-    #[inline(always)]
-    fn from(val: u8) -> Pigeon110Pol {
-        Pigeon110Pol::from_bits(val)
-    }
-}
-impl From<Pigeon110Pol> for u8 {
-    #[inline(always)]
-    fn from(val: Pigeon110Pol) -> u8 {
-        Pigeon110Pol::to_bits(val)
     }
 }
 #[repr(transparent)]
@@ -3040,37 +2668,6 @@ impl From<Pigeon20MaskCntSel> for u8 {
         Pigeon20MaskCntSel::to_bits(val)
     }
 }
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Pigeon20Pol {
-    #[doc = "Normal Signal (Active high)"]
-    ACTIVE_HIGH = 0x0,
-    #[doc = "Inverted signal (Active low)"]
-    ACTIVE_LOW = 0x01,
-}
-impl Pigeon20Pol {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Pigeon20Pol {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Pigeon20Pol {
-    #[inline(always)]
-    fn from(val: u8) -> Pigeon20Pol {
-        Pigeon20Pol::from_bits(val)
-    }
-}
-impl From<Pigeon20Pol> for u8 {
-    #[inline(always)]
-    fn from(val: Pigeon20Pol) -> u8 {
-        Pigeon20Pol::to_bits(val)
-    }
-}
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
 pub struct Pigeon20StateMask(u8);
@@ -3422,37 +3019,6 @@ impl From<Pigeon30MaskCntSel> for u8 {
     #[inline(always)]
     fn from(val: Pigeon30MaskCntSel) -> u8 {
         Pigeon30MaskCntSel::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Pigeon30Pol {
-    #[doc = "Normal Signal (Active high)"]
-    ACTIVE_HIGH = 0x0,
-    #[doc = "Inverted signal (Active low)"]
-    ACTIVE_LOW = 0x01,
-}
-impl Pigeon30Pol {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Pigeon30Pol {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Pigeon30Pol {
-    #[inline(always)]
-    fn from(val: u8) -> Pigeon30Pol {
-        Pigeon30Pol::from_bits(val)
-    }
-}
-impl From<Pigeon30Pol> for u8 {
-    #[inline(always)]
-    fn from(val: Pigeon30Pol) -> u8 {
-        Pigeon30Pol::to_bits(val)
     }
 }
 #[repr(transparent)]
@@ -3808,37 +3374,6 @@ impl From<Pigeon40MaskCntSel> for u8 {
         Pigeon40MaskCntSel::to_bits(val)
     }
 }
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Pigeon40Pol {
-    #[doc = "Normal Signal (Active high)"]
-    ACTIVE_HIGH = 0x0,
-    #[doc = "Inverted signal (Active low)"]
-    ACTIVE_LOW = 0x01,
-}
-impl Pigeon40Pol {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Pigeon40Pol {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Pigeon40Pol {
-    #[inline(always)]
-    fn from(val: u8) -> Pigeon40Pol {
-        Pigeon40Pol::from_bits(val)
-    }
-}
-impl From<Pigeon40Pol> for u8 {
-    #[inline(always)]
-    fn from(val: Pigeon40Pol) -> u8 {
-        Pigeon40Pol::to_bits(val)
-    }
-}
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
 pub struct Pigeon40StateMask(u8);
@@ -4190,37 +3725,6 @@ impl From<Pigeon50MaskCntSel> for u8 {
     #[inline(always)]
     fn from(val: Pigeon50MaskCntSel) -> u8 {
         Pigeon50MaskCntSel::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Pigeon50Pol {
-    #[doc = "Normal Signal (Active high)"]
-    ACTIVE_HIGH = 0x0,
-    #[doc = "Inverted signal (Active low)"]
-    ACTIVE_LOW = 0x01,
-}
-impl Pigeon50Pol {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Pigeon50Pol {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Pigeon50Pol {
-    #[inline(always)]
-    fn from(val: u8) -> Pigeon50Pol {
-        Pigeon50Pol::from_bits(val)
-    }
-}
-impl From<Pigeon50Pol> for u8 {
-    #[inline(always)]
-    fn from(val: Pigeon50Pol) -> u8 {
-        Pigeon50Pol::to_bits(val)
     }
 }
 #[repr(transparent)]
@@ -4576,37 +4080,6 @@ impl From<Pigeon60MaskCntSel> for u8 {
         Pigeon60MaskCntSel::to_bits(val)
     }
 }
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Pigeon60Pol {
-    #[doc = "Normal Signal (Active high)"]
-    ACTIVE_HIGH = 0x0,
-    #[doc = "Inverted signal (Active low)"]
-    ACTIVE_LOW = 0x01,
-}
-impl Pigeon60Pol {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Pigeon60Pol {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Pigeon60Pol {
-    #[inline(always)]
-    fn from(val: u8) -> Pigeon60Pol {
-        Pigeon60Pol::from_bits(val)
-    }
-}
-impl From<Pigeon60Pol> for u8 {
-    #[inline(always)]
-    fn from(val: Pigeon60Pol) -> u8 {
-        Pigeon60Pol::to_bits(val)
-    }
-}
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
 pub struct Pigeon60StateMask(u8);
@@ -4958,37 +4431,6 @@ impl From<Pigeon70MaskCntSel> for u8 {
     #[inline(always)]
     fn from(val: Pigeon70MaskCntSel) -> u8 {
         Pigeon70MaskCntSel::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Pigeon70Pol {
-    #[doc = "Normal Signal (Active high)"]
-    ACTIVE_HIGH = 0x0,
-    #[doc = "Inverted signal (Active low)"]
-    ACTIVE_LOW = 0x01,
-}
-impl Pigeon70Pol {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Pigeon70Pol {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Pigeon70Pol {
-    #[inline(always)]
-    fn from(val: u8) -> Pigeon70Pol {
-        Pigeon70Pol::from_bits(val)
-    }
-}
-impl From<Pigeon70Pol> for u8 {
-    #[inline(always)]
-    fn from(val: Pigeon70Pol) -> u8 {
-        Pigeon70Pol::to_bits(val)
     }
 }
 #[repr(transparent)]
@@ -5344,37 +4786,6 @@ impl From<Pigeon80MaskCntSel> for u8 {
         Pigeon80MaskCntSel::to_bits(val)
     }
 }
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Pigeon80Pol {
-    #[doc = "Normal Signal (Active high)"]
-    ACTIVE_HIGH = 0x0,
-    #[doc = "Inverted signal (Active low)"]
-    ACTIVE_LOW = 0x01,
-}
-impl Pigeon80Pol {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Pigeon80Pol {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Pigeon80Pol {
-    #[inline(always)]
-    fn from(val: u8) -> Pigeon80Pol {
-        Pigeon80Pol::from_bits(val)
-    }
-}
-impl From<Pigeon80Pol> for u8 {
-    #[inline(always)]
-    fn from(val: Pigeon80Pol) -> u8 {
-        Pigeon80Pol::to_bits(val)
-    }
-}
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
 pub struct Pigeon80StateMask(u8);
@@ -5726,37 +5137,6 @@ impl From<Pigeon90MaskCntSel> for u8 {
     #[inline(always)]
     fn from(val: Pigeon90MaskCntSel) -> u8 {
         Pigeon90MaskCntSel::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Pigeon90Pol {
-    #[doc = "Normal Signal (Active high)"]
-    ACTIVE_HIGH = 0x0,
-    #[doc = "Inverted signal (Active low)"]
-    ACTIVE_LOW = 0x01,
-}
-impl Pigeon90Pol {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Pigeon90Pol {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Pigeon90Pol {
-    #[inline(always)]
-    fn from(val: u8) -> Pigeon90Pol {
-        Pigeon90Pol::from_bits(val)
-    }
-}
-impl From<Pigeon90Pol> for u8 {
-    #[inline(always)]
-    fn from(val: Pigeon90Pol) -> u8 {
-        Pigeon90Pol::to_bits(val)
     }
 }
 #[repr(transparent)]

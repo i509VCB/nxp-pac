@@ -10,6 +10,39 @@ includes:
 - imxrt/pit.yaml
 - imxrt/gpt.yaml
 - imxrt1011/pwm.yaml
+# Boolean enum transforms for all peripherals
+- imxrt/adc.yaml
+- imxrt/adc_etc.yaml
+- imxrt/ccm.yaml
+- imxrt/ccm_analog.yaml
+- imxrt/csu.yaml
+- imxrt/dcdc.yaml
+- imxrt/dcp.yaml
+- imxrt/dmamux.yaml
+- imxrt/ewm.yaml
+- imxrt/flexio.yaml
+- imxrt/flexram.yaml
+- imxrt/flexspi.yaml
+- imxrt/gpc.yaml
+- imxrt/iomuxc_gpr.yaml
+- imxrt/iomuxc_snvs.yaml
+- imxrt/iomuxc_snvs_gpr.yaml
+- imxrt/kpp.yaml
+- imxrt/lpi2c.yaml
+- imxrt/lpspi.yaml
+- imxrt/lpuart.yaml
+- imxrt/pmu.yaml
+- imxrt/pwm.yaml
+- imxrt/sai.yaml
+- imxrt/snvs.yaml
+- imxrt/spdif.yaml
+- imxrt/src.yaml
+- imxrt/tempmon.yaml
+- imxrt/trng.yaml
+- imxrt/usb.yaml
+- imxrt/wdog.yaml
+- imxrt/xbara.yaml
+- imxrt/xtalosc24m.yaml
 transforms:
   #! ADC HS::COCO is array
   - !MakeFieldArray

@@ -32,37 +32,6 @@ impl From<Ackerr> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Aen {
-    #[doc = "Abort disabled"]
-    AEN_0 = 0x0,
-    #[doc = "Abort enabled"]
-    AEN_1 = 0x01,
-}
-impl Aen {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Aen {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Aen {
-    #[inline(always)]
-    fn from(val: u8) -> Aen {
-        Aen::from_bits(val)
-    }
-}
-impl From<Aen> for u8 {
-    #[inline(always)]
-    fn from(val: Aen) -> u8 {
-        Aen::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum App {
     #[doc = "No matching process ongoing."]
     APP_0 = 0x0,
@@ -182,37 +151,6 @@ impl From<Boffint> for u8 {
     #[inline(always)]
     fn from(val: Boffint) -> u8 {
         Boffint::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Boffmsk {
-    #[doc = "Bus Off interrupt disabled"]
-    BOFFMSK_0 = 0x0,
-    #[doc = "Bus Off interrupt enabled"]
-    BOFFMSK_1 = 0x01,
-}
-impl Boffmsk {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Boffmsk {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Boffmsk {
-    #[inline(always)]
-    fn from(val: u8) -> Boffmsk {
-        Boffmsk::from_bits(val)
-    }
-}
-impl From<Boffmsk> for u8 {
-    #[inline(always)]
-    fn from(val: Boffmsk) -> u8 {
-        Boffmsk::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -626,37 +564,6 @@ impl From<Crcerr> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Eacen {
-    #[doc = "Rx Mailbox filter's IDE bit is always compared and RTR is never compared despite mask bits."]
-    EACEN_0 = 0x0,
-    #[doc = "Enables the comparison of both Rx Mailbox filter's IDE and RTR bit with their corresponding bits within the incoming frame. Mask bits do apply."]
-    EACEN_1 = 0x01,
-}
-impl Eacen {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Eacen {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Eacen {
-    #[inline(always)]
-    fn from(val: u8) -> Eacen {
-        Eacen::from_bits(val)
-    }
-}
-impl From<Eacen> for u8 {
-    #[inline(always)]
-    fn from(val: Eacen) -> u8 {
-        Eacen::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Errint {
     #[doc = "No such occurrence"]
     ERRINT_0 = 0x0,
@@ -683,37 +590,6 @@ impl From<Errint> for u8 {
     #[inline(always)]
     fn from(val: Errint) -> u8 {
         Errint::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Errmsk {
-    #[doc = "Error interrupt disabled"]
-    ERRMSK_0 = 0x0,
-    #[doc = "Error interrupt enabled"]
-    ERRMSK_1 = 0x01,
-}
-impl Errmsk {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Errmsk {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Errmsk {
-    #[inline(always)]
-    fn from(val: u8) -> Errmsk {
-        Errmsk::from_bits(val)
-    }
-}
-impl From<Errmsk> for u8 {
-    #[inline(always)]
-    fn from(val: Errmsk) -> u8 {
-        Errmsk::to_bits(val)
     }
 }
 #[repr(transparent)]
@@ -991,37 +867,6 @@ impl From<Idle> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Imb {
-    #[doc = "If ESR2\\[VPS\\] is asserted, the ESR2\\[LPTM\\] is not an inactive Mailbox."]
-    IMB_0 = 0x0,
-    #[doc = "If ESR2\\[VPS\\] is asserted, there is at least one inactive Mailbox. LPTM content is the number of the first one."]
-    IMB_1 = 0x01,
-}
-impl Imb {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Imb {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Imb {
-    #[inline(always)]
-    fn from(val: u8) -> Imb {
-        Imb::from_bits(val)
-    }
-}
-impl From<Imb> for u8 {
-    #[inline(always)]
-    fn from(val: Imb) -> u8 {
-        Imb::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Irmq {
     #[doc = "Individual Rx masking and queue feature are disabled.For backward compatibility, the reading of C/S word locks the MB even if it is EMPTY."]
     IRMQ_0 = 0x0,
@@ -1084,68 +929,6 @@ impl From<Lbuf> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Lom {
-    #[doc = "Listen Only Mode is deactivated"]
-    LOM_0 = 0x0,
-    #[doc = "FLEXCAN module operates in Listen Only Mode"]
-    LOM_1 = 0x01,
-}
-impl Lom {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Lom {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Lom {
-    #[inline(always)]
-    fn from(val: u8) -> Lom {
-        Lom::from_bits(val)
-    }
-}
-impl From<Lom> for u8 {
-    #[inline(always)]
-    fn from(val: Lom) -> u8 {
-        Lom::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Lpb {
-    #[doc = "Loop Back disabled"]
-    LPB_0 = 0x0,
-    #[doc = "Loop Back enabled"]
-    LPB_1 = 0x01,
-}
-impl Lpb {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Lpb {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Lpb {
-    #[inline(always)]
-    fn from(val: u8) -> Lpb {
-        Lpb::from_bits(val)
-    }
-}
-impl From<Lpb> for u8 {
-    #[inline(always)]
-    fn from(val: Lpb) -> u8 {
-        Lpb::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpmack {
     #[doc = "FLEXCAN not in any of the low power modes"]
     LPMACK_0 = 0x0,
@@ -1172,68 +955,6 @@ impl From<Lpmack> for u8 {
     #[inline(always)]
     fn from(val: Lpmack) -> u8 {
         Lpmack::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Lprioen {
-    #[doc = "Local Priority disabled"]
-    LPRIOEN_0 = 0x0,
-    #[doc = "Local Priority enabled"]
-    LPRIOEN_1 = 0x01,
-}
-impl Lprioen {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Lprioen {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Lprioen {
-    #[inline(always)]
-    fn from(val: u8) -> Lprioen {
-        Lprioen::from_bits(val)
-    }
-}
-impl From<Lprioen> for u8 {
-    #[inline(always)]
-    fn from(val: Lprioen) -> u8 {
-        Lprioen::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Mdis {
-    #[doc = "Enable the FLEXCAN module"]
-    MDIS_0 = 0x0,
-    #[doc = "Disable the FLEXCAN module"]
-    MDIS_1 = 0x01,
-}
-impl Mdis {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Mdis {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Mdis {
-    #[inline(always)]
-    fn from(val: u8) -> Mdis {
-        Mdis::from_bits(val)
-    }
-}
-impl From<Mdis> for u8 {
-    #[inline(always)]
-    fn from(val: Mdis) -> u8 {
-        Mdis::to_bits(val)
     }
 }
 #[repr(transparent)]
@@ -1428,37 +1149,6 @@ impl From<Notrdy> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Rfen {
-    #[doc = "FIFO not enabled"]
-    RFEN_0 = 0x0,
-    #[doc = "FIFO enabled"]
-    RFEN_1 = 0x01,
-}
-impl Rfen {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Rfen {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Rfen {
-    #[inline(always)]
-    fn from(val: u8) -> Rfen {
-        Rfen::from_bits(val)
-    }
-}
-impl From<Rfen> for u8 {
-    #[inline(always)]
-    fn from(val: Rfen) -> u8 {
-        Rfen::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rrs {
     #[doc = "Remote Response Frame is generated"]
     RRS_0 = 0x0,
@@ -1516,37 +1206,6 @@ impl From<Rwrnint> for u8 {
     #[inline(always)]
     fn from(val: Rwrnint) -> u8 {
         Rwrnint::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Rwrnmsk {
-    #[doc = "Rx Warning Interrupt disabled"]
-    RWRNMSK_0 = 0x0,
-    #[doc = "Rx Warning Interrupt enabled"]
-    RWRNMSK_1 = 0x01,
-}
-impl Rwrnmsk {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Rwrnmsk {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Rwrnmsk {
-    #[inline(always)]
-    fn from(val: u8) -> Rwrnmsk {
-        Rwrnmsk::from_bits(val)
-    }
-}
-impl From<Rwrnmsk> for u8 {
-    #[inline(always)]
-    fn from(val: Rwrnmsk) -> u8 {
-        Rwrnmsk::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1710,37 +1369,6 @@ impl From<Rxwrn> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Slfwak {
-    #[doc = "FLEXCAN Self Wake Up feature is disabled"]
-    SLFWAK_0 = 0x0,
-    #[doc = "FLEXCAN Self Wake Up feature is enabled"]
-    SLFWAK_1 = 0x01,
-}
-impl Slfwak {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Slfwak {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Slfwak {
-    #[inline(always)]
-    fn from(val: u8) -> Slfwak {
-        Slfwak::from_bits(val)
-    }
-}
-impl From<Slfwak> for u8 {
-    #[inline(always)]
-    fn from(val: Slfwak) -> u8 {
-        Slfwak::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Smp {
     #[doc = "Just one sample is used to determine the bit value"]
     SMP_0 = 0x0,
@@ -1798,37 +1426,6 @@ impl From<Softrst> for u8 {
     #[inline(always)]
     fn from(val: Softrst) -> u8 {
         Softrst::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Srxdis {
-    #[doc = "Self reception enabled"]
-    SRXDIS_0 = 0x0,
-    #[doc = "Self reception disabled"]
-    SRXDIS_1 = 0x01,
-}
-impl Srxdis {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Srxdis {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Srxdis {
-    #[inline(always)]
-    fn from(val: u8) -> Srxdis {
-        Srxdis::from_bits(val)
-    }
-}
-impl From<Srxdis> for u8 {
-    #[inline(always)]
-    fn from(val: Srxdis) -> u8 {
-        Srxdis::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1989,37 +1586,6 @@ impl From<Twrnint> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Twrnmsk {
-    #[doc = "Tx Warning Interrupt disabled"]
-    TWRNMSK_0 = 0x0,
-    #[doc = "Tx Warning Interrupt enabled"]
-    TWRNMSK_1 = 0x01,
-}
-impl Twrnmsk {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Twrnmsk {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Twrnmsk {
-    #[inline(always)]
-    fn from(val: u8) -> Twrnmsk {
-        Twrnmsk::from_bits(val)
-    }
-}
-impl From<Twrnmsk> for u8 {
-    #[inline(always)]
-    fn from(val: Twrnmsk) -> u8 {
-        Twrnmsk::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tx {
     #[doc = "FLEXCAN is receiving a message"]
     TX_0 = 0x0,
@@ -2144,37 +1710,6 @@ impl From<Wakint> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Wakmsk {
-    #[doc = "Wake Up Interrupt is disabled"]
-    WAKMSK_0 = 0x0,
-    #[doc = "Wake Up Interrupt is enabled"]
-    WAKMSK_1 = 0x01,
-}
-impl Wakmsk {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Wakmsk {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Wakmsk {
-    #[inline(always)]
-    fn from(val: u8) -> Wakmsk {
-        Wakmsk::from_bits(val)
-    }
-}
-impl From<Wakmsk> for u8 {
-    #[inline(always)]
-    fn from(val: Wakmsk) -> u8 {
-        Wakmsk::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Waksrc {
     #[doc = "FLEXCAN uses the unfiltered FLEXCAN_RX input to detect recessive to dominant edges on the CAN bus."]
     WAKSRC_0 = 0x0,
@@ -2201,67 +1736,5 @@ impl From<Waksrc> for u8 {
     #[inline(always)]
     fn from(val: Waksrc) -> u8 {
         Waksrc::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Wrmfrz {
-    #[doc = "Keep the write access restricted in some regions of FlexCAN memory"]
-    WRMFRZ_0 = 0x0,
-    #[doc = "Enable unrestricted write access to FlexCAN memory"]
-    WRMFRZ_1 = 0x01,
-}
-impl Wrmfrz {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Wrmfrz {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Wrmfrz {
-    #[inline(always)]
-    fn from(val: u8) -> Wrmfrz {
-        Wrmfrz::from_bits(val)
-    }
-}
-impl From<Wrmfrz> for u8 {
-    #[inline(always)]
-    fn from(val: Wrmfrz) -> u8 {
-        Wrmfrz::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Wrnen {
-    #[doc = "TWRN_INT and RWRN_INT bits are zero, independent of the values in the error counters."]
-    WRNEN_0 = 0x0,
-    #[doc = "TWRN_INT and RWRN_INT bits are set when the respective error counter transition from <96 to >= 96."]
-    WRNEN_1 = 0x01,
-}
-impl Wrnen {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Wrnen {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Wrnen {
-    #[inline(always)]
-    fn from(val: u8) -> Wrnen {
-        Wrnen::from_bits(val)
-    }
-}
-impl From<Wrnen> for u8 {
-    #[inline(always)]
-    fn from(val: Wrnen) -> u8 {
-        Wrnen::to_bits(val)
     }
 }

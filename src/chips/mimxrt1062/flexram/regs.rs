@@ -42,38 +42,38 @@ impl IntSigEn {
     #[doc = "ITCM Access Error Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn itcm_err_sig_en(&self) -> super::vals::ItcmErrSigEn {
+    pub const fn itcm_err_sig_en(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::ItcmErrSigEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ITCM Access Error Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_itcm_err_sig_en(&mut self, val: super::vals::ItcmErrSigEn) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_itcm_err_sig_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "DTCM Access Error Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dtcm_err_sig_en(&self) -> super::vals::DtcmErrSigEn {
+    pub const fn dtcm_err_sig_en(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::DtcmErrSigEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DTCM Access Error Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_dtcm_err_sig_en(&mut self, val: super::vals::DtcmErrSigEn) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_dtcm_err_sig_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "OCRAM Access Error Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ocram_err_sig_en(&self) -> super::vals::OcramErrSigEn {
+    pub const fn ocram_err_sig_en(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::OcramErrSigEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "OCRAM Access Error Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ocram_err_sig_en(&mut self, val: super::vals::OcramErrSigEn) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_ocram_err_sig_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Reserved"]
     #[must_use]
@@ -112,7 +112,7 @@ impl defmt::Format for IntSigEn {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "IntSigEn {{ reserved0: {=bool:?}, reserved1: {=bool:?}, reserved2: {=bool:?}, itcm_err_sig_en: {:?}, dtcm_err_sig_en: {:?}, ocram_err_sig_en: {:?}, reserved: {=u32:?} }}",
+            "IntSigEn {{ reserved0: {=bool:?}, reserved1: {=bool:?}, reserved2: {=bool:?}, itcm_err_sig_en: {=bool:?}, dtcm_err_sig_en: {=bool:?}, ocram_err_sig_en: {=bool:?}, reserved: {=u32:?} }}",
             self.reserved0(),
             self.reserved1(),
             self.reserved2(),
@@ -167,38 +167,38 @@ impl IntStatEn {
     #[doc = "ITCM Access Error Status Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn itcm_err_stat_en(&self) -> super::vals::ItcmErrStatEn {
+    pub const fn itcm_err_stat_en(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::ItcmErrStatEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ITCM Access Error Status Enable"]
     #[inline(always)]
-    pub const fn set_itcm_err_stat_en(&mut self, val: super::vals::ItcmErrStatEn) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_itcm_err_stat_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "DTCM Access Error Status Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dtcm_err_stat_en(&self) -> super::vals::DtcmErrStatEn {
+    pub const fn dtcm_err_stat_en(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::DtcmErrStatEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DTCM Access Error Status Enable"]
     #[inline(always)]
-    pub const fn set_dtcm_err_stat_en(&mut self, val: super::vals::DtcmErrStatEn) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_dtcm_err_stat_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "OCRAM Access Error Status Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ocram_err_stat_en(&self) -> super::vals::OcramErrStatEn {
+    pub const fn ocram_err_stat_en(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::OcramErrStatEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "OCRAM Access Error Status Enable"]
     #[inline(always)]
-    pub const fn set_ocram_err_stat_en(&mut self, val: super::vals::OcramErrStatEn) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_ocram_err_stat_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Reserved"]
     #[must_use]
@@ -237,7 +237,7 @@ impl defmt::Format for IntStatEn {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "IntStatEn {{ reserved0: {=bool:?}, reserved1: {=bool:?}, reserved2: {=bool:?}, itcm_err_stat_en: {:?}, dtcm_err_stat_en: {:?}, ocram_err_stat_en: {:?}, reserved: {=u32:?} }}",
+            "IntStatEn {{ reserved0: {=bool:?}, reserved1: {=bool:?}, reserved2: {=bool:?}, itcm_err_stat_en: {=bool:?}, dtcm_err_stat_en: {=bool:?}, ocram_err_stat_en: {=bool:?}, reserved: {=u32:?} }}",
             self.reserved0(),
             self.reserved1(),
             self.reserved2(),
@@ -381,26 +381,26 @@ impl TcmCtrl {
     #[doc = "TCM Write Wait Mode Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tcm_wwait_en(&self) -> super::vals::TcmWwaitEn {
+    pub const fn tcm_wwait_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::TcmWwaitEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TCM Write Wait Mode Enable"]
     #[inline(always)]
-    pub const fn set_tcm_wwait_en(&mut self, val: super::vals::TcmWwaitEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_tcm_wwait_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "TCM Read Wait Mode Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tcm_rwait_en(&self) -> super::vals::TcmRwaitEn {
+    pub const fn tcm_rwait_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::TcmRwaitEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TCM Read Wait Mode Enable"]
     #[inline(always)]
-    pub const fn set_tcm_rwait_en(&mut self, val: super::vals::TcmRwaitEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_tcm_rwait_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Force RAM Clock Always On"]
     #[must_use]
@@ -448,7 +448,7 @@ impl defmt::Format for TcmCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "TcmCtrl {{ tcm_wwait_en: {:?}, tcm_rwait_en: {:?}, force_clk_on: {=bool:?}, reserved: {=u32:?} }}",
+            "TcmCtrl {{ tcm_wwait_en: {=bool:?}, tcm_rwait_en: {=bool:?}, force_clk_on: {=bool:?}, reserved: {=u32:?} }}",
             self.tcm_wwait_en(),
             self.tcm_rwait_en(),
             self.force_clk_on(),

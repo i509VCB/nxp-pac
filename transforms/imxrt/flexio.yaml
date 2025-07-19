@@ -1,0 +1,7 @@
+# Boolean enum transforms for FlexIO peripheral
+# Converts single-bit enums with _0/_1 patterns to proper boolean types
+
+transforms:
+  - !DeleteEnums
+    from: flexio::vals::(Dbge|Dozen|Fastacc)
+    bit_size: 1

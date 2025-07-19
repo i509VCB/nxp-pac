@@ -6,14 +6,14 @@ impl Ahbcr {
     #[doc = "Parallel mode enabled for AHB triggered Command (both read and write) ."]
     #[must_use]
     #[inline(always)]
-    pub const fn aparen(&self) -> super::vals::Aparen {
+    pub const fn aparen(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Aparen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Parallel mode enabled for AHB triggered Command (both read and write) ."]
     #[inline(always)]
-    pub const fn set_aparen(&mut self, val: super::vals::Aparen) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_aparen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Clear the status/pointers of AHB RX Buffer. Auto-cleared."]
     #[must_use]
@@ -42,26 +42,26 @@ impl Ahbcr {
     #[doc = "Enable AHB bus cachable read access support."]
     #[must_use]
     #[inline(always)]
-    pub const fn cachableen(&self) -> super::vals::Cachableen {
+    pub const fn cachableen(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Cachableen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable AHB bus cachable read access support."]
     #[inline(always)]
-    pub const fn set_cachableen(&mut self, val: super::vals::Cachableen) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_cachableen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Enable AHB bus bufferable write access support. This field affects the last beat of AHB write access, refer for more details about AHB bufferable write."]
     #[must_use]
     #[inline(always)]
-    pub const fn bufferableen(&self) -> super::vals::Bufferableen {
+    pub const fn bufferableen(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Bufferableen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable AHB bus bufferable write access support. This field affects the last beat of AHB write access, refer for more details about AHB bufferable write."]
     #[inline(always)]
-    pub const fn set_bufferableen(&mut self, val: super::vals::Bufferableen) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_bufferableen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "AHB Read Prefetch Enable."]
     #[must_use]
@@ -125,7 +125,7 @@ impl defmt::Format for Ahbcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ahbcr {{ aparen: {:?}, clrahbrxbuf: {=bool:?}, clrahbtxbuf: {=bool:?}, cachableen: {:?}, bufferableen: {:?}, prefetchen: {=bool:?}, readaddropt: {:?}, readszalign: {:?} }}",
+            "Ahbcr {{ aparen: {=bool:?}, clrahbrxbuf: {=bool:?}, clrahbtxbuf: {=bool:?}, cachableen: {=bool:?}, bufferableen: {=bool:?}, prefetchen: {=bool:?}, readaddropt: {:?}, readszalign: {:?} }}",
             self.aparen(),
             self.clrahbrxbuf(),
             self.clrahbtxbuf(),
@@ -1095,26 +1095,26 @@ impl Flshcr4 {
     #[doc = "Write mask enable bit for flash device on port A. When write mask function is needed for memory device on port A, this bit must be set."]
     #[must_use]
     #[inline(always)]
-    pub const fn wmena(&self) -> super::vals::Wmena {
+    pub const fn wmena(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Wmena::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Write mask enable bit for flash device on port A. When write mask function is needed for memory device on port A, this bit must be set."]
     #[inline(always)]
-    pub const fn set_wmena(&mut self, val: super::vals::Wmena) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_wmena(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Write mask enable bit for flash device on port B. When write mask function is needed for memory device on port B, this bit must be set."]
     #[must_use]
     #[inline(always)]
-    pub const fn wmenb(&self) -> super::vals::Wmenb {
+    pub const fn wmenb(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Wmenb::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Write mask enable bit for flash device on port B. When write mask function is needed for memory device on port B, this bit must be set."]
     #[inline(always)]
-    pub const fn set_wmenb(&mut self, val: super::vals::Wmenb) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_wmenb(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
 }
 impl Default for Flshcr4 {
@@ -1137,7 +1137,7 @@ impl defmt::Format for Flshcr4 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Flshcr4 {{ wmopt1: {=bool:?}, wmena: {:?}, wmenb: {:?} }}",
+            "Flshcr4 {{ wmopt1: {=bool:?}, wmena: {=bool:?}, wmenb: {=bool:?} }}",
             self.wmopt1(),
             self.wmena(),
             self.wmenb()
@@ -1735,14 +1735,14 @@ impl Iprxfcr {
     #[doc = "IP RX FIFO reading by DMA enabled."]
     #[must_use]
     #[inline(always)]
-    pub const fn rxdmaen(&self) -> super::vals::Rxdmaen {
+    pub const fn rxdmaen(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Rxdmaen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IP RX FIFO reading by DMA enabled."]
     #[inline(always)]
-    pub const fn set_rxdmaen(&mut self, val: super::vals::Rxdmaen) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_rxdmaen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Watermark level is (RXWMRK+1)*64 Bits."]
     #[must_use]
@@ -1777,7 +1777,7 @@ impl defmt::Format for Iprxfcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Iprxfcr {{ clriprxf: {=bool:?}, rxdmaen: {:?}, rxwmrk: {=u8:?} }}",
+            "Iprxfcr {{ clriprxf: {=bool:?}, rxdmaen: {=bool:?}, rxwmrk: {=u8:?} }}",
             self.clriprxf(),
             self.rxdmaen(),
             self.rxwmrk()
@@ -1859,14 +1859,14 @@ impl Iptxfcr {
     #[doc = "IP TX FIFO filling by DMA enabled."]
     #[must_use]
     #[inline(always)]
-    pub const fn txdmaen(&self) -> super::vals::Txdmaen {
+    pub const fn txdmaen(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Txdmaen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IP TX FIFO filling by DMA enabled."]
     #[inline(always)]
-    pub const fn set_txdmaen(&mut self, val: super::vals::Txdmaen) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_txdmaen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Watermark level is (TXWMRK+1)*64 Bits."]
     #[must_use]
@@ -1901,7 +1901,7 @@ impl defmt::Format for Iptxfcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Iptxfcr {{ clriptxf: {=bool:?}, txdmaen: {:?}, txwmrk: {=u8:?} }}",
+            "Iptxfcr {{ clriptxf: {=bool:?}, txdmaen: {=bool:?}, txwmrk: {=u8:?} }}",
             self.clriptxf(),
             self.txdmaen(),
             self.txwmrk()
@@ -2208,26 +2208,26 @@ impl Mcr0 {
     #[doc = "Enable AHB bus Read Access to IP RX FIFO."]
     #[must_use]
     #[inline(always)]
-    pub const fn ardfen(&self) -> super::vals::Ardfen {
+    pub const fn ardfen(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Ardfen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable AHB bus Read Access to IP RX FIFO."]
     #[inline(always)]
-    pub const fn set_ardfen(&mut self, val: super::vals::Ardfen) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_ardfen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Enable AHB bus Write Access to IP TX FIFO."]
     #[must_use]
     #[inline(always)]
-    pub const fn atdfen(&self) -> super::vals::Atdfen {
+    pub const fn atdfen(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Atdfen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable AHB bus Write Access to IP TX FIFO."]
     #[inline(always)]
-    pub const fn set_atdfen(&mut self, val: super::vals::Atdfen) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_atdfen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "The serial root clock could be divided inside FlexSPI . See Clocks section for more details on clocking."]
     #[must_use]
@@ -2244,26 +2244,26 @@ impl Mcr0 {
     #[doc = "Half Speed Serial Flash access Enable."]
     #[must_use]
     #[inline(always)]
-    pub const fn hsen(&self) -> super::vals::Hsen {
+    pub const fn hsen(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Hsen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Half Speed Serial Flash access Enable."]
     #[inline(always)]
-    pub const fn set_hsen(&mut self, val: super::vals::Hsen) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_hsen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Doze mode enable bit"]
     #[must_use]
     #[inline(always)]
-    pub const fn dozeen(&self) -> super::vals::Dozeen {
+    pub const fn dozeen(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Dozeen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Doze mode enable bit"]
     #[inline(always)]
-    pub const fn set_dozeen(&mut self, val: super::vals::Dozeen) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_dozeen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "This bit is to support Flash Octal mode access by combining Port A and B Data pins (A_DATA\\[3:0\\] and B_DATA\\[3:0\\]), when Port A and Port B are of 4 bit data width."]
     #[must_use]
@@ -2343,7 +2343,7 @@ impl defmt::Format for Mcr0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mcr0 {{ swreset: {=bool:?}, mdis: {=bool:?}, rxclksrc: {:?}, ardfen: {:?}, atdfen: {:?}, serclkdiv: {:?}, hsen: {:?}, dozeen: {:?}, combinationen: {=bool:?}, sckfreerunen: {=bool:?}, ipgrantwait: {=u8:?}, ahbgrantwait: {=u8:?} }}",
+            "Mcr0 {{ swreset: {=bool:?}, mdis: {=bool:?}, rxclksrc: {:?}, ardfen: {=bool:?}, atdfen: {=bool:?}, serclkdiv: {:?}, hsen: {=bool:?}, dozeen: {=bool:?}, combinationen: {=bool:?}, sckfreerunen: {=bool:?}, ipgrantwait: {=u8:?}, ahbgrantwait: {=u8:?} }}",
             self.swreset(),
             self.mdis(),
             self.rxclksrc(),
@@ -2434,14 +2434,14 @@ impl Mcr2 {
     #[doc = "All external devices are same devices (both in types and size) for A1/A2/B1/B2."]
     #[must_use]
     #[inline(always)]
-    pub const fn samedeviceen(&self) -> super::vals::Samedeviceen {
+    pub const fn samedeviceen(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Samedeviceen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "All external devices are same devices (both in types and size) for A1/A2/B1/B2."]
     #[inline(always)]
-    pub const fn set_samedeviceen(&mut self, val: super::vals::Samedeviceen) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_samedeviceen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "B_SCLK pad can be used as A_SCLK differential clock output (inverted clock to A_SCLK). In this case, port B flash access is not available. After changing the value of this field, MCR0\\[SWRESET\\] should be set."]
     #[must_use]
@@ -2489,7 +2489,7 @@ impl defmt::Format for Mcr2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mcr2 {{ clrahbbufopt: {:?}, samedeviceen: {:?}, sckbdiffopt: {:?}, resumewait: {=u8:?} }}",
+            "Mcr2 {{ clrahbbufopt: {:?}, samedeviceen: {=bool:?}, sckbdiffopt: {:?}, resumewait: {=u8:?} }}",
             self.clrahbbufopt(),
             self.samedeviceen(),
             self.sckbdiffopt(),

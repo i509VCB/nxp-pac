@@ -6,62 +6,62 @@ impl Reg0 {
     #[doc = "Power Down Zero Cross Detection"]
     #[must_use]
     #[inline(always)]
-    pub const fn pwd_zcd(&self) -> super::vals::PwdZcd {
+    pub const fn pwd_zcd(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::PwdZcd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Power Down Zero Cross Detection"]
     #[inline(always)]
-    pub const fn set_pwd_zcd(&mut self, val: super::vals::PwdZcd) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_pwd_zcd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Disable Auto Clock Switch"]
     #[must_use]
     #[inline(always)]
-    pub const fn disable_auto_clk_switch(&self) -> super::vals::DisableAutoClkSwitch {
+    pub const fn disable_auto_clk_switch(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::DisableAutoClkSwitch::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Disable Auto Clock Switch"]
     #[inline(always)]
-    pub const fn set_disable_auto_clk_switch(&mut self, val: super::vals::DisableAutoClkSwitch) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_disable_auto_clk_switch(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Select Clock"]
     #[must_use]
     #[inline(always)]
-    pub const fn sel_clk(&self) -> super::vals::SelClk {
+    pub const fn sel_clk(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::SelClk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Select Clock"]
     #[inline(always)]
-    pub const fn set_sel_clk(&mut self, val: super::vals::SelClk) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_sel_clk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Power down internal osc"]
     #[must_use]
     #[inline(always)]
-    pub const fn pwd_osc_int(&self) -> super::vals::PwdOscInt {
+    pub const fn pwd_osc_int(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::PwdOscInt::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Power down internal osc"]
     #[inline(always)]
-    pub const fn set_pwd_osc_int(&mut self, val: super::vals::PwdOscInt) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_pwd_osc_int(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Power down signal of the current detector."]
     #[must_use]
     #[inline(always)]
-    pub const fn pwd_cur_sns_cmp(&self) -> super::vals::PwdCurSnsCmp {
+    pub const fn pwd_cur_sns_cmp(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::PwdCurSnsCmp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Power down signal of the current detector."]
     #[inline(always)]
-    pub const fn set_pwd_cur_sns_cmp(&mut self, val: super::vals::PwdCurSnsCmp) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_pwd_cur_sns_cmp(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Current Sense (detector) Threshold"]
     #[must_use]
@@ -78,14 +78,14 @@ impl Reg0 {
     #[doc = "Power down overcurrent detection comparator"]
     #[must_use]
     #[inline(always)]
-    pub const fn pwd_overcur_det(&self) -> super::vals::PwdOvercurDet {
+    pub const fn pwd_overcur_det(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::PwdOvercurDet::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Power down overcurrent detection comparator"]
     #[inline(always)]
-    pub const fn set_pwd_overcur_det(&mut self, val: super::vals::PwdOvercurDet) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_pwd_overcur_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Overcurrent Trigger Adjust"]
     #[must_use]
@@ -102,14 +102,14 @@ impl Reg0 {
     #[doc = "Power Down Battery Detection Comparator"]
     #[must_use]
     #[inline(always)]
-    pub const fn pwd_cmp_batt_det(&self) -> super::vals::PwdCmpBattDet {
+    pub const fn pwd_cmp_batt_det(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::PwdCmpBattDet::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Power Down Battery Detection Comparator"]
     #[inline(always)]
-    pub const fn set_pwd_cmp_batt_det(&mut self, val: super::vals::PwdCmpBattDet) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_pwd_cmp_batt_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Low Power Overload Sense Enable"]
     #[must_use]
@@ -126,14 +126,14 @@ impl Reg0 {
     #[doc = "Power Down High Voltage Detection"]
     #[must_use]
     #[inline(always)]
-    pub const fn pwd_high_volt_det(&self) -> super::vals::PwdHighVoltDet {
+    pub const fn pwd_high_volt_det(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::PwdHighVoltDet::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Power Down High Voltage Detection"]
     #[inline(always)]
-    pub const fn set_pwd_high_volt_det(&mut self, val: super::vals::PwdHighVoltDet) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_pwd_high_volt_det(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Low Power Overload Threshold"]
     #[must_use]
@@ -150,50 +150,50 @@ impl Reg0 {
     #[doc = "Low Power Overload Frequency Select"]
     #[must_use]
     #[inline(always)]
-    pub const fn lp_overload_freq_sel(&self) -> super::vals::LpOverloadFreqSel {
+    pub const fn lp_overload_freq_sel(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::LpOverloadFreqSel::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Low Power Overload Frequency Select"]
     #[inline(always)]
-    pub const fn set_lp_overload_freq_sel(&mut self, val: super::vals::LpOverloadFreqSel) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_lp_overload_freq_sel(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "Low Power High Hysteric Value"]
     #[must_use]
     #[inline(always)]
-    pub const fn lp_high_hys(&self) -> super::vals::LpHighHys {
+    pub const fn lp_high_hys(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::LpHighHys::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Low Power High Hysteric Value"]
     #[inline(always)]
-    pub const fn set_lp_high_hys(&mut self, val: super::vals::LpHighHys) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_lp_high_hys(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "Power down output range comparator"]
     #[must_use]
     #[inline(always)]
-    pub const fn pwd_cmp_offset(&self) -> super::vals::PwdCmpOffset {
+    pub const fn pwd_cmp_offset(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::PwdCmpOffset::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Power down output range comparator"]
     #[inline(always)]
-    pub const fn set_pwd_cmp_offset(&mut self, val: super::vals::PwdCmpOffset) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_pwd_cmp_offset(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "Disable xtalok detection circuit"]
     #[must_use]
     #[inline(always)]
-    pub const fn xtalok_disable(&self) -> super::vals::XtalokDisable {
+    pub const fn xtalok_disable(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::XtalokDisable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Disable xtalok detection circuit"]
     #[inline(always)]
-    pub const fn set_xtalok_disable(&mut self, val: super::vals::XtalokDisable) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_xtalok_disable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
     #[doc = "Reset Current Alert Signal"]
     #[must_use]
@@ -210,14 +210,14 @@ impl Reg0 {
     #[doc = "24M XTAL OK"]
     #[must_use]
     #[inline(always)]
-    pub const fn xtal_24m_ok(&self) -> super::vals::Xtal24mOk {
+    pub const fn xtal_24m_ok(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::Xtal24mOk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "24M XTAL OK"]
     #[inline(always)]
-    pub const fn set_xtal_24m_ok(&mut self, val: super::vals::Xtal24mOk) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_xtal_24m_ok(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "DCDC Output OK"]
     #[must_use]
@@ -268,7 +268,7 @@ impl defmt::Format for Reg0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Reg0 {{ pwd_zcd: {:?}, disable_auto_clk_switch: {:?}, sel_clk: {:?}, pwd_osc_int: {:?}, pwd_cur_sns_cmp: {:?}, cur_sns_thrsh: {:?}, pwd_overcur_det: {:?}, overcur_trig_adj: {:?}, pwd_cmp_batt_det: {:?}, en_lp_overload_sns: {=bool:?}, pwd_high_volt_det: {:?}, lp_overload_thrsh: {:?}, lp_overload_freq_sel: {:?}, lp_high_hys: {:?}, pwd_cmp_offset: {:?}, xtalok_disable: {:?}, current_alert_reset: {=bool:?}, xtal_24m_ok: {:?}, sts_dc_ok: {=bool:?} }}",
+            "Reg0 {{ pwd_zcd: {=bool:?}, disable_auto_clk_switch: {=bool:?}, sel_clk: {=bool:?}, pwd_osc_int: {=bool:?}, pwd_cur_sns_cmp: {=bool:?}, cur_sns_thrsh: {:?}, pwd_overcur_det: {=bool:?}, overcur_trig_adj: {:?}, pwd_cmp_batt_det: {=bool:?}, en_lp_overload_sns: {=bool:?}, pwd_high_volt_det: {=bool:?}, lp_overload_thrsh: {:?}, lp_overload_freq_sel: {=bool:?}, lp_high_hys: {=bool:?}, pwd_cmp_offset: {=bool:?}, xtalok_disable: {=bool:?}, current_alert_reset: {=bool:?}, xtal_24m_ok: {=bool:?}, sts_dc_ok: {=bool:?} }}",
             self.pwd_zcd(),
             self.disable_auto_clk_switch(),
             self.sel_clk(),
@@ -311,14 +311,14 @@ impl Reg1 {
     #[doc = "This controls the load resistor of the internal regulator of DCDC"]
     #[must_use]
     #[inline(always)]
-    pub const fn reg_rload_sw(&self) -> super::vals::RegRloadSw {
+    pub const fn reg_rload_sw(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::RegRloadSw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This controls the load resistor of the internal regulator of DCDC"]
     #[inline(always)]
-    pub const fn set_reg_rload_sw(&mut self, val: super::vals::RegRloadSw) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_reg_rload_sw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Low Power Comparator Current Bias"]
     #[must_use]
@@ -335,14 +335,14 @@ impl Reg1 {
     #[doc = "Increase Threshold Detection"]
     #[must_use]
     #[inline(always)]
-    pub const fn loopctrl_hst_thresh(&self) -> super::vals::LoopctrlHstThresh {
+    pub const fn loopctrl_hst_thresh(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::LoopctrlHstThresh::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Increase Threshold Detection"]
     #[inline(always)]
-    pub const fn set_loopctrl_hst_thresh(&mut self, val: super::vals::LoopctrlHstThresh) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_loopctrl_hst_thresh(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "Enable Hysteresis"]
     #[must_use]
@@ -392,7 +392,7 @@ impl defmt::Format for Reg1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Reg1 {{ reg_fbk_sel: {:?}, reg_rload_sw: {:?}, lp_cmp_isrc_sel: {:?}, loopctrl_hst_thresh: {:?}, loopctrl_en_hyst: {=bool:?}, vbg_trim: {=u8:?} }}",
+            "Reg1 {{ reg_fbk_sel: {:?}, reg_rload_sw: {=bool:?}, lp_cmp_isrc_sel: {:?}, loopctrl_hst_thresh: {=bool:?}, loopctrl_en_hyst: {=bool:?}, vbg_trim: {=u8:?} }}",
             self.reg_fbk_sel(),
             self.reg_rload_sw(),
             self.lp_cmp_isrc_sel(),
@@ -458,14 +458,14 @@ impl Reg2 {
     #[doc = "Disable Pulse Skip"]
     #[must_use]
     #[inline(always)]
-    pub const fn disable_pulse_skip(&self) -> super::vals::DisablePulseSkip {
+    pub const fn disable_pulse_skip(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::DisablePulseSkip::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Disable Pulse Skip"]
     #[inline(always)]
-    pub const fn set_disable_pulse_skip(&mut self, val: super::vals::DisablePulseSkip) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_disable_pulse_skip(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
     #[doc = "DCM Set Control"]
     #[must_use]
@@ -503,7 +503,7 @@ impl defmt::Format for Reg2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Reg2 {{ loopctrl_dc_ff: {=u8:?}, loopctrl_en_rcscale: {=u8:?}, loopctrl_rcscale_thrsh: {=bool:?}, loopctrl_hyst_sign: {=bool:?}, disable_pulse_skip: {:?}, dcm_set_ctrl: {=bool:?} }}",
+            "Reg2 {{ loopctrl_dc_ff: {=u8:?}, loopctrl_en_rcscale: {=u8:?}, loopctrl_rcscale_thrsh: {=bool:?}, loopctrl_hyst_sign: {=bool:?}, disable_pulse_skip: {=bool:?}, dcm_set_ctrl: {=bool:?} }}",
             self.loopctrl_dc_ff(),
             self.loopctrl_en_rcscale(),
             self.loopctrl_rcscale_thrsh(),
@@ -545,26 +545,26 @@ impl Reg3 {
     #[doc = "Set DCDC clock to half frequency for continuous mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn minpwr_dc_halfclk(&self) -> super::vals::MinpwrDcHalfclk {
+    pub const fn minpwr_dc_halfclk(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::MinpwrDcHalfclk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Set DCDC clock to half frequency for continuous mode"]
     #[inline(always)]
-    pub const fn set_minpwr_dc_halfclk(&mut self, val: super::vals::MinpwrDcHalfclk) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_minpwr_dc_halfclk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "Disable Step"]
     #[must_use]
     #[inline(always)]
-    pub const fn disable_step(&self) -> super::vals::DisableStep {
+    pub const fn disable_step(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::DisableStep::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Disable Step"]
     #[inline(always)]
-    pub const fn set_disable_step(&mut self, val: super::vals::DisableStep) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_disable_step(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
 }
 impl Default for Reg3 {
@@ -588,7 +588,7 @@ impl defmt::Format for Reg3 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Reg3 {{ trg: {=u8:?}, target_lp: {:?}, minpwr_dc_halfclk: {:?}, disable_step: {:?} }}",
+            "Reg3 {{ trg: {=u8:?}, target_lp: {:?}, minpwr_dc_halfclk: {=bool:?}, disable_step: {=bool:?} }}",
             self.trg(),
             self.target_lp(),
             self.minpwr_dc_halfclk(),

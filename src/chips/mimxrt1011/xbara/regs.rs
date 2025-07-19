@@ -6,26 +6,26 @@ impl Ctrl0 {
     #[doc = "DMA Enable for XBAR_OUT0"]
     #[must_use]
     #[inline(always)]
-    pub const fn den0(&self) -> super::vals::Den0 {
+    pub const fn den0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Den0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA Enable for XBAR_OUT0"]
     #[inline(always)]
-    pub const fn set_den0(&mut self, val: super::vals::Den0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_den0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "Interrupt Enable for XBAR_OUT0"]
     #[must_use]
     #[inline(always)]
-    pub const fn ien0(&self) -> super::vals::Ien0 {
+    pub const fn ien0(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Ien0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt Enable for XBAR_OUT0"]
     #[inline(always)]
-    pub const fn set_ien0(&mut self, val: super::vals::Ien0) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u16) & 0x01) << 1usize);
+    pub const fn set_ien0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
     }
     #[doc = "Active edge for edge detection on XBAR_OUT0"]
     #[must_use]
@@ -42,38 +42,38 @@ impl Ctrl0 {
     #[doc = "Edge detection status for XBAR_OUT0"]
     #[must_use]
     #[inline(always)]
-    pub const fn sts0(&self) -> super::vals::Sts0 {
+    pub const fn sts0(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Sts0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Edge detection status for XBAR_OUT0"]
     #[inline(always)]
-    pub const fn set_sts0(&mut self, val: super::vals::Sts0) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u16) & 0x01) << 4usize);
+    pub const fn set_sts0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u16) & 0x01) << 4usize);
     }
     #[doc = "DMA Enable for XBAR_OUT1"]
     #[must_use]
     #[inline(always)]
-    pub const fn den1(&self) -> super::vals::Den1 {
+    pub const fn den1(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Den1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA Enable for XBAR_OUT1"]
     #[inline(always)]
-    pub const fn set_den1(&mut self, val: super::vals::Den1) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u16) & 0x01) << 8usize);
+    pub const fn set_den1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
     }
     #[doc = "Interrupt Enable for XBAR_OUT1"]
     #[must_use]
     #[inline(always)]
-    pub const fn ien1(&self) -> super::vals::Ien1 {
+    pub const fn ien1(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Ien1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt Enable for XBAR_OUT1"]
     #[inline(always)]
-    pub const fn set_ien1(&mut self, val: super::vals::Ien1) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u16) & 0x01) << 9usize);
+    pub const fn set_ien1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
     }
     #[doc = "Active edge for edge detection on XBAR_OUT1"]
     #[must_use]
@@ -90,14 +90,14 @@ impl Ctrl0 {
     #[doc = "Edge detection status for XBAR_OUT1"]
     #[must_use]
     #[inline(always)]
-    pub const fn sts1(&self) -> super::vals::Sts1 {
+    pub const fn sts1(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Sts1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Edge detection status for XBAR_OUT1"]
     #[inline(always)]
-    pub const fn set_sts1(&mut self, val: super::vals::Sts1) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u16) & 0x01) << 12usize);
+    pub const fn set_sts1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u16) & 0x01) << 12usize);
     }
 }
 impl Default for Ctrl0 {
@@ -125,7 +125,7 @@ impl defmt::Format for Ctrl0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl0 {{ den0: {:?}, ien0: {:?}, edge0: {:?}, sts0: {:?}, den1: {:?}, ien1: {:?}, edge1: {:?}, sts1: {:?} }}",
+            "Ctrl0 {{ den0: {=bool:?}, ien0: {=bool:?}, edge0: {:?}, sts0: {=bool:?}, den1: {=bool:?}, ien1: {=bool:?}, edge1: {:?}, sts1: {=bool:?} }}",
             self.den0(),
             self.ien0(),
             self.edge0(),
@@ -145,26 +145,26 @@ impl Ctrl1 {
     #[doc = "DMA Enable for XBAR_OUT2"]
     #[must_use]
     #[inline(always)]
-    pub const fn den2(&self) -> super::vals::Den2 {
+    pub const fn den2(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Den2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA Enable for XBAR_OUT2"]
     #[inline(always)]
-    pub const fn set_den2(&mut self, val: super::vals::Den2) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_den2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "Interrupt Enable for XBAR_OUT2"]
     #[must_use]
     #[inline(always)]
-    pub const fn ien2(&self) -> super::vals::Ien2 {
+    pub const fn ien2(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Ien2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt Enable for XBAR_OUT2"]
     #[inline(always)]
-    pub const fn set_ien2(&mut self, val: super::vals::Ien2) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u16) & 0x01) << 1usize);
+    pub const fn set_ien2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
     }
     #[doc = "Active edge for edge detection on XBAR_OUT2"]
     #[must_use]
@@ -181,38 +181,38 @@ impl Ctrl1 {
     #[doc = "Edge detection status for XBAR_OUT2"]
     #[must_use]
     #[inline(always)]
-    pub const fn sts2(&self) -> super::vals::Sts2 {
+    pub const fn sts2(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Sts2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Edge detection status for XBAR_OUT2"]
     #[inline(always)]
-    pub const fn set_sts2(&mut self, val: super::vals::Sts2) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u16) & 0x01) << 4usize);
+    pub const fn set_sts2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u16) & 0x01) << 4usize);
     }
     #[doc = "DMA Enable for XBAR_OUT3"]
     #[must_use]
     #[inline(always)]
-    pub const fn den3(&self) -> super::vals::Den3 {
+    pub const fn den3(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Den3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA Enable for XBAR_OUT3"]
     #[inline(always)]
-    pub const fn set_den3(&mut self, val: super::vals::Den3) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u16) & 0x01) << 8usize);
+    pub const fn set_den3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
     }
     #[doc = "Interrupt Enable for XBAR_OUT3"]
     #[must_use]
     #[inline(always)]
-    pub const fn ien3(&self) -> super::vals::Ien3 {
+    pub const fn ien3(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Ien3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt Enable for XBAR_OUT3"]
     #[inline(always)]
-    pub const fn set_ien3(&mut self, val: super::vals::Ien3) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u16) & 0x01) << 9usize);
+    pub const fn set_ien3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
     }
     #[doc = "Active edge for edge detection on XBAR_OUT3"]
     #[must_use]
@@ -229,14 +229,14 @@ impl Ctrl1 {
     #[doc = "Edge detection status for XBAR_OUT3"]
     #[must_use]
     #[inline(always)]
-    pub const fn sts3(&self) -> super::vals::Sts3 {
+    pub const fn sts3(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Sts3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Edge detection status for XBAR_OUT3"]
     #[inline(always)]
-    pub const fn set_sts3(&mut self, val: super::vals::Sts3) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u16) & 0x01) << 12usize);
+    pub const fn set_sts3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u16) & 0x01) << 12usize);
     }
 }
 impl Default for Ctrl1 {
@@ -264,7 +264,7 @@ impl defmt::Format for Ctrl1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl1 {{ den2: {:?}, ien2: {:?}, edge2: {:?}, sts2: {:?}, den3: {:?}, ien3: {:?}, edge3: {:?}, sts3: {:?} }}",
+            "Ctrl1 {{ den2: {=bool:?}, ien2: {=bool:?}, edge2: {:?}, sts2: {=bool:?}, den3: {=bool:?}, ien3: {=bool:?}, edge3: {:?}, sts3: {=bool:?} }}",
             self.den2(),
             self.ien2(),
             self.edge2(),

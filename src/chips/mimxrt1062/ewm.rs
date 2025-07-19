@@ -46,4 +46,3 @@ impl Ewm {
     }
 }
 pub mod regs;
-pub mod vals;

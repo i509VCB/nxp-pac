@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: tsc::vals::(AdcCocoClear|AdcCocoClearDisable|AutoMeasure|DebugEn|Detect|DetectIntEn|DetectSigEn|Disable|DropMeasure|IdleSw|IdleSwIntEn|IdleSwSigEn|Intermediate|Measure|MeasureIntEn|StartMeasure|StartSense|Trigger|Valid|ValidSigEn|Wiper200kPullUp|WiperPullDown|WiperPullUp|Xnur200kPullUp|XnurPullDown|XnurPullUp|Xpul200kPullUp|XpulPullDown|XpulPullUp|Ynlr200kPullUp|YnlrPullDown|YnlrPullUp|Ypll200kPullUp|YpllPullDown|YpllPullUp)
+    bit_size: 1

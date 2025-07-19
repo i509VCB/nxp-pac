@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: flexspi::vals::(Aparen|Ardfen|Atdfen|Bufferableen|Cachableen|Dozeen|Hsen|Rxdmaen|Samedeviceen|Txdmaen|Wmena|Wmenb)
+    bit_size: 1

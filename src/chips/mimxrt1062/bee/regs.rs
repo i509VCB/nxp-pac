@@ -560,14 +560,14 @@ impl Ctrl {
     #[doc = "BEE enable bit"]
     #[must_use]
     #[inline(always)]
-    pub const fn bee_enable(&self) -> super::vals::BeeEnable {
+    pub const fn bee_enable(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::BeeEnable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "BEE enable bit"]
     #[inline(always)]
-    pub const fn set_bee_enable(&mut self, val: super::vals::BeeEnable) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_bee_enable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Clock enable input, low inactive"]
     #[must_use]
@@ -632,14 +632,14 @@ impl Ctrl {
     #[doc = "Endian swap control for the 16 bytes input and output data of AES core."]
     #[must_use]
     #[inline(always)]
-    pub const fn little_endian(&self) -> super::vals::LittleEndian {
+    pub const fn little_endian(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::LittleEndian::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Endian swap control for the 16 bytes input and output data of AES core."]
     #[inline(always)]
-    pub const fn set_little_endian(&mut self, val: super::vals::LittleEndian) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_little_endian(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Security level of the allowed access for memory region0"]
     #[must_use]
@@ -900,7 +900,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ bee_enable: {:?}, ctrl_clk_en: {=bool:?}, ctrl_sftrst_n: {=bool:?}, key_valid: {=bool:?}, key_region_sel: {:?}, ac_prot_en: {=bool:?}, little_endian: {:?}, security_level_r0: {=u8:?}, ctrl_aes_mode_r0: {:?}, security_level_r1: {=u8:?}, ctrl_aes_mode_r1: {:?}, bee_enable_lock: {=bool:?}, ctrl_clk_en_lock: {=bool:?}, ctrl_sftrst_n_lock: {=bool:?}, region1_addr_lock: {=bool:?}, key_valid_lock: {=bool:?}, key_region_sel_lock: {=bool:?}, ac_prot_en_lock: {=bool:?}, little_endian_lock: {=bool:?}, security_level_r0_lock: {=u8:?}, ctrl_aes_mode_r0_lock: {=bool:?}, region0_key_lock: {=bool:?}, security_level_r1_lock: {=u8:?}, ctrl_aes_mode_r1_lock: {=bool:?}, region1_key_lock: {=bool:?} }}",
+            "Ctrl {{ bee_enable: {=bool:?}, ctrl_clk_en: {=bool:?}, ctrl_sftrst_n: {=bool:?}, key_valid: {=bool:?}, key_region_sel: {:?}, ac_prot_en: {=bool:?}, little_endian: {=bool:?}, security_level_r0: {=u8:?}, ctrl_aes_mode_r0: {:?}, security_level_r1: {=u8:?}, ctrl_aes_mode_r1: {:?}, bee_enable_lock: {=bool:?}, ctrl_clk_en_lock: {=bool:?}, ctrl_sftrst_n_lock: {=bool:?}, region1_addr_lock: {=bool:?}, key_valid_lock: {=bool:?}, key_region_sel_lock: {=bool:?}, ac_prot_en_lock: {=bool:?}, little_endian_lock: {=bool:?}, security_level_r0_lock: {=u8:?}, ctrl_aes_mode_r0_lock: {=bool:?}, region0_key_lock: {=bool:?}, security_level_r1_lock: {=u8:?}, ctrl_aes_mode_r1_lock: {=bool:?}, region1_key_lock: {=bool:?} }}",
             self.bee_enable(),
             self.ctrl_clk_en(),
             self.ctrl_sftrst_n(),

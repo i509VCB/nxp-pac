@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: xbara::vals::(Den0|Den1|Den2|Den3|Ien0|Ien1|Ien2|Ien3|Sts0|Sts1|Sts2|Sts3)
+    bit_size: 1

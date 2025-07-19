@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: acmp::vals::(Cff|Cfr|Cos|Dacen|Dmaen|En|Ief|Ier|Inv|Ope|Pmode|Se|Vrsel|We)
+    bit_size: 1

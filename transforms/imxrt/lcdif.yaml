@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: lcdif::vals::(CtrlClrDataFormat18Bit|CtrlClrDataFormat24Bit|CtrlDataFormat18Bit|CtrlDataFormat24Bit|CtrlSetDataFormat18Bit|CtrlSetDataFormat24Bit|CtrlTogDataFormat18Bit|CtrlTogDataFormat24Bit|Pigeon00Pol|Pigeon100Pol|Pigeon10Pol|Pigeon110Pol|Pigeon20Pol|Pigeon30Pol|Pigeon40Pol|Pigeon50Pol|Pigeon60Pol|Pigeon70Pol|Pigeon80Pol|Pigeon90Pol)
+    bit_size: 1

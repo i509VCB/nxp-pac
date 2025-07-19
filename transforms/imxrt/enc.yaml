@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: enc::vals::(Cmpie|Cmpirq|Die|Dir|Dirq|Hie|Hip|Hirq|Hne|Mod|Outctl|Ph1|Qdn|Rev|Revmod|Roie|Roirq|Ruie|Ruirq|Swip|Tce|Ten|Updhld|Updpos|Wde|Xie|Xip|Xirq|Xne)
+    bit_size: 1

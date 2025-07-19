@@ -18,50 +18,50 @@ impl Hpcomr {
     #[doc = "SSM Secure to Trusted State Transition Disable When set, disables the SSM transition from secure to trusted state"]
     #[must_use]
     #[inline(always)]
-    pub const fn ssm_st_dis(&self) -> super::vals::SsmStDis {
+    pub const fn ssm_st_dis(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::SsmStDis::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SSM Secure to Trusted State Transition Disable When set, disables the SSM transition from secure to trusted state"]
     #[inline(always)]
-    pub const fn set_ssm_st_dis(&mut self, val: super::vals::SsmStDis) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_ssm_st_dis(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "SSM Soft Fail to Non-Secure State Transition Disable When set, it disables the SSM transition from soft fail to non-secure state"]
     #[must_use]
     #[inline(always)]
-    pub const fn ssm_sfns_dis(&self) -> super::vals::SsmSfnsDis {
+    pub const fn ssm_sfns_dis(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::SsmSfnsDis::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SSM Soft Fail to Non-Secure State Transition Disable When set, it disables the SSM transition from soft fail to non-secure state"]
     #[inline(always)]
-    pub const fn set_ssm_sfns_dis(&mut self, val: super::vals::SsmSfnsDis) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_ssm_sfns_dis(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "LP Software Reset When set to 1, most registers in the SNVS_LP section are reset, but the following registers are not reset by an LP software reset: Monotonic Counter Secure Real Time Counter Time Alarm Register This bit cannot be set when the LP_SWR_DIS bit is set"]
     #[must_use]
     #[inline(always)]
-    pub const fn lp_swr(&self) -> super::vals::LpSwr {
+    pub const fn lp_swr(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::LpSwr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LP Software Reset When set to 1, most registers in the SNVS_LP section are reset, but the following registers are not reset by an LP software reset: Monotonic Counter Secure Real Time Counter Time Alarm Register This bit cannot be set when the LP_SWR_DIS bit is set"]
     #[inline(always)]
-    pub const fn set_lp_swr(&mut self, val: super::vals::LpSwr) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_lp_swr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "LP Software Reset Disable When set, disables the LP software reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn lp_swr_dis(&self) -> super::vals::LpSwrDis {
+    pub const fn lp_swr_dis(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::LpSwrDis::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LP Software Reset Disable When set, disables the LP software reset"]
     #[inline(always)]
-    pub const fn set_lp_swr_dis(&mut self, val: super::vals::LpSwrDis) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_lp_swr_dis(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Software Security Violation When set, the system security monitor treats this bit as a non-fatal security violation"]
     #[must_use]
@@ -114,14 +114,14 @@ impl Hpcomr {
     #[doc = "Master Key Select Enable When not set, the one time programmable (OTP) master key is selected by default"]
     #[must_use]
     #[inline(always)]
-    pub const fn mks_en(&self) -> super::vals::MksEn {
+    pub const fn mks_en(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::MksEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Master Key Select Enable When not set, the one time programmable (OTP) master key is selected by default"]
     #[inline(always)]
-    pub const fn set_mks_en(&mut self, val: super::vals::MksEn) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_mks_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "High Assurance Counter Enable This bit controls the SSM transition from the soft fail to the hard fail state"]
     #[must_use]
@@ -138,26 +138,26 @@ impl Hpcomr {
     #[doc = "High Assurance Counter Load When set, it loads the High Assurance Counter Register with the value of the High Assurance Counter Load Register"]
     #[must_use]
     #[inline(always)]
-    pub const fn hac_load(&self) -> super::vals::HacLoad {
+    pub const fn hac_load(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::HacLoad::from_bits(val as u8)
+        val != 0
     }
     #[doc = "High Assurance Counter Load When set, it loads the High Assurance Counter Register with the value of the High Assurance Counter Load Register"]
     #[inline(always)]
-    pub const fn set_hac_load(&mut self, val: super::vals::HacLoad) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_hac_load(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "High Assurance Counter Clear When set, it clears the High Assurance Counter Register"]
     #[must_use]
     #[inline(always)]
-    pub const fn hac_clear(&self) -> super::vals::HacClear {
+    pub const fn hac_clear(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::HacClear::from_bits(val as u8)
+        val != 0
     }
     #[doc = "High Assurance Counter Clear When set, it clears the High Assurance Counter Register"]
     #[inline(always)]
-    pub const fn set_hac_clear(&mut self, val: super::vals::HacClear) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_hac_clear(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "High Assurance Counter Stop This bit can be set only when SSM is in soft fail state"]
     #[must_use]
@@ -216,7 +216,7 @@ impl defmt::Format for Hpcomr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Hpcomr {{ ssm_st: {=bool:?}, ssm_st_dis: {:?}, ssm_sfns_dis: {:?}, lp_swr: {:?}, lp_swr_dis: {:?}, sw_sv: {=bool:?}, sw_fsv: {=bool:?}, sw_lpsv: {=bool:?}, prog_zmk: {:?}, mks_en: {:?}, hac_en: {=bool:?}, hac_load: {:?}, hac_clear: {:?}, hac_stop: {=bool:?}, npswa_en: {=bool:?} }}",
+            "Hpcomr {{ ssm_st: {=bool:?}, ssm_st_dis: {=bool:?}, ssm_sfns_dis: {=bool:?}, lp_swr: {=bool:?}, lp_swr_dis: {=bool:?}, sw_sv: {=bool:?}, sw_fsv: {=bool:?}, sw_lpsv: {=bool:?}, prog_zmk: {:?}, mks_en: {=bool:?}, hac_en: {=bool:?}, hac_load: {=bool:?}, hac_clear: {=bool:?}, hac_stop: {=bool:?}, npswa_en: {=bool:?} }}",
             self.ssm_st(),
             self.ssm_st_dis(),
             self.ssm_sfns_dis(),
@@ -267,14 +267,14 @@ impl Hpcr {
     #[doc = "Disable periodic interrupt in the functional interrupt"]
     #[must_use]
     #[inline(always)]
-    pub const fn dis_pi(&self) -> super::vals::DisPi {
+    pub const fn dis_pi(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::DisPi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Disable periodic interrupt in the functional interrupt"]
     #[inline(always)]
-    pub const fn set_dis_pi(&mut self, val: super::vals::DisPi) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_dis_pi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "HP Periodic Interrupt Enable The periodic interrupt can be generated only if the HP Real Time Counter is enabled"]
     #[must_use]
@@ -327,14 +327,14 @@ impl Hpcr {
     #[doc = "HP Time Synchronize"]
     #[must_use]
     #[inline(always)]
-    pub const fn hp_ts(&self) -> super::vals::HpTs {
+    pub const fn hp_ts(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::HpTs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "HP Time Synchronize"]
     #[inline(always)]
-    pub const fn set_hp_ts(&mut self, val: super::vals::HpTs) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_hp_ts(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Button Configuration"]
     #[must_use]
@@ -388,7 +388,7 @@ impl defmt::Format for Hpcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Hpcr {{ rtc_en: {=bool:?}, hpta_en: {=bool:?}, dis_pi: {:?}, pi_en: {=bool:?}, pi_freq: {:?}, hpcalb_en: {=bool:?}, hpcalb_val: {:?}, hp_ts: {:?}, btn_config: {=u8:?}, btn_mask: {=bool:?} }}",
+            "Hpcr {{ rtc_en: {=bool:?}, hpta_en: {=bool:?}, dis_pi: {=bool:?}, pi_en: {=bool:?}, pi_freq: {:?}, hpcalb_en: {=bool:?}, hpcalb_val: {:?}, hp_ts: {=bool:?}, btn_config: {=u8:?}, btn_mask: {=bool:?} }}",
             self.rtc_en(),
             self.hpta_en(),
             self.dis_pi(),
@@ -524,14 +524,14 @@ impl Hplr {
     #[doc = "LP Calibration Soft Lock When set, prevents any writes to the LP Calibration Value (LPCALB_VAL) and LP Calibration Enable (LPCALB_EN)"]
     #[must_use]
     #[inline(always)]
-    pub const fn lpcalb_sl(&self) -> super::vals::LpcalbSl {
+    pub const fn lpcalb_sl(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::LpcalbSl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LP Calibration Soft Lock When set, prevents any writes to the LP Calibration Value (LPCALB_VAL) and LP Calibration Enable (LPCALB_EN)"]
     #[inline(always)]
-    pub const fn set_lpcalb_sl(&mut self, val: super::vals::LpcalbSl) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_lpcalb_sl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Monotonic Counter Soft Lock When set, prevents any writes (increments) to the MC Registers and MC_ENV bit"]
     #[must_use]
@@ -560,86 +560,86 @@ impl Hplr {
     #[doc = "LP Security Violation Control Register Soft Lock When set, prevents any writes to the LPSVCR"]
     #[must_use]
     #[inline(always)]
-    pub const fn lpsvcr_sl(&self) -> super::vals::LpsvcrSl {
+    pub const fn lpsvcr_sl(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::LpsvcrSl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LP Security Violation Control Register Soft Lock When set, prevents any writes to the LPSVCR"]
     #[inline(always)]
-    pub const fn set_lpsvcr_sl(&mut self, val: super::vals::LpsvcrSl) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_lpsvcr_sl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "LP Tamper Glitch Filter Configuration Register Soft Lock When set, prevents any writes to the LPTGFCR"]
     #[must_use]
     #[inline(always)]
-    pub const fn lptgfcr_sl(&self) -> super::vals::LptgfcrSl {
+    pub const fn lptgfcr_sl(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::LptgfcrSl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LP Tamper Glitch Filter Configuration Register Soft Lock When set, prevents any writes to the LPTGFCR"]
     #[inline(always)]
-    pub const fn set_lptgfcr_sl(&mut self, val: super::vals::LptgfcrSl) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_lptgfcr_sl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "LP Security Events Configuration Register Soft Lock When set, prevents any writes to the LPSECR"]
     #[must_use]
     #[inline(always)]
-    pub const fn lpsecr_sl(&self) -> super::vals::LpsecrSl {
+    pub const fn lpsecr_sl(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::LpsecrSl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LP Security Events Configuration Register Soft Lock When set, prevents any writes to the LPSECR"]
     #[inline(always)]
-    pub const fn set_lpsecr_sl(&mut self, val: super::vals::LpsecrSl) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_lpsecr_sl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Master Key Select Soft Lock When set, prevents any writes to the MASTER_KEY_SEL field of the LPMKCR"]
     #[must_use]
     #[inline(always)]
-    pub const fn mks_sl(&self) -> super::vals::MksSl {
+    pub const fn mks_sl(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::MksSl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Master Key Select Soft Lock When set, prevents any writes to the MASTER_KEY_SEL field of the LPMKCR"]
     #[inline(always)]
-    pub const fn set_mks_sl(&mut self, val: super::vals::MksSl) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_mks_sl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "HP Security Violation Control Register Lock When set, prevents any writes to the HPSVCR"]
     #[must_use]
     #[inline(always)]
-    pub const fn hpsvcr_l(&self) -> super::vals::HpsvcrL {
+    pub const fn hpsvcr_l(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::HpsvcrL::from_bits(val as u8)
+        val != 0
     }
     #[doc = "HP Security Violation Control Register Lock When set, prevents any writes to the HPSVCR"]
     #[inline(always)]
-    pub const fn set_hpsvcr_l(&mut self, val: super::vals::HpsvcrL) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_hpsvcr_l(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "HP Security Interrupt Control Register Lock When set, prevents any writes to the HPSICR"]
     #[must_use]
     #[inline(always)]
-    pub const fn hpsicr_l(&self) -> super::vals::HpsicrL {
+    pub const fn hpsicr_l(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::HpsicrL::from_bits(val as u8)
+        val != 0
     }
     #[doc = "HP Security Interrupt Control Register Lock When set, prevents any writes to the HPSICR"]
     #[inline(always)]
-    pub const fn set_hpsicr_l(&mut self, val: super::vals::HpsicrL) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_hpsicr_l(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "High Assurance Counter Lock When set, prevents any writes to HPHACIVR, HPHACR, and HAC_EN bit of HPCOMR"]
     #[must_use]
     #[inline(always)]
-    pub const fn hac_l(&self) -> super::vals::HacL {
+    pub const fn hac_l(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::HacL::from_bits(val as u8)
+        val != 0
     }
     #[doc = "High Assurance Counter Lock When set, prevents any writes to HPHACIVR, HPHACR, and HAC_EN bit of HPCOMR"]
     #[inline(always)]
-    pub const fn set_hac_l(&mut self, val: super::vals::HacL) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_hac_l(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
 }
 impl Default for Hplr {
@@ -672,7 +672,7 @@ impl defmt::Format for Hplr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Hplr {{ zmk_wsl: {:?}, zmk_rsl: {:?}, srtc_sl: {:?}, lpcalb_sl: {:?}, mc_sl: {:?}, gpr_sl: {:?}, lpsvcr_sl: {:?}, lptgfcr_sl: {:?}, lpsecr_sl: {:?}, mks_sl: {:?}, hpsvcr_l: {:?}, hpsicr_l: {:?}, hac_l: {:?} }}",
+            "Hplr {{ zmk_wsl: {:?}, zmk_rsl: {:?}, srtc_sl: {:?}, lpcalb_sl: {=bool:?}, mc_sl: {:?}, gpr_sl: {:?}, lpsvcr_sl: {=bool:?}, lptgfcr_sl: {=bool:?}, lpsecr_sl: {=bool:?}, mks_sl: {=bool:?}, hpsvcr_l: {=bool:?}, hpsicr_l: {=bool:?}, hac_l: {=bool:?} }}",
             self.zmk_wsl(),
             self.zmk_rsl(),
             self.srtc_sl(),
@@ -892,14 +892,14 @@ impl Hpsr {
     #[doc = "HP Time Alarm Indicates that the HP Time Alarm has occurred since this bit was last cleared."]
     #[must_use]
     #[inline(always)]
-    pub const fn hpta(&self) -> super::vals::Hpta {
+    pub const fn hpta(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Hpta::from_bits(val as u8)
+        val != 0
     }
     #[doc = "HP Time Alarm Indicates that the HP Time Alarm has occurred since this bit was last cleared."]
     #[inline(always)]
-    pub const fn set_hpta(&mut self, val: super::vals::Hpta) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_hpta(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Periodic Interrupt Indicates that periodic interrupt has occurred since this bit was last cleared."]
     #[must_use]
@@ -1050,7 +1050,7 @@ impl defmt::Format for Hpsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Hpsr {{ hpta: {:?}, pi: {:?}, lpdis: {=bool:?}, btn: {=bool:?}, bi: {=bool:?}, ssm_state: {:?}, sys_security_cfg: {:?}, sys_secure_boot: {=bool:?}, otpmk_syndrome: {=u16:?}, otpmk_zero: {:?}, zmk_zero: {:?} }}",
+            "Hpsr {{ hpta: {=bool:?}, pi: {:?}, lpdis: {=bool:?}, btn: {=bool:?}, bi: {=bool:?}, ssm_state: {:?}, sys_security_cfg: {:?}, sys_secure_boot: {=bool:?}, otpmk_syndrome: {=u16:?}, otpmk_zero: {:?}, zmk_zero: {:?} }}",
             self.hpta(),
             self.pi(),
             self.lpdis(),
@@ -1667,26 +1667,26 @@ impl Lpcr {
     #[doc = "If this bit is 1, in the case of a security violation the SRTC stops counting and the SRTC is invalidated (SRTC_ENV bit is cleared)"]
     #[must_use]
     #[inline(always)]
-    pub const fn srtc_inv_en(&self) -> super::vals::SrtcInvEn {
+    pub const fn srtc_inv_en(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::SrtcInvEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "If this bit is 1, in the case of a security violation the SRTC stops counting and the SRTC is invalidated (SRTC_ENV bit is cleared)"]
     #[inline(always)]
-    pub const fn set_srtc_inv_en(&mut self, val: super::vals::SrtcInvEn) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_srtc_inv_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Dumb PMIC Enabled When set, software can control the system power"]
     #[must_use]
     #[inline(always)]
-    pub const fn dp_en(&self) -> super::vals::DpEn {
+    pub const fn dp_en(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::DpEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Dumb PMIC Enabled When set, software can control the system power"]
     #[inline(always)]
-    pub const fn set_dp_en(&mut self, val: super::vals::DpEn) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_dp_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Turn off System Power Asserting this bit causes a signal to be sent to the Power Management IC to turn off the system power"]
     #[must_use]
@@ -1842,7 +1842,7 @@ impl defmt::Format for Lpcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Lpcr {{ srtc_env: {=bool:?}, lpta_en: {=bool:?}, mc_env: {=bool:?}, lpwui_en: {=bool:?}, srtc_inv_en: {:?}, dp_en: {:?}, top: {:?}, lvd_en: {=bool:?}, lpcalb_en: {=bool:?}, lpcalb_val: {:?}, btn_press_time: {=u8:?}, debounce: {=u8:?}, on_time: {=u8:?}, pk_en: {=bool:?}, pk_override: {=bool:?}, gpr_z_dis: {=bool:?} }}",
+            "Lpcr {{ srtc_env: {=bool:?}, lpta_en: {=bool:?}, mc_env: {=bool:?}, lpwui_en: {=bool:?}, srtc_inv_en: {=bool:?}, dp_en: {=bool:?}, top: {:?}, lvd_en: {=bool:?}, lpcalb_en: {=bool:?}, lpcalb_val: {:?}, btn_press_time: {=u8:?}, debounce: {=u8:?}, on_time: {=u8:?}, pk_en: {=bool:?}, pk_override: {=bool:?}, gpr_z_dis: {=bool:?} }}",
             self.srtc_env(),
             self.lpta_en(),
             self.mc_env(),
@@ -2015,14 +2015,14 @@ impl Lplr {
     #[doc = "LP Calibration Hard Lock When set, prevents any writes to the LP Calibration Value (LPCALB_VAL) and LP Calibration Enable (LPCALB_EN)"]
     #[must_use]
     #[inline(always)]
-    pub const fn lpcalb_hl(&self) -> super::vals::LpcalbHl {
+    pub const fn lpcalb_hl(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::LpcalbHl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LP Calibration Hard Lock When set, prevents any writes to the LP Calibration Value (LPCALB_VAL) and LP Calibration Enable (LPCALB_EN)"]
     #[inline(always)]
-    pub const fn set_lpcalb_hl(&mut self, val: super::vals::LpcalbHl) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_lpcalb_hl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Monotonic Counter Hard Lock When set, prevents any writes (increments) to the MC Registers and MC_ENV bit"]
     #[must_use]
@@ -2051,50 +2051,50 @@ impl Lplr {
     #[doc = "LP Security Violation Control Register Hard Lock When set, prevents any writes to the LPSVCR"]
     #[must_use]
     #[inline(always)]
-    pub const fn lpsvcr_hl(&self) -> super::vals::LpsvcrHl {
+    pub const fn lpsvcr_hl(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::LpsvcrHl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LP Security Violation Control Register Hard Lock When set, prevents any writes to the LPSVCR"]
     #[inline(always)]
-    pub const fn set_lpsvcr_hl(&mut self, val: super::vals::LpsvcrHl) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_lpsvcr_hl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "LP Tamper Glitch Filter Configuration Register Hard Lock When set, prevents any writes to the LPTGFCR"]
     #[must_use]
     #[inline(always)]
-    pub const fn lptgfcr_hl(&self) -> super::vals::LptgfcrHl {
+    pub const fn lptgfcr_hl(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::LptgfcrHl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LP Tamper Glitch Filter Configuration Register Hard Lock When set, prevents any writes to the LPTGFCR"]
     #[inline(always)]
-    pub const fn set_lptgfcr_hl(&mut self, val: super::vals::LptgfcrHl) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_lptgfcr_hl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "LP Security Events Configuration Register Hard Lock When set, prevents any writes to the LPSECR"]
     #[must_use]
     #[inline(always)]
-    pub const fn lpsecr_hl(&self) -> super::vals::LpsecrHl {
+    pub const fn lpsecr_hl(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::LpsecrHl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LP Security Events Configuration Register Hard Lock When set, prevents any writes to the LPSECR"]
     #[inline(always)]
-    pub const fn set_lpsecr_hl(&mut self, val: super::vals::LpsecrHl) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_lpsecr_hl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Master Key Select Hard Lock When set, prevents any writes to the MASTER_KEY_SEL field of the LP Master Key Control Register"]
     #[must_use]
     #[inline(always)]
-    pub const fn mks_hl(&self) -> super::vals::MksHl {
+    pub const fn mks_hl(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::MksHl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Master Key Select Hard Lock When set, prevents any writes to the MASTER_KEY_SEL field of the LP Master Key Control Register"]
     #[inline(always)]
-    pub const fn set_mks_hl(&mut self, val: super::vals::MksHl) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_mks_hl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
 }
 impl Default for Lplr {
@@ -2124,7 +2124,7 @@ impl defmt::Format for Lplr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Lplr {{ zmk_whl: {:?}, zmk_rhl: {:?}, srtc_hl: {:?}, lpcalb_hl: {:?}, mc_hl: {:?}, gpr_hl: {:?}, lpsvcr_hl: {:?}, lptgfcr_hl: {:?}, lpsecr_hl: {:?}, mks_hl: {:?} }}",
+            "Lplr {{ zmk_whl: {:?}, zmk_rhl: {:?}, srtc_hl: {:?}, lpcalb_hl: {=bool:?}, mc_hl: {:?}, gpr_hl: {:?}, lpsvcr_hl: {=bool:?}, lptgfcr_hl: {=bool:?}, lpsecr_hl: {=bool:?}, mks_hl: {=bool:?} }}",
             self.zmk_whl(),
             self.zmk_rhl(),
             self.srtc_hl(),
@@ -2370,14 +2370,14 @@ impl Lpsr {
     #[doc = "LP Time Alarm"]
     #[must_use]
     #[inline(always)]
-    pub const fn lpta(&self) -> super::vals::Lpta {
+    pub const fn lpta(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Lpta::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LP Time Alarm"]
     #[inline(always)]
-    pub const fn set_lpta(&mut self, val: super::vals::Lpta) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_lpta(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Secure Real Time Counter Rollover"]
     #[must_use]
@@ -2606,7 +2606,7 @@ impl defmt::Format for Lpsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Lpsr {{ lpta: {:?}, srtcr: {:?}, mcr: {:?}, lvd: {:?}, ctd: {:?}, ttd: {:?}, vtd: {:?}, wmt1d: {:?}, wmt2d: {:?}, et1d: {:?}, et2d: {:?}, esvd: {:?}, eo: {:?}, spof: {:?}, spon: {:?}, lpns: {:?}, lps: {:?} }}",
+            "Lpsr {{ lpta: {=bool:?}, srtcr: {:?}, mcr: {:?}, lvd: {:?}, ctd: {:?}, ttd: {:?}, vtd: {:?}, wmt1d: {:?}, wmt2d: {:?}, et1d: {:?}, et2d: {:?}, esvd: {:?}, eo: {:?}, spof: {:?}, spon: {:?}, lpns: {:?}, lps: {:?} }}",
             self.lpta(),
             self.srtcr(),
             self.mcr(),
@@ -2963,26 +2963,26 @@ impl Lptdcr {
     #[doc = "External Tampering 1 Polarity This bit is used to determine the polarity of external tamper 1."]
     #[must_use]
     #[inline(always)]
-    pub const fn et1p(&self) -> super::vals::Et1p {
+    pub const fn et1p(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Et1p::from_bits(val as u8)
+        val != 0
     }
     #[doc = "External Tampering 1 Polarity This bit is used to determine the polarity of external tamper 1."]
     #[inline(always)]
-    pub const fn set_et1p(&mut self, val: super::vals::Et1p) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_et1p(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "External Tampering 2 Polarity This bit is used to determine the polarity of external tamper 2."]
     #[must_use]
     #[inline(always)]
-    pub const fn et2p(&self) -> super::vals::Et2p {
+    pub const fn et2p(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Et2p::from_bits(val as u8)
+        val != 0
     }
     #[doc = "External Tampering 2 Polarity This bit is used to determine the polarity of external tamper 2."]
     #[inline(always)]
-    pub const fn set_et2p(&mut self, val: super::vals::Et2p) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_et2p(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "System Power Fail Detector (PFD) Observability Flop The asynchronous reset input of this flop is connected directly to the inverted output of the PFD analog circuitry (external to the SNVS block)"]
     #[must_use]
@@ -3091,7 +3091,7 @@ impl defmt::Format for Lptdcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Lptdcr {{ srtcr_en: {=bool:?}, mcr_en: {=bool:?}, ct_en: {=bool:?}, tt_en: {=bool:?}, vt_en: {=bool:?}, wmt1_en: {=bool:?}, wmt2_en: {=bool:?}, et1_en: {=bool:?}, et2_en: {=bool:?}, et1p: {:?}, et2p: {:?}, pfd_observ: {=bool:?}, por_observ: {=bool:?}, ltdc: {=u8:?}, htdc: {=u8:?}, vrc: {=u8:?}, oscb: {=bool:?} }}",
+            "Lptdcr {{ srtcr_en: {=bool:?}, mcr_en: {=bool:?}, ct_en: {=bool:?}, tt_en: {=bool:?}, vt_en: {=bool:?}, wmt1_en: {=bool:?}, wmt2_en: {=bool:?}, et1_en: {=bool:?}, et2_en: {=bool:?}, et1p: {=bool:?}, et2p: {=bool:?}, pfd_observ: {=bool:?}, por_observ: {=bool:?}, ltdc: {=u8:?}, htdc: {=u8:?}, vrc: {=u8:?}, oscb: {=bool:?} }}",
             self.srtcr_en(),
             self.mcr_en(),
             self.ct_en(),
@@ -3132,14 +3132,14 @@ impl Lptgfcr {
     #[doc = "Wire-Mesh Tamper Glitch Filter Enable When set, enables the wire-mesh tamper glitch filter"]
     #[must_use]
     #[inline(always)]
-    pub const fn wmtgf_en(&self) -> super::vals::WmtgfEn {
+    pub const fn wmtgf_en(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::WmtgfEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wire-Mesh Tamper Glitch Filter Enable When set, enables the wire-mesh tamper glitch filter"]
     #[inline(always)]
-    pub const fn set_wmtgf_en(&mut self, val: super::vals::WmtgfEn) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_wmtgf_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "External Tamper Glitch Filter 1 Configures the length of the digital glitch filter for the external tamper 1 pin between 128 and 32640 SRTC clock cycles"]
     #[must_use]
@@ -3156,14 +3156,14 @@ impl Lptgfcr {
     #[doc = "External Tamper Glitch Filter 1 Enable When set, enables the external tamper glitch filter 1."]
     #[must_use]
     #[inline(always)]
-    pub const fn etgf1_en(&self) -> super::vals::Etgf1En {
+    pub const fn etgf1_en(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Etgf1En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "External Tamper Glitch Filter 1 Enable When set, enables the external tamper glitch filter 1."]
     #[inline(always)]
-    pub const fn set_etgf1_en(&mut self, val: super::vals::Etgf1En) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_etgf1_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "External Tamper Glitch Filter 2 Configures the length of the digital glitch filter for the external tamper 2 pin between 128 and 32640 SRTC clock cycles"]
     #[must_use]
@@ -3180,14 +3180,14 @@ impl Lptgfcr {
     #[doc = "External Tamper Glitch Filter 2 Enable When set, enables the external tamper glitch filter 2."]
     #[must_use]
     #[inline(always)]
-    pub const fn etgf2_en(&self) -> super::vals::Etgf2En {
+    pub const fn etgf2_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Etgf2En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "External Tamper Glitch Filter 2 Enable When set, enables the external tamper glitch filter 2."]
     #[inline(always)]
-    pub const fn set_etgf2_en(&mut self, val: super::vals::Etgf2En) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_etgf2_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Lptgfcr {
@@ -3213,7 +3213,7 @@ impl defmt::Format for Lptgfcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Lptgfcr {{ wmtgf: {=u8:?}, wmtgf_en: {:?}, etgf1: {=u8:?}, etgf1_en: {:?}, etgf2: {=u8:?}, etgf2_en: {:?} }}",
+            "Lptgfcr {{ wmtgf: {=u8:?}, wmtgf_en: {=bool:?}, etgf1: {=u8:?}, etgf1_en: {=bool:?}, etgf2: {=u8:?}, etgf2_en: {=bool:?} }}",
             self.wmtgf(),
             self.wmtgf_en(),
             self.etgf1(),

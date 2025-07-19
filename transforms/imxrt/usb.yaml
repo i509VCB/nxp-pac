@@ -1,0 +1,7 @@
+# Boolean enum transforms for USB peripheral
+# Converts single-bit enums with _0/_1 patterns to proper boolean types
+
+transforms:
+  - !DeleteEnums
+    from: usb::vals::(Ase|Cf|Dc|Es|Fs2|Gptimer0ctrlGptmode|Gptimer0ctrlGptrst|Gptimer0ctrlGptrun|Gptimer1ctrlGptmode|Gptimer1ctrlGptrst|Gptimer1ctrlGptrun|Hc|Oca|Pfsc|Phcd|Pse|Ptw|Slom)
+    bit_size: 1

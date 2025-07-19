@@ -6,38 +6,38 @@ impl Cntr {
     #[doc = "MEGA domain (FlexRAM PDRAM1) power down request"]
     #[must_use]
     #[inline(always)]
-    pub const fn mega_pdn_req(&self) -> super::vals::MegaPdnReq {
+    pub const fn mega_pdn_req(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::MegaPdnReq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "MEGA domain (FlexRAM PDRAM1) power down request"]
     #[inline(always)]
-    pub const fn set_mega_pdn_req(&mut self, val: super::vals::MegaPdnReq) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_mega_pdn_req(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "MEGA domain (FlexRAM PDRAM1) power up request"]
     #[must_use]
     #[inline(always)]
-    pub const fn mega_pup_req(&self) -> super::vals::MegaPupReq {
+    pub const fn mega_pup_req(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::MegaPupReq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "MEGA domain (FlexRAM PDRAM1) power up request"]
     #[inline(always)]
-    pub const fn set_mega_pup_req(&mut self, val: super::vals::MegaPupReq) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_mega_pup_req(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "FlexRAM PDRAM0 Power Gate Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn pdram0_pge(&self) -> super::vals::Pdram0Pge {
+    pub const fn pdram0_pge(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Pdram0Pge::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FlexRAM PDRAM0 Power Gate Enable"]
     #[inline(always)]
-    pub const fn set_pdram0_pge(&mut self, val: super::vals::Pdram0Pge) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_pdram0_pge(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
 }
 impl Default for Cntr {
@@ -60,7 +60,7 @@ impl defmt::Format for Cntr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cntr {{ mega_pdn_req: {:?}, mega_pup_req: {:?}, pdram0_pge: {:?} }}",
+            "Cntr {{ mega_pdn_req: {=bool:?}, mega_pup_req: {=bool:?}, pdram0_pge: {=bool:?} }}",
             self.mega_pdn_req(),
             self.mega_pup_req(),
             self.pdram0_pge()

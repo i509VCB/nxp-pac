@@ -41,62 +41,62 @@ impl Atcr {
     #[doc = "Enable Timer"]
     #[must_use]
     #[inline(always)]
-    pub const fn en(&self) -> super::vals::En {
+    pub const fn en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Timer"]
     #[inline(always)]
-    pub const fn set_en(&mut self, val: super::vals::En) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Enable One-Shot Offset Event"]
     #[must_use]
     #[inline(always)]
-    pub const fn offen(&self) -> super::vals::Offen {
+    pub const fn offen(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Offen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable One-Shot Offset Event"]
     #[inline(always)]
-    pub const fn set_offen(&mut self, val: super::vals::Offen) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_offen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Reset Timer On Offset Event"]
     #[must_use]
     #[inline(always)]
-    pub const fn offrst(&self) -> super::vals::Offrst {
+    pub const fn offrst(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Offrst::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reset Timer On Offset Event"]
     #[inline(always)]
-    pub const fn set_offrst(&mut self, val: super::vals::Offrst) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_offrst(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Enable Periodical Event"]
     #[must_use]
     #[inline(always)]
-    pub const fn peren(&self) -> super::vals::Peren {
+    pub const fn peren(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Peren::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Periodical Event"]
     #[inline(always)]
-    pub const fn set_peren(&mut self, val: super::vals::Peren) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_peren(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Enables event signal output external pin frc_evt_period assertion on period event"]
     #[must_use]
     #[inline(always)]
-    pub const fn pinper(&self) -> super::vals::Pinper {
+    pub const fn pinper(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Pinper::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables event signal output external pin frc_evt_period assertion on period event"]
     #[inline(always)]
-    pub const fn set_pinper(&mut self, val: super::vals::Pinper) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_pinper(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Reset Timer"]
     #[must_use]
@@ -113,26 +113,26 @@ impl Atcr {
     #[doc = "Capture Timer Value"]
     #[must_use]
     #[inline(always)]
-    pub const fn capture(&self) -> super::vals::Capture {
+    pub const fn capture(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Capture::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Capture Timer Value"]
     #[inline(always)]
-    pub const fn set_capture(&mut self, val: super::vals::Capture) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_capture(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Enable Timer Slave Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn slave(&self) -> super::vals::Slave {
+    pub const fn slave(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Slave::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Timer Slave Mode"]
     #[inline(always)]
-    pub const fn set_slave(&mut self, val: super::vals::Slave) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_slave(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
 }
 impl Default for Atcr {
@@ -160,7 +160,7 @@ impl defmt::Format for Atcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Atcr {{ en: {:?}, offen: {:?}, offrst: {:?}, peren: {:?}, pinper: {:?}, restart: {=bool:?}, capture: {:?}, slave: {:?} }}",
+            "Atcr {{ en: {=bool:?}, offen: {=bool:?}, offrst: {=bool:?}, peren: {=bool:?}, pinper: {=bool:?}, restart: {=bool:?}, capture: {=bool:?}, slave: {=bool:?} }}",
             self.en(),
             self.offen(),
             self.offrst(),
@@ -395,74 +395,74 @@ impl Ecr {
     #[doc = "Ethernet Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn etheren(&self) -> super::vals::Etheren {
+    pub const fn etheren(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Etheren::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Ethernet Enable"]
     #[inline(always)]
-    pub const fn set_etheren(&mut self, val: super::vals::Etheren) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_etheren(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Magic Packet Detection Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn magicen(&self) -> super::vals::Magicen {
+    pub const fn magicen(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Magicen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Magic Packet Detection Enable"]
     #[inline(always)]
-    pub const fn set_magicen(&mut self, val: super::vals::Magicen) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_magicen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Sleep Mode Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn sleep(&self) -> super::vals::Sleep {
+    pub const fn sleep(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Sleep::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Sleep Mode Enable"]
     #[inline(always)]
-    pub const fn set_sleep(&mut self, val: super::vals::Sleep) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_sleep(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "EN1588 Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn en1588(&self) -> super::vals::En1588 {
+    pub const fn en1588(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::En1588::from_bits(val as u8)
+        val != 0
     }
     #[doc = "EN1588 Enable"]
     #[inline(always)]
-    pub const fn set_en1588(&mut self, val: super::vals::En1588) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_en1588(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Debug Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dbgen(&self) -> super::vals::Dbgen {
+    pub const fn dbgen(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Dbgen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Debug Enable"]
     #[inline(always)]
-    pub const fn set_dbgen(&mut self, val: super::vals::Dbgen) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_dbgen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Descriptor Byte Swapping Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dbswp(&self) -> super::vals::Dbswp {
+    pub const fn dbswp(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Dbswp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Descriptor Byte Swapping Enable"]
     #[inline(always)]
-    pub const fn set_dbswp(&mut self, val: super::vals::Dbswp) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_dbswp(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
 }
 impl Default for Ecr {
@@ -489,7 +489,7 @@ impl defmt::Format for Ecr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ecr {{ reset: {=bool:?}, etheren: {:?}, magicen: {:?}, sleep: {:?}, en1588: {:?}, dbgen: {:?}, dbswp: {:?} }}",
+            "Ecr {{ reset: {=bool:?}, etheren: {=bool:?}, magicen: {=bool:?}, sleep: {=bool:?}, en1588: {=bool:?}, dbgen: {=bool:?}, dbswp: {=bool:?} }}",
             self.reset(),
             self.etheren(),
             self.magicen(),
@@ -508,194 +508,194 @@ impl Eimr {
     #[doc = "TS_TIMER Interrupt Mask"]
     #[must_use]
     #[inline(always)]
-    pub const fn ts_timer(&self) -> super::vals::TsTimer {
+    pub const fn ts_timer(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::TsTimer::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TS_TIMER Interrupt Mask"]
     #[inline(always)]
-    pub const fn set_ts_timer(&mut self, val: super::vals::TsTimer) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_ts_timer(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "TS_AVAIL Interrupt Mask"]
     #[must_use]
     #[inline(always)]
-    pub const fn ts_avail(&self) -> super::vals::TsAvail {
+    pub const fn ts_avail(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::TsAvail::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TS_AVAIL Interrupt Mask"]
     #[inline(always)]
-    pub const fn set_ts_avail(&mut self, val: super::vals::TsAvail) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_ts_avail(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "WAKEUP Interrupt Mask"]
     #[must_use]
     #[inline(always)]
-    pub const fn wakeup(&self) -> super::vals::Wakeup {
+    pub const fn wakeup(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Wakeup::from_bits(val as u8)
+        val != 0
     }
     #[doc = "WAKEUP Interrupt Mask"]
     #[inline(always)]
-    pub const fn set_wakeup(&mut self, val: super::vals::Wakeup) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_wakeup(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "PLR Interrupt Mask"]
     #[must_use]
     #[inline(always)]
-    pub const fn plr(&self) -> super::vals::Plr {
+    pub const fn plr(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::Plr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PLR Interrupt Mask"]
     #[inline(always)]
-    pub const fn set_plr(&mut self, val: super::vals::Plr) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_plr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "UN Interrupt Mask"]
     #[must_use]
     #[inline(always)]
-    pub const fn un(&self) -> super::vals::Un {
+    pub const fn un(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Un::from_bits(val as u8)
+        val != 0
     }
     #[doc = "UN Interrupt Mask"]
     #[inline(always)]
-    pub const fn set_un(&mut self, val: super::vals::Un) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_un(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "RL Interrupt Mask"]
     #[must_use]
     #[inline(always)]
-    pub const fn rl(&self) -> super::vals::Rl {
+    pub const fn rl(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::Rl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RL Interrupt Mask"]
     #[inline(always)]
-    pub const fn set_rl(&mut self, val: super::vals::Rl) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_rl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "LC Interrupt Mask"]
     #[must_use]
     #[inline(always)]
-    pub const fn lc(&self) -> super::vals::Lc {
+    pub const fn lc(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Lc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LC Interrupt Mask"]
     #[inline(always)]
-    pub const fn set_lc(&mut self, val: super::vals::Lc) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_lc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "EBERR Interrupt Mask"]
     #[must_use]
     #[inline(always)]
-    pub const fn eberr(&self) -> super::vals::Eberr {
+    pub const fn eberr(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Eberr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "EBERR Interrupt Mask"]
     #[inline(always)]
-    pub const fn set_eberr(&mut self, val: super::vals::Eberr) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_eberr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "MII Interrupt Mask"]
     #[must_use]
     #[inline(always)]
-    pub const fn mii(&self) -> super::vals::Mii {
+    pub const fn mii(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Mii::from_bits(val as u8)
+        val != 0
     }
     #[doc = "MII Interrupt Mask"]
     #[inline(always)]
-    pub const fn set_mii(&mut self, val: super::vals::Mii) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_mii(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "RXB Interrupt Mask"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxb(&self) -> super::vals::Rxb {
+    pub const fn rxb(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::Rxb::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RXB Interrupt Mask"]
     #[inline(always)]
-    pub const fn set_rxb(&mut self, val: super::vals::Rxb) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_rxb(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "RXF Interrupt Mask"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxf(&self) -> super::vals::Rxf {
+    pub const fn rxf(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Rxf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RXF Interrupt Mask"]
     #[inline(always)]
-    pub const fn set_rxf(&mut self, val: super::vals::Rxf) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_rxf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "TXB Interrupt Mask"]
     #[must_use]
     #[inline(always)]
-    pub const fn txb(&self) -> super::vals::Txb {
+    pub const fn txb(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::Txb::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TXB Interrupt Mask"]
     #[inline(always)]
-    pub const fn set_txb(&mut self, val: super::vals::Txb) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_txb(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "TXF Interrupt Mask"]
     #[must_use]
     #[inline(always)]
-    pub const fn txf(&self) -> super::vals::Txf {
+    pub const fn txf(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::Txf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TXF Interrupt Mask"]
     #[inline(always)]
-    pub const fn set_txf(&mut self, val: super::vals::Txf) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_txf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
     #[doc = "GRA Interrupt Mask"]
     #[must_use]
     #[inline(always)]
-    pub const fn gra(&self) -> super::vals::Gra {
+    pub const fn gra(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Gra::from_bits(val as u8)
+        val != 0
     }
     #[doc = "GRA Interrupt Mask"]
     #[inline(always)]
-    pub const fn set_gra(&mut self, val: super::vals::Gra) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_gra(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "BABT Interrupt Mask"]
     #[must_use]
     #[inline(always)]
-    pub const fn babt(&self) -> super::vals::Babt {
+    pub const fn babt(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::Babt::from_bits(val as u8)
+        val != 0
     }
     #[doc = "BABT Interrupt Mask"]
     #[inline(always)]
-    pub const fn set_babt(&mut self, val: super::vals::Babt) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_babt(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "BABR Interrupt Mask"]
     #[must_use]
     #[inline(always)]
-    pub const fn babr(&self) -> super::vals::Babr {
+    pub const fn babr(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Babr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "BABR Interrupt Mask"]
     #[inline(always)]
-    pub const fn set_babr(&mut self, val: super::vals::Babr) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_babr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
 }
 impl Default for Eimr {
@@ -731,7 +731,7 @@ impl defmt::Format for Eimr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Eimr {{ ts_timer: {:?}, ts_avail: {:?}, wakeup: {:?}, plr: {:?}, un: {:?}, rl: {:?}, lc: {:?}, eberr: {:?}, mii: {:?}, rxb: {:?}, rxf: {:?}, txb: {:?}, txf: {:?}, gra: {:?}, babt: {:?}, babr: {:?} }}",
+            "Eimr {{ ts_timer: {=bool:?}, ts_avail: {=bool:?}, wakeup: {=bool:?}, plr: {=bool:?}, un: {=bool:?}, rl: {=bool:?}, lc: {=bool:?}, eberr: {=bool:?}, mii: {=bool:?}, rxb: {=bool:?}, rxf: {=bool:?}, txb: {=bool:?}, txf: {=bool:?}, gra: {=bool:?}, babt: {=bool:?}, babr: {=bool:?} }}",
             self.ts_timer(),
             self.ts_avail(),
             self.wakeup(),
@@ -1861,38 +1861,38 @@ impl Mibc {
     #[doc = "MIB Clear"]
     #[must_use]
     #[inline(always)]
-    pub const fn mib_clear(&self) -> super::vals::MibClear {
+    pub const fn mib_clear(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::MibClear::from_bits(val as u8)
+        val != 0
     }
     #[doc = "MIB Clear"]
     #[inline(always)]
-    pub const fn set_mib_clear(&mut self, val: super::vals::MibClear) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_mib_clear(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "MIB Idle"]
     #[must_use]
     #[inline(always)]
-    pub const fn mib_idle(&self) -> super::vals::MibIdle {
+    pub const fn mib_idle(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::MibIdle::from_bits(val as u8)
+        val != 0
     }
     #[doc = "MIB Idle"]
     #[inline(always)]
-    pub const fn set_mib_idle(&mut self, val: super::vals::MibIdle) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_mib_idle(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Disable MIB Logic"]
     #[must_use]
     #[inline(always)]
-    pub const fn mib_dis(&self) -> super::vals::MibDis {
+    pub const fn mib_dis(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::MibDis::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Disable MIB Logic"]
     #[inline(always)]
-    pub const fn set_mib_dis(&mut self, val: super::vals::MibDis) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_mib_dis(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Mibc {
@@ -1915,7 +1915,7 @@ impl defmt::Format for Mibc {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mibc {{ mib_clear: {:?}, mib_idle: {:?}, mib_dis: {:?} }}",
+            "Mibc {{ mib_clear: {=bool:?}, mib_idle: {=bool:?}, mib_dis: {=bool:?} }}",
             self.mib_clear(),
             self.mib_idle(),
             self.mib_dis()
@@ -2090,14 +2090,14 @@ impl Mscr {
     #[doc = "Disable Preamble"]
     #[must_use]
     #[inline(always)]
-    pub const fn dis_pre(&self) -> super::vals::DisPre {
+    pub const fn dis_pre(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::DisPre::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Disable Preamble"]
     #[inline(always)]
-    pub const fn set_dis_pre(&mut self, val: super::vals::DisPre) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_dis_pre(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Hold time On MDIO Output"]
     #[must_use]
@@ -2132,7 +2132,7 @@ impl defmt::Format for Mscr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mscr {{ mii_speed: {=u8:?}, dis_pre: {:?}, holdtime: {:?} }}",
+            "Mscr {{ mii_speed: {=u8:?}, dis_pre: {=bool:?}, holdtime: {:?} }}",
             self.mii_speed(),
             self.dis_pre(),
             self.holdtime()
@@ -2294,62 +2294,62 @@ impl Racc {
     #[doc = "Enable Padding Removal For Short IP Frames"]
     #[must_use]
     #[inline(always)]
-    pub const fn padrem(&self) -> super::vals::Padrem {
+    pub const fn padrem(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Padrem::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Padding Removal For Short IP Frames"]
     #[inline(always)]
-    pub const fn set_padrem(&mut self, val: super::vals::Padrem) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_padrem(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Enable Discard Of Frames With Wrong IPv4 Header Checksum"]
     #[must_use]
     #[inline(always)]
-    pub const fn ipdis(&self) -> super::vals::Ipdis {
+    pub const fn ipdis(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Ipdis::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Discard Of Frames With Wrong IPv4 Header Checksum"]
     #[inline(always)]
-    pub const fn set_ipdis(&mut self, val: super::vals::Ipdis) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_ipdis(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Enable Discard Of Frames With Wrong Protocol Checksum"]
     #[must_use]
     #[inline(always)]
-    pub const fn prodis(&self) -> super::vals::Prodis {
+    pub const fn prodis(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Prodis::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Discard Of Frames With Wrong Protocol Checksum"]
     #[inline(always)]
-    pub const fn set_prodis(&mut self, val: super::vals::Prodis) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_prodis(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Enable Discard Of Frames With MAC Layer Errors"]
     #[must_use]
     #[inline(always)]
-    pub const fn linedis(&self) -> super::vals::Linedis {
+    pub const fn linedis(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Linedis::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Discard Of Frames With MAC Layer Errors"]
     #[inline(always)]
-    pub const fn set_linedis(&mut self, val: super::vals::Linedis) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_linedis(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "RX FIFO Shift-16"]
     #[must_use]
     #[inline(always)]
-    pub const fn shift16(&self) -> super::vals::RaccShift16 {
+    pub const fn shift16(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::RaccShift16::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RX FIFO Shift-16"]
     #[inline(always)]
-    pub const fn set_shift16(&mut self, val: super::vals::RaccShift16) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_shift16(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
 }
 impl Default for Racc {
@@ -2374,7 +2374,7 @@ impl defmt::Format for Racc {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Racc {{ padrem: {:?}, ipdis: {:?}, prodis: {:?}, linedis: {:?}, shift16: {:?} }}",
+            "Racc {{ padrem: {=bool:?}, ipdis: {=bool:?}, prodis: {=bool:?}, linedis: {=bool:?}, shift16: {=bool:?} }}",
             self.padrem(),
             self.ipdis(),
             self.prodis(),
@@ -2473,26 +2473,26 @@ impl Rcr {
     #[doc = "Internal Loopback"]
     #[must_use]
     #[inline(always)]
-    pub const fn loop_(&self) -> super::vals::Loop {
+    pub const fn loop_(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Loop::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Internal Loopback"]
     #[inline(always)]
-    pub const fn set_loop_(&mut self, val: super::vals::Loop) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_loop_(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Disable Receive On Transmit"]
     #[must_use]
     #[inline(always)]
-    pub const fn drt(&self) -> super::vals::Drt {
+    pub const fn drt(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Drt::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Disable Receive On Transmit"]
     #[inline(always)]
-    pub const fn set_drt(&mut self, val: super::vals::Drt) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_drt(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Media Independent Interface Mode"]
     #[must_use]
@@ -2509,110 +2509,110 @@ impl Rcr {
     #[doc = "Promiscuous Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn prom(&self) -> super::vals::Prom {
+    pub const fn prom(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Prom::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Promiscuous Mode"]
     #[inline(always)]
-    pub const fn set_prom(&mut self, val: super::vals::Prom) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_prom(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Broadcast Frame Reject"]
     #[must_use]
     #[inline(always)]
-    pub const fn bc_rej(&self) -> super::vals::BcRej {
+    pub const fn bc_rej(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::BcRej::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Broadcast Frame Reject"]
     #[inline(always)]
-    pub const fn set_bc_rej(&mut self, val: super::vals::BcRej) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_bc_rej(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Flow Control Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn fce(&self) -> super::vals::Fce {
+    pub const fn fce(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Fce::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Flow Control Enable"]
     #[inline(always)]
-    pub const fn set_fce(&mut self, val: super::vals::Fce) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_fce(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "RMII Mode Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn rmii_mode(&self) -> super::vals::RmiiMode {
+    pub const fn rmii_mode(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::RmiiMode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RMII Mode Enable"]
     #[inline(always)]
-    pub const fn set_rmii_mode(&mut self, val: super::vals::RmiiMode) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_rmii_mode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Enables 10-Mbit/s mode of the RMII ."]
     #[must_use]
     #[inline(always)]
-    pub const fn rmii_10t(&self) -> super::vals::Rmii10t {
+    pub const fn rmii_10t(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Rmii10t::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables 10-Mbit/s mode of the RMII ."]
     #[inline(always)]
-    pub const fn set_rmii_10t(&mut self, val: super::vals::Rmii10t) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_rmii_10t(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Enable Frame Padding Remove On Receive"]
     #[must_use]
     #[inline(always)]
-    pub const fn paden(&self) -> super::vals::Paden {
+    pub const fn paden(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Paden::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Frame Padding Remove On Receive"]
     #[inline(always)]
-    pub const fn set_paden(&mut self, val: super::vals::Paden) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_paden(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Terminate/Forward Pause Frames"]
     #[must_use]
     #[inline(always)]
-    pub const fn paufwd(&self) -> super::vals::Paufwd {
+    pub const fn paufwd(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Paufwd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Terminate/Forward Pause Frames"]
     #[inline(always)]
-    pub const fn set_paufwd(&mut self, val: super::vals::Paufwd) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_paufwd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Terminate/Forward Received CRC"]
     #[must_use]
     #[inline(always)]
-    pub const fn crcfwd(&self) -> super::vals::RcrCrcfwd {
+    pub const fn crcfwd(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::RcrCrcfwd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Terminate/Forward Received CRC"]
     #[inline(always)]
-    pub const fn set_crcfwd(&mut self, val: super::vals::RcrCrcfwd) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_crcfwd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "MAC Control Frame Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cfen(&self) -> super::vals::Cfen {
+    pub const fn cfen(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Cfen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "MAC Control Frame Enable"]
     #[inline(always)]
-    pub const fn set_cfen(&mut self, val: super::vals::Cfen) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_cfen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "Maximum Frame Length"]
     #[must_use]
@@ -2629,26 +2629,26 @@ impl Rcr {
     #[doc = "Payload Length Check Disable"]
     #[must_use]
     #[inline(always)]
-    pub const fn nlc(&self) -> super::vals::Nlc {
+    pub const fn nlc(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Nlc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Payload Length Check Disable"]
     #[inline(always)]
-    pub const fn set_nlc(&mut self, val: super::vals::Nlc) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_nlc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Graceful Receive Stopped"]
     #[must_use]
     #[inline(always)]
-    pub const fn grs(&self) -> super::vals::Grs {
+    pub const fn grs(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Grs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Graceful Receive Stopped"]
     #[inline(always)]
-    pub const fn set_grs(&mut self, val: super::vals::Grs) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_grs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Rcr {
@@ -2683,7 +2683,7 @@ impl defmt::Format for Rcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Rcr {{ loop_: {:?}, drt: {:?}, mii_mode: {=bool:?}, prom: {:?}, bc_rej: {:?}, fce: {:?}, rmii_mode: {:?}, rmii_10t: {:?}, paden: {:?}, paufwd: {:?}, crcfwd: {:?}, cfen: {:?}, max_fl: {=u16:?}, nlc: {:?}, grs: {:?} }}",
+            "Rcr {{ loop_: {=bool:?}, drt: {=bool:?}, mii_mode: {=bool:?}, prom: {=bool:?}, bc_rej: {=bool:?}, fce: {=bool:?}, rmii_mode: {=bool:?}, rmii_10t: {=bool:?}, paden: {=bool:?}, paufwd: {=bool:?}, crcfwd: {=bool:?}, cfen: {=bool:?}, max_fl: {=u16:?}, nlc: {=bool:?}, grs: {=bool:?} }}",
             self.loop_(),
             self.drt(),
             self.mii_mode(),
@@ -4123,26 +4123,26 @@ impl Rxic0 {
     #[doc = "Interrupt Coalescing Timer Clock Source Select"]
     #[must_use]
     #[inline(always)]
-    pub const fn iccs(&self) -> super::vals::Rxic0Iccs {
+    pub const fn iccs(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Rxic0Iccs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt Coalescing Timer Clock Source Select"]
     #[inline(always)]
-    pub const fn set_iccs(&mut self, val: super::vals::Rxic0Iccs) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_iccs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Interrupt Coalescing Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn icen(&self) -> super::vals::Rxic0Icen {
+    pub const fn icen(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Rxic0Icen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt Coalescing Enable"]
     #[inline(always)]
-    pub const fn set_icen(&mut self, val: super::vals::Rxic0Icen) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_icen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Rxic0 {
@@ -4166,7 +4166,7 @@ impl defmt::Format for Rxic0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Rxic0 {{ ictt: {=u16:?}, icft: {=u8:?}, iccs: {:?}, icen: {:?} }}",
+            "Rxic0 {{ ictt: {=u16:?}, icft: {=u8:?}, iccs: {=bool:?}, icen: {=bool:?} }}",
             self.ictt(),
             self.icft(),
             self.iccs(),
@@ -4182,38 +4182,38 @@ impl Tacc {
     #[doc = "TX FIFO Shift-16"]
     #[must_use]
     #[inline(always)]
-    pub const fn shift16(&self) -> super::vals::TaccShift16 {
+    pub const fn shift16(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::TaccShift16::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TX FIFO Shift-16"]
     #[inline(always)]
-    pub const fn set_shift16(&mut self, val: super::vals::TaccShift16) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_shift16(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Enables insertion of IP header checksum."]
     #[must_use]
     #[inline(always)]
-    pub const fn ipchk(&self) -> super::vals::Ipchk {
+    pub const fn ipchk(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Ipchk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables insertion of IP header checksum."]
     #[inline(always)]
-    pub const fn set_ipchk(&mut self, val: super::vals::Ipchk) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_ipchk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Enables insertion of protocol checksum."]
     #[must_use]
     #[inline(always)]
-    pub const fn prochk(&self) -> super::vals::Prochk {
+    pub const fn prochk(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Prochk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enables insertion of protocol checksum."]
     #[inline(always)]
-    pub const fn set_prochk(&mut self, val: super::vals::Prochk) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_prochk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
 }
 impl Default for Tacc {
@@ -4236,7 +4236,7 @@ impl defmt::Format for Tacc {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tacc {{ shift16: {:?}, ipchk: {:?}, prochk: {:?} }}",
+            "Tacc {{ shift16: {=bool:?}, ipchk: {=bool:?}, prochk: {=bool:?} }}",
             self.shift16(),
             self.ipchk(),
             self.prochk()
@@ -4473,38 +4473,38 @@ impl Tcr {
     #[doc = "Graceful Transmit Stop"]
     #[must_use]
     #[inline(always)]
-    pub const fn gts(&self) -> super::vals::Gts {
+    pub const fn gts(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Gts::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Graceful Transmit Stop"]
     #[inline(always)]
-    pub const fn set_gts(&mut self, val: super::vals::Gts) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_gts(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Full-Duplex Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn fden(&self) -> super::vals::Fden {
+    pub const fn fden(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Fden::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Full-Duplex Enable"]
     #[inline(always)]
-    pub const fn set_fden(&mut self, val: super::vals::Fden) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_fden(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Transmit Frame Control Pause"]
     #[must_use]
     #[inline(always)]
-    pub const fn tfc_pause(&self) -> super::vals::TfcPause {
+    pub const fn tfc_pause(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::TfcPause::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Transmit Frame Control Pause"]
     #[inline(always)]
-    pub const fn set_tfc_pause(&mut self, val: super::vals::TfcPause) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_tfc_pause(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Receive Frame Control Pause"]
     #[must_use]
@@ -4533,26 +4533,26 @@ impl Tcr {
     #[doc = "Set MAC Address On Transmit"]
     #[must_use]
     #[inline(always)]
-    pub const fn addins(&self) -> super::vals::Addins {
+    pub const fn addins(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Addins::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Set MAC Address On Transmit"]
     #[inline(always)]
-    pub const fn set_addins(&mut self, val: super::vals::Addins) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_addins(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Forward Frame From Application With CRC"]
     #[must_use]
     #[inline(always)]
-    pub const fn crcfwd(&self) -> super::vals::TcrCrcfwd {
+    pub const fn crcfwd(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::TcrCrcfwd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Forward Frame From Application With CRC"]
     #[inline(always)]
-    pub const fn set_crcfwd(&mut self, val: super::vals::TcrCrcfwd) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_crcfwd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
 }
 impl Default for Tcr {
@@ -4579,7 +4579,7 @@ impl defmt::Format for Tcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tcr {{ gts: {:?}, fden: {:?}, tfc_pause: {:?}, rfc_pause: {=bool:?}, addsel: {:?}, addins: {:?}, crcfwd: {:?} }}",
+            "Tcr {{ gts: {=bool:?}, fden: {=bool:?}, tfc_pause: {=bool:?}, rfc_pause: {=bool:?}, addsel: {:?}, addins: {=bool:?}, crcfwd: {=bool:?} }}",
             self.gts(),
             self.fden(),
             self.tfc_pause(),
@@ -4598,14 +4598,14 @@ impl Tcsr0 {
     #[doc = "Timer DMA Request Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tdre(&self) -> super::vals::Tcsr0Tdre {
+    pub const fn tdre(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Tcsr0Tdre::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Timer DMA Request Enable"]
     #[inline(always)]
-    pub const fn set_tdre(&mut self, val: super::vals::Tcsr0Tdre) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_tdre(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Timer Mode"]
     #[must_use]
@@ -4622,26 +4622,26 @@ impl Tcsr0 {
     #[doc = "Timer Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tie(&self) -> super::vals::Tcsr0Tie {
+    pub const fn tie(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Tcsr0Tie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Timer Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tie(&mut self, val: super::vals::Tcsr0Tie) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_tie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Timer Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tf(&self) -> super::vals::Tcsr0Tf {
+    pub const fn tf(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Tcsr0Tf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Timer Flag"]
     #[inline(always)]
-    pub const fn set_tf(&mut self, val: super::vals::Tcsr0Tf) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_tf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Timer PulseWidth Control"]
     #[must_use]
@@ -4678,7 +4678,7 @@ impl defmt::Format for Tcsr0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tcsr0 {{ tdre: {:?}, tmode: {:?}, tie: {:?}, tf: {:?}, tpwc: {:?} }}",
+            "Tcsr0 {{ tdre: {=bool:?}, tmode: {:?}, tie: {=bool:?}, tf: {=bool:?}, tpwc: {:?} }}",
             self.tdre(),
             self.tmode(),
             self.tie(),
@@ -4695,14 +4695,14 @@ impl Tcsr1 {
     #[doc = "Timer DMA Request Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tdre(&self) -> super::vals::Tcsr1Tdre {
+    pub const fn tdre(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Tcsr1Tdre::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Timer DMA Request Enable"]
     #[inline(always)]
-    pub const fn set_tdre(&mut self, val: super::vals::Tcsr1Tdre) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_tdre(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Timer Mode"]
     #[must_use]
@@ -4719,26 +4719,26 @@ impl Tcsr1 {
     #[doc = "Timer Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tie(&self) -> super::vals::Tcsr1Tie {
+    pub const fn tie(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Tcsr1Tie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Timer Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tie(&mut self, val: super::vals::Tcsr1Tie) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_tie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Timer Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tf(&self) -> super::vals::Tcsr1Tf {
+    pub const fn tf(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Tcsr1Tf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Timer Flag"]
     #[inline(always)]
-    pub const fn set_tf(&mut self, val: super::vals::Tcsr1Tf) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_tf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Timer PulseWidth Control"]
     #[must_use]
@@ -4775,7 +4775,7 @@ impl defmt::Format for Tcsr1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tcsr1 {{ tdre: {:?}, tmode: {:?}, tie: {:?}, tf: {:?}, tpwc: {:?} }}",
+            "Tcsr1 {{ tdre: {=bool:?}, tmode: {:?}, tie: {=bool:?}, tf: {=bool:?}, tpwc: {:?} }}",
             self.tdre(),
             self.tmode(),
             self.tie(),
@@ -4792,14 +4792,14 @@ impl Tcsr2 {
     #[doc = "Timer DMA Request Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tdre(&self) -> super::vals::Tcsr2Tdre {
+    pub const fn tdre(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Tcsr2Tdre::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Timer DMA Request Enable"]
     #[inline(always)]
-    pub const fn set_tdre(&mut self, val: super::vals::Tcsr2Tdre) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_tdre(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Timer Mode"]
     #[must_use]
@@ -4816,26 +4816,26 @@ impl Tcsr2 {
     #[doc = "Timer Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tie(&self) -> super::vals::Tcsr2Tie {
+    pub const fn tie(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Tcsr2Tie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Timer Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tie(&mut self, val: super::vals::Tcsr2Tie) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_tie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Timer Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tf(&self) -> super::vals::Tcsr2Tf {
+    pub const fn tf(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Tcsr2Tf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Timer Flag"]
     #[inline(always)]
-    pub const fn set_tf(&mut self, val: super::vals::Tcsr2Tf) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_tf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Timer PulseWidth Control"]
     #[must_use]
@@ -4872,7 +4872,7 @@ impl defmt::Format for Tcsr2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tcsr2 {{ tdre: {:?}, tmode: {:?}, tie: {:?}, tf: {:?}, tpwc: {:?} }}",
+            "Tcsr2 {{ tdre: {=bool:?}, tmode: {:?}, tie: {=bool:?}, tf: {=bool:?}, tpwc: {:?} }}",
             self.tdre(),
             self.tmode(),
             self.tie(),
@@ -4889,14 +4889,14 @@ impl Tcsr3 {
     #[doc = "Timer DMA Request Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tdre(&self) -> super::vals::Tcsr3Tdre {
+    pub const fn tdre(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Tcsr3Tdre::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Timer DMA Request Enable"]
     #[inline(always)]
-    pub const fn set_tdre(&mut self, val: super::vals::Tcsr3Tdre) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_tdre(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Timer Mode"]
     #[must_use]
@@ -4913,26 +4913,26 @@ impl Tcsr3 {
     #[doc = "Timer Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tie(&self) -> super::vals::Tcsr3Tie {
+    pub const fn tie(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Tcsr3Tie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Timer Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_tie(&mut self, val: super::vals::Tcsr3Tie) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_tie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Timer Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tf(&self) -> super::vals::Tcsr3Tf {
+    pub const fn tf(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Tcsr3Tf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Timer Flag"]
     #[inline(always)]
-    pub const fn set_tf(&mut self, val: super::vals::Tcsr3Tf) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_tf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Timer PulseWidth Control"]
     #[must_use]
@@ -4969,7 +4969,7 @@ impl defmt::Format for Tcsr3 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tcsr3 {{ tdre: {:?}, tmode: {:?}, tie: {:?}, tf: {:?}, tpwc: {:?} }}",
+            "Tcsr3 {{ tdre: {=bool:?}, tmode: {:?}, tie: {=bool:?}, tf: {=bool:?}, tpwc: {:?} }}",
             self.tdre(),
             self.tmode(),
             self.tie(),
@@ -5070,14 +5070,14 @@ impl Tfwr {
     #[doc = "Store And Forward Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn strfwd(&self) -> super::vals::Strfwd {
+    pub const fn strfwd(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Strfwd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Store And Forward Enable"]
     #[inline(always)]
-    pub const fn set_strfwd(&mut self, val: super::vals::Strfwd) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_strfwd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
 }
 impl Default for Tfwr {
@@ -5099,7 +5099,7 @@ impl defmt::Format for Tfwr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tfwr {{ tfwr: {:?}, strfwd: {:?} }}",
+            "Tfwr {{ tfwr: {:?}, strfwd: {=bool:?} }}",
             self.tfwr(),
             self.strfwd()
         )
@@ -5113,50 +5113,50 @@ impl Tgsr {
     #[doc = "Copy Of Timer Flag For Channel 0"]
     #[must_use]
     #[inline(always)]
-    pub const fn tf0(&self) -> super::vals::Tf0 {
+    pub const fn tf0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Tf0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Copy Of Timer Flag For Channel 0"]
     #[inline(always)]
-    pub const fn set_tf0(&mut self, val: super::vals::Tf0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_tf0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Copy Of Timer Flag For Channel 1"]
     #[must_use]
     #[inline(always)]
-    pub const fn tf1(&self) -> super::vals::Tf1 {
+    pub const fn tf1(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Tf1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Copy Of Timer Flag For Channel 1"]
     #[inline(always)]
-    pub const fn set_tf1(&mut self, val: super::vals::Tf1) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_tf1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Copy Of Timer Flag For Channel 2"]
     #[must_use]
     #[inline(always)]
-    pub const fn tf2(&self) -> super::vals::Tf2 {
+    pub const fn tf2(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Tf2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Copy Of Timer Flag For Channel 2"]
     #[inline(always)]
-    pub const fn set_tf2(&mut self, val: super::vals::Tf2) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_tf2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Copy Of Timer Flag For Channel 3"]
     #[must_use]
     #[inline(always)]
-    pub const fn tf3(&self) -> super::vals::Tf3 {
+    pub const fn tf3(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Tf3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Copy Of Timer Flag For Channel 3"]
     #[inline(always)]
-    pub const fn set_tf3(&mut self, val: super::vals::Tf3) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_tf3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
 }
 impl Default for Tgsr {
@@ -5180,7 +5180,7 @@ impl defmt::Format for Tgsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tgsr {{ tf0: {:?}, tf1: {:?}, tf2: {:?}, tf3: {:?} }}",
+            "Tgsr {{ tf0: {=bool:?}, tf1: {=bool:?}, tf2: {=bool:?}, tf3: {=bool:?} }}",
             self.tf0(),
             self.tf1(),
             self.tf2(),
@@ -5296,26 +5296,26 @@ impl Txic0 {
     #[doc = "Interrupt Coalescing Timer Clock Source Select"]
     #[must_use]
     #[inline(always)]
-    pub const fn iccs(&self) -> super::vals::Txic0Iccs {
+    pub const fn iccs(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Txic0Iccs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt Coalescing Timer Clock Source Select"]
     #[inline(always)]
-    pub const fn set_iccs(&mut self, val: super::vals::Txic0Iccs) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_iccs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Interrupt Coalescing Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn icen(&self) -> super::vals::Txic0Icen {
+    pub const fn icen(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Txic0Icen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt Coalescing Enable"]
     #[inline(always)]
-    pub const fn set_icen(&mut self, val: super::vals::Txic0Icen) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_icen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Txic0 {
@@ -5339,7 +5339,7 @@ impl defmt::Format for Txic0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Txic0 {{ ictt: {=u16:?}, icft: {=u8:?}, iccs: {:?}, icen: {:?} }}",
+            "Txic0 {{ ictt: {=u16:?}, icft: {=u8:?}, iccs: {=bool:?}, icen: {=bool:?} }}",
             self.ictt(),
             self.icft(),
             self.iccs(),

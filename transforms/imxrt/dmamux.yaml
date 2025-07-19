@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: dmamux::vals::(AOn|Enbl|Trig)
+    bit_size: 1

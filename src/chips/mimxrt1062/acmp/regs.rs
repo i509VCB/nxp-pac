@@ -61,86 +61,86 @@ impl Cr1 {
     #[doc = "Comparator Module Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn en(&self) -> super::vals::En {
+    pub const fn en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Comparator Module Enable"]
     #[inline(always)]
-    pub const fn set_en(&mut self, val: super::vals::En) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u8) & 0x01) << 0usize);
+    pub const fn set_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u8) & 0x01) << 0usize);
     }
     #[doc = "Comparator Output Pin Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ope(&self) -> super::vals::Ope {
+    pub const fn ope(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Ope::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Comparator Output Pin Enable"]
     #[inline(always)]
-    pub const fn set_ope(&mut self, val: super::vals::Ope) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u8) & 0x01) << 1usize);
+    pub const fn set_ope(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u8) & 0x01) << 1usize);
     }
     #[doc = "Comparator Output Select"]
     #[must_use]
     #[inline(always)]
-    pub const fn cos(&self) -> super::vals::Cos {
+    pub const fn cos(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Cos::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Comparator Output Select"]
     #[inline(always)]
-    pub const fn set_cos(&mut self, val: super::vals::Cos) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u8) & 0x01) << 2usize);
+    pub const fn set_cos(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u8) & 0x01) << 2usize);
     }
     #[doc = "Comparator INVERT"]
     #[must_use]
     #[inline(always)]
-    pub const fn inv(&self) -> super::vals::Inv {
+    pub const fn inv(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Inv::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Comparator INVERT"]
     #[inline(always)]
-    pub const fn set_inv(&mut self, val: super::vals::Inv) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u8) & 0x01) << 3usize);
+    pub const fn set_inv(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u8) & 0x01) << 3usize);
     }
     #[doc = "Power Mode Select"]
     #[must_use]
     #[inline(always)]
-    pub const fn pmode(&self) -> super::vals::Pmode {
+    pub const fn pmode(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Pmode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Power Mode Select"]
     #[inline(always)]
-    pub const fn set_pmode(&mut self, val: super::vals::Pmode) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u8) & 0x01) << 4usize);
+    pub const fn set_pmode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
     }
     #[doc = "Windowing Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn we(&self) -> super::vals::We {
+    pub const fn we(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::We::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Windowing Enable"]
     #[inline(always)]
-    pub const fn set_we(&mut self, val: super::vals::We) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u8) & 0x01) << 6usize);
+    pub const fn set_we(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u8) & 0x01) << 6usize);
     }
     #[doc = "Sample Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn se(&self) -> super::vals::Se {
+    pub const fn se(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Se::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Sample Enable"]
     #[inline(always)]
-    pub const fn set_se(&mut self, val: super::vals::Se) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u8) & 0x01) << 7usize);
+    pub const fn set_se(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u8) & 0x01) << 7usize);
     }
 }
 impl Default for Cr1 {
@@ -167,7 +167,7 @@ impl defmt::Format for Cr1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cr1 {{ en: {:?}, ope: {:?}, cos: {:?}, inv: {:?}, pmode: {:?}, we: {:?}, se: {:?} }}",
+            "Cr1 {{ en: {=bool:?}, ope: {=bool:?}, cos: {=bool:?}, inv: {=bool:?}, pmode: {=bool:?}, we: {=bool:?}, se: {=bool:?} }}",
             self.en(),
             self.ope(),
             self.cos(),
@@ -198,26 +198,26 @@ impl Daccr {
     #[doc = "Supply Voltage Reference Source Select"]
     #[must_use]
     #[inline(always)]
-    pub const fn vrsel(&self) -> super::vals::Vrsel {
+    pub const fn vrsel(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Vrsel::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Supply Voltage Reference Source Select"]
     #[inline(always)]
-    pub const fn set_vrsel(&mut self, val: super::vals::Vrsel) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u8) & 0x01) << 6usize);
+    pub const fn set_vrsel(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u8) & 0x01) << 6usize);
     }
     #[doc = "DAC Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dacen(&self) -> super::vals::Dacen {
+    pub const fn dacen(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Dacen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DAC Enable"]
     #[inline(always)]
-    pub const fn set_dacen(&mut self, val: super::vals::Dacen) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u8) & 0x01) << 7usize);
+    pub const fn set_dacen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u8) & 0x01) << 7usize);
     }
 }
 impl Default for Daccr {
@@ -240,7 +240,7 @@ impl defmt::Format for Daccr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Daccr {{ vosel: {=u8:?}, vrsel: {:?}, dacen: {:?} }}",
+            "Daccr {{ vosel: {=u8:?}, vrsel: {=bool:?}, dacen: {=bool:?} }}",
             self.vosel(),
             self.vrsel(),
             self.dacen()
@@ -359,62 +359,62 @@ impl Scr {
     #[doc = "Analog Comparator Flag Falling"]
     #[must_use]
     #[inline(always)]
-    pub const fn cff(&self) -> super::vals::Cff {
+    pub const fn cff(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Cff::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Analog Comparator Flag Falling"]
     #[inline(always)]
-    pub const fn set_cff(&mut self, val: super::vals::Cff) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u8) & 0x01) << 1usize);
+    pub const fn set_cff(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u8) & 0x01) << 1usize);
     }
     #[doc = "Analog Comparator Flag Rising"]
     #[must_use]
     #[inline(always)]
-    pub const fn cfr(&self) -> super::vals::Cfr {
+    pub const fn cfr(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Cfr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Analog Comparator Flag Rising"]
     #[inline(always)]
-    pub const fn set_cfr(&mut self, val: super::vals::Cfr) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u8) & 0x01) << 2usize);
+    pub const fn set_cfr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u8) & 0x01) << 2usize);
     }
     #[doc = "Comparator Interrupt Enable Falling"]
     #[must_use]
     #[inline(always)]
-    pub const fn ief(&self) -> super::vals::Ief {
+    pub const fn ief(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Ief::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Comparator Interrupt Enable Falling"]
     #[inline(always)]
-    pub const fn set_ief(&mut self, val: super::vals::Ief) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u8) & 0x01) << 3usize);
+    pub const fn set_ief(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u8) & 0x01) << 3usize);
     }
     #[doc = "Comparator Interrupt Enable Rising"]
     #[must_use]
     #[inline(always)]
-    pub const fn ier(&self) -> super::vals::Ier {
+    pub const fn ier(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Ier::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Comparator Interrupt Enable Rising"]
     #[inline(always)]
-    pub const fn set_ier(&mut self, val: super::vals::Ier) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u8) & 0x01) << 4usize);
+    pub const fn set_ier(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
     }
     #[doc = "DMA Enable Control"]
     #[must_use]
     #[inline(always)]
-    pub const fn dmaen(&self) -> super::vals::Dmaen {
+    pub const fn dmaen(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Dmaen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA Enable Control"]
     #[inline(always)]
-    pub const fn set_dmaen(&mut self, val: super::vals::Dmaen) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u8) & 0x01) << 6usize);
+    pub const fn set_dmaen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u8) & 0x01) << 6usize);
     }
 }
 impl Default for Scr {
@@ -440,7 +440,7 @@ impl defmt::Format for Scr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Scr {{ cout: {=bool:?}, cff: {:?}, cfr: {:?}, ief: {:?}, ier: {:?}, dmaen: {:?} }}",
+            "Scr {{ cout: {=bool:?}, cff: {=bool:?}, cfr: {=bool:?}, ief: {=bool:?}, ier: {=bool:?}, dmaen: {=bool:?} }}",
             self.cout(),
             self.cff(),
             self.cfr(),

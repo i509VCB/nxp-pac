@@ -135,14 +135,14 @@ impl Configflag {
     #[doc = "Configure Flag Host software sets this bit as the last action in its process of configuring the Host Controller"]
     #[must_use]
     #[inline(always)]
-    pub const fn cf(&self) -> super::vals::Cf {
+    pub const fn cf(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Cf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Configure Flag Host software sets this bit as the last action in its process of configuring the Host Controller"]
     #[inline(always)]
-    pub const fn set_cf(&mut self, val: super::vals::Cf) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_cf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Configflag {
@@ -161,7 +161,7 @@ impl core::fmt::Debug for Configflag {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Configflag {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Configflag {{ cf: {:?} }}", self.cf())
+        defmt::write!(f, "Configflag {{ cf: {=bool:?} }}", self.cf())
     }
 }
 #[doc = "Device Controller Capability Parameters"]
@@ -2270,38 +2270,38 @@ impl Gptimer0ctrl {
     #[doc = "General Purpose Timer Mode In one shot mode, the timer will count down to zero, generate an interrupt, and stop until the counter is reset by software; In repeat mode, the timer will count down to zero, generate an interrupt and automatically reload the counter value from GPTLD bits to start again"]
     #[must_use]
     #[inline(always)]
-    pub const fn gptmode(&self) -> super::vals::Gptimer0ctrlGptmode {
+    pub const fn gptmode(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::Gptimer0ctrlGptmode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "General Purpose Timer Mode In one shot mode, the timer will count down to zero, generate an interrupt, and stop until the counter is reset by software; In repeat mode, the timer will count down to zero, generate an interrupt and automatically reload the counter value from GPTLD bits to start again"]
     #[inline(always)]
-    pub const fn set_gptmode(&mut self, val: super::vals::Gptimer0ctrlGptmode) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_gptmode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "General Purpose Timer Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn gptrst(&self) -> super::vals::Gptimer0ctrlGptrst {
+    pub const fn gptrst(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Gptimer0ctrlGptrst::from_bits(val as u8)
+        val != 0
     }
     #[doc = "General Purpose Timer Reset"]
     #[inline(always)]
-    pub const fn set_gptrst(&mut self, val: super::vals::Gptimer0ctrlGptrst) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_gptrst(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "General Purpose Timer Run GPTCNT bits are not effected when setting or clearing this bit."]
     #[must_use]
     #[inline(always)]
-    pub const fn gptrun(&self) -> super::vals::Gptimer0ctrlGptrun {
+    pub const fn gptrun(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Gptimer0ctrlGptrun::from_bits(val as u8)
+        val != 0
     }
     #[doc = "General Purpose Timer Run GPTCNT bits are not effected when setting or clearing this bit."]
     #[inline(always)]
-    pub const fn set_gptrun(&mut self, val: super::vals::Gptimer0ctrlGptrun) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_gptrun(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Gptimer0ctrl {
@@ -2325,7 +2325,7 @@ impl defmt::Format for Gptimer0ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Gptimer0ctrl {{ gptcnt: {=u32:?}, gptmode: {:?}, gptrst: {:?}, gptrun: {:?} }}",
+            "Gptimer0ctrl {{ gptcnt: {=u32:?}, gptmode: {=bool:?}, gptrst: {=bool:?}, gptrun: {=bool:?} }}",
             self.gptcnt(),
             self.gptmode(),
             self.gptrst(),
@@ -2390,38 +2390,38 @@ impl Gptimer1ctrl {
     #[doc = "General Purpose Timer Mode In one shot mode, the timer will count down to zero, generate an interrupt, and stop until the counter is reset by software"]
     #[must_use]
     #[inline(always)]
-    pub const fn gptmode(&self) -> super::vals::Gptimer1ctrlGptmode {
+    pub const fn gptmode(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::Gptimer1ctrlGptmode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "General Purpose Timer Mode In one shot mode, the timer will count down to zero, generate an interrupt, and stop until the counter is reset by software"]
     #[inline(always)]
-    pub const fn set_gptmode(&mut self, val: super::vals::Gptimer1ctrlGptmode) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_gptmode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "General Purpose Timer Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn gptrst(&self) -> super::vals::Gptimer1ctrlGptrst {
+    pub const fn gptrst(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Gptimer1ctrlGptrst::from_bits(val as u8)
+        val != 0
     }
     #[doc = "General Purpose Timer Reset"]
     #[inline(always)]
-    pub const fn set_gptrst(&mut self, val: super::vals::Gptimer1ctrlGptrst) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_gptrst(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "General Purpose Timer Run GPTCNT bits are not effected when setting or clearing this bit."]
     #[must_use]
     #[inline(always)]
-    pub const fn gptrun(&self) -> super::vals::Gptimer1ctrlGptrun {
+    pub const fn gptrun(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Gptimer1ctrlGptrun::from_bits(val as u8)
+        val != 0
     }
     #[doc = "General Purpose Timer Run GPTCNT bits are not effected when setting or clearing this bit."]
     #[inline(always)]
-    pub const fn set_gptrun(&mut self, val: super::vals::Gptimer1ctrlGptrun) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_gptrun(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Gptimer1ctrl {
@@ -2445,7 +2445,7 @@ impl defmt::Format for Gptimer1ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Gptimer1ctrl {{ gptcnt: {=u32:?}, gptmode: {:?}, gptrst: {:?}, gptrun: {:?} }}",
+            "Gptimer1ctrl {{ gptcnt: {=u32:?}, gptmode: {=bool:?}, gptrst: {=bool:?}, gptrun: {=bool:?} }}",
             self.gptcnt(),
             self.gptmode(),
             self.gptrst(),
@@ -2761,14 +2761,14 @@ impl Hwdevice {
     #[doc = "Device Capable. Indicating whether device operation mode is supported or not."]
     #[must_use]
     #[inline(always)]
-    pub const fn dc(&self) -> super::vals::Dc {
+    pub const fn dc(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Dc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Device Capable. Indicating whether device operation mode is supported or not."]
     #[inline(always)]
-    pub const fn set_dc(&mut self, val: super::vals::Dc) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_dc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Device Endpoint Number"]
     #[must_use]
@@ -2802,7 +2802,7 @@ impl defmt::Format for Hwdevice {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Hwdevice {{ dc: {:?}, devep: {=u8:?} }}",
+            "Hwdevice {{ dc: {=bool:?}, devep: {=u8:?} }}",
             self.dc(),
             self.devep()
         )
@@ -2885,14 +2885,14 @@ impl Hwhost {
     #[doc = "Host Capable. Indicating whether host operation mode is supported or not."]
     #[must_use]
     #[inline(always)]
-    pub const fn hc(&self) -> super::vals::Hc {
+    pub const fn hc(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Hc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Host Capable. Indicating whether host operation mode is supported or not."]
     #[inline(always)]
-    pub const fn set_hc(&mut self, val: super::vals::Hc) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_hc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "The Nmber of downstream ports supported by the host controller is (NPORT+1)"]
     #[must_use]
@@ -2926,7 +2926,7 @@ impl defmt::Format for Hwhost {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Hwhost {{ hc: {:?}, nport: {=u8:?} }}",
+            "Hwhost {{ hc: {=bool:?}, nport: {=u8:?} }}",
             self.hc(),
             self.nport()
         )
@@ -3599,14 +3599,14 @@ impl Portsc1 {
     #[doc = "Over-current Active-Read Only"]
     #[must_use]
     #[inline(always)]
-    pub const fn oca(&self) -> super::vals::Oca {
+    pub const fn oca(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Oca::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Over-current Active-Read Only"]
     #[inline(always)]
-    pub const fn set_oca(&mut self, val: super::vals::Oca) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_oca(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Over-current Change-R/WC"]
     #[must_use]
@@ -3767,26 +3767,26 @@ impl Portsc1 {
     #[doc = "PHY Low Power Suspend - Clock Disable (PLPSCD) - Read/Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn phcd(&self) -> super::vals::Phcd {
+    pub const fn phcd(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Phcd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PHY Low Power Suspend - Clock Disable (PLPSCD) - Read/Write"]
     #[inline(always)]
-    pub const fn set_phcd(&mut self, val: super::vals::Phcd) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_phcd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "Port Force Full Speed Connect - Read/Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn pfsc(&self) -> super::vals::Pfsc {
+    pub const fn pfsc(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::Pfsc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Port Force Full Speed Connect - Read/Write"]
     #[inline(always)]
-    pub const fn set_pfsc(&mut self, val: super::vals::Pfsc) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_pfsc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "See description at bits 31-30"]
     #[must_use]
@@ -3815,14 +3815,14 @@ impl Portsc1 {
     #[doc = "Parallel Transceiver Width This bit has no effect if serial interface engine is used"]
     #[must_use]
     #[inline(always)]
-    pub const fn ptw(&self) -> super::vals::Ptw {
+    pub const fn ptw(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Ptw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Parallel Transceiver Width This bit has no effect if serial interface engine is used"]
     #[inline(always)]
-    pub const fn set_ptw(&mut self, val: super::vals::Ptw) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_ptw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Serial Transceiver Select 1 Serial Interface Engine is selected 0 Parallel Interface signals is selected Serial Interface Engine can be used in combination with UTMI+/ULPI physical interface to provide FS/LS signaling instead of the parallel interface signals"]
     #[must_use]
@@ -3891,7 +3891,7 @@ impl defmt::Format for Portsc1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Portsc1 {{ ccs: {=bool:?}, csc: {=bool:?}, pe: {=bool:?}, pec: {=bool:?}, oca: {:?}, occ: {=bool:?}, fpr: {=bool:?}, susp: {=bool:?}, pr: {=bool:?}, hsp: {=bool:?}, ls: {:?}, pp: {=bool:?}, po: {=bool:?}, pic: {:?}, ptc: {:?}, wkcn: {=bool:?}, wkdc: {=bool:?}, wkoc: {=bool:?}, phcd: {:?}, pfsc: {:?}, pts_2: {=bool:?}, pspd: {:?}, ptw: {:?}, sts: {=bool:?}, pts_1: {=u8:?} }}",
+            "Portsc1 {{ ccs: {=bool:?}, csc: {=bool:?}, pe: {=bool:?}, pec: {=bool:?}, oca: {=bool:?}, occ: {=bool:?}, fpr: {=bool:?}, susp: {=bool:?}, pr: {=bool:?}, hsp: {=bool:?}, ls: {:?}, pp: {=bool:?}, po: {=bool:?}, pic: {:?}, ptc: {:?}, wkcn: {=bool:?}, wkdc: {=bool:?}, wkoc: {=bool:?}, phcd: {=bool:?}, pfsc: {=bool:?}, pts_2: {=bool:?}, pspd: {:?}, ptw: {=bool:?}, sts: {=bool:?}, pts_1: {=u8:?} }}",
             self.ccs(),
             self.csc(),
             self.pe(),
@@ -4070,26 +4070,26 @@ impl Usbcmd {
     #[doc = "Periodic Schedule Enable- Read/Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn pse(&self) -> super::vals::Pse {
+    pub const fn pse(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Pse::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Periodic Schedule Enable- Read/Write"]
     #[inline(always)]
-    pub const fn set_pse(&mut self, val: super::vals::Pse) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_pse(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Asynchronous Schedule Enable - Read/Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn ase(&self) -> super::vals::Ase {
+    pub const fn ase(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Ase::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Asynchronous Schedule Enable - Read/Write"]
     #[inline(always)]
-    pub const fn set_ase(&mut self, val: super::vals::Ase) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_ase(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Interrupt on Async Advance Doorbell - Read/Write"]
     #[must_use]
@@ -4154,14 +4154,14 @@ impl Usbcmd {
     #[doc = "Frame List Size - (Read/Write or Read Only)"]
     #[must_use]
     #[inline(always)]
-    pub const fn fs_2(&self) -> super::vals::Fs2 {
+    pub const fn fs_2(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Fs2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Frame List Size - (Read/Write or Read Only)"]
     #[inline(always)]
-    pub const fn set_fs_2(&mut self, val: super::vals::Fs2) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_fs_2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "Interrupt Threshold Control -Read/Write"]
     #[must_use]
@@ -4205,7 +4205,7 @@ impl defmt::Format for Usbcmd {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Usbcmd {{ rs: {=bool:?}, rst: {=bool:?}, fs_1: {=u8:?}, pse: {:?}, ase: {:?}, iaa: {=bool:?}, asp: {=u8:?}, aspe: {=bool:?}, sutw: {=bool:?}, atdtw: {=bool:?}, fs_2: {:?}, itc: {:?} }}",
+            "Usbcmd {{ rs: {=bool:?}, rst: {=bool:?}, fs_1: {=u8:?}, pse: {=bool:?}, ase: {=bool:?}, iaa: {=bool:?}, asp: {=u8:?}, aspe: {=bool:?}, sutw: {=bool:?}, atdtw: {=bool:?}, fs_2: {=bool:?}, itc: {:?} }}",
             self.rs(),
             self.rst(),
             self.fs_1(),
@@ -4478,26 +4478,26 @@ impl Usbmode {
     #[doc = "Endian Select - Read/Write"]
     #[must_use]
     #[inline(always)]
-    pub const fn es(&self) -> super::vals::Es {
+    pub const fn es(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Es::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Endian Select - Read/Write"]
     #[inline(always)]
-    pub const fn set_es(&mut self, val: super::vals::Es) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_es(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Setup Lockout Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn slom(&self) -> super::vals::Slom {
+    pub const fn slom(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Slom::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Setup Lockout Mode"]
     #[inline(always)]
-    pub const fn set_slom(&mut self, val: super::vals::Slom) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_slom(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Stream Disable Mode"]
     #[must_use]
@@ -4533,7 +4533,7 @@ impl defmt::Format for Usbmode {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Usbmode {{ cm: {:?}, es: {:?}, slom: {:?}, sdis: {=bool:?} }}",
+            "Usbmode {{ cm: {:?}, es: {=bool:?}, slom: {=bool:?}, sdis: {=bool:?} }}",
             self.cm(),
             self.es(),
             self.slom(),

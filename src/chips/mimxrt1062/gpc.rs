@@ -71,4 +71,3 @@ impl Gpc {
     }
 }
 pub mod regs;
-pub mod vals;
