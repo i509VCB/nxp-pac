@@ -56,22 +56,22 @@ impl Flexspi {
     }
     #[doc = "AHB RX Buffer 0 Control Register 0"]
     #[inline(always)]
-    pub const fn ahbrxbuf0cr0(self) -> crate::common::Reg<regs::Ahbrxbuf0cr0, crate::common::RW> {
+    pub const fn ahbrxbuf0cr0(self) -> crate::common::Reg<regs::AhbrxbufCr0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "AHB RX Buffer 1 Control Register 0"]
     #[inline(always)]
-    pub const fn ahbrxbuf1cr0(self) -> crate::common::Reg<regs::Ahbrxbuf1cr0, crate::common::RW> {
+    pub const fn ahbrxbuf1cr0(self) -> crate::common::Reg<regs::AhbrxbufCr0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[doc = "AHB RX Buffer 2 Control Register 0"]
     #[inline(always)]
-    pub const fn ahbrxbuf2cr0(self) -> crate::common::Reg<regs::Ahbrxbuf2cr0, crate::common::RW> {
+    pub const fn ahbrxbuf2cr0(self) -> crate::common::Reg<regs::AhbrxbufCr0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[doc = "AHB RX Buffer 3 Control Register 0"]
     #[inline(always)]
-    pub const fn ahbrxbuf3cr0(self) -> crate::common::Reg<regs::Ahbrxbuf3cr0, crate::common::RW> {
+    pub const fn ahbrxbuf3cr0(self) -> crate::common::Reg<regs::AhbrxbufCr0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "Flash Control Register 0"]

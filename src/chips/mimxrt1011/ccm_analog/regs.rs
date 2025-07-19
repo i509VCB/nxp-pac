@@ -18,14 +18,14 @@ impl Misc0 {
     #[doc = "Control bit to disable the self-bias circuit in the analog bandgap"]
     #[must_use]
     #[inline(always)]
-    pub const fn reftop_selfbiasoff(&self) -> super::vals::Misc0ReftopSelfbiasoff {
+    pub const fn reftop_selfbiasoff(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Misc0ReftopSelfbiasoff::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Control bit to disable the self-bias circuit in the analog bandgap"]
     #[inline(always)]
-    pub const fn set_reftop_selfbiasoff(&mut self, val: super::vals::Misc0ReftopSelfbiasoff) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_reftop_selfbiasoff(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Not related to CCM. See Power Management Unit (PMU)"]
     #[must_use]
@@ -66,14 +66,14 @@ impl Misc0 {
     #[doc = "This bit controls a switch from VDD_HIGH_IN to VDD_SNVS_IN."]
     #[must_use]
     #[inline(always)]
-    pub const fn discon_high_snvs(&self) -> super::vals::Misc0DisconHighSnvs {
+    pub const fn discon_high_snvs(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Misc0DisconHighSnvs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit controls a switch from VDD_HIGH_IN to VDD_SNVS_IN."]
     #[inline(always)]
-    pub const fn set_discon_high_snvs(&mut self, val: super::vals::Misc0DisconHighSnvs) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_discon_high_snvs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "This field determines the bias current in the 24MHz oscillator"]
     #[must_use]
@@ -114,14 +114,14 @@ impl Misc0 {
     #[doc = "This bit allows disabling the clock gate (always ungated) for the xtal 24MHz clock that clocks the digital logic in the analog block"]
     #[must_use]
     #[inline(always)]
-    pub const fn clkgate_ctrl(&self) -> super::vals::Misc0ClkgateCtrl {
+    pub const fn clkgate_ctrl(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Misc0ClkgateCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit allows disabling the clock gate (always ungated) for the xtal 24MHz clock that clocks the digital logic in the analog block"]
     #[inline(always)]
-    pub const fn set_clkgate_ctrl(&mut self, val: super::vals::Misc0ClkgateCtrl) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_clkgate_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "This field specifies the delay between powering up the XTAL 24MHz clock and releasing the clock to the digital logic inside the analog block"]
     #[must_use]
@@ -190,7 +190,7 @@ impl defmt::Format for Misc0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Misc0 {{ reftop_pwd: {=bool:?}, reftop_selfbiasoff: {:?}, reftop_vbgadj: {:?}, reftop_vbgup: {=bool:?}, stop_mode_config: {:?}, discon_high_snvs: {:?}, osc_i: {:?}, osc_xtalok: {=bool:?}, osc_xtalok_en: {=bool:?}, clkgate_ctrl: {:?}, clkgate_delay: {:?}, rtc_xtal_source: {:?}, xtal_24m_pwd: {=bool:?} }}",
+            "Misc0 {{ reftop_pwd: {=bool:?}, reftop_selfbiasoff: {=bool:?}, reftop_vbgadj: {:?}, reftop_vbgup: {=bool:?}, stop_mode_config: {:?}, discon_high_snvs: {=bool:?}, osc_i: {:?}, osc_xtalok: {=bool:?}, osc_xtalok_en: {=bool:?}, clkgate_ctrl: {=bool:?}, clkgate_delay: {:?}, rtc_xtal_source: {:?}, xtal_24m_pwd: {=bool:?} }}",
             self.reftop_pwd(),
             self.reftop_selfbiasoff(),
             self.reftop_vbgadj(),
@@ -1390,14 +1390,14 @@ impl Misc2 {
     #[doc = "When USB is in low power suspend mode this Control bit is used to indicate if other system peripherals require the USB PLL3 clock when the SoC is not in low power mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn pll3_disable(&self) -> super::vals::Misc2Pll3Disable {
+    pub const fn pll3_disable(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Misc2Pll3Disable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "When USB is in low power suspend mode this Control bit is used to indicate if other system peripherals require the USB PLL3 clock when the SoC is not in low power mode"]
     #[inline(always)]
-    pub const fn set_pll3_disable(&mut self, val: super::vals::Misc2Pll3Disable) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_pll3_disable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "This field defines the brown out voltage offset for the xPU power domain"]
     #[must_use]
@@ -1591,7 +1591,7 @@ impl defmt::Format for Misc2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Misc2 {{ reg0_bo_offset: {:?}, reg0_bo_status: {=bool:?}, reg0_enable_bo: {=bool:?}, reg0_ok: {=bool:?}, pll3_disable: {:?}, reg1_bo_offset: {:?}, reg1_bo_status: {=bool:?}, reg1_enable_bo: {=bool:?}, reg1_ok: {=bool:?}, audio_div_lsb: {:?}, reg2_bo_offset: {:?}, reg2_bo_status: {=bool:?}, reg2_enable_bo: {=bool:?}, reg2_ok: {=bool:?}, audio_div_msb: {:?}, reg0_step_time: {:?}, reg1_step_time: {:?}, reg2_step_time: {:?} }}",
+            "Misc2 {{ reg0_bo_offset: {:?}, reg0_bo_status: {=bool:?}, reg0_enable_bo: {=bool:?}, reg0_ok: {=bool:?}, pll3_disable: {=bool:?}, reg1_bo_offset: {:?}, reg1_bo_status: {=bool:?}, reg1_enable_bo: {=bool:?}, reg1_ok: {=bool:?}, audio_div_lsb: {:?}, reg2_bo_offset: {:?}, reg2_bo_status: {=bool:?}, reg2_enable_bo: {=bool:?}, reg2_ok: {=bool:?}, audio_div_msb: {:?}, reg0_step_time: {:?}, reg1_step_time: {:?}, reg2_step_time: {:?} }}",
             self.reg0_bo_offset(),
             self.reg0_bo_status(),
             self.reg0_enable_bo(),
@@ -5393,14 +5393,14 @@ impl PllSysSs {
     #[doc = "Enable bit"]
     #[must_use]
     #[inline(always)]
-    pub const fn enable(&self) -> super::vals::Enable {
+    pub const fn enable(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Enable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable bit"]
     #[inline(always)]
-    pub const fn set_enable(&mut self, val: super::vals::Enable) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_enable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "Frequency change = stop/CCM_ANALOG_PLL_SYS_DENOM\\[B\\]*24MHz."]
     #[must_use]
@@ -5435,7 +5435,7 @@ impl defmt::Format for PllSysSs {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "PllSysSs {{ step: {=u16:?}, enable: {:?}, stop: {=u16:?} }}",
+            "PllSysSs {{ step: {=u16:?}, enable: {=bool:?}, stop: {=u16:?} }}",
             self.step(),
             self.enable(),
             self.stop()
@@ -5573,14 +5573,14 @@ impl PllUsb1 {
     #[doc = "Powers the 9-phase PLL outputs for USBPHYn"]
     #[must_use]
     #[inline(always)]
-    pub const fn en_usb_clks(&self) -> super::vals::PllUsb1EnUsbClks {
+    pub const fn en_usb_clks(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::PllUsb1EnUsbClks::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Powers the 9-phase PLL outputs for USBPHYn"]
     #[inline(always)]
-    pub const fn set_en_usb_clks(&mut self, val: super::vals::PllUsb1EnUsbClks) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_en_usb_clks(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Powers up the PLL. This bit will be set automatically when USBPHY0 remote wakeup event happens."]
     #[must_use]
@@ -5667,7 +5667,7 @@ impl defmt::Format for PllUsb1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "PllUsb1 {{ div_select: {=bool:?}, en_usb_clks: {:?}, power: {=bool:?}, enable: {=bool:?}, bypass_clk_src: {:?}, bypass: {=bool:?}, lock: {=bool:?} }}",
+            "PllUsb1 {{ div_select: {=bool:?}, en_usb_clks: {=bool:?}, power: {=bool:?}, enable: {=bool:?}, bypass_clk_src: {:?}, bypass: {=bool:?}, lock: {=bool:?} }}",
             self.div_select(),
             self.en_usb_clks(),
             self.power(),

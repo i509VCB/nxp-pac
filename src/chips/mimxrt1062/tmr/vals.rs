@@ -104,37 +104,6 @@ impl From<Csctrl0DbgEn> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Csctrl0Tci {
-    #[doc = "Stop counter upon receiving a second trigger event while still counting from the first trigger event."]
-    STOP = 0x0,
-    #[doc = "Reload the counter upon receiving a second trigger event while still counting from the first trigger event."]
-    RELOAD = 0x01,
-}
-impl Csctrl0Tci {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Csctrl0Tci {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Csctrl0Tci {
-    #[inline(always)]
-    fn from(val: u8) -> Csctrl0Tci {
-        Csctrl0Tci::from_bits(val)
-    }
-}
-impl From<Csctrl0Tci> for u8 {
-    #[inline(always)]
-    fn from(val: Csctrl0Tci) -> u8 {
-        Csctrl0Tci::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Csctrl0Up {
     #[doc = "The last count was in the DOWN direction."]
     DOWN = 0x0,
@@ -264,37 +233,6 @@ impl From<Csctrl1DbgEn> for u8 {
     #[inline(always)]
     fn from(val: Csctrl1DbgEn) -> u8 {
         Csctrl1DbgEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Csctrl1Tci {
-    #[doc = "Stop counter upon receiving a second trigger event while still counting from the first trigger event."]
-    STOP = 0x0,
-    #[doc = "Reload the counter upon receiving a second trigger event while still counting from the first trigger event."]
-    RELOAD = 0x01,
-}
-impl Csctrl1Tci {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Csctrl1Tci {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Csctrl1Tci {
-    #[inline(always)]
-    fn from(val: u8) -> Csctrl1Tci {
-        Csctrl1Tci::from_bits(val)
-    }
-}
-impl From<Csctrl1Tci> for u8 {
-    #[inline(always)]
-    fn from(val: Csctrl1Tci) -> u8 {
-        Csctrl1Tci::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -434,37 +372,6 @@ impl From<Csctrl2DbgEn> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Csctrl2Tci {
-    #[doc = "Stop counter upon receiving a second trigger event while still counting from the first trigger event."]
-    STOP = 0x0,
-    #[doc = "Reload the counter upon receiving a second trigger event while still counting from the first trigger event."]
-    RELOAD = 0x01,
-}
-impl Csctrl2Tci {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Csctrl2Tci {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Csctrl2Tci {
-    #[inline(always)]
-    fn from(val: u8) -> Csctrl2Tci {
-        Csctrl2Tci::from_bits(val)
-    }
-}
-impl From<Csctrl2Tci> for u8 {
-    #[inline(always)]
-    fn from(val: Csctrl2Tci) -> u8 {
-        Csctrl2Tci::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Csctrl2Up {
     #[doc = "The last count was in the DOWN direction."]
     DOWN = 0x0,
@@ -594,37 +501,6 @@ impl From<Csctrl3DbgEn> for u8 {
     #[inline(always)]
     fn from(val: Csctrl3DbgEn) -> u8 {
         Csctrl3DbgEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Csctrl3Tci {
-    #[doc = "Stop counter upon receiving a second trigger event while still counting from the first trigger event."]
-    STOP = 0x0,
-    #[doc = "Reload the counter upon receiving a second trigger event while still counting from the first trigger event."]
-    RELOAD = 0x01,
-}
-impl Csctrl3Tci {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Csctrl3Tci {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Csctrl3Tci {
-    #[inline(always)]
-    fn from(val: u8) -> Csctrl3Tci {
-        Csctrl3Tci::from_bits(val)
-    }
-}
-impl From<Csctrl3Tci> for u8 {
-    #[inline(always)]
-    fn from(val: Csctrl3Tci) -> u8 {
-        Csctrl3Tci::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -761,37 +637,6 @@ impl From<Ctrl0Length> for u8 {
     #[inline(always)]
     fn from(val: Ctrl0Length) -> u8 {
         Ctrl0Length::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Ctrl0Once {
-    #[doc = "Count repeatedly."]
-    REPEAT = 0x0,
-    #[doc = "Count until compare and then stop. If counting up, a successful compare occurs when the counter reaches a COMP1 value. If counting down, a successful compare occurs when the counter reaches a COMP2 value. When output mode $4 is used, the counter re-initializes after reaching the COMP1 value, continues to count to the COMP2 value, and then stops."]
-    UNTIL_COMPARE = 0x01,
-}
-impl Ctrl0Once {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Ctrl0Once {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Ctrl0Once {
-    #[inline(always)]
-    fn from(val: u8) -> Ctrl0Once {
-        Ctrl0Once::from_bits(val)
-    }
-}
-impl From<Ctrl0Once> for u8 {
-    #[inline(always)]
-    fn from(val: Ctrl0Once) -> u8 {
-        Ctrl0Once::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1039,37 +884,6 @@ impl From<Ctrl1Length> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Ctrl1Once {
-    #[doc = "Count repeatedly."]
-    REPEAT = 0x0,
-    #[doc = "Count until compare and then stop. If counting up, a successful compare occurs when the counter reaches a COMP1 value. If counting down, a successful compare occurs when the counter reaches a COMP2 value. When output mode $4 is used, the counter re-initializes after reaching the COMP1 value, continues to count to the COMP2 value, and then stops."]
-    UNTIL_COMPARE = 0x01,
-}
-impl Ctrl1Once {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Ctrl1Once {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Ctrl1Once {
-    #[inline(always)]
-    fn from(val: u8) -> Ctrl1Once {
-        Ctrl1Once::from_bits(val)
-    }
-}
-impl From<Ctrl1Once> for u8 {
-    #[inline(always)]
-    fn from(val: Ctrl1Once) -> u8 {
-        Ctrl1Once::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ctrl1Outmode {
     #[doc = "Asserted while counter is active"]
     COUNTER_ACTIVE = 0x0,
@@ -1307,37 +1121,6 @@ impl From<Ctrl2Length> for u8 {
     #[inline(always)]
     fn from(val: Ctrl2Length) -> u8 {
         Ctrl2Length::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Ctrl2Once {
-    #[doc = "Count repeatedly."]
-    REPEAT = 0x0,
-    #[doc = "Count until compare and then stop. If counting up, a successful compare occurs when the counter reaches a COMP1 value. If counting down, a successful compare occurs when the counter reaches a COMP2 value. When output mode $4 is used, the counter re-initializes after reaching the COMP1 value, continues to count to the COMP2 value, and then stops."]
-    UNTIL_COMPARE = 0x01,
-}
-impl Ctrl2Once {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Ctrl2Once {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Ctrl2Once {
-    #[inline(always)]
-    fn from(val: u8) -> Ctrl2Once {
-        Ctrl2Once::from_bits(val)
-    }
-}
-impl From<Ctrl2Once> for u8 {
-    #[inline(always)]
-    fn from(val: Ctrl2Once) -> u8 {
-        Ctrl2Once::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1585,37 +1368,6 @@ impl From<Ctrl3Length> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Ctrl3Once {
-    #[doc = "Count repeatedly."]
-    REPEAT = 0x0,
-    #[doc = "Count until compare and then stop. If counting up, a successful compare occurs when the counter reaches a COMP1 value. If counting down, a successful compare occurs when the counter reaches a COMP2 value. When output mode $4 is used, the counter re-initializes after reaching the COMP1 value, continues to count to the COMP2 value, and then stops."]
-    UNTIL_COMPARE = 0x01,
-}
-impl Ctrl3Once {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Ctrl3Once {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Ctrl3Once {
-    #[inline(always)]
-    fn from(val: u8) -> Ctrl3Once {
-        Ctrl3Once::from_bits(val)
-    }
-}
-impl From<Ctrl3Once> for u8 {
-    #[inline(always)]
-    fn from(val: Ctrl3Once) -> u8 {
-        Ctrl3Once::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ctrl3Outmode {
     #[doc = "Asserted while counter is active"]
     COUNTER_ACTIVE = 0x0,
@@ -1833,37 +1585,6 @@ impl From<Sctrl0CaptureMode> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Sctrl0Oen {
-    #[doc = "The external pin is configured as an input."]
-    INPUT = 0x0,
-    #[doc = "The OFLAG output signal is driven on the external pin. Other timer groups using this external pin as their input see the driven value. The polarity of the signal is determined by OPS."]
-    OFLAG_OUT = 0x01,
-}
-impl Sctrl0Oen {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Sctrl0Oen {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Sctrl0Oen {
-    #[inline(always)]
-    fn from(val: u8) -> Sctrl0Oen {
-        Sctrl0Oen::from_bits(val)
-    }
-}
-impl From<Sctrl0Oen> for u8 {
-    #[inline(always)]
-    fn from(val: Sctrl0Oen) -> u8 {
-        Sctrl0Oen::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sctrl0Ops {
     #[doc = "True polarity."]
     TRUE = 0x0,
@@ -1925,37 +1646,6 @@ impl From<Sctrl1CaptureMode> for u8 {
     #[inline(always)]
     fn from(val: Sctrl1CaptureMode) -> u8 {
         Sctrl1CaptureMode::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Sctrl1Oen {
-    #[doc = "The external pin is configured as an input."]
-    INPUT = 0x0,
-    #[doc = "The OFLAG output signal is driven on the external pin. Other timer groups using this external pin as their input see the driven value. The polarity of the signal is determined by OPS."]
-    OFLAG_OUT = 0x01,
-}
-impl Sctrl1Oen {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Sctrl1Oen {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Sctrl1Oen {
-    #[inline(always)]
-    fn from(val: u8) -> Sctrl1Oen {
-        Sctrl1Oen::from_bits(val)
-    }
-}
-impl From<Sctrl1Oen> for u8 {
-    #[inline(always)]
-    fn from(val: Sctrl1Oen) -> u8 {
-        Sctrl1Oen::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -2027,37 +1717,6 @@ impl From<Sctrl2CaptureMode> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Sctrl2Oen {
-    #[doc = "The external pin is configured as an input."]
-    INPUT = 0x0,
-    #[doc = "The OFLAG output signal is driven on the external pin. Other timer groups using this external pin as their input see the driven value. The polarity of the signal is determined by OPS."]
-    OFLAG_OUT = 0x01,
-}
-impl Sctrl2Oen {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Sctrl2Oen {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Sctrl2Oen {
-    #[inline(always)]
-    fn from(val: u8) -> Sctrl2Oen {
-        Sctrl2Oen::from_bits(val)
-    }
-}
-impl From<Sctrl2Oen> for u8 {
-    #[inline(always)]
-    fn from(val: Sctrl2Oen) -> u8 {
-        Sctrl2Oen::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sctrl2Ops {
     #[doc = "True polarity."]
     TRUE = 0x0,
@@ -2119,37 +1778,6 @@ impl From<Sctrl3CaptureMode> for u8 {
     #[inline(always)]
     fn from(val: Sctrl3CaptureMode) -> u8 {
         Sctrl3CaptureMode::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Sctrl3Oen {
-    #[doc = "The external pin is configured as an input."]
-    INPUT = 0x0,
-    #[doc = "The OFLAG output signal is driven on the external pin. Other timer groups using this external pin as their input see the driven value. The polarity of the signal is determined by OPS."]
-    OFLAG_OUT = 0x01,
-}
-impl Sctrl3Oen {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Sctrl3Oen {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Sctrl3Oen {
-    #[inline(always)]
-    fn from(val: u8) -> Sctrl3Oen {
-        Sctrl3Oen::from_bits(val)
-    }
-}
-impl From<Sctrl3Oen> for u8 {
-    #[inline(always)]
-    fn from(val: Sctrl3Oen) -> u8 {
-        Sctrl3Oen::to_bits(val)
     }
 }
 #[repr(u8)]

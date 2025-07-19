@@ -442,15 +442,15 @@ impl From<Dm> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum DmaCh0RxControlSr {
+pub enum DmaChRxControlSr {
     #[doc = "Stop Receive"]
     STOP = 0x0,
     #[doc = "Start Receive"]
     START = 0x01,
 }
-impl DmaCh0RxControlSr {
+impl DmaChRxControlSr {
     #[inline(always)]
-    pub const fn from_bits(val: u8) -> DmaCh0RxControlSr {
+    pub const fn from_bits(val: u8) -> DmaChRxControlSr {
         unsafe { core::mem::transmute(val & 0x01) }
     }
     #[inline(always)]
@@ -458,30 +458,30 @@ impl DmaCh0RxControlSr {
         unsafe { core::mem::transmute(self) }
     }
 }
-impl From<u8> for DmaCh0RxControlSr {
+impl From<u8> for DmaChRxControlSr {
     #[inline(always)]
-    fn from(val: u8) -> DmaCh0RxControlSr {
-        DmaCh0RxControlSr::from_bits(val)
+    fn from(val: u8) -> DmaChRxControlSr {
+        DmaChRxControlSr::from_bits(val)
     }
 }
-impl From<DmaCh0RxControlSr> for u8 {
+impl From<DmaChRxControlSr> for u8 {
     #[inline(always)]
-    fn from(val: DmaCh0RxControlSr) -> u8 {
-        DmaCh0RxControlSr::to_bits(val)
+    fn from(val: DmaChRxControlSr) -> u8 {
+        DmaChRxControlSr::to_bits(val)
     }
 }
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum DmaCh0TxControlSt {
+pub enum DmaChTxControlSt {
     #[doc = "Stop Transmission Command"]
     STOP = 0x0,
     #[doc = "Start Transmission Command"]
     START = 0x01,
 }
-impl DmaCh0TxControlSt {
+impl DmaChTxControlSt {
     #[inline(always)]
-    pub const fn from_bits(val: u8) -> DmaCh0TxControlSt {
+    pub const fn from_bits(val: u8) -> DmaChTxControlSt {
         unsafe { core::mem::transmute(val & 0x01) }
     }
     #[inline(always)]
@@ -489,78 +489,16 @@ impl DmaCh0TxControlSt {
         unsafe { core::mem::transmute(self) }
     }
 }
-impl From<u8> for DmaCh0TxControlSt {
+impl From<u8> for DmaChTxControlSt {
     #[inline(always)]
-    fn from(val: u8) -> DmaCh0TxControlSt {
-        DmaCh0TxControlSt::from_bits(val)
+    fn from(val: u8) -> DmaChTxControlSt {
+        DmaChTxControlSt::from_bits(val)
     }
 }
-impl From<DmaCh0TxControlSt> for u8 {
+impl From<DmaChTxControlSt> for u8 {
     #[inline(always)]
-    fn from(val: DmaCh0TxControlSt) -> u8 {
-        DmaCh0TxControlSt::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum DmaCh1RxControlSr {
-    #[doc = "Stop Receive"]
-    STOP = 0x0,
-    #[doc = "Start Receive"]
-    START = 0x01,
-}
-impl DmaCh1RxControlSr {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> DmaCh1RxControlSr {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for DmaCh1RxControlSr {
-    #[inline(always)]
-    fn from(val: u8) -> DmaCh1RxControlSr {
-        DmaCh1RxControlSr::from_bits(val)
-    }
-}
-impl From<DmaCh1RxControlSr> for u8 {
-    #[inline(always)]
-    fn from(val: DmaCh1RxControlSr) -> u8 {
-        DmaCh1RxControlSr::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum DmaCh1TxControlSt {
-    #[doc = "Stop Transmission Command"]
-    STOP = 0x0,
-    #[doc = "Start Transmission Command"]
-    START = 0x01,
-}
-impl DmaCh1TxControlSt {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> DmaCh1TxControlSt {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for DmaCh1TxControlSt {
-    #[inline(always)]
-    fn from(val: u8) -> DmaCh1TxControlSt {
-        DmaCh1TxControlSt::from_bits(val)
-    }
-}
-impl From<DmaCh1TxControlSt> for u8 {
-    #[inline(always)]
-    fn from(val: DmaCh1TxControlSt) -> u8 {
-        DmaCh1TxControlSt::to_bits(val)
+    fn from(val: DmaChTxControlSt) -> u8 {
+        DmaChTxControlSt::to_bits(val)
     }
 }
 #[repr(u8)]

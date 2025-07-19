@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: bee::vals::(BeeEnable|LittleEndian)
+    bit_size: 1

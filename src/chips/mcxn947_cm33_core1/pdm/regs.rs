@@ -1061,49 +1061,49 @@ impl Stat {
     #[doc = "Channel 0 Output Data Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn ch0f(&self) -> super::vals::Ch0f {
+    pub const fn ch0f(&self) -> super::vals::Chf {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Ch0f::from_bits(val as u8)
+        super::vals::Chf::from_bits(val as u8)
     }
     #[doc = "Channel 0 Output Data Flag"]
     #[inline(always)]
-    pub const fn set_ch0f(&mut self, val: super::vals::Ch0f) {
+    pub const fn set_ch0f(&mut self, val: super::vals::Chf) {
         self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
     }
     #[doc = "Channel 1 Output Data Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn ch1f(&self) -> super::vals::Ch1f {
+    pub const fn ch1f(&self) -> super::vals::Chf {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Ch1f::from_bits(val as u8)
+        super::vals::Chf::from_bits(val as u8)
     }
     #[doc = "Channel 1 Output Data Flag"]
     #[inline(always)]
-    pub const fn set_ch1f(&mut self, val: super::vals::Ch1f) {
+    pub const fn set_ch1f(&mut self, val: super::vals::Chf) {
         self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
     }
     #[doc = "Channel 2 Output Data Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn ch2f(&self) -> super::vals::Ch2f {
+    pub const fn ch2f(&self) -> super::vals::Chf {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Ch2f::from_bits(val as u8)
+        super::vals::Chf::from_bits(val as u8)
     }
     #[doc = "Channel 2 Output Data Flag"]
     #[inline(always)]
-    pub const fn set_ch2f(&mut self, val: super::vals::Ch2f) {
+    pub const fn set_ch2f(&mut self, val: super::vals::Chf) {
         self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
     }
     #[doc = "Channel 3 Output Data Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn ch3f(&self) -> super::vals::Ch3f {
+    pub const fn ch3f(&self) -> super::vals::Chf {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Ch3f::from_bits(val as u8)
+        super::vals::Chf::from_bits(val as u8)
     }
     #[doc = "Channel 3 Output Data Flag"]
     #[inline(always)]
-    pub const fn set_ch3f(&mut self, val: super::vals::Ch3f) {
+    pub const fn set_ch3f(&mut self, val: super::vals::Chf) {
         self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
     }
     #[doc = "Busy Flag"]

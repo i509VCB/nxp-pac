@@ -91,37 +91,6 @@ impl From<Cpol> for u8 {
         Cpol::to_bits(val)
     }
 }
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Dozen {
-    #[doc = "LPSPI module is enabled in Doze mode"]
-    ENABLED = 0x0,
-    #[doc = "LPSPI module is disabled in Doze mode"]
-    DISABLED = 0x01,
-}
-impl Dozen {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Dozen {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Dozen {
-    #[inline(always)]
-    fn from(val: u8) -> Dozen {
-        Dozen::from_bits(val)
-    }
-}
-impl From<Dozen> for u8 {
-    #[inline(always)]
-    fn from(val: Dozen) -> u8 {
-        Dozen::to_bits(val)
-    }
-}
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
 pub struct Feature(u16);
@@ -603,37 +572,6 @@ impl From<Rtf> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Rxmsk {
-    #[doc = "Normal transfer"]
-    NORMAL = 0x0,
-    #[doc = "Receive data is masked"]
-    MASK = 0x01,
-}
-impl Rxmsk {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Rxmsk {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Rxmsk {
-    #[inline(always)]
-    fn from(val: u8) -> Rxmsk {
-        Rxmsk::from_bits(val)
-    }
-}
-impl From<Rxmsk> for u8 {
-    #[inline(always)]
-    fn from(val: Rxmsk) -> u8 {
-        Rxmsk::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sample {
     #[doc = "Input data is sampled on SCK edge"]
     ON_SCK_EDGE = 0x0,
@@ -722,37 +660,6 @@ impl From<Tdf> for u8 {
     #[inline(always)]
     fn from(val: Tdf) -> u8 {
         Tdf::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Txmsk {
-    #[doc = "Normal transfer"]
-    NORMAL = 0x0,
-    #[doc = "Mask transmit data"]
-    MASK = 0x01,
-}
-impl Txmsk {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Txmsk {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Txmsk {
-    #[inline(always)]
-    fn from(val: u8) -> Txmsk {
-        Txmsk::from_bits(val)
-    }
-}
-impl From<Txmsk> for u8 {
-    #[inline(always)]
-    fn from(val: Txmsk) -> u8 {
-        Txmsk::to_bits(val)
     }
 }
 #[repr(u8)]

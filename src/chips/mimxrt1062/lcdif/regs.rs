@@ -92,26 +92,26 @@ impl Ctrl {
     #[doc = "Used only when WORD_LENGTH = 3, i"]
     #[must_use]
     #[inline(always)]
-    pub const fn data_format_24_bit(&self) -> super::vals::CtrlDataFormat24Bit {
+    pub const fn data_format_24_bit(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::CtrlDataFormat24Bit::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Used only when WORD_LENGTH = 3, i"]
     #[inline(always)]
-    pub const fn set_data_format_24_bit(&mut self, val: super::vals::CtrlDataFormat24Bit) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_data_format_24_bit(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Used only when WORD_LENGTH = 2, i.e. 18-bit."]
     #[must_use]
     #[inline(always)]
-    pub const fn data_format_18_bit(&self) -> super::vals::CtrlDataFormat18Bit {
+    pub const fn data_format_18_bit(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::CtrlDataFormat18Bit::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Used only when WORD_LENGTH = 2, i.e. 18-bit."]
     #[inline(always)]
-    pub const fn set_data_format_18_bit(&mut self, val: super::vals::CtrlDataFormat18Bit) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_data_format_18_bit(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "When this bit is 1 and WORD_LENGTH = 0, it implies that the 16-bit data is in ARGB555 format"]
     #[must_use]
@@ -303,7 +303,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ run: {=bool:?}, data_format_24_bit: {:?}, data_format_18_bit: {:?}, data_format_16_bit: {=bool:?}, master: {=bool:?}, enable_pxp_handshake: {=bool:?}, word_length: {:?}, lcd_databus_width: {:?}, csc_data_swizzle: {:?}, input_data_swizzle: {:?}, dotclk_mode: {=bool:?}, bypass_count: {=bool:?}, shift_num_bits: {=u8:?}, data_shift_dir: {:?}, clkgate: {=bool:?}, sftrst: {=bool:?} }}",
+            "Ctrl {{ run: {=bool:?}, data_format_24_bit: {=bool:?}, data_format_18_bit: {=bool:?}, data_format_16_bit: {=bool:?}, master: {=bool:?}, enable_pxp_handshake: {=bool:?}, word_length: {:?}, lcd_databus_width: {:?}, csc_data_swizzle: {:?}, input_data_swizzle: {:?}, dotclk_mode: {=bool:?}, bypass_count: {=bool:?}, shift_num_bits: {=u8:?}, data_shift_dir: {:?}, clkgate: {=bool:?}, sftrst: {=bool:?} }}",
             self.run(),
             self.data_format_24_bit(),
             self.data_format_18_bit(),
@@ -1803,26 +1803,26 @@ impl CtrlClr {
     #[doc = "Used only when WORD_LENGTH = 3, i"]
     #[must_use]
     #[inline(always)]
-    pub const fn data_format_24_bit(&self) -> super::vals::CtrlClrDataFormat24Bit {
+    pub const fn data_format_24_bit(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::CtrlClrDataFormat24Bit::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Used only when WORD_LENGTH = 3, i"]
     #[inline(always)]
-    pub const fn set_data_format_24_bit(&mut self, val: super::vals::CtrlClrDataFormat24Bit) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_data_format_24_bit(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Used only when WORD_LENGTH = 2, i.e. 18-bit."]
     #[must_use]
     #[inline(always)]
-    pub const fn data_format_18_bit(&self) -> super::vals::CtrlClrDataFormat18Bit {
+    pub const fn data_format_18_bit(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::CtrlClrDataFormat18Bit::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Used only when WORD_LENGTH = 2, i.e. 18-bit."]
     #[inline(always)]
-    pub const fn set_data_format_18_bit(&mut self, val: super::vals::CtrlClrDataFormat18Bit) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_data_format_18_bit(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "When this bit is 1 and WORD_LENGTH = 0, it implies that the 16-bit data is in ARGB555 format"]
     #[must_use]
@@ -2014,7 +2014,7 @@ impl defmt::Format for CtrlClr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "CtrlClr {{ run: {=bool:?}, data_format_24_bit: {:?}, data_format_18_bit: {:?}, data_format_16_bit: {=bool:?}, master: {=bool:?}, enable_pxp_handshake: {=bool:?}, word_length: {:?}, lcd_databus_width: {:?}, csc_data_swizzle: {:?}, input_data_swizzle: {:?}, dotclk_mode: {=bool:?}, bypass_count: {=bool:?}, shift_num_bits: {=u8:?}, data_shift_dir: {:?}, clkgate: {=bool:?}, sftrst: {=bool:?} }}",
+            "CtrlClr {{ run: {=bool:?}, data_format_24_bit: {=bool:?}, data_format_18_bit: {=bool:?}, data_format_16_bit: {=bool:?}, master: {=bool:?}, enable_pxp_handshake: {=bool:?}, word_length: {:?}, lcd_databus_width: {:?}, csc_data_swizzle: {:?}, input_data_swizzle: {:?}, dotclk_mode: {=bool:?}, bypass_count: {=bool:?}, shift_num_bits: {=u8:?}, data_shift_dir: {:?}, clkgate: {=bool:?}, sftrst: {=bool:?} }}",
             self.run(),
             self.data_format_24_bit(),
             self.data_format_18_bit(),
@@ -2054,26 +2054,26 @@ impl CtrlSet {
     #[doc = "Used only when WORD_LENGTH = 3, i"]
     #[must_use]
     #[inline(always)]
-    pub const fn data_format_24_bit(&self) -> super::vals::CtrlSetDataFormat24Bit {
+    pub const fn data_format_24_bit(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::CtrlSetDataFormat24Bit::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Used only when WORD_LENGTH = 3, i"]
     #[inline(always)]
-    pub const fn set_data_format_24_bit(&mut self, val: super::vals::CtrlSetDataFormat24Bit) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_data_format_24_bit(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Used only when WORD_LENGTH = 2, i.e. 18-bit."]
     #[must_use]
     #[inline(always)]
-    pub const fn data_format_18_bit(&self) -> super::vals::CtrlSetDataFormat18Bit {
+    pub const fn data_format_18_bit(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::CtrlSetDataFormat18Bit::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Used only when WORD_LENGTH = 2, i.e. 18-bit."]
     #[inline(always)]
-    pub const fn set_data_format_18_bit(&mut self, val: super::vals::CtrlSetDataFormat18Bit) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_data_format_18_bit(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "When this bit is 1 and WORD_LENGTH = 0, it implies that the 16-bit data is in ARGB555 format"]
     #[must_use]
@@ -2265,7 +2265,7 @@ impl defmt::Format for CtrlSet {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "CtrlSet {{ run: {=bool:?}, data_format_24_bit: {:?}, data_format_18_bit: {:?}, data_format_16_bit: {=bool:?}, master: {=bool:?}, enable_pxp_handshake: {=bool:?}, word_length: {:?}, lcd_databus_width: {:?}, csc_data_swizzle: {:?}, input_data_swizzle: {:?}, dotclk_mode: {=bool:?}, bypass_count: {=bool:?}, shift_num_bits: {=u8:?}, data_shift_dir: {:?}, clkgate: {=bool:?}, sftrst: {=bool:?} }}",
+            "CtrlSet {{ run: {=bool:?}, data_format_24_bit: {=bool:?}, data_format_18_bit: {=bool:?}, data_format_16_bit: {=bool:?}, master: {=bool:?}, enable_pxp_handshake: {=bool:?}, word_length: {:?}, lcd_databus_width: {:?}, csc_data_swizzle: {:?}, input_data_swizzle: {:?}, dotclk_mode: {=bool:?}, bypass_count: {=bool:?}, shift_num_bits: {=u8:?}, data_shift_dir: {:?}, clkgate: {=bool:?}, sftrst: {=bool:?} }}",
             self.run(),
             self.data_format_24_bit(),
             self.data_format_18_bit(),
@@ -2305,26 +2305,26 @@ impl CtrlTog {
     #[doc = "Used only when WORD_LENGTH = 3, i"]
     #[must_use]
     #[inline(always)]
-    pub const fn data_format_24_bit(&self) -> super::vals::CtrlTogDataFormat24Bit {
+    pub const fn data_format_24_bit(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::CtrlTogDataFormat24Bit::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Used only when WORD_LENGTH = 3, i"]
     #[inline(always)]
-    pub const fn set_data_format_24_bit(&mut self, val: super::vals::CtrlTogDataFormat24Bit) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_data_format_24_bit(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Used only when WORD_LENGTH = 2, i.e. 18-bit."]
     #[must_use]
     #[inline(always)]
-    pub const fn data_format_18_bit(&self) -> super::vals::CtrlTogDataFormat18Bit {
+    pub const fn data_format_18_bit(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::CtrlTogDataFormat18Bit::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Used only when WORD_LENGTH = 2, i.e. 18-bit."]
     #[inline(always)]
-    pub const fn set_data_format_18_bit(&mut self, val: super::vals::CtrlTogDataFormat18Bit) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_data_format_18_bit(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "When this bit is 1 and WORD_LENGTH = 0, it implies that the 16-bit data is in ARGB555 format"]
     #[must_use]
@@ -2516,7 +2516,7 @@ impl defmt::Format for CtrlTog {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "CtrlTog {{ run: {=bool:?}, data_format_24_bit: {:?}, data_format_18_bit: {:?}, data_format_16_bit: {=bool:?}, master: {=bool:?}, enable_pxp_handshake: {=bool:?}, word_length: {:?}, lcd_databus_width: {:?}, csc_data_swizzle: {:?}, input_data_swizzle: {:?}, dotclk_mode: {=bool:?}, bypass_count: {=bool:?}, shift_num_bits: {=u8:?}, data_shift_dir: {:?}, clkgate: {=bool:?}, sftrst: {=bool:?} }}",
+            "CtrlTog {{ run: {=bool:?}, data_format_24_bit: {=bool:?}, data_format_18_bit: {=bool:?}, data_format_16_bit: {=bool:?}, master: {=bool:?}, enable_pxp_handshake: {=bool:?}, word_length: {:?}, lcd_databus_width: {:?}, csc_data_swizzle: {:?}, input_data_swizzle: {:?}, dotclk_mode: {=bool:?}, bypass_count: {=bool:?}, shift_num_bits: {=u8:?}, data_shift_dir: {:?}, clkgate: {=bool:?}, sftrst: {=bool:?} }}",
             self.run(),
             self.data_format_24_bit(),
             self.data_format_18_bit(),
@@ -2815,14 +2815,14 @@ impl Pigeon00 {
     #[doc = "Polarity of signal output"]
     #[must_use]
     #[inline(always)]
-    pub const fn pol(&self) -> super::vals::Pigeon00Pol {
+    pub const fn pol(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Pigeon00Pol::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Polarity of signal output"]
     #[inline(always)]
-    pub const fn set_pol(&mut self, val: super::vals::Pigeon00Pol) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_pol(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Event to incrment local counter"]
     #[must_use]
@@ -2909,7 +2909,7 @@ impl defmt::Format for Pigeon00 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Pigeon00 {{ en: {=bool:?}, pol: {:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
+            "Pigeon00 {{ en: {=bool:?}, pol: {=bool:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
             self.en(),
             self.pol(),
             self.inc_sel(),
@@ -3050,14 +3050,14 @@ impl Pigeon10 {
     #[doc = "Polarity of signal output"]
     #[must_use]
     #[inline(always)]
-    pub const fn pol(&self) -> super::vals::Pigeon10Pol {
+    pub const fn pol(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Pigeon10Pol::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Polarity of signal output"]
     #[inline(always)]
-    pub const fn set_pol(&mut self, val: super::vals::Pigeon10Pol) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_pol(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Event to incrment local counter"]
     #[must_use]
@@ -3144,7 +3144,7 @@ impl defmt::Format for Pigeon10 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Pigeon10 {{ en: {=bool:?}, pol: {:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
+            "Pigeon10 {{ en: {=bool:?}, pol: {=bool:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
             self.en(),
             self.pol(),
             self.inc_sel(),
@@ -3175,14 +3175,14 @@ impl Pigeon100 {
     #[doc = "Polarity of signal output"]
     #[must_use]
     #[inline(always)]
-    pub const fn pol(&self) -> super::vals::Pigeon100Pol {
+    pub const fn pol(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Pigeon100Pol::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Polarity of signal output"]
     #[inline(always)]
-    pub const fn set_pol(&mut self, val: super::vals::Pigeon100Pol) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_pol(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Event to incrment local counter"]
     #[must_use]
@@ -3269,7 +3269,7 @@ impl defmt::Format for Pigeon100 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Pigeon100 {{ en: {=bool:?}, pol: {:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
+            "Pigeon100 {{ en: {=bool:?}, pol: {=bool:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
             self.en(),
             self.pol(),
             self.inc_sel(),
@@ -3465,14 +3465,14 @@ impl Pigeon110 {
     #[doc = "Polarity of signal output"]
     #[must_use]
     #[inline(always)]
-    pub const fn pol(&self) -> super::vals::Pigeon110Pol {
+    pub const fn pol(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Pigeon110Pol::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Polarity of signal output"]
     #[inline(always)]
-    pub const fn set_pol(&mut self, val: super::vals::Pigeon110Pol) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_pol(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Event to incrment local counter"]
     #[must_use]
@@ -3559,7 +3559,7 @@ impl defmt::Format for Pigeon110 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Pigeon110 {{ en: {=bool:?}, pol: {:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
+            "Pigeon110 {{ en: {=bool:?}, pol: {=bool:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
             self.en(),
             self.pol(),
             self.inc_sel(),
@@ -3755,14 +3755,14 @@ impl Pigeon20 {
     #[doc = "Polarity of signal output"]
     #[must_use]
     #[inline(always)]
-    pub const fn pol(&self) -> super::vals::Pigeon20Pol {
+    pub const fn pol(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Pigeon20Pol::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Polarity of signal output"]
     #[inline(always)]
-    pub const fn set_pol(&mut self, val: super::vals::Pigeon20Pol) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_pol(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Event to incrment local counter"]
     #[must_use]
@@ -3849,7 +3849,7 @@ impl defmt::Format for Pigeon20 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Pigeon20 {{ en: {=bool:?}, pol: {:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
+            "Pigeon20 {{ en: {=bool:?}, pol: {=bool:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
             self.en(),
             self.pol(),
             self.inc_sel(),
@@ -3990,14 +3990,14 @@ impl Pigeon30 {
     #[doc = "Polarity of signal output"]
     #[must_use]
     #[inline(always)]
-    pub const fn pol(&self) -> super::vals::Pigeon30Pol {
+    pub const fn pol(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Pigeon30Pol::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Polarity of signal output"]
     #[inline(always)]
-    pub const fn set_pol(&mut self, val: super::vals::Pigeon30Pol) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_pol(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Event to incrment local counter"]
     #[must_use]
@@ -4084,7 +4084,7 @@ impl defmt::Format for Pigeon30 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Pigeon30 {{ en: {=bool:?}, pol: {:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
+            "Pigeon30 {{ en: {=bool:?}, pol: {=bool:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
             self.en(),
             self.pol(),
             self.inc_sel(),
@@ -4225,14 +4225,14 @@ impl Pigeon40 {
     #[doc = "Polarity of signal output"]
     #[must_use]
     #[inline(always)]
-    pub const fn pol(&self) -> super::vals::Pigeon40Pol {
+    pub const fn pol(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Pigeon40Pol::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Polarity of signal output"]
     #[inline(always)]
-    pub const fn set_pol(&mut self, val: super::vals::Pigeon40Pol) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_pol(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Event to incrment local counter"]
     #[must_use]
@@ -4319,7 +4319,7 @@ impl defmt::Format for Pigeon40 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Pigeon40 {{ en: {=bool:?}, pol: {:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
+            "Pigeon40 {{ en: {=bool:?}, pol: {=bool:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
             self.en(),
             self.pol(),
             self.inc_sel(),
@@ -4460,14 +4460,14 @@ impl Pigeon50 {
     #[doc = "Polarity of signal output"]
     #[must_use]
     #[inline(always)]
-    pub const fn pol(&self) -> super::vals::Pigeon50Pol {
+    pub const fn pol(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Pigeon50Pol::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Polarity of signal output"]
     #[inline(always)]
-    pub const fn set_pol(&mut self, val: super::vals::Pigeon50Pol) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_pol(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Event to incrment local counter"]
     #[must_use]
@@ -4554,7 +4554,7 @@ impl defmt::Format for Pigeon50 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Pigeon50 {{ en: {=bool:?}, pol: {:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
+            "Pigeon50 {{ en: {=bool:?}, pol: {=bool:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
             self.en(),
             self.pol(),
             self.inc_sel(),
@@ -4695,14 +4695,14 @@ impl Pigeon60 {
     #[doc = "Polarity of signal output"]
     #[must_use]
     #[inline(always)]
-    pub const fn pol(&self) -> super::vals::Pigeon60Pol {
+    pub const fn pol(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Pigeon60Pol::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Polarity of signal output"]
     #[inline(always)]
-    pub const fn set_pol(&mut self, val: super::vals::Pigeon60Pol) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_pol(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Event to incrment local counter"]
     #[must_use]
@@ -4789,7 +4789,7 @@ impl defmt::Format for Pigeon60 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Pigeon60 {{ en: {=bool:?}, pol: {:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
+            "Pigeon60 {{ en: {=bool:?}, pol: {=bool:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
             self.en(),
             self.pol(),
             self.inc_sel(),
@@ -4930,14 +4930,14 @@ impl Pigeon70 {
     #[doc = "Polarity of signal output"]
     #[must_use]
     #[inline(always)]
-    pub const fn pol(&self) -> super::vals::Pigeon70Pol {
+    pub const fn pol(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Pigeon70Pol::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Polarity of signal output"]
     #[inline(always)]
-    pub const fn set_pol(&mut self, val: super::vals::Pigeon70Pol) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_pol(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Event to incrment local counter"]
     #[must_use]
@@ -5024,7 +5024,7 @@ impl defmt::Format for Pigeon70 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Pigeon70 {{ en: {=bool:?}, pol: {:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
+            "Pigeon70 {{ en: {=bool:?}, pol: {=bool:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
             self.en(),
             self.pol(),
             self.inc_sel(),
@@ -5165,14 +5165,14 @@ impl Pigeon80 {
     #[doc = "Polarity of signal output"]
     #[must_use]
     #[inline(always)]
-    pub const fn pol(&self) -> super::vals::Pigeon80Pol {
+    pub const fn pol(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Pigeon80Pol::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Polarity of signal output"]
     #[inline(always)]
-    pub const fn set_pol(&mut self, val: super::vals::Pigeon80Pol) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_pol(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Event to incrment local counter"]
     #[must_use]
@@ -5259,7 +5259,7 @@ impl defmt::Format for Pigeon80 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Pigeon80 {{ en: {=bool:?}, pol: {:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
+            "Pigeon80 {{ en: {=bool:?}, pol: {=bool:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
             self.en(),
             self.pol(),
             self.inc_sel(),
@@ -5400,14 +5400,14 @@ impl Pigeon90 {
     #[doc = "Polarity of signal output"]
     #[must_use]
     #[inline(always)]
-    pub const fn pol(&self) -> super::vals::Pigeon90Pol {
+    pub const fn pol(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Pigeon90Pol::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Polarity of signal output"]
     #[inline(always)]
-    pub const fn set_pol(&mut self, val: super::vals::Pigeon90Pol) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_pol(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Event to incrment local counter"]
     #[must_use]
@@ -5494,7 +5494,7 @@ impl defmt::Format for Pigeon90 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Pigeon90 {{ en: {=bool:?}, pol: {:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
+            "Pigeon90 {{ en: {=bool:?}, pol: {=bool:?}, inc_sel: {:?}, offset: {=u8:?}, mask_cnt_sel: {:?}, mask_cnt: {=u16:?}, state_mask: {:?} }}",
             self.en(),
             self.pol(),
             self.inc_sel(),

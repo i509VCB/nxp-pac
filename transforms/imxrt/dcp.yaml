@@ -1,0 +1,7 @@
+# Boolean enum transforms for DCP peripheral
+# Converts single-bit enums with _0/_1 patterns to proper boolean types
+
+transforms:
+  - !DeleteEnums
+    from: dcp::vals::(CipherEncrypt|CtrlClrPresentCrypto|CtrlClrPresentSha|CtrlPresentCrypto|CtrlPresentSha|CtrlSetPresentCrypto|CtrlSetPresentSha|CtrlTogPresentCrypto|CtrlTogPresentSha|HashOutput)
+    bit_size: 1

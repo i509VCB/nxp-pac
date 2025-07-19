@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: lpuart::vals::(Brk13|Dozeen|Msbf|Raf|Resyncdis|Rst|Rxflush|Sbk|Tc|Tdre|Txctsc|Txctssrc|Txflush|Txrtspol)
+    bit_size: 1

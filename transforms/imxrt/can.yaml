@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: can::vals::(Aen|Eacen|Boffmsk|Errmsk|Imb|Lom|Lpb|Lprioen|Mdis|Rfen|Rwrnmsk|Slfwak|Srxdis|Twrnmsk|Wakmsk|Wrmfrz|Wrnen)
+    bit_size: 1

@@ -42,14 +42,14 @@ impl Misc0 {
     #[doc = "Control bit to disable the self-bias circuit in the analog bandgap"]
     #[must_use]
     #[inline(always)]
-    pub const fn reftop_selfbiasoff(&self) -> super::vals::Misc0ReftopSelfbiasoff {
+    pub const fn reftop_selfbiasoff(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Misc0ReftopSelfbiasoff::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Control bit to disable the self-bias circuit in the analog bandgap"]
     #[inline(always)]
-    pub const fn set_reftop_selfbiasoff(&mut self, val: super::vals::Misc0ReftopSelfbiasoff) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_reftop_selfbiasoff(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "no description available"]
     #[must_use]
@@ -90,14 +90,14 @@ impl Misc0 {
     #[doc = "This bit controls a switch from VDD_HIGH_IN to VDD_SNVS_IN."]
     #[must_use]
     #[inline(always)]
-    pub const fn discon_high_snvs(&self) -> super::vals::Misc0DisconHighSnvs {
+    pub const fn discon_high_snvs(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Misc0DisconHighSnvs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit controls a switch from VDD_HIGH_IN to VDD_SNVS_IN."]
     #[inline(always)]
-    pub const fn set_discon_high_snvs(&mut self, val: super::vals::Misc0DisconHighSnvs) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_discon_high_snvs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "This field determines the bias current in the 24MHz oscillator"]
     #[must_use]
@@ -138,14 +138,14 @@ impl Misc0 {
     #[doc = "This bit allows disabling the clock gate (always ungated) for the xtal 24MHz clock that clocks the digital logic in the analog block"]
     #[must_use]
     #[inline(always)]
-    pub const fn clkgate_ctrl(&self) -> super::vals::Misc0ClkgateCtrl {
+    pub const fn clkgate_ctrl(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Misc0ClkgateCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit allows disabling the clock gate (always ungated) for the xtal 24MHz clock that clocks the digital logic in the analog block"]
     #[inline(always)]
-    pub const fn set_clkgate_ctrl(&mut self, val: super::vals::Misc0ClkgateCtrl) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_clkgate_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "This field specifies the delay between powering up the XTAL 24MHz clock and releasing the clock to the digital logic inside the analog block"]
     #[must_use]
@@ -216,7 +216,7 @@ impl defmt::Format for Misc0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Misc0 {{ reftop_pwd: {=bool:?}, reftop_pwdvbgup: {=bool:?}, reftop_lowpower: {=bool:?}, reftop_selfbiasoff: {:?}, reftop_vbgadj: {:?}, reftop_vbgup: {=bool:?}, stop_mode_config: {:?}, discon_high_snvs: {:?}, osc_i: {:?}, osc_xtalok: {=bool:?}, osc_xtalok_en: {=bool:?}, clkgate_ctrl: {:?}, clkgate_delay: {:?}, rtc_xtal_source: {:?}, xtal_24m_pwd: {=bool:?} }}",
+            "Misc0 {{ reftop_pwd: {=bool:?}, reftop_pwdvbgup: {=bool:?}, reftop_lowpower: {=bool:?}, reftop_selfbiasoff: {=bool:?}, reftop_vbgadj: {:?}, reftop_vbgup: {=bool:?}, stop_mode_config: {:?}, discon_high_snvs: {=bool:?}, osc_i: {:?}, osc_xtalok: {=bool:?}, osc_xtalok_en: {=bool:?}, clkgate_ctrl: {=bool:?}, clkgate_delay: {:?}, rtc_xtal_source: {:?}, xtal_24m_pwd: {=bool:?} }}",
             self.reftop_pwd(),
             self.reftop_pwdvbgup(),
             self.reftop_lowpower(),
@@ -279,14 +279,14 @@ impl Misc0Clr {
     #[doc = "Control bit to disable the self-bias circuit in the analog bandgap"]
     #[must_use]
     #[inline(always)]
-    pub const fn reftop_selfbiasoff(&self) -> super::vals::Misc0ClrReftopSelfbiasoff {
+    pub const fn reftop_selfbiasoff(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Misc0ClrReftopSelfbiasoff::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Control bit to disable the self-bias circuit in the analog bandgap"]
     #[inline(always)]
-    pub const fn set_reftop_selfbiasoff(&mut self, val: super::vals::Misc0ClrReftopSelfbiasoff) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_reftop_selfbiasoff(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "no description available"]
     #[must_use]
@@ -327,14 +327,14 @@ impl Misc0Clr {
     #[doc = "This bit controls a switch from VDD_HIGH_IN to VDD_SNVS_IN."]
     #[must_use]
     #[inline(always)]
-    pub const fn discon_high_snvs(&self) -> super::vals::Misc0ClrDisconHighSnvs {
+    pub const fn discon_high_snvs(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Misc0ClrDisconHighSnvs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit controls a switch from VDD_HIGH_IN to VDD_SNVS_IN."]
     #[inline(always)]
-    pub const fn set_discon_high_snvs(&mut self, val: super::vals::Misc0ClrDisconHighSnvs) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_discon_high_snvs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "This field determines the bias current in the 24MHz oscillator"]
     #[must_use]
@@ -375,14 +375,14 @@ impl Misc0Clr {
     #[doc = "This bit allows disabling the clock gate (always ungated) for the xtal 24MHz clock that clocks the digital logic in the analog block"]
     #[must_use]
     #[inline(always)]
-    pub const fn clkgate_ctrl(&self) -> super::vals::Misc0ClrClkgateCtrl {
+    pub const fn clkgate_ctrl(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Misc0ClrClkgateCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit allows disabling the clock gate (always ungated) for the xtal 24MHz clock that clocks the digital logic in the analog block"]
     #[inline(always)]
-    pub const fn set_clkgate_ctrl(&mut self, val: super::vals::Misc0ClrClkgateCtrl) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_clkgate_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "This field specifies the delay between powering up the XTAL 24MHz clock and releasing the clock to the digital logic inside the analog block"]
     #[must_use]
@@ -453,7 +453,7 @@ impl defmt::Format for Misc0Clr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Misc0Clr {{ reftop_pwd: {=bool:?}, reftop_pwdvbgup: {=bool:?}, reftop_lowpower: {=bool:?}, reftop_selfbiasoff: {:?}, reftop_vbgadj: {:?}, reftop_vbgup: {=bool:?}, stop_mode_config: {:?}, discon_high_snvs: {:?}, osc_i: {:?}, osc_xtalok: {=bool:?}, osc_xtalok_en: {=bool:?}, clkgate_ctrl: {:?}, clkgate_delay: {:?}, rtc_xtal_source: {:?}, xtal_24m_pwd: {=bool:?} }}",
+            "Misc0Clr {{ reftop_pwd: {=bool:?}, reftop_pwdvbgup: {=bool:?}, reftop_lowpower: {=bool:?}, reftop_selfbiasoff: {=bool:?}, reftop_vbgadj: {:?}, reftop_vbgup: {=bool:?}, stop_mode_config: {:?}, discon_high_snvs: {=bool:?}, osc_i: {:?}, osc_xtalok: {=bool:?}, osc_xtalok_en: {=bool:?}, clkgate_ctrl: {=bool:?}, clkgate_delay: {:?}, rtc_xtal_source: {:?}, xtal_24m_pwd: {=bool:?} }}",
             self.reftop_pwd(),
             self.reftop_pwdvbgup(),
             self.reftop_lowpower(),
@@ -516,14 +516,14 @@ impl Misc0Set {
     #[doc = "Control bit to disable the self-bias circuit in the analog bandgap"]
     #[must_use]
     #[inline(always)]
-    pub const fn reftop_selfbiasoff(&self) -> super::vals::Misc0SetReftopSelfbiasoff {
+    pub const fn reftop_selfbiasoff(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Misc0SetReftopSelfbiasoff::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Control bit to disable the self-bias circuit in the analog bandgap"]
     #[inline(always)]
-    pub const fn set_reftop_selfbiasoff(&mut self, val: super::vals::Misc0SetReftopSelfbiasoff) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_reftop_selfbiasoff(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "no description available"]
     #[must_use]
@@ -564,14 +564,14 @@ impl Misc0Set {
     #[doc = "This bit controls a switch from VDD_HIGH_IN to VDD_SNVS_IN."]
     #[must_use]
     #[inline(always)]
-    pub const fn discon_high_snvs(&self) -> super::vals::Misc0SetDisconHighSnvs {
+    pub const fn discon_high_snvs(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Misc0SetDisconHighSnvs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit controls a switch from VDD_HIGH_IN to VDD_SNVS_IN."]
     #[inline(always)]
-    pub const fn set_discon_high_snvs(&mut self, val: super::vals::Misc0SetDisconHighSnvs) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_discon_high_snvs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "This field determines the bias current in the 24MHz oscillator"]
     #[must_use]
@@ -612,14 +612,14 @@ impl Misc0Set {
     #[doc = "This bit allows disabling the clock gate (always ungated) for the xtal 24MHz clock that clocks the digital logic in the analog block"]
     #[must_use]
     #[inline(always)]
-    pub const fn clkgate_ctrl(&self) -> super::vals::Misc0SetClkgateCtrl {
+    pub const fn clkgate_ctrl(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Misc0SetClkgateCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit allows disabling the clock gate (always ungated) for the xtal 24MHz clock that clocks the digital logic in the analog block"]
     #[inline(always)]
-    pub const fn set_clkgate_ctrl(&mut self, val: super::vals::Misc0SetClkgateCtrl) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_clkgate_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "This field specifies the delay between powering up the XTAL 24MHz clock and releasing the clock to the digital logic inside the analog block"]
     #[must_use]
@@ -690,7 +690,7 @@ impl defmt::Format for Misc0Set {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Misc0Set {{ reftop_pwd: {=bool:?}, reftop_pwdvbgup: {=bool:?}, reftop_lowpower: {=bool:?}, reftop_selfbiasoff: {:?}, reftop_vbgadj: {:?}, reftop_vbgup: {=bool:?}, stop_mode_config: {:?}, discon_high_snvs: {:?}, osc_i: {:?}, osc_xtalok: {=bool:?}, osc_xtalok_en: {=bool:?}, clkgate_ctrl: {:?}, clkgate_delay: {:?}, rtc_xtal_source: {:?}, xtal_24m_pwd: {=bool:?} }}",
+            "Misc0Set {{ reftop_pwd: {=bool:?}, reftop_pwdvbgup: {=bool:?}, reftop_lowpower: {=bool:?}, reftop_selfbiasoff: {=bool:?}, reftop_vbgadj: {:?}, reftop_vbgup: {=bool:?}, stop_mode_config: {:?}, discon_high_snvs: {=bool:?}, osc_i: {:?}, osc_xtalok: {=bool:?}, osc_xtalok_en: {=bool:?}, clkgate_ctrl: {=bool:?}, clkgate_delay: {:?}, rtc_xtal_source: {:?}, xtal_24m_pwd: {=bool:?} }}",
             self.reftop_pwd(),
             self.reftop_pwdvbgup(),
             self.reftop_lowpower(),
@@ -753,14 +753,14 @@ impl Misc0Tog {
     #[doc = "Control bit to disable the self-bias circuit in the analog bandgap"]
     #[must_use]
     #[inline(always)]
-    pub const fn reftop_selfbiasoff(&self) -> super::vals::Misc0TogReftopSelfbiasoff {
+    pub const fn reftop_selfbiasoff(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Misc0TogReftopSelfbiasoff::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Control bit to disable the self-bias circuit in the analog bandgap"]
     #[inline(always)]
-    pub const fn set_reftop_selfbiasoff(&mut self, val: super::vals::Misc0TogReftopSelfbiasoff) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_reftop_selfbiasoff(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "no description available"]
     #[must_use]
@@ -801,14 +801,14 @@ impl Misc0Tog {
     #[doc = "This bit controls a switch from VDD_HIGH_IN to VDD_SNVS_IN."]
     #[must_use]
     #[inline(always)]
-    pub const fn discon_high_snvs(&self) -> super::vals::Misc0TogDisconHighSnvs {
+    pub const fn discon_high_snvs(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Misc0TogDisconHighSnvs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit controls a switch from VDD_HIGH_IN to VDD_SNVS_IN."]
     #[inline(always)]
-    pub const fn set_discon_high_snvs(&mut self, val: super::vals::Misc0TogDisconHighSnvs) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_discon_high_snvs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "This field determines the bias current in the 24MHz oscillator"]
     #[must_use]
@@ -849,14 +849,14 @@ impl Misc0Tog {
     #[doc = "This bit allows disabling the clock gate (always ungated) for the xtal 24MHz clock that clocks the digital logic in the analog block"]
     #[must_use]
     #[inline(always)]
-    pub const fn clkgate_ctrl(&self) -> super::vals::Misc0TogClkgateCtrl {
+    pub const fn clkgate_ctrl(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Misc0TogClkgateCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit allows disabling the clock gate (always ungated) for the xtal 24MHz clock that clocks the digital logic in the analog block"]
     #[inline(always)]
-    pub const fn set_clkgate_ctrl(&mut self, val: super::vals::Misc0TogClkgateCtrl) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_clkgate_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "This field specifies the delay between powering up the XTAL 24MHz clock and releasing the clock to the digital logic inside the analog block"]
     #[must_use]
@@ -927,7 +927,7 @@ impl defmt::Format for Misc0Tog {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Misc0Tog {{ reftop_pwd: {=bool:?}, reftop_pwdvbgup: {=bool:?}, reftop_lowpower: {=bool:?}, reftop_selfbiasoff: {:?}, reftop_vbgadj: {:?}, reftop_vbgup: {=bool:?}, stop_mode_config: {:?}, discon_high_snvs: {:?}, osc_i: {:?}, osc_xtalok: {=bool:?}, osc_xtalok_en: {=bool:?}, clkgate_ctrl: {:?}, clkgate_delay: {:?}, rtc_xtal_source: {:?}, xtal_24m_pwd: {=bool:?} }}",
+            "Misc0Tog {{ reftop_pwd: {=bool:?}, reftop_pwdvbgup: {=bool:?}, reftop_lowpower: {=bool:?}, reftop_selfbiasoff: {=bool:?}, reftop_vbgadj: {:?}, reftop_vbgup: {=bool:?}, stop_mode_config: {:?}, discon_high_snvs: {=bool:?}, osc_i: {:?}, osc_xtalok: {=bool:?}, osc_xtalok_en: {=bool:?}, clkgate_ctrl: {=bool:?}, clkgate_delay: {:?}, rtc_xtal_source: {:?}, xtal_24m_pwd: {=bool:?} }}",
             self.reftop_pwd(),
             self.reftop_pwdvbgup(),
             self.reftop_lowpower(),
@@ -2566,14 +2566,14 @@ impl Reg1p1 {
     #[doc = "Selects the source for the reference voltage of the weak 1p1 regulator."]
     #[must_use]
     #[inline(always)]
-    pub const fn selref_weak_linreg(&self) -> super::vals::Reg1p1SelrefWeakLinreg {
+    pub const fn selref_weak_linreg(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Reg1p1SelrefWeakLinreg::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selects the source for the reference voltage of the weak 1p1 regulator."]
     #[inline(always)]
-    pub const fn set_selref_weak_linreg(&mut self, val: super::vals::Reg1p1SelrefWeakLinreg) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_selref_weak_linreg(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
 }
 impl Default for Reg1p1 {
@@ -2603,7 +2603,7 @@ impl defmt::Format for Reg1p1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Reg1p1 {{ enable_linreg: {=bool:?}, enable_bo: {=bool:?}, enable_ilimit: {=bool:?}, enable_pulldown: {=bool:?}, bo_offset: {=u8:?}, output_trg: {:?}, bo_vdd1p1: {=bool:?}, ok_vdd1p1: {=bool:?}, enable_weak_linreg: {=bool:?}, selref_weak_linreg: {:?} }}",
+            "Reg1p1 {{ enable_linreg: {=bool:?}, enable_bo: {=bool:?}, enable_ilimit: {=bool:?}, enable_pulldown: {=bool:?}, bo_offset: {=u8:?}, output_trg: {:?}, bo_vdd1p1: {=bool:?}, ok_vdd1p1: {=bool:?}, enable_weak_linreg: {=bool:?}, selref_weak_linreg: {=bool:?} }}",
             self.enable_linreg(),
             self.enable_bo(),
             self.enable_ilimit(),
@@ -2733,14 +2733,14 @@ impl Reg1p1Clr {
     #[doc = "Selects the source for the reference voltage of the weak 1p1 regulator."]
     #[must_use]
     #[inline(always)]
-    pub const fn selref_weak_linreg(&self) -> super::vals::Reg1p1ClrSelrefWeakLinreg {
+    pub const fn selref_weak_linreg(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Reg1p1ClrSelrefWeakLinreg::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selects the source for the reference voltage of the weak 1p1 regulator."]
     #[inline(always)]
-    pub const fn set_selref_weak_linreg(&mut self, val: super::vals::Reg1p1ClrSelrefWeakLinreg) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_selref_weak_linreg(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
 }
 impl Default for Reg1p1Clr {
@@ -2770,7 +2770,7 @@ impl defmt::Format for Reg1p1Clr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Reg1p1Clr {{ enable_linreg: {=bool:?}, enable_bo: {=bool:?}, enable_ilimit: {=bool:?}, enable_pulldown: {=bool:?}, bo_offset: {=u8:?}, output_trg: {:?}, bo_vdd1p1: {=bool:?}, ok_vdd1p1: {=bool:?}, enable_weak_linreg: {=bool:?}, selref_weak_linreg: {:?} }}",
+            "Reg1p1Clr {{ enable_linreg: {=bool:?}, enable_bo: {=bool:?}, enable_ilimit: {=bool:?}, enable_pulldown: {=bool:?}, bo_offset: {=u8:?}, output_trg: {:?}, bo_vdd1p1: {=bool:?}, ok_vdd1p1: {=bool:?}, enable_weak_linreg: {=bool:?}, selref_weak_linreg: {=bool:?} }}",
             self.enable_linreg(),
             self.enable_bo(),
             self.enable_ilimit(),
@@ -2900,14 +2900,14 @@ impl Reg1p1Set {
     #[doc = "Selects the source for the reference voltage of the weak 1p1 regulator."]
     #[must_use]
     #[inline(always)]
-    pub const fn selref_weak_linreg(&self) -> super::vals::Reg1p1SetSelrefWeakLinreg {
+    pub const fn selref_weak_linreg(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Reg1p1SetSelrefWeakLinreg::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selects the source for the reference voltage of the weak 1p1 regulator."]
     #[inline(always)]
-    pub const fn set_selref_weak_linreg(&mut self, val: super::vals::Reg1p1SetSelrefWeakLinreg) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_selref_weak_linreg(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
 }
 impl Default for Reg1p1Set {
@@ -2937,7 +2937,7 @@ impl defmt::Format for Reg1p1Set {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Reg1p1Set {{ enable_linreg: {=bool:?}, enable_bo: {=bool:?}, enable_ilimit: {=bool:?}, enable_pulldown: {=bool:?}, bo_offset: {=u8:?}, output_trg: {:?}, bo_vdd1p1: {=bool:?}, ok_vdd1p1: {=bool:?}, enable_weak_linreg: {=bool:?}, selref_weak_linreg: {:?} }}",
+            "Reg1p1Set {{ enable_linreg: {=bool:?}, enable_bo: {=bool:?}, enable_ilimit: {=bool:?}, enable_pulldown: {=bool:?}, bo_offset: {=u8:?}, output_trg: {:?}, bo_vdd1p1: {=bool:?}, ok_vdd1p1: {=bool:?}, enable_weak_linreg: {=bool:?}, selref_weak_linreg: {=bool:?} }}",
             self.enable_linreg(),
             self.enable_bo(),
             self.enable_ilimit(),
@@ -3067,14 +3067,14 @@ impl Reg1p1Tog {
     #[doc = "Selects the source for the reference voltage of the weak 1p1 regulator."]
     #[must_use]
     #[inline(always)]
-    pub const fn selref_weak_linreg(&self) -> super::vals::Reg1p1TogSelrefWeakLinreg {
+    pub const fn selref_weak_linreg(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Reg1p1TogSelrefWeakLinreg::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selects the source for the reference voltage of the weak 1p1 regulator."]
     #[inline(always)]
-    pub const fn set_selref_weak_linreg(&mut self, val: super::vals::Reg1p1TogSelrefWeakLinreg) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_selref_weak_linreg(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
 }
 impl Default for Reg1p1Tog {
@@ -3104,7 +3104,7 @@ impl defmt::Format for Reg1p1Tog {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Reg1p1Tog {{ enable_linreg: {=bool:?}, enable_bo: {=bool:?}, enable_ilimit: {=bool:?}, enable_pulldown: {=bool:?}, bo_offset: {=u8:?}, output_trg: {:?}, bo_vdd1p1: {=bool:?}, ok_vdd1p1: {=bool:?}, enable_weak_linreg: {=bool:?}, selref_weak_linreg: {:?} }}",
+            "Reg1p1Tog {{ enable_linreg: {=bool:?}, enable_bo: {=bool:?}, enable_ilimit: {=bool:?}, enable_pulldown: {=bool:?}, bo_offset: {=u8:?}, output_trg: {:?}, bo_vdd1p1: {=bool:?}, ok_vdd1p1: {=bool:?}, enable_weak_linreg: {=bool:?}, selref_weak_linreg: {=bool:?} }}",
             self.enable_linreg(),
             self.enable_bo(),
             self.enable_ilimit(),

@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: flexio::vals::(Dbge|Dozen|Fastacc)
+    bit_size: 1

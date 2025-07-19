@@ -1,0 +1,10 @@
+transforms:
+  - !MergeFieldsets
+    from: usb::regs::Endptctrl(\d+)
+    to: usb::regs::EndptctrlX
+    check: NoCheck
+
+  - !MergeFieldsets
+    from: usb(\d+)::regs::Endptctrl(\d+)
+    to: usb$1::regs::EndptctrlX
+    check: NoCheck

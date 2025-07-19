@@ -1,0 +1,5 @@
+transforms:
+  - !MergeEnums
+    from: inputmux0::vals::Ctimer(\d+)cap(\d+)Inp
+    to: inputmux0::vals::CtimerCapInp
+    check: Layout

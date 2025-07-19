@@ -75,74 +75,74 @@ impl IntSigEn {
     #[doc = "ITCM Magic Address Match Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn itcm_mam_sig_en(&self) -> super::vals::ItcmMamSigEn {
+    pub const fn itcm_mam_sig_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::ItcmMamSigEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ITCM Magic Address Match Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_itcm_mam_sig_en(&mut self, val: super::vals::ItcmMamSigEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_itcm_mam_sig_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "DTCM Magic Address Match Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dtcm_mam_sig_en(&self) -> super::vals::DtcmMamSigEn {
+    pub const fn dtcm_mam_sig_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::DtcmMamSigEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DTCM Magic Address Match Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_dtcm_mam_sig_en(&mut self, val: super::vals::DtcmMamSigEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_dtcm_mam_sig_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "OCRAM Magic Address Match Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ocram_mam_sig_en(&self) -> super::vals::OcramMamSigEn {
+    pub const fn ocram_mam_sig_en(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::OcramMamSigEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "OCRAM Magic Address Match Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ocram_mam_sig_en(&mut self, val: super::vals::OcramMamSigEn) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_ocram_mam_sig_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "ITCM Access Error Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn itcm_err_sig_en(&self) -> super::vals::ItcmErrSigEn {
+    pub const fn itcm_err_sig_en(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::ItcmErrSigEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ITCM Access Error Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_itcm_err_sig_en(&mut self, val: super::vals::ItcmErrSigEn) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_itcm_err_sig_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "DTCM Access Error Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dtcm_err_sig_en(&self) -> super::vals::DtcmErrSigEn {
+    pub const fn dtcm_err_sig_en(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::DtcmErrSigEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DTCM Access Error Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_dtcm_err_sig_en(&mut self, val: super::vals::DtcmErrSigEn) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_dtcm_err_sig_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "OCRAM Access Error Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ocram_err_sig_en(&self) -> super::vals::OcramErrSigEn {
+    pub const fn ocram_err_sig_en(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::OcramErrSigEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "OCRAM Access Error Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ocram_err_sig_en(&mut self, val: super::vals::OcramErrSigEn) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_ocram_err_sig_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Reserved"]
     #[must_use]
@@ -181,7 +181,7 @@ impl defmt::Format for IntSigEn {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "IntSigEn {{ itcm_mam_sig_en: {:?}, dtcm_mam_sig_en: {:?}, ocram_mam_sig_en: {:?}, itcm_err_sig_en: {:?}, dtcm_err_sig_en: {:?}, ocram_err_sig_en: {:?}, reserved: {=u32:?} }}",
+            "IntSigEn {{ itcm_mam_sig_en: {=bool:?}, dtcm_mam_sig_en: {=bool:?}, ocram_mam_sig_en: {=bool:?}, itcm_err_sig_en: {=bool:?}, dtcm_err_sig_en: {=bool:?}, ocram_err_sig_en: {=bool:?}, reserved: {=u32:?} }}",
             self.itcm_mam_sig_en(),
             self.dtcm_mam_sig_en(),
             self.ocram_mam_sig_en(),
@@ -200,74 +200,74 @@ impl IntStatEn {
     #[doc = "ITCM Magic Address Match Status Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn itcm_mam_stat_en(&self) -> super::vals::ItcmMamStatEn {
+    pub const fn itcm_mam_stat_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::ItcmMamStatEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ITCM Magic Address Match Status Enable"]
     #[inline(always)]
-    pub const fn set_itcm_mam_stat_en(&mut self, val: super::vals::ItcmMamStatEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_itcm_mam_stat_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "DTCM Magic Address Match Status Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dtcm_mam_stat_en(&self) -> super::vals::DtcmMamStatEn {
+    pub const fn dtcm_mam_stat_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::DtcmMamStatEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DTCM Magic Address Match Status Enable"]
     #[inline(always)]
-    pub const fn set_dtcm_mam_stat_en(&mut self, val: super::vals::DtcmMamStatEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_dtcm_mam_stat_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "OCRAM Magic Address Match Status Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ocram_mam_stat_en(&self) -> super::vals::OcramMamStatEn {
+    pub const fn ocram_mam_stat_en(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::OcramMamStatEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "OCRAM Magic Address Match Status Enable"]
     #[inline(always)]
-    pub const fn set_ocram_mam_stat_en(&mut self, val: super::vals::OcramMamStatEn) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_ocram_mam_stat_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "ITCM Access Error Status Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn itcm_err_stat_en(&self) -> super::vals::ItcmErrStatEn {
+    pub const fn itcm_err_stat_en(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::ItcmErrStatEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ITCM Access Error Status Enable"]
     #[inline(always)]
-    pub const fn set_itcm_err_stat_en(&mut self, val: super::vals::ItcmErrStatEn) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_itcm_err_stat_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "DTCM Access Error Status Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dtcm_err_stat_en(&self) -> super::vals::DtcmErrStatEn {
+    pub const fn dtcm_err_stat_en(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::DtcmErrStatEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DTCM Access Error Status Enable"]
     #[inline(always)]
-    pub const fn set_dtcm_err_stat_en(&mut self, val: super::vals::DtcmErrStatEn) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_dtcm_err_stat_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "OCRAM Access Error Status Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ocram_err_stat_en(&self) -> super::vals::OcramErrStatEn {
+    pub const fn ocram_err_stat_en(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::OcramErrStatEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "OCRAM Access Error Status Enable"]
     #[inline(always)]
-    pub const fn set_ocram_err_stat_en(&mut self, val: super::vals::OcramErrStatEn) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_ocram_err_stat_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Reserved"]
     #[must_use]
@@ -306,7 +306,7 @@ impl defmt::Format for IntStatEn {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "IntStatEn {{ itcm_mam_stat_en: {:?}, dtcm_mam_stat_en: {:?}, ocram_mam_stat_en: {:?}, itcm_err_stat_en: {:?}, dtcm_err_stat_en: {:?}, ocram_err_stat_en: {:?}, reserved: {=u32:?} }}",
+            "IntStatEn {{ itcm_mam_stat_en: {=bool:?}, dtcm_mam_stat_en: {=bool:?}, ocram_mam_stat_en: {=bool:?}, itcm_err_stat_en: {=bool:?}, dtcm_err_stat_en: {=bool:?}, ocram_err_stat_en: {=bool:?}, reserved: {=u32:?} }}",
             self.itcm_mam_stat_en(),
             self.dtcm_mam_stat_en(),
             self.ocram_mam_stat_en(),
@@ -588,26 +588,26 @@ impl TcmCtrl {
     #[doc = "TCM Write Wait Mode Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tcm_wwait_en(&self) -> super::vals::TcmWwaitEn {
+    pub const fn tcm_wwait_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::TcmWwaitEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TCM Write Wait Mode Enable"]
     #[inline(always)]
-    pub const fn set_tcm_wwait_en(&mut self, val: super::vals::TcmWwaitEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_tcm_wwait_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "TCM Read Wait Mode Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tcm_rwait_en(&self) -> super::vals::TcmRwaitEn {
+    pub const fn tcm_rwait_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::TcmRwaitEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TCM Read Wait Mode Enable"]
     #[inline(always)]
-    pub const fn set_tcm_rwait_en(&mut self, val: super::vals::TcmRwaitEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_tcm_rwait_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Force RAM Clock Always On"]
     #[must_use]
@@ -655,7 +655,7 @@ impl defmt::Format for TcmCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "TcmCtrl {{ tcm_wwait_en: {:?}, tcm_rwait_en: {:?}, force_clk_on: {=bool:?}, reserved: {=u32:?} }}",
+            "TcmCtrl {{ tcm_wwait_en: {=bool:?}, tcm_rwait_en: {=bool:?}, force_clk_on: {=bool:?}, reserved: {=u32:?} }}",
             self.tcm_wwait_en(),
             self.tcm_rwait_en(),
             self.force_clk_on(),

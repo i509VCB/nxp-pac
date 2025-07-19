@@ -841,37 +841,6 @@ impl From<ForceSel> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum FracPu {
-    #[doc = "Turn off fractional delay logic."]
-    TURN_OFF = 0x0,
-    #[doc = "Power up fractional delay logic."]
-    POWER_UP = 0x01,
-}
-impl FracPu {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> FracPu {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for FracPu {
-    #[inline(always)]
-    fn from(val: u8) -> FracPu {
-        FracPu::from_bits(val)
-    }
-}
-impl From<FracPu> for u8 {
-    #[inline(always)]
-    fn from(val: FracPu) -> u8 {
-        FracPu::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fsafe {
     #[doc = "Normal mode. PWM outputs disabled by this fault are not enabled until FSTS\\[FFLAGx\\] is clear at the start of a half cycle or full cycle depending on the states of FSTS\\[FHALF\\] and FSTS\\[FFULL\\] without regard to the state of FSTS\\[FFPINx\\]. If neither FHALF nor FFULL is set then the fault condition cannot be cleared. The PWM outputs disabled by this fault input will not be re-enabled until the actual FAULTx input signal de-asserts since the fault input will combinationally disable the PWM outputs (as programmed in DISMAPn)."]
     NORMAL = 0x0,
@@ -912,37 +881,6 @@ impl From<Fsafe> for u8 {
     #[inline(always)]
     fn from(val: Fsafe) -> u8 {
         Fsafe::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Indep {
-    #[doc = "PWM_A and PWM_B form a complementary PWM pair."]
-    COMPLEMENTARY = 0x0,
-    #[doc = "PWM_A and PWM_B outputs are independent PWMs."]
-    INDEPENDENT = 0x01,
-}
-impl Indep {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Indep {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Indep {
-    #[inline(always)]
-    fn from(val: u8) -> Indep {
-        Indep::from_bits(val)
-    }
-}
-impl From<Indep> for u8 {
-    #[inline(always)]
-    fn from(val: Indep) -> u8 {
-        Indep::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1466,99 +1404,6 @@ impl From<Nocomb> for u8 {
     #[inline(always)]
     fn from(val: Nocomb) -> u8 {
         Nocomb::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Oneshota {
-    #[doc = "Free Running"]
-    FREE_RUNNING = 0x0,
-    #[doc = "One Shot"]
-    ONE_SHOT = 0x01,
-}
-impl Oneshota {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Oneshota {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Oneshota {
-    #[inline(always)]
-    fn from(val: u8) -> Oneshota {
-        Oneshota::from_bits(val)
-    }
-}
-impl From<Oneshota> for u8 {
-    #[inline(always)]
-    fn from(val: Oneshota) -> u8 {
-        Oneshota::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Oneshotb {
-    #[doc = "Free Running"]
-    FREE_RUNNING = 0x0,
-    #[doc = "One Shot"]
-    ONE_SHOT = 0x01,
-}
-impl Oneshotb {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Oneshotb {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Oneshotb {
-    #[inline(always)]
-    fn from(val: u8) -> Oneshotb {
-        Oneshotb::from_bits(val)
-    }
-}
-impl From<Oneshotb> for u8 {
-    #[inline(always)]
-    fn from(val: Oneshotb) -> u8 {
-        Oneshotb::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Oneshotx {
-    #[doc = "Free Running"]
-    FREE_RUNNING = 0x0,
-    #[doc = "One Shot"]
-    ONE_SHOT = 0x01,
-}
-impl Oneshotx {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Oneshotx {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Oneshotx {
-    #[inline(always)]
-    fn from(val: u8) -> Oneshotx {
-        Oneshotx::from_bits(val)
-    }
-}
-impl From<Oneshotx> for u8 {
-    #[inline(always)]
-    fn from(val: Oneshotx) -> u8 {
-        Oneshotx::to_bits(val)
     }
 }
 #[repr(u8)]

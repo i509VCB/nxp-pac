@@ -1,0 +1,7 @@
+# Boolean enum transforms for ENET peripheral
+# Converts single-bit enums with _0/_1 patterns to proper boolean types
+
+transforms:
+  - !DeleteEnums
+    from: enet::vals::(Addins|Babr|Babt|BcRej|Capture|Cfen|Dbgen|Dbswp|DisPre|Drt|Eberr|En|En1588|Etheren|Fce|Fden|Gra|Grs|Gts|Ipchk|Ipdis|Lc|Linedis|Loop|Magicen|MibClear|MibDis|MibIdle|Mii|Nlc|Offen|Offrst|Paden|Padrem|Paufwd|Peren|Pinper|Plr|Prochk|Prodis|Prom|RaccShift16|RcrCrcfwd|Rl|Rmii10t|RmiiMode|Rxb|Rxf|Rxic0Iccs|Rxic0Icen|Slave|Sleep|Strfwd|TaccShift16|TcrCrcfwd|Tcsr0Tdre|Tcsr0Tf|Tcsr0Tie|Tcsr1Tdre|Tcsr1Tf|Tcsr1Tie|Tcsr2Tdre|Tcsr2Tf|Tcsr2Tie|Tcsr3Tdre|Tcsr3Tf|Tcsr3Tie|Tf0|Tf1|Tf2|Tf3|TfcPause|TsAvail|TsTimer|Txb|Txf|Txic0Iccs|Txic0Icen|Un|Wakeup)
+    bit_size: 1

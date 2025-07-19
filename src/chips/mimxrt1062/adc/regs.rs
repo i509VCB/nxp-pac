@@ -67,14 +67,14 @@ impl Cfg {
     #[doc = "Long Sample Time Configuration"]
     #[must_use]
     #[inline(always)]
-    pub const fn adlsmp(&self) -> super::vals::Adlsmp {
+    pub const fn adlsmp(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Adlsmp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Long Sample Time Configuration"]
     #[inline(always)]
-    pub const fn set_adlsmp(&mut self, val: super::vals::Adlsmp) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_adlsmp(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Clock Divide Select"]
     #[must_use]
@@ -91,14 +91,14 @@ impl Cfg {
     #[doc = "Low-Power Configuration"]
     #[must_use]
     #[inline(always)]
-    pub const fn adlpc(&self) -> super::vals::Adlpc {
+    pub const fn adlpc(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Adlpc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Low-Power Configuration"]
     #[inline(always)]
-    pub const fn set_adlpc(&mut self, val: super::vals::Adlpc) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_adlpc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Defines the total sample time duration in number of full cycles"]
     #[must_use]
@@ -115,14 +115,14 @@ impl Cfg {
     #[doc = "High Speed Configuration"]
     #[must_use]
     #[inline(always)]
-    pub const fn adhsc(&self) -> super::vals::Adhsc {
+    pub const fn adhsc(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Adhsc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "High Speed Configuration"]
     #[inline(always)]
-    pub const fn set_adhsc(&mut self, val: super::vals::Adhsc) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_adhsc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Voltage Reference Selection"]
     #[must_use]
@@ -139,14 +139,14 @@ impl Cfg {
     #[doc = "Conversion Trigger Select"]
     #[must_use]
     #[inline(always)]
-    pub const fn adtrg(&self) -> super::vals::Adtrg {
+    pub const fn adtrg(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Adtrg::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Conversion Trigger Select"]
     #[inline(always)]
-    pub const fn set_adtrg(&mut self, val: super::vals::Adtrg) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_adtrg(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Hardware Average select"]
     #[must_use]
@@ -163,14 +163,14 @@ impl Cfg {
     #[doc = "Data Overwrite Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ovwren(&self) -> super::vals::Ovwren {
+    pub const fn ovwren(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Ovwren::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Data Overwrite Enable"]
     #[inline(always)]
-    pub const fn set_ovwren(&mut self, val: super::vals::Ovwren) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_ovwren(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
 }
 impl Default for Cfg {
@@ -201,7 +201,7 @@ impl defmt::Format for Cfg {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cfg {{ adiclk: {:?}, mode: {:?}, adlsmp: {:?}, adiv: {:?}, adlpc: {:?}, adsts: {:?}, adhsc: {:?}, refsel: {:?}, adtrg: {:?}, avgs: {:?}, ovwren: {:?} }}",
+            "Cfg {{ adiclk: {:?}, mode: {:?}, adlsmp: {=bool:?}, adiv: {:?}, adlpc: {=bool:?}, adsts: {:?}, adhsc: {=bool:?}, refsel: {:?}, adtrg: {=bool:?}, avgs: {:?}, ovwren: {=bool:?} }}",
             self.adiclk(),
             self.mode(),
             self.adlsmp(),
@@ -279,86 +279,86 @@ impl Gc {
     #[doc = "Asynchronous clock output enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn adacken(&self) -> super::vals::Adacken {
+    pub const fn adacken(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Adacken::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Asynchronous clock output enable"]
     #[inline(always)]
-    pub const fn set_adacken(&mut self, val: super::vals::Adacken) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_adacken(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "DMA Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dmaen(&self) -> super::vals::Dmaen {
+    pub const fn dmaen(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Dmaen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA Enable"]
     #[inline(always)]
-    pub const fn set_dmaen(&mut self, val: super::vals::Dmaen) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_dmaen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Compare Function Range Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn acren(&self) -> super::vals::Acren {
+    pub const fn acren(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Acren::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Compare Function Range Enable"]
     #[inline(always)]
-    pub const fn set_acren(&mut self, val: super::vals::Acren) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_acren(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Compare Function Greater Than Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn acfgt(&self) -> super::vals::Acfgt {
+    pub const fn acfgt(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Acfgt::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Compare Function Greater Than Enable"]
     #[inline(always)]
-    pub const fn set_acfgt(&mut self, val: super::vals::Acfgt) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_acfgt(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Compare Function Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn acfe(&self) -> super::vals::Acfe {
+    pub const fn acfe(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Acfe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Compare Function Enable"]
     #[inline(always)]
-    pub const fn set_acfe(&mut self, val: super::vals::Acfe) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_acfe(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Hardware average enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn avge(&self) -> super::vals::Avge {
+    pub const fn avge(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Avge::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Hardware average enable"]
     #[inline(always)]
-    pub const fn set_avge(&mut self, val: super::vals::Avge) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_avge(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Continuous Conversion Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn adco(&self) -> super::vals::Adco {
+    pub const fn adco(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Adco::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Continuous Conversion Enable"]
     #[inline(always)]
-    pub const fn set_adco(&mut self, val: super::vals::Adco) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_adco(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Calibration"]
     #[must_use]
@@ -398,7 +398,7 @@ impl defmt::Format for Gc {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Gc {{ adacken: {:?}, dmaen: {:?}, acren: {:?}, acfgt: {:?}, acfe: {:?}, avge: {:?}, adco: {:?}, cal: {=bool:?} }}",
+            "Gc {{ adacken: {=bool:?}, dmaen: {=bool:?}, acren: {=bool:?}, acfgt: {=bool:?}, acfe: {=bool:?}, avge: {=bool:?}, adco: {=bool:?}, cal: {=bool:?} }}",
             self.adacken(),
             self.dmaen(),
             self.acren(),
@@ -418,38 +418,38 @@ impl Gs {
     #[doc = "Conversion Active"]
     #[must_use]
     #[inline(always)]
-    pub const fn adact(&self) -> super::vals::Adact {
+    pub const fn adact(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Adact::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Conversion Active"]
     #[inline(always)]
-    pub const fn set_adact(&mut self, val: super::vals::Adact) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_adact(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Calibration Failed Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn calf(&self) -> super::vals::Calf {
+    pub const fn calf(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Calf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Calibration Failed Flag"]
     #[inline(always)]
-    pub const fn set_calf(&mut self, val: super::vals::Calf) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_calf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Asynchronous wakeup interrupt status"]
     #[must_use]
     #[inline(always)]
-    pub const fn awkst(&self) -> super::vals::Awkst {
+    pub const fn awkst(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Awkst::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Asynchronous wakeup interrupt status"]
     #[inline(always)]
-    pub const fn set_awkst(&mut self, val: super::vals::Awkst) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_awkst(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
 }
 impl Default for Gs {
@@ -472,7 +472,7 @@ impl defmt::Format for Gs {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Gs {{ adact: {:?}, calf: {:?}, awkst: {:?} }}",
+            "Gs {{ adact: {=bool:?}, calf: {=bool:?}, awkst: {=bool:?} }}",
             self.adact(),
             self.calf(),
             self.awkst()
@@ -499,14 +499,14 @@ impl Hc {
     #[doc = "Conversion Complete Interrupt Enable/Disable Control"]
     #[must_use]
     #[inline(always)]
-    pub const fn aien(&self) -> super::vals::HcAien {
+    pub const fn aien(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::HcAien::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Conversion Complete Interrupt Enable/Disable Control"]
     #[inline(always)]
-    pub const fn set_aien(&mut self, val: super::vals::HcAien) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_aien(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
 }
 impl Default for Hc {
@@ -528,7 +528,7 @@ impl defmt::Format for Hc {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Hc {{ adch: {:?}, aien: {:?} }}",
+            "Hc {{ adch: {:?}, aien: {=bool:?} }}",
             self.adch(),
             self.aien()
         )
@@ -554,14 +554,14 @@ impl Hc0 {
     #[doc = "Conversion Complete Interrupt Enable/Disable Control"]
     #[must_use]
     #[inline(always)]
-    pub const fn aien(&self) -> super::vals::Hc0Aien {
+    pub const fn aien(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Hc0Aien::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Conversion Complete Interrupt Enable/Disable Control"]
     #[inline(always)]
-    pub const fn set_aien(&mut self, val: super::vals::Hc0Aien) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_aien(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
 }
 impl Default for Hc0 {
@@ -583,7 +583,7 @@ impl defmt::Format for Hc0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Hc0 {{ adch: {:?}, aien: {:?} }}",
+            "Hc0 {{ adch: {:?}, aien: {=bool:?} }}",
             self.adch(),
             self.aien()
         )
@@ -748,14 +748,14 @@ impl Ofs {
     #[doc = "Sign bit"]
     #[must_use]
     #[inline(always)]
-    pub const fn sign(&self) -> super::vals::Sign {
+    pub const fn sign(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Sign::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Sign bit"]
     #[inline(always)]
-    pub const fn set_sign(&mut self, val: super::vals::Sign) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_sign(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
 }
 impl Default for Ofs {
@@ -777,7 +777,7 @@ impl defmt::Format for Ofs {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ofs {{ ofs: {=u16:?}, sign: {:?} }}",
+            "Ofs {{ ofs: {=u16:?}, sign: {=bool:?} }}",
             self.ofs(),
             self.sign()
         )

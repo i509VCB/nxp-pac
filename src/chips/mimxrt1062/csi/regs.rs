@@ -6,62 +6,62 @@ impl Cr1 {
     #[doc = "Pixel Bit"]
     #[must_use]
     #[inline(always)]
-    pub const fn pixel_bit(&self) -> super::vals::PixelBit {
+    pub const fn pixel_bit(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::PixelBit::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Pixel Bit"]
     #[inline(always)]
-    pub const fn set_pixel_bit(&mut self, val: super::vals::PixelBit) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_pixel_bit(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Valid Pixel Clock Edge Select"]
     #[must_use]
     #[inline(always)]
-    pub const fn redge(&self) -> super::vals::Redge {
+    pub const fn redge(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Redge::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Valid Pixel Clock Edge Select"]
     #[inline(always)]
-    pub const fn set_redge(&mut self, val: super::vals::Redge) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_redge(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Invert Pixel Clock Input"]
     #[must_use]
     #[inline(always)]
-    pub const fn inv_pclk(&self) -> super::vals::InvPclk {
+    pub const fn inv_pclk(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::InvPclk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Invert Pixel Clock Input"]
     #[inline(always)]
-    pub const fn set_inv_pclk(&mut self, val: super::vals::InvPclk) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_inv_pclk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Invert Data Input. This bit enables or disables internal inverters on the data lines."]
     #[must_use]
     #[inline(always)]
-    pub const fn inv_data(&self) -> super::vals::InvData {
+    pub const fn inv_data(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::InvData::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Invert Data Input. This bit enables or disables internal inverters on the data lines."]
     #[inline(always)]
-    pub const fn set_inv_data(&mut self, val: super::vals::InvData) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_inv_data(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Gated Clock Mode Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn gclk_mode(&self) -> super::vals::GclkMode {
+    pub const fn gclk_mode(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::GclkMode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Gated Clock Mode Enable"]
     #[inline(always)]
-    pub const fn set_gclk_mode(&mut self, val: super::vals::GclkMode) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_gclk_mode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Asynchronous RXFIFO Clear"]
     #[must_use]
@@ -102,158 +102,158 @@ impl Cr1 {
     #[doc = "FIFO Clear Control"]
     #[must_use]
     #[inline(always)]
-    pub const fn fcc(&self) -> super::vals::Fcc {
+    pub const fn fcc(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Fcc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Clear Control"]
     #[inline(always)]
-    pub const fn set_fcc(&mut self, val: super::vals::Fcc) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_fcc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "BT.656 Interface Enable. This bit selects the type of interface used."]
     #[must_use]
     #[inline(always)]
-    pub const fn ccir_en(&self) -> super::vals::CcirEn {
+    pub const fn ccir_en(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::CcirEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "BT.656 Interface Enable. This bit selects the type of interface used."]
     #[inline(always)]
-    pub const fn set_ccir_en(&mut self, val: super::vals::CcirEn) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_ccir_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "HSYNC Polarity Select"]
     #[must_use]
     #[inline(always)]
-    pub const fn hsync_pol(&self) -> super::vals::HsyncPol {
+    pub const fn hsync_pol(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::HsyncPol::from_bits(val as u8)
+        val != 0
     }
     #[doc = "HSYNC Polarity Select"]
     #[inline(always)]
-    pub const fn set_hsync_pol(&mut self, val: super::vals::HsyncPol) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_hsync_pol(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Start Of Frame (SOF) Interrupt Enable. This bit enables the SOF interrupt."]
     #[must_use]
     #[inline(always)]
-    pub const fn sof_inten(&self) -> super::vals::SofInten {
+    pub const fn sof_inten(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::SofInten::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Start Of Frame (SOF) Interrupt Enable. This bit enables the SOF interrupt."]
     #[inline(always)]
-    pub const fn set_sof_inten(&mut self, val: super::vals::SofInten) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_sof_inten(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "SOF Interrupt Polarity. This bit controls the condition that generates an SOF interrupt."]
     #[must_use]
     #[inline(always)]
-    pub const fn sof_pol(&self) -> super::vals::SofPol {
+    pub const fn sof_pol(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::SofPol::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SOF Interrupt Polarity. This bit controls the condition that generates an SOF interrupt."]
     #[inline(always)]
-    pub const fn set_sof_pol(&mut self, val: super::vals::SofPol) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_sof_pol(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "RxFIFO Full Interrupt Enable. This bit enables the RxFIFO full interrupt."]
     #[must_use]
     #[inline(always)]
-    pub const fn rxff_inten(&self) -> super::vals::RxffInten {
+    pub const fn rxff_inten(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::RxffInten::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RxFIFO Full Interrupt Enable. This bit enables the RxFIFO full interrupt."]
     #[inline(always)]
-    pub const fn set_rxff_inten(&mut self, val: super::vals::RxffInten) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_rxff_inten(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Frame Buffer1 DMA Transfer Done Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn fb1_dma_done_inten(&self) -> super::vals::Fb1DmaDoneInten {
+    pub const fn fb1_dma_done_inten(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Fb1DmaDoneInten::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Frame Buffer1 DMA Transfer Done Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_fb1_dma_done_inten(&mut self, val: super::vals::Fb1DmaDoneInten) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_fb1_dma_done_inten(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "Frame Buffer2 DMA Transfer Done Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn fb2_dma_done_inten(&self) -> super::vals::Fb2DmaDoneInten {
+    pub const fn fb2_dma_done_inten(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::Fb2DmaDoneInten::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Frame Buffer2 DMA Transfer Done Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_fb2_dma_done_inten(&mut self, val: super::vals::Fb2DmaDoneInten) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_fb2_dma_done_inten(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "STATFIFO Full Interrupt Enable. This bit enables the STAT FIFO interrupt."]
     #[must_use]
     #[inline(always)]
-    pub const fn statff_inten(&self) -> super::vals::StatffInten {
+    pub const fn statff_inten(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::StatffInten::from_bits(val as u8)
+        val != 0
     }
     #[doc = "STATFIFO Full Interrupt Enable. This bit enables the STAT FIFO interrupt."]
     #[inline(always)]
-    pub const fn set_statff_inten(&mut self, val: super::vals::StatffInten) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_statff_inten(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "STATFIFO DMA Transfer Done Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn sff_dma_done_inten(&self) -> super::vals::SffDmaDoneInten {
+    pub const fn sff_dma_done_inten(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::SffDmaDoneInten::from_bits(val as u8)
+        val != 0
     }
     #[doc = "STATFIFO DMA Transfer Done Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_sff_dma_done_inten(&mut self, val: super::vals::SffDmaDoneInten) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_sff_dma_done_inten(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "RxFIFO Overrun Interrupt Enable. This bit enables the RX FIFO overrun interrupt."]
     #[must_use]
     #[inline(always)]
-    pub const fn rf_or_inten(&self) -> super::vals::RfOrInten {
+    pub const fn rf_or_inten(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::RfOrInten::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RxFIFO Overrun Interrupt Enable. This bit enables the RX FIFO overrun interrupt."]
     #[inline(always)]
-    pub const fn set_rf_or_inten(&mut self, val: super::vals::RfOrInten) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_rf_or_inten(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "STAT FIFO Overrun Interrupt Enable. This bit enables the STATFIFO overrun interrupt."]
     #[must_use]
     #[inline(always)]
-    pub const fn sf_or_inten(&self) -> super::vals::SfOrInten {
+    pub const fn sf_or_inten(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::SfOrInten::from_bits(val as u8)
+        val != 0
     }
     #[doc = "STAT FIFO Overrun Interrupt Enable. This bit enables the STATFIFO overrun interrupt."]
     #[inline(always)]
-    pub const fn set_sf_or_inten(&mut self, val: super::vals::SfOrInten) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_sf_or_inten(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "Change Of Image Field (COF) Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cof_int_en(&self) -> super::vals::CofIntEn {
+    pub const fn cof_int_en(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::CofIntEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Change Of Image Field (COF) Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_cof_int_en(&mut self, val: super::vals::CofIntEn) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_cof_int_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "BT"]
     #[must_use]
@@ -270,50 +270,50 @@ impl Cr1 {
     #[doc = "CSI-PrP Interface Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn pr_p_if_en(&self) -> super::vals::PrPIfEn {
+    pub const fn pr_p_if_en(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::PrPIfEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CSI-PrP Interface Enable"]
     #[inline(always)]
-    pub const fn set_pr_p_if_en(&mut self, val: super::vals::PrPIfEn) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_pr_p_if_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "End-of-Frame Interrupt Enable. This bit enables and disables the EOF interrupt."]
     #[must_use]
     #[inline(always)]
-    pub const fn eof_int_en(&self) -> super::vals::EofIntEn {
+    pub const fn eof_int_en(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::EofIntEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "End-of-Frame Interrupt Enable. This bit enables and disables the EOF interrupt."]
     #[inline(always)]
-    pub const fn set_eof_int_en(&mut self, val: super::vals::EofIntEn) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_eof_int_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "External VSYNC Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ext_vsync(&self) -> super::vals::ExtVsync {
+    pub const fn ext_vsync(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::ExtVsync::from_bits(val as u8)
+        val != 0
     }
     #[doc = "External VSYNC Enable"]
     #[inline(always)]
-    pub const fn set_ext_vsync(&mut self, val: super::vals::ExtVsync) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_ext_vsync(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "SWAP 16-Bit Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn swap16_en(&self) -> super::vals::Swap16En {
+    pub const fn swap16_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Swap16En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SWAP 16-Bit Enable"]
     #[inline(always)]
-    pub const fn set_swap16_en(&mut self, val: super::vals::Swap16En) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_swap16_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Cr1 {
@@ -359,7 +359,7 @@ impl defmt::Format for Cr1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cr1 {{ pixel_bit: {:?}, redge: {:?}, inv_pclk: {:?}, inv_data: {:?}, gclk_mode: {:?}, clr_rxfifo: {=bool:?}, clr_statfifo: {=bool:?}, pack_dir: {:?}, fcc: {:?}, ccir_en: {:?}, hsync_pol: {:?}, sof_inten: {:?}, sof_pol: {:?}, rxff_inten: {:?}, fb1_dma_done_inten: {:?}, fb2_dma_done_inten: {:?}, statff_inten: {:?}, sff_dma_done_inten: {:?}, rf_or_inten: {:?}, sf_or_inten: {:?}, cof_int_en: {:?}, ccir_mode: {:?}, pr_p_if_en: {:?}, eof_int_en: {:?}, ext_vsync: {:?}, swap16_en: {:?} }}",
+            "Cr1 {{ pixel_bit: {=bool:?}, redge: {=bool:?}, inv_pclk: {=bool:?}, inv_data: {=bool:?}, gclk_mode: {=bool:?}, clr_rxfifo: {=bool:?}, clr_statfifo: {=bool:?}, pack_dir: {:?}, fcc: {=bool:?}, ccir_en: {=bool:?}, hsync_pol: {=bool:?}, sof_inten: {=bool:?}, sof_pol: {=bool:?}, rxff_inten: {=bool:?}, fb1_dma_done_inten: {=bool:?}, fb2_dma_done_inten: {=bool:?}, statff_inten: {=bool:?}, sff_dma_done_inten: {=bool:?}, rf_or_inten: {=bool:?}, sf_or_inten: {=bool:?}, cof_int_en: {=bool:?}, ccir_mode: {:?}, pr_p_if_en: {=bool:?}, eof_int_en: {=bool:?}, ext_vsync: {=bool:?}, swap16_en: {=bool:?} }}",
             self.pixel_bit(),
             self.redge(),
             self.inv_pclk(),
@@ -397,26 +397,26 @@ impl Cr18 {
     #[doc = "This bit is used to select the output method When input is standard BT.656 video."]
     #[must_use]
     #[inline(always)]
-    pub const fn deinterlace_en(&self) -> super::vals::DeinterlaceEn {
+    pub const fn deinterlace_en(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::DeinterlaceEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit is used to select the output method When input is standard BT.656 video."]
     #[inline(always)]
-    pub const fn set_deinterlace_en(&mut self, val: super::vals::DeinterlaceEn) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_deinterlace_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Enable bit for Parallel RGB888/YUV444 24bit input"]
     #[must_use]
     #[inline(always)]
-    pub const fn parallel24_en(&self) -> super::vals::Parallel24En {
+    pub const fn parallel24_en(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Parallel24En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable bit for Parallel RGB888/YUV444 24bit input"]
     #[inline(always)]
-    pub const fn set_parallel24_en(&mut self, val: super::vals::Parallel24En) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_parallel24_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "When this bit is enabled, CSI DMA will switch the base address according to BASEADDR_SWITCH_SEL rather than automatically by DMA completed"]
     #[must_use]
@@ -445,26 +445,26 @@ impl Cr18 {
     #[doc = "In interlace mode, field 0 means interrupt enabled."]
     #[must_use]
     #[inline(always)]
-    pub const fn field0_done_ie(&self) -> super::vals::Field0DoneIe {
+    pub const fn field0_done_ie(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Field0DoneIe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "In interlace mode, field 0 means interrupt enabled."]
     #[inline(always)]
-    pub const fn set_field0_done_ie(&mut self, val: super::vals::Field0DoneIe) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_field0_done_ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "When in interlace mode, field 1 done interrupt enable."]
     #[must_use]
     #[inline(always)]
-    pub const fn dma_field1_done_ie(&self) -> super::vals::DmaField1DoneIe {
+    pub const fn dma_field1_done_ie(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::DmaField1DoneIe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "When in interlace mode, field 1 done interrupt enable."]
     #[inline(always)]
-    pub const fn set_dma_field1_done_ie(&mut self, val: super::vals::DmaField1DoneIe) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_dma_field1_done_ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Choosing the last DMA request condition"]
     #[must_use]
@@ -481,14 +481,14 @@ impl Cr18 {
     #[doc = "Base address change error interrupt enable signal."]
     #[must_use]
     #[inline(always)]
-    pub const fn baseaddr_change_error_ie(&self) -> super::vals::BaseaddrChangeErrorIe {
+    pub const fn baseaddr_change_error_ie(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::BaseaddrChangeErrorIe::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Base address change error interrupt enable signal."]
     #[inline(always)]
-    pub const fn set_baseaddr_change_error_ie(&mut self, val: super::vals::BaseaddrChangeErrorIe) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_baseaddr_change_error_ie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Output is 32-bit format."]
     #[must_use]
@@ -568,7 +568,7 @@ impl defmt::Format for Cr18 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cr18 {{ deinterlace_en: {:?}, parallel24_en: {:?}, baseaddr_switch_en: {=bool:?}, baseaddr_switch_sel: {:?}, field0_done_ie: {:?}, dma_field1_done_ie: {:?}, last_dma_req_sel: {:?}, baseaddr_change_error_ie: {:?}, rgb888a_format_sel: {:?}, ahb_hprot: {=u8:?}, mask_option: {:?}, csi_enable: {=bool:?} }}",
+            "Cr18 {{ deinterlace_en: {=bool:?}, parallel24_en: {=bool:?}, baseaddr_switch_en: {=bool:?}, baseaddr_switch_sel: {:?}, field0_done_ie: {=bool:?}, dma_field1_done_ie: {=bool:?}, last_dma_req_sel: {:?}, baseaddr_change_error_ie: {=bool:?}, rgb888a_format_sel: {:?}, ahb_hprot: {=u8:?}, mask_option: {:?}, csi_enable: {=bool:?} }}",
             self.deinterlace_en(),
             self.parallel24_en(),
             self.baseaddr_switch_en(),
@@ -684,14 +684,14 @@ impl Cr2 {
     #[doc = "Skip Count Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn sce(&self) -> super::vals::Sce {
+    pub const fn sce(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Sce::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Skip Count Enable"]
     #[inline(always)]
-    pub const fn set_sce(&mut self, val: super::vals::Sce) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_sce(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "Auto Focus Spread. Selects which green pixels are used for auto-focus."]
     #[must_use]
@@ -708,14 +708,14 @@ impl Cr2 {
     #[doc = "Double Resolution Mode. Controls size of statistics grid."]
     #[must_use]
     #[inline(always)]
-    pub const fn drm(&self) -> super::vals::Drm {
+    pub const fn drm(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::Drm::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Double Resolution Mode. Controls size of statistics grid."]
     #[inline(always)]
-    pub const fn set_drm(&mut self, val: super::vals::Drm) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_drm(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "Burst Type of DMA Transfer from STATFIFO. Selects the burst type of DMA transfer from STATFIFO."]
     #[must_use]
@@ -768,7 +768,7 @@ impl defmt::Format for Cr2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cr2 {{ hsc: {:?}, vsc: {:?}, lvrm: {:?}, bts: {:?}, sce: {:?}, afs: {:?}, drm: {:?}, dma_burst_type_sff: {:?}, dma_burst_type_rff: {:?} }}",
+            "Cr2 {{ hsc: {:?}, vsc: {:?}, lvrm: {:?}, bts: {:?}, sce: {=bool:?}, afs: {:?}, drm: {=bool:?}, dma_burst_type_sff: {:?}, dma_burst_type_rff: {:?} }}",
             self.hsc(),
             self.vsc(),
             self.lvrm(),
@@ -789,50 +789,50 @@ impl Cr3 {
     #[doc = "Automatic Error Correction Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ecc_auto_en(&self) -> super::vals::EccAutoEn {
+    pub const fn ecc_auto_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::EccAutoEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Automatic Error Correction Enable"]
     #[inline(always)]
-    pub const fn set_ecc_auto_en(&mut self, val: super::vals::EccAutoEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_ecc_auto_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Error Detection Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ecc_int_en(&self) -> super::vals::EccIntEn {
+    pub const fn ecc_int_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::EccIntEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Error Detection Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ecc_int_en(&mut self, val: super::vals::EccIntEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_ecc_int_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Dummy Zero Packing Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn zero_pack_en(&self) -> super::vals::ZeroPackEn {
+    pub const fn zero_pack_en(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::ZeroPackEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Dummy Zero Packing Enable"]
     #[inline(always)]
-    pub const fn set_zero_pack_en(&mut self, val: super::vals::ZeroPackEn) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_zero_pack_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "16-bit Sensor Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn sensor_16bits(&self) -> super::vals::Sensor16bits {
+    pub const fn sensor_16bits(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Sensor16bits::from_bits(val as u8)
+        val != 0
     }
     #[doc = "16-bit Sensor Mode"]
     #[inline(always)]
-    pub const fn set_sensor_16bits(&mut self, val: super::vals::Sensor16bits) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_sensor_16bits(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "RxFIFO Full Level"]
     #[must_use]
@@ -849,14 +849,14 @@ impl Cr3 {
     #[doc = "Hresponse Error Enable. This bit enables the hresponse (AHB protocol standard) error interrupt."]
     #[must_use]
     #[inline(always)]
-    pub const fn hresp_err_en(&self) -> super::vals::HrespErrEn {
+    pub const fn hresp_err_en(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::HrespErrEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Hresponse Error Enable. This bit enables the hresponse (AHB protocol standard) error interrupt."]
     #[inline(always)]
-    pub const fn set_hresp_err_en(&mut self, val: super::vals::HrespErrEn) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_hresp_err_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "STATFIFO Full Level"]
     #[must_use]
@@ -873,62 +873,62 @@ impl Cr3 {
     #[doc = "DMA Request Enable for STATFIFO"]
     #[must_use]
     #[inline(always)]
-    pub const fn dma_req_en_sff(&self) -> super::vals::DmaReqEnSff {
+    pub const fn dma_req_en_sff(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::DmaReqEnSff::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA Request Enable for STATFIFO"]
     #[inline(always)]
-    pub const fn set_dma_req_en_sff(&mut self, val: super::vals::DmaReqEnSff) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_dma_req_en_sff(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "DMA Request Enable for RxFIFO"]
     #[must_use]
     #[inline(always)]
-    pub const fn dma_req_en_rff(&self) -> super::vals::DmaReqEnRff {
+    pub const fn dma_req_en_rff(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::DmaReqEnRff::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA Request Enable for RxFIFO"]
     #[inline(always)]
-    pub const fn set_dma_req_en_rff(&mut self, val: super::vals::DmaReqEnRff) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_dma_req_en_rff(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Reflash DMA Controller for STATFIFO"]
     #[must_use]
     #[inline(always)]
-    pub const fn dma_reflash_sff(&self) -> super::vals::DmaReflashSff {
+    pub const fn dma_reflash_sff(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::DmaReflashSff::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reflash DMA Controller for STATFIFO"]
     #[inline(always)]
-    pub const fn set_dma_reflash_sff(&mut self, val: super::vals::DmaReflashSff) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_dma_reflash_sff(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Reflash DMA Controller for RxFIFO"]
     #[must_use]
     #[inline(always)]
-    pub const fn dma_reflash_rff(&self) -> super::vals::DmaReflashRff {
+    pub const fn dma_reflash_rff(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::DmaReflashRff::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reflash DMA Controller for RxFIFO"]
     #[inline(always)]
-    pub const fn set_dma_reflash_rff(&mut self, val: super::vals::DmaReflashRff) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_dma_reflash_rff(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Frame Count Reset. Resets the Frame Counter. (Cleared automatically after reset is done)"]
     #[must_use]
     #[inline(always)]
-    pub const fn frmcnt_rst(&self) -> super::vals::FrmcntRst {
+    pub const fn frmcnt_rst(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::FrmcntRst::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Frame Count Reset. Resets the Frame Counter. (Cleared automatically after reset is done)"]
     #[inline(always)]
-    pub const fn set_frmcnt_rst(&mut self, val: super::vals::FrmcntRst) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_frmcnt_rst(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "Frame Counter"]
     #[must_use]
@@ -973,7 +973,7 @@ impl defmt::Format for Cr3 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cr3 {{ ecc_auto_en: {:?}, ecc_int_en: {:?}, zero_pack_en: {:?}, sensor_16bits: {:?}, rx_ff_level: {:?}, hresp_err_en: {:?}, statff_level: {:?}, dma_req_en_sff: {:?}, dma_req_en_rff: {:?}, dma_reflash_sff: {:?}, dma_reflash_rff: {:?}, frmcnt_rst: {:?}, frmcnt: {=u16:?} }}",
+            "Cr3 {{ ecc_auto_en: {=bool:?}, ecc_int_en: {=bool:?}, zero_pack_en: {=bool:?}, sensor_16bits: {=bool:?}, rx_ff_level: {:?}, hresp_err_en: {=bool:?}, statff_level: {:?}, dma_req_en_sff: {=bool:?}, dma_req_en_rff: {=bool:?}, dma_reflash_sff: {=bool:?}, dma_reflash_rff: {=bool:?}, frmcnt_rst: {=bool:?}, frmcnt: {=u16:?} }}",
             self.ecc_auto_en(),
             self.ecc_int_en(),
             self.zero_pack_en(),
@@ -1346,182 +1346,182 @@ impl Sr {
     #[doc = "RXFIFO Data Ready"]
     #[must_use]
     #[inline(always)]
-    pub const fn drdy(&self) -> super::vals::Drdy {
+    pub const fn drdy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Drdy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RXFIFO Data Ready"]
     #[inline(always)]
-    pub const fn set_drdy(&mut self, val: super::vals::Drdy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_drdy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "BT"]
     #[must_use]
     #[inline(always)]
-    pub const fn ecc_int(&self) -> super::vals::EccInt {
+    pub const fn ecc_int(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::EccInt::from_bits(val as u8)
+        val != 0
     }
     #[doc = "BT"]
     #[inline(always)]
-    pub const fn set_ecc_int(&mut self, val: super::vals::EccInt) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_ecc_int(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Hresponse Error Interrupt Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn hresp_err_int(&self) -> super::vals::HrespErrInt {
+    pub const fn hresp_err_int(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::HrespErrInt::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Hresponse Error Interrupt Status"]
     #[inline(always)]
-    pub const fn set_hresp_err_int(&mut self, val: super::vals::HrespErrInt) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_hresp_err_int(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Change Of Field Interrupt Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn cof_int(&self) -> super::vals::CofInt {
+    pub const fn cof_int(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::CofInt::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Change Of Field Interrupt Status"]
     #[inline(always)]
-    pub const fn set_cof_int(&mut self, val: super::vals::CofInt) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_cof_int(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "BT"]
     #[must_use]
     #[inline(always)]
-    pub const fn f1_int(&self) -> super::vals::F1Int {
+    pub const fn f1_int(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::F1Int::from_bits(val as u8)
+        val != 0
     }
     #[doc = "BT"]
     #[inline(always)]
-    pub const fn set_f1_int(&mut self, val: super::vals::F1Int) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_f1_int(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "BT"]
     #[must_use]
     #[inline(always)]
-    pub const fn f2_int(&self) -> super::vals::F2Int {
+    pub const fn f2_int(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::F2Int::from_bits(val as u8)
+        val != 0
     }
     #[doc = "BT"]
     #[inline(always)]
-    pub const fn set_f2_int(&mut self, val: super::vals::F2Int) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_f2_int(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "Start of Frame Interrupt Status. Indicates when SOF is detected. (Cleared by writing 1)"]
     #[must_use]
     #[inline(always)]
-    pub const fn sof_int(&self) -> super::vals::SofInt {
+    pub const fn sof_int(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::SofInt::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Start of Frame Interrupt Status. Indicates when SOF is detected. (Cleared by writing 1)"]
     #[inline(always)]
-    pub const fn set_sof_int(&mut self, val: super::vals::SofInt) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_sof_int(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "End of Frame (EOF) Interrupt Status. Indicates when EOF is detected. (Cleared by writing 1)"]
     #[must_use]
     #[inline(always)]
-    pub const fn eof_int(&self) -> super::vals::EofInt {
+    pub const fn eof_int(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::EofInt::from_bits(val as u8)
+        val != 0
     }
     #[doc = "End of Frame (EOF) Interrupt Status. Indicates when EOF is detected. (Cleared by writing 1)"]
     #[inline(always)]
-    pub const fn set_eof_int(&mut self, val: super::vals::EofInt) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_eof_int(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "RXFIFO Full Interrupt Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn rx_ff_int(&self) -> super::vals::RxFfInt {
+    pub const fn rx_ff_int(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::RxFfInt::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RXFIFO Full Interrupt Status"]
     #[inline(always)]
-    pub const fn set_rx_ff_int(&mut self, val: super::vals::RxFfInt) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_rx_ff_int(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "DMA Transfer Done in Frame Buffer1"]
     #[must_use]
     #[inline(always)]
-    pub const fn dma_tsf_done_fb1(&self) -> super::vals::DmaTsfDoneFb1 {
+    pub const fn dma_tsf_done_fb1(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::DmaTsfDoneFb1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA Transfer Done in Frame Buffer1"]
     #[inline(always)]
-    pub const fn set_dma_tsf_done_fb1(&mut self, val: super::vals::DmaTsfDoneFb1) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_dma_tsf_done_fb1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "DMA Transfer Done in Frame Buffer2"]
     #[must_use]
     #[inline(always)]
-    pub const fn dma_tsf_done_fb2(&self) -> super::vals::DmaTsfDoneFb2 {
+    pub const fn dma_tsf_done_fb2(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::DmaTsfDoneFb2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA Transfer Done in Frame Buffer2"]
     #[inline(always)]
-    pub const fn set_dma_tsf_done_fb2(&mut self, val: super::vals::DmaTsfDoneFb2) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_dma_tsf_done_fb2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "STATFIFO Full Interrupt Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn statff_int(&self) -> super::vals::StatffInt {
+    pub const fn statff_int(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::StatffInt::from_bits(val as u8)
+        val != 0
     }
     #[doc = "STATFIFO Full Interrupt Status"]
     #[inline(always)]
-    pub const fn set_statff_int(&mut self, val: super::vals::StatffInt) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_statff_int(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "DMA Transfer Done from StatFIFO"]
     #[must_use]
     #[inline(always)]
-    pub const fn dma_tsf_done_sff(&self) -> super::vals::DmaTsfDoneSff {
+    pub const fn dma_tsf_done_sff(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::DmaTsfDoneSff::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA Transfer Done from StatFIFO"]
     #[inline(always)]
-    pub const fn set_dma_tsf_done_sff(&mut self, val: super::vals::DmaTsfDoneSff) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_dma_tsf_done_sff(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "RxFIFO Overrun Interrupt Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn rf_or_int(&self) -> super::vals::RfOrInt {
+    pub const fn rf_or_int(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::RfOrInt::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RxFIFO Overrun Interrupt Status"]
     #[inline(always)]
-    pub const fn set_rf_or_int(&mut self, val: super::vals::RfOrInt) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_rf_or_int(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "STATFIFO Overrun Interrupt Status"]
     #[must_use]
     #[inline(always)]
-    pub const fn sf_or_int(&self) -> super::vals::SfOrInt {
+    pub const fn sf_or_int(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::SfOrInt::from_bits(val as u8)
+        val != 0
     }
     #[doc = "STATFIFO Overrun Interrupt Status"]
     #[inline(always)]
-    pub const fn set_sf_or_int(&mut self, val: super::vals::SfOrInt) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_sf_or_int(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "When DMA field 1 is complete, this bit will be set to 1(clear by writing 1)."]
     #[must_use]
@@ -1595,7 +1595,7 @@ impl defmt::Format for Sr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sr {{ drdy: {:?}, ecc_int: {:?}, hresp_err_int: {:?}, cof_int: {:?}, f1_int: {:?}, f2_int: {:?}, sof_int: {:?}, eof_int: {:?}, rx_ff_int: {:?}, dma_tsf_done_fb1: {:?}, dma_tsf_done_fb2: {:?}, statff_int: {:?}, dma_tsf_done_sff: {:?}, rf_or_int: {:?}, sf_or_int: {:?}, dma_field1_done: {=bool:?}, dma_field0_done: {=bool:?}, baseaddr_chhange_error: {=bool:?} }}",
+            "Sr {{ drdy: {=bool:?}, ecc_int: {=bool:?}, hresp_err_int: {=bool:?}, cof_int: {=bool:?}, f1_int: {=bool:?}, f2_int: {=bool:?}, sof_int: {=bool:?}, eof_int: {=bool:?}, rx_ff_int: {=bool:?}, dma_tsf_done_fb1: {=bool:?}, dma_tsf_done_fb2: {=bool:?}, statff_int: {=bool:?}, dma_tsf_done_sff: {=bool:?}, rf_or_int: {=bool:?}, sf_or_int: {=bool:?}, dma_field1_done: {=bool:?}, dma_field0_done: {=bool:?}, baseaddr_chhange_error: {=bool:?} }}",
             self.drdy(),
             self.ecc_int(),
             self.hresp_err_int(),

@@ -22,4 +22,3 @@ impl Dmamux {
     }
 }
 pub mod regs;
-pub mod vals;

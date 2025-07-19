@@ -1,0 +1,7 @@
+# Boolean enum transforms for IOMUXC_SNVS_GPR peripheral
+# Converts single-bit enums with _0/_1 patterns to proper boolean types
+
+transforms:
+  - !DeleteEnums
+    from: iomuxc_snvs_gpr::vals::(DcdcInLowVol|DcdcOverCur|DcdcOverVol|DcdcStsDcOk|LpsrModeEnable)
+    bit_size: 1

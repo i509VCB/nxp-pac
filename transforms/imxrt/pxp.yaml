@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: pxp::vals::(AlphaInvert|CtrlClkgate|CtrlClrClkgate|CtrlClrEnRepeat|CtrlClrSftrst|CtrlEnRepeat|CtrlSetClkgate|CtrlSetEnRepeat|CtrlSetSftrst|CtrlSftrst|CtrlTogClkgate|CtrlTogEnRepeat|CtrlTogSftrst|OutCtrlAlphaOutput|OutCtrlClrAlphaOutput|OutCtrlSetAlphaOutput|OutCtrlTogAlphaOutput|StatAxiReadError|StatAxiWriteError|StatClrAxiReadError|StatClrAxiWriteError|StatClrIrq|StatClrLutDmaLoadDoneIrq|StatIrq|StatLutDmaLoadDoneIrq|StatSetAxiReadError|StatSetAxiWriteError|StatSetIrq|StatSetLutDmaLoadDoneIrq|StatTogAxiReadError|StatTogAxiWriteError|StatTogIrq|StatTogLutDmaLoadDoneIrq)
+    bit_size: 1

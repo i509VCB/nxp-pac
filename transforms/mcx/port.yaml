@@ -1,0 +1,6 @@
+transforms:
+  - !MergeBlocks
+    from: port(\d+)::Port(\d+)
+    to: port0::Port0
+    main: port0::Port0
+    check: Layout

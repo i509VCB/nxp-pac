@@ -32,15 +32,15 @@ impl From<BsyFil> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Ch0f {
+pub enum Chf {
     #[doc = "Not surpassed"]
     WM_NOTREACHED = 0x0,
     #[doc = "Surpassed"]
     WM_REACHED = 0x01,
 }
-impl Ch0f {
+impl Chf {
     #[inline(always)]
-    pub const fn from_bits(val: u8) -> Ch0f {
+    pub const fn from_bits(val: u8) -> Chf {
         unsafe { core::mem::transmute(val & 0x01) }
     }
     #[inline(always)]
@@ -48,109 +48,16 @@ impl Ch0f {
         unsafe { core::mem::transmute(self) }
     }
 }
-impl From<u8> for Ch0f {
+impl From<u8> for Chf {
     #[inline(always)]
-    fn from(val: u8) -> Ch0f {
-        Ch0f::from_bits(val)
+    fn from(val: u8) -> Chf {
+        Chf::from_bits(val)
     }
 }
-impl From<Ch0f> for u8 {
+impl From<Chf> for u8 {
     #[inline(always)]
-    fn from(val: Ch0f) -> u8 {
-        Ch0f::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Ch1f {
-    #[doc = "Not surpassed"]
-    WM_NOTREACHED = 0x0,
-    #[doc = "Surpassed"]
-    WM_REACHED = 0x01,
-}
-impl Ch1f {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Ch1f {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Ch1f {
-    #[inline(always)]
-    fn from(val: u8) -> Ch1f {
-        Ch1f::from_bits(val)
-    }
-}
-impl From<Ch1f> for u8 {
-    #[inline(always)]
-    fn from(val: Ch1f) -> u8 {
-        Ch1f::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Ch2f {
-    #[doc = "Not surpassed"]
-    WM_NOTREACHED = 0x0,
-    #[doc = "Surpassed"]
-    WM_REACHED = 0x01,
-}
-impl Ch2f {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Ch2f {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Ch2f {
-    #[inline(always)]
-    fn from(val: u8) -> Ch2f {
-        Ch2f::from_bits(val)
-    }
-}
-impl From<Ch2f> for u8 {
-    #[inline(always)]
-    fn from(val: Ch2f) -> u8 {
-        Ch2f::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Ch3f {
-    #[doc = "Not surpassed"]
-    WM_NOTREACHED = 0x0,
-    #[doc = "Surpassed"]
-    WM_REACHED = 0x01,
-}
-impl Ch3f {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Ch3f {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Ch3f {
-    #[inline(always)]
-    fn from(val: u8) -> Ch3f {
-        Ch3f::from_bits(val)
-    }
-}
-impl From<Ch3f> for u8 {
-    #[inline(always)]
-    fn from(val: Ch3f) -> u8 {
-        Ch3f::to_bits(val)
+    fn from(val: Chf) -> u8 {
+        Chf::to_bits(val)
     }
 }
 #[repr(u8)]

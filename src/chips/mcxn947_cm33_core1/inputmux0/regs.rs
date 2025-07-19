@@ -191,13 +191,13 @@ impl Ctimer0cap0 {
     #[doc = "Input number for CTIMER"]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Ctimer0cap0Inp {
+    pub const fn inp(&self) -> super::vals::CtimerCapInp {
         let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::Ctimer0cap0Inp::from_bits(val as u8)
+        super::vals::CtimerCapInp::from_bits(val as u8)
     }
     #[doc = "Input number for CTIMER"]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Ctimer0cap0Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::CtimerCapInp) {
         self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
     }
 }
@@ -228,13 +228,13 @@ impl Ctimer0cap1 {
     #[doc = "Input number for CTIMER"]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Ctimer0cap1Inp {
+    pub const fn inp(&self) -> super::vals::CtimerCapInp {
         let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::Ctimer0cap1Inp::from_bits(val as u8)
+        super::vals::CtimerCapInp::from_bits(val as u8)
     }
     #[doc = "Input number for CTIMER"]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Ctimer0cap1Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::CtimerCapInp) {
         self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
     }
 }
@@ -265,13 +265,13 @@ impl Ctimer0cap2 {
     #[doc = "Input number for CTIMER"]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Ctimer0cap2Inp {
+    pub const fn inp(&self) -> super::vals::CtimerCapInp {
         let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::Ctimer0cap2Inp::from_bits(val as u8)
+        super::vals::CtimerCapInp::from_bits(val as u8)
     }
     #[doc = "Input number for CTIMER"]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Ctimer0cap2Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::CtimerCapInp) {
         self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
     }
 }
@@ -302,13 +302,13 @@ impl Ctimer0cap3 {
     #[doc = "Input number for CTIMER"]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Ctimer0cap3Inp {
+    pub const fn inp(&self) -> super::vals::CtimerCapInp {
         let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::Ctimer0cap3Inp::from_bits(val as u8)
+        super::vals::CtimerCapInp::from_bits(val as u8)
     }
     #[doc = "Input number for CTIMER"]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Ctimer0cap3Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::CtimerCapInp) {
         self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
     }
 }
@@ -339,13 +339,13 @@ impl Ctimer1cap0 {
     #[doc = "Input number for CTIMER"]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Ctimer1cap0Inp {
+    pub const fn inp(&self) -> super::vals::CtimerCapInp {
         let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::Ctimer1cap0Inp::from_bits(val as u8)
+        super::vals::CtimerCapInp::from_bits(val as u8)
     }
     #[doc = "Input number for CTIMER"]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Ctimer1cap0Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::CtimerCapInp) {
         self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
     }
 }
@@ -376,13 +376,13 @@ impl Ctimer1cap1 {
     #[doc = "Input number for CTIMER"]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Ctimer1cap1Inp {
+    pub const fn inp(&self) -> super::vals::CtimerCapInp {
         let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::Ctimer1cap1Inp::from_bits(val as u8)
+        super::vals::CtimerCapInp::from_bits(val as u8)
     }
     #[doc = "Input number for CTIMER"]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Ctimer1cap1Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::CtimerCapInp) {
         self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
     }
 }
@@ -413,13 +413,13 @@ impl Ctimer1cap2 {
     #[doc = "Input number for CTIMER"]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Ctimer1cap2Inp {
+    pub const fn inp(&self) -> super::vals::CtimerCapInp {
         let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::Ctimer1cap2Inp::from_bits(val as u8)
+        super::vals::CtimerCapInp::from_bits(val as u8)
     }
     #[doc = "Input number for CTIMER"]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Ctimer1cap2Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::CtimerCapInp) {
         self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
     }
 }
@@ -450,13 +450,13 @@ impl Ctimer1cap3 {
     #[doc = "Input number for CTIMER"]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Ctimer1cap3Inp {
+    pub const fn inp(&self) -> super::vals::CtimerCapInp {
         let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::Ctimer1cap3Inp::from_bits(val as u8)
+        super::vals::CtimerCapInp::from_bits(val as u8)
     }
     #[doc = "Input number for CTIMER"]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Ctimer1cap3Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::CtimerCapInp) {
         self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
     }
 }
@@ -487,13 +487,13 @@ impl Ctimer2cap0 {
     #[doc = "Input number for CTIMER"]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Ctimer2cap0Inp {
+    pub const fn inp(&self) -> super::vals::CtimerCapInp {
         let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::Ctimer2cap0Inp::from_bits(val as u8)
+        super::vals::CtimerCapInp::from_bits(val as u8)
     }
     #[doc = "Input number for CTIMER"]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Ctimer2cap0Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::CtimerCapInp) {
         self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
     }
 }
@@ -524,13 +524,13 @@ impl Ctimer2cap1 {
     #[doc = "Input number for CTIMER"]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Ctimer2cap1Inp {
+    pub const fn inp(&self) -> super::vals::CtimerCapInp {
         let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::Ctimer2cap1Inp::from_bits(val as u8)
+        super::vals::CtimerCapInp::from_bits(val as u8)
     }
     #[doc = "Input number for CTIMER"]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Ctimer2cap1Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::CtimerCapInp) {
         self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
     }
 }
@@ -561,13 +561,13 @@ impl Ctimer2cap2 {
     #[doc = "Input number for CTIMER"]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Ctimer2cap2Inp {
+    pub const fn inp(&self) -> super::vals::CtimerCapInp {
         let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::Ctimer2cap2Inp::from_bits(val as u8)
+        super::vals::CtimerCapInp::from_bits(val as u8)
     }
     #[doc = "Input number for CTIMER"]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Ctimer2cap2Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::CtimerCapInp) {
         self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
     }
 }
@@ -598,13 +598,13 @@ impl Ctimer2cap3 {
     #[doc = "Input number for CTIMER"]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Ctimer2cap3Inp {
+    pub const fn inp(&self) -> super::vals::CtimerCapInp {
         let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::Ctimer2cap3Inp::from_bits(val as u8)
+        super::vals::CtimerCapInp::from_bits(val as u8)
     }
     #[doc = "Input number for CTIMER"]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Ctimer2cap3Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::CtimerCapInp) {
         self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
     }
 }
@@ -635,13 +635,13 @@ impl Ctimer3cap0 {
     #[doc = "Input number for CTIMER"]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Ctimer3cap0Inp {
+    pub const fn inp(&self) -> super::vals::CtimerCapInp {
         let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::Ctimer3cap0Inp::from_bits(val as u8)
+        super::vals::CtimerCapInp::from_bits(val as u8)
     }
     #[doc = "Input number for CTIMER"]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Ctimer3cap0Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::CtimerCapInp) {
         self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
     }
 }
@@ -672,13 +672,13 @@ impl Ctimer3cap1 {
     #[doc = "Input number for CTIMER"]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Ctimer3cap1Inp {
+    pub const fn inp(&self) -> super::vals::CtimerCapInp {
         let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::Ctimer3cap1Inp::from_bits(val as u8)
+        super::vals::CtimerCapInp::from_bits(val as u8)
     }
     #[doc = "Input number for CTIMER"]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Ctimer3cap1Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::CtimerCapInp) {
         self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
     }
 }
@@ -709,13 +709,13 @@ impl Ctimer3cap2 {
     #[doc = "Input number for CTIMER"]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Ctimer3cap2Inp {
+    pub const fn inp(&self) -> super::vals::CtimerCapInp {
         let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::Ctimer3cap2Inp::from_bits(val as u8)
+        super::vals::CtimerCapInp::from_bits(val as u8)
     }
     #[doc = "Input number for CTIMER"]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Ctimer3cap2Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::CtimerCapInp) {
         self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
     }
 }
@@ -746,13 +746,13 @@ impl Ctimer3cap3 {
     #[doc = "Input number for CTIMER"]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Ctimer3cap3Inp {
+    pub const fn inp(&self) -> super::vals::CtimerCapInp {
         let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::Ctimer3cap3Inp::from_bits(val as u8)
+        super::vals::CtimerCapInp::from_bits(val as u8)
     }
     #[doc = "Input number for CTIMER"]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Ctimer3cap3Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::CtimerCapInp) {
         self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
     }
 }
@@ -783,13 +783,13 @@ impl Ctimer4cap0 {
     #[doc = "Input number for CTIMER"]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Ctimer4cap0Inp {
+    pub const fn inp(&self) -> super::vals::CtimerCapInp {
         let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::Ctimer4cap0Inp::from_bits(val as u8)
+        super::vals::CtimerCapInp::from_bits(val as u8)
     }
     #[doc = "Input number for CTIMER"]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Ctimer4cap0Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::CtimerCapInp) {
         self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
     }
 }
@@ -820,13 +820,13 @@ impl Ctimer4cap1 {
     #[doc = "Input number for CTIMER"]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Ctimer4cap1Inp {
+    pub const fn inp(&self) -> super::vals::CtimerCapInp {
         let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::Ctimer4cap1Inp::from_bits(val as u8)
+        super::vals::CtimerCapInp::from_bits(val as u8)
     }
     #[doc = "Input number for CTIMER"]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Ctimer4cap1Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::CtimerCapInp) {
         self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
     }
 }
@@ -857,13 +857,13 @@ impl Ctimer4cap2 {
     #[doc = "Input number for CTIMER"]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Ctimer4cap2Inp {
+    pub const fn inp(&self) -> super::vals::CtimerCapInp {
         let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::Ctimer4cap2Inp::from_bits(val as u8)
+        super::vals::CtimerCapInp::from_bits(val as u8)
     }
     #[doc = "Input number for CTIMER"]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Ctimer4cap2Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::CtimerCapInp) {
         self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
     }
 }
@@ -894,13 +894,13 @@ impl Ctimer4cap3 {
     #[doc = "Input number for CTIMER"]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Ctimer4cap3Inp {
+    pub const fn inp(&self) -> super::vals::CtimerCapInp {
         let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::Ctimer4cap3Inp::from_bits(val as u8)
+        super::vals::CtimerCapInp::from_bits(val as u8)
     }
     #[doc = "Input number for CTIMER"]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Ctimer4cap3Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::CtimerCapInp) {
         self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
     }
 }

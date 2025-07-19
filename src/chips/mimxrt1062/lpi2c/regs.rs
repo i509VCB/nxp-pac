@@ -510,14 +510,14 @@ impl Mcr {
     #[doc = "Doze mode enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dozen(&self) -> super::vals::Dozen {
+    pub const fn dozen(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Dozen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Doze mode enable"]
     #[inline(always)]
-    pub const fn set_dozen(&mut self, val: super::vals::Dozen) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_dozen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Debug Enable"]
     #[must_use]
@@ -534,26 +534,26 @@ impl Mcr {
     #[doc = "Reset Transmit FIFO"]
     #[must_use]
     #[inline(always)]
-    pub const fn rtf(&self) -> super::vals::McrRtf {
+    pub const fn rtf(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::McrRtf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reset Transmit FIFO"]
     #[inline(always)]
-    pub const fn set_rtf(&mut self, val: super::vals::McrRtf) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_rtf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Reset Receive FIFO"]
     #[must_use]
     #[inline(always)]
-    pub const fn rrf(&self) -> super::vals::McrRrf {
+    pub const fn rrf(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::McrRrf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reset Receive FIFO"]
     #[inline(always)]
-    pub const fn set_rrf(&mut self, val: super::vals::McrRrf) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_rrf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
 }
 impl Default for Mcr {
@@ -579,7 +579,7 @@ impl defmt::Format for Mcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mcr {{ men: {=bool:?}, rst: {=bool:?}, dozen: {:?}, dbgen: {=bool:?}, rtf: {:?}, rrf: {:?} }}",
+            "Mcr {{ men: {=bool:?}, rst: {=bool:?}, dozen: {=bool:?}, dbgen: {=bool:?}, rtf: {=bool:?}, rrf: {=bool:?} }}",
             self.men(),
             self.rst(),
             self.dozen(),
@@ -1522,14 +1522,14 @@ impl Scfgr1 {
     #[doc = "Ignore NACK"]
     #[must_use]
     #[inline(always)]
-    pub const fn ignack(&self) -> super::vals::Scfgr1Ignack {
+    pub const fn ignack(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Scfgr1Ignack::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Ignore NACK"]
     #[inline(always)]
-    pub const fn set_ignack(&mut self, val: super::vals::Scfgr1Ignack) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_ignack(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "High Speed Mode Enable"]
     #[must_use]
@@ -1584,7 +1584,7 @@ impl defmt::Format for Scfgr1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Scfgr1 {{ adrstall: {=bool:?}, rxstall: {=bool:?}, txdstall: {=bool:?}, ackstall: {=bool:?}, gcen: {=bool:?}, saen: {=bool:?}, txcfg: {:?}, rxcfg: {:?}, ignack: {:?}, hsmen: {=bool:?}, addrcfg: {:?} }}",
+            "Scfgr1 {{ adrstall: {=bool:?}, rxstall: {=bool:?}, txdstall: {=bool:?}, ackstall: {=bool:?}, gcen: {=bool:?}, saen: {=bool:?}, txcfg: {:?}, rxcfg: {:?}, ignack: {=bool:?}, hsmen: {=bool:?}, addrcfg: {:?} }}",
             self.adrstall(),
             self.rxstall(),
             self.txdstall(),
@@ -1726,38 +1726,38 @@ impl Scr {
     #[doc = "Filter Doze Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn filtdz(&self) -> super::vals::Filtdz {
+    pub const fn filtdz(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Filtdz::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Filter Doze Enable"]
     #[inline(always)]
-    pub const fn set_filtdz(&mut self, val: super::vals::Filtdz) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_filtdz(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Reset Transmit FIFO"]
     #[must_use]
     #[inline(always)]
-    pub const fn rtf(&self) -> super::vals::ScrRtf {
+    pub const fn rtf(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::ScrRtf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reset Transmit FIFO"]
     #[inline(always)]
-    pub const fn set_rtf(&mut self, val: super::vals::ScrRtf) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_rtf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Reset Receive FIFO"]
     #[must_use]
     #[inline(always)]
-    pub const fn rrf(&self) -> super::vals::ScrRrf {
+    pub const fn rrf(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::ScrRrf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reset Receive FIFO"]
     #[inline(always)]
-    pub const fn set_rrf(&mut self, val: super::vals::ScrRrf) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_rrf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
 }
 impl Default for Scr {
@@ -1783,7 +1783,7 @@ impl defmt::Format for Scr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Scr {{ sen: {=bool:?}, rst: {=bool:?}, filten: {=bool:?}, filtdz: {:?}, rtf: {:?}, rrf: {:?} }}",
+            "Scr {{ sen: {=bool:?}, rst: {=bool:?}, filten: {=bool:?}, filtdz: {=bool:?}, rtf: {=bool:?}, rrf: {=bool:?} }}",
             self.sen(),
             self.rst(),
             self.filten(),

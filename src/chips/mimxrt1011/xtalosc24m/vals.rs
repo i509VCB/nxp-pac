@@ -1,37 +1,6 @@
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum LowpwrCtrlClrLpbgSel {
-    #[doc = "Normal power bandgap"]
-    LPBG_SEL_0 = 0x0,
-    #[doc = "Low power bandgap"]
-    LPBG_SEL_1 = 0x01,
-}
-impl LowpwrCtrlClrLpbgSel {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> LowpwrCtrlClrLpbgSel {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for LowpwrCtrlClrLpbgSel {
-    #[inline(always)]
-    fn from(val: u8) -> LowpwrCtrlClrLpbgSel {
-        LowpwrCtrlClrLpbgSel::from_bits(val)
-    }
-}
-impl From<LowpwrCtrlClrLpbgSel> for u8 {
-    #[inline(always)]
-    fn from(val: LowpwrCtrlClrLpbgSel) -> u8 {
-        LowpwrCtrlClrLpbgSel::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LowpwrCtrlClrOscSel {
     #[doc = "XTAL OSC"]
     OSC_SEL_0 = 0x0,
@@ -58,37 +27,6 @@ impl From<LowpwrCtrlClrOscSel> for u8 {
     #[inline(always)]
     fn from(val: LowpwrCtrlClrOscSel) -> u8 {
         LowpwrCtrlClrOscSel::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum LowpwrCtrlClrRcOscEn {
-    #[doc = "Use XTAL OSC to source the 24MHz clock"]
-    RC_OSC_EN_0 = 0x0,
-    #[doc = "Use RC OSC"]
-    RC_OSC_EN_1 = 0x01,
-}
-impl LowpwrCtrlClrRcOscEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> LowpwrCtrlClrRcOscEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for LowpwrCtrlClrRcOscEn {
-    #[inline(always)]
-    fn from(val: u8) -> LowpwrCtrlClrRcOscEn {
-        LowpwrCtrlClrRcOscEn::from_bits(val)
-    }
-}
-impl From<LowpwrCtrlClrRcOscEn> for u8 {
-    #[inline(always)]
-    fn from(val: LowpwrCtrlClrRcOscEn) -> u8 {
-        LowpwrCtrlClrRcOscEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -129,68 +67,6 @@ impl From<LowpwrCtrlClrXtaloscPwrupDelay> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum LowpwrCtrlClrXtaloscPwrupStat {
-    #[doc = "Not stable"]
-    XTALOSC_PWRUP_STAT_0 = 0x0,
-    #[doc = "Stable and ready to use"]
-    XTALOSC_PWRUP_STAT_1 = 0x01,
-}
-impl LowpwrCtrlClrXtaloscPwrupStat {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> LowpwrCtrlClrXtaloscPwrupStat {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for LowpwrCtrlClrXtaloscPwrupStat {
-    #[inline(always)]
-    fn from(val: u8) -> LowpwrCtrlClrXtaloscPwrupStat {
-        LowpwrCtrlClrXtaloscPwrupStat::from_bits(val)
-    }
-}
-impl From<LowpwrCtrlClrXtaloscPwrupStat> for u8 {
-    #[inline(always)]
-    fn from(val: LowpwrCtrlClrXtaloscPwrupStat) -> u8 {
-        LowpwrCtrlClrXtaloscPwrupStat::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum LowpwrCtrlLpbgSel {
-    #[doc = "Normal power bandgap"]
-    LPBG_SEL_0 = 0x0,
-    #[doc = "Low power bandgap"]
-    LPBG_SEL_1 = 0x01,
-}
-impl LowpwrCtrlLpbgSel {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> LowpwrCtrlLpbgSel {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for LowpwrCtrlLpbgSel {
-    #[inline(always)]
-    fn from(val: u8) -> LowpwrCtrlLpbgSel {
-        LowpwrCtrlLpbgSel::from_bits(val)
-    }
-}
-impl From<LowpwrCtrlLpbgSel> for u8 {
-    #[inline(always)]
-    fn from(val: LowpwrCtrlLpbgSel) -> u8 {
-        LowpwrCtrlLpbgSel::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LowpwrCtrlOscSel {
     #[doc = "XTAL OSC"]
     OSC_SEL_0 = 0x0,
@@ -222,68 +98,6 @@ impl From<LowpwrCtrlOscSel> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum LowpwrCtrlRcOscEn {
-    #[doc = "Use XTAL OSC to source the 24MHz clock"]
-    RC_OSC_EN_0 = 0x0,
-    #[doc = "Use RC OSC"]
-    RC_OSC_EN_1 = 0x01,
-}
-impl LowpwrCtrlRcOscEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> LowpwrCtrlRcOscEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for LowpwrCtrlRcOscEn {
-    #[inline(always)]
-    fn from(val: u8) -> LowpwrCtrlRcOscEn {
-        LowpwrCtrlRcOscEn::from_bits(val)
-    }
-}
-impl From<LowpwrCtrlRcOscEn> for u8 {
-    #[inline(always)]
-    fn from(val: LowpwrCtrlRcOscEn) -> u8 {
-        LowpwrCtrlRcOscEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum LowpwrCtrlSetLpbgSel {
-    #[doc = "Normal power bandgap"]
-    LPBG_SEL_0 = 0x0,
-    #[doc = "Low power bandgap"]
-    LPBG_SEL_1 = 0x01,
-}
-impl LowpwrCtrlSetLpbgSel {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> LowpwrCtrlSetLpbgSel {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for LowpwrCtrlSetLpbgSel {
-    #[inline(always)]
-    fn from(val: u8) -> LowpwrCtrlSetLpbgSel {
-        LowpwrCtrlSetLpbgSel::from_bits(val)
-    }
-}
-impl From<LowpwrCtrlSetLpbgSel> for u8 {
-    #[inline(always)]
-    fn from(val: LowpwrCtrlSetLpbgSel) -> u8 {
-        LowpwrCtrlSetLpbgSel::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LowpwrCtrlSetOscSel {
     #[doc = "XTAL OSC"]
     OSC_SEL_0 = 0x0,
@@ -310,37 +124,6 @@ impl From<LowpwrCtrlSetOscSel> for u8 {
     #[inline(always)]
     fn from(val: LowpwrCtrlSetOscSel) -> u8 {
         LowpwrCtrlSetOscSel::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum LowpwrCtrlSetRcOscEn {
-    #[doc = "Use XTAL OSC to source the 24MHz clock"]
-    RC_OSC_EN_0 = 0x0,
-    #[doc = "Use RC OSC"]
-    RC_OSC_EN_1 = 0x01,
-}
-impl LowpwrCtrlSetRcOscEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> LowpwrCtrlSetRcOscEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for LowpwrCtrlSetRcOscEn {
-    #[inline(always)]
-    fn from(val: u8) -> LowpwrCtrlSetRcOscEn {
-        LowpwrCtrlSetRcOscEn::from_bits(val)
-    }
-}
-impl From<LowpwrCtrlSetRcOscEn> for u8 {
-    #[inline(always)]
-    fn from(val: LowpwrCtrlSetRcOscEn) -> u8 {
-        LowpwrCtrlSetRcOscEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -381,68 +164,6 @@ impl From<LowpwrCtrlSetXtaloscPwrupDelay> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum LowpwrCtrlSetXtaloscPwrupStat {
-    #[doc = "Not stable"]
-    XTALOSC_PWRUP_STAT_0 = 0x0,
-    #[doc = "Stable and ready to use"]
-    XTALOSC_PWRUP_STAT_1 = 0x01,
-}
-impl LowpwrCtrlSetXtaloscPwrupStat {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> LowpwrCtrlSetXtaloscPwrupStat {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for LowpwrCtrlSetXtaloscPwrupStat {
-    #[inline(always)]
-    fn from(val: u8) -> LowpwrCtrlSetXtaloscPwrupStat {
-        LowpwrCtrlSetXtaloscPwrupStat::from_bits(val)
-    }
-}
-impl From<LowpwrCtrlSetXtaloscPwrupStat> for u8 {
-    #[inline(always)]
-    fn from(val: LowpwrCtrlSetXtaloscPwrupStat) -> u8 {
-        LowpwrCtrlSetXtaloscPwrupStat::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum LowpwrCtrlTogLpbgSel {
-    #[doc = "Normal power bandgap"]
-    LPBG_SEL_0 = 0x0,
-    #[doc = "Low power bandgap"]
-    LPBG_SEL_1 = 0x01,
-}
-impl LowpwrCtrlTogLpbgSel {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> LowpwrCtrlTogLpbgSel {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for LowpwrCtrlTogLpbgSel {
-    #[inline(always)]
-    fn from(val: u8) -> LowpwrCtrlTogLpbgSel {
-        LowpwrCtrlTogLpbgSel::from_bits(val)
-    }
-}
-impl From<LowpwrCtrlTogLpbgSel> for u8 {
-    #[inline(always)]
-    fn from(val: LowpwrCtrlTogLpbgSel) -> u8 {
-        LowpwrCtrlTogLpbgSel::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LowpwrCtrlTogOscSel {
     #[doc = "XTAL OSC"]
     OSC_SEL_0 = 0x0,
@@ -469,37 +190,6 @@ impl From<LowpwrCtrlTogOscSel> for u8 {
     #[inline(always)]
     fn from(val: LowpwrCtrlTogOscSel) -> u8 {
         LowpwrCtrlTogOscSel::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum LowpwrCtrlTogRcOscEn {
-    #[doc = "Use XTAL OSC to source the 24MHz clock"]
-    RC_OSC_EN_0 = 0x0,
-    #[doc = "Use RC OSC"]
-    RC_OSC_EN_1 = 0x01,
-}
-impl LowpwrCtrlTogRcOscEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> LowpwrCtrlTogRcOscEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for LowpwrCtrlTogRcOscEn {
-    #[inline(always)]
-    fn from(val: u8) -> LowpwrCtrlTogRcOscEn {
-        LowpwrCtrlTogRcOscEn::from_bits(val)
-    }
-}
-impl From<LowpwrCtrlTogRcOscEn> for u8 {
-    #[inline(always)]
-    fn from(val: LowpwrCtrlTogRcOscEn) -> u8 {
-        LowpwrCtrlTogRcOscEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -540,37 +230,6 @@ impl From<LowpwrCtrlTogXtaloscPwrupDelay> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum LowpwrCtrlTogXtaloscPwrupStat {
-    #[doc = "Not stable"]
-    XTALOSC_PWRUP_STAT_0 = 0x0,
-    #[doc = "Stable and ready to use"]
-    XTALOSC_PWRUP_STAT_1 = 0x01,
-}
-impl LowpwrCtrlTogXtaloscPwrupStat {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> LowpwrCtrlTogXtaloscPwrupStat {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for LowpwrCtrlTogXtaloscPwrupStat {
-    #[inline(always)]
-    fn from(val: u8) -> LowpwrCtrlTogXtaloscPwrupStat {
-        LowpwrCtrlTogXtaloscPwrupStat::from_bits(val)
-    }
-}
-impl From<LowpwrCtrlTogXtaloscPwrupStat> for u8 {
-    #[inline(always)]
-    fn from(val: LowpwrCtrlTogXtaloscPwrupStat) -> u8 {
-        LowpwrCtrlTogXtaloscPwrupStat::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LowpwrCtrlXtaloscPwrupDelay {
     #[doc = "0.25ms"]
     XTALOSC_PWRUP_DELAY_0 = 0x0,
@@ -601,68 +260,6 @@ impl From<LowpwrCtrlXtaloscPwrupDelay> for u8 {
     #[inline(always)]
     fn from(val: LowpwrCtrlXtaloscPwrupDelay) -> u8 {
         LowpwrCtrlXtaloscPwrupDelay::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum LowpwrCtrlXtaloscPwrupStat {
-    #[doc = "Not stable"]
-    XTALOSC_PWRUP_STAT_0 = 0x0,
-    #[doc = "Stable and ready to use"]
-    XTALOSC_PWRUP_STAT_1 = 0x01,
-}
-impl LowpwrCtrlXtaloscPwrupStat {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> LowpwrCtrlXtaloscPwrupStat {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for LowpwrCtrlXtaloscPwrupStat {
-    #[inline(always)]
-    fn from(val: u8) -> LowpwrCtrlXtaloscPwrupStat {
-        LowpwrCtrlXtaloscPwrupStat::from_bits(val)
-    }
-}
-impl From<LowpwrCtrlXtaloscPwrupStat> for u8 {
-    #[inline(always)]
-    fn from(val: LowpwrCtrlXtaloscPwrupStat) -> u8 {
-        LowpwrCtrlXtaloscPwrupStat::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Misc0ClkgateCtrl {
-    #[doc = "Allow the logic to automatically gate the clock when the XTAL is powered down."]
-    ALLOW_AUTO_GATE = 0x0,
-    #[doc = "Prevent the logic from ever gating off the clock."]
-    NO_AUTO_GATE = 0x01,
-}
-impl Misc0ClkgateCtrl {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Misc0ClkgateCtrl {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Misc0ClkgateCtrl {
-    #[inline(always)]
-    fn from(val: u8) -> Misc0ClkgateCtrl {
-        Misc0ClkgateCtrl::from_bits(val)
-    }
-}
-impl From<Misc0ClkgateCtrl> for u8 {
-    #[inline(always)]
-    fn from(val: Misc0ClkgateCtrl) -> u8 {
-        Misc0ClkgateCtrl::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -711,37 +308,6 @@ impl From<Misc0ClkgateDelay> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Misc0ClrClkgateCtrl {
-    #[doc = "Allow the logic to automatically gate the clock when the XTAL is powered down."]
-    ALLOW_AUTO_GATE = 0x0,
-    #[doc = "Prevent the logic from ever gating off the clock."]
-    NO_AUTO_GATE = 0x01,
-}
-impl Misc0ClrClkgateCtrl {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Misc0ClrClkgateCtrl {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Misc0ClrClkgateCtrl {
-    #[inline(always)]
-    fn from(val: u8) -> Misc0ClrClkgateCtrl {
-        Misc0ClrClkgateCtrl::from_bits(val)
-    }
-}
-impl From<Misc0ClrClkgateCtrl> for u8 {
-    #[inline(always)]
-    fn from(val: Misc0ClrClkgateCtrl) -> u8 {
-        Misc0ClrClkgateCtrl::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0ClrClkgateDelay {
     #[doc = "0.5ms"]
     CLKGATE_DELAY_0 = 0x0,
@@ -785,37 +351,6 @@ impl From<Misc0ClrClkgateDelay> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Misc0ClrDisconHighSnvs {
-    #[doc = "Turn on the switch"]
-    DISCON_HIGH_SNVS_0 = 0x0,
-    #[doc = "Turn off the switch"]
-    DISCON_HIGH_SNVS_1 = 0x01,
-}
-impl Misc0ClrDisconHighSnvs {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Misc0ClrDisconHighSnvs {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Misc0ClrDisconHighSnvs {
-    #[inline(always)]
-    fn from(val: u8) -> Misc0ClrDisconHighSnvs {
-        Misc0ClrDisconHighSnvs::from_bits(val)
-    }
-}
-impl From<Misc0ClrDisconHighSnvs> for u8 {
-    #[inline(always)]
-    fn from(val: Misc0ClrDisconHighSnvs) -> u8 {
-        Misc0ClrDisconHighSnvs::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0ClrOscI {
     #[doc = "Nominal"]
     NOMINAL = 0x0,
@@ -846,37 +381,6 @@ impl From<Misc0ClrOscI> for u8 {
     #[inline(always)]
     fn from(val: Misc0ClrOscI) -> u8 {
         Misc0ClrOscI::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Misc0ClrReftopSelfbiasoff {
-    #[doc = "Uses coarse bias currents for startup"]
-    REFTOP_SELFBIASOFF_0 = 0x0,
-    #[doc = "Uses bandgap-based bias currents for best performance."]
-    REFTOP_SELFBIASOFF_1 = 0x01,
-}
-impl Misc0ClrReftopSelfbiasoff {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Misc0ClrReftopSelfbiasoff {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Misc0ClrReftopSelfbiasoff {
-    #[inline(always)]
-    fn from(val: u8) -> Misc0ClrReftopSelfbiasoff {
-        Misc0ClrReftopSelfbiasoff::from_bits(val)
-    }
-}
-impl From<Misc0ClrReftopSelfbiasoff> for u8 {
-    #[inline(always)]
-    fn from(val: Misc0ClrReftopSelfbiasoff) -> u8 {
-        Misc0ClrReftopSelfbiasoff::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1022,37 +526,6 @@ impl From<Misc0ClrVidPllPrediv> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Misc0DisconHighSnvs {
-    #[doc = "Turn on the switch"]
-    DISCON_HIGH_SNVS_0 = 0x0,
-    #[doc = "Turn off the switch"]
-    DISCON_HIGH_SNVS_1 = 0x01,
-}
-impl Misc0DisconHighSnvs {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Misc0DisconHighSnvs {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Misc0DisconHighSnvs {
-    #[inline(always)]
-    fn from(val: u8) -> Misc0DisconHighSnvs {
-        Misc0DisconHighSnvs::from_bits(val)
-    }
-}
-impl From<Misc0DisconHighSnvs> for u8 {
-    #[inline(always)]
-    fn from(val: Misc0DisconHighSnvs) -> u8 {
-        Misc0DisconHighSnvs::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0OscI {
     #[doc = "Nominal"]
     NOMINAL = 0x0,
@@ -1083,37 +556,6 @@ impl From<Misc0OscI> for u8 {
     #[inline(always)]
     fn from(val: Misc0OscI) -> u8 {
         Misc0OscI::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Misc0ReftopSelfbiasoff {
-    #[doc = "Uses coarse bias currents for startup"]
-    REFTOP_SELFBIASOFF_0 = 0x0,
-    #[doc = "Uses bandgap-based bias currents for best performance."]
-    REFTOP_SELFBIASOFF_1 = 0x01,
-}
-impl Misc0ReftopSelfbiasoff {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Misc0ReftopSelfbiasoff {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Misc0ReftopSelfbiasoff {
-    #[inline(always)]
-    fn from(val: u8) -> Misc0ReftopSelfbiasoff {
-        Misc0ReftopSelfbiasoff::from_bits(val)
-    }
-}
-impl From<Misc0ReftopSelfbiasoff> for u8 {
-    #[inline(always)]
-    fn from(val: Misc0ReftopSelfbiasoff) -> u8 {
-        Misc0ReftopSelfbiasoff::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1193,37 +635,6 @@ impl From<Misc0RtcXtalSource> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Misc0SetClkgateCtrl {
-    #[doc = "Allow the logic to automatically gate the clock when the XTAL is powered down."]
-    ALLOW_AUTO_GATE = 0x0,
-    #[doc = "Prevent the logic from ever gating off the clock."]
-    NO_AUTO_GATE = 0x01,
-}
-impl Misc0SetClkgateCtrl {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Misc0SetClkgateCtrl {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Misc0SetClkgateCtrl {
-    #[inline(always)]
-    fn from(val: u8) -> Misc0SetClkgateCtrl {
-        Misc0SetClkgateCtrl::from_bits(val)
-    }
-}
-impl From<Misc0SetClkgateCtrl> for u8 {
-    #[inline(always)]
-    fn from(val: Misc0SetClkgateCtrl) -> u8 {
-        Misc0SetClkgateCtrl::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0SetClkgateDelay {
     #[doc = "0.5ms"]
     CLKGATE_DELAY_0 = 0x0,
@@ -1267,37 +678,6 @@ impl From<Misc0SetClkgateDelay> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Misc0SetDisconHighSnvs {
-    #[doc = "Turn on the switch"]
-    DISCON_HIGH_SNVS_0 = 0x0,
-    #[doc = "Turn off the switch"]
-    DISCON_HIGH_SNVS_1 = 0x01,
-}
-impl Misc0SetDisconHighSnvs {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Misc0SetDisconHighSnvs {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Misc0SetDisconHighSnvs {
-    #[inline(always)]
-    fn from(val: u8) -> Misc0SetDisconHighSnvs {
-        Misc0SetDisconHighSnvs::from_bits(val)
-    }
-}
-impl From<Misc0SetDisconHighSnvs> for u8 {
-    #[inline(always)]
-    fn from(val: Misc0SetDisconHighSnvs) -> u8 {
-        Misc0SetDisconHighSnvs::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0SetOscI {
     #[doc = "Nominal"]
     NOMINAL = 0x0,
@@ -1328,37 +708,6 @@ impl From<Misc0SetOscI> for u8 {
     #[inline(always)]
     fn from(val: Misc0SetOscI) -> u8 {
         Misc0SetOscI::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Misc0SetReftopSelfbiasoff {
-    #[doc = "Uses coarse bias currents for startup"]
-    REFTOP_SELFBIASOFF_0 = 0x0,
-    #[doc = "Uses bandgap-based bias currents for best performance."]
-    REFTOP_SELFBIASOFF_1 = 0x01,
-}
-impl Misc0SetReftopSelfbiasoff {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Misc0SetReftopSelfbiasoff {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Misc0SetReftopSelfbiasoff {
-    #[inline(always)]
-    fn from(val: u8) -> Misc0SetReftopSelfbiasoff {
-        Misc0SetReftopSelfbiasoff::from_bits(val)
-    }
-}
-impl From<Misc0SetReftopSelfbiasoff> for u8 {
-    #[inline(always)]
-    fn from(val: Misc0SetReftopSelfbiasoff) -> u8 {
-        Misc0SetReftopSelfbiasoff::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1539,37 +888,6 @@ impl From<Misc0StopModeConfig> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Misc0TogClkgateCtrl {
-    #[doc = "Allow the logic to automatically gate the clock when the XTAL is powered down."]
-    ALLOW_AUTO_GATE = 0x0,
-    #[doc = "Prevent the logic from ever gating off the clock."]
-    NO_AUTO_GATE = 0x01,
-}
-impl Misc0TogClkgateCtrl {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Misc0TogClkgateCtrl {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Misc0TogClkgateCtrl {
-    #[inline(always)]
-    fn from(val: u8) -> Misc0TogClkgateCtrl {
-        Misc0TogClkgateCtrl::from_bits(val)
-    }
-}
-impl From<Misc0TogClkgateCtrl> for u8 {
-    #[inline(always)]
-    fn from(val: Misc0TogClkgateCtrl) -> u8 {
-        Misc0TogClkgateCtrl::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0TogClkgateDelay {
     #[doc = "0.5ms"]
     CLKGATE_DELAY_0 = 0x0,
@@ -1613,37 +931,6 @@ impl From<Misc0TogClkgateDelay> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Misc0TogDisconHighSnvs {
-    #[doc = "Turn on the switch"]
-    DISCON_HIGH_SNVS_0 = 0x0,
-    #[doc = "Turn off the switch"]
-    DISCON_HIGH_SNVS_1 = 0x01,
-}
-impl Misc0TogDisconHighSnvs {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Misc0TogDisconHighSnvs {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Misc0TogDisconHighSnvs {
-    #[inline(always)]
-    fn from(val: u8) -> Misc0TogDisconHighSnvs {
-        Misc0TogDisconHighSnvs::from_bits(val)
-    }
-}
-impl From<Misc0TogDisconHighSnvs> for u8 {
-    #[inline(always)]
-    fn from(val: Misc0TogDisconHighSnvs) -> u8 {
-        Misc0TogDisconHighSnvs::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0TogOscI {
     #[doc = "Nominal"]
     NOMINAL = 0x0,
@@ -1674,37 +961,6 @@ impl From<Misc0TogOscI> for u8 {
     #[inline(always)]
     fn from(val: Misc0TogOscI) -> u8 {
         Misc0TogOscI::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Misc0TogReftopSelfbiasoff {
-    #[doc = "Uses coarse bias currents for startup"]
-    REFTOP_SELFBIASOFF_0 = 0x0,
-    #[doc = "Uses bandgap-based bias currents for best performance."]
-    REFTOP_SELFBIASOFF_1 = 0x01,
-}
-impl Misc0TogReftopSelfbiasoff {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Misc0TogReftopSelfbiasoff {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Misc0TogReftopSelfbiasoff {
-    #[inline(always)]
-    fn from(val: u8) -> Misc0TogReftopSelfbiasoff {
-        Misc0TogReftopSelfbiasoff::from_bits(val)
-    }
-}
-impl From<Misc0TogReftopSelfbiasoff> for u8 {
-    #[inline(always)]
-    fn from(val: Misc0TogReftopSelfbiasoff) -> u8 {
-        Misc0TogReftopSelfbiasoff::to_bits(val)
     }
 }
 #[repr(u8)]

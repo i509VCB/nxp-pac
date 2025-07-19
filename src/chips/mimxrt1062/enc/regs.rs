@@ -6,194 +6,194 @@ impl Ctrl {
     #[doc = "Compare Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cmpie(&self) -> super::vals::Cmpie {
+    pub const fn cmpie(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Cmpie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Compare Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_cmpie(&mut self, val: super::vals::Cmpie) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_cmpie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "Compare Interrupt Request"]
     #[must_use]
     #[inline(always)]
-    pub const fn cmpirq(&self) -> super::vals::Cmpirq {
+    pub const fn cmpirq(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Cmpirq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Compare Interrupt Request"]
     #[inline(always)]
-    pub const fn set_cmpirq(&mut self, val: super::vals::Cmpirq) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u16) & 0x01) << 1usize);
+    pub const fn set_cmpirq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
     }
     #[doc = "Watchdog Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn wde(&self) -> super::vals::Wde {
+    pub const fn wde(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Wde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Watchdog Enable"]
     #[inline(always)]
-    pub const fn set_wde(&mut self, val: super::vals::Wde) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u16) & 0x01) << 2usize);
+    pub const fn set_wde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u16) & 0x01) << 2usize);
     }
     #[doc = "Watchdog Timeout Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn die(&self) -> super::vals::Die {
+    pub const fn die(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Die::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Watchdog Timeout Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_die(&mut self, val: super::vals::Die) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u16) & 0x01) << 3usize);
+    pub const fn set_die(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u16) & 0x01) << 3usize);
     }
     #[doc = "Watchdog Timeout Interrupt Request"]
     #[must_use]
     #[inline(always)]
-    pub const fn dirq(&self) -> super::vals::Dirq {
+    pub const fn dirq(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Dirq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Watchdog Timeout Interrupt Request"]
     #[inline(always)]
-    pub const fn set_dirq(&mut self, val: super::vals::Dirq) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u16) & 0x01) << 4usize);
+    pub const fn set_dirq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u16) & 0x01) << 4usize);
     }
     #[doc = "Use Negative Edge of INDEX Pulse"]
     #[must_use]
     #[inline(always)]
-    pub const fn xne(&self) -> super::vals::Xne {
+    pub const fn xne(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Xne::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Use Negative Edge of INDEX Pulse"]
     #[inline(always)]
-    pub const fn set_xne(&mut self, val: super::vals::Xne) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u16) & 0x01) << 5usize);
+    pub const fn set_xne(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u16) & 0x01) << 5usize);
     }
     #[doc = "INDEX Triggered Initialization of Position Counters UPOS and LPOS"]
     #[must_use]
     #[inline(always)]
-    pub const fn xip(&self) -> super::vals::Xip {
+    pub const fn xip(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Xip::from_bits(val as u8)
+        val != 0
     }
     #[doc = "INDEX Triggered Initialization of Position Counters UPOS and LPOS"]
     #[inline(always)]
-    pub const fn set_xip(&mut self, val: super::vals::Xip) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u16) & 0x01) << 6usize);
+    pub const fn set_xip(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u16) & 0x01) << 6usize);
     }
     #[doc = "INDEX Pulse Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn xie(&self) -> super::vals::Xie {
+    pub const fn xie(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Xie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "INDEX Pulse Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_xie(&mut self, val: super::vals::Xie) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_xie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "INDEX Pulse Interrupt Request"]
     #[must_use]
     #[inline(always)]
-    pub const fn xirq(&self) -> super::vals::Xirq {
+    pub const fn xirq(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Xirq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "INDEX Pulse Interrupt Request"]
     #[inline(always)]
-    pub const fn set_xirq(&mut self, val: super::vals::Xirq) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u16) & 0x01) << 8usize);
+    pub const fn set_xirq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
     }
     #[doc = "Enable Signal Phase Count Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn ph1(&self) -> super::vals::Ph1 {
+    pub const fn ph1(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Ph1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Signal Phase Count Mode"]
     #[inline(always)]
-    pub const fn set_ph1(&mut self, val: super::vals::Ph1) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u16) & 0x01) << 9usize);
+    pub const fn set_ph1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
     }
     #[doc = "Enable Reverse Direction Counting"]
     #[must_use]
     #[inline(always)]
-    pub const fn rev(&self) -> super::vals::Rev {
+    pub const fn rev(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Rev::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Reverse Direction Counting"]
     #[inline(always)]
-    pub const fn set_rev(&mut self, val: super::vals::Rev) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u16) & 0x01) << 10usize);
+    pub const fn set_rev(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
     }
     #[doc = "Software-Triggered Initialization of Position Counters UPOS and LPOS"]
     #[must_use]
     #[inline(always)]
-    pub const fn swip(&self) -> super::vals::Swip {
+    pub const fn swip(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Swip::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software-Triggered Initialization of Position Counters UPOS and LPOS"]
     #[inline(always)]
-    pub const fn set_swip(&mut self, val: super::vals::Swip) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u16) & 0x01) << 11usize);
+    pub const fn set_swip(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u16) & 0x01) << 11usize);
     }
     #[doc = "Use Negative Edge of HOME Input"]
     #[must_use]
     #[inline(always)]
-    pub const fn hne(&self) -> super::vals::Hne {
+    pub const fn hne(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Hne::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Use Negative Edge of HOME Input"]
     #[inline(always)]
-    pub const fn set_hne(&mut self, val: super::vals::Hne) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u16) & 0x01) << 12usize);
+    pub const fn set_hne(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u16) & 0x01) << 12usize);
     }
     #[doc = "Enable HOME to Initialize Position Counters UPOS and LPOS"]
     #[must_use]
     #[inline(always)]
-    pub const fn hip(&self) -> super::vals::Hip {
+    pub const fn hip(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Hip::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable HOME to Initialize Position Counters UPOS and LPOS"]
     #[inline(always)]
-    pub const fn set_hip(&mut self, val: super::vals::Hip) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u16) & 0x01) << 13usize);
+    pub const fn set_hip(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u16) & 0x01) << 13usize);
     }
     #[doc = "HOME Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn hie(&self) -> super::vals::Hie {
+    pub const fn hie(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Hie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "HOME Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_hie(&mut self, val: super::vals::Hie) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u16) & 0x01) << 14usize);
+    pub const fn set_hie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u16) & 0x01) << 14usize);
     }
     #[doc = "HOME Signal Transition Interrupt Request"]
     #[must_use]
     #[inline(always)]
-    pub const fn hirq(&self) -> super::vals::Hirq {
+    pub const fn hirq(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Hirq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "HOME Signal Transition Interrupt Request"]
     #[inline(always)]
-    pub const fn set_hirq(&mut self, val: super::vals::Hirq) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u16) & 0x01) << 15usize);
+    pub const fn set_hirq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u16) & 0x01) << 15usize);
     }
 }
 impl Default for Ctrl {
@@ -229,7 +229,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ cmpie: {:?}, cmpirq: {:?}, wde: {:?}, die: {:?}, dirq: {:?}, xne: {:?}, xip: {:?}, xie: {:?}, xirq: {:?}, ph1: {:?}, rev: {:?}, swip: {:?}, hne: {:?}, hip: {:?}, hie: {:?}, hirq: {:?} }}",
+            "Ctrl {{ cmpie: {=bool:?}, cmpirq: {=bool:?}, wde: {=bool:?}, die: {=bool:?}, dirq: {=bool:?}, xne: {=bool:?}, xip: {=bool:?}, xie: {=bool:?}, xirq: {=bool:?}, ph1: {=bool:?}, rev: {=bool:?}, swip: {=bool:?}, hne: {=bool:?}, hip: {=bool:?}, hie: {=bool:?}, hirq: {=bool:?} }}",
             self.cmpie(),
             self.cmpirq(),
             self.wde(),
@@ -257,122 +257,122 @@ impl Ctrl2 {
     #[doc = "Update Hold Registers"]
     #[must_use]
     #[inline(always)]
-    pub const fn updhld(&self) -> super::vals::Updhld {
+    pub const fn updhld(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Updhld::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Update Hold Registers"]
     #[inline(always)]
-    pub const fn set_updhld(&mut self, val: super::vals::Updhld) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_updhld(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "Update Position Registers"]
     #[must_use]
     #[inline(always)]
-    pub const fn updpos(&self) -> super::vals::Updpos {
+    pub const fn updpos(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Updpos::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Update Position Registers"]
     #[inline(always)]
-    pub const fn set_updpos(&mut self, val: super::vals::Updpos) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u16) & 0x01) << 1usize);
+    pub const fn set_updpos(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
     }
     #[doc = "Enable Modulo Counting"]
     #[must_use]
     #[inline(always)]
-    pub const fn mod_(&self) -> super::vals::Mod {
+    pub const fn mod_(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Mod::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Modulo Counting"]
     #[inline(always)]
-    pub const fn set_mod_(&mut self, val: super::vals::Mod) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u16) & 0x01) << 2usize);
+    pub const fn set_mod_(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u16) & 0x01) << 2usize);
     }
     #[doc = "Count Direction Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn dir(&self) -> super::vals::Dir {
+    pub const fn dir(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Dir::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Count Direction Flag"]
     #[inline(always)]
-    pub const fn set_dir(&mut self, val: super::vals::Dir) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u16) & 0x01) << 3usize);
+    pub const fn set_dir(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u16) & 0x01) << 3usize);
     }
     #[doc = "Roll-under Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ruie(&self) -> super::vals::Ruie {
+    pub const fn ruie(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Ruie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Roll-under Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_ruie(&mut self, val: super::vals::Ruie) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u16) & 0x01) << 4usize);
+    pub const fn set_ruie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u16) & 0x01) << 4usize);
     }
     #[doc = "Roll-under Interrupt Request"]
     #[must_use]
     #[inline(always)]
-    pub const fn ruirq(&self) -> super::vals::Ruirq {
+    pub const fn ruirq(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Ruirq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Roll-under Interrupt Request"]
     #[inline(always)]
-    pub const fn set_ruirq(&mut self, val: super::vals::Ruirq) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u16) & 0x01) << 5usize);
+    pub const fn set_ruirq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u16) & 0x01) << 5usize);
     }
     #[doc = "Roll-over Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn roie(&self) -> super::vals::Roie {
+    pub const fn roie(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Roie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Roll-over Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_roie(&mut self, val: super::vals::Roie) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u16) & 0x01) << 6usize);
+    pub const fn set_roie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u16) & 0x01) << 6usize);
     }
     #[doc = "Roll-over Interrupt Request"]
     #[must_use]
     #[inline(always)]
-    pub const fn roirq(&self) -> super::vals::Roirq {
+    pub const fn roirq(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Roirq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Roll-over Interrupt Request"]
     #[inline(always)]
-    pub const fn set_roirq(&mut self, val: super::vals::Roirq) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_roirq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "Revolution Counter Modulus Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn revmod(&self) -> super::vals::Revmod {
+    pub const fn revmod(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Revmod::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Revolution Counter Modulus Enable"]
     #[inline(always)]
-    pub const fn set_revmod(&mut self, val: super::vals::Revmod) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u16) & 0x01) << 8usize);
+    pub const fn set_revmod(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
     }
     #[doc = "Output Control"]
     #[must_use]
     #[inline(always)]
-    pub const fn outctl(&self) -> super::vals::Outctl {
+    pub const fn outctl(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Outctl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Output Control"]
     #[inline(always)]
-    pub const fn set_outctl(&mut self, val: super::vals::Outctl) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u16) & 0x01) << 9usize);
+    pub const fn set_outctl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
     }
 }
 impl Default for Ctrl2 {
@@ -402,7 +402,7 @@ impl defmt::Format for Ctrl2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl2 {{ updhld: {:?}, updpos: {:?}, mod_: {:?}, dir: {:?}, ruie: {:?}, ruirq: {:?}, roie: {:?}, roirq: {:?}, revmod: {:?}, outctl: {:?} }}",
+            "Ctrl2 {{ updhld: {=bool:?}, updpos: {=bool:?}, mod_: {=bool:?}, dir: {=bool:?}, ruie: {=bool:?}, ruirq: {=bool:?}, roie: {=bool:?}, roirq: {=bool:?}, revmod: {=bool:?}, outctl: {=bool:?} }}",
             self.updhld(),
             self.updpos(),
             self.mod_(),
@@ -973,38 +973,38 @@ impl Tst {
     #[doc = "Quadrature Decoder Negative Signal"]
     #[must_use]
     #[inline(always)]
-    pub const fn qdn(&self) -> super::vals::Qdn {
+    pub const fn qdn(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Qdn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Quadrature Decoder Negative Signal"]
     #[inline(always)]
-    pub const fn set_qdn(&mut self, val: super::vals::Qdn) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u16) & 0x01) << 13usize);
+    pub const fn set_qdn(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u16) & 0x01) << 13usize);
     }
     #[doc = "Test Counter Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tce(&self) -> super::vals::Tce {
+    pub const fn tce(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Tce::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Test Counter Enable"]
     #[inline(always)]
-    pub const fn set_tce(&mut self, val: super::vals::Tce) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u16) & 0x01) << 14usize);
+    pub const fn set_tce(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u16) & 0x01) << 14usize);
     }
     #[doc = "Test Mode Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ten(&self) -> super::vals::Ten {
+    pub const fn ten(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Ten::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Test Mode Enable"]
     #[inline(always)]
-    pub const fn set_ten(&mut self, val: super::vals::Ten) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u16) & 0x01) << 15usize);
+    pub const fn set_ten(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u16) & 0x01) << 15usize);
     }
 }
 impl Default for Tst {
@@ -1029,7 +1029,7 @@ impl defmt::Format for Tst {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tst {{ test_count: {=u8:?}, test_period: {=u8:?}, qdn: {:?}, tce: {:?}, ten: {:?} }}",
+            "Tst {{ test_count: {=u8:?}, test_period: {=u8:?}, qdn: {=bool:?}, tce: {=bool:?}, ten: {=bool:?} }}",
             self.test_count(),
             self.test_period(),
             self.qdn(),

@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: spdif::vals::(RxAutoSync|RxFifoCtrl|RxFifoOffOn|RxFifoRst|SysclkDf|TxAllClkEn|TxAutoSync|UsyncMode|ValCtrl)
+    bit_size: 1

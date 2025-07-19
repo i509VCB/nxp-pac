@@ -140,8 +140,8 @@ impl defmt::Format for Ahbcr {
 #[doc = "AHB RX Buffer 0 Control Register 0"]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Ahbrxbuf0cr0(pub u32);
-impl Ahbrxbuf0cr0 {
+pub struct AhbrxbufCr0(pub u32);
+impl AhbrxbufCr0 {
     #[doc = "AHB RX Buffer Size in 64 bits."]
     #[must_use]
     #[inline(always)]
@@ -203,15 +203,15 @@ impl Ahbrxbuf0cr0 {
         self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
-impl Default for Ahbrxbuf0cr0 {
+impl Default for AhbrxbufCr0 {
     #[inline(always)]
-    fn default() -> Ahbrxbuf0cr0 {
-        Ahbrxbuf0cr0(0)
+    fn default() -> AhbrxbufCr0 {
+        AhbrxbufCr0(0)
     }
 }
-impl core::fmt::Debug for Ahbrxbuf0cr0 {
+impl core::fmt::Debug for AhbrxbufCr0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Ahbrxbuf0cr0")
+        f.debug_struct("AhbrxbufCr0")
             .field("bufsz", &self.bufsz())
             .field("mstrid", &self.mstrid())
             .field("priority", &self.priority())
@@ -221,302 +221,11 @@ impl core::fmt::Debug for Ahbrxbuf0cr0 {
     }
 }
 #[cfg(feature = "defmt")]
-impl defmt::Format for Ahbrxbuf0cr0 {
+impl defmt::Format for AhbrxbufCr0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ahbrxbuf0cr0 {{ bufsz: {=u8:?}, mstrid: {=u8:?}, priority: {=u8:?}, regionen: {=bool:?}, prefetchen: {=bool:?} }}",
-            self.bufsz(),
-            self.mstrid(),
-            self.priority(),
-            self.regionen(),
-            self.prefetchen()
-        )
-    }
-}
-#[doc = "AHB RX Buffer 1 Control Register 0"]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Ahbrxbuf1cr0(pub u32);
-impl Ahbrxbuf1cr0 {
-    #[doc = "AHB RX Buffer Size in 64 bits."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn bufsz(&self) -> u8 {
-        let val = (self.0 >> 0usize) & 0xff;
-        val as u8
-    }
-    #[doc = "AHB RX Buffer Size in 64 bits."]
-    #[inline(always)]
-    pub const fn set_bufsz(&mut self, val: u8) {
-        self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
-    }
-    #[doc = "This AHB RX Buffer is assigned according to AHB Master with ID (MSTR_ID)."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn mstrid(&self) -> u8 {
-        let val = (self.0 >> 16usize) & 0x0f;
-        val as u8
-    }
-    #[doc = "This AHB RX Buffer is assigned according to AHB Master with ID (MSTR_ID)."]
-    #[inline(always)]
-    pub const fn set_mstrid(&mut self, val: u8) {
-        self.0 = (self.0 & !(0x0f << 16usize)) | (((val as u32) & 0x0f) << 16usize);
-    }
-    #[doc = "This priority for AHB Master Read which this AHB RX Buffer is assigned. 7 is the highest priority, 0 the lowest."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn priority(&self) -> u8 {
-        let val = (self.0 >> 24usize) & 0x03;
-        val as u8
-    }
-    #[doc = "This priority for AHB Master Read which this AHB RX Buffer is assigned. 7 is the highest priority, 0 the lowest."]
-    #[inline(always)]
-    pub const fn set_priority(&mut self, val: u8) {
-        self.0 = (self.0 & !(0x03 << 24usize)) | (((val as u32) & 0x03) << 24usize);
-    }
-    #[doc = "AHB RX Buffer address region funciton enable"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn regionen(&self) -> bool {
-        let val = (self.0 >> 30usize) & 0x01;
-        val != 0
-    }
-    #[doc = "AHB RX Buffer address region funciton enable"]
-    #[inline(always)]
-    pub const fn set_regionen(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
-    }
-    #[doc = "AHB Read Prefetch Enable for current AHB RX Buffer corresponding Master."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn prefetchen(&self) -> bool {
-        let val = (self.0 >> 31usize) & 0x01;
-        val != 0
-    }
-    #[doc = "AHB Read Prefetch Enable for current AHB RX Buffer corresponding Master."]
-    #[inline(always)]
-    pub const fn set_prefetchen(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
-    }
-}
-impl Default for Ahbrxbuf1cr0 {
-    #[inline(always)]
-    fn default() -> Ahbrxbuf1cr0 {
-        Ahbrxbuf1cr0(0)
-    }
-}
-impl core::fmt::Debug for Ahbrxbuf1cr0 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Ahbrxbuf1cr0")
-            .field("bufsz", &self.bufsz())
-            .field("mstrid", &self.mstrid())
-            .field("priority", &self.priority())
-            .field("regionen", &self.regionen())
-            .field("prefetchen", &self.prefetchen())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for Ahbrxbuf1cr0 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(
-            f,
-            "Ahbrxbuf1cr0 {{ bufsz: {=u8:?}, mstrid: {=u8:?}, priority: {=u8:?}, regionen: {=bool:?}, prefetchen: {=bool:?} }}",
-            self.bufsz(),
-            self.mstrid(),
-            self.priority(),
-            self.regionen(),
-            self.prefetchen()
-        )
-    }
-}
-#[doc = "AHB RX Buffer 2 Control Register 0"]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Ahbrxbuf2cr0(pub u32);
-impl Ahbrxbuf2cr0 {
-    #[doc = "AHB RX Buffer Size in 64 bits."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn bufsz(&self) -> u8 {
-        let val = (self.0 >> 0usize) & 0xff;
-        val as u8
-    }
-    #[doc = "AHB RX Buffer Size in 64 bits."]
-    #[inline(always)]
-    pub const fn set_bufsz(&mut self, val: u8) {
-        self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
-    }
-    #[doc = "This AHB RX Buffer is assigned according to AHB Master with ID (MSTR_ID)."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn mstrid(&self) -> u8 {
-        let val = (self.0 >> 16usize) & 0x0f;
-        val as u8
-    }
-    #[doc = "This AHB RX Buffer is assigned according to AHB Master with ID (MSTR_ID)."]
-    #[inline(always)]
-    pub const fn set_mstrid(&mut self, val: u8) {
-        self.0 = (self.0 & !(0x0f << 16usize)) | (((val as u32) & 0x0f) << 16usize);
-    }
-    #[doc = "This priority for AHB Master Read which this AHB RX Buffer is assigned. 7 is the highest priority, 0 the lowest."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn priority(&self) -> u8 {
-        let val = (self.0 >> 24usize) & 0x03;
-        val as u8
-    }
-    #[doc = "This priority for AHB Master Read which this AHB RX Buffer is assigned. 7 is the highest priority, 0 the lowest."]
-    #[inline(always)]
-    pub const fn set_priority(&mut self, val: u8) {
-        self.0 = (self.0 & !(0x03 << 24usize)) | (((val as u32) & 0x03) << 24usize);
-    }
-    #[doc = "AHB RX Buffer address region funciton enable"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn regionen(&self) -> bool {
-        let val = (self.0 >> 30usize) & 0x01;
-        val != 0
-    }
-    #[doc = "AHB RX Buffer address region funciton enable"]
-    #[inline(always)]
-    pub const fn set_regionen(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
-    }
-    #[doc = "AHB Read Prefetch Enable for current AHB RX Buffer corresponding Master."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn prefetchen(&self) -> bool {
-        let val = (self.0 >> 31usize) & 0x01;
-        val != 0
-    }
-    #[doc = "AHB Read Prefetch Enable for current AHB RX Buffer corresponding Master."]
-    #[inline(always)]
-    pub const fn set_prefetchen(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
-    }
-}
-impl Default for Ahbrxbuf2cr0 {
-    #[inline(always)]
-    fn default() -> Ahbrxbuf2cr0 {
-        Ahbrxbuf2cr0(0)
-    }
-}
-impl core::fmt::Debug for Ahbrxbuf2cr0 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Ahbrxbuf2cr0")
-            .field("bufsz", &self.bufsz())
-            .field("mstrid", &self.mstrid())
-            .field("priority", &self.priority())
-            .field("regionen", &self.regionen())
-            .field("prefetchen", &self.prefetchen())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for Ahbrxbuf2cr0 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(
-            f,
-            "Ahbrxbuf2cr0 {{ bufsz: {=u8:?}, mstrid: {=u8:?}, priority: {=u8:?}, regionen: {=bool:?}, prefetchen: {=bool:?} }}",
-            self.bufsz(),
-            self.mstrid(),
-            self.priority(),
-            self.regionen(),
-            self.prefetchen()
-        )
-    }
-}
-#[doc = "AHB RX Buffer 3 Control Register 0"]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Ahbrxbuf3cr0(pub u32);
-impl Ahbrxbuf3cr0 {
-    #[doc = "AHB RX Buffer Size in 64 bits."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn bufsz(&self) -> u8 {
-        let val = (self.0 >> 0usize) & 0xff;
-        val as u8
-    }
-    #[doc = "AHB RX Buffer Size in 64 bits."]
-    #[inline(always)]
-    pub const fn set_bufsz(&mut self, val: u8) {
-        self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
-    }
-    #[doc = "This AHB RX Buffer is assigned according to AHB Master with ID (MSTR_ID)."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn mstrid(&self) -> u8 {
-        let val = (self.0 >> 16usize) & 0x0f;
-        val as u8
-    }
-    #[doc = "This AHB RX Buffer is assigned according to AHB Master with ID (MSTR_ID)."]
-    #[inline(always)]
-    pub const fn set_mstrid(&mut self, val: u8) {
-        self.0 = (self.0 & !(0x0f << 16usize)) | (((val as u32) & 0x0f) << 16usize);
-    }
-    #[doc = "This priority for AHB Master Read which this AHB RX Buffer is assigned. 7 is the highest priority, 0 the lowest."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn priority(&self) -> u8 {
-        let val = (self.0 >> 24usize) & 0x03;
-        val as u8
-    }
-    #[doc = "This priority for AHB Master Read which this AHB RX Buffer is assigned. 7 is the highest priority, 0 the lowest."]
-    #[inline(always)]
-    pub const fn set_priority(&mut self, val: u8) {
-        self.0 = (self.0 & !(0x03 << 24usize)) | (((val as u32) & 0x03) << 24usize);
-    }
-    #[doc = "AHB RX Buffer address region funciton enable"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn regionen(&self) -> bool {
-        let val = (self.0 >> 30usize) & 0x01;
-        val != 0
-    }
-    #[doc = "AHB RX Buffer address region funciton enable"]
-    #[inline(always)]
-    pub const fn set_regionen(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
-    }
-    #[doc = "AHB Read Prefetch Enable for current AHB RX Buffer corresponding Master."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn prefetchen(&self) -> bool {
-        let val = (self.0 >> 31usize) & 0x01;
-        val != 0
-    }
-    #[doc = "AHB Read Prefetch Enable for current AHB RX Buffer corresponding Master."]
-    #[inline(always)]
-    pub const fn set_prefetchen(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
-    }
-}
-impl Default for Ahbrxbuf3cr0 {
-    #[inline(always)]
-    fn default() -> Ahbrxbuf3cr0 {
-        Ahbrxbuf3cr0(0)
-    }
-}
-impl core::fmt::Debug for Ahbrxbuf3cr0 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Ahbrxbuf3cr0")
-            .field("bufsz", &self.bufsz())
-            .field("mstrid", &self.mstrid())
-            .field("priority", &self.priority())
-            .field("regionen", &self.regionen())
-            .field("prefetchen", &self.prefetchen())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for Ahbrxbuf3cr0 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(
-            f,
-            "Ahbrxbuf3cr0 {{ bufsz: {=u8:?}, mstrid: {=u8:?}, priority: {=u8:?}, regionen: {=bool:?}, prefetchen: {=bool:?} }}",
+            "AhbrxbufCr0 {{ bufsz: {=u8:?}, mstrid: {=u8:?}, priority: {=u8:?}, regionen: {=bool:?}, prefetchen: {=bool:?} }}",
             self.bufsz(),
             self.mstrid(),
             self.priority(),

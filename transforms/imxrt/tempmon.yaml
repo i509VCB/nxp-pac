@@ -1,0 +1,7 @@
+# Boolean enum transforms for TEMPMON peripheral
+# Converts single-bit enums with _0/_1 patterns to proper boolean types
+
+transforms:
+  - !DeleteEnums
+    from: tempmon::vals::(Tempsense0MeasureTemp|Tempsense0PowerDown)
+    bit_size: 1

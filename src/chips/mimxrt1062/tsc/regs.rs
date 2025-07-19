@@ -6,14 +6,14 @@ impl BasicSetting {
     #[doc = "Auto Measure"]
     #[must_use]
     #[inline(always)]
-    pub const fn auto_measure(&self) -> super::vals::AutoMeasure {
+    pub const fn auto_measure(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::AutoMeasure::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Auto Measure"]
     #[inline(always)]
-    pub const fn set_auto_measure(&mut self, val: super::vals::AutoMeasure) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_auto_measure(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "4/5 Wire detection"]
     #[must_use]
@@ -60,7 +60,7 @@ impl defmt::Format for BasicSetting {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "BasicSetting {{ auto_measure: {:?}, wire_4_5: {:?}, measure_delay_time: {=u32:?} }}",
+            "BasicSetting {{ auto_measure: {=bool:?}, wire_4_5: {:?}, measure_delay_time: {=u32:?} }}",
             self.auto_measure(),
             self.wire_4_5(),
             self.measure_delay_time()
@@ -111,50 +111,50 @@ impl DebugMode {
     #[doc = "Trigger"]
     #[must_use]
     #[inline(always)]
-    pub const fn trigger(&self) -> super::vals::Trigger {
+    pub const fn trigger(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::Trigger::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger"]
     #[inline(always)]
-    pub const fn set_trigger(&mut self, val: super::vals::Trigger) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_trigger(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "ADC Coco Clear"]
     #[must_use]
     #[inline(always)]
-    pub const fn adc_coco_clear(&self) -> super::vals::AdcCocoClear {
+    pub const fn adc_coco_clear(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::AdcCocoClear::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ADC Coco Clear"]
     #[inline(always)]
-    pub const fn set_adc_coco_clear(&mut self, val: super::vals::AdcCocoClear) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_adc_coco_clear(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "ADC COCO Clear Disable"]
     #[must_use]
     #[inline(always)]
-    pub const fn adc_coco_clear_disable(&self) -> super::vals::AdcCocoClearDisable {
+    pub const fn adc_coco_clear_disable(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::AdcCocoClearDisable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ADC COCO Clear Disable"]
     #[inline(always)]
-    pub const fn set_adc_coco_clear_disable(&mut self, val: super::vals::AdcCocoClearDisable) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_adc_coco_clear_disable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "Debug Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn debug_en(&self) -> super::vals::DebugEn {
+    pub const fn debug_en(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::DebugEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Debug Enable"]
     #[inline(always)]
-    pub const fn set_debug_en(&mut self, val: super::vals::DebugEn) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_debug_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
 }
 impl Default for DebugMode {
@@ -181,7 +181,7 @@ impl defmt::Format for DebugMode {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "DebugMode {{ adc_conv_value: {=u16:?}, adc_coco: {=bool:?}, ext_hwts: {=u8:?}, trigger: {:?}, adc_coco_clear: {:?}, adc_coco_clear_disable: {:?}, debug_en: {:?} }}",
+            "DebugMode {{ adc_conv_value: {=u16:?}, adc_coco: {=bool:?}, ext_hwts: {=u8:?}, trigger: {=bool:?}, adc_coco_clear: {=bool:?}, adc_coco_clear_disable: {=bool:?}, debug_en: {=bool:?} }}",
             self.adc_conv_value(),
             self.adc_coco(),
             self.ext_hwts(),
@@ -200,182 +200,182 @@ impl DebugMode2 {
     #[doc = "XPUL Wire Pull Down Switch"]
     #[must_use]
     #[inline(always)]
-    pub const fn xpul_pull_down(&self) -> super::vals::XpulPullDown {
+    pub const fn xpul_pull_down(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::XpulPullDown::from_bits(val as u8)
+        val != 0
     }
     #[doc = "XPUL Wire Pull Down Switch"]
     #[inline(always)]
-    pub const fn set_xpul_pull_down(&mut self, val: super::vals::XpulPullDown) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_xpul_pull_down(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "XPUL Wire Pull Up Switch"]
     #[must_use]
     #[inline(always)]
-    pub const fn xpul_pull_up(&self) -> super::vals::XpulPullUp {
+    pub const fn xpul_pull_up(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::XpulPullUp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "XPUL Wire Pull Up Switch"]
     #[inline(always)]
-    pub const fn set_xpul_pull_up(&mut self, val: super::vals::XpulPullUp) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_xpul_pull_up(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "XPUL Wire 200K Pull Up Switch"]
     #[must_use]
     #[inline(always)]
-    pub const fn xpul_200k_pull_up(&self) -> super::vals::Xpul200kPullUp {
+    pub const fn xpul_200k_pull_up(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Xpul200kPullUp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "XPUL Wire 200K Pull Up Switch"]
     #[inline(always)]
-    pub const fn set_xpul_200k_pull_up(&mut self, val: super::vals::Xpul200kPullUp) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_xpul_200k_pull_up(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "XNUR Wire Pull Down Switch"]
     #[must_use]
     #[inline(always)]
-    pub const fn xnur_pull_down(&self) -> super::vals::XnurPullDown {
+    pub const fn xnur_pull_down(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::XnurPullDown::from_bits(val as u8)
+        val != 0
     }
     #[doc = "XNUR Wire Pull Down Switch"]
     #[inline(always)]
-    pub const fn set_xnur_pull_down(&mut self, val: super::vals::XnurPullDown) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_xnur_pull_down(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "XNUR Wire Pull Up Switch"]
     #[must_use]
     #[inline(always)]
-    pub const fn xnur_pull_up(&self) -> super::vals::XnurPullUp {
+    pub const fn xnur_pull_up(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::XnurPullUp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "XNUR Wire Pull Up Switch"]
     #[inline(always)]
-    pub const fn set_xnur_pull_up(&mut self, val: super::vals::XnurPullUp) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_xnur_pull_up(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "XNUR Wire 200K Pull Up Switch"]
     #[must_use]
     #[inline(always)]
-    pub const fn xnur_200k_pull_up(&self) -> super::vals::Xnur200kPullUp {
+    pub const fn xnur_200k_pull_up(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Xnur200kPullUp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "XNUR Wire 200K Pull Up Switch"]
     #[inline(always)]
-    pub const fn set_xnur_200k_pull_up(&mut self, val: super::vals::Xnur200kPullUp) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_xnur_200k_pull_up(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "YPLL Wire Pull Down Switch"]
     #[must_use]
     #[inline(always)]
-    pub const fn ypll_pull_down(&self) -> super::vals::YpllPullDown {
+    pub const fn ypll_pull_down(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::YpllPullDown::from_bits(val as u8)
+        val != 0
     }
     #[doc = "YPLL Wire Pull Down Switch"]
     #[inline(always)]
-    pub const fn set_ypll_pull_down(&mut self, val: super::vals::YpllPullDown) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_ypll_pull_down(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "YPLL Wire Pull Up Switch"]
     #[must_use]
     #[inline(always)]
-    pub const fn ypll_pull_up(&self) -> super::vals::YpllPullUp {
+    pub const fn ypll_pull_up(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::YpllPullUp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "YPLL Wire Pull Up Switch"]
     #[inline(always)]
-    pub const fn set_ypll_pull_up(&mut self, val: super::vals::YpllPullUp) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_ypll_pull_up(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "YPLL Wire 200K Pull Up Switch"]
     #[must_use]
     #[inline(always)]
-    pub const fn ypll_200k_pull_up(&self) -> super::vals::Ypll200kPullUp {
+    pub const fn ypll_200k_pull_up(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Ypll200kPullUp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "YPLL Wire 200K Pull Up Switch"]
     #[inline(always)]
-    pub const fn set_ypll_200k_pull_up(&mut self, val: super::vals::Ypll200kPullUp) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_ypll_200k_pull_up(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "YNLR Wire Pull Down Switch"]
     #[must_use]
     #[inline(always)]
-    pub const fn ynlr_pull_down(&self) -> super::vals::YnlrPullDown {
+    pub const fn ynlr_pull_down(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::YnlrPullDown::from_bits(val as u8)
+        val != 0
     }
     #[doc = "YNLR Wire Pull Down Switch"]
     #[inline(always)]
-    pub const fn set_ynlr_pull_down(&mut self, val: super::vals::YnlrPullDown) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_ynlr_pull_down(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "YNLR Wire Pull Up Switch"]
     #[must_use]
     #[inline(always)]
-    pub const fn ynlr_pull_up(&self) -> super::vals::YnlrPullUp {
+    pub const fn ynlr_pull_up(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::YnlrPullUp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "YNLR Wire Pull Up Switch"]
     #[inline(always)]
-    pub const fn set_ynlr_pull_up(&mut self, val: super::vals::YnlrPullUp) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_ynlr_pull_up(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "YNLR Wire 200K Pull Up Switch"]
     #[must_use]
     #[inline(always)]
-    pub const fn ynlr_200k_pull_up(&self) -> super::vals::Ynlr200kPullUp {
+    pub const fn ynlr_200k_pull_up(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Ynlr200kPullUp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "YNLR Wire 200K Pull Up Switch"]
     #[inline(always)]
-    pub const fn set_ynlr_200k_pull_up(&mut self, val: super::vals::Ynlr200kPullUp) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_ynlr_200k_pull_up(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Wiper Wire Pull Down Switch"]
     #[must_use]
     #[inline(always)]
-    pub const fn wiper_pull_down(&self) -> super::vals::WiperPullDown {
+    pub const fn wiper_pull_down(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::WiperPullDown::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wiper Wire Pull Down Switch"]
     #[inline(always)]
-    pub const fn set_wiper_pull_down(&mut self, val: super::vals::WiperPullDown) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_wiper_pull_down(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Wiper Wire Pull Up Switch"]
     #[must_use]
     #[inline(always)]
-    pub const fn wiper_pull_up(&self) -> super::vals::WiperPullUp {
+    pub const fn wiper_pull_up(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::WiperPullUp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wiper Wire Pull Up Switch"]
     #[inline(always)]
-    pub const fn set_wiper_pull_up(&mut self, val: super::vals::WiperPullUp) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_wiper_pull_up(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Wiper Wire 200K Pull Up Switch"]
     #[must_use]
     #[inline(always)]
-    pub const fn wiper_200k_pull_up(&self) -> super::vals::Wiper200kPullUp {
+    pub const fn wiper_200k_pull_up(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Wiper200kPullUp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wiper Wire 200K Pull Up Switch"]
     #[inline(always)]
-    pub const fn set_wiper_200k_pull_up(&mut self, val: super::vals::Wiper200kPullUp) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_wiper_200k_pull_up(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Detect Four Wire"]
     #[must_use]
@@ -416,14 +416,14 @@ impl DebugMode2 {
     #[doc = "Intermediate State"]
     #[must_use]
     #[inline(always)]
-    pub const fn intermediate(&self) -> super::vals::Intermediate {
+    pub const fn intermediate(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Intermediate::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Intermediate State"]
     #[inline(always)]
-    pub const fn set_intermediate(&mut self, val: super::vals::Intermediate) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_intermediate(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "Detect Enable Four Wire"]
     #[must_use]
@@ -501,7 +501,7 @@ impl defmt::Format for DebugMode2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "DebugMode2 {{ xpul_pull_down: {:?}, xpul_pull_up: {:?}, xpul_200k_pull_up: {:?}, xnur_pull_down: {:?}, xnur_pull_up: {:?}, xnur_200k_pull_up: {:?}, ypll_pull_down: {:?}, ypll_pull_up: {:?}, ypll_200k_pull_up: {:?}, ynlr_pull_down: {:?}, ynlr_pull_up: {:?}, ynlr_200k_pull_up: {:?}, wiper_pull_down: {:?}, wiper_pull_up: {:?}, wiper_200k_pull_up: {:?}, detect_four_wire: {:?}, detect_five_wire: {:?}, state_machine: {:?}, intermediate: {:?}, detect_enable_four_wire: {:?}, detect_enable_five_wire: {:?}, de_glitch: {:?} }}",
+            "DebugMode2 {{ xpul_pull_down: {=bool:?}, xpul_pull_up: {=bool:?}, xpul_200k_pull_up: {=bool:?}, xnur_pull_down: {=bool:?}, xnur_pull_up: {=bool:?}, xnur_200k_pull_up: {=bool:?}, ypll_pull_down: {=bool:?}, ypll_pull_up: {=bool:?}, ypll_200k_pull_up: {=bool:?}, ynlr_pull_down: {=bool:?}, ynlr_pull_up: {=bool:?}, ynlr_200k_pull_up: {=bool:?}, wiper_pull_down: {=bool:?}, wiper_pull_up: {=bool:?}, wiper_200k_pull_up: {=bool:?}, detect_four_wire: {:?}, detect_five_wire: {:?}, state_machine: {:?}, intermediate: {=bool:?}, detect_enable_four_wire: {:?}, detect_enable_five_wire: {:?}, de_glitch: {:?} }}",
             self.xpul_pull_down(),
             self.xpul_pull_up(),
             self.xpul_200k_pull_up(),
@@ -547,50 +547,50 @@ impl FlowControl {
     #[doc = "Start Measure"]
     #[must_use]
     #[inline(always)]
-    pub const fn start_measure(&self) -> super::vals::StartMeasure {
+    pub const fn start_measure(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::StartMeasure::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Start Measure"]
     #[inline(always)]
-    pub const fn set_start_measure(&mut self, val: super::vals::StartMeasure) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_start_measure(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Drop Measure"]
     #[must_use]
     #[inline(always)]
-    pub const fn drop_measure(&self) -> super::vals::DropMeasure {
+    pub const fn drop_measure(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::DropMeasure::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Drop Measure"]
     #[inline(always)]
-    pub const fn set_drop_measure(&mut self, val: super::vals::DropMeasure) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_drop_measure(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Start Sense"]
     #[must_use]
     #[inline(always)]
-    pub const fn start_sense(&self) -> super::vals::StartSense {
+    pub const fn start_sense(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::StartSense::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Start Sense"]
     #[inline(always)]
-    pub const fn set_start_sense(&mut self, val: super::vals::StartSense) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_start_sense(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "This bit is for SW disable registers"]
     #[must_use]
     #[inline(always)]
-    pub const fn disable(&self) -> super::vals::Disable {
+    pub const fn disable(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Disable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit is for SW disable registers"]
     #[inline(always)]
-    pub const fn set_disable(&mut self, val: super::vals::Disable) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_disable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
 }
 impl Default for FlowControl {
@@ -615,7 +615,7 @@ impl defmt::Format for FlowControl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "FlowControl {{ sw_rst: {=bool:?}, start_measure: {:?}, drop_measure: {:?}, start_sense: {:?}, disable: {:?} }}",
+            "FlowControl {{ sw_rst: {=bool:?}, start_measure: {=bool:?}, drop_measure: {=bool:?}, start_sense: {=bool:?}, disable: {=bool:?} }}",
             self.sw_rst(),
             self.start_measure(),
             self.drop_measure(),
@@ -632,38 +632,38 @@ impl IntEn {
     #[doc = "Measure Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn measure_int_en(&self) -> super::vals::MeasureIntEn {
+    pub const fn measure_int_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::MeasureIntEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Measure Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_measure_int_en(&mut self, val: super::vals::MeasureIntEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_measure_int_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Detect Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn detect_int_en(&self) -> super::vals::DetectIntEn {
+    pub const fn detect_int_en(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::DetectIntEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Detect Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_detect_int_en(&mut self, val: super::vals::DetectIntEn) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_detect_int_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Idle Software Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn idle_sw_int_en(&self) -> super::vals::IdleSwIntEn {
+    pub const fn idle_sw_int_en(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::IdleSwIntEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Idle Software Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_idle_sw_int_en(&mut self, val: super::vals::IdleSwIntEn) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_idle_sw_int_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
 }
 impl Default for IntEn {
@@ -686,7 +686,7 @@ impl defmt::Format for IntEn {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "IntEn {{ measure_int_en: {:?}, detect_int_en: {:?}, idle_sw_int_en: {:?} }}",
+            "IntEn {{ measure_int_en: {=bool:?}, detect_int_en: {=bool:?}, idle_sw_int_en: {=bool:?} }}",
             self.measure_int_en(),
             self.detect_int_en(),
             self.idle_sw_int_en()
@@ -713,38 +713,38 @@ impl IntSigEn {
     #[doc = "Detect Signal Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn detect_sig_en(&self) -> super::vals::DetectSigEn {
+    pub const fn detect_sig_en(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::DetectSigEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Detect Signal Enable"]
     #[inline(always)]
-    pub const fn set_detect_sig_en(&mut self, val: super::vals::DetectSigEn) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_detect_sig_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Valid Signal Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn valid_sig_en(&self) -> super::vals::ValidSigEn {
+    pub const fn valid_sig_en(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::ValidSigEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Valid Signal Enable"]
     #[inline(always)]
-    pub const fn set_valid_sig_en(&mut self, val: super::vals::ValidSigEn) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_valid_sig_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Idle Software Signal Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn idle_sw_sig_en(&self) -> super::vals::IdleSwSigEn {
+    pub const fn idle_sw_sig_en(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::IdleSwSigEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Idle Software Signal Enable"]
     #[inline(always)]
-    pub const fn set_idle_sw_sig_en(&mut self, val: super::vals::IdleSwSigEn) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_idle_sw_sig_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
 }
 impl Default for IntSigEn {
@@ -768,7 +768,7 @@ impl defmt::Format for IntSigEn {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "IntSigEn {{ measure_sig_en: {=bool:?}, detect_sig_en: {:?}, valid_sig_en: {:?}, idle_sw_sig_en: {:?} }}",
+            "IntSigEn {{ measure_sig_en: {=bool:?}, detect_sig_en: {=bool:?}, valid_sig_en: {=bool:?}, idle_sw_sig_en: {=bool:?} }}",
             self.measure_sig_en(),
             self.detect_sig_en(),
             self.valid_sig_en(),
@@ -784,50 +784,50 @@ impl IntStatus {
     #[doc = "Measure Signal"]
     #[must_use]
     #[inline(always)]
-    pub const fn measure(&self) -> super::vals::Measure {
+    pub const fn measure(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Measure::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Measure Signal"]
     #[inline(always)]
-    pub const fn set_measure(&mut self, val: super::vals::Measure) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_measure(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Detect Signal"]
     #[must_use]
     #[inline(always)]
-    pub const fn detect(&self) -> super::vals::Detect {
+    pub const fn detect(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Detect::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Detect Signal"]
     #[inline(always)]
-    pub const fn set_detect(&mut self, val: super::vals::Detect) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_detect(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Valid Signal"]
     #[must_use]
     #[inline(always)]
-    pub const fn valid(&self) -> super::vals::Valid {
+    pub const fn valid(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Valid::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Valid Signal"]
     #[inline(always)]
-    pub const fn set_valid(&mut self, val: super::vals::Valid) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_valid(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Idle Software"]
     #[must_use]
     #[inline(always)]
-    pub const fn idle_sw(&self) -> super::vals::IdleSw {
+    pub const fn idle_sw(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::IdleSw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Idle Software"]
     #[inline(always)]
-    pub const fn set_idle_sw(&mut self, val: super::vals::IdleSw) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_idle_sw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
 }
 impl Default for IntStatus {
@@ -851,7 +851,7 @@ impl defmt::Format for IntStatus {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "IntStatus {{ measure: {:?}, detect: {:?}, valid: {:?}, idle_sw: {:?} }}",
+            "IntStatus {{ measure: {=bool:?}, detect: {=bool:?}, valid: {=bool:?}, idle_sw: {=bool:?} }}",
             self.measure(),
             self.detect(),
             self.valid(),

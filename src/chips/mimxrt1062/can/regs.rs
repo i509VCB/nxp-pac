@@ -73,14 +73,14 @@ impl Ctrl1 {
     #[doc = "This bit configures FLEXCAN to operate in Listen Only Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn lom(&self) -> super::vals::Lom {
+    pub const fn lom(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Lom::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit configures FLEXCAN to operate in Listen Only Mode"]
     #[inline(always)]
-    pub const fn set_lom(&mut self, val: super::vals::Lom) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_lom(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "This bit defines the ordering mechanism for Message Buffer transmission"]
     #[must_use]
@@ -133,62 +133,62 @@ impl Ctrl1 {
     #[doc = "This bit provides a mask for the Rx Warning Interrupt associated with the RWRN_INT flag in the Error and Status Register"]
     #[must_use]
     #[inline(always)]
-    pub const fn rwrnmsk(&self) -> super::vals::Rwrnmsk {
+    pub const fn rwrnmsk(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Rwrnmsk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit provides a mask for the Rx Warning Interrupt associated with the RWRN_INT flag in the Error and Status Register"]
     #[inline(always)]
-    pub const fn set_rwrnmsk(&mut self, val: super::vals::Rwrnmsk) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_rwrnmsk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "This bit provides a mask for the Tx Warning Interrupt associated with the TWRN_INT flag in the Error and Status Register"]
     #[must_use]
     #[inline(always)]
-    pub const fn twrnmsk(&self) -> super::vals::Twrnmsk {
+    pub const fn twrnmsk(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Twrnmsk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit provides a mask for the Tx Warning Interrupt associated with the TWRN_INT flag in the Error and Status Register"]
     #[inline(always)]
-    pub const fn set_twrnmsk(&mut self, val: super::vals::Twrnmsk) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_twrnmsk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "This bit configures FlexCAN to operate in Loop-Back Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn lpb(&self) -> super::vals::Lpb {
+    pub const fn lpb(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Lpb::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit configures FlexCAN to operate in Loop-Back Mode"]
     #[inline(always)]
-    pub const fn set_lpb(&mut self, val: super::vals::Lpb) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_lpb(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "This bit provides a mask for the Error Interrupt."]
     #[must_use]
     #[inline(always)]
-    pub const fn errmsk(&self) -> super::vals::Errmsk {
+    pub const fn errmsk(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Errmsk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit provides a mask for the Error Interrupt."]
     #[inline(always)]
-    pub const fn set_errmsk(&mut self, val: super::vals::Errmsk) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_errmsk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "This bit provides a mask for the Bus Off Interrupt."]
     #[must_use]
     #[inline(always)]
-    pub const fn boffmsk(&self) -> super::vals::Boffmsk {
+    pub const fn boffmsk(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Boffmsk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit provides a mask for the Bus Off Interrupt."]
     #[inline(always)]
-    pub const fn set_boffmsk(&mut self, val: super::vals::Boffmsk) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_boffmsk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "This 3-bit field defines the length of Phase Buffer Segment 2 in the bit time"]
     #[must_use]
@@ -271,7 +271,7 @@ impl defmt::Format for Ctrl1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl1 {{ propseg: {=u8:?}, lom: {:?}, lbuf: {:?}, tsyn: {:?}, boffrec: {:?}, smp: {:?}, rwrnmsk: {:?}, twrnmsk: {:?}, lpb: {:?}, errmsk: {:?}, boffmsk: {:?}, pseg2: {=u8:?}, pseg1: {=u8:?}, rjw: {=u8:?}, presdiv: {=u8:?} }}",
+            "Ctrl1 {{ propseg: {=u8:?}, lom: {=bool:?}, lbuf: {:?}, tsyn: {:?}, boffrec: {:?}, smp: {:?}, rwrnmsk: {=bool:?}, twrnmsk: {=bool:?}, lpb: {=bool:?}, errmsk: {=bool:?}, boffmsk: {=bool:?}, pseg2: {=u8:?}, pseg1: {=u8:?}, rjw: {=u8:?}, presdiv: {=u8:?} }}",
             self.propseg(),
             self.lom(),
             self.lbuf(),
@@ -298,14 +298,14 @@ impl Ctrl2 {
     #[doc = "This bit controls the comparison of IDE and RTR bits within Rx Mailboxes filters with their corresponding bits in the incoming frame by the matching process"]
     #[must_use]
     #[inline(always)]
-    pub const fn eacen(&self) -> super::vals::Eacen {
+    pub const fn eacen(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Eacen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit controls the comparison of IDE and RTR bits within Rx Mailboxes filters with their corresponding bits in the incoming frame by the matching process"]
     #[inline(always)]
-    pub const fn set_eacen(&mut self, val: super::vals::Eacen) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_eacen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "If this bit is asserted Remote Request Frame is submitted to a matching process and stored in the corresponding Message Buffer in the same fashion of a Data Frame"]
     #[must_use]
@@ -358,14 +358,14 @@ impl Ctrl2 {
     #[doc = "Enable unrestricted write access to FlexCAN memory in Freeze mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn wrmfrz(&self) -> super::vals::Wrmfrz {
+    pub const fn wrmfrz(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Wrmfrz::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable unrestricted write access to FlexCAN memory in Freeze mode"]
     #[inline(always)]
-    pub const fn set_wrmfrz(&mut self, val: super::vals::Wrmfrz) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_wrmfrz(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
 }
 impl Default for Ctrl2 {
@@ -391,7 +391,7 @@ impl defmt::Format for Ctrl2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl2 {{ eacen: {:?}, rrs: {:?}, mrp: {:?}, tasd: {=u8:?}, rffn: {=u8:?}, wrmfrz: {:?} }}",
+            "Ctrl2 {{ eacen: {=bool:?}, rrs: {:?}, mrp: {:?}, tasd: {=u8:?}, rffn: {=u8:?}, wrmfrz: {=bool:?} }}",
             self.eacen(),
             self.rrs(),
             self.mrp(),
@@ -881,14 +881,14 @@ impl Esr2 {
     #[doc = "If ESR2\\[VPS\\] is asserted, this bit indicates whether there is any inactive Mailbox (CODE field is either 0b1000 or 0b0000)"]
     #[must_use]
     #[inline(always)]
-    pub const fn imb(&self) -> super::vals::Imb {
+    pub const fn imb(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Imb::from_bits(val as u8)
+        val != 0
     }
     #[doc = "If ESR2\\[VPS\\] is asserted, this bit indicates whether there is any inactive Mailbox (CODE field is either 0b1000 or 0b0000)"]
     #[inline(always)]
-    pub const fn set_imb(&mut self, val: super::vals::Imb) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_imb(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "This bit indicates whether IMB and LPTM contents are currently valid or not"]
     #[must_use]
@@ -935,7 +935,7 @@ impl defmt::Format for Esr2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Esr2 {{ imb: {:?}, vps: {:?}, lptm: {=u8:?} }}",
+            "Esr2 {{ imb: {=bool:?}, vps: {:?}, lptm: {=u8:?} }}",
             self.imb(),
             self.vps(),
             self.lptm()
@@ -1221,26 +1221,26 @@ impl Mcr {
     #[doc = "This bit is supplied for backwards compatibility reasons"]
     #[must_use]
     #[inline(always)]
-    pub const fn aen(&self) -> super::vals::Aen {
+    pub const fn aen(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Aen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit is supplied for backwards compatibility reasons"]
     #[inline(always)]
-    pub const fn set_aen(&mut self, val: super::vals::Aen) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_aen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "This bit is provided for backwards compatibility reasons"]
     #[must_use]
     #[inline(always)]
-    pub const fn lprioen(&self) -> super::vals::Lprioen {
+    pub const fn lprioen(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Lprioen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit is provided for backwards compatibility reasons"]
     #[inline(always)]
-    pub const fn set_lprioen(&mut self, val: super::vals::Lprioen) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_lprioen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "This bit indicates whether Rx matching process will be based either on individual masking and queue or on masking scheme with RXMGMASK, RX14MASK and RX15MASK, RXFGMASK"]
     #[must_use]
@@ -1257,14 +1257,14 @@ impl Mcr {
     #[doc = "This bit defines whether FlexCAN is allowed to receive frames transmitted by itself"]
     #[must_use]
     #[inline(always)]
-    pub const fn srxdis(&self) -> super::vals::Srxdis {
+    pub const fn srxdis(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Srxdis::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit defines whether FlexCAN is allowed to receive frames transmitted by itself"]
     #[inline(always)]
-    pub const fn set_srxdis(&mut self, val: super::vals::Srxdis) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_srxdis(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "This bit defines whether the integrated low-pass filter is applied to protect the FLEXCAN_RX input from spurious wake up"]
     #[must_use]
@@ -1293,26 +1293,26 @@ impl Mcr {
     #[doc = "When asserted, this bit enables the generation of the TWRN_INT and RWRN_INT flags in the Error and Status Register"]
     #[must_use]
     #[inline(always)]
-    pub const fn wrnen(&self) -> super::vals::Wrnen {
+    pub const fn wrnen(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Wrnen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "When asserted, this bit enables the generation of the TWRN_INT and RWRN_INT flags in the Error and Status Register"]
     #[inline(always)]
-    pub const fn set_wrnen(&mut self, val: super::vals::Wrnen) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_wrnen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "This bit enables the Self Wake Up feature when FLEXCAN is in Stop Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn slfwak(&self) -> super::vals::Slfwak {
+    pub const fn slfwak(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Slfwak::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit enables the Self Wake Up feature when FLEXCAN is in Stop Mode"]
     #[inline(always)]
-    pub const fn set_slfwak(&mut self, val: super::vals::Slfwak) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_slfwak(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "This bit configures some of the FLEXCAN registers to be either in Supervisor or User Mode"]
     #[must_use]
@@ -1353,14 +1353,14 @@ impl Mcr {
     #[doc = "This bit enables the Wake Up Interrupt generation."]
     #[must_use]
     #[inline(always)]
-    pub const fn wakmsk(&self) -> super::vals::Wakmsk {
+    pub const fn wakmsk(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::Wakmsk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit enables the Wake Up Interrupt generation."]
     #[inline(always)]
-    pub const fn set_wakmsk(&mut self, val: super::vals::Wakmsk) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_wakmsk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "This read-only bit indicates that FLEXCAN is either in Disable Mode, Stop Mode or Freeze Mode"]
     #[must_use]
@@ -1389,14 +1389,14 @@ impl Mcr {
     #[doc = "This bit controls whether the Rx FIFO feature is enabled or not"]
     #[must_use]
     #[inline(always)]
-    pub const fn rfen(&self) -> super::vals::Rfen {
+    pub const fn rfen(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::Rfen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit controls whether the Rx FIFO feature is enabled or not"]
     #[inline(always)]
-    pub const fn set_rfen(&mut self, val: super::vals::Rfen) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_rfen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "The FRZ bit specifies the FLEXCAN behavior when the HALT bit in the MCR Register is set or when Debug Mode is requested at Arm level"]
     #[must_use]
@@ -1413,14 +1413,14 @@ impl Mcr {
     #[doc = "This bit controls whether FLEXCAN is enabled or not"]
     #[must_use]
     #[inline(always)]
-    pub const fn mdis(&self) -> super::vals::Mdis {
+    pub const fn mdis(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Mdis::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit controls whether FLEXCAN is enabled or not"]
     #[inline(always)]
-    pub const fn set_mdis(&mut self, val: super::vals::Mdis) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_mdis(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Mcr {
@@ -1459,7 +1459,7 @@ impl defmt::Format for Mcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mcr {{ maxmb: {=u8:?}, idam: {:?}, aen: {:?}, lprioen: {:?}, irmq: {:?}, srxdis: {:?}, waksrc: {:?}, lpmack: {:?}, wrnen: {:?}, slfwak: {:?}, supv: {:?}, frzack: {:?}, softrst: {:?}, wakmsk: {:?}, notrdy: {:?}, halt: {:?}, rfen: {:?}, frz: {:?}, mdis: {:?} }}",
+            "Mcr {{ maxmb: {=u8:?}, idam: {:?}, aen: {=bool:?}, lprioen: {=bool:?}, irmq: {:?}, srxdis: {=bool:?}, waksrc: {:?}, lpmack: {:?}, wrnen: {=bool:?}, slfwak: {=bool:?}, supv: {:?}, frzack: {:?}, softrst: {:?}, wakmsk: {=bool:?}, notrdy: {:?}, halt: {:?}, rfen: {=bool:?}, frz: {:?}, mdis: {=bool:?} }}",
             self.maxmb(),
             self.idam(),
             self.aen(),

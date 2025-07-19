@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: sai::vals::(Rcr2Bcd|Rcr2Bci|Rcr2Bcp|Rcr4Fsd|Rcr4Fsp|RcsrFr|RcsrFrf|RcsrSr|Tcr2Bcd|Tcr2Bcp|Tcr4Fsd|Tcr4Fsp|Tcr4Ondem|TcsrFr)
+    bit_size: 1

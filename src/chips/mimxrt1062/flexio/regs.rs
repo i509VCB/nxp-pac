@@ -30,38 +30,38 @@ impl Ctrl {
     #[doc = "Fast Access"]
     #[must_use]
     #[inline(always)]
-    pub const fn fastacc(&self) -> super::vals::Fastacc {
+    pub const fn fastacc(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Fastacc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fast Access"]
     #[inline(always)]
-    pub const fn set_fastacc(&mut self, val: super::vals::Fastacc) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_fastacc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Debug Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dbge(&self) -> super::vals::Dbge {
+    pub const fn dbge(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Dbge::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Debug Enable"]
     #[inline(always)]
-    pub const fn set_dbge(&mut self, val: super::vals::Dbge) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_dbge(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Doze Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dozen(&self) -> super::vals::Dozen {
+    pub const fn dozen(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Dozen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Doze Enable"]
     #[inline(always)]
-    pub const fn set_dozen(&mut self, val: super::vals::Dozen) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_dozen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Ctrl {
@@ -86,7 +86,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ flexen: {=bool:?}, swrst: {=bool:?}, fastacc: {:?}, dbge: {:?}, dozen: {:?} }}",
+            "Ctrl {{ flexen: {=bool:?}, swrst: {=bool:?}, fastacc: {=bool:?}, dbge: {=bool:?}, dozen: {=bool:?} }}",
             self.flexen(),
             self.swrst(),
             self.fastacc(),

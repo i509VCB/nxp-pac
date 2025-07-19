@@ -18,38 +18,38 @@ impl Chcfg {
     #[doc = "DMA Channel Always Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn a_on(&self) -> super::vals::AOn {
+    pub const fn a_on(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::AOn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA Channel Always Enable"]
     #[inline(always)]
-    pub const fn set_a_on(&mut self, val: super::vals::AOn) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_a_on(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "DMA Channel Trigger Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn trig(&self) -> super::vals::Trig {
+    pub const fn trig(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::Trig::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA Channel Trigger Enable"]
     #[inline(always)]
-    pub const fn set_trig(&mut self, val: super::vals::Trig) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_trig(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "DMA Mux Channel Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn enbl(&self) -> super::vals::Enbl {
+    pub const fn enbl(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Enbl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DMA Mux Channel Enable"]
     #[inline(always)]
-    pub const fn set_enbl(&mut self, val: super::vals::Enbl) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_enbl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Chcfg {
@@ -73,7 +73,7 @@ impl defmt::Format for Chcfg {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Chcfg {{ source: {=u8:?}, a_on: {:?}, trig: {:?}, enbl: {:?} }}",
+            "Chcfg {{ source: {=u8:?}, a_on: {=bool:?}, trig: {=bool:?}, enbl: {=bool:?} }}",
             self.source(),
             self.a_on(),
             self.trig(),

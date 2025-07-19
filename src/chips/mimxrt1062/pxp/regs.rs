@@ -175,14 +175,14 @@ impl AsCtrl {
     #[doc = "Setting this bit to logic 0 will not alter the alpha value"]
     #[must_use]
     #[inline(always)]
-    pub const fn alpha_invert(&self) -> super::vals::AlphaInvert {
+    pub const fn alpha_invert(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::AlphaInvert::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Setting this bit to logic 0 will not alter the alpha value"]
     #[inline(always)]
-    pub const fn set_alpha_invert(&mut self, val: super::vals::AlphaInvert) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_alpha_invert(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
 }
 impl Default for AsCtrl {
@@ -208,7 +208,7 @@ impl defmt::Format for AsCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "AsCtrl {{ alpha_ctrl: {:?}, enable_colorkey: {=bool:?}, format: {:?}, alpha: {=u8:?}, rop: {:?}, alpha_invert: {:?} }}",
+            "AsCtrl {{ alpha_ctrl: {:?}, enable_colorkey: {=bool:?}, format: {:?}, alpha: {=u8:?}, rop: {:?}, alpha_invert: {=bool:?} }}",
             self.alpha_ctrl(),
             self.enable_colorkey(),
             self.format(),
@@ -578,38 +578,38 @@ impl Ctrl {
     #[doc = "Enable the PXP to run continuously"]
     #[must_use]
     #[inline(always)]
-    pub const fn en_repeat(&self) -> super::vals::CtrlEnRepeat {
+    pub const fn en_repeat(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::CtrlEnRepeat::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable the PXP to run continuously"]
     #[inline(always)]
-    pub const fn set_en_repeat(&mut self, val: super::vals::CtrlEnRepeat) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_en_repeat(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "This bit must be set to zero for normal operation"]
     #[must_use]
     #[inline(always)]
-    pub const fn clkgate(&self) -> super::vals::CtrlClkgate {
+    pub const fn clkgate(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::CtrlClkgate::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit must be set to zero for normal operation"]
     #[inline(always)]
-    pub const fn set_clkgate(&mut self, val: super::vals::CtrlClkgate) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_clkgate(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "This bit can be turned on and then off to reset the PXP block to its default state."]
     #[must_use]
     #[inline(always)]
-    pub const fn sftrst(&self) -> super::vals::CtrlSftrst {
+    pub const fn sftrst(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::CtrlSftrst::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit can be turned on and then off to reset the PXP block to its default state."]
     #[inline(always)]
-    pub const fn set_sftrst(&mut self, val: super::vals::CtrlSftrst) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_sftrst(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Ctrl {
@@ -641,7 +641,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ enable: {=bool:?}, irq_enable: {=bool:?}, next_irq_enable: {=bool:?}, enable_lcd_handshake: {=bool:?}, rotate: {:?}, hflip: {=bool:?}, vflip: {=bool:?}, rot_pos: {=bool:?}, block_size: {:?}, en_repeat: {:?}, clkgate: {:?}, sftrst: {:?} }}",
+            "Ctrl {{ enable: {=bool:?}, irq_enable: {=bool:?}, next_irq_enable: {=bool:?}, enable_lcd_handshake: {=bool:?}, rotate: {:?}, hflip: {=bool:?}, vflip: {=bool:?}, rot_pos: {=bool:?}, block_size: {:?}, en_repeat: {=bool:?}, clkgate: {=bool:?}, sftrst: {=bool:?} }}",
             self.enable(),
             self.irq_enable(),
             self.next_irq_enable(),
@@ -773,38 +773,38 @@ impl CtrlClr {
     #[doc = "Enable the PXP to run continuously"]
     #[must_use]
     #[inline(always)]
-    pub const fn en_repeat(&self) -> super::vals::CtrlClrEnRepeat {
+    pub const fn en_repeat(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::CtrlClrEnRepeat::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable the PXP to run continuously"]
     #[inline(always)]
-    pub const fn set_en_repeat(&mut self, val: super::vals::CtrlClrEnRepeat) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_en_repeat(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "This bit must be set to zero for normal operation"]
     #[must_use]
     #[inline(always)]
-    pub const fn clkgate(&self) -> super::vals::CtrlClrClkgate {
+    pub const fn clkgate(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::CtrlClrClkgate::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit must be set to zero for normal operation"]
     #[inline(always)]
-    pub const fn set_clkgate(&mut self, val: super::vals::CtrlClrClkgate) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_clkgate(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "This bit can be turned on and then off to reset the PXP block to its default state."]
     #[must_use]
     #[inline(always)]
-    pub const fn sftrst(&self) -> super::vals::CtrlClrSftrst {
+    pub const fn sftrst(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::CtrlClrSftrst::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit can be turned on and then off to reset the PXP block to its default state."]
     #[inline(always)]
-    pub const fn set_sftrst(&mut self, val: super::vals::CtrlClrSftrst) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_sftrst(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for CtrlClr {
@@ -836,7 +836,7 @@ impl defmt::Format for CtrlClr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "CtrlClr {{ enable: {=bool:?}, irq_enable: {=bool:?}, next_irq_enable: {=bool:?}, enable_lcd_handshake: {=bool:?}, rotate: {:?}, hflip: {=bool:?}, vflip: {=bool:?}, rot_pos: {=bool:?}, block_size: {:?}, en_repeat: {:?}, clkgate: {:?}, sftrst: {:?} }}",
+            "CtrlClr {{ enable: {=bool:?}, irq_enable: {=bool:?}, next_irq_enable: {=bool:?}, enable_lcd_handshake: {=bool:?}, rotate: {:?}, hflip: {=bool:?}, vflip: {=bool:?}, rot_pos: {=bool:?}, block_size: {:?}, en_repeat: {=bool:?}, clkgate: {=bool:?}, sftrst: {=bool:?} }}",
             self.enable(),
             self.irq_enable(),
             self.next_irq_enable(),
@@ -968,38 +968,38 @@ impl CtrlSet {
     #[doc = "Enable the PXP to run continuously"]
     #[must_use]
     #[inline(always)]
-    pub const fn en_repeat(&self) -> super::vals::CtrlSetEnRepeat {
+    pub const fn en_repeat(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::CtrlSetEnRepeat::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable the PXP to run continuously"]
     #[inline(always)]
-    pub const fn set_en_repeat(&mut self, val: super::vals::CtrlSetEnRepeat) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_en_repeat(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "This bit must be set to zero for normal operation"]
     #[must_use]
     #[inline(always)]
-    pub const fn clkgate(&self) -> super::vals::CtrlSetClkgate {
+    pub const fn clkgate(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::CtrlSetClkgate::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit must be set to zero for normal operation"]
     #[inline(always)]
-    pub const fn set_clkgate(&mut self, val: super::vals::CtrlSetClkgate) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_clkgate(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "This bit can be turned on and then off to reset the PXP block to its default state."]
     #[must_use]
     #[inline(always)]
-    pub const fn sftrst(&self) -> super::vals::CtrlSetSftrst {
+    pub const fn sftrst(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::CtrlSetSftrst::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit can be turned on and then off to reset the PXP block to its default state."]
     #[inline(always)]
-    pub const fn set_sftrst(&mut self, val: super::vals::CtrlSetSftrst) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_sftrst(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for CtrlSet {
@@ -1031,7 +1031,7 @@ impl defmt::Format for CtrlSet {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "CtrlSet {{ enable: {=bool:?}, irq_enable: {=bool:?}, next_irq_enable: {=bool:?}, enable_lcd_handshake: {=bool:?}, rotate: {:?}, hflip: {=bool:?}, vflip: {=bool:?}, rot_pos: {=bool:?}, block_size: {:?}, en_repeat: {:?}, clkgate: {:?}, sftrst: {:?} }}",
+            "CtrlSet {{ enable: {=bool:?}, irq_enable: {=bool:?}, next_irq_enable: {=bool:?}, enable_lcd_handshake: {=bool:?}, rotate: {:?}, hflip: {=bool:?}, vflip: {=bool:?}, rot_pos: {=bool:?}, block_size: {:?}, en_repeat: {=bool:?}, clkgate: {=bool:?}, sftrst: {=bool:?} }}",
             self.enable(),
             self.irq_enable(),
             self.next_irq_enable(),
@@ -1163,38 +1163,38 @@ impl CtrlTog {
     #[doc = "Enable the PXP to run continuously"]
     #[must_use]
     #[inline(always)]
-    pub const fn en_repeat(&self) -> super::vals::CtrlTogEnRepeat {
+    pub const fn en_repeat(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::CtrlTogEnRepeat::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable the PXP to run continuously"]
     #[inline(always)]
-    pub const fn set_en_repeat(&mut self, val: super::vals::CtrlTogEnRepeat) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_en_repeat(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "This bit must be set to zero for normal operation"]
     #[must_use]
     #[inline(always)]
-    pub const fn clkgate(&self) -> super::vals::CtrlTogClkgate {
+    pub const fn clkgate(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::CtrlTogClkgate::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit must be set to zero for normal operation"]
     #[inline(always)]
-    pub const fn set_clkgate(&mut self, val: super::vals::CtrlTogClkgate) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_clkgate(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "This bit can be turned on and then off to reset the PXP block to its default state."]
     #[must_use]
     #[inline(always)]
-    pub const fn sftrst(&self) -> super::vals::CtrlTogSftrst {
+    pub const fn sftrst(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::CtrlTogSftrst::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit can be turned on and then off to reset the PXP block to its default state."]
     #[inline(always)]
-    pub const fn set_sftrst(&mut self, val: super::vals::CtrlTogSftrst) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_sftrst(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for CtrlTog {
@@ -1226,7 +1226,7 @@ impl defmt::Format for CtrlTog {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "CtrlTog {{ enable: {=bool:?}, irq_enable: {=bool:?}, next_irq_enable: {=bool:?}, enable_lcd_handshake: {=bool:?}, rotate: {:?}, hflip: {=bool:?}, vflip: {=bool:?}, rot_pos: {=bool:?}, block_size: {:?}, en_repeat: {:?}, clkgate: {:?}, sftrst: {:?} }}",
+            "CtrlTog {{ enable: {=bool:?}, irq_enable: {=bool:?}, next_irq_enable: {=bool:?}, enable_lcd_handshake: {=bool:?}, rotate: {:?}, hflip: {=bool:?}, vflip: {=bool:?}, rot_pos: {=bool:?}, block_size: {:?}, en_repeat: {=bool:?}, clkgate: {=bool:?}, sftrst: {=bool:?} }}",
             self.enable(),
             self.irq_enable(),
             self.next_irq_enable(),
@@ -1513,14 +1513,14 @@ impl OutCtrl {
     #[doc = "Indicates that alpha component in output buffer pixels should be overwritten by PXP_OUT_CTRL\\[ALPHA\\]"]
     #[must_use]
     #[inline(always)]
-    pub const fn alpha_output(&self) -> super::vals::OutCtrlAlphaOutput {
+    pub const fn alpha_output(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::OutCtrlAlphaOutput::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates that alpha component in output buffer pixels should be overwritten by PXP_OUT_CTRL\\[ALPHA\\]"]
     #[inline(always)]
-    pub const fn set_alpha_output(&mut self, val: super::vals::OutCtrlAlphaOutput) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_alpha_output(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "When generating an output buffer with an alpha component, the value in this field will be used when enabled to override the alpha passed through the pixel data pipeline"]
     #[must_use]
@@ -1556,7 +1556,7 @@ impl defmt::Format for OutCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "OutCtrl {{ format: {:?}, interlaced_output: {:?}, alpha_output: {:?}, alpha: {=u8:?} }}",
+            "OutCtrl {{ format: {:?}, interlaced_output: {:?}, alpha_output: {=bool:?}, alpha: {=u8:?} }}",
             self.format(),
             self.interlaced_output(),
             self.alpha_output(),
@@ -1596,14 +1596,14 @@ impl OutCtrlClr {
     #[doc = "Indicates that alpha component in output buffer pixels should be overwritten by PXP_OUT_CTRL\\[ALPHA\\]"]
     #[must_use]
     #[inline(always)]
-    pub const fn alpha_output(&self) -> super::vals::OutCtrlClrAlphaOutput {
+    pub const fn alpha_output(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::OutCtrlClrAlphaOutput::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates that alpha component in output buffer pixels should be overwritten by PXP_OUT_CTRL\\[ALPHA\\]"]
     #[inline(always)]
-    pub const fn set_alpha_output(&mut self, val: super::vals::OutCtrlClrAlphaOutput) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_alpha_output(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "When generating an output buffer with an alpha component, the value in this field will be used when enabled to override the alpha passed through the pixel data pipeline"]
     #[must_use]
@@ -1639,7 +1639,7 @@ impl defmt::Format for OutCtrlClr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "OutCtrlClr {{ format: {:?}, interlaced_output: {:?}, alpha_output: {:?}, alpha: {=u8:?} }}",
+            "OutCtrlClr {{ format: {:?}, interlaced_output: {:?}, alpha_output: {=bool:?}, alpha: {=u8:?} }}",
             self.format(),
             self.interlaced_output(),
             self.alpha_output(),
@@ -1679,14 +1679,14 @@ impl OutCtrlSet {
     #[doc = "Indicates that alpha component in output buffer pixels should be overwritten by PXP_OUT_CTRL\\[ALPHA\\]"]
     #[must_use]
     #[inline(always)]
-    pub const fn alpha_output(&self) -> super::vals::OutCtrlSetAlphaOutput {
+    pub const fn alpha_output(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::OutCtrlSetAlphaOutput::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates that alpha component in output buffer pixels should be overwritten by PXP_OUT_CTRL\\[ALPHA\\]"]
     #[inline(always)]
-    pub const fn set_alpha_output(&mut self, val: super::vals::OutCtrlSetAlphaOutput) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_alpha_output(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "When generating an output buffer with an alpha component, the value in this field will be used when enabled to override the alpha passed through the pixel data pipeline"]
     #[must_use]
@@ -1722,7 +1722,7 @@ impl defmt::Format for OutCtrlSet {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "OutCtrlSet {{ format: {:?}, interlaced_output: {:?}, alpha_output: {:?}, alpha: {=u8:?} }}",
+            "OutCtrlSet {{ format: {:?}, interlaced_output: {:?}, alpha_output: {=bool:?}, alpha: {=u8:?} }}",
             self.format(),
             self.interlaced_output(),
             self.alpha_output(),
@@ -1762,14 +1762,14 @@ impl OutCtrlTog {
     #[doc = "Indicates that alpha component in output buffer pixels should be overwritten by PXP_OUT_CTRL\\[ALPHA\\]"]
     #[must_use]
     #[inline(always)]
-    pub const fn alpha_output(&self) -> super::vals::OutCtrlTogAlphaOutput {
+    pub const fn alpha_output(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::OutCtrlTogAlphaOutput::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates that alpha component in output buffer pixels should be overwritten by PXP_OUT_CTRL\\[ALPHA\\]"]
     #[inline(always)]
-    pub const fn set_alpha_output(&mut self, val: super::vals::OutCtrlTogAlphaOutput) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_alpha_output(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "When generating an output buffer with an alpha component, the value in this field will be used when enabled to override the alpha passed through the pixel data pipeline"]
     #[must_use]
@@ -1805,7 +1805,7 @@ impl defmt::Format for OutCtrlTog {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "OutCtrlTog {{ format: {:?}, interlaced_output: {:?}, alpha_output: {:?}, alpha: {=u8:?} }}",
+            "OutCtrlTog {{ format: {:?}, interlaced_output: {:?}, alpha_output: {=bool:?}, alpha: {=u8:?} }}",
             self.format(),
             self.interlaced_output(),
             self.alpha_output(),
@@ -2958,38 +2958,38 @@ impl Stat {
     #[doc = "Indicates current PXP interrupt status"]
     #[must_use]
     #[inline(always)]
-    pub const fn irq(&self) -> super::vals::StatIrq {
+    pub const fn irq(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::StatIrq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates current PXP interrupt status"]
     #[inline(always)]
-    pub const fn set_irq(&mut self, val: super::vals::StatIrq) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_irq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Indicates PXP encountered an AXI write error and processing has been terminated."]
     #[must_use]
     #[inline(always)]
-    pub const fn axi_write_error(&self) -> super::vals::StatAxiWriteError {
+    pub const fn axi_write_error(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::StatAxiWriteError::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates PXP encountered an AXI write error and processing has been terminated."]
     #[inline(always)]
-    pub const fn set_axi_write_error(&mut self, val: super::vals::StatAxiWriteError) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_axi_write_error(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Indicates PXP encountered an AXI read error and processing has been terminated."]
     #[must_use]
     #[inline(always)]
-    pub const fn axi_read_error(&self) -> super::vals::StatAxiReadError {
+    pub const fn axi_read_error(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::StatAxiReadError::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates PXP encountered an AXI read error and processing has been terminated."]
     #[inline(always)]
-    pub const fn set_axi_read_error(&mut self, val: super::vals::StatAxiReadError) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_axi_read_error(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Indicates that a command issued with the \"Next Command\" functionality has been issued and that a new command may be initiated with a write to the PXP_NEXT register"]
     #[must_use]
@@ -3018,14 +3018,14 @@ impl Stat {
     #[doc = "Indicates that the LUT DMA transfer has completed."]
     #[must_use]
     #[inline(always)]
-    pub const fn lut_dma_load_done_irq(&self) -> super::vals::StatLutDmaLoadDoneIrq {
+    pub const fn lut_dma_load_done_irq(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::StatLutDmaLoadDoneIrq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates that the LUT DMA transfer has completed."]
     #[inline(always)]
-    pub const fn set_lut_dma_load_done_irq(&mut self, val: super::vals::StatLutDmaLoadDoneIrq) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_lut_dma_load_done_irq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Indicates the X coordinate of the block currently being rendered."]
     #[must_use]
@@ -3077,7 +3077,7 @@ impl defmt::Format for Stat {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Stat {{ irq: {:?}, axi_write_error: {:?}, axi_read_error: {:?}, next_irq: {=bool:?}, axi_error_id: {=u8:?}, lut_dma_load_done_irq: {:?}, blocky: {=u8:?}, blockx: {=u8:?} }}",
+            "Stat {{ irq: {=bool:?}, axi_write_error: {=bool:?}, axi_read_error: {=bool:?}, next_irq: {=bool:?}, axi_error_id: {=u8:?}, lut_dma_load_done_irq: {=bool:?}, blocky: {=u8:?}, blockx: {=u8:?} }}",
             self.irq(),
             self.axi_write_error(),
             self.axi_read_error(),
@@ -3097,38 +3097,38 @@ impl StatClr {
     #[doc = "Indicates current PXP interrupt status"]
     #[must_use]
     #[inline(always)]
-    pub const fn irq(&self) -> super::vals::StatClrIrq {
+    pub const fn irq(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::StatClrIrq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates current PXP interrupt status"]
     #[inline(always)]
-    pub const fn set_irq(&mut self, val: super::vals::StatClrIrq) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_irq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Indicates PXP encountered an AXI write error and processing has been terminated."]
     #[must_use]
     #[inline(always)]
-    pub const fn axi_write_error(&self) -> super::vals::StatClrAxiWriteError {
+    pub const fn axi_write_error(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::StatClrAxiWriteError::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates PXP encountered an AXI write error and processing has been terminated."]
     #[inline(always)]
-    pub const fn set_axi_write_error(&mut self, val: super::vals::StatClrAxiWriteError) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_axi_write_error(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Indicates PXP encountered an AXI read error and processing has been terminated."]
     #[must_use]
     #[inline(always)]
-    pub const fn axi_read_error(&self) -> super::vals::StatClrAxiReadError {
+    pub const fn axi_read_error(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::StatClrAxiReadError::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates PXP encountered an AXI read error and processing has been terminated."]
     #[inline(always)]
-    pub const fn set_axi_read_error(&mut self, val: super::vals::StatClrAxiReadError) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_axi_read_error(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Indicates that a command issued with the \"Next Command\" functionality has been issued and that a new command may be initiated with a write to the PXP_NEXT register"]
     #[must_use]
@@ -3157,14 +3157,14 @@ impl StatClr {
     #[doc = "Indicates that the LUT DMA transfer has completed."]
     #[must_use]
     #[inline(always)]
-    pub const fn lut_dma_load_done_irq(&self) -> super::vals::StatClrLutDmaLoadDoneIrq {
+    pub const fn lut_dma_load_done_irq(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::StatClrLutDmaLoadDoneIrq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates that the LUT DMA transfer has completed."]
     #[inline(always)]
-    pub const fn set_lut_dma_load_done_irq(&mut self, val: super::vals::StatClrLutDmaLoadDoneIrq) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_lut_dma_load_done_irq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Indicates the X coordinate of the block currently being rendered."]
     #[must_use]
@@ -3216,7 +3216,7 @@ impl defmt::Format for StatClr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "StatClr {{ irq: {:?}, axi_write_error: {:?}, axi_read_error: {:?}, next_irq: {=bool:?}, axi_error_id: {=u8:?}, lut_dma_load_done_irq: {:?}, blocky: {=u8:?}, blockx: {=u8:?} }}",
+            "StatClr {{ irq: {=bool:?}, axi_write_error: {=bool:?}, axi_read_error: {=bool:?}, next_irq: {=bool:?}, axi_error_id: {=u8:?}, lut_dma_load_done_irq: {=bool:?}, blocky: {=u8:?}, blockx: {=u8:?} }}",
             self.irq(),
             self.axi_write_error(),
             self.axi_read_error(),
@@ -3236,38 +3236,38 @@ impl StatSet {
     #[doc = "Indicates current PXP interrupt status"]
     #[must_use]
     #[inline(always)]
-    pub const fn irq(&self) -> super::vals::StatSetIrq {
+    pub const fn irq(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::StatSetIrq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates current PXP interrupt status"]
     #[inline(always)]
-    pub const fn set_irq(&mut self, val: super::vals::StatSetIrq) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_irq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Indicates PXP encountered an AXI write error and processing has been terminated."]
     #[must_use]
     #[inline(always)]
-    pub const fn axi_write_error(&self) -> super::vals::StatSetAxiWriteError {
+    pub const fn axi_write_error(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::StatSetAxiWriteError::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates PXP encountered an AXI write error and processing has been terminated."]
     #[inline(always)]
-    pub const fn set_axi_write_error(&mut self, val: super::vals::StatSetAxiWriteError) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_axi_write_error(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Indicates PXP encountered an AXI read error and processing has been terminated."]
     #[must_use]
     #[inline(always)]
-    pub const fn axi_read_error(&self) -> super::vals::StatSetAxiReadError {
+    pub const fn axi_read_error(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::StatSetAxiReadError::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates PXP encountered an AXI read error and processing has been terminated."]
     #[inline(always)]
-    pub const fn set_axi_read_error(&mut self, val: super::vals::StatSetAxiReadError) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_axi_read_error(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Indicates that a command issued with the \"Next Command\" functionality has been issued and that a new command may be initiated with a write to the PXP_NEXT register"]
     #[must_use]
@@ -3296,14 +3296,14 @@ impl StatSet {
     #[doc = "Indicates that the LUT DMA transfer has completed."]
     #[must_use]
     #[inline(always)]
-    pub const fn lut_dma_load_done_irq(&self) -> super::vals::StatSetLutDmaLoadDoneIrq {
+    pub const fn lut_dma_load_done_irq(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::StatSetLutDmaLoadDoneIrq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates that the LUT DMA transfer has completed."]
     #[inline(always)]
-    pub const fn set_lut_dma_load_done_irq(&mut self, val: super::vals::StatSetLutDmaLoadDoneIrq) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_lut_dma_load_done_irq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Indicates the X coordinate of the block currently being rendered."]
     #[must_use]
@@ -3355,7 +3355,7 @@ impl defmt::Format for StatSet {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "StatSet {{ irq: {:?}, axi_write_error: {:?}, axi_read_error: {:?}, next_irq: {=bool:?}, axi_error_id: {=u8:?}, lut_dma_load_done_irq: {:?}, blocky: {=u8:?}, blockx: {=u8:?} }}",
+            "StatSet {{ irq: {=bool:?}, axi_write_error: {=bool:?}, axi_read_error: {=bool:?}, next_irq: {=bool:?}, axi_error_id: {=u8:?}, lut_dma_load_done_irq: {=bool:?}, blocky: {=u8:?}, blockx: {=u8:?} }}",
             self.irq(),
             self.axi_write_error(),
             self.axi_read_error(),
@@ -3375,38 +3375,38 @@ impl StatTog {
     #[doc = "Indicates current PXP interrupt status"]
     #[must_use]
     #[inline(always)]
-    pub const fn irq(&self) -> super::vals::StatTogIrq {
+    pub const fn irq(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::StatTogIrq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates current PXP interrupt status"]
     #[inline(always)]
-    pub const fn set_irq(&mut self, val: super::vals::StatTogIrq) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_irq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Indicates PXP encountered an AXI write error and processing has been terminated."]
     #[must_use]
     #[inline(always)]
-    pub const fn axi_write_error(&self) -> super::vals::StatTogAxiWriteError {
+    pub const fn axi_write_error(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::StatTogAxiWriteError::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates PXP encountered an AXI write error and processing has been terminated."]
     #[inline(always)]
-    pub const fn set_axi_write_error(&mut self, val: super::vals::StatTogAxiWriteError) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_axi_write_error(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Indicates PXP encountered an AXI read error and processing has been terminated."]
     #[must_use]
     #[inline(always)]
-    pub const fn axi_read_error(&self) -> super::vals::StatTogAxiReadError {
+    pub const fn axi_read_error(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::StatTogAxiReadError::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates PXP encountered an AXI read error and processing has been terminated."]
     #[inline(always)]
-    pub const fn set_axi_read_error(&mut self, val: super::vals::StatTogAxiReadError) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_axi_read_error(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Indicates that a command issued with the \"Next Command\" functionality has been issued and that a new command may be initiated with a write to the PXP_NEXT register"]
     #[must_use]
@@ -3435,14 +3435,14 @@ impl StatTog {
     #[doc = "Indicates that the LUT DMA transfer has completed."]
     #[must_use]
     #[inline(always)]
-    pub const fn lut_dma_load_done_irq(&self) -> super::vals::StatTogLutDmaLoadDoneIrq {
+    pub const fn lut_dma_load_done_irq(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::StatTogLutDmaLoadDoneIrq::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates that the LUT DMA transfer has completed."]
     #[inline(always)]
-    pub const fn set_lut_dma_load_done_irq(&mut self, val: super::vals::StatTogLutDmaLoadDoneIrq) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_lut_dma_load_done_irq(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Indicates the X coordinate of the block currently being rendered."]
     #[must_use]
@@ -3494,7 +3494,7 @@ impl defmt::Format for StatTog {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "StatTog {{ irq: {:?}, axi_write_error: {:?}, axi_read_error: {:?}, next_irq: {=bool:?}, axi_error_id: {=u8:?}, lut_dma_load_done_irq: {:?}, blocky: {=u8:?}, blockx: {=u8:?} }}",
+            "StatTog {{ irq: {=bool:?}, axi_write_error: {=bool:?}, axi_read_error: {=bool:?}, next_irq: {=bool:?}, axi_error_id: {=u8:?}, lut_dma_load_done_irq: {=bool:?}, blocky: {=u8:?}, blockx: {=u8:?} }}",
             self.irq(),
             self.axi_write_error(),
             self.axi_read_error(),

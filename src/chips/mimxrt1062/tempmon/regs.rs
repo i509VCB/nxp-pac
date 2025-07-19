@@ -6,26 +6,26 @@ impl Tempsense0 {
     #[doc = "This bit powers down the temperature sensor."]
     #[must_use]
     #[inline(always)]
-    pub const fn power_down(&self) -> super::vals::Tempsense0PowerDown {
+    pub const fn power_down(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Tempsense0PowerDown::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit powers down the temperature sensor."]
     #[inline(always)]
-    pub const fn set_power_down(&mut self, val: super::vals::Tempsense0PowerDown) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_power_down(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Starts the measurement process"]
     #[must_use]
     #[inline(always)]
-    pub const fn measure_temp(&self) -> super::vals::Tempsense0MeasureTemp {
+    pub const fn measure_temp(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Tempsense0MeasureTemp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Starts the measurement process"]
     #[inline(always)]
-    pub const fn set_measure_temp(&mut self, val: super::vals::Tempsense0MeasureTemp) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_measure_temp(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Indicates that the latest temp is valid"]
     #[must_use]
@@ -86,7 +86,7 @@ impl defmt::Format for Tempsense0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tempsense0 {{ power_down: {:?}, measure_temp: {:?}, finished: {=bool:?}, temp_cnt: {=u16:?}, alarm_value: {=u16:?} }}",
+            "Tempsense0 {{ power_down: {=bool:?}, measure_temp: {=bool:?}, finished: {=bool:?}, temp_cnt: {=u16:?}, alarm_value: {=u16:?} }}",
             self.power_down(),
             self.measure_temp(),
             self.finished(),

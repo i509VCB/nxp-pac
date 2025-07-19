@@ -1,0 +1,6 @@
+transforms:
+  # Merge PDM channel filter enums
+  - !MergeEnums
+    from: pdm::vals::Ch(\d+)f
+    to: pdm::vals::Chf
+    check: Layout

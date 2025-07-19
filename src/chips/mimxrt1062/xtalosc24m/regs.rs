@@ -6,14 +6,14 @@ impl LowpwrCtrl {
     #[doc = "RC Osc. enable control."]
     #[must_use]
     #[inline(always)]
-    pub const fn rc_osc_en(&self) -> super::vals::LowpwrCtrlRcOscEn {
+    pub const fn rc_osc_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::LowpwrCtrlRcOscEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RC Osc. enable control."]
     #[inline(always)]
-    pub const fn set_rc_osc_en(&mut self, val: super::vals::LowpwrCtrlRcOscEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_rc_osc_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Select the source for the 24MHz clock."]
     #[must_use]
@@ -30,14 +30,14 @@ impl LowpwrCtrl {
     #[doc = "Bandgap select. Not related to oscillator."]
     #[must_use]
     #[inline(always)]
-    pub const fn lpbg_sel(&self) -> super::vals::LowpwrCtrlLpbgSel {
+    pub const fn lpbg_sel(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::LowpwrCtrlLpbgSel::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bandgap select. Not related to oscillator."]
     #[inline(always)]
-    pub const fn set_lpbg_sel(&mut self, val: super::vals::LowpwrCtrlLpbgSel) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_lpbg_sel(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Low power bandgap test bit. Not related to oscillator."]
     #[must_use]
@@ -138,14 +138,14 @@ impl LowpwrCtrl {
     #[doc = "Status of the 24MHz xtal oscillator."]
     #[must_use]
     #[inline(always)]
-    pub const fn xtalosc_pwrup_stat(&self) -> super::vals::LowpwrCtrlXtaloscPwrupStat {
+    pub const fn xtalosc_pwrup_stat(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::LowpwrCtrlXtaloscPwrupStat::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Status of the 24MHz xtal oscillator."]
     #[inline(always)]
-    pub const fn set_xtalosc_pwrup_stat(&mut self, val: super::vals::LowpwrCtrlXtaloscPwrupStat) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_xtalosc_pwrup_stat(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Display power gate control. Used as software mask. Set to zero to force ungated."]
     #[must_use]
@@ -203,7 +203,7 @@ impl defmt::Format for LowpwrCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "LowpwrCtrl {{ rc_osc_en: {:?}, osc_sel: {:?}, lpbg_sel: {:?}, lpbg_test: {=bool:?}, reftop_ibias_off: {=bool:?}, l1_pwrgate: {=bool:?}, l2_pwrgate: {=bool:?}, cpu_pwrgate: {=bool:?}, display_pwrgate: {=bool:?}, rcosc_cg_override: {=bool:?}, xtalosc_pwrup_delay: {:?}, xtalosc_pwrup_stat: {:?}, mix_pwrgate: {=bool:?}, gpu_pwrgate: {=bool:?} }}",
+            "LowpwrCtrl {{ rc_osc_en: {=bool:?}, osc_sel: {:?}, lpbg_sel: {=bool:?}, lpbg_test: {=bool:?}, reftop_ibias_off: {=bool:?}, l1_pwrgate: {=bool:?}, l2_pwrgate: {=bool:?}, cpu_pwrgate: {=bool:?}, display_pwrgate: {=bool:?}, rcosc_cg_override: {=bool:?}, xtalosc_pwrup_delay: {:?}, xtalosc_pwrup_stat: {=bool:?}, mix_pwrgate: {=bool:?}, gpu_pwrgate: {=bool:?} }}",
             self.rc_osc_en(),
             self.osc_sel(),
             self.lpbg_sel(),
@@ -229,14 +229,14 @@ impl LowpwrCtrlClr {
     #[doc = "RC Osc. enable control."]
     #[must_use]
     #[inline(always)]
-    pub const fn rc_osc_en(&self) -> super::vals::LowpwrCtrlClrRcOscEn {
+    pub const fn rc_osc_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::LowpwrCtrlClrRcOscEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RC Osc. enable control."]
     #[inline(always)]
-    pub const fn set_rc_osc_en(&mut self, val: super::vals::LowpwrCtrlClrRcOscEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_rc_osc_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Select the source for the 24MHz clock."]
     #[must_use]
@@ -253,14 +253,14 @@ impl LowpwrCtrlClr {
     #[doc = "Bandgap select. Not related to oscillator."]
     #[must_use]
     #[inline(always)]
-    pub const fn lpbg_sel(&self) -> super::vals::LowpwrCtrlClrLpbgSel {
+    pub const fn lpbg_sel(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::LowpwrCtrlClrLpbgSel::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bandgap select. Not related to oscillator."]
     #[inline(always)]
-    pub const fn set_lpbg_sel(&mut self, val: super::vals::LowpwrCtrlClrLpbgSel) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_lpbg_sel(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Low power bandgap test bit. Not related to oscillator."]
     #[must_use]
@@ -364,17 +364,14 @@ impl LowpwrCtrlClr {
     #[doc = "Status of the 24MHz xtal oscillator."]
     #[must_use]
     #[inline(always)]
-    pub const fn xtalosc_pwrup_stat(&self) -> super::vals::LowpwrCtrlClrXtaloscPwrupStat {
+    pub const fn xtalosc_pwrup_stat(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::LowpwrCtrlClrXtaloscPwrupStat::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Status of the 24MHz xtal oscillator."]
     #[inline(always)]
-    pub const fn set_xtalosc_pwrup_stat(
-        &mut self,
-        val: super::vals::LowpwrCtrlClrXtaloscPwrupStat,
-    ) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_xtalosc_pwrup_stat(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Display power gate control. Used as software mask. Set to zero to force ungated."]
     #[must_use]
@@ -432,7 +429,7 @@ impl defmt::Format for LowpwrCtrlClr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "LowpwrCtrlClr {{ rc_osc_en: {:?}, osc_sel: {:?}, lpbg_sel: {:?}, lpbg_test: {=bool:?}, reftop_ibias_off: {=bool:?}, l1_pwrgate: {=bool:?}, l2_pwrgate: {=bool:?}, cpu_pwrgate: {=bool:?}, display_pwrgate: {=bool:?}, rcosc_cg_override: {=bool:?}, xtalosc_pwrup_delay: {:?}, xtalosc_pwrup_stat: {:?}, mix_pwrgate: {=bool:?}, gpu_pwrgate: {=bool:?} }}",
+            "LowpwrCtrlClr {{ rc_osc_en: {=bool:?}, osc_sel: {:?}, lpbg_sel: {=bool:?}, lpbg_test: {=bool:?}, reftop_ibias_off: {=bool:?}, l1_pwrgate: {=bool:?}, l2_pwrgate: {=bool:?}, cpu_pwrgate: {=bool:?}, display_pwrgate: {=bool:?}, rcosc_cg_override: {=bool:?}, xtalosc_pwrup_delay: {:?}, xtalosc_pwrup_stat: {=bool:?}, mix_pwrgate: {=bool:?}, gpu_pwrgate: {=bool:?} }}",
             self.rc_osc_en(),
             self.osc_sel(),
             self.lpbg_sel(),
@@ -458,14 +455,14 @@ impl LowpwrCtrlSet {
     #[doc = "RC Osc. enable control."]
     #[must_use]
     #[inline(always)]
-    pub const fn rc_osc_en(&self) -> super::vals::LowpwrCtrlSetRcOscEn {
+    pub const fn rc_osc_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::LowpwrCtrlSetRcOscEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RC Osc. enable control."]
     #[inline(always)]
-    pub const fn set_rc_osc_en(&mut self, val: super::vals::LowpwrCtrlSetRcOscEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_rc_osc_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Select the source for the 24MHz clock."]
     #[must_use]
@@ -482,14 +479,14 @@ impl LowpwrCtrlSet {
     #[doc = "Bandgap select. Not related to oscillator."]
     #[must_use]
     #[inline(always)]
-    pub const fn lpbg_sel(&self) -> super::vals::LowpwrCtrlSetLpbgSel {
+    pub const fn lpbg_sel(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::LowpwrCtrlSetLpbgSel::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bandgap select. Not related to oscillator."]
     #[inline(always)]
-    pub const fn set_lpbg_sel(&mut self, val: super::vals::LowpwrCtrlSetLpbgSel) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_lpbg_sel(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Low power bandgap test bit. Not related to oscillator."]
     #[must_use]
@@ -593,17 +590,14 @@ impl LowpwrCtrlSet {
     #[doc = "Status of the 24MHz xtal oscillator."]
     #[must_use]
     #[inline(always)]
-    pub const fn xtalosc_pwrup_stat(&self) -> super::vals::LowpwrCtrlSetXtaloscPwrupStat {
+    pub const fn xtalosc_pwrup_stat(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::LowpwrCtrlSetXtaloscPwrupStat::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Status of the 24MHz xtal oscillator."]
     #[inline(always)]
-    pub const fn set_xtalosc_pwrup_stat(
-        &mut self,
-        val: super::vals::LowpwrCtrlSetXtaloscPwrupStat,
-    ) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_xtalosc_pwrup_stat(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Display power gate control. Used as software mask. Set to zero to force ungated."]
     #[must_use]
@@ -661,7 +655,7 @@ impl defmt::Format for LowpwrCtrlSet {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "LowpwrCtrlSet {{ rc_osc_en: {:?}, osc_sel: {:?}, lpbg_sel: {:?}, lpbg_test: {=bool:?}, reftop_ibias_off: {=bool:?}, l1_pwrgate: {=bool:?}, l2_pwrgate: {=bool:?}, cpu_pwrgate: {=bool:?}, display_pwrgate: {=bool:?}, rcosc_cg_override: {=bool:?}, xtalosc_pwrup_delay: {:?}, xtalosc_pwrup_stat: {:?}, mix_pwrgate: {=bool:?}, gpu_pwrgate: {=bool:?} }}",
+            "LowpwrCtrlSet {{ rc_osc_en: {=bool:?}, osc_sel: {:?}, lpbg_sel: {=bool:?}, lpbg_test: {=bool:?}, reftop_ibias_off: {=bool:?}, l1_pwrgate: {=bool:?}, l2_pwrgate: {=bool:?}, cpu_pwrgate: {=bool:?}, display_pwrgate: {=bool:?}, rcosc_cg_override: {=bool:?}, xtalosc_pwrup_delay: {:?}, xtalosc_pwrup_stat: {=bool:?}, mix_pwrgate: {=bool:?}, gpu_pwrgate: {=bool:?} }}",
             self.rc_osc_en(),
             self.osc_sel(),
             self.lpbg_sel(),
@@ -687,14 +681,14 @@ impl LowpwrCtrlTog {
     #[doc = "RC Osc. enable control."]
     #[must_use]
     #[inline(always)]
-    pub const fn rc_osc_en(&self) -> super::vals::LowpwrCtrlTogRcOscEn {
+    pub const fn rc_osc_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::LowpwrCtrlTogRcOscEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RC Osc. enable control."]
     #[inline(always)]
-    pub const fn set_rc_osc_en(&mut self, val: super::vals::LowpwrCtrlTogRcOscEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_rc_osc_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Select the source for the 24MHz clock."]
     #[must_use]
@@ -711,14 +705,14 @@ impl LowpwrCtrlTog {
     #[doc = "Bandgap select. Not related to oscillator."]
     #[must_use]
     #[inline(always)]
-    pub const fn lpbg_sel(&self) -> super::vals::LowpwrCtrlTogLpbgSel {
+    pub const fn lpbg_sel(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::LowpwrCtrlTogLpbgSel::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bandgap select. Not related to oscillator."]
     #[inline(always)]
-    pub const fn set_lpbg_sel(&mut self, val: super::vals::LowpwrCtrlTogLpbgSel) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_lpbg_sel(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Low power bandgap test bit. Not related to oscillator."]
     #[must_use]
@@ -822,17 +816,14 @@ impl LowpwrCtrlTog {
     #[doc = "Status of the 24MHz xtal oscillator."]
     #[must_use]
     #[inline(always)]
-    pub const fn xtalosc_pwrup_stat(&self) -> super::vals::LowpwrCtrlTogXtaloscPwrupStat {
+    pub const fn xtalosc_pwrup_stat(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::LowpwrCtrlTogXtaloscPwrupStat::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Status of the 24MHz xtal oscillator."]
     #[inline(always)]
-    pub const fn set_xtalosc_pwrup_stat(
-        &mut self,
-        val: super::vals::LowpwrCtrlTogXtaloscPwrupStat,
-    ) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_xtalosc_pwrup_stat(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Display power gate control. Used as software mask. Set to zero to force ungated."]
     #[must_use]
@@ -890,7 +881,7 @@ impl defmt::Format for LowpwrCtrlTog {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "LowpwrCtrlTog {{ rc_osc_en: {:?}, osc_sel: {:?}, lpbg_sel: {:?}, lpbg_test: {=bool:?}, reftop_ibias_off: {=bool:?}, l1_pwrgate: {=bool:?}, l2_pwrgate: {=bool:?}, cpu_pwrgate: {=bool:?}, display_pwrgate: {=bool:?}, rcosc_cg_override: {=bool:?}, xtalosc_pwrup_delay: {:?}, xtalosc_pwrup_stat: {:?}, mix_pwrgate: {=bool:?}, gpu_pwrgate: {=bool:?} }}",
+            "LowpwrCtrlTog {{ rc_osc_en: {=bool:?}, osc_sel: {:?}, lpbg_sel: {=bool:?}, lpbg_test: {=bool:?}, reftop_ibias_off: {=bool:?}, l1_pwrgate: {=bool:?}, l2_pwrgate: {=bool:?}, cpu_pwrgate: {=bool:?}, display_pwrgate: {=bool:?}, rcosc_cg_override: {=bool:?}, xtalosc_pwrup_delay: {:?}, xtalosc_pwrup_stat: {=bool:?}, mix_pwrgate: {=bool:?}, gpu_pwrgate: {=bool:?} }}",
             self.rc_osc_en(),
             self.osc_sel(),
             self.lpbg_sel(),
@@ -928,14 +919,14 @@ impl Misc0 {
     #[doc = "Control bit to disable the self-bias circuit in the analog bandgap"]
     #[must_use]
     #[inline(always)]
-    pub const fn reftop_selfbiasoff(&self) -> super::vals::Misc0ReftopSelfbiasoff {
+    pub const fn reftop_selfbiasoff(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Misc0ReftopSelfbiasoff::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Control bit to disable the self-bias circuit in the analog bandgap"]
     #[inline(always)]
-    pub const fn set_reftop_selfbiasoff(&mut self, val: super::vals::Misc0ReftopSelfbiasoff) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_reftop_selfbiasoff(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Not related to oscillator."]
     #[must_use]
@@ -976,14 +967,14 @@ impl Misc0 {
     #[doc = "This bit controls a switch from VDD_HIGH_IN to VDD_SNVS_IN."]
     #[must_use]
     #[inline(always)]
-    pub const fn discon_high_snvs(&self) -> super::vals::Misc0DisconHighSnvs {
+    pub const fn discon_high_snvs(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Misc0DisconHighSnvs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit controls a switch from VDD_HIGH_IN to VDD_SNVS_IN."]
     #[inline(always)]
-    pub const fn set_discon_high_snvs(&mut self, val: super::vals::Misc0DisconHighSnvs) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_discon_high_snvs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "This field determines the bias current in the 24MHz oscillator"]
     #[must_use]
@@ -1024,14 +1015,14 @@ impl Misc0 {
     #[doc = "This bit allows disabling the clock gate (always ungated) for the xtal 24MHz clock that clocks the digital logic in the analog block"]
     #[must_use]
     #[inline(always)]
-    pub const fn clkgate_ctrl(&self) -> super::vals::Misc0ClkgateCtrl {
+    pub const fn clkgate_ctrl(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Misc0ClkgateCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit allows disabling the clock gate (always ungated) for the xtal 24MHz clock that clocks the digital logic in the analog block"]
     #[inline(always)]
-    pub const fn set_clkgate_ctrl(&mut self, val: super::vals::Misc0ClkgateCtrl) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_clkgate_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "This field specifies the delay between powering up the XTAL 24MHz clock and releasing the clock to the digital logic inside the analog block"]
     #[must_use]
@@ -1113,7 +1104,7 @@ impl defmt::Format for Misc0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Misc0 {{ reftop_pwd: {=bool:?}, reftop_selfbiasoff: {:?}, reftop_vbgadj: {:?}, reftop_vbgup: {=bool:?}, stop_mode_config: {:?}, discon_high_snvs: {:?}, osc_i: {:?}, osc_xtalok: {=bool:?}, osc_xtalok_en: {=bool:?}, clkgate_ctrl: {:?}, clkgate_delay: {:?}, rtc_xtal_source: {:?}, xtal_24m_pwd: {=bool:?}, vid_pll_prediv: {:?} }}",
+            "Misc0 {{ reftop_pwd: {=bool:?}, reftop_selfbiasoff: {=bool:?}, reftop_vbgadj: {:?}, reftop_vbgup: {=bool:?}, stop_mode_config: {:?}, discon_high_snvs: {=bool:?}, osc_i: {:?}, osc_xtalok: {=bool:?}, osc_xtalok_en: {=bool:?}, clkgate_ctrl: {=bool:?}, clkgate_delay: {:?}, rtc_xtal_source: {:?}, xtal_24m_pwd: {=bool:?}, vid_pll_prediv: {:?} }}",
             self.reftop_pwd(),
             self.reftop_selfbiasoff(),
             self.reftop_vbgadj(),
@@ -1151,14 +1142,14 @@ impl Misc0Clr {
     #[doc = "Control bit to disable the self-bias circuit in the analog bandgap"]
     #[must_use]
     #[inline(always)]
-    pub const fn reftop_selfbiasoff(&self) -> super::vals::Misc0ClrReftopSelfbiasoff {
+    pub const fn reftop_selfbiasoff(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Misc0ClrReftopSelfbiasoff::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Control bit to disable the self-bias circuit in the analog bandgap"]
     #[inline(always)]
-    pub const fn set_reftop_selfbiasoff(&mut self, val: super::vals::Misc0ClrReftopSelfbiasoff) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_reftop_selfbiasoff(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Not related to oscillator."]
     #[must_use]
@@ -1199,14 +1190,14 @@ impl Misc0Clr {
     #[doc = "This bit controls a switch from VDD_HIGH_IN to VDD_SNVS_IN."]
     #[must_use]
     #[inline(always)]
-    pub const fn discon_high_snvs(&self) -> super::vals::Misc0ClrDisconHighSnvs {
+    pub const fn discon_high_snvs(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Misc0ClrDisconHighSnvs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit controls a switch from VDD_HIGH_IN to VDD_SNVS_IN."]
     #[inline(always)]
-    pub const fn set_discon_high_snvs(&mut self, val: super::vals::Misc0ClrDisconHighSnvs) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_discon_high_snvs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "This field determines the bias current in the 24MHz oscillator"]
     #[must_use]
@@ -1247,14 +1238,14 @@ impl Misc0Clr {
     #[doc = "This bit allows disabling the clock gate (always ungated) for the xtal 24MHz clock that clocks the digital logic in the analog block"]
     #[must_use]
     #[inline(always)]
-    pub const fn clkgate_ctrl(&self) -> super::vals::Misc0ClrClkgateCtrl {
+    pub const fn clkgate_ctrl(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Misc0ClrClkgateCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit allows disabling the clock gate (always ungated) for the xtal 24MHz clock that clocks the digital logic in the analog block"]
     #[inline(always)]
-    pub const fn set_clkgate_ctrl(&mut self, val: super::vals::Misc0ClrClkgateCtrl) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_clkgate_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "This field specifies the delay between powering up the XTAL 24MHz clock and releasing the clock to the digital logic inside the analog block"]
     #[must_use]
@@ -1336,7 +1327,7 @@ impl defmt::Format for Misc0Clr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Misc0Clr {{ reftop_pwd: {=bool:?}, reftop_selfbiasoff: {:?}, reftop_vbgadj: {:?}, reftop_vbgup: {=bool:?}, stop_mode_config: {:?}, discon_high_snvs: {:?}, osc_i: {:?}, osc_xtalok: {=bool:?}, osc_xtalok_en: {=bool:?}, clkgate_ctrl: {:?}, clkgate_delay: {:?}, rtc_xtal_source: {:?}, xtal_24m_pwd: {=bool:?}, vid_pll_prediv: {:?} }}",
+            "Misc0Clr {{ reftop_pwd: {=bool:?}, reftop_selfbiasoff: {=bool:?}, reftop_vbgadj: {:?}, reftop_vbgup: {=bool:?}, stop_mode_config: {:?}, discon_high_snvs: {=bool:?}, osc_i: {:?}, osc_xtalok: {=bool:?}, osc_xtalok_en: {=bool:?}, clkgate_ctrl: {=bool:?}, clkgate_delay: {:?}, rtc_xtal_source: {:?}, xtal_24m_pwd: {=bool:?}, vid_pll_prediv: {:?} }}",
             self.reftop_pwd(),
             self.reftop_selfbiasoff(),
             self.reftop_vbgadj(),
@@ -1374,14 +1365,14 @@ impl Misc0Set {
     #[doc = "Control bit to disable the self-bias circuit in the analog bandgap"]
     #[must_use]
     #[inline(always)]
-    pub const fn reftop_selfbiasoff(&self) -> super::vals::Misc0SetReftopSelfbiasoff {
+    pub const fn reftop_selfbiasoff(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Misc0SetReftopSelfbiasoff::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Control bit to disable the self-bias circuit in the analog bandgap"]
     #[inline(always)]
-    pub const fn set_reftop_selfbiasoff(&mut self, val: super::vals::Misc0SetReftopSelfbiasoff) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_reftop_selfbiasoff(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Not related to oscillator."]
     #[must_use]
@@ -1422,14 +1413,14 @@ impl Misc0Set {
     #[doc = "This bit controls a switch from VDD_HIGH_IN to VDD_SNVS_IN."]
     #[must_use]
     #[inline(always)]
-    pub const fn discon_high_snvs(&self) -> super::vals::Misc0SetDisconHighSnvs {
+    pub const fn discon_high_snvs(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Misc0SetDisconHighSnvs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit controls a switch from VDD_HIGH_IN to VDD_SNVS_IN."]
     #[inline(always)]
-    pub const fn set_discon_high_snvs(&mut self, val: super::vals::Misc0SetDisconHighSnvs) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_discon_high_snvs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "This field determines the bias current in the 24MHz oscillator"]
     #[must_use]
@@ -1470,14 +1461,14 @@ impl Misc0Set {
     #[doc = "This bit allows disabling the clock gate (always ungated) for the xtal 24MHz clock that clocks the digital logic in the analog block"]
     #[must_use]
     #[inline(always)]
-    pub const fn clkgate_ctrl(&self) -> super::vals::Misc0SetClkgateCtrl {
+    pub const fn clkgate_ctrl(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Misc0SetClkgateCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit allows disabling the clock gate (always ungated) for the xtal 24MHz clock that clocks the digital logic in the analog block"]
     #[inline(always)]
-    pub const fn set_clkgate_ctrl(&mut self, val: super::vals::Misc0SetClkgateCtrl) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_clkgate_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "This field specifies the delay between powering up the XTAL 24MHz clock and releasing the clock to the digital logic inside the analog block"]
     #[must_use]
@@ -1559,7 +1550,7 @@ impl defmt::Format for Misc0Set {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Misc0Set {{ reftop_pwd: {=bool:?}, reftop_selfbiasoff: {:?}, reftop_vbgadj: {:?}, reftop_vbgup: {=bool:?}, stop_mode_config: {:?}, discon_high_snvs: {:?}, osc_i: {:?}, osc_xtalok: {=bool:?}, osc_xtalok_en: {=bool:?}, clkgate_ctrl: {:?}, clkgate_delay: {:?}, rtc_xtal_source: {:?}, xtal_24m_pwd: {=bool:?}, vid_pll_prediv: {:?} }}",
+            "Misc0Set {{ reftop_pwd: {=bool:?}, reftop_selfbiasoff: {=bool:?}, reftop_vbgadj: {:?}, reftop_vbgup: {=bool:?}, stop_mode_config: {:?}, discon_high_snvs: {=bool:?}, osc_i: {:?}, osc_xtalok: {=bool:?}, osc_xtalok_en: {=bool:?}, clkgate_ctrl: {=bool:?}, clkgate_delay: {:?}, rtc_xtal_source: {:?}, xtal_24m_pwd: {=bool:?}, vid_pll_prediv: {:?} }}",
             self.reftop_pwd(),
             self.reftop_selfbiasoff(),
             self.reftop_vbgadj(),
@@ -1597,14 +1588,14 @@ impl Misc0Tog {
     #[doc = "Control bit to disable the self-bias circuit in the analog bandgap"]
     #[must_use]
     #[inline(always)]
-    pub const fn reftop_selfbiasoff(&self) -> super::vals::Misc0TogReftopSelfbiasoff {
+    pub const fn reftop_selfbiasoff(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Misc0TogReftopSelfbiasoff::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Control bit to disable the self-bias circuit in the analog bandgap"]
     #[inline(always)]
-    pub const fn set_reftop_selfbiasoff(&mut self, val: super::vals::Misc0TogReftopSelfbiasoff) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_reftop_selfbiasoff(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Not related to oscillator."]
     #[must_use]
@@ -1645,14 +1636,14 @@ impl Misc0Tog {
     #[doc = "This bit controls a switch from VDD_HIGH_IN to VDD_SNVS_IN."]
     #[must_use]
     #[inline(always)]
-    pub const fn discon_high_snvs(&self) -> super::vals::Misc0TogDisconHighSnvs {
+    pub const fn discon_high_snvs(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Misc0TogDisconHighSnvs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit controls a switch from VDD_HIGH_IN to VDD_SNVS_IN."]
     #[inline(always)]
-    pub const fn set_discon_high_snvs(&mut self, val: super::vals::Misc0TogDisconHighSnvs) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_discon_high_snvs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "This field determines the bias current in the 24MHz oscillator"]
     #[must_use]
@@ -1693,14 +1684,14 @@ impl Misc0Tog {
     #[doc = "This bit allows disabling the clock gate (always ungated) for the xtal 24MHz clock that clocks the digital logic in the analog block"]
     #[must_use]
     #[inline(always)]
-    pub const fn clkgate_ctrl(&self) -> super::vals::Misc0TogClkgateCtrl {
+    pub const fn clkgate_ctrl(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Misc0TogClkgateCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "This bit allows disabling the clock gate (always ungated) for the xtal 24MHz clock that clocks the digital logic in the analog block"]
     #[inline(always)]
-    pub const fn set_clkgate_ctrl(&mut self, val: super::vals::Misc0TogClkgateCtrl) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_clkgate_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "This field specifies the delay between powering up the XTAL 24MHz clock and releasing the clock to the digital logic inside the analog block"]
     #[must_use]
@@ -1782,7 +1773,7 @@ impl defmt::Format for Misc0Tog {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Misc0Tog {{ reftop_pwd: {=bool:?}, reftop_selfbiasoff: {:?}, reftop_vbgadj: {:?}, reftop_vbgup: {=bool:?}, stop_mode_config: {:?}, discon_high_snvs: {:?}, osc_i: {:?}, osc_xtalok: {=bool:?}, osc_xtalok_en: {=bool:?}, clkgate_ctrl: {:?}, clkgate_delay: {:?}, rtc_xtal_source: {:?}, xtal_24m_pwd: {=bool:?}, vid_pll_prediv: {:?} }}",
+            "Misc0Tog {{ reftop_pwd: {=bool:?}, reftop_selfbiasoff: {=bool:?}, reftop_vbgadj: {:?}, reftop_vbgup: {=bool:?}, stop_mode_config: {:?}, discon_high_snvs: {=bool:?}, osc_i: {:?}, osc_xtalok: {=bool:?}, osc_xtalok_en: {=bool:?}, clkgate_ctrl: {=bool:?}, clkgate_delay: {:?}, rtc_xtal_source: {:?}, xtal_24m_pwd: {=bool:?}, vid_pll_prediv: {:?} }}",
             self.reftop_pwd(),
             self.reftop_selfbiasoff(),
             self.reftop_vbgadj(),

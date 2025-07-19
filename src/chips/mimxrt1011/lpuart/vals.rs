@@ -1,65 +1,3 @@
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Brk13 {
-    #[doc = "Break character is transmitted with length of 9 to 13 bit times."]
-    SHORT = 0x0,
-    #[doc = "Break character is transmitted with length of 12 to 15 bit times."]
-    LONG = 0x01,
-}
-impl Brk13 {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Brk13 {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Brk13 {
-    #[inline(always)]
-    fn from(val: u8) -> Brk13 {
-        Brk13::from_bits(val)
-    }
-}
-impl From<Brk13> for u8 {
-    #[inline(always)]
-    fn from(val: Brk13) -> u8 {
-        Brk13::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Dozeen {
-    #[doc = "LPUART is enabled in Doze mode."]
-    ENABLED = 0x0,
-    #[doc = "LPUART is disabled in Doze mode ."]
-    DISABLED = 0x01,
-}
-impl Dozeen {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Dozeen {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Dozeen {
-    #[inline(always)]
-    fn from(val: u8) -> Dozeen {
-        Dozeen::from_bits(val)
-    }
-}
-impl From<Dozeen> for u8 {
-    #[inline(always)]
-    fn from(val: Dozeen) -> u8 {
-        Dozeen::to_bits(val)
-    }
-}
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
 pub struct Feature(u16);
@@ -313,37 +251,6 @@ impl From<Matcfg> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Msbf {
-    #[doc = "LSB (bit0) is the first bit that is transmitted following the start bit. Further, the first bit received after the start bit is identified as bit0."]
-    LSB_FIRST = 0x0,
-    #[doc = "MSB (identified as bit9, bit8, bit7 or bit6) is the first bit that is transmitted following the start bit depending on the setting of CTRL\\[M\\], CTRL\\[PE\\] and BAUD\\[M10\\]. ."]
-    MSB_FIRST = 0x01,
-}
-impl Msbf {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Msbf {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Msbf {
-    #[inline(always)]
-    fn from(val: u8) -> Msbf {
-        Msbf::from_bits(val)
-    }
-}
-impl From<Msbf> for u8 {
-    #[inline(always)]
-    fn from(val: Msbf) -> u8 {
-        Msbf::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Osr {
     #[doc = "Writing 0 to this field results in an oversampling ratio of 16"]
     DEFAULT = 0x0,
@@ -464,68 +371,6 @@ impl From<Pt> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Raf {
-    #[doc = "LPUART receiver idle waiting for a start bit."]
-    IDLE = 0x0,
-    #[doc = "LPUART receiver active (RXD input not idle)."]
-    ACTIVE = 0x01,
-}
-impl Raf {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Raf {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Raf {
-    #[inline(always)]
-    fn from(val: u8) -> Raf {
-        Raf::from_bits(val)
-    }
-}
-impl From<Raf> for u8 {
-    #[inline(always)]
-    fn from(val: Raf) -> u8 {
-        Raf::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Resyncdis {
-    #[doc = "Resynchronization during received data word is supported."]
-    RESYNC = 0x0,
-    #[doc = "Resynchronization during received data word is disabled."]
-    NO_RESYNC = 0x01,
-}
-impl Resyncdis {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Resyncdis {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Resyncdis {
-    #[inline(always)]
-    fn from(val: u8) -> Resyncdis {
-        Resyncdis::from_bits(val)
-    }
-}
-impl From<Resyncdis> for u8 {
-    #[inline(always)]
-    fn from(val: Resyncdis) -> u8 {
-        Resyncdis::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rsrc {
     #[doc = "Provided LOOPS is set, RSRC is cleared, selects internal loop back mode and the LPUART does not use the RXD pin."]
     NO_EFFECT = 0x0,
@@ -552,37 +397,6 @@ impl From<Rsrc> for u8 {
     #[inline(always)]
     fn from(val: Rsrc) -> u8 {
         Rsrc::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Rst {
-    #[doc = "Module is not reset."]
-    NO_EFFECT = 0x0,
-    #[doc = "Module is reset."]
-    RESET = 0x01,
-}
-impl Rst {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Rst {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Rst {
-    #[inline(always)]
-    fn from(val: u8) -> Rst {
-        Rst::from_bits(val)
-    }
-}
-impl From<Rst> for u8 {
-    #[inline(always)]
-    fn from(val: Rst) -> u8 {
-        Rst::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -693,37 +507,6 @@ impl From<Rxfifosize> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Rxflush {
-    #[doc = "No flush operation occurs."]
-    NO_EFFECT = 0x0,
-    #[doc = "All data in the receive FIFO/buffer is cleared out."]
-    RXFIFO_RST = 0x01,
-}
-impl Rxflush {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Rxflush {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Rxflush {
-    #[inline(always)]
-    fn from(val: u8) -> Rxflush {
-        Rxflush::from_bits(val)
-    }
-}
-impl From<Rxflush> for u8 {
-    #[inline(always)]
-    fn from(val: Rxflush) -> u8 {
-        Rxflush::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rxiden {
     #[doc = "Disable RDRF assertion due to partially filled FIFO when receiver is idle."]
     DISABLED = 0x0,
@@ -767,37 +550,6 @@ impl From<Rxiden> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Sbk {
-    #[doc = "Normal transmitter operation."]
-    NO_EFFECT = 0x0,
-    #[doc = "Queue break character(s) to be sent."]
-    TX_BREAK = 0x01,
-}
-impl Sbk {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Sbk {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Sbk {
-    #[inline(always)]
-    fn from(val: u8) -> Sbk {
-        Sbk::from_bits(val)
-    }
-}
-impl From<Sbk> for u8 {
-    #[inline(always)]
-    fn from(val: Sbk) -> u8 {
-        Sbk::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sbns {
     #[doc = "One stop bit."]
     ONE = 0x0,
@@ -824,68 +576,6 @@ impl From<Sbns> for u8 {
     #[inline(always)]
     fn from(val: Sbns) -> u8 {
         Sbns::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Tc {
-    #[doc = "Transmitter active (sending data, a preamble, or a break)."]
-    ACTIVE = 0x0,
-    #[doc = "Transmitter idle (transmission activity complete)."]
-    COMPLETE = 0x01,
-}
-impl Tc {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Tc {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Tc {
-    #[inline(always)]
-    fn from(val: u8) -> Tc {
-        Tc::from_bits(val)
-    }
-}
-impl From<Tc> for u8 {
-    #[inline(always)]
-    fn from(val: Tc) -> u8 {
-        Tc::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Tdre {
-    #[doc = "Transmit FIFO level is greater than watermark."]
-    TXDATA = 0x0,
-    #[doc = "Transmit FIFO level is equal or less than watermark."]
-    NO_TXDATA = 0x01,
-}
-impl Tdre {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Tdre {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Tdre {
-    #[inline(always)]
-    fn from(val: u8) -> Tdre {
-        Tdre::from_bits(val)
-    }
-}
-impl From<Tdre> for u8 {
-    #[inline(always)]
-    fn from(val: Tdre) -> u8 {
-        Tdre::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -961,68 +651,6 @@ impl From<Trgsel> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Txctsc {
-    #[doc = "CTS input is sampled at the start of each character."]
-    START = 0x0,
-    #[doc = "CTS input is sampled when the transmitter is idle."]
-    IDLE = 0x01,
-}
-impl Txctsc {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Txctsc {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Txctsc {
-    #[inline(always)]
-    fn from(val: u8) -> Txctsc {
-        Txctsc::from_bits(val)
-    }
-}
-impl From<Txctsc> for u8 {
-    #[inline(always)]
-    fn from(val: Txctsc) -> u8 {
-        Txctsc::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Txctssrc {
-    #[doc = "CTS input is the CTS_B pin."]
-    CTS = 0x0,
-    #[doc = "CTS input is an internal connection to the receiver address match result."]
-    MATCH = 0x01,
-}
-impl Txctssrc {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Txctssrc {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Txctssrc {
-    #[inline(always)]
-    fn from(val: u8) -> Txctssrc {
-        Txctssrc::from_bits(val)
-    }
-}
-impl From<Txctssrc> for u8 {
-    #[inline(always)]
-    fn from(val: Txctssrc) -> u8 {
-        Txctssrc::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Txdir {
     #[doc = "TXD pin is an input in single-wire mode."]
     TX_INPUT = 0x0,
@@ -1092,68 +720,6 @@ impl From<Txfifosize> for u8 {
     #[inline(always)]
     fn from(val: Txfifosize) -> u8 {
         Txfifosize::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Txflush {
-    #[doc = "No flush operation occurs."]
-    NO_EFFECT = 0x0,
-    #[doc = "All data in the transmit FIFO is cleared out."]
-    TXFIFO_RST = 0x01,
-}
-impl Txflush {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Txflush {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Txflush {
-    #[inline(always)]
-    fn from(val: u8) -> Txflush {
-        Txflush::from_bits(val)
-    }
-}
-impl From<Txflush> for u8 {
-    #[inline(always)]
-    fn from(val: Txflush) -> u8 {
-        Txflush::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Txrtspol {
-    #[doc = "Transmitter RTS is active low."]
-    LOW = 0x0,
-    #[doc = "Transmitter RTS is active high."]
-    HIGH = 0x01,
-}
-impl Txrtspol {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Txrtspol {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Txrtspol {
-    #[inline(always)]
-    fn from(val: u8) -> Txrtspol {
-        Txrtspol::from_bits(val)
-    }
-}
-impl From<Txrtspol> for u8 {
-    #[inline(always)]
-    fn from(val: Txrtspol) -> u8 {
-        Txrtspol::to_bits(val)
     }
 }
 #[repr(u8)]

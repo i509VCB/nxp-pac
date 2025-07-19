@@ -221,38 +221,38 @@ impl IntMask {
     #[doc = "Bit position that can be cleared or set to enable the corresponding bit of INT_STATUS to show interupt status"]
     #[must_use]
     #[inline(always)]
-    pub const fn hw_err(&self) -> super::vals::IntMaskHwErr {
+    pub const fn hw_err(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::IntMaskHwErr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bit position that can be cleared or set to enable the corresponding bit of INT_STATUS to show interupt status"]
     #[inline(always)]
-    pub const fn set_hw_err(&mut self, val: super::vals::IntMaskHwErr) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_hw_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Same behavior as bit 0 of this register."]
     #[must_use]
     #[inline(always)]
-    pub const fn ent_val(&self) -> super::vals::IntMaskEntVal {
+    pub const fn ent_val(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::IntMaskEntVal::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Same behavior as bit 0 of this register."]
     #[inline(always)]
-    pub const fn set_ent_val(&mut self, val: super::vals::IntMaskEntVal) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_ent_val(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Same behavior as bit 0 of this register."]
     #[must_use]
     #[inline(always)]
-    pub const fn frq_ct_fail(&self) -> super::vals::IntMaskFrqCtFail {
+    pub const fn frq_ct_fail(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::IntMaskFrqCtFail::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Same behavior as bit 0 of this register."]
     #[inline(always)]
-    pub const fn set_frq_ct_fail(&mut self, val: super::vals::IntMaskFrqCtFail) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_frq_ct_fail(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
 }
 impl Default for IntMask {
@@ -275,7 +275,7 @@ impl defmt::Format for IntMask {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "IntMask {{ hw_err: {:?}, ent_val: {:?}, frq_ct_fail: {:?} }}",
+            "IntMask {{ hw_err: {=bool:?}, ent_val: {=bool:?}, frq_ct_fail: {=bool:?} }}",
             self.hw_err(),
             self.ent_val(),
             self.frq_ct_fail()

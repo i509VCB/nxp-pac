@@ -232,7 +232,7 @@ impl Syscon0 {
     }
     #[doc = "ADC0 Clock Divider"]
     #[inline(always)]
-    pub const fn adc0clkdiv(self) -> crate::common::Reg<regs::Adc0clkdiv, crate::common::RW> {
+    pub const fn adc0clkdiv(self) -> crate::common::Reg<regs::Adcclkdiv, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0394usize) as _) }
     }
     #[doc = "USB-FS Clock Divider"]
@@ -308,7 +308,7 @@ impl Syscon0 {
     }
     #[doc = "ADC1 Clock Divider"]
     #[inline(always)]
-    pub const fn adc1clkdiv(self) -> crate::common::Reg<regs::Adc1clkdiv, crate::common::RW> {
+    pub const fn adc1clkdiv(self) -> crate::common::Reg<regs::Adcclkdiv, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0468usize) as _) }
     }
     #[doc = "Control PKC RAM Interleave Access"]
@@ -528,7 +528,7 @@ impl Syscon0 {
     }
     #[doc = "CMP0 Function Clock Divider"]
     #[inline(always)]
-    pub const fn cmp0fclkdiv(self) -> crate::common::Reg<regs::Cmp0fclkdiv, crate::common::RW> {
+    pub const fn cmp0fclkdiv(self) -> crate::common::Reg<regs::Cmpfclkdiv, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05f4usize) as _) }
     }
     #[doc = "CMP0 Round Robin Clock Selection"]
@@ -548,7 +548,7 @@ impl Syscon0 {
     }
     #[doc = "CMP1 Function Clock Divider"]
     #[inline(always)]
-    pub const fn cmp1fclkdiv(self) -> crate::common::Reg<regs::Cmp1fclkdiv, crate::common::RW> {
+    pub const fn cmp1fclkdiv(self) -> crate::common::Reg<regs::Cmpfclkdiv, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0604usize) as _) }
     }
     #[doc = "CMP1 Round Robin Clock Source Select"]
@@ -568,7 +568,7 @@ impl Syscon0 {
     }
     #[doc = "CMP2 Function Clock Division"]
     #[inline(always)]
-    pub const fn cmp2fclkdiv(self) -> crate::common::Reg<regs::Cmp2fclkdiv, crate::common::RW> {
+    pub const fn cmp2fclkdiv(self) -> crate::common::Reg<regs::Cmpfclkdiv, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0614usize) as _) }
     }
     #[doc = "CMP2 Round Robin Clock Source Select"]
@@ -906,12 +906,12 @@ impl Syscon0 {
     }
     #[doc = "PWM0 Submodule Control"]
     #[inline(always)]
-    pub const fn pwm0subctl(self) -> crate::common::Reg<regs::Pwm0subctl, crate::common::RW> {
+    pub const fn pwm0subctl(self) -> crate::common::Reg<regs::Pwmsubctl, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e38usize) as _) }
     }
     #[doc = "PWM1 Submodule Control"]
     #[inline(always)]
-    pub const fn pwm1subctl(self) -> crate::common::Reg<regs::Pwm1subctl, crate::common::RW> {
+    pub const fn pwm1subctl(self) -> crate::common::Reg<regs::Pwmsubctl, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e3cusize) as _) }
     }
     #[doc = "CTIMER Global Start Enable"]

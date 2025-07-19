@@ -116,37 +116,6 @@ impl From<Cmd> for u8 {
         Cmd::to_bits(val)
     }
 }
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Dozen {
-    #[doc = "Master is enabled in Doze mode"]
-    ENABLED = 0x0,
-    #[doc = "Master is disabled in Doze mode"]
-    DISABLED = 0x01,
-}
-impl Dozen {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Dozen {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Dozen {
-    #[inline(always)]
-    fn from(val: u8) -> Dozen {
-        Dozen::from_bits(val)
-    }
-}
-impl From<Dozen> for u8 {
-    #[inline(always)]
-    fn from(val: Dozen) -> u8 {
-        Dozen::to_bits(val)
-    }
-}
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
 pub struct Feature(u16);
@@ -193,37 +162,6 @@ impl From<Feature> for u16 {
     #[inline(always)]
     fn from(val: Feature) -> u16 {
         Feature::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Filtdz {
-    #[doc = "Filter remains enabled in Doze mode"]
-    FILTER_ENABLED = 0x0,
-    #[doc = "Filter is disabled in Doze mode"]
-    FILTER_DISABLED = 0x01,
-}
-impl Filtdz {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Filtdz {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Filtdz {
-    #[inline(always)]
-    fn from(val: u8) -> Filtdz {
-        Filtdz::from_bits(val)
-    }
-}
-impl From<Filtdz> for u8 {
-    #[inline(always)]
-    fn from(val: Filtdz) -> u8 {
-        Filtdz::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -328,68 +266,6 @@ impl From<Mbf> for u8 {
     #[inline(always)]
     fn from(val: Mbf) -> u8 {
         Mbf::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum McrRrf {
-    #[doc = "No effect"]
-    NO_EFFECT = 0x0,
-    #[doc = "Receive FIFO is reset"]
-    RESET = 0x01,
-}
-impl McrRrf {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> McrRrf {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for McrRrf {
-    #[inline(always)]
-    fn from(val: u8) -> McrRrf {
-        McrRrf::from_bits(val)
-    }
-}
-impl From<McrRrf> for u8 {
-    #[inline(always)]
-    fn from(val: McrRrf) -> u8 {
-        McrRrf::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum McrRtf {
-    #[doc = "No effect"]
-    NO_EFFECT = 0x0,
-    #[doc = "Transmit FIFO is reset"]
-    RESET = 0x01,
-}
-impl McrRtf {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> McrRtf {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for McrRtf {
-    #[inline(always)]
-    fn from(val: u8) -> McrRtf {
-        McrRtf::from_bits(val)
-    }
-}
-impl From<McrRtf> for u8 {
-    #[inline(always)]
-    fn from(val: McrRtf) -> u8 {
-        McrRtf::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -569,99 +445,6 @@ impl From<Sbf> for u8 {
     #[inline(always)]
     fn from(val: Sbf) -> u8 {
         Sbf::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Scfgr1Ignack {
-    #[doc = "Slave ends transfer when NACK is detected"]
-    ENDS_TRANSFER_ON_NACK = 0x0,
-    #[doc = "Slave does not end transfer when NACK detected"]
-    DOES_NOT_END_TRANSFER_ON_NACK = 0x01,
-}
-impl Scfgr1Ignack {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Scfgr1Ignack {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Scfgr1Ignack {
-    #[inline(always)]
-    fn from(val: u8) -> Scfgr1Ignack {
-        Scfgr1Ignack::from_bits(val)
-    }
-}
-impl From<Scfgr1Ignack> for u8 {
-    #[inline(always)]
-    fn from(val: Scfgr1Ignack) -> u8 {
-        Scfgr1Ignack::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum ScrRrf {
-    #[doc = "No effect"]
-    NO_EFFECT = 0x0,
-    #[doc = "Receive Data Register is now empty"]
-    NOW_EMPTY = 0x01,
-}
-impl ScrRrf {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> ScrRrf {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for ScrRrf {
-    #[inline(always)]
-    fn from(val: u8) -> ScrRrf {
-        ScrRrf::from_bits(val)
-    }
-}
-impl From<ScrRrf> for u8 {
-    #[inline(always)]
-    fn from(val: ScrRrf) -> u8 {
-        ScrRrf::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum ScrRtf {
-    #[doc = "No effect"]
-    NO_EFFECT = 0x0,
-    #[doc = "Transmit Data Register is now empty"]
-    NOW_EMPTY = 0x01,
-}
-impl ScrRtf {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> ScrRtf {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for ScrRtf {
-    #[inline(always)]
-    fn from(val: u8) -> ScrRtf {
-        ScrRtf::from_bits(val)
-    }
-}
-impl From<ScrRtf> for u8 {
-    #[inline(always)]
-    fn from(val: ScrRtf) -> u8 {
-        ScrRtf::to_bits(val)
     }
 }
 #[repr(u8)]

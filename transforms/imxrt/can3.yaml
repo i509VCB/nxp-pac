@@ -1,0 +1,7 @@
+# Boolean enum transforms for CAN3 peripheral
+# Converts single-bit enums with _0/_1 patterns to proper boolean types
+
+transforms:
+  - !DeleteEnums
+    from: can3::vals::(Aen|Boffmsk|Dma|Doze|Eacen|Edfltdis|Errmsk|Fden|Fdrate|Frz|Frzack|Halt|Imb|Irmq|Isocanfden|Lbuf|Lom|Lpb|Lpmack|Lprioen|Mdis|Rfen|Rwrnmsk|Slfwak|Smp|Softrst|Srxdis|Supv|Tsyn|Twrnmsk|Wakmsk|Wrnen)
+    bit_size: 1
