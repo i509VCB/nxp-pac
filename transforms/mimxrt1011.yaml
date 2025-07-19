@@ -8,6 +8,7 @@ includes:
 - imxrt/gpio.yaml
 - imxrt/dma.yaml
 - imxrt/pit.yaml
+- imxrt/gpt.yaml
 - imxrt1011/pwm.yaml
 transforms:
   #! ADC HS::COCO is array

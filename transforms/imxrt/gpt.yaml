@@ -1,0 +1,5 @@
+transforms:
+  # Delete useless enums with nonsense variant names that should be booleans
+  - !DeleteEnums
+    from: gpt::vals::(Dbgen|Dozeen|En|En24m|Enmod|Fo3|Frr|If2|If2ie|Of3|Of3ie|Rov|Rovie|Stopen|Swr|Waiten)
+    bit_size: 1

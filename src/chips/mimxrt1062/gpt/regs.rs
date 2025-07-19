@@ -53,62 +53,62 @@ impl Cr {
     #[doc = "GPT Enable Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn enmod(&self) -> super::vals::Enmod {
+    pub const fn enmod(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Enmod::from_bits(val as u8)
+        val != 0
     }
     #[doc = "GPT Enable Mode"]
     #[inline(always)]
-    pub const fn set_enmod(&mut self, val: super::vals::Enmod) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_enmod(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "GPT Debug Mode Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dbgen(&self) -> super::vals::Dbgen {
+    pub const fn dbgen(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Dbgen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "GPT Debug Mode Enable"]
     #[inline(always)]
-    pub const fn set_dbgen(&mut self, val: super::vals::Dbgen) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_dbgen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "GPT Wait Mode Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn waiten(&self) -> super::vals::Waiten {
+    pub const fn waiten(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Waiten::from_bits(val as u8)
+        val != 0
     }
     #[doc = "GPT Wait Mode Enable"]
     #[inline(always)]
-    pub const fn set_waiten(&mut self, val: super::vals::Waiten) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_waiten(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "GPT Doze Mode Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dozeen(&self) -> super::vals::Dozeen {
+    pub const fn dozeen(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Dozeen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "GPT Doze Mode Enable"]
     #[inline(always)]
-    pub const fn set_dozeen(&mut self, val: super::vals::Dozeen) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_dozeen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "GPT Stop Mode Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn stopen(&self) -> super::vals::Stopen {
+    pub const fn stopen(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Stopen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "GPT Stop Mode Enable"]
     #[inline(always)]
-    pub const fn set_stopen(&mut self, val: super::vals::Stopen) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_stopen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Clock Source Select"]
     #[must_use]
@@ -125,14 +125,14 @@ impl Cr {
     #[doc = "Free-Run or Restart Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn frr(&self) -> super::vals::Frr {
+    pub const fn frr(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Frr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Free-Run or Restart Mode"]
     #[inline(always)]
-    pub const fn set_frr(&mut self, val: super::vals::Frr) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_frr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Enable Oscillator Clock Input"]
     #[must_use]
@@ -290,7 +290,7 @@ impl defmt::Format for Cr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cr {{ en: {=bool:?}, enmod: {:?}, dbgen: {:?}, waiten: {:?}, dozeen: {:?}, stopen: {:?}, clksrc: {:?}, frr: {:?}, en_24m: {=bool:?}, swr: {=bool:?}, im1: {:?}, im2: {:?}, om1: {:?}, om2: {:?}, om3: {:?}, fo1: {=bool:?}, fo2: {=bool:?}, fo3: {=bool:?} }}",
+            "Cr {{ en: {=bool:?}, enmod: {=bool:?}, dbgen: {=bool:?}, waiten: {=bool:?}, dozeen: {=bool:?}, stopen: {=bool:?}, clksrc: {:?}, frr: {=bool:?}, en_24m: {=bool:?}, swr: {=bool:?}, im1: {:?}, im2: {:?}, om1: {:?}, om2: {:?}, om3: {:?}, fo1: {=bool:?}, fo2: {=bool:?}, fo3: {=bool:?} }}",
             self.en(),
             self.enmod(),
             self.dbgen(),
