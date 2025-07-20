@@ -129,14 +129,14 @@ impl CmdcrcCtrl {
     #[doc = "CRC enable bit"]
     #[must_use]
     #[inline(always)]
-    pub const fn cmdcrc_en(&self) -> super::vals::CmdcrcEn {
+    pub const fn cmdcrc_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::CmdcrcEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "CRC enable bit"]
     #[inline(always)]
-    pub const fn set_cmdcrc_en(&mut self, val: super::vals::CmdcrcEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_cmdcrc_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
 }
 impl Default for CmdcrcCtrl {
@@ -158,7 +158,7 @@ impl defmt::Format for CmdcrcCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "CmdcrcCtrl {{ cmdcrc_rst: {:?}, cmdcrc_en: {:?} }}",
+            "CmdcrcCtrl {{ cmdcrc_rst: {:?}, cmdcrc_en: {=bool:?} }}",
             self.cmdcrc_rst(),
             self.cmdcrc_en()
         )

@@ -32,37 +32,6 @@ impl From<ByteOrder> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CmdcrcEn {
-    #[doc = "Disables the CRC command CRC. The CRC command will not be updated on completion of each ELS command."]
-    EXIT = 0x0,
-    #[doc = "Enables the CRC command. The CRC command will be updated on completion of each ELS command."]
-    CLR = 0x01,
-}
-impl CmdcrcEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CmdcrcEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CmdcrcEn {
-    #[inline(always)]
-    fn from(val: u8) -> CmdcrcEn {
-        CmdcrcEn::from_bits(val)
-    }
-}
-impl From<CmdcrcEn> for u8 {
-    #[inline(always)]
-    fn from(val: CmdcrcEn) -> u8 {
-        CmdcrcEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CmdcrcRst {
     #[doc = "No effect"]
     EXIT = 0x0,

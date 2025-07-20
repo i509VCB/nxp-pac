@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: adc::vals::(Rst|Rstfifo0|Rstfifo1)
+    bit_size: 1

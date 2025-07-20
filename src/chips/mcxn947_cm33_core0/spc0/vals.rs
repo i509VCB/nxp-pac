@@ -229,37 +229,6 @@ impl From<ActiveCfgSysldoVddDs> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum BleedEn {
-    #[doc = "Do not add"]
-    ADD_NO = 0x0,
-    #[doc = "Add"]
-    ADD_YES = 0x01,
-}
-impl BleedEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> BleedEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for BleedEn {
-    #[inline(always)]
-    fn from(val: u8) -> BleedEn {
-        BleedEn::from_bits(val)
-    }
-}
-impl From<BleedEn> for u8 {
-    #[inline(always)]
-    fn from(val: BleedEn) -> u8 {
-        BleedEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BurstAck {
     #[doc = "Did not complete"]
     COMPL_NO = 0x0,

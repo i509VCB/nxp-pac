@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: usbhs\d+__usbnc::vals::(WkupDpdmEn|WkupIdEn|WkupSwEn|WkupVbusEn)
+    bit_size: 1

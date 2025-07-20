@@ -63,37 +63,6 @@ impl From<Acmp1CmpIgenTrimUp> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Acmp1SampleSyncEn {
-    #[doc = "select XBAR output"]
-    ACMP1_SAMPLE_SYNC_EN_0 = 0x0,
-    #[doc = "select synced sample_lv"]
-    ACMP1_SAMPLE_SYNC_EN_1 = 0x01,
-}
-impl Acmp1SampleSyncEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Acmp1SampleSyncEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Acmp1SampleSyncEn {
-    #[inline(always)]
-    fn from(val: u8) -> Acmp1SampleSyncEn {
-        Acmp1SampleSyncEn::from_bits(val)
-    }
-}
-impl From<Acmp1SampleSyncEn> for u8 {
-    #[inline(always)]
-    fn from(val: Acmp1SampleSyncEn) -> u8 {
-        Acmp1SampleSyncEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Acmp2CmpIgenTrimDn {
     #[doc = "no reduce"]
     ACMP2_CMP_IGEN_TRIM_DN_0 = 0x0,
@@ -151,37 +120,6 @@ impl From<Acmp2CmpIgenTrimUp> for u8 {
     #[inline(always)]
     fn from(val: Acmp2CmpIgenTrimUp) -> u8 {
         Acmp2CmpIgenTrimUp::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Acmp2SampleSyncEn {
-    #[doc = "select XBAR output"]
-    ACMP2_SAMPLE_SYNC_EN_0 = 0x0,
-    #[doc = "select synced sample_lv"]
-    ACMP2_SAMPLE_SYNC_EN_1 = 0x01,
-}
-impl Acmp2SampleSyncEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Acmp2SampleSyncEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Acmp2SampleSyncEn {
-    #[inline(always)]
-    fn from(val: u8) -> Acmp2SampleSyncEn {
-        Acmp2SampleSyncEn::from_bits(val)
-    }
-}
-impl From<Acmp2SampleSyncEn> for u8 {
-    #[inline(always)]
-    fn from(val: Acmp2SampleSyncEn) -> u8 {
-        Acmp2SampleSyncEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -249,37 +187,6 @@ impl From<Acmp3CmpIgenTrimUp> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Acmp3SampleSyncEn {
-    #[doc = "select XBAR output"]
-    ACMP3_SAMPLE_SYNC_EN_0 = 0x0,
-    #[doc = "select synced sample_lv"]
-    ACMP3_SAMPLE_SYNC_EN_1 = 0x01,
-}
-impl Acmp3SampleSyncEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Acmp3SampleSyncEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Acmp3SampleSyncEn {
-    #[inline(always)]
-    fn from(val: u8) -> Acmp3SampleSyncEn {
-        Acmp3SampleSyncEn::from_bits(val)
-    }
-}
-impl From<Acmp3SampleSyncEn> for u8 {
-    #[inline(always)]
-    fn from(val: Acmp3SampleSyncEn) -> u8 {
-        Acmp3SampleSyncEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Acmp4CmpIgenTrimDn {
     #[doc = "no reduce"]
     ACMP4_CMP_IGEN_TRIM_DN_0 = 0x0,
@@ -337,37 +244,6 @@ impl From<Acmp4CmpIgenTrimUp> for u8 {
     #[inline(always)]
     fn from(val: Acmp4CmpIgenTrimUp) -> u8 {
         Acmp4CmpIgenTrimUp::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Acmp4SampleSyncEn {
-    #[doc = "select XBAR output"]
-    ACMP4_SAMPLE_SYNC_EN_0 = 0x0,
-    #[doc = "select synced sample_lv"]
-    ACMP4_SAMPLE_SYNC_EN_1 = 0x01,
-}
-impl Acmp4SampleSyncEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Acmp4SampleSyncEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Acmp4SampleSyncEn {
-    #[inline(always)]
-    fn from(val: u8) -> Acmp4SampleSyncEn {
-        Acmp4SampleSyncEn::from_bits(val)
-    }
-}
-impl From<Acmp4SampleSyncEn> for u8 {
-    #[inline(always)]
-    fn from(val: Acmp4SampleSyncEn) -> u8 {
-        Acmp4SampleSyncEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1112,37 +988,6 @@ impl From<EnetEvent3inSel> for u8 {
     #[inline(always)]
     fn from(val: EnetEvent3inSel) -> u8 {
         EnetEvent3inSel::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum EnetIpgClkSEn {
-    #[doc = "ipg_clk_s is gated when there is no IPS access"]
-    ENET_IPG_CLK_S_EN_0 = 0x0,
-    #[doc = "ipg_clk_s is always on"]
-    ENET_IPG_CLK_S_EN_1 = 0x01,
-}
-impl EnetIpgClkSEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> EnetIpgClkSEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for EnetIpgClkSEn {
-    #[inline(always)]
-    fn from(val: u8) -> EnetIpgClkSEn {
-        EnetIpgClkSEn::from_bits(val)
-    }
-}
-impl From<EnetIpgClkSEn> for u8 {
-    #[inline(always)]
-    fn from(val: EnetIpgClkSEn) -> u8 {
-        EnetIpgClkSEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -2121,37 +1966,6 @@ impl From<LockOcram2TzAddr> for u8 {
     #[inline(always)]
     fn from(val: LockOcram2TzAddr) -> u8 {
         LockOcram2TzAddr::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum LockOcram2TzEn {
-    #[doc = "Field is not locked"]
-    LOCK_OCRAM2_TZ_EN_0 = 0x0,
-    #[doc = "Field is locked (read access only)"]
-    LOCK_OCRAM2_TZ_EN_1 = 0x01,
-}
-impl LockOcram2TzEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> LockOcram2TzEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for LockOcram2TzEn {
-    #[inline(always)]
-    fn from(val: u8) -> LockOcram2TzEn {
-        LockOcram2TzEn::from_bits(val)
-    }
-}
-impl From<LockOcram2TzEn> for u8 {
-    #[inline(always)]
-    fn from(val: LockOcram2TzEn) -> u8 {
-        LockOcram2TzEn::to_bits(val)
     }
 }
 #[repr(transparent)]
@@ -3868,37 +3682,6 @@ impl From<MqsClkDiv> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Ocram2TzEn {
-    #[doc = "The TrustZone feature is disabled. Entire OCRAM2 space is available for all access types (secure/non-secure/user/supervisor)."]
-    OCRAM2_TZ_EN_0 = 0x0,
-    #[doc = "The TrustZone feature is enabled. Access to address in the range specified by \\[ENDADDR:STARTADDR\\] follows the execution mode access policy described in CSU chapter."]
-    OCRAM2_TZ_EN_1 = 0x01,
-}
-impl Ocram2TzEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Ocram2TzEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Ocram2TzEn {
-    #[inline(always)]
-    fn from(val: u8) -> Ocram2TzEn {
-        Ocram2TzEn::from_bits(val)
-    }
-}
-impl From<Ocram2TzEn> for u8 {
-    #[inline(always)]
-    fn from(val: Ocram2TzEn) -> u8 {
-        Ocram2TzEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Qtimer1TmrCntsFreeze {
     #[doc = "timer counter work normally"]
     QTIMER1_TMR_CNTS_FREEZE_0 = 0x0,
@@ -4918,36 +4701,5 @@ impl From<SemcStopReq> for u8 {
     #[inline(always)]
     fn from(val: SemcStopReq) -> u8 {
         SemcStopReq::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum SipTestMuxQspiSipEn {
-    #[doc = "SIP_TEST_MUX is disabled"]
-    SIP_TEST_MUX_QSPI_SIP_EN_0 = 0x0,
-    #[doc = "SIP_TEST_MUX is enabled"]
-    SIP_TEST_MUX_QSPI_SIP_EN_1 = 0x01,
-}
-impl SipTestMuxQspiSipEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> SipTestMuxQspiSipEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for SipTestMuxQspiSipEn {
-    #[inline(always)]
-    fn from(val: u8) -> SipTestMuxQspiSipEn {
-        SipTestMuxQspiSipEn::from_bits(val)
-    }
-}
-impl From<SipTestMuxQspiSipEn> for u8 {
-    #[inline(always)]
-    fn from(val: SipTestMuxQspiSipEn) -> u8 {
-        SipTestMuxQspiSipEn::to_bits(val)
     }
 }

@@ -1220,37 +1220,6 @@ impl From<ForceBypass> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum InitEn {
-    #[doc = "Write 0 does not generate enable pulse"]
-    PULSE = 0x0,
-    #[doc = "Write 1 generates enable pulse"]
-    NO_PULSE = 0x01,
-}
-impl InitEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> InitEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for InitEn {
-    #[inline(always)]
-    fn from(val: u8) -> InitEn {
-        InitEn::from_bits(val)
-    }
-}
-impl From<InitEn> for u8 {
-    #[inline(always)]
-    fn from(val: InitEn) -> u8 {
-        InitEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ModeSel {
     #[doc = "Bypass mode"]
     BYPASS = 0x0,

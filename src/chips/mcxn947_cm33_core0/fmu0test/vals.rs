@@ -439,37 +439,6 @@ impl From<BistDone> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum BistEccEn {
-    #[doc = "ECC correction disabled"]
-    ZZ169 = 0x0,
-    #[doc = "ECC correction enabled"]
-    ZZ170 = 0x01,
-}
-impl BistEccEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> BistEccEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for BistEccEn {
-    #[inline(always)]
-    fn from(val: u8) -> BistEccEn {
-        BistEccEn::from_bits(val)
-    }
-}
-impl From<BistEccEn> for u8 {
-    #[inline(always)]
-    fn from(val: BistEccEn) -> u8 {
-        BistEccEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BistFail {
     #[doc = "The last BIST operation completed successfully (or could not fail)"]
     ZZ437 = 0x0,
@@ -920,68 +889,6 @@ impl From<Corehld> for u8 {
     #[inline(always)]
     fn from(val: Corehld) -> u8 {
         Corehld::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CpyParEn {
-    #[doc = "Copy parity disabled"]
-    ZZ185 = 0x0,
-    #[doc = "Copy parity enabled"]
-    ZZ186 = 0x01,
-}
-impl CpyParEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CpyParEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CpyParEn {
-    #[inline(always)]
-    fn from(val: u8) -> CpyParEn {
-        CpyParEn::from_bits(val)
-    }
-}
-impl From<CpyParEn> for u8 {
-    #[inline(always)]
-    fn from(val: CpyParEn) -> u8 {
-        CpyParEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CpyPhraseEn {
-    #[doc = "Copy Flash read data disabled"]
-    ZZ173 = 0x0,
-    #[doc = "Copy Flash read data enabled"]
-    ZZ174 = 0x01,
-}
-impl CpyPhraseEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CpyPhraseEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CpyPhraseEn {
-    #[inline(always)]
-    fn from(val: u8) -> CpyPhraseEn {
-        CpyPhraseEn::from_bits(val)
-    }
-}
-impl From<CpyPhraseEn> for u8 {
-    #[inline(always)]
-    fn from(val: CpyPhraseEn) -> u8 {
-        CpyPhraseEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1891,37 +1798,6 @@ impl From<FmuParmDone> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum FmuParmEn {
-    #[doc = "C0DE_C0DEh check not attempted"]
-    ZZ91 = 0x0,
-    #[doc = "C0DE_C0DEh check completed"]
-    ZZ92 = 0x01,
-}
-impl FmuParmEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> FmuParmEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for FmuParmEn {
-    #[inline(always)]
-    fn from(val: u8) -> FmuParmEn {
-        FmuParmEn::from_bits(val)
-    }
-}
-impl From<FmuParmEn> for u8 {
-    #[inline(always)]
-    fn from(val: FmuParmEn) -> u8 {
-        FmuParmEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ForceSwClk {
     #[doc = "Switch clock not forced on (gated normally)"]
     ZZ157 = 0x0,
@@ -2279,37 +2155,6 @@ impl From<Loopunit> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum LsactEn {
-    #[doc = "LSACTIVE feature disabled completely: FCTRL\\[LSACTIVE\\] is forced low and no longer writable, LVE cannot assert at the TSMC array interface."]
-    ZZ123 = 0x0,
-    #[doc = "LSACTIVE feature fully enabled and controllable by SoC and internal UINT SM."]
-    ZZ124 = 0x01,
-}
-impl LsactEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> LsactEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for LsactEn {
-    #[inline(always)]
-    fn from(val: u8) -> LsactEn {
-        LsactEn::from_bits(val)
-    }
-}
-impl From<LsactEn> for u8 {
-    #[inline(always)]
-    fn from(val: LsactEn) -> u8 {
-        LsactEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lsactive {
     #[doc = "Full speed active mode requested"]
     ZZ43 = 0x0,
@@ -2398,68 +2243,6 @@ impl From<Mask0Opt> for u8 {
     #[inline(always)]
     fn from(val: Mask0Opt) -> u8 {
         Mask0Opt::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum MasterRepairEn {
-    #[doc = "Repair disabled"]
-    ZZ119 = 0x0,
-    #[doc = "Repair enable determined by bit 0 of each REPAIR register"]
-    ZZ120 = 0x01,
-}
-impl MasterRepairEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> MasterRepairEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for MasterRepairEn {
-    #[inline(always)]
-    fn from(val: u8) -> MasterRepairEn {
-        MasterRepairEn::from_bits(val)
-    }
-}
-impl From<MasterRepairEn> for u8 {
-    #[inline(always)]
-    fn from(val: MasterRepairEn) -> u8 {
-        MasterRepairEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum MisrEn {
-    #[doc = "MISR option disabled (default)"]
-    ZZ187 = 0x0,
-    #[doc = "MISR option enabled"]
-    ZZ188 = 0x01,
-}
-impl MisrEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> MisrEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for MisrEn {
-    #[inline(always)]
-    fn from(val: u8) -> MisrEn {
-        MisrEn::from_bits(val)
-    }
-}
-impl From<MisrEn> for u8 {
-    #[inline(always)]
-    fn from(val: MisrEn) -> u8 {
-        MisrEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -2584,37 +2367,6 @@ impl From<OscH> for u8 {
     #[inline(always)]
     fn from(val: OscH) -> u8 {
         OscH::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum PdTimerEn {
-    #[doc = "BIST timer is not triggered during Power Down recovery"]
-    ZZ127 = 0x0,
-    #[doc = "BIST timer is triggered during Power Down recovery (default behavior)"]
-    ZZ128 = 0x01,
-}
-impl PdTimerEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> PdTimerEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for PdTimerEn {
-    #[inline(always)]
-    fn from(val: u8) -> PdTimerEn {
-        PdTimerEn::from_bits(val)
-    }
-}
-impl From<PdTimerEn> for u8 {
-    #[inline(always)]
-    fn from(val: PdTimerEn) -> u8 {
-        PdTimerEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -3209,99 +2961,6 @@ impl From<RprDone> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum RstDfErr {
-    #[doc = "No double-bit faults detected during initialization"]
-    ZZ75 = 0x0,
-    #[doc = "Double-bit ECC fault was detected during initialization"]
-    ZZ76 = 0x01,
-}
-impl RstDfErr {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> RstDfErr {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for RstDfErr {
-    #[inline(always)]
-    fn from(val: u8) -> RstDfErr {
-        RstDfErr::from_bits(val)
-    }
-}
-impl From<RstDfErr> for u8 {
-    #[inline(always)]
-    fn from(val: RstDfErr) -> u8 {
-        RstDfErr::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum RstPatchLd {
-    #[doc = "No patch required to be loaded during reset"]
-    ZZ73 = 0x0,
-    #[doc = "Patch loaded during reset"]
-    ZZ74 = 0x01,
-}
-impl RstPatchLd {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> RstPatchLd {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for RstPatchLd {
-    #[inline(always)]
-    fn from(val: u8) -> RstPatchLd {
-        RstPatchLd::from_bits(val)
-    }
-}
-impl From<RstPatchLd> for u8 {
-    #[inline(always)]
-    fn from(val: RstPatchLd) -> u8 {
-        RstPatchLd::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum RstSfErr {
-    #[doc = "No single-bit faults detected during initialization"]
-    ZZ77 = 0x0,
-    #[doc = "At least one single ECC fault was detected during initialization"]
-    ZZ78 = 0x01,
-}
-impl RstSfErr {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> RstSfErr {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for RstSfErr {
-    #[inline(always)]
-    fn from(val: u8) -> RstSfErr {
-        RstSfErr::from_bits(val)
-    }
-}
-impl From<RstSfErr> for u8 {
-    #[inline(always)]
-    fn from(val: RstSfErr) -> u8 {
-        RstSfErr::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rwsc {
     #[doc = "no additional wait-states are added (single cycle access)"]
     ZZ45 = 0x0,
@@ -3863,37 +3522,6 @@ impl From<SocTrimEcc> for u8 {
     #[inline(always)]
     fn from(val: SocTrimEcc) -> u8 {
         SocTrimEcc::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum SocTrimEn {
-    #[doc = "C0DE_C0DEh check not attempted"]
-    ZZ87 = 0x0,
-    #[doc = "C0DE_C0DEh check completed"]
-    ZZ88 = 0x01,
-}
-impl SocTrimEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> SocTrimEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for SocTrimEn {
-    #[inline(always)]
-    fn from(val: u8) -> SocTrimEn {
-        SocTrimEn::from_bits(val)
-    }
-}
-impl From<SocTrimEn> for u8 {
-    #[inline(always)]
-    fn from(val: SocTrimEn) -> u8 {
-        SocTrimEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -4901,37 +4529,6 @@ impl From<VfyOpt> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum WaitEn {
-    #[doc = "Wait feature disabled"]
-    ZZ191 = 0x0,
-    #[doc = "Wait feature enabled"]
-    ZZ192 = 0x01,
-}
-impl WaitEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> WaitEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for WaitEn {
-    #[inline(always)]
-    fn from(val: u8) -> WaitEn {
-        WaitEn::from_bits(val)
-    }
-}
-impl From<WaitEn> for u8 {
-    #[inline(always)]
-    fn from(val: WaitEn) -> u8 {
-        WaitEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum WideLoad {
     #[doc = "Wide load mode disabled (default)"]
     ZZ153 = 0x0,
@@ -4958,67 +4555,5 @@ impl From<WideLoad> for u8 {
     #[inline(always)]
     fn from(val: WideLoad) -> u8 {
         WideLoad::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum WrPathEccEn {
-    #[doc = "ECC encoding disabled"]
-    ZZ179 = 0x0,
-    #[doc = "ECC encoding enabled"]
-    ZZ180 = 0x01,
-}
-impl WrPathEccEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> WrPathEccEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for WrPathEccEn {
-    #[inline(always)]
-    fn from(val: u8) -> WrPathEccEn {
-        WrPathEccEn::from_bits(val)
-    }
-}
-impl From<WrPathEccEn> for u8 {
-    #[inline(always)]
-    fn from(val: WrPathEccEn) -> u8 {
-        WrPathEccEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum WrPathEn {
-    #[doc = "Writes to BIST setting registers driven by MM_WDATA"]
-    ZZ181 = 0x0,
-    #[doc = "Writes to BIST setting registers driven by SMW_DIN"]
-    ZZ182 = 0x01,
-}
-impl WrPathEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> WrPathEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for WrPathEn {
-    #[inline(always)]
-    fn from(val: u8) -> WrPathEn {
-        WrPathEn::from_bits(val)
-    }
-}
-impl From<WrPathEn> for u8 {
-    #[inline(always)]
-    fn from(val: WrPathEn) -> u8 {
-        WrPathEn::to_bits(val)
     }
 }

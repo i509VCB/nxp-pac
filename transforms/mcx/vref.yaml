@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: vref\d*::vals::LpbgBufEn
+    bit_size: 1

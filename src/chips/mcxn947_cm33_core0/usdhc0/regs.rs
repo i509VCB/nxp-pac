@@ -666,14 +666,14 @@ impl CmdXfrTyp {
     #[doc = "DDR_EN"]
     #[must_use]
     #[inline(always)]
-    pub const fn ddr_en(&self) -> super::vals::DdrEn {
+    pub const fn ddr_en(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::DdrEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DDR_EN"]
     #[inline(always)]
-    pub const fn set_ddr_en(&mut self, val: super::vals::DdrEn) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_ddr_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "DTDSEL"]
     #[must_use]
@@ -827,7 +827,7 @@ impl defmt::Format for CmdXfrTyp {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "CmdXfrTyp {{ dmaen: {:?}, bcen: {:?}, ac12en: {:?}, ddr_en: {:?}, dtdsel: {:?}, msbsel: {:?}, nibble_pos: {:?}, ac23en: {:?}, rsptyp: {:?}, cccen: {:?}, cicen: {:?}, dpsel: {:?}, cmdtyp: {:?}, cmdinx: {=u8:?} }}",
+            "CmdXfrTyp {{ dmaen: {:?}, bcen: {:?}, ac12en: {:?}, ddr_en: {=bool:?}, dtdsel: {:?}, msbsel: {:?}, nibble_pos: {:?}, ac23en: {:?}, rsptyp: {:?}, cccen: {:?}, cicen: {:?}, dpsel: {:?}, cmdtyp: {:?}, cmdinx: {=u8:?} }}",
             self.dmaen(),
             self.bcen(),
             self.ac12en(),
@@ -2737,14 +2737,14 @@ impl MixCtrl {
     #[doc = "Auto tuning enable (Only used for SD3.0, SDR104 mode)"]
     #[must_use]
     #[inline(always)]
-    pub const fn auto_tune_en(&self) -> super::vals::AutoTuneEn {
+    pub const fn auto_tune_en(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::AutoTuneEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Auto tuning enable (Only used for SD3.0, SDR104 mode)"]
     #[inline(always)]
-    pub const fn set_auto_tune_en(&mut self, val: super::vals::AutoTuneEn) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_auto_tune_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "Feedback clock source selection (Only used for SD3.0, SDR104 mode)"]
     #[must_use]
@@ -2788,7 +2788,7 @@ impl defmt::Format for MixCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "MixCtrl {{ dmaen: {:?}, bcen: {:?}, ac12en: {:?}, ddr_en: {=bool:?}, dtdsel: {:?}, msbsel: {:?}, nibble_pos: {=bool:?}, ac23en: {=bool:?}, exe_tune: {:?}, smp_clk_sel: {:?}, auto_tune_en: {:?}, fbclk_sel: {:?} }}",
+            "MixCtrl {{ dmaen: {:?}, bcen: {:?}, ac12en: {:?}, ddr_en: {=bool:?}, dtdsel: {:?}, msbsel: {:?}, nibble_pos: {=bool:?}, ac23en: {=bool:?}, exe_tune: {:?}, smp_clk_sel: {:?}, auto_tune_en: {=bool:?}, fbclk_sel: {:?} }}",
             self.dmaen(),
             self.bcen(),
             self.ac12en(),
@@ -2848,14 +2848,14 @@ impl MmcBoot {
     #[doc = "Boot enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn boot_en(&self) -> super::vals::BootEn {
+    pub const fn boot_en(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::BootEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Boot enable"]
     #[inline(always)]
-    pub const fn set_boot_en(&mut self, val: super::vals::BootEn) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_boot_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Auto stop at block gap"]
     #[must_use]
@@ -2918,7 +2918,7 @@ impl defmt::Format for MmcBoot {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "MmcBoot {{ dtocv_ack: {:?}, boot_ack: {:?}, boot_mode: {:?}, boot_en: {:?}, auto_sabg_en: {=bool:?}, disable_time_out: {:?}, boot_blk_cnt: {=u16:?} }}",
+            "MmcBoot {{ dtocv_ack: {:?}, boot_ack: {:?}, boot_mode: {:?}, boot_en: {=bool:?}, auto_sabg_en: {=bool:?}, disable_time_out: {:?}, boot_blk_cnt: {=u16:?} }}",
             self.dtocv_ack(),
             self.boot_ack(),
             self.boot_mode(),
@@ -3429,38 +3429,38 @@ impl SysCtrl {
     #[doc = "Software reset for all"]
     #[must_use]
     #[inline(always)]
-    pub const fn rsta(&self) -> super::vals::Rsta {
+    pub const fn rsta(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::Rsta::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software reset for all"]
     #[inline(always)]
-    pub const fn set_rsta(&mut self, val: super::vals::Rsta) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_rsta(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "Software reset for CMD line"]
     #[must_use]
     #[inline(always)]
-    pub const fn rstc(&self) -> super::vals::Rstc {
+    pub const fn rstc(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Rstc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software reset for CMD line"]
     #[inline(always)]
-    pub const fn set_rstc(&mut self, val: super::vals::Rstc) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_rstc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "Software reset for data line"]
     #[must_use]
     #[inline(always)]
-    pub const fn rstd(&self) -> super::vals::Rstd {
+    pub const fn rstd(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::Rstd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software reset for data line"]
     #[inline(always)]
-    pub const fn set_rstd(&mut self, val: super::vals::Rstd) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_rstd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "Initialization active"]
     #[must_use]
@@ -3514,7 +3514,7 @@ impl defmt::Format for SysCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "SysCtrl {{ dvs: {:?}, sdclkfs: {=u8:?}, dtocv: {:?}, rst_fifo: {=bool:?}, ipp_rst_n: {=bool:?}, rsta: {:?}, rstc: {:?}, rstd: {:?}, inita: {=bool:?}, rstt: {=bool:?} }}",
+            "SysCtrl {{ dvs: {:?}, sdclkfs: {=u8:?}, dtocv: {:?}, rst_fifo: {=bool:?}, ipp_rst_n: {=bool:?}, rsta: {=bool:?}, rstc: {=bool:?}, rstd: {=bool:?}, inita: {=bool:?}, rstt: {=bool:?} }}",
             self.dvs(),
             self.sdclkfs(),
             self.dtocv(),
@@ -3650,14 +3650,14 @@ impl VendSpec {
     #[doc = "Check busy enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ac12_wr_chkbusy_en(&self) -> super::vals::Ac12WrChkbusyEn {
+    pub const fn ac12_wr_chkbusy_en(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Ac12WrChkbusyEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Check busy enable"]
     #[inline(always)]
-    pub const fn set_ac12_wr_chkbusy_en(&mut self, val: super::vals::Ac12WrChkbusyEn) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_ac12_wr_chkbusy_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Force CLK"]
     #[must_use]
@@ -3686,14 +3686,14 @@ impl VendSpec {
     #[doc = "Register byte access for CMD_XFR_TYP"]
     #[must_use]
     #[inline(always)]
-    pub const fn cmd_byte_en(&self) -> super::vals::CmdByteEn {
+    pub const fn cmd_byte_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::CmdByteEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Register byte access for CMD_XFR_TYP"]
     #[inline(always)]
-    pub const fn set_cmd_byte_en(&mut self, val: super::vals::CmdByteEn) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_cmd_byte_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for VendSpec {
@@ -3717,7 +3717,7 @@ impl defmt::Format for VendSpec {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "VendSpec {{ ac12_wr_chkbusy_en: {:?}, frc_sdclk_on: {:?}, crc_chk_dis: {:?}, cmd_byte_en: {:?} }}",
+            "VendSpec {{ ac12_wr_chkbusy_en: {=bool:?}, frc_sdclk_on: {:?}, crc_chk_dis: {:?}, cmd_byte_en: {=bool:?} }}",
             self.ac12_wr_chkbusy_en(),
             self.frc_sdclk_on(),
             self.crc_chk_dis(),
@@ -3757,26 +3757,26 @@ impl VendSpec2 {
     #[doc = "Tuning command enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn tuning_cmd_en(&self) -> super::vals::TuningCmdEn {
+    pub const fn tuning_cmd_en(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::TuningCmdEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Tuning command enable"]
     #[inline(always)]
-    pub const fn set_tuning_cmd_en(&mut self, val: super::vals::TuningCmdEn) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_tuning_cmd_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Argument2 register enable for ACMD23"]
     #[must_use]
     #[inline(always)]
-    pub const fn acmd23_argu2_en(&self) -> super::vals::Acmd23Argu2En {
+    pub const fn acmd23_argu2_en(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Acmd23Argu2En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Argument2 register enable for ACMD23"]
     #[inline(always)]
-    pub const fn set_acmd23_argu2_en(&mut self, val: super::vals::Acmd23Argu2En) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_acmd23_argu2_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Select the clock source for host card detection."]
     #[must_use]
@@ -3813,7 +3813,7 @@ impl defmt::Format for VendSpec2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "VendSpec2 {{ card_int_d3_test: {:?}, tuning_bit_en: {:?}, tuning_cmd_en: {:?}, acmd23_argu2_en: {:?}, en_32k_clk: {:?} }}",
+            "VendSpec2 {{ card_int_d3_test: {:?}, tuning_bit_en: {:?}, tuning_cmd_en: {=bool:?}, acmd23_argu2_en: {=bool:?}, en_32k_clk: {:?} }}",
             self.card_int_d3_test(),
             self.tuning_bit_en(),
             self.tuning_cmd_en(),

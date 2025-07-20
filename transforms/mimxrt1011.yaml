@@ -43,6 +43,7 @@ includes:
 - imxrt/wdog.yaml
 - imxrt/xbara.yaml
 - imxrt/xtalosc24m.yaml
+- imxrt/usbnc.yaml
 transforms:
   #! ADC HS::COCO is array
   - !MakeFieldArray

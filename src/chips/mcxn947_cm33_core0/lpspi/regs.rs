@@ -486,26 +486,26 @@ impl Cr {
     #[doc = "Reset Transmit FIFO"]
     #[must_use]
     #[inline(always)]
-    pub const fn rtf(&self) -> super::vals::Rtf {
+    pub const fn rtf(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Rtf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reset Transmit FIFO"]
     #[inline(always)]
-    pub const fn set_rtf(&mut self, val: super::vals::Rtf) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_rtf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Reset Receive FIFO"]
     #[must_use]
     #[inline(always)]
-    pub const fn rrf(&self) -> super::vals::Rrf {
+    pub const fn rrf(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Rrf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reset Receive FIFO"]
     #[inline(always)]
-    pub const fn set_rrf(&mut self, val: super::vals::Rrf) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_rrf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
 }
 impl Default for Cr {
@@ -530,7 +530,7 @@ impl defmt::Format for Cr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cr {{ men: {=bool:?}, rst: {=bool:?}, dbgen: {=bool:?}, rtf: {:?}, rrf: {:?} }}",
+            "Cr {{ men: {=bool:?}, rst: {=bool:?}, dbgen: {=bool:?}, rtf: {=bool:?}, rrf: {=bool:?} }}",
             self.men(),
             self.rst(),
             self.dbgen(),

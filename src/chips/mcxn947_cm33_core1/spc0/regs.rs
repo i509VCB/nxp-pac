@@ -552,14 +552,14 @@ impl DcdcCfg {
     #[doc = "DCDC Bleed Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn bleed_en(&self) -> super::vals::BleedEn {
+    pub const fn bleed_en(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::BleedEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "DCDC Bleed Enable"]
     #[inline(always)]
-    pub const fn set_bleed_en(&mut self, val: super::vals::BleedEn) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_bleed_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
 }
 impl Default for DcdcCfg {
@@ -582,7 +582,7 @@ impl defmt::Format for DcdcCfg {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "DcdcCfg {{ freq_cntrl_on: {=bool:?}, freq_cntrl: {=u8:?}, bleed_en: {:?} }}",
+            "DcdcCfg {{ freq_cntrl_on: {=bool:?}, freq_cntrl: {=u8:?}, bleed_en: {=bool:?} }}",
             self.freq_cntrl_on(),
             self.freq_cntrl(),
             self.bleed_en()

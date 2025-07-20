@@ -174,14 +174,14 @@ impl Gpr1 {
     #[doc = "ENET and ENET2 ipg_clk_s clock gating enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn enet_ipg_clk_s_en(&self) -> super::vals::EnetIpgClkSEn {
+    pub const fn enet_ipg_clk_s_en(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::EnetIpgClkSEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ENET and ENET2 ipg_clk_s clock gating enable"]
     #[inline(always)]
-    pub const fn set_enet_ipg_clk_s_en(&mut self, val: super::vals::EnetIpgClkSEn) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_enet_ipg_clk_s_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "Arm CM7 platform AHB clock enable"]
     #[must_use]
@@ -229,7 +229,7 @@ impl defmt::Format for Gpr1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Gpr1 {{ sai1_mclk1_sel: {:?}, sai1_mclk2_sel: {:?}, sai1_mclk3_sel: {:?}, sai2_mclk3_sel: {:?}, sai3_mclk3_sel: {:?}, gint: {=bool:?}, enet1_clk_sel: {:?}, enet2_clk_sel: {:?}, enet1_tx_clk_dir: {:?}, enet2_tx_clk_dir: {:?}, sai1_mclk_dir: {:?}, sai2_mclk_dir: {:?}, sai3_mclk_dir: {:?}, exc_mon: {=bool:?}, enet_ipg_clk_s_en: {:?}, cm7_force_hclk_en: {=bool:?} }}",
+            "Gpr1 {{ sai1_mclk1_sel: {:?}, sai1_mclk2_sel: {:?}, sai1_mclk3_sel: {:?}, sai2_mclk3_sel: {:?}, sai3_mclk3_sel: {:?}, gint: {=bool:?}, enet1_clk_sel: {:?}, enet2_clk_sel: {:?}, enet1_tx_clk_dir: {:?}, enet2_tx_clk_dir: {:?}, sai1_mclk_dir: {:?}, sai2_mclk_dir: {:?}, sai3_mclk_dir: {:?}, exc_mon: {=bool:?}, enet_ipg_clk_s_en: {=bool:?}, cm7_force_hclk_en: {=bool:?} }}",
             self.sai1_mclk1_sel(),
             self.sai1_mclk2_sel(),
             self.sai1_mclk3_sel(),
@@ -884,50 +884,50 @@ impl Gpr14 {
     #[doc = "ACMP1 sample_lv source select"]
     #[must_use]
     #[inline(always)]
-    pub const fn acmp1_sample_sync_en(&self) -> super::vals::Acmp1SampleSyncEn {
+    pub const fn acmp1_sample_sync_en(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Acmp1SampleSyncEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ACMP1 sample_lv source select"]
     #[inline(always)]
-    pub const fn set_acmp1_sample_sync_en(&mut self, val: super::vals::Acmp1SampleSyncEn) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_acmp1_sample_sync_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "ACMP2 sample_lv source select"]
     #[must_use]
     #[inline(always)]
-    pub const fn acmp2_sample_sync_en(&self) -> super::vals::Acmp2SampleSyncEn {
+    pub const fn acmp2_sample_sync_en(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Acmp2SampleSyncEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ACMP2 sample_lv source select"]
     #[inline(always)]
-    pub const fn set_acmp2_sample_sync_en(&mut self, val: super::vals::Acmp2SampleSyncEn) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_acmp2_sample_sync_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "ACMP3 sample_lv source select"]
     #[must_use]
     #[inline(always)]
-    pub const fn acmp3_sample_sync_en(&self) -> super::vals::Acmp3SampleSyncEn {
+    pub const fn acmp3_sample_sync_en(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Acmp3SampleSyncEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ACMP3 sample_lv source select"]
     #[inline(always)]
-    pub const fn set_acmp3_sample_sync_en(&mut self, val: super::vals::Acmp3SampleSyncEn) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_acmp3_sample_sync_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "ACMP4 sample_lv source select"]
     #[must_use]
     #[inline(always)]
-    pub const fn acmp4_sample_sync_en(&self) -> super::vals::Acmp4SampleSyncEn {
+    pub const fn acmp4_sample_sync_en(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Acmp4SampleSyncEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ACMP4 sample_lv source select"]
     #[inline(always)]
-    pub const fn set_acmp4_sample_sync_en(&mut self, val: super::vals::Acmp4SampleSyncEn) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_acmp4_sample_sync_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
 }
 impl Default for Gpr14 {
@@ -959,7 +959,7 @@ impl defmt::Format for Gpr14 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Gpr14 {{ acmp1_cmp_igen_trim_dn: {:?}, acmp2_cmp_igen_trim_dn: {:?}, acmp3_cmp_igen_trim_dn: {:?}, acmp4_cmp_igen_trim_dn: {:?}, acmp1_cmp_igen_trim_up: {:?}, acmp2_cmp_igen_trim_up: {:?}, acmp3_cmp_igen_trim_up: {:?}, acmp4_cmp_igen_trim_up: {:?}, acmp1_sample_sync_en: {:?}, acmp2_sample_sync_en: {:?}, acmp3_sample_sync_en: {:?}, acmp4_sample_sync_en: {:?} }}",
+            "Gpr14 {{ acmp1_cmp_igen_trim_dn: {:?}, acmp2_cmp_igen_trim_dn: {:?}, acmp3_cmp_igen_trim_dn: {:?}, acmp4_cmp_igen_trim_dn: {:?}, acmp1_cmp_igen_trim_up: {:?}, acmp2_cmp_igen_trim_up: {:?}, acmp3_cmp_igen_trim_up: {:?}, acmp4_cmp_igen_trim_up: {:?}, acmp1_sample_sync_en: {=bool:?}, acmp2_sample_sync_en: {=bool:?}, acmp3_sample_sync_en: {=bool:?}, acmp4_sample_sync_en: {=bool:?} }}",
             self.acmp1_cmp_igen_trim_dn(),
             self.acmp2_cmp_igen_trim_dn(),
             self.acmp3_cmp_igen_trim_dn(),
@@ -2219,14 +2219,14 @@ impl Gpr33 {
     #[doc = "OCRAM2 TrustZone (TZ) enable."]
     #[must_use]
     #[inline(always)]
-    pub const fn ocram2_tz_en(&self) -> super::vals::Ocram2TzEn {
+    pub const fn ocram2_tz_en(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Ocram2TzEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "OCRAM2 TrustZone (TZ) enable."]
     #[inline(always)]
-    pub const fn set_ocram2_tz_en(&mut self, val: super::vals::Ocram2TzEn) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_ocram2_tz_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "OCRAM2 TrustZone (TZ) start address"]
     #[must_use]
@@ -2243,14 +2243,14 @@ impl Gpr33 {
     #[doc = "Lock OCRAM2_TZ_EN field for changes"]
     #[must_use]
     #[inline(always)]
-    pub const fn lock_ocram2_tz_en(&self) -> super::vals::LockOcram2TzEn {
+    pub const fn lock_ocram2_tz_en(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::LockOcram2TzEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Lock OCRAM2_TZ_EN field for changes"]
     #[inline(always)]
-    pub const fn set_lock_ocram2_tz_en(&mut self, val: super::vals::LockOcram2TzEn) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_lock_ocram2_tz_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Lock OCRAM2_TZ_ADDR field for changes"]
     #[must_use]
@@ -2286,7 +2286,7 @@ impl defmt::Format for Gpr33 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Gpr33 {{ ocram2_tz_en: {:?}, ocram2_tz_addr: {=u8:?}, lock_ocram2_tz_en: {:?}, lock_ocram2_tz_addr: {:?} }}",
+            "Gpr33 {{ ocram2_tz_en: {=bool:?}, ocram2_tz_addr: {=u8:?}, lock_ocram2_tz_en: {=bool:?}, lock_ocram2_tz_addr: {:?} }}",
             self.ocram2_tz_en(),
             self.ocram2_tz_addr(),
             self.lock_ocram2_tz_en(),
@@ -2314,14 +2314,14 @@ impl Gpr34 {
     #[doc = "Enable SIP_TEST_MUX"]
     #[must_use]
     #[inline(always)]
-    pub const fn sip_test_mux_qspi_sip_en(&self) -> super::vals::SipTestMuxQspiSipEn {
+    pub const fn sip_test_mux_qspi_sip_en(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::SipTestMuxQspiSipEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable SIP_TEST_MUX"]
     #[inline(always)]
-    pub const fn set_sip_test_mux_qspi_sip_en(&mut self, val: super::vals::SipTestMuxQspiSipEn) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_sip_test_mux_qspi_sip_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
 }
 impl Default for Gpr34 {
@@ -2346,7 +2346,7 @@ impl defmt::Format for Gpr34 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Gpr34 {{ sip_test_mux_boot_pin_sel: {=u8:?}, sip_test_mux_qspi_sip_en: {:?} }}",
+            "Gpr34 {{ sip_test_mux_boot_pin_sel: {=u8:?}, sip_test_mux_qspi_sip_en: {=bool:?} }}",
             self.sip_test_mux_boot_pin_sel(),
             self.sip_test_mux_qspi_sip_en()
         )

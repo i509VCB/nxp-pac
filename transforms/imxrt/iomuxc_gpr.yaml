@@ -14,5 +14,5 @@ transforms:
 
   # Delete misc control enums
   - !DeleteEnums
-    from: iomuxc_gpr::vals::(AxbsP(ForceRoundRobin|M[01]HighPriority)|CacheUsb|Cm7ForceHclkEn|DbgEn|DcpKeySel|DcpkeyOcotpOrKeymux|ExcMon|FlexramBankCfgSel|Gint|L2Mem(Deepsleep|EnPowersaving)|Mqs(En|Oversample|SwRst)|Niden|OcramTzEn|RamAutoClkGatingEn|SecErrResp|Vref1mClkGpt[12]|Wdog[12]Mask)
+    from: iomuxc_gpr::vals::(AxbsP(ForceRoundRobin|M[01]HighPriority)|CacheUsb|Cm7ForceHclkEn|DbgEn|DcpKeySel|DcpkeyOcotpOrKeymux|ExcMon|FlexramBankCfgSel|Gint|L2Mem(Deepsleep|EnPowersaving)|Mqs(En|Oversample|SwRst)|Niden|OcramTzEn|RamAutoClkGatingEn|SecErrResp|Vref1mClkGpt[12]|Wdog[12]Mask|Acmp[1-4]SampleSyncEn|EnetIpgClkSEn|LockOcram2TzEn|Ocram2TzEn|SipTestMuxQspiSipEn)
     bit_size: 1

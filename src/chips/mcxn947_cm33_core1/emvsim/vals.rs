@@ -267,37 +267,6 @@ impl From<DivisorValue> for u16 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum DozeEn {
-    #[doc = "Disable"]
-    DOZE_GATE = 0x0,
-    #[doc = "Enable"]
-    DOZE_NOGATE = 0x01,
-}
-impl DozeEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> DozeEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for DozeEn {
-    #[inline(always)]
-    fn from(val: u8) -> DozeEn {
-        DozeEn::from_bits(val)
-    }
-}
-impl From<DozeEn> for u8 {
-    #[inline(always)]
-    fn from(val: DozeEn) -> u8 {
-        DozeEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EtcIm {
     #[doc = "Enable"]
     INT_ENABLED = 0x0,
@@ -1213,37 +1182,6 @@ impl From<Srst> for u8 {
     #[inline(always)]
     fn from(val: Srst) -> u8 {
         Srst::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum StopEn {
-    #[doc = "Disable"]
-    STOP_ALL_CLKS = 0x0,
-    #[doc = "Enable"]
-    ONLY_SCK_ON = 0x01,
-}
-impl StopEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> StopEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for StopEn {
-    #[inline(always)]
-    fn from(val: u8) -> StopEn {
-        StopEn::from_bits(val)
-    }
-}
-impl From<StopEn> for u8 {
-    #[inline(always)]
-    fn from(val: StopEn) -> u8 {
-        StopEn::to_bits(val)
     }
 }
 #[repr(u8)]

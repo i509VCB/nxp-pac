@@ -1,4 +1,4 @@
 transforms:
   - !DeleteEnums
-    from: lpspi::vals::(Dozen|Rxmsk|Txmsk)
+    from: lpspi::vals::(Dozen|Rxmsk|Txmsk|Rtf|Rrf)
     bit_size: 1

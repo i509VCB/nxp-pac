@@ -1,4 +1,4 @@
 transforms:
   - !DeleteEnums
-    from: wdog::vals::(Pde|Sre|Wda|Wdbg|Wde|Wdw|Wie)
+    from: wdog::vals::(Pde|Sre|Wda|Wdbg|Wde|Wdw|Wie|Por)
     bit_size: 1

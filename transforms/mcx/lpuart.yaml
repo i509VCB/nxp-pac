@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: lpuart::vals::Rst
+    bit_size: 1

@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: usbphy::vals::(ExtIdOverrideEn|ExtVbusOverrideEn|IdOverrideEn|LviEn|VbusOverrideEn)
+    bit_size: 1

@@ -1,37 +1,6 @@
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum BufEn {
-    #[doc = "Not used"]
-    USE_BUF = 0x0,
-    #[doc = "Used"]
-    NO_USE_BUF = 0x01,
-}
-impl BufEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> BufEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for BufEn {
-    #[inline(always)]
-    fn from(val: u8) -> BufEn {
-        BufEn::from_bits(val)
-    }
-}
-impl From<BufEn> for u8 {
-    #[inline(always)]
-    fn from(val: BufEn) -> u8 {
-        BufEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fifoen {
     #[doc = "Enables FIFO mode and disables Buffer mode. Any data written to DATA\\[DATA\\] goes to buffer then goes to conversion."]
     BUFFER_MODE = 0x0,
@@ -58,37 +27,6 @@ impl From<Fifoen> for u8 {
     #[inline(always)]
     fn from(val: Fifoen) -> u8 {
         Fifoen::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Fiforst {
-    #[doc = "No effect"]
-    NO_EFFECT = 0x0,
-    #[doc = "FIFO reset"]
-    FIFO_RESET = 0x01,
-}
-impl Fiforst {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Fiforst {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Fiforst {
-    #[inline(always)]
-    fn from(val: u8) -> Fiforst {
-        Fiforst::from_bits(val)
-    }
-}
-impl From<Fiforst> for u8 {
-    #[inline(always)]
-    fn from(val: Fiforst) -> u8 {
-        Fiforst::to_bits(val)
     }
 }
 #[repr(u8)]

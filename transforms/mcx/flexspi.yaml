@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: flexspi\d*::vals::(AhbrdEn|AhbwrEn|IpedEn|IpwrEn)
+    bit_size: 1

@@ -287,14 +287,14 @@ impl Wrsr {
     #[doc = "POR"]
     #[must_use]
     #[inline(always)]
-    pub const fn por(&self) -> super::vals::Por {
+    pub const fn por(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Por::from_bits(val as u8)
+        val != 0
     }
     #[doc = "POR"]
     #[inline(always)]
-    pub const fn set_por(&mut self, val: super::vals::Por) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u16) & 0x01) << 4usize);
+    pub const fn set_por(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u16) & 0x01) << 4usize);
     }
 }
 impl Default for Wrsr {
@@ -317,7 +317,7 @@ impl defmt::Format for Wrsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Wrsr {{ sftw: {:?}, tout: {:?}, por: {:?} }}",
+            "Wrsr {{ sftw: {:?}, tout: {:?}, por: {=bool:?} }}",
             self.sftw(),
             self.tout(),
             self.por()

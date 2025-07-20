@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: dac\d*::vals::(Fiforst|BufEn)
+    bit_size: 1

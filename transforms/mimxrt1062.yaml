@@ -55,6 +55,7 @@ includes:
 - imxrt/wdog.yaml
 - imxrt/xbara.yaml
 - imxrt/xtalosc24m.yaml
+- imxrt/usbnc.yaml
 transforms:
   #! TODO: Consider merging CAN1 and CAN3?
   #! TODO: FLEXIO1 merge to flexio::Flexio

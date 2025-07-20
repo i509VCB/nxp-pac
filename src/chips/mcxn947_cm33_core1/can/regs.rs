@@ -55225,14 +55225,14 @@ impl Mcr {
     #[doc = "Pretended Networking Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn pnet_en(&self) -> super::vals::PnetEn {
+    pub const fn pnet_en(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::PnetEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Pretended Networking Enable"]
     #[inline(always)]
-    pub const fn set_pnet_en(&mut self, val: super::vals::PnetEn) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_pnet_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "DMA Enable"]
     #[must_use]
@@ -55453,7 +55453,7 @@ impl defmt::Format for Mcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mcr {{ maxmb: {=u8:?}, idam: {:?}, fden: {:?}, aen: {:?}, lprioen: {:?}, pnet_en: {:?}, dma: {:?}, irmq: {:?}, srxdis: {:?}, waksrc: {=bool:?}, lpmack: {:?}, wrnen: {:?}, slfwak: {:?}, frzack: {:?}, softrst: {:?}, wakmsk: {:?}, notrdy: {:?}, halt: {:?}, rfen: {:?}, frz: {:?}, mdis: {:?} }}",
+            "Mcr {{ maxmb: {=u8:?}, idam: {:?}, fden: {:?}, aen: {:?}, lprioen: {:?}, pnet_en: {=bool:?}, dma: {:?}, irmq: {:?}, srxdis: {:?}, waksrc: {=bool:?}, lpmack: {:?}, wrnen: {:?}, slfwak: {:?}, frzack: {:?}, softrst: {:?}, wakmsk: {:?}, notrdy: {:?}, halt: {:?}, rfen: {:?}, frz: {:?}, mdis: {:?} }}",
             self.maxmb(),
             self.idam(),
             self.fden(),

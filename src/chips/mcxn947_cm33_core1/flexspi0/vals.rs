@@ -267,37 +267,6 @@ impl From<Ahbgcmrd> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum AhbrdEn {
-    #[doc = "Disable"]
-    VAL0 = 0x0,
-    #[doc = "Enable"]
-    VAL1 = 0x01,
-}
-impl AhbrdEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> AhbrdEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for AhbrdEn {
-    #[inline(always)]
-    fn from(val: u8) -> AhbrdEn {
-        AhbrdEn::from_bits(val)
-    }
-}
-impl From<AhbrdEn> for u8 {
-    #[inline(always)]
-    fn from(val: AhbrdEn) -> u8 {
-        AhbrdEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ahbrxbuf0cr0Prefetchen {
     #[doc = "Disabled"]
     VALUE0 = 0x0,
@@ -789,37 +758,6 @@ impl From<Ahbrxbuf7cr0Regionen> for u8 {
     #[inline(always)]
     fn from(val: Ahbrxbuf7cr0Regionen) -> u8 {
         Ahbrxbuf7cr0Regionen::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum AhbwrEn {
-    #[doc = "Disable"]
-    VAL0 = 0x0,
-    #[doc = "Enable"]
-    VAL1 = 0x01,
-}
-impl AhbwrEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> AhbwrEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for AhbwrEn {
-    #[inline(always)]
-    fn from(val: u8) -> AhbwrEn {
-        AhbwrEn::from_bits(val)
-    }
-}
-impl From<AhbwrEn> for u8 {
-    #[inline(always)]
-    fn from(val: AhbwrEn) -> u8 {
-        AhbwrEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1950,37 +1888,6 @@ impl From<Ipcmdsecurevioen> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum IpedEn {
-    #[doc = "Disable"]
-    VAL0 = 0x0,
-    #[doc = "Enable"]
-    VAL1 = 0x01,
-}
-impl IpedEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> IpedEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for IpedEn {
-    #[inline(always)]
-    fn from(val: u8) -> IpedEn {
-        IpedEn::from_bits(val)
-    }
-}
-impl From<IpedEn> for u8 {
-    #[inline(always)]
-    fn from(val: IpedEn) -> u8 {
-        IpedEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum IpedProtect {
     #[doc = "No restrictions"]
     VAL0 = 0x0,
@@ -2565,37 +2472,6 @@ impl From<Iptxween> for u8 {
     #[inline(always)]
     fn from(val: Iptxween) -> u8 {
         Iptxween::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum IpwrEn {
-    #[doc = "Disable"]
-    VAL0 = 0x0,
-    #[doc = "Enable"]
-    VAL1 = 0x01,
-}
-impl IpwrEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> IpwrEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for IpwrEn {
-    #[inline(always)]
-    fn from(val: u8) -> IpwrEn {
-        IpwrEn::from_bits(val)
-    }
-}
-impl From<IpwrEn> for u8 {
-    #[inline(always)]
-    fn from(val: IpwrEn) -> u8 {
-        IpwrEn::to_bits(val)
     }
 }
 #[repr(u8)]

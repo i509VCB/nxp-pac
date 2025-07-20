@@ -10040,14 +10040,14 @@ impl NvmCtrl {
     #[doc = "FLASH stall on busy control"]
     #[must_use]
     #[inline(always)]
-    pub const fn flash_stall_en(&self) -> super::vals::FlashStallEn {
+    pub const fn flash_stall_en(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::FlashStallEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FLASH stall on busy control"]
     #[inline(always)]
-    pub const fn set_flash_stall_en(&mut self, val: super::vals::FlashStallEn) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_flash_stall_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Bus error on instruction multi-bit ECC error control"]
     #[must_use]
@@ -10100,7 +10100,7 @@ impl defmt::Format for NvmCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "NvmCtrl {{ dis_flash_spec: {:?}, dis_data_spec: {:?}, dis_flash_cache: {:?}, dis_flash_inst: {:?}, dis_flash_data: {:?}, clr_flash_cache: {:?}, flash_stall_en: {:?}, dis_mbecc_err_inst: {:?}, dis_mbecc_err_data: {:?} }}",
+            "NvmCtrl {{ dis_flash_spec: {:?}, dis_data_spec: {:?}, dis_flash_cache: {:?}, dis_flash_inst: {:?}, dis_flash_data: {:?}, clr_flash_cache: {:?}, flash_stall_en: {=bool:?}, dis_mbecc_err_inst: {:?}, dis_mbecc_err_data: {:?} }}",
             self.dis_flash_spec(),
             self.dis_data_spec(),
             self.dis_flash_cache(),

@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: usbfs\d*::vals::(ClockRecoverEn|IrcEn|OvfErrorEn|ResetResumeRoughEn|RestartIfrtrimEn|StlAdjEn|StopAckDlyEn|VfedgEn|VredgEn|WakeReqEn)
+    bit_size: 1

@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: pwm::vals::Sm\d+tctrlOutTrigEn
+    bit_size: 1

@@ -66,6 +66,11 @@ transforms:
   - !DeleteEnums
     from: syscon0::vals::\w+(Reset|Halt|Unstab)
     bit_size: 1
+  
+  # Delete enable enum
+  - !DeleteEnums
+    from: syscon0::vals::FlashStallEn
+    bit_size: 1
 
   # Make port reset functions into an array
   - !MakeFieldArray

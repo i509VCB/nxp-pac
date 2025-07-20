@@ -684,14 +684,14 @@ impl EvtgCtrl {
     #[doc = "Flip-Flop Initial Output Enable Control"]
     #[must_use]
     #[inline(always)]
-    pub const fn init_en(&self) -> super::vals::InitEn {
+    pub const fn init_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::InitEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Flip-Flop Initial Output Enable Control"]
     #[inline(always)]
-    pub const fn set_init_en(&mut self, val: super::vals::InitEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u16) & 0x01) << 1usize);
+    pub const fn set_init_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
     }
     #[doc = "Flip-Flop Mode Selection"]
     #[must_use]
@@ -765,7 +765,7 @@ impl defmt::Format for EvtgCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "EvtgCtrl {{ ff_init: {:?}, init_en: {:?}, mode_sel: {:?}, fb_ovrd: {:?}, sync_ctrl: {:?}, force_bypass: {:?} }}",
+            "EvtgCtrl {{ ff_init: {:?}, init_en: {=bool:?}, mode_sel: {:?}, fb_ovrd: {:?}, sync_ctrl: {:?}, force_bypass: {:?} }}",
             self.ff_init(),
             self.init_en(),
             self.mode_sel(),

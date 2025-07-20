@@ -1565,14 +1565,14 @@ impl Mctl {
     #[doc = "LSACTIVE Feature Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn lsact_en(&self) -> super::vals::LsactEn {
+    pub const fn lsact_en(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::LsactEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "LSACTIVE Feature Enable"]
     #[inline(always)]
-    pub const fn set_lsact_en(&mut self, val: super::vals::LsactEn) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_lsact_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "LSACTIVE Write Enable"]
     #[must_use]
@@ -1589,14 +1589,14 @@ impl Mctl {
     #[doc = "Master Repair Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn master_repair_en(&self) -> super::vals::MasterRepairEn {
+    pub const fn master_repair_en(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::MasterRepairEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Master Repair Enable"]
     #[inline(always)]
-    pub const fn set_master_repair_en(&mut self, val: super::vals::MasterRepairEn) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_master_repair_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "RF Active Command Enable Control"]
     #[must_use]
@@ -1802,7 +1802,7 @@ impl defmt::Format for Mctl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mctl {{ corehld: {:?}, lsact_en: {:?}, lsactwren: {:?}, master_repair_en: {:?}, rfcmden: {:?}, cwsabten: {:?}, mrgrddis: {:?}, mrgrd0: {=u8:?}, mrgrd1: {=u8:?}, ersaack: {:?}, scan_obs: {:?}, bist_ctl: {:?}, smwr_ctl: {:?}, salv_dis: {:?}, soc_ecc_ctl: {:?}, fmu_ecc_ctl: {:?}, bist_pwr_dis: {:?}, osc_h: {:?} }}",
+            "Mctl {{ corehld: {:?}, lsact_en: {=bool:?}, lsactwren: {:?}, master_repair_en: {=bool:?}, rfcmden: {:?}, cwsabten: {:?}, mrgrddis: {:?}, mrgrd0: {=u8:?}, mrgrd1: {=u8:?}, ersaack: {:?}, scan_obs: {:?}, bist_ctl: {:?}, smwr_ctl: {:?}, salv_dis: {:?}, soc_ecc_ctl: {:?}, fmu_ecc_ctl: {:?}, bist_pwr_dis: {:?}, osc_h: {:?} }}",
             self.corehld(),
             self.lsact_en(),
             self.lsactwren(),
@@ -2234,14 +2234,14 @@ impl PwrOpt {
     #[doc = "Power Down BIST Timer Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn pd_timer_en(&self) -> super::vals::PdTimerEn {
+    pub const fn pd_timer_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::PdTimerEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Power Down BIST Timer Enable"]
     #[inline(always)]
-    pub const fn set_pd_timer_en(&mut self, val: super::vals::PdTimerEn) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_pd_timer_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for PwrOpt {
@@ -2264,7 +2264,7 @@ impl defmt::Format for PwrOpt {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "PwrOpt {{ pd_cdiv: {=u8:?}, slm_count: {=u16:?}, pd_timer_en: {:?} }}",
+            "PwrOpt {{ pd_cdiv: {=u8:?}, slm_count: {=u16:?}, pd_timer_en: {=bool:?} }}",
             self.pd_cdiv(),
             self.slm_count(),
             self.pd_timer_en()
@@ -4821,26 +4821,26 @@ impl RdPathCtrlStatus {
     #[doc = "MISR Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn misr_en(&self) -> super::vals::MisrEn {
+    pub const fn misr_en(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::MisrEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "MISR Enable"]
     #[inline(always)]
-    pub const fn set_misr_en(&mut self, val: super::vals::MisrEn) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_misr_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Copy Parity Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cpy_par_en(&self) -> super::vals::CpyParEn {
+    pub const fn cpy_par_en(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::CpyParEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Copy Parity Enable"]
     #[inline(always)]
-    pub const fn set_cpy_par_en(&mut self, val: super::vals::CpyParEn) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_cpy_par_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "BIST Mux to SMW"]
     #[must_use]
@@ -4869,26 +4869,26 @@ impl RdPathCtrlStatus {
     #[doc = "Write Path Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn wr_path_en(&self) -> super::vals::WrPathEn {
+    pub const fn wr_path_en(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::WrPathEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Write Path Enable"]
     #[inline(always)]
-    pub const fn set_wr_path_en(&mut self, val: super::vals::WrPathEn) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_wr_path_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "Write Path ECC Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn wr_path_ecc_en(&self) -> super::vals::WrPathEccEn {
+    pub const fn wr_path_ecc_en(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::WrPathEccEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Write Path ECC Enable"]
     #[inline(always)]
-    pub const fn set_wr_path_ecc_en(&mut self, val: super::vals::WrPathEccEn) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_wr_path_ecc_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "Double-Bit Error"]
     #[must_use]
@@ -4917,14 +4917,14 @@ impl RdPathCtrlStatus {
     #[doc = "Copy Phrase Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn cpy_phrase_en(&self) -> super::vals::CpyPhraseEn {
+    pub const fn cpy_phrase_en(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::CpyPhraseEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Copy Phrase Enable"]
     #[inline(always)]
-    pub const fn set_cpy_phrase_en(&mut self, val: super::vals::CpyPhraseEn) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_cpy_phrase_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "SMW_ARRAY1_SMW0_SEL"]
     #[must_use]
@@ -4941,14 +4941,14 @@ impl RdPathCtrlStatus {
     #[doc = "BIST ECC Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn bist_ecc_en(&self) -> super::vals::BistEccEn {
+    pub const fn bist_ecc_en(&self) -> bool {
         let val = (self.0 >> 30usize) & 0x01;
-        super::vals::BistEccEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "BIST ECC Enable"]
     #[inline(always)]
-    pub const fn set_bist_ecc_en(&mut self, val: super::vals::BistEccEn) {
-        self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+    pub const fn set_bist_ecc_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
     }
     #[doc = "Last Read"]
     #[must_use]
@@ -4995,7 +4995,7 @@ impl defmt::Format for RdPathCtrlStatus {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "RdPathCtrlStatus {{ rd_capt: {=u8:?}, se_size: {=u8:?}, ecc_enableb: {:?}, misr_en: {:?}, cpy_par_en: {:?}, bist_mux_to_smw: {:?}, ad_set: {=u8:?}, wr_path_en: {:?}, wr_path_ecc_en: {:?}, dberr_reg: {:?}, sberr_reg: {:?}, cpy_phrase_en: {:?}, smw_array1_smw0_sel: {:?}, bist_ecc_en: {:?}, last_read: {:?} }}",
+            "RdPathCtrlStatus {{ rd_capt: {=u8:?}, se_size: {=u8:?}, ecc_enableb: {:?}, misr_en: {=bool:?}, cpy_par_en: {=bool:?}, bist_mux_to_smw: {:?}, ad_set: {=u8:?}, wr_path_en: {=bool:?}, wr_path_ecc_en: {=bool:?}, dberr_reg: {:?}, sberr_reg: {:?}, cpy_phrase_en: {=bool:?}, smw_array1_smw0_sel: {:?}, bist_ecc_en: {=bool:?}, last_read: {:?} }}",
             self.rd_capt(),
             self.se_size(),
             self.ecc_enableb(),
@@ -5254,14 +5254,14 @@ impl ResetStatus {
     #[doc = "Status of the C0DE_C0DEh check to enable loading of the FMU parameters"]
     #[must_use]
     #[inline(always)]
-    pub const fn fmu_parm_en(&self) -> super::vals::FmuParmEn {
+    pub const fn fmu_parm_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::FmuParmEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Status of the C0DE_C0DEh check to enable loading of the FMU parameters"]
     #[inline(always)]
-    pub const fn set_fmu_parm_en(&mut self, val: super::vals::FmuParmEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_fmu_parm_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "FMU Register Load Complete"]
     #[must_use]
@@ -5278,14 +5278,14 @@ impl ResetStatus {
     #[doc = "Status of the C0DE_C0DEh check to enable loading of the SoC trim settings"]
     #[must_use]
     #[inline(always)]
-    pub const fn soc_trim_en(&self) -> super::vals::SocTrimEn {
+    pub const fn soc_trim_en(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::SocTrimEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Status of the C0DE_C0DEh check to enable loading of the SoC trim settings"]
     #[inline(always)]
-    pub const fn set_soc_trim_en(&mut self, val: super::vals::SocTrimEn) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_soc_trim_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Status of the C0DE_C0DEh check for enabling ECC decoder during reads of SoC trim settings"]
     #[must_use]
@@ -5338,26 +5338,26 @@ impl ResetStatus {
     #[doc = "ECC Single Fault during Reset Recovery"]
     #[must_use]
     #[inline(always)]
-    pub const fn rst_sf_err(&self) -> super::vals::RstSfErr {
+    pub const fn rst_sf_err(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::RstSfErr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ECC Single Fault during Reset Recovery"]
     #[inline(always)]
-    pub const fn set_rst_sf_err(&mut self, val: super::vals::RstSfErr) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_rst_sf_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "ECC Double Fault during Reset Recovery"]
     #[must_use]
     #[inline(always)]
-    pub const fn rst_df_err(&self) -> super::vals::RstDfErr {
+    pub const fn rst_df_err(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::RstDfErr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ECC Double Fault during Reset Recovery"]
     #[inline(always)]
-    pub const fn set_rst_df_err(&mut self, val: super::vals::RstDfErr) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_rst_df_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "ECC Double Fault during load of SoC Trim phrases"]
     #[must_use]
@@ -5374,14 +5374,14 @@ impl ResetStatus {
     #[doc = "Reset Patch Required"]
     #[must_use]
     #[inline(always)]
-    pub const fn rst_patch_ld(&self) -> super::vals::RstPatchLd {
+    pub const fn rst_patch_ld(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::RstPatchLd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reset Patch Required"]
     #[inline(always)]
-    pub const fn set_rst_patch_ld(&mut self, val: super::vals::RstPatchLd) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_rst_patch_ld(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Recall Data Mismatch"]
     #[must_use]
@@ -5426,7 +5426,7 @@ impl defmt::Format for ResetStatus {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "ResetStatus {{ ary_trim_done: {:?}, fmu_parm_en: {:?}, fmu_parm_done: {:?}, soc_trim_en: {:?}, soc_trim_ecc: {:?}, soc_trim_done: {:?}, rpr_done: {:?}, init_done: {:?}, rst_sf_err: {:?}, rst_df_err: {:?}, soc_trim_df_err: {=u8:?}, rst_patch_ld: {:?}, recall_data_mismatch: {:?} }}",
+            "ResetStatus {{ ary_trim_done: {:?}, fmu_parm_en: {=bool:?}, fmu_parm_done: {:?}, soc_trim_en: {=bool:?}, soc_trim_ecc: {:?}, soc_trim_done: {:?}, rpr_done: {:?}, init_done: {:?}, rst_sf_err: {=bool:?}, rst_df_err: {=bool:?}, soc_trim_df_err: {=u8:?}, rst_patch_ld: {=bool:?}, recall_data_mismatch: {:?} }}",
             self.ary_trim_done(),
             self.fmu_parm_en(),
             self.fmu_parm_done(),
@@ -5500,14 +5500,14 @@ impl SmwCmdWait {
     #[doc = "SMW Wait Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn wait_en(&self) -> super::vals::WaitEn {
+    pub const fn wait_en(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::WaitEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "SMW Wait Enable"]
     #[inline(always)]
-    pub const fn set_wait_en(&mut self, val: super::vals::WaitEn) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_wait_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "SMW Wait Auto Set"]
     #[must_use]
@@ -5542,7 +5542,7 @@ impl defmt::Format for SmwCmdWait {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "SmwCmdWait {{ cmd: {:?}, wait_en: {:?}, wait_auto_set: {=bool:?} }}",
+            "SmwCmdWait {{ cmd: {:?}, wait_en: {=bool:?}, wait_auto_set: {=bool:?} }}",
             self.cmd(),
             self.wait_en(),
             self.wait_auto_set()

@@ -1,37 +1,6 @@
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Por {
-    #[doc = "Reset is not the result of a power on reset."]
-    POR_0 = 0x0,
-    #[doc = "Reset is the result of a power on reset."]
-    POR_1 = 0x01,
-}
-impl Por {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Por {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Por {
-    #[inline(always)]
-    fn from(val: u8) -> Por {
-        Por::from_bits(val)
-    }
-}
-impl From<Por> for u8 {
-    #[inline(always)]
-    fn from(val: Por) -> u8 {
-        Por::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sftw {
     #[doc = "Reset is not the result of a software reset."]
     SFTW_0 = 0x0,

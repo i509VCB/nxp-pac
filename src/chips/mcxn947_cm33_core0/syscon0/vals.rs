@@ -2109,37 +2109,6 @@ impl From<FcclkselSel> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum FlashStallEn {
-    #[doc = "No stall on FLASH busy"]
-    ENABLE = 0x0,
-    #[doc = "Stall on FLASH busy"]
-    DISABLE = 0x01,
-}
-impl FlashStallEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> FlashStallEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for FlashStallEn {
-    #[inline(always)]
-    fn from(val: u8) -> FlashStallEn {
-        FlashStallEn::from_bits(val)
-    }
-}
-impl From<FlashStallEn> for u8 {
-    #[inline(always)]
-    fn from(val: FlashStallEn) -> u8 {
-        FlashStallEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FlexSpiclkselSel {
     #[doc = "No clock"]
     ENUM0 = 0x0,
