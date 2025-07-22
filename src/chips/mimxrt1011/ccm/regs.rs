@@ -1953,14 +1953,14 @@ impl Ccosr {
     #[doc = "Enable of CCM_CLKO1 clock"]
     #[must_use]
     #[inline(always)]
-    pub const fn clko1_en(&self) -> super::vals::Clko1En {
+    pub const fn clko1_en(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Clko1En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable of CCM_CLKO1 clock"]
     #[inline(always)]
-    pub const fn set_clko1_en(&mut self, val: super::vals::Clko1En) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_clko1_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "CCM_CLKO1 output to reflect CCM_CLKO1 or CCM_CLKO2 clocks"]
     #[must_use]
@@ -2001,14 +2001,14 @@ impl Ccosr {
     #[doc = "Enable of CCM_CLKO2 clock"]
     #[must_use]
     #[inline(always)]
-    pub const fn clko2_en(&self) -> super::vals::Clko2En {
+    pub const fn clko2_en(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::Clko2En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable of CCM_CLKO2 clock"]
     #[inline(always)]
-    pub const fn set_clko2_en(&mut self, val: super::vals::Clko2En) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_clko2_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
 }
 impl Default for Ccosr {
@@ -2035,7 +2035,7 @@ impl defmt::Format for Ccosr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ccosr {{ clko1_sel: {:?}, clko1_div: {:?}, clko1_en: {:?}, clk_out_sel: {:?}, clko2_sel: {:?}, clko2_div: {:?}, clko2_en: {:?} }}",
+            "Ccosr {{ clko1_sel: {:?}, clko1_div: {:?}, clko1_en: {=bool:?}, clk_out_sel: {:?}, clko2_sel: {:?}, clko2_div: {:?}, clko2_en: {=bool:?} }}",
             self.clko1_sel(),
             self.clko1_div(),
             self.clko1_en(),
@@ -2066,14 +2066,14 @@ impl Ccr {
     #[doc = "On chip oscillator enable bit - this bit value is reflected on the output cosc_en"]
     #[must_use]
     #[inline(always)]
-    pub const fn cosc_en(&self) -> super::vals::CoscEn {
+    pub const fn cosc_en(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::CoscEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "On chip oscillator enable bit - this bit value is reflected on the output cosc_en"]
     #[inline(always)]
-    pub const fn set_cosc_en(&mut self, val: super::vals::CoscEn) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_cosc_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Counter for analog_reg_bypass signal assertion after standby voltage request by PMIC_STBY_REQ"]
     #[must_use]
@@ -2090,14 +2090,14 @@ impl Ccr {
     #[doc = "Enable for REG_BYPASS_COUNTER"]
     #[must_use]
     #[inline(always)]
-    pub const fn rbc_en(&self) -> super::vals::RbcEn {
+    pub const fn rbc_en(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::RbcEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable for REG_BYPASS_COUNTER"]
     #[inline(always)]
-    pub const fn set_rbc_en(&mut self, val: super::vals::RbcEn) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_rbc_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
 }
 impl Default for Ccr {
@@ -2121,7 +2121,7 @@ impl defmt::Format for Ccr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ccr {{ oscnt: {=u8:?}, cosc_en: {:?}, reg_bypass_count: {:?}, rbc_en: {:?} }}",
+            "Ccr {{ oscnt: {=u8:?}, cosc_en: {=bool:?}, reg_bypass_count: {:?}, rbc_en: {=bool:?} }}",
             self.oscnt(),
             self.cosc_en(),
             self.reg_bypass_count(),
@@ -2330,26 +2330,26 @@ impl Cgpr {
     #[doc = "Defines clock dividion of clock for stby_count (pmic delay counter)"]
     #[must_use]
     #[inline(always)]
-    pub const fn pmic_delay_scaler(&self) -> super::vals::PmicDelayScaler {
+    pub const fn pmic_delay_scaler(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::PmicDelayScaler::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Defines clock dividion of clock for stby_count (pmic delay counter)"]
     #[inline(always)]
-    pub const fn set_pmic_delay_scaler(&mut self, val: super::vals::PmicDelayScaler) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_pmic_delay_scaler(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Defines the value of the output signal cgpr_dout\\[4\\]. Gate of program supply for efuse programing"]
     #[must_use]
     #[inline(always)]
-    pub const fn efuse_prog_supply_gate(&self) -> super::vals::EfuseProgSupplyGate {
+    pub const fn efuse_prog_supply_gate(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::EfuseProgSupplyGate::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Defines the value of the output signal cgpr_dout\\[4\\]. Gate of program supply for efuse programing"]
     #[inline(always)]
-    pub const fn set_efuse_prog_supply_gate(&mut self, val: super::vals::EfuseProgSupplyGate) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_efuse_prog_supply_gate(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "System memory DS control"]
     #[must_use]
@@ -2366,26 +2366,26 @@ impl Cgpr {
     #[doc = "Fast PLL enable."]
     #[must_use]
     #[inline(always)]
-    pub const fn fpl(&self) -> super::vals::Fpl {
+    pub const fn fpl(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Fpl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fast PLL enable."]
     #[inline(always)]
-    pub const fn set_fpl(&mut self, val: super::vals::Fpl) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_fpl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Control for the Deep Sleep signal to the Arm Platform memories with additional control logic based on the Arm WFI signal"]
     #[must_use]
     #[inline(always)]
-    pub const fn int_mem_clk_lpm(&self) -> super::vals::IntMemClkLpm {
+    pub const fn int_mem_clk_lpm(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::IntMemClkLpm::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Control for the Deep Sleep signal to the Arm Platform memories with additional control logic based on the Arm WFI signal"]
     #[inline(always)]
-    pub const fn set_int_mem_clk_lpm(&mut self, val: super::vals::IntMemClkLpm) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_int_mem_clk_lpm(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
 }
 impl Default for Cgpr {
@@ -2410,7 +2410,7 @@ impl defmt::Format for Cgpr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cgpr {{ pmic_delay_scaler: {:?}, efuse_prog_supply_gate: {:?}, sys_mem_ds_ctrl: {:?}, fpl: {:?}, int_mem_clk_lpm: {:?} }}",
+            "Cgpr {{ pmic_delay_scaler: {=bool:?}, efuse_prog_supply_gate: {=bool:?}, sys_mem_ds_ctrl: {:?}, fpl: {=bool:?}, int_mem_clk_lpm: {=bool:?} }}",
             self.pmic_delay_scaler(),
             self.efuse_prog_supply_gate(),
             self.sys_mem_ds_ctrl(),
@@ -2427,77 +2427,74 @@ impl Cimr {
     #[doc = "mask interrupt generation due to lrf of PLLs"]
     #[must_use]
     #[inline(always)]
-    pub const fn mask_lrf_pll(&self) -> super::vals::MaskLrfPll {
+    pub const fn mask_lrf_pll(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::MaskLrfPll::from_bits(val as u8)
+        val != 0
     }
     #[doc = "mask interrupt generation due to lrf of PLLs"]
     #[inline(always)]
-    pub const fn set_mask_lrf_pll(&mut self, val: super::vals::MaskLrfPll) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_mask_lrf_pll(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "mask interrupt generation due to on board oscillator ready"]
     #[must_use]
     #[inline(always)]
-    pub const fn mask_cosc_ready(&self) -> super::vals::MaskCoscReady {
+    pub const fn mask_cosc_ready(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::MaskCoscReady::from_bits(val as u8)
+        val != 0
     }
     #[doc = "mask interrupt generation due to on board oscillator ready"]
     #[inline(always)]
-    pub const fn set_mask_cosc_ready(&mut self, val: super::vals::MaskCoscReady) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_mask_cosc_ready(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "mask interrupt generation due to update of flexspi_podf"]
     #[must_use]
     #[inline(always)]
-    pub const fn mask_flexspi_podf_loaded(&self) -> super::vals::MaskFlexspiPodfLoaded {
+    pub const fn mask_flexspi_podf_loaded(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::MaskFlexspiPodfLoaded::from_bits(val as u8)
+        val != 0
     }
     #[doc = "mask interrupt generation due to update of flexspi_podf"]
     #[inline(always)]
-    pub const fn set_mask_flexspi_podf_loaded(&mut self, val: super::vals::MaskFlexspiPodfLoaded) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_mask_flexspi_podf_loaded(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "mask interrupt generation due to update of perclk_podf"]
     #[must_use]
     #[inline(always)]
-    pub const fn mask_perclk_podf_loaded(&self) -> super::vals::MaskPerclkPodfLoaded {
+    pub const fn mask_perclk_podf_loaded(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::MaskPerclkPodfLoaded::from_bits(val as u8)
+        val != 0
     }
     #[doc = "mask interrupt generation due to update of perclk_podf"]
     #[inline(always)]
-    pub const fn set_mask_perclk_podf_loaded(&mut self, val: super::vals::MaskPerclkPodfLoaded) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_mask_perclk_podf_loaded(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "mask interrupt generation due to frequency change of ahb_podf"]
     #[must_use]
     #[inline(always)]
-    pub const fn mask_ahb_podf_loaded(&self) -> super::vals::MaskAhbPodfLoaded {
+    pub const fn mask_ahb_podf_loaded(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::MaskAhbPodfLoaded::from_bits(val as u8)
+        val != 0
     }
     #[doc = "mask interrupt generation due to frequency change of ahb_podf"]
     #[inline(always)]
-    pub const fn set_mask_ahb_podf_loaded(&mut self, val: super::vals::MaskAhbPodfLoaded) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_mask_ahb_podf_loaded(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "mask interrupt generation due to update of periph_clk_sel."]
     #[must_use]
     #[inline(always)]
-    pub const fn mask_periph_clk_sel_loaded(&self) -> super::vals::MaskPeriphClkSelLoaded {
+    pub const fn mask_periph_clk_sel_loaded(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::MaskPeriphClkSelLoaded::from_bits(val as u8)
+        val != 0
     }
     #[doc = "mask interrupt generation due to update of periph_clk_sel."]
     #[inline(always)]
-    pub const fn set_mask_periph_clk_sel_loaded(
-        &mut self,
-        val: super::vals::MaskPeriphClkSelLoaded,
-    ) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_mask_periph_clk_sel_loaded(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
 }
 impl Default for Cimr {
@@ -2526,7 +2523,7 @@ impl defmt::Format for Cimr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cimr {{ mask_lrf_pll: {:?}, mask_cosc_ready: {:?}, mask_flexspi_podf_loaded: {:?}, mask_perclk_podf_loaded: {:?}, mask_ahb_podf_loaded: {:?}, mask_periph_clk_sel_loaded: {:?} }}",
+            "Cimr {{ mask_lrf_pll: {=bool:?}, mask_cosc_ready: {=bool:?}, mask_flexspi_podf_loaded: {=bool:?}, mask_perclk_podf_loaded: {=bool:?}, mask_ahb_podf_loaded: {=bool:?}, mask_periph_clk_sel_loaded: {=bool:?} }}",
             self.mask_lrf_pll(),
             self.mask_cosc_ready(),
             self.mask_flexspi_podf_loaded(),
@@ -2667,50 +2664,50 @@ impl Clpcr {
     #[doc = "Define if Arm clocks (arm_clk, soc_mxclk, soc_pclk, soc_dbg_pclk, vl_wrck) will be disabled on wait mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn arm_clk_dis_on_lpm(&self) -> super::vals::ArmClkDisOnLpm {
+    pub const fn arm_clk_dis_on_lpm(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::ArmClkDisOnLpm::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Define if Arm clocks (arm_clk, soc_mxclk, soc_pclk, soc_dbg_pclk, vl_wrck) will be disabled on wait mode"]
     #[inline(always)]
-    pub const fn set_arm_clk_dis_on_lpm(&mut self, val: super::vals::ArmClkDisOnLpm) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_arm_clk_dis_on_lpm(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Standby clock oscillator bit"]
     #[must_use]
     #[inline(always)]
-    pub const fn sbyos(&self) -> super::vals::Sbyos {
+    pub const fn sbyos(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Sbyos::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Standby clock oscillator bit"]
     #[inline(always)]
-    pub const fn set_sbyos(&mut self, val: super::vals::Sbyos) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_sbyos(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "dis_ref_osc - in run mode, software can manually control closing of external reference oscillator clock, i"]
     #[must_use]
     #[inline(always)]
-    pub const fn dis_ref_osc(&self) -> super::vals::DisRefOsc {
+    pub const fn dis_ref_osc(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::DisRefOsc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "dis_ref_osc - in run mode, software can manually control closing of external reference oscillator clock, i"]
     #[inline(always)]
-    pub const fn set_dis_ref_osc(&mut self, val: super::vals::DisRefOsc) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_dis_ref_osc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Voltage standby request bit"]
     #[must_use]
     #[inline(always)]
-    pub const fn vstby(&self) -> super::vals::Vstby {
+    pub const fn vstby(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Vstby::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Voltage standby request bit"]
     #[inline(always)]
-    pub const fn set_vstby(&mut self, val: super::vals::Vstby) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_vstby(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Standby counter definition"]
     #[must_use]
@@ -2727,50 +2724,50 @@ impl Clpcr {
     #[doc = "In run mode, software can manually control powering down of on chip oscillator, i"]
     #[must_use]
     #[inline(always)]
-    pub const fn cosc_pwrdown(&self) -> super::vals::CoscPwrdown {
+    pub const fn cosc_pwrdown(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::CoscPwrdown::from_bits(val as u8)
+        val != 0
     }
     #[doc = "In run mode, software can manually control powering down of on chip oscillator, i"]
     #[inline(always)]
-    pub const fn set_cosc_pwrdown(&mut self, val: super::vals::CoscPwrdown) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_cosc_pwrdown(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Mask WFI of core0 for entering low power mode Assertion of all bits\\[27:22\\] will generate low power mode request"]
     #[must_use]
     #[inline(always)]
-    pub const fn mask_core0_wfi(&self) -> super::vals::MaskCore0Wfi {
+    pub const fn mask_core0_wfi(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::MaskCore0Wfi::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Mask WFI of core0 for entering low power mode Assertion of all bits\\[27:22\\] will generate low power mode request"]
     #[inline(always)]
-    pub const fn set_mask_core0_wfi(&mut self, val: super::vals::MaskCore0Wfi) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_mask_core0_wfi(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "Mask SCU IDLE for entering low power mode Assertion of all bits\\[27:22\\] will generate low power mode request"]
     #[must_use]
     #[inline(always)]
-    pub const fn mask_scu_idle(&self) -> super::vals::MaskScuIdle {
+    pub const fn mask_scu_idle(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::MaskScuIdle::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Mask SCU IDLE for entering low power mode Assertion of all bits\\[27:22\\] will generate low power mode request"]
     #[inline(always)]
-    pub const fn set_mask_scu_idle(&mut self, val: super::vals::MaskScuIdle) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_mask_scu_idle(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "Mask L2CC IDLE for entering low power mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn mask_l2cc_idle(&self) -> super::vals::MaskL2ccIdle {
+    pub const fn mask_l2cc_idle(&self) -> bool {
         let val = (self.0 >> 27usize) & 0x01;
-        super::vals::MaskL2ccIdle::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Mask L2CC IDLE for entering low power mode"]
     #[inline(always)]
-    pub const fn set_mask_l2cc_idle(&mut self, val: super::vals::MaskL2ccIdle) {
-        self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+    pub const fn set_mask_l2cc_idle(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
     }
 }
 impl Default for Clpcr {
@@ -2800,7 +2797,7 @@ impl defmt::Format for Clpcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Clpcr {{ lpm: {:?}, arm_clk_dis_on_lpm: {:?}, sbyos: {:?}, dis_ref_osc: {:?}, vstby: {:?}, stby_count: {:?}, cosc_pwrdown: {:?}, mask_core0_wfi: {:?}, mask_scu_idle: {:?}, mask_l2cc_idle: {:?} }}",
+            "Clpcr {{ lpm: {:?}, arm_clk_dis_on_lpm: {=bool:?}, sbyos: {=bool:?}, dis_ref_osc: {=bool:?}, vstby: {=bool:?}, stby_count: {:?}, cosc_pwrdown: {=bool:?}, mask_core0_wfi: {=bool:?}, mask_scu_idle: {=bool:?}, mask_l2cc_idle: {=bool:?} }}",
             self.lpm(),
             self.arm_clk_dis_on_lpm(),
             self.sbyos(),
@@ -2822,38 +2819,38 @@ impl Cmeor {
     #[doc = "Overide clock enable signal from GPT - clock will not be gated based on GPT's signal 'ipg_enable_clk'"]
     #[must_use]
     #[inline(always)]
-    pub const fn mod_en_ov_gpt(&self) -> super::vals::ModEnOvGpt {
+    pub const fn mod_en_ov_gpt(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::ModEnOvGpt::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Overide clock enable signal from GPT - clock will not be gated based on GPT's signal 'ipg_enable_clk'"]
     #[inline(always)]
-    pub const fn set_mod_en_ov_gpt(&mut self, val: super::vals::ModEnOvGpt) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_mod_en_ov_gpt(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Overide clock enable signal from PIT - clock will not be gated based on PIT's signal 'ipg_enable_clk'"]
     #[must_use]
     #[inline(always)]
-    pub const fn mod_en_ov_pit(&self) -> super::vals::ModEnOvPit {
+    pub const fn mod_en_ov_pit(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::ModEnOvPit::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Overide clock enable signal from PIT - clock will not be gated based on PIT's signal 'ipg_enable_clk'"]
     #[inline(always)]
-    pub const fn set_mod_en_ov_pit(&mut self, val: super::vals::ModEnOvPit) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_mod_en_ov_pit(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Overide clock enable signal from TRNG"]
     #[must_use]
     #[inline(always)]
-    pub const fn mod_en_ov_trng(&self) -> super::vals::ModEnOvTrng {
+    pub const fn mod_en_ov_trng(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::ModEnOvTrng::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Overide clock enable signal from TRNG"]
     #[inline(always)]
-    pub const fn set_mod_en_ov_trng(&mut self, val: super::vals::ModEnOvTrng) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_mod_en_ov_trng(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
 }
 impl Default for Cmeor {
@@ -2876,7 +2873,7 @@ impl defmt::Format for Cmeor {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cmeor {{ mod_en_ov_gpt: {:?}, mod_en_ov_pit: {:?}, mod_en_ov_trng: {:?} }}",
+            "Cmeor {{ mod_en_ov_gpt: {=bool:?}, mod_en_ov_pit: {=bool:?}, mod_en_ov_trng: {=bool:?} }}",
             self.mod_en_ov_gpt(),
             self.mod_en_ov_pit(),
             self.mod_en_ov_trng()
@@ -3275,14 +3272,14 @@ impl Cscmr2 {
     #[doc = "Enable ADC alt_clk, so that ADC alt_clk can be driven be divided pll3_sw_clk."]
     #[must_use]
     #[inline(always)]
-    pub const fn adc_aclk_en(&self) -> super::vals::AdcAclkEn {
+    pub const fn adc_aclk_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::AdcAclkEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable ADC alt_clk, so that ADC alt_clk can be driven be divided pll3_sw_clk."]
     #[inline(always)]
-    pub const fn set_adc_aclk_en(&mut self, val: super::vals::AdcAclkEn) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_adc_aclk_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Cscmr2 {
@@ -3305,7 +3302,7 @@ impl defmt::Format for Cscmr2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cscmr2 {{ flexio1_clk_sel: {:?}, adc_aclk_podf: {:?}, adc_aclk_en: {:?} }}",
+            "Cscmr2 {{ flexio1_clk_sel: {:?}, adc_aclk_podf: {:?}, adc_aclk_en: {=bool:?} }}",
             self.flexio1_clk_sel(),
             self.adc_aclk_podf(),
             self.adc_aclk_en()

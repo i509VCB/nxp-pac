@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: semc::vals::(Axibuserren|Axicmderren|Bm0|Bm1|Bm2|Bm3|Dbicr0Ps|Dllen|Dllreset|Dqsmd|Edo|Ipcmddoneen|Ipcmderren|Mdis|MuxClkx0|MuxClkx1|Nandcr0Ps|Nandcr0Syncen|Ndnopenden|Ndpageenden|Norcr0Advh|Norcr0Advp|Norcr0Ps|Norcr0Syncen|Ovrden|Reflock|Ren|Sdramcr0Ps|Slvlock|Sramcr0Advh|Sramcr0Advp|Sramcr0Ps|Sramcr0Syncen|Swrst|Vld|Wpol0|Wpol1)
+    bit_size: 1

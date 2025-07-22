@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: vbat\d*::vals::ModeEn
+    bit_size: 1

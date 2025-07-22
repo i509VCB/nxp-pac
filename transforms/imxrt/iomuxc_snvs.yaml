@@ -1,0 +1,7 @@
+# Boolean enum transforms for IOMUXC_SNVS peripheral
+# Converts single-bit enums with _0/_1 patterns to proper boolean types
+
+transforms:
+  - !DeleteEnums
+    from: iomuxc_snvs::vals::SwPadCtlPad(Onoff|PmicOnReq|PorB|TestMode)(Hys|Ode|Pke|Pue|Sre)
+    bit_size: 1

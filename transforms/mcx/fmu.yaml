@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: fmu\d*test::vals::(RstDfErr|RstPatchLd|RstSfErr|BistEccEn|CpyParEn|CpyPhraseEn|FmuParmEn|LsactEn|MasterRepairEn|MisrEn|PdTimerEn|SocTrimEn|WaitEn|WrPathEccEn|WrPathEn)
+    bit_size: 1

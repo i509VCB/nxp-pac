@@ -3561,14 +3561,14 @@ impl Ctrl {
     #[doc = "Software Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn rst(&self) -> super::vals::Rst {
+    pub const fn rst(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Rst::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software Reset"]
     #[inline(always)]
-    pub const fn set_rst(&mut self, val: super::vals::Rst) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_rst(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Doze Enable"]
     #[must_use]
@@ -3609,26 +3609,26 @@ impl Ctrl {
     #[doc = "Reset FIFO 0"]
     #[must_use]
     #[inline(always)]
-    pub const fn rstfifo0(&self) -> super::vals::Rstfifo0 {
+    pub const fn rstfifo0(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Rstfifo0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reset FIFO 0"]
     #[inline(always)]
-    pub const fn set_rstfifo0(&mut self, val: super::vals::Rstfifo0) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_rstfifo0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Reset FIFO 1"]
     #[must_use]
     #[inline(always)]
-    pub const fn rstfifo1(&self) -> super::vals::Rstfifo1 {
+    pub const fn rstfifo1(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Rstfifo1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reset FIFO 1"]
     #[inline(always)]
-    pub const fn set_rstfifo1(&mut self, val: super::vals::Rstfifo1) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_rstfifo1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "Auto-Calibration Averages"]
     #[must_use]
@@ -3668,7 +3668,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ adcen: {=bool:?}, rst: {:?}, dozen: {:?}, cal_req: {:?}, calofs: {:?}, rstfifo0: {:?}, rstfifo1: {:?}, cal_avgs: {:?} }}",
+            "Ctrl {{ adcen: {=bool:?}, rst: {=bool:?}, dozen: {:?}, cal_req: {:?}, calofs: {:?}, rstfifo0: {=bool:?}, rstfifo1: {=bool:?}, cal_avgs: {:?} }}",
             self.adcen(),
             self.rst(),
             self.dozen(),

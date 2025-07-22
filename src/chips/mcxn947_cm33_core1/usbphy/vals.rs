@@ -716,68 +716,6 @@ impl From<Envadj> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum ExtIdOverrideEn {
-    #[doc = "Internal detector or local override"]
-    USE_PHY_ID = 0x0,
-    #[doc = "External ID signal value"]
-    USE_EXT_ID = 0x01,
-}
-impl ExtIdOverrideEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> ExtIdOverrideEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for ExtIdOverrideEn {
-    #[inline(always)]
-    fn from(val: u8) -> ExtIdOverrideEn {
-        ExtIdOverrideEn::from_bits(val)
-    }
-}
-impl From<ExtIdOverrideEn> for u8 {
-    #[inline(always)]
-    fn from(val: ExtIdOverrideEn) -> u8 {
-        ExtIdOverrideEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum ExtVbusOverrideEn {
-    #[doc = "Internal detector or local override"]
-    USE_PHY_VBUS = 0x0,
-    #[doc = "External VBUS_VALID value"]
-    USB_EXT_VBUS = 0x01,
-}
-impl ExtVbusOverrideEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> ExtVbusOverrideEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for ExtVbusOverrideEn {
-    #[inline(always)]
-    fn from(val: u8) -> ExtVbusOverrideEn {
-        ExtVbusOverrideEn::from_bits(val)
-    }
-}
-impl From<ExtVbusOverrideEn> for u8 {
-    #[inline(always)]
-    fn from(val: ExtVbusOverrideEn) -> u8 {
-        ExtVbusOverrideEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HostdiscondetectIrq {
     #[doc = "Connected"]
     CONNECTED = 0x0,
@@ -837,68 +775,6 @@ impl From<Hstpulldown> for u8 {
     #[inline(always)]
     fn from(val: Hstpulldown) -> u8 {
         Hstpulldown::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum IdOverrideEn {
-    #[doc = "Use ID pin detector or external override"]
-    NO_PHY_ID_OVERRIDE = 0x0,
-    #[doc = "Allow local override of ID pin detection status"]
-    USE_PHY_ID_OVERRIDE = 0x01,
-}
-impl IdOverrideEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> IdOverrideEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for IdOverrideEn {
-    #[inline(always)]
-    fn from(val: u8) -> IdOverrideEn {
-        IdOverrideEn::from_bits(val)
-    }
-}
-impl From<IdOverrideEn> for u8 {
-    #[inline(always)]
-    fn from(val: IdOverrideEn) -> u8 {
-        IdOverrideEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum LviEn {
-    #[doc = "Disable"]
-    LVI_3V_DISABLE = 0x0,
-    #[doc = "Enable"]
-    LVI_3V_ENABLE = 0x01,
-}
-impl LviEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> LviEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for LviEn {
-    #[inline(always)]
-    fn from(val: u8) -> LviEn {
-        LviEn::from_bits(val)
-    }
-}
-impl From<LviEn> for u8 {
-    #[inline(always)]
-    fn from(val: LviEn) -> u8 {
-        LviEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1890,37 +1766,6 @@ impl From<UsbphyTxDCal> for u8 {
     #[inline(always)]
     fn from(val: UsbphyTxDCal) -> u8 {
         UsbphyTxDCal::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum VbusOverrideEn {
-    #[doc = "Results of VBUS_VALID and session valid comparators for VBUS_VALID, AVALID, BVALID, and SESSEND"]
-    VBUS_NO_OVERRIDE = 0x0,
-    #[doc = "Override values for VBUS_VALID, AVALID, BVALID, and SESSEND"]
-    VBUS_OVERRIDE = 0x01,
-}
-impl VbusOverrideEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> VbusOverrideEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for VbusOverrideEn {
-    #[inline(always)]
-    fn from(val: u8) -> VbusOverrideEn {
-        VbusOverrideEn::from_bits(val)
-    }
-}
-impl From<VbusOverrideEn> for u8 {
-    #[inline(always)]
-    fn from(val: VbusOverrideEn) -> u8 {
-        VbusOverrideEn::to_bits(val)
     }
 }
 #[repr(u8)]

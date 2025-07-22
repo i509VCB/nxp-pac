@@ -156,37 +156,6 @@ impl From<Icompen> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum LpbgBufEn {
-    #[doc = "Disables"]
-    DIS = 0x0,
-    #[doc = "Enables"]
-    ENA = 0x01,
-}
-impl LpbgBufEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> LpbgBufEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for LpbgBufEn {
-    #[inline(always)]
-    fn from(val: u8) -> LpbgBufEn {
-        LpbgBufEn::from_bits(val)
-    }
-}
-impl From<LpbgBufEn> for u8 {
-    #[inline(always)]
-    fn from(val: LpbgBufEn) -> u8 {
-        LpbgBufEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpbgen {
     #[doc = "Disables"]
     DIS = 0x0,

@@ -54,14 +54,14 @@ impl Baud {
     #[doc = "Resynchronization Disable"]
     #[must_use]
     #[inline(always)]
-    pub const fn resyncdis(&self) -> super::vals::Resyncdis {
+    pub const fn resyncdis(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Resyncdis::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Resynchronization Disable"]
     #[inline(always)]
-    pub const fn set_resyncdis(&mut self, val: super::vals::Resyncdis) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_resyncdis(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Both Edge Sampling"]
     #[must_use]
@@ -190,7 +190,7 @@ impl defmt::Format for Baud {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Baud {{ sbr: {=u16:?}, sbns: {:?}, rxedgie: {=bool:?}, lbkdie: {=bool:?}, resyncdis: {:?}, bothedge: {=bool:?}, matcfg: {:?}, rdmae: {=bool:?}, tdmae: {=bool:?}, osr: {:?}, m10: {=bool:?}, maen2: {=bool:?}, maen1: {=bool:?} }}",
+            "Baud {{ sbr: {=u16:?}, sbns: {:?}, rxedgie: {=bool:?}, lbkdie: {=bool:?}, resyncdis: {=bool:?}, bothedge: {=bool:?}, matcfg: {:?}, rdmae: {=bool:?}, tdmae: {=bool:?}, osr: {:?}, m10: {=bool:?}, maen2: {=bool:?}, maen1: {=bool:?} }}",
             self.sbr(),
             self.sbns(),
             self.rxedgie(),
@@ -287,14 +287,14 @@ impl Ctrl {
     #[doc = "Doze Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dozeen(&self) -> super::vals::Dozeen {
+    pub const fn dozeen(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Dozeen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Doze Enable"]
     #[inline(always)]
-    pub const fn set_dozeen(&mut self, val: super::vals::Dozeen) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_dozeen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Loop Mode Select"]
     #[must_use]
@@ -359,14 +359,14 @@ impl Ctrl {
     #[doc = "Send Break"]
     #[must_use]
     #[inline(always)]
-    pub const fn sbk(&self) -> super::vals::Sbk {
+    pub const fn sbk(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Sbk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Send Break"]
     #[inline(always)]
-    pub const fn set_sbk(&mut self, val: super::vals::Sbk) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_sbk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Receiver Wakeup Control"]
     #[must_use]
@@ -594,7 +594,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ pt: {:?}, pe: {=bool:?}, ilt: {:?}, wake: {:?}, m: {:?}, rsrc: {:?}, dozeen: {:?}, loops: {:?}, idlecfg: {:?}, m7: {:?}, ma2ie: {=bool:?}, ma1ie: {=bool:?}, sbk: {:?}, rwu: {:?}, re: {=bool:?}, te: {=bool:?}, ilie: {=bool:?}, rie: {=bool:?}, tcie: {=bool:?}, tie: {=bool:?}, peie: {=bool:?}, feie: {=bool:?}, neie: {=bool:?}, orie: {=bool:?}, txinv: {=bool:?}, txdir: {:?}, r9t8: {=bool:?}, r8t9: {=bool:?} }}",
+            "Ctrl {{ pt: {:?}, pe: {=bool:?}, ilt: {:?}, wake: {:?}, m: {:?}, rsrc: {:?}, dozeen: {=bool:?}, loops: {:?}, idlecfg: {:?}, m7: {:?}, ma2ie: {=bool:?}, ma1ie: {=bool:?}, sbk: {=bool:?}, rwu: {:?}, re: {=bool:?}, te: {=bool:?}, ilie: {=bool:?}, rie: {=bool:?}, tcie: {=bool:?}, tie: {=bool:?}, peie: {=bool:?}, feie: {=bool:?}, neie: {=bool:?}, orie: {=bool:?}, txinv: {=bool:?}, txdir: {:?}, r9t8: {=bool:?}, r8t9: {=bool:?} }}",
             self.pt(),
             self.pe(),
             self.ilt(),
@@ -955,26 +955,26 @@ impl Fifo {
     #[doc = "Receive FIFO Flush"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxflush(&self) -> super::vals::Rxflush {
+    pub const fn rxflush(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Rxflush::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Receive FIFO Flush"]
     #[inline(always)]
-    pub const fn set_rxflush(&mut self, val: super::vals::Rxflush) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_rxflush(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Transmit FIFO Flush"]
     #[must_use]
     #[inline(always)]
-    pub const fn txflush(&self) -> super::vals::Txflush {
+    pub const fn txflush(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Txflush::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Transmit FIFO Flush"]
     #[inline(always)]
-    pub const fn set_txflush(&mut self, val: super::vals::Txflush) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_txflush(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "Receiver FIFO Underflow Flag"]
     #[must_use]
@@ -1055,7 +1055,7 @@ impl defmt::Format for Fifo {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Fifo {{ rxfifosize: {:?}, rxfe: {=bool:?}, txfifosize: {:?}, txfe: {=bool:?}, rxufe: {=bool:?}, txofe: {=bool:?}, rxiden: {:?}, rxflush: {:?}, txflush: {:?}, rxuf: {=bool:?}, txof: {=bool:?}, rxempt: {=bool:?}, txempt: {=bool:?} }}",
+            "Fifo {{ rxfifosize: {:?}, rxfe: {=bool:?}, txfifosize: {:?}, txfe: {=bool:?}, rxufe: {=bool:?}, txofe: {=bool:?}, rxiden: {:?}, rxflush: {=bool:?}, txflush: {=bool:?}, rxuf: {=bool:?}, txof: {=bool:?}, rxempt: {=bool:?}, txempt: {=bool:?} }}",
             self.rxfifosize(),
             self.rxfe(),
             self.txfifosize(),
@@ -1080,14 +1080,14 @@ impl Global {
     #[doc = "Software Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn rst(&self) -> super::vals::Rst {
+    pub const fn rst(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Rst::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software Reset"]
     #[inline(always)]
-    pub const fn set_rst(&mut self, val: super::vals::Rst) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_rst(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
 }
 impl Default for Global {
@@ -1104,7 +1104,7 @@ impl core::fmt::Debug for Global {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Global {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Global {{ rst: {:?} }}", self.rst())
+        defmt::write!(f, "Global {{ rst: {=bool:?} }}", self.rst())
     }
 }
 #[doc = "LPUART Match Address Register"]
@@ -1194,14 +1194,14 @@ impl Modir {
     #[doc = "Transmitter request-to-send polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn txrtspol(&self) -> super::vals::Txrtspol {
+    pub const fn txrtspol(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Txrtspol::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Transmitter request-to-send polarity"]
     #[inline(always)]
-    pub const fn set_txrtspol(&mut self, val: super::vals::Txrtspol) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_txrtspol(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Receiver request-to-send enable"]
     #[must_use]
@@ -1218,26 +1218,26 @@ impl Modir {
     #[doc = "Transmit CTS Configuration"]
     #[must_use]
     #[inline(always)]
-    pub const fn txctsc(&self) -> super::vals::Txctsc {
+    pub const fn txctsc(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Txctsc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Transmit CTS Configuration"]
     #[inline(always)]
-    pub const fn set_txctsc(&mut self, val: super::vals::Txctsc) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_txctsc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Transmit CTS Source"]
     #[must_use]
     #[inline(always)]
-    pub const fn txctssrc(&self) -> super::vals::Txctssrc {
+    pub const fn txctssrc(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Txctssrc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Transmit CTS Source"]
     #[inline(always)]
-    pub const fn set_txctssrc(&mut self, val: super::vals::Txctssrc) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_txctssrc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Receive RTS Configuration"]
     #[must_use]
@@ -1302,7 +1302,7 @@ impl defmt::Format for Modir {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Modir {{ txctse: {=bool:?}, txrtse: {=bool:?}, txrtspol: {:?}, rxrtse: {=bool:?}, txctsc: {:?}, txctssrc: {:?}, rtswater: {=u8:?}, tnp: {:?}, iren: {=bool:?} }}",
+            "Modir {{ txctse: {=bool:?}, txrtse: {=bool:?}, txrtspol: {=bool:?}, rxrtse: {=bool:?}, txctsc: {=bool:?}, txctssrc: {=bool:?}, rtswater: {=u8:?}, tnp: {:?}, iren: {=bool:?} }}",
             self.txctse(),
             self.txrtse(),
             self.txrtspol(),
@@ -1511,38 +1511,38 @@ impl Stat {
     #[doc = "Transmission Complete Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tc(&self) -> super::vals::Tc {
+    pub const fn tc(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Tc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Transmission Complete Flag"]
     #[inline(always)]
-    pub const fn set_tc(&mut self, val: super::vals::Tc) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_tc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "Transmit Data Register Empty Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn tdre(&self) -> super::vals::Tdre {
+    pub const fn tdre(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Tdre::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Transmit Data Register Empty Flag"]
     #[inline(always)]
-    pub const fn set_tdre(&mut self, val: super::vals::Tdre) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_tdre(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
     #[doc = "Receiver Active Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn raf(&self) -> super::vals::Raf {
+    pub const fn raf(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::Raf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Receiver Active Flag"]
     #[inline(always)]
-    pub const fn set_raf(&mut self, val: super::vals::Raf) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_raf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "LIN Break Detection Enable"]
     #[must_use]
@@ -1559,14 +1559,14 @@ impl Stat {
     #[doc = "Break Character Generation Length"]
     #[must_use]
     #[inline(always)]
-    pub const fn brk13(&self) -> super::vals::Brk13 {
+    pub const fn brk13(&self) -> bool {
         let val = (self.0 >> 26usize) & 0x01;
-        super::vals::Brk13::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Break Character Generation Length"]
     #[inline(always)]
-    pub const fn set_brk13(&mut self, val: super::vals::Brk13) {
-        self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+    pub const fn set_brk13(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
     }
     #[doc = "Receive Wake Up Idle Detect"]
     #[must_use]
@@ -1595,14 +1595,14 @@ impl Stat {
     #[doc = "MSB First"]
     #[must_use]
     #[inline(always)]
-    pub const fn msbf(&self) -> super::vals::Msbf {
+    pub const fn msbf(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::Msbf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "MSB First"]
     #[inline(always)]
-    pub const fn set_msbf(&mut self, val: super::vals::Msbf) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_msbf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "RXD Pin Active Edge Interrupt Flag"]
     #[must_use]
@@ -1664,7 +1664,7 @@ impl defmt::Format for Stat {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Stat {{ ma2f: {=bool:?}, ma1f: {=bool:?}, pf: {=bool:?}, fe: {=bool:?}, nf: {=bool:?}, or: {=bool:?}, idle: {=bool:?}, rdrf: {=bool:?}, tc: {:?}, tdre: {:?}, raf: {:?}, lbkde: {=bool:?}, brk13: {:?}, rwuid: {:?}, rxinv: {=bool:?}, msbf: {:?}, rxedgif: {=bool:?}, lbkdif: {=bool:?} }}",
+            "Stat {{ ma2f: {=bool:?}, ma1f: {=bool:?}, pf: {=bool:?}, fe: {=bool:?}, nf: {=bool:?}, or: {=bool:?}, idle: {=bool:?}, rdrf: {=bool:?}, tc: {=bool:?}, tdre: {=bool:?}, raf: {=bool:?}, lbkde: {=bool:?}, brk13: {=bool:?}, rwuid: {:?}, rxinv: {=bool:?}, msbf: {=bool:?}, rxedgif: {=bool:?}, lbkdif: {=bool:?} }}",
             self.ma2f(),
             self.ma1f(),
             self.pf(),

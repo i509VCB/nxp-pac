@@ -187,37 +187,6 @@ impl From<Btserren> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum ClockRecoverEn {
-    #[doc = "Disable"]
-    DIS_CLK_RECOVER = 0x0,
-    #[doc = "Enable"]
-    EN_CLK_RECOVER = 0x01,
-}
-impl ClockRecoverEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> ClockRecoverEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for ClockRecoverEn {
-    #[inline(always)]
-    fn from(val: u8) -> ClockRecoverEn {
-        ClockRecoverEn::from_bits(val)
-    }
-}
-impl From<ClockRecoverEn> for u8 {
-    #[inline(always)]
-    fn from(val: ClockRecoverEn) -> u8 {
-        ClockRecoverEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Crc16 {
     #[doc = "Not rejected"]
     INT_NO = 0x0,
@@ -900,37 +869,6 @@ impl From<Hostwohub> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum IrcEn {
-    #[doc = "Disable"]
-    DIS_IRC = 0x0,
-    #[doc = "Enable"]
-    EN_IRC = 0x01,
-}
-impl IrcEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> IrcEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for IrcEn {
-    #[inline(always)]
-    fn from(val: u8) -> IrcEn {
-        IrcEn::from_bits(val)
-    }
-}
-impl From<IrcEn> for u8 {
-    #[inline(always)]
-    fn from(val: IrcEn) -> u8 {
-        IrcEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum KeepAliveSts {
     #[doc = "Not in Keep Alive mode"]
     KEEP_ALIVE_DIS_STAT = 0x0,
@@ -1210,37 +1148,6 @@ impl From<OvfError> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum OvfErrorEn {
-    #[doc = "The interrupt is masked"]
-    MASK_OVF_ERR_INT = 0x0,
-    #[doc = "The interrupt is enabled"]
-    EN_OVF_ERR_INT = 0x01,
-}
-impl OvfErrorEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> OvfErrorEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for OvfErrorEn {
-    #[inline(always)]
-    fn from(val: u8) -> OvfErrorEn {
-        OvfErrorEn::from_bits(val)
-    }
-}
-impl From<OvfErrorEn> for u8 {
-    #[inline(always)]
-    fn from(val: OvfErrorEn) -> u8 {
-        OvfErrorEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ownerr {
     #[doc = "Interrupt did not occur"]
     INT_NO = 0x0,
@@ -1422,68 +1329,6 @@ impl From<Piderren> for u8 {
     #[inline(always)]
     fn from(val: Piderren) -> u8 {
         Piderren::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum ResetResumeRoughEn {
-    #[doc = "Always works in tracking phase after the first time rough phase, to track transition."]
-    KEEP_TRIM_FINE_ON_RESET = 0x0,
-    #[doc = "Go back to rough stage whenever a bus reset or bus resume occurs."]
-    USE_IFR_TRIM_FINE_ON_RESET = 0x01,
-}
-impl ResetResumeRoughEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> ResetResumeRoughEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for ResetResumeRoughEn {
-    #[inline(always)]
-    fn from(val: u8) -> ResetResumeRoughEn {
-        ResetResumeRoughEn::from_bits(val)
-    }
-}
-impl From<ResetResumeRoughEn> for u8 {
-    #[inline(always)]
-    fn from(val: ResetResumeRoughEn) -> u8 {
-        ResetResumeRoughEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum RestartIfrtrimEn {
-    #[doc = "Trim fine adjustment always works based on the previous updated trim fine value."]
-    LOAD_TRIM_FINE_MID = 0x0,
-    #[doc = "Trim fine restarts from the IFR trim value whenever you detect bus_reset or bus_resume or deassert module enable."]
-    LOAD_TRIM_FINE_IFR = 0x01,
-}
-impl RestartIfrtrimEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> RestartIfrtrimEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for RestartIfrtrimEn {
-    #[inline(always)]
-    fn from(val: u8) -> RestartIfrtrimEn {
-        RestartIfrtrimEn::from_bits(val)
-    }
-}
-impl From<RestartIfrtrimEn> for u8 {
-    #[inline(always)]
-    fn from(val: RestartIfrtrimEn) -> u8 {
-        RestartIfrtrimEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -2853,68 +2698,6 @@ impl From<Stallen> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum StlAdjEn {
-    #[doc = "If ENDPTn\\[END_STALL\\] = 1, both IN and OUT directions for the associated endpoint stalls."]
-    STALL_BOTH_IN_OUT = 0x0,
-    #[doc = "If ENDPTn\\[END_STALL\\] = 1, the STALL_xx_DIS registers control which directions for the associated endpoint stalls."]
-    STALL_SINGLE_DIRECTION = 0x01,
-}
-impl StlAdjEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> StlAdjEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for StlAdjEn {
-    #[inline(always)]
-    fn from(val: u8) -> StlAdjEn {
-        StlAdjEn::from_bits(val)
-    }
-}
-impl From<StlAdjEn> for u8 {
-    #[inline(always)]
-    fn from(val: StlAdjEn) -> u8 {
-        StlAdjEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum StopAckDlyEn {
-    #[doc = "Enter KEEP_ALIVE mode immediately when there is no USB AHB transfer."]
-    ENTER_KEEP_ALIVE_ON_IDLE = 0x0,
-    #[doc = "Enter KEEP_ALIVE mode until the USB core is idle and there is no USB AHB transfer."]
-    ENTER_KEEP_ALIVE_IMMEDIATE = 0x01,
-}
-impl StopAckDlyEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> StopAckDlyEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for StopAckDlyEn {
-    #[inline(always)]
-    fn from(val: u8) -> StopAckDlyEn {
-        StopAckDlyEn::from_bits(val)
-    }
-}
-impl From<StopAckDlyEn> for u8 {
-    #[inline(always)]
-    fn from(val: StopAckDlyEn) -> u8 {
-        StopAckDlyEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Susp {
     #[doc = "Not in Suspend state"]
     XCVR_NOT_SUSPEND = 0x0,
@@ -3426,37 +3209,6 @@ impl From<VfedgDet> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum VfedgEn {
-    #[doc = "Disable"]
-    DIS_VREGIN_FE_INT = 0x0,
-    #[doc = "Enable"]
-    EN_VREGIN_FE_INT = 0x01,
-}
-impl VfedgEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> VfedgEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for VfedgEn {
-    #[inline(always)]
-    fn from(val: u8) -> VfedgEn {
-        VfedgEn::from_bits(val)
-    }
-}
-impl From<VfedgEn> for u8 {
-    #[inline(always)]
-    fn from(val: VfedgEn) -> u8 {
-        VfedgEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum VredgDet {
     #[doc = "Not detected"]
     NO_VREG_RE_INT = 0x0,
@@ -3483,37 +3235,6 @@ impl From<VredgDet> for u8 {
     #[inline(always)]
     fn from(val: VredgDet) -> u8 {
         VredgDet::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum VredgEn {
-    #[doc = "Disable"]
-    DIS_VREGIN_RE_INT = 0x0,
-    #[doc = "Enable"]
-    EN_VREGIN_RE_INT = 0x01,
-}
-impl VredgEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> VredgEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for VredgEn {
-    #[inline(always)]
-    fn from(val: u8) -> VredgEn {
-        VredgEn::from_bits(val)
-    }
-}
-impl From<VredgEn> for u8 {
-    #[inline(always)]
-    fn from(val: VredgEn) -> u8 {
-        VredgEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -3590,36 +3311,5 @@ impl From<WakeOnThis> for u8 {
     #[inline(always)]
     fn from(val: WakeOnThis) -> u8 {
         WakeOnThis::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum WakeReqEn {
-    #[doc = "Disable"]
-    DIS_WAKE_REQUEST = 0x0,
-    #[doc = "Enable"]
-    EN_WAKE_REQUEST = 0x01,
-}
-impl WakeReqEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> WakeReqEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for WakeReqEn {
-    #[inline(always)]
-    fn from(val: u8) -> WakeReqEn {
-        WakeReqEn::from_bits(val)
-    }
-}
-impl From<WakeReqEn> for u8 {
-    #[inline(always)]
-    fn from(val: WakeReqEn) -> u8 {
-        WakeReqEn::to_bits(val)
     }
 }

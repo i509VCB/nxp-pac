@@ -63,68 +63,6 @@ impl From<Tempsense0ClrPowerDown> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Tempsense0MeasureTemp {
-    #[doc = "Do not start the measurement process."]
-    STOP = 0x0,
-    #[doc = "Start the measurement process."]
-    START = 0x01,
-}
-impl Tempsense0MeasureTemp {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Tempsense0MeasureTemp {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Tempsense0MeasureTemp {
-    #[inline(always)]
-    fn from(val: u8) -> Tempsense0MeasureTemp {
-        Tempsense0MeasureTemp::from_bits(val)
-    }
-}
-impl From<Tempsense0MeasureTemp> for u8 {
-    #[inline(always)]
-    fn from(val: Tempsense0MeasureTemp) -> u8 {
-        Tempsense0MeasureTemp::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Tempsense0PowerDown {
-    #[doc = "Enable power to the temperature sensor."]
-    POWER_UP = 0x0,
-    #[doc = "Power down the temperature sensor."]
-    POWER_DOWN = 0x01,
-}
-impl Tempsense0PowerDown {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Tempsense0PowerDown {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Tempsense0PowerDown {
-    #[inline(always)]
-    fn from(val: u8) -> Tempsense0PowerDown {
-        Tempsense0PowerDown::from_bits(val)
-    }
-}
-impl From<Tempsense0PowerDown> for u8 {
-    #[inline(always)]
-    fn from(val: Tempsense0PowerDown) -> u8 {
-        Tempsense0PowerDown::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tempsense0SetMeasureTemp {
     #[doc = "Do not start the measurement process."]
     STOP = 0x0,

@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: kpp::vals::(Kdie|Kdsc|Kpkd|Kpkr|Krie|Krss)
+    bit_size: 1

@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: pwm::vals::(FracPu|Indep|Oneshota|Oneshotb|Oneshotx|OutTrigEn|PwmaEn|PwmbEn|PwmxEn)
+    bit_size: 1

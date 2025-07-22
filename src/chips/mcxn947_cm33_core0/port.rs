@@ -1,11 +1,11 @@
 #[doc = "PORT"]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Port0 {
+pub struct Port {
     ptr: *mut u8,
 }
-unsafe impl Send for Port0 {}
-unsafe impl Sync for Port0 {}
-impl Port0 {
+unsafe impl Send for Port {}
+unsafe impl Sync for Port {}
+impl Port {
     #[inline(always)]
     pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
         Self { ptr: ptr as _ }

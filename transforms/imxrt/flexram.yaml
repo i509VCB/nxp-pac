@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: flexram::vals::(DtcmErrSigEn|DtcmErrStatEn|DtcmMamSigEn|DtcmMamStatEn|ItcmErrSigEn|ItcmErrStatEn|ItcmMamSigEn|ItcmMamStatEn|OcramErrSigEn|OcramErrStatEn|OcramMamSigEn|OcramMamStatEn|TcmRwaitEn|TcmWwaitEn)
+    bit_size: 1

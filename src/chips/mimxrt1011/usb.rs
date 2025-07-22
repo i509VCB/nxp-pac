@@ -210,42 +210,42 @@ impl Usb {
     }
     #[doc = "Endpoint Control0"]
     #[inline(always)]
-    pub const fn endptctrl0(self) -> crate::common::Reg<regs::Endptctrl0, crate::common::RW> {
+    pub const fn endptctrl0(self) -> crate::common::Reg<regs::EndptctrlX, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c0usize) as _) }
     }
     #[doc = "Endpoint Control 1"]
     #[inline(always)]
-    pub const fn endptctrl1(self) -> crate::common::Reg<regs::Endptctrl1, crate::common::RW> {
+    pub const fn endptctrl1(self) -> crate::common::Reg<regs::EndptctrlX, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c4usize) as _) }
     }
     #[doc = "Endpoint Control 2"]
     #[inline(always)]
-    pub const fn endptctrl2(self) -> crate::common::Reg<regs::Endptctrl2, crate::common::RW> {
+    pub const fn endptctrl2(self) -> crate::common::Reg<regs::EndptctrlX, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c8usize) as _) }
     }
     #[doc = "Endpoint Control 3"]
     #[inline(always)]
-    pub const fn endptctrl3(self) -> crate::common::Reg<regs::Endptctrl3, crate::common::RW> {
+    pub const fn endptctrl3(self) -> crate::common::Reg<regs::EndptctrlX, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01ccusize) as _) }
     }
     #[doc = "Endpoint Control 4"]
     #[inline(always)]
-    pub const fn endptctrl4(self) -> crate::common::Reg<regs::Endptctrl4, crate::common::RW> {
+    pub const fn endptctrl4(self) -> crate::common::Reg<regs::EndptctrlX, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01d0usize) as _) }
     }
     #[doc = "Endpoint Control 5"]
     #[inline(always)]
-    pub const fn endptctrl5(self) -> crate::common::Reg<regs::Endptctrl5, crate::common::RW> {
+    pub const fn endptctrl5(self) -> crate::common::Reg<regs::EndptctrlX, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01d4usize) as _) }
     }
     #[doc = "Endpoint Control 6"]
     #[inline(always)]
-    pub const fn endptctrl6(self) -> crate::common::Reg<regs::Endptctrl6, crate::common::RW> {
+    pub const fn endptctrl6(self) -> crate::common::Reg<regs::EndptctrlX, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01d8usize) as _) }
     }
     #[doc = "Endpoint Control 7"]
     #[inline(always)]
-    pub const fn endptctrl7(self) -> crate::common::Reg<regs::Endptctrl7, crate::common::RW> {
+    pub const fn endptctrl7(self) -> crate::common::Reg<regs::EndptctrlX, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01dcusize) as _) }
     }
 }

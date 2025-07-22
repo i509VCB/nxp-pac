@@ -2332,14 +2332,14 @@ impl Mcr {
     #[doc = "Software Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn rst(&self) -> super::vals::Rst {
+    pub const fn rst(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Rst::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software Reset"]
     #[inline(always)]
-    pub const fn set_rst(&mut self, val: super::vals::Rst) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_rst(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Master Enable"]
     #[must_use]
@@ -2444,7 +2444,7 @@ impl defmt::Format for Mcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mcr {{ strig0: {:?}, strig1: {:?}, strig2: {:?}, strig3: {:?}, strig4: {:?}, dozen: {:?}, rst: {:?}, men: {:?}, mclkdiv: {:?}, prescale: {:?}, mclk0dis: {:?}, mclk1dis: {:?}, mclk2dis: {:?} }}",
+            "Mcr {{ strig0: {:?}, strig1: {:?}, strig2: {:?}, strig3: {:?}, strig4: {:?}, dozen: {:?}, rst: {=bool:?}, men: {:?}, mclkdiv: {:?}, prescale: {:?}, mclk0dis: {:?}, mclk1dis: {:?}, mclk2dis: {:?} }}",
             self.strig0(),
             self.strig1(),
             self.strig2(),

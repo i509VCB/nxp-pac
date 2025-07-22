@@ -106,37 +106,6 @@ impl From<AhbPodfLoaded> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum ArmClkDisOnLpm {
-    #[doc = "Arm clock enabled on wait mode."]
-    ARM_CLK_DIS_ON_LPM_0 = 0x0,
-    #[doc = "Arm clock disabled on wait mode. ."]
-    ARM_CLK_DIS_ON_LPM_1 = 0x01,
-}
-impl ArmClkDisOnLpm {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> ArmClkDisOnLpm {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for ArmClkDisOnLpm {
-    #[inline(always)]
-    fn from(val: u8) -> ArmClkDisOnLpm {
-        ArmClkDisOnLpm::from_bits(val)
-    }
-}
-impl From<ArmClkDisOnLpm> for u8 {
-    #[inline(always)]
-    fn from(val: ArmClkDisOnLpm) -> u8 {
-        ArmClkDisOnLpm::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ArmPodf {
     #[doc = "divide by 1"]
     ARM_PODF_0 = 0x0,
@@ -599,37 +568,6 @@ impl From<Clko1Div> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Clko1En {
-    #[doc = "CCM_CLKO1 disabled."]
-    CLKO1_EN_0 = 0x0,
-    #[doc = "CCM_CLKO1 enabled."]
-    CLKO1_EN_1 = 0x01,
-}
-impl Clko1En {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Clko1En {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Clko1En {
-    #[inline(always)]
-    fn from(val: u8) -> Clko1En {
-        Clko1En::from_bits(val)
-    }
-}
-impl From<Clko1En> for u8 {
-    #[inline(always)]
-    fn from(val: Clko1En) -> u8 {
-        Clko1En::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Clko1Sel {
     #[doc = "USB1 PLL clock (divided by 2)"]
     CLKO1_SEL_0 = 0x0,
@@ -726,37 +664,6 @@ impl From<Clko2Div> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Clko2En {
-    #[doc = "CCM_CLKO2 disabled."]
-    CLKO2_EN_0 = 0x0,
-    #[doc = "CCM_CLKO2 enabled."]
-    CLKO2_EN_1 = 0x01,
-}
-impl Clko2En {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Clko2En {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Clko2En {
-    #[inline(always)]
-    fn from(val: u8) -> Clko2En {
-        Clko2En::from_bits(val)
-    }
-}
-impl From<Clko2En> for u8 {
-    #[inline(always)]
-    fn from(val: Clko2En) -> u8 {
-        Clko2En::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Clko2Sel {
     _RESERVED_0 = 0x0,
     _RESERVED_1 = 0x01,
@@ -823,68 +730,6 @@ impl From<Clko2Sel> for u8 {
     #[inline(always)]
     fn from(val: Clko2Sel) -> u8 {
         Clko2Sel::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CoscEn {
-    #[doc = "disable on chip oscillator"]
-    COSC_EN_0 = 0x0,
-    #[doc = "enable on chip oscillator"]
-    COSC_EN_1 = 0x01,
-}
-impl CoscEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CoscEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CoscEn {
-    #[inline(always)]
-    fn from(val: u8) -> CoscEn {
-        CoscEn::from_bits(val)
-    }
-}
-impl From<CoscEn> for u8 {
-    #[inline(always)]
-    fn from(val: CoscEn) -> u8 {
-        CoscEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CoscPwrdown {
-    #[doc = "On chip oscillator will not be powered down, i.e. cosc_pwrdown = '0'."]
-    COSC_PWRDOWN_0 = 0x0,
-    #[doc = "On chip oscillator will be powered down, i.e. cosc_pwrdown = '1'."]
-    COSC_PWRDOWN_1 = 0x01,
-}
-impl CoscPwrdown {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CoscPwrdown {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CoscPwrdown {
-    #[inline(always)]
-    fn from(val: u8) -> CoscPwrdown {
-        CoscPwrdown::from_bits(val)
-    }
-}
-impl From<CoscPwrdown> for u8 {
-    #[inline(always)]
-    fn from(val: CoscPwrdown) -> u8 {
-        CoscPwrdown::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -994,68 +839,6 @@ impl From<CsrCoscReady> for u8 {
     #[inline(always)]
     fn from(val: CsrCoscReady) -> u8 {
         CsrCoscReady::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum DisRefOsc {
-    #[doc = "external high frequency oscillator will be enabled, i.e. CCM_REF_EN_B = '0'."]
-    DIS_REF_OSC_0 = 0x0,
-    #[doc = "external high frequency oscillator will be disabled, i.e. CCM_REF_EN_B = '1'"]
-    DIS_REF_OSC_1 = 0x01,
-}
-impl DisRefOsc {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> DisRefOsc {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for DisRefOsc {
-    #[inline(always)]
-    fn from(val: u8) -> DisRefOsc {
-        DisRefOsc::from_bits(val)
-    }
-}
-impl From<DisRefOsc> for u8 {
-    #[inline(always)]
-    fn from(val: DisRefOsc) -> u8 {
-        DisRefOsc::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum EfuseProgSupplyGate {
-    #[doc = "fuse programing supply voltage is gated off to the efuse module"]
-    EFUSE_PROG_SUPPLY_GATE_0 = 0x0,
-    #[doc = "allow fuse programing."]
-    EFUSE_PROG_SUPPLY_GATE_1 = 0x01,
-}
-impl EfuseProgSupplyGate {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> EfuseProgSupplyGate {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for EfuseProgSupplyGate {
-    #[inline(always)]
-    fn from(val: u8) -> EfuseProgSupplyGate {
-        EfuseProgSupplyGate::from_bits(val)
-    }
-}
-impl From<EfuseProgSupplyGate> for u8 {
-    #[inline(always)]
-    fn from(val: EfuseProgSupplyGate) -> u8 {
-        EfuseProgSupplyGate::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1454,68 +1237,6 @@ impl From<FlexspiPodf> for u8 {
     #[inline(always)]
     fn from(val: FlexspiPodf) -> u8 {
         FlexspiPodf::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Fpl {
-    #[doc = "Engage PLL enable default way."]
-    FPL_0 = 0x0,
-    #[doc = "Engage PLL enable 3 CKIL clocks earlier at exiting low power mode (STOP). Should be used only if 24MHz OSC was active in low power mode."]
-    FPL_1 = 0x01,
-}
-impl Fpl {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Fpl {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Fpl {
-    #[inline(always)]
-    fn from(val: u8) -> Fpl {
-        Fpl::from_bits(val)
-    }
-}
-impl From<Fpl> for u8 {
-    #[inline(always)]
-    fn from(val: Fpl) -> u8 {
-        Fpl::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum IntMemClkLpm {
-    #[doc = "Disable the clock to the Arm platform memories when entering Low Power Mode"]
-    INT_MEM_CLK_LPM_0 = 0x0,
-    #[doc = "Keep the clocks to the Arm platform memories enabled only if an interrupt is pending when entering Low Power Modes (WAIT and STOP without power gating)"]
-    INT_MEM_CLK_LPM_1 = 0x01,
-}
-impl IntMemClkLpm {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> IntMemClkLpm {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for IntMemClkLpm {
-    #[inline(always)]
-    fn from(val: u8) -> IntMemClkLpm {
-        IntMemClkLpm::from_bits(val)
-    }
-}
-impl From<IntMemClkLpm> for u8 {
-    #[inline(always)]
-    fn from(val: IntMemClkLpm) -> u8 {
-        IntMemClkLpm::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -2012,161 +1733,6 @@ impl From<LrfPll> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum MaskAhbPodfLoaded {
-    #[doc = "don't mask interrupt due to frequency change of ahb_podf - interrupt will be created"]
-    MASK_AHB_PODF_LOADED_0 = 0x0,
-    #[doc = "mask interrupt due to frequency change of ahb_podf"]
-    MASK_AHB_PODF_LOADED_1 = 0x01,
-}
-impl MaskAhbPodfLoaded {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> MaskAhbPodfLoaded {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for MaskAhbPodfLoaded {
-    #[inline(always)]
-    fn from(val: u8) -> MaskAhbPodfLoaded {
-        MaskAhbPodfLoaded::from_bits(val)
-    }
-}
-impl From<MaskAhbPodfLoaded> for u8 {
-    #[inline(always)]
-    fn from(val: MaskAhbPodfLoaded) -> u8 {
-        MaskAhbPodfLoaded::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum MaskCore0Wfi {
-    #[doc = "WFI of core0 is not masked"]
-    MASK_CORE0_WFI_0 = 0x0,
-    #[doc = "WFI of core0 is masked"]
-    MASK_CORE0_WFI_1 = 0x01,
-}
-impl MaskCore0Wfi {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> MaskCore0Wfi {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for MaskCore0Wfi {
-    #[inline(always)]
-    fn from(val: u8) -> MaskCore0Wfi {
-        MaskCore0Wfi::from_bits(val)
-    }
-}
-impl From<MaskCore0Wfi> for u8 {
-    #[inline(always)]
-    fn from(val: MaskCore0Wfi) -> u8 {
-        MaskCore0Wfi::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum MaskCoscReady {
-    #[doc = "don't mask interrupt due to on board oscillator ready - interrupt will be created"]
-    MASK_COSC_READY_0 = 0x0,
-    #[doc = "mask interrupt due to on board oscillator ready"]
-    MASK_COSC_READY_1 = 0x01,
-}
-impl MaskCoscReady {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> MaskCoscReady {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for MaskCoscReady {
-    #[inline(always)]
-    fn from(val: u8) -> MaskCoscReady {
-        MaskCoscReady::from_bits(val)
-    }
-}
-impl From<MaskCoscReady> for u8 {
-    #[inline(always)]
-    fn from(val: MaskCoscReady) -> u8 {
-        MaskCoscReady::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum MaskL2ccIdle {
-    #[doc = "L2CC IDLE is not masked"]
-    MASK_L2CC_IDLE_0 = 0x0,
-    #[doc = "L2CC IDLE is masked"]
-    MASK_L2CC_IDLE_1 = 0x01,
-}
-impl MaskL2ccIdle {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> MaskL2ccIdle {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for MaskL2ccIdle {
-    #[inline(always)]
-    fn from(val: u8) -> MaskL2ccIdle {
-        MaskL2ccIdle::from_bits(val)
-    }
-}
-impl From<MaskL2ccIdle> for u8 {
-    #[inline(always)]
-    fn from(val: MaskL2ccIdle) -> u8 {
-        MaskL2ccIdle::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum MaskLrfPll {
-    #[doc = "don't mask interrupt due to lrf of PLLs - interrupt will be created"]
-    MASK_LRF_PLL_0 = 0x0,
-    #[doc = "mask interrupt due to lrf of PLLs"]
-    MASK_LRF_PLL_1 = 0x01,
-}
-impl MaskLrfPll {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> MaskLrfPll {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for MaskLrfPll {
-    #[inline(always)]
-    fn from(val: u8) -> MaskLrfPll {
-        MaskLrfPll::from_bits(val)
-    }
-}
-impl From<MaskLrfPll> for u8 {
-    #[inline(always)]
-    fn from(val: MaskLrfPll) -> u8 {
-        MaskLrfPll::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MaskPeriph2ClkSelLoaded {
     #[doc = "don't mask interrupt due to update of periph2_clk_sel - interrupt will be created"]
     MASK_PERIPH2_CLK_SEL_LOADED_0 = 0x0,
@@ -2193,68 +1759,6 @@ impl From<MaskPeriph2ClkSelLoaded> for u8 {
     #[inline(always)]
     fn from(val: MaskPeriph2ClkSelLoaded) -> u8 {
         MaskPeriph2ClkSelLoaded::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum MaskPeriphClkSelLoaded {
-    #[doc = "don't mask interrupt due to update of periph_clk_sel - interrupt will be created"]
-    MASK_PERIPH_CLK_SEL_LOADED_0 = 0x0,
-    #[doc = "mask interrupt due to update of periph_clk_sel"]
-    MASK_PERIPH_CLK_SEL_LOADED_1 = 0x01,
-}
-impl MaskPeriphClkSelLoaded {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> MaskPeriphClkSelLoaded {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for MaskPeriphClkSelLoaded {
-    #[inline(always)]
-    fn from(val: u8) -> MaskPeriphClkSelLoaded {
-        MaskPeriphClkSelLoaded::from_bits(val)
-    }
-}
-impl From<MaskPeriphClkSelLoaded> for u8 {
-    #[inline(always)]
-    fn from(val: MaskPeriphClkSelLoaded) -> u8 {
-        MaskPeriphClkSelLoaded::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum MaskScuIdle {
-    #[doc = "SCU IDLE is not masked"]
-    MASK_SCU_IDLE_0 = 0x0,
-    #[doc = "SCU IDLE is masked"]
-    MASK_SCU_IDLE_1 = 0x01,
-}
-impl MaskScuIdle {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> MaskScuIdle {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for MaskScuIdle {
-    #[inline(always)]
-    fn from(val: u8) -> MaskScuIdle {
-        MaskScuIdle::from_bits(val)
-    }
-}
-impl From<MaskScuIdle> for u8 {
-    #[inline(always)]
-    fn from(val: MaskScuIdle) -> u8 {
-        MaskScuIdle::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -2379,99 +1883,6 @@ impl From<ModEnOvCanfdCpi> for u8 {
     #[inline(always)]
     fn from(val: ModEnOvCanfdCpi) -> u8 {
         ModEnOvCanfdCpi::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum ModEnOvGpt {
-    #[doc = "don't override module enable signal"]
-    MOD_EN_OV_GPT_0 = 0x0,
-    #[doc = "override module enable signal"]
-    MOD_EN_OV_GPT_1 = 0x01,
-}
-impl ModEnOvGpt {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> ModEnOvGpt {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for ModEnOvGpt {
-    #[inline(always)]
-    fn from(val: u8) -> ModEnOvGpt {
-        ModEnOvGpt::from_bits(val)
-    }
-}
-impl From<ModEnOvGpt> for u8 {
-    #[inline(always)]
-    fn from(val: ModEnOvGpt) -> u8 {
-        ModEnOvGpt::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum ModEnOvPit {
-    #[doc = "don't override module enable signal"]
-    MOD_EN_OV_PIT_0 = 0x0,
-    #[doc = "override module enable signal"]
-    MOD_EN_OV_PIT_1 = 0x01,
-}
-impl ModEnOvPit {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> ModEnOvPit {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for ModEnOvPit {
-    #[inline(always)]
-    fn from(val: u8) -> ModEnOvPit {
-        ModEnOvPit::from_bits(val)
-    }
-}
-impl From<ModEnOvPit> for u8 {
-    #[inline(always)]
-    fn from(val: ModEnOvPit) -> u8 {
-        ModEnOvPit::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum ModEnOvTrng {
-    #[doc = "don't override module enable signal"]
-    MOD_EN_OV_TRNG_0 = 0x0,
-    #[doc = "override module enable signal"]
-    MOD_EN_OV_TRNG_1 = 0x01,
-}
-impl ModEnOvTrng {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> ModEnOvTrng {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for ModEnOvTrng {
-    #[inline(always)]
-    fn from(val: u8) -> ModEnOvTrng {
-        ModEnOvTrng::from_bits(val)
-    }
-}
-impl From<ModEnOvTrng> for u8 {
-    #[inline(always)]
-    fn from(val: ModEnOvTrng) -> u8 {
-        ModEnOvTrng::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -2957,37 +2368,6 @@ impl From<Pll3SwClkSel> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum PmicDelayScaler {
-    #[doc = "clock is not divided"]
-    PMIC_DELAY_SCALER_0 = 0x0,
-    #[doc = "clock is divided /8"]
-    PMIC_DELAY_SCALER_1 = 0x01,
-}
-impl PmicDelayScaler {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> PmicDelayScaler {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for PmicDelayScaler {
-    #[inline(always)]
-    fn from(val: u8) -> PmicDelayScaler {
-        PmicDelayScaler::from_bits(val)
-    }
-}
-impl From<PmicDelayScaler> for u8 {
-    #[inline(always)]
-    fn from(val: PmicDelayScaler) -> u8 {
-        PmicDelayScaler::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PrePeriphClkSel {
     #[doc = "derive clock from PLL2"]
     PRE_PERIPH_CLK_SEL_0 = 0x0,
@@ -3018,37 +2398,6 @@ impl From<PrePeriphClkSel> for u8 {
     #[inline(always)]
     fn from(val: PrePeriphClkSel) -> u8 {
         PrePeriphClkSel::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum RbcEn {
-    #[doc = "REG_BYPASS_COUNTER disabled"]
-    RBC_EN_0 = 0x0,
-    #[doc = "REG_BYPASS_COUNTER enabled."]
-    RBC_EN_1 = 0x01,
-}
-impl RbcEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> RbcEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for RbcEn {
-    #[inline(always)]
-    fn from(val: u8) -> RbcEn {
-        RbcEn::from_bits(val)
-    }
-}
-impl From<RbcEn> for u8 {
-    #[inline(always)]
-    fn from(val: RbcEn) -> u8 {
-        RbcEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -3875,37 +3224,6 @@ impl From<Sai3ClkSel> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Sbyos {
-    #[doc = "On-chip oscillator will not be powered down, after next entrance to STOP mode. (CCM_REF_EN_B will remain asserted - '0' and cosc_pwrdown will remain de asserted - '0')"]
-    SBYOS_0 = 0x0,
-    #[doc = "On-chip oscillator will be powered down, after next entrance to STOP mode. (CCM_REF_EN_B will be deasserted - '1' and cosc_pwrdown will be asserted - '1'). When returning from STOP mode, external oscillator will be enabled again, on-chip oscillator will return to oscillator mode, and after oscnt count, CCM will continue with the exit from the STOP mode process."]
-    SBYOS_1 = 0x01,
-}
-impl Sbyos {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Sbyos {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Sbyos {
-    #[inline(always)]
-    fn from(val: u8) -> Sbyos {
-        Sbyos::from_bits(val)
-    }
-}
-impl From<Sbyos> for u8 {
-    #[inline(always)]
-    fn from(val: Sbyos) -> u8 {
-        Sbyos::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SemcAltClkSel {
     #[doc = "PLL2 PFD2 will be selected as alternative clock for SEMC root clock"]
     SEMC_ALT_CLK_SEL_0 = 0x0,
@@ -4662,36 +3980,5 @@ impl From<Usdhc2Podf> for u8 {
     #[inline(always)]
     fn from(val: Usdhc2Podf) -> u8 {
         Usdhc2Podf::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Vstby {
-    #[doc = "Voltage will not be changed to standby voltage after next entrance to STOP mode. ( PMIC_STBY_REQ will remain negated - '0')"]
-    VSTBY_0 = 0x0,
-    #[doc = "Voltage will be requested to change to standby voltage after next entrance to stop mode. ( PMIC_STBY_REQ will be asserted - '1')."]
-    VSTBY_1 = 0x01,
-}
-impl Vstby {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Vstby {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Vstby {
-    #[inline(always)]
-    fn from(val: u8) -> Vstby {
-        Vstby::from_bits(val)
-    }
-}
-impl From<Vstby> for u8 {
-    #[inline(always)]
-    fn from(val: Vstby) -> u8 {
-        Vstby::to_bits(val)
     }
 }

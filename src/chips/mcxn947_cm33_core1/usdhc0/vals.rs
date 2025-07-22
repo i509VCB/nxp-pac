@@ -1,37 +1,6 @@
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Ac12WrChkbusyEn {
-    #[doc = "Do not check busy after auto CMD12 for write data packet"]
-    AC12_WR_CHKBUSY_EN_A = 0x0,
-    #[doc = "Check busy after auto CMD12 for write data packet"]
-    AC12_WR_CHKBUSY_EN_B = 0x01,
-}
-impl Ac12WrChkbusyEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Ac12WrChkbusyEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Ac12WrChkbusyEn {
-    #[inline(always)]
-    fn from(val: u8) -> Ac12WrChkbusyEn {
-        Ac12WrChkbusyEn::from_bits(val)
-    }
-}
-impl From<Ac12WrChkbusyEn> for u8 {
-    #[inline(always)]
-    fn from(val: Ac12WrChkbusyEn) -> u8 {
-        Ac12WrChkbusyEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ac12ce {
     #[doc = "No CRC error"]
     AC12CE_B = 0x0,
@@ -311,37 +280,6 @@ impl From<Ac23en> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Acmd23Argu2En {
-    #[doc = "Disable"]
-    ACMD23_ARGU2_EN_B = 0x0,
-    #[doc = "Argument2 register enable for ACMD23 sharing with SDMA system address register. Default is enabled."]
-    ACMD23_ARGU2_EN_A = 0x01,
-}
-impl Acmd23Argu2En {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Acmd23Argu2En {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Acmd23Argu2En {
-    #[inline(always)]
-    fn from(val: u8) -> Acmd23Argu2En {
-        Acmd23Argu2En::from_bits(val)
-    }
-}
-impl From<Acmd23Argu2En> for u8 {
-    #[inline(always)]
-    fn from(val: Acmd23Argu2En) -> u8 {
-        Acmd23Argu2En::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Admadce {
     #[doc = "No error"]
     ADMADCE_B = 0x0,
@@ -430,37 +368,6 @@ impl From<Admas> for u8 {
     #[inline(always)]
     fn from(val: Admas) -> u8 {
         Admas::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum AutoTuneEn {
-    #[doc = "Disable auto tuning"]
-    AUTOTUNE_B = 0x0,
-    #[doc = "Enable auto tuning"]
-    AUTO_TUNE_A = 0x01,
-}
-impl AutoTuneEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> AutoTuneEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for AutoTuneEn {
-    #[inline(always)]
-    fn from(val: u8) -> AutoTuneEn {
-        AutoTuneEn::from_bits(val)
-    }
-}
-impl From<AutoTuneEn> for u8 {
-    #[inline(always)]
-    fn from(val: AutoTuneEn) -> u8 {
-        AutoTuneEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -748,37 +655,6 @@ impl From<BootAck> for u8 {
     #[inline(always)]
     fn from(val: BootAck) -> u8 {
         BootAck::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum BootEn {
-    #[doc = "Fast boot disable"]
-    BOOT_EN_A = 0x0,
-    #[doc = "Fast boot enable"]
-    BOOT_EN_B = 0x01,
-}
-impl BootEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> BootEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for BootEn {
-    #[inline(always)]
-    fn from(val: u8) -> BootEn {
-        BootEn::from_bits(val)
-    }
-}
-impl From<BootEn> for u8 {
-    #[inline(always)]
-    fn from(val: BootEn) -> u8 {
-        BootEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -1843,37 +1719,6 @@ impl From<Cintsen> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CmdByteEn {
-    #[doc = "Disable. MIX_CTRL\\[7:0\\] is read/write and CMD_XFR_TYP\\[7:0\\] is read-only."]
-    CMD_BYTE_EN_A = 0x0,
-    #[doc = "Enable. MIX_CTRL\\[7:0\\] is read-only and CMD_XFR_TYP\\[7:0\\] is read/write."]
-    CMD_BYTE_EN_B = 0x01,
-}
-impl CmdByteEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CmdByteEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CmdByteEn {
-    #[inline(always)]
-    fn from(val: u8) -> CmdByteEn {
-        CmdByteEn::from_bits(val)
-    }
-}
-impl From<CmdByteEn> for u8 {
-    #[inline(always)]
-    fn from(val: CmdByteEn) -> u8 {
-        CmdByteEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CmdXfrTypAc12en {
     #[doc = "Disable"]
     CMD_XFR_TYP2_B = 0x0,
@@ -2462,37 +2307,6 @@ impl From<Dcesen> for u8 {
     #[inline(always)]
     fn from(val: Dcesen) -> u8 {
         Dcesen::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum DdrEn {
-    #[doc = "Disable"]
-    CMD_XFR_TYP3_B = 0x0,
-    #[doc = "Enable"]
-    CMD_XFR_TYP3_A = 0x01,
-}
-impl DdrEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> DdrEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for DdrEn {
-    #[inline(always)]
-    fn from(val: u8) -> DdrEn {
-        DdrEn::from_bits(val)
-    }
-}
-impl From<DdrEn> for u8 {
-    #[inline(always)]
-    fn from(val: DdrEn) -> u8 {
-        DdrEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -3856,99 +3670,6 @@ impl From<Rsptyp> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Rsta {
-    #[doc = "No reset"]
-    RSTA_B = 0x0,
-    #[doc = "Reset"]
-    RSTA_A = 0x01,
-}
-impl Rsta {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Rsta {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Rsta {
-    #[inline(always)]
-    fn from(val: u8) -> Rsta {
-        Rsta::from_bits(val)
-    }
-}
-impl From<Rsta> for u8 {
-    #[inline(always)]
-    fn from(val: Rsta) -> u8 {
-        Rsta::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Rstc {
-    #[doc = "No reset"]
-    RSTC_B = 0x0,
-    #[doc = "Reset"]
-    RSTC_A = 0x01,
-}
-impl Rstc {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Rstc {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Rstc {
-    #[inline(always)]
-    fn from(val: u8) -> Rstc {
-        Rstc::from_bits(val)
-    }
-}
-impl From<Rstc> for u8 {
-    #[inline(always)]
-    fn from(val: Rstc) -> u8 {
-        Rstc::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Rstd {
-    #[doc = "No reset"]
-    RSTD_B = 0x0,
-    #[doc = "Reset"]
-    RSTD_A = 0x01,
-}
-impl Rstd {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Rstd {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Rstd {
-    #[inline(always)]
-    fn from(val: u8) -> Rstd {
-        Rstd::from_bits(val)
-    }
-}
-impl From<Rstd> for u8 {
-    #[inline(always)]
-    fn from(val: Rstd) -> u8 {
-        Rstd::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rta {
     #[doc = "No valid data"]
     RTA_B = 0x0,
@@ -4506,37 +4227,6 @@ impl From<TuningBitEn> for u8 {
     #[inline(always)]
     fn from(val: TuningBitEn) -> u8 {
         TuningBitEn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum TuningCmdEn {
-    #[doc = "Auto tuning circuit does not check the CMD line."]
-    TUNING_CMD_EN_A = 0x0,
-    #[doc = "Auto tuning circuit checks the CMD line."]
-    TUNING_CMD_EN_B = 0x01,
-}
-impl TuningCmdEn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> TuningCmdEn {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for TuningCmdEn {
-    #[inline(always)]
-    fn from(val: u8) -> TuningCmdEn {
-        TuningCmdEn::from_bits(val)
-    }
-}
-impl From<TuningCmdEn> for u8 {
-    #[inline(always)]
-    fn from(val: TuningCmdEn) -> u8 {
-        TuningCmdEn::to_bits(val)
     }
 }
 #[repr(u8)]

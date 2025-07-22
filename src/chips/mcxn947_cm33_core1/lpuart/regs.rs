@@ -1145,14 +1145,14 @@ impl Global {
     #[doc = "Software Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn rst(&self) -> super::vals::Rst {
+    pub const fn rst(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Rst::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software Reset"]
     #[inline(always)]
-    pub const fn set_rst(&mut self, val: super::vals::Rst) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_rst(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
 }
 impl Default for Global {
@@ -1169,7 +1169,7 @@ impl core::fmt::Debug for Global {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Global {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Global {{ rst: {:?} }}", self.rst())
+        defmt::write!(f, "Global {{ rst: {=bool:?} }}", self.rst())
     }
 }
 #[doc = "Half Duplex Control"]

@@ -30,14 +30,14 @@ impl Csr {
     #[doc = "Low-Power Bandgap Buffer Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn lpbg_buf_en(&self) -> super::vals::LpbgBufEn {
+    pub const fn lpbg_buf_en(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::LpbgBufEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Low-Power Bandgap Buffer Enable"]
     #[inline(always)]
-    pub const fn set_lpbg_buf_en(&mut self, val: super::vals::LpbgBufEn) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_lpbg_buf_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Chop Oscillator Enable"]
     #[must_use]
@@ -138,7 +138,7 @@ impl defmt::Format for Csr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Csr {{ hcbgen: {:?}, lpbgen: {:?}, lpbg_buf_en: {:?}, chopen: {:?}, icompen: {:?}, regen: {:?}, hi_pwr_lv: {:?}, buf21en: {:?}, vrefst: {:?} }}",
+            "Csr {{ hcbgen: {:?}, lpbgen: {:?}, lpbg_buf_en: {=bool:?}, chopen: {:?}, icompen: {:?}, regen: {:?}, hi_pwr_lv: {:?}, buf21en: {:?}, vrefst: {:?} }}",
             self.hcbgen(),
             self.lpbgen(),
             self.lpbg_buf_en(),

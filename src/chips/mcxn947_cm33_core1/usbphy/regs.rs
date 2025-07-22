@@ -6,14 +6,14 @@ impl Anactrl {
     #[doc = "Internal Low Voltage Detector Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn lvi_en(&self) -> super::vals::LviEn {
+    pub const fn lvi_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::LviEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Internal Low Voltage Detector Enable"]
     #[inline(always)]
-    pub const fn set_lvi_en(&mut self, val: super::vals::LviEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_lvi_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "PFD Clock Selection"]
     #[must_use]
@@ -60,7 +60,7 @@ impl defmt::Format for Anactrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Anactrl {{ lvi_en: {:?}, pfd_clk_sel: {:?}, dev_pulldown: {:?} }}",
+            "Anactrl {{ lvi_en: {=bool:?}, pfd_clk_sel: {:?}, dev_pulldown: {:?} }}",
             self.lvi_en(),
             self.pfd_clk_sel(),
             self.dev_pulldown()
@@ -6179,14 +6179,14 @@ impl Usb1VbusDetect {
     #[doc = "VBUS Detect Signal Local Override Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn vbus_override_en(&self) -> super::vals::VbusOverrideEn {
+    pub const fn vbus_override_en(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::VbusOverrideEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "VBUS Detect Signal Local Override Enable"]
     #[inline(always)]
-    pub const fn set_vbus_override_en(&mut self, val: super::vals::VbusOverrideEn) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_vbus_override_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Override Value for SESSEND"]
     #[must_use]
@@ -6263,14 +6263,14 @@ impl Usb1VbusDetect {
     #[doc = "Enable Local ID Pin Status Override"]
     #[must_use]
     #[inline(always)]
-    pub const fn id_override_en(&self) -> super::vals::IdOverrideEn {
+    pub const fn id_override_en(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::IdOverrideEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable Local ID Pin Status Override"]
     #[inline(always)]
-    pub const fn set_id_override_en(&mut self, val: super::vals::IdOverrideEn) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_id_override_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "ID Pin Status Local Override"]
     #[must_use]
@@ -6287,26 +6287,26 @@ impl Usb1VbusDetect {
     #[doc = "External ID Override Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ext_id_override_en(&self) -> super::vals::ExtIdOverrideEn {
+    pub const fn ext_id_override_en(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::ExtIdOverrideEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "External ID Override Enable"]
     #[inline(always)]
-    pub const fn set_ext_id_override_en(&mut self, val: super::vals::ExtIdOverrideEn) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_ext_id_override_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "External VBUS Override Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ext_vbus_override_en(&self) -> super::vals::ExtVbusOverrideEn {
+    pub const fn ext_vbus_override_en(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::ExtVbusOverrideEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "External VBUS Override Enable"]
     #[inline(always)]
-    pub const fn set_ext_vbus_override_en(&mut self, val: super::vals::ExtVbusOverrideEn) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_ext_vbus_override_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "VBUS_VALID Comparator Selection"]
     #[must_use]
@@ -6377,7 +6377,7 @@ impl defmt::Format for Usb1VbusDetect {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Usb1VbusDetect {{ vbusvalid_thresh: {:?}, vbus_override_en: {:?}, sessend_override: {=bool:?}, bvalid_override: {=bool:?}, avalid_override: {=bool:?}, vbusvalid_override: {=bool:?}, vbusvalid_sel: {:?}, vbus_source_sel: {:?}, id_override_en: {:?}, id_override: {=bool:?}, ext_id_override_en: {:?}, ext_vbus_override_en: {:?}, vbusvalid_to_b: {:?}, vbusvalid_pwrup_cmps: {:?}, discharge_vbus: {:?} }}",
+            "Usb1VbusDetect {{ vbusvalid_thresh: {:?}, vbus_override_en: {=bool:?}, sessend_override: {=bool:?}, bvalid_override: {=bool:?}, avalid_override: {=bool:?}, vbusvalid_override: {=bool:?}, vbusvalid_sel: {:?}, vbus_source_sel: {:?}, id_override_en: {=bool:?}, id_override: {=bool:?}, ext_id_override_en: {=bool:?}, ext_vbus_override_en: {=bool:?}, vbusvalid_to_b: {:?}, vbusvalid_pwrup_cmps: {:?}, discharge_vbus: {:?} }}",
             self.vbusvalid_thresh(),
             self.vbus_override_en(),
             self.sessend_override(),

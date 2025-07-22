@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: usdhc\d*::vals::(Rsta|Rstc|Rstd|Ac12WrChkbusyEn|Acmd23Argu2En|AutoTuneEn|BootEn|BurstLenEn|CmdByteEn|DdrEn|TuningBitEn|TuningCmdEn)
+    bit_size: 1

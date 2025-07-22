@@ -1,0 +1,72 @@
+transforms:
+  # First merge the enums that are referenced by the fields
+  - !MergeEnums
+    from: enet0::vals::DmaCh(\d+)RxControlSr
+    to: enet0::vals::DmaChRxControlSr
+    check: Layout
+
+  - !MergeEnums
+    from: enet0::vals::DmaCh(\d+)TxControlSt
+    to: enet0::vals::DmaChTxControlSt
+    check: Layout
+
+  - !MergeEnums
+    from: enet0::vals::DmaCh(\d+)StatusNis
+    to: enet0::vals::DmaChStatusNis
+    check: Layout
+
+  - !MergeEnums
+    from: enet0::vals::DmaCh(\d+)StatusAis
+    to: enet0::vals::DmaChStatusAis
+    check: Layout
+
+  - !MergeEnums
+    from: enet0::vals::DmaCh(\d+)StatusRbu
+    to: enet0::vals::DmaChStatusRbu
+    check: Layout
+
+  - !MergeEnums
+    from: enet0::vals::DmaCh(\d+)StatusRps
+    to: enet0::vals::DmaChStatusRps
+    check: Layout
+
+  - !MergeEnums
+    from: enet0::vals::DmaCh(\d+)StatusRwt
+    to: enet0::vals::DmaChStatusRwt
+    check: Layout
+
+  - !MergeEnums
+    from: enet0::vals::DmaCh(\d+)StatusEt
+    to: enet0::vals::DmaChStatusEt
+    check: Layout
+
+  - !MergeEnums
+    from: enet0::vals::DmaCh(\d+)StatusEr
+    to: enet0::vals::DmaChStatusEr
+    check: Layout
+
+  - !MergeEnums
+    from: enet0::vals::DmaCh(\d+)StatusFbe
+    to: enet0::vals::DmaChStatusFbe
+    check: Layout
+
+  - !MergeEnums
+    from: enet0::vals::DmaCh(\d+)StatusTbu
+    to: enet0::vals::DmaChStatusTbu
+    check: Layout
+
+  - !MergeEnums
+    from: enet0::vals::DmaCh(\d+)StatusTps
+    to: enet0::vals::DmaChStatusTps
+    check: Layout
+
+  - !MergeEnums
+    from: enet0::vals::DmaCh(\d+)StatusTwt
+    to: enet0::vals::DmaChStatusTwt
+    check: Layout
+
+  # Then merge the fieldsets
+  - !MergeFieldsets
+    from: enet0::regs::DmaCh(\d+)(.*)
+    to: enet0::regs::DmaCh$2
+    check: Layout

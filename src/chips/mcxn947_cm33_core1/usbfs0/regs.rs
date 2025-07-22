@@ -221,38 +221,38 @@ impl ClkRecoverCtrl {
     #[doc = "Restart from IFR Trim Value"]
     #[must_use]
     #[inline(always)]
-    pub const fn restart_ifrtrim_en(&self) -> super::vals::RestartIfrtrimEn {
+    pub const fn restart_ifrtrim_en(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::RestartIfrtrimEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Restart from IFR Trim Value"]
     #[inline(always)]
-    pub const fn set_restart_ifrtrim_en(&mut self, val: super::vals::RestartIfrtrimEn) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u8) & 0x01) << 5usize);
+    pub const fn set_restart_ifrtrim_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u8) & 0x01) << 5usize);
     }
     #[doc = "Reset or Resume to Rough Phase Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn reset_resume_rough_en(&self) -> super::vals::ResetResumeRoughEn {
+    pub const fn reset_resume_rough_en(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::ResetResumeRoughEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reset or Resume to Rough Phase Enable"]
     #[inline(always)]
-    pub const fn set_reset_resume_rough_en(&mut self, val: super::vals::ResetResumeRoughEn) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u8) & 0x01) << 6usize);
+    pub const fn set_reset_resume_rough_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u8) & 0x01) << 6usize);
     }
     #[doc = "Crystal-Less USB Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn clock_recover_en(&self) -> super::vals::ClockRecoverEn {
+    pub const fn clock_recover_en(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::ClockRecoverEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Crystal-Less USB Enable"]
     #[inline(always)]
-    pub const fn set_clock_recover_en(&mut self, val: super::vals::ClockRecoverEn) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u8) & 0x01) << 7usize);
+    pub const fn set_clock_recover_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u8) & 0x01) << 7usize);
     }
 }
 impl Default for ClkRecoverCtrl {
@@ -276,7 +276,7 @@ impl defmt::Format for ClkRecoverCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "ClkRecoverCtrl {{ trim_init_val_sel: {:?}, restart_ifrtrim_en: {:?}, reset_resume_rough_en: {:?}, clock_recover_en: {:?} }}",
+            "ClkRecoverCtrl {{ trim_init_val_sel: {:?}, restart_ifrtrim_en: {=bool:?}, reset_resume_rough_en: {=bool:?}, clock_recover_en: {=bool:?} }}",
             self.trim_init_val_sel(),
             self.restart_ifrtrim_en(),
             self.reset_resume_rough_en(),
@@ -292,14 +292,14 @@ impl ClkRecoverIntEn {
     #[doc = "Overflow error interrupt enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ovf_error_en(&self) -> super::vals::OvfErrorEn {
+    pub const fn ovf_error_en(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::OvfErrorEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Overflow error interrupt enable"]
     #[inline(always)]
-    pub const fn set_ovf_error_en(&mut self, val: super::vals::OvfErrorEn) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u8) & 0x01) << 4usize);
+    pub const fn set_ovf_error_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
     }
 }
 impl Default for ClkRecoverIntEn {
@@ -320,7 +320,7 @@ impl defmt::Format for ClkRecoverIntEn {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "ClkRecoverIntEn {{ ovf_error_en: {:?} }}",
+            "ClkRecoverIntEn {{ ovf_error_en: {=bool:?} }}",
             self.ovf_error_en()
         )
     }
@@ -374,14 +374,14 @@ impl ClkRecoverIrcEn {
     #[doc = "Fast IRC enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn irc_en(&self) -> super::vals::IrcEn {
+    pub const fn irc_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::IrcEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Fast IRC enable"]
     #[inline(always)]
-    pub const fn set_irc_en(&mut self, val: super::vals::IrcEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u8) & 0x01) << 1usize);
+    pub const fn set_irc_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u8) & 0x01) << 1usize);
     }
 }
 impl Default for ClkRecoverIrcEn {
@@ -400,7 +400,7 @@ impl core::fmt::Debug for ClkRecoverIrcEn {
 #[cfg(feature = "defmt")]
 impl defmt::Format for ClkRecoverIrcEn {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "ClkRecoverIrcEn {{ irc_en: {:?} }}", self.irc_en())
+        defmt::write!(f, "ClkRecoverIrcEn {{ irc_en: {=bool:?} }}", self.irc_en())
     }
 }
 #[doc = "USB OTG Control"]
@@ -1429,26 +1429,26 @@ impl KeepAliveCtrl {
     #[doc = "Stop Acknowledge Delay Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn stop_ack_dly_en(&self) -> super::vals::StopAckDlyEn {
+    pub const fn stop_ack_dly_en(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::StopAckDlyEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Stop Acknowledge Delay Enable"]
     #[inline(always)]
-    pub const fn set_stop_ack_dly_en(&mut self, val: super::vals::StopAckDlyEn) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u8) & 0x01) << 2usize);
+    pub const fn set_stop_ack_dly_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u8) & 0x01) << 2usize);
     }
     #[doc = "Wakeup Request Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn wake_req_en(&self) -> super::vals::WakeReqEn {
+    pub const fn wake_req_en(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::WakeReqEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wakeup Request Enable"]
     #[inline(always)]
-    pub const fn set_wake_req_en(&mut self, val: super::vals::WakeReqEn) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u8) & 0x01) << 3usize);
+    pub const fn set_wake_req_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u8) & 0x01) << 3usize);
     }
     #[doc = "Wakeup Interrupt Enable"]
     #[must_use]
@@ -1511,7 +1511,7 @@ impl defmt::Format for KeepAliveCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "KeepAliveCtrl {{ keep_alive_en: {=bool:?}, own_overrd_en: {=bool:?}, stop_ack_dly_en: {:?}, wake_req_en: {:?}, wake_int_en: {=bool:?}, keep_alive_sts: {:?}, wake_int_sts: {:?} }}",
+            "KeepAliveCtrl {{ keep_alive_en: {=bool:?}, own_overrd_en: {=bool:?}, stop_ack_dly_en: {=bool:?}, wake_req_en: {=bool:?}, wake_int_en: {=bool:?}, keep_alive_sts: {:?}, wake_int_sts: {:?} }}",
             self.keep_alive_en(),
             self.own_overrd_en(),
             self.stop_ack_dly_en(),
@@ -1621,38 +1621,38 @@ impl Miscctrl {
     #[doc = "VREGIN Rising Edge Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn vredg_en(&self) -> super::vals::VredgEn {
+    pub const fn vredg_en(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::VredgEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "VREGIN Rising Edge Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_vredg_en(&mut self, val: super::vals::VredgEn) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u8) & 0x01) << 3usize);
+    pub const fn set_vredg_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u8) & 0x01) << 3usize);
     }
     #[doc = "VREGIN Falling Edge Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn vfedg_en(&self) -> super::vals::VfedgEn {
+    pub const fn vfedg_en(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::VfedgEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "VREGIN Falling Edge Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_vfedg_en(&mut self, val: super::vals::VfedgEn) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u8) & 0x01) << 4usize);
+    pub const fn set_vfedg_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
     }
     #[doc = "USB Peripheral Mode Stall Adjust Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn stl_adj_en(&self) -> super::vals::StlAdjEn {
+    pub const fn stl_adj_en(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::StlAdjEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "USB Peripheral Mode Stall Adjust Enable"]
     #[inline(always)]
-    pub const fn set_stl_adj_en(&mut self, val: super::vals::StlAdjEn) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u8) & 0x01) << 7usize);
+    pub const fn set_stl_adj_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u8) & 0x01) << 7usize);
     }
 }
 impl Default for Miscctrl {
@@ -1678,7 +1678,7 @@ impl defmt::Format for Miscctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Miscctrl {{ sofdynthld: {:?}, sofbusset: {:?}, ownerrisodis: {:?}, vredg_en: {:?}, vfedg_en: {:?}, stl_adj_en: {:?} }}",
+            "Miscctrl {{ sofdynthld: {:?}, sofbusset: {:?}, ownerrisodis: {:?}, vredg_en: {=bool:?}, vfedg_en: {=bool:?}, stl_adj_en: {=bool:?} }}",
             self.sofdynthld(),
             self.sofbusset(),
             self.ownerrisodis(),

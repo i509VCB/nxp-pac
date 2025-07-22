@@ -1453,37 +1453,6 @@ impl From<CipherAlgorithms> for u16 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CipherEncrypt {
-    #[doc = "DECRYPT"]
-    DECRYPT = 0x0,
-    #[doc = "ENCRYPT"]
-    ENCRYPT = 0x01,
-}
-impl CipherEncrypt {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CipherEncrypt {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CipherEncrypt {
-    #[inline(always)]
-    fn from(val: u8) -> CipherEncrypt {
-        CipherEncrypt::from_bits(val)
-    }
-}
-impl From<CipherEncrypt> for u8 {
-    #[inline(always)]
-    fn from(val: CipherEncrypt) -> u8 {
-        CipherEncrypt::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CipherMode {
     #[doc = "ECB"]
     ECB = 0x0,
@@ -1682,130 +1651,6 @@ impl From<CtrlClrChannelInterruptEnable> for u8 {
         CtrlClrChannelInterruptEnable::to_bits(val)
     }
 }
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CtrlClrPresentCrypto {
-    #[doc = "Absent"]
-    ABSENT = 0x0,
-    #[doc = "Present"]
-    PRESENT = 0x01,
-}
-impl CtrlClrPresentCrypto {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CtrlClrPresentCrypto {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CtrlClrPresentCrypto {
-    #[inline(always)]
-    fn from(val: u8) -> CtrlClrPresentCrypto {
-        CtrlClrPresentCrypto::from_bits(val)
-    }
-}
-impl From<CtrlClrPresentCrypto> for u8 {
-    #[inline(always)]
-    fn from(val: CtrlClrPresentCrypto) -> u8 {
-        CtrlClrPresentCrypto::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CtrlClrPresentSha {
-    #[doc = "Absent"]
-    ABSENT = 0x0,
-    #[doc = "Present"]
-    PRESENT = 0x01,
-}
-impl CtrlClrPresentSha {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CtrlClrPresentSha {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CtrlClrPresentSha {
-    #[inline(always)]
-    fn from(val: u8) -> CtrlClrPresentSha {
-        CtrlClrPresentSha::from_bits(val)
-    }
-}
-impl From<CtrlClrPresentSha> for u8 {
-    #[inline(always)]
-    fn from(val: CtrlClrPresentSha) -> u8 {
-        CtrlClrPresentSha::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CtrlPresentCrypto {
-    #[doc = "Absent"]
-    ABSENT = 0x0,
-    #[doc = "Present"]
-    PRESENT = 0x01,
-}
-impl CtrlPresentCrypto {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CtrlPresentCrypto {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CtrlPresentCrypto {
-    #[inline(always)]
-    fn from(val: u8) -> CtrlPresentCrypto {
-        CtrlPresentCrypto::from_bits(val)
-    }
-}
-impl From<CtrlPresentCrypto> for u8 {
-    #[inline(always)]
-    fn from(val: CtrlPresentCrypto) -> u8 {
-        CtrlPresentCrypto::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CtrlPresentSha {
-    #[doc = "Absent"]
-    ABSENT = 0x0,
-    #[doc = "Present"]
-    PRESENT = 0x01,
-}
-impl CtrlPresentSha {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CtrlPresentSha {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CtrlPresentSha {
-    #[inline(always)]
-    fn from(val: u8) -> CtrlPresentSha {
-        CtrlPresentSha::from_bits(val)
-    }
-}
-impl From<CtrlPresentSha> for u8 {
-    #[inline(always)]
-    fn from(val: CtrlPresentSha) -> u8 {
-        CtrlPresentSha::to_bits(val)
-    }
-}
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
 pub struct CtrlSetChannelInterruptEnable(u8);
@@ -1860,68 +1705,6 @@ impl From<CtrlSetChannelInterruptEnable> for u8 {
     #[inline(always)]
     fn from(val: CtrlSetChannelInterruptEnable) -> u8 {
         CtrlSetChannelInterruptEnable::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CtrlSetPresentCrypto {
-    #[doc = "Absent"]
-    ABSENT = 0x0,
-    #[doc = "Present"]
-    PRESENT = 0x01,
-}
-impl CtrlSetPresentCrypto {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CtrlSetPresentCrypto {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CtrlSetPresentCrypto {
-    #[inline(always)]
-    fn from(val: u8) -> CtrlSetPresentCrypto {
-        CtrlSetPresentCrypto::from_bits(val)
-    }
-}
-impl From<CtrlSetPresentCrypto> for u8 {
-    #[inline(always)]
-    fn from(val: CtrlSetPresentCrypto) -> u8 {
-        CtrlSetPresentCrypto::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CtrlSetPresentSha {
-    #[doc = "Absent"]
-    ABSENT = 0x0,
-    #[doc = "Present"]
-    PRESENT = 0x01,
-}
-impl CtrlSetPresentSha {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CtrlSetPresentSha {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CtrlSetPresentSha {
-    #[inline(always)]
-    fn from(val: u8) -> CtrlSetPresentSha {
-        CtrlSetPresentSha::from_bits(val)
-    }
-}
-impl From<CtrlSetPresentSha> for u8 {
-    #[inline(always)]
-    fn from(val: CtrlSetPresentSha) -> u8 {
-        CtrlSetPresentSha::to_bits(val)
     }
 }
 #[repr(transparent)]
@@ -1980,68 +1763,6 @@ impl From<CtrlTogChannelInterruptEnable> for u8 {
         CtrlTogChannelInterruptEnable::to_bits(val)
     }
 }
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CtrlTogPresentCrypto {
-    #[doc = "Absent"]
-    ABSENT = 0x0,
-    #[doc = "Present"]
-    PRESENT = 0x01,
-}
-impl CtrlTogPresentCrypto {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CtrlTogPresentCrypto {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CtrlTogPresentCrypto {
-    #[inline(always)]
-    fn from(val: u8) -> CtrlTogPresentCrypto {
-        CtrlTogPresentCrypto::from_bits(val)
-    }
-}
-impl From<CtrlTogPresentCrypto> for u8 {
-    #[inline(always)]
-    fn from(val: CtrlTogPresentCrypto) -> u8 {
-        CtrlTogPresentCrypto::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CtrlTogPresentSha {
-    #[doc = "Absent"]
-    ABSENT = 0x0,
-    #[doc = "Present"]
-    PRESENT = 0x01,
-}
-impl CtrlTogPresentSha {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> CtrlTogPresentSha {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for CtrlTogPresentSha {
-    #[inline(always)]
-    fn from(val: u8) -> CtrlTogPresentSha {
-        CtrlTogPresentSha::from_bits(val)
-    }
-}
-impl From<CtrlTogPresentSha> for u8 {
-    #[inline(always)]
-    fn from(val: CtrlTogPresentSha) -> u8 {
-        CtrlTogPresentSha::to_bits(val)
-    }
-}
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
 pub struct HashAlgorithms(u16);
@@ -2092,37 +1813,6 @@ impl From<HashAlgorithms> for u16 {
     #[inline(always)]
     fn from(val: HashAlgorithms) -> u16 {
         HashAlgorithms::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum HashOutput {
-    #[doc = "INPUT"]
-    INPUT = 0x0,
-    #[doc = "OUTPUT"]
-    OUTPUT = 0x01,
-}
-impl HashOutput {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> HashOutput {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for HashOutput {
-    #[inline(always)]
-    fn from(val: u8) -> HashOutput {
-        HashOutput::from_bits(val)
-    }
-}
-impl From<HashOutput> for u8 {
-    #[inline(always)]
-    fn from(val: HashOutput) -> u8 {
-        HashOutput::to_bits(val)
     }
 }
 #[repr(u8)]

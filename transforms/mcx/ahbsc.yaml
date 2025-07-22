@@ -1,0 +1,27 @@
+transforms:
+  # Merge Port enums
+  - !MergeEnums
+    from: ahbsc::vals::Port(\d+)
+    to: ahbsc::vals::Port
+    check: Layout
+
+  # Make port fields into an array in relevant registers
+  - !MakeFieldArray
+    fieldsets: ahbsc::regs::Ahbnspppc0
+    from: port(\d+)
+    to: port
+
+  - !MakeFieldArray
+    fieldsets: ahbsc::regs::Ahbnspppcexp0
+    from: port(\d+)
+    to: port
+
+  - !MakeFieldArray
+    fieldsets: ahbsc::regs::Mcmnspppc0
+    from: port(\d+)
+    to: port
+
+  - !MakeFieldArray
+    fieldsets: ahbsc::regs::AipsBridgeGroup4MemRule2
+    from: port(\d+)
+    to: port

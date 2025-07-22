@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: evtg\d*::vals::InitEn
+    bit_size: 1

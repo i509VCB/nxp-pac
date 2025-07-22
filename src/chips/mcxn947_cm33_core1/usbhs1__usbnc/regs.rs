@@ -54,14 +54,14 @@ impl Ctrl1 {
     #[doc = "Software Wake-up Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn wkup_sw_en(&self) -> super::vals::WkupSwEn {
+    pub const fn wkup_sw_en(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::WkupSwEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software Wake-up Enable"]
     #[inline(always)]
-    pub const fn set_wkup_sw_en(&mut self, val: super::vals::WkupSwEn) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_wkup_sw_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "Software Wake-up"]
     #[must_use]
@@ -78,38 +78,38 @@ impl Ctrl1 {
     #[doc = "Wake-up on ID Change Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn wkup_id_en(&self) -> super::vals::WkupIdEn {
+    pub const fn wkup_id_en(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::WkupIdEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up on ID Change Enable"]
     #[inline(always)]
-    pub const fn set_wkup_id_en(&mut self, val: super::vals::WkupIdEn) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_wkup_id_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Wake-up on VBUS Change Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn wkup_vbus_en(&self) -> super::vals::WkupVbusEn {
+    pub const fn wkup_vbus_en(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::WkupVbusEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up on VBUS Change Enable"]
     #[inline(always)]
-    pub const fn set_wkup_vbus_en(&mut self, val: super::vals::WkupVbusEn) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_wkup_vbus_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Wake-up on DPDM Change Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn wkup_dpdm_en(&self) -> super::vals::WkupDpdmEn {
+    pub const fn wkup_dpdm_en(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::WkupDpdmEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Wake-up on DPDM Change Enable"]
     #[inline(always)]
-    pub const fn set_wkup_dpdm_en(&mut self, val: super::vals::WkupDpdmEn) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_wkup_dpdm_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "Wake-up Interrupt Request"]
     #[must_use]
@@ -151,7 +151,7 @@ impl defmt::Format for Ctrl1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl1 {{ over_cur_dis: {:?}, over_cur_pol: {:?}, pwr_pol: {:?}, wie: {:?}, wkup_sw_en: {:?}, wkup_sw: {:?}, wkup_id_en: {:?}, wkup_vbus_en: {:?}, wkup_dpdm_en: {:?}, wir: {=bool:?} }}",
+            "Ctrl1 {{ over_cur_dis: {:?}, over_cur_pol: {:?}, pwr_pol: {:?}, wie: {:?}, wkup_sw_en: {=bool:?}, wkup_sw: {:?}, wkup_id_en: {=bool:?}, wkup_vbus_en: {=bool:?}, wkup_dpdm_en: {=bool:?}, wir: {=bool:?} }}",
             self.over_cur_dis(),
             self.over_cur_pol(),
             self.pwr_pol(),

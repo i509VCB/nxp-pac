@@ -1,68 +1,6 @@
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Pde {
-    #[doc = "Power Down Counter of WDOG is disabled."]
-    PDE_0 = 0x0,
-    #[doc = "Power Down Counter of WDOG is enabled (Default)."]
-    PDE_1 = 0x01,
-}
-impl Pde {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Pde {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Pde {
-    #[inline(always)]
-    fn from(val: u8) -> Pde {
-        Pde::from_bits(val)
-    }
-}
-impl From<Pde> for u8 {
-    #[inline(always)]
-    fn from(val: Pde) -> u8 {
-        Pde::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Por {
-    #[doc = "Reset is not the result of a power on reset."]
-    POR_0 = 0x0,
-    #[doc = "Reset is the result of a power on reset."]
-    POR_1 = 0x01,
-}
-impl Por {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Por {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Por {
-    #[inline(always)]
-    fn from(val: u8) -> Por {
-        Por::from_bits(val)
-    }
-}
-impl From<Por> for u8 {
-    #[inline(always)]
-    fn from(val: Por) -> u8 {
-        Por::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sftw {
     #[doc = "Reset is not the result of a software reset."]
     SFTW_0 = 0x0,
@@ -89,37 +27,6 @@ impl From<Sftw> for u8 {
     #[inline(always)]
     fn from(val: Sftw) -> u8 {
         Sftw::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Sre {
-    #[doc = "using original way to generate software reset (default)"]
-    SRE_0 = 0x0,
-    #[doc = "using new way to generate software reset."]
-    SRE_1 = 0x01,
-}
-impl Sre {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Sre {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Sre {
-    #[inline(always)]
-    fn from(val: u8) -> Sre {
-        Sre::from_bits(val)
-    }
-}
-impl From<Sre> for u8 {
-    #[inline(always)]
-    fn from(val: Sre) -> u8 {
-        Sre::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -187,99 +94,6 @@ impl From<Tout> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Wda {
-    #[doc = "Assert WDOG_B output."]
-    WDA_0 = 0x0,
-    #[doc = "No effect on system (Default)."]
-    WDA_1 = 0x01,
-}
-impl Wda {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Wda {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Wda {
-    #[inline(always)]
-    fn from(val: u8) -> Wda {
-        Wda::from_bits(val)
-    }
-}
-impl From<Wda> for u8 {
-    #[inline(always)]
-    fn from(val: Wda) -> u8 {
-        Wda::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Wdbg {
-    #[doc = "Continue WDOG timer operation (Default)."]
-    WDBG_0 = 0x0,
-    #[doc = "Suspend the watchdog timer."]
-    WDBG_1 = 0x01,
-}
-impl Wdbg {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Wdbg {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Wdbg {
-    #[inline(always)]
-    fn from(val: u8) -> Wdbg {
-        Wdbg::from_bits(val)
-    }
-}
-impl From<Wdbg> for u8 {
-    #[inline(always)]
-    fn from(val: Wdbg) -> u8 {
-        Wdbg::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Wde {
-    #[doc = "Disable the Watchdog (Default)."]
-    WDE_0 = 0x0,
-    #[doc = "Enable the Watchdog."]
-    WDE_1 = 0x01,
-}
-impl Wde {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Wde {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Wde {
-    #[inline(always)]
-    fn from(val: u8) -> Wde {
-        Wde::from_bits(val)
-    }
-}
-impl From<Wde> for u8 {
-    #[inline(always)]
-    fn from(val: Wde) -> u8 {
-        Wde::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wdt {
     #[doc = "No effect on WDOG_B (Default)."]
     WDT_0 = 0x0,
@@ -306,37 +120,6 @@ impl From<Wdt> for u8 {
     #[inline(always)]
     fn from(val: Wdt) -> u8 {
         Wdt::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Wdw {
-    #[doc = "Continue WDOG timer operation (Default)."]
-    WDW_0 = 0x0,
-    #[doc = "Suspend WDOG timer operation."]
-    WDW_1 = 0x01,
-}
-impl Wdw {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Wdw {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Wdw {
-    #[inline(always)]
-    fn from(val: u8) -> Wdw {
-        Wdw::from_bits(val)
-    }
-}
-impl From<Wdw> for u8 {
-    #[inline(always)]
-    fn from(val: Wdw) -> u8 {
-        Wdw::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -424,37 +207,6 @@ impl From<Wict> for u8 {
     #[inline(always)]
     fn from(val: Wict) -> u8 {
         Wict::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Wie {
-    #[doc = "Disable Interrupt (Default)."]
-    WIE_0 = 0x0,
-    #[doc = "Enable Interrupt."]
-    WIE_1 = 0x01,
-}
-impl Wie {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Wie {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Wie {
-    #[inline(always)]
-    fn from(val: u8) -> Wie {
-        Wie::from_bits(val)
-    }
-}
-impl From<Wie> for u8 {
-    #[inline(always)]
-    fn from(val: Wie) -> u8 {
-        Wie::to_bits(val)
     }
 }
 #[repr(transparent)]

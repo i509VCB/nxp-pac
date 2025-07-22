@@ -1,5 +1,30 @@
 includes:
 - useless.yaml
 - mcx/gpio.yaml
+- mcx/enet.yaml
+- mcx/pdm.yaml
+- mcx/inputmux.yaml
+- mcx/syscon0.yaml
+- mcx/port.yaml
+- mcx/ahbsc.yaml
+- mcx/lpspi.yaml
+- mcx/dac.yaml
+- mcx/lpuart.yaml
+- mcx/adc.yaml
+- mcx/usdhc.yaml
+- mcx/sinc.yaml
+- mcx/fmu.yaml
+- mcx/emvsim.yaml
+- mcx/can.yaml
+- mcx/vref.yaml
+- mcx/vbat.yaml
+- mcx/spc.yaml
+- mcx/usbfs.yaml
+- mcx/pwm.yaml
+- mcx/flexspi.yaml
+- mcx/usbhs_usbnc.yaml
+- mcx/evtg.yaml
+- mcx/usbphy.yaml
+- mcx/s50.yaml
 transforms:
   - !Sort

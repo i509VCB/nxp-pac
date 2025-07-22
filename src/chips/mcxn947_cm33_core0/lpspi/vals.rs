@@ -617,68 +617,6 @@ impl From<Rdmo> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Rrf {
-    #[doc = "No effect"]
-    NO_EFFECT = 0x0,
-    #[doc = "Reset"]
-    RXFIFO_RST = 0x01,
-}
-impl Rrf {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Rrf {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Rrf {
-    #[inline(always)]
-    fn from(val: u8) -> Rrf {
-        Rrf::from_bits(val)
-    }
-}
-impl From<Rrf> for u8 {
-    #[inline(always)]
-    fn from(val: Rrf) -> u8 {
-        Rrf::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Rtf {
-    #[doc = "No effect"]
-    NO_EFFECT = 0x0,
-    #[doc = "Reset"]
-    TXFIFO_RST = 0x01,
-}
-impl Rtf {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Rtf {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Rtf {
-    #[inline(always)]
-    fn from(val: u8) -> Rtf {
-        Rtf::from_bits(val)
-    }
-}
-impl From<Rtf> for u8 {
-    #[inline(always)]
-    fn from(val: Rtf) -> u8 {
-        Rtf::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rxmsk {
     #[doc = "Normal transfer"]
     NORMAL = 0x0,

@@ -190,14 +190,14 @@ impl Ctrl {
     #[doc = "Interrupt Enable."]
     #[must_use]
     #[inline(always)]
-    pub const fn inten(&self) -> super::vals::Inten {
+    pub const fn inten(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Inten::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt Enable."]
     #[inline(always)]
-    pub const fn set_inten(&mut self, val: super::vals::Inten) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u8) & 0x01) << 3usize);
+    pub const fn set_inten(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u8) & 0x01) << 3usize);
     }
 }
 impl Default for Ctrl {
@@ -221,7 +221,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ ewmen: {=bool:?}, assin: {=bool:?}, inen: {=bool:?}, inten: {:?} }}",
+            "Ctrl {{ ewmen: {=bool:?}, assin: {=bool:?}, inen: {=bool:?}, inten: {=bool:?} }}",
             self.ewmen(),
             self.assin(),
             self.inen(),

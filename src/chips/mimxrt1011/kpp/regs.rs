@@ -166,74 +166,74 @@ impl Kpsr {
     #[doc = "Keypad Key Depress"]
     #[must_use]
     #[inline(always)]
-    pub const fn kpkd(&self) -> super::vals::Kpkd {
+    pub const fn kpkd(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Kpkd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Keypad Key Depress"]
     #[inline(always)]
-    pub const fn set_kpkd(&mut self, val: super::vals::Kpkd) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_kpkd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "Keypad Key Release"]
     #[must_use]
     #[inline(always)]
-    pub const fn kpkr(&self) -> super::vals::Kpkr {
+    pub const fn kpkr(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Kpkr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Keypad Key Release"]
     #[inline(always)]
-    pub const fn set_kpkr(&mut self, val: super::vals::Kpkr) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u16) & 0x01) << 1usize);
+    pub const fn set_kpkr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
     }
     #[doc = "Key Depress Synchronizer Clear"]
     #[must_use]
     #[inline(always)]
-    pub const fn kdsc(&self) -> super::vals::Kdsc {
+    pub const fn kdsc(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Kdsc::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Key Depress Synchronizer Clear"]
     #[inline(always)]
-    pub const fn set_kdsc(&mut self, val: super::vals::Kdsc) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u16) & 0x01) << 2usize);
+    pub const fn set_kdsc(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u16) & 0x01) << 2usize);
     }
     #[doc = "Key Release Synchronizer Set"]
     #[must_use]
     #[inline(always)]
-    pub const fn krss(&self) -> super::vals::Krss {
+    pub const fn krss(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Krss::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Key Release Synchronizer Set"]
     #[inline(always)]
-    pub const fn set_krss(&mut self, val: super::vals::Krss) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u16) & 0x01) << 3usize);
+    pub const fn set_krss(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u16) & 0x01) << 3usize);
     }
     #[doc = "Keypad Key Depress Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn kdie(&self) -> super::vals::Kdie {
+    pub const fn kdie(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Kdie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Keypad Key Depress Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_kdie(&mut self, val: super::vals::Kdie) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u16) & 0x01) << 8usize);
+    pub const fn set_kdie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
     }
     #[doc = "Keypad Release Interrupt Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn krie(&self) -> super::vals::Krie {
+    pub const fn krie(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Krie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Keypad Release Interrupt Enable"]
     #[inline(always)]
-    pub const fn set_krie(&mut self, val: super::vals::Krie) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u16) & 0x01) << 9usize);
+    pub const fn set_krie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
     }
 }
 impl Default for Kpsr {
@@ -259,7 +259,7 @@ impl defmt::Format for Kpsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Kpsr {{ kpkd: {:?}, kpkr: {:?}, kdsc: {:?}, krss: {:?}, kdie: {:?}, krie: {:?} }}",
+            "Kpsr {{ kpkd: {=bool:?}, kpkr: {=bool:?}, kdsc: {=bool:?}, krss: {=bool:?}, kdie: {=bool:?}, krie: {=bool:?} }}",
             self.kpkd(),
             self.kpkr(),
             self.kdsc(),

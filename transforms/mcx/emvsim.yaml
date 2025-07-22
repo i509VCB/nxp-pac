@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: emvsim::vals::(DozeEn|StopEn)
+    bit_size: 1

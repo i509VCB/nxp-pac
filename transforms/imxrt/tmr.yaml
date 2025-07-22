@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: tmr::vals::(Csctrl[0-3](Tci|DbgEn)|Ctrl[0-3]Once|Sctrl[0-3]Oen)
+    bit_size: 1

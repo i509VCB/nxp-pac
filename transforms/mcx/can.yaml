@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: can::vals::PnetEn
+    bit_size: 1

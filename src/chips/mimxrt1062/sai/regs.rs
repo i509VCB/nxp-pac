@@ -122,26 +122,26 @@ impl Rcr2 {
     #[doc = "Bit Clock Direction"]
     #[must_use]
     #[inline(always)]
-    pub const fn bcd(&self) -> super::vals::Rcr2Bcd {
+    pub const fn bcd(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::Rcr2Bcd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bit Clock Direction"]
     #[inline(always)]
-    pub const fn set_bcd(&mut self, val: super::vals::Rcr2Bcd) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_bcd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "Bit Clock Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn bcp(&self) -> super::vals::Rcr2Bcp {
+    pub const fn bcp(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Rcr2Bcp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bit Clock Polarity"]
     #[inline(always)]
-    pub const fn set_bcp(&mut self, val: super::vals::Rcr2Bcp) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_bcp(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "MCLK Select"]
     #[must_use]
@@ -158,14 +158,14 @@ impl Rcr2 {
     #[doc = "Bit Clock Input"]
     #[must_use]
     #[inline(always)]
-    pub const fn bci(&self) -> super::vals::Rcr2Bci {
+    pub const fn bci(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Rcr2Bci::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bit Clock Input"]
     #[inline(always)]
-    pub const fn set_bci(&mut self, val: super::vals::Rcr2Bci) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_bci(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Bit Clock Swap"]
     #[must_use]
@@ -216,7 +216,7 @@ impl defmt::Format for Rcr2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Rcr2 {{ div: {=u8:?}, bcd: {:?}, bcp: {:?}, msel: {:?}, bci: {:?}, bcs: {:?}, sync: {:?} }}",
+            "Rcr2 {{ div: {=u8:?}, bcd: {=bool:?}, bcp: {=bool:?}, msel: {:?}, bci: {=bool:?}, bcs: {:?}, sync: {:?} }}",
             self.div(),
             self.bcd(),
             self.bcp(),
@@ -290,26 +290,26 @@ impl Rcr4 {
     #[doc = "Frame Sync Direction"]
     #[must_use]
     #[inline(always)]
-    pub const fn fsd(&self) -> super::vals::Rcr4Fsd {
+    pub const fn fsd(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Rcr4Fsd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Frame Sync Direction"]
     #[inline(always)]
-    pub const fn set_fsd(&mut self, val: super::vals::Rcr4Fsd) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_fsd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Frame Sync Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn fsp(&self) -> super::vals::Rcr4Fsp {
+    pub const fn fsp(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Rcr4Fsp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Frame Sync Polarity"]
     #[inline(always)]
-    pub const fn set_fsp(&mut self, val: super::vals::Rcr4Fsp) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_fsp(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "On Demand Mode"]
     #[must_use]
@@ -422,7 +422,7 @@ impl defmt::Format for Rcr4 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Rcr4 {{ fsd: {:?}, fsp: {:?}, ondem: {=bool:?}, fse: {=bool:?}, mf: {=bool:?}, sywd: {=u8:?}, frsz: {=u8:?}, fpack: {:?}, fcont: {=bool:?} }}",
+            "Rcr4 {{ fsd: {=bool:?}, fsp: {=bool:?}, ondem: {=bool:?}, fse: {=bool:?}, mf: {=bool:?}, sywd: {=u8:?}, frsz: {=u8:?}, fpack: {:?}, fcont: {=bool:?} }}",
             self.fsd(),
             self.fsp(),
             self.ondem(),
@@ -596,14 +596,14 @@ impl Rcsr {
     #[doc = "FIFO Request Flag"]
     #[must_use]
     #[inline(always)]
-    pub const fn frf(&self) -> super::vals::RcsrFrf {
+    pub const fn frf(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::RcsrFrf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Request Flag"]
     #[inline(always)]
-    pub const fn set_frf(&mut self, val: super::vals::RcsrFrf) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_frf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "FIFO Warning Flag"]
     #[must_use]
@@ -656,26 +656,26 @@ impl Rcsr {
     #[doc = "Software Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn sr(&self) -> super::vals::RcsrSr {
+    pub const fn sr(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::RcsrSr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software Reset"]
     #[inline(always)]
-    pub const fn set_sr(&mut self, val: super::vals::RcsrSr) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_sr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "FIFO Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn fr(&self) -> super::vals::RcsrFr {
+    pub const fn fr(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::RcsrFr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Reset"]
     #[inline(always)]
-    pub const fn set_fr(&mut self, val: super::vals::RcsrFr) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_fr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "Bit Clock Enable"]
     #[must_use]
@@ -761,7 +761,7 @@ impl defmt::Format for Rcsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Rcsr {{ frde: {=bool:?}, fwde: {=bool:?}, frie: {=bool:?}, fwie: {=bool:?}, feie: {=bool:?}, seie: {=bool:?}, wsie: {=bool:?}, frf: {:?}, fwf: {=bool:?}, fef: {=bool:?}, sef: {=bool:?}, wsf: {=bool:?}, sr: {:?}, fr: {:?}, bce: {=bool:?}, dbge: {=bool:?}, stope: {=bool:?}, re: {=bool:?} }}",
+            "Rcsr {{ frde: {=bool:?}, fwde: {=bool:?}, frie: {=bool:?}, fwie: {=bool:?}, feie: {=bool:?}, seie: {=bool:?}, wsie: {=bool:?}, frf: {=bool:?}, fwf: {=bool:?}, fef: {=bool:?}, sef: {=bool:?}, wsf: {=bool:?}, sr: {=bool:?}, fr: {=bool:?}, bce: {=bool:?}, dbge: {=bool:?}, stope: {=bool:?}, re: {=bool:?} }}",
             self.frde(),
             self.fwde(),
             self.frie(),
@@ -964,26 +964,26 @@ impl Tcr2 {
     #[doc = "Bit Clock Direction"]
     #[must_use]
     #[inline(always)]
-    pub const fn bcd(&self) -> super::vals::Tcr2Bcd {
+    pub const fn bcd(&self) -> bool {
         let val = (self.0 >> 24usize) & 0x01;
-        super::vals::Tcr2Bcd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bit Clock Direction"]
     #[inline(always)]
-    pub const fn set_bcd(&mut self, val: super::vals::Tcr2Bcd) {
-        self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+    pub const fn set_bcd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
     }
     #[doc = "Bit Clock Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn bcp(&self) -> super::vals::Tcr2Bcp {
+    pub const fn bcp(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::Tcr2Bcp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Bit Clock Polarity"]
     #[inline(always)]
-    pub const fn set_bcp(&mut self, val: super::vals::Tcr2Bcp) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_bcp(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "MCLK Select"]
     #[must_use]
@@ -1058,7 +1058,7 @@ impl defmt::Format for Tcr2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tcr2 {{ div: {=u8:?}, bcd: {:?}, bcp: {:?}, msel: {:?}, bci: {=bool:?}, bcs: {=bool:?}, sync: {:?} }}",
+            "Tcr2 {{ div: {=u8:?}, bcd: {=bool:?}, bcp: {=bool:?}, msel: {:?}, bci: {=bool:?}, bcs: {=bool:?}, sync: {:?} }}",
             self.div(),
             self.bcd(),
             self.bcp(),
@@ -1132,38 +1132,38 @@ impl Tcr4 {
     #[doc = "Frame Sync Direction"]
     #[must_use]
     #[inline(always)]
-    pub const fn fsd(&self) -> super::vals::Tcr4Fsd {
+    pub const fn fsd(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Tcr4Fsd::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Frame Sync Direction"]
     #[inline(always)]
-    pub const fn set_fsd(&mut self, val: super::vals::Tcr4Fsd) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_fsd(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Frame Sync Polarity"]
     #[must_use]
     #[inline(always)]
-    pub const fn fsp(&self) -> super::vals::Tcr4Fsp {
+    pub const fn fsp(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Tcr4Fsp::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Frame Sync Polarity"]
     #[inline(always)]
-    pub const fn set_fsp(&mut self, val: super::vals::Tcr4Fsp) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_fsp(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "On Demand Mode"]
     #[must_use]
     #[inline(always)]
-    pub const fn ondem(&self) -> super::vals::Tcr4Ondem {
+    pub const fn ondem(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Tcr4Ondem::from_bits(val as u8)
+        val != 0
     }
     #[doc = "On Demand Mode"]
     #[inline(always)]
-    pub const fn set_ondem(&mut self, val: super::vals::Tcr4Ondem) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_ondem(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Frame Sync Early"]
     #[must_use]
@@ -1277,7 +1277,7 @@ impl defmt::Format for Tcr4 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tcr4 {{ fsd: {:?}, fsp: {:?}, ondem: {:?}, fse: {=bool:?}, mf: {=bool:?}, chmod: {:?}, sywd: {=u8:?}, frsz: {=u8:?}, fpack: {:?}, fcont: {=bool:?} }}",
+            "Tcr4 {{ fsd: {=bool:?}, fsp: {=bool:?}, ondem: {=bool:?}, fse: {=bool:?}, mf: {=bool:?}, chmod: {:?}, sywd: {=u8:?}, frsz: {=u8:?}, fpack: {:?}, fcont: {=bool:?} }}",
             self.fsd(),
             self.fsp(),
             self.ondem(),
@@ -1524,14 +1524,14 @@ impl Tcsr {
     #[doc = "FIFO Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn fr(&self) -> super::vals::TcsrFr {
+    pub const fn fr(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::TcsrFr::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Reset"]
     #[inline(always)]
-    pub const fn set_fr(&mut self, val: super::vals::TcsrFr) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_fr(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "Bit Clock Enable"]
     #[must_use]
@@ -1617,7 +1617,7 @@ impl defmt::Format for Tcsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tcsr {{ frde: {=bool:?}, fwde: {=bool:?}, frie: {=bool:?}, fwie: {=bool:?}, feie: {=bool:?}, seie: {=bool:?}, wsie: {=bool:?}, frf: {=bool:?}, fwf: {=bool:?}, fef: {=bool:?}, sef: {=bool:?}, wsf: {=bool:?}, sr: {=bool:?}, fr: {:?}, bce: {=bool:?}, dbge: {=bool:?}, stope: {=bool:?}, te: {=bool:?} }}",
+            "Tcsr {{ frde: {=bool:?}, fwde: {=bool:?}, frie: {=bool:?}, fwie: {=bool:?}, feie: {=bool:?}, seie: {=bool:?}, wsie: {=bool:?}, frf: {=bool:?}, fwf: {=bool:?}, fef: {=bool:?}, sef: {=bool:?}, wsf: {=bool:?}, sr: {=bool:?}, fr: {=bool:?}, bce: {=bool:?}, dbge: {=bool:?}, stope: {=bool:?}, te: {=bool:?} }}",
             self.frde(),
             self.fwde(),
             self.frie(),

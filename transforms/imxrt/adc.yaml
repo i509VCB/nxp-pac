@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: adc::vals::(Acfe|Acfgt|Acren|Adacken|Adact|Adco|Adhsc|Adlpc|Adlsmp|Adtrg|Avge|Awkst|Calf|Dmaen|Hc0Aien|HcAien|Ovwren|Sign)
+    bit_size: 1

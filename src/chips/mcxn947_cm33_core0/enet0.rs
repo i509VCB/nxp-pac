@@ -573,262 +573,262 @@ impl Enet0 {
     #[inline(always)]
     pub const fn dma_ch0_control(
         self,
-    ) -> crate::common::Reg<regs::DmaCh0Control, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChControl, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1100usize) as _) }
     }
     #[doc = "DMA Channel 0 Transmit Control"]
     #[inline(always)]
     pub const fn dma_ch0_tx_control(
         self,
-    ) -> crate::common::Reg<regs::DmaCh0TxControl, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChTxControl, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1104usize) as _) }
     }
     #[doc = "DMA Channel 0 Receive Control"]
     #[inline(always)]
     pub const fn dma_ch0_rx_control(
         self,
-    ) -> crate::common::Reg<regs::DmaCh0RxControl, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChRxControl, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1108usize) as _) }
     }
     #[doc = "Channel 0 Tx Descriptor List Address register"]
     #[inline(always)]
     pub const fn dma_ch0_txdesc_list_address(
         self,
-    ) -> crate::common::Reg<regs::DmaCh0TxdescListAddress, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChTxdescListAddress, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1114usize) as _) }
     }
     #[doc = "Channel 0 Rx Descriptor List Address register"]
     #[inline(always)]
     pub const fn dma_ch0_rxdesc_list_address(
         self,
-    ) -> crate::common::Reg<regs::DmaCh0RxdescListAddress, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChRxdescListAddress, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x111cusize) as _) }
     }
     #[doc = "Channel 0 Tx Descriptor Tail Pointer"]
     #[inline(always)]
     pub const fn dma_ch0_txdesc_tail_pointer(
         self,
-    ) -> crate::common::Reg<regs::DmaCh0TxdescTailPointer, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChTxdescTailPointer, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1120usize) as _) }
     }
     #[doc = "Channel 0 Rx Descriptor Tail Pointer"]
     #[inline(always)]
     pub const fn dma_ch0_rxdesc_tail_pointer(
         self,
-    ) -> crate::common::Reg<regs::DmaCh0RxdescTailPointer, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChRxdescTailPointer, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1128usize) as _) }
     }
     #[doc = "Channel 0 Tx Descriptor Ring Length"]
     #[inline(always)]
     pub const fn dma_ch0_txdesc_ring_length(
         self,
-    ) -> crate::common::Reg<regs::DmaCh0TxdescRingLength, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChTxdescRingLength, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x112cusize) as _) }
     }
     #[doc = "Channeli Receive Control"]
     #[inline(always)]
     pub const fn dma_ch0_rx_control2(
         self,
-    ) -> crate::common::Reg<regs::DmaCh0RxControl2, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChRxControl2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1130usize) as _) }
     }
     #[doc = "Channeli Interrupt Enable"]
     #[inline(always)]
     pub const fn dma_ch0_interrupt_enable(
         self,
-    ) -> crate::common::Reg<regs::DmaCh0InterruptEnable, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChInterruptEnable, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1134usize) as _) }
     }
     #[doc = "Channel 0 Receive Interrupt Watchdog Timer"]
     #[inline(always)]
     pub const fn dma_ch0_rx_interrupt_watchdog_timer(
         self,
-    ) -> crate::common::Reg<regs::DmaCh0RxInterruptWatchdogTimer, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChRxInterruptWatchdogTimer, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1138usize) as _) }
     }
     #[doc = "Channel 0 Slot Function Control and Status"]
     #[inline(always)]
     pub const fn dma_ch0_slot_function_control_status(
         self,
-    ) -> crate::common::Reg<regs::DmaCh0SlotFunctionControlStatus, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChSlotFunctionControlStatus, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x113cusize) as _) }
     }
     #[doc = "Channel 0 Current Application Transmit Descriptor"]
     #[inline(always)]
     pub const fn dma_ch0_current_app_txdesc(
         self,
-    ) -> crate::common::Reg<regs::DmaCh0CurrentAppTxdesc, crate::common::R> {
+    ) -> crate::common::Reg<regs::DmaChCurrentAppTxdesc, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1144usize) as _) }
     }
     #[doc = "Channel 0 Current Application Receive Descriptor"]
     #[inline(always)]
     pub const fn dma_ch0_current_app_rxdesc(
         self,
-    ) -> crate::common::Reg<regs::DmaCh0CurrentAppRxdesc, crate::common::R> {
+    ) -> crate::common::Reg<regs::DmaChCurrentAppRxdesc, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x114cusize) as _) }
     }
     #[doc = "Channel 0 Current Application Transmit Buffer Address"]
     #[inline(always)]
     pub const fn dma_ch0_current_app_txbuffer(
         self,
-    ) -> crate::common::Reg<regs::DmaCh0CurrentAppTxbuffer, crate::common::R> {
+    ) -> crate::common::Reg<regs::DmaChCurrentAppTxbuffer, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1154usize) as _) }
     }
     #[doc = "Channel 0 Current Application Receive Buffer Address"]
     #[inline(always)]
     pub const fn dma_ch0_current_app_rxbuffer(
         self,
-    ) -> crate::common::Reg<regs::DmaCh0CurrentAppRxbuffer, crate::common::R> {
+    ) -> crate::common::Reg<regs::DmaChCurrentAppRxbuffer, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x115cusize) as _) }
     }
     #[doc = "DMA Channel 0 Status"]
     #[inline(always)]
-    pub const fn dma_ch0_status(self) -> crate::common::Reg<regs::DmaCh0Status, crate::common::RW> {
+    pub const fn dma_ch0_status(self) -> crate::common::Reg<regs::DmaChStatus, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1160usize) as _) }
     }
     #[doc = "Channel 0 Missed Frame Counter"]
     #[inline(always)]
     pub const fn dma_ch0_miss_frame_cnt(
         self,
-    ) -> crate::common::Reg<regs::DmaCh0MissFrameCnt, crate::common::R> {
+    ) -> crate::common::Reg<regs::DmaChMissFrameCnt, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1164usize) as _) }
     }
     #[doc = "Channel 0 Receive ERI Counter"]
     #[inline(always)]
     pub const fn dma_ch0_rx_eri_cnt(
         self,
-    ) -> crate::common::Reg<regs::DmaCh0RxEriCnt, crate::common::R> {
+    ) -> crate::common::Reg<regs::DmaChRxEriCnt, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x116cusize) as _) }
     }
     #[doc = "DMA Channel 1 Control"]
     #[inline(always)]
     pub const fn dma_ch1_control(
         self,
-    ) -> crate::common::Reg<regs::DmaCh1Control, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChControl, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1180usize) as _) }
     }
     #[doc = "DMA Channel 1 Transmit Control"]
     #[inline(always)]
     pub const fn dma_ch1_tx_control(
         self,
-    ) -> crate::common::Reg<regs::DmaCh1TxControl, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChTxControl, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1184usize) as _) }
     }
     #[doc = "DMA Channel 1 Receive Control"]
     #[inline(always)]
     pub const fn dma_ch1_rx_control(
         self,
-    ) -> crate::common::Reg<regs::DmaCh1RxControl, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChRxControl, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1188usize) as _) }
     }
     #[doc = "Channel 1 Tx Descriptor List Address"]
     #[inline(always)]
     pub const fn dma_ch1_txdesc_list_address(
         self,
-    ) -> crate::common::Reg<regs::DmaCh1TxdescListAddress, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChTxdescListAddress, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1194usize) as _) }
     }
     #[doc = "Channel 1 Rx Descriptor List Address"]
     #[inline(always)]
     pub const fn dma_ch1_rxdesc_list_address(
         self,
-    ) -> crate::common::Reg<regs::DmaCh1RxdescListAddress, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChRxdescListAddress, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x119cusize) as _) }
     }
     #[doc = "Channel 1 Tx Descriptor Tail Pointer"]
     #[inline(always)]
     pub const fn dma_ch1_txdesc_tail_pointer(
         self,
-    ) -> crate::common::Reg<regs::DmaCh1TxdescTailPointer, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChTxdescTailPointer, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x11a0usize) as _) }
     }
     #[doc = "Channel 1 Rx Descriptor Tail Pointer"]
     #[inline(always)]
     pub const fn dma_ch1_rxdesc_tail_pointer(
         self,
-    ) -> crate::common::Reg<regs::DmaCh1RxdescTailPointer, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChRxdescTailPointer, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x11a8usize) as _) }
     }
     #[doc = "Channel 1 Tx Descriptor Ring Length"]
     #[inline(always)]
     pub const fn dma_ch1_txdesc_ring_length(
         self,
-    ) -> crate::common::Reg<regs::DmaCh1TxdescRingLength, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChTxdescRingLength, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x11acusize) as _) }
     }
     #[doc = "DMA Channel 1 Receive Control"]
     #[inline(always)]
     pub const fn dma_ch1_rx_control2(
         self,
-    ) -> crate::common::Reg<regs::DmaCh1RxControl2, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChRxControl2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x11b0usize) as _) }
     }
     #[doc = "Channel 1 Interrupt Enable"]
     #[inline(always)]
     pub const fn dma_ch1_interrupt_enable(
         self,
-    ) -> crate::common::Reg<regs::DmaCh1InterruptEnable, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChInterruptEnable, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x11b4usize) as _) }
     }
     #[doc = "Channel 1 Receive Interrupt Watchdog Timer"]
     #[inline(always)]
     pub const fn dma_ch1_rx_interrupt_watchdog_timer(
         self,
-    ) -> crate::common::Reg<regs::DmaCh1RxInterruptWatchdogTimer, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChRxInterruptWatchdogTimer, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x11b8usize) as _) }
     }
     #[doc = "Channel 1 Slot Function Control and Status"]
     #[inline(always)]
     pub const fn dma_ch1_slot_function_control_status(
         self,
-    ) -> crate::common::Reg<regs::DmaCh1SlotFunctionControlStatus, crate::common::RW> {
+    ) -> crate::common::Reg<regs::DmaChSlotFunctionControlStatus, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x11bcusize) as _) }
     }
     #[doc = "Channel 1 Current Application Transmit Descriptor"]
     #[inline(always)]
     pub const fn dma_ch1_current_app_txdesc(
         self,
-    ) -> crate::common::Reg<regs::DmaCh1CurrentAppTxdesc, crate::common::R> {
+    ) -> crate::common::Reg<regs::DmaChCurrentAppTxdesc, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x11c4usize) as _) }
     }
     #[doc = "Channel 1 Current Application Receive Descriptor"]
     #[inline(always)]
     pub const fn dma_ch1_current_app_rxdesc(
         self,
-    ) -> crate::common::Reg<regs::DmaCh1CurrentAppRxdesc, crate::common::R> {
+    ) -> crate::common::Reg<regs::DmaChCurrentAppRxdesc, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x11ccusize) as _) }
     }
     #[doc = "Channel 1 Current Application Transmit Buffer Address"]
     #[inline(always)]
     pub const fn dma_ch1_current_app_txbuffer(
         self,
-    ) -> crate::common::Reg<regs::DmaCh1CurrentAppTxbuffer, crate::common::R> {
+    ) -> crate::common::Reg<regs::DmaChCurrentAppTxbuffer, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x11d4usize) as _) }
     }
     #[doc = "Channel 1 Current Application Receive Buffer Address"]
     #[inline(always)]
     pub const fn dma_ch1_current_app_rxbuffer(
         self,
-    ) -> crate::common::Reg<regs::DmaCh1CurrentAppRxbuffer, crate::common::R> {
+    ) -> crate::common::Reg<regs::DmaChCurrentAppRxbuffer, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x11dcusize) as _) }
     }
     #[doc = "DMA Channel 1 Status"]
     #[inline(always)]
-    pub const fn dma_ch1_status(self) -> crate::common::Reg<regs::DmaCh1Status, crate::common::RW> {
+    pub const fn dma_ch1_status(self) -> crate::common::Reg<regs::DmaChStatus, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x11e0usize) as _) }
     }
     #[doc = "Channel 1 Missed Frame Counter"]
     #[inline(always)]
     pub const fn dma_ch1_miss_frame_cnt(
         self,
-    ) -> crate::common::Reg<regs::DmaCh1MissFrameCnt, crate::common::R> {
+    ) -> crate::common::Reg<regs::DmaChMissFrameCnt, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x11e4usize) as _) }
     }
     #[doc = "Channel 1 Receive ERI Counter"]
     #[inline(always)]
     pub const fn dma_ch1_rx_eri_cnt(
         self,
-    ) -> crate::common::Reg<regs::DmaCh1RxEriCnt, crate::common::R> {
+    ) -> crate::common::Reg<regs::DmaChRxEriCnt, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x11ecusize) as _) }
     }
 }

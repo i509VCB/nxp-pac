@@ -14247,7 +14247,7 @@ impl From<Plu> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Port0 {
+pub enum Port {
     #[doc = "Non-secure and non-privilege user access allowed"]
     NONSECURE_NONPRIV_USER_ALLOWED = 0x0,
     #[doc = "Non-secure and privilege access allowed"]
@@ -14257,9 +14257,9 @@ pub enum Port0 {
     #[doc = "Secure and privilege user access allowed"]
     SECURE_PRIV_USER_ALLOWED = 0x03,
 }
-impl Port0 {
+impl Port {
     #[inline(always)]
-    pub const fn from_bits(val: u8) -> Port0 {
+    pub const fn from_bits(val: u8) -> Port {
         unsafe { core::mem::transmute(val & 0x03) }
     }
     #[inline(always)]
@@ -14267,191 +14267,16 @@ impl Port0 {
         unsafe { core::mem::transmute(self) }
     }
 }
-impl From<u8> for Port0 {
+impl From<u8> for Port {
     #[inline(always)]
-    fn from(val: u8) -> Port0 {
-        Port0::from_bits(val)
+    fn from(val: u8) -> Port {
+        Port::from_bits(val)
     }
 }
-impl From<Port0> for u8 {
+impl From<Port> for u8 {
     #[inline(always)]
-    fn from(val: Port0) -> u8 {
-        Port0::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Port1 {
-    #[doc = "Non-secure and non-privilege user access allowed"]
-    NONSECURE_NONPRIV_USER_ALLOWED = 0x0,
-    #[doc = "Non-secure and privilege access allowed"]
-    NONSECURE_PRIV_USER_ALLOWED = 0x01,
-    #[doc = "Secure and non-privilege user access allowed"]
-    SECURE_NONPRIV_USER_ALLOWED = 0x02,
-    #[doc = "Secure and privilege user access allowed"]
-    SECURE_PRIV_USER_ALLOWED = 0x03,
-}
-impl Port1 {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Port1 {
-        unsafe { core::mem::transmute(val & 0x03) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Port1 {
-    #[inline(always)]
-    fn from(val: u8) -> Port1 {
-        Port1::from_bits(val)
-    }
-}
-impl From<Port1> for u8 {
-    #[inline(always)]
-    fn from(val: Port1) -> u8 {
-        Port1::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Port2 {
-    #[doc = "Non-secure and non-privilege user access allowed"]
-    NONSECURE_NONPRIV_USER_ALLOWED = 0x0,
-    #[doc = "Non-secure and privilege access allowed"]
-    NONSECURE_PRIV_USER_ALLOWED = 0x01,
-    #[doc = "Secure and non-privilege user access allowed"]
-    SECURE_NONPRIV_USER_ALLOWED = 0x02,
-    #[doc = "Secure and privilege user access allowed"]
-    SECURE_PRIV_USER_ALLOWED = 0x03,
-}
-impl Port2 {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Port2 {
-        unsafe { core::mem::transmute(val & 0x03) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Port2 {
-    #[inline(always)]
-    fn from(val: u8) -> Port2 {
-        Port2::from_bits(val)
-    }
-}
-impl From<Port2> for u8 {
-    #[inline(always)]
-    fn from(val: Port2) -> u8 {
-        Port2::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Port3 {
-    #[doc = "Non-secure and non-privilege user access allowed"]
-    NONSECURE_NONPRIV_USER_ALLOWED = 0x0,
-    #[doc = "Non-secure and privilege access allowed"]
-    NONSECURE_PRIV_USER_ALLOWED = 0x01,
-    #[doc = "Secure and non-privilege user access allowed"]
-    SECURE_NONPRIV_USER_ALLOWED = 0x02,
-    #[doc = "Secure and privilege user access allowed"]
-    SECURE_PRIV_USER_ALLOWED = 0x03,
-}
-impl Port3 {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Port3 {
-        unsafe { core::mem::transmute(val & 0x03) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Port3 {
-    #[inline(always)]
-    fn from(val: u8) -> Port3 {
-        Port3::from_bits(val)
-    }
-}
-impl From<Port3> for u8 {
-    #[inline(always)]
-    fn from(val: Port3) -> u8 {
-        Port3::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Port4 {
-    #[doc = "Non-secure and non-privilege user access allowed"]
-    NONSECURE_NONPRIV_USER_ALLOWED = 0x0,
-    #[doc = "Non-secure and privilege access allowed"]
-    NONSECURE_PRIV_USER_ALLOWED = 0x01,
-    #[doc = "Secure and non-privilege user access allowed"]
-    SECURE_NONPRIV_USER_ALLOWED = 0x02,
-    #[doc = "Secure and privilege user access allowed"]
-    SECURE_PRIV_USER_ALLOWED = 0x03,
-}
-impl Port4 {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Port4 {
-        unsafe { core::mem::transmute(val & 0x03) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Port4 {
-    #[inline(always)]
-    fn from(val: u8) -> Port4 {
-        Port4::from_bits(val)
-    }
-}
-impl From<Port4> for u8 {
-    #[inline(always)]
-    fn from(val: Port4) -> u8 {
-        Port4::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Port5 {
-    #[doc = "Non-secure and non-privilege user access allowed"]
-    NONSECURE_NONPRIV_USER_ALLOWED = 0x0,
-    #[doc = "Non-secure and privilege access allowed"]
-    NONSECURE_PRIV_USER_ALLOWED = 0x01,
-    #[doc = "Secure and non-privilege user access allowed"]
-    SECURE_NONPRIV_USER_ALLOWED = 0x02,
-    #[doc = "Secure and privilege user access allowed"]
-    SECURE_PRIV_USER_ALLOWED = 0x03,
-}
-impl Port5 {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Port5 {
-        unsafe { core::mem::transmute(val & 0x03) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Port5 {
-    #[inline(always)]
-    fn from(val: u8) -> Port5 {
-        Port5::from_bits(val)
-    }
-}
-impl From<Port5> for u8 {
-    #[inline(always)]
-    fn from(val: Port5) -> u8 {
-        Port5::to_bits(val)
+    fn from(val: Port) -> u8 {
+        Port::to_bits(val)
     }
 }
 #[repr(u8)]

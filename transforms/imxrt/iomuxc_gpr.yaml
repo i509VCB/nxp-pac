@@ -1,0 +1,18 @@
+# Boolean enum transforms for IOMUXC_GPR peripheral
+# Converts single-bit enums with _0/_1 patterns to proper boolean types
+
+transforms:
+  # Delete peripheral stop/doze control enums
+  - !DeleteEnums
+    from: iomuxc_gpr::vals::(Edma|Flexio1|Flexspi|Lpi2c[12]|Lpspi[12]|Lpuart[1-4]|Pit|Sai[13]|Trng)(IpgDoze|IpgStopMode|StopAck|StopReq)
+    bit_size: 1
+
+  # Delete lock control enums
+  - !DeleteEnums
+    from: iomuxc_gpr::vals::Lock(DbgEn|DcpkeyOcotpOrKeymux|M7ApcAcR[0-3](Bot|Top)|Niden|OcramTzEn|SecErrResp|Vtor)
+    bit_size: 1
+
+  # Delete misc control enums
+  - !DeleteEnums
+    from: iomuxc_gpr::vals::(AxbsP(ForceRoundRobin|M[01]HighPriority)|CacheUsb|Cm7ForceHclkEn|DbgEn|DcpKeySel|DcpkeyOcotpOrKeymux|ExcMon|FlexramBankCfgSel|Gint|L2Mem(Deepsleep|EnPowersaving)|Mqs(En|Oversample|SwRst)|Niden|OcramTzEn|RamAutoClkGatingEn|SecErrResp|Vref1mClkGpt[12]|Wdog[12]Mask|Acmp[1-4]SampleSyncEn|EnetIpgClkSEn|LockOcram2TzEn|Ocram2TzEn|SipTestMuxQspiSipEn)
+    bit_size: 1

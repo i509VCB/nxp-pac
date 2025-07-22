@@ -1042,14 +1042,14 @@ impl Csctrl0 {
     #[doc = "Triggered Count Initialization Control"]
     #[must_use]
     #[inline(always)]
-    pub const fn tci(&self) -> super::vals::Csctrl0Tci {
+    pub const fn tci(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Csctrl0Tci::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Triggered Count Initialization Control"]
     #[inline(always)]
-    pub const fn set_tci(&mut self, val: super::vals::Csctrl0Tci) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u16) & 0x01) << 10usize);
+    pub const fn set_tci(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
     }
     #[doc = "Reload on Capture"]
     #[must_use]
@@ -1129,7 +1129,7 @@ impl defmt::Format for Csctrl0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Csctrl0 {{ cl1: {:?}, cl2: {:?}, tcf1: {=bool:?}, tcf2: {=bool:?}, tcf1en: {=bool:?}, tcf2en: {=bool:?}, up: {:?}, tci: {:?}, roc: {=bool:?}, alt_load: {=bool:?}, fault: {=bool:?}, dbg_en: {:?} }}",
+            "Csctrl0 {{ cl1: {:?}, cl2: {:?}, tcf1: {=bool:?}, tcf2: {=bool:?}, tcf1en: {=bool:?}, tcf2en: {=bool:?}, up: {:?}, tci: {=bool:?}, roc: {=bool:?}, alt_load: {=bool:?}, fault: {=bool:?}, dbg_en: {:?} }}",
             self.cl1(),
             self.cl2(),
             self.tcf1(),
@@ -1237,14 +1237,14 @@ impl Csctrl1 {
     #[doc = "Triggered Count Initialization Control"]
     #[must_use]
     #[inline(always)]
-    pub const fn tci(&self) -> super::vals::Csctrl1Tci {
+    pub const fn tci(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Csctrl1Tci::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Triggered Count Initialization Control"]
     #[inline(always)]
-    pub const fn set_tci(&mut self, val: super::vals::Csctrl1Tci) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u16) & 0x01) << 10usize);
+    pub const fn set_tci(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
     }
     #[doc = "Reload on Capture"]
     #[must_use]
@@ -1324,7 +1324,7 @@ impl defmt::Format for Csctrl1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Csctrl1 {{ cl1: {:?}, cl2: {:?}, tcf1: {=bool:?}, tcf2: {=bool:?}, tcf1en: {=bool:?}, tcf2en: {=bool:?}, up: {:?}, tci: {:?}, roc: {=bool:?}, alt_load: {=bool:?}, fault: {=bool:?}, dbg_en: {:?} }}",
+            "Csctrl1 {{ cl1: {:?}, cl2: {:?}, tcf1: {=bool:?}, tcf2: {=bool:?}, tcf1en: {=bool:?}, tcf2en: {=bool:?}, up: {:?}, tci: {=bool:?}, roc: {=bool:?}, alt_load: {=bool:?}, fault: {=bool:?}, dbg_en: {:?} }}",
             self.cl1(),
             self.cl2(),
             self.tcf1(),
@@ -1432,14 +1432,14 @@ impl Csctrl2 {
     #[doc = "Triggered Count Initialization Control"]
     #[must_use]
     #[inline(always)]
-    pub const fn tci(&self) -> super::vals::Csctrl2Tci {
+    pub const fn tci(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Csctrl2Tci::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Triggered Count Initialization Control"]
     #[inline(always)]
-    pub const fn set_tci(&mut self, val: super::vals::Csctrl2Tci) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u16) & 0x01) << 10usize);
+    pub const fn set_tci(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
     }
     #[doc = "Reload on Capture"]
     #[must_use]
@@ -1519,7 +1519,7 @@ impl defmt::Format for Csctrl2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Csctrl2 {{ cl1: {:?}, cl2: {:?}, tcf1: {=bool:?}, tcf2: {=bool:?}, tcf1en: {=bool:?}, tcf2en: {=bool:?}, up: {:?}, tci: {:?}, roc: {=bool:?}, alt_load: {=bool:?}, fault: {=bool:?}, dbg_en: {:?} }}",
+            "Csctrl2 {{ cl1: {:?}, cl2: {:?}, tcf1: {=bool:?}, tcf2: {=bool:?}, tcf1en: {=bool:?}, tcf2en: {=bool:?}, up: {:?}, tci: {=bool:?}, roc: {=bool:?}, alt_load: {=bool:?}, fault: {=bool:?}, dbg_en: {:?} }}",
             self.cl1(),
             self.cl2(),
             self.tcf1(),
@@ -1627,14 +1627,14 @@ impl Csctrl3 {
     #[doc = "Triggered Count Initialization Control"]
     #[must_use]
     #[inline(always)]
-    pub const fn tci(&self) -> super::vals::Csctrl3Tci {
+    pub const fn tci(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Csctrl3Tci::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Triggered Count Initialization Control"]
     #[inline(always)]
-    pub const fn set_tci(&mut self, val: super::vals::Csctrl3Tci) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u16) & 0x01) << 10usize);
+    pub const fn set_tci(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
     }
     #[doc = "Reload on Capture"]
     #[must_use]
@@ -1714,7 +1714,7 @@ impl defmt::Format for Csctrl3 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Csctrl3 {{ cl1: {:?}, cl2: {:?}, tcf1: {=bool:?}, tcf2: {=bool:?}, tcf1en: {=bool:?}, tcf2en: {=bool:?}, up: {:?}, tci: {:?}, roc: {=bool:?}, alt_load: {=bool:?}, fault: {=bool:?}, dbg_en: {:?} }}",
+            "Csctrl3 {{ cl1: {:?}, cl2: {:?}, tcf1: {=bool:?}, tcf2: {=bool:?}, tcf1en: {=bool:?}, tcf2en: {=bool:?}, up: {:?}, tci: {=bool:?}, roc: {=bool:?}, alt_load: {=bool:?}, fault: {=bool:?}, dbg_en: {:?} }}",
             self.cl1(),
             self.cl2(),
             self.tcf1(),
@@ -1786,14 +1786,14 @@ impl Ctrl0 {
     #[doc = "Count Once"]
     #[must_use]
     #[inline(always)]
-    pub const fn once(&self) -> super::vals::Ctrl0Once {
+    pub const fn once(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Ctrl0Once::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Count Once"]
     #[inline(always)]
-    pub const fn set_once(&mut self, val: super::vals::Ctrl0Once) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u16) & 0x01) << 6usize);
+    pub const fn set_once(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u16) & 0x01) << 6usize);
     }
     #[doc = "Secondary Count Source"]
     #[must_use]
@@ -1857,7 +1857,7 @@ impl defmt::Format for Ctrl0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl0 {{ outmode: {:?}, coinit: {=bool:?}, dir: {:?}, length: {:?}, once: {:?}, scs: {:?}, pcs: {:?}, cm: {:?} }}",
+            "Ctrl0 {{ outmode: {:?}, coinit: {=bool:?}, dir: {:?}, length: {:?}, once: {=bool:?}, scs: {:?}, pcs: {:?}, cm: {:?} }}",
             self.outmode(),
             self.coinit(),
             self.dir(),
@@ -1925,14 +1925,14 @@ impl Ctrl1 {
     #[doc = "Count Once"]
     #[must_use]
     #[inline(always)]
-    pub const fn once(&self) -> super::vals::Ctrl1Once {
+    pub const fn once(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Ctrl1Once::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Count Once"]
     #[inline(always)]
-    pub const fn set_once(&mut self, val: super::vals::Ctrl1Once) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u16) & 0x01) << 6usize);
+    pub const fn set_once(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u16) & 0x01) << 6usize);
     }
     #[doc = "Secondary Count Source"]
     #[must_use]
@@ -1996,7 +1996,7 @@ impl defmt::Format for Ctrl1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl1 {{ outmode: {:?}, coinit: {=bool:?}, dir: {:?}, length: {:?}, once: {:?}, scs: {:?}, pcs: {:?}, cm: {:?} }}",
+            "Ctrl1 {{ outmode: {:?}, coinit: {=bool:?}, dir: {:?}, length: {:?}, once: {=bool:?}, scs: {:?}, pcs: {:?}, cm: {:?} }}",
             self.outmode(),
             self.coinit(),
             self.dir(),
@@ -2064,14 +2064,14 @@ impl Ctrl2 {
     #[doc = "Count Once"]
     #[must_use]
     #[inline(always)]
-    pub const fn once(&self) -> super::vals::Ctrl2Once {
+    pub const fn once(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Ctrl2Once::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Count Once"]
     #[inline(always)]
-    pub const fn set_once(&mut self, val: super::vals::Ctrl2Once) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u16) & 0x01) << 6usize);
+    pub const fn set_once(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u16) & 0x01) << 6usize);
     }
     #[doc = "Secondary Count Source"]
     #[must_use]
@@ -2135,7 +2135,7 @@ impl defmt::Format for Ctrl2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl2 {{ outmode: {:?}, coinit: {=bool:?}, dir: {:?}, length: {:?}, once: {:?}, scs: {:?}, pcs: {:?}, cm: {:?} }}",
+            "Ctrl2 {{ outmode: {:?}, coinit: {=bool:?}, dir: {:?}, length: {:?}, once: {=bool:?}, scs: {:?}, pcs: {:?}, cm: {:?} }}",
             self.outmode(),
             self.coinit(),
             self.dir(),
@@ -2203,14 +2203,14 @@ impl Ctrl3 {
     #[doc = "Count Once"]
     #[must_use]
     #[inline(always)]
-    pub const fn once(&self) -> super::vals::Ctrl3Once {
+    pub const fn once(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Ctrl3Once::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Count Once"]
     #[inline(always)]
-    pub const fn set_once(&mut self, val: super::vals::Ctrl3Once) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u16) & 0x01) << 6usize);
+    pub const fn set_once(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u16) & 0x01) << 6usize);
     }
     #[doc = "Secondary Count Source"]
     #[must_use]
@@ -2274,7 +2274,7 @@ impl defmt::Format for Ctrl3 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl3 {{ outmode: {:?}, coinit: {=bool:?}, dir: {:?}, length: {:?}, once: {:?}, scs: {:?}, pcs: {:?}, cm: {:?} }}",
+            "Ctrl3 {{ outmode: {:?}, coinit: {=bool:?}, dir: {:?}, length: {:?}, once: {=bool:?}, scs: {:?}, pcs: {:?}, cm: {:?} }}",
             self.outmode(),
             self.coinit(),
             self.dir(),
@@ -3105,14 +3105,14 @@ impl Sctrl0 {
     #[doc = "Output Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn oen(&self) -> super::vals::Sctrl0Oen {
+    pub const fn oen(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sctrl0Oen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Output Enable"]
     #[inline(always)]
-    pub const fn set_oen(&mut self, val: super::vals::Sctrl0Oen) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_oen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "Output Polarity Select"]
     #[must_use]
@@ -3315,7 +3315,7 @@ impl defmt::Format for Sctrl0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sctrl0 {{ oen: {:?}, ops: {:?}, force: {=bool:?}, val: {=bool:?}, eeof: {=bool:?}, mstr: {=bool:?}, capture_mode: {:?}, input: {=bool:?}, ips: {=bool:?}, iefie: {=bool:?}, ief: {=bool:?}, tofie: {=bool:?}, tof: {=bool:?}, tcfie: {=bool:?}, tcf: {=bool:?} }}",
+            "Sctrl0 {{ oen: {=bool:?}, ops: {:?}, force: {=bool:?}, val: {=bool:?}, eeof: {=bool:?}, mstr: {=bool:?}, capture_mode: {:?}, input: {=bool:?}, ips: {=bool:?}, iefie: {=bool:?}, ief: {=bool:?}, tofie: {=bool:?}, tof: {=bool:?}, tcfie: {=bool:?}, tcf: {=bool:?} }}",
             self.oen(),
             self.ops(),
             self.force(),
@@ -3342,14 +3342,14 @@ impl Sctrl1 {
     #[doc = "Output Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn oen(&self) -> super::vals::Sctrl1Oen {
+    pub const fn oen(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sctrl1Oen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Output Enable"]
     #[inline(always)]
-    pub const fn set_oen(&mut self, val: super::vals::Sctrl1Oen) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_oen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "Output Polarity Select"]
     #[must_use]
@@ -3552,7 +3552,7 @@ impl defmt::Format for Sctrl1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sctrl1 {{ oen: {:?}, ops: {:?}, force: {=bool:?}, val: {=bool:?}, eeof: {=bool:?}, mstr: {=bool:?}, capture_mode: {:?}, input: {=bool:?}, ips: {=bool:?}, iefie: {=bool:?}, ief: {=bool:?}, tofie: {=bool:?}, tof: {=bool:?}, tcfie: {=bool:?}, tcf: {=bool:?} }}",
+            "Sctrl1 {{ oen: {=bool:?}, ops: {:?}, force: {=bool:?}, val: {=bool:?}, eeof: {=bool:?}, mstr: {=bool:?}, capture_mode: {:?}, input: {=bool:?}, ips: {=bool:?}, iefie: {=bool:?}, ief: {=bool:?}, tofie: {=bool:?}, tof: {=bool:?}, tcfie: {=bool:?}, tcf: {=bool:?} }}",
             self.oen(),
             self.ops(),
             self.force(),
@@ -3579,14 +3579,14 @@ impl Sctrl2 {
     #[doc = "Output Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn oen(&self) -> super::vals::Sctrl2Oen {
+    pub const fn oen(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sctrl2Oen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Output Enable"]
     #[inline(always)]
-    pub const fn set_oen(&mut self, val: super::vals::Sctrl2Oen) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_oen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "Output Polarity Select"]
     #[must_use]
@@ -3789,7 +3789,7 @@ impl defmt::Format for Sctrl2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sctrl2 {{ oen: {:?}, ops: {:?}, force: {=bool:?}, val: {=bool:?}, eeof: {=bool:?}, mstr: {=bool:?}, capture_mode: {:?}, input: {=bool:?}, ips: {=bool:?}, iefie: {=bool:?}, ief: {=bool:?}, tofie: {=bool:?}, tof: {=bool:?}, tcfie: {=bool:?}, tcf: {=bool:?} }}",
+            "Sctrl2 {{ oen: {=bool:?}, ops: {:?}, force: {=bool:?}, val: {=bool:?}, eeof: {=bool:?}, mstr: {=bool:?}, capture_mode: {:?}, input: {=bool:?}, ips: {=bool:?}, iefie: {=bool:?}, ief: {=bool:?}, tofie: {=bool:?}, tof: {=bool:?}, tcfie: {=bool:?}, tcf: {=bool:?} }}",
             self.oen(),
             self.ops(),
             self.force(),
@@ -3816,14 +3816,14 @@ impl Sctrl3 {
     #[doc = "Output Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn oen(&self) -> super::vals::Sctrl3Oen {
+    pub const fn oen(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Sctrl3Oen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Output Enable"]
     #[inline(always)]
-    pub const fn set_oen(&mut self, val: super::vals::Sctrl3Oen) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_oen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
     #[doc = "Output Polarity Select"]
     #[must_use]
@@ -4026,7 +4026,7 @@ impl defmt::Format for Sctrl3 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sctrl3 {{ oen: {:?}, ops: {:?}, force: {=bool:?}, val: {=bool:?}, eeof: {=bool:?}, mstr: {=bool:?}, capture_mode: {:?}, input: {=bool:?}, ips: {=bool:?}, iefie: {=bool:?}, ief: {=bool:?}, tofie: {=bool:?}, tof: {=bool:?}, tcfie: {=bool:?}, tcf: {=bool:?} }}",
+            "Sctrl3 {{ oen: {=bool:?}, ops: {:?}, force: {=bool:?}, val: {=bool:?}, eeof: {=bool:?}, mstr: {=bool:?}, capture_mode: {:?}, input: {=bool:?}, ips: {=bool:?}, iefie: {=bool:?}, ief: {=bool:?}, tofie: {=bool:?}, tof: {=bool:?}, tcfie: {=bool:?}, tcf: {=bool:?} }}",
             self.oen(),
             self.ops(),
             self.force(),

@@ -68,3 +68,9 @@ transforms:
   # Useless enums which didn't get matched
   - !DeleteEnums
     from: iomuxc::vals::(Hys|Ode|Pke|Pue|Sre)
+
+  # Boolean enum transforms for IOMUXC select input registers
+  - !DeleteEnums
+    from: iomuxc::vals::(Flexpwm\d+Pwm[ab]SelectInput\d+|FlexspiDqsF[ab]SelectInput|Kpp(Col|Row)SelectInput\d+|Lpi2c\d+HreqSelectInput|Lpspi\d+(Pcs|Sck|Sdi|Sdo)SelectInput\d*|Lpuart\d+(Rxd|Txd)SelectInput|NmiGlueNmiSelectInput|SpdifIn\d+SelectInput|SpdifTxClk\d+SelectInput|UsbOtg(Id|Oc)SelectInput|XevGlueRxevSelectInput)Daisy
+    bit_size: 1
+

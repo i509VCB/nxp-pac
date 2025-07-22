@@ -1,0 +1,13 @@
+# Boolean enum transforms for XTALOSC24M peripheral
+# Converts single-bit enums with _0/_1 patterns to proper boolean types
+
+transforms:
+  # Delete LowpwrCtrl register control enums
+  - !DeleteEnums
+    from: xtalosc24m::vals::LowpwrCtrl(Clr|Set|Tog)?(LpbgSel|RcOscEn|XtaloscPwrupStat)
+    bit_size: 1
+
+  # Delete Misc0 register control enums
+  - !DeleteEnums
+    from: xtalosc24m::vals::Misc0(Clr|Set|Tog)?(ClkgateCtrl|DisconHighSnvs|ReftopSelfbiasoff)
+    bit_size: 1

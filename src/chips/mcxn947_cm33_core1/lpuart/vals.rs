@@ -751,37 +751,6 @@ impl From<Rsrc> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Rst {
-    #[doc = "Not reset"]
-    NO_EFFECT = 0x0,
-    #[doc = "Reset"]
-    RESET = 0x01,
-}
-impl Rst {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Rst {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Rst {
-    #[inline(always)]
-    fn from(val: u8) -> Rst {
-        Rst::from_bits(val)
-    }
-}
-impl From<Rst> for u8 {
-    #[inline(always)]
-    fn from(val: Rst) -> u8 {
-        Rst::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rts {
     #[doc = "Logic one"]
     LOGIC_ONE = 0x0,

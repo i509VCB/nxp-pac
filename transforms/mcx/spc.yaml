@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: spc\d*::vals::BleedEn
+    bit_size: 1

@@ -723,13 +723,13 @@ impl AipsBridgeGroup0MemRule0 {
     #[doc = "PORT5"]
     #[must_use]
     #[inline(always)]
-    pub const fn port5(&self) -> super::vals::Port5 {
+    pub const fn port5(&self) -> super::vals::Port {
         let val = (self.0 >> 8usize) & 0x03;
-        super::vals::Port5::from_bits(val as u8)
+        super::vals::Port::from_bits(val as u8)
     }
     #[doc = "PORT5"]
     #[inline(always)]
-    pub const fn set_port5(&mut self, val: super::vals::Port5) {
+    pub const fn set_port5(&mut self, val: super::vals::Port) {
         self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
     }
     #[doc = "FMU0"]
@@ -2493,26 +2493,18 @@ impl AipsBridgeGroup4MemRule2 {
     #[doc = "PORT0"]
     #[must_use]
     #[inline(always)]
-    pub const fn port0(&self) -> super::vals::Port0 {
-        let val = (self.0 >> 24usize) & 0x03;
-        super::vals::Port0::from_bits(val as u8)
+    pub const fn port(&self, n: usize) -> super::vals::Port {
+        assert!(n < 2usize);
+        let offs = 24usize + n * 4usize;
+        let val = (self.0 >> offs) & 0x03;
+        super::vals::Port::from_bits(val as u8)
     }
     #[doc = "PORT0"]
     #[inline(always)]
-    pub const fn set_port0(&mut self, val: super::vals::Port0) {
-        self.0 = (self.0 & !(0x03 << 24usize)) | (((val.to_bits() as u32) & 0x03) << 24usize);
-    }
-    #[doc = "PORT1"]
-    #[must_use]
-    #[inline(always)]
-    pub const fn port1(&self) -> super::vals::Port1 {
-        let val = (self.0 >> 28usize) & 0x03;
-        super::vals::Port1::from_bits(val as u8)
-    }
-    #[doc = "PORT1"]
-    #[inline(always)]
-    pub const fn set_port1(&mut self, val: super::vals::Port1) {
-        self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
+    pub const fn set_port(&mut self, n: usize, val: super::vals::Port) {
+        assert!(n < 2usize);
+        let offs = 24usize + n * 4usize;
+        self.0 = (self.0 & !(0x03 << offs)) | (((val.to_bits() as u32) & 0x03) << offs);
     }
 }
 impl Default for AipsBridgeGroup4MemRule2 {
@@ -2530,8 +2522,8 @@ impl core::fmt::Debug for AipsBridgeGroup4MemRule2 {
             .field("opamp1", &self.opamp1())
             .field("hpdac0", &self.hpdac0())
             .field("opamp2", &self.opamp2())
-            .field("port0", &self.port0())
-            .field("port1", &self.port1())
+            .field("port[0]", &self.port(0usize))
+            .field("port[1]", &self.port(1usize))
             .finish()
     }
 }
@@ -2540,15 +2532,15 @@ impl defmt::Format for AipsBridgeGroup4MemRule2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "AipsBridgeGroup4MemRule2 {{ opamp0: {:?}, vref: {:?}, dac: {:?}, opamp1: {:?}, hpdac0: {:?}, opamp2: {:?}, port0: {:?}, port1: {:?} }}",
+            "AipsBridgeGroup4MemRule2 {{ opamp0: {:?}, vref: {:?}, dac: {:?}, opamp1: {:?}, hpdac0: {:?}, opamp2: {:?}, port[0]: {:?}, port[1]: {:?} }}",
             self.opamp0(),
             self.vref(),
             self.dac(),
             self.opamp1(),
             self.hpdac0(),
             self.opamp2(),
-            self.port0(),
-            self.port1()
+            self.port(0usize),
+            self.port(1usize)
         )
     }
 }
@@ -2560,37 +2552,37 @@ impl AipsBridgeGroup4MemRule3 {
     #[doc = "PORT2"]
     #[must_use]
     #[inline(always)]
-    pub const fn port2(&self) -> super::vals::Port2 {
+    pub const fn port2(&self) -> super::vals::Port {
         let val = (self.0 >> 0usize) & 0x03;
-        super::vals::Port2::from_bits(val as u8)
+        super::vals::Port::from_bits(val as u8)
     }
     #[doc = "PORT2"]
     #[inline(always)]
-    pub const fn set_port2(&mut self, val: super::vals::Port2) {
+    pub const fn set_port2(&mut self, val: super::vals::Port) {
         self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
     }
     #[doc = "PORT3"]
     #[must_use]
     #[inline(always)]
-    pub const fn port3(&self) -> super::vals::Port3 {
+    pub const fn port3(&self) -> super::vals::Port {
         let val = (self.0 >> 4usize) & 0x03;
-        super::vals::Port3::from_bits(val as u8)
+        super::vals::Port::from_bits(val as u8)
     }
     #[doc = "PORT3"]
     #[inline(always)]
-    pub const fn set_port3(&mut self, val: super::vals::Port3) {
+    pub const fn set_port3(&mut self, val: super::vals::Port) {
         self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
     }
     #[doc = "PORT4"]
     #[must_use]
     #[inline(always)]
-    pub const fn port4(&self) -> super::vals::Port4 {
+    pub const fn port4(&self) -> super::vals::Port {
         let val = (self.0 >> 8usize) & 0x03;
-        super::vals::Port4::from_bits(val as u8)
+        super::vals::Port::from_bits(val as u8)
     }
     #[doc = "PORT4"]
     #[inline(always)]
-    pub const fn set_port4(&mut self, val: super::vals::Port4) {
+    pub const fn set_port4(&mut self, val: super::vals::Port) {
         self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
     }
     #[doc = "MTR0"]

@@ -3768,26 +3768,26 @@ impl Ctrl {
     #[doc = "Indicates whether the SHA1/SHA2 functions are present."]
     #[must_use]
     #[inline(always)]
-    pub const fn present_sha(&self) -> super::vals::CtrlPresentSha {
+    pub const fn present_sha(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::CtrlPresentSha::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates whether the SHA1/SHA2 functions are present."]
     #[inline(always)]
-    pub const fn set_present_sha(&mut self, val: super::vals::CtrlPresentSha) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_present_sha(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Indicates whether the crypto (cipher/hash) functions are present."]
     #[must_use]
     #[inline(always)]
-    pub const fn present_crypto(&self) -> super::vals::CtrlPresentCrypto {
+    pub const fn present_crypto(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::CtrlPresentCrypto::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates whether the crypto (cipher/hash) functions are present."]
     #[inline(always)]
-    pub const fn set_present_crypto(&mut self, val: super::vals::CtrlPresentCrypto) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_present_crypto(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "This bit must be set to zero for a normal operation"]
     #[must_use]
@@ -3839,7 +3839,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ channel_interrupt_enable: {:?}, enable_context_switching: {=bool:?}, enable_context_caching: {=bool:?}, gather_residual_writes: {=bool:?}, present_sha: {:?}, present_crypto: {:?}, clkgate: {=bool:?}, sftrst: {=bool:?} }}",
+            "Ctrl {{ channel_interrupt_enable: {:?}, enable_context_switching: {=bool:?}, enable_context_caching: {=bool:?}, gather_residual_writes: {=bool:?}, present_sha: {=bool:?}, present_crypto: {=bool:?}, clkgate: {=bool:?}, sftrst: {=bool:?} }}",
             self.channel_interrupt_enable(),
             self.enable_context_switching(),
             self.enable_context_caching(),
@@ -3910,26 +3910,26 @@ impl CtrlClr {
     #[doc = "Indicates whether the SHA1/SHA2 functions are present."]
     #[must_use]
     #[inline(always)]
-    pub const fn present_sha(&self) -> super::vals::CtrlClrPresentSha {
+    pub const fn present_sha(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::CtrlClrPresentSha::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates whether the SHA1/SHA2 functions are present."]
     #[inline(always)]
-    pub const fn set_present_sha(&mut self, val: super::vals::CtrlClrPresentSha) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_present_sha(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Indicates whether the crypto (cipher/hash) functions are present."]
     #[must_use]
     #[inline(always)]
-    pub const fn present_crypto(&self) -> super::vals::CtrlClrPresentCrypto {
+    pub const fn present_crypto(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::CtrlClrPresentCrypto::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates whether the crypto (cipher/hash) functions are present."]
     #[inline(always)]
-    pub const fn set_present_crypto(&mut self, val: super::vals::CtrlClrPresentCrypto) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_present_crypto(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "This bit must be set to zero for a normal operation"]
     #[must_use]
@@ -3981,7 +3981,7 @@ impl defmt::Format for CtrlClr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "CtrlClr {{ channel_interrupt_enable: {:?}, enable_context_switching: {=bool:?}, enable_context_caching: {=bool:?}, gather_residual_writes: {=bool:?}, present_sha: {:?}, present_crypto: {:?}, clkgate: {=bool:?}, sftrst: {=bool:?} }}",
+            "CtrlClr {{ channel_interrupt_enable: {:?}, enable_context_switching: {=bool:?}, enable_context_caching: {=bool:?}, gather_residual_writes: {=bool:?}, present_sha: {=bool:?}, present_crypto: {=bool:?}, clkgate: {=bool:?}, sftrst: {=bool:?} }}",
             self.channel_interrupt_enable(),
             self.enable_context_switching(),
             self.enable_context_caching(),
@@ -4052,26 +4052,26 @@ impl CtrlSet {
     #[doc = "Indicates whether the SHA1/SHA2 functions are present."]
     #[must_use]
     #[inline(always)]
-    pub const fn present_sha(&self) -> super::vals::CtrlSetPresentSha {
+    pub const fn present_sha(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::CtrlSetPresentSha::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates whether the SHA1/SHA2 functions are present."]
     #[inline(always)]
-    pub const fn set_present_sha(&mut self, val: super::vals::CtrlSetPresentSha) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_present_sha(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Indicates whether the crypto (cipher/hash) functions are present."]
     #[must_use]
     #[inline(always)]
-    pub const fn present_crypto(&self) -> super::vals::CtrlSetPresentCrypto {
+    pub const fn present_crypto(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::CtrlSetPresentCrypto::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates whether the crypto (cipher/hash) functions are present."]
     #[inline(always)]
-    pub const fn set_present_crypto(&mut self, val: super::vals::CtrlSetPresentCrypto) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_present_crypto(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "This bit must be set to zero for a normal operation"]
     #[must_use]
@@ -4123,7 +4123,7 @@ impl defmt::Format for CtrlSet {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "CtrlSet {{ channel_interrupt_enable: {:?}, enable_context_switching: {=bool:?}, enable_context_caching: {=bool:?}, gather_residual_writes: {=bool:?}, present_sha: {:?}, present_crypto: {:?}, clkgate: {=bool:?}, sftrst: {=bool:?} }}",
+            "CtrlSet {{ channel_interrupt_enable: {:?}, enable_context_switching: {=bool:?}, enable_context_caching: {=bool:?}, gather_residual_writes: {=bool:?}, present_sha: {=bool:?}, present_crypto: {=bool:?}, clkgate: {=bool:?}, sftrst: {=bool:?} }}",
             self.channel_interrupt_enable(),
             self.enable_context_switching(),
             self.enable_context_caching(),
@@ -4194,26 +4194,26 @@ impl CtrlTog {
     #[doc = "Indicates whether the SHA1/SHA2 functions are present."]
     #[must_use]
     #[inline(always)]
-    pub const fn present_sha(&self) -> super::vals::CtrlTogPresentSha {
+    pub const fn present_sha(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::CtrlTogPresentSha::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates whether the SHA1/SHA2 functions are present."]
     #[inline(always)]
-    pub const fn set_present_sha(&mut self, val: super::vals::CtrlTogPresentSha) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_present_sha(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Indicates whether the crypto (cipher/hash) functions are present."]
     #[must_use]
     #[inline(always)]
-    pub const fn present_crypto(&self) -> super::vals::CtrlTogPresentCrypto {
+    pub const fn present_crypto(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::CtrlTogPresentCrypto::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates whether the crypto (cipher/hash) functions are present."]
     #[inline(always)]
-    pub const fn set_present_crypto(&mut self, val: super::vals::CtrlTogPresentCrypto) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_present_crypto(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "This bit must be set to zero for a normal operation"]
     #[must_use]
@@ -4265,7 +4265,7 @@ impl defmt::Format for CtrlTog {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "CtrlTog {{ channel_interrupt_enable: {:?}, enable_context_switching: {=bool:?}, enable_context_caching: {=bool:?}, gather_residual_writes: {=bool:?}, present_sha: {:?}, present_crypto: {:?}, clkgate: {=bool:?}, sftrst: {=bool:?} }}",
+            "CtrlTog {{ channel_interrupt_enable: {:?}, enable_context_switching: {=bool:?}, enable_context_caching: {=bool:?}, gather_residual_writes: {=bool:?}, present_sha: {=bool:?}, present_crypto: {=bool:?}, clkgate: {=bool:?}, sftrst: {=bool:?} }}",
             self.channel_interrupt_enable(),
             self.enable_context_switching(),
             self.enable_context_caching(),
@@ -4584,14 +4584,14 @@ impl Packet1 {
     #[doc = "When the cipher block is enabled, this bit indicates whether the operation is encryption or decryption"]
     #[must_use]
     #[inline(always)]
-    pub const fn cipher_encrypt(&self) -> super::vals::CipherEncrypt {
+    pub const fn cipher_encrypt(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::CipherEncrypt::from_bits(val as u8)
+        val != 0
     }
     #[doc = "When the cipher block is enabled, this bit indicates whether the operation is encryption or decryption"]
     #[inline(always)]
-    pub const fn set_cipher_encrypt(&mut self, val: super::vals::CipherEncrypt) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_cipher_encrypt(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Reflects whether the cipher block must load the initialization vector from the payload for this operation"]
     #[must_use]
@@ -4668,14 +4668,14 @@ impl Packet1 {
     #[doc = "When the hashing is enabled, this bit controls whether the input or output data is hashed."]
     #[must_use]
     #[inline(always)]
-    pub const fn hash_output(&self) -> super::vals::HashOutput {
+    pub const fn hash_output(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::HashOutput::from_bits(val as u8)
+        val != 0
     }
     #[doc = "When the hashing is enabled, this bit controls whether the input or output data is hashed."]
     #[inline(always)]
-    pub const fn set_hash_output(&mut self, val: super::vals::HashOutput) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_hash_output(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "When this bit is set (MEMCOPY and BLIT modes only), the DCP simply fills the destination buffer with the value found in the source address field"]
     #[must_use]
@@ -4828,7 +4828,7 @@ impl defmt::Format for Packet1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Packet1 {{ interrupt: {=bool:?}, decr_semaphore: {=bool:?}, chain: {=bool:?}, chain_contiguous: {=bool:?}, enable_memcopy: {=bool:?}, enable_cipher: {=bool:?}, enable_hash: {=bool:?}, enable_blit: {=bool:?}, cipher_encrypt: {:?}, cipher_init: {=bool:?}, otp_key: {=bool:?}, payload_key: {=bool:?}, hash_init: {=bool:?}, hash_term: {=bool:?}, check_hash: {=bool:?}, hash_output: {:?}, constant_fill: {=bool:?}, test_sema_irq: {=bool:?}, key_byteswap: {=bool:?}, key_wordswap: {=bool:?}, input_byteswap: {=bool:?}, input_wordswap: {=bool:?}, output_byteswap: {=bool:?}, output_wordswap: {=bool:?}, tag: {=u8:?} }}",
+            "Packet1 {{ interrupt: {=bool:?}, decr_semaphore: {=bool:?}, chain: {=bool:?}, chain_contiguous: {=bool:?}, enable_memcopy: {=bool:?}, enable_cipher: {=bool:?}, enable_hash: {=bool:?}, enable_blit: {=bool:?}, cipher_encrypt: {=bool:?}, cipher_init: {=bool:?}, otp_key: {=bool:?}, payload_key: {=bool:?}, hash_init: {=bool:?}, hash_term: {=bool:?}, check_hash: {=bool:?}, hash_output: {=bool:?}, constant_fill: {=bool:?}, test_sema_irq: {=bool:?}, key_byteswap: {=bool:?}, key_wordswap: {=bool:?}, input_byteswap: {=bool:?}, input_wordswap: {=bool:?}, output_byteswap: {=bool:?}, output_wordswap: {=bool:?}, tag: {=u8:?} }}",
             self.interrupt(),
             self.decr_semaphore(),
             self.chain(),

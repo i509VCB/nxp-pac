@@ -157,26 +157,26 @@ impl Cs {
     #[doc = "Reconfiguration Success"]
     #[must_use]
     #[inline(always)]
-    pub const fn rcs(&self) -> super::vals::Rcs {
+    pub const fn rcs(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Rcs::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reconfiguration Success"]
     #[inline(always)]
-    pub const fn set_rcs(&mut self, val: super::vals::Rcs) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_rcs(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "Unlock status"]
     #[must_use]
     #[inline(always)]
-    pub const fn ulk(&self) -> super::vals::Ulk {
+    pub const fn ulk(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Ulk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Unlock status"]
     #[inline(always)]
-    pub const fn set_ulk(&mut self, val: super::vals::Ulk) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_ulk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "Watchdog prescaler"]
     #[must_use]
@@ -258,7 +258,7 @@ impl defmt::Format for Cs {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cs {{ stop: {=bool:?}, wait: {=bool:?}, dbg: {=bool:?}, tst: {:?}, update: {=bool:?}, int: {=bool:?}, en: {=bool:?}, clk: {=u8:?}, rcs: {:?}, ulk: {:?}, pres: {=bool:?}, cmd32en: {=bool:?}, flg: {=bool:?}, win: {=bool:?} }}",
+            "Cs {{ stop: {=bool:?}, wait: {=bool:?}, dbg: {=bool:?}, tst: {:?}, update: {=bool:?}, int: {=bool:?}, en: {=bool:?}, clk: {=u8:?}, rcs: {=bool:?}, ulk: {=bool:?}, pres: {=bool:?}, cmd32en: {=bool:?}, flg: {=bool:?}, win: {=bool:?} }}",
             self.stop(),
             self.wait(),
             self.dbg(),

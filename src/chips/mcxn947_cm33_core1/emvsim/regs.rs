@@ -241,26 +241,26 @@ impl Ctrl {
     #[doc = "Doze Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn doze_en(&self) -> super::vals::DozeEn {
+    pub const fn doze_en(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::DozeEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Doze Enable"]
     #[inline(always)]
-    pub const fn set_doze_en(&mut self, val: super::vals::DozeEn) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_doze_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "STOP Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn stop_en(&self) -> super::vals::StopEn {
+    pub const fn stop_en(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::StopEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "STOP Enable"]
     #[inline(always)]
-    pub const fn set_stop_en(&mut self, val: super::vals::StopEn) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_stop_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Receiver Enable"]
     #[must_use]
@@ -459,7 +459,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ ic: {:?}, icm: {=bool:?}, anack: {=bool:?}, onack: {=bool:?}, flsh_rx: {:?}, flsh_tx: {:?}, sw_rst: {:?}, kill_clocks: {:?}, doze_en: {:?}, stop_en: {:?}, rcv_en: {=bool:?}, xmt_en: {=bool:?}, rcvr_11: {:?}, rx_dma_en: {=bool:?}, tx_dma_en: {=bool:?}, inv_crc_val: {=bool:?}, crc_out_flip: {=bool:?}, crc_in_flip: {=bool:?}, cwt_en: {=bool:?}, lrc_en: {=bool:?}, crc_en: {=bool:?}, xmt_crc_lrc: {=bool:?}, bwt_en: {=bool:?} }}",
+            "Ctrl {{ ic: {:?}, icm: {=bool:?}, anack: {=bool:?}, onack: {=bool:?}, flsh_rx: {:?}, flsh_tx: {:?}, sw_rst: {:?}, kill_clocks: {:?}, doze_en: {=bool:?}, stop_en: {=bool:?}, rcv_en: {=bool:?}, xmt_en: {=bool:?}, rcvr_11: {:?}, rx_dma_en: {=bool:?}, tx_dma_en: {=bool:?}, inv_crc_val: {=bool:?}, crc_out_flip: {=bool:?}, crc_in_flip: {=bool:?}, cwt_en: {=bool:?}, lrc_en: {=bool:?}, crc_en: {=bool:?}, xmt_crc_lrc: {=bool:?}, bwt_en: {=bool:?} }}",
             self.ic(),
             self.icm(),
             self.anack(),

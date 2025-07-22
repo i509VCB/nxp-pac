@@ -30,14 +30,14 @@ impl Scr {
     #[doc = "ValCtrl"]
     #[must_use]
     #[inline(always)]
-    pub const fn val_ctrl(&self) -> super::vals::ValCtrl {
+    pub const fn val_ctrl(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::ValCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "ValCtrl"]
     #[inline(always)]
-    pub const fn set_val_ctrl(&mut self, val: super::vals::ValCtrl) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_val_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "InputSrcSel"]
     #[must_use]
@@ -162,38 +162,38 @@ impl Scr {
     #[doc = "RxFIFO_Rst"]
     #[must_use]
     #[inline(always)]
-    pub const fn rx_fifo_rst(&self) -> super::vals::RxFifoRst {
+    pub const fn rx_fifo_rst(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::RxFifoRst::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RxFIFO_Rst"]
     #[inline(always)]
-    pub const fn set_rx_fifo_rst(&mut self, val: super::vals::RxFifoRst) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_rx_fifo_rst(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "RxFIFO_Off_On"]
     #[must_use]
     #[inline(always)]
-    pub const fn rx_fifo_off_on(&self) -> super::vals::RxFifoOffOn {
+    pub const fn rx_fifo_off_on(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::RxFifoOffOn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RxFIFO_Off_On"]
     #[inline(always)]
-    pub const fn set_rx_fifo_off_on(&mut self, val: super::vals::RxFifoOffOn) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_rx_fifo_off_on(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "RxFIFO_Ctrl"]
     #[must_use]
     #[inline(always)]
-    pub const fn rx_fifo_ctrl(&self) -> super::vals::RxFifoCtrl {
+    pub const fn rx_fifo_ctrl(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::RxFifoCtrl::from_bits(val as u8)
+        val != 0
     }
     #[doc = "RxFIFO_Ctrl"]
     #[inline(always)]
-    pub const fn set_rx_fifo_ctrl(&mut self, val: super::vals::RxFifoCtrl) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_rx_fifo_ctrl(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
 }
 impl Default for Scr {
@@ -229,7 +229,7 @@ impl defmt::Format for Scr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Scr {{ usrc_sel: {:?}, tx_sel: {:?}, val_ctrl: {:?}, input_src_sel: {:?}, dma_tx_en: {=bool:?}, dma_rx_en: {=bool:?}, tx_fifo_ctrl: {:?}, soft_reset: {=bool:?}, low_power: {=bool:?}, tx_fifoempty_sel: {:?}, tx_auto_sync: {=bool:?}, rx_auto_sync: {=bool:?}, rx_fifofull_sel: {:?}, rx_fifo_rst: {:?}, rx_fifo_off_on: {:?}, rx_fifo_ctrl: {:?} }}",
+            "Scr {{ usrc_sel: {:?}, tx_sel: {:?}, val_ctrl: {=bool:?}, input_src_sel: {:?}, dma_tx_en: {=bool:?}, dma_rx_en: {=bool:?}, tx_fifo_ctrl: {:?}, soft_reset: {=bool:?}, low_power: {=bool:?}, tx_fifoempty_sel: {:?}, tx_auto_sync: {=bool:?}, rx_auto_sync: {=bool:?}, rx_fifofull_sel: {:?}, rx_fifo_rst: {=bool:?}, rx_fifo_off_on: {=bool:?}, rx_fifo_ctrl: {=bool:?} }}",
             self.usrc_sel(),
             self.tx_sel(),
             self.val_ctrl(),
@@ -1038,14 +1038,14 @@ impl Srcd {
     #[doc = "USyncMode"]
     #[must_use]
     #[inline(always)]
-    pub const fn usync_mode(&self) -> super::vals::UsyncMode {
+    pub const fn usync_mode(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::UsyncMode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "USyncMode"]
     #[inline(always)]
-    pub const fn set_usync_mode(&mut self, val: super::vals::UsyncMode) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_usync_mode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
 }
 impl Default for Srcd {
@@ -1064,7 +1064,7 @@ impl core::fmt::Debug for Srcd {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Srcd {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Srcd {{ usync_mode: {:?} }}", self.usync_mode())
+        defmt::write!(f, "Srcd {{ usync_mode: {=bool:?} }}", self.usync_mode())
     }
 }
 #[doc = "SPDIFRxCChannel_h Register"]

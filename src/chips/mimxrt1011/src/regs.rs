@@ -295,14 +295,14 @@ impl Scr {
     #[doc = "lockup reset enable bit"]
     #[must_use]
     #[inline(always)]
-    pub const fn lockup_rst(&self) -> super::vals::LockupRst {
+    pub const fn lockup_rst(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::LockupRst::from_bits(val as u8)
+        val != 0
     }
     #[doc = "lockup reset enable bit"]
     #[inline(always)]
-    pub const fn set_lockup_rst(&mut self, val: super::vals::LockupRst) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_lockup_rst(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Mask wdog_rst_b source"]
     #[must_use]
@@ -319,38 +319,38 @@ impl Scr {
     #[doc = "Software reset for core0 only"]
     #[must_use]
     #[inline(always)]
-    pub const fn core0_rst(&self) -> super::vals::Core0Rst {
+    pub const fn core0_rst(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Core0Rst::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software reset for core0 only"]
     #[inline(always)]
-    pub const fn set_core0_rst(&mut self, val: super::vals::Core0Rst) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_core0_rst(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "Software reset for core0 debug only"]
     #[must_use]
     #[inline(always)]
-    pub const fn core0_dbg_rst(&self) -> super::vals::Core0DbgRst {
+    pub const fn core0_dbg_rst(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Core0DbgRst::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software reset for core0 debug only"]
     #[inline(always)]
-    pub const fn set_core0_dbg_rst(&mut self, val: super::vals::Core0DbgRst) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_core0_dbg_rst(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Do not assert debug resets after power gating event of core"]
     #[must_use]
     #[inline(always)]
-    pub const fn dbg_rst_msk_pg(&self) -> super::vals::DbgRstMskPg {
+    pub const fn dbg_rst_msk_pg(&self) -> bool {
         let val = (self.0 >> 25usize) & 0x01;
-        super::vals::DbgRstMskPg::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Do not assert debug resets after power gating event of core"]
     #[inline(always)]
-    pub const fn set_dbg_rst_msk_pg(&mut self, val: super::vals::DbgRstMskPg) {
-        self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+    pub const fn set_dbg_rst_msk_pg(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
     }
     #[doc = "Mask wdog3_rst_b source"]
     #[must_use]
@@ -388,7 +388,7 @@ impl defmt::Format for Scr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Scr {{ lockup_rst: {:?}, mask_wdog_rst: {:?}, core0_rst: {:?}, core0_dbg_rst: {:?}, dbg_rst_msk_pg: {:?}, mask_wdog3_rst: {:?} }}",
+            "Scr {{ lockup_rst: {=bool:?}, mask_wdog_rst: {:?}, core0_rst: {=bool:?}, core0_dbg_rst: {=bool:?}, dbg_rst_msk_pg: {=bool:?}, mask_wdog3_rst: {:?} }}",
             self.lockup_rst(),
             self.mask_wdog_rst(),
             self.core0_rst(),
@@ -406,14 +406,14 @@ impl Srsr {
     #[doc = "Indicates whether reset was the result of ipp_reset_b pin (Power-up sequence)"]
     #[must_use]
     #[inline(always)]
-    pub const fn ipp_reset_b(&self) -> super::vals::IppResetB {
+    pub const fn ipp_reset_b(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::IppResetB::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates whether reset was the result of ipp_reset_b pin (Power-up sequence)"]
     #[inline(always)]
-    pub const fn set_ipp_reset_b(&mut self, val: super::vals::IppResetB) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_ipp_reset_b(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Indicates a reset has been caused by CPU lockup."]
     #[must_use]
@@ -430,86 +430,86 @@ impl Srsr {
     #[doc = "Indicates whether the reset was the result of the csu_reset_b input."]
     #[must_use]
     #[inline(always)]
-    pub const fn csu_reset_b(&self) -> super::vals::CsuResetB {
+    pub const fn csu_reset_b(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::CsuResetB::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates whether the reset was the result of the csu_reset_b input."]
     #[inline(always)]
-    pub const fn set_csu_reset_b(&mut self, val: super::vals::CsuResetB) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_csu_reset_b(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Indicates whether the reset was the result of the ipp_user_reset_b qualified reset."]
     #[must_use]
     #[inline(always)]
-    pub const fn ipp_user_reset_b(&self) -> super::vals::IppUserResetB {
+    pub const fn ipp_user_reset_b(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::IppUserResetB::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Indicates whether the reset was the result of the ipp_user_reset_b qualified reset."]
     #[inline(always)]
-    pub const fn set_ipp_user_reset_b(&mut self, val: super::vals::IppUserResetB) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_ipp_user_reset_b(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "IC Watchdog Time-out reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn wdog_rst_b(&self) -> super::vals::WdogRstB {
+    pub const fn wdog_rst_b(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::WdogRstB::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IC Watchdog Time-out reset"]
     #[inline(always)]
-    pub const fn set_wdog_rst_b(&mut self, val: super::vals::WdogRstB) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_wdog_rst_b(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "HIGH - Z JTAG reset. Indicates whether the reset was the result of HIGH-Z reset from JTAG."]
     #[must_use]
     #[inline(always)]
-    pub const fn jtag_rst_b(&self) -> super::vals::JtagRstB {
+    pub const fn jtag_rst_b(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::JtagRstB::from_bits(val as u8)
+        val != 0
     }
     #[doc = "HIGH - Z JTAG reset. Indicates whether the reset was the result of HIGH-Z reset from JTAG."]
     #[inline(always)]
-    pub const fn set_jtag_rst_b(&mut self, val: super::vals::JtagRstB) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_jtag_rst_b(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "JTAG software reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn jtag_sw_rst(&self) -> super::vals::JtagSwRst {
+    pub const fn jtag_sw_rst(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::JtagSwRst::from_bits(val as u8)
+        val != 0
     }
     #[doc = "JTAG software reset"]
     #[inline(always)]
-    pub const fn set_jtag_sw_rst(&mut self, val: super::vals::JtagSwRst) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_jtag_sw_rst(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "IC Watchdog3 Time-out reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn wdog3_rst_b(&self) -> super::vals::Wdog3RstB {
+    pub const fn wdog3_rst_b(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Wdog3RstB::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IC Watchdog3 Time-out reset"]
     #[inline(always)]
-    pub const fn set_wdog3_rst_b(&mut self, val: super::vals::Wdog3RstB) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_wdog3_rst_b(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Temper Sensor software reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn tempsense_rst_b(&self) -> super::vals::TempsenseRstB {
+    pub const fn tempsense_rst_b(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::TempsenseRstB::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Temper Sensor software reset"]
     #[inline(always)]
-    pub const fn set_tempsense_rst_b(&mut self, val: super::vals::TempsenseRstB) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_tempsense_rst_b(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
 }
 impl Default for Srsr {
@@ -538,7 +538,7 @@ impl defmt::Format for Srsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Srsr {{ ipp_reset_b: {:?}, lockup: {:?}, csu_reset_b: {:?}, ipp_user_reset_b: {:?}, wdog_rst_b: {:?}, jtag_rst_b: {:?}, jtag_sw_rst: {:?}, wdog3_rst_b: {:?}, tempsense_rst_b: {:?} }}",
+            "Srsr {{ ipp_reset_b: {=bool:?}, lockup: {:?}, csu_reset_b: {=bool:?}, ipp_user_reset_b: {=bool:?}, wdog_rst_b: {=bool:?}, jtag_rst_b: {=bool:?}, jtag_sw_rst: {=bool:?}, wdog3_rst_b: {=bool:?}, tempsense_rst_b: {=bool:?} }}",
             self.ipp_reset_b(),
             self.lockup(),
             self.csu_reset_b(),

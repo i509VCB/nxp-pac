@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: lpi2c::vals::(Dozen|Filtdz|McrRrf|McrRtf|MierFeie|Scfgr1Ignack|ScrRrf|ScrRtf)
+    bit_size: 1

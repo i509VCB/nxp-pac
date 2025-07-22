@@ -395,14 +395,14 @@ impl Gcr {
     #[doc = "Buffer Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn buf_en(&self) -> super::vals::BufEn {
+    pub const fn buf_en(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::BufEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Buffer Enable"]
     #[inline(always)]
-    pub const fn set_buf_en(&mut self, val: super::vals::BufEn) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_buf_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "External On-Chip PTAT Current Reference Select"]
     #[must_use]
@@ -469,7 +469,7 @@ impl defmt::Format for Gcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Gcr {{ dacen: {=bool:?}, dacrfs: {:?}, fifoen: {:?}, swmd: {=bool:?}, trgsel: {:?}, ptgen: {=bool:?}, latch_cyc: {=u8:?}, buf_en: {:?}, iref_ptat_ext_sel: {=bool:?}, iref_ztc_ext_sel: {=bool:?}, buf_spd_ctrl: {:?} }}",
+            "Gcr {{ dacen: {=bool:?}, dacrfs: {:?}, fifoen: {:?}, swmd: {=bool:?}, trgsel: {:?}, ptgen: {=bool:?}, latch_cyc: {=u8:?}, buf_en: {=bool:?}, iref_ptat_ext_sel: {=bool:?}, iref_ztc_ext_sel: {=bool:?}, buf_spd_ctrl: {:?} }}",
             self.dacen(),
             self.dacrfs(),
             self.fifoen(),
@@ -721,14 +721,14 @@ impl Rcr {
     #[doc = "FIFO Reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn fiforst(&self) -> super::vals::Fiforst {
+    pub const fn fiforst(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Fiforst::from_bits(val as u8)
+        val != 0
     }
     #[doc = "FIFO Reset"]
     #[inline(always)]
-    pub const fn set_fiforst(&mut self, val: super::vals::Fiforst) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_fiforst(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
 }
 impl Default for Rcr {
@@ -750,7 +750,7 @@ impl defmt::Format for Rcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Rcr {{ swrst: {:?}, fiforst: {:?} }}",
+            "Rcr {{ swrst: {:?}, fiforst: {=bool:?} }}",
             self.swrst(),
             self.fiforst()
         )

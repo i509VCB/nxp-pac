@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: sinc\d*::vals::Rst
+    bit_size: 1

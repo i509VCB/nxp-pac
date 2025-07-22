@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: s50::vals::CmdcrcEn
+    bit_size: 1

@@ -7,6 +7,55 @@ includes:
 - imxrt/gpio.yaml
 - imxrt/dma.yaml
 - imxrt/pit.yaml
+- imxrt/gpt.yaml
+# Boolean enum transforms for all peripherals
+- imxrt/acmp.yaml
+- imxrt/adc.yaml
+- imxrt/adc_etc.yaml
+- imxrt/bee.yaml
+- imxrt/can.yaml
+- imxrt/can3.yaml
+- imxrt/ccm.yaml
+- imxrt/ccm_analog.yaml
+- imxrt/csi.yaml
+- imxrt/csu.yaml
+- imxrt/dcdc.yaml
+- imxrt/dcp.yaml
+- imxrt/dmamux.yaml
+- imxrt/enc.yaml
+- imxrt/enet.yaml
+- imxrt/ewm.yaml
+- imxrt/flexio.yaml
+- imxrt/flexram.yaml
+- imxrt/flexspi.yaml
+- imxrt/gpc.yaml
+- imxrt/iomuxc_gpr.yaml
+- imxrt/iomuxc_snvs.yaml
+- imxrt/iomuxc_snvs_gpr.yaml
+- imxrt/kpp.yaml
+- imxrt/lcdif.yaml
+- imxrt/lpi2c.yaml
+- imxrt/lpspi.yaml
+- imxrt/lpuart.yaml
+- imxrt/pmu.yaml
+- imxrt/pwm.yaml
+- imxrt/pxp.yaml
+- imxrt/rtwdog.yaml
+- imxrt/sai.yaml
+- imxrt/semc.yaml
+- imxrt/snvs.yaml
+- imxrt/spdif.yaml
+- imxrt/src.yaml
+- imxrt/tempmon.yaml
+- imxrt/tmr.yaml
+- imxrt/trng.yaml
+- imxrt/tsc.yaml
+- imxrt/usb.yaml
+- imxrt/usdhc.yaml
+- imxrt/wdog.yaml
+- imxrt/xbara.yaml
+- imxrt/xtalosc24m.yaml
+- imxrt/usbnc.yaml
 transforms:
   #! TODO: Consider merging CAN1 and CAN3?
   #! TODO: FLEXIO1 merge to flexio::Flexio

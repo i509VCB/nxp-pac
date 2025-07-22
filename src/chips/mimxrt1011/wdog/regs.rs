@@ -18,26 +18,26 @@ impl Wcr {
     #[doc = "WDBG"]
     #[must_use]
     #[inline(always)]
-    pub const fn wdbg(&self) -> super::vals::Wdbg {
+    pub const fn wdbg(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Wdbg::from_bits(val as u8)
+        val != 0
     }
     #[doc = "WDBG"]
     #[inline(always)]
-    pub const fn set_wdbg(&mut self, val: super::vals::Wdbg) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u16) & 0x01) << 1usize);
+    pub const fn set_wdbg(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
     }
     #[doc = "WDE"]
     #[must_use]
     #[inline(always)]
-    pub const fn wde(&self) -> super::vals::Wde {
+    pub const fn wde(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Wde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "WDE"]
     #[inline(always)]
-    pub const fn set_wde(&mut self, val: super::vals::Wde) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u16) & 0x01) << 2usize);
+    pub const fn set_wde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u16) & 0x01) << 2usize);
     }
     #[doc = "WDT"]
     #[must_use]
@@ -66,38 +66,38 @@ impl Wcr {
     #[doc = "WDA"]
     #[must_use]
     #[inline(always)]
-    pub const fn wda(&self) -> super::vals::Wda {
+    pub const fn wda(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Wda::from_bits(val as u8)
+        val != 0
     }
     #[doc = "WDA"]
     #[inline(always)]
-    pub const fn set_wda(&mut self, val: super::vals::Wda) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u16) & 0x01) << 5usize);
+    pub const fn set_wda(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u16) & 0x01) << 5usize);
     }
     #[doc = "software reset extension, an option way to generate software reset"]
     #[must_use]
     #[inline(always)]
-    pub const fn sre(&self) -> super::vals::Sre {
+    pub const fn sre(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Sre::from_bits(val as u8)
+        val != 0
     }
     #[doc = "software reset extension, an option way to generate software reset"]
     #[inline(always)]
-    pub const fn set_sre(&mut self, val: super::vals::Sre) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u16) & 0x01) << 6usize);
+    pub const fn set_sre(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u16) & 0x01) << 6usize);
     }
     #[doc = "WDW"]
     #[must_use]
     #[inline(always)]
-    pub const fn wdw(&self) -> super::vals::Wdw {
+    pub const fn wdw(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Wdw::from_bits(val as u8)
+        val != 0
     }
     #[doc = "WDW"]
     #[inline(always)]
-    pub const fn set_wdw(&mut self, val: super::vals::Wdw) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u16) & 0x01) << 7usize);
+    pub const fn set_wdw(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
     }
     #[doc = "WT"]
     #[must_use]
@@ -138,7 +138,7 @@ impl defmt::Format for Wcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Wcr {{ wdzst: {:?}, wdbg: {:?}, wde: {:?}, wdt: {:?}, srs: {:?}, wda: {:?}, sre: {:?}, wdw: {:?}, wt: {:?} }}",
+            "Wcr {{ wdzst: {:?}, wdbg: {=bool:?}, wde: {=bool:?}, wdt: {:?}, srs: {:?}, wda: {=bool:?}, sre: {=bool:?}, wdw: {=bool:?}, wt: {:?} }}",
             self.wdzst(),
             self.wdbg(),
             self.wde(),
@@ -183,14 +183,14 @@ impl Wicr {
     #[doc = "WIE"]
     #[must_use]
     #[inline(always)]
-    pub const fn wie(&self) -> super::vals::Wie {
+    pub const fn wie(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Wie::from_bits(val as u8)
+        val != 0
     }
     #[doc = "WIE"]
     #[inline(always)]
-    pub const fn set_wie(&mut self, val: super::vals::Wie) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u16) & 0x01) << 15usize);
+    pub const fn set_wie(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u16) & 0x01) << 15usize);
     }
 }
 impl Default for Wicr {
@@ -213,7 +213,7 @@ impl defmt::Format for Wicr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Wicr {{ wict: {:?}, wtis: {:?}, wie: {:?} }}",
+            "Wicr {{ wict: {:?}, wtis: {:?}, wie: {=bool:?} }}",
             self.wict(),
             self.wtis(),
             self.wie()
@@ -228,14 +228,14 @@ impl Wmcr {
     #[doc = "PDE"]
     #[must_use]
     #[inline(always)]
-    pub const fn pde(&self) -> super::vals::Pde {
+    pub const fn pde(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Pde::from_bits(val as u8)
+        val != 0
     }
     #[doc = "PDE"]
     #[inline(always)]
-    pub const fn set_pde(&mut self, val: super::vals::Pde) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u16) & 0x01) << 0usize);
+    pub const fn set_pde(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
     }
 }
 impl Default for Wmcr {
@@ -252,7 +252,7 @@ impl core::fmt::Debug for Wmcr {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Wmcr {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Wmcr {{ pde: {:?} }}", self.pde())
+        defmt::write!(f, "Wmcr {{ pde: {=bool:?} }}", self.pde())
     }
 }
 #[doc = "Watchdog Reset Status Register"]
@@ -287,14 +287,14 @@ impl Wrsr {
     #[doc = "POR"]
     #[must_use]
     #[inline(always)]
-    pub const fn por(&self) -> super::vals::Por {
+    pub const fn por(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Por::from_bits(val as u8)
+        val != 0
     }
     #[doc = "POR"]
     #[inline(always)]
-    pub const fn set_por(&mut self, val: super::vals::Por) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u16) & 0x01) << 4usize);
+    pub const fn set_por(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u16) & 0x01) << 4usize);
     }
 }
 impl Default for Wrsr {
@@ -317,7 +317,7 @@ impl defmt::Format for Wrsr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Wrsr {{ sftw: {:?}, tout: {:?}, por: {:?} }}",
+            "Wrsr {{ sftw: {:?}, tout: {:?}, por: {=bool:?} }}",
             self.sftw(),
             self.tout(),
             self.por()

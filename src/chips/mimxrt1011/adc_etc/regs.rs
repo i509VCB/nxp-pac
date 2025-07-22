@@ -30,26 +30,26 @@ impl Ctrl {
     #[doc = "Select the trigger type of the DMA_REQ."]
     #[must_use]
     #[inline(always)]
-    pub const fn dma_mode_sel(&self) -> super::vals::DmaModeSel {
+    pub const fn dma_mode_sel(&self) -> bool {
         let val = (self.0 >> 29usize) & 0x01;
-        super::vals::DmaModeSel::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Select the trigger type of the DMA_REQ."]
     #[inline(always)]
-    pub const fn set_dma_mode_sel(&mut self, val: super::vals::DmaModeSel) {
-        self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+    pub const fn set_dma_mode_sel(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
     }
     #[doc = "Software synchronous reset, active high."]
     #[must_use]
     #[inline(always)]
-    pub const fn softrst(&self) -> super::vals::Softrst {
+    pub const fn softrst(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Softrst::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software synchronous reset, active high."]
     #[inline(always)]
-    pub const fn set_softrst(&mut self, val: super::vals::Softrst) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_softrst(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Ctrl {
@@ -73,7 +73,7 @@ impl defmt::Format for Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ctrl {{ trig_enable: {:?}, pre_divider: {=u8:?}, dma_mode_sel: {:?}, softrst: {:?} }}",
+            "Ctrl {{ trig_enable: {:?}, pre_divider: {=u8:?}, dma_mode_sel: {=bool:?}, softrst: {=bool:?} }}",
             self.trig_enable(),
             self.pre_divider(),
             self.dma_mode_sel(),
@@ -89,194 +89,194 @@ impl DmaCtrl {
     #[doc = "Enable DMA request when TRIG0 done."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig0_enable(&self) -> super::vals::Trig0Enable {
+    pub const fn trig0_enable(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Trig0Enable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable DMA request when TRIG0 done."]
     #[inline(always)]
-    pub const fn set_trig0_enable(&mut self, val: super::vals::Trig0Enable) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_trig0_enable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Enable DMA request when TRIG1 done."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig1_enable(&self) -> super::vals::Trig1Enable {
+    pub const fn trig1_enable(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Trig1Enable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable DMA request when TRIG1 done."]
     #[inline(always)]
-    pub const fn set_trig1_enable(&mut self, val: super::vals::Trig1Enable) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_trig1_enable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "Enable DMA request when TRIG2 done."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig2_enable(&self) -> super::vals::Trig2Enable {
+    pub const fn trig2_enable(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Trig2Enable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable DMA request when TRIG2 done."]
     #[inline(always)]
-    pub const fn set_trig2_enable(&mut self, val: super::vals::Trig2Enable) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_trig2_enable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Enable DMA request when TRIG3 done."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig3_enable(&self) -> super::vals::Trig3Enable {
+    pub const fn trig3_enable(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Trig3Enable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable DMA request when TRIG3 done."]
     #[inline(always)]
-    pub const fn set_trig3_enable(&mut self, val: super::vals::Trig3Enable) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_trig3_enable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Enable DMA request when TRIG4 done."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig4_enable(&self) -> super::vals::Trig4Enable {
+    pub const fn trig4_enable(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Trig4Enable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable DMA request when TRIG4 done."]
     #[inline(always)]
-    pub const fn set_trig4_enable(&mut self, val: super::vals::Trig4Enable) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_trig4_enable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "Enable DMA request when TRIG5 done."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig5_enable(&self) -> super::vals::Trig5Enable {
+    pub const fn trig5_enable(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Trig5Enable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable DMA request when TRIG5 done."]
     #[inline(always)]
-    pub const fn set_trig5_enable(&mut self, val: super::vals::Trig5Enable) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_trig5_enable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "Enable DMA request when TRIG6 done."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig6_enable(&self) -> super::vals::Trig6Enable {
+    pub const fn trig6_enable(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Trig6Enable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable DMA request when TRIG6 done."]
     #[inline(always)]
-    pub const fn set_trig6_enable(&mut self, val: super::vals::Trig6Enable) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_trig6_enable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Enable DMA request when TRIG7 done."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig7_enable(&self) -> super::vals::Trig7Enable {
+    pub const fn trig7_enable(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Trig7Enable::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Enable DMA request when TRIG7 done."]
     #[inline(always)]
-    pub const fn set_trig7_enable(&mut self, val: super::vals::Trig7Enable) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_trig7_enable(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Flag bit for DMA request"]
     #[must_use]
     #[inline(always)]
-    pub const fn trig0_req(&self) -> super::vals::Trig0Req {
+    pub const fn trig0_req(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Trig0Req::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Flag bit for DMA request"]
     #[inline(always)]
-    pub const fn set_trig0_req(&mut self, val: super::vals::Trig0Req) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_trig0_req(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Flag bit for DMA request"]
     #[must_use]
     #[inline(always)]
-    pub const fn trig1_req(&self) -> super::vals::Trig1Req {
+    pub const fn trig1_req(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Trig1Req::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Flag bit for DMA request"]
     #[inline(always)]
-    pub const fn set_trig1_req(&mut self, val: super::vals::Trig1Req) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_trig1_req(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "Flag bit for DMA request"]
     #[must_use]
     #[inline(always)]
-    pub const fn trig2_req(&self) -> super::vals::Trig2Req {
+    pub const fn trig2_req(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::Trig2Req::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Flag bit for DMA request"]
     #[inline(always)]
-    pub const fn set_trig2_req(&mut self, val: super::vals::Trig2Req) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_trig2_req(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Flag bit for DMA request"]
     #[must_use]
     #[inline(always)]
-    pub const fn trig3_req(&self) -> super::vals::Trig3Req {
+    pub const fn trig3_req(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Trig3Req::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Flag bit for DMA request"]
     #[inline(always)]
-    pub const fn set_trig3_req(&mut self, val: super::vals::Trig3Req) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_trig3_req(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "Flag bit for DMA request"]
     #[must_use]
     #[inline(always)]
-    pub const fn trig4_req(&self) -> super::vals::Trig4Req {
+    pub const fn trig4_req(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::Trig4Req::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Flag bit for DMA request"]
     #[inline(always)]
-    pub const fn set_trig4_req(&mut self, val: super::vals::Trig4Req) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_trig4_req(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "Flag bit for DMA request"]
     #[must_use]
     #[inline(always)]
-    pub const fn trig5_req(&self) -> super::vals::Trig5Req {
+    pub const fn trig5_req(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Trig5Req::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Flag bit for DMA request"]
     #[inline(always)]
-    pub const fn set_trig5_req(&mut self, val: super::vals::Trig5Req) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_trig5_req(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "Flag bit for DMA request"]
     #[must_use]
     #[inline(always)]
-    pub const fn trig6_req(&self) -> super::vals::Trig6Req {
+    pub const fn trig6_req(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Trig6Req::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Flag bit for DMA request"]
     #[inline(always)]
-    pub const fn set_trig6_req(&mut self, val: super::vals::Trig6Req) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_trig6_req(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "Flag bit for DMA request"]
     #[must_use]
     #[inline(always)]
-    pub const fn trig7_req(&self) -> super::vals::Trig7Req {
+    pub const fn trig7_req(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Trig7Req::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Flag bit for DMA request"]
     #[inline(always)]
-    pub const fn set_trig7_req(&mut self, val: super::vals::Trig7Req) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_trig7_req(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
 }
 impl Default for DmaCtrl {
@@ -312,7 +312,7 @@ impl defmt::Format for DmaCtrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "DmaCtrl {{ trig0_enable: {:?}, trig1_enable: {:?}, trig2_enable: {:?}, trig3_enable: {:?}, trig4_enable: {:?}, trig5_enable: {:?}, trig6_enable: {:?}, trig7_enable: {:?}, trig0_req: {:?}, trig1_req: {:?}, trig2_req: {:?}, trig3_req: {:?}, trig4_req: {:?}, trig5_req: {:?}, trig6_req: {:?}, trig7_req: {:?} }}",
+            "DmaCtrl {{ trig0_enable: {=bool:?}, trig1_enable: {=bool:?}, trig2_enable: {=bool:?}, trig3_enable: {=bool:?}, trig4_enable: {=bool:?}, trig5_enable: {=bool:?}, trig6_enable: {=bool:?}, trig7_enable: {=bool:?}, trig0_req: {=bool:?}, trig1_req: {=bool:?}, trig2_req: {=bool:?}, trig3_req: {=bool:?}, trig4_req: {=bool:?}, trig5_req: {=bool:?}, trig6_req: {=bool:?}, trig7_req: {=bool:?} }}",
             self.trig0_enable(),
             self.trig1_enable(),
             self.trig2_enable(),
@@ -340,194 +340,194 @@ impl Done01Irq {
     #[doc = "TRIG0 done0 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig0_done0(&self) -> super::vals::Trig0Done0 {
+    pub const fn trig0_done0(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Trig0Done0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG0 done0 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig0_done0(&mut self, val: super::vals::Trig0Done0) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_trig0_done0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "TRIG1 done0 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig1_done0(&self) -> super::vals::Trig1Done0 {
+    pub const fn trig1_done0(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Trig1Done0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG1 done0 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig1_done0(&mut self, val: super::vals::Trig1Done0) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_trig1_done0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "TRIG2 done0 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig2_done0(&self) -> super::vals::Trig2Done0 {
+    pub const fn trig2_done0(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Trig2Done0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG2 done0 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig2_done0(&mut self, val: super::vals::Trig2Done0) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_trig2_done0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "TRIG3 done0 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig3_done0(&self) -> super::vals::Trig3Done0 {
+    pub const fn trig3_done0(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Trig3Done0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG3 done0 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig3_done0(&mut self, val: super::vals::Trig3Done0) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_trig3_done0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "TRIG4 done0 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig4_done0(&self) -> super::vals::Trig4Done0 {
+    pub const fn trig4_done0(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Trig4Done0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG4 done0 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig4_done0(&mut self, val: super::vals::Trig4Done0) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_trig4_done0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "TRIG5 done0 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig5_done0(&self) -> super::vals::Trig5Done0 {
+    pub const fn trig5_done0(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Trig5Done0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG5 done0 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig5_done0(&mut self, val: super::vals::Trig5Done0) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_trig5_done0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "TRIG6 done0 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig6_done0(&self) -> super::vals::Trig6Done0 {
+    pub const fn trig6_done0(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Trig6Done0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG6 done0 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig6_done0(&mut self, val: super::vals::Trig6Done0) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_trig6_done0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "TRIG7 done0 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig7_done0(&self) -> super::vals::Trig7Done0 {
+    pub const fn trig7_done0(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Trig7Done0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG7 done0 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig7_done0(&mut self, val: super::vals::Trig7Done0) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_trig7_done0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "TRIG0 done1 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig0_done1(&self) -> super::vals::Trig0Done1 {
+    pub const fn trig0_done1(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Trig0Done1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG0 done1 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig0_done1(&mut self, val: super::vals::Trig0Done1) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_trig0_done1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "TRIG1 done1 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig1_done1(&self) -> super::vals::Trig1Done1 {
+    pub const fn trig1_done1(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Trig1Done1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG1 done1 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig1_done1(&mut self, val: super::vals::Trig1Done1) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_trig1_done1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "TRIG2 done1 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig2_done1(&self) -> super::vals::Trig2Done1 {
+    pub const fn trig2_done1(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::Trig2Done1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG2 done1 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig2_done1(&mut self, val: super::vals::Trig2Done1) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_trig2_done1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "TRIG3 done1 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig3_done1(&self) -> super::vals::Trig3Done1 {
+    pub const fn trig3_done1(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Trig3Done1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG3 done1 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig3_done1(&mut self, val: super::vals::Trig3Done1) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_trig3_done1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "TRIG4 done1 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig4_done1(&self) -> super::vals::Trig4Done1 {
+    pub const fn trig4_done1(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::Trig4Done1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG4 done1 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig4_done1(&mut self, val: super::vals::Trig4Done1) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_trig4_done1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "TRIG5 done1 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig5_done1(&self) -> super::vals::Trig5Done1 {
+    pub const fn trig5_done1(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Trig5Done1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG5 done1 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig5_done1(&mut self, val: super::vals::Trig5Done1) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_trig5_done1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "TRIG6 done1 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig6_done1(&self) -> super::vals::Trig6Done1 {
+    pub const fn trig6_done1(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Trig6Done1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG6 done1 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig6_done1(&mut self, val: super::vals::Trig6Done1) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_trig6_done1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "TRIG7 done1 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig7_done1(&self) -> super::vals::Trig7Done1 {
+    pub const fn trig7_done1(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Trig7Done1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG7 done1 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig7_done1(&mut self, val: super::vals::Trig7Done1) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_trig7_done1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
 }
 impl Default for Done01Irq {
@@ -563,7 +563,7 @@ impl defmt::Format for Done01Irq {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Done01Irq {{ trig0_done0: {:?}, trig1_done0: {:?}, trig2_done0: {:?}, trig3_done0: {:?}, trig4_done0: {:?}, trig5_done0: {:?}, trig6_done0: {:?}, trig7_done0: {:?}, trig0_done1: {:?}, trig1_done1: {:?}, trig2_done1: {:?}, trig3_done1: {:?}, trig4_done1: {:?}, trig5_done1: {:?}, trig6_done1: {:?}, trig7_done1: {:?} }}",
+            "Done01Irq {{ trig0_done0: {=bool:?}, trig1_done0: {=bool:?}, trig2_done0: {=bool:?}, trig3_done0: {=bool:?}, trig4_done0: {=bool:?}, trig5_done0: {=bool:?}, trig6_done0: {=bool:?}, trig7_done0: {=bool:?}, trig0_done1: {=bool:?}, trig1_done1: {=bool:?}, trig2_done1: {=bool:?}, trig3_done1: {=bool:?}, trig4_done1: {=bool:?}, trig5_done1: {=bool:?}, trig6_done1: {=bool:?}, trig7_done1: {=bool:?} }}",
             self.trig0_done0(),
             self.trig1_done0(),
             self.trig2_done0(),
@@ -591,290 +591,290 @@ impl Done23ErrIrq {
     #[doc = "TRIG0 done2 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig0_done2(&self) -> super::vals::Trig0Done2 {
+    pub const fn trig0_done2(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Trig0Done2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG0 done2 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig0_done2(&mut self, val: super::vals::Trig0Done2) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_trig0_done2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "TRIG1 done2 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig1_done2(&self) -> super::vals::Trig1Done2 {
+    pub const fn trig1_done2(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::Trig1Done2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG1 done2 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig1_done2(&mut self, val: super::vals::Trig1Done2) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_trig1_done2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "TRIG2 done2 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig2_done2(&self) -> super::vals::Trig2Done2 {
+    pub const fn trig2_done2(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Trig2Done2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG2 done2 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig2_done2(&mut self, val: super::vals::Trig2Done2) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_trig2_done2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "TRIG3 done2 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig3_done2(&self) -> super::vals::Trig3Done2 {
+    pub const fn trig3_done2(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::Trig3Done2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG3 done2 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig3_done2(&mut self, val: super::vals::Trig3Done2) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_trig3_done2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "TRIG4 done2 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig4_done2(&self) -> super::vals::Trig4Done2 {
+    pub const fn trig4_done2(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Trig4Done2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG4 done2 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig4_done2(&mut self, val: super::vals::Trig4Done2) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_trig4_done2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "TRIG5 done2 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig5_done2(&self) -> super::vals::Trig5Done2 {
+    pub const fn trig5_done2(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
-        super::vals::Trig5Done2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG5 done2 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig5_done2(&mut self, val: super::vals::Trig5Done2) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+    pub const fn set_trig5_done2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "TRIG6 done2 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig6_done2(&self) -> super::vals::Trig6Done2 {
+    pub const fn trig6_done2(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
-        super::vals::Trig6Done2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG6 done2 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig6_done2(&mut self, val: super::vals::Trig6Done2) {
-        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    pub const fn set_trig6_done2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "TRIG7 done2 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig7_done2(&self) -> super::vals::Trig7Done2 {
+    pub const fn trig7_done2(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
-        super::vals::Trig7Done2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG7 done2 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig7_done2(&mut self, val: super::vals::Trig7Done2) {
-        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    pub const fn set_trig7_done2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "TRIG0 done3 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig0_done3(&self) -> super::vals::Trig0Done3 {
+    pub const fn trig0_done3(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Trig0Done3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG0 done3 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig0_done3(&mut self, val: super::vals::Trig0Done3) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_trig0_done3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "TRIG1 done3 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig1_done3(&self) -> super::vals::Trig1Done3 {
+    pub const fn trig1_done3(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Trig1Done3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG1 done3 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig1_done3(&mut self, val: super::vals::Trig1Done3) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_trig1_done3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "TRIG2 done3 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig2_done3(&self) -> super::vals::Trig2Done3 {
+    pub const fn trig2_done3(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
-        super::vals::Trig2Done3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG2 done3 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig2_done3(&mut self, val: super::vals::Trig2Done3) {
-        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    pub const fn set_trig2_done3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "TRIG3 done3 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig3_done3(&self) -> super::vals::Trig3Done3 {
+    pub const fn trig3_done3(&self) -> bool {
         let val = (self.0 >> 11usize) & 0x01;
-        super::vals::Trig3Done3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG3 done3 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig3_done3(&mut self, val: super::vals::Trig3Done3) {
-        self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+    pub const fn set_trig3_done3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
     }
     #[doc = "TRIG4 done3 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig4_done3(&self) -> super::vals::Trig4Done3 {
+    pub const fn trig4_done3(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Trig4Done3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG4 done3 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig4_done3(&mut self, val: super::vals::Trig4Done3) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_trig4_done3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "TRIG5 done3 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig5_done3(&self) -> super::vals::Trig5Done3 {
+    pub const fn trig5_done3(&self) -> bool {
         let val = (self.0 >> 13usize) & 0x01;
-        super::vals::Trig5Done3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG5 done3 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig5_done3(&mut self, val: super::vals::Trig5Done3) {
-        self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+    pub const fn set_trig5_done3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
     }
     #[doc = "TRIG6 done3 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig6_done3(&self) -> super::vals::Trig6Done3 {
+    pub const fn trig6_done3(&self) -> bool {
         let val = (self.0 >> 14usize) & 0x01;
-        super::vals::Trig6Done3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG6 done3 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig6_done3(&mut self, val: super::vals::Trig6Done3) {
-        self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+    pub const fn set_trig6_done3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
     }
     #[doc = "TRIG7 done3 interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig7_done3(&self) -> super::vals::Trig7Done3 {
+    pub const fn trig7_done3(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Trig7Done3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG7 done3 interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig7_done3(&mut self, val: super::vals::Trig7Done3) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_trig7_done3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "TRIG0 error interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig0_err(&self) -> super::vals::Trig0Err {
+    pub const fn trig0_err(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Trig0Err::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG0 error interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig0_err(&mut self, val: super::vals::Trig0Err) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_trig0_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "TRIG1 error interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig1_err(&self) -> super::vals::Trig1Err {
+    pub const fn trig1_err(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
-        super::vals::Trig1Err::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG1 error interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig1_err(&mut self, val: super::vals::Trig1Err) {
-        self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+    pub const fn set_trig1_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "TRIG2 error interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig2_err(&self) -> super::vals::Trig2Err {
+    pub const fn trig2_err(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::Trig2Err::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG2 error interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig2_err(&mut self, val: super::vals::Trig2Err) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_trig2_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "TRIG3 error interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig3_err(&self) -> super::vals::Trig3Err {
+    pub const fn trig3_err(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Trig3Err::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG3 error interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig3_err(&mut self, val: super::vals::Trig3Err) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_trig3_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "TRIG4 error interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig4_err(&self) -> super::vals::Trig4Err {
+    pub const fn trig4_err(&self) -> bool {
         let val = (self.0 >> 20usize) & 0x01;
-        super::vals::Trig4Err::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG4 error interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig4_err(&mut self, val: super::vals::Trig4Err) {
-        self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+    pub const fn set_trig4_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
     #[doc = "TRIG5 error interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig5_err(&self) -> super::vals::Trig5Err {
+    pub const fn trig5_err(&self) -> bool {
         let val = (self.0 >> 21usize) & 0x01;
-        super::vals::Trig5Err::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG5 error interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig5_err(&mut self, val: super::vals::Trig5Err) {
-        self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+    pub const fn set_trig5_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
     }
     #[doc = "TRIG6 error interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig6_err(&self) -> super::vals::Trig6Err {
+    pub const fn trig6_err(&self) -> bool {
         let val = (self.0 >> 22usize) & 0x01;
-        super::vals::Trig6Err::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG6 error interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig6_err(&mut self, val: super::vals::Trig6Err) {
-        self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+    pub const fn set_trig6_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
     }
     #[doc = "TRIG7 error interrupt detection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig7_err(&self) -> super::vals::Trig7Err {
+    pub const fn trig7_err(&self) -> bool {
         let val = (self.0 >> 23usize) & 0x01;
-        super::vals::Trig7Err::from_bits(val as u8)
+        val != 0
     }
     #[doc = "TRIG7 error interrupt detection."]
     #[inline(always)]
-    pub const fn set_trig7_err(&mut self, val: super::vals::Trig7Err) {
-        self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+    pub const fn set_trig7_err(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
     }
 }
 impl Default for Done23ErrIrq {
@@ -918,7 +918,7 @@ impl defmt::Format for Done23ErrIrq {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Done23ErrIrq {{ trig0_done2: {:?}, trig1_done2: {:?}, trig2_done2: {:?}, trig3_done2: {:?}, trig4_done2: {:?}, trig5_done2: {:?}, trig6_done2: {:?}, trig7_done2: {:?}, trig0_done3: {:?}, trig1_done3: {:?}, trig2_done3: {:?}, trig3_done3: {:?}, trig4_done3: {:?}, trig5_done3: {:?}, trig6_done3: {:?}, trig7_done3: {:?}, trig0_err: {:?}, trig1_err: {:?}, trig2_err: {:?}, trig3_err: {:?}, trig4_err: {:?}, trig5_err: {:?}, trig6_err: {:?}, trig7_err: {:?} }}",
+            "Done23ErrIrq {{ trig0_done2: {=bool:?}, trig1_done2: {=bool:?}, trig2_done2: {=bool:?}, trig3_done2: {=bool:?}, trig4_done2: {=bool:?}, trig5_done2: {=bool:?}, trig6_done2: {=bool:?}, trig7_done2: {=bool:?}, trig0_done3: {=bool:?}, trig1_done3: {=bool:?}, trig2_done3: {=bool:?}, trig3_done3: {=bool:?}, trig4_done3: {=bool:?}, trig5_done3: {=bool:?}, trig6_done3: {=bool:?}, trig7_done3: {=bool:?}, trig0_err: {=bool:?}, trig1_err: {=bool:?}, trig2_err: {=bool:?}, trig3_err: {=bool:?}, trig4_err: {=bool:?}, trig5_err: {=bool:?}, trig6_err: {=bool:?}, trig7_err: {=bool:?} }}",
             self.trig0_done2(),
             self.trig1_done2(),
             self.trig2_done2(),
@@ -978,14 +978,14 @@ impl Trig0Chain10 {
     #[doc = "Segment 0 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b0(&self) -> super::vals::Trig0Chain10B2b0 {
+    pub const fn b2b0(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Trig0Chain10B2b0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 0 B2B"]
     #[inline(always)]
-    pub const fn set_b2b0(&mut self, val: super::vals::Trig0Chain10B2b0) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_b2b0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Segment 0 interrupt enable. (This bit field is meaningful only when IE0_EN is set)"]
     #[must_use]
@@ -1002,14 +1002,14 @@ impl Trig0Chain10 {
     #[doc = "IRQ enable of segment 0."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie0_en(&self) -> super::vals::Trig0Chain10Ie0En {
+    pub const fn ie0_en(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Trig0Chain10Ie0En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 0."]
     #[inline(always)]
-    pub const fn set_ie0_en(&mut self, val: super::vals::Trig0Chain10Ie0En) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_ie0_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "ADC channel selection"]
     #[must_use]
@@ -1038,14 +1038,14 @@ impl Trig0Chain10 {
     #[doc = "Segment 1 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b1(&self) -> super::vals::Trig0Chain10B2b1 {
+    pub const fn b2b1(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Trig0Chain10B2b1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 1 B2B"]
     #[inline(always)]
-    pub const fn set_b2b1(&mut self, val: super::vals::Trig0Chain10B2b1) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_b2b1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Segment 1 interrupt enable. (This bit field is meaningful only when IE1_EN is set)"]
     #[must_use]
@@ -1062,14 +1062,14 @@ impl Trig0Chain10 {
     #[doc = "IRQ enable of segment 1."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie1_en(&self) -> super::vals::Trig0Chain10Ie1En {
+    pub const fn ie1_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Trig0Chain10Ie1En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 1."]
     #[inline(always)]
-    pub const fn set_ie1_en(&mut self, val: super::vals::Trig0Chain10Ie1En) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_ie1_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Trig0Chain10 {
@@ -1099,7 +1099,7 @@ impl defmt::Format for Trig0Chain10 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig0Chain10 {{ csel0: {:?}, hwts0: {:?}, b2b0: {:?}, ie0: {:?}, ie0_en: {:?}, csel1: {:?}, hwts1: {:?}, b2b1: {:?}, ie1: {:?}, ie1_en: {:?} }}",
+            "Trig0Chain10 {{ csel0: {:?}, hwts0: {:?}, b2b0: {=bool:?}, ie0: {:?}, ie0_en: {=bool:?}, csel1: {:?}, hwts1: {:?}, b2b1: {=bool:?}, ie1: {:?}, ie1_en: {=bool:?} }}",
             self.csel0(),
             self.hwts0(),
             self.b2b0(),
@@ -1145,14 +1145,14 @@ impl Trig0Chain32 {
     #[doc = "Segment 2 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b2(&self) -> super::vals::Trig0Chain32B2b2 {
+    pub const fn b2b2(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Trig0Chain32B2b2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 2 B2B"]
     #[inline(always)]
-    pub const fn set_b2b2(&mut self, val: super::vals::Trig0Chain32B2b2) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_b2b2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Segment 2 interrupt enable. (This bit field is meaningful only when IE2_EN is set)"]
     #[must_use]
@@ -1169,14 +1169,14 @@ impl Trig0Chain32 {
     #[doc = "IRQ enable of segment 2."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie2_en(&self) -> super::vals::Trig0Chain32Ie2En {
+    pub const fn ie2_en(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Trig0Chain32Ie2En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 2."]
     #[inline(always)]
-    pub const fn set_ie2_en(&mut self, val: super::vals::Trig0Chain32Ie2En) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_ie2_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "ADC channel selection"]
     #[must_use]
@@ -1205,14 +1205,14 @@ impl Trig0Chain32 {
     #[doc = "Segment 3 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b3(&self) -> super::vals::Trig0Chain32B2b3 {
+    pub const fn b2b3(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Trig0Chain32B2b3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 3 B2B"]
     #[inline(always)]
-    pub const fn set_b2b3(&mut self, val: super::vals::Trig0Chain32B2b3) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_b2b3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Segment 3 interrupt enable. (This bit field is meaningful only when IE3_EN is set)"]
     #[must_use]
@@ -1229,14 +1229,14 @@ impl Trig0Chain32 {
     #[doc = "IRQ enable of segment 3."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie3_en(&self) -> super::vals::Trig0Chain32Ie3En {
+    pub const fn ie3_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Trig0Chain32Ie3En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 3."]
     #[inline(always)]
-    pub const fn set_ie3_en(&mut self, val: super::vals::Trig0Chain32Ie3En) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_ie3_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Trig0Chain32 {
@@ -1266,7 +1266,7 @@ impl defmt::Format for Trig0Chain32 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig0Chain32 {{ csel2: {:?}, hwts2: {:?}, b2b2: {:?}, ie2: {:?}, ie2_en: {:?}, csel3: {:?}, hwts3: {:?}, b2b3: {:?}, ie3: {:?}, ie3_en: {:?} }}",
+            "Trig0Chain32 {{ csel2: {:?}, hwts2: {:?}, b2b2: {=bool:?}, ie2: {:?}, ie2_en: {=bool:?}, csel3: {:?}, hwts3: {:?}, b2b3: {=bool:?}, ie3: {:?}, ie3_en: {=bool:?} }}",
             self.csel2(),
             self.hwts2(),
             self.b2b2(),
@@ -1312,14 +1312,14 @@ impl Trig0Chain54 {
     #[doc = "Segment 4 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b4(&self) -> super::vals::Trig0Chain54B2b4 {
+    pub const fn b2b4(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Trig0Chain54B2b4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 4 B2B"]
     #[inline(always)]
-    pub const fn set_b2b4(&mut self, val: super::vals::Trig0Chain54B2b4) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_b2b4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Segment 4 interrupt enable. (This bit field is meaningful only when IE4_EN is set)"]
     #[must_use]
@@ -1336,14 +1336,14 @@ impl Trig0Chain54 {
     #[doc = "IRQ enable of segment 4."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie4_en(&self) -> super::vals::Trig0Chain54Ie4En {
+    pub const fn ie4_en(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Trig0Chain54Ie4En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 4."]
     #[inline(always)]
-    pub const fn set_ie4_en(&mut self, val: super::vals::Trig0Chain54Ie4En) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_ie4_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "ADC channel selection"]
     #[must_use]
@@ -1372,14 +1372,14 @@ impl Trig0Chain54 {
     #[doc = "Segment 5 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b5(&self) -> super::vals::Trig0Chain54B2b5 {
+    pub const fn b2b5(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Trig0Chain54B2b5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 5 B2B"]
     #[inline(always)]
-    pub const fn set_b2b5(&mut self, val: super::vals::Trig0Chain54B2b5) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_b2b5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Segment 5 interrupt enable. (This bit field is meaningful only when IE5_EN is set)"]
     #[must_use]
@@ -1396,14 +1396,14 @@ impl Trig0Chain54 {
     #[doc = "IRQ enable of segment 5."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie5_en(&self) -> super::vals::Trig0Chain54Ie5En {
+    pub const fn ie5_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Trig0Chain54Ie5En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 5."]
     #[inline(always)]
-    pub const fn set_ie5_en(&mut self, val: super::vals::Trig0Chain54Ie5En) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_ie5_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Trig0Chain54 {
@@ -1433,7 +1433,7 @@ impl defmt::Format for Trig0Chain54 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig0Chain54 {{ csel4: {:?}, hwts4: {:?}, b2b4: {:?}, ie4: {:?}, ie4_en: {:?}, csel5: {:?}, hwts5: {:?}, b2b5: {:?}, ie5: {:?}, ie5_en: {:?} }}",
+            "Trig0Chain54 {{ csel4: {:?}, hwts4: {:?}, b2b4: {=bool:?}, ie4: {:?}, ie4_en: {=bool:?}, csel5: {:?}, hwts5: {:?}, b2b5: {=bool:?}, ie5: {:?}, ie5_en: {=bool:?} }}",
             self.csel4(),
             self.hwts4(),
             self.b2b4(),
@@ -1479,14 +1479,14 @@ impl Trig0Chain76 {
     #[doc = "Segment 6 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b6(&self) -> super::vals::Trig0Chain76B2b6 {
+    pub const fn b2b6(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Trig0Chain76B2b6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 6 B2B"]
     #[inline(always)]
-    pub const fn set_b2b6(&mut self, val: super::vals::Trig0Chain76B2b6) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_b2b6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Segment 6 interrupt enable. (This bit field is meaningful only when IE6_EN is set)"]
     #[must_use]
@@ -1503,14 +1503,14 @@ impl Trig0Chain76 {
     #[doc = "IRQ enable of segment 6."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie6_en(&self) -> super::vals::Trig0Chain76Ie6En {
+    pub const fn ie6_en(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Trig0Chain76Ie6En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 6."]
     #[inline(always)]
-    pub const fn set_ie6_en(&mut self, val: super::vals::Trig0Chain76Ie6En) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_ie6_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "ADC channel selection"]
     #[must_use]
@@ -1539,14 +1539,14 @@ impl Trig0Chain76 {
     #[doc = "Segment 7 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b7(&self) -> super::vals::Trig0Chain76B2b7 {
+    pub const fn b2b7(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Trig0Chain76B2b7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 7 B2B"]
     #[inline(always)]
-    pub const fn set_b2b7(&mut self, val: super::vals::Trig0Chain76B2b7) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_b2b7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Segment 7 interrupt enable. (This bit field is meaningful only when IE7_EN is set)"]
     #[must_use]
@@ -1563,14 +1563,14 @@ impl Trig0Chain76 {
     #[doc = "IRQ enable of segment 7."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie7_en(&self) -> super::vals::Trig0Chain76Ie7En {
+    pub const fn ie7_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Trig0Chain76Ie7En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 7."]
     #[inline(always)]
-    pub const fn set_ie7_en(&mut self, val: super::vals::Trig0Chain76Ie7En) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_ie7_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Trig0Chain76 {
@@ -1600,7 +1600,7 @@ impl defmt::Format for Trig0Chain76 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig0Chain76 {{ csel6: {:?}, hwts6: {:?}, b2b6: {:?}, ie6: {:?}, ie6_en: {:?}, csel7: {:?}, hwts7: {:?}, b2b7: {:?}, ie7: {:?}, ie7_en: {:?} }}",
+            "Trig0Chain76 {{ csel6: {:?}, hwts6: {:?}, b2b6: {=bool:?}, ie6: {:?}, ie6_en: {=bool:?}, csel7: {:?}, hwts7: {:?}, b2b7: {=bool:?}, ie7: {:?}, ie7_en: {=bool:?} }}",
             self.csel6(),
             self.hwts6(),
             self.b2b6(),
@@ -1677,26 +1677,26 @@ impl Trig0Ctrl {
     #[doc = "Software trigger. This field is self-clearing."]
     #[must_use]
     #[inline(always)]
-    pub const fn sw_trig(&self) -> super::vals::Trig0CtrlSwTrig {
+    pub const fn sw_trig(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Trig0CtrlSwTrig::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software trigger. This field is self-clearing."]
     #[inline(always)]
-    pub const fn set_sw_trig(&mut self, val: super::vals::Trig0CtrlSwTrig) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_sw_trig(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Trigger mode selection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig_mode(&self) -> super::vals::Trig0CtrlTrigMode {
+    pub const fn trig_mode(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Trig0CtrlTrigMode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger mode selection."]
     #[inline(always)]
-    pub const fn set_trig_mode(&mut self, val: super::vals::Trig0CtrlTrigMode) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_trig_mode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "The number of segments inside the trigger chain of TRIGa."]
     #[must_use]
@@ -1725,14 +1725,14 @@ impl Trig0Ctrl {
     #[doc = "Trigger synchronization mode selection"]
     #[must_use]
     #[inline(always)]
-    pub const fn sync_mode(&self) -> super::vals::Trig0CtrlSyncMode {
+    pub const fn sync_mode(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Trig0CtrlSyncMode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger synchronization mode selection"]
     #[inline(always)]
-    pub const fn set_sync_mode(&mut self, val: super::vals::Trig0CtrlSyncMode) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_sync_mode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
 }
 impl Default for Trig0Ctrl {
@@ -1757,7 +1757,7 @@ impl defmt::Format for Trig0Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig0Ctrl {{ sw_trig: {:?}, trig_mode: {:?}, trig_chain: {:?}, trig_priority: {=u8:?}, sync_mode: {:?} }}",
+            "Trig0Ctrl {{ sw_trig: {=bool:?}, trig_mode: {=bool:?}, trig_chain: {:?}, trig_priority: {=u8:?}, sync_mode: {=bool:?} }}",
             self.sw_trig(),
             self.trig_mode(),
             self.trig_chain(),
@@ -2018,14 +2018,14 @@ impl Trig1Chain10 {
     #[doc = "Segment 0 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b0(&self) -> super::vals::Trig1Chain10B2b0 {
+    pub const fn b2b0(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Trig1Chain10B2b0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 0 B2B"]
     #[inline(always)]
-    pub const fn set_b2b0(&mut self, val: super::vals::Trig1Chain10B2b0) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_b2b0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Segment 0 interrupt enable. (This bit field is meaningful only when IE0_EN is set)"]
     #[must_use]
@@ -2042,14 +2042,14 @@ impl Trig1Chain10 {
     #[doc = "IRQ enable of segment 0."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie0_en(&self) -> super::vals::Trig1Chain10Ie0En {
+    pub const fn ie0_en(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Trig1Chain10Ie0En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 0."]
     #[inline(always)]
-    pub const fn set_ie0_en(&mut self, val: super::vals::Trig1Chain10Ie0En) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_ie0_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "ADC channel selection"]
     #[must_use]
@@ -2078,14 +2078,14 @@ impl Trig1Chain10 {
     #[doc = "Segment 1 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b1(&self) -> super::vals::Trig1Chain10B2b1 {
+    pub const fn b2b1(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Trig1Chain10B2b1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 1 B2B"]
     #[inline(always)]
-    pub const fn set_b2b1(&mut self, val: super::vals::Trig1Chain10B2b1) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_b2b1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Segment 1 interrupt enable. (This bit field is meaningful only when IE1_EN is set)"]
     #[must_use]
@@ -2102,14 +2102,14 @@ impl Trig1Chain10 {
     #[doc = "IRQ enable of segment 1."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie1_en(&self) -> super::vals::Trig1Chain10Ie1En {
+    pub const fn ie1_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Trig1Chain10Ie1En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 1."]
     #[inline(always)]
-    pub const fn set_ie1_en(&mut self, val: super::vals::Trig1Chain10Ie1En) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_ie1_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Trig1Chain10 {
@@ -2139,7 +2139,7 @@ impl defmt::Format for Trig1Chain10 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig1Chain10 {{ csel0: {:?}, hwts0: {:?}, b2b0: {:?}, ie0: {:?}, ie0_en: {:?}, csel1: {:?}, hwts1: {:?}, b2b1: {:?}, ie1: {:?}, ie1_en: {:?} }}",
+            "Trig1Chain10 {{ csel0: {:?}, hwts0: {:?}, b2b0: {=bool:?}, ie0: {:?}, ie0_en: {=bool:?}, csel1: {:?}, hwts1: {:?}, b2b1: {=bool:?}, ie1: {:?}, ie1_en: {=bool:?} }}",
             self.csel0(),
             self.hwts0(),
             self.b2b0(),
@@ -2185,14 +2185,14 @@ impl Trig1Chain32 {
     #[doc = "Segment 2 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b2(&self) -> super::vals::Trig1Chain32B2b2 {
+    pub const fn b2b2(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Trig1Chain32B2b2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 2 B2B"]
     #[inline(always)]
-    pub const fn set_b2b2(&mut self, val: super::vals::Trig1Chain32B2b2) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_b2b2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Segment 2 interrupt enable. (This bit field is meaningful only when IE2_EN is set)"]
     #[must_use]
@@ -2209,14 +2209,14 @@ impl Trig1Chain32 {
     #[doc = "IRQ enable of segment 2."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie2_en(&self) -> super::vals::Trig1Chain32Ie2En {
+    pub const fn ie2_en(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Trig1Chain32Ie2En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 2."]
     #[inline(always)]
-    pub const fn set_ie2_en(&mut self, val: super::vals::Trig1Chain32Ie2En) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_ie2_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "ADC channel selection"]
     #[must_use]
@@ -2245,14 +2245,14 @@ impl Trig1Chain32 {
     #[doc = "Segment 3 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b3(&self) -> super::vals::Trig1Chain32B2b3 {
+    pub const fn b2b3(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Trig1Chain32B2b3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 3 B2B"]
     #[inline(always)]
-    pub const fn set_b2b3(&mut self, val: super::vals::Trig1Chain32B2b3) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_b2b3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Segment 3 interrupt enable. (This bit field is meaningful only when IE3_EN is set)"]
     #[must_use]
@@ -2269,14 +2269,14 @@ impl Trig1Chain32 {
     #[doc = "IRQ enable of segment 3."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie3_en(&self) -> super::vals::Trig1Chain32Ie3En {
+    pub const fn ie3_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Trig1Chain32Ie3En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 3."]
     #[inline(always)]
-    pub const fn set_ie3_en(&mut self, val: super::vals::Trig1Chain32Ie3En) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_ie3_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Trig1Chain32 {
@@ -2306,7 +2306,7 @@ impl defmt::Format for Trig1Chain32 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig1Chain32 {{ csel2: {:?}, hwts2: {:?}, b2b2: {:?}, ie2: {:?}, ie2_en: {:?}, csel3: {:?}, hwts3: {:?}, b2b3: {:?}, ie3: {:?}, ie3_en: {:?} }}",
+            "Trig1Chain32 {{ csel2: {:?}, hwts2: {:?}, b2b2: {=bool:?}, ie2: {:?}, ie2_en: {=bool:?}, csel3: {:?}, hwts3: {:?}, b2b3: {=bool:?}, ie3: {:?}, ie3_en: {=bool:?} }}",
             self.csel2(),
             self.hwts2(),
             self.b2b2(),
@@ -2352,14 +2352,14 @@ impl Trig1Chain54 {
     #[doc = "Segment 4 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b4(&self) -> super::vals::Trig1Chain54B2b4 {
+    pub const fn b2b4(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Trig1Chain54B2b4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 4 B2B"]
     #[inline(always)]
-    pub const fn set_b2b4(&mut self, val: super::vals::Trig1Chain54B2b4) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_b2b4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Segment 4 interrupt enable. (This bit field is meaningful only when IE4_EN is set)"]
     #[must_use]
@@ -2376,14 +2376,14 @@ impl Trig1Chain54 {
     #[doc = "IRQ enable of segment 4."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie4_en(&self) -> super::vals::Trig1Chain54Ie4En {
+    pub const fn ie4_en(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Trig1Chain54Ie4En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 4."]
     #[inline(always)]
-    pub const fn set_ie4_en(&mut self, val: super::vals::Trig1Chain54Ie4En) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_ie4_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "ADC channel selection"]
     #[must_use]
@@ -2412,14 +2412,14 @@ impl Trig1Chain54 {
     #[doc = "Segment 5 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b5(&self) -> super::vals::Trig1Chain54B2b5 {
+    pub const fn b2b5(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Trig1Chain54B2b5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 5 B2B"]
     #[inline(always)]
-    pub const fn set_b2b5(&mut self, val: super::vals::Trig1Chain54B2b5) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_b2b5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Segment 5 interrupt enable. (This bit field is meaningful only when IE5_EN is set)"]
     #[must_use]
@@ -2436,14 +2436,14 @@ impl Trig1Chain54 {
     #[doc = "IRQ enable of segment 5."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie5_en(&self) -> super::vals::Trig1Chain54Ie5En {
+    pub const fn ie5_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Trig1Chain54Ie5En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 5."]
     #[inline(always)]
-    pub const fn set_ie5_en(&mut self, val: super::vals::Trig1Chain54Ie5En) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_ie5_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Trig1Chain54 {
@@ -2473,7 +2473,7 @@ impl defmt::Format for Trig1Chain54 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig1Chain54 {{ csel4: {:?}, hwts4: {:?}, b2b4: {:?}, ie4: {:?}, ie4_en: {:?}, csel5: {:?}, hwts5: {:?}, b2b5: {:?}, ie5: {:?}, ie5_en: {:?} }}",
+            "Trig1Chain54 {{ csel4: {:?}, hwts4: {:?}, b2b4: {=bool:?}, ie4: {:?}, ie4_en: {=bool:?}, csel5: {:?}, hwts5: {:?}, b2b5: {=bool:?}, ie5: {:?}, ie5_en: {=bool:?} }}",
             self.csel4(),
             self.hwts4(),
             self.b2b4(),
@@ -2519,14 +2519,14 @@ impl Trig1Chain76 {
     #[doc = "Segment 6 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b6(&self) -> super::vals::Trig1Chain76B2b6 {
+    pub const fn b2b6(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Trig1Chain76B2b6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 6 B2B"]
     #[inline(always)]
-    pub const fn set_b2b6(&mut self, val: super::vals::Trig1Chain76B2b6) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_b2b6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Segment 6 interrupt enable. (This bit field is meaningful only when IE6_EN is set)"]
     #[must_use]
@@ -2543,14 +2543,14 @@ impl Trig1Chain76 {
     #[doc = "IRQ enable of segment 6."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie6_en(&self) -> super::vals::Trig1Chain76Ie6En {
+    pub const fn ie6_en(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Trig1Chain76Ie6En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 6."]
     #[inline(always)]
-    pub const fn set_ie6_en(&mut self, val: super::vals::Trig1Chain76Ie6En) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_ie6_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "ADC channel selection"]
     #[must_use]
@@ -2579,14 +2579,14 @@ impl Trig1Chain76 {
     #[doc = "Segment 7 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b7(&self) -> super::vals::Trig1Chain76B2b7 {
+    pub const fn b2b7(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Trig1Chain76B2b7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 7 B2B"]
     #[inline(always)]
-    pub const fn set_b2b7(&mut self, val: super::vals::Trig1Chain76B2b7) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_b2b7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Segment 7 interrupt enable. (This bit field is meaningful only when IE7_EN is set)"]
     #[must_use]
@@ -2603,14 +2603,14 @@ impl Trig1Chain76 {
     #[doc = "IRQ enable of segment 7."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie7_en(&self) -> super::vals::Trig1Chain76Ie7En {
+    pub const fn ie7_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Trig1Chain76Ie7En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 7."]
     #[inline(always)]
-    pub const fn set_ie7_en(&mut self, val: super::vals::Trig1Chain76Ie7En) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_ie7_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Trig1Chain76 {
@@ -2640,7 +2640,7 @@ impl defmt::Format for Trig1Chain76 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig1Chain76 {{ csel6: {:?}, hwts6: {:?}, b2b6: {:?}, ie6: {:?}, ie6_en: {:?}, csel7: {:?}, hwts7: {:?}, b2b7: {:?}, ie7: {:?}, ie7_en: {:?} }}",
+            "Trig1Chain76 {{ csel6: {:?}, hwts6: {:?}, b2b6: {=bool:?}, ie6: {:?}, ie6_en: {=bool:?}, csel7: {:?}, hwts7: {:?}, b2b7: {=bool:?}, ie7: {:?}, ie7_en: {=bool:?} }}",
             self.csel6(),
             self.hwts6(),
             self.b2b6(),
@@ -2717,26 +2717,26 @@ impl Trig1Ctrl {
     #[doc = "Software trigger. This field is self-clearing."]
     #[must_use]
     #[inline(always)]
-    pub const fn sw_trig(&self) -> super::vals::Trig1CtrlSwTrig {
+    pub const fn sw_trig(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Trig1CtrlSwTrig::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software trigger. This field is self-clearing."]
     #[inline(always)]
-    pub const fn set_sw_trig(&mut self, val: super::vals::Trig1CtrlSwTrig) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_sw_trig(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Trigger mode selection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig_mode(&self) -> super::vals::Trig1CtrlTrigMode {
+    pub const fn trig_mode(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Trig1CtrlTrigMode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger mode selection."]
     #[inline(always)]
-    pub const fn set_trig_mode(&mut self, val: super::vals::Trig1CtrlTrigMode) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_trig_mode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "The number of segments inside the trigger chain of TRIGa."]
     #[must_use]
@@ -2765,14 +2765,14 @@ impl Trig1Ctrl {
     #[doc = "Trigger synchronization mode selection"]
     #[must_use]
     #[inline(always)]
-    pub const fn sync_mode(&self) -> super::vals::Trig1CtrlSyncMode {
+    pub const fn sync_mode(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Trig1CtrlSyncMode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger synchronization mode selection"]
     #[inline(always)]
-    pub const fn set_sync_mode(&mut self, val: super::vals::Trig1CtrlSyncMode) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_sync_mode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
 }
 impl Default for Trig1Ctrl {
@@ -2797,7 +2797,7 @@ impl defmt::Format for Trig1Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig1Ctrl {{ sw_trig: {:?}, trig_mode: {:?}, trig_chain: {:?}, trig_priority: {=u8:?}, sync_mode: {:?} }}",
+            "Trig1Ctrl {{ sw_trig: {=bool:?}, trig_mode: {=bool:?}, trig_chain: {:?}, trig_priority: {=u8:?}, sync_mode: {=bool:?} }}",
             self.sw_trig(),
             self.trig_mode(),
             self.trig_chain(),
@@ -3058,14 +3058,14 @@ impl Trig2Chain10 {
     #[doc = "Segment 0 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b0(&self) -> super::vals::Trig2Chain10B2b0 {
+    pub const fn b2b0(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Trig2Chain10B2b0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 0 B2B"]
     #[inline(always)]
-    pub const fn set_b2b0(&mut self, val: super::vals::Trig2Chain10B2b0) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_b2b0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Segment 0 interrupt enable. (This bit field is meaningful only when IE0_EN is set)"]
     #[must_use]
@@ -3082,14 +3082,14 @@ impl Trig2Chain10 {
     #[doc = "IRQ enable of segment 0."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie0_en(&self) -> super::vals::Trig2Chain10Ie0En {
+    pub const fn ie0_en(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Trig2Chain10Ie0En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 0."]
     #[inline(always)]
-    pub const fn set_ie0_en(&mut self, val: super::vals::Trig2Chain10Ie0En) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_ie0_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "ADC channel selection"]
     #[must_use]
@@ -3118,14 +3118,14 @@ impl Trig2Chain10 {
     #[doc = "Segment 1 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b1(&self) -> super::vals::Trig2Chain10B2b1 {
+    pub const fn b2b1(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Trig2Chain10B2b1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 1 B2B"]
     #[inline(always)]
-    pub const fn set_b2b1(&mut self, val: super::vals::Trig2Chain10B2b1) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_b2b1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Segment 1 interrupt enable. (This bit field is meaningful only when IE1_EN is set)"]
     #[must_use]
@@ -3142,14 +3142,14 @@ impl Trig2Chain10 {
     #[doc = "IRQ enable of segment 1."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie1_en(&self) -> super::vals::Trig2Chain10Ie1En {
+    pub const fn ie1_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Trig2Chain10Ie1En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 1."]
     #[inline(always)]
-    pub const fn set_ie1_en(&mut self, val: super::vals::Trig2Chain10Ie1En) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_ie1_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Trig2Chain10 {
@@ -3179,7 +3179,7 @@ impl defmt::Format for Trig2Chain10 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig2Chain10 {{ csel0: {:?}, hwts0: {:?}, b2b0: {:?}, ie0: {:?}, ie0_en: {:?}, csel1: {:?}, hwts1: {:?}, b2b1: {:?}, ie1: {:?}, ie1_en: {:?} }}",
+            "Trig2Chain10 {{ csel0: {:?}, hwts0: {:?}, b2b0: {=bool:?}, ie0: {:?}, ie0_en: {=bool:?}, csel1: {:?}, hwts1: {:?}, b2b1: {=bool:?}, ie1: {:?}, ie1_en: {=bool:?} }}",
             self.csel0(),
             self.hwts0(),
             self.b2b0(),
@@ -3225,14 +3225,14 @@ impl Trig2Chain32 {
     #[doc = "Segment 2 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b2(&self) -> super::vals::Trig2Chain32B2b2 {
+    pub const fn b2b2(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Trig2Chain32B2b2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 2 B2B"]
     #[inline(always)]
-    pub const fn set_b2b2(&mut self, val: super::vals::Trig2Chain32B2b2) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_b2b2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Segment 2 interrupt enable. (This bit field is meaningful only when IE2_EN is set)"]
     #[must_use]
@@ -3249,14 +3249,14 @@ impl Trig2Chain32 {
     #[doc = "IRQ enable of segment 2."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie2_en(&self) -> super::vals::Trig2Chain32Ie2En {
+    pub const fn ie2_en(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Trig2Chain32Ie2En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 2."]
     #[inline(always)]
-    pub const fn set_ie2_en(&mut self, val: super::vals::Trig2Chain32Ie2En) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_ie2_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "ADC channel selection"]
     #[must_use]
@@ -3285,14 +3285,14 @@ impl Trig2Chain32 {
     #[doc = "Segment 3 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b3(&self) -> super::vals::Trig2Chain32B2b3 {
+    pub const fn b2b3(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Trig2Chain32B2b3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 3 B2B"]
     #[inline(always)]
-    pub const fn set_b2b3(&mut self, val: super::vals::Trig2Chain32B2b3) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_b2b3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Segment 3 interrupt enable. (This bit field is meaningful only when IE3_EN is set)"]
     #[must_use]
@@ -3309,14 +3309,14 @@ impl Trig2Chain32 {
     #[doc = "IRQ enable of segment 3."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie3_en(&self) -> super::vals::Trig2Chain32Ie3En {
+    pub const fn ie3_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Trig2Chain32Ie3En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 3."]
     #[inline(always)]
-    pub const fn set_ie3_en(&mut self, val: super::vals::Trig2Chain32Ie3En) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_ie3_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Trig2Chain32 {
@@ -3346,7 +3346,7 @@ impl defmt::Format for Trig2Chain32 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig2Chain32 {{ csel2: {:?}, hwts2: {:?}, b2b2: {:?}, ie2: {:?}, ie2_en: {:?}, csel3: {:?}, hwts3: {:?}, b2b3: {:?}, ie3: {:?}, ie3_en: {:?} }}",
+            "Trig2Chain32 {{ csel2: {:?}, hwts2: {:?}, b2b2: {=bool:?}, ie2: {:?}, ie2_en: {=bool:?}, csel3: {:?}, hwts3: {:?}, b2b3: {=bool:?}, ie3: {:?}, ie3_en: {=bool:?} }}",
             self.csel2(),
             self.hwts2(),
             self.b2b2(),
@@ -3392,14 +3392,14 @@ impl Trig2Chain54 {
     #[doc = "Segment 4 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b4(&self) -> super::vals::Trig2Chain54B2b4 {
+    pub const fn b2b4(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Trig2Chain54B2b4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 4 B2B"]
     #[inline(always)]
-    pub const fn set_b2b4(&mut self, val: super::vals::Trig2Chain54B2b4) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_b2b4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Segment 4 interrupt enable. (This bit field is meaningful only when IE4_EN is set)"]
     #[must_use]
@@ -3416,14 +3416,14 @@ impl Trig2Chain54 {
     #[doc = "IRQ enable of segment 4."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie4_en(&self) -> super::vals::Trig2Chain54Ie4En {
+    pub const fn ie4_en(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Trig2Chain54Ie4En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 4."]
     #[inline(always)]
-    pub const fn set_ie4_en(&mut self, val: super::vals::Trig2Chain54Ie4En) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_ie4_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "ADC channel selection"]
     #[must_use]
@@ -3452,14 +3452,14 @@ impl Trig2Chain54 {
     #[doc = "Segment 5 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b5(&self) -> super::vals::Trig2Chain54B2b5 {
+    pub const fn b2b5(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Trig2Chain54B2b5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 5 B2B"]
     #[inline(always)]
-    pub const fn set_b2b5(&mut self, val: super::vals::Trig2Chain54B2b5) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_b2b5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Segment 5 interrupt enable. (This bit field is meaningful only when IE5_EN is set)"]
     #[must_use]
@@ -3476,14 +3476,14 @@ impl Trig2Chain54 {
     #[doc = "IRQ enable of segment 5."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie5_en(&self) -> super::vals::Trig2Chain54Ie5En {
+    pub const fn ie5_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Trig2Chain54Ie5En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 5."]
     #[inline(always)]
-    pub const fn set_ie5_en(&mut self, val: super::vals::Trig2Chain54Ie5En) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_ie5_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Trig2Chain54 {
@@ -3513,7 +3513,7 @@ impl defmt::Format for Trig2Chain54 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig2Chain54 {{ csel4: {:?}, hwts4: {:?}, b2b4: {:?}, ie4: {:?}, ie4_en: {:?}, csel5: {:?}, hwts5: {:?}, b2b5: {:?}, ie5: {:?}, ie5_en: {:?} }}",
+            "Trig2Chain54 {{ csel4: {:?}, hwts4: {:?}, b2b4: {=bool:?}, ie4: {:?}, ie4_en: {=bool:?}, csel5: {:?}, hwts5: {:?}, b2b5: {=bool:?}, ie5: {:?}, ie5_en: {=bool:?} }}",
             self.csel4(),
             self.hwts4(),
             self.b2b4(),
@@ -3559,14 +3559,14 @@ impl Trig2Chain76 {
     #[doc = "Segment 6 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b6(&self) -> super::vals::Trig2Chain76B2b6 {
+    pub const fn b2b6(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Trig2Chain76B2b6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 6 B2B"]
     #[inline(always)]
-    pub const fn set_b2b6(&mut self, val: super::vals::Trig2Chain76B2b6) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_b2b6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Segment 6 interrupt enable. (This bit field is meaningful only when IE6_EN is set)"]
     #[must_use]
@@ -3583,14 +3583,14 @@ impl Trig2Chain76 {
     #[doc = "IRQ enable of segment 6."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie6_en(&self) -> super::vals::Trig2Chain76Ie6En {
+    pub const fn ie6_en(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Trig2Chain76Ie6En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 6."]
     #[inline(always)]
-    pub const fn set_ie6_en(&mut self, val: super::vals::Trig2Chain76Ie6En) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_ie6_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "ADC channel selection"]
     #[must_use]
@@ -3619,14 +3619,14 @@ impl Trig2Chain76 {
     #[doc = "Segment 7 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b7(&self) -> super::vals::Trig2Chain76B2b7 {
+    pub const fn b2b7(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Trig2Chain76B2b7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 7 B2B"]
     #[inline(always)]
-    pub const fn set_b2b7(&mut self, val: super::vals::Trig2Chain76B2b7) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_b2b7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Segment 7 interrupt enable. (This bit field is meaningful only when IE7_EN is set)"]
     #[must_use]
@@ -3643,14 +3643,14 @@ impl Trig2Chain76 {
     #[doc = "IRQ enable of segment 7."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie7_en(&self) -> super::vals::Trig2Chain76Ie7En {
+    pub const fn ie7_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Trig2Chain76Ie7En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 7."]
     #[inline(always)]
-    pub const fn set_ie7_en(&mut self, val: super::vals::Trig2Chain76Ie7En) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_ie7_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Trig2Chain76 {
@@ -3680,7 +3680,7 @@ impl defmt::Format for Trig2Chain76 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig2Chain76 {{ csel6: {:?}, hwts6: {:?}, b2b6: {:?}, ie6: {:?}, ie6_en: {:?}, csel7: {:?}, hwts7: {:?}, b2b7: {:?}, ie7: {:?}, ie7_en: {:?} }}",
+            "Trig2Chain76 {{ csel6: {:?}, hwts6: {:?}, b2b6: {=bool:?}, ie6: {:?}, ie6_en: {=bool:?}, csel7: {:?}, hwts7: {:?}, b2b7: {=bool:?}, ie7: {:?}, ie7_en: {=bool:?} }}",
             self.csel6(),
             self.hwts6(),
             self.b2b6(),
@@ -3757,26 +3757,26 @@ impl Trig2Ctrl {
     #[doc = "Software trigger. This field is self-clearing."]
     #[must_use]
     #[inline(always)]
-    pub const fn sw_trig(&self) -> super::vals::Trig2CtrlSwTrig {
+    pub const fn sw_trig(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Trig2CtrlSwTrig::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software trigger. This field is self-clearing."]
     #[inline(always)]
-    pub const fn set_sw_trig(&mut self, val: super::vals::Trig2CtrlSwTrig) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_sw_trig(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Trigger mode selection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig_mode(&self) -> super::vals::Trig2CtrlTrigMode {
+    pub const fn trig_mode(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Trig2CtrlTrigMode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger mode selection."]
     #[inline(always)]
-    pub const fn set_trig_mode(&mut self, val: super::vals::Trig2CtrlTrigMode) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_trig_mode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "The number of segments inside the trigger chain of TRIGa."]
     #[must_use]
@@ -3805,14 +3805,14 @@ impl Trig2Ctrl {
     #[doc = "Trigger synchronization mode selection"]
     #[must_use]
     #[inline(always)]
-    pub const fn sync_mode(&self) -> super::vals::Trig2CtrlSyncMode {
+    pub const fn sync_mode(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Trig2CtrlSyncMode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger synchronization mode selection"]
     #[inline(always)]
-    pub const fn set_sync_mode(&mut self, val: super::vals::Trig2CtrlSyncMode) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_sync_mode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
 }
 impl Default for Trig2Ctrl {
@@ -3837,7 +3837,7 @@ impl defmt::Format for Trig2Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig2Ctrl {{ sw_trig: {:?}, trig_mode: {:?}, trig_chain: {:?}, trig_priority: {=u8:?}, sync_mode: {:?} }}",
+            "Trig2Ctrl {{ sw_trig: {=bool:?}, trig_mode: {=bool:?}, trig_chain: {:?}, trig_priority: {=u8:?}, sync_mode: {=bool:?} }}",
             self.sw_trig(),
             self.trig_mode(),
             self.trig_chain(),
@@ -4098,14 +4098,14 @@ impl Trig3Chain10 {
     #[doc = "Segment 0 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b0(&self) -> super::vals::Trig3Chain10B2b0 {
+    pub const fn b2b0(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Trig3Chain10B2b0::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 0 B2B"]
     #[inline(always)]
-    pub const fn set_b2b0(&mut self, val: super::vals::Trig3Chain10B2b0) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_b2b0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Segment 0 interrupt enable. (This bit field is meaningful only when IE0_EN is set)"]
     #[must_use]
@@ -4122,14 +4122,14 @@ impl Trig3Chain10 {
     #[doc = "IRQ enable of segment 0."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie0_en(&self) -> super::vals::Trig3Chain10Ie0En {
+    pub const fn ie0_en(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Trig3Chain10Ie0En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 0."]
     #[inline(always)]
-    pub const fn set_ie0_en(&mut self, val: super::vals::Trig3Chain10Ie0En) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_ie0_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "ADC channel selection"]
     #[must_use]
@@ -4158,14 +4158,14 @@ impl Trig3Chain10 {
     #[doc = "Segment 1 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b1(&self) -> super::vals::Trig3Chain10B2b1 {
+    pub const fn b2b1(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Trig3Chain10B2b1::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 1 B2B"]
     #[inline(always)]
-    pub const fn set_b2b1(&mut self, val: super::vals::Trig3Chain10B2b1) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_b2b1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Segment 1 interrupt enable. (This bit field is meaningful only when IE1_EN is set)"]
     #[must_use]
@@ -4182,14 +4182,14 @@ impl Trig3Chain10 {
     #[doc = "IRQ enable of segment 1."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie1_en(&self) -> super::vals::Trig3Chain10Ie1En {
+    pub const fn ie1_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Trig3Chain10Ie1En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 1."]
     #[inline(always)]
-    pub const fn set_ie1_en(&mut self, val: super::vals::Trig3Chain10Ie1En) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_ie1_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Trig3Chain10 {
@@ -4219,7 +4219,7 @@ impl defmt::Format for Trig3Chain10 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig3Chain10 {{ csel0: {:?}, hwts0: {:?}, b2b0: {:?}, ie0: {:?}, ie0_en: {:?}, csel1: {:?}, hwts1: {:?}, b2b1: {:?}, ie1: {:?}, ie1_en: {:?} }}",
+            "Trig3Chain10 {{ csel0: {:?}, hwts0: {:?}, b2b0: {=bool:?}, ie0: {:?}, ie0_en: {=bool:?}, csel1: {:?}, hwts1: {:?}, b2b1: {=bool:?}, ie1: {:?}, ie1_en: {=bool:?} }}",
             self.csel0(),
             self.hwts0(),
             self.b2b0(),
@@ -4265,14 +4265,14 @@ impl Trig3Chain32 {
     #[doc = "Segment 2 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b2(&self) -> super::vals::Trig3Chain32B2b2 {
+    pub const fn b2b2(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Trig3Chain32B2b2::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 2 B2B"]
     #[inline(always)]
-    pub const fn set_b2b2(&mut self, val: super::vals::Trig3Chain32B2b2) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_b2b2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Segment 2 interrupt enable. (This bit field is meaningful only when IE2_EN is set)"]
     #[must_use]
@@ -4289,14 +4289,14 @@ impl Trig3Chain32 {
     #[doc = "IRQ enable of segment 2."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie2_en(&self) -> super::vals::Trig3Chain32Ie2En {
+    pub const fn ie2_en(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Trig3Chain32Ie2En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 2."]
     #[inline(always)]
-    pub const fn set_ie2_en(&mut self, val: super::vals::Trig3Chain32Ie2En) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_ie2_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "ADC channel selection"]
     #[must_use]
@@ -4325,14 +4325,14 @@ impl Trig3Chain32 {
     #[doc = "Segment 3 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b3(&self) -> super::vals::Trig3Chain32B2b3 {
+    pub const fn b2b3(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Trig3Chain32B2b3::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 3 B2B"]
     #[inline(always)]
-    pub const fn set_b2b3(&mut self, val: super::vals::Trig3Chain32B2b3) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_b2b3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Segment 3 interrupt enable. (This bit field is meaningful only when IE3_EN is set)"]
     #[must_use]
@@ -4349,14 +4349,14 @@ impl Trig3Chain32 {
     #[doc = "IRQ enable of segment 3."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie3_en(&self) -> super::vals::Trig3Chain32Ie3En {
+    pub const fn ie3_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Trig3Chain32Ie3En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 3."]
     #[inline(always)]
-    pub const fn set_ie3_en(&mut self, val: super::vals::Trig3Chain32Ie3En) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_ie3_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Trig3Chain32 {
@@ -4386,7 +4386,7 @@ impl defmt::Format for Trig3Chain32 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig3Chain32 {{ csel2: {:?}, hwts2: {:?}, b2b2: {:?}, ie2: {:?}, ie2_en: {:?}, csel3: {:?}, hwts3: {:?}, b2b3: {:?}, ie3: {:?}, ie3_en: {:?} }}",
+            "Trig3Chain32 {{ csel2: {:?}, hwts2: {:?}, b2b2: {=bool:?}, ie2: {:?}, ie2_en: {=bool:?}, csel3: {:?}, hwts3: {:?}, b2b3: {=bool:?}, ie3: {:?}, ie3_en: {=bool:?} }}",
             self.csel2(),
             self.hwts2(),
             self.b2b2(),
@@ -4432,14 +4432,14 @@ impl Trig3Chain54 {
     #[doc = "Segment 4 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b4(&self) -> super::vals::Trig3Chain54B2b4 {
+    pub const fn b2b4(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Trig3Chain54B2b4::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 4 B2B"]
     #[inline(always)]
-    pub const fn set_b2b4(&mut self, val: super::vals::Trig3Chain54B2b4) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_b2b4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Segment 4 interrupt enable. (This bit field is meaningful only when IE4_EN is set)"]
     #[must_use]
@@ -4456,14 +4456,14 @@ impl Trig3Chain54 {
     #[doc = "IRQ enable of segment 4."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie4_en(&self) -> super::vals::Trig3Chain54Ie4En {
+    pub const fn ie4_en(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Trig3Chain54Ie4En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 4."]
     #[inline(always)]
-    pub const fn set_ie4_en(&mut self, val: super::vals::Trig3Chain54Ie4En) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_ie4_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "ADC channel selection"]
     #[must_use]
@@ -4492,14 +4492,14 @@ impl Trig3Chain54 {
     #[doc = "Segment 5 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b5(&self) -> super::vals::Trig3Chain54B2b5 {
+    pub const fn b2b5(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Trig3Chain54B2b5::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 5 B2B"]
     #[inline(always)]
-    pub const fn set_b2b5(&mut self, val: super::vals::Trig3Chain54B2b5) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_b2b5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Segment 5 interrupt enable. (This bit field is meaningful only when IE5_EN is set)"]
     #[must_use]
@@ -4516,14 +4516,14 @@ impl Trig3Chain54 {
     #[doc = "IRQ enable of segment 5."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie5_en(&self) -> super::vals::Trig3Chain54Ie5En {
+    pub const fn ie5_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Trig3Chain54Ie5En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 5."]
     #[inline(always)]
-    pub const fn set_ie5_en(&mut self, val: super::vals::Trig3Chain54Ie5En) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_ie5_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Trig3Chain54 {
@@ -4553,7 +4553,7 @@ impl defmt::Format for Trig3Chain54 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig3Chain54 {{ csel4: {:?}, hwts4: {:?}, b2b4: {:?}, ie4: {:?}, ie4_en: {:?}, csel5: {:?}, hwts5: {:?}, b2b5: {:?}, ie5: {:?}, ie5_en: {:?} }}",
+            "Trig3Chain54 {{ csel4: {:?}, hwts4: {:?}, b2b4: {=bool:?}, ie4: {:?}, ie4_en: {=bool:?}, csel5: {:?}, hwts5: {:?}, b2b5: {=bool:?}, ie5: {:?}, ie5_en: {=bool:?} }}",
             self.csel4(),
             self.hwts4(),
             self.b2b4(),
@@ -4599,14 +4599,14 @@ impl Trig3Chain76 {
     #[doc = "Segment 6 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b6(&self) -> super::vals::Trig3Chain76B2b6 {
+    pub const fn b2b6(&self) -> bool {
         let val = (self.0 >> 12usize) & 0x01;
-        super::vals::Trig3Chain76B2b6::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 6 B2B"]
     #[inline(always)]
-    pub const fn set_b2b6(&mut self, val: super::vals::Trig3Chain76B2b6) {
-        self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+    pub const fn set_b2b6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
     }
     #[doc = "Segment 6 interrupt enable. (This bit field is meaningful only when IE6_EN is set)"]
     #[must_use]
@@ -4623,14 +4623,14 @@ impl Trig3Chain76 {
     #[doc = "IRQ enable of segment 6."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie6_en(&self) -> super::vals::Trig3Chain76Ie6En {
+    pub const fn ie6_en(&self) -> bool {
         let val = (self.0 >> 15usize) & 0x01;
-        super::vals::Trig3Chain76Ie6En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 6."]
     #[inline(always)]
-    pub const fn set_ie6_en(&mut self, val: super::vals::Trig3Chain76Ie6En) {
-        self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+    pub const fn set_ie6_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
     }
     #[doc = "ADC channel selection"]
     #[must_use]
@@ -4659,14 +4659,14 @@ impl Trig3Chain76 {
     #[doc = "Segment 7 B2B"]
     #[must_use]
     #[inline(always)]
-    pub const fn b2b7(&self) -> super::vals::Trig3Chain76B2b7 {
+    pub const fn b2b7(&self) -> bool {
         let val = (self.0 >> 28usize) & 0x01;
-        super::vals::Trig3Chain76B2b7::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Segment 7 B2B"]
     #[inline(always)]
-    pub const fn set_b2b7(&mut self, val: super::vals::Trig3Chain76B2b7) {
-        self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+    pub const fn set_b2b7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
     }
     #[doc = "Segment 7 interrupt enable. (This bit field is meaningful only when IE7_EN is set)"]
     #[must_use]
@@ -4683,14 +4683,14 @@ impl Trig3Chain76 {
     #[doc = "IRQ enable of segment 7."]
     #[must_use]
     #[inline(always)]
-    pub const fn ie7_en(&self) -> super::vals::Trig3Chain76Ie7En {
+    pub const fn ie7_en(&self) -> bool {
         let val = (self.0 >> 31usize) & 0x01;
-        super::vals::Trig3Chain76Ie7En::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IRQ enable of segment 7."]
     #[inline(always)]
-    pub const fn set_ie7_en(&mut self, val: super::vals::Trig3Chain76Ie7En) {
-        self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+    pub const fn set_ie7_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
     }
 }
 impl Default for Trig3Chain76 {
@@ -4720,7 +4720,7 @@ impl defmt::Format for Trig3Chain76 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig3Chain76 {{ csel6: {:?}, hwts6: {:?}, b2b6: {:?}, ie6: {:?}, ie6_en: {:?}, csel7: {:?}, hwts7: {:?}, b2b7: {:?}, ie7: {:?}, ie7_en: {:?} }}",
+            "Trig3Chain76 {{ csel6: {:?}, hwts6: {:?}, b2b6: {=bool:?}, ie6: {:?}, ie6_en: {=bool:?}, csel7: {:?}, hwts7: {:?}, b2b7: {=bool:?}, ie7: {:?}, ie7_en: {=bool:?} }}",
             self.csel6(),
             self.hwts6(),
             self.b2b6(),
@@ -4797,26 +4797,26 @@ impl Trig3Ctrl {
     #[doc = "Software trigger. This field is self-clearing."]
     #[must_use]
     #[inline(always)]
-    pub const fn sw_trig(&self) -> super::vals::Trig3CtrlSwTrig {
+    pub const fn sw_trig(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Trig3CtrlSwTrig::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Software trigger. This field is self-clearing."]
     #[inline(always)]
-    pub const fn set_sw_trig(&mut self, val: super::vals::Trig3CtrlSwTrig) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_sw_trig(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "Trigger mode selection."]
     #[must_use]
     #[inline(always)]
-    pub const fn trig_mode(&self) -> super::vals::Trig3CtrlTrigMode {
+    pub const fn trig_mode(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::Trig3CtrlTrigMode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger mode selection."]
     #[inline(always)]
-    pub const fn set_trig_mode(&mut self, val: super::vals::Trig3CtrlTrigMode) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_trig_mode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "The number of segments inside the trigger chain of TRIGa."]
     #[must_use]
@@ -4845,14 +4845,14 @@ impl Trig3Ctrl {
     #[doc = "Trigger synchronization mode selection"]
     #[must_use]
     #[inline(always)]
-    pub const fn sync_mode(&self) -> super::vals::Trig3CtrlSyncMode {
+    pub const fn sync_mode(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
-        super::vals::Trig3CtrlSyncMode::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Trigger synchronization mode selection"]
     #[inline(always)]
-    pub const fn set_sync_mode(&mut self, val: super::vals::Trig3CtrlSyncMode) {
-        self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+    pub const fn set_sync_mode(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
 }
 impl Default for Trig3Ctrl {
@@ -4877,7 +4877,7 @@ impl defmt::Format for Trig3Ctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Trig3Ctrl {{ sw_trig: {:?}, trig_mode: {:?}, trig_chain: {:?}, trig_priority: {=u8:?}, sync_mode: {:?} }}",
+            "Trig3Ctrl {{ sw_trig: {=bool:?}, trig_mode: {=bool:?}, trig_chain: {:?}, trig_priority: {=u8:?}, sync_mode: {=bool:?} }}",
             self.sw_trig(),
             self.trig_mode(),
             self.trig_chain(),

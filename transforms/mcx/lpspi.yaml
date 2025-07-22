@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: lpspi::vals::(Rtf|Rrf)
+    bit_size: 1

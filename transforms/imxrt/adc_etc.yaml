@@ -1,0 +1,18 @@
+# Boolean enum transforms for ADC_ETC peripheral
+# Converts single-bit enums with _0/_1 patterns to proper boolean types
+
+transforms:
+  # Delete misc control enums
+  - !DeleteEnums
+    from: adc_etc::vals::(DmaModeSel|Softrst)
+    bit_size: 1
+
+  # Delete trigger chain enums (Trig0-3 have all patterns, Trig4-7 only have some)
+  - !DeleteEnums
+    from: adc_etc::vals::Trig[0-3](Chain\d+B2b\d+|Chain\d+Ie\dEn|Ctrl(SwTrig|SyncMode|TrigMode)|Done\d+|Enable|Err|Req)
+    bit_size: 1
+
+  # Delete trigger enums for Trig4-7 (limited patterns)
+  - !DeleteEnums
+    from: adc_etc::vals::Trig[4-7](Done\d+|Enable|Err|Req)
+    bit_size: 1

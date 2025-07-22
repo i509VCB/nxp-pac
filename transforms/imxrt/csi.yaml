@@ -1,0 +1,4 @@
+transforms:
+  - !DeleteEnums
+    from: csi::vals::(BaseaddrChangeErrorIe|CcirEn|CofInt|CofIntEn|DeinterlaceEn|DmaField1DoneIe|DmaReflashRff|DmaReflashSff|DmaReqEnRff|DmaReqEnSff|DmaTsfDoneFb1|DmaTsfDoneFb2|DmaTsfDoneSff|Drdy|Drm|EccAutoEn|EccInt|EccIntEn|EofInt|EofIntEn|ExtVsync|F1Int|F2Int|Fb1DmaDoneInten|Fb2DmaDoneInten|Fcc|Field0DoneIe|FrmcntRst|GclkMode|HrespErrEn|HrespErrInt|HsyncPol|InvData|InvPclk|Parallel24En|PixelBit|PrPIfEn|Redge|RfOrInt|RfOrInten|RxFfInt|RxffInten|Sce|Sensor16bits|SfOrInt|SfOrInten|SffDmaDoneInten|SofInt|SofInten|SofPol|StatffInt|StatffInten|Swap16En|ZeroPackEn)
+    bit_size: 1

@@ -1,0 +1,7 @@
+# Boolean enum transforms for DCDC peripheral
+# Converts single-bit enums with _0/_1 patterns to proper boolean types
+
+transforms:
+  - !DeleteEnums
+    from: dcdc::vals::(DisableAutoClkSwitch|DisablePulseSkip|DisableStep|LoopctrlHstThresh|LpHighHys|LpOverloadFreqSel|MinpwrDcHalfclk|PwdCmpBattDet|PwdCmpOffset|PwdCurSnsCmp|PwdHighVoltDet|PwdOscInt|PwdOvercurDet|PwdZcd|RegRloadSw|SelClk|Xtal24mOk|XtalokDisable)
+    bit_size: 1

@@ -145,14 +145,14 @@ impl Flexpwm1PwmaSelectInput0 {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Flexpwm1PwmaSelectInput0Daisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Flexpwm1PwmaSelectInput0Daisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Flexpwm1PwmaSelectInput0Daisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Flexpwm1PwmaSelectInput0 {
@@ -173,7 +173,7 @@ impl defmt::Format for Flexpwm1PwmaSelectInput0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Flexpwm1PwmaSelectInput0 {{ daisy: {:?} }}",
+            "Flexpwm1PwmaSelectInput0 {{ daisy: {=bool:?} }}",
             self.daisy()
         )
     }
@@ -186,14 +186,14 @@ impl Flexpwm1PwmaSelectInput1 {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Flexpwm1PwmaSelectInput1Daisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Flexpwm1PwmaSelectInput1Daisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Flexpwm1PwmaSelectInput1Daisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Flexpwm1PwmaSelectInput1 {
@@ -214,7 +214,7 @@ impl defmt::Format for Flexpwm1PwmaSelectInput1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Flexpwm1PwmaSelectInput1 {{ daisy: {:?} }}",
+            "Flexpwm1PwmaSelectInput1 {{ daisy: {=bool:?} }}",
             self.daisy()
         )
     }
@@ -227,14 +227,14 @@ impl Flexpwm1PwmaSelectInput2 {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Flexpwm1PwmaSelectInput2Daisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Flexpwm1PwmaSelectInput2Daisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Flexpwm1PwmaSelectInput2Daisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Flexpwm1PwmaSelectInput2 {
@@ -255,7 +255,7 @@ impl defmt::Format for Flexpwm1PwmaSelectInput2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Flexpwm1PwmaSelectInput2 {{ daisy: {:?} }}",
+            "Flexpwm1PwmaSelectInput2 {{ daisy: {=bool:?} }}",
             self.daisy()
         )
     }
@@ -268,14 +268,14 @@ impl Flexpwm1PwmaSelectInput3 {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Flexpwm1PwmaSelectInput3Daisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Flexpwm1PwmaSelectInput3Daisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Flexpwm1PwmaSelectInput3Daisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Flexpwm1PwmaSelectInput3 {
@@ -296,7 +296,7 @@ impl defmt::Format for Flexpwm1PwmaSelectInput3 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Flexpwm1PwmaSelectInput3 {{ daisy: {:?} }}",
+            "Flexpwm1PwmaSelectInput3 {{ daisy: {=bool:?} }}",
             self.daisy()
         )
     }
@@ -309,14 +309,14 @@ impl Flexpwm1PwmbSelectInput0 {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Flexpwm1PwmbSelectInput0Daisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Flexpwm1PwmbSelectInput0Daisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Flexpwm1PwmbSelectInput0Daisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Flexpwm1PwmbSelectInput0 {
@@ -337,7 +337,7 @@ impl defmt::Format for Flexpwm1PwmbSelectInput0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Flexpwm1PwmbSelectInput0 {{ daisy: {:?} }}",
+            "Flexpwm1PwmbSelectInput0 {{ daisy: {=bool:?} }}",
             self.daisy()
         )
     }
@@ -350,14 +350,14 @@ impl Flexpwm1PwmbSelectInput1 {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Flexpwm1PwmbSelectInput1Daisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Flexpwm1PwmbSelectInput1Daisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Flexpwm1PwmbSelectInput1Daisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Flexpwm1PwmbSelectInput1 {
@@ -378,7 +378,7 @@ impl defmt::Format for Flexpwm1PwmbSelectInput1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Flexpwm1PwmbSelectInput1 {{ daisy: {:?} }}",
+            "Flexpwm1PwmbSelectInput1 {{ daisy: {=bool:?} }}",
             self.daisy()
         )
     }
@@ -391,14 +391,14 @@ impl Flexpwm1PwmbSelectInput2 {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Flexpwm1PwmbSelectInput2Daisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Flexpwm1PwmbSelectInput2Daisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Flexpwm1PwmbSelectInput2Daisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Flexpwm1PwmbSelectInput2 {
@@ -419,7 +419,7 @@ impl defmt::Format for Flexpwm1PwmbSelectInput2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Flexpwm1PwmbSelectInput2 {{ daisy: {:?} }}",
+            "Flexpwm1PwmbSelectInput2 {{ daisy: {=bool:?} }}",
             self.daisy()
         )
     }
@@ -432,14 +432,14 @@ impl Flexpwm1PwmbSelectInput3 {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Flexpwm1PwmbSelectInput3Daisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Flexpwm1PwmbSelectInput3Daisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Flexpwm1PwmbSelectInput3Daisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Flexpwm1PwmbSelectInput3 {
@@ -460,7 +460,7 @@ impl defmt::Format for Flexpwm1PwmbSelectInput3 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Flexpwm1PwmbSelectInput3 {{ daisy: {:?} }}",
+            "Flexpwm1PwmbSelectInput3 {{ daisy: {=bool:?} }}",
             self.daisy()
         )
     }
@@ -473,14 +473,14 @@ impl FlexspiDqsFaSelectInput {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::FlexspiDqsFaSelectInputDaisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::FlexspiDqsFaSelectInputDaisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::FlexspiDqsFaSelectInputDaisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for FlexspiDqsFaSelectInput {
@@ -499,7 +499,11 @@ impl core::fmt::Debug for FlexspiDqsFaSelectInput {
 #[cfg(feature = "defmt")]
 impl defmt::Format for FlexspiDqsFaSelectInput {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "FlexspiDqsFaSelectInput {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "FlexspiDqsFaSelectInput {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }
 #[doc = "FLEXSPI_DQS_FB_SELECT_INPUT DAISY Register"]
@@ -510,14 +514,14 @@ impl FlexspiDqsFbSelectInput {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::FlexspiDqsFbSelectInputDaisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::FlexspiDqsFbSelectInputDaisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::FlexspiDqsFbSelectInputDaisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for FlexspiDqsFbSelectInput {
@@ -536,7 +540,11 @@ impl core::fmt::Debug for FlexspiDqsFbSelectInput {
 #[cfg(feature = "defmt")]
 impl defmt::Format for FlexspiDqsFbSelectInput {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "FlexspiDqsFbSelectInput {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "FlexspiDqsFbSelectInput {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }
 #[doc = "KPP_COL_SELECT_INPUT_0 DAISY Register"]
@@ -547,14 +555,14 @@ impl KppColSelectInput0 {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::KppColSelectInput0Daisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::KppColSelectInput0Daisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::KppColSelectInput0Daisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for KppColSelectInput0 {
@@ -573,7 +581,7 @@ impl core::fmt::Debug for KppColSelectInput0 {
 #[cfg(feature = "defmt")]
 impl defmt::Format for KppColSelectInput0 {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "KppColSelectInput0 {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(f, "KppColSelectInput0 {{ daisy: {=bool:?} }}", self.daisy())
     }
 }
 #[doc = "KPP_COL_SELECT_INPUT_1 DAISY Register"]
@@ -584,14 +592,14 @@ impl KppColSelectInput1 {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::KppColSelectInput1Daisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::KppColSelectInput1Daisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::KppColSelectInput1Daisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for KppColSelectInput1 {
@@ -610,7 +618,7 @@ impl core::fmt::Debug for KppColSelectInput1 {
 #[cfg(feature = "defmt")]
 impl defmt::Format for KppColSelectInput1 {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "KppColSelectInput1 {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(f, "KppColSelectInput1 {{ daisy: {=bool:?} }}", self.daisy())
     }
 }
 #[doc = "KPP_COL_SELECT_INPUT_2 DAISY Register"]
@@ -621,14 +629,14 @@ impl KppColSelectInput2 {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::KppColSelectInput2Daisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::KppColSelectInput2Daisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::KppColSelectInput2Daisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for KppColSelectInput2 {
@@ -647,7 +655,7 @@ impl core::fmt::Debug for KppColSelectInput2 {
 #[cfg(feature = "defmt")]
 impl defmt::Format for KppColSelectInput2 {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "KppColSelectInput2 {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(f, "KppColSelectInput2 {{ daisy: {=bool:?} }}", self.daisy())
     }
 }
 #[doc = "KPP_COL_SELECT_INPUT_3 DAISY Register"]
@@ -658,14 +666,14 @@ impl KppColSelectInput3 {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::KppColSelectInput3Daisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::KppColSelectInput3Daisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::KppColSelectInput3Daisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for KppColSelectInput3 {
@@ -684,7 +692,7 @@ impl core::fmt::Debug for KppColSelectInput3 {
 #[cfg(feature = "defmt")]
 impl defmt::Format for KppColSelectInput3 {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "KppColSelectInput3 {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(f, "KppColSelectInput3 {{ daisy: {=bool:?} }}", self.daisy())
     }
 }
 #[doc = "KPP_ROW_SELECT_INPUT_0 DAISY Register"]
@@ -695,14 +703,14 @@ impl KppRowSelectInput0 {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::KppRowSelectInput0Daisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::KppRowSelectInput0Daisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::KppRowSelectInput0Daisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for KppRowSelectInput0 {
@@ -721,7 +729,7 @@ impl core::fmt::Debug for KppRowSelectInput0 {
 #[cfg(feature = "defmt")]
 impl defmt::Format for KppRowSelectInput0 {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "KppRowSelectInput0 {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(f, "KppRowSelectInput0 {{ daisy: {=bool:?} }}", self.daisy())
     }
 }
 #[doc = "KPP_ROW_SELECT_INPUT_1 DAISY Register"]
@@ -732,14 +740,14 @@ impl KppRowSelectInput1 {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::KppRowSelectInput1Daisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::KppRowSelectInput1Daisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::KppRowSelectInput1Daisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for KppRowSelectInput1 {
@@ -758,7 +766,7 @@ impl core::fmt::Debug for KppRowSelectInput1 {
 #[cfg(feature = "defmt")]
 impl defmt::Format for KppRowSelectInput1 {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "KppRowSelectInput1 {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(f, "KppRowSelectInput1 {{ daisy: {=bool:?} }}", self.daisy())
     }
 }
 #[doc = "KPP_ROW_SELECT_INPUT_2 DAISY Register"]
@@ -769,14 +777,14 @@ impl KppRowSelectInput2 {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::KppRowSelectInput2Daisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::KppRowSelectInput2Daisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::KppRowSelectInput2Daisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for KppRowSelectInput2 {
@@ -795,7 +803,7 @@ impl core::fmt::Debug for KppRowSelectInput2 {
 #[cfg(feature = "defmt")]
 impl defmt::Format for KppRowSelectInput2 {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "KppRowSelectInput2 {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(f, "KppRowSelectInput2 {{ daisy: {=bool:?} }}", self.daisy())
     }
 }
 #[doc = "KPP_ROW_SELECT_INPUT_3 DAISY Register"]
@@ -806,14 +814,14 @@ impl KppRowSelectInput3 {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::KppRowSelectInput3Daisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::KppRowSelectInput3Daisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::KppRowSelectInput3Daisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for KppRowSelectInput3 {
@@ -832,7 +840,7 @@ impl core::fmt::Debug for KppRowSelectInput3 {
 #[cfg(feature = "defmt")]
 impl defmt::Format for KppRowSelectInput3 {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "KppRowSelectInput3 {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(f, "KppRowSelectInput3 {{ daisy: {=bool:?} }}", self.daisy())
     }
 }
 #[doc = "LPI2C1_HREQ_SELECT_INPUT DAISY Register"]
@@ -843,14 +851,14 @@ impl Lpi2c1HreqSelectInput {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Lpi2c1HreqSelectInputDaisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Lpi2c1HreqSelectInputDaisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Lpi2c1HreqSelectInputDaisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Lpi2c1HreqSelectInput {
@@ -869,7 +877,11 @@ impl core::fmt::Debug for Lpi2c1HreqSelectInput {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Lpi2c1HreqSelectInput {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Lpi2c1HreqSelectInput {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "Lpi2c1HreqSelectInput {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }
 #[doc = "LPI2C1_SCL_SELECT_INPUT DAISY Register"]
@@ -1028,14 +1040,14 @@ impl Lpspi1PcsSelectInput0 {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Lpspi1PcsSelectInput0Daisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Lpspi1PcsSelectInput0Daisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Lpspi1PcsSelectInput0Daisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Lpspi1PcsSelectInput0 {
@@ -1054,7 +1066,11 @@ impl core::fmt::Debug for Lpspi1PcsSelectInput0 {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Lpspi1PcsSelectInput0 {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Lpspi1PcsSelectInput0 {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "Lpspi1PcsSelectInput0 {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }
 #[doc = "LPSPI1_SCK_SELECT_INPUT DAISY Register"]
@@ -1065,14 +1081,14 @@ impl Lpspi1SckSelectInput {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Lpspi1SckSelectInputDaisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Lpspi1SckSelectInputDaisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Lpspi1SckSelectInputDaisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Lpspi1SckSelectInput {
@@ -1091,7 +1107,11 @@ impl core::fmt::Debug for Lpspi1SckSelectInput {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Lpspi1SckSelectInput {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Lpspi1SckSelectInput {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "Lpspi1SckSelectInput {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }
 #[doc = "LPSPI1_SDI_SELECT_INPUT DAISY Register"]
@@ -1102,14 +1122,14 @@ impl Lpspi1SdiSelectInput {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Lpspi1SdiSelectInputDaisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Lpspi1SdiSelectInputDaisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Lpspi1SdiSelectInputDaisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Lpspi1SdiSelectInput {
@@ -1128,7 +1148,11 @@ impl core::fmt::Debug for Lpspi1SdiSelectInput {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Lpspi1SdiSelectInput {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Lpspi1SdiSelectInput {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "Lpspi1SdiSelectInput {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }
 #[doc = "LPSPI1_SDO_SELECT_INPUT DAISY Register"]
@@ -1139,14 +1163,14 @@ impl Lpspi1SdoSelectInput {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Lpspi1SdoSelectInputDaisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Lpspi1SdoSelectInputDaisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Lpspi1SdoSelectInputDaisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Lpspi1SdoSelectInput {
@@ -1165,7 +1189,11 @@ impl core::fmt::Debug for Lpspi1SdoSelectInput {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Lpspi1SdoSelectInput {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Lpspi1SdoSelectInput {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "Lpspi1SdoSelectInput {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }
 #[doc = "LPSPI2_PCS_SELECT_INPUT_0 DAISY Register"]
@@ -1176,14 +1204,14 @@ impl Lpspi2PcsSelectInput0 {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Lpspi2PcsSelectInput0Daisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Lpspi2PcsSelectInput0Daisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Lpspi2PcsSelectInput0Daisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Lpspi2PcsSelectInput0 {
@@ -1202,7 +1230,11 @@ impl core::fmt::Debug for Lpspi2PcsSelectInput0 {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Lpspi2PcsSelectInput0 {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Lpspi2PcsSelectInput0 {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "Lpspi2PcsSelectInput0 {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }
 #[doc = "LPSPI2_SCK_SELECT_INPUT DAISY Register"]
@@ -1213,14 +1245,14 @@ impl Lpspi2SckSelectInput {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Lpspi2SckSelectInputDaisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Lpspi2SckSelectInputDaisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Lpspi2SckSelectInputDaisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Lpspi2SckSelectInput {
@@ -1239,7 +1271,11 @@ impl core::fmt::Debug for Lpspi2SckSelectInput {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Lpspi2SckSelectInput {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Lpspi2SckSelectInput {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "Lpspi2SckSelectInput {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }
 #[doc = "LPSPI2_SDI_SELECT_INPUT DAISY Register"]
@@ -1250,14 +1286,14 @@ impl Lpspi2SdiSelectInput {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Lpspi2SdiSelectInputDaisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Lpspi2SdiSelectInputDaisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Lpspi2SdiSelectInputDaisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Lpspi2SdiSelectInput {
@@ -1276,7 +1312,11 @@ impl core::fmt::Debug for Lpspi2SdiSelectInput {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Lpspi2SdiSelectInput {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Lpspi2SdiSelectInput {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "Lpspi2SdiSelectInput {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }
 #[doc = "LPSPI2_SDO_SELECT_INPUT DAISY Register"]
@@ -1287,14 +1327,14 @@ impl Lpspi2SdoSelectInput {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Lpspi2SdoSelectInputDaisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Lpspi2SdoSelectInputDaisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Lpspi2SdoSelectInputDaisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Lpspi2SdoSelectInput {
@@ -1313,7 +1353,11 @@ impl core::fmt::Debug for Lpspi2SdoSelectInput {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Lpspi2SdoSelectInput {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Lpspi2SdoSelectInput {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "Lpspi2SdoSelectInput {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }
 #[doc = "LPUART1_RXD_SELECT_INPUT DAISY Register"]
@@ -1324,14 +1368,14 @@ impl Lpuart1RxdSelectInput {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Lpuart1RxdSelectInputDaisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Lpuart1RxdSelectInputDaisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Lpuart1RxdSelectInputDaisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Lpuart1RxdSelectInput {
@@ -1350,7 +1394,11 @@ impl core::fmt::Debug for Lpuart1RxdSelectInput {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Lpuart1RxdSelectInput {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Lpuart1RxdSelectInput {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "Lpuart1RxdSelectInput {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }
 #[doc = "LPUART1_TXD_SELECT_INPUT DAISY Register"]
@@ -1361,14 +1409,14 @@ impl Lpuart1TxdSelectInput {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Lpuart1TxdSelectInputDaisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Lpuart1TxdSelectInputDaisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Lpuart1TxdSelectInputDaisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Lpuart1TxdSelectInput {
@@ -1387,7 +1435,11 @@ impl core::fmt::Debug for Lpuart1TxdSelectInput {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Lpuart1TxdSelectInput {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Lpuart1TxdSelectInput {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "Lpuart1TxdSelectInput {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }
 #[doc = "LPUART2_RXD_SELECT_INPUT DAISY Register"]
@@ -1398,14 +1450,14 @@ impl Lpuart2RxdSelectInput {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Lpuart2RxdSelectInputDaisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Lpuart2RxdSelectInputDaisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Lpuart2RxdSelectInputDaisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Lpuart2RxdSelectInput {
@@ -1424,7 +1476,11 @@ impl core::fmt::Debug for Lpuart2RxdSelectInput {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Lpuart2RxdSelectInput {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Lpuart2RxdSelectInput {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "Lpuart2RxdSelectInput {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }
 #[doc = "LPUART2_TXD_SELECT_INPUT DAISY Register"]
@@ -1435,14 +1491,14 @@ impl Lpuart2TxdSelectInput {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Lpuart2TxdSelectInputDaisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Lpuart2TxdSelectInputDaisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Lpuart2TxdSelectInputDaisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Lpuart2TxdSelectInput {
@@ -1461,7 +1517,11 @@ impl core::fmt::Debug for Lpuart2TxdSelectInput {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Lpuart2TxdSelectInput {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Lpuart2TxdSelectInput {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "Lpuart2TxdSelectInput {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }
 #[doc = "LPUART3_RXD_SELECT_INPUT DAISY Register"]
@@ -1546,14 +1606,14 @@ impl Lpuart4RxdSelectInput {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Lpuart4RxdSelectInputDaisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Lpuart4RxdSelectInputDaisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Lpuart4RxdSelectInputDaisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Lpuart4RxdSelectInput {
@@ -1572,7 +1632,11 @@ impl core::fmt::Debug for Lpuart4RxdSelectInput {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Lpuart4RxdSelectInput {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Lpuart4RxdSelectInput {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "Lpuart4RxdSelectInput {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }
 #[doc = "LPUART4_TXD_SELECT_INPUT DAISY Register"]
@@ -1583,14 +1647,14 @@ impl Lpuart4TxdSelectInput {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::Lpuart4TxdSelectInputDaisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::Lpuart4TxdSelectInputDaisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::Lpuart4TxdSelectInputDaisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for Lpuart4TxdSelectInput {
@@ -1609,7 +1673,11 @@ impl core::fmt::Debug for Lpuart4TxdSelectInput {
 #[cfg(feature = "defmt")]
 impl defmt::Format for Lpuart4TxdSelectInput {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Lpuart4TxdSelectInput {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "Lpuart4TxdSelectInput {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }
 #[doc = "SW_MUX_CTL_PAD_GPIO_00 SW MUX Control Register"]
@@ -1675,14 +1743,14 @@ impl NmiGlueNmiSelectInput {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::NmiGlueNmiSelectInputDaisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::NmiGlueNmiSelectInputDaisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::NmiGlueNmiSelectInputDaisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for NmiGlueNmiSelectInput {
@@ -1701,7 +1769,11 @@ impl core::fmt::Debug for NmiGlueNmiSelectInput {
 #[cfg(feature = "defmt")]
 impl defmt::Format for NmiGlueNmiSelectInput {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "NmiGlueNmiSelectInput {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "NmiGlueNmiSelectInput {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }
 #[doc = "SPDIF_IN1_SELECT_INPUT DAISY Register"]
@@ -1712,14 +1784,14 @@ impl SpdifIn1SelectInput {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::SpdifIn1SelectInputDaisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::SpdifIn1SelectInputDaisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::SpdifIn1SelectInputDaisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for SpdifIn1SelectInput {
@@ -1738,7 +1810,11 @@ impl core::fmt::Debug for SpdifIn1SelectInput {
 #[cfg(feature = "defmt")]
 impl defmt::Format for SpdifIn1SelectInput {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "SpdifIn1SelectInput {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "SpdifIn1SelectInput {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }
 #[doc = "SPDIF_TX_CLK2_SELECT_INPUT DAISY Register"]
@@ -1749,14 +1825,14 @@ impl SpdifTxClk2SelectInput {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::SpdifTxClk2SelectInputDaisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::SpdifTxClk2SelectInputDaisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::SpdifTxClk2SelectInputDaisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for SpdifTxClk2SelectInput {
@@ -1775,7 +1851,11 @@ impl core::fmt::Debug for SpdifTxClk2SelectInput {
 #[cfg(feature = "defmt")]
 impl defmt::Format for SpdifTxClk2SelectInput {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "SpdifTxClk2SelectInput {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "SpdifTxClk2SelectInput {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }
 #[doc = "USB_OTG_ID_SELECT_INPUT DAISY Register"]
@@ -1786,14 +1866,14 @@ impl UsbOtgIdSelectInput {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::UsbOtgIdSelectInputDaisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::UsbOtgIdSelectInputDaisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::UsbOtgIdSelectInputDaisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for UsbOtgIdSelectInput {
@@ -1812,7 +1892,11 @@ impl core::fmt::Debug for UsbOtgIdSelectInput {
 #[cfg(feature = "defmt")]
 impl defmt::Format for UsbOtgIdSelectInput {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "UsbOtgIdSelectInput {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "UsbOtgIdSelectInput {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }
 #[doc = "USB_OTG_OC_SELECT_INPUT DAISY Register"]
@@ -1823,14 +1907,14 @@ impl UsbOtgOcSelectInput {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::UsbOtgOcSelectInputDaisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::UsbOtgOcSelectInputDaisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::UsbOtgOcSelectInputDaisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for UsbOtgOcSelectInput {
@@ -1849,7 +1933,11 @@ impl core::fmt::Debug for UsbOtgOcSelectInput {
 #[cfg(feature = "defmt")]
 impl defmt::Format for UsbOtgOcSelectInput {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "UsbOtgOcSelectInput {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "UsbOtgOcSelectInput {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }
 #[doc = "XEV_GLUE_RXEV_SELECT_INPUT DAISY Register"]
@@ -1860,14 +1948,14 @@ impl XevGlueRxevSelectInput {
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[must_use]
     #[inline(always)]
-    pub const fn daisy(&self) -> super::vals::XevGlueRxevSelectInputDaisy {
+    pub const fn daisy(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        super::vals::XevGlueRxevSelectInputDaisy::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Selecting Pads Involved in Daisy Chain."]
     #[inline(always)]
-    pub const fn set_daisy(&mut self, val: super::vals::XevGlueRxevSelectInputDaisy) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_daisy(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for XevGlueRxevSelectInput {
@@ -1886,6 +1974,10 @@ impl core::fmt::Debug for XevGlueRxevSelectInput {
 #[cfg(feature = "defmt")]
 impl defmt::Format for XevGlueRxevSelectInput {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "XevGlueRxevSelectInput {{ daisy: {:?} }}", self.daisy())
+        defmt::write!(
+            f,
+            "XevGlueRxevSelectInput {{ daisy: {=bool:?} }}",
+            self.daisy()
+        )
     }
 }

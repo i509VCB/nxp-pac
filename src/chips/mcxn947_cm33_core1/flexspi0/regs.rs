@@ -2956,50 +2956,50 @@ impl Ipedctrl {
     #[doc = "IPED Encryption and Decryption Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn iped_en(&self) -> super::vals::IpedEn {
+    pub const fn iped_en(&self) -> bool {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::IpedEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IPED Encryption and Decryption Enable"]
     #[inline(always)]
-    pub const fn set_iped_en(&mut self, val: super::vals::IpedEn) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+    pub const fn set_iped_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
     }
     #[doc = "IP Write IPED CTR Mode Encryption Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ipwr_en(&self) -> super::vals::IpwrEn {
+    pub const fn ipwr_en(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::IpwrEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "IP Write IPED CTR Mode Encryption Enable"]
     #[inline(always)]
-    pub const fn set_ipwr_en(&mut self, val: super::vals::IpwrEn) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_ipwr_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "AHB Write IPED CTR Mode Encryption Enable."]
     #[must_use]
     #[inline(always)]
-    pub const fn ahbwr_en(&self) -> super::vals::AhbwrEn {
+    pub const fn ahbwr_en(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
-        super::vals::AhbwrEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "AHB Write IPED CTR Mode Encryption Enable."]
     #[inline(always)]
-    pub const fn set_ahbwr_en(&mut self, val: super::vals::AhbwrEn) {
-        self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+    pub const fn set_ahbwr_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "AHB Read IPED CTR Mode Decryption Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn ahbrd_en(&self) -> super::vals::AhbrdEn {
+    pub const fn ahbrd_en(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
-        super::vals::AhbrdEn::from_bits(val as u8)
+        val != 0
     }
     #[doc = "AHB Read IPED CTR Mode Decryption Enable"]
     #[inline(always)]
-    pub const fn set_ahbrd_en(&mut self, val: super::vals::AhbrdEn) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+    pub const fn set_ahbrd_en(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "IP Write GCM Mode Enable"]
     #[must_use]
@@ -3089,7 +3089,7 @@ impl defmt::Format for Ipedctrl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Ipedctrl {{ config: {:?}, iped_en: {:?}, ipwr_en: {:?}, ahbwr_en: {:?}, ahbrd_en: {:?}, ipgcmwr: {:?}, ahgcmwr: {:?}, ahbgcmrd: {:?}, iped_protect: {:?}, iped_swreset: {:?} }}",
+            "Ipedctrl {{ config: {:?}, iped_en: {=bool:?}, ipwr_en: {=bool:?}, ahbwr_en: {=bool:?}, ahbrd_en: {=bool:?}, ipgcmwr: {:?}, ahgcmwr: {:?}, ahbgcmrd: {:?}, iped_protect: {:?}, iped_swreset: {:?} }}",
             self.config(),
             self.iped_en(),
             self.ipwr_en(),

@@ -363,14 +363,14 @@ impl Cr {
     #[doc = "Doze Mode Enable"]
     #[must_use]
     #[inline(always)]
-    pub const fn dozen(&self) -> super::vals::Dozen {
+    pub const fn dozen(&self) -> bool {
         let val = (self.0 >> 2usize) & 0x01;
-        super::vals::Dozen::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Doze Mode Enable"]
     #[inline(always)]
-    pub const fn set_dozen(&mut self, val: super::vals::Dozen) {
-        self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+    pub const fn set_dozen(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
     }
     #[doc = "Debug Enable"]
     #[must_use]
@@ -387,26 +387,26 @@ impl Cr {
     #[doc = "Reset Transmit FIFO"]
     #[must_use]
     #[inline(always)]
-    pub const fn rtf(&self) -> super::vals::Rtf {
+    pub const fn rtf(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
-        super::vals::Rtf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reset Transmit FIFO"]
     #[inline(always)]
-    pub const fn set_rtf(&mut self, val: super::vals::Rtf) {
-        self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+    pub const fn set_rtf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "Reset Receive FIFO"]
     #[must_use]
     #[inline(always)]
-    pub const fn rrf(&self) -> super::vals::Rrf {
+    pub const fn rrf(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
-        super::vals::Rrf::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Reset Receive FIFO"]
     #[inline(always)]
-    pub const fn set_rrf(&mut self, val: super::vals::Rrf) {
-        self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+    pub const fn set_rrf(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
 }
 impl Default for Cr {
@@ -432,7 +432,7 @@ impl defmt::Format for Cr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cr {{ men: {=bool:?}, rst: {=bool:?}, dozen: {:?}, dbgen: {=bool:?}, rtf: {:?}, rrf: {:?} }}",
+            "Cr {{ men: {=bool:?}, rst: {=bool:?}, dozen: {=bool:?}, dbgen: {=bool:?}, rtf: {=bool:?}, rrf: {=bool:?} }}",
             self.men(),
             self.rst(),
             self.dozen(),
@@ -1164,26 +1164,26 @@ impl Tcr {
     #[doc = "Transmit Data Mask"]
     #[must_use]
     #[inline(always)]
-    pub const fn txmsk(&self) -> super::vals::Txmsk {
+    pub const fn txmsk(&self) -> bool {
         let val = (self.0 >> 18usize) & 0x01;
-        super::vals::Txmsk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Transmit Data Mask"]
     #[inline(always)]
-    pub const fn set_txmsk(&mut self, val: super::vals::Txmsk) {
-        self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+    pub const fn set_txmsk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
     }
     #[doc = "Receive Data Mask"]
     #[must_use]
     #[inline(always)]
-    pub const fn rxmsk(&self) -> super::vals::Rxmsk {
+    pub const fn rxmsk(&self) -> bool {
         let val = (self.0 >> 19usize) & 0x01;
-        super::vals::Rxmsk::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Receive Data Mask"]
     #[inline(always)]
-    pub const fn set_rxmsk(&mut self, val: super::vals::Rxmsk) {
-        self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+    pub const fn set_rxmsk(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
     }
     #[doc = "Continuing Command"]
     #[must_use]
@@ -1311,7 +1311,7 @@ impl defmt::Format for Tcr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Tcr {{ framesz: {=u16:?}, width: {:?}, txmsk: {:?}, rxmsk: {:?}, contc: {:?}, cont: {=bool:?}, bysw: {=bool:?}, lsbf: {:?}, pcs: {:?}, prescale: {:?}, cpha: {:?}, cpol: {:?} }}",
+            "Tcr {{ framesz: {=u16:?}, width: {:?}, txmsk: {=bool:?}, rxmsk: {=bool:?}, contc: {:?}, cont: {=bool:?}, bysw: {=bool:?}, lsbf: {:?}, pcs: {:?}, prescale: {:?}, cpha: {:?}, cpol: {:?} }}",
             self.framesz(),
             self.width(),
             self.txmsk(),
