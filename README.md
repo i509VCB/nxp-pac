@@ -1,17 +1,24 @@
-# nxp-pac
+## nxp-pac crate workspace
 
-This is a [Peripheral Access Crate](https://rust-embedded.github.io/book/start/registers.html) for NXP microcontrollers.
-
-<!--This crate has been automatically generated from the SVD files in [nrfx](https://github.com/NordicSemiconductor/nrfx), using [chiptool](https://github.com/embassy-rs/chiptool/). Fixes are added to the SVD file to make the
-crate more amenable to writing HALs with, such as converting sets of identical registers/fields to arrays, merging identical registers and enums, etc.-->
-
-This crate will (hopefully) be used for [`embassy-nxp`](github.com/embassy-rs/embassy/) Rust Hardware Abstraction Layer (HAL) for the NXP microcontrollers.
+This is the workspace for the nxp-pac crate and supporting utilities.
 
 ## Cloning
 
 If you want to regenerate the pac, you need to clone with `--recursive`.
 
 If you forgot this, you can use `git submodule update --checkout --init` to fetch the submodules.
+
+## Tour
+
+The `data` directory contains the SVD files, board metadata, and chiptool transformations needed to
+generate the nxp-pac crate. This data is used by the code generation tool.
+
+The `generate` directory contains the code generation tool for generating the code in the `nxp-pac` crate.
+If you want change the way the `nxp-pac` crate is generated please see this directory.
+
+The `nxp-pac` directory contains the nxp-pac crate. If you are looking for a peripheral access crate for
+an NXP microcontroller, please see this directory. You should never need to manually edit the source
+code in this directory. The metadata will need to be updated to support new microcontrollers.
 
 ## License
 

@@ -131,12 +131,14 @@ fn generate_chip(current_dir: &Path, feature: &Feature) -> anyhow::Result<()> {
         .join("mcux-soc-svd")
         .join(feature.chip);
     let metadata_dir = current_dir.join("data").join("metadata");
+    let pac_dir = current_dir.join("nxp-pac");
 
     for core in feature.cores {
         let svd = chip_src_dir.join(core).with_extension("xml");
         debug!("svd path: {:?}", svd);
-        let transforms_dir = current_dir.join("transforms");
-        let chips_dir = current_dir.join("src").join("chips");
+        let transforms_dir = current_dir.join("data").join("transforms");
+        debug!("transforms path: {:?}", transforms_dir);
+        let chips_dir = pac_dir.join("src").join("chips");
 
         info!("Generating {}/{}", feature.chip, core);
         pac::generate_core(&svd, &chips_dir, &transforms_dir, &core).context("Generating PAC")?;
