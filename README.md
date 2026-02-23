@@ -13,8 +13,9 @@ If you forgot this, you can use `git submodule update --checkout --init` to fetc
 The `data` directory contains the SVD files, board metadata, and chiptool transformations needed to
 generate the nxp-pac crate. This data is used by the code generation tool.
 
-The `generate` directory contains the code generation tool for generating the code in the `nxp-pac` crate.
+The `generator` directory contains the code generation tool for generating the code in the `nxp-pac` crate.
 If you want change the way the `nxp-pac` crate is generated please see this directory.
+Run it using `cargo run -p generator -- <CHIP>`.
 
 The `nxp-pac` directory contains the nxp-pac crate. If you are looking for a peripheral access crate for
 an NXP microcontroller, please see this directory. You should never need to manually edit the source

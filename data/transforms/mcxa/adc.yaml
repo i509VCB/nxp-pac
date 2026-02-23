@@ -31,6 +31,11 @@ transforms:
     from: adc::regs::Cmdl(\d+)
     to: adc::regs::Cmdl
 
+  - !MakeRegisterArray
+    blocks: adc::Adc
+    from: cmdl(\d+)
+    to: cmdl
+
   - !MergeEnums
     from: adc::vals::Cmdh(\d+)(.+)
     to: adc::vals::$2
@@ -39,6 +44,11 @@ transforms:
     from: adc::regs::Cmdh(\d+)
     to: adc::regs::Cmdh
   
+  - !MakeRegisterArray
+    blocks: adc::Adc
+    from: cmdh(\d+)
+    to: cmdh
+
   - !DeleteEnums
     from: adc::vals::Swt(\d+)
 
