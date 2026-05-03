@@ -3,13 +3,13 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Reg0Policy {
     #[doc = "Noncacheable."]
-    REG0_00 = 0x0,
+    Reg000 = 0x0,
     #[doc = "Write-through."]
-    REG0_01 = 0x01,
+    Reg001 = 0x01,
     #[doc = "Write-back."]
-    REG0_10 = 0x02,
+    Reg010 = 0x02,
     #[doc = "Invalid."]
-    REG0_11 = 0x03,
+    Reg011 = 0x03,
 }
 impl Reg0Policy {
     #[inline(always)]
@@ -38,13 +38,13 @@ impl From<Reg0Policy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Reg1Policy {
     #[doc = "Noncacheable."]
-    REG1_00 = 0x0,
+    Reg100 = 0x0,
     #[doc = "Write-through."]
-    REG1_01 = 0x01,
+    Reg101 = 0x01,
     #[doc = "Write-back."]
-    REG1_10 = 0x02,
+    Reg110 = 0x02,
     #[doc = "Invalid."]
-    REG1_11 = 0x03,
+    Reg111 = 0x03,
 }
 impl Reg1Policy {
     #[inline(always)]
@@ -73,13 +73,13 @@ impl From<Reg1Policy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Reg2Policy {
     #[doc = "Noncacheable."]
-    REG2_00 = 0x0,
+    Reg200 = 0x0,
     #[doc = "Write-through."]
-    REG2_01 = 0x01,
+    Reg201 = 0x01,
     #[doc = "Write-back."]
-    REG2_10 = 0x02,
+    Reg210 = 0x02,
     #[doc = "Invalid."]
-    REG2_11 = 0x03,
+    Reg211 = 0x03,
 }
 impl Reg2Policy {
     #[inline(always)]

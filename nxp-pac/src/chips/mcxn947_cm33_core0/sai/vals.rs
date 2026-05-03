@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Chmod {
     #[doc = "TDM mode."]
-    TDM_MODE = 0x0,
+    TdmMode = 0x0,
     #[doc = "Output mode."]
-    OUTPUT_MODE = 0x01,
+    OutputMode = 0x01,
 }
 impl Chmod {
     #[inline(always)]
@@ -34,7 +34,7 @@ impl From<Chmod> for u8 {
 pub struct Feature(u16);
 impl Feature {
     #[doc = "Standard feature set."]
-    pub const STD: Self = Self(0x0);
+    pub const Std: Self = Self(0x0);
 }
 impl Feature {
     pub const fn from_bits(val: u16) -> Feature {
@@ -47,7 +47,7 @@ impl Feature {
 impl core::fmt::Debug for Feature {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("STD"),
+            0x0 => f.write_str("Std"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -56,7 +56,7 @@ impl core::fmt::Debug for Feature {
 impl defmt::Format for Feature {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "STD"),
+            0x0 => defmt::write!(f, "Std"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -78,25 +78,25 @@ impl From<Feature> for u16 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Frsz {
     #[doc = "1."]
-    ONE_WORD = 0x0,
+    OneWord = 0x0,
     #[doc = "2."]
-    TWO_WORDS = 0x01,
+    TwoWords = 0x01,
     #[doc = "(FRSZ value + 1)."]
-    N_WORDS_2 = 0x02,
+    NWords2 = 0x02,
     #[doc = "(FRSZ value + 1)."]
-    N_WORDS_3 = 0x03,
+    NWords3 = 0x03,
     #[doc = "(FRSZ value + 1)."]
-    N_WORDS_4 = 0x04,
+    NWords4 = 0x04,
     #[doc = "(FRSZ value + 1)."]
-    N_WORDS_5 = 0x05,
+    NWords5 = 0x05,
     #[doc = "(FRSZ value + 1)."]
-    N_WORDS_6 = 0x06,
+    NWords6 = 0x06,
     #[doc = "(FRSZ value + 1)."]
-    N_WORDS_7 = 0x07,
+    NWords7 = 0x07,
     #[doc = "(FRSZ value + 1)."]
-    N_WORDS_8 = 0x08,
+    NWords8 = 0x08,
     #[doc = "(FRSZ value + 1)."]
-    N_WORDS_9 = 0x09,
+    NWords9 = 0x09,
     _RESERVED_a = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
@@ -119,7 +119,7 @@ pub enum Frsz {
     _RESERVED_1d = 0x1d,
     _RESERVED_1e = 0x1e,
     #[doc = "32."]
-    MAX_WORDS = 0x1f,
+    MaxWords = 0x1f,
 }
 impl Frsz {
     #[inline(always)]
@@ -148,12 +148,12 @@ impl From<Frsz> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum McrMsel {
     #[doc = "Controller clock (MCLK) option 1."]
-    MCLK1 = 0x0,
+    Mclk1 = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "Controller clock (MCLK) option 2."]
-    MCLK2 = 0x02,
+    Mclk2 = 0x02,
     #[doc = "Controller clock (MCLK) option 3."]
-    MCLK3 = 0x03,
+    Mclk3 = 0x03,
 }
 impl McrMsel {
     #[inline(always)]
@@ -182,9 +182,9 @@ impl From<McrMsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Moe {
     #[doc = "Input."]
-    INPUT = 0x0,
+    Input = 0x0,
     #[doc = "Output."]
-    OUTPUT = 0x01,
+    Output = 0x01,
 }
 impl Moe {
     #[inline(always)]
@@ -213,9 +213,9 @@ impl From<Moe> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcr2Bcd {
     #[doc = "Generated externally in Target mode."]
-    EXT_TARGET_MODE = 0x0,
+    ExtTargetMode = 0x0,
     #[doc = "Generated internally in Controller mode."]
-    INT_CONTROLLER_MODE = 0x01,
+    IntControllerMode = 0x01,
 }
 impl Rcr2Bcd {
     #[inline(always)]
@@ -244,9 +244,9 @@ impl From<Rcr2Bcd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcr2Bci {
     #[doc = "Disable."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Enable."]
-    CLOCKED_AS_IF_EXT_GENERATED = 0x01,
+    ClockedAsIfExtGenerated = 0x01,
 }
 impl Rcr2Bci {
     #[inline(always)]
@@ -275,9 +275,9 @@ impl From<Rcr2Bci> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcr2Bcp {
     #[doc = "Active high."]
-    ACTIVE_HIGH = 0x0,
+    ActiveHigh = 0x0,
     #[doc = "Active low."]
-    ACTIVE_LOW = 0x01,
+    ActiveLow = 0x01,
 }
 impl Rcr2Bcp {
     #[inline(always)]
@@ -306,9 +306,9 @@ impl From<Rcr2Bcp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcr2Bcs {
     #[doc = "Use the normal bit clock source."]
-    NORMAL = 0x0,
+    Normal = 0x0,
     #[doc = "Swap the bit clock source."]
-    SWAP_BIT_CLK_SOURCE = 0x01,
+    SwapBitClkSource = 0x01,
 }
 impl Rcr2Bcs {
     #[inline(always)]
@@ -337,13 +337,13 @@ impl From<Rcr2Bcs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcr2Msel {
     #[doc = "Bus clock."]
-    BUS_CLOCK = 0x0,
+    BusClock = 0x0,
     #[doc = "Controller clock (MCLK) option 1."]
-    MCLK1 = 0x01,
+    Mclk1 = 0x01,
     #[doc = "Controller clock (MCLK) option 2."]
-    MCLK2 = 0x02,
+    Mclk2 = 0x02,
     #[doc = "Controller clock (MCLK) option 3."]
-    MCLK3 = 0x03,
+    Mclk3 = 0x03,
 }
 impl Rcr2Msel {
     #[inline(always)]
@@ -372,13 +372,13 @@ impl From<Rcr2Msel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcr2Sync {
     #[doc = "Asynchronous mode."]
-    ASYNC = 0x0,
+    Async = 0x0,
     #[doc = "Synchronous with transmitter."]
-    SYNC_W_TX = 0x01,
+    SyncWTx = 0x01,
     #[doc = "Synchronous with another SAI receiver."]
-    SYNC_W_ANOTHER_SAI_RX = 0x02,
+    SyncWAnotherSaiRx = 0x02,
     #[doc = "Synchronous with another SAI transmitter."]
-    SYNC_W_ANOTHER_SAI_TX = 0x03,
+    SyncWAnotherSaiTx = 0x03,
 }
 impl Rcr2Sync {
     #[inline(always)]
@@ -407,13 +407,13 @@ impl From<Rcr2Sync> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcr4Fcomb {
     #[doc = "Disable."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Enable on FIFO writes (from receive shift registers)."]
-    ENA_ON_FIFO_WRITES = 0x01,
+    EnaOnFifoWrites = 0x01,
     #[doc = "Enable on FIFO reads (by software)."]
-    ENA_ON_FIFO_READS = 0x02,
+    EnaOnFifoReads = 0x02,
     #[doc = "Enable on FIFO writes (from receive shift registers) and reads (by software)."]
-    ENA_ON_FIFO_WRITES_READS = 0x03,
+    EnaOnFifoWritesReads = 0x03,
 }
 impl Rcr4Fcomb {
     #[inline(always)]
@@ -442,12 +442,12 @@ impl From<Rcr4Fcomb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcr4Fpack {
     #[doc = "Disable."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "Enable 8-bit FIFO packing."]
-    EIGHT_BIT_PACKING = 0x02,
+    EightBitPacking = 0x02,
     #[doc = "Enable 16-bit FIFO packing."]
-    SIXTEEN_BIT_PACKING = 0x03,
+    SixteenBitPacking = 0x03,
 }
 impl Rcr4Fpack {
     #[inline(always)]
@@ -476,9 +476,9 @@ impl From<Rcr4Fpack> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcr4Fsd {
     #[doc = "Generated externally in Target mode."]
-    EXT_TARGET_MODE = 0x0,
+    ExtTargetMode = 0x0,
     #[doc = "Generated internally in Controller mode."]
-    INT_CONTROLLER_MODE = 0x01,
+    IntControllerMode = 0x01,
 }
 impl Rcr4Fsd {
     #[inline(always)]
@@ -507,9 +507,9 @@ impl From<Rcr4Fsd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcr4Fsp {
     #[doc = "Active high."]
-    ACTIVE_HIGH = 0x0,
+    ActiveHigh = 0x0,
     #[doc = "Active low."]
-    ACTIVE_LOW = 0x01,
+    ActiveLow = 0x01,
 }
 impl Rcr4Fsp {
     #[inline(always)]
@@ -538,25 +538,25 @@ impl From<Rcr4Fsp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcr5Fbt {
     #[doc = "0."]
-    INDEX0 = 0x0,
+    Index0 = 0x0,
     #[doc = "FBT value."]
-    INDEX_1 = 0x01,
+    Index1 = 0x01,
     #[doc = "FBT value."]
-    INDEX_2 = 0x02,
+    Index2 = 0x02,
     #[doc = "FBT value."]
-    INDEX_3 = 0x03,
+    Index3 = 0x03,
     #[doc = "FBT value."]
-    INDEX_4 = 0x04,
+    Index4 = 0x04,
     #[doc = "FBT value."]
-    INDEX_5 = 0x05,
+    Index5 = 0x05,
     #[doc = "FBT value."]
-    INDEX_6 = 0x06,
+    Index6 = 0x06,
     #[doc = "FBT value."]
-    INDEX_7 = 0x07,
+    Index7 = 0x07,
     #[doc = "FBT value."]
-    INDEX_8 = 0x08,
+    Index8 = 0x08,
     #[doc = "FBT value."]
-    INDEX_9 = 0x09,
+    Index9 = 0x09,
     _RESERVED_a = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
@@ -579,7 +579,7 @@ pub enum Rcr5Fbt {
     _RESERVED_1d = 0x1d,
     _RESERVED_1e = 0x1e,
     #[doc = "31."]
-    INDEX31 = 0x1f,
+    Index31 = 0x1f,
 }
 impl Rcr5Fbt {
     #[inline(always)]
@@ -608,25 +608,25 @@ impl From<Rcr5Fbt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcr5W0w {
     #[doc = "1."]
-    MIN = 0x0,
+    Min = 0x0,
     #[doc = "2."]
-    TWO = 0x01,
+    Two = 0x01,
     #[doc = "(W0W value + 1)."]
-    THREE_THIRTYONE_2 = 0x02,
+    ThreeThirtyone2 = 0x02,
     #[doc = "(W0W value + 1)."]
-    THREE_THIRTYONE_3 = 0x03,
+    ThreeThirtyone3 = 0x03,
     #[doc = "(W0W value + 1)."]
-    THREE_THIRTYONE_4 = 0x04,
+    ThreeThirtyone4 = 0x04,
     #[doc = "(W0W value + 1)."]
-    THREE_THIRTYONE_5 = 0x05,
+    ThreeThirtyone5 = 0x05,
     #[doc = "(W0W value + 1)."]
-    THREE_THIRTYONE_6 = 0x06,
+    ThreeThirtyone6 = 0x06,
     #[doc = "(W0W value + 1)."]
-    THREE_THIRTYONE_7 = 0x07,
+    ThreeThirtyone7 = 0x07,
     #[doc = "(W0W value + 1)."]
-    THREE_THIRTYONE_8 = 0x08,
+    ThreeThirtyone8 = 0x08,
     #[doc = "(W0W value + 1)."]
-    THREE_THIRTYONE_9 = 0x09,
+    ThreeThirtyone9 = 0x09,
     _RESERVED_a = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
@@ -649,7 +649,7 @@ pub enum Rcr5W0w {
     _RESERVED_1d = 0x1d,
     _RESERVED_1e = 0x1e,
     #[doc = "32."]
-    MAX = 0x1f,
+    Max = 0x1f,
 }
 impl Rcr5W0w {
     #[inline(always)]
@@ -685,25 +685,25 @@ pub enum Rcr5Wnw {
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "8."]
-    EIGHT = 0x07,
+    Eight = 0x07,
     #[doc = "9."]
-    NINE = 0x08,
+    Nine = 0x08,
     #[doc = "(WNW value + 1)."]
-    TEN_THIRTYONE_9 = 0x09,
+    TenThirtyone9 = 0x09,
     #[doc = "(WNW value + 1)."]
-    TEN_THIRTYONE_10 = 0x0a,
+    TenThirtyone10 = 0x0a,
     #[doc = "(WNW value + 1)."]
-    TEN_THIRTYONE_11 = 0x0b,
+    TenThirtyone11 = 0x0b,
     #[doc = "(WNW value + 1)."]
-    TEN_THIRTYONE_12 = 0x0c,
+    TenThirtyone12 = 0x0c,
     #[doc = "(WNW value + 1)."]
-    TEN_THIRTYONE_13 = 0x0d,
+    TenThirtyone13 = 0x0d,
     #[doc = "(WNW value + 1)."]
-    TEN_THIRTYONE_14 = 0x0e,
+    TenThirtyone14 = 0x0e,
     #[doc = "(WNW value + 1)."]
-    TEN_THIRTYONE_15 = 0x0f,
+    TenThirtyone15 = 0x0f,
     #[doc = "(WNW value + 1)."]
-    TEN_THIRTYONE_16 = 0x10,
+    TenThirtyone16 = 0x10,
     _RESERVED_11 = 0x11,
     _RESERVED_12 = 0x12,
     _RESERVED_13 = 0x13,
@@ -719,7 +719,7 @@ pub enum Rcr5Wnw {
     _RESERVED_1d = 0x1d,
     _RESERVED_1e = 0x1e,
     #[doc = "32."]
-    MAX = 0x1f,
+    Max = 0x1f,
 }
 impl Rcr5Wnw {
     #[inline(always)]
@@ -748,9 +748,9 @@ impl From<Rcr5Wnw> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RcsrFr {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Reset."]
-    FIFO_RESET = 0x01,
+    FifoReset = 0x01,
 }
 impl RcsrFr {
     #[inline(always)]
@@ -779,9 +779,9 @@ impl From<RcsrFr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RcsrFrf {
     #[doc = "Watermark not reached."]
-    BELOW_WATERMARK = 0x0,
+    BelowWatermark = 0x0,
     #[doc = "Watermark reached."]
-    WATERMARK_REACHED = 0x01,
+    WatermarkReached = 0x01,
 }
 impl RcsrFrf {
     #[inline(always)]
@@ -810,9 +810,9 @@ impl From<RcsrFrf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RcsrSr {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Software reset."]
-    SW_RESET = 0x01,
+    SwReset = 0x01,
 }
 impl RcsrSr {
     #[inline(always)]
@@ -841,21 +841,21 @@ impl From<RcsrSr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rfw {
     #[doc = "1."]
-    MIN = 0x0,
+    Min = 0x0,
     #[doc = "2."]
-    TWO = 0x01,
+    Two = 0x01,
     #[doc = "(RFW value + 1)."]
-    WATERMARK_2 = 0x02,
+    Watermark2 = 0x02,
     #[doc = "(RFW value + 1)."]
-    WATERMARK_3 = 0x03,
+    Watermark3 = 0x03,
     #[doc = "(RFW value + 1)."]
-    WATERMARK_4 = 0x04,
+    Watermark4 = 0x04,
     #[doc = "(RFW value + 1)."]
-    WATERMARK_5 = 0x05,
+    Watermark5 = 0x05,
     #[doc = "(RFW value + 1)."]
-    WATERMARK_6 = 0x06,
+    Watermark6 = 0x06,
     #[doc = "8."]
-    MAX = 0x07,
+    Max = 0x07,
 }
 impl Rfw {
     #[inline(always)]
@@ -884,9 +884,9 @@ impl From<Rfw> for u8 {
 pub struct Rwm(u32);
 impl Rwm {
     #[doc = "Enable."]
-    pub const WORD_N_ENABLED: Self = Self(0x0);
+    pub const WordNEnabled: Self = Self(0x0);
     #[doc = "Mask."]
-    pub const WORD_N_MASKED: Self = Self(0x01);
+    pub const WordNMasked: Self = Self(0x01);
 }
 impl Rwm {
     pub const fn from_bits(val: u32) -> Rwm {
@@ -899,8 +899,8 @@ impl Rwm {
 impl core::fmt::Debug for Rwm {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("WORD_N_ENABLED"),
-            0x01 => f.write_str("WORD_N_MASKED"),
+            0x0 => f.write_str("WordNEnabled"),
+            0x01 => f.write_str("WordNMasked"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -909,8 +909,8 @@ impl core::fmt::Debug for Rwm {
 impl defmt::Format for Rwm {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "WORD_N_ENABLED"),
-            0x01 => defmt::write!(f, "WORD_N_MASKED"),
+            0x0 => defmt::write!(f, "WordNEnabled"),
+            0x01 => defmt::write!(f, "WordNMasked"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -932,25 +932,25 @@ impl From<Rwm> for u32 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sywd {
     #[doc = "1."]
-    MIN = 0x0,
+    Min = 0x0,
     #[doc = "2."]
-    TWO_CLOCKS = 0x01,
+    TwoClocks = 0x01,
     #[doc = "(SYWD value + 1)."]
-    N_CLOCKS_2 = 0x02,
+    NClocks2 = 0x02,
     #[doc = "(SYWD value + 1)."]
-    N_CLOCKS_3 = 0x03,
+    NClocks3 = 0x03,
     #[doc = "(SYWD value + 1)."]
-    N_CLOCKS_4 = 0x04,
+    NClocks4 = 0x04,
     #[doc = "(SYWD value + 1)."]
-    N_CLOCKS_5 = 0x05,
+    NClocks5 = 0x05,
     #[doc = "(SYWD value + 1)."]
-    N_CLOCKS_6 = 0x06,
+    NClocks6 = 0x06,
     #[doc = "(SYWD value + 1)."]
-    N_CLOCKS_7 = 0x07,
+    NClocks7 = 0x07,
     #[doc = "(SYWD value + 1)."]
-    N_CLOCKS_8 = 0x08,
+    NClocks8 = 0x08,
     #[doc = "(SYWD value + 1)."]
-    N_CLOCKS_9 = 0x09,
+    NClocks9 = 0x09,
     _RESERVED_a = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
@@ -973,7 +973,7 @@ pub enum Sywd {
     _RESERVED_1d = 0x1d,
     _RESERVED_1e = 0x1e,
     #[doc = "32."]
-    THIRTYTWO_CLOCKS = 0x1f,
+    ThirtytwoClocks = 0x1f,
 }
 impl Sywd {
     #[inline(always)]
@@ -1002,9 +1002,9 @@ impl From<Sywd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcr2Bcd {
     #[doc = "Generate externally in Target mode."]
-    EXT_IN_TARGET = 0x0,
+    ExtInTarget = 0x0,
     #[doc = "Generate internally in Controller mode."]
-    INT_IN_CONTROLLER = 0x01,
+    IntInController = 0x01,
 }
 impl Tcr2Bcd {
     #[inline(always)]
@@ -1033,9 +1033,9 @@ impl From<Tcr2Bcd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcr2Bcp {
     #[doc = "Active high."]
-    ACTIVE_HIGH = 0x0,
+    ActiveHigh = 0x0,
     #[doc = "Active low."]
-    ACTIVE_LOW = 0x01,
+    ActiveLow = 0x01,
 }
 impl Tcr2Bcp {
     #[inline(always)]
@@ -1064,13 +1064,13 @@ impl From<Tcr2Bcp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcr2Msel {
     #[doc = "Bus clock."]
-    BUS_CLOCK = 0x0,
+    BusClock = 0x0,
     #[doc = "Controller clock (MCLK) option 1."]
-    MCLK1 = 0x01,
+    Mclk1 = 0x01,
     #[doc = "Controller clock (MCLK) option 2."]
-    MCLK2 = 0x02,
+    Mclk2 = 0x02,
     #[doc = "Controller clock (MCLK) option 3."]
-    MCLK3 = 0x03,
+    Mclk3 = 0x03,
 }
 impl Tcr2Msel {
     #[inline(always)]
@@ -1099,13 +1099,13 @@ impl From<Tcr2Msel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcr2Sync {
     #[doc = "Asynchronous mode."]
-    ASYNC = 0x0,
+    Async = 0x0,
     #[doc = "Synchronous with receiver."]
-    SYNC_W_RX = 0x01,
+    SyncWRx = 0x01,
     #[doc = "Synchronous with another SAI transmitter."]
-    SYNC_W_TX = 0x02,
+    SyncWTx = 0x02,
     #[doc = "Synchronous with another SAI receiver."]
-    SYNC_W_ANOTHER_SAI_RX = 0x03,
+    SyncWAnotherSaiRx = 0x03,
 }
 impl Tcr2Sync {
     #[inline(always)]
@@ -1134,13 +1134,13 @@ impl From<Tcr2Sync> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcr4Fcomb {
     #[doc = "Disable."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Enable on FIFO reads (from transmit shift registers)."]
-    ENABLED_ON_FIFO_READS = 0x01,
+    EnabledOnFifoReads = 0x01,
     #[doc = "Enable on FIFO writes (by software)."]
-    ENABLED_ON_FIFO_WRITES = 0x02,
+    EnabledOnFifoWrites = 0x02,
     #[doc = "Enable on FIFO reads (from transmit shift registers) and writes (by software)."]
-    ENABLED_ON_FIFO_READS_WRITES = 0x03,
+    EnabledOnFifoReadsWrites = 0x03,
 }
 impl Tcr4Fcomb {
     #[inline(always)]
@@ -1169,12 +1169,12 @@ impl From<Tcr4Fcomb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcr4Fpack {
     #[doc = "Disable FIFO packing."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "Enable 8-bit FIFO packing."]
-    EIGHT_BIT_FIFO_PACKING = 0x02,
+    EightBitFifoPacking = 0x02,
     #[doc = "Enable 16-bit FIFO packing."]
-    SIXTEEN_BIT_FIFO_PACKING = 0x03,
+    SixteenBitFifoPacking = 0x03,
 }
 impl Tcr4Fpack {
     #[inline(always)]
@@ -1203,9 +1203,9 @@ impl From<Tcr4Fpack> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcr4Fsd {
     #[doc = "Generated externally in Target mode."]
-    EXT_IN_TARGET_MODE = 0x0,
+    ExtInTargetMode = 0x0,
     #[doc = "Generated internally in Controller mode."]
-    INT_IN_CONTROLLER_MODE = 0x01,
+    IntInControllerMode = 0x01,
 }
 impl Tcr4Fsd {
     #[inline(always)]
@@ -1234,9 +1234,9 @@ impl From<Tcr4Fsd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcr4Fsp {
     #[doc = "Active high."]
-    ACTIVE_HIGH = 0x0,
+    ActiveHigh = 0x0,
     #[doc = "Active low."]
-    ACTIVE_LOW = 0x01,
+    ActiveLow = 0x01,
 }
 impl Tcr4Fsp {
     #[inline(always)]
@@ -1265,9 +1265,9 @@ impl From<Tcr4Fsp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcr4Ondem {
     #[doc = "Generated continuously."]
-    CONTINUOUS_FRAME_SYNC = 0x0,
+    ContinuousFrameSync = 0x0,
     #[doc = "Generated after the FIFO warning flag is cleared."]
-    ON_DEMAND_FRAME_SYNC = 0x01,
+    OnDemandFrameSync = 0x01,
 }
 impl Tcr4Ondem {
     #[inline(always)]
@@ -1296,25 +1296,25 @@ impl From<Tcr4Ondem> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcr5Fbt {
     #[doc = "0."]
-    INDEX0 = 0x0,
+    Index0 = 0x0,
     #[doc = "FBT."]
-    INDEX_1 = 0x01,
+    Index1 = 0x01,
     #[doc = "FBT."]
-    INDEX_2 = 0x02,
+    Index2 = 0x02,
     #[doc = "FBT."]
-    INDEX_3 = 0x03,
+    Index3 = 0x03,
     #[doc = "FBT."]
-    INDEX_4 = 0x04,
+    Index4 = 0x04,
     #[doc = "FBT."]
-    INDEX_5 = 0x05,
+    Index5 = 0x05,
     #[doc = "FBT."]
-    INDEX_6 = 0x06,
+    Index6 = 0x06,
     #[doc = "FBT."]
-    INDEX_7 = 0x07,
+    Index7 = 0x07,
     #[doc = "FBT."]
-    INDEX_8 = 0x08,
+    Index8 = 0x08,
     #[doc = "FBT."]
-    INDEX_9 = 0x09,
+    Index9 = 0x09,
     _RESERVED_a = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
@@ -1337,7 +1337,7 @@ pub enum Tcr5Fbt {
     _RESERVED_1d = 0x1d,
     _RESERVED_1e = 0x1e,
     #[doc = "31."]
-    INDEX31 = 0x1f,
+    Index31 = 0x1f,
 }
 impl Tcr5Fbt {
     #[inline(always)]
@@ -1373,25 +1373,25 @@ pub enum Tcr5W0w {
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "8."]
-    EIGHT = 0x07,
+    Eight = 0x07,
     #[doc = "9."]
-    NINE = 0x08,
+    Nine = 0x08,
     #[doc = "(W0W value + 1)."]
-    TEN_THIRTYONE_9 = 0x09,
+    TenThirtyone9 = 0x09,
     #[doc = "(W0W value + 1)."]
-    TEN_THIRTYONE_10 = 0x0a,
+    TenThirtyone10 = 0x0a,
     #[doc = "(W0W value + 1)."]
-    TEN_THIRTYONE_11 = 0x0b,
+    TenThirtyone11 = 0x0b,
     #[doc = "(W0W value + 1)."]
-    TEN_THIRTYONE_12 = 0x0c,
+    TenThirtyone12 = 0x0c,
     #[doc = "(W0W value + 1)."]
-    TEN_THIRTYONE_13 = 0x0d,
+    TenThirtyone13 = 0x0d,
     #[doc = "(W0W value + 1)."]
-    TEN_THIRTYONE_14 = 0x0e,
+    TenThirtyone14 = 0x0e,
     #[doc = "(W0W value + 1)."]
-    TEN_THIRTYONE_15 = 0x0f,
+    TenThirtyone15 = 0x0f,
     #[doc = "(W0W value + 1)."]
-    TEN_THIRTYONE_16 = 0x10,
+    TenThirtyone16 = 0x10,
     _RESERVED_11 = 0x11,
     _RESERVED_12 = 0x12,
     _RESERVED_13 = 0x13,
@@ -1407,7 +1407,7 @@ pub enum Tcr5W0w {
     _RESERVED_1d = 0x1d,
     _RESERVED_1e = 0x1e,
     #[doc = "32."]
-    MAX = 0x1f,
+    Max = 0x1f,
 }
 impl Tcr5W0w {
     #[inline(always)]
@@ -1443,25 +1443,25 @@ pub enum Tcr5Wnw {
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "8."]
-    EIGHT = 0x07,
+    Eight = 0x07,
     #[doc = "9."]
-    NINE = 0x08,
+    Nine = 0x08,
     #[doc = "(WNW value + 1)."]
-    TEN_THIRTYONE_9 = 0x09,
+    TenThirtyone9 = 0x09,
     #[doc = "(WNW value + 1)."]
-    TEN_THIRTYONE_10 = 0x0a,
+    TenThirtyone10 = 0x0a,
     #[doc = "(WNW value + 1)."]
-    TEN_THIRTYONE_11 = 0x0b,
+    TenThirtyone11 = 0x0b,
     #[doc = "(WNW value + 1)."]
-    TEN_THIRTYONE_12 = 0x0c,
+    TenThirtyone12 = 0x0c,
     #[doc = "(WNW value + 1)."]
-    TEN_THIRTYONE_13 = 0x0d,
+    TenThirtyone13 = 0x0d,
     #[doc = "(WNW value + 1)."]
-    TEN_THIRTYONE_14 = 0x0e,
+    TenThirtyone14 = 0x0e,
     #[doc = "(WNW value + 1)."]
-    TEN_THIRTYONE_15 = 0x0f,
+    TenThirtyone15 = 0x0f,
     #[doc = "(WNW value + 1)."]
-    TEN_THIRTYONE_16 = 0x10,
+    TenThirtyone16 = 0x10,
     _RESERVED_11 = 0x11,
     _RESERVED_12 = 0x12,
     _RESERVED_13 = 0x13,
@@ -1477,7 +1477,7 @@ pub enum Tcr5Wnw {
     _RESERVED_1d = 0x1d,
     _RESERVED_1e = 0x1e,
     #[doc = "32."]
-    MAX = 0x1f,
+    Max = 0x1f,
 }
 impl Tcr5Wnw {
     #[inline(always)]
@@ -1506,9 +1506,9 @@ impl From<Tcr5Wnw> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TcsrFr {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "FIFO reset."]
-    RESET = 0x01,
+    Reset = 0x01,
 }
 impl TcsrFr {
     #[inline(always)]
@@ -1537,21 +1537,21 @@ impl From<TcsrFr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tfw {
     #[doc = "1."]
-    MIN = 0x0,
+    Min = 0x0,
     #[doc = "2."]
-    TWO = 0x01,
+    Two = 0x01,
     #[doc = "(TFW +1)."]
-    WATERMARK_VALUE_2 = 0x02,
+    WatermarkValue2 = 0x02,
     #[doc = "(TFW +1)."]
-    WATERMARK_VALUE_3 = 0x03,
+    WatermarkValue3 = 0x03,
     #[doc = "(TFW +1)."]
-    WATERMARK_VALUE_4 = 0x04,
+    WatermarkValue4 = 0x04,
     #[doc = "(TFW +1)."]
-    WATERMARK_VALUE_5 = 0x05,
+    WatermarkValue5 = 0x05,
     #[doc = "(TFW +1)."]
-    WATERMARK_VALUE_6 = 0x06,
+    WatermarkValue6 = 0x06,
     #[doc = "8."]
-    MAX = 0x07,
+    Max = 0x07,
 }
 impl Tfw {
     #[inline(always)]
@@ -1580,9 +1580,9 @@ impl From<Tfw> for u8 {
 pub struct Twm(u32);
 impl Twm {
     #[doc = "Enable."]
-    pub const WORD_N_ENABLED: Self = Self(0x0);
+    pub const WordNEnabled: Self = Self(0x0);
     #[doc = "Mask."]
-    pub const WORD_N_MASKED: Self = Self(0x01);
+    pub const WordNMasked: Self = Self(0x01);
 }
 impl Twm {
     pub const fn from_bits(val: u32) -> Twm {
@@ -1595,8 +1595,8 @@ impl Twm {
 impl core::fmt::Debug for Twm {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("WORD_N_ENABLED"),
-            0x01 => f.write_str("WORD_N_MASKED"),
+            0x0 => f.write_str("WordNEnabled"),
+            0x01 => f.write_str("WordNMasked"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -1605,8 +1605,8 @@ impl core::fmt::Debug for Twm {
 impl defmt::Format for Twm {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "WORD_N_ENABLED"),
-            0x01 => defmt::write!(f, "WORD_N_MASKED"),
+            0x0 => defmt::write!(f, "WordNEnabled"),
+            0x01 => defmt::write!(f, "WordNMasked"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -1628,25 +1628,25 @@ impl From<Twm> for u32 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wdfl {
     #[doc = "Word 1."]
-    WORD_1 = 0x0,
+    Word1 = 0x0,
     #[doc = "Word 2."]
-    WORD_2 = 0x01,
+    Word2 = 0x01,
     #[doc = "Word (WDFL value + 1)."]
-    WORD_N_2 = 0x02,
+    WordN2 = 0x02,
     #[doc = "Word (WDFL value + 1)."]
-    WORD_N_3 = 0x03,
+    WordN3 = 0x03,
     #[doc = "Word (WDFL value + 1)."]
-    WORD_N_4 = 0x04,
+    WordN4 = 0x04,
     #[doc = "Word (WDFL value + 1)."]
-    WORD_N_5 = 0x05,
+    WordN5 = 0x05,
     #[doc = "Word (WDFL value + 1)."]
-    WORD_N_6 = 0x06,
+    WordN6 = 0x06,
     #[doc = "Word (WDFL value + 1)."]
-    WORD_N_7 = 0x07,
+    WordN7 = 0x07,
     #[doc = "Word (WDFL value + 1)."]
-    WORD_N_8 = 0x08,
+    WordN8 = 0x08,
     #[doc = "Word (WDFL value + 1)."]
-    WORD_N_9 = 0x09,
+    WordN9 = 0x09,
     _RESERVED_a = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
@@ -1669,7 +1669,7 @@ pub enum Wdfl {
     _RESERVED_1d = 0x1d,
     _RESERVED_1e = 0x1e,
     #[doc = "Word 32."]
-    WORD_MAX = 0x1f,
+    WordMax = 0x1f,
 }
 impl Wdfl {
     #[inline(always)]

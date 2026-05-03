@@ -1578,14 +1578,14 @@ impl SramIntClrStatus {
     #[doc = "APB_ERR Interrupt Status Clear."]
     #[must_use]
     #[inline(always)]
-    pub const fn apb_err(&self) -> bool {
+    pub const fn apb_err(&self) -> super::vals::SramIntClrStatusApbErr {
         let val = (self.0 >> 1usize) & 0x01;
-        val != 0
+        super::vals::SramIntClrStatusApbErr::from_bits(val as u8)
     }
     #[doc = "APB_ERR Interrupt Status Clear."]
     #[inline(always)]
-    pub const fn set_apb_err(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+    pub const fn set_apb_err(&mut self, val: super::vals::SramIntClrStatusApbErr) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
     }
 }
 impl Default for SramIntClrStatus {
@@ -1607,7 +1607,7 @@ impl defmt::Format for SramIntClrStatus {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "SramIntClrStatus {{ ready: {=bool:?}, apb_err: {=bool:?} }}",
+            "SramIntClrStatus {{ ready: {=bool:?}, apb_err: {:?} }}",
             self.ready(),
             self.apb_err()
         )
@@ -1743,14 +1743,14 @@ impl SramIntSetStatus {
     #[doc = "APB_ERR Interrupt Status Set."]
     #[must_use]
     #[inline(always)]
-    pub const fn apb_err(&self) -> bool {
+    pub const fn apb_err(&self) -> super::vals::SramIntSetStatusApbErr {
         let val = (self.0 >> 1usize) & 0x01;
-        val != 0
+        super::vals::SramIntSetStatusApbErr::from_bits(val as u8)
     }
     #[doc = "APB_ERR Interrupt Status Set."]
     #[inline(always)]
-    pub const fn set_apb_err(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+    pub const fn set_apb_err(&mut self, val: super::vals::SramIntSetStatusApbErr) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
     }
 }
 impl Default for SramIntSetStatus {
@@ -1772,7 +1772,7 @@ impl defmt::Format for SramIntSetStatus {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "SramIntSetStatus {{ ready: {=bool:?}, apb_err: {=bool:?} }}",
+            "SramIntSetStatus {{ ready: {=bool:?}, apb_err: {:?} }}",
             self.ready(),
             self.apb_err()
         )

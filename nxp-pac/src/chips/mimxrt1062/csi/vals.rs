@@ -3,11 +3,11 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Afs {
     #[doc = "Abs Diff on consecutive green pixels."]
-    AFS_0 = 0x0,
+    Afs0 = 0x0,
     #[doc = "Abs Diff on every third green pixels."]
-    AFS_1 = 0x01,
+    Afs1 = 0x01,
     #[doc = "Abs Diff on every four green pixels."]
-    AFS_2 = 0x02,
+    Afs2 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Afs {
@@ -37,9 +37,9 @@ impl From<Afs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BaseaddrChangeErrorIe {
     #[doc = "Interrupt disabled."]
-    BASEADDR_CHANGE_ERROR_IE_0 = 0x0,
+    BaseaddrChangeErrorIe0 = 0x0,
     #[doc = "Interrupt enabled."]
-    BASEADDR_CHANGE_ERROR_IE_1 = 0x01,
+    BaseaddrChangeErrorIe1 = 0x01,
 }
 impl BaseaddrChangeErrorIe {
     #[inline(always)]
@@ -68,9 +68,9 @@ impl From<BaseaddrChangeErrorIe> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BaseaddrSwitchSel {
     #[doc = "Switching base address at the edge of the vsync."]
-    BASEADDR_SWITCH_SEL_0 = 0x0,
+    BaseaddrSwitchSel0 = 0x0,
     #[doc = "Switching base address at the edge of the first data of each frame."]
-    BASEADDR_SWITCH_SEL_1 = 0x01,
+    BaseaddrSwitchSel1 = 0x01,
 }
 impl BaseaddrSwitchSel {
     #[inline(always)]
@@ -99,13 +99,13 @@ impl From<BaseaddrSwitchSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bts {
     #[doc = "GR."]
-    BTS_0 = 0x0,
+    Bts0 = 0x0,
     #[doc = "RG."]
-    BTS_1 = 0x01,
+    Bts1 = 0x01,
     #[doc = "BG."]
-    BTS_2 = 0x02,
+    Bts2 = 0x02,
     #[doc = "GB."]
-    BTS_3 = 0x03,
+    Bts3 = 0x03,
 }
 impl Bts {
     #[inline(always)]
@@ -134,9 +134,9 @@ impl From<Bts> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CcirEn {
     #[doc = "Traditional interface is selected."]
-    CCIR_EN_0 = 0x0,
+    CcirEn0 = 0x0,
     #[doc = "BT.656 interface is selected."]
-    CCIR_EN_1 = 0x01,
+    CcirEn1 = 0x01,
 }
 impl CcirEn {
     #[inline(always)]
@@ -165,9 +165,9 @@ impl From<CcirEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CcirMode {
     #[doc = "Progressive mode is selected."]
-    CCIR_MODE_0 = 0x0,
+    CcirMode0 = 0x0,
     #[doc = "Interlace mode is selected."]
-    CCIR_MODE_1 = 0x01,
+    CcirMode1 = 0x01,
 }
 impl CcirMode {
     #[inline(always)]
@@ -196,9 +196,9 @@ impl From<CcirMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CofInt {
     #[doc = "Video field has no change."]
-    COF_INT_0 = 0x0,
+    CofInt0 = 0x0,
     #[doc = "Change of video field is detected."]
-    COF_INT_1 = 0x01,
+    CofInt1 = 0x01,
 }
 impl CofInt {
     #[inline(always)]
@@ -227,9 +227,9 @@ impl From<CofInt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CofIntEn {
     #[doc = "COF interrupt is disabled."]
-    COF_INT_EN_0 = 0x0,
+    CofIntEn0 = 0x0,
     #[doc = "COF interrupt is enabled."]
-    COF_INT_EN_1 = 0x01,
+    CofIntEn1 = 0x01,
 }
 impl CofIntEn {
     #[inline(always)]
@@ -258,9 +258,9 @@ impl From<CofIntEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DeinterlaceEn {
     #[doc = "Deinterlace disabled."]
-    DEINTERLACE_EN_0 = 0x0,
+    DeinterlaceEn0 = 0x0,
     #[doc = "Deinterlace enabled."]
-    DEINTERLACE_EN_1 = 0x01,
+    DeinterlaceEn1 = 0x01,
 }
 impl DeinterlaceEn {
     #[inline(always)]
@@ -289,12 +289,12 @@ impl From<DeinterlaceEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DmaBurstTypeRff {
     #[doc = "INCR8."]
-    DMA_BURST_TYPE_RFF_0 = 0x0,
+    DmaBurstTypeRff0 = 0x0,
     #[doc = "INCR4."]
-    DMA_BURST_TYPE_RFF_1 = 0x01,
+    DmaBurstTypeRff1 = 0x01,
     _RESERVED_2 = 0x02,
     #[doc = "INCR16."]
-    DMA_BURST_TYPE_RFF_3 = 0x03,
+    DmaBurstTypeRff3 = 0x03,
 }
 impl DmaBurstTypeRff {
     #[inline(always)]
@@ -323,12 +323,12 @@ impl From<DmaBurstTypeRff> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DmaBurstTypeSff {
     #[doc = "INCR8."]
-    DMA_BURST_TYPE_SFF_0 = 0x0,
+    DmaBurstTypeSff0 = 0x0,
     #[doc = "INCR4."]
-    DMA_BURST_TYPE_SFF_1 = 0x01,
+    DmaBurstTypeSff1 = 0x01,
     _RESERVED_2 = 0x02,
     #[doc = "INCR16."]
-    DMA_BURST_TYPE_SFF_3 = 0x03,
+    DmaBurstTypeSff3 = 0x03,
 }
 impl DmaBurstTypeSff {
     #[inline(always)]
@@ -357,9 +357,9 @@ impl From<DmaBurstTypeSff> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DmaField1DoneIe {
     #[doc = "Interrupt disabled."]
-    DMA_FIELD1_DONE_IE_0 = 0x0,
+    DmaField1DoneIe0 = 0x0,
     #[doc = "Interrupt enabled."]
-    DMA_FIELD1_DONE_IE_1 = 0x01,
+    DmaField1DoneIe1 = 0x01,
 }
 impl DmaField1DoneIe {
     #[inline(always)]
@@ -388,9 +388,9 @@ impl From<DmaField1DoneIe> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DmaReflashRff {
     #[doc = "No reflashing."]
-    DMA_REFLASH_RFF_0 = 0x0,
+    DmaReflashRff0 = 0x0,
     #[doc = "Reflash the embedded DMA controller."]
-    DMA_REFLASH_RFF_1 = 0x01,
+    DmaReflashRff1 = 0x01,
 }
 impl DmaReflashRff {
     #[inline(always)]
@@ -419,9 +419,9 @@ impl From<DmaReflashRff> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DmaReflashSff {
     #[doc = "No reflashing."]
-    DMA_REFLASH_SFF_0 = 0x0,
+    DmaReflashSff0 = 0x0,
     #[doc = "Reflash the embedded DMA controller."]
-    DMA_REFLASH_SFF_1 = 0x01,
+    DmaReflashSff1 = 0x01,
 }
 impl DmaReflashSff {
     #[inline(always)]
@@ -450,9 +450,9 @@ impl From<DmaReflashSff> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DmaReqEnRff {
     #[doc = "Disable the dma request."]
-    DMA_REQ_EN_RFF_0 = 0x0,
+    DmaReqEnRff0 = 0x0,
     #[doc = "Enable the dma request."]
-    DMA_REQ_EN_RFF_1 = 0x01,
+    DmaReqEnRff1 = 0x01,
 }
 impl DmaReqEnRff {
     #[inline(always)]
@@ -481,9 +481,9 @@ impl From<DmaReqEnRff> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DmaReqEnSff {
     #[doc = "Disable the dma request."]
-    DMA_REQ_EN_SFF_0 = 0x0,
+    DmaReqEnSff0 = 0x0,
     #[doc = "Enable the dma request."]
-    DMA_REQ_EN_SFF_1 = 0x01,
+    DmaReqEnSff1 = 0x01,
 }
 impl DmaReqEnSff {
     #[inline(always)]
@@ -512,9 +512,9 @@ impl From<DmaReqEnSff> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DmaTsfDoneFb1 {
     #[doc = "DMA transfer is not completed."]
-    DMA_TSF_DONE_FB1_0 = 0x0,
+    DmaTsfDoneFb10 = 0x0,
     #[doc = "DMA transfer is completed."]
-    DMA_TSF_DONE_FB1_1 = 0x01,
+    DmaTsfDoneFb11 = 0x01,
 }
 impl DmaTsfDoneFb1 {
     #[inline(always)]
@@ -543,9 +543,9 @@ impl From<DmaTsfDoneFb1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DmaTsfDoneFb2 {
     #[doc = "DMA transfer is not completed."]
-    DMA_TSF_DONE_FB2_0 = 0x0,
+    DmaTsfDoneFb20 = 0x0,
     #[doc = "DMA transfer is completed."]
-    DMA_TSF_DONE_FB2_1 = 0x01,
+    DmaTsfDoneFb21 = 0x01,
 }
 impl DmaTsfDoneFb2 {
     #[inline(always)]
@@ -574,9 +574,9 @@ impl From<DmaTsfDoneFb2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DmaTsfDoneSff {
     #[doc = "DMA transfer is not completed."]
-    DMA_TSF_DONE_SFF_0 = 0x0,
+    DmaTsfDoneSff0 = 0x0,
     #[doc = "DMA transfer is completed."]
-    DMA_TSF_DONE_SFF_1 = 0x01,
+    DmaTsfDoneSff1 = 0x01,
 }
 impl DmaTsfDoneSff {
     #[inline(always)]
@@ -605,9 +605,9 @@ impl From<DmaTsfDoneSff> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Drdy {
     #[doc = "No data (word) is ready."]
-    DRDY_0 = 0x0,
+    Drdy0 = 0x0,
     #[doc = "At least 1 datum (word) is ready in RXFIFO."]
-    DRDY_1 = 0x01,
+    Drdy1 = 0x01,
 }
 impl Drdy {
     #[inline(always)]
@@ -636,9 +636,9 @@ impl From<Drdy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Drm {
     #[doc = "Stats grid of 8 x 6."]
-    DRM_0 = 0x0,
+    Drm0 = 0x0,
     #[doc = "Stats grid of 8 x 12."]
-    DRM_1 = 0x01,
+    Drm1 = 0x01,
 }
 impl Drm {
     #[inline(always)]
@@ -667,9 +667,9 @@ impl From<Drm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EccAutoEn {
     #[doc = "Auto Error correction is disabled."]
-    ECC_AUTO_EN_0 = 0x0,
+    EccAutoEn0 = 0x0,
     #[doc = "Auto Error correction is enabled."]
-    ECC_AUTO_EN_1 = 0x01,
+    EccAutoEn1 = 0x01,
 }
 impl EccAutoEn {
     #[inline(always)]
@@ -698,9 +698,9 @@ impl From<EccAutoEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EccInt {
     #[doc = "No error detected."]
-    ECC_INT_0 = 0x0,
+    EccInt0 = 0x0,
     #[doc = "Error is detected in BT.656 coding."]
-    ECC_INT_1 = 0x01,
+    EccInt1 = 0x01,
 }
 impl EccInt {
     #[inline(always)]
@@ -729,9 +729,9 @@ impl From<EccInt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EccIntEn {
     #[doc = "No interrupt is generated when error is detected. Only the status bit ECC_INT is set."]
-    ECC_INT_EN_0 = 0x0,
+    EccIntEn0 = 0x0,
     #[doc = "Interrupt is generated when error is detected."]
-    ECC_INT_EN_1 = 0x01,
+    EccIntEn1 = 0x01,
 }
 impl EccIntEn {
     #[inline(always)]
@@ -760,9 +760,9 @@ impl From<EccIntEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EofInt {
     #[doc = "EOF is not detected."]
-    EOF_INT_0 = 0x0,
+    EofInt0 = 0x0,
     #[doc = "EOF is detected."]
-    EOF_INT_1 = 0x01,
+    EofInt1 = 0x01,
 }
 impl EofInt {
     #[inline(always)]
@@ -791,9 +791,9 @@ impl From<EofInt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EofIntEn {
     #[doc = "EOF interrupt is disabled."]
-    EOF_INT_EN_0 = 0x0,
+    EofIntEn0 = 0x0,
     #[doc = "EOF interrupt is generated when RX count value is reached."]
-    EOF_INT_EN_1 = 0x01,
+    EofIntEn1 = 0x01,
 }
 impl EofIntEn {
     #[inline(always)]
@@ -822,9 +822,9 @@ impl From<EofIntEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ExtVsync {
     #[doc = "Internal VSYNC mode."]
-    EXT_VSYNC_0 = 0x0,
+    ExtVsync0 = 0x0,
     #[doc = "External VSYNC mode."]
-    EXT_VSYNC_1 = 0x01,
+    ExtVsync1 = 0x01,
 }
 impl ExtVsync {
     #[inline(always)]
@@ -853,9 +853,9 @@ impl From<ExtVsync> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum F1Int {
     #[doc = "Field 1 of video is not detected."]
-    F1_INT_0 = 0x0,
+    F1Int0 = 0x0,
     #[doc = "Field 1 of video is about to start."]
-    F1_INT_1 = 0x01,
+    F1Int1 = 0x01,
 }
 impl F1Int {
     #[inline(always)]
@@ -884,9 +884,9 @@ impl From<F1Int> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum F2Int {
     #[doc = "Field 2 of video is not detected."]
-    F2_INT_0 = 0x0,
+    F2Int0 = 0x0,
     #[doc = "Field 2 of video is about to start."]
-    F2_INT_1 = 0x01,
+    F2Int1 = 0x01,
 }
 impl F2Int {
     #[inline(always)]
@@ -915,9 +915,9 @@ impl From<F2Int> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fb1DmaDoneInten {
     #[doc = "Frame Buffer1 DMA Transfer Done interrupt disable."]
-    FB1_DMA_DONE_INTEN_0 = 0x0,
+    Fb1DmaDoneInten0 = 0x0,
     #[doc = "Frame Buffer1 DMA Transfer Done interrupt enable."]
-    FB1_DMA_DONE_INTEN_1 = 0x01,
+    Fb1DmaDoneInten1 = 0x01,
 }
 impl Fb1DmaDoneInten {
     #[inline(always)]
@@ -946,9 +946,9 @@ impl From<Fb1DmaDoneInten> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fb2DmaDoneInten {
     #[doc = "Frame Buffer2 DMA Transfer Done interrupt disable."]
-    FB2_DMA_DONE_INTEN_0 = 0x0,
+    Fb2DmaDoneInten0 = 0x0,
     #[doc = "Frame Buffer2 DMA Transfer Done interrupt enable."]
-    FB2_DMA_DONE_INTEN_1 = 0x01,
+    Fb2DmaDoneInten1 = 0x01,
 }
 impl Fb2DmaDoneInten {
     #[inline(always)]
@@ -977,9 +977,9 @@ impl From<Fb2DmaDoneInten> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fcc {
     #[doc = "Asynchronous FIFO clear is selected."]
-    FCC_0 = 0x0,
+    Fcc0 = 0x0,
     #[doc = "Synchronous FIFO clear is selected."]
-    FCC_1 = 0x01,
+    Fcc1 = 0x01,
 }
 impl Fcc {
     #[inline(always)]
@@ -1008,9 +1008,9 @@ impl From<Fcc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Field0DoneIe {
     #[doc = "Interrupt disabled."]
-    FIELD0_DONE_IE_0 = 0x0,
+    Field0DoneIe0 = 0x0,
     #[doc = "Interrupt enabled."]
-    FIELD0_DONE_IE_1 = 0x01,
+    Field0DoneIe1 = 0x01,
 }
 impl Field0DoneIe {
     #[inline(always)]
@@ -1039,9 +1039,9 @@ impl From<Field0DoneIe> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FrmcntRst {
     #[doc = "Do not reset."]
-    FRMCNT_RST_0 = 0x0,
+    FrmcntRst0 = 0x0,
     #[doc = "Reset frame counter immediately."]
-    FRMCNT_RST_1 = 0x01,
+    FrmcntRst1 = 0x01,
 }
 impl FrmcntRst {
     #[inline(always)]
@@ -1070,9 +1070,9 @@ impl From<FrmcntRst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum GclkMode {
     #[doc = "Non-gated clock mode. All incoming pixel clocks are valid. HSYNC is ignored."]
-    GCLK_MODE_0 = 0x0,
+    GclkMode0 = 0x0,
     #[doc = "Gated clock mode. Pixel clock signal is valid only when HSYNC is active."]
-    GCLK_MODE_1 = 0x01,
+    GclkMode1 = 0x01,
 }
 impl GclkMode {
     #[inline(always)]
@@ -1101,9 +1101,9 @@ impl From<GclkMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HrespErrEn {
     #[doc = "Disable hresponse error interrupt."]
-    HRESP_ERR_EN_0 = 0x0,
+    HrespErrEn0 = 0x0,
     #[doc = "Enable hresponse error interrupt."]
-    HRESP_ERR_EN_1 = 0x01,
+    HrespErrEn1 = 0x01,
 }
 impl HrespErrEn {
     #[inline(always)]
@@ -1132,9 +1132,9 @@ impl From<HrespErrEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HrespErrInt {
     #[doc = "No hresponse error."]
-    HRESP_ERR_INT_0 = 0x0,
+    HrespErrInt0 = 0x0,
     #[doc = "Hresponse error is detected."]
-    HRESP_ERR_INT_1 = 0x01,
+    HrespErrInt1 = 0x01,
 }
 impl HrespErrInt {
     #[inline(always)]
@@ -1163,25 +1163,25 @@ impl From<HrespErrInt> for u8 {
 pub struct Hsc(u8);
 impl Hsc {
     #[doc = "Number of pixels to skip minus 1."]
-    pub const HSC_0: Self = Self(0x0);
+    pub const Hsc0: Self = Self(0x0);
     #[doc = "Number of pixels to skip minus 1."]
-    pub const HSC_1: Self = Self(0x01);
+    pub const Hsc1: Self = Self(0x01);
     #[doc = "Number of pixels to skip minus 1."]
-    pub const HSC_2: Self = Self(0x02);
+    pub const Hsc2: Self = Self(0x02);
     #[doc = "Number of pixels to skip minus 1."]
-    pub const HSC_3: Self = Self(0x03);
+    pub const Hsc3: Self = Self(0x03);
     #[doc = "Number of pixels to skip minus 1."]
-    pub const HSC_4: Self = Self(0x04);
+    pub const Hsc4: Self = Self(0x04);
     #[doc = "Number of pixels to skip minus 1."]
-    pub const HSC_5: Self = Self(0x05);
+    pub const Hsc5: Self = Self(0x05);
     #[doc = "Number of pixels to skip minus 1."]
-    pub const HSC_6: Self = Self(0x06);
+    pub const Hsc6: Self = Self(0x06);
     #[doc = "Number of pixels to skip minus 1."]
-    pub const HSC_7: Self = Self(0x07);
+    pub const Hsc7: Self = Self(0x07);
     #[doc = "Number of pixels to skip minus 1."]
-    pub const HSC_8: Self = Self(0x08);
+    pub const Hsc8: Self = Self(0x08);
     #[doc = "Number of pixels to skip minus 1."]
-    pub const HSC_9: Self = Self(0x09);
+    pub const Hsc9: Self = Self(0x09);
 }
 impl Hsc {
     pub const fn from_bits(val: u8) -> Hsc {
@@ -1194,16 +1194,16 @@ impl Hsc {
 impl core::fmt::Debug for Hsc {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HSC_0"),
-            0x01 => f.write_str("HSC_1"),
-            0x02 => f.write_str("HSC_2"),
-            0x03 => f.write_str("HSC_3"),
-            0x04 => f.write_str("HSC_4"),
-            0x05 => f.write_str("HSC_5"),
-            0x06 => f.write_str("HSC_6"),
-            0x07 => f.write_str("HSC_7"),
-            0x08 => f.write_str("HSC_8"),
-            0x09 => f.write_str("HSC_9"),
+            0x0 => f.write_str("Hsc0"),
+            0x01 => f.write_str("Hsc1"),
+            0x02 => f.write_str("Hsc2"),
+            0x03 => f.write_str("Hsc3"),
+            0x04 => f.write_str("Hsc4"),
+            0x05 => f.write_str("Hsc5"),
+            0x06 => f.write_str("Hsc6"),
+            0x07 => f.write_str("Hsc7"),
+            0x08 => f.write_str("Hsc8"),
+            0x09 => f.write_str("Hsc9"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -1212,16 +1212,16 @@ impl core::fmt::Debug for Hsc {
 impl defmt::Format for Hsc {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HSC_0"),
-            0x01 => defmt::write!(f, "HSC_1"),
-            0x02 => defmt::write!(f, "HSC_2"),
-            0x03 => defmt::write!(f, "HSC_3"),
-            0x04 => defmt::write!(f, "HSC_4"),
-            0x05 => defmt::write!(f, "HSC_5"),
-            0x06 => defmt::write!(f, "HSC_6"),
-            0x07 => defmt::write!(f, "HSC_7"),
-            0x08 => defmt::write!(f, "HSC_8"),
-            0x09 => defmt::write!(f, "HSC_9"),
+            0x0 => defmt::write!(f, "Hsc0"),
+            0x01 => defmt::write!(f, "Hsc1"),
+            0x02 => defmt::write!(f, "Hsc2"),
+            0x03 => defmt::write!(f, "Hsc3"),
+            0x04 => defmt::write!(f, "Hsc4"),
+            0x05 => defmt::write!(f, "Hsc5"),
+            0x06 => defmt::write!(f, "Hsc6"),
+            0x07 => defmt::write!(f, "Hsc7"),
+            0x08 => defmt::write!(f, "Hsc8"),
+            0x09 => defmt::write!(f, "Hsc9"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -1243,9 +1243,9 @@ impl From<Hsc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HsyncPol {
     #[doc = "HSYNC is active low."]
-    HSYNC_POL_0 = 0x0,
+    HsyncPol0 = 0x0,
     #[doc = "HSYNC is active high."]
-    HSYNC_POL_1 = 0x01,
+    HsyncPol1 = 0x01,
 }
 impl HsyncPol {
     #[inline(always)]
@@ -1274,9 +1274,9 @@ impl From<HsyncPol> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum InvData {
     #[doc = "CSI_D\\[7:0\\] data lines are directly applied to internal circuitry."]
-    INV_DATA_0 = 0x0,
+    InvData0 = 0x0,
     #[doc = "CSI_D\\[7:0\\] data lines are inverted before applied to internal circuitry."]
-    INV_DATA_1 = 0x01,
+    InvData1 = 0x01,
 }
 impl InvData {
     #[inline(always)]
@@ -1305,9 +1305,9 @@ impl From<InvData> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum InvPclk {
     #[doc = "CSI_PIXCLK is directly applied to internal circuitry."]
-    INV_PCLK_0 = 0x0,
+    InvPclk0 = 0x0,
     #[doc = "CSI_PIXCLK is inverted before applied to internal circuitry."]
-    INV_PCLK_1 = 0x01,
+    InvPclk1 = 0x01,
 }
 impl InvPclk {
     #[inline(always)]
@@ -1336,9 +1336,9 @@ impl From<InvPclk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LastDmaReqSel {
     #[doc = "fifo_full_level."]
-    LAST_DMA_REQ_SEL_0 = 0x0,
+    LastDmaReqSel0 = 0x0,
     #[doc = "hburst_length."]
-    LAST_DMA_REQ_SEL_1 = 0x01,
+    LastDmaReqSel1 = 0x01,
 }
 impl LastDmaReqSel {
     #[inline(always)]
@@ -1367,19 +1367,19 @@ impl From<LastDmaReqSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lvrm {
     #[doc = "512 x 384."]
-    LVRM_0 = 0x0,
+    Lvrm0 = 0x0,
     #[doc = "448 x 336."]
-    LVRM_1 = 0x01,
+    Lvrm1 = 0x01,
     #[doc = "384 x 288."]
-    LVRM_2 = 0x02,
+    Lvrm2 = 0x02,
     #[doc = "384 x 256."]
-    LVRM_3 = 0x03,
+    Lvrm3 = 0x03,
     #[doc = "320 x 240."]
-    LVRM_4 = 0x04,
+    Lvrm4 = 0x04,
     #[doc = "288 x 216."]
-    LVRM_5 = 0x05,
+    Lvrm5 = 0x05,
     #[doc = "400 x 300."]
-    LVRM_6 = 0x06,
+    Lvrm6 = 0x06,
     _RESERVED_7 = 0x07,
 }
 impl Lvrm {
@@ -1409,13 +1409,13 @@ impl From<Lvrm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MaskOption {
     #[doc = "Writing to memory (OCRAM or external DDR) from first completely frame, when using this option, the CSI_ENABLE should be 1."]
-    MASK_OPTION_0 = 0x0,
+    MaskOption0 = 0x0,
     #[doc = "Writing to memory when CSI_ENABLE is 1."]
-    MASK_OPTION_1 = 0x01,
+    MaskOption1 = 0x01,
     #[doc = "Writing to memory from second completely frame, when using this option, the CSI_ENABLE should be 1."]
-    MASK_OPTION_2 = 0x02,
+    MaskOption2 = 0x02,
     #[doc = "Writing to memory when data comes in, not matter the CSI_ENABLE is 1 or 0."]
-    MASK_OPTION_3 = 0x03,
+    MaskOption3 = 0x03,
 }
 impl MaskOption {
     #[inline(always)]
@@ -1444,9 +1444,9 @@ impl From<MaskOption> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PackDir {
     #[doc = "Pack from LSB first. For image data, 0x11, 0x22, 0x33, 0x44, it will appear as 0x44332211 in RX FIFO. For stat data, 0xAAAA, 0xBBBB, it will appear as 0xBBBBAAAA in STAT FIFO."]
-    PACK_DIR_0 = 0x0,
+    PackDir0 = 0x0,
     #[doc = "Pack from MSB first. For image data, 0x11, 0x22, 0x33, 0x44, it will appear as 0x11223344 in RX FIFO. For stat data, 0xAAAA, 0xBBBB, it will appear as 0xAAAABBBB in STAT FIFO."]
-    PACK_DIR_1 = 0x01,
+    PackDir1 = 0x01,
 }
 impl PackDir {
     #[inline(always)]
@@ -1475,9 +1475,9 @@ impl From<PackDir> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Parallel24En {
     #[doc = "Input is disabled."]
-    PARALLEL24_EN_0 = 0x0,
+    Parallel24En0 = 0x0,
     #[doc = "Input is enabled."]
-    PARALLEL24_EN_1 = 0x01,
+    Parallel24En1 = 0x01,
 }
 impl Parallel24En {
     #[inline(always)]
@@ -1506,9 +1506,9 @@ impl From<Parallel24En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PixelBit {
     #[doc = "8-bit data for each pixel."]
-    PIXEL_BIT_0 = 0x0,
+    PixelBit0 = 0x0,
     #[doc = "10-bit data for each pixel."]
-    PIXEL_BIT_1 = 0x01,
+    PixelBit1 = 0x01,
 }
 impl PixelBit {
     #[inline(always)]
@@ -1537,9 +1537,9 @@ impl From<PixelBit> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PrPIfEn {
     #[doc = "CSI to PrP bus is disabled."]
-    PR_P_IF_EN_0 = 0x0,
+    PrPIfEn0 = 0x0,
     #[doc = "CSI to PrP bus is enabled."]
-    PR_P_IF_EN_1 = 0x01,
+    PrPIfEn1 = 0x01,
 }
 impl PrPIfEn {
     #[inline(always)]
@@ -1568,9 +1568,9 @@ impl From<PrPIfEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Redge {
     #[doc = "Pixel data is latched at the falling edge of CSI_PIXCLK."]
-    REDGE_0 = 0x0,
+    Redge0 = 0x0,
     #[doc = "Pixel data is latched at the rising edge of CSI_PIXCLK."]
-    REDGE_1 = 0x01,
+    Redge1 = 0x01,
 }
 impl Redge {
     #[inline(always)]
@@ -1599,9 +1599,9 @@ impl From<Redge> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RfOrInt {
     #[doc = "RXFIFO has not overflowed."]
-    RF_OR_INT_0 = 0x0,
+    RfOrInt0 = 0x0,
     #[doc = "RXFIFO has overflowed."]
-    RF_OR_INT_1 = 0x01,
+    RfOrInt1 = 0x01,
 }
 impl RfOrInt {
     #[inline(always)]
@@ -1630,9 +1630,9 @@ impl From<RfOrInt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RfOrInten {
     #[doc = "RxFIFO overrun interrupt is disabled."]
-    RF_OR_INTEN_0 = 0x0,
+    RfOrInten0 = 0x0,
     #[doc = "RxFIFO overrun interrupt is enabled."]
-    RF_OR_INTEN_1 = 0x01,
+    RfOrInten1 = 0x01,
 }
 impl RfOrInten {
     #[inline(always)]
@@ -1661,9 +1661,9 @@ impl From<RfOrInten> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rgb888aFormatSel {
     #[doc = "{8'h0, data\\[23:0\\]}."]
-    RGB888A_FORMAT_SEL_0 = 0x0,
+    Rgb888aFormatSel0 = 0x0,
     #[doc = "{data\\[23:0\\], 8'h0}."]
-    RGB888A_FORMAT_SEL_1 = 0x01,
+    Rgb888aFormatSel1 = 0x01,
 }
 impl Rgb888aFormatSel {
     #[inline(always)]
@@ -1692,9 +1692,9 @@ impl From<Rgb888aFormatSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RxFfInt {
     #[doc = "RxFIFO is not full."]
-    RX_FF_INT_0 = 0x0,
+    RxFfInt0 = 0x0,
     #[doc = "RxFIFO is full."]
-    RX_FF_INT_1 = 0x01,
+    RxFfInt1 = 0x01,
 }
 impl RxFfInt {
     #[inline(always)]
@@ -1723,21 +1723,21 @@ impl From<RxFfInt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RxFfLevel {
     #[doc = "4 Double words."]
-    RX_FF_LEVEL_0 = 0x0,
+    RxFfLevel0 = 0x0,
     #[doc = "8 Double words."]
-    RX_FF_LEVEL_1 = 0x01,
+    RxFfLevel1 = 0x01,
     #[doc = "16 Double words."]
-    RX_FF_LEVEL_2 = 0x02,
+    RxFfLevel2 = 0x02,
     #[doc = "24 Double words."]
-    RX_FF_LEVEL_3 = 0x03,
+    RxFfLevel3 = 0x03,
     #[doc = "32 Double words."]
-    RX_FF_LEVEL_4 = 0x04,
+    RxFfLevel4 = 0x04,
     #[doc = "48 Double words."]
-    RX_FF_LEVEL_5 = 0x05,
+    RxFfLevel5 = 0x05,
     #[doc = "64 Double words."]
-    RX_FF_LEVEL_6 = 0x06,
+    RxFfLevel6 = 0x06,
     #[doc = "96 Double words."]
-    RX_FF_LEVEL_7 = 0x07,
+    RxFfLevel7 = 0x07,
 }
 impl RxFfLevel {
     #[inline(always)]
@@ -1766,9 +1766,9 @@ impl From<RxFfLevel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RxffInten {
     #[doc = "RxFIFO full interrupt disable."]
-    RXFF_INTEN_0 = 0x0,
+    RxffInten0 = 0x0,
     #[doc = "RxFIFO full interrupt enable."]
-    RXFF_INTEN_1 = 0x01,
+    RxffInten1 = 0x01,
 }
 impl RxffInten {
     #[inline(always)]
@@ -1797,9 +1797,9 @@ impl From<RxffInten> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sce {
     #[doc = "Skip count disable."]
-    SCE_0 = 0x0,
+    Sce0 = 0x0,
     #[doc = "Skip count enable."]
-    SCE_1 = 0x01,
+    Sce1 = 0x01,
 }
 impl Sce {
     #[inline(always)]
@@ -1828,9 +1828,9 @@ impl From<Sce> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sensor16bits {
     #[doc = "Only one 8-bit sensor is connected."]
-    SENSOR_16BITS_0 = 0x0,
+    Sensor16bits0 = 0x0,
     #[doc = "One 16-bit sensor is connected."]
-    SENSOR_16BITS_1 = 0x01,
+    Sensor16bits1 = 0x01,
 }
 impl Sensor16bits {
     #[inline(always)]
@@ -1859,9 +1859,9 @@ impl From<Sensor16bits> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SfOrInt {
     #[doc = "STATFIFO has not overflowed."]
-    SF_OR_INT_0 = 0x0,
+    SfOrInt0 = 0x0,
     #[doc = "STATFIFO has overflowed."]
-    SF_OR_INT_1 = 0x01,
+    SfOrInt1 = 0x01,
 }
 impl SfOrInt {
     #[inline(always)]
@@ -1890,9 +1890,9 @@ impl From<SfOrInt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SfOrInten {
     #[doc = "STATFIFO overrun interrupt is disabled."]
-    SF_OR_INTEN_0 = 0x0,
+    SfOrInten0 = 0x0,
     #[doc = "STATFIFO overrun interrupt is enabled."]
-    SF_OR_INTEN_1 = 0x01,
+    SfOrInten1 = 0x01,
 }
 impl SfOrInten {
     #[inline(always)]
@@ -1921,9 +1921,9 @@ impl From<SfOrInten> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SffDmaDoneInten {
     #[doc = "STATFIFO DMA Transfer Done interrupt disable."]
-    SFF_DMA_DONE_INTEN_0 = 0x0,
+    SffDmaDoneInten0 = 0x0,
     #[doc = "STATFIFO DMA Transfer Done interrupt enable."]
-    SFF_DMA_DONE_INTEN_1 = 0x01,
+    SffDmaDoneInten1 = 0x01,
 }
 impl SffDmaDoneInten {
     #[inline(always)]
@@ -1952,9 +1952,9 @@ impl From<SffDmaDoneInten> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SofInt {
     #[doc = "SOF is not detected."]
-    SOF_INT_0 = 0x0,
+    SofInt0 = 0x0,
     #[doc = "SOF is detected."]
-    SOF_INT_1 = 0x01,
+    SofInt1 = 0x01,
 }
 impl SofInt {
     #[inline(always)]
@@ -1983,9 +1983,9 @@ impl From<SofInt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SofInten {
     #[doc = "SOF interrupt disable."]
-    SOF_INTEN_0 = 0x0,
+    SofInten0 = 0x0,
     #[doc = "SOF interrupt enable."]
-    SOF_INTEN_1 = 0x01,
+    SofInten1 = 0x01,
 }
 impl SofInten {
     #[inline(always)]
@@ -2014,9 +2014,9 @@ impl From<SofInten> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SofPol {
     #[doc = "SOF interrupt is generated on SOF falling edge."]
-    SOF_POL_0 = 0x0,
+    SofPol0 = 0x0,
     #[doc = "SOF interrupt is generated on SOF rising edge."]
-    SOF_POL_1 = 0x01,
+    SofPol1 = 0x01,
 }
 impl SofPol {
     #[inline(always)]
@@ -2045,9 +2045,9 @@ impl From<SofPol> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum StatffInt {
     #[doc = "STATFIFO is not full."]
-    STATFF_INT_0 = 0x0,
+    StatffInt0 = 0x0,
     #[doc = "STATFIFO is full."]
-    STATFF_INT_1 = 0x01,
+    StatffInt1 = 0x01,
 }
 impl StatffInt {
     #[inline(always)]
@@ -2076,9 +2076,9 @@ impl From<StatffInt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum StatffInten {
     #[doc = "STATFIFO full interrupt disable."]
-    STATFF_INTEN_0 = 0x0,
+    StatffInten0 = 0x0,
     #[doc = "STATFIFO full interrupt enable."]
-    STATFF_INTEN_1 = 0x01,
+    StatffInten1 = 0x01,
 }
 impl StatffInten {
     #[inline(always)]
@@ -2107,21 +2107,21 @@ impl From<StatffInten> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum StatffLevel {
     #[doc = "4 Double words."]
-    STATFF_LEVEL_0 = 0x0,
+    StatffLevel0 = 0x0,
     #[doc = "8 Double words."]
-    STATFF_LEVEL_1 = 0x01,
+    StatffLevel1 = 0x01,
     #[doc = "12 Double words."]
-    STATFF_LEVEL_2 = 0x02,
+    StatffLevel2 = 0x02,
     #[doc = "16 Double words."]
-    STATFF_LEVEL_3 = 0x03,
+    StatffLevel3 = 0x03,
     #[doc = "24 Double words."]
-    STATFF_LEVEL_4 = 0x04,
+    StatffLevel4 = 0x04,
     #[doc = "32 Double words."]
-    STATFF_LEVEL_5 = 0x05,
+    StatffLevel5 = 0x05,
     #[doc = "48 Double words."]
-    STATFF_LEVEL_6 = 0x06,
+    StatffLevel6 = 0x06,
     #[doc = "64 Double words."]
-    STATFF_LEVEL_7 = 0x07,
+    StatffLevel7 = 0x07,
 }
 impl StatffLevel {
     #[inline(always)]
@@ -2150,9 +2150,9 @@ impl From<StatffLevel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swap16En {
     #[doc = "Disable swapping."]
-    SWAP16_EN_0 = 0x0,
+    Swap16En0 = 0x0,
     #[doc = "Enable swapping."]
-    SWAP16_EN_1 = 0x01,
+    Swap16En1 = 0x01,
 }
 impl Swap16En {
     #[inline(always)]
@@ -2181,25 +2181,25 @@ impl From<Swap16En> for u8 {
 pub struct Vsc(u8);
 impl Vsc {
     #[doc = "Number of rows to skip minus 1."]
-    pub const VSC_0: Self = Self(0x0);
+    pub const Vsc0: Self = Self(0x0);
     #[doc = "Number of rows to skip minus 1."]
-    pub const VSC_1: Self = Self(0x01);
+    pub const Vsc1: Self = Self(0x01);
     #[doc = "Number of rows to skip minus 1."]
-    pub const VSC_2: Self = Self(0x02);
+    pub const Vsc2: Self = Self(0x02);
     #[doc = "Number of rows to skip minus 1."]
-    pub const VSC_3: Self = Self(0x03);
+    pub const Vsc3: Self = Self(0x03);
     #[doc = "Number of rows to skip minus 1."]
-    pub const VSC_4: Self = Self(0x04);
+    pub const Vsc4: Self = Self(0x04);
     #[doc = "Number of rows to skip minus 1."]
-    pub const VSC_5: Self = Self(0x05);
+    pub const Vsc5: Self = Self(0x05);
     #[doc = "Number of rows to skip minus 1."]
-    pub const VSC_6: Self = Self(0x06);
+    pub const Vsc6: Self = Self(0x06);
     #[doc = "Number of rows to skip minus 1."]
-    pub const VSC_7: Self = Self(0x07);
+    pub const Vsc7: Self = Self(0x07);
     #[doc = "Number of rows to skip minus 1."]
-    pub const VSC_8: Self = Self(0x08);
+    pub const Vsc8: Self = Self(0x08);
     #[doc = "Number of rows to skip minus 1."]
-    pub const VSC_9: Self = Self(0x09);
+    pub const Vsc9: Self = Self(0x09);
 }
 impl Vsc {
     pub const fn from_bits(val: u8) -> Vsc {
@@ -2212,16 +2212,16 @@ impl Vsc {
 impl core::fmt::Debug for Vsc {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("VSC_0"),
-            0x01 => f.write_str("VSC_1"),
-            0x02 => f.write_str("VSC_2"),
-            0x03 => f.write_str("VSC_3"),
-            0x04 => f.write_str("VSC_4"),
-            0x05 => f.write_str("VSC_5"),
-            0x06 => f.write_str("VSC_6"),
-            0x07 => f.write_str("VSC_7"),
-            0x08 => f.write_str("VSC_8"),
-            0x09 => f.write_str("VSC_9"),
+            0x0 => f.write_str("Vsc0"),
+            0x01 => f.write_str("Vsc1"),
+            0x02 => f.write_str("Vsc2"),
+            0x03 => f.write_str("Vsc3"),
+            0x04 => f.write_str("Vsc4"),
+            0x05 => f.write_str("Vsc5"),
+            0x06 => f.write_str("Vsc6"),
+            0x07 => f.write_str("Vsc7"),
+            0x08 => f.write_str("Vsc8"),
+            0x09 => f.write_str("Vsc9"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -2230,16 +2230,16 @@ impl core::fmt::Debug for Vsc {
 impl defmt::Format for Vsc {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "VSC_0"),
-            0x01 => defmt::write!(f, "VSC_1"),
-            0x02 => defmt::write!(f, "VSC_2"),
-            0x03 => defmt::write!(f, "VSC_3"),
-            0x04 => defmt::write!(f, "VSC_4"),
-            0x05 => defmt::write!(f, "VSC_5"),
-            0x06 => defmt::write!(f, "VSC_6"),
-            0x07 => defmt::write!(f, "VSC_7"),
-            0x08 => defmt::write!(f, "VSC_8"),
-            0x09 => defmt::write!(f, "VSC_9"),
+            0x0 => defmt::write!(f, "Vsc0"),
+            0x01 => defmt::write!(f, "Vsc1"),
+            0x02 => defmt::write!(f, "Vsc2"),
+            0x03 => defmt::write!(f, "Vsc3"),
+            0x04 => defmt::write!(f, "Vsc4"),
+            0x05 => defmt::write!(f, "Vsc5"),
+            0x06 => defmt::write!(f, "Vsc6"),
+            0x07 => defmt::write!(f, "Vsc7"),
+            0x08 => defmt::write!(f, "Vsc8"),
+            0x09 => defmt::write!(f, "Vsc9"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -2261,9 +2261,9 @@ impl From<Vsc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ZeroPackEn {
     #[doc = "Zero packing disabled."]
-    ZERO_PACK_EN_0 = 0x0,
+    ZeroPackEn0 = 0x0,
     #[doc = "Zero packing enabled."]
-    ZERO_PACK_EN_1 = 0x01,
+    ZeroPackEn1 = 0x01,
 }
 impl ZeroPackEn {
     #[inline(always)]

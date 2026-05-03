@@ -2285,26 +2285,26 @@ impl Xfercfg {
     #[doc = "Set Interrupt flag A for this channel. There is no hardware distinction between interrupt A and B. They can be used by software to assist with more complex descriptor usage. By convention, interrupt A may be used when only one interrupt flag is needed."]
     #[must_use]
     #[inline(always)]
-    pub const fn setinta(&self) -> bool {
+    pub const fn setinta(&self) -> super::vals::Setinta {
         let val = (self.0 >> 4usize) & 0x01;
-        val != 0
+        super::vals::Setinta::from_bits(val as u8)
     }
     #[doc = "Set Interrupt flag A for this channel. There is no hardware distinction between interrupt A and B. They can be used by software to assist with more complex descriptor usage. By convention, interrupt A may be used when only one interrupt flag is needed."]
     #[inline(always)]
-    pub const fn set_setinta(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+    pub const fn set_setinta(&mut self, val: super::vals::Setinta) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
     }
     #[doc = "Set Interrupt flag B for this channel. There is no hardware distinction between interrupt A and B. They can be used by software to assist with more complex descriptor usage. By convention, interrupt A may be used when only one interrupt flag is needed."]
     #[must_use]
     #[inline(always)]
-    pub const fn setintb(&self) -> bool {
+    pub const fn setintb(&self) -> super::vals::Setintb {
         let val = (self.0 >> 5usize) & 0x01;
-        val != 0
+        super::vals::Setintb::from_bits(val as u8)
     }
     #[doc = "Set Interrupt flag B for this channel. There is no hardware distinction between interrupt A and B. They can be used by software to assist with more complex descriptor usage. By convention, interrupt A may be used when only one interrupt flag is needed."]
     #[inline(always)]
-    pub const fn set_setintb(&mut self, val: bool) {
-        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+    pub const fn set_setintb(&mut self, val: super::vals::Setintb) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
     }
     #[doc = "Transfer width used for this DMA channel."]
     #[must_use]
@@ -2382,7 +2382,7 @@ impl defmt::Format for Xfercfg {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Xfercfg {{ cfgvalid: {=bool:?}, reload: {=bool:?}, swtrig: {=bool:?}, clrtrig: {=bool:?}, setinta: {=bool:?}, setintb: {=bool:?}, width: {:?}, srcinc: {:?}, dstinc: {:?}, xfercount: {=u16:?} }}",
+            "Xfercfg {{ cfgvalid: {=bool:?}, reload: {=bool:?}, swtrig: {=bool:?}, clrtrig: {=bool:?}, setinta: {:?}, setintb: {:?}, width: {:?}, srcinc: {:?}, dstinc: {:?}, xfercount: {=u16:?} }}",
             self.cfgvalid(),
             self.reload(),
             self.swtrig(),

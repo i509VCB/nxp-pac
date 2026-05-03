@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sbc5 {
     #[doc = "No single-bit correction event on Memory 5 detected."]
-    NO_EVENT = 0x0,
+    NoEvent = 0x0,
     #[doc = "Single-bit correction event on Memory 5 detected."]
-    CORR_EVENT = 0x01,
+    CorrEvent = 0x01,
 }
 impl Sbc5 {
     #[inline(always)]

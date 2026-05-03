@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wden {
     #[doc = "Timer stopped."]
-    STOP = 0x0,
+    Stop = 0x0,
     #[doc = "Timer running."]
-    RUN = 0x01,
+    Run = 0x01,
 }
 impl Wden {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Wden> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wdprotect {
     #[doc = "Flexible."]
-    FLEXIBLE = 0x0,
+    Flexible = 0x0,
     #[doc = "Threshold."]
-    THRESHOLD = 0x01,
+    Threshold = 0x01,
 }
 impl Wdprotect {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Wdprotect> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wdreset {
     #[doc = "Interrupt."]
-    INTERRUPT = 0x0,
+    Interrupt = 0x0,
     #[doc = "Reset."]
-    RESET = 0x01,
+    Reset = 0x01,
 }
 impl Wdreset {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Wdreset> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wdtof {
     #[doc = "Watchdog event has not occurred."]
-    CLEAR = 0x0,
+    Clear = 0x0,
     #[doc = "Watchdog event has occurred (causes a chip reset if WDRESET = 1)."]
-    RESET = 0x01,
+    Reset = 0x01,
 }
 impl Wdtof {
     #[inline(always)]

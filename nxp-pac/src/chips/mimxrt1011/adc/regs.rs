@@ -597,18 +597,98 @@ impl Hs {
     #[doc = "Conversion Complete Flag."]
     #[must_use]
     #[inline(always)]
-    pub const fn coco(&self, n: usize) -> bool {
-        assert!(n < 8usize);
-        let offs = 0usize + n * 1usize;
-        let val = (self.0 >> offs) & 0x01;
+    pub const fn coco0(&self) -> bool {
+        let val = (self.0 >> 0usize) & 0x01;
         val != 0
     }
     #[doc = "Conversion Complete Flag."]
     #[inline(always)]
-    pub const fn set_coco(&mut self, n: usize, val: bool) {
-        assert!(n < 8usize);
-        let offs = 0usize + n * 1usize;
-        self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
+    pub const fn set_coco0(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+    }
+    #[doc = "Conversion Complete Flag."]
+    #[must_use]
+    #[inline(always)]
+    pub const fn coco1(&self) -> bool {
+        let val = (self.0 >> 1usize) & 0x01;
+        val != 0
+    }
+    #[doc = "Conversion Complete Flag."]
+    #[inline(always)]
+    pub const fn set_coco1(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+    }
+    #[doc = "See description for COCO1."]
+    #[must_use]
+    #[inline(always)]
+    pub const fn coco2(&self) -> bool {
+        let val = (self.0 >> 2usize) & 0x01;
+        val != 0
+    }
+    #[doc = "See description for COCO1."]
+    #[inline(always)]
+    pub const fn set_coco2(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+    }
+    #[doc = "See description for COCO1."]
+    #[must_use]
+    #[inline(always)]
+    pub const fn coco3(&self) -> bool {
+        let val = (self.0 >> 3usize) & 0x01;
+        val != 0
+    }
+    #[doc = "See description for COCO1."]
+    #[inline(always)]
+    pub const fn set_coco3(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+    }
+    #[doc = "See description for COCO1."]
+    #[must_use]
+    #[inline(always)]
+    pub const fn coco4(&self) -> bool {
+        let val = (self.0 >> 4usize) & 0x01;
+        val != 0
+    }
+    #[doc = "See description for COCO1."]
+    #[inline(always)]
+    pub const fn set_coco4(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+    }
+    #[doc = "See description for COCO1."]
+    #[must_use]
+    #[inline(always)]
+    pub const fn coco5(&self) -> bool {
+        let val = (self.0 >> 5usize) & 0x01;
+        val != 0
+    }
+    #[doc = "See description for COCO1."]
+    #[inline(always)]
+    pub const fn set_coco5(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+    }
+    #[doc = "See description for COCO1."]
+    #[must_use]
+    #[inline(always)]
+    pub const fn coco6(&self) -> bool {
+        let val = (self.0 >> 6usize) & 0x01;
+        val != 0
+    }
+    #[doc = "See description for COCO1."]
+    #[inline(always)]
+    pub const fn set_coco6(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+    }
+    #[doc = "See description for COCO1."]
+    #[must_use]
+    #[inline(always)]
+    pub const fn coco7(&self) -> bool {
+        let val = (self.0 >> 7usize) & 0x01;
+        val != 0
+    }
+    #[doc = "See description for COCO1."]
+    #[inline(always)]
+    pub const fn set_coco7(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
 }
 impl Default for Hs {
@@ -620,14 +700,14 @@ impl Default for Hs {
 impl core::fmt::Debug for Hs {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("Hs")
-            .field("coco[0]", &self.coco(0usize))
-            .field("coco[1]", &self.coco(1usize))
-            .field("coco[2]", &self.coco(2usize))
-            .field("coco[3]", &self.coco(3usize))
-            .field("coco[4]", &self.coco(4usize))
-            .field("coco[5]", &self.coco(5usize))
-            .field("coco[6]", &self.coco(6usize))
-            .field("coco[7]", &self.coco(7usize))
+            .field("coco0", &self.coco0())
+            .field("coco1", &self.coco1())
+            .field("coco2", &self.coco2())
+            .field("coco3", &self.coco3())
+            .field("coco4", &self.coco4())
+            .field("coco5", &self.coco5())
+            .field("coco6", &self.coco6())
+            .field("coco7", &self.coco7())
             .finish()
     }
 }
@@ -636,15 +716,15 @@ impl defmt::Format for Hs {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Hs {{ coco[0]: {=bool:?}, coco[1]: {=bool:?}, coco[2]: {=bool:?}, coco[3]: {=bool:?}, coco[4]: {=bool:?}, coco[5]: {=bool:?}, coco[6]: {=bool:?}, coco[7]: {=bool:?} }}",
-            self.coco(0usize),
-            self.coco(1usize),
-            self.coco(2usize),
-            self.coco(3usize),
-            self.coco(4usize),
-            self.coco(5usize),
-            self.coco(6usize),
-            self.coco(7usize)
+            "Hs {{ coco0: {=bool:?}, coco1: {=bool:?}, coco2: {=bool:?}, coco3: {=bool:?}, coco4: {=bool:?}, coco5: {=bool:?}, coco6: {=bool:?}, coco7: {=bool:?} }}",
+            self.coco0(),
+            self.coco1(),
+            self.coco2(),
+            self.coco3(),
+            self.coco4(),
+            self.coco5(),
+            self.coco6(),
+            self.coco7()
         )
     }
 }

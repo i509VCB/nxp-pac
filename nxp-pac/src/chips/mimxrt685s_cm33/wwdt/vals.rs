@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wden {
     #[doc = "Stop. The watchdog timer is stopped."]
-    STOP = 0x0,
+    Stop = 0x0,
     #[doc = "Run. The watchdog timer is running."]
-    RUN = 0x01,
+    Run = 0x01,
 }
 impl Wden {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Wden> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wdprotect {
     #[doc = "Flexible. The watchdog time-out value (TC) can be changed at any time."]
-    FLEXIBLE = 0x0,
+    Flexible = 0x0,
     #[doc = "Threshold. The watchdog time-out value (TC) can be changed only after the counter is below the value of WDWARNINT and WDWINDOW."]
-    THRESHOLD = 0x01,
+    Threshold = 0x01,
 }
 impl Wdprotect {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Wdprotect> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wdreset {
     #[doc = "Interrupt. A watchdog time-out will not cause a chip reset."]
-    INTERRUPT = 0x0,
+    Interrupt = 0x0,
     #[doc = "Reset. A watchdog time-out will cause a chip reset."]
-    RESET = 0x01,
+    Reset = 0x01,
 }
 impl Wdreset {
     #[inline(always)]

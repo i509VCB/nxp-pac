@@ -3,21 +3,21 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cfg0 {
     #[doc = "Constant HIGH. This bit slice always contributes to a product term match."]
-    CONSTANT_HIGH = 0x0,
+    ConstantHigh = 0x0,
     #[doc = "Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_EDGE = 0x01,
+    StickyRisingEdge = 0x01,
     #[doc = "Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_FALLING_EDGE = 0x02,
+    StickyFallingEdge = 0x02,
     #[doc = "Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_FALLING_EDGE = 0x03,
+    StickyRisingFallingEdge = 0x03,
     #[doc = "High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
-    HIGH_LEVEL = 0x04,
+    HighLevel = 0x04,
     #[doc = "Low level. Match occurs when there is a low level on the specified input."]
-    LOW_LEVEL = 0x05,
+    LowLevel = 0x05,
     #[doc = "Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
-    CONSTANT_ZERO = 0x06,
+    ConstantZero = 0x06,
     #[doc = "Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
-    EVENT = 0x07,
+    Event = 0x07,
 }
 impl Cfg0 {
     #[inline(always)]
@@ -46,21 +46,21 @@ impl From<Cfg0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cfg1 {
     #[doc = "Constant HIGH. This bit slice always contributes to a product term match."]
-    CONSTANT_HIGH = 0x0,
+    ConstantHigh = 0x0,
     #[doc = "Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_EDGE = 0x01,
+    StickyRisingEdge = 0x01,
     #[doc = "Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_FALLING_EDGE = 0x02,
+    StickyFallingEdge = 0x02,
     #[doc = "Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_FALLING_EDGE = 0x03,
+    StickyRisingFallingEdge = 0x03,
     #[doc = "High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
-    HIGH_LEVEL = 0x04,
+    HighLevel = 0x04,
     #[doc = "Low level. Match occurs when there is a low level on the specified input."]
-    LOW_LEVEL = 0x05,
+    LowLevel = 0x05,
     #[doc = "Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
-    CONSTANT_ZERO = 0x06,
+    ConstantZero = 0x06,
     #[doc = "Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
-    EVENT = 0x07,
+    Event = 0x07,
 }
 impl Cfg1 {
     #[inline(always)]
@@ -89,21 +89,21 @@ impl From<Cfg1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cfg2 {
     #[doc = "Constant HIGH. This bit slice always contributes to a product term match."]
-    CONSTANT_HIGH = 0x0,
+    ConstantHigh = 0x0,
     #[doc = "Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_EDGE = 0x01,
+    StickyRisingEdge = 0x01,
     #[doc = "Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_FALLING_EDGE = 0x02,
+    StickyFallingEdge = 0x02,
     #[doc = "Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_FALLING_EDGE = 0x03,
+    StickyRisingFallingEdge = 0x03,
     #[doc = "High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
-    HIGH_LEVEL = 0x04,
+    HighLevel = 0x04,
     #[doc = "Low level. Match occurs when there is a low level on the specified input."]
-    LOW_LEVEL = 0x05,
+    LowLevel = 0x05,
     #[doc = "Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
-    CONSTANT_ZERO = 0x06,
+    ConstantZero = 0x06,
     #[doc = "Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
-    EVENT = 0x07,
+    Event = 0x07,
 }
 impl Cfg2 {
     #[inline(always)]
@@ -132,21 +132,21 @@ impl From<Cfg2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cfg3 {
     #[doc = "Constant HIGH. This bit slice always contributes to a product term match."]
-    CONSTANT_HIGH = 0x0,
+    ConstantHigh = 0x0,
     #[doc = "Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_EDGE = 0x01,
+    StickyRisingEdge = 0x01,
     #[doc = "Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_FALLING_EDGE = 0x02,
+    StickyFallingEdge = 0x02,
     #[doc = "Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_FALLING_EDGE = 0x03,
+    StickyRisingFallingEdge = 0x03,
     #[doc = "High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
-    HIGH_LEVEL = 0x04,
+    HighLevel = 0x04,
     #[doc = "Low level. Match occurs when there is a low level on the specified input."]
-    LOW_LEVEL = 0x05,
+    LowLevel = 0x05,
     #[doc = "Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
-    CONSTANT_ZERO = 0x06,
+    ConstantZero = 0x06,
     #[doc = "Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
-    EVENT = 0x07,
+    Event = 0x07,
 }
 impl Cfg3 {
     #[inline(always)]
@@ -175,21 +175,21 @@ impl From<Cfg3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cfg4 {
     #[doc = "Constant HIGH. This bit slice always contributes to a product term match."]
-    CONSTANT_HIGH = 0x0,
+    ConstantHigh = 0x0,
     #[doc = "Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_EDGE = 0x01,
+    StickyRisingEdge = 0x01,
     #[doc = "Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_FALLING_EDGE = 0x02,
+    StickyFallingEdge = 0x02,
     #[doc = "Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_FALLING_EDGE = 0x03,
+    StickyRisingFallingEdge = 0x03,
     #[doc = "High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
-    HIGH_LEVEL = 0x04,
+    HighLevel = 0x04,
     #[doc = "Low level. Match occurs when there is a low level on the specified input."]
-    LOW_LEVEL = 0x05,
+    LowLevel = 0x05,
     #[doc = "Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
-    CONSTANT_ZERO = 0x06,
+    ConstantZero = 0x06,
     #[doc = "Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
-    EVENT = 0x07,
+    Event = 0x07,
 }
 impl Cfg4 {
     #[inline(always)]
@@ -218,21 +218,21 @@ impl From<Cfg4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cfg5 {
     #[doc = "Constant HIGH. This bit slice always contributes to a product term match."]
-    CONSTANT_HIGH = 0x0,
+    ConstantHigh = 0x0,
     #[doc = "Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_EDGE = 0x01,
+    StickyRisingEdge = 0x01,
     #[doc = "Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_FALLING_EDGE = 0x02,
+    StickyFallingEdge = 0x02,
     #[doc = "Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_FALLING_EDGE = 0x03,
+    StickyRisingFallingEdge = 0x03,
     #[doc = "High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
-    HIGH_LEVEL = 0x04,
+    HighLevel = 0x04,
     #[doc = "Low level. Match occurs when there is a low level on the specified input."]
-    LOW_LEVEL = 0x05,
+    LowLevel = 0x05,
     #[doc = "Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
-    CONSTANT_ZERO = 0x06,
+    ConstantZero = 0x06,
     #[doc = "Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
-    EVENT = 0x07,
+    Event = 0x07,
 }
 impl Cfg5 {
     #[inline(always)]
@@ -261,21 +261,21 @@ impl From<Cfg5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cfg6 {
     #[doc = "Constant HIGH. This bit slice always contributes to a product term match."]
-    CONSTANT_HIGH = 0x0,
+    ConstantHigh = 0x0,
     #[doc = "Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_EDGE = 0x01,
+    StickyRisingEdge = 0x01,
     #[doc = "Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_FALLING_EDGE = 0x02,
+    StickyFallingEdge = 0x02,
     #[doc = "Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_FALLING_EDGE = 0x03,
+    StickyRisingFallingEdge = 0x03,
     #[doc = "High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
-    HIGH_LEVEL = 0x04,
+    HighLevel = 0x04,
     #[doc = "Low level. Match occurs when there is a low level on the specified input."]
-    LOW_LEVEL = 0x05,
+    LowLevel = 0x05,
     #[doc = "Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
-    CONSTANT_ZERO = 0x06,
+    ConstantZero = 0x06,
     #[doc = "Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
-    EVENT = 0x07,
+    Event = 0x07,
 }
 impl Cfg6 {
     #[inline(always)]
@@ -304,21 +304,21 @@ impl From<Cfg6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cfg7 {
     #[doc = "Constant HIGH. This bit slice always contributes to a product term match."]
-    CONSTANT_HIGH = 0x0,
+    ConstantHigh = 0x0,
     #[doc = "Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_EDGE = 0x01,
+    StickyRisingEdge = 0x01,
     #[doc = "Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_FALLING_EDGE = 0x02,
+    StickyFallingEdge = 0x02,
     #[doc = "Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_FALLING_EDGE = 0x03,
+    StickyRisingFallingEdge = 0x03,
     #[doc = "High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
-    HIGH_LEVEL = 0x04,
+    HighLevel = 0x04,
     #[doc = "Low level. Match occurs when there is a low level on the specified input."]
-    LOW_LEVEL = 0x05,
+    LowLevel = 0x05,
     #[doc = "Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
-    CONSTANT_ZERO = 0x06,
+    ConstantZero = 0x06,
     #[doc = "Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
-    EVENT = 0x07,
+    Event = 0x07,
 }
 impl Cfg7 {
     #[inline(always)]
@@ -347,9 +347,9 @@ impl From<Cfg7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ProdEndpts0 {
     #[doc = "No effect. Slice 0 is not an endpoint."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "endpoint. Slice 0 is the endpoint of a product term (minterm). Pin interrupt 0 in the NVIC is raised if the minterm evaluates as true."]
-    ENDPOINT = 0x01,
+    Endpoint = 0x01,
 }
 impl ProdEndpts0 {
     #[inline(always)]
@@ -378,9 +378,9 @@ impl From<ProdEndpts0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ProdEndpts1 {
     #[doc = "No effect. Slice 1 is not an endpoint."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "endpoint. Slice 1 is the endpoint of a product term (minterm). Pin interrupt 1 in the NVIC is raised if the minterm evaluates as true."]
-    ENDPOINT = 0x01,
+    Endpoint = 0x01,
 }
 impl ProdEndpts1 {
     #[inline(always)]
@@ -409,9 +409,9 @@ impl From<ProdEndpts1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ProdEndpts2 {
     #[doc = "No effect. Slice 2 is not an endpoint."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "endpoint. Slice 2 is the endpoint of a product term (minterm). Pin interrupt 2 in the NVIC is raised if the minterm evaluates as true."]
-    ENDPOINT = 0x01,
+    Endpoint = 0x01,
 }
 impl ProdEndpts2 {
     #[inline(always)]
@@ -440,9 +440,9 @@ impl From<ProdEndpts2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ProdEndpts3 {
     #[doc = "No effect. Slice 3 is not an endpoint."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "endpoint. Slice 3 is the endpoint of a product term (minterm). Pin interrupt 3 in the NVIC is raised if the minterm evaluates as true."]
-    ENDPOINT = 0x01,
+    Endpoint = 0x01,
 }
 impl ProdEndpts3 {
     #[inline(always)]
@@ -471,9 +471,9 @@ impl From<ProdEndpts3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ProdEndpts4 {
     #[doc = "No effect. Slice 4 is not an endpoint."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "endpoint. Slice 4 is the endpoint of a product term (minterm). Pin interrupt 4 in the NVIC is raised if the minterm evaluates as true."]
-    ENDPOINT = 0x01,
+    Endpoint = 0x01,
 }
 impl ProdEndpts4 {
     #[inline(always)]
@@ -502,9 +502,9 @@ impl From<ProdEndpts4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ProdEndpts5 {
     #[doc = "No effect. Slice 5 is not an endpoint."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "endpoint. Slice 5 is the endpoint of a product term (minterm). Pin interrupt 5 in the NVIC is raised if the minterm evaluates as true."]
-    ENDPOINT = 0x01,
+    Endpoint = 0x01,
 }
 impl ProdEndpts5 {
     #[inline(always)]
@@ -533,9 +533,9 @@ impl From<ProdEndpts5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ProdEndpts6 {
     #[doc = "No effect. Slice 6 is not an endpoint."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "endpoint. Slice 6 is the endpoint of a product term (minterm). Pin interrupt 6 in the NVIC is raised if the minterm evaluates as true."]
-    ENDPOINT = 0x01,
+    Endpoint = 0x01,
 }
 impl ProdEndpts6 {
     #[inline(always)]
@@ -564,9 +564,9 @@ impl From<ProdEndpts6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SelPmatch {
     #[doc = "Pin interrupt. Interrupts are driven in response to the standard pin interrupt function."]
-    PIN_INTERRUPT = 0x0,
+    PinInterrupt = 0x0,
     #[doc = "Pattern match. Interrupts are driven in response to pattern matches."]
-    PATTERN_MATCH = 0x01,
+    PatternMatch = 0x01,
 }
 impl SelPmatch {
     #[inline(always)]
@@ -595,21 +595,21 @@ impl From<SelPmatch> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Src0 {
     #[doc = "Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 0."]
-    INPUT0 = 0x0,
+    Input0 = 0x0,
     #[doc = "Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 0."]
-    INPUT1 = 0x01,
+    Input1 = 0x01,
     #[doc = "Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 0."]
-    INPUT2 = 0x02,
+    Input2 = 0x02,
     #[doc = "Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 0."]
-    INPUT3 = 0x03,
+    Input3 = 0x03,
     #[doc = "Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 0."]
-    INPUT4 = 0x04,
+    Input4 = 0x04,
     #[doc = "Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 0."]
-    INPUT5 = 0x05,
+    Input5 = 0x05,
     #[doc = "Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 0."]
-    INPUT6 = 0x06,
+    Input6 = 0x06,
     #[doc = "Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 0."]
-    INPUT7 = 0x07,
+    Input7 = 0x07,
 }
 impl Src0 {
     #[inline(always)]
@@ -638,21 +638,21 @@ impl From<Src0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Src1 {
     #[doc = "Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 1."]
-    INPUT0 = 0x0,
+    Input0 = 0x0,
     #[doc = "Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 1."]
-    INPUT1 = 0x01,
+    Input1 = 0x01,
     #[doc = "Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 1."]
-    INPUT2 = 0x02,
+    Input2 = 0x02,
     #[doc = "Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 1."]
-    INPUT3 = 0x03,
+    Input3 = 0x03,
     #[doc = "Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 1."]
-    INPUT4 = 0x04,
+    Input4 = 0x04,
     #[doc = "Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 1."]
-    INPUT5 = 0x05,
+    Input5 = 0x05,
     #[doc = "Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 1."]
-    INPUT6 = 0x06,
+    Input6 = 0x06,
     #[doc = "Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 1."]
-    INPUT7 = 0x07,
+    Input7 = 0x07,
 }
 impl Src1 {
     #[inline(always)]
@@ -681,21 +681,21 @@ impl From<Src1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Src2 {
     #[doc = "Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 2."]
-    INPUT0 = 0x0,
+    Input0 = 0x0,
     #[doc = "Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 2."]
-    INPUT1 = 0x01,
+    Input1 = 0x01,
     #[doc = "Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 2."]
-    INPUT2 = 0x02,
+    Input2 = 0x02,
     #[doc = "Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 2."]
-    INPUT3 = 0x03,
+    Input3 = 0x03,
     #[doc = "Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 2."]
-    INPUT4 = 0x04,
+    Input4 = 0x04,
     #[doc = "Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 2."]
-    INPUT5 = 0x05,
+    Input5 = 0x05,
     #[doc = "Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 2."]
-    INPUT6 = 0x06,
+    Input6 = 0x06,
     #[doc = "Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 2."]
-    INPUT7 = 0x07,
+    Input7 = 0x07,
 }
 impl Src2 {
     #[inline(always)]
@@ -724,21 +724,21 @@ impl From<Src2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Src3 {
     #[doc = "Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 3."]
-    INPUT0 = 0x0,
+    Input0 = 0x0,
     #[doc = "Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 3."]
-    INPUT1 = 0x01,
+    Input1 = 0x01,
     #[doc = "Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 3."]
-    INPUT2 = 0x02,
+    Input2 = 0x02,
     #[doc = "Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 3."]
-    INPUT3 = 0x03,
+    Input3 = 0x03,
     #[doc = "Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 3."]
-    INPUT4 = 0x04,
+    Input4 = 0x04,
     #[doc = "Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 3."]
-    INPUT5 = 0x05,
+    Input5 = 0x05,
     #[doc = "Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 3."]
-    INPUT6 = 0x06,
+    Input6 = 0x06,
     #[doc = "Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 3."]
-    INPUT7 = 0x07,
+    Input7 = 0x07,
 }
 impl Src3 {
     #[inline(always)]
@@ -767,21 +767,21 @@ impl From<Src3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Src4 {
     #[doc = "Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 4."]
-    INPUT0 = 0x0,
+    Input0 = 0x0,
     #[doc = "Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 4."]
-    INPUT1 = 0x01,
+    Input1 = 0x01,
     #[doc = "Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 4."]
-    INPUT2 = 0x02,
+    Input2 = 0x02,
     #[doc = "Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 4."]
-    INPUT3 = 0x03,
+    Input3 = 0x03,
     #[doc = "Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 4."]
-    INPUT4 = 0x04,
+    Input4 = 0x04,
     #[doc = "Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 4."]
-    INPUT5 = 0x05,
+    Input5 = 0x05,
     #[doc = "Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 4."]
-    INPUT6 = 0x06,
+    Input6 = 0x06,
     #[doc = "Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 4."]
-    INPUT7 = 0x07,
+    Input7 = 0x07,
 }
 impl Src4 {
     #[inline(always)]
@@ -810,21 +810,21 @@ impl From<Src4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Src5 {
     #[doc = "Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 5."]
-    INPUT0 = 0x0,
+    Input0 = 0x0,
     #[doc = "Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 5."]
-    INPUT1 = 0x01,
+    Input1 = 0x01,
     #[doc = "Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 5."]
-    INPUT2 = 0x02,
+    Input2 = 0x02,
     #[doc = "Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 5."]
-    INPUT3 = 0x03,
+    Input3 = 0x03,
     #[doc = "Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 5."]
-    INPUT4 = 0x04,
+    Input4 = 0x04,
     #[doc = "Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 5."]
-    INPUT5 = 0x05,
+    Input5 = 0x05,
     #[doc = "Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 5."]
-    INPUT6 = 0x06,
+    Input6 = 0x06,
     #[doc = "Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 5."]
-    INPUT7 = 0x07,
+    Input7 = 0x07,
 }
 impl Src5 {
     #[inline(always)]
@@ -853,21 +853,21 @@ impl From<Src5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Src6 {
     #[doc = "Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 6."]
-    INPUT0 = 0x0,
+    Input0 = 0x0,
     #[doc = "Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 6."]
-    INPUT1 = 0x01,
+    Input1 = 0x01,
     #[doc = "Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 6."]
-    INPUT2 = 0x02,
+    Input2 = 0x02,
     #[doc = "Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 6."]
-    INPUT3 = 0x03,
+    Input3 = 0x03,
     #[doc = "Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 6."]
-    INPUT4 = 0x04,
+    Input4 = 0x04,
     #[doc = "Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 6."]
-    INPUT5 = 0x05,
+    Input5 = 0x05,
     #[doc = "Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 6."]
-    INPUT6 = 0x06,
+    Input6 = 0x06,
     #[doc = "Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 6."]
-    INPUT7 = 0x07,
+    Input7 = 0x07,
 }
 impl Src6 {
     #[inline(always)]
@@ -896,21 +896,21 @@ impl From<Src6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Src7 {
     #[doc = "Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 7."]
-    INPUT0 = 0x0,
+    Input0 = 0x0,
     #[doc = "Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 7."]
-    INPUT1 = 0x01,
+    Input1 = 0x01,
     #[doc = "Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 7."]
-    INPUT2 = 0x02,
+    Input2 = 0x02,
     #[doc = "Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 7."]
-    INPUT3 = 0x03,
+    Input3 = 0x03,
     #[doc = "Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 7."]
-    INPUT4 = 0x04,
+    Input4 = 0x04,
     #[doc = "Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 7."]
-    INPUT5 = 0x05,
+    Input5 = 0x05,
     #[doc = "Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 7."]
-    INPUT6 = 0x06,
+    Input6 = 0x06,
     #[doc = "Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 7."]
-    INPUT7 = 0x07,
+    Input7 = 0x07,
 }
 impl Src7 {
     #[inline(always)]

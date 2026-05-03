@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ackerr {
     #[doc = "No such occurrence."]
-    ACK_ERROR_NO = 0x0,
+    AckErrorNo = 0x0,
     #[doc = "An ACK error occurred since last read of this register."]
-    ACK_ERROR_YES = 0x01,
+    AckErrorYes = 0x01,
 }
 impl Ackerr {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Ackerr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Aen {
     #[doc = "Abort disabled."]
-    ABORT_DISABLED = 0x0,
+    AbortDisabled = 0x0,
     #[doc = "Abort enabled."]
-    ABORT_ENABLED = 0x01,
+    AbortEnabled = 0x01,
 }
 impl Aen {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Aen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bit0err {
     #[doc = "No such occurrence."]
-    BIT0_ERROR_NO = 0x0,
+    Bit0ErrorNo = 0x0,
     #[doc = "At least one bit sent as dominant is received as recessive."]
-    BIT0_ERROR_YES = 0x01,
+    Bit0ErrorYes = 0x01,
 }
 impl Bit0err {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Bit0err> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bit0errFast {
     #[doc = "No such occurrence."]
-    BIT0_ERROR_NO = 0x0,
+    Bit0ErrorNo = 0x0,
     #[doc = "At least one bit sent as dominant is received as recessive."]
-    BIT0_ERROR_YES = 0x01,
+    Bit0ErrorYes = 0x01,
 }
 impl Bit0errFast {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<Bit0errFast> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bit1err {
     #[doc = "No such occurrence."]
-    BIT1_ERROR_NO = 0x0,
+    Bit1ErrorNo = 0x0,
     #[doc = "At least one bit sent as recessive is received as dominant."]
-    BIT1_ERROR_YES = 0x01,
+    Bit1ErrorYes = 0x01,
 }
 impl Bit1err {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<Bit1err> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bit1errFast {
     #[doc = "No such occurrence."]
-    BIT1_ERROR_NO = 0x0,
+    Bit1ErrorNo = 0x0,
     #[doc = "At least one bit sent as recessive is received as dominant."]
-    BIT1_ERROR_YES = 0x01,
+    Bit1ErrorYes = 0x01,
 }
 impl Bit1errFast {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<Bit1errFast> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Boffdoneint {
     #[doc = "No such occurrence."]
-    BUS_OFF_NOT_DONE = 0x0,
+    BusOffNotDone = 0x0,
     #[doc = "FlexCAN module has completed Bus Off process."]
-    BUS_OFF_DONE = 0x01,
+    BusOffDone = 0x01,
 }
 impl Boffdoneint {
     #[inline(always)]
@@ -220,9 +220,9 @@ impl From<Boffdoneint> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Boffmsk {
     #[doc = "Bus Off interrupt disabled."]
-    BUS_OFF_INT_DISABLED = 0x0,
+    BusOffIntDisabled = 0x0,
     #[doc = "Bus Off interrupt enabled."]
-    BUS_OFF_INT_ENABLED = 0x01,
+    BusOffIntEnabled = 0x01,
 }
 impl Boffmsk {
     #[inline(always)]
@@ -251,9 +251,9 @@ impl From<Boffmsk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Boffrec {
     #[doc = "Automatic recovering from Bus Off state enabled."]
-    AUTO_RECOVER_ENABLED = 0x0,
+    AutoRecoverEnabled = 0x0,
     #[doc = "Automatic recovering from Bus Off state disabled."]
-    AUTO_RECOVER_DISABLED = 0x01,
+    AutoRecoverDisabled = 0x01,
 }
 impl Boffrec {
     #[inline(always)]
@@ -282,9 +282,9 @@ impl From<Boffrec> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Buf0i {
     #[doc = "The corresponding buffer has no occurrence of successfully completed transmission or reception when MCR\\[RFEN\\]=0."]
-    BUFFER_TX_RX_NOT_COMPLETE = 0x0,
+    BufferTxRxNotComplete = 0x0,
     #[doc = "The corresponding buffer has successfully completed transmission or reception when MCR\\[RFEN\\]=0."]
-    BUFFER_TX_RX_COMPLETE = 0x01,
+    BufferTxRxComplete = 0x01,
 }
 impl Buf0i {
     #[inline(always)]
@@ -313,9 +313,9 @@ impl From<Buf0i> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Buf5i {
     #[doc = "No occurrence of MB5 completing transmission/reception when MCR\\[RFEN\\]=0, or of frame(s) available in the FIFO, when MCR\\[RFEN\\]=1."]
-    ID2 = 0x0,
+    Id2 = 0x0,
     #[doc = "MB5 completed transmission/reception when MCR\\[RFEN\\]=0, or frame(s) available in the Rx FIFO when MCR\\[RFEN\\]=1. It generates a DMA request in case of MCR\\[RFEN\\] and MCR\\[DMA\\] are enabled."]
-    ID4 = 0x01,
+    Id4 = 0x01,
 }
 impl Buf5i {
     #[inline(always)]
@@ -344,9 +344,9 @@ impl From<Buf5i> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Buf6i {
     #[doc = "No occurrence of MB6 completing transmission/reception when MCR\\[RFEN\\]=0, or of Rx FIFO almost full when MCR\\[RFEN\\]=1."]
-    ID2 = 0x0,
+    Id2 = 0x0,
     #[doc = "MB6 completed transmission/reception when MCR\\[RFEN\\]=0, or Rx FIFO almost full when MCR\\[RFEN\\]=1."]
-    ID4 = 0x01,
+    Id4 = 0x01,
 }
 impl Buf6i {
     #[inline(always)]
@@ -375,9 +375,9 @@ impl From<Buf6i> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Buf7i {
     #[doc = "No occurrence of MB7 completing transmission/reception when MCR\\[RFEN\\]=0, or of Rx FIFO overflow when MCR\\[RFEN\\]=1."]
-    ID2 = 0x0,
+    Id2 = 0x0,
     #[doc = "MB7 completed transmission/reception when MCR\\[RFEN\\]=0, or Rx FIFO overflow when MCR\\[RFEN\\]=1."]
-    ID4 = 0x01,
+    Id4 = 0x01,
 }
 impl Buf7i {
     #[inline(always)]
@@ -406,9 +406,9 @@ impl From<Buf7i> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Crcerr {
     #[doc = "No such occurrence."]
-    CRC_ERROR_NO = 0x0,
+    CrcErrorNo = 0x0,
     #[doc = "A CRC error occurred since last read of this register."]
-    CRC_ERROR_YES = 0x01,
+    CrcErrorYes = 0x01,
 }
 impl Crcerr {
     #[inline(always)]
@@ -437,9 +437,9 @@ impl From<Crcerr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CrcerrFast {
     #[doc = "No such occurrence."]
-    CRC_ERROR_NO = 0x0,
+    CrcErrorNo = 0x0,
     #[doc = "A CRC error occurred since last read of this register."]
-    CRC_ERROR_YES = 0x01,
+    CrcErrorYes = 0x01,
 }
 impl CrcerrFast {
     #[inline(always)]
@@ -468,9 +468,9 @@ impl From<CrcerrFast> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dma {
     #[doc = "DMA feature for RX FIFO disabled."]
-    ID2 = 0x0,
+    Id2 = 0x0,
     #[doc = "DMA feature for RX FIFO enabled."]
-    ID4 = 0x01,
+    Id4 = 0x01,
 }
 impl Dma {
     #[inline(always)]
@@ -499,9 +499,9 @@ impl From<Dma> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Doze {
     #[doc = "FlexCAN is not enabled to enter low-power mode when Doze mode is requested."]
-    LOW_POWER_DOZE_DISABLED = 0x0,
+    LowPowerDozeDisabled = 0x0,
     #[doc = "FlexCAN is enabled to enter low-power mode when Doze mode is requested."]
-    LOW_POWER_DOZE_ENABLED = 0x01,
+    LowPowerDozeEnabled = 0x01,
 }
 impl Doze {
     #[inline(always)]
@@ -530,9 +530,9 @@ impl From<Doze> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Eacen {
     #[doc = "Rx mailbox filter's IDE bit is always compared and RTR is never compared despite mask bits."]
-    RTR_COMPARE_NO = 0x0,
+    RtrCompareNo = 0x0,
     #[doc = "Enables the comparison of both Rx mailbox filter's IDE and RTR bit with their corresponding bits within the incoming frame. Mask bits do apply."]
-    RTR_COMPARE_YES = 0x01,
+    RtrCompareYes = 0x01,
 }
 impl Eacen {
     #[inline(always)]
@@ -561,9 +561,9 @@ impl From<Eacen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Edfltdis {
     #[doc = "Edge filter is enabled."]
-    ENABLE = 0x0,
+    Enable = 0x0,
     #[doc = "Edge filter is disabled."]
-    DISABLE = 0x01,
+    Disable = 0x01,
 }
 impl Edfltdis {
     #[inline(always)]
@@ -592,9 +592,9 @@ impl From<Edfltdis> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ErrintFast {
     #[doc = "No such occurrence."]
-    ERRORS_DATA_PHASE_NO = 0x0,
+    ErrorsDataPhaseNo = 0x0,
     #[doc = "Indicates setting of any error bit detected in the data phase of CAN FD frames with the BRS bit set."]
-    ERRORS_DATA_PHASE_YES = 0x01,
+    ErrorsDataPhaseYes = 0x01,
 }
 impl ErrintFast {
     #[inline(always)]
@@ -623,9 +623,9 @@ impl From<ErrintFast> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Errmsk {
     #[doc = "Error interrupt disabled."]
-    ERROR_INT_DISABLED = 0x0,
+    ErrorIntDisabled = 0x0,
     #[doc = "Error interrupt enabled."]
-    ERROR_INT_ENABLED = 0x01,
+    ErrorIntEnabled = 0x01,
 }
 impl Errmsk {
     #[inline(always)]
@@ -654,9 +654,9 @@ impl From<Errmsk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Errovr {
     #[doc = "Overrun has not occurred."]
-    OVERRUN_NOT_OCCURRED = 0x0,
+    OverrunNotOccurred = 0x0,
     #[doc = "Overrun has occurred."]
-    OVERRUN_OCCURRED = 0x01,
+    OverrunOccurred = 0x01,
 }
 impl Errovr {
     #[inline(always)]
@@ -685,9 +685,9 @@ impl From<Errovr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fden {
     #[doc = "CAN FD is disabled. FlexCAN is able to receive and transmit messages in CAN 2.0 format."]
-    CAN_FD_DISABLED = 0x0,
+    CanFdDisabled = 0x0,
     #[doc = "CAN FD is enabled. FlexCAN is able to receive and transmit messages in both CAN FD and CAN 2.0 formats."]
-    CAN_FD_ENABLED = 0x01,
+    CanFdEnabled = 0x01,
 }
 impl Fden {
     #[inline(always)]
@@ -716,9 +716,9 @@ impl From<Fden> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fdrate {
     #[doc = "Transmit a frame in nominal rate. The BRS bit in the Tx MB has no effect."]
-    NOMINAL = 0x0,
+    Nominal = 0x0,
     #[doc = "Transmit a frame with bit rate switching if the BRS bit in the Tx MB is recessive."]
-    BIT_RATE_SWITCHING = 0x01,
+    BitRateSwitching = 0x01,
 }
 impl Fdrate {
     #[inline(always)]
@@ -747,11 +747,11 @@ impl From<Fdrate> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fltconf {
     #[doc = "Error Active."]
-    ERROR_ACTIVE = 0x0,
+    ErrorActive = 0x0,
     #[doc = "Error Passive."]
-    ERROR_PASSIVE = 0x01,
+    ErrorPassive = 0x01,
     #[doc = "Bus Off."]
-    BUS_OFF = 0x02,
+    BusOff = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Fltconf {
@@ -781,9 +781,9 @@ impl From<Fltconf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Frmerr {
     #[doc = "No such occurrence."]
-    FORM_ERROR_NO = 0x0,
+    FormErrorNo = 0x0,
     #[doc = "A Form Error occurred since last read of this register."]
-    FORM_ERROR_YES = 0x01,
+    FormErrorYes = 0x01,
 }
 impl Frmerr {
     #[inline(always)]
@@ -812,9 +812,9 @@ impl From<Frmerr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FrmerrFast {
     #[doc = "No such occurrence."]
-    FORM_ERROR_NO = 0x0,
+    FormErrorNo = 0x0,
     #[doc = "A form error occurred since last read of this register."]
-    FORM_ERROR_YES = 0x01,
+    FormErrorYes = 0x01,
 }
 impl FrmerrFast {
     #[inline(always)]
@@ -843,9 +843,9 @@ impl From<FrmerrFast> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Frz {
     #[doc = "Not enabled to enter Freeze mode."]
-    FREEZE_MODE_DISABLED = 0x0,
+    FreezeModeDisabled = 0x0,
     #[doc = "Enabled to enter Freeze mode."]
-    FREEZE_MODE_ENABLED = 0x01,
+    FreezeModeEnabled = 0x01,
 }
 impl Frz {
     #[inline(always)]
@@ -874,9 +874,9 @@ impl From<Frz> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Frzack {
     #[doc = "FlexCAN not in Freeze mode, prescaler running."]
-    FREEZE_MODE_NO = 0x0,
+    FreezeModeNo = 0x0,
     #[doc = "FlexCAN in Freeze mode, prescaler stopped."]
-    FREEZE_MODE_YES = 0x01,
+    FreezeModeYes = 0x01,
 }
 impl Frzack {
     #[inline(always)]
@@ -905,9 +905,9 @@ impl From<Frzack> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Halt {
     #[doc = "No Freeze mode request."]
-    HALT_DISABLE = 0x0,
+    HaltDisable = 0x0,
     #[doc = "Enters Freeze mode if the FRZ bit is asserted."]
-    HALT_ENABLE = 0x01,
+    HaltEnable = 0x01,
 }
 impl Halt {
     #[inline(always)]
@@ -936,13 +936,13 @@ impl From<Halt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Idam {
     #[doc = "Format A: One full ID (standard and extended) per ID filter table element."]
-    ONE_FULL_ID = 0x0,
+    OneFullId = 0x0,
     #[doc = "Format B: Two full standard IDs or two partial 14-bit (standard and extended) IDs per ID filter table element."]
-    TWO_FULL_ID = 0x01,
+    TwoFullId = 0x01,
     #[doc = "Format C: Four partial 8-bit standard IDs per ID filter table element."]
-    FOUR_PARTIAL_ID = 0x02,
+    FourPartialId = 0x02,
     #[doc = "Format D: All frames rejected."]
-    ALL_FRAMES_REJECTED = 0x03,
+    AllFramesRejected = 0x03,
 }
 impl Idam {
     #[inline(always)]
@@ -971,9 +971,9 @@ impl From<Idam> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Idle {
     #[doc = "No such occurrence."]
-    CAN_BUS_NOT_IDLE = 0x0,
+    CanBusNotIdle = 0x0,
     #[doc = "CAN bus is now IDLE."]
-    CAN_BUS_IDLE = 0x01,
+    CanBusIdle = 0x01,
 }
 impl Idle {
     #[inline(always)]
@@ -1002,9 +1002,9 @@ impl From<Idle> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Imb {
     #[doc = "If ESR2\\[VPS\\] is asserted, the ESR2\\[LPTM\\] is not an inactive mailbox."]
-    INACTIVE_MAILBOX_NO = 0x0,
+    InactiveMailboxNo = 0x0,
     #[doc = "If ESR2\\[VPS\\] is asserted, there is at least one inactive mailbox. LPTM content is the number of the first one."]
-    INACTIVE_MAILBOX_YES = 0x01,
+    InactiveMailboxYes = 0x01,
 }
 impl Imb {
     #[inline(always)]
@@ -1033,9 +1033,9 @@ impl From<Imb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Irmq {
     #[doc = "Individual Rx masking and queue feature are disabled. For backward compatibility with legacy applications, the reading of C/S word locks the MB even if it is EMPTY."]
-    INDIVIDUAL_RX_MASKING_DISABLED = 0x0,
+    IndividualRxMaskingDisabled = 0x0,
     #[doc = "Individual Rx masking and queue feature are enabled."]
-    INDIVIDUAL_RX_MASKING_ENABLED = 0x01,
+    IndividualRxMaskingEnabled = 0x01,
 }
 impl Irmq {
     #[inline(always)]
@@ -1064,9 +1064,9 @@ impl From<Irmq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Isocanfden {
     #[doc = "FlexCAN operates using the non-ISO CAN FD protocol."]
-    NON_ISO = 0x0,
+    NonIso = 0x0,
     #[doc = "FlexCAN operates using the ISO CAN FD protocol (ISO 11898-1)."]
-    ISO = 0x01,
+    Iso = 0x01,
 }
 impl Isocanfden {
     #[inline(always)]
@@ -1095,9 +1095,9 @@ impl From<Isocanfden> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lbuf {
     #[doc = "Buffer with highest priority is transmitted first."]
-    HIGHEST_BUFFER_FIRST = 0x0,
+    HighestBufferFirst = 0x0,
     #[doc = "Lowest number buffer is transmitted first."]
-    LOWEST_BUFFER_FIRST = 0x01,
+    LowestBufferFirst = 0x01,
 }
 impl Lbuf {
     #[inline(always)]
@@ -1126,9 +1126,9 @@ impl From<Lbuf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lom {
     #[doc = "Listen-Only mode is deactivated."]
-    LISTEN_ONLY_MODE_DISABLED = 0x0,
+    ListenOnlyModeDisabled = 0x0,
     #[doc = "FlexCAN module operates in Listen-Only mode."]
-    LISTEN_ONLY_MODE_ENABLED = 0x01,
+    ListenOnlyModeEnabled = 0x01,
 }
 impl Lom {
     #[inline(always)]
@@ -1157,9 +1157,9 @@ impl From<Lom> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpb {
     #[doc = "Loop Back disabled."]
-    LOOPBACK_DISABLED = 0x0,
+    LoopbackDisabled = 0x0,
     #[doc = "Loop Back enabled."]
-    LOOPBACK_ENABLED = 0x01,
+    LoopbackEnabled = 0x01,
 }
 impl Lpb {
     #[inline(always)]
@@ -1188,9 +1188,9 @@ impl From<Lpb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpmack {
     #[doc = "FlexCAN is not in a low-power mode."]
-    LOW_POWER_NO = 0x0,
+    LowPowerNo = 0x0,
     #[doc = "FlexCAN is in a low-power mode."]
-    LOW_POWER_YES = 0x01,
+    LowPowerYes = 0x01,
 }
 impl Lpmack {
     #[inline(always)]
@@ -1219,9 +1219,9 @@ impl From<Lpmack> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lprioen {
     #[doc = "Local Priority disabled."]
-    LOCAL_PRIORITY_DISABLED = 0x0,
+    LocalPriorityDisabled = 0x0,
     #[doc = "Local Priority enabled."]
-    LOCAL_PRIORITY_ENABLED = 0x01,
+    LocalPriorityEnabled = 0x01,
 }
 impl Lprioen {
     #[inline(always)]
@@ -1250,13 +1250,13 @@ impl From<Lprioen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbdsr0 {
     #[doc = "Selects 8 bytes per message buffer."]
-    R0_8_BYTES = 0x0,
+    R08Bytes = 0x0,
     #[doc = "Selects 16 bytes per message buffer."]
-    R0_16_BYTES = 0x01,
+    R016Bytes = 0x01,
     #[doc = "Selects 32 bytes per message buffer."]
-    R0_32_BYTES = 0x02,
+    R032Bytes = 0x02,
     #[doc = "Selects 64 bytes per message buffer."]
-    R0_64_BYTES = 0x03,
+    R064Bytes = 0x03,
 }
 impl Mbdsr0 {
     #[inline(always)]
@@ -1285,13 +1285,13 @@ impl From<Mbdsr0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbdsr1 {
     #[doc = "Selects 8 bytes per message buffer."]
-    R1_8_BYTES = 0x0,
+    R18Bytes = 0x0,
     #[doc = "Selects 16 bytes per message buffer."]
-    R1_16_BYTES = 0x01,
+    R116Bytes = 0x01,
     #[doc = "Selects 32 bytes per message buffer."]
-    R1_32_BYTES = 0x02,
+    R132Bytes = 0x02,
     #[doc = "Selects 64 bytes per message buffer."]
-    R1_64_BYTES = 0x03,
+    R164Bytes = 0x03,
 }
 impl Mbdsr1 {
     #[inline(always)]
@@ -1320,9 +1320,9 @@ impl From<Mbdsr1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mdis {
     #[doc = "Enable the FlexCAN module."]
-    FLEXCAN_ENABLED = 0x0,
+    FlexcanEnabled = 0x0,
     #[doc = "Disable the FlexCAN module."]
-    FLEXCAN_DISABLED = 0x01,
+    FlexcanDisabled = 0x01,
 }
 impl Mdis {
     #[inline(always)]
@@ -1351,9 +1351,9 @@ impl From<Mdis> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mrp {
     #[doc = "Matching starts from Rx FIFO and continues on mailboxes."]
-    ID2 = 0x0,
+    Id2 = 0x0,
     #[doc = "Matching starts from mailboxes and continues on Rx FIFO."]
-    ID4 = 0x01,
+    Id4 = 0x01,
 }
 impl Mrp {
     #[inline(always)]
@@ -1382,9 +1382,9 @@ impl From<Mrp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Notrdy {
     #[doc = "FlexCAN module is either in Normal mode, Listen-Only mode, or Loop-Back mode."]
-    ID1 = 0x0,
+    Id1 = 0x0,
     #[doc = "FlexCAN module is either in Disable mode, Doze mode, Stop mode, or Freeze mode."]
-    ID2 = 0x01,
+    Id2 = 0x01,
 }
 impl Notrdy {
     #[inline(always)]
@@ -1413,9 +1413,9 @@ impl From<Notrdy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rfen {
     #[doc = "Rx FIFO not enabled."]
-    ID2 = 0x0,
+    Id2 = 0x0,
     #[doc = "Rx FIFO enabled."]
-    ID4 = 0x01,
+    Id4 = 0x01,
 }
 impl Rfen {
     #[inline(always)]
@@ -1444,9 +1444,9 @@ impl From<Rfen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rrs {
     #[doc = "Remote response frame is generated."]
-    REMOTE_RESPONSE_FRAME_NOT_GENERATED = 0x0,
+    RemoteResponseFrameNotGenerated = 0x0,
     #[doc = "Remote request frame is stored."]
-    REMOTE_RESPONSE_FRAME_GENERATED = 0x01,
+    RemoteResponseFrameGenerated = 0x01,
 }
 impl Rrs {
     #[inline(always)]
@@ -1475,9 +1475,9 @@ impl From<Rrs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rwrnint {
     #[doc = "No such occurrence."]
-    RX_WARNING_INT_NO = 0x0,
+    RxWarningIntNo = 0x0,
     #[doc = "The Rx error counter transitioned from less than 96 to greater than or equal to 96."]
-    RX_WARNING_INT_YES = 0x01,
+    RxWarningIntYes = 0x01,
 }
 impl Rwrnint {
     #[inline(always)]
@@ -1506,9 +1506,9 @@ impl From<Rwrnint> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rwrnmsk {
     #[doc = "Rx Warning interrupt disabled."]
-    RX_WARNING_INT_DISABLED = 0x0,
+    RxWarningIntDisabled = 0x0,
     #[doc = "Rx Warning interrupt enabled."]
-    RX_WARNING_INT_ENABLED = 0x01,
+    RxWarningIntEnabled = 0x01,
 }
 impl Rwrnmsk {
     #[inline(always)]
@@ -1537,9 +1537,9 @@ impl From<Rwrnmsk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rxwrn {
     #[doc = "No such occurrence."]
-    RXERRCNT_LT_96 = 0x0,
+    RxerrcntLt96 = 0x0,
     #[doc = "RXERRCNT is greater than or equal to 96."]
-    RXERRCNT_GTE_96 = 0x01,
+    RxerrcntGte96 = 0x01,
 }
 impl Rxwrn {
     #[inline(always)]
@@ -1568,9 +1568,9 @@ impl From<Rxwrn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Slfwak {
     #[doc = "FlexCAN Self Wake Up feature is disabled."]
-    SELF_WAKEUP_DISABLED = 0x0,
+    SelfWakeupDisabled = 0x0,
     #[doc = "FlexCAN Self Wake Up feature is enabled."]
-    SELF_WAKEUP_ENABLED = 0x01,
+    SelfWakeupEnabled = 0x01,
 }
 impl Slfwak {
     #[inline(always)]
@@ -1599,9 +1599,9 @@ impl From<Slfwak> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Smp {
     #[doc = "Just one sample is used to determine the bit value."]
-    ONE_SAMPLE = 0x0,
+    OneSample = 0x0,
     #[doc = "Three samples are used to determine the value of the received bit: the regular one (sample point) and two preceding samples; a majority rule is used."]
-    THREE_SAMPLE = 0x01,
+    ThreeSample = 0x01,
 }
 impl Smp {
     #[inline(always)]
@@ -1630,9 +1630,9 @@ impl From<Smp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Softrst {
     #[doc = "No reset request."]
-    SOFTRST_NO_RESET_REQUEST = 0x0,
+    SoftrstNoResetRequest = 0x0,
     #[doc = "Resets the registers affected by soft reset."]
-    SOFTRST_RESET_REGISTERS = 0x01,
+    SoftrstResetRegisters = 0x01,
 }
 impl Softrst {
     #[inline(always)]
@@ -1661,9 +1661,9 @@ impl From<Softrst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Srxdis {
     #[doc = "Self-reception enabled."]
-    SELF_RECEPTION_ENABLED = 0x0,
+    SelfReceptionEnabled = 0x0,
     #[doc = "Self-reception disabled."]
-    SELF_RECEPTION_DISABLED = 0x01,
+    SelfReceptionDisabled = 0x01,
 }
 impl Srxdis {
     #[inline(always)]
@@ -1692,9 +1692,9 @@ impl From<Srxdis> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Stferr {
     #[doc = "No such occurrence."]
-    STUFFING_ERROR_NO = 0x0,
+    StuffingErrorNo = 0x0,
     #[doc = "A stuffing error occurred since last read of this register."]
-    STUFFING_ERROR_YES = 0x01,
+    StuffingErrorYes = 0x01,
 }
 impl Stferr {
     #[inline(always)]
@@ -1723,9 +1723,9 @@ impl From<Stferr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum StferrFast {
     #[doc = "No such occurrence."]
-    STUFFING_ERROR_NO = 0x0,
+    StuffingErrorNo = 0x0,
     #[doc = "A stuffing error occurred since last read of this register."]
-    STUFFING_ERROR_YES = 0x01,
+    StuffingErrorYes = 0x01,
 }
 impl StferrFast {
     #[inline(always)]
@@ -1754,9 +1754,9 @@ impl From<StferrFast> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Supv {
     #[doc = "FlexCAN is in User mode. Affected registers allow both Supervisor and Unrestricted accesses."]
-    ID2 = 0x0,
+    Id2 = 0x0,
     #[doc = "FlexCAN is in Supervisor mode. Affected registers allow only Supervisor access. Unrestricted access behaves as though the access was done to an unimplemented register location."]
-    ID4 = 0x01,
+    Id4 = 0x01,
 }
 impl Supv {
     #[inline(always)]
@@ -1785,9 +1785,9 @@ impl From<Supv> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Synch {
     #[doc = "FlexCAN is not synchronized to the CAN bus."]
-    CAN_BUS_SYNC_NO = 0x0,
+    CanBusSyncNo = 0x0,
     #[doc = "FlexCAN is synchronized to the CAN bus."]
-    CAN_BUS_SYNC_YES = 0x01,
+    CanBusSyncYes = 0x01,
 }
 impl Synch {
     #[inline(always)]
@@ -1816,9 +1816,9 @@ impl From<Synch> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tdcfail {
     #[doc = "Measured loop delay is in range."]
-    IN_RANGE = 0x0,
+    InRange = 0x0,
     #[doc = "Measured loop delay is out of range."]
-    OUT_OF_RANGE = 0x01,
+    OutOfRange = 0x01,
 }
 impl Tdcfail {
     #[inline(always)]
@@ -1847,9 +1847,9 @@ impl From<Tdcfail> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TimerSrc {
     #[doc = "The free running timer is clocked by the CAN bit clock, which defines the baud rate on the CAN bus."]
-    CAN_BIT_CLOCK = 0x0,
+    CanBitClock = 0x0,
     #[doc = "The free running timer is clocked by an external time tick. The period can be either adjusted to be equal to the baud rate on the CAN bus, or a different value as required. See the device-specific section for details about the external time tick."]
-    EXTERNAL_CLOCK = 0x01,
+    ExternalClock = 0x01,
 }
 impl TimerSrc {
     #[inline(always)]
@@ -1878,9 +1878,9 @@ impl From<TimerSrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tsyn {
     #[doc = "Timer sync feature disabled."]
-    TIMER_SYNC_DISABLED = 0x0,
+    TimerSyncDisabled = 0x0,
     #[doc = "Timer sync feature enabled."]
-    TIMER_SYNC_ENABLED = 0x01,
+    TimerSyncEnabled = 0x01,
 }
 impl Tsyn {
     #[inline(always)]
@@ -1909,9 +1909,9 @@ impl From<Tsyn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Twrnint {
     #[doc = "No such occurrence."]
-    TX_WARNING_INT_NO = 0x0,
+    TxWarningIntNo = 0x0,
     #[doc = "The Tx error counter transitioned from less than 96 to greater than or equal to 96."]
-    TX_WARNING_INT_YES = 0x01,
+    TxWarningIntYes = 0x01,
 }
 impl Twrnint {
     #[inline(always)]
@@ -1940,9 +1940,9 @@ impl From<Twrnint> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Twrnmsk {
     #[doc = "Tx Warning interrupt disabled."]
-    TX_WARNING_INT_DISABLED = 0x0,
+    TxWarningIntDisabled = 0x0,
     #[doc = "Tx Warning interrupt enabled."]
-    TX_WARNING_INT_ENABLED = 0x01,
+    TxWarningIntEnabled = 0x01,
 }
 impl Twrnmsk {
     #[inline(always)]
@@ -1971,9 +1971,9 @@ impl From<Twrnmsk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tx {
     #[doc = "FlexCAN is not transmitting a message."]
-    TRANSMIT_MESSAGE_NO = 0x0,
+    TransmitMessageNo = 0x0,
     #[doc = "FlexCAN is transmitting a message."]
-    TRANSMIT_MESSAGE_YES = 0x01,
+    TransmitMessageYes = 0x01,
 }
 impl Tx {
     #[inline(always)]
@@ -2002,9 +2002,9 @@ impl From<Tx> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Txwrn {
     #[doc = "No such occurrence."]
-    TXERRCNT_LT_96 = 0x0,
+    TxerrcntLt96 = 0x0,
     #[doc = "TXERRCNT is greater than or equal to 96."]
-    TXERRCNT_GTE_96 = 0x01,
+    TxerrcntGte96 = 0x01,
 }
 impl Txwrn {
     #[inline(always)]
@@ -2033,9 +2033,9 @@ impl From<Txwrn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wakmsk {
     #[doc = "Wake Up interrupt is disabled."]
-    WAKEUP_INTERRUPT_DISABLED = 0x0,
+    WakeupInterruptDisabled = 0x0,
     #[doc = "Wake Up interrupt is enabled."]
-    WAKEUP_INTERRUPT_ENABLED = 0x01,
+    WakeupInterruptEnabled = 0x01,
 }
 impl Wakmsk {
     #[inline(always)]
@@ -2064,9 +2064,9 @@ impl From<Wakmsk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wrnen {
     #[doc = "TWRNINT and RWRNINT bits are zero, independent of the values in the error counters."]
-    TWRNINT_RWRNINT_INACTIVE = 0x0,
+    TwrnintRwrnintInactive = 0x0,
     #[doc = "TWRNINT and RWRNINT bits are set when the respective error counter transitions from less than 96 to greater than or equal to 96."]
-    TWRNINT_RWRNINT_ACTIVE = 0x01,
+    TwrnintRwrnintActive = 0x01,
 }
 impl Wrnen {
     #[inline(always)]

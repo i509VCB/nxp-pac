@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CpuCtrlPcr {
     #[doc = "Do not switch off power even if pdn_req is asserted."]
-    PCR_0 = 0x0,
+    Pcr0 = 0x0,
     #[doc = "Switch off power when pdn_req is asserted."]
-    PCR_1 = 0x01,
+    Pcr1 = 0x01,
 }
 impl CpuCtrlPcr {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<CpuCtrlPcr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CpuSrPsr {
     #[doc = "The target subsystem was not powered down for the previous power-down request."]
-    PSR_0 = 0x0,
+    Psr0 = 0x0,
     #[doc = "The target subsystem was powered down for the previous power-down request."]
-    PSR_1 = 0x01,
+    Psr1 = 0x01,
 }
 impl CpuSrPsr {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<CpuSrPsr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MegaCtrlPcr {
     #[doc = "Do not switch off power even if pdn_req is asserted."]
-    PCR_0 = 0x0,
+    Pcr0 = 0x0,
     #[doc = "Switch off power when pdn_req is asserted."]
-    PCR_1 = 0x01,
+    Pcr1 = 0x01,
 }
 impl MegaCtrlPcr {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<MegaCtrlPcr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MegaSrPsr {
     #[doc = "The target subsystem was not powered down for the previous power-down request."]
-    PSR_0 = 0x0,
+    Psr0 = 0x0,
     #[doc = "The target subsystem was powered down for the previous power-down request."]
-    PSR_1 = 0x01,
+    Psr1 = 0x01,
 }
 impl MegaSrPsr {
     #[inline(always)]

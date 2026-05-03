@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DcdcInLowVol {
     #[doc = "DCDC_IN is ok."]
-    DCDC_IN_LOW_VOL_0 = 0x0,
+    DcdcInLowVol0 = 0x0,
     #[doc = "DCDC_IN is too low."]
-    DCDC_IN_LOW_VOL_1 = 0x01,
+    DcdcInLowVol1 = 0x01,
 }
 impl DcdcInLowVol {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<DcdcInLowVol> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DcdcOverCur {
     #[doc = "No over current detected."]
-    DCDC_OVER_CUR_0 = 0x0,
+    DcdcOverCur0 = 0x0,
     #[doc = "Over current detected."]
-    DCDC_OVER_CUR_1 = 0x01,
+    DcdcOverCur1 = 0x01,
 }
 impl DcdcOverCur {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<DcdcOverCur> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DcdcOverVol {
     #[doc = "No over voltage detected."]
-    DCDC_OVER_VOL_0 = 0x0,
+    DcdcOverVol0 = 0x0,
     #[doc = "Over voltage detected."]
-    DCDC_OVER_VOL_1 = 0x01,
+    DcdcOverVol1 = 0x01,
 }
 impl DcdcOverVol {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<DcdcOverVol> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DcdcStsDcOk {
     #[doc = "DCDC is ramping up and not ready."]
-    DCDC_STS_DC_OK_0 = 0x0,
+    DcdcStsDcOk0 = 0x0,
     #[doc = "DCDC is ready."]
-    DCDC_STS_DC_OK_1 = 0x01,
+    DcdcStsDcOk1 = 0x01,
 }
 impl DcdcStsDcOk {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<DcdcStsDcOk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LpsrModeEnable {
     #[doc = "SNVS domain will reset when system reset happens."]
-    LPSR_MODE_ENABLE_0 = 0x0,
+    LpsrModeEnable0 = 0x0,
     #[doc = "SNVS domain will only reset with SNVS POR."]
-    LPSR_MODE_ENABLE_1 = 0x01,
+    LpsrModeEnable1 = 0x01,
 }
 impl LpsrModeEnable {
     #[inline(always)]
@@ -158,13 +158,13 @@ impl From<LpsrModeEnable> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PorPullType {
     #[doc = "100 Ohm pull up enabled for POR_B always."]
-    POR_PULL_TYPE_0 = 0x0,
+    PorPullType0 = 0x0,
     #[doc = "Disable pull in SNVS mode, 100 Ohm pull up enabled otherwise."]
-    POR_PULL_TYPE_1 = 0x01,
+    PorPullType1 = 0x01,
     #[doc = "Disable pull of POR_B always."]
-    POR_PULL_TYPE_2 = 0x02,
+    PorPullType2 = 0x02,
     #[doc = "100 Ohm pull down enabled in SNVS mode, 100 Ohm pull up enabled otherwise."]
-    POR_PULL_TYPE_3 = 0x03,
+    PorPullType3 = 0x03,
 }
 impl PorPullType {
     #[inline(always)]

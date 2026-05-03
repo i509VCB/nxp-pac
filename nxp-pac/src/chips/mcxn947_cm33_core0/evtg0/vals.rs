@@ -3,13 +3,13 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi0Bft01Pt0Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT0_AC0 = 0x0,
+    Pt0Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT0_AC1 = 0x01,
+    Pt0Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT0_AC2 = 0x02,
+    Pt0Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT0_AC3 = 0x03,
+    Pt0Ac3 = 0x03,
 }
 impl EvtgAoi0Bft01Pt0Ac {
     #[inline(always)]
@@ -38,13 +38,13 @@ impl From<EvtgAoi0Bft01Pt0Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi0Bft01Pt0Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT0_BC0 = 0x0,
+    Pt0Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT0_BC1 = 0x01,
+    Pt0Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT0_BC2 = 0x02,
+    Pt0Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT0_BC3 = 0x03,
+    Pt0Bc3 = 0x03,
 }
 impl EvtgAoi0Bft01Pt0Bc {
     #[inline(always)]
@@ -73,13 +73,13 @@ impl From<EvtgAoi0Bft01Pt0Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi0Bft01Pt0Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    CC0_0 = 0x0,
+    Cc00 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    CC0_1 = 0x01,
+    Cc01 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    CC0_2 = 0x02,
+    Cc02 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    CC0_3 = 0x03,
+    Cc03 = 0x03,
 }
 impl EvtgAoi0Bft01Pt0Cc {
     #[inline(always)]
@@ -108,13 +108,13 @@ impl From<EvtgAoi0Bft01Pt0Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi0Bft01Pt0Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    DC_0 = 0x0,
+    Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    DC_1 = 0x01,
+    Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    DC_2 = 0x02,
+    Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    DC_3 = 0x03,
+    Dc3 = 0x03,
 }
 impl EvtgAoi0Bft01Pt0Dc {
     #[inline(always)]
@@ -143,13 +143,13 @@ impl From<EvtgAoi0Bft01Pt0Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi0Bft01Pt1Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    AC_0 = 0x0,
+    Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    AC_1 = 0x01,
+    Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    AC_2 = 0x02,
+    Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    AC_3 = 0x03,
+    Ac3 = 0x03,
 }
 impl EvtgAoi0Bft01Pt1Ac {
     #[inline(always)]
@@ -178,13 +178,13 @@ impl From<EvtgAoi0Bft01Pt1Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi0Bft01Pt1Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    BC_0 = 0x0,
+    Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    BC_1 = 0x01,
+    Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    BC_2 = 0x02,
+    Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    BC_3 = 0x03,
+    Bc3 = 0x03,
 }
 impl EvtgAoi0Bft01Pt1Bc {
     #[inline(always)]
@@ -213,13 +213,13 @@ impl From<EvtgAoi0Bft01Pt1Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi0Bft01Pt1Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    CC_0 = 0x0,
+    Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    CC_1 = 0x01,
+    Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    CC_2 = 0x02,
+    Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    CC_3 = 0x03,
+    Cc3 = 0x03,
 }
 impl EvtgAoi0Bft01Pt1Cc {
     #[inline(always)]
@@ -248,13 +248,13 @@ impl From<EvtgAoi0Bft01Pt1Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi0Bft01Pt1Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT1_DC0 = 0x0,
+    Pt1Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT1_DC1 = 0x01,
+    Pt1Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT1_DC2 = 0x02,
+    Pt1Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT1_DC3 = 0x03,
+    Pt1Dc3 = 0x03,
 }
 impl EvtgAoi0Bft01Pt1Dc {
     #[inline(always)]
@@ -283,13 +283,13 @@ impl From<EvtgAoi0Bft01Pt1Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi0Bft23Pt2Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT2_AC0 = 0x0,
+    Pt2Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT2_AC1 = 0x01,
+    Pt2Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT2_AC2 = 0x02,
+    Pt2Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT2_AC3 = 0x03,
+    Pt2Ac3 = 0x03,
 }
 impl EvtgAoi0Bft23Pt2Ac {
     #[inline(always)]
@@ -318,13 +318,13 @@ impl From<EvtgAoi0Bft23Pt2Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi0Bft23Pt2Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT2_BC0 = 0x0,
+    Pt2Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT2_BC1 = 0x01,
+    Pt2Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT2_BC2 = 0x02,
+    Pt2Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT2_BC3 = 0x03,
+    Pt2Bc3 = 0x03,
 }
 impl EvtgAoi0Bft23Pt2Bc {
     #[inline(always)]
@@ -353,13 +353,13 @@ impl From<EvtgAoi0Bft23Pt2Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi0Bft23Pt2Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    PT2_CC0 = 0x0,
+    Pt2Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    PT2_CC1 = 0x01,
+    Pt2Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    PT2_CC2 = 0x02,
+    Pt2Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    PT2_CC3 = 0x03,
+    Pt2Cc3 = 0x03,
 }
 impl EvtgAoi0Bft23Pt2Cc {
     #[inline(always)]
@@ -388,13 +388,13 @@ impl From<EvtgAoi0Bft23Pt2Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi0Bft23Pt2Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT2_DC0 = 0x0,
+    Pt2Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT2_DC1 = 0x01,
+    Pt2Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT2_DC2 = 0x02,
+    Pt2Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT2_DC3 = 0x03,
+    Pt2Dc3 = 0x03,
 }
 impl EvtgAoi0Bft23Pt2Dc {
     #[inline(always)]
@@ -423,13 +423,13 @@ impl From<EvtgAoi0Bft23Pt2Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi0Bft23Pt3Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT3_AC0 = 0x0,
+    Pt3Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT3_AC1 = 0x01,
+    Pt3Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT3_AC2 = 0x02,
+    Pt3Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT3_AC3 = 0x03,
+    Pt3Ac3 = 0x03,
 }
 impl EvtgAoi0Bft23Pt3Ac {
     #[inline(always)]
@@ -458,13 +458,13 @@ impl From<EvtgAoi0Bft23Pt3Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi0Bft23Pt3Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT3_BC0 = 0x0,
+    Pt3Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT3_BC1 = 0x01,
+    Pt3Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT3_BC2 = 0x02,
+    Pt3Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT3_BC3 = 0x03,
+    Pt3Bc3 = 0x03,
 }
 impl EvtgAoi0Bft23Pt3Bc {
     #[inline(always)]
@@ -493,13 +493,13 @@ impl From<EvtgAoi0Bft23Pt3Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi0Bft23Pt3Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    PT3_CC0 = 0x0,
+    Pt3Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    PT3_CC1 = 0x01,
+    Pt3Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    PT3_CC2 = 0x02,
+    Pt3Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    PT3_CC3 = 0x03,
+    Pt3Cc3 = 0x03,
 }
 impl EvtgAoi0Bft23Pt3Cc {
     #[inline(always)]
@@ -528,13 +528,13 @@ impl From<EvtgAoi0Bft23Pt3Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi0Bft23Pt3Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT3_DC0 = 0x0,
+    Pt3Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT3_DC1 = 0x01,
+    Pt3Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT3_DC2 = 0x02,
+    Pt3Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT3_DC3 = 0x03,
+    Pt3Dc3 = 0x03,
 }
 impl EvtgAoi0Bft23Pt3Dc {
     #[inline(always)]
@@ -563,13 +563,13 @@ impl From<EvtgAoi0Bft23Pt3Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi1Bft01Pt0Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT0_AC0 = 0x0,
+    Pt0Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT0_AC1 = 0x01,
+    Pt0Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT0_AC2 = 0x02,
+    Pt0Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT0_AC3 = 0x03,
+    Pt0Ac3 = 0x03,
 }
 impl EvtgAoi1Bft01Pt0Ac {
     #[inline(always)]
@@ -598,13 +598,13 @@ impl From<EvtgAoi1Bft01Pt0Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi1Bft01Pt0Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT0_BC0 = 0x0,
+    Pt0Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT0_BC1 = 0x01,
+    Pt0Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT0_BC2 = 0x02,
+    Pt0Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT0_BC3 = 0x03,
+    Pt0Bc3 = 0x03,
 }
 impl EvtgAoi1Bft01Pt0Bc {
     #[inline(always)]
@@ -633,13 +633,13 @@ impl From<EvtgAoi1Bft01Pt0Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi1Bft01Pt0Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    PT0_CC0 = 0x0,
+    Pt0Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    PT0_CC1 = 0x01,
+    Pt0Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    PT0_CC2 = 0x02,
+    Pt0Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    PT0_CC3 = 0x03,
+    Pt0Cc3 = 0x03,
 }
 impl EvtgAoi1Bft01Pt0Cc {
     #[inline(always)]
@@ -668,13 +668,13 @@ impl From<EvtgAoi1Bft01Pt0Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi1Bft01Pt0Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT0_DC0 = 0x0,
+    Pt0Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT0_DC1 = 0x01,
+    Pt0Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT0_DC2 = 0x02,
+    Pt0Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT0_DC3 = 0x03,
+    Pt0Dc3 = 0x03,
 }
 impl EvtgAoi1Bft01Pt0Dc {
     #[inline(always)]
@@ -703,13 +703,13 @@ impl From<EvtgAoi1Bft01Pt0Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi1Bft01Pt1Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT1_AC0 = 0x0,
+    Pt1Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT1_AC1 = 0x01,
+    Pt1Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT1_AC2 = 0x02,
+    Pt1Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT1_AC3 = 0x03,
+    Pt1Ac3 = 0x03,
 }
 impl EvtgAoi1Bft01Pt1Ac {
     #[inline(always)]
@@ -738,13 +738,13 @@ impl From<EvtgAoi1Bft01Pt1Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi1Bft01Pt1Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT1_BC0 = 0x0,
+    Pt1Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT1_BC1 = 0x01,
+    Pt1Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT1_BC2 = 0x02,
+    Pt1Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT1_BC3 = 0x03,
+    Pt1Bc3 = 0x03,
 }
 impl EvtgAoi1Bft01Pt1Bc {
     #[inline(always)]
@@ -773,13 +773,13 @@ impl From<EvtgAoi1Bft01Pt1Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi1Bft01Pt1Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    PT1_CC0 = 0x0,
+    Pt1Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    PT1_CC1 = 0x01,
+    Pt1Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    PT1_CC2 = 0x02,
+    Pt1Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    PT1_CC3 = 0x03,
+    Pt1Cc3 = 0x03,
 }
 impl EvtgAoi1Bft01Pt1Cc {
     #[inline(always)]
@@ -808,13 +808,13 @@ impl From<EvtgAoi1Bft01Pt1Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi1Bft01Pt1Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT1_DC0 = 0x0,
+    Pt1Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT1_DC1 = 0x01,
+    Pt1Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT1_DC2 = 0x02,
+    Pt1Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT1_DC3 = 0x03,
+    Pt1Dc3 = 0x03,
 }
 impl EvtgAoi1Bft01Pt1Dc {
     #[inline(always)]
@@ -843,13 +843,13 @@ impl From<EvtgAoi1Bft01Pt1Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi1Bft23Pt2Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT2_AC0 = 0x0,
+    Pt2Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT2_AC1 = 0x01,
+    Pt2Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT2_AC2 = 0x02,
+    Pt2Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT2_AC3 = 0x03,
+    Pt2Ac3 = 0x03,
 }
 impl EvtgAoi1Bft23Pt2Ac {
     #[inline(always)]
@@ -878,13 +878,13 @@ impl From<EvtgAoi1Bft23Pt2Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi1Bft23Pt2Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT2_BC0 = 0x0,
+    Pt2Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT2_BC1 = 0x01,
+    Pt2Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT2_BC2 = 0x02,
+    Pt2Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT2_BC3 = 0x03,
+    Pt2Bc3 = 0x03,
 }
 impl EvtgAoi1Bft23Pt2Bc {
     #[inline(always)]
@@ -913,13 +913,13 @@ impl From<EvtgAoi1Bft23Pt2Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi1Bft23Pt2Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    PT2_CC0 = 0x0,
+    Pt2Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    PT2_CC1 = 0x01,
+    Pt2Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    PT2_CC2 = 0x02,
+    Pt2Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    PT2_CC3 = 0x03,
+    Pt2Cc3 = 0x03,
 }
 impl EvtgAoi1Bft23Pt2Cc {
     #[inline(always)]
@@ -948,13 +948,13 @@ impl From<EvtgAoi1Bft23Pt2Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi1Bft23Pt2Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT2_DC0 = 0x0,
+    Pt2Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT2_DC1 = 0x01,
+    Pt2Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT2_DC2 = 0x02,
+    Pt2Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT2_DC3 = 0x03,
+    Pt2Dc3 = 0x03,
 }
 impl EvtgAoi1Bft23Pt2Dc {
     #[inline(always)]
@@ -983,13 +983,13 @@ impl From<EvtgAoi1Bft23Pt2Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi1Bft23Pt3Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT3_AC0 = 0x0,
+    Pt3Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT3_AC1 = 0x01,
+    Pt3Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT3_AC2 = 0x02,
+    Pt3Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT3_AC3 = 0x03,
+    Pt3Ac3 = 0x03,
 }
 impl EvtgAoi1Bft23Pt3Ac {
     #[inline(always)]
@@ -1018,13 +1018,13 @@ impl From<EvtgAoi1Bft23Pt3Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi1Bft23Pt3Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT3_BC0 = 0x0,
+    Pt3Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT3_BC1 = 0x01,
+    Pt3Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT3_BC2 = 0x02,
+    Pt3Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT3_BC3 = 0x03,
+    Pt3Bc3 = 0x03,
 }
 impl EvtgAoi1Bft23Pt3Bc {
     #[inline(always)]
@@ -1053,13 +1053,13 @@ impl From<EvtgAoi1Bft23Pt3Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi1Bft23Pt3Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    PT3_CC0 = 0x0,
+    Pt3Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    PT3_CC1 = 0x01,
+    Pt3Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    PT3_CC2 = 0x02,
+    Pt3Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    PT3_CC3 = 0x03,
+    Pt3Cc3 = 0x03,
 }
 impl EvtgAoi1Bft23Pt3Cc {
     #[inline(always)]
@@ -1088,13 +1088,13 @@ impl From<EvtgAoi1Bft23Pt3Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EvtgAoi1Bft23Pt3Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT3_DC0 = 0x0,
+    Pt3Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT3_DC1 = 0x01,
+    Pt3Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT3_DC2 = 0x02,
+    Pt3Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT3_DC3 = 0x03,
+    Pt3Dc3 = 0x03,
 }
 impl EvtgAoi1Bft23Pt3Dc {
     #[inline(always)]
@@ -1123,13 +1123,13 @@ impl From<EvtgAoi1Bft23Pt3Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FbOvrd {
     #[doc = "Replace An."]
-    AN = 0x0,
+    An = 0x0,
     #[doc = "Replace Bn."]
-    BN = 0x01,
+    Bn = 0x01,
     #[doc = "Replace Cn."]
-    CN = 0x02,
+    Cn = 0x02,
     #[doc = "Replace Dn."]
-    DN = 0x03,
+    Dn = 0x03,
 }
 impl FbOvrd {
     #[inline(always)]
@@ -1158,9 +1158,9 @@ impl From<FbOvrd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FfInit {
     #[doc = "0."]
-    FF0 = 0x0,
+    Ff0 = 0x0,
     #[doc = "1."]
-    FF1 = 0x01,
+    Ff1 = 0x01,
 }
 impl FfInit {
     #[inline(always)]
@@ -1189,9 +1189,9 @@ impl From<FfInit> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ForceBypass {
     #[doc = "Will not force the bypass."]
-    NFB0 = 0x0,
+    Nfb0 = 0x0,
     #[doc = "Whatever MODE_SEL is, will force bypass flip-flop and route the AOI_0(Filter_0) value directly to EVTG_OUTA."]
-    F_FF_A = 0x01,
+    FFfA = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
 }
@@ -1222,9 +1222,9 @@ impl From<ForceBypass> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum InitEn {
     #[doc = "Write 0 does not generate enable pulse."]
-    PULSE = 0x0,
+    Pulse = 0x0,
     #[doc = "Write 1 generates enable pulse."]
-    NO_PULSE = 0x01,
+    NoPulse = 0x01,
 }
 impl InitEn {
     #[inline(always)]
@@ -1253,17 +1253,17 @@ impl From<InitEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ModeSel {
     #[doc = "Bypass mode."]
-    BYPASS = 0x0,
+    Bypass = 0x0,
     #[doc = "RS Trigger mode."]
-    RS = 0x01,
+    Rs = 0x01,
     #[doc = "T-FF mode."]
-    TFF = 0x02,
+    Tff = 0x02,
     #[doc = "D-FF mode."]
-    DFF = 0x03,
+    Dff = 0x03,
     #[doc = "JK-FF mode."]
-    JKFF = 0x04,
+    Jkff = 0x04,
     #[doc = "Latch mode."]
-    LATCH = 0x05,
+    Latch = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
 }
@@ -1294,9 +1294,9 @@ impl From<ModeSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SyncCtrl {
     #[doc = "EVTG input \"An\" will not be synced."]
-    A_NOTSYNC = 0x0,
+    ANotsync = 0x0,
     #[doc = "EVTG input \"An\" will be synced by two bus clk cycles."]
-    A_SYNC = 0x01,
+    ASync = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,

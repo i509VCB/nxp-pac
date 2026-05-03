@@ -6,13 +6,13 @@ impl Ct32bitCapSel {
     #[doc = "Counter Timer m, Capture Port Input n 19:1 Mux Select. .."]
     #[must_use]
     #[inline(always)]
-    pub const fn capn_sel(&self) -> super::vals::CapnSel {
+    pub const fn ca_pn_sel(&self) -> super::vals::CaPnSel {
         let val = (self.0 >> 0usize) & 0x1f;
-        super::vals::CapnSel::from_bits(val as u8)
+        super::vals::CaPnSel::from_bits(val as u8)
     }
     #[doc = "Counter Timer m, Capture Port Input n 19:1 Mux Select. .."]
     #[inline(always)]
-    pub const fn set_capn_sel(&mut self, val: super::vals::CapnSel) {
+    pub const fn set_ca_pn_sel(&mut self, val: super::vals::CaPnSel) {
         self.0 = (self.0 & !(0x1f << 0usize)) | (((val.to_bits() as u32) & 0x1f) << 0usize);
     }
 }
@@ -25,14 +25,14 @@ impl Default for Ct32bitCapSel {
 impl core::fmt::Debug for Ct32bitCapSel {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("Ct32bitCapSel")
-            .field("capn_sel", &self.capn_sel())
+            .field("ca_pn_sel", &self.ca_pn_sel())
             .finish()
     }
 }
 #[cfg(feature = "defmt")]
 impl defmt::Format for Ct32bitCapSel {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Ct32bitCapSel {{ capn_sel: {:?} }}", self.capn_sel())
+        defmt::write!(f, "Ct32bitCapSel {{ ca_pn_sel: {:?} }}", self.ca_pn_sel())
     }
 }
 #[doc = "DMAC0 input trigger enable 0."]

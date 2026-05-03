@@ -3,20 +3,20 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ahbbrst {
     #[doc = "Incremental burst of unspecified length only."]
-    AHBBRST_0 = 0x0,
+    Ahbbrst0 = 0x0,
     #[doc = "INCR4 burst, then single transfer."]
-    AHBBRST_1 = 0x01,
+    Ahbbrst1 = 0x01,
     #[doc = "INCR8 burst, INCR4 burst, then single transfer."]
-    AHBBRST_2 = 0x02,
+    Ahbbrst2 = 0x02,
     #[doc = "INCR16 burst, INCR8 burst, INCR4 burst, then single transfer."]
-    AHBBRST_3 = 0x03,
+    Ahbbrst3 = 0x03,
     _RESERVED_4 = 0x04,
     #[doc = "INCR4 burst, then incremental burst of unspecified length."]
-    AHBBRST_5 = 0x05,
+    Ahbbrst5 = 0x05,
     #[doc = "INCR8 burst, INCR4 burst, then incremental burst of unspecified length."]
-    AHBBRST_6 = 0x06,
+    Ahbbrst6 = 0x06,
     #[doc = "INCR16 burst, INCR8 burst, INCR4 burst, then incremental burst of unspecified length."]
-    AHBBRST_7 = 0x07,
+    Ahbbrst7 = 0x07,
 }
 impl Ahbbrst {
     #[inline(always)]
@@ -45,9 +45,9 @@ impl From<Ahbbrst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ase {
     #[doc = "Do not process the Asynchronous Schedule."]
-    ASE_0 = 0x0,
+    Ase0 = 0x0,
     #[doc = "Use the ASYNCLISTADDR register to access the Asynchronous Schedule."]
-    ASE_1 = 0x01,
+    Ase1 = 0x01,
 }
 impl Ase {
     #[inline(always)]
@@ -76,9 +76,9 @@ impl From<Ase> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cf {
     #[doc = "Port routing control logic default-routes each port to an implementation dependent classic host controller."]
-    CF_0 = 0x0,
+    Cf0 = 0x0,
     #[doc = "Port routing control logic default-routes all ports to this host controller."]
-    CF_1 = 0x01,
+    Cf1 = 0x01,
 }
 impl Cf {
     #[inline(always)]
@@ -107,12 +107,12 @@ impl From<Cf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cm {
     #[doc = "Idle \\[Default for combination host/device\\]."]
-    CM_0 = 0x0,
+    Cm0 = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "Device Controller \\[Default for device only controller\\]."]
-    CM_2 = 0x02,
+    Cm2 = 0x02,
     #[doc = "Host Controller \\[Default for host only controller\\]."]
-    CM_3 = 0x03,
+    Cm3 = 0x03,
 }
 impl Cm {
     #[inline(always)]
@@ -141,9 +141,9 @@ impl From<Cm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dc {
     #[doc = "Not supported."]
-    DC_0 = 0x0,
+    Dc0 = 0x0,
     #[doc = "Supported."]
-    DC_1 = 0x01,
+    Dc1 = 0x01,
 }
 impl Dc {
     #[inline(always)]
@@ -172,9 +172,9 @@ impl From<Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Es {
     #[doc = "Little Endian \\[Default\\]."]
-    ES_0 = 0x0,
+    Es0 = 0x0,
     #[doc = "Big Endian."]
-    ES_1 = 0x01,
+    Es1 = 0x01,
 }
 impl Es {
     #[inline(always)]
@@ -203,21 +203,21 @@ impl From<Es> for u8 {
 pub struct Frindex(u16);
 impl Frindex {
     #[doc = "(1024) 12."]
-    pub const FRINDEX_0: Self = Self(0x0);
+    pub const Frindex0: Self = Self(0x0);
     #[doc = "(512) 11."]
-    pub const FRINDEX_1: Self = Self(0x01);
+    pub const Frindex1: Self = Self(0x01);
     #[doc = "(256) 10."]
-    pub const FRINDEX_2: Self = Self(0x02);
+    pub const Frindex2: Self = Self(0x02);
     #[doc = "(128) 9."]
-    pub const FRINDEX_3: Self = Self(0x03);
+    pub const Frindex3: Self = Self(0x03);
     #[doc = "(64) 8."]
-    pub const FRINDEX_4: Self = Self(0x04);
+    pub const Frindex4: Self = Self(0x04);
     #[doc = "(32) 7."]
-    pub const FRINDEX_5: Self = Self(0x05);
+    pub const Frindex5: Self = Self(0x05);
     #[doc = "(16) 6."]
-    pub const FRINDEX_6: Self = Self(0x06);
+    pub const Frindex6: Self = Self(0x06);
     #[doc = "(8) 5."]
-    pub const FRINDEX_7: Self = Self(0x07);
+    pub const Frindex7: Self = Self(0x07);
 }
 impl Frindex {
     pub const fn from_bits(val: u16) -> Frindex {
@@ -230,14 +230,14 @@ impl Frindex {
 impl core::fmt::Debug for Frindex {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("FRINDEX_0"),
-            0x01 => f.write_str("FRINDEX_1"),
-            0x02 => f.write_str("FRINDEX_2"),
-            0x03 => f.write_str("FRINDEX_3"),
-            0x04 => f.write_str("FRINDEX_4"),
-            0x05 => f.write_str("FRINDEX_5"),
-            0x06 => f.write_str("FRINDEX_6"),
-            0x07 => f.write_str("FRINDEX_7"),
+            0x0 => f.write_str("Frindex0"),
+            0x01 => f.write_str("Frindex1"),
+            0x02 => f.write_str("Frindex2"),
+            0x03 => f.write_str("Frindex3"),
+            0x04 => f.write_str("Frindex4"),
+            0x05 => f.write_str("Frindex5"),
+            0x06 => f.write_str("Frindex6"),
+            0x07 => f.write_str("Frindex7"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -246,14 +246,14 @@ impl core::fmt::Debug for Frindex {
 impl defmt::Format for Frindex {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "FRINDEX_0"),
-            0x01 => defmt::write!(f, "FRINDEX_1"),
-            0x02 => defmt::write!(f, "FRINDEX_2"),
-            0x03 => defmt::write!(f, "FRINDEX_3"),
-            0x04 => defmt::write!(f, "FRINDEX_4"),
-            0x05 => defmt::write!(f, "FRINDEX_5"),
-            0x06 => defmt::write!(f, "FRINDEX_6"),
-            0x07 => defmt::write!(f, "FRINDEX_7"),
+            0x0 => defmt::write!(f, "Frindex0"),
+            0x01 => defmt::write!(f, "Frindex1"),
+            0x02 => defmt::write!(f, "Frindex2"),
+            0x03 => defmt::write!(f, "Frindex3"),
+            0x04 => defmt::write!(f, "Frindex4"),
+            0x05 => defmt::write!(f, "Frindex5"),
+            0x06 => defmt::write!(f, "Frindex6"),
+            0x07 => defmt::write!(f, "Frindex7"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -275,9 +275,9 @@ impl From<Frindex> for u16 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fs2 {
     #[doc = "1024 elements (4096 bytes) Default value."]
-    FS_2_0 = 0x0,
+    Fs20 = 0x0,
     #[doc = "512 elements (2048 bytes)."]
-    FS_2_1 = 0x01,
+    Fs21 = 0x01,
 }
 impl Fs2 {
     #[inline(always)]
@@ -306,9 +306,9 @@ impl From<Fs2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gptimer0ctrlGptmode {
     #[doc = "One Shot Mode."]
-    GPTMODE_0 = 0x0,
+    Gptmode0 = 0x0,
     #[doc = "Repeat Mode."]
-    GPTMODE_1 = 0x01,
+    Gptmode1 = 0x01,
 }
 impl Gptimer0ctrlGptmode {
     #[inline(always)]
@@ -337,9 +337,9 @@ impl From<Gptimer0ctrlGptmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gptimer0ctrlGptrst {
     #[doc = "No action."]
-    GPTRST_0 = 0x0,
+    Gptrst0 = 0x0,
     #[doc = "Load counter value from GPTLD bits in n_GPTIMER0LD."]
-    GPTRST_1 = 0x01,
+    Gptrst1 = 0x01,
 }
 impl Gptimer0ctrlGptrst {
     #[inline(always)]
@@ -368,9 +368,9 @@ impl From<Gptimer0ctrlGptrst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gptimer0ctrlGptrun {
     #[doc = "Stop counting."]
-    GPTRUN_0 = 0x0,
+    Gptrun0 = 0x0,
     #[doc = "Run."]
-    GPTRUN_1 = 0x01,
+    Gptrun1 = 0x01,
 }
 impl Gptimer0ctrlGptrun {
     #[inline(always)]
@@ -399,9 +399,9 @@ impl From<Gptimer0ctrlGptrun> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gptimer1ctrlGptmode {
     #[doc = "One Shot Mode."]
-    GPTMODE_0 = 0x0,
+    Gptmode0 = 0x0,
     #[doc = "Repeat Mode."]
-    GPTMODE_1 = 0x01,
+    Gptmode1 = 0x01,
 }
 impl Gptimer1ctrlGptmode {
     #[inline(always)]
@@ -430,9 +430,9 @@ impl From<Gptimer1ctrlGptmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gptimer1ctrlGptrst {
     #[doc = "No action."]
-    GPTRST_0 = 0x0,
+    Gptrst0 = 0x0,
     #[doc = "Load counter value from GPTLD bits in USB_n_GPTIMER0LD."]
-    GPTRST_1 = 0x01,
+    Gptrst1 = 0x01,
 }
 impl Gptimer1ctrlGptrst {
     #[inline(always)]
@@ -461,9 +461,9 @@ impl From<Gptimer1ctrlGptrst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gptimer1ctrlGptrun {
     #[doc = "Stop counting."]
-    GPTRUN_0 = 0x0,
+    Gptrun0 = 0x0,
     #[doc = "Run."]
-    GPTRUN_1 = 0x01,
+    Gptrun1 = 0x01,
 }
 impl Gptimer1ctrlGptrun {
     #[inline(always)]
@@ -492,9 +492,9 @@ impl From<Gptimer1ctrlGptrun> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hc {
     #[doc = "Not supported."]
-    HC_0 = 0x0,
+    Hc0 = 0x0,
     #[doc = "Supported."]
-    HC_1 = 0x01,
+    Hc1 = 0x01,
 }
 impl Hc {
     #[inline(always)]
@@ -523,21 +523,21 @@ impl From<Hc> for u8 {
 pub struct Itc(u8);
 impl Itc {
     #[doc = "Immediate (no threshold)."]
-    pub const ITC_0: Self = Self(0x0);
+    pub const Itc0: Self = Self(0x0);
     #[doc = "1 micro-frame."]
-    pub const ITC_1: Self = Self(0x01);
+    pub const Itc1: Self = Self(0x01);
     #[doc = "2 micro-frames."]
-    pub const ITC_2: Self = Self(0x02);
+    pub const Itc2: Self = Self(0x02);
     #[doc = "4 micro-frames."]
-    pub const ITC_4: Self = Self(0x04);
+    pub const Itc4: Self = Self(0x04);
     #[doc = "8 micro-frames."]
-    pub const ITC_8: Self = Self(0x08);
+    pub const Itc8: Self = Self(0x08);
     #[doc = "16 micro-frames."]
-    pub const ITC_16: Self = Self(0x10);
+    pub const Itc16: Self = Self(0x10);
     #[doc = "32 micro-frames."]
-    pub const ITC_32: Self = Self(0x20);
+    pub const Itc32: Self = Self(0x20);
     #[doc = "64 micro-frames."]
-    pub const ITC_64: Self = Self(0x40);
+    pub const Itc64: Self = Self(0x40);
 }
 impl Itc {
     pub const fn from_bits(val: u8) -> Itc {
@@ -550,14 +550,14 @@ impl Itc {
 impl core::fmt::Debug for Itc {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("ITC_0"),
-            0x01 => f.write_str("ITC_1"),
-            0x02 => f.write_str("ITC_2"),
-            0x04 => f.write_str("ITC_4"),
-            0x08 => f.write_str("ITC_8"),
-            0x10 => f.write_str("ITC_16"),
-            0x20 => f.write_str("ITC_32"),
-            0x40 => f.write_str("ITC_64"),
+            0x0 => f.write_str("Itc0"),
+            0x01 => f.write_str("Itc1"),
+            0x02 => f.write_str("Itc2"),
+            0x04 => f.write_str("Itc4"),
+            0x08 => f.write_str("Itc8"),
+            0x10 => f.write_str("Itc16"),
+            0x20 => f.write_str("Itc32"),
+            0x40 => f.write_str("Itc64"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -566,14 +566,14 @@ impl core::fmt::Debug for Itc {
 impl defmt::Format for Itc {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "ITC_0"),
-            0x01 => defmt::write!(f, "ITC_1"),
-            0x02 => defmt::write!(f, "ITC_2"),
-            0x04 => defmt::write!(f, "ITC_4"),
-            0x08 => defmt::write!(f, "ITC_8"),
-            0x10 => defmt::write!(f, "ITC_16"),
-            0x20 => defmt::write!(f, "ITC_32"),
-            0x40 => defmt::write!(f, "ITC_64"),
+            0x0 => defmt::write!(f, "Itc0"),
+            0x01 => defmt::write!(f, "Itc1"),
+            0x02 => defmt::write!(f, "Itc2"),
+            0x04 => defmt::write!(f, "Itc4"),
+            0x08 => defmt::write!(f, "Itc8"),
+            0x10 => defmt::write!(f, "Itc16"),
+            0x20 => defmt::write!(f, "Itc32"),
+            0x40 => defmt::write!(f, "Itc64"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -595,13 +595,13 @@ impl From<Itc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ls {
     #[doc = "SE0."]
-    LS_0 = 0x0,
+    Ls0 = 0x0,
     #[doc = "K-state."]
-    LS_1 = 0x01,
+    Ls1 = 0x01,
     #[doc = "J-state."]
-    LS_2 = 0x02,
+    Ls2 = 0x02,
     #[doc = "Undefined."]
-    LS_3 = 0x03,
+    Ls3 = 0x03,
 }
 impl Ls {
     #[inline(always)]
@@ -630,9 +630,9 @@ impl From<Ls> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NCc {
     #[doc = "There is no internal Companion Controller and port-ownership hand-off is not supported."]
-    N_CC_0 = 0x0,
+    NCc0 = 0x0,
     #[doc = "There are internal companion controller(s) and port-ownership hand-offs is supported."]
-    N_CC_1 = 0x01,
+    NCc1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -675,9 +675,9 @@ impl From<NCc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Oca {
     #[doc = "This port does not have an over-current condition."]
-    OCA_0 = 0x0,
+    Oca0 = 0x0,
     #[doc = "This port currently has an over-current condition."]
-    OCA_1 = 0x01,
+    Oca1 = 0x01,
 }
 impl Oca {
     #[inline(always)]
@@ -706,9 +706,9 @@ impl From<Oca> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pfsc {
     #[doc = "Normal operation."]
-    PFSC_0 = 0x0,
+    Pfsc0 = 0x0,
     #[doc = "Forced to full speed."]
-    PFSC_1 = 0x01,
+    Pfsc1 = 0x01,
 }
 impl Pfsc {
     #[inline(always)]
@@ -737,9 +737,9 @@ impl From<Pfsc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Phcd {
     #[doc = "Enable PHY clock."]
-    PHCD_0 = 0x0,
+    Phcd0 = 0x0,
     #[doc = "Disable PHY clock."]
-    PHCD_1 = 0x01,
+    Phcd1 = 0x01,
 }
 impl Phcd {
     #[inline(always)]
@@ -768,21 +768,21 @@ impl From<Phcd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Phym {
     #[doc = "UTMI/UMTI+."]
-    PHYM_0 = 0x0,
+    Phym0 = 0x0,
     #[doc = "ULPI DDR."]
-    PHYM_1 = 0x01,
+    Phym1 = 0x01,
     #[doc = "ULPI."]
-    PHYM_2 = 0x02,
+    Phym2 = 0x02,
     #[doc = "Serial Only."]
-    PHYM_3 = 0x03,
+    Phym3 = 0x03,
     #[doc = "Software programmable - reset to UTMI/UTMI+."]
-    PHYM_4 = 0x04,
+    Phym4 = 0x04,
     #[doc = "Software programmable - reset to ULPI DDR."]
-    PHYM_5 = 0x05,
+    Phym5 = 0x05,
     #[doc = "Software programmable - reset to ULPI."]
-    PHYM_6 = 0x06,
+    Phym6 = 0x06,
     #[doc = "Software programmable - reset to Serial."]
-    PHYM_7 = 0x07,
+    Phym7 = 0x07,
 }
 impl Phym {
     #[inline(always)]
@@ -811,13 +811,13 @@ impl From<Phym> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Phyw {
     #[doc = "8 bit wide data bus Software non-programmable."]
-    PHYW_0 = 0x0,
+    Phyw0 = 0x0,
     #[doc = "16 bit wide data bus Software non-programmable."]
-    PHYW_1 = 0x01,
+    Phyw1 = 0x01,
     #[doc = "Reset to 8 bit wide data bus Software programmable."]
-    PHYW_2 = 0x02,
+    Phyw2 = 0x02,
     #[doc = "Reset to 16 bit wide data bus Software programmable."]
-    PHYW_3 = 0x03,
+    Phyw3 = 0x03,
 }
 impl Phyw {
     #[inline(always)]
@@ -846,13 +846,13 @@ impl From<Phyw> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pic {
     #[doc = "Port indicators are off."]
-    PIC_0 = 0x0,
+    Pic0 = 0x0,
     #[doc = "Amber."]
-    PIC_1 = 0x01,
+    Pic1 = 0x01,
     #[doc = "Green."]
-    PIC_2 = 0x02,
+    Pic2 = 0x02,
     #[doc = "Undefined."]
-    PIC_3 = 0x03,
+    Pic3 = 0x03,
 }
 impl Pic {
     #[inline(always)]
@@ -881,9 +881,9 @@ impl From<Pic> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pse {
     #[doc = "Do not process the Periodic Schedule."]
-    PSE_0 = 0x0,
+    Pse0 = 0x0,
     #[doc = "Use the PERIODICLISTBASE register to access the Periodic Schedule."]
-    PSE_1 = 0x01,
+    Pse1 = 0x01,
 }
 impl Pse {
     #[inline(always)]
@@ -912,13 +912,13 @@ impl From<Pse> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pspd {
     #[doc = "Full Speed."]
-    PSPD_0 = 0x0,
+    Pspd0 = 0x0,
     #[doc = "Low Speed."]
-    PSPD_1 = 0x01,
+    Pspd1 = 0x01,
     #[doc = "High Speed."]
-    PSPD_2 = 0x02,
+    Pspd2 = 0x02,
     #[doc = "Undefined."]
-    PSPD_3 = 0x03,
+    Pspd3 = 0x03,
 }
 impl Pspd {
     #[inline(always)]
@@ -947,21 +947,21 @@ impl From<Pspd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ptc {
     #[doc = "TEST_MODE_DISABLE."]
-    PTC_0 = 0x0,
+    Ptc0 = 0x0,
     #[doc = "J_STATE."]
-    PTC_1 = 0x01,
+    Ptc1 = 0x01,
     #[doc = "K_STATE."]
-    PTC_2 = 0x02,
+    Ptc2 = 0x02,
     #[doc = "SE0 (host) / NAK (device)."]
-    PTC_3 = 0x03,
+    Ptc3 = 0x03,
     #[doc = "Packet."]
-    PTC_4 = 0x04,
+    Ptc4 = 0x04,
     #[doc = "FORCE_ENABLE_HS."]
-    PTC_5 = 0x05,
+    Ptc5 = 0x05,
     #[doc = "FORCE_ENABLE_FS."]
-    PTC_6 = 0x06,
+    Ptc6 = 0x06,
     #[doc = "FORCE_ENABLE_LS."]
-    PTC_7 = 0x07,
+    Ptc7 = 0x07,
     _RESERVED_8 = 0x08,
     _RESERVED_9 = 0x09,
     _RESERVED_a = 0x0a,
@@ -998,9 +998,9 @@ impl From<Ptc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ptw {
     #[doc = "Select the 8-bit UTMI interface \\[60MHz\\]."]
-    PTW_0 = 0x0,
+    Ptw0 = 0x0,
     #[doc = "Select the 16-bit UTMI interface \\[30MHz\\]."]
-    PTW_1 = 0x01,
+    Ptw1 = 0x01,
 }
 impl Ptw {
     #[inline(always)]
@@ -1029,9 +1029,9 @@ impl From<Ptw> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Slom {
     #[doc = "Setup Lockouts On (default);."]
-    SLOM_0 = 0x0,
+    Slom0 = 0x0,
     #[doc = "Setup Lockouts Off (DCD requires use of Setup Data Buffer Tripwire in USBCMDUSB Command Register."]
-    SLOM_1 = 0x01,
+    Slom1 = 0x01,
 }
 impl Slom {
     #[inline(always)]
@@ -1060,13 +1060,13 @@ impl From<Slom> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm {
     #[doc = "No Serial Engine, always use parallel signalling."]
-    SM_0 = 0x0,
+    Sm0 = 0x0,
     #[doc = "Serial Engine present, always use serial signalling for FS/LS."]
-    SM_1 = 0x01,
+    Sm1 = 0x01,
     #[doc = "Software programmable - Reset to use parallel signalling for FS/LS."]
-    SM_2 = 0x02,
+    Sm2 = 0x02,
     #[doc = "Software programmable - Reset to use serial signalling for FS/LS."]
-    SM_3 = 0x03,
+    Sm3 = 0x03,
 }
 impl Sm {
     #[inline(always)]

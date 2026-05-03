@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum OverCurDis {
     #[doc = "Enables overcurrent detection."]
-    OVER_CUR_DIS_0 = 0x0,
+    OverCurDis0 = 0x0,
     #[doc = "Disables overcurrent detection."]
-    OVER_CUR_DIS_1 = 0x01,
+    OverCurDis1 = 0x01,
 }
 impl OverCurDis {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<OverCurDis> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum OverCurPol {
     #[doc = "High active (high on this signal represents an overcurrent condition)."]
-    OVER_CUR_POL_0 = 0x0,
+    OverCurPol0 = 0x0,
     #[doc = "Low active (low on this signal represents an overcurrent condition)."]
-    OVER_CUR_POL_1 = 0x01,
+    OverCurPol1 = 0x01,
 }
 impl OverCurPol {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<OverCurPol> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PwrPol {
     #[doc = "PMIC Power Pin is Low active."]
-    PWR_POL_0 = 0x0,
+    PwrPol0 = 0x0,
     #[doc = "PMIC Power Pin is High active."]
-    PWR_POL_1 = 0x01,
+    PwrPol1 = 0x01,
 }
 impl PwrPol {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<PwrPol> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum UtmiClkVld {
     #[doc = "Invalid."]
-    UTMI_CLK_VLD_0 = 0x0,
+    UtmiClkVld0 = 0x0,
     #[doc = "Valid."]
-    UTMI_CLK_VLD_1 = 0x01,
+    UtmiClkVld1 = 0x01,
 }
 impl UtmiClkVld {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<UtmiClkVld> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wie {
     #[doc = "Interrupt Disabled."]
-    WIE_0 = 0x0,
+    Wie0 = 0x0,
     #[doc = "Interrupt Enabled."]
-    WIE_1 = 0x01,
+    Wie1 = 0x01,
 }
 impl Wie {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<Wie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wir {
     #[doc = "No wake-up interrupt request received."]
-    WIR_0 = 0x0,
+    Wir0 = 0x0,
     #[doc = "Wake-up Interrupt Request received."]
-    WIR_1 = 0x01,
+    Wir1 = 0x01,
 }
 impl Wir {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<Wir> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum WkupDpdmEn {
     #[doc = "DPDM changes wake-up to be disabled only when VBUS is 0."]
-    WKUP_DPDM_EN_0 = 0x0,
+    WkupDpdmEn0 = 0x0,
     #[doc = "(Default) DPDM changes wake-up to be enabled, it is for device only."]
-    WKUP_DPDM_EN_1 = 0x01,
+    WkupDpdmEn1 = 0x01,
 }
 impl WkupDpdmEn {
     #[inline(always)]
@@ -220,9 +220,9 @@ impl From<WkupDpdmEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum WkupIdEn {
     #[doc = "Disable."]
-    WKUP_ID_EN_0 = 0x0,
+    WkupIdEn0 = 0x0,
     #[doc = "Enable."]
-    WKUP_ID_EN_1 = 0x01,
+    WkupIdEn1 = 0x01,
 }
 impl WkupIdEn {
     #[inline(always)]
@@ -251,9 +251,9 @@ impl From<WkupIdEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum WkupSw {
     #[doc = "Inactive."]
-    WKUP_SW_0 = 0x0,
+    WkupSw0 = 0x0,
     #[doc = "Force wake-up."]
-    WKUP_SW_1 = 0x01,
+    WkupSw1 = 0x01,
 }
 impl WkupSw {
     #[inline(always)]
@@ -282,9 +282,9 @@ impl From<WkupSw> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum WkupSwEn {
     #[doc = "Disable."]
-    WKUP_SW_EN_0 = 0x0,
+    WkupSwEn0 = 0x0,
     #[doc = "Enable."]
-    WKUP_SW_EN_1 = 0x01,
+    WkupSwEn1 = 0x01,
 }
 impl WkupSwEn {
     #[inline(always)]
@@ -313,9 +313,9 @@ impl From<WkupSwEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum WkupVbusEn {
     #[doc = "Disable."]
-    WKUP_VBUS_EN_0 = 0x0,
+    WkupVbusEn0 = 0x0,
     #[doc = "Enable."]
-    WKUP_VBUS_EN_1 = 0x01,
+    WkupVbusEn1 = 0x01,
 }
 impl WkupVbusEn {
     #[inline(always)]

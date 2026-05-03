@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FieldReturn {
     #[doc = "The device is a functional part."]
-    FUNCTIONAL = 0x0,
+    Functional = 0x0,
     #[doc = "The device is a field returned part."]
-    FIELD_RETURNED = 0x01,
+    FieldReturned = 0x01,
 }
 impl FieldReturn {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<FieldReturn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HabJde {
     #[doc = "JTAG debugging is not enabled by the HAB (it may still be enabled by other mechanisms)."]
-    JTAG_DBG_DIS = 0x0,
+    JtagDbgDis = 0x0,
     #[doc = "JTAG debugging is enabled by the HAB (though this signal may be gated off)."]
-    JTAG_DBG_EN = 0x01,
+    JtagDbgEn = 0x01,
 }
 impl HabJde {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<HabJde> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ReloadShadows {
     #[doc = "Do not force shadow register re-load."]
-    SHADOW_NOFORCE_RELOAD = 0x0,
+    ShadowNoforceReload = 0x0,
     #[doc = "Force shadow register re-load. This bit is cleared automatically after shadow registers are re-loaded."]
-    SHADOW_FORCE_RELOAD = 0x01,
+    ShadowForceReload = 0x01,
 }
 impl ReloadShadows {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<ReloadShadows> for u8 {
 pub struct WrUnlock(u16);
 impl WrUnlock {
     #[doc = "OTP write access is locked."]
-    pub const OTP_W_LOCKED: Self = Self(0x0);
+    pub const OtpWLocked: Self = Self(0x0);
     #[doc = "OTP write access is unlocked."]
-    pub const OTP_W_UNLOCKED: Self = Self(0x3e77);
+    pub const OtpWUnlocked: Self = Self(0x3e77);
 }
 impl WrUnlock {
     pub const fn from_bits(val: u16) -> WrUnlock {
@@ -111,8 +111,8 @@ impl WrUnlock {
 impl core::fmt::Debug for WrUnlock {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("OTP_W_LOCKED"),
-            0x3e77 => f.write_str("OTP_W_UNLOCKED"),
+            0x0 => f.write_str("OtpWLocked"),
+            0x3e77 => f.write_str("OtpWUnlocked"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -121,8 +121,8 @@ impl core::fmt::Debug for WrUnlock {
 impl defmt::Format for WrUnlock {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "OTP_W_LOCKED"),
-            0x3e77 => defmt::write!(f, "OTP_W_UNLOCKED"),
+            0x0 => defmt::write!(f, "OtpWLocked"),
+            0x3e77 => defmt::write!(f, "OtpWUnlocked"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }

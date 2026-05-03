@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mprot0 {
     #[doc = "Accesses from this master are forced to user-mode (ips_supervisor_access is forced to zero) regardless of the hprot\\[1\\] access attribute."]
-    MPL0 = 0x0,
+    Mpl0 = 0x0,
     #[doc = "Accesses from this master are not forced to user-mode. The hprot\\[1\\] access attribute is used directly to determine ips_supervisor_access."]
-    MPL1 = 0x01,
+    Mpl1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -48,9 +48,9 @@ impl From<Mprot0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mprot1 {
     #[doc = "Accesses from this master are forced to user-mode (ips_supervisor_access is forced to zero) regardless of the hprot\\[1\\] access attribute."]
-    MPL0 = 0x0,
+    Mpl0 = 0x0,
     #[doc = "Accesses from this master are not forced to user-mode. The hprot\\[1\\] access attribute is used directly to determine ips_supervisor_access."]
-    MPL1 = 0x01,
+    Mpl1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -93,9 +93,9 @@ impl From<Mprot1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mprot2 {
     #[doc = "Accesses from this master are forced to user-mode (ips_supervisor_access is forced to zero) regardless of the hprot\\[1\\] access attribute."]
-    MPL0 = 0x0,
+    Mpl0 = 0x0,
     #[doc = "Accesses from this master are not forced to user-mode. The hprot\\[1\\] access attribute is used directly to determine ips_supervisor_access."]
-    MPL1 = 0x01,
+    Mpl1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -138,9 +138,9 @@ impl From<Mprot2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mprot3 {
     #[doc = "Accesses from this master are forced to user-mode (ips_supervisor_access is forced to zero) regardless of the hprot\\[1\\] access attribute."]
-    MPL0 = 0x0,
+    Mpl0 = 0x0,
     #[doc = "Accesses from this master are not forced to user-mode. The hprot\\[1\\] access attribute is used directly to determine ips_supervisor_access."]
-    MPL1 = 0x01,
+    Mpl1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -183,9 +183,9 @@ impl From<Mprot3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac0 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -228,9 +228,9 @@ impl From<Opac0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac1 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -273,9 +273,9 @@ impl From<Opac1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac10 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -318,9 +318,9 @@ impl From<Opac10> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac11 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -363,9 +363,9 @@ impl From<Opac11> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac12 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -408,9 +408,9 @@ impl From<Opac12> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac13 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -453,9 +453,9 @@ impl From<Opac13> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac14 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -498,9 +498,9 @@ impl From<Opac14> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac15 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -543,9 +543,9 @@ impl From<Opac15> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac16 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -588,9 +588,9 @@ impl From<Opac16> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac17 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -633,9 +633,9 @@ impl From<Opac17> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac18 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -678,9 +678,9 @@ impl From<Opac18> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac19 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -723,9 +723,9 @@ impl From<Opac19> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac2 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -768,9 +768,9 @@ impl From<Opac2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac20 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -813,9 +813,9 @@ impl From<Opac20> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac21 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -858,9 +858,9 @@ impl From<Opac21> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac22 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -903,9 +903,9 @@ impl From<Opac22> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac23 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -948,9 +948,9 @@ impl From<Opac23> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac24 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -993,9 +993,9 @@ impl From<Opac24> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac25 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1038,9 +1038,9 @@ impl From<Opac25> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac26 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1083,9 +1083,9 @@ impl From<Opac26> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac27 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1128,9 +1128,9 @@ impl From<Opac27> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac28 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1173,9 +1173,9 @@ impl From<Opac28> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac29 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1218,9 +1218,9 @@ impl From<Opac29> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac3 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1263,9 +1263,9 @@ impl From<Opac3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac30 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1308,9 +1308,9 @@ impl From<Opac30> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac31 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1353,9 +1353,9 @@ impl From<Opac31> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac32 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1398,9 +1398,9 @@ impl From<Opac32> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac33 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1443,9 +1443,9 @@ impl From<Opac33> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac4 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1488,9 +1488,9 @@ impl From<Opac4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac5 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1533,9 +1533,9 @@ impl From<Opac5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac6 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1578,9 +1578,9 @@ impl From<Opac6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac7 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1623,9 +1623,9 @@ impl From<Opac7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac8 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1668,9 +1668,9 @@ impl From<Opac8> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Opac9 {
     #[doc = "Accesses from an untrusted master are allowed."]
-    TP0 = 0x0,
+    Tp0 = 0x0,
     #[doc = "Accesses from an untrusted master are not allowed. If an access is attempted by an untrusted master, the access is terminated with an error response and no peripheral access is initiated on the IPS bus."]
-    TP1 = 0x01,
+    Tp1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,

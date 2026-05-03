@@ -3,9 +3,9 @@
 pub struct Edge(u32);
 impl Edge {
     #[doc = "level."]
-    pub const LEVEL: Self = Self(0x0);
+    pub const Level: Self = Self(0x0);
     #[doc = "edge."]
-    pub const EDGE: Self = Self(0x01);
+    pub const Edge: Self = Self(0x01);
 }
 impl Edge {
     pub const fn from_bits(val: u32) -> Edge {
@@ -18,8 +18,8 @@ impl Edge {
 impl core::fmt::Debug for Edge {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("LEVEL"),
-            0x01 => f.write_str("EDGE"),
+            0x0 => f.write_str("Level"),
+            0x01 => f.write_str("Edge"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -28,8 +28,8 @@ impl core::fmt::Debug for Edge {
 impl defmt::Format for Edge {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "LEVEL"),
-            0x01 => defmt::write!(f, "EDGE"),
+            0x0 => defmt::write!(f, "Level"),
+            0x01 => defmt::write!(f, "Edge"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -51,9 +51,9 @@ impl From<Edge> for u32 {
 pub struct PolCtl(u32);
 impl PolCtl {
     #[doc = "interrupt when gpio high."]
-    pub const HIHG: Self = Self(0x0);
+    pub const Hihg: Self = Self(0x0);
     #[doc = "interrupt when gpio low."]
-    pub const LOW: Self = Self(0x01);
+    pub const Low: Self = Self(0x01);
 }
 impl PolCtl {
     pub const fn from_bits(val: u32) -> PolCtl {
@@ -66,8 +66,8 @@ impl PolCtl {
 impl core::fmt::Debug for PolCtl {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HIHG"),
-            0x01 => f.write_str("LOW"),
+            0x0 => f.write_str("Hihg"),
+            0x01 => f.write_str("Low"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -76,8 +76,8 @@ impl core::fmt::Debug for PolCtl {
 impl defmt::Format for PolCtl {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HIHG"),
-            0x01 => defmt::write!(f, "LOW"),
+            0x0 => defmt::write!(f, "Hihg"),
+            0x01 => defmt::write!(f, "Low"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }

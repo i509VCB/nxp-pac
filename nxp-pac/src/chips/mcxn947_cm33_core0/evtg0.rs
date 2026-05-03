@@ -14,14 +14,14 @@ impl Evtg0 {
     pub const fn as_ptr(&self) -> *mut () {
         self.ptr as _
     }
-    #[doc = "Array of registers: EVTG_AOI0_BFT01, EVTG_AOI0_BFT23, EVTG_AOI0_FILT, EVTG_AOI1_BFT01, EVTG_AOI1_BFT23, EVTG_AOI1_FILT, EVTG_CTRL."]
+    #[doc = "Array of registers: EVTG_AOI0_BFT01, EVTG_AOI0_BFT23, EVTG_AOI1_BFT01, EVTG_AOI1_BFT23, EVTG_CTRL, EVTG_AOI0_FILT, EVTG_AOI1_FILT."]
     #[inline(always)]
     pub const fn evtg_inst(self, n: usize) -> EvtgInst {
         assert!(n < 4usize);
         unsafe { EvtgInst::from_ptr(self.ptr.wrapping_add(0x0usize + n * 16usize) as _) }
     }
 }
-#[doc = "Array of registers: EVTG_AOI0_BFT01, EVTG_AOI0_BFT23, EVTG_AOI0_FILT, EVTG_AOI1_BFT01, EVTG_AOI1_BFT23, EVTG_AOI1_FILT, EVTG_CTRL."]
+#[doc = "Array of registers: EVTG_AOI0_BFT01, EVTG_AOI0_BFT23, EVTG_AOI1_BFT01, EVTG_AOI1_BFT23, EVTG_CTRL, EVTG_AOI0_FILT, EVTG_AOI1_FILT."]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct EvtgInst {
     ptr: *mut u8,

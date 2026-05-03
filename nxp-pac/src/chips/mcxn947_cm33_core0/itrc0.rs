@@ -26,21 +26,21 @@ impl Itrc0 {
     }
     #[doc = "Array of registers: OUT_SEL\\[%s\\]."]
     #[inline(always)]
-    pub const fn outx_sel(self, n: usize) -> OutxSel {
+    pub const fn ou_tx_sel(self, n: usize) -> OuTxSel {
         assert!(n < 7usize);
-        unsafe { OutxSel::from_ptr(self.ptr.wrapping_add(0x08usize + n * 8usize) as _) }
+        unsafe { OuTxSel::from_ptr(self.ptr.wrapping_add(0x08usize + n * 8usize) as _) }
     }
     #[doc = "Array of registers: OUT_SEL_1\\[%s\\]."]
     #[inline(always)]
-    pub const fn outx_sel_1(self, n: usize) -> OutxSel1 {
+    pub const fn ou_tx_sel_1(self, n: usize) -> OuTxSel1 {
         assert!(n < 7usize);
-        unsafe { OutxSel1::from_ptr(self.ptr.wrapping_add(0x48usize + n * 8usize) as _) }
+        unsafe { OuTxSel1::from_ptr(self.ptr.wrapping_add(0x48usize + n * 8usize) as _) }
     }
     #[doc = "Array of registers: OUT_SEL_2\\[%s\\]."]
     #[inline(always)]
-    pub const fn outx_sel_2(self, n: usize) -> OutxSel2 {
+    pub const fn ou_tx_sel_2(self, n: usize) -> OuTxSel2 {
         assert!(n < 7usize);
-        unsafe { OutxSel2::from_ptr(self.ptr.wrapping_add(0x88usize + n * 8usize) as _) }
+        unsafe { OuTxSel2::from_ptr(self.ptr.wrapping_add(0x88usize + n * 8usize) as _) }
     }
     #[doc = "Software event 0."]
     #[inline(always)]
@@ -55,12 +55,12 @@ impl Itrc0 {
 }
 #[doc = "Array of registers: OUT_SEL\\[%s\\]."]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct OutxSel {
+pub struct OuTxSel {
     ptr: *mut u8,
 }
-unsafe impl Send for OutxSel {}
-unsafe impl Sync for OutxSel {}
-impl OutxSel {
+unsafe impl Send for OuTxSel {}
+unsafe impl Sync for OuTxSel {}
+impl OuTxSel {
     #[inline(always)]
     pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
         Self { ptr: ptr as _ }
@@ -78,12 +78,12 @@ impl OutxSel {
 }
 #[doc = "Array of registers: OUT_SEL_1\\[%s\\]."]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct OutxSel1 {
+pub struct OuTxSel1 {
     ptr: *mut u8,
 }
-unsafe impl Send for OutxSel1 {}
-unsafe impl Sync for OutxSel1 {}
-impl OutxSel1 {
+unsafe impl Send for OuTxSel1 {}
+unsafe impl Sync for OuTxSel1 {}
+impl OuTxSel1 {
     #[inline(always)]
     pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
         Self { ptr: ptr as _ }
@@ -101,12 +101,12 @@ impl OutxSel1 {
 }
 #[doc = "Array of registers: OUT_SEL_2\\[%s\\]."]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct OutxSel2 {
+pub struct OuTxSel2 {
     ptr: *mut u8,
 }
-unsafe impl Send for OutxSel2 {}
-unsafe impl Sync for OutxSel2 {}
-impl OutxSel2 {
+unsafe impl Send for OuTxSel2 {}
+unsafe impl Sync for OuTxSel2 {}
+impl OuTxSel2 {
     #[inline(always)]
     pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
         Self { ptr: ptr as _ }

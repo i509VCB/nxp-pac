@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum AxbsPForceRoundRobin {
     #[doc = "AXBS_P masters are not arbitored in round robin, depending on M0/M1 master priority settings."]
-    AXBS_P_FORCE_ROUND_ROBIN_0 = 0x0,
+    AxbsPForceRoundRobin0 = 0x0,
     #[doc = "AXBS_P masters are arbitored in round robin."]
-    AXBS_P_FORCE_ROUND_ROBIN_1 = 0x01,
+    AxbsPForceRoundRobin1 = 0x01,
 }
 impl AxbsPForceRoundRobin {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<AxbsPForceRoundRobin> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum AxbsPM0HighPriority {
     #[doc = "AXBS_P M0 master doesn't have high priority."]
-    AXBS_P_M0_HIGH_PRIORITY_0 = 0x0,
+    AxbsPM0HighPriority0 = 0x0,
     #[doc = "AXBS_P M0 master has high priority."]
-    AXBS_P_M0_HIGH_PRIORITY_1 = 0x01,
+    AxbsPM0HighPriority1 = 0x01,
 }
 impl AxbsPM0HighPriority {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<AxbsPM0HighPriority> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum AxbsPM1HighPriority {
     #[doc = "AXBS_P M1 master does not have high priority."]
-    AXBS_P_M1_HIGH_PRIORITY_0 = 0x0,
+    AxbsPM1HighPriority0 = 0x0,
     #[doc = "AXBS_P M1 master has high priority."]
-    AXBS_P_M1_HIGH_PRIORITY_1 = 0x01,
+    AxbsPM1HighPriority1 = 0x01,
 }
 impl AxbsPM1HighPriority {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<AxbsPM1HighPriority> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CacheUsb {
     #[doc = "Cacheable attribute is off for read/write transactions."]
-    CACHE_USB_0 = 0x0,
+    CacheUsb0 = 0x0,
     #[doc = "Cacheable attribute is on for read/write transactions."]
-    CACHE_USB_1 = 0x01,
+    CacheUsb1 = 0x01,
 }
 impl CacheUsb {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<CacheUsb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cm7ForceHclkEn {
     #[doc = "AHB clock is not running (gated) when CM7 is sleeping and TCM is not accessible."]
-    CM7_FORCE_HCLK_EN_0 = 0x0,
+    Cm7ForceHclkEn0 = 0x0,
     #[doc = "AHB clock is running (enabled) when CM7 is sleeping and TCM is accessible."]
-    CM7_FORCE_HCLK_EN_1 = 0x01,
+    Cm7ForceHclkEn1 = 0x01,
 }
 impl Cm7ForceHclkEn {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<Cm7ForceHclkEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DbgEn {
     #[doc = "Debug turned off."]
-    DBG_EN_0 = 0x0,
+    DbgEn0 = 0x0,
     #[doc = "Debug enabled (default)."]
-    DBG_EN_1 = 0x01,
+    DbgEn1 = 0x01,
 }
 impl DbgEn {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<DbgEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DcpKeySel {
     #[doc = "Select \\[127:0\\] from SNVS Master Key as DCP key."]
-    DCP_KEY_SEL_0 = 0x0,
+    DcpKeySel0 = 0x0,
     #[doc = "Select \\[255:128\\] from SNVS Master Key as DCP key."]
-    DCP_KEY_SEL_1 = 0x01,
+    DcpKeySel1 = 0x01,
 }
 impl DcpKeySel {
     #[inline(always)]
@@ -220,9 +220,9 @@ impl From<DcpKeySel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DcpkeyOcotpOrKeymux {
     #[doc = "Select key from SNVS Master Key."]
-    DCPKEY_OCOTP_OR_KEYMUX_0 = 0x0,
+    DcpkeyOcotpOrKeymux0 = 0x0,
     #[doc = "Select key from OCOTP (SW_GP2)."]
-    DCPKEY_OCOTP_OR_KEYMUX_1 = 0x01,
+    DcpkeyOcotpOrKeymux1 = 0x01,
 }
 impl DcpkeyOcotpOrKeymux {
     #[inline(always)]
@@ -251,9 +251,9 @@ impl From<DcpkeyOcotpOrKeymux> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EdmaStopAck {
     #[doc = "EDMA stop acknowledge is not asserted."]
-    EDMA_STOP_ACK_0 = 0x0,
+    EdmaStopAck0 = 0x0,
     #[doc = "EDMA stop acknowledge is asserted (EDMA is in STOP mode)."]
-    EDMA_STOP_ACK_1 = 0x01,
+    EdmaStopAck1 = 0x01,
 }
 impl EdmaStopAck {
     #[inline(always)]
@@ -282,9 +282,9 @@ impl From<EdmaStopAck> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EdmaStopReq {
     #[doc = "stop request off."]
-    EDMA_STOP_REQ_0 = 0x0,
+    EdmaStopReq0 = 0x0,
     #[doc = "stop request on."]
-    EDMA_STOP_REQ_1 = 0x01,
+    EdmaStopReq1 = 0x01,
 }
 impl EdmaStopReq {
     #[inline(always)]
@@ -313,9 +313,9 @@ impl From<EdmaStopReq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ExcMon {
     #[doc = "OKAY response."]
-    EXC_MON_0 = 0x0,
+    ExcMon0 = 0x0,
     #[doc = "SLVError response."]
-    EXC_MON_1 = 0x01,
+    ExcMon1 = 0x01,
 }
 impl ExcMon {
     #[inline(always)]
@@ -344,9 +344,9 @@ impl From<ExcMon> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexio1IpgDoze {
     #[doc = "FLEXIO1 is not in doze mode."]
-    FLEXIO1_IPG_DOZE_0 = 0x0,
+    Flexio1IpgDoze0 = 0x0,
     #[doc = "FLEXIO1 is in doze mode."]
-    FLEXIO1_IPG_DOZE_1 = 0x01,
+    Flexio1IpgDoze1 = 0x01,
 }
 impl Flexio1IpgDoze {
     #[inline(always)]
@@ -375,9 +375,9 @@ impl From<Flexio1IpgDoze> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexio1IpgStopMode {
     #[doc = "FlexIO1 is functional in Stop mode."]
-    FLEXIO1_IPG_STOP_MODE_0 = 0x0,
+    Flexio1IpgStopMode0 = 0x0,
     #[doc = "When this bit is equal to 1'b1 and ipg_stop is asserted, FlexIO1 is not functional in Stop mode."]
-    FLEXIO1_IPG_STOP_MODE_1 = 0x01,
+    Flexio1IpgStopMode1 = 0x01,
 }
 impl Flexio1IpgStopMode {
     #[inline(always)]
@@ -406,9 +406,9 @@ impl From<Flexio1IpgStopMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexio1StopAck {
     #[doc = "FLEXIO1 stop acknowledge is not asserted."]
-    FLEXIO1_STOP_ACK_0 = 0x0,
+    Flexio1StopAck0 = 0x0,
     #[doc = "FLEXIO1 stop acknowledge is asserted."]
-    FLEXIO1_STOP_ACK_1 = 0x01,
+    Flexio1StopAck1 = 0x01,
 }
 impl Flexio1StopAck {
     #[inline(always)]
@@ -437,9 +437,9 @@ impl From<Flexio1StopAck> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexio1StopReq {
     #[doc = "stop request off."]
-    FLEXIO1_STOP_REQ_0 = 0x0,
+    Flexio1StopReq0 = 0x0,
     #[doc = "stop request on."]
-    FLEXIO1_STOP_REQ_1 = 0x01,
+    Flexio1StopReq1 = 0x01,
 }
 impl Flexio1StopReq {
     #[inline(always)]
@@ -468,9 +468,9 @@ impl From<Flexio1StopReq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FlexramBankCfgSel {
     #[doc = "use fuse value to config."]
-    FLEXRAM_BANK_CFG_SEL_0 = 0x0,
+    FlexramBankCfgSel0 = 0x0,
     #[doc = "use FLEXRAM_BANK_CFG to config."]
-    FLEXRAM_BANK_CFG_SEL_1 = 0x01,
+    FlexramBankCfgSel1 = 0x01,
 }
 impl FlexramBankCfgSel {
     #[inline(always)]
@@ -499,9 +499,9 @@ impl From<FlexramBankCfgSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FlexspiStopAck {
     #[doc = "FLEXSPI stop acknowledge is not asserted."]
-    FLEXSPI_STOP_ACK_0 = 0x0,
+    FlexspiStopAck0 = 0x0,
     #[doc = "FLEXSPI stop acknowledge is asserted."]
-    FLEXSPI_STOP_ACK_1 = 0x01,
+    FlexspiStopAck1 = 0x01,
 }
 impl FlexspiStopAck {
     #[inline(always)]
@@ -530,9 +530,9 @@ impl From<FlexspiStopAck> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FlexspiStopReq {
     #[doc = "stop request off."]
-    FLEXSPI_STOP_REQ_0 = 0x0,
+    FlexspiStopReq0 = 0x0,
     #[doc = "stop request on."]
-    FLEXSPI_STOP_REQ_1 = 0x01,
+    FlexspiStopReq1 = 0x01,
 }
 impl FlexspiStopReq {
     #[inline(always)]
@@ -561,9 +561,9 @@ impl From<FlexspiStopReq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gint {
     #[doc = "Global interrupt request is not asserted."]
-    GINT_0 = 0x0,
+    Gint0 = 0x0,
     #[doc = "Global interrupt request is asserted."]
-    GINT_1 = 0x01,
+    Gint1 = 0x01,
 }
 impl Gint {
     #[inline(always)]
@@ -592,9 +592,9 @@ impl From<Gint> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum IomuxcXbarDirSel2 {
     #[doc = "XBAR_INOUT as input."]
-    IOMUXC_XBAR_DIR_SEL_2_0 = 0x0,
+    IomuxcXbarDirSel20 = 0x0,
     #[doc = "XBAR_INOUT as output."]
-    IOMUXC_XBAR_DIR_SEL_2_1 = 0x01,
+    IomuxcXbarDirSel21 = 0x01,
 }
 impl IomuxcXbarDirSel2 {
     #[inline(always)]
@@ -623,9 +623,9 @@ impl From<IomuxcXbarDirSel2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum IomuxcXbarDirSel3 {
     #[doc = "XBAR_INOUT as input."]
-    IOMUXC_XBAR_DIR_SEL_3_0 = 0x0,
+    IomuxcXbarDirSel30 = 0x0,
     #[doc = "XBAR_INOUT as output."]
-    IOMUXC_XBAR_DIR_SEL_3_1 = 0x01,
+    IomuxcXbarDirSel31 = 0x01,
 }
 impl IomuxcXbarDirSel3 {
     #[inline(always)]
@@ -654,9 +654,9 @@ impl From<IomuxcXbarDirSel3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum L2MemDeepsleep {
     #[doc = "No force sleep control supported, memory deep sleep mode only entered when whole system in stop mode (OCRAM in normal mode)."]
-    L2_MEM_DEEPSLEEP_0 = 0x0,
+    L2MemDeepsleep0 = 0x0,
     #[doc = "Force memory into deep sleep mode (OCRAM in power saving mode)."]
-    L2_MEM_DEEPSLEEP_1 = 0x01,
+    L2MemDeepsleep1 = 0x01,
 }
 impl L2MemDeepsleep {
     #[inline(always)]
@@ -685,9 +685,9 @@ impl From<L2MemDeepsleep> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum L2MemEnPowersaving {
     #[doc = "Enters power saving mode only when chip is in SUSPEND mode."]
-    L2_MEM_EN_POWERSAVING_0 = 0x0,
+    L2MemEnPowersaving0 = 0x0,
     #[doc = "Controlled by L2_MEM_DEEPSLEEP bitfield."]
-    L2_MEM_EN_POWERSAVING_1 = 0x01,
+    L2MemEnPowersaving1 = 0x01,
 }
 impl L2MemEnPowersaving {
     #[inline(always)]
@@ -716,9 +716,9 @@ impl From<L2MemEnPowersaving> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LockDbgEn {
     #[doc = "Field is not locked."]
-    LOCK_DBG_EN_0 = 0x0,
+    LockDbgEn0 = 0x0,
     #[doc = "Field is locked (read access only)."]
-    LOCK_DBG_EN_1 = 0x01,
+    LockDbgEn1 = 0x01,
 }
 impl LockDbgEn {
     #[inline(always)]
@@ -747,9 +747,9 @@ impl From<LockDbgEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LockDcpkeyOcotpOrKeymux {
     #[doc = "Field is not locked."]
-    LOCK_DCPKEY_OCOTP_OR_KEYMUX_0 = 0x0,
+    LockDcpkeyOcotpOrKeymux0 = 0x0,
     #[doc = "Field is locked (read access only)."]
-    LOCK_DCPKEY_OCOTP_OR_KEYMUX_1 = 0x01,
+    LockDcpkeyOcotpOrKeymux1 = 0x01,
 }
 impl LockDcpkeyOcotpOrKeymux {
     #[inline(always)]
@@ -778,9 +778,9 @@ impl From<LockDcpkeyOcotpOrKeymux> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LockM7ApcAcR0Bot {
     #[doc = "Register field \\[31:1\\] is not locked."]
-    LOCK_M7_APC_AC_R0_BOT_0 = 0x0,
+    LockM7ApcAcR0Bot0 = 0x0,
     #[doc = "Register field \\[31:1\\] is locked (read access only)."]
-    LOCK_M7_APC_AC_R0_BOT_1 = 0x01,
+    LockM7ApcAcR0Bot1 = 0x01,
 }
 impl LockM7ApcAcR0Bot {
     #[inline(always)]
@@ -809,9 +809,9 @@ impl From<LockM7ApcAcR0Bot> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LockM7ApcAcR0Top {
     #[doc = "Register field \\[31:1\\] is not locked."]
-    LOCK_M7_APC_AC_R0_TOP_0 = 0x0,
+    LockM7ApcAcR0Top0 = 0x0,
     #[doc = "Register field \\[31:1\\] is locked (read access only)."]
-    LOCK_M7_APC_AC_R0_TOP_1 = 0x01,
+    LockM7ApcAcR0Top1 = 0x01,
 }
 impl LockM7ApcAcR0Top {
     #[inline(always)]
@@ -840,9 +840,9 @@ impl From<LockM7ApcAcR0Top> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LockM7ApcAcR1Bot {
     #[doc = "Register field \\[31:1\\] is not locked."]
-    LOCK_M7_APC_AC_R1_BOT_0 = 0x0,
+    LockM7ApcAcR1Bot0 = 0x0,
     #[doc = "Register field \\[31:1\\] is locked (read access only)."]
-    LOCK_M7_APC_AC_R1_BOT_1 = 0x01,
+    LockM7ApcAcR1Bot1 = 0x01,
 }
 impl LockM7ApcAcR1Bot {
     #[inline(always)]
@@ -871,9 +871,9 @@ impl From<LockM7ApcAcR1Bot> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LockM7ApcAcR1Top {
     #[doc = "Register field \\[31:1\\] is not locked."]
-    LOCK_M7_APC_AC_R1_TOP_0 = 0x0,
+    LockM7ApcAcR1Top0 = 0x0,
     #[doc = "Register field \\[31:1\\] is locked (read access only)."]
-    LOCK_M7_APC_AC_R1_TOP_1 = 0x01,
+    LockM7ApcAcR1Top1 = 0x01,
 }
 impl LockM7ApcAcR1Top {
     #[inline(always)]
@@ -902,9 +902,9 @@ impl From<LockM7ApcAcR1Top> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LockM7ApcAcR2Bot {
     #[doc = "Register field \\[31:1\\] is not locked."]
-    LOCK_M7_APC_AC_R2_BOT_0 = 0x0,
+    LockM7ApcAcR2Bot0 = 0x0,
     #[doc = "Register field \\[31:1\\] is locked (read access only)."]
-    LOCK_M7_APC_AC_R2_BOT_1 = 0x01,
+    LockM7ApcAcR2Bot1 = 0x01,
 }
 impl LockM7ApcAcR2Bot {
     #[inline(always)]
@@ -933,9 +933,9 @@ impl From<LockM7ApcAcR2Bot> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LockM7ApcAcR2Top {
     #[doc = "Register field \\[31:1\\] is not locked."]
-    LOCK_M7_APC_AC_R2_TOP_0 = 0x0,
+    LockM7ApcAcR2Top0 = 0x0,
     #[doc = "Register field \\[31:1\\] is locked (read access only)."]
-    LOCK_M7_APC_AC_R2_TOP_1 = 0x01,
+    LockM7ApcAcR2Top1 = 0x01,
 }
 impl LockM7ApcAcR2Top {
     #[inline(always)]
@@ -964,9 +964,9 @@ impl From<LockM7ApcAcR2Top> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LockM7ApcAcR3Bot {
     #[doc = "Register field \\[31:1\\] is not locked."]
-    LOCK_M7_APC_AC_R3_BOT_0 = 0x0,
+    LockM7ApcAcR3Bot0 = 0x0,
     #[doc = "Register field \\[31:1\\] is locked (read access only)."]
-    LOCK_M7_APC_AC_R3_BOT_1 = 0x01,
+    LockM7ApcAcR3Bot1 = 0x01,
 }
 impl LockM7ApcAcR3Bot {
     #[inline(always)]
@@ -995,9 +995,9 @@ impl From<LockM7ApcAcR3Bot> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LockM7ApcAcR3Top {
     #[doc = "Register field \\[31:1\\] is not locked."]
-    LOCK_M7_APC_AC_R3_TOP_0 = 0x0,
+    LockM7ApcAcR3Top0 = 0x0,
     #[doc = "Register field \\[31:1\\] is locked (read access only)."]
-    LOCK_M7_APC_AC_R3_TOP_1 = 0x01,
+    LockM7ApcAcR3Top1 = 0x01,
 }
 impl LockM7ApcAcR3Top {
     #[inline(always)]
@@ -1026,9 +1026,9 @@ impl From<LockM7ApcAcR3Top> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LockNiden {
     #[doc = "Field is not locked."]
-    LOCK_NIDEN_0 = 0x0,
+    LockNiden0 = 0x0,
     #[doc = "Field is locked (read access only)."]
-    LOCK_NIDEN_1 = 0x01,
+    LockNiden1 = 0x01,
 }
 impl LockNiden {
     #[inline(always)]
@@ -1057,9 +1057,9 @@ impl From<LockNiden> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LockOcramTzAddr {
     #[doc = "Field is not locked."]
-    LOCK_OCRAM_TZ_ADDR_0 = 0x0,
+    LockOcramTzAddr0 = 0x0,
     #[doc = "Field is locked (read access only)."]
-    LOCK_OCRAM_TZ_ADDR_1 = 0x01,
+    LockOcramTzAddr1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1118,9 +1118,9 @@ impl From<LockOcramTzAddr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LockOcramTzEn {
     #[doc = "Field is not locked."]
-    LOCK_OCRAM_TZ_EN_0 = 0x0,
+    LockOcramTzEn0 = 0x0,
     #[doc = "Field is locked (read access only)."]
-    LOCK_OCRAM_TZ_EN_1 = 0x01,
+    LockOcramTzEn1 = 0x01,
 }
 impl LockOcramTzEn {
     #[inline(always)]
@@ -1149,9 +1149,9 @@ impl From<LockOcramTzEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LockSecErrResp {
     #[doc = "Field is not locked."]
-    LOCK_SEC_ERR_RESP_0 = 0x0,
+    LockSecErrResp0 = 0x0,
     #[doc = "Field is locked (read access only)."]
-    LOCK_SEC_ERR_RESP_1 = 0x01,
+    LockSecErrResp1 = 0x01,
 }
 impl LockSecErrResp {
     #[inline(always)]
@@ -1180,9 +1180,9 @@ impl From<LockSecErrResp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LockVtor {
     #[doc = "CM7_INIT_VTOR field is not locked."]
-    LOCK_VTOR_0 = 0x0,
+    LockVtor0 = 0x0,
     #[doc = "CM7_INIT_VTOR field is locked (read access only)."]
-    LOCK_VTOR_1 = 0x01,
+    LockVtor1 = 0x01,
 }
 impl LockVtor {
     #[inline(always)]
@@ -1211,9 +1211,9 @@ impl From<LockVtor> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpi2c1IpgDoze {
     #[doc = "not in doze mode."]
-    LPI2C1_IPG_DOZE_0 = 0x0,
+    Lpi2c1IpgDoze0 = 0x0,
     #[doc = "in doze mode."]
-    LPI2C1_IPG_DOZE_1 = 0x01,
+    Lpi2c1IpgDoze1 = 0x01,
 }
 impl Lpi2c1IpgDoze {
     #[inline(always)]
@@ -1242,9 +1242,9 @@ impl From<Lpi2c1IpgDoze> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpi2c1IpgStopMode {
     #[doc = "the module is functional in Stop mode."]
-    LPI2C1_IPG_STOP_MODE_0 = 0x0,
+    Lpi2c1IpgStopMode0 = 0x0,
     #[doc = "the module is NOT functional in Stop mode, when this bit is equal to 1 and ipg_stop is asserted."]
-    LPI2C1_IPG_STOP_MODE_1 = 0x01,
+    Lpi2c1IpgStopMode1 = 0x01,
 }
 impl Lpi2c1IpgStopMode {
     #[inline(always)]
@@ -1273,9 +1273,9 @@ impl From<Lpi2c1IpgStopMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpi2c1StopAck {
     #[doc = "stop acknowledge is not asserted."]
-    LPI2C1_STOP_ACK_0 = 0x0,
+    Lpi2c1StopAck0 = 0x0,
     #[doc = "stop acknowledge is asserted (the module is in Stop mode)."]
-    LPI2C1_STOP_ACK_1 = 0x01,
+    Lpi2c1StopAck1 = 0x01,
 }
 impl Lpi2c1StopAck {
     #[inline(always)]
@@ -1304,9 +1304,9 @@ impl From<Lpi2c1StopAck> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpi2c1StopReq {
     #[doc = "stop request off."]
-    LPI2C1_STOP_REQ_0 = 0x0,
+    Lpi2c1StopReq0 = 0x0,
     #[doc = "stop request on."]
-    LPI2C1_STOP_REQ_1 = 0x01,
+    Lpi2c1StopReq1 = 0x01,
 }
 impl Lpi2c1StopReq {
     #[inline(always)]
@@ -1335,9 +1335,9 @@ impl From<Lpi2c1StopReq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpi2c2IpgDoze {
     #[doc = "not in doze mode."]
-    LPI2C2_IPG_DOZE_0 = 0x0,
+    Lpi2c2IpgDoze0 = 0x0,
     #[doc = "in doze mode."]
-    LPI2C2_IPG_DOZE_1 = 0x01,
+    Lpi2c2IpgDoze1 = 0x01,
 }
 impl Lpi2c2IpgDoze {
     #[inline(always)]
@@ -1366,9 +1366,9 @@ impl From<Lpi2c2IpgDoze> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpi2c2IpgStopMode {
     #[doc = "the module is functional in Stop mode."]
-    LPI2C2_IPG_STOP_MODE_0 = 0x0,
+    Lpi2c2IpgStopMode0 = 0x0,
     #[doc = "the module is NOT functional in Stop mode, when this bit is equal to 1 and ipg_stop is asserted."]
-    LPI2C2_IPG_STOP_MODE_1 = 0x01,
+    Lpi2c2IpgStopMode1 = 0x01,
 }
 impl Lpi2c2IpgStopMode {
     #[inline(always)]
@@ -1397,9 +1397,9 @@ impl From<Lpi2c2IpgStopMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpi2c2StopAck {
     #[doc = "stop acknowledge is not asserted."]
-    LPI2C2_STOP_ACK_0 = 0x0,
+    Lpi2c2StopAck0 = 0x0,
     #[doc = "stop acknowledge is asserted."]
-    LPI2C2_STOP_ACK_1 = 0x01,
+    Lpi2c2StopAck1 = 0x01,
 }
 impl Lpi2c2StopAck {
     #[inline(always)]
@@ -1428,9 +1428,9 @@ impl From<Lpi2c2StopAck> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpi2c2StopReq {
     #[doc = "stop request off."]
-    LPI2C2_STOP_REQ_0 = 0x0,
+    Lpi2c2StopReq0 = 0x0,
     #[doc = "stop request on."]
-    LPI2C2_STOP_REQ_1 = 0x01,
+    Lpi2c2StopReq1 = 0x01,
 }
 impl Lpi2c2StopReq {
     #[inline(always)]
@@ -1459,9 +1459,9 @@ impl From<Lpi2c2StopReq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi1IpgDoze {
     #[doc = "not in doze mode."]
-    LPSPI1_IPG_DOZE_0 = 0x0,
+    Lpspi1IpgDoze0 = 0x0,
     #[doc = "in doze mode."]
-    LPSPI1_IPG_DOZE_1 = 0x01,
+    Lpspi1IpgDoze1 = 0x01,
 }
 impl Lpspi1IpgDoze {
     #[inline(always)]
@@ -1490,9 +1490,9 @@ impl From<Lpspi1IpgDoze> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi1IpgStopMode {
     #[doc = "the module is functional in Stop mode."]
-    LPSPI1_IPG_STOP_MODE_0 = 0x0,
+    Lpspi1IpgStopMode0 = 0x0,
     #[doc = "the module is NOT functional in Stop mode, when this bit is equal to 1 and ipg_stop is asserted."]
-    LPSPI1_IPG_STOP_MODE_1 = 0x01,
+    Lpspi1IpgStopMode1 = 0x01,
 }
 impl Lpspi1IpgStopMode {
     #[inline(always)]
@@ -1521,9 +1521,9 @@ impl From<Lpspi1IpgStopMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi1StopAck {
     #[doc = "stop acknowledge is not asserted."]
-    LPSPI1_STOP_ACK_0 = 0x0,
+    Lpspi1StopAck0 = 0x0,
     #[doc = "stop acknowledge is asserted."]
-    LPSPI1_STOP_ACK_1 = 0x01,
+    Lpspi1StopAck1 = 0x01,
 }
 impl Lpspi1StopAck {
     #[inline(always)]
@@ -1552,9 +1552,9 @@ impl From<Lpspi1StopAck> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi1StopReq {
     #[doc = "stop request off."]
-    LPSPI1_STOP_REQ_0 = 0x0,
+    Lpspi1StopReq0 = 0x0,
     #[doc = "stop request on."]
-    LPSPI1_STOP_REQ_1 = 0x01,
+    Lpspi1StopReq1 = 0x01,
 }
 impl Lpspi1StopReq {
     #[inline(always)]
@@ -1583,9 +1583,9 @@ impl From<Lpspi1StopReq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi2IpgDoze {
     #[doc = "not in doze mode."]
-    LPSPI2_IPG_DOZE_0 = 0x0,
+    Lpspi2IpgDoze0 = 0x0,
     #[doc = "in doze mode."]
-    LPSPI2_IPG_DOZE_1 = 0x01,
+    Lpspi2IpgDoze1 = 0x01,
 }
 impl Lpspi2IpgDoze {
     #[inline(always)]
@@ -1614,9 +1614,9 @@ impl From<Lpspi2IpgDoze> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi2IpgStopMode {
     #[doc = "the module is functional in Stop mode."]
-    LPSPI2_IPG_STOP_MODE_0 = 0x0,
+    Lpspi2IpgStopMode0 = 0x0,
     #[doc = "the module is NOT functional in Stop mode, when this bit is equal to 1 and ipg_stop is asserted."]
-    LPSPI2_IPG_STOP_MODE_1 = 0x01,
+    Lpspi2IpgStopMode1 = 0x01,
 }
 impl Lpspi2IpgStopMode {
     #[inline(always)]
@@ -1645,9 +1645,9 @@ impl From<Lpspi2IpgStopMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi2StopAck {
     #[doc = "stop acknowledge is not asserted."]
-    LPSPI2_STOP_ACK_0 = 0x0,
+    Lpspi2StopAck0 = 0x0,
     #[doc = "stop acknowledge is asserted."]
-    LPSPI2_STOP_ACK_1 = 0x01,
+    Lpspi2StopAck1 = 0x01,
 }
 impl Lpspi2StopAck {
     #[inline(always)]
@@ -1676,9 +1676,9 @@ impl From<Lpspi2StopAck> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi2StopReq {
     #[doc = "stop request off."]
-    LPSPI2_STOP_REQ_0 = 0x0,
+    Lpspi2StopReq0 = 0x0,
     #[doc = "stop request on."]
-    LPSPI2_STOP_REQ_1 = 0x01,
+    Lpspi2StopReq1 = 0x01,
 }
 impl Lpspi2StopReq {
     #[inline(always)]
@@ -1707,9 +1707,9 @@ impl From<Lpspi2StopReq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart1IpgDoze {
     #[doc = "not in doze mode."]
-    LPUART1_IPG_DOZE_0 = 0x0,
+    Lpuart1IpgDoze0 = 0x0,
     #[doc = "in doze mode."]
-    LPUART1_IPG_DOZE_1 = 0x01,
+    Lpuart1IpgDoze1 = 0x01,
 }
 impl Lpuart1IpgDoze {
     #[inline(always)]
@@ -1738,9 +1738,9 @@ impl From<Lpuart1IpgDoze> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart1IpgStopMode {
     #[doc = "the module is functional in Stop mode."]
-    LPUART1_IPG_STOP_MODE_0 = 0x0,
+    Lpuart1IpgStopMode0 = 0x0,
     #[doc = "the module is NOT functional in Stop mode, when this bit is equal to 1 and ipg_stop is asserted."]
-    LPUART1_IPG_STOP_MODE_1 = 0x01,
+    Lpuart1IpgStopMode1 = 0x01,
 }
 impl Lpuart1IpgStopMode {
     #[inline(always)]
@@ -1769,9 +1769,9 @@ impl From<Lpuart1IpgStopMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart1StopAck {
     #[doc = "stop acknowledge is not asserted."]
-    LPUART1_STOP_ACK_0 = 0x0,
+    Lpuart1StopAck0 = 0x0,
     #[doc = "stop acknowledge is asserted."]
-    LPUART1_STOP_ACK_1 = 0x01,
+    Lpuart1StopAck1 = 0x01,
 }
 impl Lpuart1StopAck {
     #[inline(always)]
@@ -1800,9 +1800,9 @@ impl From<Lpuart1StopAck> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart1StopReq {
     #[doc = "stop request off."]
-    LPUART1_STOP_REQ_0 = 0x0,
+    Lpuart1StopReq0 = 0x0,
     #[doc = "stop request on."]
-    LPUART1_STOP_REQ_1 = 0x01,
+    Lpuart1StopReq1 = 0x01,
 }
 impl Lpuart1StopReq {
     #[inline(always)]
@@ -1831,9 +1831,9 @@ impl From<Lpuart1StopReq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart2IpgDoze {
     #[doc = "not in doze mode."]
-    LPUART2_IPG_DOZE_0 = 0x0,
+    Lpuart2IpgDoze0 = 0x0,
     #[doc = "in doze mode."]
-    LPUART2_IPG_DOZE_1 = 0x01,
+    Lpuart2IpgDoze1 = 0x01,
 }
 impl Lpuart2IpgDoze {
     #[inline(always)]
@@ -1862,9 +1862,9 @@ impl From<Lpuart2IpgDoze> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart2IpgStopMode {
     #[doc = "the module is functional in Stop mode."]
-    LPUART2_IPG_STOP_MODE_0 = 0x0,
+    Lpuart2IpgStopMode0 = 0x0,
     #[doc = "the module is NOT functional in Stop mode, when this bit is equal to 1 and ipg_stop is asserted."]
-    LPUART2_IPG_STOP_MODE_1 = 0x01,
+    Lpuart2IpgStopMode1 = 0x01,
 }
 impl Lpuart2IpgStopMode {
     #[inline(always)]
@@ -1893,9 +1893,9 @@ impl From<Lpuart2IpgStopMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart2StopAck {
     #[doc = "stop acknowledge is not asserted."]
-    LPUART2_STOP_ACK_0 = 0x0,
+    Lpuart2StopAck0 = 0x0,
     #[doc = "stop acknowledge is asserted."]
-    LPUART2_STOP_ACK_1 = 0x01,
+    Lpuart2StopAck1 = 0x01,
 }
 impl Lpuart2StopAck {
     #[inline(always)]
@@ -1924,9 +1924,9 @@ impl From<Lpuart2StopAck> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart2StopReq {
     #[doc = "stop request off."]
-    LPUART2_STOP_REQ_0 = 0x0,
+    Lpuart2StopReq0 = 0x0,
     #[doc = "stop request on."]
-    LPUART2_STOP_REQ_1 = 0x01,
+    Lpuart2StopReq1 = 0x01,
 }
 impl Lpuart2StopReq {
     #[inline(always)]
@@ -1955,9 +1955,9 @@ impl From<Lpuart2StopReq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart3IpgDoze {
     #[doc = "not in doze mode."]
-    LPUART3_IPG_DOZE_0 = 0x0,
+    Lpuart3IpgDoze0 = 0x0,
     #[doc = "in doze mode."]
-    LPUART3_IPG_DOZE_1 = 0x01,
+    Lpuart3IpgDoze1 = 0x01,
 }
 impl Lpuart3IpgDoze {
     #[inline(always)]
@@ -1986,9 +1986,9 @@ impl From<Lpuart3IpgDoze> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart3IpgStopMode {
     #[doc = "the module is functional in Stop mode."]
-    LPUART3_IPG_STOP_MODE_0 = 0x0,
+    Lpuart3IpgStopMode0 = 0x0,
     #[doc = "the module is NOT functional in Stop mode, when this bit is equal to 1 and ipg_stop is asserted."]
-    LPUART3_IPG_STOP_MODE_1 = 0x01,
+    Lpuart3IpgStopMode1 = 0x01,
 }
 impl Lpuart3IpgStopMode {
     #[inline(always)]
@@ -2017,9 +2017,9 @@ impl From<Lpuart3IpgStopMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart3StopAck {
     #[doc = "stop acknowledge is not asserted."]
-    LPUART3_STOP_ACK_0 = 0x0,
+    Lpuart3StopAck0 = 0x0,
     #[doc = "stop acknowledge is asserted."]
-    LPUART3_STOP_ACK_1 = 0x01,
+    Lpuart3StopAck1 = 0x01,
 }
 impl Lpuart3StopAck {
     #[inline(always)]
@@ -2048,9 +2048,9 @@ impl From<Lpuart3StopAck> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart3StopReq {
     #[doc = "stop request off."]
-    LPUART3_STOP_REQ_0 = 0x0,
+    Lpuart3StopReq0 = 0x0,
     #[doc = "stop request on."]
-    LPUART3_STOP_REQ_1 = 0x01,
+    Lpuart3StopReq1 = 0x01,
 }
 impl Lpuart3StopReq {
     #[inline(always)]
@@ -2079,9 +2079,9 @@ impl From<Lpuart3StopReq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart4IpgDoze {
     #[doc = "not in doze mode."]
-    LPUART4_IPG_DOZE_0 = 0x0,
+    Lpuart4IpgDoze0 = 0x0,
     #[doc = "in doze mode."]
-    LPUART4_IPG_DOZE_1 = 0x01,
+    Lpuart4IpgDoze1 = 0x01,
 }
 impl Lpuart4IpgDoze {
     #[inline(always)]
@@ -2110,9 +2110,9 @@ impl From<Lpuart4IpgDoze> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart4IpgStopMode {
     #[doc = "the module is functional in Stop mode."]
-    LPUART4_IPG_STOP_MODE_0 = 0x0,
+    Lpuart4IpgStopMode0 = 0x0,
     #[doc = "the module is NOT functional in Stop mode, when this bit is equal to 1 and ipg_stop is asserted."]
-    LPUART4_IPG_STOP_MODE_1 = 0x01,
+    Lpuart4IpgStopMode1 = 0x01,
 }
 impl Lpuart4IpgStopMode {
     #[inline(always)]
@@ -2141,9 +2141,9 @@ impl From<Lpuart4IpgStopMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart4StopAck {
     #[doc = "stop acknowledge is not asserted."]
-    LPUART4_STOP_ACK_0 = 0x0,
+    Lpuart4StopAck0 = 0x0,
     #[doc = "stop acknowledge is asserted."]
-    LPUART4_STOP_ACK_1 = 0x01,
+    Lpuart4StopAck1 = 0x01,
 }
 impl Lpuart4StopAck {
     #[inline(always)]
@@ -2172,9 +2172,9 @@ impl From<Lpuart4StopAck> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart4StopReq {
     #[doc = "stop request off."]
-    LPUART4_STOP_REQ_0 = 0x0,
+    Lpuart4StopReq0 = 0x0,
     #[doc = "stop request on."]
-    LPUART4_STOP_REQ_1 = 0x01,
+    Lpuart4StopReq1 = 0x01,
 }
 impl Lpuart4StopReq {
     #[inline(always)]
@@ -2203,9 +2203,9 @@ impl From<Lpuart4StopReq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum M7ApcAcR0Ctrl {
     #[doc = "No access protection."]
-    M7_APC_AC_R0_CTRL_0 = 0x0,
+    M7ApcAcR0Ctrl0 = 0x0,
     #[doc = "M7 debug protection enabled."]
-    M7_APC_AC_R0_CTRL_1 = 0x01,
+    M7ApcAcR0Ctrl1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
 }
@@ -2236,9 +2236,9 @@ impl From<M7ApcAcR0Ctrl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum M7ApcAcR1Ctrl {
     #[doc = "No access protection."]
-    M7_APC_AC_R1_CTRL_0 = 0x0,
+    M7ApcAcR1Ctrl0 = 0x0,
     #[doc = "M7 debug protection enabled."]
-    M7_APC_AC_R1_CTRL_1 = 0x01,
+    M7ApcAcR1Ctrl1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
 }
@@ -2269,9 +2269,9 @@ impl From<M7ApcAcR1Ctrl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum M7ApcAcR2Ctrl {
     #[doc = "No access protection."]
-    M7_APC_AC_R2_CTRL_0 = 0x0,
+    M7ApcAcR2Ctrl0 = 0x0,
     #[doc = "M7 debug protection enabled."]
-    M7_APC_AC_R2_CTRL_1 = 0x01,
+    M7ApcAcR2Ctrl1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
 }
@@ -2302,9 +2302,9 @@ impl From<M7ApcAcR2Ctrl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum M7ApcAcR3Ctrl {
     #[doc = "No access protection."]
-    M7_APC_AC_R3_CTRL_0 = 0x0,
+    M7ApcAcR3Ctrl0 = 0x0,
     #[doc = "M7 debug protection enabled."]
-    M7_APC_AC_R3_CTRL_1 = 0x01,
+    M7ApcAcR3Ctrl1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
 }
@@ -2335,13 +2335,13 @@ impl From<M7ApcAcR3Ctrl> for u8 {
 pub struct MqsClkDiv(u8);
 impl MqsClkDiv {
     #[doc = "mclk frequency = hmclk frequency."]
-    pub const MQS_CLK_DIV_0: Self = Self(0x0);
+    pub const MqsClkDiv0: Self = Self(0x0);
     #[doc = "mclk frequency = 1/2 * hmclk frequency."]
-    pub const MQS_CLK_DIV_1: Self = Self(0x01);
+    pub const MqsClkDiv1: Self = Self(0x01);
     #[doc = "mclk frequency = 1/3 * hmclk frequency."]
-    pub const MQS_CLK_DIV_2: Self = Self(0x02);
+    pub const MqsClkDiv2: Self = Self(0x02);
     #[doc = "mclk frequency = 1/256 * hmclk frequency."]
-    pub const MQS_CLK_DIV_255: Self = Self(0xff);
+    pub const MqsClkDiv255: Self = Self(0xff);
 }
 impl MqsClkDiv {
     pub const fn from_bits(val: u8) -> MqsClkDiv {
@@ -2354,10 +2354,10 @@ impl MqsClkDiv {
 impl core::fmt::Debug for MqsClkDiv {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("MQS_CLK_DIV_0"),
-            0x01 => f.write_str("MQS_CLK_DIV_1"),
-            0x02 => f.write_str("MQS_CLK_DIV_2"),
-            0xff => f.write_str("MQS_CLK_DIV_255"),
+            0x0 => f.write_str("MqsClkDiv0"),
+            0x01 => f.write_str("MqsClkDiv1"),
+            0x02 => f.write_str("MqsClkDiv2"),
+            0xff => f.write_str("MqsClkDiv255"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -2366,10 +2366,10 @@ impl core::fmt::Debug for MqsClkDiv {
 impl defmt::Format for MqsClkDiv {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "MQS_CLK_DIV_0"),
-            0x01 => defmt::write!(f, "MQS_CLK_DIV_1"),
-            0x02 => defmt::write!(f, "MQS_CLK_DIV_2"),
-            0xff => defmt::write!(f, "MQS_CLK_DIV_255"),
+            0x0 => defmt::write!(f, "MqsClkDiv0"),
+            0x01 => defmt::write!(f, "MqsClkDiv1"),
+            0x02 => defmt::write!(f, "MqsClkDiv2"),
+            0xff => defmt::write!(f, "MqsClkDiv255"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -2391,9 +2391,9 @@ impl From<MqsClkDiv> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MqsEn {
     #[doc = "Disable MQS."]
-    MQS_EN_0 = 0x0,
+    MqsEn0 = 0x0,
     #[doc = "Enable MQS."]
-    MQS_EN_1 = 0x01,
+    MqsEn1 = 0x01,
 }
 impl MqsEn {
     #[inline(always)]
@@ -2422,9 +2422,9 @@ impl From<MqsEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MqsOversample {
     #[doc = "32."]
-    MQS_OVERSAMPLE_0 = 0x0,
+    MqsOversample0 = 0x0,
     #[doc = "64."]
-    MQS_OVERSAMPLE_1 = 0x01,
+    MqsOversample1 = 0x01,
 }
 impl MqsOversample {
     #[inline(always)]
@@ -2453,9 +2453,9 @@ impl From<MqsOversample> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MqsSwRst {
     #[doc = "Exit software reset for MQS."]
-    MQS_SW_RST_0 = 0x0,
+    MqsSwRst0 = 0x0,
     #[doc = "Enable software reset for MQS."]
-    MQS_SW_RST_1 = 0x01,
+    MqsSwRst1 = 0x01,
 }
 impl MqsSwRst {
     #[inline(always)]
@@ -2484,9 +2484,9 @@ impl From<MqsSwRst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Niden {
     #[doc = "Debug turned off."]
-    NIDEN_0 = 0x0,
+    Niden0 = 0x0,
     #[doc = "Debug enabled (default)."]
-    NIDEN_1 = 0x01,
+    Niden1 = 0x01,
 }
 impl Niden {
     #[inline(always)]
@@ -2515,9 +2515,9 @@ impl From<Niden> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum OcramTzEn {
     #[doc = "The TrustZone feature is disabled. Entire OCRAM space is available for all access types (secure/non-secure/user/supervisor)."]
-    OCRAM_TZ_EN_0 = 0x0,
+    OcramTzEn0 = 0x0,
     #[doc = "The TrustZone feature is enabled. Access to address in the range specified by \\[ENDADDR:STARTADDR\\] follows the execution mode access policy described in CSU chapter."]
-    OCRAM_TZ_EN_1 = 0x01,
+    OcramTzEn1 = 0x01,
 }
 impl OcramTzEn {
     #[inline(always)]
@@ -2546,9 +2546,9 @@ impl From<OcramTzEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PitStopAck {
     #[doc = "PIT stop acknowledge is not asserted."]
-    PIT_STOP_ACK_0 = 0x0,
+    PitStopAck0 = 0x0,
     #[doc = "PIT stop acknowledge is asserted."]
-    PIT_STOP_ACK_1 = 0x01,
+    PitStopAck1 = 0x01,
 }
 impl PitStopAck {
     #[inline(always)]
@@ -2577,9 +2577,9 @@ impl From<PitStopAck> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PitStopReq {
     #[doc = "stop request off."]
-    PIT_STOP_REQ_0 = 0x0,
+    PitStopReq0 = 0x0,
     #[doc = "stop request on."]
-    PIT_STOP_REQ_1 = 0x01,
+    PitStopReq1 = 0x01,
 }
 impl PitStopReq {
     #[inline(always)]
@@ -2608,9 +2608,9 @@ impl From<PitStopReq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RamAutoClkGatingEn {
     #[doc = "disable automatically gate off RAM clock."]
-    RAM_AUTO_CLK_GATING_EN_0 = 0x0,
+    RamAutoClkGatingEn0 = 0x0,
     #[doc = "enable automatically gate off RAM clock."]
-    RAM_AUTO_CLK_GATING_EN_1 = 0x01,
+    RamAutoClkGatingEn1 = 0x01,
 }
 impl RamAutoClkGatingEn {
     #[inline(always)]
@@ -2639,15 +2639,15 @@ impl From<RamAutoClkGatingEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai1Mclk1Sel {
     #[doc = "ccm.ssi1_clk_root."]
-    SAI1_MCLK1_SEL_0 = 0x0,
+    Sai1Mclk1Sel0 = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "ccm.ssi3_clk_root."]
-    SAI1_MCLK1_SEL_2 = 0x02,
+    Sai1Mclk1Sel2 = 0x02,
     #[doc = "iomux.sai1_ipg_clk_sai_mclk."]
-    SAI1_MCLK1_SEL_3 = 0x03,
+    Sai1Mclk1Sel3 = 0x03,
     _RESERVED_4 = 0x04,
     #[doc = "iomux.sai3_ipg_clk_sai_mclk."]
-    SAI1_MCLK1_SEL_5 = 0x05,
+    Sai1Mclk1Sel5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
 }
@@ -2678,15 +2678,15 @@ impl From<Sai1Mclk1Sel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai1Mclk2Sel {
     #[doc = "ccm.ssi1_clk_root."]
-    SAI1_MCLK2_SEL_0 = 0x0,
+    Sai1Mclk2Sel0 = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "ccm.ssi3_clk_root."]
-    SAI1_MCLK2_SEL_2 = 0x02,
+    Sai1Mclk2Sel2 = 0x02,
     #[doc = "iomux.sai1_ipg_clk_sai_mclk."]
-    SAI1_MCLK2_SEL_3 = 0x03,
+    Sai1Mclk2Sel3 = 0x03,
     _RESERVED_4 = 0x04,
     #[doc = "iomux.sai3_ipg_clk_sai_mclk."]
-    SAI1_MCLK2_SEL_5 = 0x05,
+    Sai1Mclk2Sel5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
 }
@@ -2717,13 +2717,13 @@ impl From<Sai1Mclk2Sel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai1Mclk3Sel {
     #[doc = "ccm.spdif0_clk_root."]
-    SAI1_MCLK3_SEL_0 = 0x0,
+    Sai1Mclk3Sel0 = 0x0,
     #[doc = "SPDIF_EXT_CLK."]
-    SAI1_MCLK3_SEL_1 = 0x01,
+    Sai1Mclk3Sel1 = 0x01,
     #[doc = "spdif.spdif_srclk."]
-    SAI1_MCLK3_SEL_2 = 0x02,
+    Sai1Mclk3Sel2 = 0x02,
     #[doc = "spdif.spdif_outclock."]
-    SAI1_MCLK3_SEL_3 = 0x03,
+    Sai1Mclk3Sel3 = 0x03,
 }
 impl Sai1Mclk3Sel {
     #[inline(always)]
@@ -2752,9 +2752,9 @@ impl From<Sai1Mclk3Sel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai1MclkDir {
     #[doc = "sai1.MCLK is input signal."]
-    SAI1_MCLK_DIR_0 = 0x0,
+    Sai1MclkDir0 = 0x0,
     #[doc = "sai1.MCLK is output signal."]
-    SAI1_MCLK_DIR_1 = 0x01,
+    Sai1MclkDir1 = 0x01,
 }
 impl Sai1MclkDir {
     #[inline(always)]
@@ -2783,9 +2783,9 @@ impl From<Sai1MclkDir> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai1StopAck {
     #[doc = "SAI1 stop acknowledge is not asserted."]
-    SAI1_STOP_ACK_0 = 0x0,
+    Sai1StopAck0 = 0x0,
     #[doc = "SAI1 stop acknowledge is asserted."]
-    SAI1_STOP_ACK_1 = 0x01,
+    Sai1StopAck1 = 0x01,
 }
 impl Sai1StopAck {
     #[inline(always)]
@@ -2814,9 +2814,9 @@ impl From<Sai1StopAck> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai1StopReq {
     #[doc = "stop request off."]
-    SAI1_STOP_REQ_0 = 0x0,
+    Sai1StopReq0 = 0x0,
     #[doc = "stop request on."]
-    SAI1_STOP_REQ_1 = 0x01,
+    Sai1StopReq1 = 0x01,
 }
 impl Sai1StopReq {
     #[inline(always)]
@@ -2845,13 +2845,13 @@ impl From<Sai1StopReq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai3Mclk3Sel {
     #[doc = "ccm.spdif0_clk_root."]
-    SAI3_MCLK3_SEL_0 = 0x0,
+    Sai3Mclk3Sel0 = 0x0,
     #[doc = "SPDIF_EXT_CLK."]
-    SAI3_MCLK3_SEL_1 = 0x01,
+    Sai3Mclk3Sel1 = 0x01,
     #[doc = "spdif.spdif_srclk."]
-    SAI3_MCLK3_SEL_2 = 0x02,
+    Sai3Mclk3Sel2 = 0x02,
     #[doc = "spdif.spdif_outclock."]
-    SAI3_MCLK3_SEL_3 = 0x03,
+    Sai3Mclk3Sel3 = 0x03,
 }
 impl Sai3Mclk3Sel {
     #[inline(always)]
@@ -2880,9 +2880,9 @@ impl From<Sai3Mclk3Sel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai3MclkDir {
     #[doc = "sai3.MCLK is input signal."]
-    SAI3_MCLK_DIR_0 = 0x0,
+    Sai3MclkDir0 = 0x0,
     #[doc = "sai3.MCLK is output signal."]
-    SAI3_MCLK_DIR_1 = 0x01,
+    Sai3MclkDir1 = 0x01,
 }
 impl Sai3MclkDir {
     #[inline(always)]
@@ -2911,9 +2911,9 @@ impl From<Sai3MclkDir> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai3StopAck {
     #[doc = "SAI3 stop acknowledge is not asserted."]
-    SAI3_STOP_ACK_0 = 0x0,
+    Sai3StopAck0 = 0x0,
     #[doc = "SAI3 stop acknowledge is asserted."]
-    SAI3_STOP_ACK_1 = 0x01,
+    Sai3StopAck1 = 0x01,
 }
 impl Sai3StopAck {
     #[inline(always)]
@@ -2942,9 +2942,9 @@ impl From<Sai3StopAck> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai3StopReq {
     #[doc = "stop request off."]
-    SAI3_STOP_REQ_0 = 0x0,
+    Sai3StopReq0 = 0x0,
     #[doc = "stop request on."]
-    SAI3_STOP_REQ_1 = 0x01,
+    Sai3StopReq1 = 0x01,
 }
 impl Sai3StopReq {
     #[inline(always)]
@@ -2973,9 +2973,9 @@ impl From<Sai3StopReq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SecErrResp {
     #[doc = "OKEY response."]
-    SEC_ERR_RESP_0 = 0x0,
+    SecErrResp0 = 0x0,
     #[doc = "SLVError (default)."]
-    SEC_ERR_RESP_1 = 0x01,
+    SecErrResp1 = 0x01,
 }
 impl SecErrResp {
     #[inline(always)]
@@ -3004,9 +3004,9 @@ impl From<SecErrResp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TrngStopAck {
     #[doc = "TRNG stop acknowledge is not asserted."]
-    TRNG_STOP_ACK_0 = 0x0,
+    TrngStopAck0 = 0x0,
     #[doc = "TRNG stop acknowledge is asserted."]
-    TRNG_STOP_ACK_1 = 0x01,
+    TrngStopAck1 = 0x01,
 }
 impl TrngStopAck {
     #[inline(always)]
@@ -3035,9 +3035,9 @@ impl From<TrngStopAck> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TrngStopReq {
     #[doc = "stop request off."]
-    TRNG_STOP_REQ_0 = 0x0,
+    TrngStopReq0 = 0x0,
     #[doc = "stop request on."]
-    TRNG_STOP_REQ_1 = 0x01,
+    TrngStopReq1 = 0x01,
 }
 impl TrngStopReq {
     #[inline(always)]
@@ -3066,9 +3066,9 @@ impl From<TrngStopReq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Vref1mClkGpt1 {
     #[doc = "GPT1 ipg_clk_highfreq driven by IPG_PERCLK."]
-    VREF_1M_CLK_GPT1_0 = 0x0,
+    Vref1mClkGpt10 = 0x0,
     #[doc = "GPT1 ipg_clk_highfreq driven by anatop 1 MHz clock."]
-    VREF_1M_CLK_GPT1_1 = 0x01,
+    Vref1mClkGpt11 = 0x01,
 }
 impl Vref1mClkGpt1 {
     #[inline(always)]
@@ -3097,9 +3097,9 @@ impl From<Vref1mClkGpt1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Vref1mClkGpt2 {
     #[doc = "GPT2 ipg_clk_highfreq driven by IPG_PERCLK."]
-    VREF_1M_CLK_GPT2_0 = 0x0,
+    Vref1mClkGpt20 = 0x0,
     #[doc = "GPT2 ipg_clk_highfreq driven by anatop 1 MHz clock."]
-    VREF_1M_CLK_GPT2_1 = 0x01,
+    Vref1mClkGpt21 = 0x01,
 }
 impl Vref1mClkGpt2 {
     #[inline(always)]
@@ -3128,9 +3128,9 @@ impl From<Vref1mClkGpt2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wdog1Mask {
     #[doc = "WDOG1 Timeout behaves normally."]
-    WDOG1_MASK_0 = 0x0,
+    Wdog1Mask0 = 0x0,
     #[doc = "WDOG1 Timeout is masked."]
-    WDOG1_MASK_1 = 0x01,
+    Wdog1Mask1 = 0x01,
 }
 impl Wdog1Mask {
     #[inline(always)]
@@ -3159,9 +3159,9 @@ impl From<Wdog1Mask> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wdog2Mask {
     #[doc = "WDOG2 Timeout behaves normally."]
-    WDOG2_MASK_0 = 0x0,
+    Wdog2Mask0 = 0x0,
     #[doc = "WDOG2 Timeout is masked."]
-    WDOG2_MASK_1 = 0x01,
+    Wdog2Mask1 = 0x01,
 }
 impl Wdog2Mask {
     #[inline(always)]

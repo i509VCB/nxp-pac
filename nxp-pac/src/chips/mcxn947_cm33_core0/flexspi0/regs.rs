@@ -5883,6 +5883,30 @@ impl Mcr0 {
     pub const fn set_rxclksrc(&mut self, val: super::vals::Rxclksrc) {
         self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
     }
+    #[doc = "AHB Read Access to IP Receive FIFO Enable."]
+    #[must_use]
+    #[inline(always)]
+    pub const fn ardfen(&self) -> super::vals::Ardfen {
+        let val = (self.0 >> 6usize) & 0x01;
+        super::vals::Ardfen::from_bits(val as u8)
+    }
+    #[doc = "AHB Read Access to IP Receive FIFO Enable."]
+    #[inline(always)]
+    pub const fn set_ardfen(&mut self, val: super::vals::Ardfen) {
+        self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+    }
+    #[doc = "AHB Write Access to IP Transmit FIFO Enable."]
+    #[must_use]
+    #[inline(always)]
+    pub const fn atdfen(&self) -> super::vals::Atdfen {
+        let val = (self.0 >> 7usize) & 0x01;
+        super::vals::Atdfen::from_bits(val as u8)
+    }
+    #[doc = "AHB Write Access to IP Transmit FIFO Enable."]
+    #[inline(always)]
+    pub const fn set_atdfen(&mut self, val: super::vals::Atdfen) {
+        self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+    }
     #[doc = "Serial Root Clock Divider."]
     #[must_use]
     #[inline(always)]
@@ -5992,6 +6016,8 @@ impl core::fmt::Debug for Mcr0 {
             .field("swreset", &self.swreset())
             .field("mdis", &self.mdis())
             .field("rxclksrc", &self.rxclksrc())
+            .field("ardfen", &self.ardfen())
+            .field("atdfen", &self.atdfen())
             .field("serclkdiv", &self.serclkdiv())
             .field("hsen", &self.hsen())
             .field("dozeen", &self.dozeen())
@@ -6008,10 +6034,12 @@ impl defmt::Format for Mcr0 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Mcr0 {{ swreset: {:?}, mdis: {:?}, rxclksrc: {:?}, serclkdiv: {:?}, hsen: {:?}, dozeen: {:?}, combinationen: {=bool:?}, sckfreerunen: {=bool:?}, learnen: {=bool:?}, ipgrantwait: {=u8:?}, ahbgrantwait: {=u8:?} }}",
+            "Mcr0 {{ swreset: {:?}, mdis: {:?}, rxclksrc: {:?}, ardfen: {:?}, atdfen: {:?}, serclkdiv: {:?}, hsen: {:?}, dozeen: {:?}, combinationen: {=bool:?}, sckfreerunen: {=bool:?}, learnen: {=bool:?}, ipgrantwait: {=u8:?}, ahbgrantwait: {=u8:?} }}",
             self.swreset(),
             self.mdis(),
             self.rxclksrc(),
+            self.ardfen(),
+            self.atdfen(),
             self.serclkdiv(),
             self.hsen(),
             self.dozeen(),

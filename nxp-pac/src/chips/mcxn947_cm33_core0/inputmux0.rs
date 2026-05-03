@@ -14,6 +14,12 @@ impl Inputmux0 {
     pub const fn as_ptr(&self) -> *mut () {
         self.ptr as _
     }
+    #[doc = "Array of registers: QDC_TRIG, QDC_HOME, QDC_INDEX, QDC_PHASEB, QDC_PHASEA."]
+    #[inline(always)]
+    pub const fn qd_cn(self, n: usize) -> QdCn {
+        assert!(n < 2usize);
+        unsafe { QdCn::from_ptr(self.ptr.wrapping_add(0x0usize + n * 32usize) as _) }
+    }
     #[doc = "Inputmux Register for SCT0 Input."]
     #[inline(always)]
     pub const fn sct0_inmux(
@@ -215,56 +221,6 @@ impl Inputmux0 {
     pub const fn dac2_trig(self) -> crate::common::Reg<regs::Dac2Trig, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0340usize) as _) }
     }
-    #[doc = "QDC0 Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn qdc0_trig(self) -> crate::common::Reg<regs::Qdc0Trig, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0360usize) as _) }
-    }
-    #[doc = "QDC0 Input Connections."]
-    #[inline(always)]
-    pub const fn qdc0_home(self) -> crate::common::Reg<regs::Qdc0Home, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0364usize) as _) }
-    }
-    #[doc = "QDC0 Input Connections."]
-    #[inline(always)]
-    pub const fn qdc0_index(self) -> crate::common::Reg<regs::Qdc0Index, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0368usize) as _) }
-    }
-    #[doc = "QDC0 Input Connections."]
-    #[inline(always)]
-    pub const fn qdc0_phaseb(self) -> crate::common::Reg<regs::Qdc0Phaseb, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x036cusize) as _) }
-    }
-    #[doc = "QDC0 Input Connections."]
-    #[inline(always)]
-    pub const fn qdc0_phasea(self) -> crate::common::Reg<regs::Qdc0Phasea, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0370usize) as _) }
-    }
-    #[doc = "QDC1 Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn qdc1_trig(self) -> crate::common::Reg<regs::Qdc1Trig, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0380usize) as _) }
-    }
-    #[doc = "QDC1 Input Connections."]
-    #[inline(always)]
-    pub const fn qdc1_home(self) -> crate::common::Reg<regs::Qdc1Home, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0384usize) as _) }
-    }
-    #[doc = "QDC1 Input Connections."]
-    #[inline(always)]
-    pub const fn qdc1_index(self) -> crate::common::Reg<regs::Qdc1Index, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0388usize) as _) }
-    }
-    #[doc = "QDC1 Input Connections."]
-    #[inline(always)]
-    pub const fn qdc1_phaseb(self) -> crate::common::Reg<regs::Qdc1Phaseb, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x038cusize) as _) }
-    }
-    #[doc = "QDC1 Input Connections."]
-    #[inline(always)]
-    pub const fn qdc1_phasea(self) -> crate::common::Reg<regs::Qdc1Phasea, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0390usize) as _) }
-    }
     #[doc = "PWM0 External Synchronization."]
     #[inline(always)]
     pub const fn flex_pwm0_sm_extsync(
@@ -357,83 +313,14 @@ impl Inputmux0 {
     }
     #[doc = "EVTG Trigger Input Connections."]
     #[inline(always)]
-    pub const fn evtg_trig0(self) -> crate::common::Reg<regs::EvtgTrig0, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0440usize) as _) }
-    }
-    #[doc = "EVTG Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn evtg_trig1(self) -> crate::common::Reg<regs::EvtgTrig1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0444usize) as _) }
-    }
-    #[doc = "EVTG Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn evtg_trig2(self) -> crate::common::Reg<regs::EvtgTrig2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0448usize) as _) }
-    }
-    #[doc = "EVTG Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn evtg_trig3(self) -> crate::common::Reg<regs::EvtgTrig3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x044cusize) as _) }
-    }
-    #[doc = "EVTG Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn evtg_trig4(self) -> crate::common::Reg<regs::EvtgTrig4, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0450usize) as _) }
-    }
-    #[doc = "EVTG Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn evtg_trig5(self) -> crate::common::Reg<regs::EvtgTrig5, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0454usize) as _) }
-    }
-    #[doc = "EVTG Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn evtg_trig6(self) -> crate::common::Reg<regs::EvtgTrig6, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0458usize) as _) }
-    }
-    #[doc = "EVTG Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn evtg_trig7(self) -> crate::common::Reg<regs::EvtgTrig7, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x045cusize) as _) }
-    }
-    #[doc = "EVTG Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn evtg_trig8(self) -> crate::common::Reg<regs::EvtgTrig8, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0460usize) as _) }
-    }
-    #[doc = "EVTG Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn evtg_trig9(self) -> crate::common::Reg<regs::EvtgTrig9, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0464usize) as _) }
-    }
-    #[doc = "EVTG Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn evtg_trig10(self) -> crate::common::Reg<regs::EvtgTrig10, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0468usize) as _) }
-    }
-    #[doc = "EVTG Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn evtg_trig11(self) -> crate::common::Reg<regs::EvtgTrig11, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x046cusize) as _) }
-    }
-    #[doc = "EVTG Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn evtg_trig12(self) -> crate::common::Reg<regs::EvtgTrig12, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0470usize) as _) }
-    }
-    #[doc = "EVTG Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn evtg_trig13(self) -> crate::common::Reg<regs::EvtgTrig13, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0474usize) as _) }
-    }
-    #[doc = "EVTG Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn evtg_trig14(self) -> crate::common::Reg<regs::EvtgTrig14, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0478usize) as _) }
-    }
-    #[doc = "EVTG Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn evtg_trig15(self) -> crate::common::Reg<regs::EvtgTrig15, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x047cusize) as _) }
+    pub const fn evtg_trig(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::EvtgTrig, crate::common::RW> {
+        assert!(n < 16usize);
+        unsafe {
+            crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0440usize + n * 4usize) as _)
+        }
     }
     #[doc = "USB-FS Trigger Input Connections."]
     #[inline(always)]
@@ -447,43 +334,11 @@ impl Inputmux0 {
     }
     #[doc = "EXT Trigger Connections."]
     #[inline(always)]
-    pub const fn ext_trig0(self) -> crate::common::Reg<regs::ExtTrig0, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04c0usize) as _) }
-    }
-    #[doc = "EXT Trigger Connections."]
-    #[inline(always)]
-    pub const fn ext_trig1(self) -> crate::common::Reg<regs::ExtTrig1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04c4usize) as _) }
-    }
-    #[doc = "EXT Trigger Connections."]
-    #[inline(always)]
-    pub const fn ext_trig2(self) -> crate::common::Reg<regs::ExtTrig2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04c8usize) as _) }
-    }
-    #[doc = "EXT Trigger Connections."]
-    #[inline(always)]
-    pub const fn ext_trig3(self) -> crate::common::Reg<regs::ExtTrig3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04ccusize) as _) }
-    }
-    #[doc = "EXT Trigger Connections."]
-    #[inline(always)]
-    pub const fn ext_trig4(self) -> crate::common::Reg<regs::ExtTrig4, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04d0usize) as _) }
-    }
-    #[doc = "EXT Trigger Connections."]
-    #[inline(always)]
-    pub const fn ext_trig5(self) -> crate::common::Reg<regs::ExtTrig5, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04d4usize) as _) }
-    }
-    #[doc = "EXT Trigger Connections."]
-    #[inline(always)]
-    pub const fn ext_trig6(self) -> crate::common::Reg<regs::ExtTrig6, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04d8usize) as _) }
-    }
-    #[doc = "EXT Trigger Connections."]
-    #[inline(always)]
-    pub const fn ext_trig7(self) -> crate::common::Reg<regs::ExtTrig7, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04dcusize) as _) }
+    pub const fn ext_trig(self, n: usize) -> crate::common::Reg<regs::ExtTrig, crate::common::RW> {
+        assert!(n < 8usize);
+        unsafe {
+            crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04c0usize + n * 4usize) as _)
+        }
     }
     #[doc = "CMP1 Input Connections."]
     #[inline(always)]
@@ -497,53 +352,25 @@ impl Inputmux0 {
     }
     #[doc = "SINC Filter Channel Trigger Input Connections."]
     #[inline(always)]
-    pub const fn sinc_filter_ch0(
+    pub const fn sinc_filter_ch(
         self,
-    ) -> crate::common::Reg<regs::SincFilterCh0, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0520usize) as _) }
-    }
-    #[doc = "SINC Filter Channel Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn sinc_filter_ch1(
-        self,
-    ) -> crate::common::Reg<regs::SincFilterCh1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0524usize) as _) }
-    }
-    #[doc = "SINC Filter Channel Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn sinc_filter_ch2(
-        self,
-    ) -> crate::common::Reg<regs::SincFilterCh2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0528usize) as _) }
-    }
-    #[doc = "SINC Filter Channel Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn sinc_filter_ch3(
-        self,
-    ) -> crate::common::Reg<regs::SincFilterCh3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x052cusize) as _) }
-    }
-    #[doc = "SINC Filter Channel Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn sinc_filter_ch4(
-        self,
-    ) -> crate::common::Reg<regs::SincFilterCh4, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0530usize) as _) }
+        n: usize,
+    ) -> crate::common::Reg<regs::SincFilterCh, crate::common::RW> {
+        assert!(n < 5usize);
+        unsafe {
+            crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0520usize + n * 4usize) as _)
+        }
     }
     #[doc = "OPAMP Trigger Input Connections."]
     #[inline(always)]
-    pub const fn opamp0_trig(self) -> crate::common::Reg<regs::Opamp0Trig, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0580usize) as _) }
-    }
-    #[doc = "OPAMP Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn opamp1_trig(self) -> crate::common::Reg<regs::Opamp1Trig, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0584usize) as _) }
-    }
-    #[doc = "OPAMP Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn opamp2_trig(self) -> crate::common::Reg<regs::Opamp2Trig, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0588usize) as _) }
+    pub const fn opamp_trig(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::OpampTrig, crate::common::RW> {
+        assert!(n < 3usize);
+        unsafe {
+            crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0580usize + n * 4usize) as _)
+        }
     }
     #[doc = "LP_FLEXCOMM0 Trigger Input Connections."]
     #[inline(always)]
@@ -617,43 +444,14 @@ impl Inputmux0 {
     }
     #[doc = "FlexIO Trigger Input Connections."]
     #[inline(always)]
-    pub const fn flexio_trig0(self) -> crate::common::Reg<regs::FlexioTrig0, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x06e0usize) as _) }
-    }
-    #[doc = "FlexIO Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn flexio_trig1(self) -> crate::common::Reg<regs::FlexioTrig1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x06e4usize) as _) }
-    }
-    #[doc = "FlexIO Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn flexio_trig2(self) -> crate::common::Reg<regs::FlexioTrig2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x06e8usize) as _) }
-    }
-    #[doc = "FlexIO Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn flexio_trig3(self) -> crate::common::Reg<regs::FlexioTrig3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x06ecusize) as _) }
-    }
-    #[doc = "FlexIO Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn flexio_trig4(self) -> crate::common::Reg<regs::FlexioTrig4, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x06f0usize) as _) }
-    }
-    #[doc = "FlexIO Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn flexio_trig5(self) -> crate::common::Reg<regs::FlexioTrig5, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x06f4usize) as _) }
-    }
-    #[doc = "FlexIO Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn flexio_trig6(self) -> crate::common::Reg<regs::FlexioTrig6, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x06f8usize) as _) }
-    }
-    #[doc = "FlexIO Trigger Input Connections."]
-    #[inline(always)]
-    pub const fn flexio_trig7(self) -> crate::common::Reg<regs::FlexioTrig7, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x06fcusize) as _) }
+    pub const fn flexio_trig(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::FlexioTrig, crate::common::RW> {
+        assert!(n < 8usize);
+        unsafe {
+            crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x06e0usize + n * 4usize) as _)
+        }
     }
     #[doc = "DMA0 Request Enable0."]
     #[inline(always)]
@@ -864,6 +662,48 @@ impl Inputmux0 {
         self,
     ) -> crate::common::Reg<regs::Dma1ReqEnable3Clr, crate::common::W> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x07b8usize) as _) }
+    }
+}
+#[doc = "Array of registers: QDC_TRIG, QDC_HOME, QDC_INDEX, QDC_PHASEB, QDC_PHASEA."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct QdCn {
+    ptr: *mut u8,
+}
+unsafe impl Send for QdCn {}
+unsafe impl Sync for QdCn {}
+impl QdCn {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "QDCouter_loop Trigger Input Connections."]
+    #[inline(always)]
+    pub const fn qdc_trig(self) -> crate::common::Reg<regs::QdcTrig, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0360usize) as _) }
+    }
+    #[doc = "QDCouter_loop Input Connections."]
+    #[inline(always)]
+    pub const fn qdc_home(self) -> crate::common::Reg<regs::QdcHome, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0364usize) as _) }
+    }
+    #[doc = "QDCouter_loop Input Connections."]
+    #[inline(always)]
+    pub const fn qdc_index(self) -> crate::common::Reg<regs::QdcIndex, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0368usize) as _) }
+    }
+    #[doc = "QDCouter_loop Input Connections."]
+    #[inline(always)]
+    pub const fn qdc_phaseb(self) -> crate::common::Reg<regs::QdcPhaseb, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x036cusize) as _) }
+    }
+    #[doc = "QDCouter_loop Input Connections."]
+    #[inline(always)]
+    pub const fn qdc_phasea(self) -> crate::common::Reg<regs::QdcPhasea, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0370usize) as _) }
     }
 }
 pub mod regs;

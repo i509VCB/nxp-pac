@@ -6,13 +6,13 @@ impl Scr {
     #[doc = "no description available."]
     #[must_use]
     #[inline(always)]
-    pub const fn usrc_sel(&self) -> super::vals::UsrcSel {
+    pub const fn u_src_sel(&self) -> super::vals::USrcSel {
         let val = (self.0 >> 0usize) & 0x03;
-        super::vals::UsrcSel::from_bits(val as u8)
+        super::vals::USrcSel::from_bits(val as u8)
     }
     #[doc = "no description available."]
     #[inline(always)]
-    pub const fn set_usrc_sel(&mut self, val: super::vals::UsrcSel) {
+    pub const fn set_u_src_sel(&mut self, val: super::vals::USrcSel) {
         self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
     }
     #[doc = "no description available."]
@@ -102,13 +102,13 @@ impl Scr {
     #[doc = "no description available."]
     #[must_use]
     #[inline(always)]
-    pub const fn tx_fifoempty_sel(&self) -> super::vals::TxFifoemptySel {
+    pub const fn tx_fifo_empty_sel(&self) -> super::vals::TxFifoEmptySel {
         let val = (self.0 >> 15usize) & 0x03;
-        super::vals::TxFifoemptySel::from_bits(val as u8)
+        super::vals::TxFifoEmptySel::from_bits(val as u8)
     }
     #[doc = "no description available."]
     #[inline(always)]
-    pub const fn set_tx_fifoempty_sel(&mut self, val: super::vals::TxFifoemptySel) {
+    pub const fn set_tx_fifo_empty_sel(&mut self, val: super::vals::TxFifoEmptySel) {
         self.0 = (self.0 & !(0x03 << 15usize)) | (((val.to_bits() as u32) & 0x03) << 15usize);
     }
     #[doc = "no description available."]
@@ -138,13 +138,13 @@ impl Scr {
     #[doc = "no description available."]
     #[must_use]
     #[inline(always)]
-    pub const fn rx_fifofull_sel(&self) -> super::vals::RxFifofullSel {
+    pub const fn rx_fifo_full_sel(&self) -> super::vals::RxFifoFullSel {
         let val = (self.0 >> 19usize) & 0x03;
-        super::vals::RxFifofullSel::from_bits(val as u8)
+        super::vals::RxFifoFullSel::from_bits(val as u8)
     }
     #[doc = "no description available."]
     #[inline(always)]
-    pub const fn set_rx_fifofull_sel(&mut self, val: super::vals::RxFifofullSel) {
+    pub const fn set_rx_fifo_full_sel(&mut self, val: super::vals::RxFifoFullSel) {
         self.0 = (self.0 & !(0x03 << 19usize)) | (((val.to_bits() as u32) & 0x03) << 19usize);
     }
     #[doc = "no description available."]
@@ -193,7 +193,7 @@ impl Default for Scr {
 impl core::fmt::Debug for Scr {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("Scr")
-            .field("usrc_sel", &self.usrc_sel())
+            .field("u_src_sel", &self.u_src_sel())
             .field("tx_sel", &self.tx_sel())
             .field("val_ctrl", &self.val_ctrl())
             .field("dma_tx_en", &self.dma_tx_en())
@@ -201,10 +201,10 @@ impl core::fmt::Debug for Scr {
             .field("tx_fifo_ctrl", &self.tx_fifo_ctrl())
             .field("soft_reset", &self.soft_reset())
             .field("low_power", &self.low_power())
-            .field("tx_fifoempty_sel", &self.tx_fifoempty_sel())
+            .field("tx_fifo_empty_sel", &self.tx_fifo_empty_sel())
             .field("tx_auto_sync", &self.tx_auto_sync())
             .field("rx_auto_sync", &self.rx_auto_sync())
-            .field("rx_fifofull_sel", &self.rx_fifofull_sel())
+            .field("rx_fifo_full_sel", &self.rx_fifo_full_sel())
             .field("rx_fifo_rst", &self.rx_fifo_rst())
             .field("rx_fifo_off_on", &self.rx_fifo_off_on())
             .field("rx_fifo_ctrl", &self.rx_fifo_ctrl())
@@ -216,8 +216,8 @@ impl defmt::Format for Scr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Scr {{ usrc_sel: {:?}, tx_sel: {:?}, val_ctrl: {:?}, dma_tx_en: {=bool:?}, dma_rx_en: {=bool:?}, tx_fifo_ctrl: {:?}, soft_reset: {=bool:?}, low_power: {=bool:?}, tx_fifoempty_sel: {:?}, tx_auto_sync: {:?}, rx_auto_sync: {:?}, rx_fifofull_sel: {:?}, rx_fifo_rst: {:?}, rx_fifo_off_on: {:?}, rx_fifo_ctrl: {:?} }}",
-            self.usrc_sel(),
+            "Scr {{ u_src_sel: {:?}, tx_sel: {:?}, val_ctrl: {:?}, dma_tx_en: {=bool:?}, dma_rx_en: {=bool:?}, tx_fifo_ctrl: {:?}, soft_reset: {=bool:?}, low_power: {=bool:?}, tx_fifo_empty_sel: {:?}, tx_auto_sync: {:?}, rx_auto_sync: {:?}, rx_fifo_full_sel: {:?}, rx_fifo_rst: {:?}, rx_fifo_off_on: {:?}, rx_fifo_ctrl: {:?} }}",
+            self.u_src_sel(),
             self.tx_sel(),
             self.val_ctrl(),
             self.dma_tx_en(),
@@ -225,10 +225,10 @@ impl defmt::Format for Scr {
             self.tx_fifo_ctrl(),
             self.soft_reset(),
             self.low_power(),
-            self.tx_fifoempty_sel(),
+            self.tx_fifo_empty_sel(),
             self.tx_auto_sync(),
             self.rx_auto_sync(),
-            self.rx_fifofull_sel(),
+            self.rx_fifo_full_sel(),
             self.rx_fifo_rst(),
             self.rx_fifo_off_on(),
             self.rx_fifo_ctrl()
@@ -255,73 +255,73 @@ impl Sic {
     #[doc = "Rx FIFO resync."]
     #[must_use]
     #[inline(always)]
-    pub const fn rx_fiforesyn(&self) -> bool {
+    pub const fn rx_fifo_resyn(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
         val != 0
     }
     #[doc = "Rx FIFO resync."]
     #[inline(always)]
-    pub const fn set_rx_fiforesyn(&mut self, val: bool) {
+    pub const fn set_rx_fifo_resyn(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Rx FIFO underrun/overrun."]
     #[must_use]
     #[inline(always)]
-    pub const fn rx_fifoun_ov(&self) -> bool {
+    pub const fn rx_fifo_un_ov(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
         val != 0
     }
     #[doc = "Rx FIFO underrun/overrun."]
     #[inline(always)]
-    pub const fn set_rx_fifoun_ov(&mut self, val: bool) {
+    pub const fn set_rx_fifo_un_ov(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "U/Q Channel framing error."]
     #[must_use]
     #[inline(always)]
-    pub const fn uqerr(&self) -> bool {
+    pub const fn uq_err(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
         val != 0
     }
     #[doc = "U/Q Channel framing error."]
     #[inline(always)]
-    pub const fn set_uqerr(&mut self, val: bool) {
+    pub const fn set_uq_err(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "U/Q Channel sync found."]
     #[must_use]
     #[inline(always)]
-    pub const fn uqsync(&self) -> bool {
+    pub const fn uq_sync(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
         val != 0
     }
     #[doc = "U/Q Channel sync found."]
     #[inline(always)]
-    pub const fn set_uqsync(&mut self, val: bool) {
+    pub const fn set_uq_sync(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Q Channel receive register overrun."]
     #[must_use]
     #[inline(always)]
-    pub const fn qrx_ov(&self) -> bool {
+    pub const fn q_rx_ov(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
         val != 0
     }
     #[doc = "Q Channel receive register overrun."]
     #[inline(always)]
-    pub const fn set_qrx_ov(&mut self, val: bool) {
+    pub const fn set_q_rx_ov(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "U Channel receive register overrun."]
     #[must_use]
     #[inline(always)]
-    pub const fn urx_ov(&self) -> bool {
+    pub const fn u_rx_ov(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
         val != 0
     }
     #[doc = "U Channel receive register overrun."]
     #[inline(always)]
-    pub const fn set_urx_ov(&mut self, val: bool) {
+    pub const fn set_u_rx_ov(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "SPDIF receiver found parity bit error."]
@@ -363,13 +363,13 @@ impl Sic {
     #[doc = "SPDIF receive change in value of control channel."]
     #[must_use]
     #[inline(always)]
-    pub const fn cnew(&self) -> bool {
+    pub const fn c_new(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
         val != 0
     }
     #[doc = "SPDIF receive change in value of control channel."]
     #[inline(always)]
-    pub const fn set_cnew(&mut self, val: bool) {
+    pub const fn set_c_new(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "SPDIF Tx FIFO resync."]
@@ -419,16 +419,16 @@ impl core::fmt::Debug for Sic {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("Sic")
             .field("lock_loss", &self.lock_loss())
-            .field("rx_fiforesyn", &self.rx_fiforesyn())
-            .field("rx_fifoun_ov", &self.rx_fifoun_ov())
-            .field("uqerr", &self.uqerr())
-            .field("uqsync", &self.uqsync())
-            .field("qrx_ov", &self.qrx_ov())
-            .field("urx_ov", &self.urx_ov())
+            .field("rx_fifo_resyn", &self.rx_fifo_resyn())
+            .field("rx_fifo_un_ov", &self.rx_fifo_un_ov())
+            .field("uq_err", &self.uq_err())
+            .field("uq_sync", &self.uq_sync())
+            .field("q_rx_ov", &self.q_rx_ov())
+            .field("u_rx_ov", &self.u_rx_ov())
             .field("bit_err", &self.bit_err())
             .field("sym_err", &self.sym_err())
             .field("val_no_good", &self.val_no_good())
-            .field("cnew", &self.cnew())
+            .field("c_new", &self.c_new())
             .field("tx_resyn", &self.tx_resyn())
             .field("tx_un_ov", &self.tx_un_ov())
             .field("lock", &self.lock())
@@ -440,18 +440,18 @@ impl defmt::Format for Sic {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sic {{ lock_loss: {=bool:?}, rx_fiforesyn: {=bool:?}, rx_fifoun_ov: {=bool:?}, uqerr: {=bool:?}, uqsync: {=bool:?}, qrx_ov: {=bool:?}, urx_ov: {=bool:?}, bit_err: {=bool:?}, sym_err: {=bool:?}, val_no_good: {=bool:?}, cnew: {=bool:?}, tx_resyn: {=bool:?}, tx_un_ov: {=bool:?}, lock: {=bool:?} }}",
+            "Sic {{ lock_loss: {=bool:?}, rx_fifo_resyn: {=bool:?}, rx_fifo_un_ov: {=bool:?}, uq_err: {=bool:?}, uq_sync: {=bool:?}, q_rx_ov: {=bool:?}, u_rx_ov: {=bool:?}, bit_err: {=bool:?}, sym_err: {=bool:?}, val_no_good: {=bool:?}, c_new: {=bool:?}, tx_resyn: {=bool:?}, tx_un_ov: {=bool:?}, lock: {=bool:?} }}",
             self.lock_loss(),
-            self.rx_fiforesyn(),
-            self.rx_fifoun_ov(),
-            self.uqerr(),
-            self.uqsync(),
-            self.qrx_ov(),
-            self.urx_ov(),
+            self.rx_fifo_resyn(),
+            self.rx_fifo_un_ov(),
+            self.uq_err(),
+            self.uq_sync(),
+            self.q_rx_ov(),
+            self.u_rx_ov(),
             self.bit_err(),
             self.sym_err(),
             self.val_no_good(),
-            self.cnew(),
+            self.c_new(),
             self.tx_resyn(),
             self.tx_un_ov(),
             self.lock()
@@ -466,13 +466,13 @@ impl Sie {
     #[doc = "SPDIF Rx FIFO full, can't be cleared with reg. IntClear. To clear it, read from Rx FIFO."]
     #[must_use]
     #[inline(always)]
-    pub const fn rx_fifoful(&self) -> bool {
+    pub const fn rx_fifo_ful(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
         val != 0
     }
     #[doc = "SPDIF Rx FIFO full, can't be cleared with reg. IntClear. To clear it, read from Rx FIFO."]
     #[inline(always)]
-    pub const fn set_rx_fifoful(&mut self, val: bool) {
+    pub const fn set_rx_fifo_ful(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "SPDIF Tx FIFO empty, can't be cleared with reg. IntClear. To clear it, write toTx FIFO."]
@@ -502,97 +502,97 @@ impl Sie {
     #[doc = "Rx FIFO resync."]
     #[must_use]
     #[inline(always)]
-    pub const fn rx_fiforesyn(&self) -> bool {
+    pub const fn rx_fifo_resyn(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
         val != 0
     }
     #[doc = "Rx FIFO resync."]
     #[inline(always)]
-    pub const fn set_rx_fiforesyn(&mut self, val: bool) {
+    pub const fn set_rx_fifo_resyn(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Rx FIFO underrun/overrun."]
     #[must_use]
     #[inline(always)]
-    pub const fn rx_fifoun_ov(&self) -> bool {
+    pub const fn rx_fifo_un_ov(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
         val != 0
     }
     #[doc = "Rx FIFO underrun/overrun."]
     #[inline(always)]
-    pub const fn set_rx_fifoun_ov(&mut self, val: bool) {
+    pub const fn set_rx_fifo_un_ov(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "U/Q Channel framing error."]
     #[must_use]
     #[inline(always)]
-    pub const fn uqerr(&self) -> bool {
+    pub const fn uq_err(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
         val != 0
     }
     #[doc = "U/Q Channel framing error."]
     #[inline(always)]
-    pub const fn set_uqerr(&mut self, val: bool) {
+    pub const fn set_uq_err(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "U/Q Channel sync found."]
     #[must_use]
     #[inline(always)]
-    pub const fn uqsync(&self) -> bool {
+    pub const fn uq_sync(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
         val != 0
     }
     #[doc = "U/Q Channel sync found."]
     #[inline(always)]
-    pub const fn set_uqsync(&mut self, val: bool) {
+    pub const fn set_uq_sync(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Q Channel receive register overrun."]
     #[must_use]
     #[inline(always)]
-    pub const fn qrx_ov(&self) -> bool {
+    pub const fn q_rx_ov(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
         val != 0
     }
     #[doc = "Q Channel receive register overrun."]
     #[inline(always)]
-    pub const fn set_qrx_ov(&mut self, val: bool) {
+    pub const fn set_q_rx_ov(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Q Channel receive register full, can't be cleared with reg."]
     #[must_use]
     #[inline(always)]
-    pub const fn qrx_ful(&self) -> bool {
+    pub const fn q_rx_ful(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
         val != 0
     }
     #[doc = "Q Channel receive register full, can't be cleared with reg."]
     #[inline(always)]
-    pub const fn set_qrx_ful(&mut self, val: bool) {
+    pub const fn set_q_rx_ful(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "U Channel receive register overrun."]
     #[must_use]
     #[inline(always)]
-    pub const fn urx_ov(&self) -> bool {
+    pub const fn u_rx_ov(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
         val != 0
     }
     #[doc = "U Channel receive register overrun."]
     #[inline(always)]
-    pub const fn set_urx_ov(&mut self, val: bool) {
+    pub const fn set_u_rx_ov(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "U Channel receive register full, can't be cleared with reg."]
     #[must_use]
     #[inline(always)]
-    pub const fn urx_ful(&self) -> bool {
+    pub const fn u_rx_ful(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
         val != 0
     }
     #[doc = "U Channel receive register full, can't be cleared with reg."]
     #[inline(always)]
-    pub const fn set_urx_ful(&mut self, val: bool) {
+    pub const fn set_u_rx_ful(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "SPDIF receiver found parity bit error."]
@@ -634,13 +634,13 @@ impl Sie {
     #[doc = "SPDIF receive change in value of control channel."]
     #[must_use]
     #[inline(always)]
-    pub const fn cnew(&self) -> bool {
+    pub const fn c_new(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
         val != 0
     }
     #[doc = "SPDIF receive change in value of control channel."]
     #[inline(always)]
-    pub const fn set_cnew(&mut self, val: bool) {
+    pub const fn set_c_new(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "SPDIF Tx FIFO resync."]
@@ -689,21 +689,21 @@ impl Default for Sie {
 impl core::fmt::Debug for Sie {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("Sie")
-            .field("rx_fifoful", &self.rx_fifoful())
+            .field("rx_fifo_ful", &self.rx_fifo_ful())
             .field("tx_em", &self.tx_em())
             .field("lock_loss", &self.lock_loss())
-            .field("rx_fiforesyn", &self.rx_fiforesyn())
-            .field("rx_fifoun_ov", &self.rx_fifoun_ov())
-            .field("uqerr", &self.uqerr())
-            .field("uqsync", &self.uqsync())
-            .field("qrx_ov", &self.qrx_ov())
-            .field("qrx_ful", &self.qrx_ful())
-            .field("urx_ov", &self.urx_ov())
-            .field("urx_ful", &self.urx_ful())
+            .field("rx_fifo_resyn", &self.rx_fifo_resyn())
+            .field("rx_fifo_un_ov", &self.rx_fifo_un_ov())
+            .field("uq_err", &self.uq_err())
+            .field("uq_sync", &self.uq_sync())
+            .field("q_rx_ov", &self.q_rx_ov())
+            .field("q_rx_ful", &self.q_rx_ful())
+            .field("u_rx_ov", &self.u_rx_ov())
+            .field("u_rx_ful", &self.u_rx_ful())
             .field("bit_err", &self.bit_err())
             .field("sym_err", &self.sym_err())
             .field("val_no_good", &self.val_no_good())
-            .field("cnew", &self.cnew())
+            .field("c_new", &self.c_new())
             .field("tx_resyn", &self.tx_resyn())
             .field("tx_un_ov", &self.tx_un_ov())
             .field("lock", &self.lock())
@@ -715,22 +715,22 @@ impl defmt::Format for Sie {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sie {{ rx_fifoful: {=bool:?}, tx_em: {=bool:?}, lock_loss: {=bool:?}, rx_fiforesyn: {=bool:?}, rx_fifoun_ov: {=bool:?}, uqerr: {=bool:?}, uqsync: {=bool:?}, qrx_ov: {=bool:?}, qrx_ful: {=bool:?}, urx_ov: {=bool:?}, urx_ful: {=bool:?}, bit_err: {=bool:?}, sym_err: {=bool:?}, val_no_good: {=bool:?}, cnew: {=bool:?}, tx_resyn: {=bool:?}, tx_un_ov: {=bool:?}, lock: {=bool:?} }}",
-            self.rx_fifoful(),
+            "Sie {{ rx_fifo_ful: {=bool:?}, tx_em: {=bool:?}, lock_loss: {=bool:?}, rx_fifo_resyn: {=bool:?}, rx_fifo_un_ov: {=bool:?}, uq_err: {=bool:?}, uq_sync: {=bool:?}, q_rx_ov: {=bool:?}, q_rx_ful: {=bool:?}, u_rx_ov: {=bool:?}, u_rx_ful: {=bool:?}, bit_err: {=bool:?}, sym_err: {=bool:?}, val_no_good: {=bool:?}, c_new: {=bool:?}, tx_resyn: {=bool:?}, tx_un_ov: {=bool:?}, lock: {=bool:?} }}",
+            self.rx_fifo_ful(),
             self.tx_em(),
             self.lock_loss(),
-            self.rx_fiforesyn(),
-            self.rx_fifoun_ov(),
-            self.uqerr(),
-            self.uqsync(),
-            self.qrx_ov(),
-            self.qrx_ful(),
-            self.urx_ov(),
-            self.urx_ful(),
+            self.rx_fifo_resyn(),
+            self.rx_fifo_un_ov(),
+            self.uq_err(),
+            self.uq_sync(),
+            self.q_rx_ov(),
+            self.q_rx_ful(),
+            self.u_rx_ov(),
+            self.u_rx_ful(),
             self.bit_err(),
             self.sym_err(),
             self.val_no_good(),
-            self.cnew(),
+            self.c_new(),
             self.tx_resyn(),
             self.tx_un_ov(),
             self.lock()
@@ -745,13 +745,13 @@ impl Sis {
     #[doc = "SPDIF Rx FIFO full, can't be cleared with reg. IntClear. To clear it, read from Rx FIFO."]
     #[must_use]
     #[inline(always)]
-    pub const fn rx_fifoful(&self) -> bool {
+    pub const fn rx_fifo_ful(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
         val != 0
     }
     #[doc = "SPDIF Rx FIFO full, can't be cleared with reg. IntClear. To clear it, read from Rx FIFO."]
     #[inline(always)]
-    pub const fn set_rx_fifoful(&mut self, val: bool) {
+    pub const fn set_rx_fifo_ful(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
     #[doc = "SPDIF Tx FIFO empty, can't be cleared with reg. IntClear. To clear it, write toTx FIFO."]
@@ -781,97 +781,97 @@ impl Sis {
     #[doc = "Rx FIFO resync."]
     #[must_use]
     #[inline(always)]
-    pub const fn rx_fiforesyn(&self) -> bool {
+    pub const fn rx_fifo_resyn(&self) -> bool {
         let val = (self.0 >> 3usize) & 0x01;
         val != 0
     }
     #[doc = "Rx FIFO resync."]
     #[inline(always)]
-    pub const fn set_rx_fiforesyn(&mut self, val: bool) {
+    pub const fn set_rx_fifo_resyn(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
     }
     #[doc = "Rx FIFO underrun/overrun."]
     #[must_use]
     #[inline(always)]
-    pub const fn rx_fifoun_ov(&self) -> bool {
+    pub const fn rx_fifo_un_ov(&self) -> bool {
         let val = (self.0 >> 4usize) & 0x01;
         val != 0
     }
     #[doc = "Rx FIFO underrun/overrun."]
     #[inline(always)]
-    pub const fn set_rx_fifoun_ov(&mut self, val: bool) {
+    pub const fn set_rx_fifo_un_ov(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
     }
     #[doc = "U/Q Channel framing error."]
     #[must_use]
     #[inline(always)]
-    pub const fn uqerr(&self) -> bool {
+    pub const fn uq_err(&self) -> bool {
         let val = (self.0 >> 5usize) & 0x01;
         val != 0
     }
     #[doc = "U/Q Channel framing error."]
     #[inline(always)]
-    pub const fn set_uqerr(&mut self, val: bool) {
+    pub const fn set_uq_err(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
     }
     #[doc = "U/Q Channel sync found."]
     #[must_use]
     #[inline(always)]
-    pub const fn uqsync(&self) -> bool {
+    pub const fn uq_sync(&self) -> bool {
         let val = (self.0 >> 6usize) & 0x01;
         val != 0
     }
     #[doc = "U/Q Channel sync found."]
     #[inline(always)]
-    pub const fn set_uqsync(&mut self, val: bool) {
+    pub const fn set_uq_sync(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
     }
     #[doc = "Q Channel receive register overrun."]
     #[must_use]
     #[inline(always)]
-    pub const fn qrx_ov(&self) -> bool {
+    pub const fn q_rx_ov(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
         val != 0
     }
     #[doc = "Q Channel receive register overrun."]
     #[inline(always)]
-    pub const fn set_qrx_ov(&mut self, val: bool) {
+    pub const fn set_q_rx_ov(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Q Channel receive register full, can't be cleared with reg."]
     #[must_use]
     #[inline(always)]
-    pub const fn qrx_ful(&self) -> bool {
+    pub const fn q_rx_ful(&self) -> bool {
         let val = (self.0 >> 8usize) & 0x01;
         val != 0
     }
     #[doc = "Q Channel receive register full, can't be cleared with reg."]
     #[inline(always)]
-    pub const fn set_qrx_ful(&mut self, val: bool) {
+    pub const fn set_q_rx_ful(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
     }
     #[doc = "U Channel receive register overrun."]
     #[must_use]
     #[inline(always)]
-    pub const fn urx_ov(&self) -> bool {
+    pub const fn u_rx_ov(&self) -> bool {
         let val = (self.0 >> 9usize) & 0x01;
         val != 0
     }
     #[doc = "U Channel receive register overrun."]
     #[inline(always)]
-    pub const fn set_urx_ov(&mut self, val: bool) {
+    pub const fn set_u_rx_ov(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
     }
     #[doc = "U Channel receive register full, can't be cleared with reg."]
     #[must_use]
     #[inline(always)]
-    pub const fn urx_ful(&self) -> bool {
+    pub const fn u_rx_ful(&self) -> bool {
         let val = (self.0 >> 10usize) & 0x01;
         val != 0
     }
     #[doc = "U Channel receive register full, can't be cleared with reg."]
     #[inline(always)]
-    pub const fn set_urx_ful(&mut self, val: bool) {
+    pub const fn set_u_rx_ful(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
     }
     #[doc = "SPDIF receiver found parity bit error."]
@@ -913,13 +913,13 @@ impl Sis {
     #[doc = "SPDIF receive change in value of control channel."]
     #[must_use]
     #[inline(always)]
-    pub const fn cnew(&self) -> bool {
+    pub const fn c_new(&self) -> bool {
         let val = (self.0 >> 17usize) & 0x01;
         val != 0
     }
     #[doc = "SPDIF receive change in value of control channel."]
     #[inline(always)]
-    pub const fn set_cnew(&mut self, val: bool) {
+    pub const fn set_c_new(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
     }
     #[doc = "SPDIF Tx FIFO resync."]
@@ -968,21 +968,21 @@ impl Default for Sis {
 impl core::fmt::Debug for Sis {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("Sis")
-            .field("rx_fifoful", &self.rx_fifoful())
+            .field("rx_fifo_ful", &self.rx_fifo_ful())
             .field("tx_em", &self.tx_em())
             .field("lock_loss", &self.lock_loss())
-            .field("rx_fiforesyn", &self.rx_fiforesyn())
-            .field("rx_fifoun_ov", &self.rx_fifoun_ov())
-            .field("uqerr", &self.uqerr())
-            .field("uqsync", &self.uqsync())
-            .field("qrx_ov", &self.qrx_ov())
-            .field("qrx_ful", &self.qrx_ful())
-            .field("urx_ov", &self.urx_ov())
-            .field("urx_ful", &self.urx_ful())
+            .field("rx_fifo_resyn", &self.rx_fifo_resyn())
+            .field("rx_fifo_un_ov", &self.rx_fifo_un_ov())
+            .field("uq_err", &self.uq_err())
+            .field("uq_sync", &self.uq_sync())
+            .field("q_rx_ov", &self.q_rx_ov())
+            .field("q_rx_ful", &self.q_rx_ful())
+            .field("u_rx_ov", &self.u_rx_ov())
+            .field("u_rx_ful", &self.u_rx_ful())
             .field("bit_err", &self.bit_err())
             .field("sym_err", &self.sym_err())
             .field("val_no_good", &self.val_no_good())
-            .field("cnew", &self.cnew())
+            .field("c_new", &self.c_new())
             .field("tx_resyn", &self.tx_resyn())
             .field("tx_un_ov", &self.tx_un_ov())
             .field("lock", &self.lock())
@@ -994,22 +994,22 @@ impl defmt::Format for Sis {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sis {{ rx_fifoful: {=bool:?}, tx_em: {=bool:?}, lock_loss: {=bool:?}, rx_fiforesyn: {=bool:?}, rx_fifoun_ov: {=bool:?}, uqerr: {=bool:?}, uqsync: {=bool:?}, qrx_ov: {=bool:?}, qrx_ful: {=bool:?}, urx_ov: {=bool:?}, urx_ful: {=bool:?}, bit_err: {=bool:?}, sym_err: {=bool:?}, val_no_good: {=bool:?}, cnew: {=bool:?}, tx_resyn: {=bool:?}, tx_un_ov: {=bool:?}, lock: {=bool:?} }}",
-            self.rx_fifoful(),
+            "Sis {{ rx_fifo_ful: {=bool:?}, tx_em: {=bool:?}, lock_loss: {=bool:?}, rx_fifo_resyn: {=bool:?}, rx_fifo_un_ov: {=bool:?}, uq_err: {=bool:?}, uq_sync: {=bool:?}, q_rx_ov: {=bool:?}, q_rx_ful: {=bool:?}, u_rx_ov: {=bool:?}, u_rx_ful: {=bool:?}, bit_err: {=bool:?}, sym_err: {=bool:?}, val_no_good: {=bool:?}, c_new: {=bool:?}, tx_resyn: {=bool:?}, tx_un_ov: {=bool:?}, lock: {=bool:?} }}",
+            self.rx_fifo_ful(),
             self.tx_em(),
             self.lock_loss(),
-            self.rx_fiforesyn(),
-            self.rx_fifoun_ov(),
-            self.uqerr(),
-            self.uqsync(),
-            self.qrx_ov(),
-            self.qrx_ful(),
-            self.urx_ov(),
-            self.urx_ful(),
+            self.rx_fifo_resyn(),
+            self.rx_fifo_un_ov(),
+            self.uq_err(),
+            self.uq_sync(),
+            self.q_rx_ov(),
+            self.q_rx_ful(),
+            self.u_rx_ov(),
+            self.u_rx_ful(),
             self.bit_err(),
             self.sym_err(),
             self.val_no_good(),
-            self.cnew(),
+            self.c_new(),
             self.tx_resyn(),
             self.tx_un_ov(),
             self.lock()
@@ -1024,13 +1024,13 @@ impl Srcd {
     #[doc = "no description available."]
     #[must_use]
     #[inline(always)]
-    pub const fn usync_mode(&self) -> super::vals::UsyncMode {
+    pub const fn u_sync_mode(&self) -> super::vals::USyncMode {
         let val = (self.0 >> 1usize) & 0x01;
-        super::vals::UsyncMode::from_bits(val as u8)
+        super::vals::USyncMode::from_bits(val as u8)
     }
     #[doc = "no description available."]
     #[inline(always)]
-    pub const fn set_usync_mode(&mut self, val: super::vals::UsyncMode) {
+    pub const fn set_u_sync_mode(&mut self, val: super::vals::USyncMode) {
         self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
     }
 }
@@ -1043,14 +1043,14 @@ impl Default for Srcd {
 impl core::fmt::Debug for Srcd {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("Srcd")
-            .field("usync_mode", &self.usync_mode())
+            .field("u_sync_mode", &self.u_sync_mode())
             .finish()
     }
 }
 #[cfg(feature = "defmt")]
 impl defmt::Format for Srcd {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Srcd {{ usync_mode: {:?} }}", self.usync_mode())
+        defmt::write!(f, "Srcd {{ u_sync_mode: {:?} }}", self.u_sync_mode())
     }
 }
 #[doc = "SPDIFRxCChannel_h Register."]
@@ -1061,13 +1061,13 @@ impl Srcsh {
     #[doc = "SPDIF receive C channel register, contains first 24 bits of C channel without interpretation."]
     #[must_use]
     #[inline(always)]
-    pub const fn rx_cchannel_h(&self) -> u32 {
+    pub const fn rx_c_channel_h(&self) -> u32 {
         let val = (self.0 >> 0usize) & 0x00ff_ffff;
         val as u32
     }
     #[doc = "SPDIF receive C channel register, contains first 24 bits of C channel without interpretation."]
     #[inline(always)]
-    pub const fn set_rx_cchannel_h(&mut self, val: u32) {
+    pub const fn set_rx_c_channel_h(&mut self, val: u32) {
         self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val as u32) & 0x00ff_ffff) << 0usize);
     }
 }
@@ -1080,7 +1080,7 @@ impl Default for Srcsh {
 impl core::fmt::Debug for Srcsh {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("Srcsh")
-            .field("rx_cchannel_h", &self.rx_cchannel_h())
+            .field("rx_c_channel_h", &self.rx_c_channel_h())
             .finish()
     }
 }
@@ -1089,8 +1089,8 @@ impl defmt::Format for Srcsh {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Srcsh {{ rx_cchannel_h: {=u32:?} }}",
-            self.rx_cchannel_h()
+            "Srcsh {{ rx_c_channel_h: {=u32:?} }}",
+            self.rx_c_channel_h()
         )
     }
 }
@@ -1102,13 +1102,13 @@ impl Srcsl {
     #[doc = "SPDIF receive C channel register, contains next 24 bits of C channel without interpretation."]
     #[must_use]
     #[inline(always)]
-    pub const fn rx_cchannel_l(&self) -> u32 {
+    pub const fn rx_c_channel_l(&self) -> u32 {
         let val = (self.0 >> 0usize) & 0x00ff_ffff;
         val as u32
     }
     #[doc = "SPDIF receive C channel register, contains next 24 bits of C channel without interpretation."]
     #[inline(always)]
-    pub const fn set_rx_cchannel_l(&mut self, val: u32) {
+    pub const fn set_rx_c_channel_l(&mut self, val: u32) {
         self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val as u32) & 0x00ff_ffff) << 0usize);
     }
 }
@@ -1121,7 +1121,7 @@ impl Default for Srcsl {
 impl core::fmt::Debug for Srcsl {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("Srcsl")
-            .field("rx_cchannel_l", &self.rx_cchannel_l())
+            .field("rx_c_channel_l", &self.rx_c_channel_l())
             .finish()
     }
 }
@@ -1130,8 +1130,8 @@ impl defmt::Format for Srcsl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Srcsl {{ rx_cchannel_l: {=u32:?} }}",
-            self.rx_cchannel_l()
+            "Srcsl {{ rx_c_channel_l: {=u32:?} }}",
+            self.rx_c_channel_l()
         )
     }
 }
@@ -1286,13 +1286,13 @@ impl Srq {
     #[doc = "SPDIF receive Q channel register, contains next 3 Q channel bytes."]
     #[must_use]
     #[inline(always)]
-    pub const fn rx_qchannel(&self) -> u32 {
+    pub const fn rx_q_channel(&self) -> u32 {
         let val = (self.0 >> 0usize) & 0x00ff_ffff;
         val as u32
     }
     #[doc = "SPDIF receive Q channel register, contains next 3 Q channel bytes."]
     #[inline(always)]
-    pub const fn set_rx_qchannel(&mut self, val: u32) {
+    pub const fn set_rx_q_channel(&mut self, val: u32) {
         self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val as u32) & 0x00ff_ffff) << 0usize);
     }
 }
@@ -1305,14 +1305,14 @@ impl Default for Srq {
 impl core::fmt::Debug for Srq {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("Srq")
-            .field("rx_qchannel", &self.rx_qchannel())
+            .field("rx_q_channel", &self.rx_q_channel())
             .finish()
     }
 }
 #[cfg(feature = "defmt")]
 impl defmt::Format for Srq {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Srq {{ rx_qchannel: {=u32:?} }}", self.rx_qchannel())
+        defmt::write!(f, "Srq {{ rx_q_channel: {=u32:?} }}", self.rx_q_channel())
     }
 }
 #[doc = "SPDIFRxRight Register."]
@@ -1360,13 +1360,13 @@ impl Sru {
     #[doc = "SPDIF receive U channel register, contains next 3 U channel bytes."]
     #[must_use]
     #[inline(always)]
-    pub const fn rx_uchannel(&self) -> u32 {
+    pub const fn rx_u_channel(&self) -> u32 {
         let val = (self.0 >> 0usize) & 0x00ff_ffff;
         val as u32
     }
     #[doc = "SPDIF receive U channel register, contains next 3 U channel bytes."]
     #[inline(always)]
-    pub const fn set_rx_uchannel(&mut self, val: u32) {
+    pub const fn set_rx_u_channel(&mut self, val: u32) {
         self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val as u32) & 0x00ff_ffff) << 0usize);
     }
 }
@@ -1379,14 +1379,14 @@ impl Default for Sru {
 impl core::fmt::Debug for Sru {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("Sru")
-            .field("rx_uchannel", &self.rx_uchannel())
+            .field("rx_u_channel", &self.rx_u_channel())
             .finish()
     }
 }
 #[cfg(feature = "defmt")]
 impl defmt::Format for Sru {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Sru {{ rx_uchannel: {=u32:?} }}", self.rx_uchannel())
+        defmt::write!(f, "Sru {{ rx_u_channel: {=u32:?} }}", self.rx_u_channel())
     }
 }
 #[doc = "SPDIFTxClk Register."]
@@ -1480,13 +1480,13 @@ impl Stcsch {
     #[doc = "SPDIF transmit Cons."]
     #[must_use]
     #[inline(always)]
-    pub const fn tx_cchannel_cons_h(&self) -> u32 {
+    pub const fn tx_c_channel_cons_h(&self) -> u32 {
         let val = (self.0 >> 0usize) & 0x00ff_ffff;
         val as u32
     }
     #[doc = "SPDIF transmit Cons."]
     #[inline(always)]
-    pub const fn set_tx_cchannel_cons_h(&mut self, val: u32) {
+    pub const fn set_tx_c_channel_cons_h(&mut self, val: u32) {
         self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val as u32) & 0x00ff_ffff) << 0usize);
     }
 }
@@ -1499,7 +1499,7 @@ impl Default for Stcsch {
 impl core::fmt::Debug for Stcsch {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("Stcsch")
-            .field("tx_cchannel_cons_h", &self.tx_cchannel_cons_h())
+            .field("tx_c_channel_cons_h", &self.tx_c_channel_cons_h())
             .finish()
     }
 }
@@ -1508,8 +1508,8 @@ impl defmt::Format for Stcsch {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Stcsch {{ tx_cchannel_cons_h: {=u32:?} }}",
-            self.tx_cchannel_cons_h()
+            "Stcsch {{ tx_c_channel_cons_h: {=u32:?} }}",
+            self.tx_c_channel_cons_h()
         )
     }
 }
@@ -1521,13 +1521,13 @@ impl Stcscl {
     #[doc = "SPDIF transmit Cons."]
     #[must_use]
     #[inline(always)]
-    pub const fn tx_cchannel_cons_l(&self) -> u32 {
+    pub const fn tx_c_channel_cons_l(&self) -> u32 {
         let val = (self.0 >> 0usize) & 0x00ff_ffff;
         val as u32
     }
     #[doc = "SPDIF transmit Cons."]
     #[inline(always)]
-    pub const fn set_tx_cchannel_cons_l(&mut self, val: u32) {
+    pub const fn set_tx_c_channel_cons_l(&mut self, val: u32) {
         self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val as u32) & 0x00ff_ffff) << 0usize);
     }
 }
@@ -1540,7 +1540,7 @@ impl Default for Stcscl {
 impl core::fmt::Debug for Stcscl {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("Stcscl")
-            .field("tx_cchannel_cons_l", &self.tx_cchannel_cons_l())
+            .field("tx_c_channel_cons_l", &self.tx_c_channel_cons_l())
             .finish()
     }
 }
@@ -1549,8 +1549,8 @@ impl defmt::Format for Stcscl {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Stcscl {{ tx_cchannel_cons_l: {=u32:?} }}",
-            self.tx_cchannel_cons_l()
+            "Stcscl {{ tx_c_channel_cons_l: {=u32:?} }}",
+            self.tx_c_channel_cons_l()
         )
     }
 }

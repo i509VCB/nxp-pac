@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum AbortLoop {
     #[doc = "No effect."]
-    ZZ335 = 0x0,
+    Zz335 = 0x0,
     #[doc = "Abort BIST loop commands and force the loop counter to return to 0x0."]
-    ZZ336 = 0x01,
+    Zz336 = 0x01,
 }
 impl AbortLoop {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<AbortLoop> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Abtreq {
     #[doc = "No request to abort a command write sequence."]
-    ZZ39 = 0x0,
+    Zz39 = 0x0,
     #[doc = "Request to abort a command write sequence."]
-    ZZ40 = 0x01,
+    Zz40 = 0x01,
 }
 impl Abtreq {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Abtreq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Accerr {
     #[doc = "No access error detected."]
-    ZZ21 = 0x0,
+    Zz21 = 0x0,
     #[doc = "Access error detected."]
-    ZZ22 = 0x01,
+    Zz22 = 0x01,
 }
 impl Accerr {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Accerr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum AddrFail {
     #[doc = "The address is within the flash or IFR address space."]
-    ZZ141 = 0x0,
+    Zz141 = 0x0,
     #[doc = "The address is outside the flash or IFR address space."]
-    ZZ142 = 0x01,
+    Zz142 = 0x01,
 }
 impl AddrFail {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<AddrFail> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum AlignfailBlk {
     #[doc = "The address is block-aligned."]
-    ZZ143 = 0x0,
+    Zz143 = 0x0,
     #[doc = "The address is not block-aligned."]
-    ZZ144 = 0x01,
+    Zz144 = 0x01,
 }
 impl AlignfailBlk {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<AlignfailBlk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum AlignfailPg {
     #[doc = "The address is page-aligned."]
-    ZZ147 = 0x0,
+    Zz147 = 0x0,
     #[doc = "The address is not page-aligned."]
-    ZZ148 = 0x01,
+    Zz148 = 0x01,
 }
 impl AlignfailPg {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<AlignfailPg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum AlignfailPhr {
     #[doc = "The address is phrase-aligned."]
-    ZZ149 = 0x0,
+    Zz149 = 0x0,
     #[doc = "The address is not phrase-aligned."]
-    ZZ150 = 0x01,
+    Zz150 = 0x01,
 }
 impl AlignfailPhr {
     #[inline(always)]
@@ -220,9 +220,9 @@ impl From<AlignfailPhr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum AlignfailScr {
     #[doc = "The address is sector-aligned."]
-    ZZ145 = 0x0,
+    Zz145 = 0x0,
     #[doc = "The address is not sector-aligned."]
-    ZZ146 = 0x01,
+    Zz146 = 0x01,
 }
 impl AlignfailScr {
     #[inline(always)]
@@ -251,9 +251,9 @@ impl From<AlignfailScr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum AllCmd {
     #[doc = "The command operates on a single flash block."]
-    ZZ137 = 0x0,
+    Zz137 = 0x0,
     #[doc = "The command operates on all flash blocks."]
-    ZZ138 = 0x01,
+    Zz138 = 0x01,
 }
 impl AllCmd {
     #[inline(always)]
@@ -282,9 +282,9 @@ impl From<AllCmd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum AryTrimDone {
     #[doc = "Recall register load operation has not been completed."]
-    ZZ93 = 0x0,
+    Zz93 = 0x0,
     #[doc = "Recall register load operation has completed."]
-    ZZ94 = 0x01,
+    Zz94 = 0x01,
 }
 impl AryTrimDone {
     #[inline(always)]
@@ -313,13 +313,13 @@ impl From<AryTrimDone> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BdoneSel {
     #[doc = "Select internal bist_done signal from current module instantiation."]
-    ZZ453 = 0x0,
+    Zz453 = 0x0,
     #[doc = "Select ipt_bist_fail signal from current module instantiation."]
-    ZZ454 = 0x01,
+    Zz454 = 0x01,
     #[doc = "Select ipt_bist_done signal from other module instantiation."]
-    ZZ455 = 0x02,
+    Zz455 = 0x02,
     #[doc = "Select AND of internal bist_done signal from current module instantiation with ipt_bist_done signal from other module instantiation."]
-    ZZ456 = 0x03,
+    Zz456 = 0x03,
 }
 impl BdoneSel {
     #[inline(always)]
@@ -348,9 +348,9 @@ impl From<BdoneSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BistBusy {
     #[doc = "BIST Command not active."]
-    ZZ201 = 0x0,
+    Zz201 = 0x0,
     #[doc = "BIST Command is active."]
-    ZZ202 = 0x01,
+    Zz202 = 0x01,
 }
 impl BistBusy {
     #[inline(always)]
@@ -379,9 +379,9 @@ impl From<BistBusy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BistCtl {
     #[doc = "BIST IP disabled."]
-    ZZ107 = 0x0,
+    Zz107 = 0x0,
     #[doc = "BIST IP enabled."]
-    ZZ108 = 0x01,
+    Zz108 = 0x01,
 }
 impl BistCtl {
     #[inline(always)]
@@ -410,9 +410,9 @@ impl From<BistCtl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BistDone {
     #[doc = "The BIST (or data dump) is running."]
-    ZZ439 = 0x0,
+    Zz439 = 0x0,
     #[doc = "The BIST (or data dump) has completed."]
-    ZZ440 = 0x01,
+    Zz440 = 0x01,
 }
 impl BistDone {
     #[inline(always)]
@@ -441,9 +441,9 @@ impl From<BistDone> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BistEccEn {
     #[doc = "ECC correction disabled."]
-    ZZ169 = 0x0,
+    Zz169 = 0x0,
     #[doc = "ECC correction enabled."]
-    ZZ170 = 0x01,
+    Zz170 = 0x01,
 }
 impl BistEccEn {
     #[inline(always)]
@@ -472,9 +472,9 @@ impl From<BistEccEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BistFail {
     #[doc = "The last BIST operation completed successfully (or could not fail)."]
-    ZZ437 = 0x0,
+    Zz437 = 0x0,
     #[doc = "The last BIST operation failed."]
-    ZZ438 = 0x01,
+    Zz438 = 0x01,
 }
 impl BistFail {
     #[inline(always)]
@@ -503,9 +503,9 @@ impl From<BistFail> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BistMuxToSmw {
     #[doc = "BIST drives fields."]
-    ZZ183 = 0x0,
+    Zz183 = 0x0,
     #[doc = "SMW registers drive fields."]
-    ZZ184 = 0x01,
+    Zz184 = 0x01,
 }
 impl BistMuxToSmw {
     #[inline(always)]
@@ -534,9 +534,9 @@ impl From<BistMuxToSmw> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BistOn {
     #[doc = "BIST enable not forced by user interface."]
-    ZZ159 = 0x0,
+    Zz159 = 0x0,
     #[doc = "BIST enable control by user interface."]
-    ZZ160 = 0x01,
+    Zz160 = 0x01,
 }
 impl BistOn {
     #[inline(always)]
@@ -565,9 +565,9 @@ impl From<BistOn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BistPwrDis {
     #[doc = "BIST DFT logic has full control of SLM and LVE when BIST is enabled (including during commands)."]
-    ZZ97 = 0x0,
+    Zz97 = 0x0,
     #[doc = "BIST DFT logic has no control of SLM and LVE; power mode RTL is in complete control of SLM and LVE values."]
-    ZZ98 = 0x01,
+    Zz98 = 0x01,
 }
 impl BistPwrDis {
     #[inline(always)]
@@ -596,13 +596,13 @@ impl From<BistPwrDis> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BsdoSel {
     #[doc = "Select internal bist_sdo signal from current module instantiation."]
-    ZZ449 = 0x0,
+    Zz449 = 0x0,
     #[doc = "Select ipt_bist_done signal from current module instantiation."]
-    ZZ450 = 0x01,
+    Zz450 = 0x01,
     #[doc = "Select ipt_bist_sdo signal from other module instantiation."]
-    ZZ451 = 0x02,
+    Zz451 = 0x02,
     #[doc = "Select ipt_bist_done signal from other module instantiation."]
-    ZZ452 = 0x03,
+    Zz452 = 0x03,
 }
 impl BsdoSel {
     #[inline(always)]
@@ -631,9 +631,9 @@ impl From<BsdoSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Busy {
     #[doc = "BIST is idle."]
-    ZZ333 = 0x0,
+    Zz333 = 0x0,
     #[doc = "BIST is busy."]
-    ZZ334 = 0x01,
+    Zz334 = 0x01,
 }
 impl Busy {
     #[inline(always)]
@@ -662,9 +662,9 @@ impl From<Busy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ccie {
     #[doc = "Command complete interrupt disabled."]
-    ZZ37 = 0x0,
+    Zz37 = 0x0,
     #[doc = "Command complete interrupt enabled. An interrupt request is generated whenever the FSTAT\\[CCIF\\] flag is set."]
-    ZZ38 = 0x01,
+    Zz38 = 0x01,
 }
 impl Ccie {
     #[inline(always)]
@@ -693,9 +693,9 @@ impl From<Ccie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ccif {
     #[doc = "Flash command or initialization in progress."]
-    ZZ17 = 0x0,
+    Zz17 = 0x0,
     #[doc = "Flash command or initialization has completed."]
-    ZZ18 = 0x01,
+    Zz18 = 0x01,
 }
 impl Ccif {
     #[inline(always)]
@@ -724,18 +724,18 @@ impl From<Ccif> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmd {
     #[doc = "IDLE."]
-    ZZ193 = 0x0,
+    Zz193 = 0x0,
     #[doc = "ABORT."]
-    ZZ194 = 0x01,
+    Zz194 = 0x01,
     #[doc = "SME2 to one-shot mass erase."]
-    ZZ195 = 0x02,
+    Zz195 = 0x02,
     #[doc = "SME3 to sector erase on selected array."]
-    ZZ196 = 0x03,
+    Zz196 = 0x03,
     #[doc = "SMP1 to program phrase or page on selected array with shot disabled on previously programmed bit."]
-    ZZ197 = 0x04,
+    Zz197 = 0x04,
     _RESERVED_5 = 0x05,
     #[doc = "SMP2 to program phrase or page on selected array to repair cells of weak program after power loss."]
-    ZZ199 = 0x06,
+    Zz199 = 0x06,
     _RESERVED_7 = 0x07,
 }
 impl Cmd {
@@ -765,9 +765,9 @@ impl From<Cmd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdabt {
     #[doc = "No command abort detected."]
-    ZZ25 = 0x0,
+    Zz25 = 0x0,
     #[doc = "Command abort detected."]
-    ZZ26 = 0x01,
+    Zz26 = 0x01,
 }
 impl Cmdabt {
     #[inline(always)]
@@ -796,9 +796,9 @@ impl From<Cmdabt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdp {
     #[doc = "Command protection level and domain ID are stale."]
-    ZZ11 = 0x0,
+    Zz11 = 0x0,
     #[doc = "Command protection level (CMDPRT) and domain ID (CMDDID) are set."]
-    ZZ12 = 0x01,
+    Zz12 = 0x01,
 }
 impl Cmdp {
     #[inline(always)]
@@ -827,13 +827,13 @@ impl From<Cmdp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdprt {
     #[doc = "Secure, normal access."]
-    ZZ13 = 0x0,
+    Zz13 = 0x0,
     #[doc = "Secure, privileged access."]
-    ZZ14 = 0x01,
+    Zz14 = 0x01,
     #[doc = "Nonsecure, normal access."]
-    ZZ15 = 0x02,
+    Zz15 = 0x02,
     #[doc = "Nonsecure, privileged access."]
-    ZZ16 = 0x03,
+    Zz16 = 0x03,
 }
 impl Cmdprt {
     #[inline(always)]
@@ -862,11 +862,11 @@ impl From<Cmdprt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CmpMask {
     #[doc = "Expected data is compared to DOUT."]
-    ZZ229 = 0x0,
+    Zz229 = 0x0,
     #[doc = "Expected data (only 0s are considered) are compared to DOUT."]
-    ZZ230 = 0x01,
+    Zz230 = 0x01,
     #[doc = "Expected data (only 1s are considered) are compared to DOUT."]
-    ZZ231 = 0x02,
+    Zz231 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl CmpMask {
@@ -896,9 +896,9 @@ impl From<CmpMask> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Corehld {
     #[doc = "CPU access is allowed."]
-    ZZ125 = 0x0,
+    Zz125 = 0x0,
     #[doc = "CPU access must be blocked."]
-    ZZ126 = 0x01,
+    Zz126 = 0x01,
 }
 impl Corehld {
     #[inline(always)]
@@ -927,9 +927,9 @@ impl From<Corehld> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CpyParEn {
     #[doc = "Copy parity disabled."]
-    ZZ185 = 0x0,
+    Zz185 = 0x0,
     #[doc = "Copy parity enabled."]
-    ZZ186 = 0x01,
+    Zz186 = 0x01,
 }
 impl CpyParEn {
     #[inline(always)]
@@ -958,9 +958,9 @@ impl From<CpyParEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CpyPhraseEn {
     #[doc = "Copy Flash read data disabled."]
-    ZZ173 = 0x0,
+    Zz173 = 0x0,
     #[doc = "Copy Flash read data enabled."]
-    ZZ174 = 0x01,
+    Zz174 = 0x01,
 }
 impl CpyPhraseEn {
     #[inline(always)]
@@ -989,9 +989,9 @@ impl From<CpyPhraseEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cwsabt {
     #[doc = "Command write sequence not aborted."]
-    ZZ19 = 0x0,
+    Zz19 = 0x0,
     #[doc = "Command write sequence aborted."]
-    ZZ20 = 0x01,
+    Zz20 = 0x01,
 }
 impl Cwsabt {
     #[inline(always)]
@@ -1020,9 +1020,9 @@ impl From<Cwsabt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cwsabten {
     #[doc = "CWS abort feature is disabled."]
-    ZZ115 = 0x0,
+    Zz115 = 0x0,
     #[doc = "CWS abort feature is enabled."]
-    ZZ116 = 0x01,
+    Zz116 = 0x01,
 }
 impl Cwsabten {
     #[inline(always)]
@@ -1051,9 +1051,9 @@ impl From<Cwsabten> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DatadumpMrgen {
     #[doc = "Normal read pulse shape."]
-    ZZ431 = 0x0,
+    Zz431 = 0x0,
     #[doc = "Margin read pulse shape."]
-    ZZ432 = 0x01,
+    Zz432 = 0x01,
 }
 impl DatadumpMrgen {
     #[inline(always)]
@@ -1082,9 +1082,9 @@ impl From<DatadumpMrgen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DatadumpMrgtype {
     #[doc = "DIN method used."]
-    ZZ429 = 0x0,
+    Zz429 = 0x0,
     #[doc = "TM method used."]
-    ZZ430 = 0x01,
+    Zz430 = 0x01,
 }
 impl DatadumpMrgtype {
     #[inline(always)]
@@ -1113,13 +1113,13 @@ impl From<DatadumpMrgtype> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DatadumpPatt {
     #[doc = "All ones."]
-    ZZ433 = 0x0,
+    Zz433 = 0x0,
     #[doc = "All zeroes."]
-    ZZ434 = 0x01,
+    Zz434 = 0x01,
     #[doc = "Checkerboard."]
-    ZZ435 = 0x02,
+    Zz435 = 0x02,
     #[doc = "Inverse checkerboard."]
-    ZZ436 = 0x03,
+    Zz436 = 0x03,
 }
 impl DatadumpPatt {
     #[inline(always)]
@@ -1148,9 +1148,9 @@ impl From<DatadumpPatt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dberr {
     #[doc = "No double-bit fault detected during UINT-driven read sequence."]
-    ZZ163 = 0x0,
+    Zz163 = 0x0,
     #[doc = "Double-bit fault detected during UINT-driven read sequence."]
-    ZZ164 = 0x01,
+    Zz164 = 0x01,
 }
 impl Dberr {
     #[inline(always)]
@@ -1179,9 +1179,9 @@ impl From<Dberr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DberrReg {
     #[doc = "Double-bit fault not detected."]
-    ZZ177 = 0x0,
+    Zz177 = 0x0,
     #[doc = "Double-bit fault detected on previous UINT flash read."]
-    ZZ178 = 0x01,
+    Zz178 = 0x01,
 }
 impl DberrReg {
     #[inline(always)]
@@ -1210,9 +1210,9 @@ impl From<DberrReg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dbgctl {
     #[doc = "Default."]
-    ZZ213 = 0x0,
+    Zz213 = 0x0,
     #[doc = "Enable debug feature to collect failure address and data."]
-    ZZ214 = 0x01,
+    Zz214 = 0x01,
 }
 impl Dbgctl {
     #[inline(always)]
@@ -1241,9 +1241,9 @@ impl From<Dbgctl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dfdie {
     #[doc = "Double bit fault detect interrupt disabled."]
-    ZZ33 = 0x0,
+    Zz33 = 0x0,
     #[doc = "Double bit fault detect interrupt enabled; an interrupt request is generated whenever the FSTAT\\[DFDIF\\] flag is set."]
-    ZZ34 = 0x01,
+    Zz34 = 0x01,
 }
 impl Dfdie {
     #[inline(always)]
@@ -1272,9 +1272,9 @@ impl From<Dfdie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dfdif {
     #[doc = "Double bit fault not detected during a valid flash read access from the FMC."]
-    ZZ9 = 0x0,
+    Zz9 = 0x0,
     #[doc = "Double bit fault detected (or FCTRL\\[FDFD\\] is set) during a valid flash read access from the FMC."]
-    ZZ10 = 0x01,
+    Zz10 = 0x01,
 }
 impl Dfdif {
     #[inline(always)]
@@ -1303,25 +1303,25 @@ impl From<Dfdif> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DftData {
     #[doc = "CKBD pattern. For READ operations only, compare DOUT with checkerboard data pattern for each read cycle."]
-    ZZ232 = 0x0,
+    Zz232 = 0x0,
     #[doc = "ICKBD pattern. For READ operations only, compare DOUT with inverse checkerboard data pattern for each read cycle."]
-    ZZ233 = 0x01,
+    Zz233 = 0x01,
     #[doc = "Diagonal pattern. Used for READ operations only, compare DOUT to diagonal pattern."]
-    ZZ234 = 0x02,
+    Zz234 = 0x02,
     #[doc = "Fixed data pattern. For READ operations, comparison to DOUT for selected groups; refer to R_ADR_CTRL\\[GRPSEL\\] for modules with multiple groups."]
-    ZZ235 = 0x03,
+    Zz235 = 0x03,
     #[doc = "Random data pattern which will be generated based on the initial seed set in R_DATA; for READ operations, used for DOUT comparison of selected groups. For PROG operations, used to control DIN of selected groups."]
-    ZZ236 = 0x04,
+    Zz236 = 0x04,
     #[doc = "DOUT based pattern. For READ operations only, DOUT of selected group will be latched in R_DATA. If more than one group is selected in R_ADR_CTRL\\[GRPSEL\\], the group with the lower index will be latched."]
-    ZZ237 = 0x05,
+    Zz237 = 0x05,
     #[doc = "R_DATA based pattern. For READ operations, expected DOUT value of selected groups equals to R_DATA when XADR\\[0\\]==YADR\\[0\\] or ~R_DATA when XADR\\[0\\]!=YADR\\[0\\]. For PROG operations, DIN of selected groups equals R_DATA when XADR\\[0\\]==YADR\\[0\\] or ~R_DATA when XADR\\[0\\]!=YADR\\[0\\]."]
-    ZZ238 = 0x06,
+    Zz238 = 0x06,
     #[doc = "SCAN-IO pattern. For READ operations, control expected DOUT value of selected groups to SCAN-IO data pattern. For PROG operations, control DIN of selected groups to SCAN-IO data pattern."]
-    ZZ239 = 0x07,
+    Zz239 = 0x07,
     #[doc = "REPAIR set. For PROG operation to IFR1(7,1) and IFR1(7,2), R_REPAIR0_0 and R_REPAIR0_1 or R_REPAIR1_0 and R_REPAIR1_1 will control DIN. For READ operation on IFR1(7,1) and IFR1(7,2), DOUT will be compared against R_REPAIR0_0 and R_REPAIR0_1 or R_REPAIR1_0 andR_REPAIR1_1. When this option is selected, only one flash block can be selected."]
-    ZZ240 = 0x08,
+    Zz240 = 0x08,
     #[doc = "REPAIR load. For READ operation only, DOUT from IFR1(7,1) and IFR1(7,2) is loaded to R_REPAIR0 and R_REPAIR1."]
-    ZZ241 = 0x09,
+    Zz241 = 0x09,
     _RESERVED_a = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
@@ -1356,9 +1356,9 @@ impl From<DftData> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DftDataSrc {
     #[doc = "{R_DATA_CTRL0,R_DATA_CTRL_EX\\[2:0\\],R_DATA_CTRL0,R_DATA_CTRL_EX\\[2:0\\],R_DATA_CTRL0,R_DATA_CTRL_EX\\[2:0\\],R_DATA_CTRL0} is used."]
-    ZZ227 = 0x0,
+    Zz227 = 0x0,
     #[doc = "{R_DATA_CTRL3,R_DATA_CTRL2_EX\\[2:0\\],R_DATA_CTRL2,R_DATA_CTRL1_EX\\[2:0\\],R_DATA_CTRL1,R_DATA_CTRL_EX\\[2:0\\],R_DATA_CTRL0} is used."]
-    ZZ228 = 0x01,
+    Zz228 = 0x01,
 }
 impl DftDataSrc {
     #[inline(always)]
@@ -1387,25 +1387,25 @@ impl From<DftDataSrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DftXadr {
     #[doc = "XADR fixed, no change at all."]
-    ZZ252 = 0x0,
+    Zz252 = 0x0,
     #[doc = "XADR increased by 1 after row. For READ operation, XADR increases by 1 after reading the last word of row. For PROG operation, XADR increases by 1 after NVSTR falls."]
-    ZZ253 = 0x01,
+    Zz253 = 0x01,
     #[doc = "XADR increased for diagonal. For PROG-DIAGONAL operation, XADR is increased to create diagonal pattern."]
-    ZZ254 = 0x02,
+    Zz254 = 0x02,
     #[doc = "XADR increased by sector. During ERASE operation, XADR increased by number of rows in a sector when NVSTR falls."]
-    ZZ255 = 0x03,
+    Zz255 = 0x03,
     #[doc = "XADR inversed. XADR is inversed after reading one word or after programming one row when NVSTR falls."]
-    ZZ256 = 0x04,
+    Zz256 = 0x04,
     #[doc = "XADR increased by 2 after row. For READ operation, XADR is increased by 2 after reading the last word of a row. For PROG operation, XADR is increased by 2 when NVSTR falls."]
-    ZZ257 = 0x05,
+    Zz257 = 0x05,
     #[doc = "XADR\\[0\\] inversed. XADR\\[0\\] is inversed after reading one word or after programming one row when NVSTR falls."]
-    ZZ258 = 0x06,
+    Zz258 = 0x06,
     #[doc = "XADR increased by 1. For READ operations only, XADR increased by 1 after each read cycle."]
-    ZZ259 = 0x07,
+    Zz259 = 0x07,
     #[doc = "XADR decreased by 1 after row. For READ operations only, XADR is decreased by 1 after YADR decreases to 0."]
-    ZZ260 = 0x08,
+    Zz260 = 0x08,
     #[doc = "XADR decreased by 1. For READ operations only, XADR is decreased by 1 after each read cycle."]
-    ZZ261 = 0x09,
+    Zz261 = 0x09,
     _RESERVED_a = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
@@ -1440,25 +1440,25 @@ impl From<DftXadr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DftYadr {
     #[doc = "YADR fixed, no change at all."]
-    ZZ242 = 0x0,
+    Zz242 = 0x0,
     #[doc = "YADR for ICKBD. For PROG and READ operations, YADR changed to generate inverse checkerboard pattern."]
-    ZZ243 = 0x01,
+    Zz243 = 0x01,
     #[doc = "YADR for CKBD. For PROG and READ operations, YADR changed to generate checkerboard pattern."]
-    ZZ244 = 0x02,
+    Zz244 = 0x02,
     #[doc = "YADR increased by 1. For READ operations, YADR increased by 1 after each read cycle. For PROG operations, YADR increased by 1 after YE falls."]
-    ZZ245 = 0x03,
+    Zz245 = 0x03,
     #[doc = "YADR increased for diagonal. For PROG-DIAGONAL operation, YADR is increased to create diagonal pattern."]
-    ZZ246 = 0x04,
+    Zz246 = 0x04,
     #[doc = "YADR inversed. YADR is inversed after reading one word or after programming one word when YE falls."]
-    ZZ247 = 0x05,
+    Zz247 = 0x05,
     #[doc = "YADR\\[0\\] inversed. YADR\\[0\\] is inversed after reading one word or after programming one word when YE falls."]
-    ZZ248 = 0x06,
+    Zz248 = 0x06,
     #[doc = "YADR increased by 1 after last row. For READ operations only, YADR is increased by 1 after XADR reaches last row."]
-    ZZ249 = 0x07,
+    Zz249 = 0x07,
     #[doc = "YADR decreased by 1. For READ operations only, YADR is decreased by 1 after each read cycle."]
-    ZZ250 = 0x08,
+    Zz250 = 0x08,
     #[doc = "YADR decreased by 1 after first row. For READ operations only, YADR is decreased by 1 after XADR decreases to 0."]
-    ZZ251 = 0x09,
+    Zz251 = 0x09,
     _RESERVED_a = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
@@ -1493,9 +1493,9 @@ impl From<DftYadr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DisPrer {
     #[doc = "Enable pre-PV read before first program shot."]
-    ZZ345 = 0x0,
+    Zz345 = 0x0,
     #[doc = "Disable pre-PV read before first program shot."]
-    ZZ346 = 0x01,
+    Zz346 = 0x01,
 }
 impl DisPrer {
     #[inline(always)]
@@ -1524,9 +1524,9 @@ impl From<DisPrer> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EccEnableb {
     #[doc = "ECC decoder enabled (default)."]
-    ZZ189 = 0x0,
+    Zz189 = 0x0,
     #[doc = "ECC decoder disabled."]
-    ZZ190 = 0x01,
+    Zz190 = 0x01,
 }
 impl EccEnableb {
     #[inline(always)]
@@ -1555,9 +1555,9 @@ impl From<EccEnableb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Eccen {
     #[doc = "Default mode (no ECC encode or decode)."]
-    ZZ207 = 0x0,
+    Zz207 = 0x0,
     #[doc = "Enable ECC encode/decode."]
-    ZZ208 = 0x01,
+    Zz208 = 0x01,
 }
 impl Eccen {
     #[inline(always)]
@@ -1586,9 +1586,9 @@ impl From<Eccen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ersaack {
     #[doc = "Mass Erase operation is not active (operation has completed or has not started)."]
-    ZZ111 = 0x0,
+    Zz111 = 0x0,
     #[doc = "Mass Erase operation is active (controller acknowledges that the soc_ersall_req input is asserted and will continue with the operation)."]
-    ZZ112 = 0x01,
+    Zz112 = 0x01,
 }
 impl Ersaack {
     #[inline(always)]
@@ -1617,9 +1617,9 @@ impl From<Ersaack> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ersien0 {
     #[doc = "Block 0 IFR Sector X is protected from erase by ERSSCR command."]
-    ZZ31 = 0x0,
+    Zz31 = 0x0,
     #[doc = "Block 0 IFR Sector X is not protected from erase by ERSSCR command."]
-    ZZ32 = 0x01,
+    Zz32 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1662,9 +1662,9 @@ impl From<Ersien0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ersien1 {
     #[doc = "Block 1 IFR Sector X is protected from erase by ERSSCR command."]
-    ZZ29 = 0x0,
+    Zz29 = 0x0,
     #[doc = "Block 1 IFR Sector X is not protected from erase by ERSSCR command."]
-    ZZ30 = 0x01,
+    Zz30 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1707,9 +1707,9 @@ impl From<Ersien1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ersreq {
     #[doc = "No request or request complete."]
-    ZZ35 = 0x0,
+    Zz35 = 0x0,
     #[doc = "Request to run the Mass Erase operation."]
-    ZZ36 = 0x01,
+    Zz36 = 0x01,
 }
 impl Ersreq {
     #[inline(always)]
@@ -1738,9 +1738,9 @@ impl From<Ersreq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fail {
     #[doc = "Error not detected."]
-    ZZ27 = 0x0,
+    Zz27 = 0x0,
     #[doc = "Error detected."]
-    ZZ28 = 0x01,
+    Zz28 = 0x01,
 }
 impl Fail {
     #[inline(always)]
@@ -1769,9 +1769,9 @@ impl From<Fail> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fdfd {
     #[doc = "FSTAT\\[DFDIF\\] sets only if a double bit fault is detected during a valid flash read access from the FMC."]
-    ZZ41 = 0x0,
+    Zz41 = 0x0,
     #[doc = "FSTAT\\[DFDIF\\] sets during any valid flash read access from the FMC; an interrupt request is generated if the DFDIE bit is set."]
-    ZZ42 = 0x01,
+    Zz42 = 0x01,
 }
 impl Fdfd {
     #[inline(always)]
@@ -1800,9 +1800,9 @@ impl From<Fdfd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FlashRd {
     #[doc = "Manual flash read not enabled.(default)."]
-    ZZ155 = 0x0,
+    Zz155 = 0x0,
     #[doc = "Manual flash read enabled."]
-    ZZ156 = 0x01,
+    Zz156 = 0x01,
 }
 impl FlashRd {
     #[inline(always)]
@@ -1831,9 +1831,9 @@ impl From<FlashRd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FmuEccCtl {
     #[doc = "ECC is enabled for FMU program operations."]
-    ZZ99 = 0x0,
+    Zz99 = 0x0,
     #[doc = "ECC is disabled for FMU program operations."]
-    ZZ100 = 0x01,
+    Zz100 = 0x01,
 }
 impl FmuEccCtl {
     #[inline(always)]
@@ -1862,9 +1862,9 @@ impl From<FmuEccCtl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FmuParmDone {
     #[doc = "FMU registers have not been loaded."]
-    ZZ89 = 0x0,
+    Zz89 = 0x0,
     #[doc = "FMU registers have been loaded."]
-    ZZ90 = 0x01,
+    Zz90 = 0x01,
 }
 impl FmuParmDone {
     #[inline(always)]
@@ -1893,9 +1893,9 @@ impl From<FmuParmDone> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FmuParmEn {
     #[doc = "C0DE_C0DEh check not attempted."]
-    ZZ91 = 0x0,
+    Zz91 = 0x0,
     #[doc = "C0DE_C0DEh check completed."]
-    ZZ92 = 0x01,
+    Zz92 = 0x01,
 }
 impl FmuParmEn {
     #[inline(always)]
@@ -1924,9 +1924,9 @@ impl From<FmuParmEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ForceSwClk {
     #[doc = "Switch clock not forced on (gated normally)."]
-    ZZ157 = 0x0,
+    Zz157 = 0x0,
     #[doc = "Switch clock forced on."]
-    ZZ158 = 0x01,
+    Zz158 = 0x01,
 }
 impl ForceSwClk {
     #[inline(always)]
@@ -1955,19 +1955,19 @@ impl From<ForceSwClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Grpsel {
     #[doc = "Select no data."]
-    ZZ270 = 0x0,
+    Zz270 = 0x0,
     #[doc = "Select data slice \\[34:0\\]."]
-    ZZ271 = 0x01,
+    Zz271 = 0x01,
     #[doc = "Select data slice \\[69:35\\]."]
-    ZZ272 = 0x02,
+    Zz272 = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Select data slice \\[104:70\\]."]
-    ZZ273 = 0x04,
+    Zz273 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
     #[doc = "Select data slice \\[136:105\\]."]
-    ZZ274 = 0x08,
+    Zz274 = 0x08,
     _RESERVED_9 = 0x09,
     _RESERVED_a = 0x0a,
     _RESERVED_b = 0x0b,
@@ -1975,7 +1975,7 @@ pub enum Grpsel {
     _RESERVED_d = 0x0d,
     _RESERVED_e = 0x0e,
     #[doc = "Select data \\[136:0\\]."]
-    ZZ275 = 0x0f,
+    Zz275 = 0x0f,
 }
 impl Grpsel {
     #[inline(always)]
@@ -2004,9 +2004,9 @@ impl From<Grpsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum IfrCmd {
     #[doc = "The command operates on a main flash address."]
-    ZZ139 = 0x0,
+    Zz139 = 0x0,
     #[doc = "The command operates on an IFR address."]
-    ZZ140 = 0x01,
+    Zz140 = 0x01,
 }
 impl IfrCmd {
     #[inline(always)]
@@ -2035,9 +2035,9 @@ impl From<IfrCmd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum IllegalCmd {
     #[doc = "Command is legal."]
-    ZZ129 = 0x0,
+    Zz129 = 0x0,
     #[doc = "Command is illegal."]
-    ZZ130 = 0x01,
+    Zz130 = 0x01,
 }
 impl IllegalCmd {
     #[inline(always)]
@@ -2066,9 +2066,9 @@ impl From<IllegalCmd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum InitDone {
     #[doc = "All initialization steps did not complete."]
-    ZZ79 = 0x0,
+    Zz79 = 0x0,
     #[doc = "All initialization steps completed."]
-    ZZ80 = 0x01,
+    Zz80 = 0x01,
 }
 impl InitDone {
     #[inline(always)]
@@ -2097,13 +2097,13 @@ impl From<InitDone> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ipsel0 {
     #[doc = "Unselect block 0."]
-    ZZ223 = 0x0,
+    Zz223 = 0x0,
     #[doc = "not used, reserved."]
-    ZZ224 = 0x01,
+    Zz224 = 0x01,
     #[doc = "Enable block 0 test, repair off (default)."]
-    ZZ225 = 0x02,
+    Zz225 = 0x02,
     #[doc = "Enable block 0 test, repair on."]
-    ZZ226 = 0x03,
+    Zz226 = 0x03,
 }
 impl Ipsel0 {
     #[inline(always)]
@@ -2132,13 +2132,13 @@ impl From<Ipsel0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ipsel1 {
     #[doc = "Unselect block 1."]
-    ZZ219 = 0x0,
+    Zz219 = 0x0,
     #[doc = "not used, reserved."]
-    ZZ220 = 0x01,
+    Zz220 = 0x01,
     #[doc = "Enable block 1 test, repair off (default)."]
-    ZZ221 = 0x02,
+    Zz221 = 0x02,
     #[doc = "Enable block 1 test, repair on."]
-    ZZ222 = 0x03,
+    Zz222 = 0x03,
 }
 impl Ipsel1 {
     #[inline(always)]
@@ -2167,9 +2167,9 @@ impl From<Ipsel1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LastRead {
     #[doc = "Latest read not last in multi-address operation."]
-    ZZ167 = 0x0,
+    Zz167 = 0x0,
     #[doc = "Latest read last in multi-address operation."]
-    ZZ168 = 0x01,
+    Zz168 = 0x01,
 }
 impl LastRead {
     #[inline(always)]
@@ -2198,15 +2198,15 @@ impl From<LastRead> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Loopopt {
     #[doc = "Loop is disabled; selected BIST operation is run once."]
-    ZZ284 = 0x0,
+    Zz284 = 0x0,
     #[doc = "Loop is enabled; XADR increments by 1 XADR increments by 1 for each new loop. Stops when total loop count meets LOOPCNT+1."]
-    ZZ285 = 0x01,
+    Zz285 = 0x01,
     #[doc = "Loop is enabled; YADR increments by 1 YADR increments by 1 for each new loop. Stops when total loop count meets LOOPCNT+1."]
-    ZZ286 = 0x02,
+    Zz286 = 0x02,
     #[doc = "Loop is enabled; XADR increments by 2 XADR increments by 2 for each new loop. Stops when total loop count meets LOOPCNT+1."]
-    ZZ287 = 0x03,
+    Zz287 = 0x03,
     #[doc = "Loop is enabled; XADR increments by sector XADR increments by 16 for each new loop. Stops when total loop count meets LOOPCNT+1."]
-    ZZ288 = 0x04,
+    Zz288 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
@@ -2238,21 +2238,21 @@ impl From<Loopopt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Loopunit {
     #[doc = "Clock cycles."]
-    ZZ276 = 0x0,
+    Zz276 = 0x0,
     #[doc = "0.5 usec."]
-    ZZ277 = 0x01,
+    Zz277 = 0x01,
     #[doc = "1 usec."]
-    ZZ278 = 0x02,
+    Zz278 = 0x02,
     #[doc = "10 usec."]
-    ZZ279 = 0x03,
+    Zz279 = 0x03,
     #[doc = "100 usec."]
-    ZZ280 = 0x04,
+    Zz280 = 0x04,
     #[doc = "1 msec."]
-    ZZ281 = 0x05,
+    Zz281 = 0x05,
     #[doc = "10 msec."]
-    ZZ282 = 0x06,
+    Zz282 = 0x06,
     #[doc = "100 msec."]
-    ZZ283 = 0x07,
+    Zz283 = 0x07,
 }
 impl Loopunit {
     #[inline(always)]
@@ -2281,9 +2281,9 @@ impl From<Loopunit> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LsactEn {
     #[doc = "LSACTIVE feature disabled completely: FCTRL\\[LSACTIVE\\] is forced low and no longer writable, LVE cannot assert at the TSMC array interface."]
-    ZZ123 = 0x0,
+    Zz123 = 0x0,
     #[doc = "LSACTIVE feature fully enabled and controllable by SoC and internal UINT SM."]
-    ZZ124 = 0x01,
+    Zz124 = 0x01,
 }
 impl LsactEn {
     #[inline(always)]
@@ -2312,9 +2312,9 @@ impl From<LsactEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lsactive {
     #[doc = "Full speed active mode requested."]
-    ZZ43 = 0x0,
+    Zz43 = 0x0,
     #[doc = "Low speed active mode requested."]
-    ZZ44 = 0x01,
+    Zz44 = 0x01,
 }
 impl Lsactive {
     #[inline(always)]
@@ -2343,9 +2343,9 @@ impl From<Lsactive> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lsactwren {
     #[doc = "Unrestricted write access allowed."]
-    ZZ121 = 0x0,
+    Zz121 = 0x0,
     #[doc = "Write access while CMP set must match CMDDID and CMDPRT."]
-    ZZ122 = 0x01,
+    Zz122 = 0x01,
 }
 impl Lsactwren {
     #[inline(always)]
@@ -2374,9 +2374,9 @@ impl From<Lsactwren> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mask0Opt {
     #[doc = "Mask programmed bits passing PV until extra shot."]
-    ZZ347 = 0x0,
+    Zz347 = 0x0,
     #[doc = "Always program bits even if they pass PV."]
-    ZZ348 = 0x01,
+    Zz348 = 0x01,
 }
 impl Mask0Opt {
     #[inline(always)]
@@ -2405,9 +2405,9 @@ impl From<Mask0Opt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MasterRepairEn {
     #[doc = "Repair disabled."]
-    ZZ119 = 0x0,
+    Zz119 = 0x0,
     #[doc = "Repair enable determined by bit 0 of each REPAIR register."]
-    ZZ120 = 0x01,
+    Zz120 = 0x01,
 }
 impl MasterRepairEn {
     #[inline(always)]
@@ -2436,9 +2436,9 @@ impl From<MasterRepairEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MisrEn {
     #[doc = "MISR option disabled (default)."]
-    ZZ187 = 0x0,
+    Zz187 = 0x0,
     #[doc = "MISR option enabled."]
-    ZZ188 = 0x01,
+    Zz188 = 0x01,
 }
 impl MisrEn {
     #[inline(always)]
@@ -2467,9 +2467,9 @@ impl From<MisrEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MmRd {
     #[doc = "Write to register."]
-    ZZ161 = 0x0,
+    Zz161 = 0x0,
     #[doc = "Read register."]
-    ZZ162 = 0x01,
+    Zz162 = 0x01,
 }
 impl MmRd {
     #[inline(always)]
@@ -2498,9 +2498,9 @@ impl From<MmRd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mrgrddis {
     #[doc = "Margin Read Settings are enabled."]
-    ZZ113 = 0x0,
+    Zz113 = 0x0,
     #[doc = "Margin Read Settings are disabled."]
-    ZZ114 = 0x01,
+    Zz114 = 0x01,
 }
 impl Mrgrddis {
     #[inline(always)]
@@ -2529,9 +2529,9 @@ impl From<Mrgrddis> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum OptionFail {
     #[doc = "Option check passes for read command or command is not a read command."]
-    ZZ131 = 0x0,
+    Zz131 = 0x0,
     #[doc = "Option check fails for read command."]
-    ZZ132 = 0x01,
+    Zz132 = 0x01,
 }
 impl OptionFail {
     #[inline(always)]
@@ -2560,9 +2560,9 @@ impl From<OptionFail> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum OscH {
     #[doc = "Use APB clock."]
-    ZZ95 = 0x0,
+    Zz95 = 0x0,
     #[doc = "Use a known fixed-frequency clock, e.g. 12 MHz."]
-    ZZ96 = 0x01,
+    Zz96 = 0x01,
 }
 impl OscH {
     #[inline(always)]
@@ -2591,9 +2591,9 @@ impl From<OscH> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PdTimerEn {
     #[doc = "BIST timer is not triggered during Power Down recovery."]
-    ZZ127 = 0x0,
+    Zz127 = 0x0,
     #[doc = "BIST timer is triggered during Power Down recovery (default behavior)."]
-    ZZ128 = 0x01,
+    Zz128 = 0x01,
 }
 impl PdTimerEn {
     #[inline(always)]
@@ -2622,9 +2622,9 @@ impl From<PdTimerEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Perdy {
     #[doc = "Program or sector erase command operation is not stalled."]
-    ZZ1 = 0x0,
+    Zz1 = 0x0,
     #[doc = "Program or sector erase command operation is stalled."]
-    ZZ2 = 0x01,
+    Zz2 = 0x01,
 }
 impl Perdy {
     #[inline(always)]
@@ -2653,11 +2653,11 @@ impl From<Perdy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pewen {
     #[doc = "Writes are not enabled."]
-    ZZ3 = 0x0,
+    Zz3 = 0x0,
     #[doc = "Writes are enabled for one flash or IFR phrase (phrase programming, sector erase)."]
-    ZZ4 = 0x01,
+    Zz4 = 0x01,
     #[doc = "Writes are enabled for one flash or IFR page (page programming)."]
-    ZZ5 = 0x02,
+    Zz5 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Pewen {
@@ -2687,21 +2687,21 @@ impl From<Pewen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PostTers {
     #[doc = "50 usec."]
-    ZZ361 = 0x0,
+    Zz361 = 0x0,
     #[doc = "100 usec."]
-    ZZ362 = 0x01,
+    Zz362 = 0x01,
     #[doc = "200 usec."]
-    ZZ363 = 0x02,
+    Zz363 = 0x02,
     #[doc = "300 usec."]
-    ZZ364 = 0x03,
+    Zz364 = 0x03,
     #[doc = "500 usec."]
-    ZZ365 = 0x04,
+    Zz365 = 0x04,
     #[doc = "1 msec."]
-    ZZ366 = 0x05,
+    Zz366 = 0x05,
     #[doc = "1.5 msec."]
-    ZZ367 = 0x06,
+    Zz367 = 0x06,
     #[doc = "2 msec."]
-    ZZ368 = 0x07,
+    Zz368 = 0x07,
 }
 impl PostTers {
     #[inline(always)]
@@ -2730,13 +2730,13 @@ impl From<PostTers> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PostTpgm {
     #[doc = "1 usec."]
-    ZZ357 = 0x0,
+    Zz357 = 0x0,
     #[doc = "2 usec."]
-    ZZ358 = 0x01,
+    Zz358 = 0x01,
     #[doc = "4 usec."]
-    ZZ359 = 0x02,
+    Zz359 = 0x02,
     #[doc = "8 usec."]
-    ZZ360 = 0x03,
+    Zz360 = 0x03,
 }
 impl PostTpgm {
     #[inline(always)]
@@ -2765,21 +2765,21 @@ impl From<PostTpgm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ProgAttr {
     #[doc = "One YE pulse will program one data slice group."]
-    ZZ262 = 0x0,
+    Zz262 = 0x0,
     #[doc = "One YE pulse will program two data slice groups."]
-    ZZ263 = 0x01,
+    Zz263 = 0x01,
     #[doc = "One YE pulse will program three data slice groups (reserved)."]
-    ZZ264 = 0x02,
+    Zz264 = 0x02,
     #[doc = "One YE pulse will program four data slice groups."]
-    ZZ265 = 0x03,
+    Zz265 = 0x03,
     #[doc = "One YE pulse will program five data slice groups (reserved)."]
-    ZZ266 = 0x04,
+    Zz266 = 0x04,
     #[doc = "One YE pulse will program six data slice groups (reserved)."]
-    ZZ267 = 0x05,
+    Zz267 = 0x05,
     #[doc = "One YE pulse will program seven data slice groups (reserved)."]
-    ZZ268 = 0x06,
+    Zz268 = 0x06,
     #[doc = "One YE pulse will program eight data slice groups (reserved)."]
-    ZZ269 = 0x07,
+    Zz269 = 0x07,
 }
 impl ProgAttr {
     #[inline(always)]
@@ -2808,9 +2808,9 @@ impl From<ProgAttr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pviol {
     #[doc = "No protection violation detected."]
-    ZZ23 = 0x0,
+    Zz23 = 0x0,
     #[doc = "Protection violation detected."]
-    ZZ24 = 0x01,
+    Zz24 = 0x01,
 }
 impl Pviol {
     #[inline(always)]
@@ -2839,9 +2839,9 @@ impl From<Pviol> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RRepair00Rdis00 {
     #[doc = "Repair address is valid."]
-    ZZ337 = 0x0,
+    Zz337 = 0x0,
     #[doc = "Repair address is not valid."]
-    ZZ338 = 0x01,
+    Zz338 = 0x01,
 }
 impl RRepair00Rdis00 {
     #[inline(always)]
@@ -2870,9 +2870,9 @@ impl From<RRepair00Rdis00> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RRepair01Rdis01 {
     #[doc = "Repair address is valid."]
-    ZZ339 = 0x0,
+    Zz339 = 0x0,
     #[doc = "Repair address is not valid."]
-    ZZ340 = 0x01,
+    Zz340 = 0x01,
 }
 impl RRepair01Rdis01 {
     #[inline(always)]
@@ -2901,9 +2901,9 @@ impl From<RRepair01Rdis01> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RRepair10Rdis10 {
     #[doc = "Repair address is valid."]
-    ZZ341 = 0x0,
+    Zz341 = 0x0,
     #[doc = "Repair address is not valid."]
-    ZZ342 = 0x01,
+    Zz342 = 0x01,
 }
 impl RRepair10Rdis10 {
     #[inline(always)]
@@ -2932,9 +2932,9 @@ impl From<RRepair10Rdis10> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RRepair11Rdis11 {
     #[doc = "Repair address is valid."]
-    ZZ343 = 0x0,
+    Zz343 = 0x0,
     #[doc = "Repair address is not valid."]
-    ZZ344 = 0x01,
+    Zz344 = 0x01,
 }
 impl RRepair11Rdis11 {
     #[inline(always)]
@@ -2963,9 +2963,9 @@ impl From<RRepair11Rdis11> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RangeFail {
     #[doc = "The address range is valid."]
-    ZZ135 = 0x0,
+    Zz135 = 0x0,
     #[doc = "The address range is invalid."]
-    ZZ136 = 0x01,
+    Zz136 = 0x01,
 }
 impl RangeFail {
     #[inline(always)]
@@ -2994,9 +2994,9 @@ impl From<RangeFail> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RecallDataMismatch {
     #[doc = "Data read towards end of reset matched data read for Recall."]
-    ZZ71 = 0x0,
+    Zz71 = 0x0,
     #[doc = "Data read towards end of reset did not match data read for recall."]
-    ZZ72 = 0x01,
+    Zz72 = 0x01,
 }
 impl RecallDataMismatch {
     #[inline(always)]
@@ -3025,9 +3025,9 @@ impl From<RecallDataMismatch> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Repair00Rdis00 {
     #[doc = "Repair address is valid."]
-    ZZ405 = 0x0,
+    Zz405 = 0x0,
     #[doc = "Repair address is not valid."]
-    ZZ406 = 0x01,
+    Zz406 = 0x01,
 }
 impl Repair00Rdis00 {
     #[inline(always)]
@@ -3056,9 +3056,9 @@ impl From<Repair00Rdis00> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Repair01Rdis01 {
     #[doc = "Repair address is valid."]
-    ZZ407 = 0x0,
+    Zz407 = 0x0,
     #[doc = "Repair address is not valid."]
-    ZZ408 = 0x01,
+    Zz408 = 0x01,
 }
 impl Repair01Rdis01 {
     #[inline(always)]
@@ -3087,9 +3087,9 @@ impl From<Repair01Rdis01> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Repair10Rdis10 {
     #[doc = "Repair address is valid."]
-    ZZ409 = 0x0,
+    Zz409 = 0x0,
     #[doc = "Repair address is not valid."]
-    ZZ410 = 0x01,
+    Zz410 = 0x01,
 }
 impl Repair10Rdis10 {
     #[inline(always)]
@@ -3118,9 +3118,9 @@ impl From<Repair10Rdis10> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Repair11Rdis11 {
     #[doc = "Repair address is valid."]
-    ZZ411 = 0x0,
+    Zz411 = 0x0,
     #[doc = "Repair address is not valid."]
-    ZZ412 = 0x01,
+    Zz412 = 0x01,
 }
 impl Repair11Rdis11 {
     #[inline(always)]
@@ -3149,9 +3149,9 @@ impl From<Repair11Rdis11> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rfcmden {
     #[doc = "Flash commands blocked (CCIF not writable)."]
-    ZZ117 = 0x0,
+    Zz117 = 0x0,
     #[doc = "Flash commands allowed."]
-    ZZ118 = 0x01,
+    Zz118 = 0x01,
 }
 impl Rfcmden {
     #[inline(always)]
@@ -3180,9 +3180,9 @@ impl From<Rfcmden> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RprDone {
     #[doc = "Repair registers have not been loaded."]
-    ZZ81 = 0x0,
+    Zz81 = 0x0,
     #[doc = "Repair registers have been loaded."]
-    ZZ82 = 0x01,
+    Zz82 = 0x01,
 }
 impl RprDone {
     #[inline(always)]
@@ -3211,9 +3211,9 @@ impl From<RprDone> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RstDfErr {
     #[doc = "No double-bit faults detected during initialization."]
-    ZZ75 = 0x0,
+    Zz75 = 0x0,
     #[doc = "Double-bit ECC fault was detected during initialization."]
-    ZZ76 = 0x01,
+    Zz76 = 0x01,
 }
 impl RstDfErr {
     #[inline(always)]
@@ -3242,9 +3242,9 @@ impl From<RstDfErr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RstPatchLd {
     #[doc = "No patch required to be loaded during reset."]
-    ZZ73 = 0x0,
+    Zz73 = 0x0,
     #[doc = "Patch loaded during reset."]
-    ZZ74 = 0x01,
+    Zz74 = 0x01,
 }
 impl RstPatchLd {
     #[inline(always)]
@@ -3273,9 +3273,9 @@ impl From<RstPatchLd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RstSfErr {
     #[doc = "No single-bit faults detected during initialization."]
-    ZZ77 = 0x0,
+    Zz77 = 0x0,
     #[doc = "At least one single ECC fault was detected during initialization."]
-    ZZ78 = 0x01,
+    Zz78 = 0x01,
 }
 impl RstSfErr {
     #[inline(always)]
@@ -3304,37 +3304,37 @@ impl From<RstSfErr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rwsc {
     #[doc = "no additional wait-states are added (single cycle access)."]
-    ZZ45 = 0x0,
+    Zz45 = 0x0,
     #[doc = "1 additional wait-state is added."]
-    ZZ46 = 0x01,
+    Zz46 = 0x01,
     #[doc = "2 additional wait-states are added."]
-    ZZ47 = 0x02,
+    Zz47 = 0x02,
     #[doc = "3 additional wait-states are added."]
-    ZZ48 = 0x03,
+    Zz48 = 0x03,
     #[doc = "4 additional wait-states are added."]
-    ZZ49 = 0x04,
+    Zz49 = 0x04,
     #[doc = "5 additional wait-states are added."]
-    ZZ50 = 0x05,
+    Zz50 = 0x05,
     #[doc = "6 additional wait-states are added."]
-    ZZ51 = 0x06,
+    Zz51 = 0x06,
     #[doc = "7 additional wait-states are added."]
-    ZZ52 = 0x07,
+    Zz52 = 0x07,
     #[doc = "8 additional wait-states are added."]
-    ZZ53 = 0x08,
+    Zz53 = 0x08,
     #[doc = "9 additional wait-states are added."]
-    ZZ54 = 0x09,
+    Zz54 = 0x09,
     #[doc = "10 additional wait-states are added."]
-    ZZ55 = 0x0a,
+    Zz55 = 0x0a,
     #[doc = "11 additional wait-states are added."]
-    ZZ56 = 0x0b,
+    Zz56 = 0x0b,
     #[doc = "12 additional wait-states are added."]
-    ZZ57 = 0x0c,
+    Zz57 = 0x0c,
     #[doc = "13 additional wait-states are added."]
-    ZZ58 = 0x0d,
+    Zz58 = 0x0d,
     #[doc = "14 additional wait-states are added."]
-    ZZ59 = 0x0e,
+    Zz59 = 0x0e,
     #[doc = "15 additional wait-states are added."]
-    ZZ60 = 0x0f,
+    Zz60 = 0x0f,
 }
 impl Rwsc {
     #[inline(always)]
@@ -3363,9 +3363,9 @@ impl From<Rwsc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SalvDis {
     #[doc = "Salvage enabled (ECC used during erase verify)."]
-    ZZ103 = 0x0,
+    Zz103 = 0x0,
     #[doc = "Salvage disabled (ECC not used during erase verify)."]
-    ZZ104 = 0x01,
+    Zz104 = 0x01,
 }
 impl SalvDis {
     #[inline(always)]
@@ -3394,9 +3394,9 @@ impl From<SalvDis> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SalvUsed {
     #[doc = "Salvage not used during the last operation."]
-    ZZ7 = 0x0,
+    Zz7 = 0x0,
     #[doc = "Salvage used during the last erase operation."]
-    ZZ8 = 0x01,
+    Zz8 = 0x01,
 }
 impl SalvUsed {
     #[inline(always)]
@@ -3425,9 +3425,9 @@ impl From<SalvUsed> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SberrReg {
     #[doc = "Single-bit fault not detected."]
-    ZZ175 = 0x0,
+    Zz175 = 0x0,
     #[doc = "Single-bit fault detected on previous UINT flash read."]
-    ZZ176 = 0x01,
+    Zz176 = 0x01,
 }
 impl SberrReg {
     #[inline(always)]
@@ -3456,9 +3456,9 @@ impl From<SberrReg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ScanObs {
     #[doc = "Normal functional behavior."]
-    ZZ109 = 0x0,
+    Zz109 = 0x0,
     #[doc = "Enables observation of signals that may otherwise be ATPG untestable."]
-    ZZ110 = 0x01,
+    Zz110 = 0x01,
 }
 impl ScanObs {
     #[inline(always)]
@@ -3487,9 +3487,9 @@ impl From<ScanObs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ScrAlignChk {
     #[doc = "No sector alignment check."]
-    ZZ133 = 0x0,
+    Zz133 = 0x0,
     #[doc = "Sector alignment check."]
-    ZZ134 = 0x01,
+    Zz134 = 0x01,
 }
 impl ScrAlignChk {
     #[inline(always)]
@@ -3518,9 +3518,9 @@ impl From<ScrAlignChk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SetFail {
     #[doc = "FAIL flag should not be set on command exit (no failure detected)."]
-    ZZ165 = 0x0,
+    Zz165 = 0x0,
     #[doc = "FAIL flag should be set on command exit."]
-    ZZ166 = 0x01,
+    Zz166 = 0x01,
 }
 impl SetFail {
     #[inline(always)]
@@ -3549,9 +3549,9 @@ impl From<SetFail> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SingleRd {
     #[doc = "Normal UINT operation."]
-    ZZ151 = 0x0,
+    Zz151 = 0x0,
     #[doc = "UINT configured for single cycle reads."]
-    ZZ152 = 0x01,
+    Zz152 = 0x01,
 }
 impl SingleRd {
     #[inline(always)]
@@ -3580,14 +3580,14 @@ impl From<SingleRd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SmwArray {
     #[doc = "Main array."]
-    ZZ425 = 0x0,
+    Zz425 = 0x0,
     #[doc = "IFR space only or main (and REDEN space) with IFR space for mass erase."]
-    ZZ426 = 0x01,
+    Zz426 = 0x01,
     #[doc = "IFR1 space."]
-    ZZ427 = 0x02,
+    Zz427 = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "REDEN space."]
-    ZZ428 = 0x04,
+    Zz428 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
@@ -3619,9 +3619,9 @@ impl From<SmwArray> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SmwArray1Smw0Sel {
     #[doc = "Select block 0."]
-    ZZ171 = 0x0,
+    Zz171 = 0x0,
     #[doc = "Select block 1."]
-    ZZ172 = 0x01,
+    Zz172 = 0x01,
 }
 impl SmwArray1Smw0Sel {
     #[inline(always)]
@@ -3650,9 +3650,9 @@ impl From<SmwArray1Smw0Sel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SmwBusy {
     #[doc = "SMW command not active."]
-    ZZ203 = 0x0,
+    Zz203 = 0x0,
     #[doc = "SMW command is active."]
-    ZZ204 = 0x01,
+    Zz204 = 0x01,
 }
 impl SmwBusy {
     #[inline(always)]
@@ -3681,9 +3681,9 @@ impl From<SmwBusy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SmwErr {
     #[doc = "Error not detected."]
-    ZZ205 = 0x0,
+    Zz205 = 0x0,
     #[doc = "Error detected."]
-    ZZ206 = 0x01,
+    Zz206 = 0x01,
 }
 impl SmwErr {
     #[inline(always)]
@@ -3712,9 +3712,9 @@ impl From<SmwErr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SmwrCtl {
     #[doc = "SMWR IP disabled."]
-    ZZ105 = 0x0,
+    Zz105 = 0x0,
     #[doc = "SMWR IP enabled."]
-    ZZ106 = 0x01,
+    Zz106 = 0x01,
 }
 impl SmwrCtl {
     #[inline(always)]
@@ -3743,11 +3743,11 @@ impl From<SmwrCtl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Smwtst {
     #[doc = "Default."]
-    ZZ209 = 0x0,
+    Zz209 = 0x0,
     #[doc = "Enable SMWR self-test mode, DOUT from macro will be forced to all 0."]
-    ZZ210 = 0x01,
+    Zz210 = 0x01,
     #[doc = "Enable SMWR self-test mode, DOUT from macro will be forced to all 1."]
-    ZZ211 = 0x02,
+    Zz211 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Smwtst {
@@ -3777,9 +3777,9 @@ impl From<Smwtst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SocEccCtl {
     #[doc = "ECC is enabled for SOC read access."]
-    ZZ101 = 0x0,
+    Zz101 = 0x0,
     #[doc = "ECC is disabled for SOC read access."]
-    ZZ102 = 0x01,
+    Zz102 = 0x01,
 }
 impl SocEccCtl {
     #[inline(always)]
@@ -3808,9 +3808,9 @@ impl From<SocEccCtl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SocTrimDone {
     #[doc = "SoC Trim registers have not been updated."]
-    ZZ83 = 0x0,
+    Zz83 = 0x0,
     #[doc = "All SoC Trim registers have been updated."]
-    ZZ84 = 0x01,
+    Zz84 = 0x01,
 }
 impl SocTrimDone {
     #[inline(always)]
@@ -3839,9 +3839,9 @@ impl From<SocTrimDone> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SocTrimEcc {
     #[doc = "C0DE_C0DEh check failed."]
-    ZZ85 = 0x0,
+    Zz85 = 0x0,
     #[doc = "C0DE_C0DEh check passed."]
-    ZZ86 = 0x01,
+    Zz86 = 0x01,
 }
 impl SocTrimEcc {
     #[inline(always)]
@@ -3870,9 +3870,9 @@ impl From<SocTrimEcc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SocTrimEn {
     #[doc = "C0DE_C0DEh check not attempted."]
-    ZZ87 = 0x0,
+    Zz87 = 0x0,
     #[doc = "C0DE_C0DEh check completed."]
-    ZZ88 = 0x01,
+    Zz88 = 0x01,
 }
 impl SocTrimEn {
     #[inline(always)]
@@ -3901,9 +3901,9 @@ impl From<SocTrimEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Status0 {
     #[doc = "BIST test passed on flash block 0."]
-    ZZ331 = 0x0,
+    Zz331 = 0x0,
     #[doc = "BIST test failed on flash block 0."]
-    ZZ332 = 0x01,
+    Zz332 = 0x01,
 }
 impl Status0 {
     #[inline(always)]
@@ -3932,9 +3932,9 @@ impl From<Status0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Status1 {
     #[doc = "BIST test passed on flash block 1."]
-    ZZ329 = 0x0,
+    Zz329 = 0x0,
     #[doc = "BIST test failed on flash block 1."]
-    ZZ330 = 0x01,
+    Zz330 = 0x01,
 }
 impl Status1 {
     #[inline(always)]
@@ -3963,21 +3963,21 @@ impl From<Status1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TersCtrl0 {
     #[doc = "50 usec."]
-    ZZ397 = 0x0,
+    Zz397 = 0x0,
     #[doc = "100 usec."]
-    ZZ398 = 0x01,
+    Zz398 = 0x01,
     #[doc = "200 usec."]
-    ZZ399 = 0x02,
+    Zz399 = 0x02,
     #[doc = "300 usec."]
-    ZZ400 = 0x03,
+    Zz400 = 0x03,
     #[doc = "500 usec."]
-    ZZ401 = 0x04,
+    Zz401 = 0x04,
     #[doc = "1 msec."]
-    ZZ402 = 0x05,
+    Zz402 = 0x05,
     #[doc = "1.5 msec."]
-    ZZ403 = 0x06,
+    Zz403 = 0x06,
     #[doc = "2 msec."]
-    ZZ404 = 0x07,
+    Zz404 = 0x07,
 }
 impl TersCtrl0 {
     #[inline(always)]
@@ -4006,21 +4006,21 @@ impl From<TersCtrl0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tlvsunit {
     #[doc = "Clock cycles."]
-    ZZ289 = 0x0,
+    Zz289 = 0x0,
     #[doc = "0.5 usec."]
-    ZZ290 = 0x01,
+    Zz290 = 0x01,
     #[doc = "1 usec."]
-    ZZ291 = 0x02,
+    Zz291 = 0x02,
     #[doc = "10 usec."]
-    ZZ292 = 0x03,
+    Zz292 = 0x03,
     #[doc = "100 usec."]
-    ZZ293 = 0x04,
+    Zz293 = 0x04,
     #[doc = "1 msec."]
-    ZZ294 = 0x05,
+    Zz294 = 0x05,
     #[doc = "10 msec."]
-    ZZ295 = 0x06,
+    Zz295 = 0x06,
     #[doc = "100 msec."]
-    ZZ296 = 0x07,
+    Zz296 = 0x07,
 }
 impl Tlvsunit {
     #[inline(always)]
@@ -4049,21 +4049,21 @@ impl From<Tlvsunit> for u8 {
 pub struct TmToAtx(u8);
 impl TmToAtx {
     #[doc = "TM\\[0\\] to ATX0."]
-    pub const ZZ441: Self = Self(0x01);
+    pub const Zz441: Self = Self(0x01);
     #[doc = "TM\\[1\\] to ATX0."]
-    pub const ZZ442: Self = Self(0x02);
+    pub const Zz442: Self = Self(0x02);
     #[doc = "TM\\[2\\] to ATX0."]
-    pub const ZZ443: Self = Self(0x04);
+    pub const Zz443: Self = Self(0x04);
     #[doc = "TM\\[3\\] to ATX0."]
-    pub const ZZ444: Self = Self(0x08);
+    pub const Zz444: Self = Self(0x08);
     #[doc = "TM\\[0\\] to ATX1."]
-    pub const ZZ445: Self = Self(0x10);
+    pub const Zz445: Self = Self(0x10);
     #[doc = "TM\\[1\\] to ATX1."]
-    pub const ZZ446: Self = Self(0x20);
+    pub const Zz446: Self = Self(0x20);
     #[doc = "TM\\[2\\] to ATX1."]
-    pub const ZZ447: Self = Self(0x40);
+    pub const Zz447: Self = Self(0x40);
     #[doc = "TM\\[3\\] to ATX1."]
-    pub const ZZ448: Self = Self(0x80);
+    pub const Zz448: Self = Self(0x80);
 }
 impl TmToAtx {
     pub const fn from_bits(val: u8) -> TmToAtx {
@@ -4076,14 +4076,14 @@ impl TmToAtx {
 impl core::fmt::Debug for TmToAtx {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("ZZ441"),
-            0x02 => f.write_str("ZZ442"),
-            0x04 => f.write_str("ZZ443"),
-            0x08 => f.write_str("ZZ444"),
-            0x10 => f.write_str("ZZ445"),
-            0x20 => f.write_str("ZZ446"),
-            0x40 => f.write_str("ZZ447"),
-            0x80 => f.write_str("ZZ448"),
+            0x01 => f.write_str("Zz441"),
+            0x02 => f.write_str("Zz442"),
+            0x04 => f.write_str("Zz443"),
+            0x08 => f.write_str("Zz444"),
+            0x10 => f.write_str("Zz445"),
+            0x20 => f.write_str("Zz446"),
+            0x40 => f.write_str("Zz447"),
+            0x80 => f.write_str("Zz448"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -4092,14 +4092,14 @@ impl core::fmt::Debug for TmToAtx {
 impl defmt::Format for TmToAtx {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "ZZ441"),
-            0x02 => defmt::write!(f, "ZZ442"),
-            0x04 => defmt::write!(f, "ZZ443"),
-            0x08 => defmt::write!(f, "ZZ444"),
-            0x10 => defmt::write!(f, "ZZ445"),
-            0x20 => defmt::write!(f, "ZZ446"),
-            0x40 => defmt::write!(f, "ZZ447"),
-            0x80 => defmt::write!(f, "ZZ448"),
+            0x01 => defmt::write!(f, "Zz441"),
+            0x02 => defmt::write!(f, "Zz442"),
+            0x04 => defmt::write!(f, "Zz443"),
+            0x08 => defmt::write!(f, "Zz444"),
+            0x10 => defmt::write!(f, "Zz445"),
+            0x20 => defmt::write!(f, "Zz446"),
+            0x40 => defmt::write!(f, "Zz447"),
+            0x80 => defmt::write!(f, "Zz448"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -4121,9 +4121,9 @@ impl From<TmToAtx> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tme {
     #[doc = "Test mode entry not requested."]
-    ZZ65 = 0x0,
+    Zz65 = 0x0,
     #[doc = "Test mode entry requested."]
-    ZZ66 = 0x01,
+    Zz66 = 0x01,
 }
 impl Tme {
     #[inline(always)]
@@ -4152,9 +4152,9 @@ impl From<Tme> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tmectl {
     #[doc = "FTEST register always reads 0 and writes to FTEST are ignored."]
-    ZZ69 = 0x0,
+    Zz69 = 0x0,
     #[doc = "FTEST register is readable and can be written to enable writability of TME."]
-    ZZ70 = 0x01,
+    Zz70 = 0x01,
 }
 impl Tmectl {
     #[inline(always)]
@@ -4183,9 +4183,9 @@ impl From<Tmectl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tmelock {
     #[doc = "FTEST register not locked from accepting writes."]
-    ZZ61 = 0x0,
+    Zz61 = 0x0,
     #[doc = "FTEST register locked from accepting writes."]
-    ZZ62 = 0x01,
+    Zz62 = 0x01,
 }
 impl Tmelock {
     #[inline(always)]
@@ -4214,9 +4214,9 @@ impl From<Tmelock> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tmewr {
     #[doc = "TME bit is not writable."]
-    ZZ67 = 0x0,
+    Zz67 = 0x0,
     #[doc = "TME bit is writable."]
-    ZZ68 = 0x01,
+    Zz68 = 0x01,
 }
 impl Tmewr {
     #[inline(always)]
@@ -4245,9 +4245,9 @@ impl From<Tmewr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tmode {
     #[doc = "Test mode not active."]
-    ZZ63 = 0x0,
+    Zz63 = 0x0,
     #[doc = "Test mode active."]
-    ZZ64 = 0x01,
+    Zz64 = 0x01,
 }
 impl Tmode {
     #[inline(always)]
@@ -4276,21 +4276,21 @@ impl From<Tmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TnvhCtrl {
     #[doc = "2 usec."]
-    ZZ377 = 0x0,
+    Zz377 = 0x0,
     #[doc = "2.5 usec."]
-    ZZ378 = 0x01,
+    Zz378 = 0x01,
     #[doc = "3 usec."]
-    ZZ379 = 0x02,
+    Zz379 = 0x02,
     #[doc = "3.5 usec."]
-    ZZ380 = 0x03,
+    Zz380 = 0x03,
     #[doc = "4 usec."]
-    ZZ381 = 0x04,
+    Zz381 = 0x04,
     #[doc = "4.5 usec."]
-    ZZ382 = 0x05,
+    Zz382 = 0x05,
     #[doc = "5 usec."]
-    ZZ383 = 0x06,
+    Zz383 = 0x06,
     #[doc = "5.5 usec."]
-    ZZ384 = 0x07,
+    Zz384 = 0x07,
 }
 impl TnvhCtrl {
     #[inline(always)]
@@ -4319,21 +4319,21 @@ impl From<TnvhCtrl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tnvhunit {
     #[doc = "Clock cycles."]
-    ZZ313 = 0x0,
+    Zz313 = 0x0,
     #[doc = "0.5 usec."]
-    ZZ314 = 0x01,
+    Zz314 = 0x01,
     #[doc = "1 usec."]
-    ZZ315 = 0x02,
+    Zz315 = 0x02,
     #[doc = "10 usec."]
-    ZZ316 = 0x03,
+    Zz316 = 0x03,
     #[doc = "100 usec."]
-    ZZ317 = 0x04,
+    Zz317 = 0x04,
     #[doc = "1 msec."]
-    ZZ318 = 0x05,
+    Zz318 = 0x05,
     #[doc = "10 msec."]
-    ZZ319 = 0x06,
+    Zz319 = 0x06,
     #[doc = "100 msec."]
-    ZZ320 = 0x07,
+    Zz320 = 0x07,
 }
 impl Tnvhunit {
     #[inline(always)]
@@ -4362,21 +4362,21 @@ impl From<Tnvhunit> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TnvsCtrl {
     #[doc = "5 usec."]
-    ZZ385 = 0x0,
+    Zz385 = 0x0,
     #[doc = "8 usec."]
-    ZZ386 = 0x01,
+    Zz386 = 0x01,
     #[doc = "11 usec."]
-    ZZ387 = 0x02,
+    Zz387 = 0x02,
     #[doc = "14 usec."]
-    ZZ388 = 0x03,
+    Zz388 = 0x03,
     #[doc = "17 usec."]
-    ZZ389 = 0x04,
+    Zz389 = 0x04,
     #[doc = "20 usec."]
-    ZZ390 = 0x05,
+    Zz390 = 0x05,
     #[doc = "23 usec."]
-    ZZ391 = 0x06,
+    Zz391 = 0x06,
     #[doc = "26 usec."]
-    ZZ392 = 0x07,
+    Zz392 = 0x07,
 }
 impl TnvsCtrl {
     #[inline(always)]
@@ -4405,21 +4405,21 @@ impl From<TnvsCtrl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tnvsunit {
     #[doc = "Clock cycles."]
-    ZZ321 = 0x0,
+    Zz321 = 0x0,
     #[doc = "0.5 usec."]
-    ZZ322 = 0x01,
+    Zz322 = 0x01,
     #[doc = "1 usec."]
-    ZZ323 = 0x02,
+    Zz323 = 0x02,
     #[doc = "10 usec."]
-    ZZ324 = 0x03,
+    Zz324 = 0x03,
     #[doc = "100 usec."]
-    ZZ325 = 0x04,
+    Zz325 = 0x04,
     #[doc = "1 msec."]
-    ZZ326 = 0x05,
+    Zz326 = 0x05,
     #[doc = "10 msec."]
-    ZZ327 = 0x06,
+    Zz327 = 0x06,
     #[doc = "100 msec."]
-    ZZ328 = 0x07,
+    Zz328 = 0x07,
 }
 impl Tnvsunit {
     #[inline(always)]
@@ -4448,13 +4448,13 @@ impl From<Tnvsunit> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TpgmCtrl {
     #[doc = "1 usec."]
-    ZZ393 = 0x0,
+    Zz393 = 0x0,
     #[doc = "2 usec."]
-    ZZ394 = 0x01,
+    Zz394 = 0x01,
     #[doc = "4 usec."]
-    ZZ395 = 0x02,
+    Zz395 = 0x02,
     #[doc = "8 usec."]
-    ZZ396 = 0x03,
+    Zz396 = 0x03,
 }
 impl TpgmCtrl {
     #[inline(always)]
@@ -4483,13 +4483,13 @@ impl From<TpgmCtrl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TpgmOpt {
     #[doc = "Fixed Tpgm for all shots, except post shot."]
-    ZZ349 = 0x0,
+    Zz349 = 0x0,
     #[doc = "Increase Tpgm option by 1 for each loop until Tpgm reaches 4 usec."]
-    ZZ350 = 0x01,
+    Zz350 = 0x01,
     #[doc = "Increase Tpgm option by 1 for each loop until Tpgm reaches 8 usec."]
-    ZZ351 = 0x02,
+    Zz351 = 0x02,
     #[doc = "Unused."]
-    ZZ352 = 0x03,
+    Zz352 = 0x03,
 }
 impl TpgmOpt {
     #[inline(always)]
@@ -4518,21 +4518,21 @@ impl From<TpgmOpt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TpgsCtrl {
     #[doc = "1 usec."]
-    ZZ369 = 0x0,
+    Zz369 = 0x0,
     #[doc = "2 usec."]
-    ZZ370 = 0x01,
+    Zz370 = 0x01,
     #[doc = "3 usec."]
-    ZZ371 = 0x02,
+    Zz371 = 0x02,
     #[doc = "4 usec."]
-    ZZ372 = 0x03,
+    Zz372 = 0x03,
     #[doc = "5 usec."]
-    ZZ373 = 0x04,
+    Zz373 = 0x04,
     #[doc = "6 usec."]
-    ZZ374 = 0x05,
+    Zz374 = 0x05,
     #[doc = "7 usec."]
-    ZZ375 = 0x06,
+    Zz375 = 0x06,
     #[doc = "8 usec."]
-    ZZ376 = 0x07,
+    Zz376 = 0x07,
 }
 impl TpgsCtrl {
     #[inline(always)]
@@ -4561,21 +4561,21 @@ impl From<TpgsCtrl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpgsunit {
     #[doc = "Clock cycles."]
-    ZZ305 = 0x0,
+    Zz305 = 0x0,
     #[doc = "0.5 usec."]
-    ZZ306 = 0x01,
+    Zz306 = 0x01,
     #[doc = "1 usec."]
-    ZZ307 = 0x02,
+    Zz307 = 0x02,
     #[doc = "10 usec."]
-    ZZ308 = 0x03,
+    Zz308 = 0x03,
     #[doc = "100 usec."]
-    ZZ309 = 0x04,
+    Zz309 = 0x04,
     #[doc = "1 msec."]
-    ZZ310 = 0x05,
+    Zz310 = 0x05,
     #[doc = "10 msec."]
-    ZZ311 = 0x06,
+    Zz311 = 0x06,
     #[doc = "100 msec."]
-    ZZ312 = 0x07,
+    Zz312 = 0x07,
 }
 impl Tpgsunit {
     #[inline(always)]
@@ -4604,21 +4604,21 @@ impl From<Tpgsunit> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trcvunit {
     #[doc = "Clock cycles."]
-    ZZ297 = 0x0,
+    Zz297 = 0x0,
     #[doc = "0.5 usec."]
-    ZZ298 = 0x01,
+    Zz298 = 0x01,
     #[doc = "1 usec."]
-    ZZ299 = 0x02,
+    Zz299 = 0x02,
     #[doc = "10 usec."]
-    ZZ300 = 0x03,
+    Zz300 = 0x03,
     #[doc = "100 usec."]
-    ZZ301 = 0x04,
+    Zz301 = 0x04,
     #[doc = "1 msec."]
-    ZZ302 = 0x05,
+    Zz302 = 0x05,
     #[doc = "10 msec."]
-    ZZ303 = 0x06,
+    Zz303 = 0x06,
     #[doc = "100 msec."]
-    ZZ304 = 0x07,
+    Zz304 = 0x07,
 }
 impl Trcvunit {
     #[inline(always)]
@@ -4647,13 +4647,13 @@ impl From<Trcvunit> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tstctl {
     #[doc = "Default, disable both BIST self-test and MISR."]
-    ZZ215 = 0x0,
+    Zz215 = 0x0,
     #[doc = "Enable BIST self-test mode DOUT from macro will be forced to '0', and disable MISR."]
-    ZZ216 = 0x01,
+    Zz216 = 0x01,
     #[doc = "Enable MISR."]
-    ZZ217 = 0x02,
+    Zz217 = 0x02,
     #[doc = "Enable both BIST self-test mode and MISR."]
-    ZZ218 = 0x03,
+    Zz218 = 0x03,
 }
 impl Tstctl {
     #[inline(always)]
@@ -4682,9 +4682,9 @@ impl From<Tstctl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum UserEv {
     #[doc = "EV input to the flash array is driven LOW."]
-    ZZ419 = 0x0,
+    Zz419 = 0x0,
     #[doc = "EV input to the flash array is driven HIGH."]
-    ZZ420 = 0x01,
+    Zz420 = 0x01,
 }
 impl UserEv {
     #[inline(always)]
@@ -4713,9 +4713,9 @@ impl From<UserEv> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum UserHem {
     #[doc = "HEM input to SMW / BIST PIN_CTRL\\[24\\] is driven LOW."]
-    ZZ413 = 0x0,
+    Zz413 = 0x0,
     #[doc = "HEM input to SMW / BIST PIN_CTRL\\[24\\] is driven HIGH."]
-    ZZ414 = 0x01,
+    Zz414 = 0x01,
 }
 impl UserHem {
     #[inline(always)]
@@ -4744,9 +4744,9 @@ impl From<UserHem> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum UserIfren {
     #[doc = "IFREN input to the flash array is driven LOW."]
-    ZZ417 = 0x0,
+    Zz417 = 0x0,
     #[doc = "IFREN input to the flash array is driven HIGH."]
-    ZZ418 = 0x01,
+    Zz418 = 0x01,
 }
 impl UserIfren {
     #[inline(always)]
@@ -4775,9 +4775,9 @@ impl From<UserIfren> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum UserIfren1 {
     #[doc = "IFREN1 input to the flash array is driven LOW."]
-    ZZ423 = 0x0,
+    Zz423 = 0x0,
     #[doc = "IFREN1 input to the flash array is driven HIGH."]
-    ZZ424 = 0x01,
+    Zz424 = 0x01,
 }
 impl UserIfren1 {
     #[inline(always)]
@@ -4806,9 +4806,9 @@ impl From<UserIfren1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum UserPv {
     #[doc = "PV input to the flash array is driven LOW."]
-    ZZ421 = 0x0,
+    Zz421 = 0x0,
     #[doc = "PV input to the flash array is driven HIGH."]
-    ZZ422 = 0x01,
+    Zz422 = 0x01,
 }
 impl UserPv {
     #[inline(always)]
@@ -4837,9 +4837,9 @@ impl From<UserPv> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum UserReden {
     #[doc = "REDEN input to the flash array is driven LOW."]
-    ZZ415 = 0x0,
+    Zz415 = 0x0,
     #[doc = "REDEN input to the flash array is driven HIGH."]
-    ZZ416 = 0x01,
+    Zz416 = 0x01,
 }
 impl UserReden {
     #[inline(always)]
@@ -4868,13 +4868,13 @@ impl From<UserReden> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum VfyOpt {
     #[doc = "Skip verify for post shot only, verify for all other shots."]
-    ZZ353 = 0x0,
+    Zz353 = 0x0,
     #[doc = "Skip verify for the 1st and post shots."]
-    ZZ354 = 0x01,
+    Zz354 = 0x01,
     #[doc = "Skip the 1st, 2nd, and post shots."]
-    ZZ355 = 0x02,
+    Zz355 = 0x02,
     #[doc = "Skip verify for all shots."]
-    ZZ356 = 0x03,
+    Zz356 = 0x03,
 }
 impl VfyOpt {
     #[inline(always)]
@@ -4903,9 +4903,9 @@ impl From<VfyOpt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum WaitEn {
     #[doc = "Wait feature disabled."]
-    ZZ191 = 0x0,
+    Zz191 = 0x0,
     #[doc = "Wait feature enabled."]
-    ZZ192 = 0x01,
+    Zz192 = 0x01,
 }
 impl WaitEn {
     #[inline(always)]
@@ -4934,9 +4934,9 @@ impl From<WaitEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum WideLoad {
     #[doc = "Wide load mode disabled (default)."]
-    ZZ153 = 0x0,
+    Zz153 = 0x0,
     #[doc = "Wide load mode enabled."]
-    ZZ154 = 0x01,
+    Zz154 = 0x01,
 }
 impl WideLoad {
     #[inline(always)]
@@ -4965,9 +4965,9 @@ impl From<WideLoad> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum WrPathEccEn {
     #[doc = "ECC encoding disabled."]
-    ZZ179 = 0x0,
+    Zz179 = 0x0,
     #[doc = "ECC encoding enabled."]
-    ZZ180 = 0x01,
+    Zz180 = 0x01,
 }
 impl WrPathEccEn {
     #[inline(always)]
@@ -4996,9 +4996,9 @@ impl From<WrPathEccEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum WrPathEn {
     #[doc = "Writes to BIST setting registers driven by MM_WDATA."]
-    ZZ181 = 0x0,
+    Zz181 = 0x0,
     #[doc = "Writes to BIST setting registers driven by SMW_DIN."]
-    ZZ182 = 0x01,
+    Zz182 = 0x01,
 }
 impl WrPathEn {
     #[inline(always)]

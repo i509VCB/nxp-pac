@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fauto {
     #[doc = "Manual fault clearing. PWM outputs disabled by this fault are not enabled until FSTS\\[FFLAGx\\] is clear at the start of a half cycle or full cycle depending on the states of FSTS\\[FHALF\\] and FSTS\\[FFULL\\]. If neither FFULL nor FHALF is set, then the fault condition cannot be cleared. This is further controlled by FCTRL\\[FSAFE\\]."]
-    MANUAL = 0x0,
+    Manual = 0x0,
     #[doc = "Automatic fault clearing. PWM outputs disabled by this fault are enabled when FSTS\\[FFPINx\\] is clear at the start of a half cycle or full cycle depending on the states of FSTS\\[FHALF\\] and FSTS\\[FFULL\\] without regard to the state of FSTS\\[FFLAGx\\]. If neither FFULL nor FHALF is set, then the fault condition cannot be cleared."]
-    AUTOMATIC = 0x01,
+    Automatic = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -48,9 +48,9 @@ impl From<Fauto> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fflag {
     #[doc = "No fault on the FAULTx pin."]
-    NO_FLAG = 0x0,
+    NoFlag = 0x0,
     #[doc = "Fault on the FAULTx pin."]
-    FLAG = 0x01,
+    Flag = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -93,9 +93,9 @@ impl From<Fflag> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ffull {
     #[doc = "PWM outputs are not re-enabled at the start of a full cycle."]
-    PWM_OUTPUTS_NOT_REENABLED = 0x0,
+    PwmOutputsNotReenabled = 0x0,
     #[doc = "PWM outputs are re-enabled at the start of a full cycle."]
-    PWM_OUTPUTS_REENABLED = 0x01,
+    PwmOutputsReenabled = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -138,9 +138,9 @@ impl From<Ffull> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fhalf {
     #[doc = "PWM outputs are not re-enabled at the start of a half cycle."]
-    PWM_OUTPUTS_NOT_REENABLED = 0x0,
+    PwmOutputsNotReenabled = 0x0,
     #[doc = "PWM outputs are re-enabled at the start of a half cycle (as defined by VAL0)."]
-    PWM_OUTPUTS_REENABLED = 0x01,
+    PwmOutputsReenabled = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -183,9 +183,9 @@ impl From<Fhalf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fie {
     #[doc = "FAULTx CPU interrupt requests disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "FAULTx CPU interrupt requests enabled."]
-    ENABLED = 0x01,
+    Enabled = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -228,9 +228,9 @@ impl From<Fie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flvl {
     #[doc = "A logic 0 on the fault input indicates a fault condition."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "A logic 1 on the fault input indicates a fault condition."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -273,9 +273,9 @@ impl From<Flvl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fsafe {
     #[doc = "Normal mode. PWM outputs disabled by this fault are not enabled until FSTS\\[FFLAGx\\] is clear at the start of a half cycle or full cycle depending on the states of FSTS\\[FHALF\\] and FSTS\\[FFULL\\] without regard to the state of FSTS\\[FFPINx\\]. If neither FHALF nor FFULL is set, then the fault condition cannot be cleared. The PWM outputs disabled by this fault input will not be re-enabled until the actual FAULTx input signal de-asserts since the fault input will combinationally disable the PWM outputs (as programmed in DISMAPn)."]
-    NORMAL = 0x0,
+    Normal = 0x0,
     #[doc = "Safe mode. PWM outputs disabled by this fault are not enabled until FSTS\\[FFLAGx\\] is clear and FSTS\\[FFPINx\\] is clear at the start of a half cycle or full cycle depending on the states of FSTS\\[FHALF\\] and FSTS\\[FFULL\\]. If neither FHLAF nor FFULL is set, then the fault condition cannot be cleared."]
-    SAFE = 0x01,
+    Safe = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -318,9 +318,9 @@ impl From<Fsafe> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ipol {
     #[doc = "PWM23 is used to generate complementary PWM pair in the corresponding submodule."]
-    PWM23 = 0x0,
+    Pwm23 = 0x0,
     #[doc = "PWM45 is used to generate complementary PWM pair in the corresponding submodule."]
-    PWM45 = 0x01,
+    Pwm45 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -363,9 +363,9 @@ impl From<Ipol> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ldok {
     #[doc = "Do not load new values."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Load prescaler, modulus, and PWM values of the corresponding submodule."]
-    ENABLED = 0x01,
+    Enabled = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -408,9 +408,9 @@ impl From<Ldok> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Nocomb {
     #[doc = "There is a combinational link from the fault inputs to the PWM outputs. The fault inputs are combined with the filtered and latched fault signals to disable the PWM outputs."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "The direct combinational path from the fault inputs to the PWM outputs is disabled and the filtered and latched fault signals are used to disable the PWM outputs."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -453,9 +453,9 @@ impl From<Nocomb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Run {
     #[doc = "PWM counter is stopped, but PWM outputs hold the current state."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "PWM counter is started in the corresponding submodule."]
-    ENABLED = 0x01,
+    Enabled = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -498,13 +498,13 @@ impl From<Run> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0captctrlaEdga0 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm0captctrlaEdga0 {
     #[inline(always)]
@@ -533,13 +533,13 @@ impl From<Sm0captctrlaEdga0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0captctrlaEdga1 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm0captctrlaEdga1 {
     #[inline(always)]
@@ -568,9 +568,9 @@ impl From<Sm0captctrlaEdga1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0captctrlaInpSela {
     #[doc = "Raw PWM_A input signal selected as source."]
-    PWM_A = 0x0,
+    PwmA = 0x0,
     #[doc = "Edge Counter."]
-    EDGE_COUNTER = 0x01,
+    EdgeCounter = 0x01,
 }
 impl Sm0captctrlaInpSela {
     #[inline(always)]
@@ -599,9 +599,9 @@ impl From<Sm0captctrlaInpSela> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0captctrlaOneshota {
     #[doc = "Free Running."]
-    FREE_RUNNING = 0x0,
+    FreeRunning = 0x0,
     #[doc = "One Shot."]
-    ONE_SHOT = 0x01,
+    OneShot = 0x01,
 }
 impl Sm0captctrlaOneshota {
     #[inline(always)]
@@ -630,13 +630,13 @@ impl From<Sm0captctrlaOneshota> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0captctrlbEdgb0 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm0captctrlbEdgb0 {
     #[inline(always)]
@@ -665,13 +665,13 @@ impl From<Sm0captctrlbEdgb0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0captctrlbEdgb1 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm0captctrlbEdgb1 {
     #[inline(always)]
@@ -700,9 +700,9 @@ impl From<Sm0captctrlbEdgb1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0captctrlbInpSelb {
     #[doc = "Raw PWM_B input signal selected as source."]
-    PWM_B = 0x0,
+    PwmB = 0x0,
     #[doc = "Edge Counter."]
-    EDGE_COUNTER = 0x01,
+    EdgeCounter = 0x01,
 }
 impl Sm0captctrlbInpSelb {
     #[inline(always)]
@@ -731,9 +731,9 @@ impl From<Sm0captctrlbInpSelb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0captctrlbOneshotb {
     #[doc = "Free Running."]
-    FREE_RUNNING = 0x0,
+    FreeRunning = 0x0,
     #[doc = "One Shot."]
-    ONE_SHOT = 0x01,
+    OneShot = 0x01,
 }
 impl Sm0captctrlbOneshotb {
     #[inline(always)]
@@ -762,13 +762,13 @@ impl From<Sm0captctrlbOneshotb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0captctrlxEdgx0 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm0captctrlxEdgx0 {
     #[inline(always)]
@@ -797,13 +797,13 @@ impl From<Sm0captctrlxEdgx0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0captctrlxEdgx1 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm0captctrlxEdgx1 {
     #[inline(always)]
@@ -832,9 +832,9 @@ impl From<Sm0captctrlxEdgx1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0captctrlxInpSelx {
     #[doc = "Raw PWM_X input signal selected as source."]
-    PWM_X = 0x0,
+    PwmX = 0x0,
     #[doc = "Edge Counter."]
-    EDGE_COUNTER = 0x01,
+    EdgeCounter = 0x01,
 }
 impl Sm0captctrlxInpSelx {
     #[inline(always)]
@@ -863,9 +863,9 @@ impl From<Sm0captctrlxInpSelx> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0captctrlxOneshotx {
     #[doc = "Free Running."]
-    FREE_RUNNING = 0x0,
+    FreeRunning = 0x0,
     #[doc = "One Shot."]
-    ONE_SHOT = 0x01,
+    OneShot = 0x01,
 }
 impl Sm0captctrlxOneshotx {
     #[inline(always)]
@@ -894,11 +894,11 @@ impl From<Sm0captctrlxOneshotx> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0ctrl2ClkSel {
     #[doc = "The IPBus clock is used as the clock for the local prescaler and counter."]
-    IPBUS = 0x0,
+    Ipbus = 0x0,
     #[doc = "EXT_CLK is used as the clock for the local prescaler and counter."]
-    EXT_CLK = 0x01,
+    ExtClk = 0x01,
     #[doc = "Submodule 0's clock (AUX_CLK) is used as the source clock for the local prescaler and counter. This setting should not be used in submodule 0 as it forces the clock to logic 0."]
-    AUX_CLK = 0x02,
+    AuxClk = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Sm0ctrl2ClkSel {
@@ -928,21 +928,21 @@ impl From<Sm0ctrl2ClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0ctrl2ForceSel {
     #[doc = "The local force signal, CTRL2\\[FORCE\\], from this submodule is used to force updates."]
-    LOCAL = 0x0,
+    Local = 0x0,
     #[doc = "The master force signal from submodule 0 is used to force updates. This setting should not be used in submodule 0 as it holds the FORCE OUTPUT signal to logic 0."]
-    MASTER = 0x01,
+    Master = 0x01,
     #[doc = "The local reload signal from this submodule is used to force updates without regard to the state of LDOK."]
-    LOCAL_RELOAD = 0x02,
+    LocalReload = 0x02,
     #[doc = "The master reload signal from submodule0 is used to force updates if LDOK is set. This setting should not be used in submodule0 as it holds the FORCE OUTPUT signal to logic 0."]
-    MASTER_RELOAD = 0x03,
+    MasterReload = 0x03,
     #[doc = "The local sync signal from this submodule is used to force updates."]
-    LOCAL_SYNC = 0x04,
+    LocalSync = 0x04,
     #[doc = "The master sync signal from submodule0 is used to force updates. This setting should not be used in submodule0 as it holds the FORCE OUTPUT signal to logic 0."]
-    MASTER_SYNC = 0x05,
+    MasterSync = 0x05,
     #[doc = "The external force signal, EXT_FORCE, from outside the PWM module causes updates."]
-    EXT_FORCE = 0x06,
+    ExtForce = 0x06,
     #[doc = "The external sync signal, EXT_SYNC, from outside the PWM module causes updates."]
-    EXT_SYNC = 0x07,
+    ExtSync = 0x07,
 }
 impl Sm0ctrl2ForceSel {
     #[inline(always)]
@@ -971,9 +971,9 @@ impl From<Sm0ctrl2ForceSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0ctrl2Indep {
     #[doc = "PWM_A and PWM_B form a complementary PWM pair."]
-    COMPLEMENTARY = 0x0,
+    Complementary = 0x0,
     #[doc = "PWM_A and PWM_B outputs are independent PWMs."]
-    INDEPENDENT = 0x01,
+    Independent = 0x01,
 }
 impl Sm0ctrl2Indep {
     #[inline(always)]
@@ -1002,13 +1002,13 @@ impl From<Sm0ctrl2Indep> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0ctrl2InitSel {
     #[doc = "Local sync (PWM_X) causes initialization."]
-    PWM_X = 0x0,
+    PwmX = 0x0,
     #[doc = "Master reload from submodule 0 causes initialization. This setting should not be used in submodule 0 as it forces the INIT signal to logic 0. The submodule counter will only re-initialize when a master reload occurs."]
-    MASTER_RELOAD = 0x01,
+    MasterReload = 0x01,
     #[doc = "Master sync from submodule 0 causes initialization. This setting should not be used in submodule 0 as it forces the INIT signal to logic 0."]
-    MASTER_SYNC = 0x02,
+    MasterSync = 0x02,
     #[doc = "EXT_SYNC causes initialization."]
-    EXT_SYNC = 0x03,
+    ExtSync = 0x03,
 }
 impl Sm0ctrl2InitSel {
     #[inline(always)]
@@ -1037,9 +1037,9 @@ impl From<Sm0ctrl2InitSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0ctrl2ReloadSel {
     #[doc = "The local RELOAD signal is used to reload registers."]
-    LOCAL = 0x0,
+    Local = 0x0,
     #[doc = "The master RELOAD signal (from submodule 0) is used to reload registers. This setting should not be used in submodule 0 as it forces the RELOAD signal to logic 0."]
-    MASTER = 0x01,
+    Master = 0x01,
 }
 impl Sm0ctrl2ReloadSel {
     #[inline(always)]
@@ -1068,9 +1068,9 @@ impl From<Sm0ctrl2ReloadSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0ctrlCompmode {
     #[doc = "The VAL* registers and the PWM counter are compared using an \"equal to\" method. This means that PWM edges are only produced when the counter is equal to one of the VAL* register values. This implies that a PWM_A output that is high at the end of a period maintains this state until a match with VAL3 clears the output in the following period."]
-    EQUAL_TO = 0x0,
+    EqualTo = 0x0,
     #[doc = "The VAL* registers and the PWM counter are compared using an \"equal to or greater than\" method. This means that PWM edges are produced when the counter is equal to or greater than one of the VAL* register values. This implies that a PWM_A output that is high at the end of a period could go low at the start of the next period if the starting counter value is greater than (but not necessarily equal to) the new VAL3 value."]
-    EQUAL_TO_OR_GREATER_THAN = 0x01,
+    EqualToOrGreaterThan = 0x01,
 }
 impl Sm0ctrlCompmode {
     #[inline(always)]
@@ -1099,37 +1099,37 @@ impl From<Sm0ctrlCompmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0ctrlLdfq {
     #[doc = "Every PWM opportunity."]
-    EVERYPWM = 0x0,
+    Everypwm = 0x0,
     #[doc = "Every 2 PWM opportunities."]
-    EVERY2PWM = 0x01,
+    Every2pwm = 0x01,
     #[doc = "Every 3 PWM opportunities."]
-    EVERY3PWM = 0x02,
+    Every3pwm = 0x02,
     #[doc = "Every 4 PWM opportunities."]
-    EVERY4PWM = 0x03,
+    Every4pwm = 0x03,
     #[doc = "Every 5 PWM opportunities."]
-    EVERY5PWM = 0x04,
+    Every5pwm = 0x04,
     #[doc = "Every 6 PWM opportunities."]
-    EVERY6PWM = 0x05,
+    Every6pwm = 0x05,
     #[doc = "Every 7 PWM opportunities."]
-    EVERY7PWM = 0x06,
+    Every7pwm = 0x06,
     #[doc = "Every 8 PWM opportunities."]
-    EVERY8PWM = 0x07,
+    Every8pwm = 0x07,
     #[doc = "Every 9 PWM opportunities."]
-    EVERY9PWM = 0x08,
+    Every9pwm = 0x08,
     #[doc = "Every 10 PWM opportunities."]
-    EVERY10PWM = 0x09,
+    Every10pwm = 0x09,
     #[doc = "Every 11 PWM opportunities."]
-    EVERY11PWM = 0x0a,
+    Every11pwm = 0x0a,
     #[doc = "Every 12 PWM opportunities."]
-    EVERY12PWM = 0x0b,
+    Every12pwm = 0x0b,
     #[doc = "Every 13 PWM opportunities."]
-    EVERY13PWM = 0x0c,
+    Every13pwm = 0x0c,
     #[doc = "Every 14 PWM opportunities."]
-    EVERY14PWM = 0x0d,
+    Every14pwm = 0x0d,
     #[doc = "Every 15 PWM opportunities."]
-    EVERY15PWM = 0x0e,
+    Every15pwm = 0x0e,
     #[doc = "Every 16 PWM opportunities."]
-    EVERY16PWM = 0x0f,
+    Every16pwm = 0x0f,
 }
 impl Sm0ctrlLdfq {
     #[inline(always)]
@@ -1158,9 +1158,9 @@ impl From<Sm0ctrlLdfq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0ctrlLdmod {
     #[doc = "Buffered registers of this submodule are loaded and take effect at the next PWM reload if MCTRL\\[LDOK\\] is set."]
-    NEXT_PWM_RELOAD = 0x0,
+    NextPwmReload = 0x0,
     #[doc = "Buffered registers of this submodule are loaded and take effect immediately upon MCTRL\\[LDOK\\] being set. In this case, it is not necessary to set CTRL\\[FULL\\] or CTRL\\[HALF\\]."]
-    MTCTRL_LDOK_SET = 0x01,
+    MtctrlLdokSet = 0x01,
 }
 impl Sm0ctrlLdmod {
     #[inline(always)]
@@ -1189,21 +1189,21 @@ impl From<Sm0ctrlLdmod> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0ctrlPrsc {
     #[doc = "Prescaler 1."]
-    ONE = 0x0,
+    One = 0x0,
     #[doc = "Prescaler 2."]
-    TWO = 0x01,
+    Two = 0x01,
     #[doc = "Prescaler 4."]
-    FOUR = 0x02,
+    Four = 0x02,
     #[doc = "Prescaler 8."]
-    EIGHT = 0x03,
+    Eight = 0x03,
     #[doc = "Prescaler 16."]
-    SIXTEEN = 0x04,
+    Sixteen = 0x04,
     #[doc = "Prescaler 32."]
-    THIRTYTWO = 0x05,
+    Thirtytwo = 0x05,
     #[doc = "Prescaler 64."]
-    SIXTYFOUR = 0x06,
+    Sixtyfour = 0x06,
     #[doc = "Prescaler 128."]
-    HUNDREDTWENTYEIGHT = 0x07,
+    Hundredtwentyeight = 0x07,
 }
 impl Sm0ctrlPrsc {
     #[inline(always)]
@@ -1232,13 +1232,13 @@ impl From<Sm0ctrlPrsc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0dmaenCaptde {
     #[doc = "Read DMA requests disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Exceeding a FIFO watermark sets the DMA read request. This requires at least one of DMAEN\\[CA1DE\\], DMAEN\\[CA0DE\\], DMAEN\\[CB1DE\\], DMAEN\\[CB0DE\\], DMAEN\\[CX1DE\\], or DMAEN\\[CX0DE\\] to be set to determine which watermark(s) the DMA request is sensitive."]
-    EXCEEDFIFO = 0x01,
+    Exceedfifo = 0x01,
     #[doc = "A local synchronization (VAL1 matches counter) sets the read DMA request."]
-    LOCAL_SYNC = 0x02,
+    LocalSync = 0x02,
     #[doc = "A local reload (STS\\[RF\\] being set) sets the read DMA request."]
-    LOCAL_RELOAD = 0x03,
+    LocalReload = 0x03,
 }
 impl Sm0dmaenCaptde {
     #[inline(always)]
@@ -1267,9 +1267,9 @@ impl From<Sm0dmaenCaptde> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0dmaenFand {
     #[doc = "Selected FIFO watermarks are OR'ed together."]
-    OR = 0x0,
+    Or = 0x0,
     #[doc = "Selected FIFO watermarks are AND'ed together."]
-    AND = 0x01,
+    And = 0x01,
 }
 impl Sm0dmaenFand {
     #[inline(always)]
@@ -1298,9 +1298,9 @@ impl From<Sm0dmaenFand> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0intenCmpie {
     #[doc = "The corresponding STS\\[CMPF\\] bit will not cause an interrupt request."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "The corresponding STS\\[CMPF\\] bit will cause an interrupt request."]
-    ENABLED = 0x01,
+    Enabled = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1391,13 +1391,13 @@ impl From<Sm0intenCmpie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0octrlPwmafs {
     #[doc = "Output is forced to logic 0 state prior to consideration of output polarity control."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "Output is forced to logic 1 state prior to consideration of output polarity control."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_2 = 0x02,
+    Tristated2 = 0x02,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_3 = 0x03,
+    Tristated3 = 0x03,
 }
 impl Sm0octrlPwmafs {
     #[inline(always)]
@@ -1426,13 +1426,13 @@ impl From<Sm0octrlPwmafs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0octrlPwmbfs {
     #[doc = "Output is forced to logic 0 state prior to consideration of output polarity control."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "Output is forced to logic 1 state prior to consideration of output polarity control."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_2 = 0x02,
+    Tristated2 = 0x02,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_3 = 0x03,
+    Tristated3 = 0x03,
 }
 impl Sm0octrlPwmbfs {
     #[inline(always)]
@@ -1461,13 +1461,13 @@ impl From<Sm0octrlPwmbfs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0octrlPwmxfs {
     #[doc = "Output is forced to logic 0 state prior to consideration of output polarity control."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "Output is forced to logic 1 state prior to consideration of output polarity control."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_2 = 0x02,
+    Tristated2 = 0x02,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_3 = 0x03,
+    Tristated3 = 0x03,
 }
 impl Sm0octrlPwmxfs {
     #[inline(always)]
@@ -1496,9 +1496,9 @@ impl From<Sm0octrlPwmxfs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0out23 {
     #[doc = "A logic 0 is supplied to the deadtime generator of submodule 0 instead of PWM23."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "A logic 1 is supplied to the deadtime generator of submodule 0 instead of PWM23."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
 }
 impl Sm0out23 {
     #[inline(always)]
@@ -1527,9 +1527,9 @@ impl From<Sm0out23> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0out45 {
     #[doc = "A logic 0 is supplied to the deadtime generator of submodule 0 instead of PWM45."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "A logic 1 is supplied to the deadtime generator of submodule 0 instead of PWM45."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
 }
 impl Sm0out45 {
     #[inline(always)]
@@ -1558,13 +1558,13 @@ impl From<Sm0out45> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0sel23 {
     #[doc = "Generated SM0PWM23 signal used by the deadtime logic."]
-    SM0PWM23 = 0x0,
+    Sm0pwm23 = 0x0,
     #[doc = "Inverted generated SM0PWM23 signal used by the deadtime logic."]
-    INVERTED_SM0PWM23 = 0x01,
+    InvertedSm0pwm23 = 0x01,
     #[doc = "SWCOUT\\[SM0OUT23\\] used by the deadtime logic."]
-    SM0OUT23 = 0x02,
+    Sm0out23 = 0x02,
     #[doc = "PWM0_EXTA signal used by the deadtime logic."]
-    PWM0_EXTA = 0x03,
+    Pwm0Exta = 0x03,
 }
 impl Sm0sel23 {
     #[inline(always)]
@@ -1593,11 +1593,11 @@ impl From<Sm0sel23> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0sel45 {
     #[doc = "Generated SM0PWM45 signal used by the deadtime logic."]
-    SM0PWM45 = 0x0,
+    Sm0pwm45 = 0x0,
     #[doc = "Inverted generated SM0PWM45 signal used by the deadtime logic."]
-    INVERTED_SM0PWM45 = 0x01,
+    InvertedSm0pwm45 = 0x01,
     #[doc = "SWCOUT\\[SM0OUT45\\] used by the deadtime logic."]
-    SM0OUT45 = 0x02,
+    Sm0out45 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Sm0sel45 {
@@ -1627,9 +1627,9 @@ impl From<Sm0sel45> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0stsCmpf {
     #[doc = "No compare event has occurred for a particular VALx value."]
-    NO_EVENT = 0x0,
+    NoEvent = 0x0,
     #[doc = "A compare event has occurred for a particular VALx value."]
-    EVENT = 0x01,
+    Event = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1721,7 +1721,7 @@ impl From<Sm0stsCmpf> for u8 {
 pub enum Sm0tctrlOutTrigEn {
     _RESERVED_0 = 0x0,
     #[doc = "PWM_OUT_TRIG0 will set when the counter value matches the VAL0 value."]
-    VAL0 = 0x01,
+    Val0 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1812,9 +1812,9 @@ impl From<Sm0tctrlOutTrigEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0tctrlPwaot0 {
     #[doc = "Route the PWM_OUT_TRIG0 signal to PWM_MUX_TRIG0 port."]
-    PWM_OUT_TRIG0_SIGNAL = 0x0,
+    PwmOutTrig0Signal = 0x0,
     #[doc = "Route the PWM_A output to the PWM_MUX_TRIG0 port."]
-    PWMA_OUTPUT = 0x01,
+    PwmaOutput = 0x01,
 }
 impl Sm0tctrlPwaot0 {
     #[inline(always)]
@@ -1843,9 +1843,9 @@ impl From<Sm0tctrlPwaot0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0tctrlPwbot1 {
     #[doc = "Route the PWM_OUT_TRIG1 signal to PWM_MUX_TRIG1 port."]
-    PWM_OUT_TRIG1_SIGNAL = 0x0,
+    PwmOutTrig1Signal = 0x0,
     #[doc = "Route the PWM_B output to the PWM_MUX_TRIG1 port."]
-    PWMB_OUTPUT = 0x01,
+    PwmbOutput = 0x01,
 }
 impl Sm0tctrlPwbot1 {
     #[inline(always)]
@@ -1874,9 +1874,9 @@ impl From<Sm0tctrlPwbot1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm0tctrlTrgfrq {
     #[doc = "Trigger outputs are generated during every PWM period even if the PWM is not reloaded every period due to CTRL\\[LDFQ\\] being non-zero."]
-    EVERYPWM = 0x0,
+    Everypwm = 0x0,
     #[doc = "Trigger outputs are generated only during the final PWM period prior to a reload opportunity when the PWM is not reloaded every period due to CTRL\\[LDFQ\\] being non-zero."]
-    FINALPWM = 0x01,
+    Finalpwm = 0x01,
 }
 impl Sm0tctrlTrgfrq {
     #[inline(always)]
@@ -1905,13 +1905,13 @@ impl From<Sm0tctrlTrgfrq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1captctrlaEdga0 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm1captctrlaEdga0 {
     #[inline(always)]
@@ -1940,13 +1940,13 @@ impl From<Sm1captctrlaEdga0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1captctrlaEdga1 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm1captctrlaEdga1 {
     #[inline(always)]
@@ -1975,9 +1975,9 @@ impl From<Sm1captctrlaEdga1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1captctrlaInpSela {
     #[doc = "Raw PWM_A input signal selected as source."]
-    PWM_A = 0x0,
+    PwmA = 0x0,
     #[doc = "Edge Counter."]
-    EDGE_COUNTER = 0x01,
+    EdgeCounter = 0x01,
 }
 impl Sm1captctrlaInpSela {
     #[inline(always)]
@@ -2006,9 +2006,9 @@ impl From<Sm1captctrlaInpSela> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1captctrlaOneshota {
     #[doc = "Free Running."]
-    FREE_RUNNING = 0x0,
+    FreeRunning = 0x0,
     #[doc = "One Shot."]
-    ONE_SHOT = 0x01,
+    OneShot = 0x01,
 }
 impl Sm1captctrlaOneshota {
     #[inline(always)]
@@ -2037,13 +2037,13 @@ impl From<Sm1captctrlaOneshota> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1captctrlbEdgb0 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm1captctrlbEdgb0 {
     #[inline(always)]
@@ -2072,13 +2072,13 @@ impl From<Sm1captctrlbEdgb0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1captctrlbEdgb1 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm1captctrlbEdgb1 {
     #[inline(always)]
@@ -2107,9 +2107,9 @@ impl From<Sm1captctrlbEdgb1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1captctrlbInpSelb {
     #[doc = "Raw PWM_B input signal selected as source."]
-    PWM_B = 0x0,
+    PwmB = 0x0,
     #[doc = "Edge Counter."]
-    EDGE_COUNTER = 0x01,
+    EdgeCounter = 0x01,
 }
 impl Sm1captctrlbInpSelb {
     #[inline(always)]
@@ -2138,9 +2138,9 @@ impl From<Sm1captctrlbInpSelb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1captctrlbOneshotb {
     #[doc = "Free Running."]
-    FREE_RUNNING = 0x0,
+    FreeRunning = 0x0,
     #[doc = "One Shot."]
-    ONE_SHOT = 0x01,
+    OneShot = 0x01,
 }
 impl Sm1captctrlbOneshotb {
     #[inline(always)]
@@ -2169,13 +2169,13 @@ impl From<Sm1captctrlbOneshotb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1captctrlxEdgx0 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm1captctrlxEdgx0 {
     #[inline(always)]
@@ -2204,13 +2204,13 @@ impl From<Sm1captctrlxEdgx0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1captctrlxEdgx1 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm1captctrlxEdgx1 {
     #[inline(always)]
@@ -2239,9 +2239,9 @@ impl From<Sm1captctrlxEdgx1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1captctrlxInpSelx {
     #[doc = "Raw PWM_X input signal selected as source."]
-    PWM_X = 0x0,
+    PwmX = 0x0,
     #[doc = "Edge Counter."]
-    EDGE_COUNTER = 0x01,
+    EdgeCounter = 0x01,
 }
 impl Sm1captctrlxInpSelx {
     #[inline(always)]
@@ -2270,9 +2270,9 @@ impl From<Sm1captctrlxInpSelx> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1captctrlxOneshotx {
     #[doc = "Free Running."]
-    FREE_RUNNING = 0x0,
+    FreeRunning = 0x0,
     #[doc = "One Shot."]
-    ONE_SHOT = 0x01,
+    OneShot = 0x01,
 }
 impl Sm1captctrlxOneshotx {
     #[inline(always)]
@@ -2301,11 +2301,11 @@ impl From<Sm1captctrlxOneshotx> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1ctrl2ClkSel {
     #[doc = "The IPBus clock is used as the clock for the local prescaler and counter."]
-    IPBUS = 0x0,
+    Ipbus = 0x0,
     #[doc = "EXT_CLK is used as the clock for the local prescaler and counter."]
-    EXT_CLK = 0x01,
+    ExtClk = 0x01,
     #[doc = "Submodule 0's clock (AUX_CLK) is used as the source clock for the local prescaler and counter. This setting should not be used in submodule 0 as it forces the clock to logic 0."]
-    AUX_CLK = 0x02,
+    AuxClk = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Sm1ctrl2ClkSel {
@@ -2335,21 +2335,21 @@ impl From<Sm1ctrl2ClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1ctrl2ForceSel {
     #[doc = "The local force signal, CTRL2\\[FORCE\\], from this submodule is used to force updates."]
-    LOCAL = 0x0,
+    Local = 0x0,
     #[doc = "The master force signal from submodule 0 is used to force updates. This setting should not be used in submodule 0 as it holds the FORCE OUTPUT signal to logic 0."]
-    MASTER = 0x01,
+    Master = 0x01,
     #[doc = "The local reload signal from this submodule is used to force updates without regard to the state of LDOK."]
-    LOCAL_RELOAD = 0x02,
+    LocalReload = 0x02,
     #[doc = "The master reload signal from submodule0 is used to force updates if LDOK is set. This setting should not be used in submodule0 as it holds the FORCE OUTPUT signal to logic 0."]
-    MASTER_RELOAD = 0x03,
+    MasterReload = 0x03,
     #[doc = "The local sync signal from this submodule is used to force updates."]
-    LOCAL_SYNC = 0x04,
+    LocalSync = 0x04,
     #[doc = "The master sync signal from submodule0 is used to force updates. This setting should not be used in submodule0 as it holds the FORCE OUTPUT signal to logic 0."]
-    MASTER_SYNC = 0x05,
+    MasterSync = 0x05,
     #[doc = "The external force signal, EXT_FORCE, from outside the PWM module causes updates."]
-    EXT_FORCE = 0x06,
+    ExtForce = 0x06,
     #[doc = "The external sync signal, EXT_SYNC, from outside the PWM module causes updates."]
-    EXT_SYNC = 0x07,
+    ExtSync = 0x07,
 }
 impl Sm1ctrl2ForceSel {
     #[inline(always)]
@@ -2378,9 +2378,9 @@ impl From<Sm1ctrl2ForceSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1ctrl2Indep {
     #[doc = "PWM_A and PWM_B form a complementary PWM pair."]
-    COMPLEMENTARY = 0x0,
+    Complementary = 0x0,
     #[doc = "PWM_A and PWM_B outputs are independent PWMs."]
-    INDEPENDENT = 0x01,
+    Independent = 0x01,
 }
 impl Sm1ctrl2Indep {
     #[inline(always)]
@@ -2409,13 +2409,13 @@ impl From<Sm1ctrl2Indep> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1ctrl2InitSel {
     #[doc = "Local sync (PWM_X) causes initialization."]
-    PWM_X = 0x0,
+    PwmX = 0x0,
     #[doc = "Master reload from submodule 0 causes initialization. This setting should not be used in submodule 0 as it forces the INIT signal to logic 0. The submodule counter will only re-initialize when a master reload occurs."]
-    MASTER_RELOAD = 0x01,
+    MasterReload = 0x01,
     #[doc = "Master sync from submodule 0 causes initialization. This setting should not be used in submodule 0 as it forces the INIT signal to logic 0."]
-    MASTER_SYNC = 0x02,
+    MasterSync = 0x02,
     #[doc = "EXT_SYNC causes initialization."]
-    EXT_SYNC = 0x03,
+    ExtSync = 0x03,
 }
 impl Sm1ctrl2InitSel {
     #[inline(always)]
@@ -2444,9 +2444,9 @@ impl From<Sm1ctrl2InitSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1ctrl2ReloadSel {
     #[doc = "The local RELOAD signal is used to reload registers."]
-    LOCAL = 0x0,
+    Local = 0x0,
     #[doc = "The master RELOAD signal (from submodule 0) is used to reload registers. This setting should not be used in submodule 0 as it forces the RELOAD signal to logic 0."]
-    MASTER = 0x01,
+    Master = 0x01,
 }
 impl Sm1ctrl2ReloadSel {
     #[inline(always)]
@@ -2475,9 +2475,9 @@ impl From<Sm1ctrl2ReloadSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1ctrlCompmode {
     #[doc = "The VAL* registers and the PWM counter are compared using an \"equal to\" method. This means that PWM edges are only produced when the counter is equal to one of the VAL* register values. This implies that a PWM_A output that is high at the end of a period maintains this state until a match with VAL3 clears the output in the following period."]
-    EQUAL_TO = 0x0,
+    EqualTo = 0x0,
     #[doc = "The VAL* registers and the PWM counter are compared using an \"equal to or greater than\" method. This means that PWM edges are produced when the counter is equal to or greater than one of the VAL* register values. This implies that a PWM_A output that is high at the end of a period could go low at the start of the next period if the starting counter value is greater than (but not necessarily equal to) the new VAL3 value."]
-    EQUAL_TO_OR_GREATER_THAN = 0x01,
+    EqualToOrGreaterThan = 0x01,
 }
 impl Sm1ctrlCompmode {
     #[inline(always)]
@@ -2506,37 +2506,37 @@ impl From<Sm1ctrlCompmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1ctrlLdfq {
     #[doc = "Every PWM opportunity."]
-    EVERYPWM = 0x0,
+    Everypwm = 0x0,
     #[doc = "Every 2 PWM opportunities."]
-    EVERY2PWM = 0x01,
+    Every2pwm = 0x01,
     #[doc = "Every 3 PWM opportunities."]
-    EVERY3PWM = 0x02,
+    Every3pwm = 0x02,
     #[doc = "Every 4 PWM opportunities."]
-    EVERY4PWM = 0x03,
+    Every4pwm = 0x03,
     #[doc = "Every 5 PWM opportunities."]
-    EVERY5PWM = 0x04,
+    Every5pwm = 0x04,
     #[doc = "Every 6 PWM opportunities."]
-    EVERY6PWM = 0x05,
+    Every6pwm = 0x05,
     #[doc = "Every 7 PWM opportunities."]
-    EVERY7PWM = 0x06,
+    Every7pwm = 0x06,
     #[doc = "Every 8 PWM opportunities."]
-    EVERY8PWM = 0x07,
+    Every8pwm = 0x07,
     #[doc = "Every 9 PWM opportunities."]
-    EVERY9PWM = 0x08,
+    Every9pwm = 0x08,
     #[doc = "Every 10 PWM opportunities."]
-    EVERY10PWM = 0x09,
+    Every10pwm = 0x09,
     #[doc = "Every 11 PWM opportunities."]
-    EVERY11PWM = 0x0a,
+    Every11pwm = 0x0a,
     #[doc = "Every 12 PWM opportunities."]
-    EVERY12PWM = 0x0b,
+    Every12pwm = 0x0b,
     #[doc = "Every 13 PWM opportunities."]
-    EVERY13PWM = 0x0c,
+    Every13pwm = 0x0c,
     #[doc = "Every 14 PWM opportunities."]
-    EVERY14PWM = 0x0d,
+    Every14pwm = 0x0d,
     #[doc = "Every 15 PWM opportunities."]
-    EVERY15PWM = 0x0e,
+    Every15pwm = 0x0e,
     #[doc = "Every 16 PWM opportunities."]
-    EVERY16PWM = 0x0f,
+    Every16pwm = 0x0f,
 }
 impl Sm1ctrlLdfq {
     #[inline(always)]
@@ -2565,9 +2565,9 @@ impl From<Sm1ctrlLdfq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1ctrlLdmod {
     #[doc = "Buffered registers of this submodule are loaded and take effect at the next PWM reload if MCTRL\\[LDOK\\] is set."]
-    NEXT_PWM_RELOAD = 0x0,
+    NextPwmReload = 0x0,
     #[doc = "Buffered registers of this submodule are loaded and take effect immediately upon MCTRL\\[LDOK\\] being set. In this case, it is not necessary to set CTRL\\[FULL\\] or CTRL\\[HALF\\]."]
-    MTCTRL_LDOK_SET = 0x01,
+    MtctrlLdokSet = 0x01,
 }
 impl Sm1ctrlLdmod {
     #[inline(always)]
@@ -2596,21 +2596,21 @@ impl From<Sm1ctrlLdmod> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1ctrlPrsc {
     #[doc = "Prescaler 1."]
-    ONE = 0x0,
+    One = 0x0,
     #[doc = "Prescaler 2."]
-    TWO = 0x01,
+    Two = 0x01,
     #[doc = "Prescaler 4."]
-    FOUR = 0x02,
+    Four = 0x02,
     #[doc = "Prescaler 8."]
-    EIGHT = 0x03,
+    Eight = 0x03,
     #[doc = "Prescaler 16."]
-    SIXTEEN = 0x04,
+    Sixteen = 0x04,
     #[doc = "Prescaler 32."]
-    THIRTYTWO = 0x05,
+    Thirtytwo = 0x05,
     #[doc = "Prescaler 64."]
-    SIXTYFOUR = 0x06,
+    Sixtyfour = 0x06,
     #[doc = "Prescaler 128."]
-    HUNDREDTWENTYEIGHT = 0x07,
+    Hundredtwentyeight = 0x07,
 }
 impl Sm1ctrlPrsc {
     #[inline(always)]
@@ -2639,13 +2639,13 @@ impl From<Sm1ctrlPrsc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1dmaenCaptde {
     #[doc = "Read DMA requests disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Exceeding a FIFO watermark sets the DMA read request. This requires at least one of DMAEN\\[CA1DE\\], DMAEN\\[CA0DE\\], DMAEN\\[CB1DE\\], DMAEN\\[CB0DE\\], DMAEN\\[CX1DE\\], or DMAEN\\[CX0DE\\] to be set to determine which watermark(s) the DMA request is sensitive."]
-    EXCEEDFIFO = 0x01,
+    Exceedfifo = 0x01,
     #[doc = "A local synchronization (VAL1 matches counter) sets the read DMA request."]
-    LOCAL_SYNC = 0x02,
+    LocalSync = 0x02,
     #[doc = "A local reload (STS\\[RF\\] being set) sets the read DMA request."]
-    LOCAL_RELOAD = 0x03,
+    LocalReload = 0x03,
 }
 impl Sm1dmaenCaptde {
     #[inline(always)]
@@ -2674,9 +2674,9 @@ impl From<Sm1dmaenCaptde> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1dmaenFand {
     #[doc = "Selected FIFO watermarks are OR'ed together."]
-    OR = 0x0,
+    Or = 0x0,
     #[doc = "Selected FIFO watermarks are AND'ed together."]
-    AND = 0x01,
+    And = 0x01,
 }
 impl Sm1dmaenFand {
     #[inline(always)]
@@ -2705,9 +2705,9 @@ impl From<Sm1dmaenFand> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1intenCmpie {
     #[doc = "The corresponding STS\\[CMPF\\] bit will not cause an interrupt request."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "The corresponding STS\\[CMPF\\] bit will cause an interrupt request."]
-    ENABLED = 0x01,
+    Enabled = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -2798,13 +2798,13 @@ impl From<Sm1intenCmpie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1octrlPwmafs {
     #[doc = "Output is forced to logic 0 state prior to consideration of output polarity control."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "Output is forced to logic 1 state prior to consideration of output polarity control."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_2 = 0x02,
+    Tristated2 = 0x02,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_3 = 0x03,
+    Tristated3 = 0x03,
 }
 impl Sm1octrlPwmafs {
     #[inline(always)]
@@ -2833,13 +2833,13 @@ impl From<Sm1octrlPwmafs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1octrlPwmbfs {
     #[doc = "Output is forced to logic 0 state prior to consideration of output polarity control."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "Output is forced to logic 1 state prior to consideration of output polarity control."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_2 = 0x02,
+    Tristated2 = 0x02,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_3 = 0x03,
+    Tristated3 = 0x03,
 }
 impl Sm1octrlPwmbfs {
     #[inline(always)]
@@ -2868,13 +2868,13 @@ impl From<Sm1octrlPwmbfs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1octrlPwmxfs {
     #[doc = "Output is forced to logic 0 state prior to consideration of output polarity control."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "Output is forced to logic 1 state prior to consideration of output polarity control."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_2 = 0x02,
+    Tristated2 = 0x02,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_3 = 0x03,
+    Tristated3 = 0x03,
 }
 impl Sm1octrlPwmxfs {
     #[inline(always)]
@@ -2903,9 +2903,9 @@ impl From<Sm1octrlPwmxfs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1out23 {
     #[doc = "A logic 0 is supplied to the deadtime generator of submodule 1 instead of PWM23."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "A logic 1 is supplied to the deadtime generator of submodule 1 instead of PWM23."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
 }
 impl Sm1out23 {
     #[inline(always)]
@@ -2934,9 +2934,9 @@ impl From<Sm1out23> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1out45 {
     #[doc = "A logic 0 is supplied to the deadtime generator of submodule 1 instead of PWM45."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "A logic 1 is supplied to the deadtime generator of submodule 1 instead of PWM45."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
 }
 impl Sm1out45 {
     #[inline(always)]
@@ -2965,13 +2965,13 @@ impl From<Sm1out45> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1sel23 {
     #[doc = "Generated SM1PWM23 signal used by the deadtime logic."]
-    SM1PWM23 = 0x0,
+    Sm1pwm23 = 0x0,
     #[doc = "Inverted generated SM1PWM23 signal used by the deadtime logic."]
-    INVERTED_SM1PWM23 = 0x01,
+    InvertedSm1pwm23 = 0x01,
     #[doc = "SWCOUT\\[SM1OUT23\\] used by the deadtime logic."]
-    SM1OUT23 = 0x02,
+    Sm1out23 = 0x02,
     #[doc = "PWM1_EXTA signal used by the deadtime logic."]
-    PWM1_EXTA = 0x03,
+    Pwm1Exta = 0x03,
 }
 impl Sm1sel23 {
     #[inline(always)]
@@ -3000,11 +3000,11 @@ impl From<Sm1sel23> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1sel45 {
     #[doc = "Generated SM1PWM45 signal used by the deadtime logic."]
-    SM1PWM45 = 0x0,
+    Sm1pwm45 = 0x0,
     #[doc = "Inverted generated SM1PWM45 signal used by the deadtime logic."]
-    INVERTED_SM1PWM45 = 0x01,
+    InvertedSm1pwm45 = 0x01,
     #[doc = "SWCOUT\\[SM1OUT45\\] used by the deadtime logic."]
-    SM1OUT45 = 0x02,
+    Sm1out45 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Sm1sel45 {
@@ -3034,9 +3034,9 @@ impl From<Sm1sel45> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1stsCmpf {
     #[doc = "No compare event has occurred for a particular VALx value."]
-    NO_EVENT = 0x0,
+    NoEvent = 0x0,
     #[doc = "A compare event has occurred for a particular VALx value."]
-    EVENT = 0x01,
+    Event = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -3128,7 +3128,7 @@ impl From<Sm1stsCmpf> for u8 {
 pub enum Sm1tctrlOutTrigEn {
     _RESERVED_0 = 0x0,
     #[doc = "PWM_OUT_TRIG0 will set when the counter value matches the VAL0 value."]
-    VAL0 = 0x01,
+    Val0 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -3219,9 +3219,9 @@ impl From<Sm1tctrlOutTrigEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1tctrlPwaot0 {
     #[doc = "Route the PWM_OUT_TRIG0 signal to PWM_MUX_TRIG0 port."]
-    PWM_OUT_TRIG0_SIGNAL = 0x0,
+    PwmOutTrig0Signal = 0x0,
     #[doc = "Route the PWM_A output to the PWM_MUX_TRIG0 port."]
-    PWMA_OUTPUT = 0x01,
+    PwmaOutput = 0x01,
 }
 impl Sm1tctrlPwaot0 {
     #[inline(always)]
@@ -3250,9 +3250,9 @@ impl From<Sm1tctrlPwaot0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1tctrlPwbot1 {
     #[doc = "Route the PWM_OUT_TRIG1 signal to PWM_MUX_TRIG1 port."]
-    PWM_OUT_TRIG1_SIGNAL = 0x0,
+    PwmOutTrig1Signal = 0x0,
     #[doc = "Route the PWM_B output to the PWM_MUX_TRIG1 port."]
-    PWMB_OUTPUT = 0x01,
+    PwmbOutput = 0x01,
 }
 impl Sm1tctrlPwbot1 {
     #[inline(always)]
@@ -3281,9 +3281,9 @@ impl From<Sm1tctrlPwbot1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm1tctrlTrgfrq {
     #[doc = "Trigger outputs are generated during every PWM period even if the PWM is not reloaded every period due to CTRL\\[LDFQ\\] being non-zero."]
-    EVERYPWM = 0x0,
+    Everypwm = 0x0,
     #[doc = "Trigger outputs are generated only during the final PWM period prior to a reload opportunity when the PWM is not reloaded every period due to CTRL\\[LDFQ\\] being non-zero."]
-    FINALPWM = 0x01,
+    Finalpwm = 0x01,
 }
 impl Sm1tctrlTrgfrq {
     #[inline(always)]
@@ -3312,13 +3312,13 @@ impl From<Sm1tctrlTrgfrq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2captctrlaEdga0 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm2captctrlaEdga0 {
     #[inline(always)]
@@ -3347,13 +3347,13 @@ impl From<Sm2captctrlaEdga0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2captctrlaEdga1 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm2captctrlaEdga1 {
     #[inline(always)]
@@ -3382,9 +3382,9 @@ impl From<Sm2captctrlaEdga1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2captctrlaInpSela {
     #[doc = "Raw PWM_A input signal selected as source."]
-    PWM_A = 0x0,
+    PwmA = 0x0,
     #[doc = "Edge Counter."]
-    EDGE_COUNTER = 0x01,
+    EdgeCounter = 0x01,
 }
 impl Sm2captctrlaInpSela {
     #[inline(always)]
@@ -3413,9 +3413,9 @@ impl From<Sm2captctrlaInpSela> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2captctrlaOneshota {
     #[doc = "Free Running."]
-    FREE_RUNNING = 0x0,
+    FreeRunning = 0x0,
     #[doc = "One Shot."]
-    ONE_SHOT = 0x01,
+    OneShot = 0x01,
 }
 impl Sm2captctrlaOneshota {
     #[inline(always)]
@@ -3444,13 +3444,13 @@ impl From<Sm2captctrlaOneshota> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2captctrlbEdgb0 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm2captctrlbEdgb0 {
     #[inline(always)]
@@ -3479,13 +3479,13 @@ impl From<Sm2captctrlbEdgb0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2captctrlbEdgb1 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm2captctrlbEdgb1 {
     #[inline(always)]
@@ -3514,9 +3514,9 @@ impl From<Sm2captctrlbEdgb1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2captctrlbInpSelb {
     #[doc = "Raw PWM_B input signal selected as source."]
-    PWM_B = 0x0,
+    PwmB = 0x0,
     #[doc = "Edge Counter."]
-    EDGE_COUNTER = 0x01,
+    EdgeCounter = 0x01,
 }
 impl Sm2captctrlbInpSelb {
     #[inline(always)]
@@ -3545,9 +3545,9 @@ impl From<Sm2captctrlbInpSelb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2captctrlbOneshotb {
     #[doc = "Free Running."]
-    FREE_RUNNING = 0x0,
+    FreeRunning = 0x0,
     #[doc = "One Shot."]
-    ONE_SHOT = 0x01,
+    OneShot = 0x01,
 }
 impl Sm2captctrlbOneshotb {
     #[inline(always)]
@@ -3576,13 +3576,13 @@ impl From<Sm2captctrlbOneshotb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2captctrlxEdgx0 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm2captctrlxEdgx0 {
     #[inline(always)]
@@ -3611,13 +3611,13 @@ impl From<Sm2captctrlxEdgx0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2captctrlxEdgx1 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm2captctrlxEdgx1 {
     #[inline(always)]
@@ -3646,9 +3646,9 @@ impl From<Sm2captctrlxEdgx1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2captctrlxInpSelx {
     #[doc = "Raw PWM_X input signal selected as source."]
-    PWM_X = 0x0,
+    PwmX = 0x0,
     #[doc = "Edge Counter."]
-    EDGE_COUNTER = 0x01,
+    EdgeCounter = 0x01,
 }
 impl Sm2captctrlxInpSelx {
     #[inline(always)]
@@ -3677,9 +3677,9 @@ impl From<Sm2captctrlxInpSelx> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2captctrlxOneshotx {
     #[doc = "Free Running."]
-    FREE_RUNNING = 0x0,
+    FreeRunning = 0x0,
     #[doc = "One Shot."]
-    ONE_SHOT = 0x01,
+    OneShot = 0x01,
 }
 impl Sm2captctrlxOneshotx {
     #[inline(always)]
@@ -3708,11 +3708,11 @@ impl From<Sm2captctrlxOneshotx> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2ctrl2ClkSel {
     #[doc = "The IPBus clock is used as the clock for the local prescaler and counter."]
-    IPBUS = 0x0,
+    Ipbus = 0x0,
     #[doc = "EXT_CLK is used as the clock for the local prescaler and counter."]
-    EXT_CLK = 0x01,
+    ExtClk = 0x01,
     #[doc = "Submodule 0's clock (AUX_CLK) is used as the source clock for the local prescaler and counter. This setting should not be used in submodule 0 as it forces the clock to logic 0."]
-    AUX_CLK = 0x02,
+    AuxClk = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Sm2ctrl2ClkSel {
@@ -3742,21 +3742,21 @@ impl From<Sm2ctrl2ClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2ctrl2ForceSel {
     #[doc = "The local force signal, CTRL2\\[FORCE\\], from this submodule is used to force updates."]
-    LOCAL = 0x0,
+    Local = 0x0,
     #[doc = "The master force signal from submodule 0 is used to force updates. This setting should not be used in submodule 0 as it holds the FORCE OUTPUT signal to logic 0."]
-    MASTER = 0x01,
+    Master = 0x01,
     #[doc = "The local reload signal from this submodule is used to force updates without regard to the state of LDOK."]
-    LOCAL_RELOAD = 0x02,
+    LocalReload = 0x02,
     #[doc = "The master reload signal from submodule0 is used to force updates if LDOK is set. This setting should not be used in submodule0 as it holds the FORCE OUTPUT signal to logic 0."]
-    MASTER_RELOAD = 0x03,
+    MasterReload = 0x03,
     #[doc = "The local sync signal from this submodule is used to force updates."]
-    LOCAL_SYNC = 0x04,
+    LocalSync = 0x04,
     #[doc = "The master sync signal from submodule0 is used to force updates. This setting should not be used in submodule0 as it holds the FORCE OUTPUT signal to logic 0."]
-    MASTER_SYNC = 0x05,
+    MasterSync = 0x05,
     #[doc = "The external force signal, EXT_FORCE, from outside the PWM module causes updates."]
-    EXT_FORCE = 0x06,
+    ExtForce = 0x06,
     #[doc = "The external sync signal, EXT_SYNC, from outside the PWM module causes updates."]
-    EXT_SYNC = 0x07,
+    ExtSync = 0x07,
 }
 impl Sm2ctrl2ForceSel {
     #[inline(always)]
@@ -3785,9 +3785,9 @@ impl From<Sm2ctrl2ForceSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2ctrl2Indep {
     #[doc = "PWM_A and PWM_B form a complementary PWM pair."]
-    COMPLEMENTARY = 0x0,
+    Complementary = 0x0,
     #[doc = "PWM_A and PWM_B outputs are independent PWMs."]
-    INDEPENDENT = 0x01,
+    Independent = 0x01,
 }
 impl Sm2ctrl2Indep {
     #[inline(always)]
@@ -3816,13 +3816,13 @@ impl From<Sm2ctrl2Indep> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2ctrl2InitSel {
     #[doc = "Local sync (PWM_X) causes initialization."]
-    PWM_X = 0x0,
+    PwmX = 0x0,
     #[doc = "Master reload from submodule 0 causes initialization. This setting should not be used in submodule 0 as it forces the INIT signal to logic 0. The submodule counter will only re-initialize when a master reload occurs."]
-    MASTER_RELOAD = 0x01,
+    MasterReload = 0x01,
     #[doc = "Master sync from submodule 0 causes initialization. This setting should not be used in submodule 0 as it forces the INIT signal to logic 0."]
-    MASTER_SYNC = 0x02,
+    MasterSync = 0x02,
     #[doc = "EXT_SYNC causes initialization."]
-    EXT_SYNC = 0x03,
+    ExtSync = 0x03,
 }
 impl Sm2ctrl2InitSel {
     #[inline(always)]
@@ -3851,9 +3851,9 @@ impl From<Sm2ctrl2InitSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2ctrl2ReloadSel {
     #[doc = "The local RELOAD signal is used to reload registers."]
-    LOCAL = 0x0,
+    Local = 0x0,
     #[doc = "The master RELOAD signal (from submodule 0) is used to reload registers. This setting should not be used in submodule 0 as it forces the RELOAD signal to logic 0."]
-    MASTER = 0x01,
+    Master = 0x01,
 }
 impl Sm2ctrl2ReloadSel {
     #[inline(always)]
@@ -3882,9 +3882,9 @@ impl From<Sm2ctrl2ReloadSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2ctrlCompmode {
     #[doc = "The VAL* registers and the PWM counter are compared using an \"equal to\" method. This means that PWM edges are only produced when the counter is equal to one of the VAL* register values. This implies that a PWM_A output that is high at the end of a period maintains this state until a match with VAL3 clears the output in the following period."]
-    EQUAL_TO = 0x0,
+    EqualTo = 0x0,
     #[doc = "The VAL* registers and the PWM counter are compared using an \"equal to or greater than\" method. This means that PWM edges are produced when the counter is equal to or greater than one of the VAL* register values. This implies that a PWM_A output that is high at the end of a period could go low at the start of the next period if the starting counter value is greater than (but not necessarily equal to) the new VAL3 value."]
-    EQUAL_TO_OR_GREATER_THAN = 0x01,
+    EqualToOrGreaterThan = 0x01,
 }
 impl Sm2ctrlCompmode {
     #[inline(always)]
@@ -3913,37 +3913,37 @@ impl From<Sm2ctrlCompmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2ctrlLdfq {
     #[doc = "Every PWM opportunity."]
-    EVERYPWM = 0x0,
+    Everypwm = 0x0,
     #[doc = "Every 2 PWM opportunities."]
-    EVERY2PWM = 0x01,
+    Every2pwm = 0x01,
     #[doc = "Every 3 PWM opportunities."]
-    EVERY3PWM = 0x02,
+    Every3pwm = 0x02,
     #[doc = "Every 4 PWM opportunities."]
-    EVERY4PWM = 0x03,
+    Every4pwm = 0x03,
     #[doc = "Every 5 PWM opportunities."]
-    EVERY5PWM = 0x04,
+    Every5pwm = 0x04,
     #[doc = "Every 6 PWM opportunities."]
-    EVERY6PWM = 0x05,
+    Every6pwm = 0x05,
     #[doc = "Every 7 PWM opportunities."]
-    EVERY7PWM = 0x06,
+    Every7pwm = 0x06,
     #[doc = "Every 8 PWM opportunities."]
-    EVERY8PWM = 0x07,
+    Every8pwm = 0x07,
     #[doc = "Every 9 PWM opportunities."]
-    EVERY9PWM = 0x08,
+    Every9pwm = 0x08,
     #[doc = "Every 10 PWM opportunities."]
-    EVERY10PWM = 0x09,
+    Every10pwm = 0x09,
     #[doc = "Every 11 PWM opportunities."]
-    EVERY11PWM = 0x0a,
+    Every11pwm = 0x0a,
     #[doc = "Every 12 PWM opportunities."]
-    EVERY12PWM = 0x0b,
+    Every12pwm = 0x0b,
     #[doc = "Every 13 PWM opportunities."]
-    EVERY13PWM = 0x0c,
+    Every13pwm = 0x0c,
     #[doc = "Every 14 PWM opportunities."]
-    EVERY14PWM = 0x0d,
+    Every14pwm = 0x0d,
     #[doc = "Every 15 PWM opportunities."]
-    EVERY15PWM = 0x0e,
+    Every15pwm = 0x0e,
     #[doc = "Every 16 PWM opportunities."]
-    EVERY16PWM = 0x0f,
+    Every16pwm = 0x0f,
 }
 impl Sm2ctrlLdfq {
     #[inline(always)]
@@ -3972,9 +3972,9 @@ impl From<Sm2ctrlLdfq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2ctrlLdmod {
     #[doc = "Buffered registers of this submodule are loaded and take effect at the next PWM reload if MCTRL\\[LDOK\\] is set."]
-    NEXT_PWM_RELOAD = 0x0,
+    NextPwmReload = 0x0,
     #[doc = "Buffered registers of this submodule are loaded and take effect immediately upon MCTRL\\[LDOK\\] being set. In this case, it is not necessary to set CTRL\\[FULL\\] or CTRL\\[HALF\\]."]
-    MTCTRL_LDOK_SET = 0x01,
+    MtctrlLdokSet = 0x01,
 }
 impl Sm2ctrlLdmod {
     #[inline(always)]
@@ -4003,21 +4003,21 @@ impl From<Sm2ctrlLdmod> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2ctrlPrsc {
     #[doc = "Prescaler 1."]
-    ONE = 0x0,
+    One = 0x0,
     #[doc = "Prescaler 2."]
-    TWO = 0x01,
+    Two = 0x01,
     #[doc = "Prescaler 4."]
-    FOUR = 0x02,
+    Four = 0x02,
     #[doc = "Prescaler 8."]
-    EIGHT = 0x03,
+    Eight = 0x03,
     #[doc = "Prescaler 16."]
-    SIXTEEN = 0x04,
+    Sixteen = 0x04,
     #[doc = "Prescaler 32."]
-    THIRTYTWO = 0x05,
+    Thirtytwo = 0x05,
     #[doc = "Prescaler 64."]
-    SIXTYFOUR = 0x06,
+    Sixtyfour = 0x06,
     #[doc = "Prescaler 128."]
-    HUNDREDTWENTYEIGHT = 0x07,
+    Hundredtwentyeight = 0x07,
 }
 impl Sm2ctrlPrsc {
     #[inline(always)]
@@ -4046,13 +4046,13 @@ impl From<Sm2ctrlPrsc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2dmaenCaptde {
     #[doc = "Read DMA requests disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Exceeding a FIFO watermark sets the DMA read request. This requires at least one of DMAEN\\[CA1DE\\], DMAEN\\[CA0DE\\], DMAEN\\[CB1DE\\], DMAEN\\[CB0DE\\], DMAEN\\[CX1DE\\], or DMAEN\\[CX0DE\\] to be set to determine which watermark(s) the DMA request is sensitive."]
-    EXCEEDFIFO = 0x01,
+    Exceedfifo = 0x01,
     #[doc = "A local synchronization (VAL1 matches counter) sets the read DMA request."]
-    LOCAL_SYNC = 0x02,
+    LocalSync = 0x02,
     #[doc = "A local reload (STS\\[RF\\] being set) sets the read DMA request."]
-    LOCAL_RELOAD = 0x03,
+    LocalReload = 0x03,
 }
 impl Sm2dmaenCaptde {
     #[inline(always)]
@@ -4081,9 +4081,9 @@ impl From<Sm2dmaenCaptde> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2dmaenFand {
     #[doc = "Selected FIFO watermarks are OR'ed together."]
-    OR = 0x0,
+    Or = 0x0,
     #[doc = "Selected FIFO watermarks are AND'ed together."]
-    AND = 0x01,
+    And = 0x01,
 }
 impl Sm2dmaenFand {
     #[inline(always)]
@@ -4112,9 +4112,9 @@ impl From<Sm2dmaenFand> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2intenCmpie {
     #[doc = "The corresponding STS\\[CMPF\\] bit will not cause an interrupt request."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "The corresponding STS\\[CMPF\\] bit will cause an interrupt request."]
-    ENABLED = 0x01,
+    Enabled = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -4205,13 +4205,13 @@ impl From<Sm2intenCmpie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2octrlPwmafs {
     #[doc = "Output is forced to logic 0 state prior to consideration of output polarity control."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "Output is forced to logic 1 state prior to consideration of output polarity control."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_2 = 0x02,
+    Tristated2 = 0x02,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_3 = 0x03,
+    Tristated3 = 0x03,
 }
 impl Sm2octrlPwmafs {
     #[inline(always)]
@@ -4240,13 +4240,13 @@ impl From<Sm2octrlPwmafs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2octrlPwmbfs {
     #[doc = "Output is forced to logic 0 state prior to consideration of output polarity control."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "Output is forced to logic 1 state prior to consideration of output polarity control."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_2 = 0x02,
+    Tristated2 = 0x02,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_3 = 0x03,
+    Tristated3 = 0x03,
 }
 impl Sm2octrlPwmbfs {
     #[inline(always)]
@@ -4275,13 +4275,13 @@ impl From<Sm2octrlPwmbfs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2octrlPwmxfs {
     #[doc = "Output is forced to logic 0 state prior to consideration of output polarity control."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "Output is forced to logic 1 state prior to consideration of output polarity control."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_2 = 0x02,
+    Tristated2 = 0x02,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_3 = 0x03,
+    Tristated3 = 0x03,
 }
 impl Sm2octrlPwmxfs {
     #[inline(always)]
@@ -4310,9 +4310,9 @@ impl From<Sm2octrlPwmxfs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2out23 {
     #[doc = "A logic 0 is supplied to the deadtime generator of submodule 2 instead of PWM23."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "A logic 1 is supplied to the deadtime generator of submodule 2 instead of PWM23."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
 }
 impl Sm2out23 {
     #[inline(always)]
@@ -4341,9 +4341,9 @@ impl From<Sm2out23> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2out45 {
     #[doc = "A logic 0 is supplied to the deadtime generator of submodule 2 instead of PWM45."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "A logic 1 is supplied to the deadtime generator of submodule 2 instead of PWM45."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
 }
 impl Sm2out45 {
     #[inline(always)]
@@ -4372,13 +4372,13 @@ impl From<Sm2out45> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2sel23 {
     #[doc = "Generated SM2PWM23 signal used by the deadtime logic."]
-    SM2PWM23 = 0x0,
+    Sm2pwm23 = 0x0,
     #[doc = "Inverted generated SM2PWM23 signal used by the deadtime logic."]
-    INVERTED_SM2PWM23 = 0x01,
+    InvertedSm2pwm23 = 0x01,
     #[doc = "SWCOUT\\[SM2OUT23\\] used by the deadtime logic."]
-    SM2OUT23 = 0x02,
+    Sm2out23 = 0x02,
     #[doc = "PWM2_EXTA signal used by the deadtime logic."]
-    PWM2_EXTA = 0x03,
+    Pwm2Exta = 0x03,
 }
 impl Sm2sel23 {
     #[inline(always)]
@@ -4407,11 +4407,11 @@ impl From<Sm2sel23> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2sel45 {
     #[doc = "Generated SM2PWM45 signal used by the deadtime logic."]
-    SM2PWM45 = 0x0,
+    Sm2pwm45 = 0x0,
     #[doc = "Inverted generated SM2PWM45 signal used by the deadtime logic."]
-    INVERTED_SM2PWM45 = 0x01,
+    InvertedSm2pwm45 = 0x01,
     #[doc = "SWCOUT\\[SM2OUT45\\] used by the deadtime logic."]
-    SM2OUT45 = 0x02,
+    Sm2out45 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Sm2sel45 {
@@ -4441,9 +4441,9 @@ impl From<Sm2sel45> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2stsCmpf {
     #[doc = "No compare event has occurred for a particular VALx value."]
-    NO_EVENT = 0x0,
+    NoEvent = 0x0,
     #[doc = "A compare event has occurred for a particular VALx value."]
-    EVENT = 0x01,
+    Event = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -4535,7 +4535,7 @@ impl From<Sm2stsCmpf> for u8 {
 pub enum Sm2tctrlOutTrigEn {
     _RESERVED_0 = 0x0,
     #[doc = "PWM_OUT_TRIG0 will set when the counter value matches the VAL0 value."]
-    VAL0 = 0x01,
+    Val0 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -4626,9 +4626,9 @@ impl From<Sm2tctrlOutTrigEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2tctrlPwaot0 {
     #[doc = "Route the PWM_OUT_TRIG0 signal to PWM_MUX_TRIG0 port."]
-    PWM_OUT_TRIG0_SIGNAL = 0x0,
+    PwmOutTrig0Signal = 0x0,
     #[doc = "Route the PWM_A output to the PWM_MUX_TRIG0 port."]
-    PWMA_OUTPUT = 0x01,
+    PwmaOutput = 0x01,
 }
 impl Sm2tctrlPwaot0 {
     #[inline(always)]
@@ -4657,9 +4657,9 @@ impl From<Sm2tctrlPwaot0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2tctrlPwbot1 {
     #[doc = "Route the PWM_OUT_TRIG1 signal to PWM_MUX_TRIG1 port."]
-    PWM_OUT_TRIG1_SIGNAL = 0x0,
+    PwmOutTrig1Signal = 0x0,
     #[doc = "Route the PWM_B output to the PWM_MUX_TRIG1 port."]
-    PWMB_OUTPUT = 0x01,
+    PwmbOutput = 0x01,
 }
 impl Sm2tctrlPwbot1 {
     #[inline(always)]
@@ -4688,9 +4688,9 @@ impl From<Sm2tctrlPwbot1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm2tctrlTrgfrq {
     #[doc = "Trigger outputs are generated during every PWM period even if the PWM is not reloaded every period due to CTRL\\[LDFQ\\] being non-zero."]
-    EVERYPWM = 0x0,
+    Everypwm = 0x0,
     #[doc = "Trigger outputs are generated only during the final PWM period prior to a reload opportunity when the PWM is not reloaded every period due to CTRL\\[LDFQ\\] being non-zero."]
-    FINALPWM = 0x01,
+    Finalpwm = 0x01,
 }
 impl Sm2tctrlTrgfrq {
     #[inline(always)]
@@ -4719,13 +4719,13 @@ impl From<Sm2tctrlTrgfrq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3captctrlaEdga0 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm3captctrlaEdga0 {
     #[inline(always)]
@@ -4754,13 +4754,13 @@ impl From<Sm3captctrlaEdga0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3captctrlaEdga1 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm3captctrlaEdga1 {
     #[inline(always)]
@@ -4789,9 +4789,9 @@ impl From<Sm3captctrlaEdga1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3captctrlaInpSela {
     #[doc = "Raw PWM_A input signal selected as source."]
-    PWM_A = 0x0,
+    PwmA = 0x0,
     #[doc = "Edge Counter."]
-    EDGE_COUNTER = 0x01,
+    EdgeCounter = 0x01,
 }
 impl Sm3captctrlaInpSela {
     #[inline(always)]
@@ -4820,9 +4820,9 @@ impl From<Sm3captctrlaInpSela> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3captctrlaOneshota {
     #[doc = "Free Running."]
-    FREE_RUNNING = 0x0,
+    FreeRunning = 0x0,
     #[doc = "One Shot."]
-    ONE_SHOT = 0x01,
+    OneShot = 0x01,
 }
 impl Sm3captctrlaOneshota {
     #[inline(always)]
@@ -4851,13 +4851,13 @@ impl From<Sm3captctrlaOneshota> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3captctrlbEdgb0 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm3captctrlbEdgb0 {
     #[inline(always)]
@@ -4886,13 +4886,13 @@ impl From<Sm3captctrlbEdgb0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3captctrlbEdgb1 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm3captctrlbEdgb1 {
     #[inline(always)]
@@ -4921,9 +4921,9 @@ impl From<Sm3captctrlbEdgb1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3captctrlbInpSelb {
     #[doc = "Raw PWM_B input signal selected as source."]
-    PWM_B = 0x0,
+    PwmB = 0x0,
     #[doc = "Edge Counter."]
-    EDGE_COUNTER = 0x01,
+    EdgeCounter = 0x01,
 }
 impl Sm3captctrlbInpSelb {
     #[inline(always)]
@@ -4952,9 +4952,9 @@ impl From<Sm3captctrlbInpSelb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3captctrlbOneshotb {
     #[doc = "Free Running."]
-    FREE_RUNNING = 0x0,
+    FreeRunning = 0x0,
     #[doc = "One Shot."]
-    ONE_SHOT = 0x01,
+    OneShot = 0x01,
 }
 impl Sm3captctrlbOneshotb {
     #[inline(always)]
@@ -4983,13 +4983,13 @@ impl From<Sm3captctrlbOneshotb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3captctrlxEdgx0 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm3captctrlxEdgx0 {
     #[inline(always)]
@@ -5018,13 +5018,13 @@ impl From<Sm3captctrlxEdgx0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3captctrlxEdgx1 {
     #[doc = "Disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Capture falling edges."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
     #[doc = "Capture rising edges."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Capture any edge."]
-    ANY_EDGE = 0x03,
+    AnyEdge = 0x03,
 }
 impl Sm3captctrlxEdgx1 {
     #[inline(always)]
@@ -5053,9 +5053,9 @@ impl From<Sm3captctrlxEdgx1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3captctrlxInpSelx {
     #[doc = "Raw PWM_X input signal selected as source."]
-    PWM_X = 0x0,
+    PwmX = 0x0,
     #[doc = "Edge Counter."]
-    EDGE_COUNTER = 0x01,
+    EdgeCounter = 0x01,
 }
 impl Sm3captctrlxInpSelx {
     #[inline(always)]
@@ -5084,9 +5084,9 @@ impl From<Sm3captctrlxInpSelx> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3captctrlxOneshotx {
     #[doc = "Free Running."]
-    FREE_RUNNING = 0x0,
+    FreeRunning = 0x0,
     #[doc = "One Shot."]
-    ONE_SHOT = 0x01,
+    OneShot = 0x01,
 }
 impl Sm3captctrlxOneshotx {
     #[inline(always)]
@@ -5115,11 +5115,11 @@ impl From<Sm3captctrlxOneshotx> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3ctrl2ClkSel {
     #[doc = "The IPBus clock is used as the clock for the local prescaler and counter."]
-    IPBUS = 0x0,
+    Ipbus = 0x0,
     #[doc = "EXT_CLK is used as the clock for the local prescaler and counter."]
-    EXT_CLK = 0x01,
+    ExtClk = 0x01,
     #[doc = "Submodule 0's clock (AUX_CLK) is used as the source clock for the local prescaler and counter. This setting should not be used in submodule 0 as it forces the clock to logic 0."]
-    AUX_CLK = 0x02,
+    AuxClk = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Sm3ctrl2ClkSel {
@@ -5149,21 +5149,21 @@ impl From<Sm3ctrl2ClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3ctrl2ForceSel {
     #[doc = "The local force signal, CTRL2\\[FORCE\\], from this submodule is used to force updates."]
-    LOCAL = 0x0,
+    Local = 0x0,
     #[doc = "The master force signal from submodule 0 is used to force updates. This setting should not be used in submodule 0 as it holds the FORCE OUTPUT signal to logic 0."]
-    MASTER = 0x01,
+    Master = 0x01,
     #[doc = "The local reload signal from this submodule is used to force updates without regard to the state of LDOK."]
-    LOCAL_RELOAD = 0x02,
+    LocalReload = 0x02,
     #[doc = "The master reload signal from submodule0 is used to force updates if LDOK is set. This setting should not be used in submodule0 as it holds the FORCE OUTPUT signal to logic 0."]
-    MASTER_RELOAD = 0x03,
+    MasterReload = 0x03,
     #[doc = "The local sync signal from this submodule is used to force updates."]
-    LOCAL_SYNC = 0x04,
+    LocalSync = 0x04,
     #[doc = "The master sync signal from submodule0 is used to force updates. This setting should not be used in submodule0 as it holds the FORCE OUTPUT signal to logic 0."]
-    MASTER_SYNC = 0x05,
+    MasterSync = 0x05,
     #[doc = "The external force signal, EXT_FORCE, from outside the PWM module causes updates."]
-    EXT_FORCE = 0x06,
+    ExtForce = 0x06,
     #[doc = "The external sync signal, EXT_SYNC, from outside the PWM module causes updates."]
-    EXT_SYNC = 0x07,
+    ExtSync = 0x07,
 }
 impl Sm3ctrl2ForceSel {
     #[inline(always)]
@@ -5192,9 +5192,9 @@ impl From<Sm3ctrl2ForceSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3ctrl2Indep {
     #[doc = "PWM_A and PWM_B form a complementary PWM pair."]
-    COMPLEMENTARY = 0x0,
+    Complementary = 0x0,
     #[doc = "PWM_A and PWM_B outputs are independent PWMs."]
-    INDEPENDENT = 0x01,
+    Independent = 0x01,
 }
 impl Sm3ctrl2Indep {
     #[inline(always)]
@@ -5223,13 +5223,13 @@ impl From<Sm3ctrl2Indep> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3ctrl2InitSel {
     #[doc = "Local sync (PWM_X) causes initialization."]
-    PWM_X = 0x0,
+    PwmX = 0x0,
     #[doc = "Master reload from submodule 0 causes initialization. This setting should not be used in submodule 0 as it forces the INIT signal to logic 0. The submodule counter will only re-initialize when a master reload occurs."]
-    MASTER_RELOAD = 0x01,
+    MasterReload = 0x01,
     #[doc = "Master sync from submodule 0 causes initialization. This setting should not be used in submodule 0 as it forces the INIT signal to logic 0."]
-    MASTER_SYNC = 0x02,
+    MasterSync = 0x02,
     #[doc = "EXT_SYNC causes initialization."]
-    EXT_SYNC = 0x03,
+    ExtSync = 0x03,
 }
 impl Sm3ctrl2InitSel {
     #[inline(always)]
@@ -5258,9 +5258,9 @@ impl From<Sm3ctrl2InitSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3ctrl2ReloadSel {
     #[doc = "The local RELOAD signal is used to reload registers."]
-    LOCAL = 0x0,
+    Local = 0x0,
     #[doc = "The master RELOAD signal (from submodule 0) is used to reload registers. This setting should not be used in submodule 0 as it forces the RELOAD signal to logic 0."]
-    MASTER = 0x01,
+    Master = 0x01,
 }
 impl Sm3ctrl2ReloadSel {
     #[inline(always)]
@@ -5289,9 +5289,9 @@ impl From<Sm3ctrl2ReloadSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3ctrlCompmode {
     #[doc = "The VAL* registers and the PWM counter are compared using an \"equal to\" method. This means that PWM edges are only produced when the counter is equal to one of the VAL* register values. This implies that a PWM_A output that is high at the end of a period maintains this state until a match with VAL3 clears the output in the following period."]
-    EQUAL_TO = 0x0,
+    EqualTo = 0x0,
     #[doc = "The VAL* registers and the PWM counter are compared using an \"equal to or greater than\" method. This means that PWM edges are produced when the counter is equal to or greater than one of the VAL* register values. This implies that a PWM_A output that is high at the end of a period could go low at the start of the next period if the starting counter value is greater than (but not necessarily equal to) the new VAL3 value."]
-    EQUAL_TO_OR_GREATER_THAN = 0x01,
+    EqualToOrGreaterThan = 0x01,
 }
 impl Sm3ctrlCompmode {
     #[inline(always)]
@@ -5320,37 +5320,37 @@ impl From<Sm3ctrlCompmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3ctrlLdfq {
     #[doc = "Every PWM opportunity."]
-    EVERYPWM = 0x0,
+    Everypwm = 0x0,
     #[doc = "Every 2 PWM opportunities."]
-    EVERY2PWM = 0x01,
+    Every2pwm = 0x01,
     #[doc = "Every 3 PWM opportunities."]
-    EVERY3PWM = 0x02,
+    Every3pwm = 0x02,
     #[doc = "Every 4 PWM opportunities."]
-    EVERY4PWM = 0x03,
+    Every4pwm = 0x03,
     #[doc = "Every 5 PWM opportunities."]
-    EVERY5PWM = 0x04,
+    Every5pwm = 0x04,
     #[doc = "Every 6 PWM opportunities."]
-    EVERY6PWM = 0x05,
+    Every6pwm = 0x05,
     #[doc = "Every 7 PWM opportunities."]
-    EVERY7PWM = 0x06,
+    Every7pwm = 0x06,
     #[doc = "Every 8 PWM opportunities."]
-    EVERY8PWM = 0x07,
+    Every8pwm = 0x07,
     #[doc = "Every 9 PWM opportunities."]
-    EVERY9PWM = 0x08,
+    Every9pwm = 0x08,
     #[doc = "Every 10 PWM opportunities."]
-    EVERY10PWM = 0x09,
+    Every10pwm = 0x09,
     #[doc = "Every 11 PWM opportunities."]
-    EVERY11PWM = 0x0a,
+    Every11pwm = 0x0a,
     #[doc = "Every 12 PWM opportunities."]
-    EVERY12PWM = 0x0b,
+    Every12pwm = 0x0b,
     #[doc = "Every 13 PWM opportunities."]
-    EVERY13PWM = 0x0c,
+    Every13pwm = 0x0c,
     #[doc = "Every 14 PWM opportunities."]
-    EVERY14PWM = 0x0d,
+    Every14pwm = 0x0d,
     #[doc = "Every 15 PWM opportunities."]
-    EVERY15PWM = 0x0e,
+    Every15pwm = 0x0e,
     #[doc = "Every 16 PWM opportunities."]
-    EVERY16PWM = 0x0f,
+    Every16pwm = 0x0f,
 }
 impl Sm3ctrlLdfq {
     #[inline(always)]
@@ -5379,9 +5379,9 @@ impl From<Sm3ctrlLdfq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3ctrlLdmod {
     #[doc = "Buffered registers of this submodule are loaded and take effect at the next PWM reload if MCTRL\\[LDOK\\] is set."]
-    NEXT_PWM_RELOAD = 0x0,
+    NextPwmReload = 0x0,
     #[doc = "Buffered registers of this submodule are loaded and take effect immediately upon MCTRL\\[LDOK\\] being set. In this case, it is not necessary to set CTRL\\[FULL\\] or CTRL\\[HALF\\]."]
-    MTCTRL_LDOK_SET = 0x01,
+    MtctrlLdokSet = 0x01,
 }
 impl Sm3ctrlLdmod {
     #[inline(always)]
@@ -5410,21 +5410,21 @@ impl From<Sm3ctrlLdmod> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3ctrlPrsc {
     #[doc = "Prescaler 1."]
-    ONE = 0x0,
+    One = 0x0,
     #[doc = "Prescaler 2."]
-    TWO = 0x01,
+    Two = 0x01,
     #[doc = "Prescaler 4."]
-    FOUR = 0x02,
+    Four = 0x02,
     #[doc = "Prescaler 8."]
-    EIGHT = 0x03,
+    Eight = 0x03,
     #[doc = "Prescaler 16."]
-    SIXTEEN = 0x04,
+    Sixteen = 0x04,
     #[doc = "Prescaler 32."]
-    THIRTYTWO = 0x05,
+    Thirtytwo = 0x05,
     #[doc = "Prescaler 64."]
-    SIXTYFOUR = 0x06,
+    Sixtyfour = 0x06,
     #[doc = "Prescaler 128."]
-    HUNDREDTWENTYEIGHT = 0x07,
+    Hundredtwentyeight = 0x07,
 }
 impl Sm3ctrlPrsc {
     #[inline(always)]
@@ -5453,13 +5453,13 @@ impl From<Sm3ctrlPrsc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3dmaenCaptde {
     #[doc = "Read DMA requests disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Exceeding a FIFO watermark sets the DMA read request. This requires at least one of DMAEN\\[CA1DE\\], DMAEN\\[CA0DE\\], DMAEN\\[CB1DE\\], DMAEN\\[CB0DE\\], DMAEN\\[CX1DE\\], or DMAEN\\[CX0DE\\] to be set to determine which watermark(s) the DMA request is sensitive."]
-    EXCEEDFIFO = 0x01,
+    Exceedfifo = 0x01,
     #[doc = "A local synchronization (VAL1 matches counter) sets the read DMA request."]
-    LOCAL_SYNC = 0x02,
+    LocalSync = 0x02,
     #[doc = "A local reload (STS\\[RF\\] being set) sets the read DMA request."]
-    LOCAL_RELOAD = 0x03,
+    LocalReload = 0x03,
 }
 impl Sm3dmaenCaptde {
     #[inline(always)]
@@ -5488,9 +5488,9 @@ impl From<Sm3dmaenCaptde> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3dmaenFand {
     #[doc = "Selected FIFO watermarks are OR'ed together."]
-    OR = 0x0,
+    Or = 0x0,
     #[doc = "Selected FIFO watermarks are AND'ed together."]
-    AND = 0x01,
+    And = 0x01,
 }
 impl Sm3dmaenFand {
     #[inline(always)]
@@ -5519,9 +5519,9 @@ impl From<Sm3dmaenFand> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3intenCmpie {
     #[doc = "The corresponding STS\\[CMPF\\] bit will not cause an interrupt request."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "The corresponding STS\\[CMPF\\] bit will cause an interrupt request."]
-    ENABLED = 0x01,
+    Enabled = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -5612,13 +5612,13 @@ impl From<Sm3intenCmpie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3octrlPwmafs {
     #[doc = "Output is forced to logic 0 state prior to consideration of output polarity control."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "Output is forced to logic 1 state prior to consideration of output polarity control."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_2 = 0x02,
+    Tristated2 = 0x02,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_3 = 0x03,
+    Tristated3 = 0x03,
 }
 impl Sm3octrlPwmafs {
     #[inline(always)]
@@ -5647,13 +5647,13 @@ impl From<Sm3octrlPwmafs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3octrlPwmbfs {
     #[doc = "Output is forced to logic 0 state prior to consideration of output polarity control."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "Output is forced to logic 1 state prior to consideration of output polarity control."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_2 = 0x02,
+    Tristated2 = 0x02,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_3 = 0x03,
+    Tristated3 = 0x03,
 }
 impl Sm3octrlPwmbfs {
     #[inline(always)]
@@ -5682,13 +5682,13 @@ impl From<Sm3octrlPwmbfs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3octrlPwmxfs {
     #[doc = "Output is forced to logic 0 state prior to consideration of output polarity control."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "Output is forced to logic 1 state prior to consideration of output polarity control."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_2 = 0x02,
+    Tristated2 = 0x02,
     #[doc = "Output is put in a high-impedance state."]
-    TRISTATED_3 = 0x03,
+    Tristated3 = 0x03,
 }
 impl Sm3octrlPwmxfs {
     #[inline(always)]
@@ -5717,9 +5717,9 @@ impl From<Sm3octrlPwmxfs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3out23 {
     #[doc = "A logic 0 is supplied to the deadtime generator of submodule 3 instead of PWM23."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "A logic 1 is supplied to the deadtime generator of submodule 3 instead of PWM23."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
 }
 impl Sm3out23 {
     #[inline(always)]
@@ -5748,9 +5748,9 @@ impl From<Sm3out23> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3out45 {
     #[doc = "A logic 0 is supplied to the deadtime generator of submodule 3 instead of PWM45."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "A logic 1 is supplied to the deadtime generator of submodule 3 instead of PWM45."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
 }
 impl Sm3out45 {
     #[inline(always)]
@@ -5779,13 +5779,13 @@ impl From<Sm3out45> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3sel23 {
     #[doc = "Generated SM3PWM23 signal used by the deadtime logic."]
-    SM3PWM23 = 0x0,
+    Sm3pwm23 = 0x0,
     #[doc = "Inverted generated SM3PWM23 signal used by the deadtime logic."]
-    INVERTED_SM3PWM23 = 0x01,
+    InvertedSm3pwm23 = 0x01,
     #[doc = "SWCOUT\\[SM3OUT23\\] used by the deadtime logic."]
-    SM3OUT23 = 0x02,
+    Sm3out23 = 0x02,
     #[doc = "PWM3_EXTA signal used by the deadtime logic."]
-    PWM3_EXTA = 0x03,
+    Pwm3Exta = 0x03,
 }
 impl Sm3sel23 {
     #[inline(always)]
@@ -5814,11 +5814,11 @@ impl From<Sm3sel23> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3sel45 {
     #[doc = "Generated SM3PWM45 signal used by the deadtime logic."]
-    SM3PWM45 = 0x0,
+    Sm3pwm45 = 0x0,
     #[doc = "Inverted generated SM3PWM45 signal used by the deadtime logic."]
-    INVERTED_SM3PWM45 = 0x01,
+    InvertedSm3pwm45 = 0x01,
     #[doc = "SWCOUT\\[SM3OUT45\\] used by the deadtime logic."]
-    SM3OUT45 = 0x02,
+    Sm3out45 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Sm3sel45 {
@@ -5848,9 +5848,9 @@ impl From<Sm3sel45> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3stsCmpf {
     #[doc = "No compare event has occurred for a particular VALx value."]
-    NO_EVENT = 0x0,
+    NoEvent = 0x0,
     #[doc = "A compare event has occurred for a particular VALx value."]
-    EVENT = 0x01,
+    Event = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -5942,7 +5942,7 @@ impl From<Sm3stsCmpf> for u8 {
 pub enum Sm3tctrlOutTrigEn {
     _RESERVED_0 = 0x0,
     #[doc = "PWM_OUT_TRIG0 will set when the counter value matches the VAL0 value."]
-    VAL0 = 0x01,
+    Val0 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -6033,9 +6033,9 @@ impl From<Sm3tctrlOutTrigEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3tctrlPwaot0 {
     #[doc = "Route the PWM_OUT_TRIG0 signal to PWM_MUX_TRIG0 port."]
-    PWM_OUT_TRIG0_SIGNAL = 0x0,
+    PwmOutTrig0Signal = 0x0,
     #[doc = "Route the PWM_A output to the PWM_MUX_TRIG0 port."]
-    PWMA_OUTPUT = 0x01,
+    PwmaOutput = 0x01,
 }
 impl Sm3tctrlPwaot0 {
     #[inline(always)]
@@ -6064,9 +6064,9 @@ impl From<Sm3tctrlPwaot0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3tctrlPwbot1 {
     #[doc = "Route the PWM_OUT_TRIG1 signal to PWM_MUX_TRIG1 port."]
-    PWM_OUT_TRIG1_SIGNAL = 0x0,
+    PwmOutTrig1Signal = 0x0,
     #[doc = "Route the PWM_B output to the PWM_MUX_TRIG1 port."]
-    PWMB_OUTPUT = 0x01,
+    PwmbOutput = 0x01,
 }
 impl Sm3tctrlPwbot1 {
     #[inline(always)]
@@ -6095,9 +6095,9 @@ impl From<Sm3tctrlPwbot1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sm3tctrlTrgfrq {
     #[doc = "Trigger outputs are generated during every PWM period even if the PWM is not reloaded every period due to CTRL\\[LDFQ\\] being non-zero."]
-    EVERYPWM = 0x0,
+    Everypwm = 0x0,
     #[doc = "Trigger outputs are generated only during the final PWM period prior to a reload opportunity when the PWM is not reloaded every period due to CTRL\\[LDFQ\\] being non-zero."]
-    FINALPWM = 0x01,
+    Finalpwm = 0x01,
 }
 impl Sm3tctrlTrgfrq {
     #[inline(always)]
@@ -6126,13 +6126,13 @@ impl From<Sm3tctrlTrgfrq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum StretchCntPrsc {
     #[doc = "Stretch count is zero, no stretch."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Stretch mux0_trig/mux1_trig/out0_trig/out1_trig/pwma_trig/pwmb_trig for 2 IPBus clock period."]
-    ENABLED = 0x01,
+    Enabled = 0x01,
     #[doc = "Stretch mux0_trig/mux1_trig/out0_trig/out1_trig/pwma_trig/pwmb_trig for 4 IPBus clock period."]
-    DISABLED_LOCKED = 0x02,
+    DisabledLocked = 0x02,
     #[doc = "Stretch mux0_trig/mux1_trig/out0_trig/out1_trig/pwma_trig/pwmb_trig for 8 IPBus clock period."]
-    ENABLED_LOCKED = 0x03,
+    EnabledLocked = 0x03,
 }
 impl StretchCntPrsc {
     #[inline(always)]
@@ -6161,13 +6161,13 @@ impl From<StretchCntPrsc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wrprot {
     #[doc = "Write protection off (default)."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Write protection on."]
-    ENABLED = 0x01,
+    Enabled = 0x01,
     #[doc = "Write protection off and locked until chip reset."]
-    DISABLED_LOCKED = 0x02,
+    DisabledLocked = 0x02,
     #[doc = "Write protection on and locked until chip reset."]
-    ENABLED_LOCKED = 0x03,
+    EnabledLocked = 0x03,
 }
 impl Wrprot {
     #[inline(always)]

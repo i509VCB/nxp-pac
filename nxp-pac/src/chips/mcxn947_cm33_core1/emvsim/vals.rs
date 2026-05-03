@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BgtErr {
     #[doc = "Sufficient."]
-    BGT_ERR_SUFFICIENT = 0x0,
+    BgtErrSufficient = 0x0,
     #[doc = "Too small."]
-    BGT_ERR_TOOSMALL = 0x01,
+    BgtErrToosmall = 0x01,
 }
 impl BgtErr {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<BgtErr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BgtErrIm {
     #[doc = "Enable."]
-    INT_ENABLED = 0x0,
+    IntEnabled = 0x0,
     #[doc = "Masked."]
-    INT_MASKED = 0x01,
+    IntMasked = 0x01,
 }
 impl BgtErrIm {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<BgtErrIm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BwtErr {
     #[doc = "Not exceeded."]
-    BWT_ERR_NO = 0x0,
+    BwtErrNo = 0x0,
     #[doc = "Exceeded."]
-    BWT_ERR_YES = 0x01,
+    BwtErrYes = 0x01,
 }
 impl BwtErr {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<BwtErr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BwtErrIm {
     #[doc = "Enable."]
-    INT_ENABLED = 0x0,
+    IntEnabled = 0x0,
     #[doc = "Masked."]
-    INT_MASKED = 0x01,
+    IntMasked = 0x01,
 }
 impl BwtErrIm {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<BwtErrIm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CrcOk {
     #[doc = "Current CRC value does not match remainder."]
-    CRC_NOTOK = 0x0,
+    CrcNotok = 0x0,
     #[doc = "Current calculated CRC value matches the expected result."]
-    CRC_OK = 0x01,
+    CrcOk = 0x01,
 }
 impl CrcOk {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<CrcOk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CwtErrIm {
     #[doc = "Enable."]
-    INT_ENABLED = 0x0,
+    IntEnabled = 0x0,
     #[doc = "Masked."]
-    INT_DISABLED = 0x01,
+    IntDisabled = 0x01,
 }
 impl CwtErrIm {
     #[inline(always)]
@@ -189,25 +189,25 @@ impl From<CwtErrIm> for u8 {
 pub struct DivisorValue(u16);
 impl DivisorValue {
     #[doc = "Invalid. As per ISO 7816 specification, the minimum value of F/D is 5."]
-    pub const INVALID_0: Self = Self(0x0);
+    pub const Invalid0: Self = Self(0x0);
     #[doc = "Invalid. As per ISO 7816 specification, the minimum value of F/D is 5."]
-    pub const INVALID_1: Self = Self(0x01);
+    pub const Invalid1: Self = Self(0x01);
     #[doc = "Invalid. As per ISO 7816 specification, the minimum value of F/D is 5."]
-    pub const INVALID_2: Self = Self(0x02);
+    pub const Invalid2: Self = Self(0x02);
     #[doc = "Invalid. As per ISO 7816 specification, the minimum value of F/D is 5."]
-    pub const INVALID_3: Self = Self(0x03);
+    pub const Invalid3: Self = Self(0x03);
     #[doc = "Invalid. As per ISO 7816 specification, the minimum value of F/D is 5."]
-    pub const INVALID_4: Self = Self(0x04);
+    pub const Invalid4: Self = Self(0x04);
     #[doc = "Divisor value F/D."]
-    pub const VALID_5: Self = Self(0x05);
+    pub const Valid5: Self = Self(0x05);
     #[doc = "Divisor value F/D."]
-    pub const VALID_6: Self = Self(0x06);
+    pub const Valid6: Self = Self(0x06);
     #[doc = "Divisor value F/D."]
-    pub const VALID_7: Self = Self(0x07);
+    pub const Valid7: Self = Self(0x07);
     #[doc = "Divisor value F/D."]
-    pub const VALID_8: Self = Self(0x08);
+    pub const Valid8: Self = Self(0x08);
     #[doc = "Divisor value F/D."]
-    pub const VALID_9: Self = Self(0x09);
+    pub const Valid9: Self = Self(0x09);
 }
 impl DivisorValue {
     pub const fn from_bits(val: u16) -> DivisorValue {
@@ -220,16 +220,16 @@ impl DivisorValue {
 impl core::fmt::Debug for DivisorValue {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("INVALID_0"),
-            0x01 => f.write_str("INVALID_1"),
-            0x02 => f.write_str("INVALID_2"),
-            0x03 => f.write_str("INVALID_3"),
-            0x04 => f.write_str("INVALID_4"),
-            0x05 => f.write_str("VALID_5"),
-            0x06 => f.write_str("VALID_6"),
-            0x07 => f.write_str("VALID_7"),
-            0x08 => f.write_str("VALID_8"),
-            0x09 => f.write_str("VALID_9"),
+            0x0 => f.write_str("Invalid0"),
+            0x01 => f.write_str("Invalid1"),
+            0x02 => f.write_str("Invalid2"),
+            0x03 => f.write_str("Invalid3"),
+            0x04 => f.write_str("Invalid4"),
+            0x05 => f.write_str("Valid5"),
+            0x06 => f.write_str("Valid6"),
+            0x07 => f.write_str("Valid7"),
+            0x08 => f.write_str("Valid8"),
+            0x09 => f.write_str("Valid9"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -238,16 +238,16 @@ impl core::fmt::Debug for DivisorValue {
 impl defmt::Format for DivisorValue {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "INVALID_0"),
-            0x01 => defmt::write!(f, "INVALID_1"),
-            0x02 => defmt::write!(f, "INVALID_2"),
-            0x03 => defmt::write!(f, "INVALID_3"),
-            0x04 => defmt::write!(f, "INVALID_4"),
-            0x05 => defmt::write!(f, "VALID_5"),
-            0x06 => defmt::write!(f, "VALID_6"),
-            0x07 => defmt::write!(f, "VALID_7"),
-            0x08 => defmt::write!(f, "VALID_8"),
-            0x09 => defmt::write!(f, "VALID_9"),
+            0x0 => defmt::write!(f, "Invalid0"),
+            0x01 => defmt::write!(f, "Invalid1"),
+            0x02 => defmt::write!(f, "Invalid2"),
+            0x03 => defmt::write!(f, "Invalid3"),
+            0x04 => defmt::write!(f, "Invalid4"),
+            0x05 => defmt::write!(f, "Valid5"),
+            0x06 => defmt::write!(f, "Valid6"),
+            0x07 => defmt::write!(f, "Valid7"),
+            0x08 => defmt::write!(f, "Valid8"),
+            0x09 => defmt::write!(f, "Valid9"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -269,9 +269,9 @@ impl From<DivisorValue> for u16 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DozeEn {
     #[doc = "Disable."]
-    DOZE_GATE = 0x0,
+    DozeGate = 0x0,
     #[doc = "Enable."]
-    DOZE_NOGATE = 0x01,
+    DozeNogate = 0x01,
 }
 impl DozeEn {
     #[inline(always)]
@@ -300,9 +300,9 @@ impl From<DozeEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EtcIm {
     #[doc = "Enable."]
-    INT_ENABLED = 0x0,
+    IntEnabled = 0x0,
     #[doc = "Masked."]
-    INT_MASKED = 0x01,
+    IntMasked = 0x01,
 }
 impl EtcIm {
     #[inline(always)]
@@ -331,9 +331,9 @@ impl From<EtcIm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Etcf {
     #[doc = "Pending or incomplete."]
-    ETX_PENDING = 0x0,
+    EtxPending = 0x0,
     #[doc = "Complete."]
-    ETX_COMPLETE = 0x01,
+    EtxComplete = 0x01,
 }
 impl Etcf {
     #[inline(always)]
@@ -362,9 +362,9 @@ impl From<Etcf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FlshRx {
     #[doc = "Normal."]
-    NORMALOP = 0x0,
+    Normalop = 0x0,
     #[doc = "Reset."]
-    RESETHOLD = 0x01,
+    Resethold = 0x01,
 }
 impl FlshRx {
     #[inline(always)]
@@ -393,9 +393,9 @@ impl From<FlshRx> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FlshTx {
     #[doc = "Normal."]
-    NORMALOP = 0x0,
+    Normalop = 0x0,
     #[doc = "Reset."]
-    RESETHOLD = 0x01,
+    Resethold = 0x01,
 }
 impl FlshTx {
     #[inline(always)]
@@ -424,13 +424,13 @@ impl From<FlshTx> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gpcnt0ClkSel {
     #[doc = "Disable/reset."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Card clock."]
-    CARDCLK = 0x01,
+    Cardclk = 0x01,
     #[doc = "Receive clock."]
-    RXCLK = 0x02,
+    Rxclk = 0x02,
     #[doc = "ETU clock (transmit clock)."]
-    TXCLK = 0x03,
+    Txclk = 0x03,
 }
 impl Gpcnt0ClkSel {
     #[inline(always)]
@@ -459,9 +459,9 @@ impl From<Gpcnt0ClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gpcnt0Im {
     #[doc = "Enable."]
-    INT_ENABLED = 0x0,
+    IntEnabled = 0x0,
     #[doc = "Masked."]
-    INT_MASKED = 0x01,
+    IntMasked = 0x01,
 }
 impl Gpcnt0Im {
     #[inline(always)]
@@ -490,9 +490,9 @@ impl From<Gpcnt0Im> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gpcnt0To {
     #[doc = "GPCNT0 not reached, or flag cleared."]
-    GPCNT0_TO_NOTREACHED = 0x0,
+    Gpcnt0ToNotreached = 0x0,
     #[doc = "GPCNT0 reached."]
-    GPCNT0_TO_REACHED = 0x01,
+    Gpcnt0ToReached = 0x01,
 }
 impl Gpcnt0To {
     #[inline(always)]
@@ -521,13 +521,13 @@ impl From<Gpcnt0To> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gpcnt1ClkSel {
     #[doc = "Disable/reset."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Card clock."]
-    CARDCLK = 0x01,
+    Cardclk = 0x01,
     #[doc = "Receive clock."]
-    RXCLK = 0x02,
+    Rxclk = 0x02,
     #[doc = "ETU clock (transmit clock)."]
-    TXCLK = 0x03,
+    Txclk = 0x03,
 }
 impl Gpcnt1ClkSel {
     #[inline(always)]
@@ -556,9 +556,9 @@ impl From<Gpcnt1ClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gpcnt1Im {
     #[doc = "Enable."]
-    INT_ENABLED = 0x0,
+    IntEnabled = 0x0,
     #[doc = "Masked."]
-    INT_MASKED = 0x01,
+    IntMasked = 0x01,
 }
 impl Gpcnt1Im {
     #[inline(always)]
@@ -587,9 +587,9 @@ impl From<Gpcnt1Im> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gpcnt1To {
     #[doc = "GPCNT1 not reached, or flag cleared."]
-    GPCNT1_TO_NOTREACHED = 0x0,
+    Gpcnt1ToNotreached = 0x0,
     #[doc = "GPCNT1 reached."]
-    GPCNT1_TO_REACHED = 0x01,
+    Gpcnt1ToReached = 0x01,
 }
 impl Gpcnt1To {
     #[inline(always)]
@@ -618,9 +618,9 @@ impl From<Gpcnt1To> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ic {
     #[doc = "Direct."]
-    DIR_CONVENTION = 0x0,
+    DirConvention = 0x0,
     #[doc = "Inverse."]
-    INV_CONVENTION = 0x01,
+    InvConvention = 0x01,
 }
 impl Ic {
     #[inline(always)]
@@ -649,9 +649,9 @@ impl From<Ic> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum KillClocks {
     #[doc = "Enable."]
-    INCLK_ENABLED = 0x0,
+    InclkEnabled = 0x0,
     #[doc = "Disable."]
-    INCLK_DISABLED = 0x01,
+    InclkDisabled = 0x01,
 }
 impl KillClocks {
     #[inline(always)]
@@ -680,9 +680,9 @@ impl From<KillClocks> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LrcOk {
     #[doc = "No match."]
-    LRC_NOTOK = 0x0,
+    LrcNotok = 0x0,
     #[doc = "Match."]
-    LRC_OK = 0x01,
+    LrcOk = 0x01,
 }
 impl LrcOk {
     #[inline(always)]
@@ -711,9 +711,9 @@ impl From<LrcOk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PefIm {
     #[doc = "Enable."]
-    INT_ENABLED = 0x0,
+    IntEnabled = 0x0,
     #[doc = "Masked."]
-    INT_MASKED = 0x01,
+    IntMasked = 0x01,
 }
 impl PefIm {
     #[inline(always)]
@@ -742,9 +742,9 @@ impl From<PefIm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcvr11 {
     #[doc = "12 ETU operation."]
-    RCVR_12 = 0x0,
+    Rcvr12 = 0x0,
     #[doc = "11 ETU operation."]
-    RCVR_11 = 0x01,
+    Rcvr11 = 0x01,
 }
 impl Rcvr11 {
     #[inline(always)]
@@ -773,9 +773,9 @@ impl From<Rcvr11> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RdtIm {
     #[doc = "Enable."]
-    INT_ENABLED = 0x0,
+    IntEnabled = 0x0,
     #[doc = "Masked."]
-    INT_MASKED = 0x01,
+    IntMasked = 0x01,
 }
 impl RdtIm {
     #[inline(always)]
@@ -804,9 +804,9 @@ impl From<RdtIm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rdtf {
     #[doc = "Less than threshold."]
-    LESSTHAN_RXTHRESH = 0x0,
+    LessthanRxthresh = 0x0,
     #[doc = "Greater than or equal to threshold."]
-    GREATER_EQ_RXTHRESH = 0x01,
+    GreaterEqRxthresh = 0x01,
 }
 impl Rdtf {
     #[inline(always)]
@@ -835,9 +835,9 @@ impl From<Rdtf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rfo {
     #[doc = "No overrun error."]
-    NO_OVERRUN = 0x0,
+    NoOverrun = 0x0,
     #[doc = "Overrun error."]
-    OVERFLOW = 0x01,
+    Overflow = 0x01,
 }
 impl Rfo {
     #[inline(always)]
@@ -866,9 +866,9 @@ impl From<Rfo> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RfoIm {
     #[doc = "Enable."]
-    INT_ENABLED = 0x0,
+    IntEnabled = 0x0,
     #[doc = "Masked."]
-    INT_MASKED = 0x01,
+    IntMasked = 0x01,
 }
 impl RfoIm {
     #[inline(always)]
@@ -897,9 +897,9 @@ impl From<RfoIm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RnackIm {
     #[doc = "Enable."]
-    INT_ENABLED = 0x0,
+    IntEnabled = 0x0,
     #[doc = "Masked."]
-    INT_MASKED = 0x01,
+    IntMasked = 0x01,
 }
 impl RnackIm {
     #[inline(always)]
@@ -928,9 +928,9 @@ impl From<RnackIm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rte {
     #[doc = "Less than."]
-    LESSTHAN_NACKTHRESH = 0x0,
+    LessthanNackthresh = 0x0,
     #[doc = "Equal to."]
-    GREATER_EQ_NACKTHRESH = 0x01,
+    GreaterEqNackthresh = 0x01,
 }
 impl Rte {
     #[inline(always)]
@@ -959,7 +959,7 @@ impl From<Rte> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RxCnt {
     #[doc = "FIFO empty."]
-    FIFO_EMPTY = 0x0,
+    FifoEmpty = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -1003,9 +1003,9 @@ impl From<RxCnt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RxDataIm {
     #[doc = "Enable."]
-    INT_ENABLED = 0x0,
+    IntEnabled = 0x0,
     #[doc = "Masked."]
-    INT_MASKED = 0x01,
+    IntMasked = 0x01,
 }
 impl RxDataIm {
     #[inline(always)]
@@ -1034,9 +1034,9 @@ impl From<RxDataIm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Scsp {
     #[doc = "Logic 0."]
-    SCSP_LOGIC0 = 0x0,
+    ScspLogic0 = 0x0,
     #[doc = "Logic 1."]
-    SCSP_LOGIC1 = 0x01,
+    ScspLogic1 = 0x01,
 }
 impl Scsp {
     #[inline(always)]
@@ -1065,9 +1065,9 @@ impl From<Scsp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Spd {
     #[doc = "No."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Yes."]
-    POWERDOWN = 0x01,
+    Powerdown = 0x01,
 }
 impl Spd {
     #[inline(always)]
@@ -1096,9 +1096,9 @@ impl From<Spd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Spdes {
     #[doc = "Falling edge."]
-    FALLING_EDGE = 0x0,
+    FallingEdge = 0x0,
     #[doc = "Rising edge."]
-    RISING_EDGE = 0x01,
+    RisingEdge = 0x01,
 }
 impl Spdes {
     #[inline(always)]
@@ -1127,9 +1127,9 @@ impl From<Spdes> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Spdim {
     #[doc = "Enable."]
-    INT_ENABLED = 0x0,
+    IntEnabled = 0x0,
     #[doc = "Mask."]
-    INT_MASKED = 0x01,
+    IntMasked = 0x01,
 }
 impl Spdim {
     #[inline(always)]
@@ -1158,9 +1158,9 @@ impl From<Spdim> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Spdp {
     #[doc = "Logic low."]
-    LOGIC_LOW = 0x0,
+    LogicLow = 0x0,
     #[doc = "Logic high."]
-    LOGIC_HIGH = 0x01,
+    LogicHigh = 0x01,
 }
 impl Spdp {
     #[inline(always)]
@@ -1189,9 +1189,9 @@ impl From<Spdp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Srst {
     #[doc = "Assert."]
-    ASSERTED = 0x0,
+    Asserted = 0x0,
     #[doc = "Deassert."]
-    DE_ASSERTED = 0x01,
+    DeAsserted = 0x01,
 }
 impl Srst {
     #[inline(always)]
@@ -1220,9 +1220,9 @@ impl From<Srst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum StopEn {
     #[doc = "Disable."]
-    STOP_ALL_CLKS = 0x0,
+    StopAllClks = 0x0,
     #[doc = "Enable."]
-    ONLY_SCK_ON = 0x01,
+    OnlySckOn = 0x01,
 }
 impl StopEn {
     #[inline(always)]
@@ -1251,9 +1251,9 @@ impl From<StopEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwRst {
     #[doc = "Normal."]
-    NORMALOP = 0x0,
+    Normalop = 0x0,
     #[doc = "Reset."]
-    RESETHOLD = 0x01,
+    Resethold = 0x01,
 }
 impl SwRst {
     #[inline(always)]
@@ -1282,9 +1282,9 @@ impl From<SwRst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TcIm {
     #[doc = "Enable."]
-    INT_ENABLED = 0x0,
+    IntEnabled = 0x0,
     #[doc = "Masked."]
-    INT_MASKED = 0x01,
+    IntMasked = 0x01,
 }
 impl TcIm {
     #[inline(always)]
@@ -1313,9 +1313,9 @@ impl From<TcIm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcf {
     #[doc = "Pending or incomplete."]
-    TX_PENDING = 0x0,
+    TxPending = 0x0,
     #[doc = "Complete."]
-    TX_COMPLETE = 0x01,
+    TxComplete = 0x01,
 }
 impl Tcf {
     #[inline(always)]
@@ -1344,9 +1344,9 @@ impl From<Tcf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TdtIm {
     #[doc = "Enable."]
-    INT_ENABLED = 0x0,
+    IntEnabled = 0x0,
     #[doc = "Masked."]
-    INT_MASKED = 0x01,
+    IntMasked = 0x01,
 }
 impl TdtIm {
     #[inline(always)]
@@ -1375,9 +1375,9 @@ impl From<TdtIm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tdtf {
     #[doc = "Threshold exceeded or this field written to 0."]
-    LESSTHAN_TXTHRESH = 0x0,
+    LessthanTxthresh = 0x0,
     #[doc = "Threshold not exceeded."]
-    GREATER_EQ_TXTHRESH = 0x01,
+    GreaterEqTxthresh = 0x01,
 }
 impl Tdtf {
     #[inline(always)]
@@ -1406,9 +1406,9 @@ impl From<Tdtf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tfe {
     #[doc = "Not empty."]
-    FIFO_EMPTY = 0x0,
+    FifoEmpty = 0x0,
     #[doc = "Empty."]
-    FIFO_NOTEMPTY = 0x01,
+    FifoNotempty = 0x01,
 }
 impl Tfe {
     #[inline(always)]
@@ -1437,9 +1437,9 @@ impl From<Tfe> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TfeIm {
     #[doc = "Enable."]
-    INT_ENABLED = 0x0,
+    IntEnabled = 0x0,
     #[doc = "Masked."]
-    INT_MASKED = 0x01,
+    IntMasked = 0x01,
 }
 impl TfeIm {
     #[inline(always)]
@@ -1468,9 +1468,9 @@ impl From<TfeIm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tff {
     #[doc = "Not full."]
-    TX_FIFO_NOTFULL = 0x0,
+    TxFifoNotfull = 0x0,
     #[doc = "Full."]
-    TX_FIFO_FULL = 0x01,
+    TxFifoFull = 0x01,
 }
 impl Tff {
     #[inline(always)]
@@ -1499,9 +1499,9 @@ impl From<Tff> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TffIm {
     #[doc = "Enable."]
-    INT_ENABLED = 0x0,
+    IntEnabled = 0x0,
     #[doc = "Masked."]
-    INT_MASKED = 0x01,
+    IntMasked = 0x01,
 }
 impl TffIm {
     #[inline(always)]
@@ -1530,9 +1530,9 @@ impl From<TffIm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TnackIm {
     #[doc = "Enable."]
-    INT_ENABLED = 0x0,
+    IntEnabled = 0x0,
     #[doc = "Masked."]
-    INT_MASKED = 0x01,
+    IntMasked = 0x01,
 }
 impl TnackIm {
     #[inline(always)]
@@ -1561,9 +1561,9 @@ impl From<TnackIm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tnte {
     #[doc = "Threshold not reached."]
-    LESSTHAN_NACKTHRESH = 0x0,
+    LessthanNackthresh = 0x0,
     #[doc = "Threshold reached."]
-    GREATER_EQ_NACKTHRESH = 0x01,
+    GreaterEqNackthresh = 0x01,
 }
 impl Tnte {
     #[inline(always)]
@@ -1592,7 +1592,7 @@ impl From<Tnte> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TxCnt {
     #[doc = "FIFO empty."]
-    FIFO_EMPTY = 0x0,
+    FifoEmpty = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -1636,9 +1636,9 @@ impl From<TxCnt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Vccenp {
     #[doc = "Active high."]
-    ACTIVE_HIGH = 0x0,
+    ActiveHigh = 0x0,
     #[doc = "Active low."]
-    ACTIVE_LOW = 0x01,
+    ActiveLow = 0x01,
 }
 impl Vccenp {
     #[inline(always)]

@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum OstimerIntena {
     #[doc = "Interrupts blocked."]
-    INTERRUPTS_BLOCKED = 0x0,
+    InterruptsBlocked = 0x0,
     #[doc = "Interrupts enabled."]
-    INTERRUPTS_ENABLED = 0x01,
+    InterruptsEnabled = 0x01,
 }
 impl OstimerIntena {
     #[inline(always)]

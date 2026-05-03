@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Addins {
     #[doc = "The source MAC address is not modified by the MAC."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The MAC overwrites the source MAC address with the programmed MAC address according to ADDSEL."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Addins {
     #[inline(always)]
@@ -34,7 +34,7 @@ impl From<Addins> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Addsel {
     #[doc = "Node MAC address programmed on PADDR1/2 registers."]
-    VAL_MAC = 0x0,
+    ValMac = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -70,9 +70,9 @@ impl From<Addsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Babr {
     #[doc = "The corresponding interrupt source is masked."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The corresponding interrupt source is not masked."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Babr {
     #[inline(always)]
@@ -101,9 +101,9 @@ impl From<Babr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Babt {
     #[doc = "The corresponding interrupt source is masked."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The corresponding interrupt source is not masked."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Babt {
     #[inline(always)]
@@ -132,9 +132,9 @@ impl From<Babt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BcRej {
     #[doc = "Will not reject frames as described above."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Will reject frames as described above."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl BcRej {
     #[inline(always)]
@@ -163,9 +163,9 @@ impl From<BcRej> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Capture {
     #[doc = "No effect."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The current time is captured and can be read from the ATVR register."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Capture {
     #[inline(always)]
@@ -194,9 +194,9 @@ impl From<Capture> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cfen {
     #[doc = "MAC control frames with any opcode other than 0x0001 (pause frame) are accepted and forwarded to the client interface."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "MAC control frames with any opcode other than 0x0001 (pause frame) are silently discarded."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Cfen {
     #[inline(always)]
@@ -225,9 +225,9 @@ impl From<Cfen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dbgen {
     #[doc = "MAC continues operation in debug mode."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "MAC enters hardware freeze mode when the processor is in debug mode."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Dbgen {
     #[inline(always)]
@@ -256,9 +256,9 @@ impl From<Dbgen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dbswp {
     #[doc = "The buffer descriptor bytes are not swapped to support big-endian devices."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The buffer descriptor bytes are swapped to support little-endian devices."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Dbswp {
     #[inline(always)]
@@ -287,9 +287,9 @@ impl From<Dbswp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DisPre {
     #[doc = "Preamble enabled."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Preamble (32 ones) is not prepended to the MII management frame."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl DisPre {
     #[inline(always)]
@@ -318,9 +318,9 @@ impl From<DisPre> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Drt {
     #[doc = "Receive path operates independently of transmit (i.e., full-duplex mode). Can also be used to monitor transmit activity in half-duplex mode."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Disable reception of frames while transmitting. (Normally used for half-duplex mode.)."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Drt {
     #[inline(always)]
@@ -349,9 +349,9 @@ impl From<Drt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Eberr {
     #[doc = "The corresponding interrupt source is masked."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The corresponding interrupt source is not masked."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Eberr {
     #[inline(always)]
@@ -380,9 +380,9 @@ impl From<Eberr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum En {
     #[doc = "The timer stops at the current value."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The timer starts incrementing."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl En {
     #[inline(always)]
@@ -411,9 +411,9 @@ impl From<En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum En1588 {
     #[doc = "Legacy FEC buffer descriptors and functions enabled."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Enhanced frame time-stamping functions enabled. Has no effect within the MAC besides controlling the DMA control bit ena_1588."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl En1588 {
     #[inline(always)]
@@ -442,9 +442,9 @@ impl From<En1588> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Etheren {
     #[doc = "Reception immediately stops and transmission stops after a bad CRC is appended to any currently transmitted frame."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "MAC is enabled, and reception and transmission are possible."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Etheren {
     #[inline(always)]
@@ -473,9 +473,9 @@ impl From<Etheren> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fce {
     #[doc = "Disable flow control."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Enable flow control."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Fce {
     #[inline(always)]
@@ -504,9 +504,9 @@ impl From<Fce> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fden {
     #[doc = "Disable full-duplex."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Enable full-duplex."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Fden {
     #[inline(always)]
@@ -535,9 +535,9 @@ impl From<Fden> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gra {
     #[doc = "The corresponding interrupt source is masked."]
-    MASKED = 0x0,
+    Masked = 0x0,
     #[doc = "The corresponding interrupt source is not masked."]
-    UMASKED = 0x01,
+    Umasked = 0x01,
 }
 impl Gra {
     #[inline(always)]
@@ -566,9 +566,9 @@ impl From<Gra> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Grs {
     #[doc = "Receive not stopped."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Receive stopped."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Grs {
     #[inline(always)]
@@ -597,9 +597,9 @@ impl From<Grs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gts {
     #[doc = "Disable graceful transmit stop."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Enable graceful transmit stop."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Gts {
     #[inline(always)]
@@ -628,17 +628,17 @@ impl From<Gts> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Holdtime {
     #[doc = "1 internal module clock cycle."]
-    VAL_1 = 0x0,
+    Val1 = 0x0,
     #[doc = "2 internal module clock cycles."]
-    VAL2 = 0x01,
+    Val2 = 0x01,
     #[doc = "3 internal module clock cycles."]
-    VAL3 = 0x02,
+    Val3 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "8 internal module clock cycles."]
-    VAL8 = 0x07,
+    Val8 = 0x07,
 }
 impl Holdtime {
     #[inline(always)]
@@ -667,9 +667,9 @@ impl From<Holdtime> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ipchk {
     #[doc = "Checksum is not inserted."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "If an IP frame is transmitted, the checksum is inserted automatically. The IP header checksum field must be cleared. If a non-IP frame is transmitted the frame is not modified."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Ipchk {
     #[inline(always)]
@@ -698,9 +698,9 @@ impl From<Ipchk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ipdis {
     #[doc = "Frames with wrong IPv4 header checksum are not discarded."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "If an IPv4 frame is received with a mismatching header checksum, the frame is discarded. IPv6 has no header checksum and is not affected by this setting. Discarding is only available when the RX FIFO operates in store and forward mode (RSFL cleared)."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Ipdis {
     #[inline(always)]
@@ -729,9 +729,9 @@ impl From<Ipdis> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lc {
     #[doc = "The corresponding interrupt source is masked."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The corresponding interrupt source is not masked."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Lc {
     #[inline(always)]
@@ -760,9 +760,9 @@ impl From<Lc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Linedis {
     #[doc = "Frames with errors are not discarded."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Any frame received with a CRC, length, or PHY error is automatically discarded and not forwarded to the user application interface."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Linedis {
     #[inline(always)]
@@ -791,9 +791,9 @@ impl From<Linedis> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Loop {
     #[doc = "Loopback disabled."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Transmitted frames are looped back internal to the device and transmit MII output signals are not asserted. DRT must be cleared."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Loop {
     #[inline(always)]
@@ -822,9 +822,9 @@ impl From<Loop> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Magicen {
     #[doc = "Magic detection logic disabled."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The MAC core detects magic packets and asserts EIR\\[WAKEUP\\] when a frame is detected."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Magicen {
     #[inline(always)]
@@ -853,9 +853,9 @@ impl From<Magicen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MibClear {
     #[doc = "See note above."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "All statistics counters are reset to 0."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl MibClear {
     #[inline(always)]
@@ -884,9 +884,9 @@ impl From<MibClear> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MibDis {
     #[doc = "MIB logic is enabled."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "MIB logic is disabled. The MIB logic halts and does not update any MIB counters."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl MibDis {
     #[inline(always)]
@@ -915,9 +915,9 @@ impl From<MibDis> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MibIdle {
     #[doc = "The MIB block is updating MIB counters."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The MIB block is not currently updating any MIB counters."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl MibIdle {
     #[inline(always)]
@@ -946,9 +946,9 @@ impl From<MibIdle> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mii {
     #[doc = "The corresponding interrupt source is masked."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The corresponding interrupt source is not masked."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Mii {
     #[inline(always)]
@@ -977,9 +977,9 @@ impl From<Mii> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Nlc {
     #[doc = "The payload length check is disabled."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The core checks the frame's payload length with the frame length/type field. Errors are indicated in the EIR\\[PLR\\] field."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Nlc {
     #[inline(always)]
@@ -1008,9 +1008,9 @@ impl From<Nlc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Offen {
     #[doc = "Disable."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The timer can be reset to zero when the given offset time is reached (offset event). The field is cleared when the offset event is reached, so no further event occurs until the field is set again. The timer offset value must be set before setting this field."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Offen {
     #[inline(always)]
@@ -1039,9 +1039,9 @@ impl From<Offen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Offrst {
     #[doc = "The timer is not affected and no action occurs, besides clearing OFFEN, when the offset is reached."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "If OFFEN is set, the timer resets to zero when the offset setting is reached. The offset event does not cause a timer interrupt."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Offrst {
     #[inline(always)]
@@ -1070,9 +1070,9 @@ impl From<Offrst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Paden {
     #[doc = "No padding is removed on receive by the MAC."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Padding is removed from received frames."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Paden {
     #[inline(always)]
@@ -1101,9 +1101,9 @@ impl From<Paden> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Padrem {
     #[doc = "Padding not removed."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Any bytes following the IP payload section of the frame are removed from the frame."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Padrem {
     #[inline(always)]
@@ -1132,9 +1132,9 @@ impl From<Padrem> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Paufwd {
     #[doc = "Pause frames are terminated and discarded in the MAC."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Pause frames are forwarded to the user application."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Paufwd {
     #[inline(always)]
@@ -1163,9 +1163,9 @@ impl From<Paufwd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Peren {
     #[doc = "Disable."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "A period event interrupt can be generated (EIR\\[TS_TIMER\\]) and the event signal output is asserted when the timer wraps around according to the periodic setting ATPER. The timer period value must be set before setting this bit. Not all devices contain the event signal output. See the chip configuration details."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Peren {
     #[inline(always)]
@@ -1194,9 +1194,9 @@ impl From<Peren> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pinper {
     #[doc = "Disable."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Enable."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Pinper {
     #[inline(always)]
@@ -1225,9 +1225,9 @@ impl From<Pinper> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Plr {
     #[doc = "The corresponding interrupt source is masked."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The corresponding interrupt source is not masked."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Plr {
     #[inline(always)]
@@ -1256,9 +1256,9 @@ impl From<Plr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Prochk {
     #[doc = "Checksum not inserted."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "If an IP frame with a known protocol is transmitted, the checksum is inserted automatically into the frame. The checksum field must be cleared. The other frames are not modified."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Prochk {
     #[inline(always)]
@@ -1287,9 +1287,9 @@ impl From<Prochk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Prodis {
     #[doc = "Frames with wrong checksum are not discarded."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "If a TCP/IP, UDP/IP, or ICMP/IP frame is received that has a wrong TCP, UDP, or ICMP checksum, the frame is discarded. Discarding is only available when the RX FIFO operates in store and forward mode (RSFL cleared)."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Prodis {
     #[inline(always)]
@@ -1318,9 +1318,9 @@ impl From<Prodis> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Prom {
     #[doc = "Disabled."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Enabled."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Prom {
     #[inline(always)]
@@ -1349,9 +1349,9 @@ impl From<Prom> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RaccShift16 {
     #[doc = "Disabled."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Instructs the MAC to write two additional bytes in front of each frame received into the RX FIFO."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl RaccShift16 {
     #[inline(always)]
@@ -1380,9 +1380,9 @@ impl From<RaccShift16> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RcrCrcfwd {
     #[doc = "The CRC field of received frames is transmitted to the user application."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The CRC field is stripped from the frame."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl RcrCrcfwd {
     #[inline(always)]
@@ -1411,9 +1411,9 @@ impl From<RcrCrcfwd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rl {
     #[doc = "The corresponding interrupt source is masked."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The corresponding interrupt source is not masked."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Rl {
     #[inline(always)]
@@ -1442,9 +1442,9 @@ impl From<Rl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rmii10t {
     #[doc = "100-Mbit/s operation."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "10-Mbit/s operation."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Rmii10t {
     #[inline(always)]
@@ -1473,9 +1473,9 @@ impl From<Rmii10t> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RmiiMode {
     #[doc = "MAC configured for MII mode."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "MAC configured for RMII operation."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl RmiiMode {
     #[inline(always)]
@@ -1504,9 +1504,9 @@ impl From<RmiiMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rxb {
     #[doc = "The corresponding interrupt source is masked."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The corresponding interrupt source is not masked."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Rxb {
     #[inline(always)]
@@ -1535,9 +1535,9 @@ impl From<Rxb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rxf {
     #[doc = "The corresponding interrupt source is masked."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The corresponding interrupt source is not masked."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Rxf {
     #[inline(always)]
@@ -1566,9 +1566,9 @@ impl From<Rxf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rxic0Iccs {
     #[doc = "Use MII/GMII TX clocks."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Use ENET system clock."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Rxic0Iccs {
     #[inline(always)]
@@ -1597,9 +1597,9 @@ impl From<Rxic0Iccs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rxic0Icen {
     #[doc = "Disable Interrupt coalescing."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Enable Interrupt coalescing."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Rxic0Icen {
     #[inline(always)]
@@ -1628,9 +1628,9 @@ impl From<Rxic0Icen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Slave {
     #[doc = "The timer is active and all configuration fields in this register are relevant."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The internal timer is disabled and the externally provided timer value is used. All other fields, except CAPTURE, in this register have no effect. CAPTURE can still be used to capture the current timer value."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Slave {
     #[inline(always)]
@@ -1659,9 +1659,9 @@ impl From<Slave> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sleep {
     #[doc = "Normal operating mode."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Sleep mode."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Sleep {
     #[inline(always)]
@@ -1690,9 +1690,9 @@ impl From<Sleep> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Strfwd {
     #[doc = "Reset. The transmission start threshold is programmed in TFWR\\[TFWR\\]."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Enabled."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Strfwd {
     #[inline(always)]
@@ -1721,9 +1721,9 @@ impl From<Strfwd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TaccShift16 {
     #[doc = "Disabled."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Indicates to the transmit data FIFO that the written frames contain two additional octets before the frame data. This means the actual frame begins at bit 16 of the first word written into the FIFO. This function allows putting the frame payload on a 32-bit boundary in memory, as the 14-byte Ethernet header is extended to a 16-byte header."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl TaccShift16 {
     #[inline(always)]
@@ -1752,9 +1752,9 @@ impl From<TaccShift16> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TcrCrcfwd {
     #[doc = "TxBD\\[TC\\] controls whether the frame has a CRC from the application."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The transmitter does not append any CRC to transmitted frames, as it is expecting a frame with CRC from the application."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl TcrCrcfwd {
     #[inline(always)]
@@ -1783,9 +1783,9 @@ impl From<TcrCrcfwd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcsr0Tdre {
     #[doc = "DMA request is disabled."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "DMA request is enabled."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tcsr0Tdre {
     #[inline(always)]
@@ -1814,9 +1814,9 @@ impl From<Tcsr0Tdre> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcsr0Tf {
     #[doc = "Input Capture or Output Compare has not occurred."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Input Capture or Output Compare has occurred."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tcsr0Tf {
     #[inline(always)]
@@ -1845,9 +1845,9 @@ impl From<Tcsr0Tf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcsr0Tie {
     #[doc = "Interrupt is disabled."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Interrupt is enabled."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tcsr0Tie {
     #[inline(always)]
@@ -1876,33 +1876,33 @@ impl From<Tcsr0Tie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcsr0Tmode {
     #[doc = "Timer Channel is disabled."]
-    TMR_DIS = 0x0,
+    TmrDis = 0x0,
     #[doc = "Timer Channel is configured for Input Capture on rising edge."]
-    TMR_RE = 0x01,
+    TmrRe = 0x01,
     #[doc = "Timer Channel is configured for Input Capture on falling edge."]
-    TMR_FE = 0x02,
+    TmrFe = 0x02,
     #[doc = "Timer Channel is configured for Input Capture on both edges."]
-    TMR_BE = 0x03,
+    TmrBe = 0x03,
     #[doc = "Timer Channel is configured for Output Compare - software only."]
-    TMR_OUT = 0x04,
+    TmrOut = 0x04,
     #[doc = "Timer Channel is configured for Output Compare - toggle output on compare."]
-    TMR_TOGGLE = 0x05,
+    TmrToggle = 0x05,
     #[doc = "Timer Channel is configured for Output Compare - clear output on compare."]
-    TMR_CLR = 0x06,
+    TmrClr = 0x06,
     #[doc = "Timer Channel is configured for Output Compare - set output on compare."]
-    TMR_SET_OUT = 0x07,
+    TmrSetOut = 0x07,
     _RESERVED_8 = 0x08,
     #[doc = "Timer Channel is configured for Output Compare - set output on compare, clear output on overflow."]
-    TMR_CLR_SET1 = 0x09,
+    TmrClrSet1 = 0x09,
     #[doc = "Timer Channel is configured for Output Compare - clear output on compare, set output on overflow."]
-    TMR_CLR_SET = 0x0a,
+    TmrClrSet = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
     _RESERVED_d = 0x0d,
     #[doc = "Timer Channel is configured for Output Compare - pulse output low on compare for 1 to 32 1588-clock cycles as specified by TPWC."]
-    TMR_OUT_CMP_LOW = 0x0e,
+    TmrOutCmpLow = 0x0e,
     #[doc = "Timer Channel is configured for Output Compare - pulse output high on compare for 1 to 32 1588-clock cycles as specified by TPWC."]
-    TMR_OUT_CMP_HIGH = 0x0f,
+    TmrOutCmpHigh = 0x0f,
 }
 impl Tcsr0Tmode {
     #[inline(always)]
@@ -1931,13 +1931,13 @@ impl From<Tcsr0Tmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcsr0Tpwc {
     #[doc = "Pulse width is one 1588-clock cycle."]
-    VALW1 = 0x0,
+    Valw1 = 0x0,
     #[doc = "Pulse width is two 1588-clock cycles."]
-    VALW2 = 0x01,
+    Valw2 = 0x01,
     #[doc = "Pulse width is three 1588-clock cycles."]
-    VALW3 = 0x02,
+    Valw3 = 0x02,
     #[doc = "Pulse width is four 1588-clock cycles."]
-    VALW4 = 0x03,
+    Valw4 = 0x03,
     _RESERVED_4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
@@ -1966,7 +1966,7 @@ pub enum Tcsr0Tpwc {
     _RESERVED_1d = 0x1d,
     _RESERVED_1e = 0x1e,
     #[doc = "Pulse width is 32 1588-clock cycles."]
-    VALW32 = 0x1f,
+    Valw32 = 0x1f,
 }
 impl Tcsr0Tpwc {
     #[inline(always)]
@@ -1995,9 +1995,9 @@ impl From<Tcsr0Tpwc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcsr1Tdre {
     #[doc = "DMA request is disabled."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "DMA request is enabled."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tcsr1Tdre {
     #[inline(always)]
@@ -2026,9 +2026,9 @@ impl From<Tcsr1Tdre> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcsr1Tf {
     #[doc = "Input Capture or Output Compare has not occurred."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Input Capture or Output Compare has occurred."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tcsr1Tf {
     #[inline(always)]
@@ -2057,9 +2057,9 @@ impl From<Tcsr1Tf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcsr1Tie {
     #[doc = "Interrupt is disabled."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Interrupt is enabled."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tcsr1Tie {
     #[inline(always)]
@@ -2088,33 +2088,33 @@ impl From<Tcsr1Tie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcsr1Tmode {
     #[doc = "Timer Channel is disabled."]
-    TMR_DIS = 0x0,
+    TmrDis = 0x0,
     #[doc = "Timer Channel is configured for Input Capture on rising edge."]
-    TMR_RE = 0x01,
+    TmrRe = 0x01,
     #[doc = "Timer Channel is configured for Input Capture on falling edge."]
-    TMR_FE = 0x02,
+    TmrFe = 0x02,
     #[doc = "Timer Channel is configured for Input Capture on both edges."]
-    TMR_BE = 0x03,
+    TmrBe = 0x03,
     #[doc = "Timer Channel is configured for Output Compare - software only."]
-    TMR_OUT = 0x04,
+    TmrOut = 0x04,
     #[doc = "Timer Channel is configured for Output Compare - toggle output on compare."]
-    TMR_TOGGLE = 0x05,
+    TmrToggle = 0x05,
     #[doc = "Timer Channel is configured for Output Compare - clear output on compare."]
-    TMR_CLR = 0x06,
+    TmrClr = 0x06,
     #[doc = "Timer Channel is configured for Output Compare - set output on compare."]
-    TMR_SET_OUT = 0x07,
+    TmrSetOut = 0x07,
     _RESERVED_8 = 0x08,
     #[doc = "Timer Channel is configured for Output Compare - set output on compare, clear output on overflow."]
-    TMR_CLR_SET1 = 0x09,
+    TmrClrSet1 = 0x09,
     #[doc = "Timer Channel is configured for Output Compare - clear output on compare, set output on overflow."]
-    TMR_CLR_SET = 0x0a,
+    TmrClrSet = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
     _RESERVED_d = 0x0d,
     #[doc = "Timer Channel is configured for Output Compare - pulse output low on compare for 1 to 32 1588-clock cycles as specified by TPWC."]
-    TMR_OUT_CMP_LOW = 0x0e,
+    TmrOutCmpLow = 0x0e,
     #[doc = "Timer Channel is configured for Output Compare - pulse output high on compare for 1 to 32 1588-clock cycles as specified by TPWC."]
-    TMR_OUT_CMP_HIGH = 0x0f,
+    TmrOutCmpHigh = 0x0f,
 }
 impl Tcsr1Tmode {
     #[inline(always)]
@@ -2143,13 +2143,13 @@ impl From<Tcsr1Tmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcsr1Tpwc {
     #[doc = "Pulse width is one 1588-clock cycle."]
-    VALW1 = 0x0,
+    Valw1 = 0x0,
     #[doc = "Pulse width is two 1588-clock cycles."]
-    VALW2 = 0x01,
+    Valw2 = 0x01,
     #[doc = "Pulse width is three 1588-clock cycles."]
-    VALW3 = 0x02,
+    Valw3 = 0x02,
     #[doc = "Pulse width is four 1588-clock cycles."]
-    VALW4 = 0x03,
+    Valw4 = 0x03,
     _RESERVED_4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
@@ -2178,7 +2178,7 @@ pub enum Tcsr1Tpwc {
     _RESERVED_1d = 0x1d,
     _RESERVED_1e = 0x1e,
     #[doc = "Pulse width is 32 1588-clock cycles."]
-    VALW32 = 0x1f,
+    Valw32 = 0x1f,
 }
 impl Tcsr1Tpwc {
     #[inline(always)]
@@ -2207,9 +2207,9 @@ impl From<Tcsr1Tpwc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcsr2Tdre {
     #[doc = "DMA request is disabled."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "DMA request is enabled."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tcsr2Tdre {
     #[inline(always)]
@@ -2238,9 +2238,9 @@ impl From<Tcsr2Tdre> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcsr2Tf {
     #[doc = "Input Capture or Output Compare has not occurred."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Input Capture or Output Compare has occurred."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tcsr2Tf {
     #[inline(always)]
@@ -2269,9 +2269,9 @@ impl From<Tcsr2Tf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcsr2Tie {
     #[doc = "Interrupt is disabled."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Interrupt is enabled."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tcsr2Tie {
     #[inline(always)]
@@ -2300,33 +2300,33 @@ impl From<Tcsr2Tie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcsr2Tmode {
     #[doc = "Timer Channel is disabled."]
-    TMR_DIS = 0x0,
+    TmrDis = 0x0,
     #[doc = "Timer Channel is configured for Input Capture on rising edge."]
-    TMR_RE = 0x01,
+    TmrRe = 0x01,
     #[doc = "Timer Channel is configured for Input Capture on falling edge."]
-    TMR_FE = 0x02,
+    TmrFe = 0x02,
     #[doc = "Timer Channel is configured for Input Capture on both edges."]
-    TMR_BE = 0x03,
+    TmrBe = 0x03,
     #[doc = "Timer Channel is configured for Output Compare - software only."]
-    TMR_OUT = 0x04,
+    TmrOut = 0x04,
     #[doc = "Timer Channel is configured for Output Compare - toggle output on compare."]
-    TMR_TOGGLE = 0x05,
+    TmrToggle = 0x05,
     #[doc = "Timer Channel is configured for Output Compare - clear output on compare."]
-    TMR_CLR = 0x06,
+    TmrClr = 0x06,
     #[doc = "Timer Channel is configured for Output Compare - set output on compare."]
-    TMR_SET_OUT = 0x07,
+    TmrSetOut = 0x07,
     _RESERVED_8 = 0x08,
     #[doc = "Timer Channel is configured for Output Compare - set output on compare, clear output on overflow."]
-    TMR_CLR_SET1 = 0x09,
+    TmrClrSet1 = 0x09,
     #[doc = "Timer Channel is configured for Output Compare - clear output on compare, set output on overflow."]
-    TMR_CLR_SET = 0x0a,
+    TmrClrSet = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
     _RESERVED_d = 0x0d,
     #[doc = "Timer Channel is configured for Output Compare - pulse output low on compare for 1 to 32 1588-clock cycles as specified by TPWC."]
-    TMR_OUT_CMP_LOW = 0x0e,
+    TmrOutCmpLow = 0x0e,
     #[doc = "Timer Channel is configured for Output Compare - pulse output high on compare for 1 to 32 1588-clock cycles as specified by TPWC."]
-    TMR_OUT_CMP_HIGH = 0x0f,
+    TmrOutCmpHigh = 0x0f,
 }
 impl Tcsr2Tmode {
     #[inline(always)]
@@ -2355,13 +2355,13 @@ impl From<Tcsr2Tmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcsr2Tpwc {
     #[doc = "Pulse width is one 1588-clock cycle."]
-    VALW1 = 0x0,
+    Valw1 = 0x0,
     #[doc = "Pulse width is two 1588-clock cycles."]
-    VALW2 = 0x01,
+    Valw2 = 0x01,
     #[doc = "Pulse width is three 1588-clock cycles."]
-    VALW3 = 0x02,
+    Valw3 = 0x02,
     #[doc = "Pulse width is four 1588-clock cycles."]
-    VALW4 = 0x03,
+    Valw4 = 0x03,
     _RESERVED_4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
@@ -2390,7 +2390,7 @@ pub enum Tcsr2Tpwc {
     _RESERVED_1d = 0x1d,
     _RESERVED_1e = 0x1e,
     #[doc = "Pulse width is 32 1588-clock cycles."]
-    VALW32 = 0x1f,
+    Valw32 = 0x1f,
 }
 impl Tcsr2Tpwc {
     #[inline(always)]
@@ -2419,9 +2419,9 @@ impl From<Tcsr2Tpwc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcsr3Tdre {
     #[doc = "DMA request is disabled."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "DMA request is enabled."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tcsr3Tdre {
     #[inline(always)]
@@ -2450,9 +2450,9 @@ impl From<Tcsr3Tdre> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcsr3Tf {
     #[doc = "Input Capture or Output Compare has not occurred."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Input Capture or Output Compare has occurred."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tcsr3Tf {
     #[inline(always)]
@@ -2481,9 +2481,9 @@ impl From<Tcsr3Tf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcsr3Tie {
     #[doc = "Interrupt is disabled."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Interrupt is enabled."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tcsr3Tie {
     #[inline(always)]
@@ -2512,33 +2512,33 @@ impl From<Tcsr3Tie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcsr3Tmode {
     #[doc = "Timer Channel is disabled."]
-    TMR_DIS = 0x0,
+    TmrDis = 0x0,
     #[doc = "Timer Channel is configured for Input Capture on rising edge."]
-    TMR_RE = 0x01,
+    TmrRe = 0x01,
     #[doc = "Timer Channel is configured for Input Capture on falling edge."]
-    TMR_FE = 0x02,
+    TmrFe = 0x02,
     #[doc = "Timer Channel is configured for Input Capture on both edges."]
-    TMR_BE = 0x03,
+    TmrBe = 0x03,
     #[doc = "Timer Channel is configured for Output Compare - software only."]
-    TMR_OUT = 0x04,
+    TmrOut = 0x04,
     #[doc = "Timer Channel is configured for Output Compare - toggle output on compare."]
-    TMR_TOGGLE = 0x05,
+    TmrToggle = 0x05,
     #[doc = "Timer Channel is configured for Output Compare - clear output on compare."]
-    TMR_CLR = 0x06,
+    TmrClr = 0x06,
     #[doc = "Timer Channel is configured for Output Compare - set output on compare."]
-    TMR_SET_OUT = 0x07,
+    TmrSetOut = 0x07,
     _RESERVED_8 = 0x08,
     #[doc = "Timer Channel is configured for Output Compare - set output on compare, clear output on overflow."]
-    TMR_CLR_SET1 = 0x09,
+    TmrClrSet1 = 0x09,
     #[doc = "Timer Channel is configured for Output Compare - clear output on compare, set output on overflow."]
-    TMR_CLR_SET = 0x0a,
+    TmrClrSet = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
     _RESERVED_d = 0x0d,
     #[doc = "Timer Channel is configured for Output Compare - pulse output low on compare for 1 to 32 1588-clock cycles as specified by TPWC."]
-    TMR_OUT_CMP_LOW = 0x0e,
+    TmrOutCmpLow = 0x0e,
     #[doc = "Timer Channel is configured for Output Compare - pulse output high on compare for 1 to 32 1588-clock cycles as specified by TPWC."]
-    TMR_OUT_CMP_HIGH = 0x0f,
+    TmrOutCmpHigh = 0x0f,
 }
 impl Tcsr3Tmode {
     #[inline(always)]
@@ -2567,13 +2567,13 @@ impl From<Tcsr3Tmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcsr3Tpwc {
     #[doc = "Pulse width is one 1588-clock cycle."]
-    VALW1 = 0x0,
+    Valw1 = 0x0,
     #[doc = "Pulse width is two 1588-clock cycles."]
-    VALW2 = 0x01,
+    Valw2 = 0x01,
     #[doc = "Pulse width is three 1588-clock cycles."]
-    VALW3 = 0x02,
+    Valw3 = 0x02,
     #[doc = "Pulse width is four 1588-clock cycles."]
-    VALW4 = 0x03,
+    Valw4 = 0x03,
     _RESERVED_4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
@@ -2602,7 +2602,7 @@ pub enum Tcsr3Tpwc {
     _RESERVED_1d = 0x1d,
     _RESERVED_1e = 0x1e,
     #[doc = "Pulse width is 32 1588-clock cycles."]
-    VALW32 = 0x1f,
+    Valw32 = 0x1f,
 }
 impl Tcsr3Tpwc {
     #[inline(always)]
@@ -2631,9 +2631,9 @@ impl From<Tcsr3Tpwc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tf0 {
     #[doc = "Timer Flag for Channel 0 is clear."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Timer Flag for Channel 0 is set."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tf0 {
     #[inline(always)]
@@ -2662,9 +2662,9 @@ impl From<Tf0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tf1 {
     #[doc = "Timer Flag for Channel 1 is clear."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Timer Flag for Channel 1 is set."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tf1 {
     #[inline(always)]
@@ -2693,9 +2693,9 @@ impl From<Tf1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tf2 {
     #[doc = "Timer Flag for Channel 2 is clear."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Timer Flag for Channel 2 is set."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tf2 {
     #[inline(always)]
@@ -2724,9 +2724,9 @@ impl From<Tf2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tf3 {
     #[doc = "Timer Flag for Channel 3 is clear."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Timer Flag for Channel 3 is set."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tf3 {
     #[inline(always)]
@@ -2755,9 +2755,9 @@ impl From<Tf3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TfcPause {
     #[doc = "No PAUSE frame transmitted."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The MAC stops transmission of data frames after the current transmission is complete."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl TfcPause {
     #[inline(always)]
@@ -2786,13 +2786,13 @@ impl From<TfcPause> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tfwr {
     #[doc = "64 bytes written."]
-    VAL64_0 = 0x0,
+    Val640 = 0x0,
     #[doc = "64 bytes written."]
-    VAL64_1 = 0x01,
+    Val641 = 0x01,
     #[doc = "128 bytes written."]
-    VAL128 = 0x02,
+    Val128 = 0x02,
     #[doc = "192 bytes written."]
-    VAL192 = 0x03,
+    Val192 = 0x03,
     _RESERVED_4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
@@ -2821,7 +2821,7 @@ pub enum Tfwr {
     _RESERVED_1d = 0x1d,
     _RESERVED_1e = 0x1e,
     #[doc = "1984 bytes written."]
-    VAL1984 = 0x1f,
+    Val1984 = 0x1f,
     _RESERVED_20 = 0x20,
     _RESERVED_21 = 0x21,
     _RESERVED_22 = 0x22,
@@ -2882,9 +2882,9 @@ impl From<Tfwr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TsAvail {
     #[doc = "The corresponding interrupt source is masked."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The corresponding interrupt source is not masked."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl TsAvail {
     #[inline(always)]
@@ -2913,9 +2913,9 @@ impl From<TsAvail> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TsTimer {
     #[doc = "The corresponding interrupt source is masked."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The corresponding interrupt source is not masked."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl TsTimer {
     #[inline(always)]
@@ -2944,9 +2944,9 @@ impl From<TsTimer> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Txb {
     #[doc = "The corresponding interrupt source is masked."]
-    MASKED = 0x0,
+    Masked = 0x0,
     #[doc = "The corresponding interrupt source is not masked."]
-    UNMASKED = 0x01,
+    Unmasked = 0x01,
 }
 impl Txb {
     #[inline(always)]
@@ -2975,9 +2975,9 @@ impl From<Txb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Txf {
     #[doc = "The corresponding interrupt source is masked."]
-    MASKED = 0x0,
+    Masked = 0x0,
     #[doc = "The corresponding interrupt source is not masked."]
-    UNMASKED = 0x01,
+    Unmasked = 0x01,
 }
 impl Txf {
     #[inline(always)]
@@ -3006,9 +3006,9 @@ impl From<Txf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Txic0Iccs {
     #[doc = "Use MII/GMII TX clocks."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Use ENET system clock."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Txic0Iccs {
     #[inline(always)]
@@ -3037,9 +3037,9 @@ impl From<Txic0Iccs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Txic0Icen {
     #[doc = "Disable Interrupt coalescing."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Enable Interrupt coalescing."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Txic0Icen {
     #[inline(always)]
@@ -3068,9 +3068,9 @@ impl From<Txic0Icen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Un {
     #[doc = "The corresponding interrupt source is masked."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The corresponding interrupt source is not masked."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Un {
     #[inline(always)]
@@ -3099,9 +3099,9 @@ impl From<Un> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wakeup {
     #[doc = "The corresponding interrupt source is masked."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "The corresponding interrupt source is not masked."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Wakeup {
     #[inline(always)]

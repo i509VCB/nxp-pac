@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CtrlRMeasureInProgress {
     #[doc = "Complete."]
-    CYCLE_DONE = 0x0,
+    CycleDone = 0x0,
     #[doc = "In progress."]
-    IN_PROGRESS = 0x01,
+    InProgress = 0x01,
 }
 impl CtrlRMeasureInProgress {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<CtrlRMeasureInProgress> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CtrlWMeasureInProgress {
     #[doc = "Terminates measurement."]
-    FORCE_TERMINATE = 0x0,
+    ForceTerminate = 0x0,
     #[doc = "Initiates measurement."]
-    INITIATE_A_FREQME_CYCLE = 0x01,
+    InitiateAFreqmeCycle = 0x01,
 }
 impl CtrlWMeasureInProgress {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<CtrlWMeasureInProgress> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CtrlWPulseMode {
     #[doc = "Frequency Measurement mode."]
-    FREQ_ME_MODE = 0x0,
+    FreqMeMode = 0x0,
     #[doc = "Pulse Width Measurement mode."]
-    PULSE_ME_MODE = 0x01,
+    PulseMeMode = 0x01,
 }
 impl CtrlWPulseMode {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<CtrlWPulseMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CtrlWPulsePol {
     #[doc = "High period."]
-    HIGH_PERIOD = 0x0,
+    HighPeriod = 0x0,
     #[doc = "Low period."]
-    LOW_PERIOD = 0x01,
+    LowPeriod = 0x01,
 }
 impl CtrlWPulsePol {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<CtrlWPulsePol> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CtrlstatMeasureInProgress {
     #[doc = "Not in progress."]
-    IDLE = 0x0,
+    Idle = 0x0,
     #[doc = "In progress."]
-    ONGOING = 0x01,
+    Ongoing = 0x01,
 }
 impl CtrlstatMeasureInProgress {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<CtrlstatMeasureInProgress> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CtrlstatPulseMode {
     #[doc = "Frequency Measurement mode."]
-    FREQ = 0x0,
+    Freq = 0x0,
     #[doc = "Pulse Width Measurement mode."]
-    PULSE = 0x01,
+    Pulse = 0x01,
 }
 impl CtrlstatPulseMode {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<CtrlstatPulseMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CtrlstatPulsePol {
     #[doc = "High period."]
-    HIGH = 0x0,
+    High = 0x0,
     #[doc = "Low period."]
-    LOW = 0x01,
+    Low = 0x01,
 }
 impl CtrlstatPulsePol {
     #[inline(always)]
@@ -220,9 +220,9 @@ impl From<CtrlstatPulsePol> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum GtMaxStat {
     #[doc = "Less than MAX\\[MAX_VALUE\\]."]
-    IN_RANGE = 0x0,
+    InRange = 0x0,
     #[doc = "Greater than MAX\\[MAX_VALUE\\]."]
-    GT_MAX = 0x01,
+    GtMax = 0x01,
 }
 impl GtMaxStat {
     #[inline(always)]
@@ -251,9 +251,9 @@ impl From<GtMaxStat> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LtMinStat {
     #[doc = "Greater than MIN\\[MIN_VALUE\\]."]
-    IN_RANGE = 0x0,
+    InRange = 0x0,
     #[doc = "Less than MIN\\[MIN_VALUE\\]."]
-    LT_MIN = 0x01,
+    LtMin = 0x01,
 }
 impl LtMinStat {
     #[inline(always)]

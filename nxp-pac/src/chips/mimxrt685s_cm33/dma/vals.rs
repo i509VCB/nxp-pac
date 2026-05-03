@@ -3,9 +3,9 @@
 pub struct Abort6333(u32);
 impl Abort6333 {
     #[doc = "No effect."]
-    pub const NO_EFFECT: Self = Self(0x0);
+    pub const NoEffect: Self = Self(0x0);
     #[doc = "Aborts DMA operations on the relevant channel."]
-    pub const EFFECT: Self = Self(0x01);
+    pub const Effect: Self = Self(0x01);
 }
 impl Abort6333 {
     pub const fn from_bits(val: u32) -> Abort6333 {
@@ -18,8 +18,8 @@ impl Abort6333 {
 impl core::fmt::Debug for Abort6333 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("NO_EFFECT"),
-            0x01 => f.write_str("EFFECT"),
+            0x0 => f.write_str("NoEffect"),
+            0x01 => f.write_str("Effect"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -28,8 +28,8 @@ impl core::fmt::Debug for Abort6333 {
 impl defmt::Format for Abort6333 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "NO_EFFECT"),
-            0x01 => defmt::write!(f, "EFFECT"),
+            0x0 => defmt::write!(f, "NoEffect"),
+            0x01 => defmt::write!(f, "Effect"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -51,9 +51,9 @@ impl From<Abort6333> for u32 {
 pub struct Abortctrl(u32);
 impl Abortctrl {
     #[doc = "No effect."]
-    pub const NO_EFFECT: Self = Self(0x0);
+    pub const NoEffect: Self = Self(0x0);
     #[doc = "Aborts DMA operations on channel 0."]
-    pub const EFFECT: Self = Self(0x01);
+    pub const Effect: Self = Self(0x01);
 }
 impl Abortctrl {
     pub const fn from_bits(val: u32) -> Abortctrl {
@@ -66,8 +66,8 @@ impl Abortctrl {
 impl core::fmt::Debug for Abortctrl {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("NO_EFFECT"),
-            0x01 => f.write_str("EFFECT"),
+            0x0 => f.write_str("NoEffect"),
+            0x01 => f.write_str("Effect"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -76,8 +76,8 @@ impl core::fmt::Debug for Abortctrl {
 impl defmt::Format for Abortctrl {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "NO_EFFECT"),
-            0x01 => defmt::write!(f, "EFFECT"),
+            0x0 => defmt::write!(f, "NoEffect"),
+            0x01 => defmt::write!(f, "Effect"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -99,9 +99,9 @@ impl From<Abortctrl> for u32 {
 pub struct Act(u32);
 impl Act {
     #[doc = "DMAchannel 0 is not active."]
-    pub const NOT_ACTIVE: Self = Self(0x0);
+    pub const NotActive: Self = Self(0x0);
     #[doc = "DMAchannel 0 is active."]
-    pub const ACTIVE: Self = Self(0x01);
+    pub const Active: Self = Self(0x01);
 }
 impl Act {
     pub const fn from_bits(val: u32) -> Act {
@@ -114,8 +114,8 @@ impl Act {
 impl core::fmt::Debug for Act {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("NOT_ACTIVE"),
-            0x01 => f.write_str("ACTIVE"),
+            0x0 => f.write_str("NotActive"),
+            0x01 => f.write_str("Active"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -124,8 +124,8 @@ impl core::fmt::Debug for Act {
 impl defmt::Format for Act {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "NOT_ACTIVE"),
-            0x01 => defmt::write!(f, "ACTIVE"),
+            0x0 => defmt::write!(f, "NotActive"),
+            0x01 => defmt::write!(f, "Active"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -147,9 +147,9 @@ impl From<Act> for u32 {
 pub struct Active6333(u32);
 impl Active6333 {
     #[doc = "The relevant DMA channel is not active."]
-    pub const NOT_ACTIVE: Self = Self(0x0);
+    pub const NotActive: Self = Self(0x0);
     #[doc = "The relevant DMA channel is active."]
-    pub const ACTIVE: Self = Self(0x01);
+    pub const Active: Self = Self(0x01);
 }
 impl Active6333 {
     pub const fn from_bits(val: u32) -> Active6333 {
@@ -162,8 +162,8 @@ impl Active6333 {
 impl core::fmt::Debug for Active6333 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("NOT_ACTIVE"),
-            0x01 => f.write_str("ACTIVE"),
+            0x0 => f.write_str("NotActive"),
+            0x01 => f.write_str("Active"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -172,8 +172,8 @@ impl core::fmt::Debug for Active6333 {
 impl defmt::Format for Active6333 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "NOT_ACTIVE"),
-            0x01 => defmt::write!(f, "ACTIVE"),
+            0x0 => defmt::write!(f, "NotActive"),
+            0x01 => defmt::write!(f, "Active"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -195,9 +195,9 @@ impl From<Active6333> for u32 {
 pub struct Bsy(u32);
 impl Bsy {
     #[doc = "DMAchannel 0 is not busy."]
-    pub const NOT_BUSY: Self = Self(0x0);
+    pub const NotBusy: Self = Self(0x0);
     #[doc = "DMAchannel 0 is busy."]
-    pub const BUSY: Self = Self(0x01);
+    pub const Busy: Self = Self(0x01);
 }
 impl Bsy {
     pub const fn from_bits(val: u32) -> Bsy {
@@ -210,8 +210,8 @@ impl Bsy {
 impl core::fmt::Debug for Bsy {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("NOT_BUSY"),
-            0x01 => f.write_str("BUSY"),
+            0x0 => f.write_str("NotBusy"),
+            0x01 => f.write_str("Busy"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -220,8 +220,8 @@ impl core::fmt::Debug for Bsy {
 impl defmt::Format for Bsy {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "NOT_BUSY"),
-            0x01 => defmt::write!(f, "BUSY"),
+            0x0 => defmt::write!(f, "NotBusy"),
+            0x01 => defmt::write!(f, "Busy"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -243,9 +243,9 @@ impl From<Bsy> for u32 {
 pub struct Busy6333(u32);
 impl Busy6333 {
     #[doc = "The relevant DMA channel is not busy."]
-    pub const NOT_BUSY: Self = Self(0x0);
+    pub const NotBusy: Self = Self(0x0);
     #[doc = "The relevant DMA channel is busy."]
-    pub const BUSY: Self = Self(0x01);
+    pub const Busy: Self = Self(0x01);
 }
 impl Busy6333 {
     pub const fn from_bits(val: u32) -> Busy6333 {
@@ -258,8 +258,8 @@ impl Busy6333 {
 impl core::fmt::Debug for Busy6333 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("NOT_BUSY"),
-            0x01 => f.write_str("BUSY"),
+            0x0 => f.write_str("NotBusy"),
+            0x01 => f.write_str("Busy"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -268,8 +268,8 @@ impl core::fmt::Debug for Busy6333 {
 impl defmt::Format for Busy6333 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "NOT_BUSY"),
-            0x01 => defmt::write!(f, "BUSY"),
+            0x0 => defmt::write!(f, "NotBusy"),
+            0x01 => defmt::write!(f, "Busy"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -291,13 +291,13 @@ impl From<Busy6333> for u32 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dstinc {
     #[doc = "No increment. The destination address is not incremented for each transfer. This is the usual case when the destination is a peripheral device."]
-    NO_INCREMENT = 0x0,
+    NoIncrement = 0x0,
     #[doc = "1 x width. The destination address is incremented by the amount specified by Width for each transfer. This is the usual case when the destination is memory."]
-    WIDTH_X_1 = 0x01,
+    WidthX1 = 0x01,
     #[doc = "2 x width. The destination address is incremented by 2 times the amount specified by Width for each transfer."]
-    WIDTH_X_2 = 0x02,
+    WidthX2 = 0x02,
     #[doc = "4 x width. The destination address is incremented by 4 times the amount specified by Width for each transfer."]
-    WIDTH_X_4 = 0x03,
+    WidthX4 = 0x03,
 }
 impl Dstinc {
     #[inline(always)]
@@ -326,9 +326,9 @@ impl From<Dstinc> for u8 {
 pub struct Ena(u32);
 impl Ena {
     #[doc = "DMAchannel 0 is disabled."]
-    pub const DISABLED: Self = Self(0x0);
+    pub const Disabled: Self = Self(0x0);
     #[doc = "DMAchannel 0 is enabled."]
-    pub const ENABLED: Self = Self(0x01);
+    pub const Enabled: Self = Self(0x01);
 }
 impl Ena {
     pub const fn from_bits(val: u32) -> Ena {
@@ -341,8 +341,8 @@ impl Ena {
 impl core::fmt::Debug for Ena {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("DISABLED"),
-            0x01 => f.write_str("ENABLED"),
+            0x0 => f.write_str("Disabled"),
+            0x01 => f.write_str("Enabled"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -351,8 +351,8 @@ impl core::fmt::Debug for Ena {
 impl defmt::Format for Ena {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "DISABLED"),
-            0x01 => defmt::write!(f, "ENABLED"),
+            0x0 => defmt::write!(f, "Disabled"),
+            0x01 => defmt::write!(f, "Enabled"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -374,9 +374,9 @@ impl From<Ena> for u32 {
 pub struct Enable6333(u32);
 impl Enable6333 {
     #[doc = "The relevant DMA channel is disabled."]
-    pub const DISABLED: Self = Self(0x0);
+    pub const Disabled: Self = Self(0x0);
     #[doc = "The relevant DMA channel is enabled."]
-    pub const ENABLED: Self = Self(0x01);
+    pub const Enabled: Self = Self(0x01);
 }
 impl Enable6333 {
     pub const fn from_bits(val: u32) -> Enable6333 {
@@ -389,8 +389,8 @@ impl Enable6333 {
 impl core::fmt::Debug for Enable6333 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("DISABLED"),
-            0x01 => f.write_str("ENABLED"),
+            0x0 => f.write_str("Disabled"),
+            0x01 => f.write_str("Enabled"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -399,8 +399,8 @@ impl core::fmt::Debug for Enable6333 {
 impl defmt::Format for Enable6333 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "DISABLED"),
-            0x01 => defmt::write!(f, "ENABLED"),
+            0x0 => defmt::write!(f, "Disabled"),
+            0x01 => defmt::write!(f, "Enabled"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -422,9 +422,9 @@ impl From<Enable6333> for u32 {
 pub struct Err(u32);
 impl Err {
     #[doc = "The Error Interrupt is not active for DMA channel 0."]
-    pub const NOT_ACTIVE: Self = Self(0x0);
+    pub const NotActive: Self = Self(0x0);
     #[doc = "The Error Interrupt is pending for DMA channel 0."]
-    pub const PENDING: Self = Self(0x01);
+    pub const Pending: Self = Self(0x01);
 }
 impl Err {
     pub const fn from_bits(val: u32) -> Err {
@@ -437,8 +437,8 @@ impl Err {
 impl core::fmt::Debug for Err {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("NOT_ACTIVE"),
-            0x01 => f.write_str("PENDING"),
+            0x0 => f.write_str("NotActive"),
+            0x01 => f.write_str("Pending"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -447,8 +447,8 @@ impl core::fmt::Debug for Err {
 impl defmt::Format for Err {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "NOT_ACTIVE"),
-            0x01 => defmt::write!(f, "PENDING"),
+            0x0 => defmt::write!(f, "NotActive"),
+            0x01 => defmt::write!(f, "Pending"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -470,9 +470,9 @@ impl From<Err> for u32 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Err32 {
     #[doc = "The Error Interrupt is not active for DMA channel 32."]
-    NOT_ACTIVE = 0x0,
+    NotActive = 0x0,
     #[doc = "The Error Interrupt is pending for DMA channel 32."]
-    PENDING = 0x01,
+    Pending = 0x01,
 }
 impl Err32 {
     #[inline(always)]
@@ -501,9 +501,9 @@ impl From<Err32> for u8 {
 pub struct Err6333(u32);
 impl Err6333 {
     #[doc = "The Error Interrupt is not active for the relevant DMA channel."]
-    pub const NOT_ACTIVE: Self = Self(0x0);
+    pub const NotActive: Self = Self(0x0);
     #[doc = "The Error Interrupt is pending for the relevant DMA channel."]
-    pub const PENDING: Self = Self(0x01);
+    pub const Pending: Self = Self(0x01);
 }
 impl Err6333 {
     pub const fn from_bits(val: u32) -> Err6333 {
@@ -516,8 +516,8 @@ impl Err6333 {
 impl core::fmt::Debug for Err6333 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("NOT_ACTIVE"),
-            0x01 => f.write_str("PENDING"),
+            0x0 => f.write_str("NotActive"),
+            0x01 => f.write_str("Pending"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -526,8 +526,8 @@ impl core::fmt::Debug for Err6333 {
 impl defmt::Format for Err6333 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "NOT_ACTIVE"),
-            0x01 => defmt::write!(f, "PENDING"),
+            0x0 => defmt::write!(f, "NotActive"),
+            0x01 => defmt::write!(f, "Pending"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -549,9 +549,9 @@ impl From<Err6333> for u32 {
 pub struct Ia(u32);
 impl Ia {
     #[doc = "The DMAchannel 0 interrupt A is not active."]
-    pub const NOT_ACTIVE: Self = Self(0x0);
+    pub const NotActive: Self = Self(0x0);
     #[doc = "The DMAchannel 0 interrupt A is active."]
-    pub const ACTIVE: Self = Self(0x01);
+    pub const Active: Self = Self(0x01);
 }
 impl Ia {
     pub const fn from_bits(val: u32) -> Ia {
@@ -564,8 +564,8 @@ impl Ia {
 impl core::fmt::Debug for Ia {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("NOT_ACTIVE"),
-            0x01 => f.write_str("ACTIVE"),
+            0x0 => f.write_str("NotActive"),
+            0x01 => f.write_str("Active"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -574,8 +574,8 @@ impl core::fmt::Debug for Ia {
 impl defmt::Format for Ia {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "NOT_ACTIVE"),
-            0x01 => defmt::write!(f, "ACTIVE"),
+            0x0 => defmt::write!(f, "NotActive"),
+            0x01 => defmt::write!(f, "Active"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -597,9 +597,9 @@ impl From<Ia> for u32 {
 pub struct Ib(u32);
 impl Ib {
     #[doc = "The DMAchannel 0 interrupt B is not active."]
-    pub const NOT_ACTIVE: Self = Self(0x0);
+    pub const NotActive: Self = Self(0x0);
     #[doc = "The DMAchannel 0 interrupt B is active."]
-    pub const ACTIVE: Self = Self(0x01);
+    pub const Active: Self = Self(0x01);
 }
 impl Ib {
     pub const fn from_bits(val: u32) -> Ib {
@@ -612,8 +612,8 @@ impl Ib {
 impl core::fmt::Debug for Ib {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("NOT_ACTIVE"),
-            0x01 => f.write_str("ACTIVE"),
+            0x0 => f.write_str("NotActive"),
+            0x01 => f.write_str("Active"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -622,8 +622,8 @@ impl core::fmt::Debug for Ib {
 impl defmt::Format for Ib {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "NOT_ACTIVE"),
-            0x01 => defmt::write!(f, "ACTIVE"),
+            0x0 => defmt::write!(f, "NotActive"),
+            0x01 => defmt::write!(f, "Active"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -645,9 +645,9 @@ impl From<Ib> for u32 {
 pub struct Inta6333(u32);
 impl Inta6333 {
     #[doc = "Interrupt A is not active for the relevant DMA channel."]
-    pub const NOT_ACTIVE: Self = Self(0x0);
+    pub const NotActive: Self = Self(0x0);
     #[doc = "Interrupt A is active for the relevant DMA channel."]
-    pub const ACTIVE: Self = Self(0x01);
+    pub const Active: Self = Self(0x01);
 }
 impl Inta6333 {
     pub const fn from_bits(val: u32) -> Inta6333 {
@@ -660,8 +660,8 @@ impl Inta6333 {
 impl core::fmt::Debug for Inta6333 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("NOT_ACTIVE"),
-            0x01 => f.write_str("ACTIVE"),
+            0x0 => f.write_str("NotActive"),
+            0x01 => f.write_str("Active"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -670,8 +670,8 @@ impl core::fmt::Debug for Inta6333 {
 impl defmt::Format for Inta6333 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "NOT_ACTIVE"),
-            0x01 => defmt::write!(f, "ACTIVE"),
+            0x0 => defmt::write!(f, "NotActive"),
+            0x01 => defmt::write!(f, "Active"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -693,9 +693,9 @@ impl From<Inta6333> for u32 {
 pub struct Intb6333(u32);
 impl Intb6333 {
     #[doc = "Interrupt B is not active for the relevant DMA channel."]
-    pub const NOT_ACTIVE: Self = Self(0x0);
+    pub const NotActive: Self = Self(0x0);
     #[doc = "Interrupt B is active for the relevant DMA channel."]
-    pub const ACTIVE: Self = Self(0x01);
+    pub const Active: Self = Self(0x01);
 }
 impl Intb6333 {
     pub const fn from_bits(val: u32) -> Intb6333 {
@@ -708,8 +708,8 @@ impl Intb6333 {
 impl core::fmt::Debug for Intb6333 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("NOT_ACTIVE"),
-            0x01 => f.write_str("ACTIVE"),
+            0x0 => f.write_str("NotActive"),
+            0x01 => f.write_str("Active"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -718,8 +718,8 @@ impl core::fmt::Debug for Intb6333 {
 impl defmt::Format for Intb6333 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "NOT_ACTIVE"),
-            0x01 => defmt::write!(f, "ACTIVE"),
+            0x0 => defmt::write!(f, "NotActive"),
+            0x01 => defmt::write!(f, "Active"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -741,9 +741,9 @@ impl From<Intb6333> for u32 {
 pub struct Inten(u32);
 impl Inten {
     #[doc = "The Interrupt for DMA channel 0 is disabled."]
-    pub const DISABLED: Self = Self(0x0);
+    pub const Disabled: Self = Self(0x0);
     #[doc = "The Interrupt for DMA channel 0 is enabled."]
-    pub const ENABLED: Self = Self(0x01);
+    pub const Enabled: Self = Self(0x01);
 }
 impl Inten {
     pub const fn from_bits(val: u32) -> Inten {
@@ -756,8 +756,8 @@ impl Inten {
 impl core::fmt::Debug for Inten {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("DISABLED"),
-            0x01 => f.write_str("ENABLED"),
+            0x0 => f.write_str("Disabled"),
+            0x01 => f.write_str("Enabled"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -766,8 +766,8 @@ impl core::fmt::Debug for Inten {
 impl defmt::Format for Inten {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "DISABLED"),
-            0x01 => defmt::write!(f, "ENABLED"),
+            0x0 => defmt::write!(f, "Disabled"),
+            0x01 => defmt::write!(f, "Enabled"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -789,9 +789,9 @@ impl From<Inten> for u32 {
 pub struct Inten6333(u32);
 impl Inten6333 {
     #[doc = "The Interrupt for the relevant DMA channel is disabled."]
-    pub const DISABLED: Self = Self(0x0);
+    pub const Disabled: Self = Self(0x0);
     #[doc = "The Interrupt for the relevant DMA channel is enabled."]
-    pub const ENABLED: Self = Self(0x01);
+    pub const Enabled: Self = Self(0x01);
 }
 impl Inten6333 {
     pub const fn from_bits(val: u32) -> Inten6333 {
@@ -804,8 +804,8 @@ impl Inten6333 {
 impl core::fmt::Debug for Inten6333 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("DISABLED"),
-            0x01 => f.write_str("ENABLED"),
+            0x0 => f.write_str("Disabled"),
+            0x01 => f.write_str("Enabled"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -814,8 +814,8 @@ impl core::fmt::Debug for Inten6333 {
 impl defmt::Format for Inten6333 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "DISABLED"),
-            0x01 => defmt::write!(f, "ENABLED"),
+            0x0 => defmt::write!(f, "Disabled"),
+            0x01 => defmt::write!(f, "Enabled"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -832,14 +832,76 @@ impl From<Inten6333> for u32 {
         Inten6333::to_bits(val)
     }
 }
+#[repr(u8)]
+#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+pub enum Setinta {
+    #[doc = "No effect."]
+    NoEffect = 0x0,
+    #[doc = "Set. The INTA flag for this channel will be set when the current descriptor is exhausted."]
+    Set = 0x01,
+}
+impl Setinta {
+    #[inline(always)]
+    pub const fn from_bits(val: u8) -> Setinta {
+        unsafe { core::mem::transmute(val & 0x01) }
+    }
+    #[inline(always)]
+    pub const fn to_bits(self) -> u8 {
+        unsafe { core::mem::transmute(self) }
+    }
+}
+impl From<u8> for Setinta {
+    #[inline(always)]
+    fn from(val: u8) -> Setinta {
+        Setinta::from_bits(val)
+    }
+}
+impl From<Setinta> for u8 {
+    #[inline(always)]
+    fn from(val: Setinta) -> u8 {
+        Setinta::to_bits(val)
+    }
+}
+#[repr(u8)]
+#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+pub enum Setintb {
+    #[doc = "No effect."]
+    NoEffect = 0x0,
+    #[doc = "Set. The INTB flag for this channel will be set when the current descriptor is exhausted."]
+    Set = 0x01,
+}
+impl Setintb {
+    #[inline(always)]
+    pub const fn from_bits(val: u8) -> Setintb {
+        unsafe { core::mem::transmute(val & 0x01) }
+    }
+    #[inline(always)]
+    pub const fn to_bits(self) -> u8 {
+        unsafe { core::mem::transmute(self) }
+    }
+}
+impl From<u8> for Setintb {
+    #[inline(always)]
+    fn from(val: u8) -> Setintb {
+        Setintb::from_bits(val)
+    }
+}
+impl From<Setintb> for u8 {
+    #[inline(always)]
+    fn from(val: Setintb) -> u8 {
+        Setintb::to_bits(val)
+    }
+}
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
 pub struct Settrig0Trig(u32);
 impl Settrig0Trig {
     #[doc = "No effect."]
-    pub const NO_EFFECT: Self = Self(0x0);
+    pub const NoEffect: Self = Self(0x0);
     #[doc = "Sets the Trig bit for DMA channel 0."]
-    pub const EFFECT: Self = Self(0x01);
+    pub const Effect: Self = Self(0x01);
 }
 impl Settrig0Trig {
     pub const fn from_bits(val: u32) -> Settrig0Trig {
@@ -852,8 +914,8 @@ impl Settrig0Trig {
 impl core::fmt::Debug for Settrig0Trig {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("NO_EFFECT"),
-            0x01 => f.write_str("EFFECT"),
+            0x0 => f.write_str("NoEffect"),
+            0x01 => f.write_str("Effect"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -862,8 +924,8 @@ impl core::fmt::Debug for Settrig0Trig {
 impl defmt::Format for Settrig0Trig {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "NO_EFFECT"),
-            0x01 => defmt::write!(f, "EFFECT"),
+            0x0 => defmt::write!(f, "NoEffect"),
+            0x01 => defmt::write!(f, "Effect"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -885,9 +947,9 @@ impl From<Settrig0Trig> for u32 {
 pub struct Settrig6333(u32);
 impl Settrig6333 {
     #[doc = "No effect."]
-    pub const NO_EFFECT: Self = Self(0x0);
+    pub const NoEffect: Self = Self(0x0);
     #[doc = "Sets the Trig bit for DMA channel for the relevant DMA channel."]
-    pub const EFFECT: Self = Self(0x01);
+    pub const Effect: Self = Self(0x01);
 }
 impl Settrig6333 {
     pub const fn from_bits(val: u32) -> Settrig6333 {
@@ -900,8 +962,8 @@ impl Settrig6333 {
 impl core::fmt::Debug for Settrig6333 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("NO_EFFECT"),
-            0x01 => f.write_str("EFFECT"),
+            0x0 => f.write_str("NoEffect"),
+            0x01 => f.write_str("Effect"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -910,8 +972,8 @@ impl core::fmt::Debug for Settrig6333 {
 impl defmt::Format for Settrig6333 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "NO_EFFECT"),
-            0x01 => defmt::write!(f, "EFFECT"),
+            0x0 => defmt::write!(f, "NoEffect"),
+            0x01 => defmt::write!(f, "Effect"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -933,9 +995,9 @@ impl From<Settrig6333> for u32 {
 pub struct Setvalid6333(u32);
 impl Setvalid6333 {
     #[doc = "No effect."]
-    pub const NO_EFFECT: Self = Self(0x0);
+    pub const NoEffect: Self = Self(0x0);
     #[doc = "Sets the ValidPending control bit for the relevant DMA channel."]
-    pub const EFFECT: Self = Self(0x01);
+    pub const Effect: Self = Self(0x01);
 }
 impl Setvalid6333 {
     pub const fn from_bits(val: u32) -> Setvalid6333 {
@@ -948,8 +1010,8 @@ impl Setvalid6333 {
 impl core::fmt::Debug for Setvalid6333 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("NO_EFFECT"),
-            0x01 => f.write_str("EFFECT"),
+            0x0 => f.write_str("NoEffect"),
+            0x01 => f.write_str("Effect"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -958,8 +1020,8 @@ impl core::fmt::Debug for Setvalid6333 {
 impl defmt::Format for Setvalid6333 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "NO_EFFECT"),
-            0x01 => defmt::write!(f, "EFFECT"),
+            0x0 => defmt::write!(f, "NoEffect"),
+            0x01 => defmt::write!(f, "Effect"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -981,13 +1043,13 @@ impl From<Setvalid6333> for u32 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Srcinc {
     #[doc = "No increment. The source address is not incremented for each transfer. This is the usual case when the source is a peripheral device."]
-    NO_INCREMENT = 0x0,
+    NoIncrement = 0x0,
     #[doc = "1 x width. The source address is incremented by the amount specified by Width for each transfer. This is the usual case when the source is memory."]
-    WIDTH_X_1 = 0x01,
+    WidthX1 = 0x01,
     #[doc = "2 x width. The source address is incremented by 2 times the amount specified by Width for each transfer."]
-    WIDTH_X_2 = 0x02,
+    WidthX2 = 0x02,
     #[doc = "4 x width. The source address is incremented by 4 times the amount specified by Width for each transfer."]
-    WIDTH_X_4 = 0x03,
+    WidthX4 = 0x03,
 }
 impl Srcinc {
     #[inline(always)]
@@ -1016,9 +1078,9 @@ impl From<Srcinc> for u8 {
 pub struct Sv(u32);
 impl Sv {
     #[doc = "No effect."]
-    pub const NO_EFFECT: Self = Self(0x0);
+    pub const NoEffect: Self = Self(0x0);
     #[doc = "Sets the ValidPending control bit for DMA channel 0."]
-    pub const EFFECT: Self = Self(0x01);
+    pub const Effect: Self = Self(0x01);
 }
 impl Sv {
     pub const fn from_bits(val: u32) -> Sv {
@@ -1031,8 +1093,8 @@ impl Sv {
 impl core::fmt::Debug for Sv {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("NO_EFFECT"),
-            0x01 => f.write_str("EFFECT"),
+            0x0 => f.write_str("NoEffect"),
+            0x01 => f.write_str("Effect"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -1041,8 +1103,8 @@ impl core::fmt::Debug for Sv {
 impl defmt::Format for Sv {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "NO_EFFECT"),
-            0x01 => defmt::write!(f, "EFFECT"),
+            0x0 => defmt::write!(f, "NoEffect"),
+            0x01 => defmt::write!(f, "Effect"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -1064,9 +1126,9 @@ impl From<Sv> for u32 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trigburst {
     #[doc = "Single transfer. Hardware trigger causes a single transfer."]
-    SINGLE = 0x0,
+    Single = 0x0,
     #[doc = "Burst transfer. When the trigger for this channel is set to edge triggered, a hardware trigger causes a burst transfer, as defined by BURSTPOWER. When the trigger for this channel is set to level triggered, a hardware trigger causes transfers to continue as long as the trigger is asserted, unless the transfer is complete."]
-    BURST = 0x01,
+    Burst = 0x01,
 }
 impl Trigburst {
     #[inline(always)]
@@ -1095,9 +1157,9 @@ impl From<Trigburst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trigpol {
     #[doc = "Active low - falling edge. Hardware trigger is active low or falling edge triggered, based on TRIGTYPE."]
-    ACTIVE_LOW_FALLING = 0x0,
+    ActiveLowFalling = 0x0,
     #[doc = "Active high - rising edge. Hardware trigger is active high or rising edge triggered, based on TRIGTYPE."]
-    ACTIVE_HIGH_RISING = 0x01,
+    ActiveHighRising = 0x01,
 }
 impl Trigpol {
     #[inline(always)]
@@ -1126,9 +1188,9 @@ impl From<Trigpol> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trigtype {
     #[doc = "Edge. Hardware trigger is edge triggered. Transfers will be initiated and completed, as specified for a single trigger."]
-    EDGE = 0x0,
+    Edge = 0x0,
     #[doc = "Level. Hardware trigger is level triggered. Note that when level triggering without burst (BURSTPOWER = 0) is selected, only hardware triggers should be used on that channel. Transfers continue as long as the trigger level is asserted. Once the trigger is de-asserted, the transfer will be paused until the trigger is, again, asserted. However, the transfer will not be paused until any remaining transfers within the current BURSTPOWER length are completed."]
-    LEVEL = 0x01,
+    Level = 0x01,
 }
 impl Trigtype {
     #[inline(always)]
@@ -1157,9 +1219,9 @@ impl From<Trigtype> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Validpending {
     #[doc = "No effect. No effect on DMA operation."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Valid pending."]
-    VALID_PENDING = 0x01,
+    ValidPending = 0x01,
 }
 impl Validpending {
     #[inline(always)]
@@ -1188,11 +1250,11 @@ impl From<Validpending> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Width {
     #[doc = "8-bit. 8-bit transfers are performed (8-bit source reads and destination writes)."]
-    BIT_8 = 0x0,
+    Bit8 = 0x0,
     #[doc = "16-bit. 6-bit transfers are performed (16-bit source reads and destination writes)."]
-    BIT_16 = 0x01,
+    Bit16 = 0x01,
     #[doc = "32-bit. 32-bit transfers are performed (32-bit source reads and destination writes)."]
-    BIT_32 = 0x02,
+    Bit32 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Width {

@@ -1,4 +1,4 @@
-#[doc = "Array of registers: BIVCTX_WD%s, VMAPCTX_WD%s."]
+#[doc = "Array of registers: VMAPCTX_WD%s, BIVCTX_WD%s."]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct CtxValidIvArray {
     ptr: *mut u8,
@@ -66,7 +66,7 @@ impl Npx0 {
     pub const fn remap(self) -> crate::common::Reg<regs::Remap, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
     }
-    #[doc = "Array of registers: BIVCTX_WD%s, VMAPCTX_WD%s."]
+    #[doc = "Array of registers: VMAPCTX_WD%s, BIVCTX_WD%s."]
     #[inline(always)]
     pub const fn ctx_valid_iv_array(self, n: usize) -> CtxValidIvArray {
         assert!(n < 4usize);

@@ -3,21 +3,21 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Addrcfg {
     #[doc = "Address match 0 (7-bit)."]
-    ADDRESS_MATCH0_7_BIT = 0x0,
+    AddressMatch07Bit = 0x0,
     #[doc = "Address match 0 (10-bit)."]
-    ADDRESS_MATCH0_10_BIT = 0x01,
+    AddressMatch010Bit = 0x01,
     #[doc = "Address match 0 (7-bit) or address match 1 (7-bit)."]
-    ADDRESS_MATCH0_7_BIT_OR_ADDRESS_MATCH1_7_BIT = 0x02,
+    AddressMatch07BitOrAddressMatch17Bit = 0x02,
     #[doc = "Address match 0 (10-bit) or address match 1 (10-bit)."]
-    ADDRESS_MATCH0_10_BIT_OR_ADDRESS_MATCH1_10_BIT = 0x03,
+    AddressMatch010BitOrAddressMatch110Bit = 0x03,
     #[doc = "Address match 0 (7-bit) or address match 1 (10-bit)."]
-    ADDRESS_MATCH0_7_BIT_OR_ADDRESS_MATCH1_10_BIT = 0x04,
+    AddressMatch07BitOrAddressMatch110Bit = 0x04,
     #[doc = "Address match 0 (10-bit) or address match 1 (7-bit)."]
-    ADDRESS_MATCH0_10_BIT_OR_ADDRESS_MATCH1_7_BIT = 0x05,
+    AddressMatch010BitOrAddressMatch17Bit = 0x05,
     #[doc = "From address match 0 (7-bit) to address match 1 (7-bit)."]
-    FROM_ADDRESS_MATCH0_7_BIT_TO_ADDRESS_MATCH1_7_BIT = 0x06,
+    FromAddressMatch07BitToAddressMatch17Bit = 0x06,
     #[doc = "From address match 0 (10-bit) to address match 1 (10-bit)."]
-    FROM_ADDRESS_MATCH0_10_BIT_TO_ADDRESS_MATCH1_10_BIT = 0x07,
+    FromAddressMatch010BitToAddressMatch110Bit = 0x07,
 }
 impl Addrcfg {
     #[inline(always)]
@@ -46,9 +46,9 @@ impl From<Addrcfg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Alf {
     #[doc = "Controller did not lose arbitration."]
-    INT_NO = 0x0,
+    IntNo = 0x0,
     #[doc = "Controller lost arbitration."]
-    INT_YES = 0x01,
+    IntYes = 0x01,
 }
 impl Alf {
     #[inline(always)]
@@ -77,9 +77,9 @@ impl From<Alf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Anv {
     #[doc = "Valid."]
-    VALID = 0x0,
+    Valid = 0x0,
     #[doc = "Not valid."]
-    NOT_VALID = 0x01,
+    NotValid = 0x01,
 }
 impl Anv {
     #[inline(always)]
@@ -108,9 +108,9 @@ impl From<Anv> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bef {
     #[doc = "No bit error occurred."]
-    INT_NO = 0x0,
+    IntNo = 0x0,
     #[doc = "Bit error occurred."]
-    INT_YES = 0x01,
+    IntYes = 0x01,
 }
 impl Bef {
     #[inline(always)]
@@ -139,22 +139,21 @@ impl From<Bef> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmd {
     #[doc = "Transmit the value in DATA\\[7:0\\]."]
-    TRANSMIT_DATA_7_THROUGH_0 = 0x0,
+    TransmitData7Through0 = 0x0,
     #[doc = "Receive (DATA\\[7:0\\] + 1) bytes."]
-    RECEIVE_DATA_7_THROUGH_0_PLUS_ONE = 0x01,
+    ReceiveData7Through0PlusOne = 0x01,
     #[doc = "Generate Stop condition on I2C bus."]
-    GENERATE_STOP_CONDITION = 0x02,
+    GenerateStopCondition = 0x02,
     #[doc = "Receive and discard (DATA\\[7:0\\] + 1) bytes."]
-    RECEIVE_AND_DISCARD_DATA_7_THROUGH_0_PLUS_ONE = 0x03,
+    ReceiveAndDiscardData7Through0PlusOne = 0x03,
     #[doc = "Generate (repeated) Start on the I2C bus and transmit the address in DATA\\[7:0\\]."]
-    GENERATE_START_AND_TRANSMIT_ADDRESS_IN_DATA_7_THROUGH_0 = 0x04,
+    GenerateStartAndTransmitAddressInData7Through0 = 0x04,
     #[doc = "Generate (repeated) Start on the I2C bus and transmit the address in DATA\\[7:0\\] (this transfer expects a NACK to be returned)."]
-    GENERATE_START_AND_TRANSMIT_ADDRESS_IN_DATA_7_THROUGH_0_EXPECT_NACK = 0x05,
+    GenerateStartAndTransmitAddressInData7Through0ExpectNack = 0x05,
     #[doc = "Generate (repeated) Start on the I2C bus and transmit the address in DATA\\[7:0\\] using HS mode."]
-    GENERATE_START_AND_TRANSMIT_ADDRESS_IN_DATA_7_THROUGH_0_USING_HIGH_SPEED_MODE = 0x06,
+    GenerateStartAndTransmitAddressInData7Through0UsingHighSpeedMode = 0x06,
     #[doc = "Generate (repeated) Start on the I2C bus and transmit the address in DATA\\[7:0\\] using HS mode (this transfer expects a NACK to be returned)."]
-    GENERATE_START_AND_TRANSMIT_ADDRESS_IN_DATA_7_THROUGH_0_USING_HIGH_SPEED_MODE_EXPECT_NACK =
-        0x07,
+    GenerateStartAndTransmitAddressInData7Through0UsingHighSpeedModeExpectNack = 0x07,
 }
 impl Cmd {
     #[inline(always)]
@@ -183,9 +182,9 @@ impl From<Cmd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dmf {
     #[doc = "Matching data not received."]
-    INT_NO = 0x0,
+    IntNo = 0x0,
     #[doc = "Matching data received."]
-    INT_YES = 0x01,
+    IntYes = 0x01,
 }
 impl Dmf {
     #[inline(always)]
@@ -214,9 +213,9 @@ impl From<Dmf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dozen {
     #[doc = "Enable."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disable."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dozen {
     #[inline(always)]
@@ -245,9 +244,9 @@ impl From<Dozen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Epf {
     #[doc = "No Stop or repeated Start generated."]
-    INT_NO = 0x0,
+    IntNo = 0x0,
     #[doc = "Stop or repeated Start generated."]
-    INT_YES = 0x01,
+    IntYes = 0x01,
 }
 impl Epf {
     #[inline(always)]
@@ -276,9 +275,9 @@ impl From<Epf> for u8 {
 pub struct Feature(u16);
 impl Feature {
     #[doc = "Controller only, with standard feature set."]
-    pub const MASTER_ONLY: Self = Self(0x02);
+    pub const MasterOnly: Self = Self(0x02);
     #[doc = "Controller and target, with standard feature set."]
-    pub const MASTER_AND_SLAVE: Self = Self(0x03);
+    pub const MasterAndSlave: Self = Self(0x03);
 }
 impl Feature {
     pub const fn from_bits(val: u16) -> Feature {
@@ -291,8 +290,8 @@ impl Feature {
 impl core::fmt::Debug for Feature {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x02 => f.write_str("MASTER_ONLY"),
-            0x03 => f.write_str("MASTER_AND_SLAVE"),
+            0x02 => f.write_str("MasterOnly"),
+            0x03 => f.write_str("MasterAndSlave"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -301,8 +300,8 @@ impl core::fmt::Debug for Feature {
 impl defmt::Format for Feature {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x02 => defmt::write!(f, "MASTER_ONLY"),
-            0x03 => defmt::write!(f, "MASTER_AND_SLAVE"),
+            0x02 => defmt::write!(f, "MasterOnly"),
+            0x03 => defmt::write!(f, "MasterAndSlave"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -324,9 +323,9 @@ impl From<Feature> for u16 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Filtdz {
     #[doc = "Enable."]
-    FILTER_ENABLED = 0x0,
+    FilterEnabled = 0x0,
     #[doc = "Disable."]
-    FILTER_DISABLED = 0x01,
+    FilterDisabled = 0x01,
 }
 impl Filtdz {
     #[inline(always)]
@@ -355,9 +354,9 @@ impl From<Filtdz> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hrdir {
     #[doc = "HREQ pin is input (for LPI2C controller)."]
-    INPUT = 0x0,
+    Input = 0x0,
     #[doc = "HREQ pin is output (for LPI2C target)."]
-    OUTPUT = 0x01,
+    Output = 0x01,
 }
 impl Hrdir {
     #[inline(always)]
@@ -386,9 +385,9 @@ impl From<Hrdir> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hrpol {
     #[doc = "Active low."]
-    ACTIVE_LOW = 0x0,
+    ActiveLow = 0x0,
     #[doc = "Active high."]
-    ACTIVE_HIGH = 0x01,
+    ActiveHigh = 0x01,
 }
 impl Hrpol {
     #[inline(always)]
@@ -417,20 +416,20 @@ impl From<Hrpol> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Matcfg {
     #[doc = "Match is disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "Match is enabled: first data word equals MDMR\\[MATCH0\\] OR MDMR\\[MATCH1\\]."]
-    FIRST_DATA_WORD_EQUALS_MATCH0_OR_MATCH1 = 0x02,
+    FirstDataWordEqualsMatch0OrMatch1 = 0x02,
     #[doc = "Match is enabled: any data word equals MDMR\\[MATCH0\\] OR MDMR\\[MATCH1\\]."]
-    ANY_DATA_WORD_EQUALS_MATCH0_OR_MATCH1 = 0x03,
+    AnyDataWordEqualsMatch0OrMatch1 = 0x03,
     #[doc = "Match is enabled: (first data word equals MDMR\\[MATCH0\\]) AND (second data word equals MDMR\\[MATCH1)."]
-    FIRST_DATA_WORD_MATCH0_AND_SECOND_DATA_WORD_MATCH1 = 0x04,
+    FirstDataWordMatch0AndSecondDataWordMatch1 = 0x04,
     #[doc = "Match is enabled: (any data word equals MDMR\\[MATCH0\\]) AND (next data word equals MDMR\\[MATCH1)."]
-    ANY_DATA_WORD_MATCH0_NEXT_DATA_WORD_MATCH1 = 0x05,
+    AnyDataWordMatch0NextDataWordMatch1 = 0x05,
     #[doc = "Match is enabled: (first data word AND MDMR\\[MATCH1\\]) equals (MDMR\\[MATCH0\\] AND MDMR\\[MATCH1\\])."]
-    FIRST_DATA_WORD_AND_MATCH1_EQUALS_MATCH0_AND_MATCH1 = 0x06,
+    FirstDataWordAndMatch1EqualsMatch0AndMatch1 = 0x06,
     #[doc = "Match is enabled: (any data word AND MDMR\\[MATCH1\\]) equals (MDMR\\[MATCH0\\] AND MDMR\\[MATCH1\\])."]
-    ANY_DATA_WORD_AND_MATCH1_EQUALS_MATCH0_AND_MATCH1 = 0x07,
+    AnyDataWordAndMatch1EqualsMatch0AndMatch1 = 0x07,
 }
 impl Matcfg {
     #[inline(always)]
@@ -459,9 +458,9 @@ impl From<Matcfg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbf {
     #[doc = "Idle."]
-    IDLE = 0x0,
+    Idle = 0x0,
     #[doc = "Busy."]
-    BUSY = 0x01,
+    Busy = 0x01,
 }
 impl Mbf {
     #[inline(always)]
@@ -490,9 +489,9 @@ impl From<Mbf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum McrRrf {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Reset receive FIFO."]
-    RESET = 0x01,
+    Reset = 0x01,
 }
 impl McrRrf {
     #[inline(always)]
@@ -521,9 +520,9 @@ impl From<McrRrf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum McrRtf {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Reset transmit FIFO."]
-    RESET = 0x01,
+    Reset = 0x01,
 }
 impl McrRtf {
     #[inline(always)]
@@ -552,9 +551,9 @@ impl From<McrRtf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MsrBbf {
     #[doc = "Idle."]
-    IDLE = 0x0,
+    Idle = 0x0,
     #[doc = "Busy."]
-    BUSY = 0x01,
+    Busy = 0x01,
 }
 impl MsrBbf {
     #[inline(always)]
@@ -583,9 +582,9 @@ impl From<MsrBbf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MsrFef {
     #[doc = "No FIFO error."]
-    INT_NO = 0x0,
+    IntNo = 0x0,
     #[doc = "FIFO error."]
-    INT_YES = 0x01,
+    IntYes = 0x01,
 }
 impl MsrFef {
     #[inline(always)]
@@ -614,9 +613,9 @@ impl From<MsrFef> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MsrSdf {
     #[doc = "No Stop condition generated."]
-    INT_NO = 0x0,
+    IntNo = 0x0,
     #[doc = "Stop condition generated."]
-    INT_YES = 0x01,
+    IntYes = 0x01,
 }
 impl MsrSdf {
     #[inline(always)]
@@ -645,9 +644,9 @@ impl From<MsrSdf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ndf {
     #[doc = "No unexpected NACK detected."]
-    INT_NO = 0x0,
+    IntNo = 0x0,
     #[doc = "Unexpected NACK detected."]
-    INT_YES = 0x01,
+    IntYes = 0x01,
 }
 impl Ndf {
     #[inline(always)]
@@ -676,21 +675,21 @@ impl From<Ndf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pincfg {
     #[doc = "Two-pin open drain mode."]
-    OPEN_DRAIN_2_PIN = 0x0,
+    OpenDrain2Pin = 0x0,
     #[doc = "Two-pin output only mode (Ultra-Fast mode)."]
-    OUTPUT_2_PIN_ONLY = 0x01,
+    Output2PinOnly = 0x01,
     #[doc = "Two-pin push-pull mode."]
-    PUSH_PULL_2_PIN = 0x02,
+    PushPull2Pin = 0x02,
     #[doc = "Four-pin push-pull mode."]
-    PUSH_PULL_4_PIN = 0x03,
+    PushPull4Pin = 0x03,
     #[doc = "Two-pin open-drain mode with separate LPI2C target."]
-    OPEN_DRAIN_2_PIN_W_LPI2C_SLAVE = 0x04,
+    OpenDrain2PinWLpi2cSlave = 0x04,
     #[doc = "Two-pin output only mode (Ultra-Fast mode) with separate LPI2C target."]
-    OUTPUT_2_PIN_ONLY_W_LPI2C_SLAVE = 0x05,
+    Output2PinOnlyWLpi2cSlave = 0x05,
     #[doc = "Two-pin push-pull mode with separate LPI2C target."]
-    PUSH_PULL_2_PIN_W_LPI2C_SLAVE = 0x06,
+    PushPull2PinWLpi2cSlave = 0x06,
     #[doc = "Four-pin push-pull mode (inverted outputs)."]
-    PUSH_PULL_4_PIN_W_LPI2C_SLAVE = 0x07,
+    PushPull4PinWLpi2cSlave = 0x07,
 }
 impl Pincfg {
     #[inline(always)]
@@ -719,9 +718,9 @@ impl From<Pincfg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pltf {
     #[doc = "Pin low timeout did not occur."]
-    INT_NO = 0x0,
+    IntNo = 0x0,
     #[doc = "Pin low timeout occurred."]
-    INT_YES = 0x01,
+    IntYes = 0x01,
 }
 impl Pltf {
     #[inline(always)]
@@ -750,21 +749,21 @@ impl From<Pltf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Prescale {
     #[doc = "Divide by 1."]
-    DIVIDE_BY_1 = 0x0,
+    DivideBy1 = 0x0,
     #[doc = "Divide by 2."]
-    DIVIDE_BY_2 = 0x01,
+    DivideBy2 = 0x01,
     #[doc = "Divide by 4."]
-    DIVIDE_BY_4 = 0x02,
+    DivideBy4 = 0x02,
     #[doc = "Divide by 8."]
-    DIVIDE_BY_8 = 0x03,
+    DivideBy8 = 0x03,
     #[doc = "Divide by 16."]
-    DIVIDE_BY_16 = 0x04,
+    DivideBy16 = 0x04,
     #[doc = "Divide by 32."]
-    DIVIDE_BY_32 = 0x05,
+    DivideBy32 = 0x05,
     #[doc = "Divide by 64."]
-    DIVIDE_BY_64 = 0x06,
+    DivideBy64 = 0x06,
     #[doc = "Divide by 128."]
-    DIVIDE_BY_128 = 0x07,
+    DivideBy128 = 0x07,
 }
 impl Prescale {
     #[inline(always)]
@@ -793,9 +792,9 @@ impl From<Prescale> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Relax {
     #[doc = "Normal transfer."]
-    NORMAL_TRANSFER = 0x0,
+    NormalTransfer = 0x0,
     #[doc = "Relaxed transfer."]
-    RELAXED_TRANSFER = 0x01,
+    RelaxedTransfer = 0x01,
 }
 impl Relax {
     #[inline(always)]
@@ -824,9 +823,9 @@ impl From<Relax> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rscfg {
     #[doc = "Any repeated Start condition following an address match."]
-    ANY_REPEATED_START_AFTER_ADDRESS_MATCH = 0x0,
+    AnyRepeatedStartAfterAddressMatch = 0x0,
     #[doc = "Any repeated Start condition."]
-    ANY_REPEATED_START = 0x01,
+    AnyRepeatedStart = 0x01,
 }
 impl Rscfg {
     #[inline(always)]
@@ -855,9 +854,9 @@ impl From<Rscfg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rsf {
     #[doc = "No repeated Start detected."]
-    INT_NO = 0x0,
+    IntNo = 0x0,
     #[doc = "Repeated Start detected."]
-    INT_YES = 0x01,
+    IntYes = 0x01,
 }
 impl Rsf {
     #[inline(always)]
@@ -886,9 +885,9 @@ impl From<Rsf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rxcfg {
     #[doc = "Return received data, clear MSR\\[RDF\\]."]
-    RETURNS_RECEIVED_DATA_AND_CLEARS_RX_DATA_FLAG = 0x0,
+    ReturnsReceivedDataAndClearsRxDataFlag = 0x0,
     #[doc = "Return SASR and clear SSR\\[AVF\\] when SSR\\[AVF\\] is set, return received data and clear MSR\\[RDF\\] when SSR\\[AFV\\] is not set."]
-    WHEN_ADDRESS_VALID_FLAG_SET_RETURNS_ADDRESS_STATUS_AND_CLEARS_ADDRESS_VALID_FLAG = 0x01,
+    WhenAddressValidFlagSetReturnsAddressStatusAndClearsAddressValidFlag = 0x01,
 }
 impl Rxcfg {
     #[inline(always)]
@@ -917,9 +916,9 @@ impl From<Rxcfg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rxnack {
     #[doc = "ACK or NACK always determined by STAR\\[TXNACK\\]."]
-    SET_BY_TXNACK = 0x0,
+    SetByTxnack = 0x0,
     #[doc = "NACK always generated on address overrun or receive data overrun, otherwise ACK or NACK is determined by STAR\\[TXNACK\\]."]
-    ALWAYS_GENERATED_ON_ADDRESS_OR_RECEIVE_DATA_OVERRUN = 0x01,
+    AlwaysGeneratedOnAddressOrReceiveDataOverrun = 0x01,
 }
 impl Rxnack {
     #[inline(always)]
@@ -948,9 +947,9 @@ impl From<Rxnack> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sbf {
     #[doc = "Idle."]
-    IDLE = 0x0,
+    Idle = 0x0,
     #[doc = "Busy."]
-    BUSY = 0x01,
+    Busy = 0x01,
 }
 impl Sbf {
     #[inline(always)]
@@ -979,9 +978,9 @@ impl From<Sbf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Scfgr1Ignack {
     #[doc = "End transfer on NACK."]
-    ENDS_TRANSFER_ON_NACK = 0x0,
+    EndsTransferOnNack = 0x0,
     #[doc = "Do not end transfer on NACK."]
-    DOES_NOT_END_TRANSFER_ON_NACK = 0x01,
+    DoesNotEndTransferOnNack = 0x01,
 }
 impl Scfgr1Ignack {
     #[inline(always)]
@@ -1010,9 +1009,9 @@ impl From<Scfgr1Ignack> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ScrRrf {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "SRDR is now empty."]
-    NOW_EMPTY = 0x01,
+    NowEmpty = 0x01,
 }
 impl ScrRrf {
     #[inline(always)]
@@ -1041,9 +1040,9 @@ impl From<ScrRrf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ScrRtf {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "STDR is now empty."]
-    NOW_EMPTY = 0x01,
+    NowEmpty = 0x01,
 }
 impl ScrRtf {
     #[inline(always)]
@@ -1072,9 +1071,9 @@ impl From<ScrRtf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sdcfg {
     #[doc = "Any Stop condition following an address match."]
-    ANY_STOP_AFTER_ADDRESS_MATCH = 0x0,
+    AnyStopAfterAddressMatch = 0x0,
     #[doc = "Any Stop condition."]
-    ANY_STOP = 0x01,
+    AnyStop = 0x01,
 }
 impl Sdcfg {
     #[inline(always)]
@@ -1103,9 +1102,9 @@ impl From<Sdcfg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SsrBbf {
     #[doc = "Idle."]
-    IDLE = 0x0,
+    Idle = 0x0,
     #[doc = "Busy."]
-    BUSY = 0x01,
+    Busy = 0x01,
 }
 impl SsrBbf {
     #[inline(always)]
@@ -1134,9 +1133,9 @@ impl From<SsrBbf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SsrFef {
     #[doc = "No FIFO error."]
-    INT_NO = 0x0,
+    IntNo = 0x0,
     #[doc = "FIFO error."]
-    INT_YES = 0x01,
+    IntYes = 0x01,
 }
 impl SsrFef {
     #[inline(always)]
@@ -1165,9 +1164,9 @@ impl From<SsrFef> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SsrSdf {
     #[doc = "No Stop detected."]
-    INT_NO = 0x0,
+    IntNo = 0x0,
     #[doc = "Stop detected."]
-    INT_YES = 0x01,
+    IntYes = 0x01,
 }
 impl SsrSdf {
     #[inline(always)]
@@ -1196,9 +1195,9 @@ impl From<SsrSdf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Startcfg {
     #[doc = "Sets when both I2C bus and LPI2C controller are idle."]
-    BOTH_I2C_AND_LPI2C_IDLE = 0x0,
+    BothI2cAndLpi2cIdle = 0x0,
     #[doc = "Sets when I2C bus is idle."]
-    I2C_IDLE = 0x01,
+    I2cIdle = 0x01,
 }
 impl Startcfg {
     #[inline(always)]
@@ -1227,9 +1226,9 @@ impl From<Startcfg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Stf {
     #[doc = "Start condition not detected."]
-    INT_NO = 0x0,
+    IntNo = 0x0,
     #[doc = "Start condition detected."]
-    INT_YES = 0x01,
+    IntYes = 0x01,
 }
 impl Stf {
     #[inline(always)]
@@ -1258,9 +1257,9 @@ impl From<Stf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Stopcfg {
     #[doc = "Any Stop condition."]
-    ANY_STOP = 0x0,
+    AnyStop = 0x0,
     #[doc = "Last Stop condition."]
-    LAST_STOP = 0x01,
+    LastStop = 0x01,
 }
 impl Stopcfg {
     #[inline(always)]
@@ -1289,9 +1288,9 @@ impl From<Stopcfg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Timecfg {
     #[doc = "SCL."]
-    IF_SCL_LOW = 0x0,
+    IfSclLow = 0x0,
     #[doc = "SCL or SDA."]
-    IF_SCL_OR_SDA_LOW = 0x01,
+    IfSclOrSdaLow = 0x01,
 }
 impl Timecfg {
     #[inline(always)]
@@ -1320,9 +1319,9 @@ impl From<Timecfg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Txcfg {
     #[doc = "MSR\\[TDF\\] is set only during a target-transmit transfer when STDR is empty."]
-    ASSERTS_DURING_SLAVE_TRANSMIT_TRANSFER_WHEN_TX_DATA_EMPTY = 0x0,
+    AssertsDuringSlaveTransmitTransferWhenTxDataEmpty = 0x0,
     #[doc = "MSR\\[TDF\\] is set whenever STDR is empty."]
-    ASSERTS_WHEN_TX_DATA_EMPTY = 0x01,
+    AssertsWhenTxDataEmpty = 0x01,
 }
 impl Txcfg {
     #[inline(always)]
@@ -1351,9 +1350,9 @@ impl From<Txcfg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Txnack {
     #[doc = "Transmit ACK."]
-    TRANSMIT_ACK = 0x0,
+    TransmitAck = 0x0,
     #[doc = "Transmit NACK."]
-    TRANSMIT_NACK = 0x01,
+    TransmitNack = 0x01,
 }
 impl Txnack {
     #[inline(always)]

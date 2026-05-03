@@ -3,7 +3,7 @@
 pub struct ConfigOpt(u8);
 impl ConfigOpt {
     #[doc = "TRNG_CONFIG_OPT for TRNG."]
-    pub const CONFIG_OPT_0: Self = Self(0x0);
+    pub const ConfigOpt0: Self = Self(0x0);
 }
 impl ConfigOpt {
     pub const fn from_bits(val: u8) -> ConfigOpt {
@@ -16,7 +16,7 @@ impl ConfigOpt {
 impl core::fmt::Debug for ConfigOpt {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("CONFIG_OPT_0"),
+            0x0 => f.write_str("ConfigOpt0"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -25,7 +25,7 @@ impl core::fmt::Debug for ConfigOpt {
 impl defmt::Format for ConfigOpt {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "CONFIG_OPT_0"),
+            0x0 => defmt::write!(f, "ConfigOpt0"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -47,7 +47,7 @@ impl From<ConfigOpt> for u8 {
 pub struct EcoRev(u8);
 impl EcoRev {
     #[doc = "TRNG_ECO_REV for TRNG."]
-    pub const ECO_REV_0: Self = Self(0x0);
+    pub const EcoRev0: Self = Self(0x0);
 }
 impl EcoRev {
     pub const fn from_bits(val: u8) -> EcoRev {
@@ -60,7 +60,7 @@ impl EcoRev {
 impl core::fmt::Debug for EcoRev {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("ECO_REV_0"),
+            0x0 => f.write_str("EcoRev0"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -69,7 +69,7 @@ impl core::fmt::Debug for EcoRev {
 impl defmt::Format for EcoRev {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "ECO_REV_0"),
+            0x0 => defmt::write!(f, "EcoRev0"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -91,7 +91,7 @@ impl From<EcoRev> for u8 {
 pub struct Era(u8);
 impl Era {
     #[doc = "COMPILE_OPT for TRNG."]
-    pub const ERA_0: Self = Self(0x0);
+    pub const Era0: Self = Self(0x0);
 }
 impl Era {
     pub const fn from_bits(val: u8) -> Era {
@@ -104,7 +104,7 @@ impl Era {
 impl core::fmt::Debug for Era {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("ERA_0"),
+            0x0 => f.write_str("Era0"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -113,7 +113,7 @@ impl core::fmt::Debug for Era {
 impl defmt::Format for Era {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "ERA_0"),
+            0x0 => defmt::write!(f, "Era0"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -135,9 +135,9 @@ impl From<Era> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum IntCtrlEntVal {
     #[doc = "Same behavior as bit 0 above."]
-    ENT_VAL_0 = 0x0,
+    EntVal0 = 0x0,
     #[doc = "Same behavior as bit 0 above."]
-    ENT_VAL_1 = 0x01,
+    EntVal1 = 0x01,
 }
 impl IntCtrlEntVal {
     #[inline(always)]
@@ -166,9 +166,9 @@ impl From<IntCtrlEntVal> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum IntCtrlFrqCtFail {
     #[doc = "Same behavior as bit 0 above."]
-    FRQ_CT_FAIL_0 = 0x0,
+    FrqCtFail0 = 0x0,
     #[doc = "Same behavior as bit 0 above."]
-    FRQ_CT_FAIL_1 = 0x01,
+    FrqCtFail1 = 0x01,
 }
 impl IntCtrlFrqCtFail {
     #[inline(always)]
@@ -197,9 +197,9 @@ impl From<IntCtrlFrqCtFail> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum IntCtrlHwErr {
     #[doc = "Corresponding bit of INT_STATUS cleared."]
-    HW_ERR_0 = 0x0,
+    HwErr0 = 0x0,
     #[doc = "Corresponding bit of INT_STATUS active."]
-    HW_ERR_1 = 0x01,
+    HwErr1 = 0x01,
 }
 impl IntCtrlHwErr {
     #[inline(always)]
@@ -228,9 +228,9 @@ impl From<IntCtrlHwErr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum IntMaskEntVal {
     #[doc = "Same behavior as bit 0 above."]
-    ENT_VAL_0 = 0x0,
+    EntVal0 = 0x0,
     #[doc = "Same behavior as bit 0 above."]
-    ENT_VAL_1 = 0x01,
+    EntVal1 = 0x01,
 }
 impl IntMaskEntVal {
     #[inline(always)]
@@ -259,9 +259,9 @@ impl From<IntMaskEntVal> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum IntMaskFrqCtFail {
     #[doc = "Same behavior as bit 0 above."]
-    FRQ_CT_FAIL_0 = 0x0,
+    FrqCtFail0 = 0x0,
     #[doc = "Same behavior as bit 0 above."]
-    FRQ_CT_FAIL_1 = 0x01,
+    FrqCtFail1 = 0x01,
 }
 impl IntMaskFrqCtFail {
     #[inline(always)]
@@ -290,9 +290,9 @@ impl From<IntMaskFrqCtFail> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum IntMaskHwErr {
     #[doc = "Corresponding interrupt of INT_STATUS is masked."]
-    HW_ERR_0 = 0x0,
+    HwErr0 = 0x0,
     #[doc = "Corresponding bit of INT_STATUS is active."]
-    HW_ERR_1 = 0x01,
+    HwErr1 = 0x01,
 }
 impl IntMaskHwErr {
     #[inline(always)]
@@ -321,9 +321,9 @@ impl From<IntMaskHwErr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum IntStatusEntVal {
     #[doc = "Busy generation entropy. Any value read is invalid."]
-    ENT_VAL_0 = 0x0,
+    EntVal0 = 0x0,
     #[doc = "TRNG can be stopped and entropy is valid if read."]
-    ENT_VAL_1 = 0x01,
+    EntVal1 = 0x01,
 }
 impl IntStatusEntVal {
     #[inline(always)]
@@ -352,9 +352,9 @@ impl From<IntStatusEntVal> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum IntStatusFrqCtFail {
     #[doc = "No hardware nor self test frequency errors."]
-    FRQ_CT_FAIL_0 = 0x0,
+    FrqCtFail0 = 0x0,
     #[doc = "The frequency counter has detected a failure."]
-    FRQ_CT_FAIL_1 = 0x01,
+    FrqCtFail1 = 0x01,
 }
 impl IntStatusFrqCtFail {
     #[inline(always)]
@@ -383,9 +383,9 @@ impl From<IntStatusFrqCtFail> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum IntStatusHwErr {
     #[doc = "no error."]
-    HW_ERR_0 = 0x0,
+    HwErr0 = 0x0,
     #[doc = "error detected."]
-    HW_ERR_1 = 0x01,
+    HwErr1 = 0x01,
 }
 impl IntStatusHwErr {
     #[inline(always)]
@@ -414,7 +414,7 @@ impl From<IntStatusHwErr> for u8 {
 pub struct IntgOpt(u8);
 impl IntgOpt {
     #[doc = "INTG_OPT for TRNG."]
-    pub const INTG_OPT_0: Self = Self(0x0);
+    pub const IntgOpt0: Self = Self(0x0);
 }
 impl IntgOpt {
     pub const fn from_bits(val: u8) -> IntgOpt {
@@ -427,7 +427,7 @@ impl IntgOpt {
 impl core::fmt::Debug for IntgOpt {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("INTG_OPT_0"),
+            0x0 => f.write_str("IntgOpt0"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -436,7 +436,7 @@ impl core::fmt::Debug for IntgOpt {
 impl defmt::Format for IntgOpt {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "INTG_OPT_0"),
+            0x0 => defmt::write!(f, "IntgOpt0"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -458,7 +458,7 @@ impl From<IntgOpt> for u8 {
 pub struct IpId(u16);
 impl IpId {
     #[doc = "ID for TRNG."]
-    pub const IP_ID_48: Self = Self(0x30);
+    pub const IpId48: Self = Self(0x30);
 }
 impl IpId {
     pub const fn from_bits(val: u16) -> IpId {
@@ -471,7 +471,7 @@ impl IpId {
 impl core::fmt::Debug for IpId {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x30 => f.write_str("IP_ID_48"),
+            0x30 => f.write_str("IpId48"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -480,7 +480,7 @@ impl core::fmt::Debug for IpId {
 impl defmt::Format for IpId {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x30 => defmt::write!(f, "IP_ID_48"),
+            0x30 => defmt::write!(f, "IpId48"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -502,7 +502,7 @@ impl From<IpId> for u16 {
 pub struct MajRev(u8);
 impl MajRev {
     #[doc = "Major revision number for TRNG."]
-    pub const MAJ_REV_1: Self = Self(0x01);
+    pub const MajRev1: Self = Self(0x01);
 }
 impl MajRev {
     pub const fn from_bits(val: u8) -> MajRev {
@@ -515,7 +515,7 @@ impl MajRev {
 impl core::fmt::Debug for MajRev {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("MAJ_REV_1"),
+            0x01 => f.write_str("MajRev1"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -524,7 +524,7 @@ impl core::fmt::Debug for MajRev {
 impl defmt::Format for MajRev {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "MAJ_REV_1"),
+            0x01 => defmt::write!(f, "MajRev1"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -546,7 +546,7 @@ impl From<MajRev> for u8 {
 pub struct MinRev(u8);
 impl MinRev {
     #[doc = "Minor revision number for TRNG."]
-    pub const MIN_REV_0: Self = Self(0x0);
+    pub const MinRev0: Self = Self(0x0);
 }
 impl MinRev {
     pub const fn from_bits(val: u8) -> MinRev {
@@ -559,7 +559,7 @@ impl MinRev {
 impl core::fmt::Debug for MinRev {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("MIN_REV_0"),
+            0x0 => f.write_str("MinRev0"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -568,7 +568,7 @@ impl core::fmt::Debug for MinRev {
 impl defmt::Format for MinRev {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "MIN_REV_0"),
+            0x0 => defmt::write!(f, "MinRev0"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -590,9 +590,9 @@ impl From<MinRev> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NoPrgm {
     #[doc = "Programability of registers controlled only by the Miscellaneous Control Register's access mode bit."]
-    NO_PRGM_0 = 0x0,
+    NoPrgm0 = 0x0,
     #[doc = "Overides Miscellaneous Control Register access mode and prevents TRNG register programming."]
-    NO_PRGM_1 = 0x01,
+    NoPrgm1 = 0x01,
 }
 impl NoPrgm {
     #[inline(always)]
@@ -621,13 +621,13 @@ impl From<NoPrgm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum OscDiv {
     #[doc = "use ring oscillator with no divide."]
-    OSC_DIV_0 = 0x0,
+    OscDiv0 = 0x0,
     #[doc = "use ring oscillator divided-by-2."]
-    OSC_DIV_1 = 0x01,
+    OscDiv1 = 0x01,
     #[doc = "use ring oscillator divided-by-4."]
-    OSC_DIV_2 = 0x02,
+    OscDiv2 = 0x02,
     #[doc = "use ring oscillator divided-by-8."]
-    OSC_DIV_3 = 0x03,
+    OscDiv3 = 0x03,
 }
 impl OscDiv {
     #[inline(always)]
@@ -656,13 +656,13 @@ impl From<OscDiv> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SampMode {
     #[doc = "use Von Neumann data into both Entropy shifter and Statistical Checker."]
-    SAMP_MODE_0 = 0x0,
+    SampMode0 = 0x0,
     #[doc = "use raw data into both Entropy shifter and Statistical Checker."]
-    SAMP_MODE_1 = 0x01,
+    SampMode1 = 0x01,
     #[doc = "use Von Neumann data into Entropy shifter. Use raw data into Statistical Checker."]
-    SAMP_MODE_2 = 0x02,
+    SampMode2 = 0x02,
     #[doc = "undefined/reserved."]
-    SAMP_MODE_3 = 0x03,
+    SampMode3 = 0x03,
 }
 impl SampMode {
     #[inline(always)]

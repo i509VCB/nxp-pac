@@ -3,11 +3,11 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Datainsel {
     #[doc = "Original FLEXCOMM I2S signals."]
-    ORIG_FLEX_I2S_SIGNALS = 0x0,
+    OrigFlexI2sSignals = 0x0,
     #[doc = "Shared Set0 I2S signals."]
-    SHARED_SET0_I2S_SIGNALS = 0x01,
+    SharedSet0I2sSignals = 0x01,
     #[doc = "Shared Set1 I2S signals."]
-    SHARED_SET1_I2S_SIGNALS = 0x02,
+    SharedSet1I2sSignals = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Datainsel {
@@ -37,11 +37,11 @@ impl From<Datainsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dataoutsel {
     #[doc = "Original FLEXCOMM I2S signals."]
-    ORIG_FLEX_I2S_SIGNALS = 0x0,
+    OrigFlexI2sSignals = 0x0,
     #[doc = "Shared Set0 I2S signals."]
-    SHARED_SET0_I2S_SIGNALS = 0x01,
+    SharedSet0I2sSignals = 0x01,
     #[doc = "Shared Set1 I2S signals."]
-    SHARED_SET1_I2S_SIGNALS = 0x02,
+    SharedSet1I2sSignals = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Dataoutsel {
@@ -71,9 +71,9 @@ impl From<Dataoutsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum F20dataouten {
     #[doc = "Input."]
-    INPUT = 0x0,
+    Input = 0x0,
     #[doc = "Output."]
-    OUTPUT = 0x01,
+    Output = 0x01,
 }
 impl F20dataouten {
     #[inline(always)]
@@ -102,9 +102,9 @@ impl From<F20dataouten> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fc0dataouten {
     #[doc = "Input."]
-    INPUT = 0x0,
+    Input = 0x0,
     #[doc = "Output."]
-    OUTPUT = 0x01,
+    Output = 0x01,
 }
 impl Fc0dataouten {
     #[inline(always)]
@@ -133,9 +133,9 @@ impl From<Fc0dataouten> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fc1dataouten {
     #[doc = "Input."]
-    INPUT = 0x0,
+    Input = 0x0,
     #[doc = "Output."]
-    OUTPUT = 0x01,
+    Output = 0x01,
 }
 impl Fc1dataouten {
     #[inline(always)]
@@ -164,9 +164,9 @@ impl From<Fc1dataouten> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fc3dataouten {
     #[doc = "Input."]
-    INPUT = 0x0,
+    Input = 0x0,
     #[doc = "Output."]
-    OUTPUT = 0x01,
+    Output = 0x01,
 }
 impl Fc3dataouten {
     #[inline(always)]
@@ -195,9 +195,9 @@ impl From<Fc3dataouten> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fc4dataouten {
     #[doc = "Input."]
-    INPUT = 0x0,
+    Input = 0x0,
     #[doc = "Output."]
-    OUTPUT = 0x01,
+    Output = 0x01,
 }
 impl Fc4dataouten {
     #[inline(always)]
@@ -226,9 +226,9 @@ impl From<Fc4dataouten> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fc5dataouten {
     #[doc = "Input."]
-    INPUT = 0x0,
+    Input = 0x0,
     #[doc = "Output."]
-    OUTPUT = 0x01,
+    Output = 0x01,
 }
 impl Fc5dataouten {
     #[inline(always)]
@@ -257,9 +257,9 @@ impl From<Fc5dataouten> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fc6dataouten {
     #[doc = "Input."]
-    INPUT = 0x0,
+    Input = 0x0,
     #[doc = "Output."]
-    OUTPUT = 0x01,
+    Output = 0x01,
 }
 impl Fc6dataouten {
     #[inline(always)]
@@ -288,9 +288,9 @@ impl From<Fc6dataouten> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fc7dataouten {
     #[doc = "Input."]
-    INPUT = 0x0,
+    Input = 0x0,
     #[doc = "Output."]
-    OUTPUT = 0x01,
+    Output = 0x01,
 }
 impl Fc7dataouten {
     #[inline(always)]
@@ -319,9 +319,9 @@ impl From<Fc7dataouten> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mclkpindir {
     #[doc = "MCLK is in input direction."]
-    INPUT_DIRECTION = 0x0,
+    InputDirection = 0x0,
     #[doc = "MCLK is in the output direction."]
-    OUTPUT_DIRECTION = 0x01,
+    OutputDirection = 0x01,
 }
 impl Mclkpindir {
     #[inline(always)]
@@ -350,9 +350,9 @@ impl From<Mclkpindir> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rxevpulsegen {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Pulse RXEV High for one PSCLK cycle."]
-    PULSE_RXEV_HIGH = 0x01,
+    PulseRxevHigh = 0x01,
 }
 impl Rxevpulsegen {
     #[inline(always)]
@@ -381,11 +381,11 @@ impl From<Rxevpulsegen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sckinsel {
     #[doc = "Original FLEXCOMM I2S signals."]
-    ORIG_FLEX_I2S_SIGNALS = 0x0,
+    OrigFlexI2sSignals = 0x0,
     #[doc = "Shared Set0 I2S signals."]
-    SHARED_SET0_I2S_SIGNALS = 0x01,
+    SharedSet0I2sSignals = 0x01,
     #[doc = "Shared Set1 I2S signals."]
-    SHARED_SET1_I2S_SIGNALS = 0x02,
+    SharedSet1I2sSignals = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Sckinsel {
@@ -415,21 +415,21 @@ impl From<Sckinsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Shareddatasel {
     #[doc = "FLEXCOMM0."]
-    FLEXCOMM0 = 0x0,
+    Flexcomm0 = 0x0,
     #[doc = "FLEXCOMM1."]
-    FLEXCOMM1 = 0x01,
+    Flexcomm1 = 0x01,
     #[doc = "FLEXCOMM2."]
-    FLEXCOMM2 = 0x02,
+    Flexcomm2 = 0x02,
     #[doc = "FLEXCOMM3."]
-    FLEXCOMM3 = 0x03,
+    Flexcomm3 = 0x03,
     #[doc = "FLEXCOMM4."]
-    FLEXCOMM4 = 0x04,
+    Flexcomm4 = 0x04,
     #[doc = "FLEXCOMM5."]
-    FLEXCOMM5 = 0x05,
+    Flexcomm5 = 0x05,
     #[doc = "FLEXCOMM6."]
-    FLEXCOMM6 = 0x06,
+    Flexcomm6 = 0x06,
     #[doc = "FLEXCOMM7."]
-    FLEXCOMM7 = 0x07,
+    Flexcomm7 = 0x07,
 }
 impl Shareddatasel {
     #[inline(always)]
@@ -458,21 +458,21 @@ impl From<Shareddatasel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sharedscksel {
     #[doc = "FLEXCOMM0."]
-    FLEXCOMM0 = 0x0,
+    Flexcomm0 = 0x0,
     #[doc = "FLEXCOMM1."]
-    FLEXCOMM1 = 0x01,
+    Flexcomm1 = 0x01,
     #[doc = "FLEXCOMM2."]
-    FLEXCOMM2 = 0x02,
+    Flexcomm2 = 0x02,
     #[doc = "FLEXCOMM3."]
-    FLEXCOMM3 = 0x03,
+    Flexcomm3 = 0x03,
     #[doc = "FLEXCOMM4."]
-    FLEXCOMM4 = 0x04,
+    Flexcomm4 = 0x04,
     #[doc = "FLEXCOMM5."]
-    FLEXCOMM5 = 0x05,
+    Flexcomm5 = 0x05,
     #[doc = "FLEXCOMM6."]
-    FLEXCOMM6 = 0x06,
+    Flexcomm6 = 0x06,
     #[doc = "FLEXCOMM7."]
-    FLEXCOMM7 = 0x07,
+    Flexcomm7 = 0x07,
 }
 impl Sharedscksel {
     #[inline(always)]
@@ -501,21 +501,21 @@ impl From<Sharedscksel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sharedwssel {
     #[doc = "FLEXCOMM0."]
-    FLEXCOMM0 = 0x0,
+    Flexcomm0 = 0x0,
     #[doc = "FLEXCOMM1."]
-    FLEXCOMM1 = 0x01,
+    Flexcomm1 = 0x01,
     #[doc = "FLEXCOMM2."]
-    FLEXCOMM2 = 0x02,
+    Flexcomm2 = 0x02,
     #[doc = "FLEXCOMM3."]
-    FLEXCOMM3 = 0x03,
+    Flexcomm3 = 0x03,
     #[doc = "FLEXCOMM4."]
-    FLEXCOMM4 = 0x04,
+    Flexcomm4 = 0x04,
     #[doc = "FLEXCOMM5."]
-    FLEXCOMM5 = 0x05,
+    Flexcomm5 = 0x05,
     #[doc = "FLEXCOMM6."]
-    FLEXCOMM6 = 0x06,
+    Flexcomm6 = 0x06,
     #[doc = "FLEXCOMM7."]
-    FLEXCOMM7 = 0x07,
+    Flexcomm7 = 0x07,
 }
 impl Sharedwssel {
     #[inline(always)]
@@ -544,11 +544,11 @@ impl From<Sharedwssel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wsinsel {
     #[doc = "Original FLEXCOMM I2S signals."]
-    ORIG_FLEX_I2S_SIGNALS = 0x0,
+    OrigFlexI2sSignals = 0x0,
     #[doc = "Shared Set0 I2S signals."]
-    SHARED_SET0_I2S_SIGNALS = 0x01,
+    SharedSet0I2sSignals = 0x01,
     #[doc = "Shared Set1 I2S signals."]
-    SHARED_SET1_I2S_SIGNALS = 0x02,
+    SharedSet1I2sSignals = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Wsinsel {

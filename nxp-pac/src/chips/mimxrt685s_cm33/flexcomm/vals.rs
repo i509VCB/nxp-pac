@@ -3,17 +3,17 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Persel {
     #[doc = "No peripheral selected."]
-    NO_PERIPH_SELECTED = 0x0,
+    NoPeriphSelected = 0x0,
     #[doc = "USART function selected."]
-    USART = 0x01,
+    Usart = 0x01,
     #[doc = "SPI function selected."]
-    SPI = 0x02,
+    Spi = 0x02,
     #[doc = "I2C function selected."]
-    I2C = 0x03,
+    I2c = 0x03,
     #[doc = "I2S transmit function selected."]
-    I2S_TRANSMIT = 0x04,
+    I2sTransmit = 0x04,
     #[doc = "I2S receive function selected."]
-    I2S_RECEIVE = 0x05,
+    I2sReceive = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
 }

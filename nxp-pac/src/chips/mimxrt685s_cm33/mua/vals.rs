@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CrFn {
     #[doc = "Clears the Fn bit in the SR register."]
-    FN_0 = 0x0,
+    Fn0 = 0x0,
     #[doc = "Sets the Fn bit in the SR register."]
-    FN_1 = 0x01,
+    Fn1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -40,9 +40,9 @@ impl From<CrFn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ep {
     #[doc = "The MUA side event is not pending (default)."]
-    EP_0 = 0x0,
+    Ep0 = 0x0,
     #[doc = "The MUA side event is pending."]
-    EP_1 = 0x01,
+    Ep1 = 0x01,
 }
 impl Ep {
     #[inline(always)]
@@ -71,13 +71,13 @@ impl From<Ep> for u8 {
 pub struct Feature(u16);
 impl Feature {
     #[doc = "Standard features implemented."]
-    pub const FEATURE_0: Self = Self(0x0);
+    pub const Feature0: Self = Self(0x0);
     #[doc = "RAIP and RAIE register bits implemented on MUA side."]
-    pub const FEATURE_1: Self = Self(0x01);
+    pub const Feature1: Self = Self(0x01);
     #[doc = "MUA and MUB implemented with the same function. some bits in CR register are moved to CCR register."]
-    pub const FEATURE_2: Self = Self(0x02);
+    pub const Feature2: Self = Self(0x02);
     #[doc = "some sync logic are deleted for synchronized MUA and MUB. RAIP and RDIP monitor Core reset instead of MU reset. Add HRIP and MURIP and their interrupt enable bits on both sides. Delete RS bit. Add COO mode in PM state."]
-    pub const FEATURE_4: Self = Self(0x04);
+    pub const Feature4: Self = Self(0x04);
 }
 impl Feature {
     pub const fn from_bits(val: u16) -> Feature {
@@ -90,10 +90,10 @@ impl Feature {
 impl core::fmt::Debug for Feature {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("FEATURE_0"),
-            0x01 => f.write_str("FEATURE_1"),
-            0x02 => f.write_str("FEATURE_2"),
-            0x04 => f.write_str("FEATURE_4"),
+            0x0 => f.write_str("Feature0"),
+            0x01 => f.write_str("Feature1"),
+            0x02 => f.write_str("Feature2"),
+            0x04 => f.write_str("Feature4"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -102,10 +102,10 @@ impl core::fmt::Debug for Feature {
 impl defmt::Format for Feature {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "FEATURE_0"),
-            0x01 => defmt::write!(f, "FEATURE_1"),
-            0x02 => defmt::write!(f, "FEATURE_2"),
-            0x04 => defmt::write!(f, "FEATURE_4"),
+            0x0 => defmt::write!(f, "Feature0"),
+            0x01 => defmt::write!(f, "Feature1"),
+            0x02 => defmt::write!(f, "Feature2"),
+            0x04 => defmt::write!(f, "Feature4"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -127,9 +127,9 @@ impl From<Feature> for u16 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fup {
     #[doc = "No flags updated, initiated by the MUA, in progress (default)."]
-    FUP_0 = 0x0,
+    Fup0 = 0x0,
     #[doc = "MUA initiated flags update, processing."]
-    FUP_1 = 0x01,
+    Fup1 = 0x01,
 }
 impl Fup {
     #[inline(always)]
@@ -156,11 +156,11 @@ impl From<Fup> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Gien {
+pub enum GiEn {
     #[doc = "Disables MUA General Interrupt n. (default)."]
-    GIEN_0 = 0x0,
+    GiEn0 = 0x0,
     #[doc = "Enables MUA General Interrupt n."]
-    GIEN_1 = 0x01,
+    GiEn1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -176,9 +176,9 @@ pub enum Gien {
     _RESERVED_e = 0x0e,
     _RESERVED_f = 0x0f,
 }
-impl Gien {
+impl GiEn {
     #[inline(always)]
-    pub const fn from_bits(val: u8) -> Gien {
+    pub const fn from_bits(val: u8) -> GiEn {
         unsafe { core::mem::transmute(val & 0x0f) }
     }
     #[inline(always)]
@@ -186,26 +186,26 @@ impl Gien {
         unsafe { core::mem::transmute(self) }
     }
 }
-impl From<u8> for Gien {
+impl From<u8> for GiEn {
     #[inline(always)]
-    fn from(val: u8) -> Gien {
-        Gien::from_bits(val)
+    fn from(val: u8) -> GiEn {
+        GiEn::from_bits(val)
     }
 }
-impl From<Gien> for u8 {
+impl From<GiEn> for u8 {
     #[inline(always)]
-    fn from(val: Gien) -> u8 {
-        Gien::to_bits(val)
+    fn from(val: GiEn) -> u8 {
+        GiEn::to_bits(val)
     }
 }
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Gipn {
+pub enum GiPn {
     #[doc = "MUA general purpose interrupt n is not pending. (default)."]
-    GIPN_0 = 0x0,
+    GiPn0 = 0x0,
     #[doc = "MUA general purpose interrupt n is pending."]
-    GIPN_1 = 0x01,
+    GiPn1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -221,9 +221,9 @@ pub enum Gipn {
     _RESERVED_e = 0x0e,
     _RESERVED_f = 0x0f,
 }
-impl Gipn {
+impl GiPn {
     #[inline(always)]
-    pub const fn from_bits(val: u8) -> Gipn {
+    pub const fn from_bits(val: u8) -> GiPn {
         unsafe { core::mem::transmute(val & 0x0f) }
     }
     #[inline(always)]
@@ -231,26 +231,26 @@ impl Gipn {
         unsafe { core::mem::transmute(self) }
     }
 }
-impl From<u8> for Gipn {
+impl From<u8> for GiPn {
     #[inline(always)]
-    fn from(val: u8) -> Gipn {
-        Gipn::from_bits(val)
+    fn from(val: u8) -> GiPn {
+        GiPn::from_bits(val)
     }
 }
-impl From<Gipn> for u8 {
+impl From<GiPn> for u8 {
     #[inline(always)]
-    fn from(val: Gipn) -> u8 {
-        Gipn::to_bits(val)
+    fn from(val: GiPn) -> u8 {
+        GiPn::to_bits(val)
     }
 }
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Girn {
+pub enum GiRn {
     #[doc = "MUA General Interrupt n is not requested to the MUB (default)."]
-    GIRN_0 = 0x0,
+    GiRn0 = 0x0,
     #[doc = "MUA General Interrupt n is requested to the MUB."]
-    GIRN_1 = 0x01,
+    GiRn1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -266,9 +266,9 @@ pub enum Girn {
     _RESERVED_e = 0x0e,
     _RESERVED_f = 0x0f,
 }
-impl Girn {
+impl GiRn {
     #[inline(always)]
-    pub const fn from_bits(val: u8) -> Girn {
+    pub const fn from_bits(val: u8) -> GiRn {
         unsafe { core::mem::transmute(val & 0x0f) }
     }
     #[inline(always)]
@@ -276,16 +276,16 @@ impl Girn {
         unsafe { core::mem::transmute(self) }
     }
 }
-impl From<u8> for Girn {
+impl From<u8> for GiRn {
     #[inline(always)]
-    fn from(val: u8) -> Girn {
-        Girn::from_bits(val)
+    fn from(val: u8) -> GiRn {
+        GiRn::from_bits(val)
     }
 }
-impl From<Girn> for u8 {
+impl From<GiRn> for u8 {
     #[inline(always)]
-    fn from(val: Girn) -> u8 {
-        Girn::to_bits(val)
+    fn from(val: GiRn) -> u8 {
+        GiRn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -293,9 +293,9 @@ impl From<Girn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mur {
     #[doc = "N/A. Self clearing bit (default)."]
-    MUR_0 = 0x0,
+    Mur0 = 0x0,
     #[doc = "Asserts the MU reset."]
-    MUR_1 = 0x01,
+    Mur1 = 0x01,
 }
 impl Mur {
     #[inline(always)]
@@ -324,9 +324,9 @@ impl From<Mur> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pm {
     #[doc = "The MUB processor is in Run Mode."]
-    RUN = 0x0,
+    Run = 0x0,
     #[doc = "The MUB processor is in WAIT Mode."]
-    WAIT = 0x01,
+    Wait = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
 }
@@ -355,11 +355,56 @@ impl From<Pm> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+pub enum RFn {
+    #[doc = "MUA RRn register is not full (default)."]
+    RFn0 = 0x0,
+    #[doc = "MUA RRn register has received data from MUB TRn register and is ready to be read by the MUA."]
+    RFn1 = 0x01,
+    _RESERVED_2 = 0x02,
+    _RESERVED_3 = 0x03,
+    _RESERVED_4 = 0x04,
+    _RESERVED_5 = 0x05,
+    _RESERVED_6 = 0x06,
+    _RESERVED_7 = 0x07,
+    _RESERVED_8 = 0x08,
+    _RESERVED_9 = 0x09,
+    _RESERVED_a = 0x0a,
+    _RESERVED_b = 0x0b,
+    _RESERVED_c = 0x0c,
+    _RESERVED_d = 0x0d,
+    _RESERVED_e = 0x0e,
+    _RESERVED_f = 0x0f,
+}
+impl RFn {
+    #[inline(always)]
+    pub const fn from_bits(val: u8) -> RFn {
+        unsafe { core::mem::transmute(val & 0x0f) }
+    }
+    #[inline(always)]
+    pub const fn to_bits(self) -> u8 {
+        unsafe { core::mem::transmute(self) }
+    }
+}
+impl From<u8> for RFn {
+    #[inline(always)]
+    fn from(val: u8) -> RFn {
+        RFn::from_bits(val)
+    }
+}
+impl From<RFn> for u8 {
+    #[inline(always)]
+    fn from(val: RFn) -> u8 {
+        RFn::to_bits(val)
+    }
+}
+#[repr(u8)]
+#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Raie {
     #[doc = "Disables Processor A General Purpose Interrupt 3 request due to Processor B reset assertion."]
-    RAIE_0 = 0x0,
+    Raie0 = 0x0,
     #[doc = "Enables Processor A General Purpose Interrupt 3 request due to Processor B reset assertion."]
-    RAIE_1 = 0x01,
+    Raie1 = 0x01,
 }
 impl Raie {
     #[inline(always)]
@@ -388,9 +433,9 @@ impl From<Raie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Raip {
     #[doc = "Processor B-side did not enter reset."]
-    RAIP_0 = 0x0,
+    Raip0 = 0x0,
     #[doc = "Processor B-side entered reset."]
-    RAIP_1 = 0x01,
+    Raip1 = 0x01,
 }
 impl Raip {
     #[inline(always)]
@@ -419,9 +464,9 @@ impl From<Raip> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rdie {
     #[doc = "Disables Processor A General Purpose Interrupt 3 request due to Processor B reset de-assertion."]
-    RDIE_0 = 0x0,
+    Rdie0 = 0x0,
     #[doc = "Enables Processor A General Purpose Interrupt 3 request due to Processor B reset de-assertion."]
-    RDIE_1 = 0x01,
+    Rdie1 = 0x01,
 }
 impl Rdie {
     #[inline(always)]
@@ -450,9 +495,9 @@ impl From<Rdie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rdip {
     #[doc = "Processor B-side did not exit reset."]
-    RDIP_0 = 0x0,
+    Rdip0 = 0x0,
     #[doc = "Processor B-side exited from reset."]
-    RDIP_1 = 0x01,
+    Rdip1 = 0x01,
 }
 impl Rdip {
     #[inline(always)]
@@ -479,56 +524,11 @@ impl From<Rdip> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Rfn {
-    #[doc = "MUA RRn register is not full (default)."]
-    RFN_0 = 0x0,
-    #[doc = "MUA RRn register has received data from MUB TRn register and is ready to be read by the MUA."]
-    RFN_1 = 0x01,
-    _RESERVED_2 = 0x02,
-    _RESERVED_3 = 0x03,
-    _RESERVED_4 = 0x04,
-    _RESERVED_5 = 0x05,
-    _RESERVED_6 = 0x06,
-    _RESERVED_7 = 0x07,
-    _RESERVED_8 = 0x08,
-    _RESERVED_9 = 0x09,
-    _RESERVED_a = 0x0a,
-    _RESERVED_b = 0x0b,
-    _RESERVED_c = 0x0c,
-    _RESERVED_d = 0x0d,
-    _RESERVED_e = 0x0e,
-    _RESERVED_f = 0x0f,
-}
-impl Rfn {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Rfn {
-        unsafe { core::mem::transmute(val & 0x0f) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Rfn {
-    #[inline(always)]
-    fn from(val: u8) -> Rfn {
-        Rfn::from_bits(val)
-    }
-}
-impl From<Rfn> for u8 {
-    #[inline(always)]
-    fn from(val: Rfn) -> u8 {
-        Rfn::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Rien {
+pub enum RiEn {
     #[doc = "Disables MUA Receive Interrupt n. (default)."]
-    RIEN_0 = 0x0,
+    RiEn0 = 0x0,
     #[doc = "Enables MUA Receive Interrupt n."]
-    RIEN_1 = 0x01,
+    RiEn1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -544,9 +544,9 @@ pub enum Rien {
     _RESERVED_e = 0x0e,
     _RESERVED_f = 0x0f,
 }
-impl Rien {
+impl RiEn {
     #[inline(always)]
-    pub const fn from_bits(val: u8) -> Rien {
+    pub const fn from_bits(val: u8) -> RiEn {
         unsafe { core::mem::transmute(val & 0x0f) }
     }
     #[inline(always)]
@@ -554,16 +554,16 @@ impl Rien {
         unsafe { core::mem::transmute(self) }
     }
 }
-impl From<u8> for Rien {
+impl From<u8> for RiEn {
     #[inline(always)]
-    fn from(val: u8) -> Rien {
-        Rien::from_bits(val)
+    fn from(val: u8) -> RiEn {
+        RiEn::from_bits(val)
     }
 }
-impl From<Rien> for u8 {
+impl From<RiEn> for u8 {
     #[inline(always)]
-    fn from(val: Rien) -> u8 {
-        Rien::to_bits(val)
+    fn from(val: RiEn) -> u8 {
+        RiEn::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -571,9 +571,9 @@ impl From<Rien> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rs {
     #[doc = "The MUB side of the MU is not in reset."]
-    RS_0 = 0x0,
+    Rs0 = 0x0,
     #[doc = "The MUB side of the MU is in reset."]
-    RS_1 = 0x01,
+    Rs1 = 0x01,
 }
 impl Rs {
     #[inline(always)]
@@ -602,9 +602,9 @@ impl From<Rs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SrFn {
     #[doc = "Fn bit in the CR register is written 0 (default)."]
-    FN_0 = 0x0,
+    Fn0 = 0x0,
     #[doc = "Fn bit in the CR register is written 1."]
-    FN_1 = 0x01,
+    Fn1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -637,11 +637,11 @@ impl From<SrFn> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Ten {
+pub enum TEn {
     #[doc = "MUA TRn register is not empty."]
-    TEN_0 = 0x0,
+    TEn0 = 0x0,
     #[doc = "MUA TRn register is empty (default)."]
-    TEN_1 = 0x01,
+    TEn1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -657,9 +657,9 @@ pub enum Ten {
     _RESERVED_e = 0x0e,
     _RESERVED_f = 0x0f,
 }
-impl Ten {
+impl TEn {
     #[inline(always)]
-    pub const fn from_bits(val: u8) -> Ten {
+    pub const fn from_bits(val: u8) -> TEn {
         unsafe { core::mem::transmute(val & 0x0f) }
     }
     #[inline(always)]
@@ -667,26 +667,26 @@ impl Ten {
         unsafe { core::mem::transmute(self) }
     }
 }
-impl From<u8> for Ten {
+impl From<u8> for TEn {
     #[inline(always)]
-    fn from(val: u8) -> Ten {
-        Ten::from_bits(val)
+    fn from(val: u8) -> TEn {
+        TEn::from_bits(val)
     }
 }
-impl From<Ten> for u8 {
+impl From<TEn> for u8 {
     #[inline(always)]
-    fn from(val: Ten) -> u8 {
-        Ten::to_bits(val)
+    fn from(val: TEn) -> u8 {
+        TEn::to_bits(val)
     }
 }
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Tien {
+pub enum TiEn {
     #[doc = "Disables MUA Transmit Interrupt n. (default)."]
-    TIEN_0 = 0x0,
+    TiEn0 = 0x0,
     #[doc = "Enables MUA Transmit Interrupt n."]
-    TIEN_1 = 0x01,
+    TiEn1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -702,9 +702,9 @@ pub enum Tien {
     _RESERVED_e = 0x0e,
     _RESERVED_f = 0x0f,
 }
-impl Tien {
+impl TiEn {
     #[inline(always)]
-    pub const fn from_bits(val: u8) -> Tien {
+    pub const fn from_bits(val: u8) -> TiEn {
         unsafe { core::mem::transmute(val & 0x0f) }
     }
     #[inline(always)]
@@ -712,15 +712,15 @@ impl Tien {
         unsafe { core::mem::transmute(self) }
     }
 }
-impl From<u8> for Tien {
+impl From<u8> for TiEn {
     #[inline(always)]
-    fn from(val: u8) -> Tien {
-        Tien::from_bits(val)
+    fn from(val: u8) -> TiEn {
+        TiEn::from_bits(val)
     }
 }
-impl From<Tien> for u8 {
+impl From<TiEn> for u8 {
     #[inline(always)]
-    fn from(val: Tien) -> u8 {
-        Tien::to_bits(val)
+    fn from(val: TiEn) -> u8 {
+        TiEn::to_bits(val)
     }
 }

@@ -3292,7 +3292,7 @@ impl Can {
     pub const fn pl2_plmask_hi(self) -> crate::common::Reg<regs::Pl2PlmaskHi, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0b24usize) as _) }
     }
-    #[doc = "Array of registers: WMB_CS, WMB_D03, WMB_D47, WMB_ID."]
+    #[doc = "Array of registers: WMB_CS, WMB_ID, WMB_D03, WMB_D47."]
     #[inline(always)]
     pub const fn wmb(self, n: usize) -> Wmb {
         assert!(n < 4usize);
@@ -3357,7 +3357,7 @@ impl Can {
         }
     }
 }
-#[doc = "Array of registers: WMB_CS, WMB_D03, WMB_D47, WMB_ID."]
+#[doc = "Array of registers: WMB_CS, WMB_ID, WMB_D03, WMB_D47."]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct Wmb {
     ptr: *mut u8,

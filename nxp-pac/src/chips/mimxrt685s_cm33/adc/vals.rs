@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Adcen {
     #[doc = "ADC is disabled."]
-    ADCEN_0 = 0x0,
+    Adcen0 = 0x0,
     #[doc = "ADC is enabled."]
-    ADCEN_1 = 0x01,
+    Adcen1 = 0x01,
 }
 impl Adcen {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Adcen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Calofsi {
     #[doc = "Offset calibration and offset trimming not implemented."]
-    CALOFSI_0 = 0x0,
+    Calofsi0 = 0x0,
     #[doc = "Offset calibration and offset trimming implemented."]
-    CALOFSI_1 = 0x01,
+    Calofsi1 = 0x01,
 }
 impl Calofsi {
     #[inline(always)]
@@ -65,11 +65,11 @@ impl From<Calofsi> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdact {
     #[doc = "No command is currently in progress."]
-    CMDACT_0 = 0x0,
+    Cmdact0 = 0x0,
     #[doc = "Command 1 currently being executed."]
-    CMDACT_1 = 0x01,
+    Cmdact1 = 0x01,
     #[doc = "Command 2 currently being executed."]
-    CMDACT_2 = 0x02,
+    Cmdact2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
     _RESERVED_5 = 0x05,
@@ -83,7 +83,7 @@ pub enum Cmdact {
     _RESERVED_d = 0x0d,
     _RESERVED_e = 0x0e,
     #[doc = "Command 15 currently being executed."]
-    CMDACT_15 = 0x0f,
+    Cmdact15 = 0x0f,
 }
 impl Cmdact {
     #[inline(always)]
@@ -112,21 +112,21 @@ impl From<Cmdact> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CmdhAvgs {
     #[doc = "Single conversion."]
-    AVGS_0 = 0x0,
+    Avgs0 = 0x0,
     #[doc = "2 conversions averaged."]
-    AVGS_1 = 0x01,
+    Avgs1 = 0x01,
     #[doc = "4 conversions averaged."]
-    AVGS_2 = 0x02,
+    Avgs2 = 0x02,
     #[doc = "8 conversions averaged."]
-    AVGS_3 = 0x03,
+    Avgs3 = 0x03,
     #[doc = "16 conversions averaged."]
-    AVGS_4 = 0x04,
+    Avgs4 = 0x04,
     #[doc = "32 conversions averaged."]
-    AVGS_5 = 0x05,
+    Avgs5 = 0x05,
     #[doc = "64 conversions averaged."]
-    AVGS_6 = 0x06,
+    Avgs6 = 0x06,
     #[doc = "128 conversions averaged."]
-    AVGS_7 = 0x07,
+    Avgs7 = 0x07,
 }
 impl CmdhAvgs {
     #[inline(always)]
@@ -155,12 +155,12 @@ impl From<CmdhAvgs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CmdhCmpen {
     #[doc = "Compare disabled."]
-    CMPEN_0 = 0x0,
+    Cmpen0 = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "Compare enabled. Store on true."]
-    CMPEN_2 = 0x02,
+    Cmpen2 = 0x02,
     #[doc = "Compare enabled. Repeat channel acquisition (sample/convert/compare) until true."]
-    CMPEN_3 = 0x03,
+    Cmpen3 = 0x03,
 }
 impl CmdhCmpen {
     #[inline(always)]
@@ -189,32 +189,32 @@ impl From<CmdhCmpen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CmdhLoop {
     #[doc = "Looping not enabled. Command executes 1 time."]
-    LOOP_0 = 0x0,
+    Loop0 = 0x0,
     #[doc = "Loop 1 time. Command executes 2 times."]
-    LOOP_1 = 0x01,
+    Loop1 = 0x01,
     #[doc = "Loop 2 times. Command executes 3 times."]
-    LOOP_2 = 0x02,
+    Loop2 = 0x02,
     #[doc = "Loop corresponding number of times. Command executes LOOP+1 times."]
-    LOOP_3 = 0x03,
+    Loop3 = 0x03,
     #[doc = "Loop corresponding number of times. Command executes LOOP+1 times."]
-    LOOP_4 = 0x04,
+    Loop4 = 0x04,
     #[doc = "Loop corresponding number of times. Command executes LOOP+1 times."]
-    LOOP_5 = 0x05,
+    Loop5 = 0x05,
     #[doc = "Loop corresponding number of times. Command executes LOOP+1 times."]
-    LOOP_6 = 0x06,
+    Loop6 = 0x06,
     #[doc = "Loop corresponding number of times. Command executes LOOP+1 times."]
-    LOOP_7 = 0x07,
+    Loop7 = 0x07,
     #[doc = "Loop corresponding number of times. Command executes LOOP+1 times."]
-    LOOP_8 = 0x08,
+    Loop8 = 0x08,
     #[doc = "Loop corresponding number of times. Command executes LOOP+1 times."]
-    LOOP_9 = 0x09,
+    Loop9 = 0x09,
     _RESERVED_a = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
     _RESERVED_d = 0x0d,
     _RESERVED_e = 0x0e,
     #[doc = "Loop 15 times. Command executes 16 times."]
-    LOOP_15 = 0x0f,
+    Loop15 = 0x0f,
 }
 impl CmdhLoop {
     #[inline(always)]
@@ -243,9 +243,9 @@ impl From<CmdhLoop> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CmdhLwi {
     #[doc = "Auto channel increment disabled."]
-    LWI_0 = 0x0,
+    Lwi0 = 0x0,
     #[doc = "Auto channel increment enabled."]
-    LWI_1 = 0x01,
+    Lwi1 = 0x01,
 }
 impl CmdhLwi {
     #[inline(always)]
@@ -274,32 +274,32 @@ impl From<CmdhLwi> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CmdhNext {
     #[doc = "No next command defined. Terminate conversions at completion of current command. If lower priority trigger pending, begin command associated with lower priority trigger."]
-    NEXT_0 = 0x0,
+    Next0 = 0x0,
     #[doc = "Select CMD1 command buffer register as next command."]
-    NEXT_1 = 0x01,
+    Next1 = 0x01,
     #[doc = "Select corresponding CMD command buffer register as next command."]
-    NEXT_2 = 0x02,
+    Next2 = 0x02,
     #[doc = "Select corresponding CMD command buffer register as next command."]
-    NEXT_3 = 0x03,
+    Next3 = 0x03,
     #[doc = "Select corresponding CMD command buffer register as next command."]
-    NEXT_4 = 0x04,
+    Next4 = 0x04,
     #[doc = "Select corresponding CMD command buffer register as next command."]
-    NEXT_5 = 0x05,
+    Next5 = 0x05,
     #[doc = "Select corresponding CMD command buffer register as next command."]
-    NEXT_6 = 0x06,
+    Next6 = 0x06,
     #[doc = "Select corresponding CMD command buffer register as next command."]
-    NEXT_7 = 0x07,
+    Next7 = 0x07,
     #[doc = "Select corresponding CMD command buffer register as next command."]
-    NEXT_8 = 0x08,
+    Next8 = 0x08,
     #[doc = "Select corresponding CMD command buffer register as next command."]
-    NEXT_9 = 0x09,
+    Next9 = 0x09,
     _RESERVED_a = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
     _RESERVED_d = 0x0d,
     _RESERVED_e = 0x0e,
     #[doc = "Select CMD15 command buffer register as next command."]
-    NEXT_15 = 0x0f,
+    Next15 = 0x0f,
 }
 impl CmdhNext {
     #[inline(always)]
@@ -328,21 +328,21 @@ impl From<CmdhNext> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CmdhSts {
     #[doc = "Minimum sample time of 3 ADCK cycles."]
-    STS_0 = 0x0,
+    Sts0 = 0x0,
     #[doc = "3 + 2^1 ADCK cycles; 5 ADCK cycles total sample time."]
-    STS_1 = 0x01,
+    Sts1 = 0x01,
     #[doc = "3 + 2^2 ADCK cycles; 7 ADCK cycles total sample time."]
-    STS_2 = 0x02,
+    Sts2 = 0x02,
     #[doc = "3 + 2^3 ADCK cycles; 11 ADCK cycles total sample time."]
-    STS_3 = 0x03,
+    Sts3 = 0x03,
     #[doc = "3 + 2^4 ADCK cycles; 19 ADCK cycles total sample time."]
-    STS_4 = 0x04,
+    Sts4 = 0x04,
     #[doc = "3 + 2^5 ADCK cycles; 35 ADCK cycles total sample time."]
-    STS_5 = 0x05,
+    Sts5 = 0x05,
     #[doc = "3 + 2^6 ADCK cycles; 67 ADCK cycles total sample time."]
-    STS_6 = 0x06,
+    Sts6 = 0x06,
     #[doc = "3 + 2^7 ADCK cycles; 131 ADCK cycles total sample time."]
-    STS_7 = 0x07,
+    Sts7 = 0x07,
 }
 impl CmdhSts {
     #[inline(always)]
@@ -371,9 +371,9 @@ impl From<CmdhSts> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CmdlAbsel {
     #[doc = "When DIFF=0b0, the associated A-side channel is converted as single-ended. When DIFF=0b1, the ADC result is (CHnA-CHnB)."]
-    ABSEL_0 = 0x0,
+    Absel0 = 0x0,
     #[doc = "When DIFF=0b0, the associated B-side channel is converted as single-ended. When DIFF=0b1, the ADC result is (CHnB-CHnA)."]
-    ABSEL_1 = 0x01,
+    Absel1 = 0x01,
 }
 impl CmdlAbsel {
     #[inline(always)]
@@ -402,25 +402,25 @@ impl From<CmdlAbsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CmdlAdch {
     #[doc = "Select CH0A or CH0B or CH0A/CH0B pair."]
-    ADCH_0 = 0x0,
+    Adch0 = 0x0,
     #[doc = "Select CH1A or CH1B or CH1A/CH1B pair."]
-    ADCH_1 = 0x01,
+    Adch1 = 0x01,
     #[doc = "Select CH2A or CH2B or CH2A/CH2B pair."]
-    ADCH_2 = 0x02,
+    Adch2 = 0x02,
     #[doc = "Select CH3A or CH3B or CH3A/CH3B pair."]
-    ADCH_3 = 0x03,
+    Adch3 = 0x03,
     #[doc = "Select corresponding channel CHnA or CHnB or CHnA/CHnB pair."]
-    ADCH_4 = 0x04,
+    Adch4 = 0x04,
     #[doc = "Select corresponding channel CHnA or CHnB or CHnA/CHnB pair."]
-    ADCH_5 = 0x05,
+    Adch5 = 0x05,
     #[doc = "Select corresponding channel CHnA or CHnB or CHnA/CHnB pair."]
-    ADCH_6 = 0x06,
+    Adch6 = 0x06,
     #[doc = "Select corresponding channel CHnA or CHnB or CHnA/CHnB pair."]
-    ADCH_7 = 0x07,
+    Adch7 = 0x07,
     #[doc = "Select corresponding channel CHnA or CHnB or CHnA/CHnB pair."]
-    ADCH_8 = 0x08,
+    Adch8 = 0x08,
     #[doc = "Select corresponding channel CHnA or CHnB or CHnA/CHnB pair."]
-    ADCH_9 = 0x09,
+    Adch9 = 0x09,
     _RESERVED_a = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
@@ -442,9 +442,9 @@ pub enum CmdlAdch {
     _RESERVED_1c = 0x1c,
     _RESERVED_1d = 0x1d,
     #[doc = "Select CH30A or CH30B or CH30A/CH30B pair."]
-    ADCH_30 = 0x1e,
+    Adch30 = 0x1e,
     #[doc = "Select CH31A or CH31B or CH31A/CH31B pair."]
-    ADCH_31 = 0x1f,
+    Adch31 = 0x1f,
 }
 impl CmdlAdch {
     #[inline(always)]
@@ -473,9 +473,9 @@ impl From<CmdlAdch> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CmdlCscale {
     #[doc = "Scale selected analog channel (Factor of 30/64)."]
-    CSCALE_0 = 0x0,
+    Cscale0 = 0x0,
     #[doc = "(Default) Full scale (Factor of 1)."]
-    CSCALE_1 = 0x01,
+    Cscale1 = 0x01,
 }
 impl CmdlCscale {
     #[inline(always)]
@@ -504,9 +504,9 @@ impl From<CmdlCscale> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CmdlDiff {
     #[doc = "Single-ended mode."]
-    DIFF_0 = 0x0,
+    Diff0 = 0x0,
     #[doc = "Differential mode."]
-    DIFF_1 = 0x01,
+    Diff1 = 0x01,
 }
 impl CmdlDiff {
     #[inline(always)]
@@ -535,32 +535,32 @@ impl From<CmdlDiff> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmdsrc {
     #[doc = "Not a valid value CMDSRC value for a dataword in RESFIFO. 0x0 is only found in initial FIFO state prior to an ADC conversion result dataword being stored to a RESFIFO buffer."]
-    CMDSRC_0 = 0x0,
+    Cmdsrc0 = 0x0,
     #[doc = "CMD1 buffer used as control settings for this conversion."]
-    CMDSRC_1 = 0x01,
+    Cmdsrc1 = 0x01,
     #[doc = "Corresponding command buffer used as control settings for this conversion."]
-    CMDSRC_2 = 0x02,
+    Cmdsrc2 = 0x02,
     #[doc = "Corresponding command buffer used as control settings for this conversion."]
-    CMDSRC_3 = 0x03,
+    Cmdsrc3 = 0x03,
     #[doc = "Corresponding command buffer used as control settings for this conversion."]
-    CMDSRC_4 = 0x04,
+    Cmdsrc4 = 0x04,
     #[doc = "Corresponding command buffer used as control settings for this conversion."]
-    CMDSRC_5 = 0x05,
+    Cmdsrc5 = 0x05,
     #[doc = "Corresponding command buffer used as control settings for this conversion."]
-    CMDSRC_6 = 0x06,
+    Cmdsrc6 = 0x06,
     #[doc = "Corresponding command buffer used as control settings for this conversion."]
-    CMDSRC_7 = 0x07,
+    Cmdsrc7 = 0x07,
     #[doc = "Corresponding command buffer used as control settings for this conversion."]
-    CMDSRC_8 = 0x08,
+    Cmdsrc8 = 0x08,
     #[doc = "Corresponding command buffer used as control settings for this conversion."]
-    CMDSRC_9 = 0x09,
+    Cmdsrc9 = 0x09,
     _RESERVED_a = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
     _RESERVED_d = 0x0d,
     _RESERVED_e = 0x0e,
     #[doc = "CMD15 buffer used as control settings for this conversion."]
-    CMDSRC_15 = 0x0f,
+    Cmdsrc15 = 0x0f,
 }
 impl Cmdsrc {
     #[inline(always)]
@@ -589,15 +589,15 @@ impl From<Cmdsrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Csw {
     #[doc = "Channel scaling not supported."]
-    CSW_0 = 0x0,
+    Csw0 = 0x0,
     #[doc = "Channel scaling supported. 1-bit CSCALE control field."]
-    CSW_1 = 0x01,
+    Csw1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
     _RESERVED_5 = 0x05,
     #[doc = "Channel scaling supported. 6-bit CSCALE control field."]
-    CSW_6 = 0x06,
+    Csw6 = 0x06,
     _RESERVED_7 = 0x07,
 }
 impl Csw {
@@ -627,9 +627,9 @@ impl From<Csw> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Diffen {
     #[doc = "Differential operation not supported."]
-    DIFFEN_0 = 0x0,
+    Diffen0 = 0x0,
     #[doc = "Differential operation supported. CMDLa\\[DIFF\\] and CMDLa\\[ABSEL\\] control fields implemented."]
-    DIFFEN_1 = 0x01,
+    Diffen1 = 0x01,
 }
 impl Diffen {
     #[inline(always)]
@@ -658,9 +658,9 @@ impl From<Diffen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dozen {
     #[doc = "ADC is enabled in Doze mode."]
-    DOZEN_0 = 0x0,
+    Dozen0 = 0x0,
     #[doc = "ADC is disabled in Doze mode."]
-    DOZEN_1 = 0x01,
+    Dozen1 = 0x01,
 }
 impl Dozen {
     #[inline(always)]
@@ -689,17 +689,17 @@ impl From<Dozen> for u8 {
 pub struct Fifosize(u8);
 impl Fifosize {
     #[doc = "Result FIFO depth = 1 dataword."]
-    pub const FIFOSIZE_1: Self = Self(0x01);
+    pub const Fifosize1: Self = Self(0x01);
     #[doc = "Result FIFO depth = 4 datawords."]
-    pub const FIFOSIZE_4: Self = Self(0x04);
+    pub const Fifosize4: Self = Self(0x04);
     #[doc = "Result FIFO depth = 8 datawords."]
-    pub const FIFOSIZE_8: Self = Self(0x08);
+    pub const Fifosize8: Self = Self(0x08);
     #[doc = "Result FIFO depth = 16 datawords."]
-    pub const FIFOSIZE_16: Self = Self(0x10);
+    pub const Fifosize16: Self = Self(0x10);
     #[doc = "Result FIFO depth = 32 datawords."]
-    pub const FIFOSIZE_32: Self = Self(0x20);
+    pub const Fifosize32: Self = Self(0x20);
     #[doc = "Result FIFO depth = 64 datawords."]
-    pub const FIFOSIZE_64: Self = Self(0x40);
+    pub const Fifosize64: Self = Self(0x40);
 }
 impl Fifosize {
     pub const fn from_bits(val: u8) -> Fifosize {
@@ -712,12 +712,12 @@ impl Fifosize {
 impl core::fmt::Debug for Fifosize {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("FIFOSIZE_1"),
-            0x04 => f.write_str("FIFOSIZE_4"),
-            0x08 => f.write_str("FIFOSIZE_8"),
-            0x10 => f.write_str("FIFOSIZE_16"),
-            0x20 => f.write_str("FIFOSIZE_32"),
-            0x40 => f.write_str("FIFOSIZE_64"),
+            0x01 => f.write_str("Fifosize1"),
+            0x04 => f.write_str("Fifosize4"),
+            0x08 => f.write_str("Fifosize8"),
+            0x10 => f.write_str("Fifosize16"),
+            0x20 => f.write_str("Fifosize32"),
+            0x40 => f.write_str("Fifosize64"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -726,12 +726,12 @@ impl core::fmt::Debug for Fifosize {
 impl defmt::Format for Fifosize {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "FIFOSIZE_1"),
-            0x04 => defmt::write!(f, "FIFOSIZE_4"),
-            0x08 => defmt::write!(f, "FIFOSIZE_8"),
-            0x10 => defmt::write!(f, "FIFOSIZE_16"),
-            0x20 => defmt::write!(f, "FIFOSIZE_32"),
-            0x40 => defmt::write!(f, "FIFOSIZE_64"),
+            0x01 => defmt::write!(f, "Fifosize1"),
+            0x04 => defmt::write!(f, "Fifosize4"),
+            0x08 => defmt::write!(f, "Fifosize8"),
+            0x10 => defmt::write!(f, "Fifosize16"),
+            0x20 => defmt::write!(f, "Fifosize32"),
+            0x40 => defmt::write!(f, "Fifosize64"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -753,9 +753,9 @@ impl From<Fifosize> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fof {
     #[doc = "No result FIFO overflow has occurred since the last time the flag was cleared."]
-    FOF_0 = 0x0,
+    Fof0 = 0x0,
     #[doc = "At least one result FIFO overflow has occurred since the last time the flag was cleared."]
-    FOF_1 = 0x01,
+    Fof1 = 0x01,
 }
 impl Fof {
     #[inline(always)]
@@ -784,9 +784,9 @@ impl From<Fof> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fofie {
     #[doc = "FIFO overflow interrupts are not enabled."]
-    FOFIE_0 = 0x0,
+    Fofie0 = 0x0,
     #[doc = "FIFO overflow interrupts are enabled."]
-    FOFIE_1 = 0x01,
+    Fofie1 = 0x01,
 }
 impl Fofie {
     #[inline(always)]
@@ -815,9 +815,9 @@ impl From<Fofie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fwmde {
     #[doc = "DMA request disabled."]
-    FWMDE_0 = 0x0,
+    Fwmde0 = 0x0,
     #[doc = "DMA request enabled."]
-    FWMDE_1 = 0x01,
+    Fwmde1 = 0x01,
 }
 impl Fwmde {
     #[inline(always)]
@@ -846,9 +846,9 @@ impl From<Fwmde> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fwmie {
     #[doc = "FIFO watermark interrupts are not enabled."]
-    FWMIE_0 = 0x0,
+    Fwmie0 = 0x0,
     #[doc = "FIFO watermark interrupts are enabled."]
-    FWMIE_1 = 0x01,
+    Fwmie1 = 0x01,
 }
 impl Fwmie {
     #[inline(always)]
@@ -877,9 +877,9 @@ impl From<Fwmie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hten {
     #[doc = "Hardware trigger source disabled."]
-    HTEN_0 = 0x0,
+    Hten0 = 0x0,
     #[doc = "Hardware trigger source enabled."]
-    HTEN_1 = 0x01,
+    Hten1 = 0x01,
 }
 impl Hten {
     #[inline(always)]
@@ -908,9 +908,9 @@ impl From<Hten> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Iadcki {
     #[doc = "Internal clock source not implemented."]
-    IADCKI_0 = 0x0,
+    Iadcki0 = 0x0,
     #[doc = "Internal clock source (and CFG\\[ADCKEN\\]) implemented."]
-    IADCKI_1 = 0x01,
+    Iadcki1 = 0x01,
 }
 impl Iadcki {
     #[inline(always)]
@@ -939,32 +939,32 @@ impl From<Iadcki> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Loopcnt {
     #[doc = "Result is from initial conversion in command."]
-    LOOPCNT_0 = 0x0,
+    Loopcnt0 = 0x0,
     #[doc = "Result is from second conversion in command."]
-    LOOPCNT_1 = 0x01,
+    Loopcnt1 = 0x01,
     #[doc = "Result is from LOOPCNT+1 conversion in command."]
-    LOOPCNT_2 = 0x02,
+    Loopcnt2 = 0x02,
     #[doc = "Result is from LOOPCNT+1 conversion in command."]
-    LOOPCNT_3 = 0x03,
+    Loopcnt3 = 0x03,
     #[doc = "Result is from LOOPCNT+1 conversion in command."]
-    LOOPCNT_4 = 0x04,
+    Loopcnt4 = 0x04,
     #[doc = "Result is from LOOPCNT+1 conversion in command."]
-    LOOPCNT_5 = 0x05,
+    Loopcnt5 = 0x05,
     #[doc = "Result is from LOOPCNT+1 conversion in command."]
-    LOOPCNT_6 = 0x06,
+    Loopcnt6 = 0x06,
     #[doc = "Result is from LOOPCNT+1 conversion in command."]
-    LOOPCNT_7 = 0x07,
+    Loopcnt7 = 0x07,
     #[doc = "Result is from LOOPCNT+1 conversion in command."]
-    LOOPCNT_8 = 0x08,
+    Loopcnt8 = 0x08,
     #[doc = "Result is from LOOPCNT+1 conversion in command."]
-    LOOPCNT_9 = 0x09,
+    Loopcnt9 = 0x09,
     _RESERVED_a = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
     _RESERVED_d = 0x0d,
     _RESERVED_e = 0x0e,
     #[doc = "Result is from 16th conversion in command."]
-    LOOPCNT_15 = 0x0f,
+    Loopcnt15 = 0x0f,
 }
 impl Loopcnt {
     #[inline(always)]
@@ -993,9 +993,9 @@ impl From<Loopcnt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mvi {
     #[doc = "Single voltage reference high (VREFH) input supported."]
-    MVI_0 = 0x0,
+    Mvi0 = 0x0,
     #[doc = "Multiple voltage reference high (VREFH) inputs supported."]
-    MVI_1 = 0x01,
+    Mvi1 = 0x01,
 }
 impl Mvi {
     #[inline(always)]
@@ -1024,9 +1024,9 @@ impl From<Mvi> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pauseen {
     #[doc = "Pause operation disabled."]
-    PAUSEEN_0 = 0x0,
+    Pauseen0 = 0x0,
     #[doc = "Pause operation enabled."]
-    PAUSEEN_1 = 0x01,
+    Pauseen1 = 0x01,
 }
 impl Pauseen {
     #[inline(always)]
@@ -1055,9 +1055,9 @@ impl From<Pauseen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pwren {
     #[doc = "ADC analog circuits are only enabled while conversions are active. Performance is affected due to analog startup delays."]
-    PWREN_0 = 0x0,
+    Pwren0 = 0x0,
     #[doc = "ADC analog circuits are pre-enabled and ready to execute conversions without startup delays (at the cost of higher DC current consumption). When PWREN is set, the power up delay is enforced such that any detected trigger does not begin ADC operation until the power up delay time has passed."]
-    PWREN_1 = 0x01,
+    Pwren1 = 0x01,
 }
 impl Pwren {
     #[inline(always)]
@@ -1086,13 +1086,13 @@ impl From<Pwren> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pwrsel {
     #[doc = "Lowest power setting."]
-    PWRSEL_0 = 0x0,
+    Pwrsel0 = 0x0,
     #[doc = "Next lowest power setting."]
-    PWRSEL_1 = 0x01,
+    Pwrsel1 = 0x01,
     #[doc = "...."]
-    PWRSEL_2 = 0x02,
+    Pwrsel2 = 0x02,
     #[doc = "Highest power setting."]
-    PWRSEL_3 = 0x03,
+    Pwrsel3 = 0x03,
 }
 impl Pwrsel {
     #[inline(always)]
@@ -1121,9 +1121,9 @@ impl From<Pwrsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rdy {
     #[doc = "Result FIFO data level not above watermark level."]
-    RDY_0 = 0x0,
+    Rdy0 = 0x0,
     #[doc = "Result FIFO holding data above watermark level."]
-    RDY_1 = 0x01,
+    Rdy1 = 0x01,
 }
 impl Rdy {
     #[inline(always)]
@@ -1152,11 +1152,11 @@ impl From<Rdy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Refsel {
     #[doc = "(Default) Option 1 setting."]
-    REFSEL_0 = 0x0,
+    Refsel0 = 0x0,
     #[doc = "Option 2 setting."]
-    REFSEL_1 = 0x01,
+    Refsel1 = 0x01,
     #[doc = "Option 3 setting."]
-    REFSEL_2 = 0x02,
+    Refsel2 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Refsel {
@@ -1186,9 +1186,9 @@ impl From<Refsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Res {
     #[doc = "Up to 13-bit differential/12-bit single ended resolution supported."]
-    RES_0 = 0x0,
+    Res0 = 0x0,
     #[doc = "Up to 16-bit differential/15-bit single ended resolution supported."]
-    RES_1 = 0x01,
+    Res1 = 0x01,
 }
 impl Res {
     #[inline(always)]
@@ -1217,9 +1217,9 @@ impl From<Res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rst {
     #[doc = "ADC logic is not reset."]
-    RST_0 = 0x0,
+    Rst0 = 0x0,
     #[doc = "ADC logic is reset."]
-    RST_1 = 0x01,
+    Rst1 = 0x01,
 }
 impl Rst {
     #[inline(always)]
@@ -1248,9 +1248,9 @@ impl From<Rst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rstfifo {
     #[doc = "No effect."]
-    RSTFIFO_0 = 0x0,
+    Rstfifo0 = 0x0,
     #[doc = "FIFO is reset."]
-    RSTFIFO_1 = 0x01,
+    Rstfifo1 = 0x01,
 }
 impl Rstfifo {
     #[inline(always)]
@@ -1279,9 +1279,9 @@ impl From<Rstfifo> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swt0 {
     #[doc = "No trigger 0 event generated."]
-    SWT0_0 = 0x0,
+    Swt00 = 0x0,
     #[doc = "Trigger 0 event generated."]
-    SWT0_1 = 0x01,
+    Swt01 = 0x01,
 }
 impl Swt0 {
     #[inline(always)]
@@ -1310,9 +1310,9 @@ impl From<Swt0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swt1 {
     #[doc = "No trigger 1 event generated."]
-    SWT1_0 = 0x0,
+    Swt10 = 0x0,
     #[doc = "Trigger 1 event generated."]
-    SWT1_1 = 0x01,
+    Swt11 = 0x01,
 }
 impl Swt1 {
     #[inline(always)]
@@ -1341,9 +1341,9 @@ impl From<Swt1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swt10 {
     #[doc = "No trigger 10 event generated."]
-    SWT10_0 = 0x0,
+    Swt100 = 0x0,
     #[doc = "Trigger 10 event generated."]
-    SWT10_1 = 0x01,
+    Swt101 = 0x01,
 }
 impl Swt10 {
     #[inline(always)]
@@ -1372,9 +1372,9 @@ impl From<Swt10> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swt11 {
     #[doc = "No trigger 11 event generated."]
-    SWT11_0 = 0x0,
+    Swt110 = 0x0,
     #[doc = "Trigger 11 event generated."]
-    SWT11_1 = 0x01,
+    Swt111 = 0x01,
 }
 impl Swt11 {
     #[inline(always)]
@@ -1403,9 +1403,9 @@ impl From<Swt11> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swt12 {
     #[doc = "No trigger 12 event generated."]
-    SWT12_0 = 0x0,
+    Swt120 = 0x0,
     #[doc = "Trigger 12 event generated."]
-    SWT12_1 = 0x01,
+    Swt121 = 0x01,
 }
 impl Swt12 {
     #[inline(always)]
@@ -1434,9 +1434,9 @@ impl From<Swt12> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swt13 {
     #[doc = "No trigger 13 event generated."]
-    SWT13_0 = 0x0,
+    Swt130 = 0x0,
     #[doc = "Trigger 13 event generated."]
-    SWT13_1 = 0x01,
+    Swt131 = 0x01,
 }
 impl Swt13 {
     #[inline(always)]
@@ -1465,9 +1465,9 @@ impl From<Swt13> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swt14 {
     #[doc = "No trigger 14 event generated."]
-    SWT14_0 = 0x0,
+    Swt140 = 0x0,
     #[doc = "Trigger 14 event generated."]
-    SWT14_1 = 0x01,
+    Swt141 = 0x01,
 }
 impl Swt14 {
     #[inline(always)]
@@ -1496,9 +1496,9 @@ impl From<Swt14> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swt15 {
     #[doc = "No trigger 15 event generated."]
-    SWT15_0 = 0x0,
+    Swt150 = 0x0,
     #[doc = "Trigger 15 event generated."]
-    SWT15_1 = 0x01,
+    Swt151 = 0x01,
 }
 impl Swt15 {
     #[inline(always)]
@@ -1527,9 +1527,9 @@ impl From<Swt15> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swt2 {
     #[doc = "No trigger 2 event generated."]
-    SWT2_0 = 0x0,
+    Swt20 = 0x0,
     #[doc = "Trigger 2 event generated."]
-    SWT2_1 = 0x01,
+    Swt21 = 0x01,
 }
 impl Swt2 {
     #[inline(always)]
@@ -1558,9 +1558,9 @@ impl From<Swt2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swt3 {
     #[doc = "No trigger 3 event generated."]
-    SWT3_0 = 0x0,
+    Swt30 = 0x0,
     #[doc = "Trigger 3 event generated."]
-    SWT3_1 = 0x01,
+    Swt31 = 0x01,
 }
 impl Swt3 {
     #[inline(always)]
@@ -1589,9 +1589,9 @@ impl From<Swt3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swt4 {
     #[doc = "No trigger 4 event generated."]
-    SWT4_0 = 0x0,
+    Swt40 = 0x0,
     #[doc = "Trigger 4 event generated."]
-    SWT4_1 = 0x01,
+    Swt41 = 0x01,
 }
 impl Swt4 {
     #[inline(always)]
@@ -1620,9 +1620,9 @@ impl From<Swt4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swt5 {
     #[doc = "No trigger 5 event generated."]
-    SWT5_0 = 0x0,
+    Swt50 = 0x0,
     #[doc = "Trigger 5 event generated."]
-    SWT5_1 = 0x01,
+    Swt51 = 0x01,
 }
 impl Swt5 {
     #[inline(always)]
@@ -1651,9 +1651,9 @@ impl From<Swt5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swt6 {
     #[doc = "No trigger 6 event generated."]
-    SWT6_0 = 0x0,
+    Swt60 = 0x0,
     #[doc = "Trigger 6 event generated."]
-    SWT6_1 = 0x01,
+    Swt61 = 0x01,
 }
 impl Swt6 {
     #[inline(always)]
@@ -1682,9 +1682,9 @@ impl From<Swt6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swt7 {
     #[doc = "No trigger 7 event generated."]
-    SWT7_0 = 0x0,
+    Swt70 = 0x0,
     #[doc = "Trigger 7 event generated."]
-    SWT7_1 = 0x01,
+    Swt71 = 0x01,
 }
 impl Swt7 {
     #[inline(always)]
@@ -1713,9 +1713,9 @@ impl From<Swt7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swt8 {
     #[doc = "No trigger 8 event generated."]
-    SWT8_0 = 0x0,
+    Swt80 = 0x0,
     #[doc = "Trigger 8 event generated."]
-    SWT8_1 = 0x01,
+    Swt81 = 0x01,
 }
 impl Swt8 {
     #[inline(always)]
@@ -1744,9 +1744,9 @@ impl From<Swt8> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swt9 {
     #[doc = "No trigger 9 event generated."]
-    SWT9_0 = 0x0,
+    Swt90 = 0x0,
     #[doc = "Trigger 9 event generated."]
-    SWT9_1 = 0x01,
+    Swt91 = 0x01,
 }
 impl Swt9 {
     #[inline(always)]
@@ -1775,32 +1775,32 @@ impl From<Swt9> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcmd {
     #[doc = "Not a valid selection from the command buffer. Trigger event is ignored."]
-    TCMD_0 = 0x0,
+    Tcmd0 = 0x0,
     #[doc = "CMD1 is executed."]
-    TCMD_1 = 0x01,
+    Tcmd1 = 0x01,
     #[doc = "Corresponding CMD is executed."]
-    TCMD_2 = 0x02,
+    Tcmd2 = 0x02,
     #[doc = "Corresponding CMD is executed."]
-    TCMD_3 = 0x03,
+    Tcmd3 = 0x03,
     #[doc = "Corresponding CMD is executed."]
-    TCMD_4 = 0x04,
+    Tcmd4 = 0x04,
     #[doc = "Corresponding CMD is executed."]
-    TCMD_5 = 0x05,
+    Tcmd5 = 0x05,
     #[doc = "Corresponding CMD is executed."]
-    TCMD_6 = 0x06,
+    Tcmd6 = 0x06,
     #[doc = "Corresponding CMD is executed."]
-    TCMD_7 = 0x07,
+    Tcmd7 = 0x07,
     #[doc = "Corresponding CMD is executed."]
-    TCMD_8 = 0x08,
+    Tcmd8 = 0x08,
     #[doc = "Corresponding CMD is executed."]
-    TCMD_9 = 0x09,
+    Tcmd9 = 0x09,
     _RESERVED_a = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
     _RESERVED_d = 0x0d,
     _RESERVED_e = 0x0e,
     #[doc = "CMD15 is executed."]
-    TCMD_15 = 0x0f,
+    Tcmd15 = 0x0f,
 }
 impl Tcmd {
     #[inline(always)]
@@ -1829,32 +1829,32 @@ impl From<Tcmd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpri {
     #[doc = "Set to highest priority, Level 1."]
-    TPRI_0 = 0x0,
+    Tpri0 = 0x0,
     #[doc = "Set to corresponding priority level."]
-    TPRI_1 = 0x01,
+    Tpri1 = 0x01,
     #[doc = "Set to corresponding priority level."]
-    TPRI_2 = 0x02,
+    Tpri2 = 0x02,
     #[doc = "Set to corresponding priority level."]
-    TPRI_3 = 0x03,
+    Tpri3 = 0x03,
     #[doc = "Set to corresponding priority level."]
-    TPRI_4 = 0x04,
+    Tpri4 = 0x04,
     #[doc = "Set to corresponding priority level."]
-    TPRI_5 = 0x05,
+    Tpri5 = 0x05,
     #[doc = "Set to corresponding priority level."]
-    TPRI_6 = 0x06,
+    Tpri6 = 0x06,
     #[doc = "Set to corresponding priority level."]
-    TPRI_7 = 0x07,
+    Tpri7 = 0x07,
     #[doc = "Set to corresponding priority level."]
-    TPRI_8 = 0x08,
+    Tpri8 = 0x08,
     #[doc = "Set to corresponding priority level."]
-    TPRI_9 = 0x09,
+    Tpri9 = 0x09,
     _RESERVED_a = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
     _RESERVED_d = 0x0d,
     _RESERVED_e = 0x0e,
     #[doc = "Set to lowest priority, Level 16."]
-    TPRI_15 = 0x0f,
+    Tpri15 = 0x0f,
 }
 impl Tpri {
     #[inline(always)]
@@ -1883,9 +1883,9 @@ impl From<Tpri> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tprictrl {
     #[doc = "If a higher priority trigger is detected during command processing, the current conversion is aborted and the new command specified by the trigger is started."]
-    TPRICTRL_0 = 0x0,
+    Tprictrl0 = 0x0,
     #[doc = "If a higher priority trigger is received during command processing, the current conversion is completed (including averaging iterations and compare function if enabled) and stored to the RESFIFO before the higher priority trigger/command is initiated."]
-    TPRICTRL_1 = 0x01,
+    Tprictrl1 = 0x01,
 }
 impl Tprictrl {
     #[inline(always)]
@@ -1914,9 +1914,9 @@ impl From<Tprictrl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trgact {
     #[doc = "Command (sequence) associated with Trigger 0 currently being executed."]
-    TRGACT_0 = 0x0,
+    Trgact0 = 0x0,
     #[doc = "Command (sequence) associated with Trigger 1 currently being executed."]
-    TRGACT_1 = 0x01,
+    Trgact1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1931,7 +1931,7 @@ pub enum Trgact {
     _RESERVED_d = 0x0d,
     _RESERVED_e = 0x0e,
     #[doc = "Command (sequence) associated with Trigger 15 currently being executed."]
-    TRGACT_15 = 0x0f,
+    Trgact15 = 0x0f,
 }
 impl Trgact {
     #[inline(always)]
@@ -1960,32 +1960,32 @@ impl From<Trgact> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tsrc {
     #[doc = "Trigger source 0 initiated this conversion."]
-    TSRC_0 = 0x0,
+    Tsrc0 = 0x0,
     #[doc = "Trigger source 1 initiated this conversion."]
-    TSRC_1 = 0x01,
+    Tsrc1 = 0x01,
     #[doc = "Corresponding trigger source initiated this conversion."]
-    TSRC_2 = 0x02,
+    Tsrc2 = 0x02,
     #[doc = "Corresponding trigger source initiated this conversion."]
-    TSRC_3 = 0x03,
+    Tsrc3 = 0x03,
     #[doc = "Corresponding trigger source initiated this conversion."]
-    TSRC_4 = 0x04,
+    Tsrc4 = 0x04,
     #[doc = "Corresponding trigger source initiated this conversion."]
-    TSRC_5 = 0x05,
+    Tsrc5 = 0x05,
     #[doc = "Corresponding trigger source initiated this conversion."]
-    TSRC_6 = 0x06,
+    Tsrc6 = 0x06,
     #[doc = "Corresponding trigger source initiated this conversion."]
-    TSRC_7 = 0x07,
+    Tsrc7 = 0x07,
     #[doc = "Corresponding trigger source initiated this conversion."]
-    TSRC_8 = 0x08,
+    Tsrc8 = 0x08,
     #[doc = "Corresponding trigger source initiated this conversion."]
-    TSRC_9 = 0x09,
+    Tsrc9 = 0x09,
     _RESERVED_a = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
     _RESERVED_d = 0x0d,
     _RESERVED_e = 0x0e,
     #[doc = "Trigger source 15 initiated this conversion."]
-    TSRC_15 = 0x0f,
+    Tsrc15 = 0x0f,
 }
 impl Tsrc {
     #[inline(always)]
@@ -2014,9 +2014,9 @@ impl From<Tsrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Valid {
     #[doc = "FIFO is empty. Discard any read from RESFIFO."]
-    VALID_0 = 0x0,
+    Valid0 = 0x0,
     #[doc = "FIFO record read from RESFIFO is valid."]
-    VALID_1 = 0x01,
+    Valid1 = 0x01,
 }
 impl Valid {
     #[inline(always)]
@@ -2045,9 +2045,9 @@ impl From<Valid> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Vr1rngi {
     #[doc = "Range control not required. CFG\\[VREF1RNG\\] is not implemented."]
-    VR1RNGI_0 = 0x0,
+    Vr1rngi0 = 0x0,
     #[doc = "Range control required. CFG\\[VREF1RNG\\] is implemented."]
-    VR1RNGI_1 = 0x01,
+    Vr1rngi1 = 0x01,
 }
 impl Vr1rngi {
     #[inline(always)]

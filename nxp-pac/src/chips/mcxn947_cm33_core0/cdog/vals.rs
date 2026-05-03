@@ -4,12 +4,12 @@
 pub enum AddressCtrl {
     _RESERVED_0 = 0x0,
     #[doc = "Enable reset."]
-    ENABLE_RESET = 0x01,
+    EnableReset = 0x01,
     #[doc = "Enable interrupt."]
-    ENABLE_INTERRUPT = 0x02,
+    EnableInterrupt = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Disable both reset and interrupt."]
-    DISABLE_BOTH = 0x04,
+    DisableBoth = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
@@ -42,9 +42,9 @@ impl From<AddressCtrl> for u8 {
 pub enum DebugHaltCtrl {
     _RESERVED_0 = 0x0,
     #[doc = "Keep the timer running."]
-    RUN_TIMER = 0x01,
+    RunTimer = 0x01,
     #[doc = "Stop the timer."]
-    PAUSE_TIMER = 0x02,
+    PauseTimer = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl DebugHaltCtrl {
@@ -75,9 +75,9 @@ impl From<DebugHaltCtrl> for u8 {
 pub enum IrqPause {
     _RESERVED_0 = 0x0,
     #[doc = "Keep the timer running."]
-    RUN_TIMER = 0x01,
+    RunTimer = 0x01,
     #[doc = "Stop the timer."]
-    PAUSE_TIMER = 0x02,
+    PauseTimer = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl IrqPause {
@@ -108,9 +108,9 @@ impl From<IrqPause> for u8 {
 pub enum LockCtrl {
     _RESERVED_0 = 0x0,
     #[doc = "Locked."]
-    LOCKED = 0x01,
+    Locked = 0x01,
     #[doc = "Unlocked."]
-    UNLOCKED = 0x02,
+    Unlocked = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl LockCtrl {
@@ -141,12 +141,12 @@ impl From<LockCtrl> for u8 {
 pub enum MiscompareCtrl {
     _RESERVED_0 = 0x0,
     #[doc = "Enable reset."]
-    ENABLE_RESET = 0x01,
+    EnableReset = 0x01,
     #[doc = "Enable interrupt."]
-    ENABLE_INTERRUPT = 0x02,
+    EnableInterrupt = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Disable both reset and interrupt."]
-    DISABLE_BOTH = 0x04,
+    DisableBoth = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
@@ -179,12 +179,12 @@ impl From<MiscompareCtrl> for u8 {
 pub enum SequenceCtrl {
     _RESERVED_0 = 0x0,
     #[doc = "Enable reset."]
-    ENABLE_RESET = 0x01,
+    EnableReset = 0x01,
     #[doc = "Enable interrupt."]
-    ENABLE_INTERRUPT = 0x02,
+    EnableInterrupt = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Disable both reset and interrupt."]
-    DISABLE_BOTH = 0x04,
+    DisableBoth = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
@@ -217,12 +217,12 @@ impl From<SequenceCtrl> for u8 {
 pub enum StateCtrl {
     _RESERVED_0 = 0x0,
     #[doc = "Enable reset."]
-    ENABLE_RESET = 0x01,
+    EnableReset = 0x01,
     #[doc = "Enable interrupt."]
-    ENABLE_INTERRUPT = 0x02,
+    EnableInterrupt = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Disable both reset and interrupt."]
-    DISABLE_BOTH = 0x04,
+    DisableBoth = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
@@ -255,12 +255,12 @@ impl From<StateCtrl> for u8 {
 pub enum TimeoutCtrl {
     _RESERVED_0 = 0x0,
     #[doc = "Enable reset."]
-    ENABLE_RESET = 0x01,
+    EnableReset = 0x01,
     #[doc = "Enable interrupt."]
-    ENABLE_INTERRUPT = 0x02,
+    EnableInterrupt = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Disable both reset and interrupt."]
-    DISABLE_BOTH = 0x04,
+    DisableBoth = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,

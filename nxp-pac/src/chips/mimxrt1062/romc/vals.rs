@@ -3,9 +3,9 @@
 pub struct Datafix(u8);
 impl Datafix {
     #[doc = "Address comparator triggers a opcode patch."]
-    pub const DATAFIX_0: Self = Self(0x0);
+    pub const Datafix0: Self = Self(0x0);
     #[doc = "Address comparator triggers a data fix."]
-    pub const DATAFIX_1: Self = Self(0x01);
+    pub const Datafix1: Self = Self(0x01);
 }
 impl Datafix {
     pub const fn from_bits(val: u8) -> Datafix {
@@ -18,8 +18,8 @@ impl Datafix {
 impl core::fmt::Debug for Datafix {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("DATAFIX_0"),
-            0x01 => f.write_str("DATAFIX_1"),
+            0x0 => f.write_str("Datafix0"),
+            0x01 => f.write_str("Datafix1"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -28,8 +28,8 @@ impl core::fmt::Debug for Datafix {
 impl defmt::Format for Datafix {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "DATAFIX_0"),
-            0x01 => defmt::write!(f, "DATAFIX_1"),
+            0x0 => defmt::write!(f, "Datafix0"),
+            0x01 => defmt::write!(f, "Datafix1"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -51,9 +51,9 @@ impl From<Datafix> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis {
     #[doc = "Does not affect any ROMC functions (default)."]
-    DIS_0 = 0x0,
+    Dis0 = 0x0,
     #[doc = "Disable all ROMC functions: data fixing, and opcode patching."]
-    DIS_1 = 0x01,
+    Dis1 = 0x01,
 }
 impl Dis {
     #[inline(always)]
@@ -82,9 +82,9 @@ impl From<Dis> for u8 {
 pub struct Enable(u16);
 impl Enable {
     #[doc = "Address comparator disabled."]
-    pub const ENABLE_0: Self = Self(0x0);
+    pub const Enable0: Self = Self(0x0);
     #[doc = "Address comparator enabled, ROMC will trigger a opcode patch or data fix event upon matching of the associated address."]
-    pub const ENABLE_1: Self = Self(0x01);
+    pub const Enable1: Self = Self(0x01);
 }
 impl Enable {
     pub const fn from_bits(val: u16) -> Enable {
@@ -97,8 +97,8 @@ impl Enable {
 impl core::fmt::Debug for Enable {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("ENABLE_0"),
-            0x01 => f.write_str("ENABLE_1"),
+            0x0 => f.write_str("Enable0"),
+            0x01 => f.write_str("Enable1"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -107,8 +107,8 @@ impl core::fmt::Debug for Enable {
 impl defmt::Format for Enable {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "ENABLE_0"),
-            0x01 => defmt::write!(f, "ENABLE_1"),
+            0x0 => defmt::write!(f, "Enable0"),
+            0x01 => defmt::write!(f, "Enable1"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -130,9 +130,9 @@ impl From<Enable> for u16 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Source {
     #[doc = "Address Comparator 0 matched."]
-    SOURCE_0 = 0x0,
+    Source0 = 0x0,
     #[doc = "Address Comparator 1 matched."]
-    SOURCE_1 = 0x01,
+    Source1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -147,7 +147,7 @@ pub enum Source {
     _RESERVED_d = 0x0d,
     _RESERVED_e = 0x0e,
     #[doc = "Address Comparator 15 matched."]
-    SOURCE_15 = 0x0f,
+    Source15 = 0x0f,
     _RESERVED_10 = 0x10,
     _RESERVED_11 = 0x11,
     _RESERVED_12 = 0x12,
@@ -224,9 +224,9 @@ impl From<Source> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sw {
     #[doc = "no event or comparator collisions."]
-    SW_0 = 0x0,
+    Sw0 = 0x0,
     #[doc = "a collision has occurred."]
-    SW_1 = 0x01,
+    Sw1 = 0x01,
 }
 impl Sw {
     #[inline(always)]
@@ -255,9 +255,9 @@ impl From<Sw> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Thumbx {
     #[doc = "Arm patch."]
-    THUMBX_0 = 0x0,
+    Thumbx0 = 0x0,
     #[doc = "THUMB patch (ignore if data fix)."]
-    THUMBX_1 = 0x01,
+    Thumbx1 = 0x01,
 }
 impl Thumbx {
     #[inline(always)]

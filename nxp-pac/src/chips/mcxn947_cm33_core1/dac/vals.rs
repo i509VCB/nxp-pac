@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BufEn {
     #[doc = "Not used."]
-    USE_BUF = 0x0,
+    UseBuf = 0x0,
     #[doc = "Used."]
-    NO_USE_BUF = 0x01,
+    NoUseBuf = 0x01,
 }
 impl BufEn {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<BufEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BufSpdCtrl {
     #[doc = "Lower Low-Power mode."]
-    LLP_MODE = 0x0,
+    LlpMode = 0x0,
     #[doc = "Low-Power mode."]
-    LP_MODE = 0x01,
+    LpMode = 0x01,
 }
 impl BufSpdCtrl {
     #[inline(always)]
@@ -65,11 +65,11 @@ impl From<BufSpdCtrl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dacrfs {
     #[doc = "Selects VREFH0 as the reference voltage."]
-    VREFH0 = 0x0,
+    Vrefh0 = 0x0,
     #[doc = "Selects VREFH1 as the reference voltage."]
-    VREFH1 = 0x01,
+    Vrefh1 = 0x01,
     #[doc = "Selects VREFH2 as the reference voltage."]
-    VREFH2 = 0x02,
+    Vrefh2 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Dacrfs {
@@ -99,9 +99,9 @@ impl From<Dacrfs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fifoen {
     #[doc = "Enables FIFO mode and disables Buffer mode. Any data written to DATA\\[DATA\\] goes to buffer then goes to conversion."]
-    BUFFER_MODE = 0x0,
+    BufferMode = 0x0,
     #[doc = "Enables FIFO mode. Data will be first read from FIFO to buffer and then goes to conversion."]
-    FIFO_MODE = 0x01,
+    FifoMode = 0x01,
 }
 impl Fifoen {
     #[inline(always)]
@@ -130,9 +130,9 @@ impl From<Fifoen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fiforst {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "FIFO reset."]
-    FIFO_RESET = 0x01,
+    FifoReset = 0x01,
 }
 impl Fiforst {
     #[inline(always)]
@@ -162,19 +162,19 @@ impl From<Fiforst> for u8 {
 pub enum Fifosz {
     _RESERVED_0 = 0x0,
     #[doc = "FIFO depth is 4."]
-    VAL_1 = 0x01,
+    Val1 = 0x01,
     #[doc = "FIFO depth is 8."]
-    VAL_2 = 0x02,
+    Val2 = 0x02,
     #[doc = "FIFO depth is 16."]
-    VAL_3 = 0x03,
+    Val3 = 0x03,
     #[doc = "FIFO depth is 32."]
-    VAL_4 = 0x04,
+    Val4 = 0x04,
     #[doc = "FIFO depth is 64."]
-    VAL_5 = 0x05,
+    Val5 = 0x05,
     #[doc = "FIFO depth is 128."]
-    VAL_6 = 0x06,
+    Val6 = 0x06,
     #[doc = "FIFO depth is 256."]
-    VAL_7 = 0x07,
+    Val7 = 0x07,
 }
 impl Fifosz {
     #[inline(always)]
@@ -203,9 +203,9 @@ impl From<Fifosz> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ptgcoco {
     #[doc = "Not completed or not started."]
-    NOT_START = 0x0,
+    NotStart = 0x0,
     #[doc = "Completed."]
-    COMPLETED = 0x01,
+    Completed = 0x01,
 }
 impl Ptgcoco {
     #[inline(always)]
@@ -234,9 +234,9 @@ impl From<Ptgcoco> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swbk {
     #[doc = "No swing back cycle has completed since the last time the flag was cleared."]
-    NO_SWING = 0x0,
+    NoSwing = 0x0,
     #[doc = "At least one swing back cycle has occurred since the last time the flag was cleared."]
-    SWING_BACK = 0x01,
+    SwingBack = 0x01,
 }
 impl Swbk {
     #[inline(always)]
@@ -265,9 +265,9 @@ impl From<Swbk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swrst {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Software reset."]
-    SOFTWARE_RESET = 0x01,
+    SoftwareReset = 0x01,
 }
 impl Swrst {
     #[inline(always)]
@@ -296,9 +296,9 @@ impl From<Swrst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trgsel {
     #[doc = "Hardware trigger."]
-    HARDWARE = 0x0,
+    Hardware = 0x0,
     #[doc = "Software trigger."]
-    SOFTWARE = 0x01,
+    Software = 0x01,
 }
 impl Trgsel {
     #[inline(always)]
@@ -327,9 +327,9 @@ impl From<Trgsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wm {
     #[doc = "Data in FIFO is more than watermark level."]
-    MORE_THAN_WLEVEL = 0x0,
+    MoreThanWlevel = 0x0,
     #[doc = "Data in FIFO is less than or equal to watermark level."]
-    LESS_THAN_WLEVEL = 0x01,
+    LessThanWlevel = 0x01,
 }
 impl Wm {
     #[inline(always)]

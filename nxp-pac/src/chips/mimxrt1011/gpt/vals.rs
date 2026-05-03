@@ -3,17 +3,17 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Clksrc {
     #[doc = "No clock."]
-    CLKSRC_0 = 0x0,
+    Clksrc0 = 0x0,
     #[doc = "Peripheral Clock (ipg_clk)."]
-    CLKSRC_1 = 0x01,
+    Clksrc1 = 0x01,
     #[doc = "High Frequency Reference Clock (ipg_clk_highfreq)."]
-    CLKSRC_2 = 0x02,
+    Clksrc2 = 0x02,
     #[doc = "External Clock."]
-    CLKSRC_3 = 0x03,
+    Clksrc3 = 0x03,
     #[doc = "Low Frequency Reference Clock (ipg_clk_32k)."]
-    CLKSRC_4 = 0x04,
+    Clksrc4 = 0x04,
     #[doc = "Crystal oscillator as Reference Clock (ipg_clk_24M)."]
-    CLKSRC_5 = 0x05,
+    Clksrc5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
 }
@@ -44,9 +44,9 @@ impl From<Clksrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dbgen {
     #[doc = "GPT is disabled in debug mode."]
-    DBGEN_0 = 0x0,
+    Dbgen0 = 0x0,
     #[doc = "GPT is enabled in debug mode."]
-    DBGEN_1 = 0x01,
+    Dbgen1 = 0x01,
 }
 impl Dbgen {
     #[inline(always)]
@@ -75,9 +75,9 @@ impl From<Dbgen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dozeen {
     #[doc = "GPT is disabled in doze mode."]
-    DOZEEN_0 = 0x0,
+    Dozeen0 = 0x0,
     #[doc = "GPT is enabled in doze mode."]
-    DOZEEN_1 = 0x01,
+    Dozeen1 = 0x01,
 }
 impl Dozeen {
     #[inline(always)]
@@ -106,9 +106,9 @@ impl From<Dozeen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum En {
     #[doc = "GPT is disabled."]
-    EN_0 = 0x0,
+    En0 = 0x0,
     #[doc = "GPT is enabled."]
-    EN_1 = 0x01,
+    En1 = 0x01,
 }
 impl En {
     #[inline(always)]
@@ -137,9 +137,9 @@ impl From<En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum En24m {
     #[doc = "24M clock disabled."]
-    EN_24M_0 = 0x0,
+    En24m0 = 0x0,
     #[doc = "24M clock enabled."]
-    EN_24M_1 = 0x01,
+    En24m1 = 0x01,
 }
 impl En24m {
     #[inline(always)]
@@ -168,9 +168,9 @@ impl From<En24m> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Enmod {
     #[doc = "GPT counter will retain its value when it is disabled."]
-    ENMOD_0 = 0x0,
+    Enmod0 = 0x0,
     #[doc = "GPT counter value is reset to 0 when it is disabled."]
-    ENMOD_1 = 0x01,
+    Enmod1 = 0x01,
 }
 impl Enmod {
     #[inline(always)]
@@ -199,9 +199,9 @@ impl From<Enmod> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fo3 {
     #[doc = "Writing a 0 has no effect."]
-    FO3_0 = 0x0,
+    Fo30 = 0x0,
     #[doc = "Causes the programmed pin action on the timer Output Compare n pin; the OFn flag is not set."]
-    FO3_1 = 0x01,
+    Fo31 = 0x01,
 }
 impl Fo3 {
     #[inline(always)]
@@ -230,9 +230,9 @@ impl From<Fo3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Frr {
     #[doc = "Restart mode."]
-    FRR_0 = 0x0,
+    Frr0 = 0x0,
     #[doc = "Free-Run mode."]
-    FRR_1 = 0x01,
+    Frr1 = 0x01,
 }
 impl Frr {
     #[inline(always)]
@@ -261,9 +261,9 @@ impl From<Frr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum If2 {
     #[doc = "Capture event has not occurred."]
-    IF2_0 = 0x0,
+    If20 = 0x0,
     #[doc = "Capture event has occurred."]
-    IF2_1 = 0x01,
+    If21 = 0x01,
 }
 impl If2 {
     #[inline(always)]
@@ -292,9 +292,9 @@ impl From<If2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum If2ie {
     #[doc = "IF2IE Input Capture n Interrupt Enable is disabled."]
-    IF2IE_0 = 0x0,
+    If2ie0 = 0x0,
     #[doc = "IF2IE Input Capture n Interrupt Enable is enabled."]
-    IF2IE_1 = 0x01,
+    If2ie1 = 0x01,
 }
 impl If2ie {
     #[inline(always)]
@@ -323,13 +323,13 @@ impl From<If2ie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Im2 {
     #[doc = "capture disabled."]
-    IM2_0 = 0x0,
+    Im20 = 0x0,
     #[doc = "capture on rising edge only."]
-    IM2_1 = 0x01,
+    Im21 = 0x01,
     #[doc = "capture on falling edge only."]
-    IM2_2 = 0x02,
+    Im22 = 0x02,
     #[doc = "capture on both edges."]
-    IM2_3 = 0x03,
+    Im23 = 0x03,
 }
 impl Im2 {
     #[inline(always)]
@@ -358,9 +358,9 @@ impl From<Im2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Of3 {
     #[doc = "Compare event has not occurred."]
-    OF3_0 = 0x0,
+    Of30 = 0x0,
     #[doc = "Compare event has occurred."]
-    OF3_1 = 0x01,
+    Of31 = 0x01,
 }
 impl Of3 {
     #[inline(always)]
@@ -389,9 +389,9 @@ impl From<Of3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Of3ie {
     #[doc = "Output Compare Channel n interrupt is disabled."]
-    OF3IE_0 = 0x0,
+    Of3ie0 = 0x0,
     #[doc = "Output Compare Channel n interrupt is enabled."]
-    OF3IE_1 = 0x01,
+    Of3ie1 = 0x01,
 }
 impl Of3ie {
     #[inline(always)]
@@ -420,15 +420,15 @@ impl From<Of3ie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Om3 {
     #[doc = "Output disconnected. No response on pin."]
-    OM3_0 = 0x0,
+    Om30 = 0x0,
     #[doc = "Toggle output pin."]
-    OM3_1 = 0x01,
+    Om31 = 0x01,
     #[doc = "Clear output pin."]
-    OM3_2 = 0x02,
+    Om32 = 0x02,
     #[doc = "Set output pin."]
-    OM3_3 = 0x03,
+    Om33 = 0x03,
     #[doc = "Generate an active low pulse (that is one input clock wide) on the output pin."]
-    OM3_4 = 0x04,
+    Om34 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
@@ -460,11 +460,11 @@ impl From<Om3> for u8 {
 pub struct Prescaler(u16);
 impl Prescaler {
     #[doc = "Divide by 1."]
-    pub const PRESCALER_0: Self = Self(0x0);
+    pub const Prescaler0: Self = Self(0x0);
     #[doc = "Divide by 2."]
-    pub const PRESCALER_1: Self = Self(0x01);
+    pub const Prescaler1: Self = Self(0x01);
     #[doc = "Divide by 4096."]
-    pub const PRESCALER_4095: Self = Self(0x0fff);
+    pub const Prescaler4095: Self = Self(0x0fff);
 }
 impl Prescaler {
     pub const fn from_bits(val: u16) -> Prescaler {
@@ -477,9 +477,9 @@ impl Prescaler {
 impl core::fmt::Debug for Prescaler {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("PRESCALER_0"),
-            0x01 => f.write_str("PRESCALER_1"),
-            0x0fff => f.write_str("PRESCALER_4095"),
+            0x0 => f.write_str("Prescaler0"),
+            0x01 => f.write_str("Prescaler1"),
+            0x0fff => f.write_str("Prescaler4095"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -488,9 +488,9 @@ impl core::fmt::Debug for Prescaler {
 impl defmt::Format for Prescaler {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "PRESCALER_0"),
-            0x01 => defmt::write!(f, "PRESCALER_1"),
-            0x0fff => defmt::write!(f, "PRESCALER_4095"),
+            0x0 => defmt::write!(f, "Prescaler0"),
+            0x01 => defmt::write!(f, "Prescaler1"),
+            0x0fff => defmt::write!(f, "Prescaler4095"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -512,9 +512,9 @@ impl From<Prescaler> for u16 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Prescaler24m {
     #[doc = "Divide by 1."]
-    PRESCALER24M_0 = 0x0,
+    Prescaler24m0 = 0x0,
     #[doc = "Divide by 2."]
-    PRESCALER24M_1 = 0x01,
+    Prescaler24m1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -529,7 +529,7 @@ pub enum Prescaler24m {
     _RESERVED_d = 0x0d,
     _RESERVED_e = 0x0e,
     #[doc = "Divide by 16."]
-    PRESCALER24M_15 = 0x0f,
+    Prescaler24m15 = 0x0f,
 }
 impl Prescaler24m {
     #[inline(always)]
@@ -558,9 +558,9 @@ impl From<Prescaler24m> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rov {
     #[doc = "Rollover has not occurred."]
-    ROV_0 = 0x0,
+    Rov0 = 0x0,
     #[doc = "Rollover has occurred."]
-    ROV_1 = 0x01,
+    Rov1 = 0x01,
 }
 impl Rov {
     #[inline(always)]
@@ -589,9 +589,9 @@ impl From<Rov> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rovie {
     #[doc = "Rollover interrupt is disabled."]
-    ROVIE_0 = 0x0,
+    Rovie0 = 0x0,
     #[doc = "Rollover interrupt enabled."]
-    ROVIE_1 = 0x01,
+    Rovie1 = 0x01,
 }
 impl Rovie {
     #[inline(always)]
@@ -620,9 +620,9 @@ impl From<Rovie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Stopen {
     #[doc = "GPT is disabled in Stop mode."]
-    STOPEN_0 = 0x0,
+    Stopen0 = 0x0,
     #[doc = "GPT is enabled in Stop mode."]
-    STOPEN_1 = 0x01,
+    Stopen1 = 0x01,
 }
 impl Stopen {
     #[inline(always)]
@@ -651,9 +651,9 @@ impl From<Stopen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swr {
     #[doc = "GPT is not in reset state."]
-    SWR_0 = 0x0,
+    Swr0 = 0x0,
     #[doc = "GPT is in reset state."]
-    SWR_1 = 0x01,
+    Swr1 = 0x01,
 }
 impl Swr {
     #[inline(always)]
@@ -682,9 +682,9 @@ impl From<Swr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Waiten {
     #[doc = "GPT is disabled in wait mode."]
-    WAITEN_0 = 0x0,
+    Waiten0 = 0x0,
     #[doc = "GPT is enabled in wait mode."]
-    WAITEN_1 = 0x01,
+    Waiten1 = 0x01,
 }
 impl Waiten {
     #[inline(always)]

@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Core0DbgRst {
     #[doc = "do not assert core0 debug reset."]
-    CORE0_DBG_RST_0 = 0x0,
+    Core0DbgRst0 = 0x0,
     #[doc = "assert core0 debug reset."]
-    CORE0_DBG_RST_1 = 0x01,
+    Core0DbgRst1 = 0x01,
 }
 impl Core0DbgRst {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Core0DbgRst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Core0Rst {
     #[doc = "do not assert core0 reset."]
-    CORE0_RST_0 = 0x0,
+    Core0Rst0 = 0x0,
     #[doc = "assert core0 reset."]
-    CORE0_RST_1 = 0x01,
+    Core0Rst1 = 0x01,
 }
 impl Core0Rst {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Core0Rst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CsuResetB {
     #[doc = "Reset is not a result of the csu_reset_b event."]
-    CSU_RESET_B_0 = 0x0,
+    CsuResetB0 = 0x0,
     #[doc = "Reset is a result of the csu_reset_b event."]
-    CSU_RESET_B_1 = 0x01,
+    CsuResetB1 = 0x01,
 }
 impl CsuResetB {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<CsuResetB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DbgRstMskPg {
     #[doc = "do not mask core debug resets (debug resets will be asserted after power gating event)."]
-    DBG_RST_MSK_PG_0 = 0x0,
+    DbgRstMskPg0 = 0x0,
     #[doc = "mask core debug resets (debug resets won't be asserted after power gating event)."]
-    DBG_RST_MSK_PG_1 = 0x01,
+    DbgRstMskPg1 = 0x01,
 }
 impl DbgRstMskPg {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<DbgRstMskPg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum IppResetB {
     #[doc = "Reset is not a result of ipp_reset_b pin."]
-    IPP_RESET_B_0 = 0x0,
+    IppResetB0 = 0x0,
     #[doc = "Reset is a result of ipp_reset_b pin."]
-    IPP_RESET_B_1 = 0x01,
+    IppResetB1 = 0x01,
 }
 impl IppResetB {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<IppResetB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum IppUserResetB {
     #[doc = "Reset is not a result of the ipp_user_reset_b qualified as COLD reset event."]
-    IPP_USER_RESET_B_0 = 0x0,
+    IppUserResetB0 = 0x0,
     #[doc = "Reset is a result of the ipp_user_reset_b qualified as COLD reset event."]
-    IPP_USER_RESET_B_1 = 0x01,
+    IppUserResetB1 = 0x01,
 }
 impl IppUserResetB {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<IppUserResetB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum JtagRstB {
     #[doc = "Reset is not a result of HIGH-Z reset from JTAG."]
-    JTAG_RST_B_0 = 0x0,
+    JtagRstB0 = 0x0,
     #[doc = "Reset is a result of HIGH-Z reset from JTAG."]
-    JTAG_RST_B_1 = 0x01,
+    JtagRstB1 = 0x01,
 }
 impl JtagRstB {
     #[inline(always)]
@@ -220,9 +220,9 @@ impl From<JtagRstB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum JtagSwRst {
     #[doc = "Reset is not a result of the mentioned case."]
-    JTAG_SW_RST_0 = 0x0,
+    JtagSwRst0 = 0x0,
     #[doc = "Reset is a result of the mentioned case."]
-    JTAG_SW_RST_1 = 0x01,
+    JtagSwRst1 = 0x01,
 }
 impl JtagSwRst {
     #[inline(always)]
@@ -251,9 +251,9 @@ impl From<JtagSwRst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LockupSysresetreq {
     #[doc = "Reset is not a result of the mentioned case."]
-    LOCKUP_SYSRESETREQ_0 = 0x0,
+    LockupSysresetreq0 = 0x0,
     #[doc = "Reset is a result of the mentioned case."]
-    LOCKUP_SYSRESETREQ_1 = 0x01,
+    LockupSysresetreq1 = 0x01,
 }
 impl LockupSysresetreq {
     #[inline(always)]
@@ -287,13 +287,13 @@ pub enum MaskWdog3Rst {
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
     #[doc = "wdog3_rst_b is masked."]
-    MASK_WDOG3_RST_5 = 0x05,
+    MaskWdog3Rst5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
     _RESERVED_8 = 0x08,
     _RESERVED_9 = 0x09,
     #[doc = "wdog3_rst_b is not masked."]
-    MASK_WDOG3_RST_10 = 0x0a,
+    MaskWdog3Rst10 = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
     _RESERVED_d = 0x0d,
@@ -332,13 +332,13 @@ pub enum MaskWdogRst {
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
     #[doc = "wdog_rst_b is masked."]
-    MASK_WDOG_RST_5 = 0x05,
+    MaskWdogRst5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
     _RESERVED_8 = 0x08,
     _RESERVED_9 = 0x09,
     #[doc = "wdog_rst_b is not masked (default)."]
-    MASK_WDOG_RST_10 = 0x0a,
+    MaskWdogRst10 = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
     _RESERVED_d = 0x0d,
@@ -372,9 +372,9 @@ impl From<MaskWdogRst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TempsenseRstB {
     #[doc = "Reset is not a result of software reset from Temperature Sensor."]
-    TEMPSENSE_RST_B_0 = 0x0,
+    TempsenseRstB0 = 0x0,
     #[doc = "Reset is a result of software reset from Temperature Sensor."]
-    TEMPSENSE_RST_B_1 = 0x01,
+    TempsenseRstB1 = 0x01,
 }
 impl TempsenseRstB {
     #[inline(always)]
@@ -403,9 +403,9 @@ impl From<TempsenseRstB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wdog3RstB {
     #[doc = "Reset is not a result of the watchdog3 time-out event."]
-    WDOG3_RST_B_0 = 0x0,
+    Wdog3RstB0 = 0x0,
     #[doc = "Reset is a result of the watchdog3 time-out event."]
-    WDOG3_RST_B_1 = 0x01,
+    Wdog3RstB1 = 0x01,
 }
 impl Wdog3RstB {
     #[inline(always)]
@@ -434,9 +434,9 @@ impl From<Wdog3RstB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum WdogRstB {
     #[doc = "Reset is not a result of the watchdog time-out event."]
-    WDOG_RST_B_0 = 0x0,
+    WdogRstB0 = 0x0,
     #[doc = "Reset is a result of the watchdog time-out event."]
-    WDOG_RST_B_1 = 0x01,
+    WdogRstB1 = 0x01,
 }
 impl WdogRstB {
     #[inline(always)]

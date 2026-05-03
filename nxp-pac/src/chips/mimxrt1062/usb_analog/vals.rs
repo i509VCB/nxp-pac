@@ -3,7 +3,7 @@
 pub struct SiliconRevision(u32);
 impl SiliconRevision {
     #[doc = "Silicon revision 1.0."]
-    pub const SILICON_REVISION_7077888: Self = Self(0x006c_0000);
+    pub const SiliconRevision7077888: Self = Self(0x006c_0000);
 }
 impl SiliconRevision {
     pub const fn from_bits(val: u32) -> SiliconRevision {
@@ -16,7 +16,7 @@ impl SiliconRevision {
 impl core::fmt::Debug for SiliconRevision {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x006c_0000 => f.write_str("SILICON_REVISION_7077888"),
+            0x006c_0000 => f.write_str("SiliconRevision7077888"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -25,7 +25,7 @@ impl core::fmt::Debug for SiliconRevision {
 impl defmt::Format for SiliconRevision {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x006c_0000 => defmt::write!(f, "SILICON_REVISION_7077888"),
+            0x006c_0000 => defmt::write!(f, "SiliconRevision7077888"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -47,9 +47,9 @@ impl From<SiliconRevision> for u32 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb1ChrgDetectChkChrgB {
     #[doc = "Check whether a charger (either a dedicated charger or a host charger) is connected to USB port."]
-    CHECK = 0x0,
+    Check = 0x0,
     #[doc = "Do not check whether a charger is connected to the USB port."]
-    NO_CHECK = 0x01,
+    NoCheck = 0x01,
 }
 impl Usb1ChrgDetectChkChrgB {
     #[inline(always)]
@@ -78,9 +78,9 @@ impl From<Usb1ChrgDetectChkChrgB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb1ChrgDetectClrChkChrgB {
     #[doc = "Check whether a charger (either a dedicated charger or a host charger) is connected to USB port."]
-    CHECK = 0x0,
+    Check = 0x0,
     #[doc = "Do not check whether a charger is connected to the USB port."]
-    NO_CHECK = 0x01,
+    NoCheck = 0x01,
 }
 impl Usb1ChrgDetectClrChkChrgB {
     #[inline(always)]
@@ -109,9 +109,9 @@ impl From<Usb1ChrgDetectClrChkChrgB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb1ChrgDetectClrEnB {
     #[doc = "Enable the charger detector."]
-    ENABLE = 0x0,
+    Enable = 0x0,
     #[doc = "Disable the charger detector."]
-    DISABLE = 0x01,
+    Disable = 0x01,
 }
 impl Usb1ChrgDetectClrEnB {
     #[inline(always)]
@@ -140,9 +140,9 @@ impl From<Usb1ChrgDetectClrEnB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb1ChrgDetectEnB {
     #[doc = "Enable the charger detector."]
-    ENABLE = 0x0,
+    Enable = 0x0,
     #[doc = "Disable the charger detector."]
-    DISABLE = 0x01,
+    Disable = 0x01,
 }
 impl Usb1ChrgDetectEnB {
     #[inline(always)]
@@ -171,9 +171,9 @@ impl From<Usb1ChrgDetectEnB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb1ChrgDetectSetChkChrgB {
     #[doc = "Check whether a charger (either a dedicated charger or a host charger) is connected to USB port."]
-    CHECK = 0x0,
+    Check = 0x0,
     #[doc = "Do not check whether a charger is connected to the USB port."]
-    NO_CHECK = 0x01,
+    NoCheck = 0x01,
 }
 impl Usb1ChrgDetectSetChkChrgB {
     #[inline(always)]
@@ -202,9 +202,9 @@ impl From<Usb1ChrgDetectSetChkChrgB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb1ChrgDetectSetEnB {
     #[doc = "Enable the charger detector."]
-    ENABLE = 0x0,
+    Enable = 0x0,
     #[doc = "Disable the charger detector."]
-    DISABLE = 0x01,
+    Disable = 0x01,
 }
 impl Usb1ChrgDetectSetEnB {
     #[inline(always)]
@@ -233,9 +233,9 @@ impl From<Usb1ChrgDetectSetEnB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb1ChrgDetectStatChrgDetected {
     #[doc = "The USB port is not connected to a charger."]
-    CHARGER_NOT_PRESENT = 0x0,
+    ChargerNotPresent = 0x0,
     #[doc = "A charger (either a dedicated charger or a host charger) is connected to the USB port."]
-    CHARGER_PRESENT = 0x01,
+    ChargerPresent = 0x01,
 }
 impl Usb1ChrgDetectStatChrgDetected {
     #[inline(always)]
@@ -264,9 +264,9 @@ impl From<Usb1ChrgDetectStatChrgDetected> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb1ChrgDetectStatPlugContact {
     #[doc = "The USB plug has not made contact."]
-    NO_CONTACT = 0x0,
+    NoContact = 0x0,
     #[doc = "The USB plug has made good contact."]
-    GOOD_CONTACT = 0x01,
+    GoodContact = 0x01,
 }
 impl Usb1ChrgDetectStatPlugContact {
     #[inline(always)]
@@ -295,9 +295,9 @@ impl From<Usb1ChrgDetectStatPlugContact> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb1ChrgDetectTogChkChrgB {
     #[doc = "Check whether a charger (either a dedicated charger or a host charger) is connected to USB port."]
-    CHECK = 0x0,
+    Check = 0x0,
     #[doc = "Do not check whether a charger is connected to the USB port."]
-    NO_CHECK = 0x01,
+    NoCheck = 0x01,
 }
 impl Usb1ChrgDetectTogChkChrgB {
     #[inline(always)]
@@ -326,9 +326,9 @@ impl From<Usb1ChrgDetectTogChkChrgB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb1ChrgDetectTogEnB {
     #[doc = "Enable the charger detector."]
-    ENABLE = 0x0,
+    Enable = 0x0,
     #[doc = "Disable the charger detector."]
-    DISABLE = 0x01,
+    Disable = 0x01,
 }
 impl Usb1ChrgDetectTogEnB {
     #[inline(always)]
@@ -357,21 +357,21 @@ impl From<Usb1ChrgDetectTogEnB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb1VbusDetectClrVbusvalidThresh {
     #[doc = "4.0V."]
-    _4V0 = 0x0,
+    _4v0 = 0x0,
     #[doc = "4.1V."]
-    _4V1 = 0x01,
+    _4v1 = 0x01,
     #[doc = "4.2V."]
-    _4V2 = 0x02,
+    _4v2 = 0x02,
     #[doc = "4.3V."]
-    _4V3 = 0x03,
+    _4v3 = 0x03,
     #[doc = "4.4V (default)."]
-    _4V4 = 0x04,
+    _4v4 = 0x04,
     #[doc = "4.5V."]
-    _4V5 = 0x05,
+    _4v5 = 0x05,
     #[doc = "4.6V."]
-    _4V6 = 0x06,
+    _4v6 = 0x06,
     #[doc = "4.7V."]
-    _4V7 = 0x07,
+    _4v7 = 0x07,
 }
 impl Usb1VbusDetectClrVbusvalidThresh {
     #[inline(always)]
@@ -400,21 +400,21 @@ impl From<Usb1VbusDetectClrVbusvalidThresh> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb1VbusDetectSetVbusvalidThresh {
     #[doc = "4.0V."]
-    _4V0 = 0x0,
+    _4v0 = 0x0,
     #[doc = "4.1V."]
-    _4V1 = 0x01,
+    _4v1 = 0x01,
     #[doc = "4.2V."]
-    _4V2 = 0x02,
+    _4v2 = 0x02,
     #[doc = "4.3V."]
-    _4V3 = 0x03,
+    _4v3 = 0x03,
     #[doc = "4.4V (default)."]
-    _4V4 = 0x04,
+    _4v4 = 0x04,
     #[doc = "4.5V."]
-    _4V5 = 0x05,
+    _4v5 = 0x05,
     #[doc = "4.6V."]
-    _4V6 = 0x06,
+    _4v6 = 0x06,
     #[doc = "4.7V."]
-    _4V7 = 0x07,
+    _4v7 = 0x07,
 }
 impl Usb1VbusDetectSetVbusvalidThresh {
     #[inline(always)]
@@ -443,21 +443,21 @@ impl From<Usb1VbusDetectSetVbusvalidThresh> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb1VbusDetectTogVbusvalidThresh {
     #[doc = "4.0V."]
-    _4V0 = 0x0,
+    _4v0 = 0x0,
     #[doc = "4.1V."]
-    _4V1 = 0x01,
+    _4v1 = 0x01,
     #[doc = "4.2V."]
-    _4V2 = 0x02,
+    _4v2 = 0x02,
     #[doc = "4.3V."]
-    _4V3 = 0x03,
+    _4v3 = 0x03,
     #[doc = "4.4V (default)."]
-    _4V4 = 0x04,
+    _4v4 = 0x04,
     #[doc = "4.5V."]
-    _4V5 = 0x05,
+    _4v5 = 0x05,
     #[doc = "4.6V."]
-    _4V6 = 0x06,
+    _4v6 = 0x06,
     #[doc = "4.7V."]
-    _4V7 = 0x07,
+    _4v7 = 0x07,
 }
 impl Usb1VbusDetectTogVbusvalidThresh {
     #[inline(always)]
@@ -486,21 +486,21 @@ impl From<Usb1VbusDetectTogVbusvalidThresh> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb1VbusDetectVbusvalidThresh {
     #[doc = "4.0V."]
-    _4V0 = 0x0,
+    _4v0 = 0x0,
     #[doc = "4.1V."]
-    _4V1 = 0x01,
+    _4v1 = 0x01,
     #[doc = "4.2V."]
-    _4V2 = 0x02,
+    _4v2 = 0x02,
     #[doc = "4.3V."]
-    _4V3 = 0x03,
+    _4v3 = 0x03,
     #[doc = "4.4V (default)."]
-    _4V4 = 0x04,
+    _4v4 = 0x04,
     #[doc = "4.5V."]
-    _4V5 = 0x05,
+    _4v5 = 0x05,
     #[doc = "4.6V."]
-    _4V6 = 0x06,
+    _4v6 = 0x06,
     #[doc = "4.7V."]
-    _4V7 = 0x07,
+    _4v7 = 0x07,
 }
 impl Usb1VbusDetectVbusvalidThresh {
     #[inline(always)]
@@ -529,9 +529,9 @@ impl From<Usb1VbusDetectVbusvalidThresh> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb2ChrgDetectChkChrgB {
     #[doc = "Check whether a charger (either a dedicated charger or a host charger) is connected to USB port."]
-    CHECK = 0x0,
+    Check = 0x0,
     #[doc = "Do not check whether a charger is connected to the USB port."]
-    NO_CHECK = 0x01,
+    NoCheck = 0x01,
 }
 impl Usb2ChrgDetectChkChrgB {
     #[inline(always)]
@@ -560,9 +560,9 @@ impl From<Usb2ChrgDetectChkChrgB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb2ChrgDetectClrChkChrgB {
     #[doc = "Check whether a charger (either a dedicated charger or a host charger) is connected to USB port."]
-    CHECK = 0x0,
+    Check = 0x0,
     #[doc = "Do not check whether a charger is connected to the USB port."]
-    NO_CHECK = 0x01,
+    NoCheck = 0x01,
 }
 impl Usb2ChrgDetectClrChkChrgB {
     #[inline(always)]
@@ -591,9 +591,9 @@ impl From<Usb2ChrgDetectClrChkChrgB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb2ChrgDetectClrEnB {
     #[doc = "Enable the charger detector."]
-    ENABLE = 0x0,
+    Enable = 0x0,
     #[doc = "Disable the charger detector."]
-    DISABLE = 0x01,
+    Disable = 0x01,
 }
 impl Usb2ChrgDetectClrEnB {
     #[inline(always)]
@@ -622,9 +622,9 @@ impl From<Usb2ChrgDetectClrEnB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb2ChrgDetectEnB {
     #[doc = "Enable the charger detector."]
-    ENABLE = 0x0,
+    Enable = 0x0,
     #[doc = "Disable the charger detector."]
-    DISABLE = 0x01,
+    Disable = 0x01,
 }
 impl Usb2ChrgDetectEnB {
     #[inline(always)]
@@ -653,9 +653,9 @@ impl From<Usb2ChrgDetectEnB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb2ChrgDetectSetChkChrgB {
     #[doc = "Check whether a charger (either a dedicated charger or a host charger) is connected to USB port."]
-    CHECK = 0x0,
+    Check = 0x0,
     #[doc = "Do not check whether a charger is connected to the USB port."]
-    NO_CHECK = 0x01,
+    NoCheck = 0x01,
 }
 impl Usb2ChrgDetectSetChkChrgB {
     #[inline(always)]
@@ -684,9 +684,9 @@ impl From<Usb2ChrgDetectSetChkChrgB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb2ChrgDetectSetEnB {
     #[doc = "Enable the charger detector."]
-    ENABLE = 0x0,
+    Enable = 0x0,
     #[doc = "Disable the charger detector."]
-    DISABLE = 0x01,
+    Disable = 0x01,
 }
 impl Usb2ChrgDetectSetEnB {
     #[inline(always)]
@@ -715,9 +715,9 @@ impl From<Usb2ChrgDetectSetEnB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb2ChrgDetectStatChrgDetected {
     #[doc = "The USB port is not connected to a charger."]
-    CHARGER_NOT_PRESENT = 0x0,
+    ChargerNotPresent = 0x0,
     #[doc = "A charger (either a dedicated charger or a host charger) is connected to the USB port."]
-    CHARGER_PRESENT = 0x01,
+    ChargerPresent = 0x01,
 }
 impl Usb2ChrgDetectStatChrgDetected {
     #[inline(always)]
@@ -746,9 +746,9 @@ impl From<Usb2ChrgDetectStatChrgDetected> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb2ChrgDetectStatPlugContact {
     #[doc = "The USB plug has not made contact."]
-    NO_CONTACT = 0x0,
+    NoContact = 0x0,
     #[doc = "The USB plug has made good contact."]
-    GOOD_CONTACT = 0x01,
+    GoodContact = 0x01,
 }
 impl Usb2ChrgDetectStatPlugContact {
     #[inline(always)]
@@ -777,9 +777,9 @@ impl From<Usb2ChrgDetectStatPlugContact> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb2ChrgDetectTogChkChrgB {
     #[doc = "Check whether a charger (either a dedicated charger or a host charger) is connected to USB port."]
-    CHECK = 0x0,
+    Check = 0x0,
     #[doc = "Do not check whether a charger is connected to the USB port."]
-    NO_CHECK = 0x01,
+    NoCheck = 0x01,
 }
 impl Usb2ChrgDetectTogChkChrgB {
     #[inline(always)]
@@ -808,9 +808,9 @@ impl From<Usb2ChrgDetectTogChkChrgB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb2ChrgDetectTogEnB {
     #[doc = "Enable the charger detector."]
-    ENABLE = 0x0,
+    Enable = 0x0,
     #[doc = "Disable the charger detector."]
-    DISABLE = 0x01,
+    Disable = 0x01,
 }
 impl Usb2ChrgDetectTogEnB {
     #[inline(always)]
@@ -839,21 +839,21 @@ impl From<Usb2ChrgDetectTogEnB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb2VbusDetectClrVbusvalidThresh {
     #[doc = "4.0V."]
-    _4V0 = 0x0,
+    _4v0 = 0x0,
     #[doc = "4.1V."]
-    _4V1 = 0x01,
+    _4v1 = 0x01,
     #[doc = "4.2V."]
-    _4V2 = 0x02,
+    _4v2 = 0x02,
     #[doc = "4.3V."]
-    _4V3 = 0x03,
+    _4v3 = 0x03,
     #[doc = "4.4V (default)."]
-    _4V4 = 0x04,
+    _4v4 = 0x04,
     #[doc = "4.5V."]
-    _4V5 = 0x05,
+    _4v5 = 0x05,
     #[doc = "4.6V."]
-    _4V6 = 0x06,
+    _4v6 = 0x06,
     #[doc = "4.7V."]
-    _4V7 = 0x07,
+    _4v7 = 0x07,
 }
 impl Usb2VbusDetectClrVbusvalidThresh {
     #[inline(always)]
@@ -882,21 +882,21 @@ impl From<Usb2VbusDetectClrVbusvalidThresh> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb2VbusDetectSetVbusvalidThresh {
     #[doc = "4.0V."]
-    _4V0 = 0x0,
+    _4v0 = 0x0,
     #[doc = "4.1V."]
-    _4V1 = 0x01,
+    _4v1 = 0x01,
     #[doc = "4.2V."]
-    _4V2 = 0x02,
+    _4v2 = 0x02,
     #[doc = "4.3V."]
-    _4V3 = 0x03,
+    _4v3 = 0x03,
     #[doc = "4.4V (default)."]
-    _4V4 = 0x04,
+    _4v4 = 0x04,
     #[doc = "4.5V."]
-    _4V5 = 0x05,
+    _4v5 = 0x05,
     #[doc = "4.6V."]
-    _4V6 = 0x06,
+    _4v6 = 0x06,
     #[doc = "4.7V."]
-    _4V7 = 0x07,
+    _4v7 = 0x07,
 }
 impl Usb2VbusDetectSetVbusvalidThresh {
     #[inline(always)]
@@ -925,21 +925,21 @@ impl From<Usb2VbusDetectSetVbusvalidThresh> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb2VbusDetectTogVbusvalidThresh {
     #[doc = "4.0V."]
-    _4V0 = 0x0,
+    _4v0 = 0x0,
     #[doc = "4.1V."]
-    _4V1 = 0x01,
+    _4v1 = 0x01,
     #[doc = "4.2V."]
-    _4V2 = 0x02,
+    _4v2 = 0x02,
     #[doc = "4.3V."]
-    _4V3 = 0x03,
+    _4v3 = 0x03,
     #[doc = "4.4V (default)."]
-    _4V4 = 0x04,
+    _4v4 = 0x04,
     #[doc = "4.5V."]
-    _4V5 = 0x05,
+    _4v5 = 0x05,
     #[doc = "4.6V."]
-    _4V6 = 0x06,
+    _4v6 = 0x06,
     #[doc = "4.7V."]
-    _4V7 = 0x07,
+    _4v7 = 0x07,
 }
 impl Usb2VbusDetectTogVbusvalidThresh {
     #[inline(always)]
@@ -968,21 +968,21 @@ impl From<Usb2VbusDetectTogVbusvalidThresh> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usb2VbusDetectVbusvalidThresh {
     #[doc = "4.0V."]
-    _4V0 = 0x0,
+    _4v0 = 0x0,
     #[doc = "4.1V."]
-    _4V1 = 0x01,
+    _4v1 = 0x01,
     #[doc = "4.2V."]
-    _4V2 = 0x02,
+    _4v2 = 0x02,
     #[doc = "4.3V."]
-    _4V3 = 0x03,
+    _4v3 = 0x03,
     #[doc = "4.4V (default)."]
-    _4V4 = 0x04,
+    _4v4 = 0x04,
     #[doc = "4.5V."]
-    _4V5 = 0x05,
+    _4v5 = 0x05,
     #[doc = "4.6V."]
-    _4V6 = 0x06,
+    _4v6 = 0x06,
     #[doc = "4.7V."]
-    _4V7 = 0x07,
+    _4v7 = 0x07,
 }
 impl Usb2VbusDetectVbusvalidThresh {
     #[inline(always)]

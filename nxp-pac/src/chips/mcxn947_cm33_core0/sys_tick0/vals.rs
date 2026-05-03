@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Clksource {
     #[doc = "external clock."]
-    EXTERNAL_CLOCK = 0x0,
+    ExternalClock = 0x0,
     #[doc = "processor clock."]
-    PROCESSOR_CLOCK = 0x01,
+    ProcessorClock = 0x01,
 }
 impl Clksource {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Clksource> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Enable {
     #[doc = "counter disabled."]
-    COUNTER_DISABLED = 0x0,
+    CounterDisabled = 0x0,
     #[doc = "counter enabled."]
-    COUNTER_ENABLED = 0x01,
+    CounterEnabled = 0x01,
 }
 impl Enable {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Enable> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Noref {
     #[doc = "The alternative reference clock is provided."]
-    CLOCK_PROVIDED = 0x0,
+    ClockProvided = 0x0,
     #[doc = "The alternative reference clock is not provided."]
-    CLOCK_DISABLED = 0x01,
+    ClockDisabled = 0x01,
 }
 impl Noref {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Noref> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Skew {
     #[doc = "10ms calibration value is exact."]
-    EXACT_VALUE = 0x0,
+    ExactValue = 0x0,
     #[doc = "10ms calibration value is inexact, because of the clock frequency."]
-    INEXACT_VALUE = 0x01,
+    InexactValue = 0x01,
 }
 impl Skew {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<Skew> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tickint {
     #[doc = "counting down to 0 does not assert the SysTick exception request."]
-    INTERRUPT_DISABLED = 0x0,
+    InterruptDisabled = 0x0,
     #[doc = "counting down to 0 asserts the SysTick exception request."]
-    INTERRUPT_ENABLED = 0x01,
+    InterruptEnabled = 0x01,
 }
 impl Tickint {
     #[inline(always)]

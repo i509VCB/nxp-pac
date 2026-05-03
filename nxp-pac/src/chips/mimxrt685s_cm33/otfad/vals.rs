@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ade {
     #[doc = "Bypass the fetched data."]
-    ADE_0 = 0x0,
+    Ade0 = 0x0,
     #[doc = "Perform the CTR-AES128 mode decryption on the fetched data."]
-    ADE_1 = 0x01,
+    Ade1 = 0x01,
 }
 impl Ade {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Ade> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fldm {
     #[doc = "No effect on the operating mode."]
-    FLDM_0 = 0x0,
+    Fldm0 = 0x0,
     #[doc = "Force entry into LDM after a write with this data bit set. SR\\[MODE\\] signals the operating mode."]
-    FLDM_1 = 0x01,
+    Fldm1 = 0x01,
 }
 impl Fldm {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Fldm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ge {
     #[doc = "OTFAD has decryption disabled. All data fetched by the FLEXSPI bypasses OTFAD processing."]
-    GE_0 = 0x0,
+    Ge0 = 0x0,
     #[doc = "OTFAD has decryption enabled, and processes data fetched by the FLEXSPI as defined by the hardware configuration."]
-    GE_1 = 0x01,
+    Ge1 = 0x01,
 }
 impl Ge {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Ge> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gem {
     #[doc = "OTFAD is disabled. All data fetched by the FLEXSPI bypasses OTFAD processing."]
-    GEM_0 = 0x0,
+    Gem0 = 0x0,
     #[doc = "OTFAD is enabled, and processes data fetched by the FLEXSPI as defined by the hardware configuration."]
-    GEM_1 = 0x01,
+    Gem1 = 0x01,
 }
 impl Gem {
     #[inline(always)]
@@ -127,13 +127,13 @@ impl From<Gem> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mode {
     #[doc = "Operating in Normal mode (NRM)."]
-    MODE_0 = 0x0,
+    Mode0 = 0x0,
     #[doc = "Unused (reserved)."]
-    MODE_1 = 0x01,
+    Mode1 = 0x01,
     #[doc = "Unused (reserved)."]
-    MODE_2 = 0x02,
+    Mode2 = 0x02,
     #[doc = "Operating in Logically Disabled Mode (LDM)."]
-    MODE_3 = 0x03,
+    Mode3 = 0x03,
 }
 impl Mode {
     #[inline(always)]
@@ -162,9 +162,9 @@ impl From<Mode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ro {
     #[doc = "The context registers can be accessed normally (as defined by SR\\[RRAM\\])."]
-    RO_0 = 0x0,
+    Ro0 = 0x0,
     #[doc = "The context registers are read-only and accesses may be further restricted based on SR\\[RRAM\\]."]
-    RO_1 = 0x01,
+    Ro1 = 0x01,
 }
 impl Ro {
     #[inline(always)]
@@ -193,9 +193,9 @@ impl From<Ro> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rrae {
     #[doc = "Register access is fully enabled. The OTFAD programming model registers can be accessed \"normally\"."]
-    RRAE_0 = 0x0,
+    Rrae0 = 0x0,
     #[doc = "Register access is restricted and only the CR, SR and optional MDPC registers can be accessed; others are treated as RAZ/WI."]
-    RRAE_1 = 0x01,
+    Rrae1 = 0x01,
 }
 impl Rrae {
     #[inline(always)]
@@ -224,9 +224,9 @@ impl From<Rrae> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rram {
     #[doc = "Register access is fully enabled. The OTFAD programming model registers can be accessed \"normally\"."]
-    RRAM_0 = 0x0,
+    Rram0 = 0x0,
     #[doc = "Register access is restricted and only the CR, SR and optional MDPC registers can be accessed; others are treated as RAZ/WI."]
-    RRAM_1 = 0x01,
+    Rram1 = 0x01,
 }
 impl Rram {
     #[inline(always)]
@@ -255,9 +255,9 @@ impl From<Rram> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Vld {
     #[doc = "Context is invalid."]
-    VLD_0 = 0x0,
+    Vld0 = 0x0,
     #[doc = "Context is valid."]
-    VLD_1 = 0x01,
+    Vld1 = 0x01,
 }
 impl Vld {
     #[inline(always)]

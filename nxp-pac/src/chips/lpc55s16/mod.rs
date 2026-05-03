@@ -1,6 +1,7 @@
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6a8c2aa 2026-01-27))"]
+#![allow(non_upper_case_globals)]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (e5ab29f 2026-04-30))"]
 #[derive(Copy, Clone, Debug, PartialEq, Eq)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Interrupt {
@@ -114,215 +115,223 @@ unsafe impl cortex_m::interrupt::InterruptNumber for Interrupt {
 #[cfg(feature = "rt")]
 mod _vectors;
 #[doc = "FLASH_CFPA"]
-pub const FLASH_CFPA_SCRATCH: flash_cfpa::FlashCfpa =
-    unsafe { flash_cfpa::FlashCfpa::from_ptr(0x0003_de00usize as _) };
+pub const FLASH_CFPA_SCRATCH: FLASH_CFPA::FLASH_CFPA =
+    unsafe { FLASH_CFPA::FLASH_CFPA::from_ptr(0x0003_de00usize as _) };
 #[doc = "FLASH_CFPA"]
-pub const FLASH_CFPA0: flash_cfpa::FlashCfpa =
-    unsafe { flash_cfpa::FlashCfpa::from_ptr(0x0003_e000usize as _) };
+pub const FLASH_CFPA0: FLASH_CFPA::FLASH_CFPA =
+    unsafe { FLASH_CFPA::FLASH_CFPA::from_ptr(0x0003_e000usize as _) };
 #[doc = "FLASH_CFPA"]
-pub const FLASH_CFPA1: flash_cfpa::FlashCfpa =
-    unsafe { flash_cfpa::FlashCfpa::from_ptr(0x0003_e200usize as _) };
+pub const FLASH_CFPA1: FLASH_CFPA::FLASH_CFPA =
+    unsafe { FLASH_CFPA::FLASH_CFPA::from_ptr(0x0003_e200usize as _) };
 #[doc = "FLASH_CMPA"]
-pub const FLASH_CMPA: flash_cmpa::FlashCmpa =
-    unsafe { flash_cmpa::FlashCmpa::from_ptr(0x0003_e400usize as _) };
+pub const FLASH_CMPA: FLASH_CMPA::FLASH_CMPA =
+    unsafe { FLASH_CMPA::FLASH_CMPA::from_ptr(0x0003_e400usize as _) };
 #[doc = "FLASH_KEY_STORE"]
-pub const FLASH_KEY_STORE: flash_key_store::FlashKeyStore =
-    unsafe { flash_key_store::FlashKeyStore::from_ptr(0x0003_e600usize as _) };
+pub const FLASH_KEY_STORE: FLASH_KEY_STORE::FLASH_KEY_STORE =
+    unsafe { FLASH_KEY_STORE::FLASH_KEY_STORE::from_ptr(0x0003_e600usize as _) };
 #[doc = "FLASH_ROMPATCH"]
-pub const FLASH_ROMPATCH: flash_rompatch::FlashRompatch =
-    unsafe { flash_rompatch::FlashRompatch::from_ptr(0x0003_ec00usize as _) };
+pub const FLASH_ROMPATCH: FLASH_ROMPATCH::FLASH_ROMPATCH =
+    unsafe { FLASH_ROMPATCH::FLASH_ROMPATCH::from_ptr(0x0003_ec00usize as _) };
 #[doc = "FLASH_NMPA"]
-pub const FLASH_NMPA: flash_nmpa::FlashNmpa =
-    unsafe { flash_nmpa::FlashNmpa::from_ptr(0x0003_fc00usize as _) };
+pub const FLASH_NMPA: FLASH_NMPA::FLASH_NMPA =
+    unsafe { FLASH_NMPA::FLASH_NMPA::from_ptr(0x0003_fc00usize as _) };
 #[doc = "SYSCON"]
-pub const SYSCON: syscon::Syscon = unsafe { syscon::Syscon::from_ptr(0x4000_0000usize as _) };
+pub const SYSCON: SYSCON::SYSCON = unsafe { SYSCON::SYSCON::from_ptr(0x4000_0000usize as _) };
 #[doc = "I/O pin configuration (IOCON)"]
-pub const IOCON: iocon::Iocon = unsafe { iocon::Iocon::from_ptr(0x4000_1000usize as _) };
+pub const IOCON: IOCON::IOCON = unsafe { IOCON::IOCON::from_ptr(0x4000_1000usize as _) };
 #[doc = "Group GPIO input interrupt (GINT0/1)"]
-pub const GINT0: gint::Gint = unsafe { gint::Gint::from_ptr(0x4000_2000usize as _) };
+pub const GINT0: GINT::GINT = unsafe { GINT::GINT::from_ptr(0x4000_2000usize as _) };
 #[doc = "Group GPIO input interrupt (GINT0/1)"]
-pub const GINT1: gint::Gint = unsafe { gint::Gint::from_ptr(0x4000_3000usize as _) };
+pub const GINT1: GINT::GINT = unsafe { GINT::GINT::from_ptr(0x4000_3000usize as _) };
 #[doc = "Pin interrupt and pattern match (PINT)"]
-pub const PINT: pint::Pint = unsafe { pint::Pint::from_ptr(0x4000_4000usize as _) };
+pub const PINT: PINT::PINT = unsafe { PINT::PINT::from_ptr(0x4000_4000usize as _) };
 #[doc = "Pin interrupt and pattern match (PINT)"]
-pub const SECPINT: pint::Pint = unsafe { pint::Pint::from_ptr(0x4000_5000usize as _) };
+pub const SECPINT: PINT::PINT = unsafe { PINT::PINT::from_ptr(0x4000_5000usize as _) };
 #[doc = "Input multiplexing (INPUT MUX)"]
-pub const INPUTMUX: inputmux::Inputmux =
-    unsafe { inputmux::Inputmux::from_ptr(0x4000_6000usize as _) };
+pub const INPUTMUX: INPUTMUX::INPUTMUX =
+    unsafe { INPUTMUX::INPUTMUX::from_ptr(0x4000_6000usize as _) };
 #[doc = "Standard counter/timers (CTIMER0 to 4)"]
-pub const CTIMER0: ctimer::Ctimer = unsafe { ctimer::Ctimer::from_ptr(0x4000_8000usize as _) };
+pub const CTIMER0: CTIMER::CTIMER = unsafe { CTIMER::CTIMER::from_ptr(0x4000_8000usize as _) };
 #[doc = "Standard counter/timers (CTIMER0 to 4)"]
-pub const CTIMER1: ctimer::Ctimer = unsafe { ctimer::Ctimer::from_ptr(0x4000_9000usize as _) };
+pub const CTIMER1: CTIMER::CTIMER = unsafe { CTIMER::CTIMER::from_ptr(0x4000_9000usize as _) };
 #[doc = "Windowed Watchdog Timer (WWDT)"]
-pub const WWDT: wwdt::Wwdt = unsafe { wwdt::Wwdt::from_ptr(0x4000_c000usize as _) };
+pub const WWDT: WWDT::WWDT = unsafe { WWDT::WWDT::from_ptr(0x4000_c000usize as _) };
 #[doc = "Multi-Rate Timer (MRT)"]
-pub const MRT0: mrt0::Mrt0 = unsafe { mrt0::Mrt0::from_ptr(0x4000_d000usize as _) };
+pub const MRT0: MRT0::MRT0 = unsafe { MRT0::MRT0::from_ptr(0x4000_d000usize as _) };
 #[doc = "Micro-tick Timer (UTICK)"]
-pub const UTICK0: utick0::Utick0 = unsafe { utick0::Utick0::from_ptr(0x4000_e000usize as _) };
+pub const UTICK0: UTICK0::UTICK0 = unsafe { UTICK0::UTICK0::from_ptr(0x4000_e000usize as _) };
 #[doc = "ANALOGCTRL"]
-pub const ANACTRL: anactrl::Anactrl = unsafe { anactrl::Anactrl::from_ptr(0x4001_3000usize as _) };
+pub const ANACTRL: ANACTRL::ANACTRL = unsafe { ANACTRL::ANACTRL::from_ptr(0x4001_3000usize as _) };
 #[doc = "PMC"]
-pub const PMC: pmc::Pmc = unsafe { pmc::Pmc::from_ptr(0x4002_0000usize as _) };
+pub const PMC: PMC::PMC = unsafe { PMC::PMC::from_ptr(0x4002_0000usize as _) };
 #[doc = "system controller"]
-pub const SYSCTL: sysctl::Sysctl = unsafe { sysctl::Sysctl::from_ptr(0x4002_3000usize as _) };
+pub const SYSCTL: SYSCTL::SYSCTL = unsafe { SYSCTL::SYSCTL::from_ptr(0x4002_3000usize as _) };
 #[doc = "Standard counter/timers (CTIMER0 to 4)"]
-pub const CTIMER2: ctimer::Ctimer = unsafe { ctimer::Ctimer::from_ptr(0x4002_8000usize as _) };
+pub const CTIMER2: CTIMER::CTIMER = unsafe { CTIMER::CTIMER::from_ptr(0x4002_8000usize as _) };
 #[doc = "Standard counter/timers (CTIMER0 to 4)"]
-pub const CTIMER3: ctimer::Ctimer = unsafe { ctimer::Ctimer::from_ptr(0x4002_9000usize as _) };
+pub const CTIMER3: CTIMER::CTIMER = unsafe { CTIMER::CTIMER::from_ptr(0x4002_9000usize as _) };
 #[doc = "Standard counter/timers (CTIMER0 to 4)"]
-pub const CTIMER4: ctimer::Ctimer = unsafe { ctimer::Ctimer::from_ptr(0x4002_a000usize as _) };
+pub const CTIMER4: CTIMER::CTIMER = unsafe { CTIMER::CTIMER::from_ptr(0x4002_a000usize as _) };
 #[doc = "Real-Time Clock (RTC)"]
-pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4002_c000usize as _) };
+pub const RTC: RTC::RTC = unsafe { RTC::RTC::from_ptr(0x4002_c000usize as _) };
 #[doc = "Synchronous OS/Event timer with Wakeup Timer"]
-pub const OSTIMER: ostimer::Ostimer = unsafe { ostimer::Ostimer::from_ptr(0x4002_d000usize as _) };
+pub const OSTIMER: OSTIMER::OSTIMER = unsafe { OSTIMER::OSTIMER::from_ptr(0x4002_d000usize as _) };
 #[doc = "FLASH"]
-pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4003_4000usize as _) };
+pub const FLASH: FLASH::FLASH = unsafe { FLASH::FLASH::from_ptr(0x4003_4000usize as _) };
 #[doc = "PRINCE"]
-pub const PRINCE: prince::Prince = unsafe { prince::Prince::from_ptr(0x4003_5000usize as _) };
+pub const PRINCE: PRINCE::PRINCE = unsafe { PRINCE::PRINCE::from_ptr(0x4003_5000usize as _) };
 #[doc = "Universal System Bus Physical Layer"]
-pub const USBPHY: usbphy::Usbphy = unsafe { usbphy::Usbphy::from_ptr(0x4003_8000usize as _) };
+pub const USBPHY: USBPHY::USBPHY = unsafe { USBPHY::USBPHY::from_ptr(0x4003_8000usize as _) };
 #[doc = "RNG"]
-pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x4003_a000usize as _) };
+pub const RNG: RNG::RNG = unsafe { RNG::RNG::from_ptr(0x4003_a000usize as _) };
 #[doc = "PUFCTRL"]
-pub const PUF: puf::Puf = unsafe { puf::Puf::from_ptr(0x4003_b000usize as _) };
+pub const PUF: PUF::PUF = unsafe { PUF::PUF::from_ptr(0x4003_b000usize as _) };
 #[doc = "PUF SRAM Control"]
-pub const PUF_SRAM_CTRL: puf_sram_ctrl::PufSramCtrl =
-    unsafe { puf_sram_ctrl::PufSramCtrl::from_ptr(0x4003_b000usize as _) };
+pub const PUF_SRAM_CTRL: PUF_SRAM_CTRL::PUF_SRAM_CTRL =
+    unsafe { PUF_SRAM_CTRL::PUF_SRAM_CTRL::from_ptr(0x4003_b000usize as _) };
 #[doc = "LPC80X Programmable Logic Unit (PLU)"]
-pub const PLU: plu::Plu = unsafe { plu::Plu::from_ptr(0x4003_d000usize as _) };
+pub const PLU: PLU::PLU = unsafe { PLU::PLU::from_ptr(0x4003_d000usize as _) };
 #[doc = "DMA controller"]
-pub const DMA0: dma::Dma = unsafe { dma::Dma::from_ptr(0x4008_2000usize as _) };
+pub const DMA0: DMA::DMA = unsafe { DMA::DMA::from_ptr(0x4008_2000usize as _) };
 #[doc = "USB 2.0 Device Controller"]
-pub const USB0: usb0::Usb0 = unsafe { usb0::Usb0::from_ptr(0x4008_4000usize as _) };
+pub const USB0: USB0::USB0 = unsafe { USB0::USB0::from_ptr(0x4008_4000usize as _) };
 #[doc = "SCTimer/PWM (SCT)"]
-pub const SCT0: sct0::Sct0 = unsafe { sct0::Sct0::from_ptr(0x4008_5000usize as _) };
+pub const SCT0: SCT0::SCT0 = unsafe { SCT0::SCT0::from_ptr(0x4008_5000usize as _) };
 #[doc = "Flexcomm serial communication"]
-pub const FLEXCOMM0: flexcomm::Flexcomm =
-    unsafe { flexcomm::Flexcomm::from_ptr(0x4008_6000usize as _) };
+pub const FLEXCOMM0: FLEXCOMM::FLEXCOMM =
+    unsafe { FLEXCOMM::FLEXCOMM::from_ptr(0x4008_6000usize as _) };
 #[doc = "I2C-bus interfaces"]
-pub const I2C0: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4008_6000usize as _) };
+pub const I2C0: I2C::I2C = unsafe { I2C::I2C::from_ptr(0x4008_6000usize as _) };
 #[doc = "I2S interface"]
-pub const I2S0: i2s::I2s = unsafe { i2s::I2s::from_ptr(0x4008_6000usize as _) };
+pub const I2S0: I2S::I2S = unsafe { I2S::I2S::from_ptr(0x4008_6000usize as _) };
 #[doc = "Serial Peripheral Interfaces (SPI)"]
-pub const SPI0: spi::Spi = unsafe { spi::Spi::from_ptr(0x4008_6000usize as _) };
+pub const SPI0: SPI::SPI = unsafe { SPI::SPI::from_ptr(0x4008_6000usize as _) };
 #[doc = "USARTs"]
-pub const USART0: usart::Usart = unsafe { usart::Usart::from_ptr(0x4008_6000usize as _) };
+pub const USART0: USART::USART = unsafe { USART::USART::from_ptr(0x4008_6000usize as _) };
 #[doc = "Flexcomm serial communication"]
-pub const FLEXCOMM1: flexcomm::Flexcomm =
-    unsafe { flexcomm::Flexcomm::from_ptr(0x4008_7000usize as _) };
+pub const FLEXCOMM1: FLEXCOMM::FLEXCOMM =
+    unsafe { FLEXCOMM::FLEXCOMM::from_ptr(0x4008_7000usize as _) };
 #[doc = "I2C-bus interfaces"]
-pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4008_7000usize as _) };
+pub const I2C1: I2C::I2C = unsafe { I2C::I2C::from_ptr(0x4008_7000usize as _) };
 #[doc = "I2S interface"]
-pub const I2S1: i2s::I2s = unsafe { i2s::I2s::from_ptr(0x4008_7000usize as _) };
+pub const I2S1: I2S::I2S = unsafe { I2S::I2S::from_ptr(0x4008_7000usize as _) };
 #[doc = "Serial Peripheral Interfaces (SPI)"]
-pub const SPI1: spi::Spi = unsafe { spi::Spi::from_ptr(0x4008_7000usize as _) };
+pub const SPI1: SPI::SPI = unsafe { SPI::SPI::from_ptr(0x4008_7000usize as _) };
 #[doc = "USARTs"]
-pub const USART1: usart::Usart = unsafe { usart::Usart::from_ptr(0x4008_7000usize as _) };
+pub const USART1: USART::USART = unsafe { USART::USART::from_ptr(0x4008_7000usize as _) };
 #[doc = "Flexcomm serial communication"]
-pub const FLEXCOMM2: flexcomm::Flexcomm =
-    unsafe { flexcomm::Flexcomm::from_ptr(0x4008_8000usize as _) };
+pub const FLEXCOMM2: FLEXCOMM::FLEXCOMM =
+    unsafe { FLEXCOMM::FLEXCOMM::from_ptr(0x4008_8000usize as _) };
 #[doc = "I2C-bus interfaces"]
-pub const I2C2: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4008_8000usize as _) };
+pub const I2C2: I2C::I2C = unsafe { I2C::I2C::from_ptr(0x4008_8000usize as _) };
 #[doc = "I2S interface"]
-pub const I2S2: i2s::I2s = unsafe { i2s::I2s::from_ptr(0x4008_8000usize as _) };
+pub const I2S2: I2S::I2S = unsafe { I2S::I2S::from_ptr(0x4008_8000usize as _) };
 #[doc = "Serial Peripheral Interfaces (SPI)"]
-pub const SPI2: spi::Spi = unsafe { spi::Spi::from_ptr(0x4008_8000usize as _) };
+pub const SPI2: SPI::SPI = unsafe { SPI::SPI::from_ptr(0x4008_8000usize as _) };
 #[doc = "USARTs"]
-pub const USART2: usart::Usart = unsafe { usart::Usart::from_ptr(0x4008_8000usize as _) };
+pub const USART2: USART::USART = unsafe { USART::USART::from_ptr(0x4008_8000usize as _) };
 #[doc = "Flexcomm serial communication"]
-pub const FLEXCOMM3: flexcomm::Flexcomm =
-    unsafe { flexcomm::Flexcomm::from_ptr(0x4008_9000usize as _) };
+pub const FLEXCOMM3: FLEXCOMM::FLEXCOMM =
+    unsafe { FLEXCOMM::FLEXCOMM::from_ptr(0x4008_9000usize as _) };
 #[doc = "I2C-bus interfaces"]
-pub const I2C3: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4008_9000usize as _) };
+pub const I2C3: I2C::I2C = unsafe { I2C::I2C::from_ptr(0x4008_9000usize as _) };
 #[doc = "I2S interface"]
-pub const I2S3: i2s::I2s = unsafe { i2s::I2s::from_ptr(0x4008_9000usize as _) };
+pub const I2S3: I2S::I2S = unsafe { I2S::I2S::from_ptr(0x4008_9000usize as _) };
 #[doc = "Serial Peripheral Interfaces (SPI)"]
-pub const SPI3: spi::Spi = unsafe { spi::Spi::from_ptr(0x4008_9000usize as _) };
+pub const SPI3: SPI::SPI = unsafe { SPI::SPI::from_ptr(0x4008_9000usize as _) };
 #[doc = "USARTs"]
-pub const USART3: usart::Usart = unsafe { usart::Usart::from_ptr(0x4008_9000usize as _) };
+pub const USART3: USART::USART = unsafe { USART::USART::from_ptr(0x4008_9000usize as _) };
 #[doc = "Flexcomm serial communication"]
-pub const FLEXCOMM4: flexcomm::Flexcomm =
-    unsafe { flexcomm::Flexcomm::from_ptr(0x4008_a000usize as _) };
+pub const FLEXCOMM4: FLEXCOMM::FLEXCOMM =
+    unsafe { FLEXCOMM::FLEXCOMM::from_ptr(0x4008_a000usize as _) };
 #[doc = "I2C-bus interfaces"]
-pub const I2C4: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4008_a000usize as _) };
+pub const I2C4: I2C::I2C = unsafe { I2C::I2C::from_ptr(0x4008_a000usize as _) };
 #[doc = "I2S interface"]
-pub const I2S4: i2s::I2s = unsafe { i2s::I2s::from_ptr(0x4008_a000usize as _) };
+pub const I2S4: I2S::I2S = unsafe { I2S::I2S::from_ptr(0x4008_a000usize as _) };
 #[doc = "Serial Peripheral Interfaces (SPI)"]
-pub const SPI4: spi::Spi = unsafe { spi::Spi::from_ptr(0x4008_a000usize as _) };
+pub const SPI4: SPI::SPI = unsafe { SPI::SPI::from_ptr(0x4008_a000usize as _) };
 #[doc = "USARTs"]
-pub const USART4: usart::Usart = unsafe { usart::Usart::from_ptr(0x4008_a000usize as _) };
+pub const USART4: USART::USART = unsafe { USART::USART::from_ptr(0x4008_a000usize as _) };
 #[doc = "General Purpose I/O (GPIO)"]
-pub const GPIO: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4008_c000usize as _) };
+pub const GPIO: GPIO::GPIO = unsafe { GPIO::GPIO::from_ptr(0x4008_c000usize as _) };
 #[doc = "USB1 High-speed Device Controller"]
-pub const USBHSD: usbhsd::Usbhsd = unsafe { usbhsd::Usbhsd::from_ptr(0x4009_4000usize as _) };
+pub const USBHSD: USBHSD::USBHSD = unsafe { USBHSD::USBHSD::from_ptr(0x4009_4000usize as _) };
 #[doc = "CRC engine"]
-pub const CRC_ENGINE: crc_engine::CrcEngine =
-    unsafe { crc_engine::CrcEngine::from_ptr(0x4009_5000usize as _) };
+pub const CRC_ENGINE: CRC_ENGINE::CRC_ENGINE =
+    unsafe { CRC_ENGINE::CRC_ENGINE::from_ptr(0x4009_5000usize as _) };
 #[doc = "Flexcomm serial communication"]
-pub const FLEXCOMM5: flexcomm::Flexcomm =
-    unsafe { flexcomm::Flexcomm::from_ptr(0x4009_6000usize as _) };
+pub const FLEXCOMM5: FLEXCOMM::FLEXCOMM =
+    unsafe { FLEXCOMM::FLEXCOMM::from_ptr(0x4009_6000usize as _) };
 #[doc = "I2C-bus interfaces"]
-pub const I2C5: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4009_6000usize as _) };
+pub const I2C5: I2C::I2C = unsafe { I2C::I2C::from_ptr(0x4009_6000usize as _) };
 #[doc = "I2S interface"]
-pub const I2S5: i2s::I2s = unsafe { i2s::I2s::from_ptr(0x4009_6000usize as _) };
+pub const I2S5: I2S::I2S = unsafe { I2S::I2S::from_ptr(0x4009_6000usize as _) };
 #[doc = "Serial Peripheral Interfaces (SPI)"]
-pub const SPI5: spi::Spi = unsafe { spi::Spi::from_ptr(0x4009_6000usize as _) };
+pub const SPI5: SPI::SPI = unsafe { SPI::SPI::from_ptr(0x4009_6000usize as _) };
 #[doc = "USARTs"]
-pub const USART5: usart::Usart = unsafe { usart::Usart::from_ptr(0x4009_6000usize as _) };
+pub const USART5: USART::USART = unsafe { USART::USART::from_ptr(0x4009_6000usize as _) };
 #[doc = "Flexcomm serial communication"]
-pub const FLEXCOMM6: flexcomm::Flexcomm =
-    unsafe { flexcomm::Flexcomm::from_ptr(0x4009_7000usize as _) };
+pub const FLEXCOMM6: FLEXCOMM::FLEXCOMM =
+    unsafe { FLEXCOMM::FLEXCOMM::from_ptr(0x4009_7000usize as _) };
 #[doc = "I2C-bus interfaces"]
-pub const I2C6: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4009_7000usize as _) };
+pub const I2C6: I2C::I2C = unsafe { I2C::I2C::from_ptr(0x4009_7000usize as _) };
 #[doc = "I2S interface"]
-pub const I2S6: i2s::I2s = unsafe { i2s::I2s::from_ptr(0x4009_7000usize as _) };
+pub const I2S6: I2S::I2S = unsafe { I2S::I2S::from_ptr(0x4009_7000usize as _) };
 #[doc = "Serial Peripheral Interfaces (SPI)"]
-pub const SPI6: spi::Spi = unsafe { spi::Spi::from_ptr(0x4009_7000usize as _) };
+pub const SPI6: SPI::SPI = unsafe { SPI::SPI::from_ptr(0x4009_7000usize as _) };
 #[doc = "USARTs"]
-pub const USART6: usart::Usart = unsafe { usart::Usart::from_ptr(0x4009_7000usize as _) };
+pub const USART6: USART::USART = unsafe { USART::USART::from_ptr(0x4009_7000usize as _) };
 #[doc = "Flexcomm serial communication"]
-pub const FLEXCOMM7: flexcomm::Flexcomm =
-    unsafe { flexcomm::Flexcomm::from_ptr(0x4009_8000usize as _) };
+pub const FLEXCOMM7: FLEXCOMM::FLEXCOMM =
+    unsafe { FLEXCOMM::FLEXCOMM::from_ptr(0x4009_8000usize as _) };
 #[doc = "I2C-bus interfaces"]
-pub const I2C7: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4009_8000usize as _) };
+pub const I2C7: I2C::I2C = unsafe { I2C::I2C::from_ptr(0x4009_8000usize as _) };
 #[doc = "I2S interface"]
-pub const I2S7: i2s::I2s = unsafe { i2s::I2s::from_ptr(0x4009_8000usize as _) };
+pub const I2S7: I2S::I2S = unsafe { I2S::I2S::from_ptr(0x4009_8000usize as _) };
 #[doc = "Serial Peripheral Interfaces (SPI)"]
-pub const SPI7: spi::Spi = unsafe { spi::Spi::from_ptr(0x4009_8000usize as _) };
+pub const SPI7: SPI::SPI = unsafe { SPI::SPI::from_ptr(0x4009_8000usize as _) };
 #[doc = "USARTs"]
-pub const USART7: usart::Usart = unsafe { usart::Usart::from_ptr(0x4009_8000usize as _) };
+pub const USART7: USART::USART = unsafe { USART::USART::from_ptr(0x4009_8000usize as _) };
 #[doc = "MCU Debugger Mailbox"]
-pub const DBGMAILBOX: dbgmailbox::Dbgmailbox =
-    unsafe { dbgmailbox::Dbgmailbox::from_ptr(0x4009_c000usize as _) };
+pub const DBGMAILBOX: DBGMAILBOX::DBGMAILBOX =
+    unsafe { DBGMAILBOX::DBGMAILBOX::from_ptr(0x4009_c000usize as _) };
 #[doc = "Controller Area Network Flexible Data (CAN FD)"]
-pub const CAN0: can0::Can0 = unsafe { can0::Can0::from_ptr(0x4009_d000usize as _) };
+pub const CAN0: CAN0::CAN0 = unsafe { CAN0::CAN0::from_ptr(0x4009_d000usize as _) };
 #[doc = "Flexcomm serial communication"]
-pub const FLEXCOMM8: flexcomm::Flexcomm =
-    unsafe { flexcomm::Flexcomm::from_ptr(0x4009_f000usize as _) };
+pub const FLEXCOMM8: FLEXCOMM::FLEXCOMM =
+    unsafe { FLEXCOMM::FLEXCOMM::from_ptr(0x4009_f000usize as _) };
 #[doc = "Serial Peripheral Interfaces (SPI)"]
-pub const SPI8: spi::Spi = unsafe { spi::Spi::from_ptr(0x4009_f000usize as _) };
+pub const SPI8: SPI::SPI = unsafe { SPI::SPI::from_ptr(0x4009_f000usize as _) };
 #[doc = "ADC"]
-pub const ADC0: adc0::Adc0 = unsafe { adc0::Adc0::from_ptr(0x400a_0000usize as _) };
+pub const ADC0: ADC0::ADC0 = unsafe { ADC0::ADC0::from_ptr(0x400a_0000usize as _) };
 #[doc = "CDOG"]
-pub const CDOG: cdog::Cdog = unsafe { cdog::Cdog::from_ptr(0x400a_1000usize as _) };
+pub const CDOG: CDOG::CDOG = unsafe { CDOG::CDOG::from_ptr(0x400a_1000usize as _) };
 #[doc = "USB0 Full-speed Host controller"]
-pub const USBFSH: usbfsh::Usbfsh = unsafe { usbfsh::Usbfsh::from_ptr(0x400a_2000usize as _) };
+pub const USBFSH: USBFSH::USBFSH = unsafe { USBFSH::USBFSH::from_ptr(0x400a_2000usize as _) };
 #[doc = "USB1 High-speed Host Controller"]
-pub const USBHSH: usbhsh::Usbhsh = unsafe { usbhsh::Usbhsh::from_ptr(0x400a_3000usize as _) };
+pub const USBHSH: USBHSH::USBHSH = unsafe { USBHSH::USBHSH::from_ptr(0x400a_3000usize as _) };
 #[doc = "Hash-Crypt peripheral"]
-pub const HASHCRYPT: hashcrypt::Hashcrypt =
-    unsafe { hashcrypt::Hashcrypt::from_ptr(0x400a_4000usize as _) };
+pub const HASHCRYPT: HASHCRYPT::HASHCRYPT =
+    unsafe { HASHCRYPT::HASHCRYPT::from_ptr(0x400a_4000usize as _) };
 #[doc = "CASPER"]
-pub const CASPER: casper::Casper = unsafe { casper::Casper::from_ptr(0x400a_5000usize as _) };
+pub const CASPER: CASPER::CASPER = unsafe { CASPER::CASPER::from_ptr(0x400a_5000usize as _) };
 #[doc = "DMA controller"]
-pub const DMA1: dma::Dma = unsafe { dma::Dma::from_ptr(0x400a_7000usize as _) };
+pub const DMA1: DMA::DMA = unsafe { DMA::DMA::from_ptr(0x400a_7000usize as _) };
 #[doc = "General Purpose I/O (GPIO)"]
-pub const SECGPIO: secgpio::Secgpio = unsafe { secgpio::Secgpio::from_ptr(0x400a_8000usize as _) };
+pub const SECGPIO: SECGPIO::SECGPIO = unsafe { SECGPIO::SECGPIO::from_ptr(0x400a_8000usize as _) };
 #[doc = "AHB secure controller"]
-pub const AHB_SECURE_CTRL: ahb_secure_ctrl::AhbSecureCtrl =
-    unsafe { ahb_secure_ctrl::AhbSecureCtrl::from_ptr(0x400a_c000usize as _) };
+pub const AHB_SECURE_CTRL: AHB_SECURE_CTRL::AHB_SECURE_CTRL =
+    unsafe { AHB_SECURE_CTRL::AHB_SECURE_CTRL::from_ptr(0x400a_c000usize as _) };
 #[doc = "no description available"]
-pub const SCNSCB: scn_scb::ScnScb = unsafe { scn_scb::ScnScb::from_ptr(0xe000_e000usize as _) };
+pub const SCNSCB: SCnSCB::SCnSCB = unsafe { SCnSCB::SCnSCB::from_ptr(0xe000_e000usize as _) };
+#[doc = "no description available"]
+pub const NVIC: NVIC::NVIC = unsafe { NVIC::NVIC::from_ptr(0xe000_e100usize as _) };
+#[doc = "no description available"]
+pub const SCB: SCB::SCB = unsafe { SCB::SCB::from_ptr(0xe000_ed00usize as _) };
+#[doc = "Memory Protection Unit"]
+pub const MPU: MPU::MPU = unsafe { MPU::MPU::from_ptr(0xe000_ed90usize as _) };
+#[doc = "no description available"]
+pub const SAU: SAU::SAU = unsafe { SAU::SAU::from_ptr(0xe000_edd0usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
 pub const NVIC_PRIO_BITS: u8 = 3;
@@ -330,52 +339,58 @@ pub const NVIC_PRIO_BITS: u8 = 3;
 pub use Interrupt as interrupt;
 #[cfg(feature = "rt")]
 pub use cortex_m_rt::interrupt;
-pub mod adc0;
-pub mod ahb_secure_ctrl;
-pub mod anactrl;
-pub mod can0;
-pub mod casper;
-pub mod cdog;
+pub mod ADC0;
+pub mod AHB_SECURE_CTRL;
+pub mod ANACTRL;
+pub mod CAN0;
+pub mod CASPER;
+pub mod CDOG;
+pub mod CRC_ENGINE;
+pub mod CTIMER;
+pub mod DBGMAILBOX;
+pub mod DMA;
+pub mod FLASH;
+pub mod FLASH_CFPA;
+pub mod FLASH_CMPA;
+pub mod FLASH_KEY_STORE;
+pub mod FLASH_NMPA;
+pub mod FLASH_ROMPATCH;
+pub mod FLEXCOMM;
+pub mod GINT;
+pub mod GPIO;
+pub mod HASHCRYPT;
+pub mod I2C;
+pub mod I2S;
+pub mod INPUTMUX;
+pub mod IOCON;
+pub mod MPU;
+pub mod MRT0;
+pub mod NVIC;
+pub mod OSTIMER;
+pub mod PINT;
+pub mod PLU;
+pub mod PMC;
+pub mod PRINCE;
+pub mod PUF;
+pub mod PUF_SRAM_CTRL;
+pub mod RNG;
+pub mod RTC;
+pub mod SAU;
+pub mod SCB;
+pub mod SCT0;
+pub mod SCnSCB;
+pub mod SECGPIO;
+pub mod SPI;
+pub mod SYSCON;
+pub mod SYSCTL;
+pub mod USART;
+pub mod USB0;
+pub mod USBFSH;
+pub mod USBHSD;
+pub mod USBHSH;
+pub mod USBPHY;
+pub mod UTICK0;
+pub mod WWDT;
 pub mod common;
-pub mod crc_engine;
-pub mod ctimer;
-pub mod dbgmailbox;
-pub mod dma;
-pub mod flash;
-pub mod flash_cfpa;
-pub mod flash_cmpa;
-pub mod flash_key_store;
-pub mod flash_nmpa;
-pub mod flash_rompatch;
-pub mod flexcomm;
-pub mod gint;
-pub mod gpio;
-pub mod hashcrypt;
-pub mod i2c;
-pub mod i2s;
-pub mod inputmux;
-pub mod iocon;
-pub mod mrt0;
-pub mod ostimer;
-pub mod pint;
-pub mod plu;
-pub mod pmc;
-pub mod prince;
 pub mod puf;
-pub mod puf_sram_ctrl;
-pub mod rng;
-pub mod rtc;
-pub mod scn_scb;
-pub mod sct0;
-pub mod secgpio;
-pub mod spi;
 pub mod syscon;
-pub mod sysctl;
-pub mod usart;
-pub mod usb0;
-pub mod usbfsh;
-pub mod usbhsd;
-pub mod usbhsh;
-pub mod usbphy;
-pub mod utick0;
-pub mod wwdt;

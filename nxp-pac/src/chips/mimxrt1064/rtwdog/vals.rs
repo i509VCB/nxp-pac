@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmd32en {
     #[doc = "Disables support for 32-bit refresh/unlock command write words. Only 16-bit or 8-bit is supported."]
-    CMD32EN_0 = 0x0,
+    Cmd32en0 = 0x0,
     #[doc = "Enables support for 32-bit refresh/unlock command write words. 16-bit or 8-bit is NOT supported."]
-    CMD32EN_1 = 0x01,
+    Cmd32en1 = 0x01,
 }
 impl Cmd32en {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Cmd32en> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dbg {
     #[doc = "Watchdog disabled in chip debug mode."]
-    DBG_0 = 0x0,
+    Dbg0 = 0x0,
     #[doc = "Watchdog enabled in chip debug mode."]
-    DBG_1 = 0x01,
+    Dbg1 = 0x01,
 }
 impl Dbg {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Dbg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum En {
     #[doc = "Watchdog disabled."]
-    EN_0 = 0x0,
+    En0 = 0x0,
     #[doc = "Watchdog enabled."]
-    EN_1 = 0x01,
+    En1 = 0x01,
 }
 impl En {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flg {
     #[doc = "No interrupt occurred."]
-    FLG_0 = 0x0,
+    Flg0 = 0x0,
     #[doc = "An interrupt occurred."]
-    FLG_1 = 0x01,
+    Flg1 = 0x01,
 }
 impl Flg {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<Flg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Int {
     #[doc = "Watchdog interrupts are disabled. Watchdog resets are not delayed."]
-    INT_0 = 0x0,
+    Int0 = 0x0,
     #[doc = "Watchdog interrupts are enabled. Watchdog resets are delayed by 128 bus clocks from the interrupt vector fetch."]
-    INT_1 = 0x01,
+    Int1 = 0x01,
 }
 impl Int {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<Int> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pres {
     #[doc = "256 prescaler disabled."]
-    PRES_0 = 0x0,
+    Pres0 = 0x0,
     #[doc = "256 prescaler enabled."]
-    PRES_1 = 0x01,
+    Pres1 = 0x01,
 }
 impl Pres {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<Pres> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcs {
     #[doc = "Reconfiguring WDOG."]
-    RCS_0 = 0x0,
+    Rcs0 = 0x0,
     #[doc = "Reconfiguration is successful."]
-    RCS_1 = 0x01,
+    Rcs1 = 0x01,
 }
 impl Rcs {
     #[inline(always)]
@@ -220,9 +220,9 @@ impl From<Rcs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Stop {
     #[doc = "Watchdog disabled in chip stop mode."]
-    STOP_0 = 0x0,
+    Stop0 = 0x0,
     #[doc = "Watchdog enabled in chip stop mode."]
-    STOP_1 = 0x01,
+    Stop1 = 0x01,
 }
 impl Stop {
     #[inline(always)]
@@ -251,13 +251,13 @@ impl From<Stop> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tst {
     #[doc = "Watchdog test mode disabled."]
-    TST_0 = 0x0,
+    Tst0 = 0x0,
     #[doc = "Watchdog user mode enabled. (Watchdog test mode disabled.) After testing the watchdog, software should use this setting to indicate that the watchdog is functioning normally in user mode."]
-    TST_1 = 0x01,
+    Tst1 = 0x01,
     #[doc = "Watchdog test mode enabled, only the low byte is used. CNT\\[CNTLOW\\] is compared with TOVAL\\[TOVALLOW\\]."]
-    TST_2 = 0x02,
+    Tst2 = 0x02,
     #[doc = "Watchdog test mode enabled, only the high byte is used. CNT\\[CNTHIGH\\] is compared with TOVAL\\[TOVALHIGH\\]."]
-    TST_3 = 0x03,
+    Tst3 = 0x03,
 }
 impl Tst {
     #[inline(always)]
@@ -286,9 +286,9 @@ impl From<Tst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ulk {
     #[doc = "WDOG is locked."]
-    ULK_0 = 0x0,
+    Ulk0 = 0x0,
     #[doc = "WDOG is unlocked."]
-    ULK_1 = 0x01,
+    Ulk1 = 0x01,
 }
 impl Ulk {
     #[inline(always)]
@@ -317,9 +317,9 @@ impl From<Ulk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Update {
     #[doc = "Updates not allowed. After the initial configuration, the watchdog cannot be later modified without forcing a reset."]
-    UPDATE_0 = 0x0,
+    Update0 = 0x0,
     #[doc = "Updates allowed. Software can modify the watchdog configuration registers within 128 bus clocks after performing the unlock write sequence."]
-    UPDATE_1 = 0x01,
+    Update1 = 0x01,
 }
 impl Update {
     #[inline(always)]
@@ -348,9 +348,9 @@ impl From<Update> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wait {
     #[doc = "Watchdog disabled in chip wait mode."]
-    WAIT_0 = 0x0,
+    Wait0 = 0x0,
     #[doc = "Watchdog enabled in chip wait mode."]
-    WAIT_1 = 0x01,
+    Wait1 = 0x01,
 }
 impl Wait {
     #[inline(always)]
@@ -379,9 +379,9 @@ impl From<Wait> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Win {
     #[doc = "Window mode disabled."]
-    WIN_0 = 0x0,
+    Win0 = 0x0,
     #[doc = "Window mode enabled."]
-    WIN_1 = 0x01,
+    Win1 = 0x01,
 }
 impl Win {
     #[inline(always)]

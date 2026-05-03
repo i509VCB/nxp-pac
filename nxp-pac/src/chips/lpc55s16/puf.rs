@@ -1,131 +1,61 @@
-#[doc = "PUFCTRL."]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Puf {
-    ptr: *mut u8,
+#[doc = "Key destination for PUF key."]
+#[repr(transparent)]
+#[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+pub struct Key(u8);
+impl Key {
+    #[doc = "Do not send key to any hardware engine."]
+    pub const none: Self = Self(0x55);
+    #[doc = "Send key to AES engine."]
+    pub const aes: Self = Self(0x56);
+    #[doc = "Send key to PRINCE engine for memory layout 0."]
+    pub const prince0: Self = Self(0x59);
+    #[doc = "Send key to PRINCE engine for memory layout 1."]
+    pub const prince1: Self = Self(0x65);
+    #[doc = "Send key to PRINCE engine for memory layout 2."]
+    pub const prince2: Self = Self(0x95);
 }
-unsafe impl Send for Puf {}
-unsafe impl Sync for Puf {}
-impl Puf {
-    #[inline(always)]
-    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
-        Self { ptr: ptr as _ }
+impl Key {
+    pub const fn from_bits(val: u8) -> Key {
+        Self(val & 0xff)
     }
-    #[inline(always)]
-    pub const fn as_ptr(&self) -> *mut () {
-        self.ptr as _
+    pub const fn to_bits(self) -> u8 {
+        self.0
     }
-    #[doc = "PUF Control register."]
-    #[inline(always)]
-    pub const fn ctrl(self) -> crate::common::Reg<regs::Ctrl, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
-    }
-    #[doc = "PUF Key Index register."]
-    #[inline(always)]
-    pub const fn keyindex(self) -> crate::common::Reg<regs::Keyindex, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
-    }
-    #[doc = "PUF Key Size register."]
-    #[inline(always)]
-    pub const fn keysize(self) -> crate::common::Reg<regs::Keysize, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
-    }
-    #[doc = "PUF Status register."]
-    #[inline(always)]
-    pub const fn stat(self) -> crate::common::Reg<regs::Stat, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
-    }
-    #[doc = "PUF Allow register."]
-    #[inline(always)]
-    pub const fn allow(self) -> crate::common::Reg<regs::Allow, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
-    }
-    #[doc = "PUF Key Input register."]
-    #[inline(always)]
-    pub const fn keyinput(self) -> crate::common::Reg<regs::Keyinput, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize) as _) }
-    }
-    #[doc = "PUF Code Input register."]
-    #[inline(always)]
-    pub const fn codeinput(self) -> crate::common::Reg<regs::Codeinput, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x44usize) as _) }
-    }
-    #[doc = "PUF Code Output register."]
-    #[inline(always)]
-    pub const fn codeoutput(self) -> crate::common::Reg<regs::Codeoutput, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x48usize) as _) }
-    }
-    #[doc = "PUF Key Output Index register."]
-    #[inline(always)]
-    pub const fn keyoutindex(self) -> crate::common::Reg<regs::Keyoutindex, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x60usize) as _) }
-    }
-    #[doc = "PUF Key Output register."]
-    #[inline(always)]
-    pub const fn keyoutput(self) -> crate::common::Reg<regs::Keyoutput, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x64usize) as _) }
-    }
-    #[doc = "PUF Interface Status and clear register."]
-    #[inline(always)]
-    pub const fn ifstat(self) -> crate::common::Reg<regs::Ifstat, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xdcusize) as _) }
-    }
-    #[doc = "PUF Interrupt Enable."]
-    #[inline(always)]
-    pub const fn inten(self) -> crate::common::Reg<regs::Inten, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0100usize) as _) }
-    }
-    #[doc = "PUF interrupt status."]
-    #[inline(always)]
-    pub const fn intstat(self) -> crate::common::Reg<regs::Intstat, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0104usize) as _) }
-    }
-    #[doc = "PUF config register for block bits."]
-    #[inline(always)]
-    pub const fn cfg(self) -> crate::common::Reg<regs::Cfg, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x010cusize) as _) }
-    }
-    #[doc = "Only reset in case of full IC reset."]
-    #[inline(always)]
-    pub const fn keylock(self) -> crate::common::Reg<regs::Keylock, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0200usize) as _) }
-    }
-    #[doc = "no description available."]
-    #[inline(always)]
-    pub const fn keyenable(self) -> crate::common::Reg<regs::Keyenable, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0204usize) as _) }
-    }
-    #[doc = "Reinitialize Keys shift registers counters."]
-    #[inline(always)]
-    pub const fn keyreset(self) -> crate::common::Reg<regs::Keyreset, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0208usize) as _) }
-    }
-    #[doc = "no description available."]
-    #[inline(always)]
-    pub const fn idxblk(self) -> crate::common::Reg<regs::Idxblk, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x020cusize) as _) }
-    }
-    #[doc = "no description available."]
-    #[inline(always)]
-    pub const fn idxblk_dp(self) -> crate::common::Reg<regs::IdxblkDp, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0210usize) as _) }
-    }
-    #[doc = "Only reset in case of full IC reset."]
-    #[inline(always)]
-    pub const fn keymask(self, n: usize) -> crate::common::Reg<regs::Keymask, crate::common::W> {
-        assert!(n < 4usize);
-        unsafe {
-            crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0214usize + n * 4usize) as _)
+}
+impl core::fmt::Debug for Key {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        match self.0 {
+            0x55 => f.write_str("none"),
+            0x56 => f.write_str("aes"),
+            0x59 => f.write_str("prince0"),
+            0x65 => f.write_str("prince1"),
+            0x95 => f.write_str("prince2"),
+            other => core::write!(f, "0x{:02X}", other),
         }
     }
-    #[doc = "Index block status."]
-    #[inline(always)]
-    pub const fn idxblk_status(self) -> crate::common::Reg<regs::IdxblkStatus, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0254usize) as _) }
-    }
-    #[doc = "no description available."]
-    #[inline(always)]
-    pub const fn shift_status(self) -> crate::common::Reg<regs::ShiftStatus, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0258usize) as _) }
+}
+#[cfg(feature = "defmt")]
+impl defmt::Format for Key {
+    fn format(&self, f: defmt::Formatter) {
+        match self.0 {
+            0x55 => defmt::write!(f, "none"),
+            0x56 => defmt::write!(f, "aes"),
+            0x59 => defmt::write!(f, "prince0"),
+            0x65 => defmt::write!(f, "prince1"),
+            0x95 => defmt::write!(f, "prince2"),
+            other => defmt::write!(f, "0x{:02X}", other),
+        }
     }
 }
-pub mod regs;
+impl From<u8> for Key {
+    #[inline(always)]
+    fn from(val: u8) -> Key {
+        Key::from_bits(val)
+    }
+}
+impl From<Key> for u8 {
+    #[inline(always)]
+    fn from(val: Key) -> u8 {
+        Key::to_bits(val)
+    }
+}

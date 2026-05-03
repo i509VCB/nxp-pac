@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ctx0lk {
     #[doc = "Lock disabled: VMAPCTX0 remains read-write."]
-    LOCK_DISABLED = 0x0,
+    LockDisabled = 0x0,
     #[doc = "Lock enabled: cannot write to VMAPCTX0 (becomes read-only)."]
-    LOCK_ENABLED = 0x01,
+    LockEnabled = 0x01,
 }
 impl Ctx0lk {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Ctx0lk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ctx1lk {
     #[doc = "Lock disabled: VMAPCTX1 remains read-write."]
-    LOCK_DISABLED = 0x0,
+    LockDisabled = 0x0,
     #[doc = "Lock enabled: cannot write to VMAPCTX1 (becomes read-only)."]
-    LOCK_ENABLED = 0x01,
+    LockEnabled = 0x01,
 }
 impl Ctx1lk {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Ctx1lk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ctx2lk {
     #[doc = "Lock disabled: VMAPCTX2 remains read-write."]
-    LOCK_DISABLED = 0x0,
+    LockDisabled = 0x0,
     #[doc = "Lock enabled: cannot write to VMAPCTX2 (becomes read-only)."]
-    LOCK_ENABLED = 0x01,
+    LockEnabled = 0x01,
 }
 impl Ctx2lk {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Ctx2lk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ctx3lk {
     #[doc = "Lock disabled: VMAPCTX3 remains read-write."]
-    LOCK_DISABLED = 0x0,
+    LockDisabled = 0x0,
     #[doc = "Lock enabled: cannot write to VMAPCTX3 (becomes read-only)."]
-    LOCK_ENABLED = 0x01,
+    LockEnabled = 0x01,
 }
 impl Ctx3lk {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<Ctx3lk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gde {
     #[doc = "Global decryption disabled. NPX on-the-fly decryption is globally disabled. Subsequent reads return 0."]
-    DECRYPTION_DISABLED = 0x0,
+    DecryptionDisabled = 0x0,
     #[doc = "Global decryption enabled. NPX on-the-fly decryption is globally enabled. Subsequent reads return 1."]
-    DECRYPTION_ENABLED = 0x01,
+    DecryptionEnabled = 0x01,
 }
 impl Gde {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<Gde> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gee {
     #[doc = "Global encryption disabled. NPX on-the-fly encryption is disabled. Subsequent reads return 0."]
-    ENCRYPTION_DISABLED = 0x0,
+    EncryptionDisabled = 0x0,
     #[doc = "Global encryption enabled. NPX on-the-fly encryption is enabled if the flash access hits in a valid memory context. Subsequent reads return 1."]
-    ENCRYPTION_ENABLED = 0x01,
+    EncryptionEnabled = 0x01,
 }
 impl Gee {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<Gee> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Glk {
     #[doc = "Lock disabled. Subsequent reads return 0."]
-    LOCK_DISABLED = 0x0,
+    LockDisabled = 0x0,
     #[doc = "Lock enabled: cannot write to VMAPCTXn, NPXCR, or CACMSK. Subsequent reads return 1."]
-    LOCK_ENABLED = 0x01,
+    LockEnabled = 0x01,
 }
 impl Glk {
     #[inline(always)]
@@ -220,9 +220,9 @@ impl From<Glk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mlk {
     #[doc = "Lock disabled. Subsequent reads return 0."]
-    LOCK_DISABLED = 0x0,
+    LockDisabled = 0x0,
     #[doc = "Lock enabled: cannot write to mask. Subsequent reads return 1."]
-    LOCK_ENABLED = 0x01,
+    LockEnabled = 0x01,
 }
 impl Mlk {
     #[inline(always)]
@@ -251,15 +251,15 @@ impl From<Mlk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Numctx {
     #[doc = "No (zero) implemented memory contexts."]
-    ZERO_CTX = 0x0,
+    ZeroCtx = 0x0,
     #[doc = "1 implemented memory contexts."]
-    ONE_CTX = 0x01,
+    OneCtx = 0x01,
     #[doc = "2 implemented memory contexts."]
-    TWO_CTX = 0x02,
+    TwoCtx = 0x02,
     #[doc = "3 implemented memory contexts."]
-    THREE_CTX = 0x03,
+    ThreeCtx = 0x03,
     #[doc = "4 implemented memory contexts."]
-    FOUR_CTX = 0x04,
+    FourCtx = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
@@ -299,9 +299,9 @@ impl From<Numctx> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Remaplk {
     #[doc = "Lock disabled: can write to REMAP."]
-    LOCK_DISABLED = 0x0,
+    LockDisabled = 0x0,
     #[doc = "Lock enabled: cannot write to REMAP."]
-    LOCK_ENABLED = 0x01,
+    LockEnabled = 0x01,
 }
 impl Remaplk {
     #[inline(always)]
@@ -330,9 +330,9 @@ impl From<Remaplk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum V0 {
     #[doc = "Not valid."]
-    KEY_NOTVALID = 0x0,
+    KeyNotvalid = 0x0,
     #[doc = "Valid."]
-    KEY_VALID = 0x01,
+    KeyValid = 0x01,
 }
 impl V0 {
     #[inline(always)]
@@ -361,9 +361,9 @@ impl From<V0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum V1 {
     #[doc = "Not valid."]
-    KEY_NOTVALID = 0x0,
+    KeyNotvalid = 0x0,
     #[doc = "Valid."]
-    KEY_VALID = 0x01,
+    KeyValid = 0x01,
 }
 impl V1 {
     #[inline(always)]
@@ -392,9 +392,9 @@ impl From<V1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum V2 {
     #[doc = "Not valid."]
-    KEY_NOTVALID = 0x0,
+    KeyNotvalid = 0x0,
     #[doc = "Valid."]
-    KEY_VALID = 0x01,
+    KeyValid = 0x01,
 }
 impl V2 {
     #[inline(always)]
@@ -423,9 +423,9 @@ impl From<V2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum V3 {
     #[doc = "Not valid."]
-    KEY_NOTVALID = 0x0,
+    KeyNotvalid = 0x0,
     #[doc = "Valid."]
-    KEY_VALID = 0x01,
+    KeyValid = 0x01,
 }
 impl V3 {
     #[inline(always)]

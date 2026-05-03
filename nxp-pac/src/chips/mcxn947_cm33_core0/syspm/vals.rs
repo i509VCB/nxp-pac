@@ -3,12 +3,12 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cmode {
     #[doc = "Counted in both User and Privileged modes."]
-    USER_AND_PRIV = 0x0,
+    UserAndPriv = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "Counted only in User mode."]
-    USER_ONLY = 0x02,
+    UserOnly = 0x02,
     #[doc = "Counted only in Privileged mode."]
-    PRIV_ONLY = 0x03,
+    PrivOnly = 0x03,
 }
 impl Cmode {
     #[inline(always)]
@@ -37,9 +37,9 @@ impl From<Cmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rectr1 {
     #[doc = "Run normally."]
-    RUN = 0x0,
+    Run = 0x0,
     #[doc = "Reset."]
-    RESET = 0x01,
+    Reset = 0x01,
 }
 impl Rectr1 {
     #[inline(always)]
@@ -68,9 +68,9 @@ impl From<Rectr1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rectr2 {
     #[doc = "Run normally."]
-    RUN = 0x0,
+    Run = 0x0,
     #[doc = "Reset."]
-    RESET = 0x01,
+    Reset = 0x01,
 }
 impl Rectr2 {
     #[inline(always)]
@@ -99,9 +99,9 @@ impl From<Rectr2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rectr3 {
     #[doc = "Run normally."]
-    RUN = 0x0,
+    Run = 0x0,
     #[doc = "Reset."]
-    RESET = 0x01,
+    Reset = 0x01,
 }
 impl Rectr3 {
     #[inline(always)]
@@ -130,13 +130,13 @@ impl From<Rectr3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ssc {
     #[doc = "Idle or no-op."]
-    IDLE = 0x0,
+    Idle = 0x0,
     #[doc = "Local stop."]
-    LSTOP = 0x01,
+    Lstop = 0x01,
     #[doc = "Local start."]
-    LSTART_2 = 0x02,
+    Lstart2 = 0x02,
     #[doc = "Local start."]
-    LSTART_3 = 0x03,
+    Lstart3 = 0x03,
     _RESERVED_4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,

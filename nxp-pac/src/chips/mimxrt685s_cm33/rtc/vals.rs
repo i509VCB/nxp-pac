@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RtcOscPd {
     #[doc = "The RTC oscillator is enabled. This bit must be cleared in order for the RTC module to function."]
-    ENABLE = 0x0,
+    Enable = 0x0,
     #[doc = "The RTC oscillator is shut-off to reserve power consumption. RTC operation is disabled."]
-    SHUT_OFF = 0x01,
+    ShutOff = 0x01,
 }
 impl RtcOscPd {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<RtcOscPd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wake1khz {
     #[doc = "Run. The RTC 1 kHz timer is running. Writing a 0 has no effect."]
-    RUN = 0x0,
+    Run = 0x0,
     #[doc = "Time-out. The 1 kHz high-resolution/wake-up timer has timed out. This flag generates an RTC wake-up interrupt request RTC-WAKE which can also wake up the part from any low power mode. Writing a 1 clears this bit."]
-    TIME_OUT = 0x01,
+    TimeOut = 0x01,
 }
 impl Wake1khz {
     #[inline(always)]

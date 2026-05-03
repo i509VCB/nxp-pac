@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ai {
     #[doc = "No effect."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "Add 1 to the WNDX field after the register write."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
 }
 impl Ai {
     #[inline(always)]
@@ -34,21 +34,21 @@ impl From<Ai> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW0Mbacsel0 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW0Mbacsel0 {
     #[inline(always)]
@@ -77,21 +77,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW0Mbacsel0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW0Mbacsel1 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW0Mbacsel1 {
     #[inline(always)]
@@ -120,21 +120,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW0Mbacsel1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW0Mbacsel2 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW0Mbacsel2 {
     #[inline(always)]
@@ -163,21 +163,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW0Mbacsel2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW0Mbacsel3 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW0Mbacsel3 {
     #[inline(always)]
@@ -206,21 +206,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW0Mbacsel3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW0Mbacsel4 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW0Mbacsel4 {
     #[inline(always)]
@@ -249,21 +249,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW0Mbacsel4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW0Mbacsel5 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW0Mbacsel5 {
     #[inline(always)]
@@ -292,21 +292,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW0Mbacsel5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW0Mbacsel6 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW0Mbacsel6 {
     #[inline(always)]
@@ -335,21 +335,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW0Mbacsel6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW0Mbacsel7 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW0Mbacsel7 {
     #[inline(always)]
@@ -378,9 +378,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW0Mbacsel7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW0Nse0 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW0Nse0 {
     #[inline(always)]
@@ -409,9 +409,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW0Nse0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW0Nse1 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW0Nse1 {
     #[inline(always)]
@@ -440,9 +440,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW0Nse1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW0Nse2 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW0Nse2 {
     #[inline(always)]
@@ -471,9 +471,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW0Nse2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW0Nse3 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW0Nse3 {
     #[inline(always)]
@@ -502,9 +502,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW0Nse3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW0Nse4 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW0Nse4 {
     #[inline(always)]
@@ -533,9 +533,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW0Nse4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW0Nse5 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW0Nse5 {
     #[inline(always)]
@@ -564,9 +564,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW0Nse5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW0Nse6 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW0Nse6 {
     #[inline(always)]
@@ -595,9 +595,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW0Nse6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW0Nse7 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW0Nse7 {
     #[inline(always)]
@@ -626,21 +626,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW0Nse7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW1Mbacsel0 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW1Mbacsel0 {
     #[inline(always)]
@@ -669,21 +669,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW1Mbacsel0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW1Mbacsel1 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW1Mbacsel1 {
     #[inline(always)]
@@ -712,21 +712,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW1Mbacsel1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW1Mbacsel2 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW1Mbacsel2 {
     #[inline(always)]
@@ -755,21 +755,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW1Mbacsel2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW1Mbacsel3 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW1Mbacsel3 {
     #[inline(always)]
@@ -798,21 +798,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW1Mbacsel3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW1Mbacsel4 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW1Mbacsel4 {
     #[inline(always)]
@@ -841,21 +841,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW1Mbacsel4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW1Mbacsel5 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW1Mbacsel5 {
     #[inline(always)]
@@ -884,21 +884,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW1Mbacsel5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW1Mbacsel6 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW1Mbacsel6 {
     #[inline(always)]
@@ -927,21 +927,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW1Mbacsel6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW1Mbacsel7 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW1Mbacsel7 {
     #[inline(always)]
@@ -970,9 +970,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW1Mbacsel7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW1Nse0 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW1Nse0 {
     #[inline(always)]
@@ -1001,9 +1001,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW1Nse0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW1Nse1 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW1Nse1 {
     #[inline(always)]
@@ -1032,9 +1032,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW1Nse1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW1Nse2 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW1Nse2 {
     #[inline(always)]
@@ -1063,9 +1063,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW1Nse2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW1Nse3 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW1Nse3 {
     #[inline(always)]
@@ -1094,9 +1094,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW1Nse3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW1Nse4 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW1Nse4 {
     #[inline(always)]
@@ -1125,9 +1125,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW1Nse4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW1Nse5 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW1Nse5 {
     #[inline(always)]
@@ -1156,9 +1156,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW1Nse5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW1Nse6 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW1Nse6 {
     #[inline(always)]
@@ -1187,9 +1187,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW1Nse6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW1Nse7 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW1Nse7 {
     #[inline(always)]
@@ -1218,21 +1218,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW1Nse7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW2Mbacsel0 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW2Mbacsel0 {
     #[inline(always)]
@@ -1261,21 +1261,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW2Mbacsel0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW2Mbacsel1 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW2Mbacsel1 {
     #[inline(always)]
@@ -1304,21 +1304,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW2Mbacsel1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW2Mbacsel2 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW2Mbacsel2 {
     #[inline(always)]
@@ -1347,21 +1347,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW2Mbacsel2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW2Mbacsel3 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW2Mbacsel3 {
     #[inline(always)]
@@ -1390,21 +1390,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW2Mbacsel3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW2Mbacsel4 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW2Mbacsel4 {
     #[inline(always)]
@@ -1433,21 +1433,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW2Mbacsel4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW2Mbacsel5 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW2Mbacsel5 {
     #[inline(always)]
@@ -1476,21 +1476,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW2Mbacsel5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW2Mbacsel6 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW2Mbacsel6 {
     #[inline(always)]
@@ -1519,21 +1519,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW2Mbacsel6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW2Mbacsel7 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW2Mbacsel7 {
     #[inline(always)]
@@ -1562,9 +1562,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW2Mbacsel7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW2Nse0 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW2Nse0 {
     #[inline(always)]
@@ -1593,9 +1593,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW2Nse0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW2Nse1 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW2Nse1 {
     #[inline(always)]
@@ -1624,9 +1624,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW2Nse1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW2Nse2 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW2Nse2 {
     #[inline(always)]
@@ -1655,9 +1655,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW2Nse2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW2Nse3 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW2Nse3 {
     #[inline(always)]
@@ -1686,9 +1686,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW2Nse3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW2Nse4 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW2Nse4 {
     #[inline(always)]
@@ -1717,9 +1717,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW2Nse4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW2Nse5 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW2Nse5 {
     #[inline(always)]
@@ -1748,9 +1748,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW2Nse5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW2Nse6 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW2Nse6 {
     #[inline(always)]
@@ -1779,9 +1779,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW2Nse6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW2Nse7 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW2Nse7 {
     #[inline(always)]
@@ -1810,21 +1810,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW2Nse7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW3Mbacsel0 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW3Mbacsel0 {
     #[inline(always)]
@@ -1853,21 +1853,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW3Mbacsel0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW3Mbacsel1 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW3Mbacsel1 {
     #[inline(always)]
@@ -1896,21 +1896,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW3Mbacsel1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW3Mbacsel2 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW3Mbacsel2 {
     #[inline(always)]
@@ -1939,21 +1939,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW3Mbacsel2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW3Mbacsel3 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW3Mbacsel3 {
     #[inline(always)]
@@ -1982,21 +1982,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW3Mbacsel3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW3Mbacsel4 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW3Mbacsel4 {
     #[inline(always)]
@@ -2025,21 +2025,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW3Mbacsel4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW3Mbacsel5 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW3Mbacsel5 {
     #[inline(always)]
@@ -2068,21 +2068,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW3Mbacsel5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW3Mbacsel6 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW3Mbacsel6 {
     #[inline(always)]
@@ -2111,21 +2111,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW3Mbacsel6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW3Mbacsel7 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW3Mbacsel7 {
     #[inline(always)]
@@ -2154,9 +2154,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW3Mbacsel7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW3Nse0 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW3Nse0 {
     #[inline(always)]
@@ -2185,9 +2185,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW3Nse0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW3Nse1 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW3Nse1 {
     #[inline(always)]
@@ -2216,9 +2216,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW3Nse1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW3Nse2 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW3Nse2 {
     #[inline(always)]
@@ -2247,9 +2247,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW3Nse2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW3Nse3 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW3Nse3 {
     #[inline(always)]
@@ -2278,9 +2278,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW3Nse3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW3Nse4 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW3Nse4 {
     #[inline(always)]
@@ -2309,9 +2309,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW3Nse4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW3Nse5 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW3Nse5 {
     #[inline(always)]
@@ -2340,9 +2340,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW3Nse5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW3Nse6 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW3Nse6 {
     #[inline(always)]
@@ -2371,9 +2371,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW3Nse6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW3Nse7 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW3Nse7 {
     #[inline(always)]
@@ -2402,21 +2402,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW3Nse7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW4Mbacsel0 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW4Mbacsel0 {
     #[inline(always)]
@@ -2445,21 +2445,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW4Mbacsel0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW4Mbacsel1 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW4Mbacsel1 {
     #[inline(always)]
@@ -2488,21 +2488,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW4Mbacsel1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW4Mbacsel2 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW4Mbacsel2 {
     #[inline(always)]
@@ -2531,21 +2531,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW4Mbacsel2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW4Mbacsel3 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW4Mbacsel3 {
     #[inline(always)]
@@ -2574,21 +2574,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW4Mbacsel3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW4Mbacsel4 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW4Mbacsel4 {
     #[inline(always)]
@@ -2617,21 +2617,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW4Mbacsel4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW4Mbacsel5 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW4Mbacsel5 {
     #[inline(always)]
@@ -2660,21 +2660,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW4Mbacsel5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW4Mbacsel6 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW4Mbacsel6 {
     #[inline(always)]
@@ -2703,21 +2703,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW4Mbacsel6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW4Mbacsel7 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW4Mbacsel7 {
     #[inline(always)]
@@ -2746,9 +2746,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW4Mbacsel7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW4Nse0 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW4Nse0 {
     #[inline(always)]
@@ -2777,9 +2777,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW4Nse0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW4Nse1 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW4Nse1 {
     #[inline(always)]
@@ -2808,9 +2808,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW4Nse1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW4Nse2 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW4Nse2 {
     #[inline(always)]
@@ -2839,9 +2839,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW4Nse2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW4Nse3 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW4Nse3 {
     #[inline(always)]
@@ -2870,9 +2870,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW4Nse3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW4Nse4 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW4Nse4 {
     #[inline(always)]
@@ -2901,9 +2901,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW4Nse4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW4Nse5 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW4Nse5 {
     #[inline(always)]
@@ -2932,9 +2932,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW4Nse5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW4Nse6 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW4Nse6 {
     #[inline(always)]
@@ -2963,9 +2963,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW4Nse6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW4Nse7 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW4Nse7 {
     #[inline(always)]
@@ -2994,21 +2994,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW4Nse7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW5Mbacsel0 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW5Mbacsel0 {
     #[inline(always)]
@@ -3037,21 +3037,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW5Mbacsel0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW5Mbacsel1 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW5Mbacsel1 {
     #[inline(always)]
@@ -3080,21 +3080,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW5Mbacsel1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW5Mbacsel2 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW5Mbacsel2 {
     #[inline(always)]
@@ -3123,21 +3123,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW5Mbacsel2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW5Mbacsel3 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW5Mbacsel3 {
     #[inline(always)]
@@ -3166,21 +3166,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW5Mbacsel3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW5Mbacsel4 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW5Mbacsel4 {
     #[inline(always)]
@@ -3209,21 +3209,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW5Mbacsel4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW5Mbacsel5 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW5Mbacsel5 {
     #[inline(always)]
@@ -3252,21 +3252,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW5Mbacsel5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW5Mbacsel6 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW5Mbacsel6 {
     #[inline(always)]
@@ -3295,21 +3295,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW5Mbacsel6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW5Mbacsel7 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW5Mbacsel7 {
     #[inline(always)]
@@ -3338,9 +3338,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW5Mbacsel7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW5Nse0 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW5Nse0 {
     #[inline(always)]
@@ -3369,9 +3369,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW5Nse0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW5Nse1 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW5Nse1 {
     #[inline(always)]
@@ -3400,9 +3400,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW5Nse1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW5Nse2 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW5Nse2 {
     #[inline(always)]
@@ -3431,9 +3431,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW5Nse2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW5Nse3 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW5Nse3 {
     #[inline(always)]
@@ -3462,9 +3462,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW5Nse3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW5Nse4 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW5Nse4 {
     #[inline(always)]
@@ -3493,9 +3493,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW5Nse4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW5Nse5 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW5Nse5 {
     #[inline(always)]
@@ -3524,9 +3524,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW5Nse5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW5Nse6 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW5Nse6 {
     #[inline(always)]
@@ -3555,9 +3555,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW5Nse6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW5Nse7 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW5Nse7 {
     #[inline(always)]
@@ -3586,21 +3586,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW5Nse7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW6Mbacsel0 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW6Mbacsel0 {
     #[inline(always)]
@@ -3629,21 +3629,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW6Mbacsel0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW6Mbacsel1 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW6Mbacsel1 {
     #[inline(always)]
@@ -3672,21 +3672,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW6Mbacsel1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW6Mbacsel2 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW6Mbacsel2 {
     #[inline(always)]
@@ -3715,21 +3715,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW6Mbacsel2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW6Mbacsel3 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW6Mbacsel3 {
     #[inline(always)]
@@ -3758,21 +3758,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW6Mbacsel3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW6Mbacsel4 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW6Mbacsel4 {
     #[inline(always)]
@@ -3801,21 +3801,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW6Mbacsel4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW6Mbacsel5 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW6Mbacsel5 {
     #[inline(always)]
@@ -3844,21 +3844,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW6Mbacsel5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW6Mbacsel6 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW6Mbacsel6 {
     #[inline(always)]
@@ -3887,21 +3887,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW6Mbacsel6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW6Mbacsel7 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW6Mbacsel7 {
     #[inline(always)]
@@ -3930,9 +3930,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW6Mbacsel7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW6Nse0 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW6Nse0 {
     #[inline(always)]
@@ -3961,9 +3961,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW6Nse0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW6Nse1 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW6Nse1 {
     #[inline(always)]
@@ -3992,9 +3992,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW6Nse1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW6Nse2 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW6Nse2 {
     #[inline(always)]
@@ -4023,9 +4023,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW6Nse2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW6Nse3 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW6Nse3 {
     #[inline(always)]
@@ -4054,9 +4054,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW6Nse3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW6Nse4 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW6Nse4 {
     #[inline(always)]
@@ -4085,9 +4085,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW6Nse4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW6Nse5 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW6Nse5 {
     #[inline(always)]
@@ -4116,9 +4116,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW6Nse5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW6Nse6 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW6Nse6 {
     #[inline(always)]
@@ -4147,9 +4147,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW6Nse6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW6Nse7 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW6Nse7 {
     #[inline(always)]
@@ -4178,21 +4178,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW6Nse7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW7Mbacsel0 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW7Mbacsel0 {
     #[inline(always)]
@@ -4221,21 +4221,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW7Mbacsel0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW7Mbacsel1 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW7Mbacsel1 {
     #[inline(always)]
@@ -4264,21 +4264,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW7Mbacsel1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW7Mbacsel2 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW7Mbacsel2 {
     #[inline(always)]
@@ -4307,21 +4307,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW7Mbacsel2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW7Mbacsel3 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW7Mbacsel3 {
     #[inline(always)]
@@ -4350,21 +4350,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW7Mbacsel3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW7Mbacsel4 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW7Mbacsel4 {
     #[inline(always)]
@@ -4393,21 +4393,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW7Mbacsel4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW7Mbacsel5 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW7Mbacsel5 {
     #[inline(always)]
@@ -4436,21 +4436,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW7Mbacsel5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW7Mbacsel6 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW7Mbacsel6 {
     #[inline(always)]
@@ -4479,21 +4479,21 @@ impl From<Mbc0Dom0Mem0BlkCfgW7Mbacsel6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW7Mbacsel7 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem0BlkCfgW7Mbacsel7 {
     #[inline(always)]
@@ -4522,9 +4522,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW7Mbacsel7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW7Nse0 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW7Nse0 {
     #[inline(always)]
@@ -4553,9 +4553,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW7Nse0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW7Nse1 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW7Nse1 {
     #[inline(always)]
@@ -4584,9 +4584,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW7Nse1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW7Nse2 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW7Nse2 {
     #[inline(always)]
@@ -4615,9 +4615,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW7Nse2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW7Nse3 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW7Nse3 {
     #[inline(always)]
@@ -4646,9 +4646,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW7Nse3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW7Nse4 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW7Nse4 {
     #[inline(always)]
@@ -4677,9 +4677,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW7Nse4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW7Nse5 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW7Nse5 {
     #[inline(always)]
@@ -4708,9 +4708,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW7Nse5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW7Nse6 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW7Nse6 {
     #[inline(always)]
@@ -4739,9 +4739,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW7Nse6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkCfgW7Nse7 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkCfgW7Nse7 {
     #[inline(always)]
@@ -4770,9 +4770,9 @@ impl From<Mbc0Dom0Mem0BlkCfgW7Nse7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit0 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit0 {
     #[inline(always)]
@@ -4801,9 +4801,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit1 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit1 {
     #[inline(always)]
@@ -4832,9 +4832,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit10 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit10 {
     #[inline(always)]
@@ -4863,9 +4863,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit10> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit11 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit11 {
     #[inline(always)]
@@ -4894,9 +4894,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit11> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit12 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit12 {
     #[inline(always)]
@@ -4925,9 +4925,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit12> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit13 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit13 {
     #[inline(always)]
@@ -4956,9 +4956,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit13> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit14 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit14 {
     #[inline(always)]
@@ -4987,9 +4987,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit14> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit15 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit15 {
     #[inline(always)]
@@ -5018,9 +5018,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit15> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit16 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit16 {
     #[inline(always)]
@@ -5049,9 +5049,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit16> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit17 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit17 {
     #[inline(always)]
@@ -5080,9 +5080,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit17> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit18 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit18 {
     #[inline(always)]
@@ -5111,9 +5111,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit18> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit19 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit19 {
     #[inline(always)]
@@ -5142,9 +5142,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit19> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit2 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit2 {
     #[inline(always)]
@@ -5173,9 +5173,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit20 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit20 {
     #[inline(always)]
@@ -5204,9 +5204,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit20> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit21 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit21 {
     #[inline(always)]
@@ -5235,9 +5235,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit21> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit22 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit22 {
     #[inline(always)]
@@ -5266,9 +5266,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit22> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit23 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit23 {
     #[inline(always)]
@@ -5297,9 +5297,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit23> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit24 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit24 {
     #[inline(always)]
@@ -5328,9 +5328,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit24> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit25 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit25 {
     #[inline(always)]
@@ -5359,9 +5359,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit25> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit26 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit26 {
     #[inline(always)]
@@ -5390,9 +5390,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit26> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit27 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit27 {
     #[inline(always)]
@@ -5421,9 +5421,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit27> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit28 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit28 {
     #[inline(always)]
@@ -5452,9 +5452,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit28> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit29 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit29 {
     #[inline(always)]
@@ -5483,9 +5483,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit29> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit3 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit3 {
     #[inline(always)]
@@ -5514,9 +5514,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit30 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit30 {
     #[inline(always)]
@@ -5545,9 +5545,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit30> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit31 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit31 {
     #[inline(always)]
@@ -5576,9 +5576,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit31> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit4 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit4 {
     #[inline(always)]
@@ -5607,9 +5607,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit5 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit5 {
     #[inline(always)]
@@ -5638,9 +5638,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit6 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit6 {
     #[inline(always)]
@@ -5669,9 +5669,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit7 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit7 {
     #[inline(always)]
@@ -5700,9 +5700,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit8 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit8 {
     #[inline(always)]
@@ -5731,9 +5731,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit8> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW0Bit9 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW0Bit9 {
     #[inline(always)]
@@ -5762,9 +5762,9 @@ impl From<Mbc0Dom0Mem0BlkNseW0Bit9> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit0 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit0 {
     #[inline(always)]
@@ -5793,9 +5793,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit1 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit1 {
     #[inline(always)]
@@ -5824,9 +5824,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit10 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit10 {
     #[inline(always)]
@@ -5855,9 +5855,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit10> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit11 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit11 {
     #[inline(always)]
@@ -5886,9 +5886,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit11> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit12 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit12 {
     #[inline(always)]
@@ -5917,9 +5917,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit12> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit13 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit13 {
     #[inline(always)]
@@ -5948,9 +5948,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit13> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit14 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit14 {
     #[inline(always)]
@@ -5979,9 +5979,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit14> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit15 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit15 {
     #[inline(always)]
@@ -6010,9 +6010,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit15> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit16 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit16 {
     #[inline(always)]
@@ -6041,9 +6041,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit16> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit17 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit17 {
     #[inline(always)]
@@ -6072,9 +6072,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit17> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit18 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit18 {
     #[inline(always)]
@@ -6103,9 +6103,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit18> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit19 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit19 {
     #[inline(always)]
@@ -6134,9 +6134,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit19> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit2 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit2 {
     #[inline(always)]
@@ -6165,9 +6165,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit20 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit20 {
     #[inline(always)]
@@ -6196,9 +6196,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit20> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit21 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit21 {
     #[inline(always)]
@@ -6227,9 +6227,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit21> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit22 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit22 {
     #[inline(always)]
@@ -6258,9 +6258,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit22> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit23 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit23 {
     #[inline(always)]
@@ -6289,9 +6289,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit23> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit24 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit24 {
     #[inline(always)]
@@ -6320,9 +6320,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit24> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit25 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit25 {
     #[inline(always)]
@@ -6351,9 +6351,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit25> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit26 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit26 {
     #[inline(always)]
@@ -6382,9 +6382,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit26> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit27 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit27 {
     #[inline(always)]
@@ -6413,9 +6413,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit27> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit28 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit28 {
     #[inline(always)]
@@ -6444,9 +6444,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit28> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit29 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit29 {
     #[inline(always)]
@@ -6475,9 +6475,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit29> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit3 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit3 {
     #[inline(always)]
@@ -6506,9 +6506,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit30 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit30 {
     #[inline(always)]
@@ -6537,9 +6537,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit30> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit31 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit31 {
     #[inline(always)]
@@ -6568,9 +6568,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit31> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit4 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit4 {
     #[inline(always)]
@@ -6599,9 +6599,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit5 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit5 {
     #[inline(always)]
@@ -6630,9 +6630,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit6 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit6 {
     #[inline(always)]
@@ -6661,9 +6661,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit7 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit7 {
     #[inline(always)]
@@ -6692,9 +6692,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit8 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit8 {
     #[inline(always)]
@@ -6723,9 +6723,9 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit8> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem0BlkNseW1Bit9 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem0BlkNseW1Bit9 {
     #[inline(always)]
@@ -6754,21 +6754,21 @@ impl From<Mbc0Dom0Mem0BlkNseW1Bit9> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkCfgW0Mbacsel0 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem1BlkCfgW0Mbacsel0 {
     #[inline(always)]
@@ -6797,21 +6797,21 @@ impl From<Mbc0Dom0Mem1BlkCfgW0Mbacsel0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkCfgW0Mbacsel1 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem1BlkCfgW0Mbacsel1 {
     #[inline(always)]
@@ -6840,21 +6840,21 @@ impl From<Mbc0Dom0Mem1BlkCfgW0Mbacsel1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkCfgW0Mbacsel2 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem1BlkCfgW0Mbacsel2 {
     #[inline(always)]
@@ -6883,21 +6883,21 @@ impl From<Mbc0Dom0Mem1BlkCfgW0Mbacsel2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkCfgW0Mbacsel3 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem1BlkCfgW0Mbacsel3 {
     #[inline(always)]
@@ -6926,21 +6926,21 @@ impl From<Mbc0Dom0Mem1BlkCfgW0Mbacsel3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkCfgW0Mbacsel4 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem1BlkCfgW0Mbacsel4 {
     #[inline(always)]
@@ -6969,21 +6969,21 @@ impl From<Mbc0Dom0Mem1BlkCfgW0Mbacsel4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkCfgW0Mbacsel5 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem1BlkCfgW0Mbacsel5 {
     #[inline(always)]
@@ -7012,21 +7012,21 @@ impl From<Mbc0Dom0Mem1BlkCfgW0Mbacsel5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkCfgW0Mbacsel6 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem1BlkCfgW0Mbacsel6 {
     #[inline(always)]
@@ -7055,21 +7055,21 @@ impl From<Mbc0Dom0Mem1BlkCfgW0Mbacsel6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkCfgW0Mbacsel7 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem1BlkCfgW0Mbacsel7 {
     #[inline(always)]
@@ -7098,9 +7098,9 @@ impl From<Mbc0Dom0Mem1BlkCfgW0Mbacsel7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkCfgW0Nse0 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkCfgW0Nse0 {
     #[inline(always)]
@@ -7129,9 +7129,9 @@ impl From<Mbc0Dom0Mem1BlkCfgW0Nse0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkCfgW0Nse1 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkCfgW0Nse1 {
     #[inline(always)]
@@ -7160,9 +7160,9 @@ impl From<Mbc0Dom0Mem1BlkCfgW0Nse1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkCfgW0Nse2 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkCfgW0Nse2 {
     #[inline(always)]
@@ -7191,9 +7191,9 @@ impl From<Mbc0Dom0Mem1BlkCfgW0Nse2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkCfgW0Nse3 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkCfgW0Nse3 {
     #[inline(always)]
@@ -7222,9 +7222,9 @@ impl From<Mbc0Dom0Mem1BlkCfgW0Nse3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkCfgW0Nse4 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkCfgW0Nse4 {
     #[inline(always)]
@@ -7253,9 +7253,9 @@ impl From<Mbc0Dom0Mem1BlkCfgW0Nse4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkCfgW0Nse5 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkCfgW0Nse5 {
     #[inline(always)]
@@ -7284,9 +7284,9 @@ impl From<Mbc0Dom0Mem1BlkCfgW0Nse5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkCfgW0Nse6 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkCfgW0Nse6 {
     #[inline(always)]
@@ -7315,9 +7315,9 @@ impl From<Mbc0Dom0Mem1BlkCfgW0Nse6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkCfgW0Nse7 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkCfgW0Nse7 {
     #[inline(always)]
@@ -7346,9 +7346,9 @@ impl From<Mbc0Dom0Mem1BlkCfgW0Nse7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit0 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit0 {
     #[inline(always)]
@@ -7377,9 +7377,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit1 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit1 {
     #[inline(always)]
@@ -7408,9 +7408,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit10 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit10 {
     #[inline(always)]
@@ -7439,9 +7439,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit10> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit11 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit11 {
     #[inline(always)]
@@ -7470,9 +7470,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit11> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit12 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit12 {
     #[inline(always)]
@@ -7501,9 +7501,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit12> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit13 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit13 {
     #[inline(always)]
@@ -7532,9 +7532,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit13> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit14 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit14 {
     #[inline(always)]
@@ -7563,9 +7563,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit14> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit15 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit15 {
     #[inline(always)]
@@ -7594,9 +7594,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit15> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit16 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit16 {
     #[inline(always)]
@@ -7625,9 +7625,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit16> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit17 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit17 {
     #[inline(always)]
@@ -7656,9 +7656,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit17> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit18 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit18 {
     #[inline(always)]
@@ -7687,9 +7687,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit18> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit19 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit19 {
     #[inline(always)]
@@ -7718,9 +7718,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit19> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit2 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit2 {
     #[inline(always)]
@@ -7749,9 +7749,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit20 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit20 {
     #[inline(always)]
@@ -7780,9 +7780,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit20> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit21 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit21 {
     #[inline(always)]
@@ -7811,9 +7811,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit21> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit22 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit22 {
     #[inline(always)]
@@ -7842,9 +7842,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit22> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit23 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit23 {
     #[inline(always)]
@@ -7873,9 +7873,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit23> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit24 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit24 {
     #[inline(always)]
@@ -7904,9 +7904,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit24> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit25 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit25 {
     #[inline(always)]
@@ -7935,9 +7935,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit25> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit26 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit26 {
     #[inline(always)]
@@ -7966,9 +7966,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit26> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit27 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit27 {
     #[inline(always)]
@@ -7997,9 +7997,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit27> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit28 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit28 {
     #[inline(always)]
@@ -8028,9 +8028,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit28> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit29 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit29 {
     #[inline(always)]
@@ -8059,9 +8059,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit29> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit3 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit3 {
     #[inline(always)]
@@ -8090,9 +8090,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit30 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit30 {
     #[inline(always)]
@@ -8121,9 +8121,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit30> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit31 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit31 {
     #[inline(always)]
@@ -8152,9 +8152,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit31> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit4 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit4 {
     #[inline(always)]
@@ -8183,9 +8183,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit5 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit5 {
     #[inline(always)]
@@ -8214,9 +8214,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit6 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit6 {
     #[inline(always)]
@@ -8245,9 +8245,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit7 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit7 {
     #[inline(always)]
@@ -8276,9 +8276,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit8 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit8 {
     #[inline(always)]
@@ -8307,9 +8307,9 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit8> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem1BlkNseW0Bit9 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem1BlkNseW0Bit9 {
     #[inline(always)]
@@ -8338,21 +8338,21 @@ impl From<Mbc0Dom0Mem1BlkNseW0Bit9> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkCfgW0Mbacsel0 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem2BlkCfgW0Mbacsel0 {
     #[inline(always)]
@@ -8381,21 +8381,21 @@ impl From<Mbc0Dom0Mem2BlkCfgW0Mbacsel0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkCfgW0Mbacsel1 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem2BlkCfgW0Mbacsel1 {
     #[inline(always)]
@@ -8424,21 +8424,21 @@ impl From<Mbc0Dom0Mem2BlkCfgW0Mbacsel1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkCfgW0Mbacsel2 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem2BlkCfgW0Mbacsel2 {
     #[inline(always)]
@@ -8467,21 +8467,21 @@ impl From<Mbc0Dom0Mem2BlkCfgW0Mbacsel2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkCfgW0Mbacsel3 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem2BlkCfgW0Mbacsel3 {
     #[inline(always)]
@@ -8510,21 +8510,21 @@ impl From<Mbc0Dom0Mem2BlkCfgW0Mbacsel3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkCfgW0Mbacsel4 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem2BlkCfgW0Mbacsel4 {
     #[inline(always)]
@@ -8553,21 +8553,21 @@ impl From<Mbc0Dom0Mem2BlkCfgW0Mbacsel4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkCfgW0Mbacsel5 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem2BlkCfgW0Mbacsel5 {
     #[inline(always)]
@@ -8596,21 +8596,21 @@ impl From<Mbc0Dom0Mem2BlkCfgW0Mbacsel5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkCfgW0Mbacsel6 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem2BlkCfgW0Mbacsel6 {
     #[inline(always)]
@@ -8639,21 +8639,21 @@ impl From<Mbc0Dom0Mem2BlkCfgW0Mbacsel6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkCfgW0Mbacsel7 {
     #[doc = "select MBC_MEMN_GLBAC0 access control policy for block B."]
-    GLBAC0 = 0x0,
+    Glbac0 = 0x0,
     #[doc = "select MBC_MEMN_GLBAC1 access control policy for block B."]
-    GLBAC1 = 0x01,
+    Glbac1 = 0x01,
     #[doc = "select MBC_MEMN_GLBAC2 access control policy for block B."]
-    GLBAC2 = 0x02,
+    Glbac2 = 0x02,
     #[doc = "select MBC_MEMN_GLBAC3 access control policy for block B."]
-    GLBAC3 = 0x03,
+    Glbac3 = 0x03,
     #[doc = "select MBC_MEMN_GLBAC4 access control policy for block B."]
-    GLBAC4 = 0x04,
+    Glbac4 = 0x04,
     #[doc = "select MBC_MEMN_GLBAC5 access control policy for block B."]
-    GLBAC5 = 0x05,
+    Glbac5 = 0x05,
     #[doc = "select MBC_MEMN_GLBAC6 access control policy for block B."]
-    GLBAC6 = 0x06,
+    Glbac6 = 0x06,
     #[doc = "select MBC_MEMN_GLBAC7 access control policy for block B."]
-    GLBAC7 = 0x07,
+    Glbac7 = 0x07,
 }
 impl Mbc0Dom0Mem2BlkCfgW0Mbacsel7 {
     #[inline(always)]
@@ -8682,9 +8682,9 @@ impl From<Mbc0Dom0Mem2BlkCfgW0Mbacsel7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkCfgW0Nse0 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkCfgW0Nse0 {
     #[inline(always)]
@@ -8713,9 +8713,9 @@ impl From<Mbc0Dom0Mem2BlkCfgW0Nse0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkCfgW0Nse1 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkCfgW0Nse1 {
     #[inline(always)]
@@ -8744,9 +8744,9 @@ impl From<Mbc0Dom0Mem2BlkCfgW0Nse1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkCfgW0Nse2 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkCfgW0Nse2 {
     #[inline(always)]
@@ -8775,9 +8775,9 @@ impl From<Mbc0Dom0Mem2BlkCfgW0Nse2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkCfgW0Nse3 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkCfgW0Nse3 {
     #[inline(always)]
@@ -8806,9 +8806,9 @@ impl From<Mbc0Dom0Mem2BlkCfgW0Nse3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkCfgW0Nse4 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkCfgW0Nse4 {
     #[inline(always)]
@@ -8837,9 +8837,9 @@ impl From<Mbc0Dom0Mem2BlkCfgW0Nse4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkCfgW0Nse5 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkCfgW0Nse5 {
     #[inline(always)]
@@ -8868,9 +8868,9 @@ impl From<Mbc0Dom0Mem2BlkCfgW0Nse5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkCfgW0Nse6 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkCfgW0Nse6 {
     #[inline(always)]
@@ -8899,9 +8899,9 @@ impl From<Mbc0Dom0Mem2BlkCfgW0Nse6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkCfgW0Nse7 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkCfgW0Nse7 {
     #[inline(always)]
@@ -8930,9 +8930,9 @@ impl From<Mbc0Dom0Mem2BlkCfgW0Nse7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit0 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit0 {
     #[inline(always)]
@@ -8961,9 +8961,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit1 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit1 {
     #[inline(always)]
@@ -8992,9 +8992,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit10 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit10 {
     #[inline(always)]
@@ -9023,9 +9023,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit10> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit11 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit11 {
     #[inline(always)]
@@ -9054,9 +9054,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit11> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit12 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit12 {
     #[inline(always)]
@@ -9085,9 +9085,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit12> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit13 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit13 {
     #[inline(always)]
@@ -9116,9 +9116,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit13> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit14 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit14 {
     #[inline(always)]
@@ -9147,9 +9147,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit14> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit15 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit15 {
     #[inline(always)]
@@ -9178,9 +9178,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit15> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit16 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit16 {
     #[inline(always)]
@@ -9209,9 +9209,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit16> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit17 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit17 {
     #[inline(always)]
@@ -9240,9 +9240,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit17> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit18 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit18 {
     #[inline(always)]
@@ -9271,9 +9271,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit18> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit19 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit19 {
     #[inline(always)]
@@ -9302,9 +9302,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit19> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit2 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit2 {
     #[inline(always)]
@@ -9333,9 +9333,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit20 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit20 {
     #[inline(always)]
@@ -9364,9 +9364,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit20> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit21 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit21 {
     #[inline(always)]
@@ -9395,9 +9395,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit21> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit22 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit22 {
     #[inline(always)]
@@ -9426,9 +9426,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit22> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit23 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit23 {
     #[inline(always)]
@@ -9457,9 +9457,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit23> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit24 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit24 {
     #[inline(always)]
@@ -9488,9 +9488,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit24> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit25 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit25 {
     #[inline(always)]
@@ -9519,9 +9519,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit25> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit26 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit26 {
     #[inline(always)]
@@ -9550,9 +9550,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit26> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit27 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit27 {
     #[inline(always)]
@@ -9581,9 +9581,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit27> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit28 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit28 {
     #[inline(always)]
@@ -9612,9 +9612,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit28> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit29 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit29 {
     #[inline(always)]
@@ -9643,9 +9643,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit29> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit3 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit3 {
     #[inline(always)]
@@ -9674,9 +9674,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit30 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit30 {
     #[inline(always)]
@@ -9705,9 +9705,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit30> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit31 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit31 {
     #[inline(always)]
@@ -9736,9 +9736,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit31> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit4 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit4 {
     #[inline(always)]
@@ -9767,9 +9767,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit5 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit5 {
     #[inline(always)]
@@ -9798,9 +9798,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit6 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit6 {
     #[inline(always)]
@@ -9829,9 +9829,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit7 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit7 {
     #[inline(always)]
@@ -9860,9 +9860,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit8 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit8 {
     #[inline(always)]
@@ -9891,9 +9891,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit8> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0Dom0Mem2BlkNseW0Bit9 {
     #[doc = "Secure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\]), nonsecure accesses to block B are not allowed."]
-    ALLOWED = 0x0,
+    Allowed = 0x0,
     #[doc = "Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in register (MBCm_DOMd_MEMs_BLK_CFG_Ww\\[MBACSEL\\])."]
-    NOTALLOWED = 0x01,
+    Notallowed = 0x01,
 }
 impl Mbc0Dom0Mem2BlkNseW0Bit9 {
     #[inline(always)]
@@ -9922,9 +9922,9 @@ impl From<Mbc0Dom0Mem2BlkNseW0Bit9> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0NseBlkClrAllDidSel0 {
     #[doc = "No effect."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "Clear all NSE bits for this domain."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
 }
 impl Mbc0NseBlkClrAllDidSel0 {
     #[inline(always)]
@@ -9953,9 +9953,9 @@ impl From<Mbc0NseBlkClrAllDidSel0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mbc0NseBlkIndexDidSel0 {
     #[doc = "No effect."]
-    LOGIC_0 = 0x0,
+    Logic0 = 0x0,
     #[doc = "Selects NSE bits for this domain."]
-    LOGIC_1 = 0x01,
+    Logic1 = 0x01,
 }
 impl Mbc0NseBlkIndexDidSel0 {
     #[inline(always)]

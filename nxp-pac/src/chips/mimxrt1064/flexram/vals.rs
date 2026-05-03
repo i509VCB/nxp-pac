@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DtcmErrSigEn {
     #[doc = "Masked."]
-    DTCM_ERR_SIG_EN_0 = 0x0,
+    DtcmErrSigEn0 = 0x0,
     #[doc = "Enabled."]
-    DTCM_ERR_SIG_EN_1 = 0x01,
+    DtcmErrSigEn1 = 0x01,
 }
 impl DtcmErrSigEn {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<DtcmErrSigEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DtcmErrStatEn {
     #[doc = "Masked."]
-    DTCM_ERR_STAT_EN_0 = 0x0,
+    DtcmErrStatEn0 = 0x0,
     #[doc = "Enabled."]
-    DTCM_ERR_STAT_EN_1 = 0x01,
+    DtcmErrStatEn1 = 0x01,
 }
 impl DtcmErrStatEn {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<DtcmErrStatEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DtcmErrStatus {
     #[doc = "DTCM access error does not happen."]
-    DTCM_ERR_STATUS_0 = 0x0,
+    DtcmErrStatus0 = 0x0,
     #[doc = "DTCM access error happens."]
-    DTCM_ERR_STATUS_1 = 0x01,
+    DtcmErrStatus1 = 0x01,
 }
 impl DtcmErrStatus {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<DtcmErrStatus> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ItcmErrSigEn {
     #[doc = "Masked."]
-    ITCM_ERR_SIG_EN_0 = 0x0,
+    ItcmErrSigEn0 = 0x0,
     #[doc = "Enabled."]
-    ITCM_ERR_SIG_EN_1 = 0x01,
+    ItcmErrSigEn1 = 0x01,
 }
 impl ItcmErrSigEn {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<ItcmErrSigEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ItcmErrStatEn {
     #[doc = "Masked."]
-    ITCM_ERR_STAT_EN_0 = 0x0,
+    ItcmErrStatEn0 = 0x0,
     #[doc = "Enabled."]
-    ITCM_ERR_STAT_EN_1 = 0x01,
+    ItcmErrStatEn1 = 0x01,
 }
 impl ItcmErrStatEn {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<ItcmErrStatEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ItcmErrStatus {
     #[doc = "ITCM access error does not happen."]
-    ITCM_ERR_STATUS_0 = 0x0,
+    ItcmErrStatus0 = 0x0,
     #[doc = "ITCM access error happens."]
-    ITCM_ERR_STATUS_1 = 0x01,
+    ItcmErrStatus1 = 0x01,
 }
 impl ItcmErrStatus {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<ItcmErrStatus> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum OcramErrSigEn {
     #[doc = "Masked."]
-    OCRAM_ERR_SIG_EN_0 = 0x0,
+    OcramErrSigEn0 = 0x0,
     #[doc = "Enabled."]
-    OCRAM_ERR_SIG_EN_1 = 0x01,
+    OcramErrSigEn1 = 0x01,
 }
 impl OcramErrSigEn {
     #[inline(always)]
@@ -220,9 +220,9 @@ impl From<OcramErrSigEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum OcramErrStatEn {
     #[doc = "Masked."]
-    OCRAM_ERR_STAT_EN_0 = 0x0,
+    OcramErrStatEn0 = 0x0,
     #[doc = "Enabled."]
-    OCRAM_ERR_STAT_EN_1 = 0x01,
+    OcramErrStatEn1 = 0x01,
 }
 impl OcramErrStatEn {
     #[inline(always)]
@@ -251,9 +251,9 @@ impl From<OcramErrStatEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum OcramErrStatus {
     #[doc = "OCRAM access error does not happen."]
-    OCRAM_ERR_STATUS_0 = 0x0,
+    OcramErrStatus0 = 0x0,
     #[doc = "OCRAM access error happens."]
-    OCRAM_ERR_STATUS_1 = 0x01,
+    OcramErrStatus1 = 0x01,
 }
 impl OcramErrStatus {
     #[inline(always)]
@@ -282,9 +282,9 @@ impl From<OcramErrStatus> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TcmRwaitEn {
     #[doc = "TCM read fast mode: Read RAM accesses are expected to be finished in 1-cycle."]
-    TCM_RWAIT_EN_0 = 0x0,
+    TcmRwaitEn0 = 0x0,
     #[doc = "TCM read wait mode: Read RAM accesses are expected to be finished in 2-cycles."]
-    TCM_RWAIT_EN_1 = 0x01,
+    TcmRwaitEn1 = 0x01,
 }
 impl TcmRwaitEn {
     #[inline(always)]
@@ -313,9 +313,9 @@ impl From<TcmRwaitEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TcmWwaitEn {
     #[doc = "TCM write fast mode: Write RAM accesses are expected to be finished in 1-cycle."]
-    TCM_WWAIT_EN_0 = 0x0,
+    TcmWwaitEn0 = 0x0,
     #[doc = "TCM write wait mode: Write RAM accesses are expected to be finished in 2-cycles."]
-    TCM_WWAIT_EN_1 = 0x01,
+    TcmWwaitEn1 = 0x01,
 }
 impl TcmWwaitEn {
     #[inline(always)]

@@ -3,13 +3,13 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum AlmMatch {
     #[doc = "Only seconds, minutes, and hours matched."]
-    HOURS = 0x0,
+    Hours = 0x0,
     #[doc = "Only seconds, minutes, hours, and days matched."]
-    DAYS = 0x01,
+    Days = 0x01,
     #[doc = "Only seconds, minutes, hours, days, and months matched."]
-    MONTHS = 0x02,
+    Months = 0x02,
     #[doc = "Only seconds, minutes, hours, days, months, and year (offset) matched."]
-    YEAR = 0x03,
+    Year = 0x03,
 }
 impl AlmMatch {
     #[inline(always)]
@@ -38,9 +38,9 @@ impl From<AlmMatch> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BusErr {
     #[doc = "Read and write accesses are normal."]
-    NORMAL = 0x0,
+    Normal = 0x0,
     #[doc = "Read or write accesses occurred when STATUS\\[INVAL_BIT\\] was asserted."]
-    ASSERTED = 0x01,
+    Asserted = 0x01,
 }
 impl BusErr {
     #[inline(always)]
@@ -69,9 +69,9 @@ impl From<BusErr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ClkSel {
     #[doc = "16.384 kHz clock is selected."]
-    CLK_16_384KHZ = 0x0,
+    Clk16384khz = 0x0,
     #[doc = "32.768 kHz clock is selected."]
-    CLK_32_768KHZ = 0x01,
+    Clk32768khz = 0x01,
 }
 impl ClkSel {
     #[inline(always)]
@@ -100,9 +100,9 @@ impl From<ClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ClkoDis {
     #[doc = "The selected clock is output to other peripherals."]
-    TO_OTHER_PERIPHERALS = 0x0,
+    ToOtherPeripherals = 0x0,
     #[doc = "The selected clock is not output to other peripherals."]
-    NOT_TO_OTHER_PERIPHERALS = 0x01,
+    NotToOtherPeripherals = 0x01,
 }
 impl ClkoDis {
     #[inline(always)]
@@ -131,13 +131,13 @@ impl From<ClkoDis> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Clkout {
     #[doc = "No output clock."]
-    NO_OUTPUT_CLK = 0x0,
+    NoOutputClk = 0x0,
     #[doc = "Fine 1 Hz clock with both precise edges."]
-    CLK_1HZ_FINE = 0x01,
+    Clk1hzFine = 0x01,
     #[doc = "32.768 or 16.384 kHz clock."]
-    CLK_32_168KHZ = 0x02,
+    Clk32168khz = 0x02,
     #[doc = "Coarse 1 Hz clock with both precise edges."]
-    CLK_1HZ_COARSE = 0x03,
+    Clk1hzCoarse = 0x03,
 }
 impl Clkout {
     #[inline(always)]
@@ -166,19 +166,19 @@ impl From<Clkout> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dow {
     #[doc = "Sunday."]
-    SUNDAY = 0x0,
+    Sunday = 0x0,
     #[doc = "Monday."]
-    MONDAY = 0x01,
+    Monday = 0x01,
     #[doc = "Tuesday."]
-    TUESDAY = 0x02,
+    Tuesday = 0x02,
     #[doc = "Wednesday."]
-    WEDNESDAY = 0x03,
+    Wednesday = 0x03,
     #[doc = "Thursday."]
-    THURSDAY = 0x04,
+    Thursday = 0x04,
     #[doc = "Friday."]
-    FRIDAY = 0x05,
+    Friday = 0x05,
     #[doc = "Saturday."]
-    SATURDAY = 0x06,
+    Saturday = 0x06,
     _RESERVED_7 = 0x07,
 }
 impl Dow {
@@ -208,9 +208,9 @@ impl From<Dow> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum InvalBit {
     #[doc = "Time and date counters can be read or written. Time and date is valid."]
-    VALID = 0x0,
+    Valid = 0x0,
     #[doc = "Time and date counter values are changing or time and date is invalid and cannot be read or written."]
-    INVALID = 0x01,
+    Invalid = 0x01,
 }
 impl InvalBit {
     #[inline(always)]
@@ -239,37 +239,37 @@ impl From<InvalBit> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MonCnt {
     #[doc = "Illegal Value."]
-    ILLEGAL_VALUE_0 = 0x0,
+    IllegalValue0 = 0x0,
     #[doc = "January."]
-    JANUARY = 0x01,
+    January = 0x01,
     #[doc = "February."]
-    FEBRUARY = 0x02,
+    February = 0x02,
     #[doc = "March."]
-    MARCH = 0x03,
+    March = 0x03,
     #[doc = "April."]
-    APRIL = 0x04,
+    April = 0x04,
     #[doc = "May."]
-    MAY = 0x05,
+    May = 0x05,
     #[doc = "June."]
-    JUNE = 0x06,
+    June = 0x06,
     #[doc = "July."]
-    JULY = 0x07,
+    July = 0x07,
     #[doc = "August."]
-    AUGUST = 0x08,
+    August = 0x08,
     #[doc = "September."]
-    SEPTEMBER = 0x09,
+    September = 0x09,
     #[doc = "October."]
-    OCTOBER = 0x0a,
+    October = 0x0a,
     #[doc = "November."]
-    NOVEMBER = 0x0b,
+    November = 0x0b,
     #[doc = "December."]
-    DECEMBER = 0x0c,
+    December = 0x0c,
     #[doc = "Illegal Value."]
-    ILLEGAL_VALUE_13 = 0x0d,
+    IllegalValue13 = 0x0d,
     #[doc = "Illegal Value."]
-    ILLEGAL_VALUE_14 = 0x0e,
+    IllegalValue14 = 0x0e,
     #[doc = "Illegal Value."]
-    ILLEGAL_VALUE_15 = 0x0f,
+    IllegalValue15 = 0x0f,
 }
 impl MonCnt {
     #[inline(always)]
@@ -298,9 +298,9 @@ impl From<MonCnt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swr {
     #[doc = "Software Reset cleared."]
-    CLEARED = 0x0,
+    Cleared = 0x0,
     #[doc = "Software Reset asserted."]
-    ASSERTED = 0x01,
+    Asserted = 0x01,
 }
 impl Swr {
     #[inline(always)]
@@ -331,7 +331,7 @@ pub enum We {
     _RESERVED_0 = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "Enable Write Protection - Registers are locked."]
-    LOCKED = 0x02,
+    Locked = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl We {

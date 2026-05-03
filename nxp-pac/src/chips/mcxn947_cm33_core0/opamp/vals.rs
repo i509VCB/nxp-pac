@@ -3,13 +3,13 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Biasc {
     #[doc = "Default."]
-    DEF = 0x0,
+    Def = 0x0,
     #[doc = "Increase current."]
-    INC = 0x01,
+    Inc = 0x01,
     #[doc = "Decrease current."]
-    DEC = 0x02,
+    Dec = 0x02,
     #[doc = "Further decrease current."]
-    FUR_DEC = 0x03,
+    FurDec = 0x03,
 }
 impl Biasc {
     #[inline(always)]
@@ -38,9 +38,9 @@ impl From<Biasc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Inpf {
     #[doc = "Positive input 0 (INP0)."]
-    INP0 = 0x0,
+    Inp0 = 0x0,
     #[doc = "Positive input 1 (INP1)."]
-    INP1 = 0x01,
+    Inp1 = 0x01,
 }
 impl Inpf {
     #[inline(always)]
@@ -69,9 +69,9 @@ impl From<Inpf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Inpsel {
     #[doc = "When OPAMP is not in trigger mode, select positive input 0 (INP0)."]
-    INP0 = 0x0,
+    Inp0 = 0x0,
     #[doc = "When OPAMP is not in trigger mode, select positive input 1 (INP1)."]
-    INP1 = 0x01,
+    Inp1 = 0x01,
 }
 impl Inpsel {
     #[inline(always)]
@@ -100,13 +100,13 @@ impl From<Inpsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Intref {
     #[doc = "Select OPAMP input rail to rail voltage from 0 to VDD_ANA."]
-    VDDA2 = 0x0,
+    Vdda2 = 0x0,
     #[doc = "Select OPAMP input rail to rail voltage from 0 to VDD_ANA-0.8V."]
-    VDDA3V = 0x01,
+    Vdda3v = 0x01,
     #[doc = "Select OPAMP input rail to rail voltage from 0.8V to VDD_ANA."]
-    VSSA3V = 0x02,
+    Vssa3v = 0x02,
     #[doc = "Not allowed."]
-    NOT = 0x03,
+    Not = 0x03,
 }
 impl Intref {
     #[inline(always)]
@@ -135,9 +135,9 @@ impl From<Intref> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mode {
     #[doc = "High performance mode."]
-    LOW = 0x0,
+    Low = 0x0,
     #[doc = "Low power mode."]
-    HIGH = 0x01,
+    High = 0x01,
 }
 impl Mode {
     #[inline(always)]
@@ -166,7 +166,7 @@ impl From<Mode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ngain {
     #[doc = "Buffer."]
-    BUFFER = 0x0,
+    Buffer = 0x0,
     #[doc = "Ngain=1."]
     G1 = 0x01,
     #[doc = "Ngain=2."]
@@ -209,9 +209,9 @@ impl From<Ngain> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PgaFunction {
     #[doc = "Core amplifier enabled."]
-    CORE_AMP = 0x0,
+    CoreAmp = 0x0,
     #[doc = "PGA function enabled."]
-    PGA = 0x01,
+    Pga = 0x01,
 }
 impl PgaFunction {
     #[inline(always)]
@@ -240,7 +240,7 @@ impl From<PgaFunction> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pgain {
     #[doc = "Positive input 1 (INP1)."]
-    INP1 = 0x0,
+    Inp1 = 0x0,
     #[doc = "Pgain=1."]
     G2 = 0x01,
     #[doc = "Pgain=2."]
@@ -283,13 +283,13 @@ impl From<Pgain> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pref {
     #[doc = "Input 0."]
-    VAL0 = 0x0,
+    Val0 = 0x0,
     #[doc = "Input 1."]
-    VAL1 = 0x01,
+    Val1 = 0x01,
     #[doc = "Input 2."]
-    VAL2 = 0x02,
+    Val2 = 0x02,
     #[doc = "Input 3."]
-    VAL3 = 0x03,
+    Val3 = 0x03,
 }
 impl Pref {
     #[inline(always)]

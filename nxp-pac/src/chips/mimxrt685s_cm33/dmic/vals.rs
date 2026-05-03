@@ -3,13 +3,13 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dcpole {
     #[doc = "Flat response, no filter."]
-    FLAT_RESPONSE = 0x0,
+    FlatResponse = 0x0,
     #[doc = "155 Hz."]
-    HZ_155 = 0x01,
+    Hz155 = 0x01,
     #[doc = "78 Hz."]
-    HZ_78 = 0x02,
+    Hz78 = 0x02,
     #[doc = "39 Hz."]
-    HZ_39 = 0x03,
+    Hz39 = 0x03,
 }
 impl Dcpole {
     #[inline(always)]
@@ -38,9 +38,9 @@ impl From<Dcpole> for u8 {
 pub struct Decreset(u8);
 impl Decreset {
     #[doc = "release reset to decimator."]
-    pub const RELEASE_RESET: Self = Self(0x0);
+    pub const ReleaseReset: Self = Self(0x0);
     #[doc = "assert reset to decimator Note : resets are applied in pairs. So bit 0 corresponds to channels 0/1, bit1 corresponds to channels 2/3, bit2 to channel 4/5 and bit3 to channel 6/7."]
-    pub const ASSERT_RESET: Self = Self(0x01);
+    pub const AssertReset: Self = Self(0x01);
 }
 impl Decreset {
     pub const fn from_bits(val: u8) -> Decreset {
@@ -53,8 +53,8 @@ impl Decreset {
 impl core::fmt::Debug for Decreset {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("RELEASE_RESET"),
-            0x01 => f.write_str("ASSERT_RESET"),
+            0x0 => f.write_str("ReleaseReset"),
+            0x01 => f.write_str("AssertReset"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -63,8 +63,8 @@ impl core::fmt::Debug for Decreset {
 impl defmt::Format for Decreset {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "RELEASE_RESET"),
-            0x01 => defmt::write!(f, "ASSERT_RESET"),
+            0x0 => defmt::write!(f, "ReleaseReset"),
+            0x01 => defmt::write!(f, "AssertReset"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -86,11 +86,11 @@ impl From<Decreset> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hpfs {
     #[doc = "First filter by-pass."]
-    BYPASS = 0x0,
+    Bypass = 0x0,
     #[doc = "High pass filter with -3dB cut-off at 1750Hz."]
-    HIGH_PASS_1750HZ = 0x01,
+    HighPass1750hz = 0x01,
     #[doc = "High pass filter with -3dB cut-off at 215Hz."]
-    HIGH_PASS_215HZ = 0x02,
+    HighPass215hz = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Hpfs {
@@ -120,9 +120,9 @@ impl From<Hpfs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PhyFall {
     #[doc = "Capture PDM_DATA on the rising edge of PDM_CLK."]
-    RISING_EDGE = 0x0,
+    RisingEdge = 0x0,
     #[doc = "Capture PDM_DATA on the falling edge of PDM_CLK."]
-    FALLING_EDGE = 0x01,
+    FallingEdge = 0x01,
 }
 impl PhyFall {
     #[inline(always)]
@@ -151,9 +151,9 @@ impl From<PhyFall> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PhyHalf {
     #[doc = "Standard half rate sampling. The clock to the DMIC is sent at the same rate as the decimator is providing."]
-    STANDARD = 0x0,
+    Standard = 0x0,
     #[doc = "Use half rate sampling. The clock to the DMIC is sent at half the rate as the decimator is providing."]
-    HALF_RATE = 0x01,
+    HalfRate = 0x01,
 }
 impl PhyHalf {
     #[inline(always)]
@@ -182,9 +182,9 @@ impl From<PhyHalf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Resetn {
     #[doc = "Reset the FIFO."]
-    RESET = 0x0,
+    Reset = 0x0,
     #[doc = "Normal operation."]
-    NORMAL = 0x01,
+    Normal = 0x01,
 }
 impl Resetn {
     #[inline(always)]
@@ -213,9 +213,9 @@ impl From<Resetn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Saturateat16bit {
     #[doc = "Results roll over if out range and do not saturate."]
-    DO_NOT_SATURATE = 0x0,
+    DoNotSaturate = 0x0,
     #[doc = "If the result overflows, it saturates at 0xFFFF for positive overflow and 0x8000 for negative overflow."]
-    SATURATE = 0x01,
+    Saturate = 0x01,
 }
 impl Saturateat16bit {
     #[inline(always)]
@@ -244,9 +244,9 @@ impl From<Saturateat16bit> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Signextend {
     #[doc = "The top byte of the FIFODATA register is always 0."]
-    DO_NOT_SIGNEXTEND = 0x0,
+    DoNotSignextend = 0x0,
     #[doc = "The top byte of the FIFODATA register is sign extended. This allows processing of 24-bit audio data on 32-bit machines."]
-    SIGNEXTEND = 0x01,
+    Signextend = 0x01,
 }
 impl Signextend {
     #[inline(always)]
@@ -275,9 +275,9 @@ impl From<Signextend> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum St10 {
     #[doc = "Normal operation, waiting for HWVAD trigger event (stage 0)."]
-    NORMAL = 0x0,
+    Normal = 0x0,
     #[doc = "Reset internal interrupt flag by writing a '1' pulse."]
-    RESET = 0x01,
+    Reset = 0x01,
 }
 impl St10 {
     #[inline(always)]
@@ -306,9 +306,9 @@ impl From<St10> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Use2fs {
     #[doc = "Use 1FS output for PCM data."]
-    USE_1FS = 0x0,
+    Use1fs = 0x0,
     #[doc = "Use 2FS output for PCM data."]
-    USE_2FS = 0x01,
+    Use2fs = 0x01,
 }
 impl Use2fs {
     #[inline(always)]

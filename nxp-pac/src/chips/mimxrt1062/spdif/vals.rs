@@ -3,20 +3,20 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ClkSrcSel {
     #[doc = "if (DPLL Locked) SPDIF_RxClk else REF_CLK_32K (XTALOSC)."]
-    CLKSRC_0B0000 = 0x0,
+    Clksrc0b0000 = 0x0,
     #[doc = "if (DPLL Locked) SPDIF_RxClk else tx_clk (SPDIF0_CLK_ROOT)."]
-    CLKSRC_0B0001 = 0x01,
+    Clksrc0b0001 = 0x01,
     _RESERVED_2 = 0x02,
     #[doc = "if (DPLL Locked) SPDIF_RxClk else SPDIF_EXT_CLK."]
-    CLKSRC_0B0011 = 0x03,
+    Clksrc0b0011 = 0x03,
     _RESERVED_4 = 0x04,
     #[doc = "REF_CLK_32K (XTALOSC)."]
-    CLKSRC_0B0101 = 0x05,
+    Clksrc0b0101 = 0x05,
     #[doc = "tx_clk (SPDIF0_CLK_ROOT)."]
-    CLKSRC_0B0110 = 0x06,
+    Clksrc0b0110 = 0x06,
     _RESERVED_7 = 0x07,
     #[doc = "SPDIF_EXT_CLK."]
-    CLKSRC_0B1000 = 0x08,
+    Clksrc0b1000 = 0x08,
     _RESERVED_9 = 0x09,
     _RESERVED_a = 0x0a,
     _RESERVED_b = 0x0b,
@@ -52,19 +52,19 @@ impl From<ClkSrcSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum GainSel {
     #[doc = "24*(2**10)."]
-    GAINSEL_0B000 = 0x0,
+    Gainsel0b000 = 0x0,
     #[doc = "16*(2**10)."]
-    GAINSEL_0B001 = 0x01,
+    Gainsel0b001 = 0x01,
     #[doc = "12*(2**10)."]
-    GAINSEL_0B010 = 0x02,
+    Gainsel0b010 = 0x02,
     #[doc = "8*(2**10)."]
-    GAINSEL_0B011 = 0x03,
+    Gainsel0b011 = 0x03,
     #[doc = "6*(2**10)."]
-    GAINSEL_0B100 = 0x04,
+    Gainsel0b100 = 0x04,
     #[doc = "4*(2**10)."]
-    GAINSEL_0B101 = 0x05,
+    Gainsel0b101 = 0x05,
     #[doc = "3*(2**10)."]
-    GAINSEL_0B110 = 0x06,
+    Gainsel0b110 = 0x06,
     _RESERVED_7 = 0x07,
 }
 impl GainSel {
@@ -94,13 +94,13 @@ impl From<GainSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum InputSrcSel {
     #[doc = "SPDIF_IN."]
-    SPDIF_IN = 0x0,
+    SpdifIn = 0x0,
     #[doc = "None."]
-    NONE_SEL_1 = 0x01,
+    NoneSel1 = 0x01,
     #[doc = "None."]
-    NONE_SEL_2 = 0x02,
+    NoneSel2 = 0x02,
     #[doc = "None."]
-    NONE_SEL_3 = 0x03,
+    NoneSel3 = 0x03,
 }
 impl InputSrcSel {
     #[inline(always)]
@@ -129,9 +129,9 @@ impl From<InputSrcSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RxFifoCtrl {
     #[doc = "Normal operation."]
-    NORMAL = 0x0,
+    Normal = 0x0,
     #[doc = "Always read zero from Rx data register."]
-    ALWAYS_ZERO = 0x01,
+    AlwaysZero = 0x01,
 }
 impl RxFifoCtrl {
     #[inline(always)]
@@ -158,11 +158,46 @@ impl From<RxFifoCtrl> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+pub enum RxFifoFullSel {
+    #[doc = "Full interrupt if at least 1 sample in Rx left and right FIFOs."]
+    FullInt1 = 0x0,
+    #[doc = "Full interrupt if at least 4 sample in Rx left and right FIFOs."]
+    FullInt4 = 0x01,
+    #[doc = "Full interrupt if at least 8 sample in Rx left and right FIFOs."]
+    FullInt8 = 0x02,
+    #[doc = "Full interrupt if at least 16 sample in Rx left and right FIFO."]
+    FullInt16 = 0x03,
+}
+impl RxFifoFullSel {
+    #[inline(always)]
+    pub const fn from_bits(val: u8) -> RxFifoFullSel {
+        unsafe { core::mem::transmute(val & 0x03) }
+    }
+    #[inline(always)]
+    pub const fn to_bits(self) -> u8 {
+        unsafe { core::mem::transmute(self) }
+    }
+}
+impl From<u8> for RxFifoFullSel {
+    #[inline(always)]
+    fn from(val: u8) -> RxFifoFullSel {
+        RxFifoFullSel::from_bits(val)
+    }
+}
+impl From<RxFifoFullSel> for u8 {
+    #[inline(always)]
+    fn from(val: RxFifoFullSel) -> u8 {
+        RxFifoFullSel::to_bits(val)
+    }
+}
+#[repr(u8)]
+#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RxFifoOffOn {
     #[doc = "SPDIF Rx FIFO is on."]
-    ON_0 = 0x0,
+    On0 = 0x0,
     #[doc = "SPDIF Rx FIFO is off. Does not accept data from interface."]
-    OFF_1 = 0x01,
+    Off1 = 0x01,
 }
 impl RxFifoOffOn {
     #[inline(always)]
@@ -191,9 +226,9 @@ impl From<RxFifoOffOn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RxFifoRst {
     #[doc = "Normal operation."]
-    NORMAL = 0x0,
+    Normal = 0x0,
     #[doc = "Reset register to 1 sample remaining."]
-    RESET_ONE = 0x01,
+    ResetOne = 0x01,
 }
 impl RxFifoRst {
     #[inline(always)]
@@ -217,51 +252,16 @@ impl From<RxFifoRst> for u8 {
         RxFifoRst::to_bits(val)
     }
 }
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum RxFifofullSel {
-    #[doc = "Full interrupt if at least 1 sample in Rx left and right FIFOs."]
-    FULL_INT_1 = 0x0,
-    #[doc = "Full interrupt if at least 4 sample in Rx left and right FIFOs."]
-    FULL_INT_4 = 0x01,
-    #[doc = "Full interrupt if at least 8 sample in Rx left and right FIFOs."]
-    FULL_INT_8 = 0x02,
-    #[doc = "Full interrupt if at least 16 sample in Rx left and right FIFO."]
-    FULL_INT_16 = 0x03,
-}
-impl RxFifofullSel {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> RxFifofullSel {
-        unsafe { core::mem::transmute(val & 0x03) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for RxFifofullSel {
-    #[inline(always)]
-    fn from(val: u8) -> RxFifofullSel {
-        RxFifofullSel::from_bits(val)
-    }
-}
-impl From<RxFifofullSel> for u8 {
-    #[inline(always)]
-    fn from(val: RxFifofullSel) -> u8 {
-        RxFifofullSel::to_bits(val)
-    }
-}
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
 pub struct SysclkDf(u16);
 impl SysclkDf {
     #[doc = "no clock signal."]
-    pub const NO_CLK: Self = Self(0x0);
+    pub const NoClk: Self = Self(0x0);
     #[doc = "divider factor is 2."]
-    pub const DIV2: Self = Self(0x01);
+    pub const Div2: Self = Self(0x01);
     #[doc = "divider factor is 512."]
-    pub const DIV512: Self = Self(0x01ff);
+    pub const Div512: Self = Self(0x01ff);
 }
 impl SysclkDf {
     pub const fn from_bits(val: u16) -> SysclkDf {
@@ -274,9 +274,9 @@ impl SysclkDf {
 impl core::fmt::Debug for SysclkDf {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("NO_CLK"),
-            0x01 => f.write_str("DIV2"),
-            0x01ff => f.write_str("DIV512"),
+            0x0 => f.write_str("NoClk"),
+            0x01 => f.write_str("Div2"),
+            0x01ff => f.write_str("Div512"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -285,9 +285,9 @@ impl core::fmt::Debug for SysclkDf {
 impl defmt::Format for SysclkDf {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "NO_CLK"),
-            0x01 => defmt::write!(f, "DIV2"),
-            0x01ff => defmt::write!(f, "DIV512"),
+            0x0 => defmt::write!(f, "NoClk"),
+            0x01 => defmt::write!(f, "Div2"),
+            0x01ff => defmt::write!(f, "Div512"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -309,11 +309,11 @@ impl From<SysclkDf> for u16 {
 pub struct TxClkDf(u8);
 impl TxClkDf {
     #[doc = "divider factor is 1."]
-    pub const DIV1: Self = Self(0x0);
+    pub const Div1: Self = Self(0x0);
     #[doc = "divider factor is 2."]
-    pub const DIV2: Self = Self(0x01);
+    pub const Div2: Self = Self(0x01);
     #[doc = "divider factor is 128."]
-    pub const DIV128: Self = Self(0x7f);
+    pub const Div128: Self = Self(0x7f);
 }
 impl TxClkDf {
     pub const fn from_bits(val: u8) -> TxClkDf {
@@ -326,9 +326,9 @@ impl TxClkDf {
 impl core::fmt::Debug for TxClkDf {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("DIV1"),
-            0x01 => f.write_str("DIV2"),
-            0x7f => f.write_str("DIV128"),
+            0x0 => f.write_str("Div1"),
+            0x01 => f.write_str("Div2"),
+            0x7f => f.write_str("Div128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -337,9 +337,9 @@ impl core::fmt::Debug for TxClkDf {
 impl defmt::Format for TxClkDf {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "DIV1"),
-            0x01 => defmt::write!(f, "DIV2"),
-            0x7f => defmt::write!(f, "DIV128"),
+            0x0 => defmt::write!(f, "Div1"),
+            0x01 => defmt::write!(f, "Div2"),
+            0x7f => defmt::write!(f, "Div128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -361,15 +361,15 @@ impl From<TxClkDf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TxClkSource {
     #[doc = "REF_CLK_32K input (XTALOSC 32 kHz clock)."]
-    TXCLK_SRC_0B000 = 0x0,
+    TxclkSrc0b000 = 0x0,
     #[doc = "tx_clk input (from SPDIF0_CLK_ROOT. See clock control block for more information.)."]
-    TXCLK_SRC_0B001 = 0x01,
+    TxclkSrc0b001 = 0x01,
     _RESERVED_2 = 0x02,
     #[doc = "SPDIF_EXT_CLK, from pads."]
-    TXCLK_SRC_0B011 = 0x03,
+    TxclkSrc0b011 = 0x03,
     _RESERVED_4 = 0x04,
     #[doc = "ipg_clk input (frequency divided)."]
-    TXCLK_SRC_0B101 = 0x05,
+    TxclkSrc0b101 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
 }
@@ -400,11 +400,11 @@ impl From<TxClkSource> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TxFifoCtrl {
     #[doc = "Send out digital zero on SPDIF Tx."]
-    SEND_ZERO = 0x0,
+    SendZero = 0x0,
     #[doc = "Tx Normal operation."]
-    NORMAL = 0x01,
+    Normal = 0x01,
     #[doc = "Reset to 1 sample remaining."]
-    RESET_ONE = 0x02,
+    ResetOne = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl TxFifoCtrl {
@@ -432,19 +432,19 @@ impl From<TxFifoCtrl> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum TxFifoemptySel {
+pub enum TxFifoEmptySel {
     #[doc = "Empty interrupt if 0 sample in Tx left and right FIFOs."]
-    EMPTY_INT_0 = 0x0,
+    EmptyInt0 = 0x0,
     #[doc = "Empty interrupt if at most 4 sample in Tx left and right FIFOs."]
-    EMPTY_INT_4 = 0x01,
+    EmptyInt4 = 0x01,
     #[doc = "Empty interrupt if at most 8 sample in Tx left and right FIFOs."]
-    EMPTY_INT_8 = 0x02,
+    EmptyInt8 = 0x02,
     #[doc = "Empty interrupt if at most 12 sample in Tx left and right FIFOs."]
-    EMPTY_INT_12 = 0x03,
+    EmptyInt12 = 0x03,
 }
-impl TxFifoemptySel {
+impl TxFifoEmptySel {
     #[inline(always)]
-    pub const fn from_bits(val: u8) -> TxFifoemptySel {
+    pub const fn from_bits(val: u8) -> TxFifoEmptySel {
         unsafe { core::mem::transmute(val & 0x03) }
     }
     #[inline(always)]
@@ -452,16 +452,16 @@ impl TxFifoemptySel {
         unsafe { core::mem::transmute(self) }
     }
 }
-impl From<u8> for TxFifoemptySel {
+impl From<u8> for TxFifoEmptySel {
     #[inline(always)]
-    fn from(val: u8) -> TxFifoemptySel {
-        TxFifoemptySel::from_bits(val)
+    fn from(val: u8) -> TxFifoEmptySel {
+        TxFifoEmptySel::from_bits(val)
     }
 }
-impl From<TxFifoemptySel> for u8 {
+impl From<TxFifoEmptySel> for u8 {
     #[inline(always)]
-    fn from(val: TxFifoemptySel) -> u8 {
-        TxFifoemptySel::to_bits(val)
+    fn from(val: TxFifoEmptySel) -> u8 {
+        TxFifoEmptySel::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -469,14 +469,14 @@ impl From<TxFifoemptySel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TxSel {
     #[doc = "Off and output 0."]
-    OFF_OUT0 = 0x0,
+    OffOut0 = 0x0,
     #[doc = "Feed-through SPDIFIN."]
-    FEEDTHRU = 0x01,
+    Feedthru = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
     #[doc = "Tx Normal operation."]
-    NORMAL_OP = 0x05,
+    NormalOp = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
 }
@@ -505,18 +505,18 @@ impl From<TxSel> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum UsrcSel {
+pub enum USrcSel {
     #[doc = "No embedded U channel."]
-    NONE = 0x0,
+    None = 0x0,
     #[doc = "U channel from SPDIF receive block (CD mode)."]
-    SPDIF_RXBLOCK = 0x01,
+    SpdifRxblock = 0x01,
     _RESERVED_2 = 0x02,
     #[doc = "U channel from on chip transmitter."]
-    CHIP_TRANSMIT = 0x03,
+    ChipTransmit = 0x03,
 }
-impl UsrcSel {
+impl USrcSel {
     #[inline(always)]
-    pub const fn from_bits(val: u8) -> UsrcSel {
+    pub const fn from_bits(val: u8) -> USrcSel {
         unsafe { core::mem::transmute(val & 0x03) }
     }
     #[inline(always)]
@@ -524,30 +524,30 @@ impl UsrcSel {
         unsafe { core::mem::transmute(self) }
     }
 }
-impl From<u8> for UsrcSel {
+impl From<u8> for USrcSel {
     #[inline(always)]
-    fn from(val: u8) -> UsrcSel {
-        UsrcSel::from_bits(val)
+    fn from(val: u8) -> USrcSel {
+        USrcSel::from_bits(val)
     }
 }
-impl From<UsrcSel> for u8 {
+impl From<USrcSel> for u8 {
     #[inline(always)]
-    fn from(val: UsrcSel) -> u8 {
-        UsrcSel::to_bits(val)
+    fn from(val: USrcSel) -> u8 {
+        USrcSel::to_bits(val)
     }
 }
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum UsyncMode {
+pub enum USyncMode {
     #[doc = "Non-CD data."]
-    NON_CDDATA = 0x0,
+    NonCddata = 0x0,
     #[doc = "CD user channel subcode."]
-    CDUSER_CHSUBCODE = 0x01,
+    CduserChsubcode = 0x01,
 }
-impl UsyncMode {
+impl USyncMode {
     #[inline(always)]
-    pub const fn from_bits(val: u8) -> UsyncMode {
+    pub const fn from_bits(val: u8) -> USyncMode {
         unsafe { core::mem::transmute(val & 0x01) }
     }
     #[inline(always)]
@@ -555,16 +555,16 @@ impl UsyncMode {
         unsafe { core::mem::transmute(self) }
     }
 }
-impl From<u8> for UsyncMode {
+impl From<u8> for USyncMode {
     #[inline(always)]
-    fn from(val: u8) -> UsyncMode {
-        UsyncMode::from_bits(val)
+    fn from(val: u8) -> USyncMode {
+        USyncMode::from_bits(val)
     }
 }
-impl From<UsyncMode> for u8 {
+impl From<USyncMode> for u8 {
     #[inline(always)]
-    fn from(val: UsyncMode) -> u8 {
-        UsyncMode::to_bits(val)
+    fn from(val: USyncMode) -> u8 {
+        USyncMode::to_bits(val)
     }
 }
 #[repr(u8)]
@@ -572,9 +572,9 @@ impl From<UsyncMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ValCtrl {
     #[doc = "Outgoing Validity always set."]
-    ALWAYS_SET = 0x0,
+    AlwaysSet = 0x0,
     #[doc = "Outgoing Validity always clear."]
-    ALWAYS_CLEAR = 0x01,
+    AlwaysClear = 0x01,
 }
 impl ValCtrl {
     #[inline(always)]

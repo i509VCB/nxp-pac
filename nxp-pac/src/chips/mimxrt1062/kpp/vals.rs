@@ -3,9 +3,9 @@
 pub struct Kcdd(u8);
 impl Kcdd {
     #[doc = "COLn pin is configured as an input."]
-    pub const INPUT: Self = Self(0x0);
+    pub const Input: Self = Self(0x0);
     #[doc = "COLn pin is configured as an output."]
-    pub const OUTPUT: Self = Self(0x01);
+    pub const Output: Self = Self(0x01);
 }
 impl Kcdd {
     pub const fn from_bits(val: u8) -> Kcdd {
@@ -18,8 +18,8 @@ impl Kcdd {
 impl core::fmt::Debug for Kcdd {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("INPUT"),
-            0x01 => f.write_str("OUTPUT"),
+            0x0 => f.write_str("Input"),
+            0x01 => f.write_str("Output"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -28,8 +28,8 @@ impl core::fmt::Debug for Kcdd {
 impl defmt::Format for Kcdd {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "INPUT"),
-            0x01 => defmt::write!(f, "OUTPUT"),
+            0x0 => defmt::write!(f, "Input"),
+            0x01 => defmt::write!(f, "Output"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -51,9 +51,9 @@ impl From<Kcdd> for u8 {
 pub struct Kco(u8);
 impl Kco {
     #[doc = "Column strobe output is totem pole drive."]
-    pub const TOTEM_POLE: Self = Self(0x0);
+    pub const TotemPole: Self = Self(0x0);
     #[doc = "Column strobe output is open drain."]
-    pub const OPEN_DRAIN: Self = Self(0x01);
+    pub const OpenDrain: Self = Self(0x01);
 }
 impl Kco {
     pub const fn from_bits(val: u8) -> Kco {
@@ -66,8 +66,8 @@ impl Kco {
 impl core::fmt::Debug for Kco {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("TOTEM_POLE"),
-            0x01 => f.write_str("OPEN_DRAIN"),
+            0x0 => f.write_str("TotemPole"),
+            0x01 => f.write_str("OpenDrain"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -76,8 +76,8 @@ impl core::fmt::Debug for Kco {
 impl defmt::Format for Kco {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "TOTEM_POLE"),
-            0x01 => defmt::write!(f, "OPEN_DRAIN"),
+            0x0 => defmt::write!(f, "TotemPole"),
+            0x01 => defmt::write!(f, "OpenDrain"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -99,9 +99,9 @@ impl From<Kco> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Kdie {
     #[doc = "No interrupt request is generated when KPKD is set."]
-    KDIE_0 = 0x0,
+    Kdie0 = 0x0,
     #[doc = "An interrupt request is generated when KPKD is set."]
-    KDIE_1 = 0x01,
+    Kdie1 = 0x01,
 }
 impl Kdie {
     #[inline(always)]
@@ -130,9 +130,9 @@ impl From<Kdie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Kdsc {
     #[doc = "No effect."]
-    KDSC_0 = 0x0,
+    Kdsc0 = 0x0,
     #[doc = "Set bits that clear the keypad depress synchronizer chain."]
-    KDSC_1 = 0x01,
+    Kdsc1 = 0x01,
 }
 impl Kdsc {
     #[inline(always)]
@@ -161,9 +161,9 @@ impl From<Kdsc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Kpkd {
     #[doc = "No key presses detected."]
-    KPKD_0 = 0x0,
+    Kpkd0 = 0x0,
     #[doc = "A key has been depressed."]
-    KPKD_1 = 0x01,
+    Kpkd1 = 0x01,
 }
 impl Kpkd {
     #[inline(always)]
@@ -192,9 +192,9 @@ impl From<Kpkd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Kpkr {
     #[doc = "No key release detected."]
-    KPKR_0 = 0x0,
+    Kpkr0 = 0x0,
     #[doc = "All keys have been released."]
-    KPKR_1 = 0x01,
+    Kpkr1 = 0x01,
 }
 impl Kpkr {
     #[inline(always)]
@@ -223,9 +223,9 @@ impl From<Kpkr> for u8 {
 pub struct Krdd(u8);
 impl Krdd {
     #[doc = "ROWn pin configured as an input."]
-    pub const INPUT: Self = Self(0x0);
+    pub const Input: Self = Self(0x0);
     #[doc = "ROWn pin configured as an output."]
-    pub const OUTPUT: Self = Self(0x01);
+    pub const Output: Self = Self(0x01);
 }
 impl Krdd {
     pub const fn from_bits(val: u8) -> Krdd {
@@ -238,8 +238,8 @@ impl Krdd {
 impl core::fmt::Debug for Krdd {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("INPUT"),
-            0x01 => f.write_str("OUTPUT"),
+            0x0 => f.write_str("Input"),
+            0x01 => f.write_str("Output"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -248,8 +248,8 @@ impl core::fmt::Debug for Krdd {
 impl defmt::Format for Krdd {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "INPUT"),
-            0x01 => defmt::write!(f, "OUTPUT"),
+            0x0 => defmt::write!(f, "Input"),
+            0x01 => defmt::write!(f, "Output"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -271,9 +271,9 @@ impl From<Krdd> for u8 {
 pub struct Kre(u8);
 impl Kre {
     #[doc = "Row is not included in the keypad key press detect."]
-    pub const KRE_0: Self = Self(0x0);
+    pub const Kre0: Self = Self(0x0);
     #[doc = "Row is included in the keypad key press detect."]
-    pub const KRE_1: Self = Self(0x01);
+    pub const Kre1: Self = Self(0x01);
 }
 impl Kre {
     pub const fn from_bits(val: u8) -> Kre {
@@ -286,8 +286,8 @@ impl Kre {
 impl core::fmt::Debug for Kre {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("KRE_0"),
-            0x01 => f.write_str("KRE_1"),
+            0x0 => f.write_str("Kre0"),
+            0x01 => f.write_str("Kre1"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -296,8 +296,8 @@ impl core::fmt::Debug for Kre {
 impl defmt::Format for Kre {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "KRE_0"),
-            0x01 => defmt::write!(f, "KRE_1"),
+            0x0 => defmt::write!(f, "Kre0"),
+            0x01 => defmt::write!(f, "Kre1"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -319,9 +319,9 @@ impl From<Kre> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Krie {
     #[doc = "No interrupt request is generated when KPKR is set."]
-    KRIE_0 = 0x0,
+    Krie0 = 0x0,
     #[doc = "An interrupt request is generated when KPKR is set."]
-    KRIE_1 = 0x01,
+    Krie1 = 0x01,
 }
 impl Krie {
     #[inline(always)]
@@ -350,9 +350,9 @@ impl From<Krie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Krss {
     #[doc = "No effect."]
-    KRSS_0 = 0x0,
+    Krss0 = 0x0,
     #[doc = "Set bits which sets keypad release synchronizer chain."]
-    KRSS_1 = 0x01,
+    Krss1 = 0x01,
 }
 impl Krss {
     #[inline(always)]

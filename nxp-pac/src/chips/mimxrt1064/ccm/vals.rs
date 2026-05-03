@@ -3,21 +3,21 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum AhbPodf {
     #[doc = "divide by 1."]
-    AHB_PODF_0 = 0x0,
+    AhbPodf0 = 0x0,
     #[doc = "divide by 2."]
-    AHB_PODF_1 = 0x01,
+    AhbPodf1 = 0x01,
     #[doc = "divide by 3."]
-    AHB_PODF_2 = 0x02,
+    AhbPodf2 = 0x02,
     #[doc = "divide by 4."]
-    AHB_PODF_3 = 0x03,
+    AhbPodf3 = 0x03,
     #[doc = "divide by 5."]
-    AHB_PODF_4 = 0x04,
+    AhbPodf4 = 0x04,
     #[doc = "divide by 6."]
-    AHB_PODF_5 = 0x05,
+    AhbPodf5 = 0x05,
     #[doc = "divide by 7."]
-    AHB_PODF_6 = 0x06,
+    AhbPodf6 = 0x06,
     #[doc = "divide by 8."]
-    AHB_PODF_7 = 0x07,
+    AhbPodf7 = 0x07,
 }
 impl AhbPodf {
     #[inline(always)]
@@ -46,9 +46,9 @@ impl From<AhbPodf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum AhbPodfBusy {
     #[doc = "divider is not busy and its value represents the actual division."]
-    AHB_PODF_BUSY_0 = 0x0,
+    AhbPodfBusy0 = 0x0,
     #[doc = "divider is busy with handshake process with module. The value read in the divider represents the previous value of the division factor, and after the handshake the written value of the ahb_podf will be applied."]
-    AHB_PODF_BUSY_1 = 0x01,
+    AhbPodfBusy1 = 0x01,
 }
 impl AhbPodfBusy {
     #[inline(always)]
@@ -77,9 +77,9 @@ impl From<AhbPodfBusy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum AhbPodfLoaded {
     #[doc = "interrupt is not generated due to frequency change of ahb_podf."]
-    AHB_PODF_LOADED_0 = 0x0,
+    AhbPodfLoaded0 = 0x0,
     #[doc = "interrupt generated due to frequency change of ahb_podf."]
-    AHB_PODF_LOADED_1 = 0x01,
+    AhbPodfLoaded1 = 0x01,
 }
 impl AhbPodfLoaded {
     #[inline(always)]
@@ -108,9 +108,9 @@ impl From<AhbPodfLoaded> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ArmClkDisOnLpm {
     #[doc = "Arm clock enabled on wait mode."]
-    ARM_CLK_DIS_ON_LPM_0 = 0x0,
+    ArmClkDisOnLpm0 = 0x0,
     #[doc = "Arm clock disabled on wait mode.."]
-    ARM_CLK_DIS_ON_LPM_1 = 0x01,
+    ArmClkDisOnLpm1 = 0x01,
 }
 impl ArmClkDisOnLpm {
     #[inline(always)]
@@ -139,21 +139,21 @@ impl From<ArmClkDisOnLpm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ArmPodf {
     #[doc = "divide by 1."]
-    ARM_PODF_0 = 0x0,
+    ArmPodf0 = 0x0,
     #[doc = "divide by 2."]
-    ARM_PODF_1 = 0x01,
+    ArmPodf1 = 0x01,
     #[doc = "divide by 3."]
-    ARM_PODF_2 = 0x02,
+    ArmPodf2 = 0x02,
     #[doc = "divide by 4."]
-    ARM_PODF_3 = 0x03,
+    ArmPodf3 = 0x03,
     #[doc = "divide by 5."]
-    ARM_PODF_4 = 0x04,
+    ArmPodf4 = 0x04,
     #[doc = "divide by 6."]
-    ARM_PODF_5 = 0x05,
+    ArmPodf5 = 0x05,
     #[doc = "divide by 7."]
-    ARM_PODF_6 = 0x06,
+    ArmPodf6 = 0x06,
     #[doc = "divide by 8."]
-    ARM_PODF_7 = 0x07,
+    ArmPodf7 = 0x07,
 }
 impl ArmPodf {
     #[inline(always)]
@@ -182,9 +182,9 @@ impl From<ArmPodf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ArmPodfBusy {
     #[doc = "divider is not busy and its value represents the actual division."]
-    ARM_PODF_BUSY_0 = 0x0,
+    ArmPodfBusy0 = 0x0,
     #[doc = "divider is busy with handshake process with module. The value read in the divider represents the previous value of the division factor, and after the handshake the written value of the arm_podf will be applied."]
-    ARM_PODF_BUSY_1 = 0x01,
+    ArmPodfBusy1 = 0x01,
 }
 impl ArmPodfBusy {
     #[inline(always)]
@@ -213,9 +213,9 @@ impl From<ArmPodfBusy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Camp2Ready {
     #[doc = "CAMP2 is not ready."]
-    CAMP2_READY_0 = 0x0,
+    Camp2Ready0 = 0x0,
     #[doc = "CAMP2 is ready."]
-    CAMP2_READY_1 = 0x01,
+    Camp2Ready1 = 0x01,
 }
 impl Camp2Ready {
     #[inline(always)]
@@ -244,133 +244,133 @@ impl From<Camp2Ready> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CanClkPodf {
     #[doc = "Divide by 1."]
-    DIVIDE_1 = 0x0,
+    Divide1 = 0x0,
     #[doc = "Divide by 2."]
-    DIVIDE_2 = 0x01,
+    Divide2 = 0x01,
     #[doc = "Divide by 3."]
-    DIVIDE_3 = 0x02,
+    Divide3 = 0x02,
     #[doc = "Divide by 4."]
-    DIVIDE_4 = 0x03,
+    Divide4 = 0x03,
     #[doc = "Divide by 5."]
-    DIVIDE_5 = 0x04,
+    Divide5 = 0x04,
     #[doc = "Divide by 6."]
-    DIVIDE_6 = 0x05,
+    Divide6 = 0x05,
     #[doc = "Divide by 7."]
-    DIVIDE_7 = 0x06,
+    Divide7 = 0x06,
     #[doc = "Divide by 8."]
-    DIVIDE_8 = 0x07,
+    Divide8 = 0x07,
     #[doc = "Divide by 9."]
-    DIVIDE_9 = 0x08,
+    Divide9 = 0x08,
     #[doc = "Divide by 10."]
-    DIVIDE_10 = 0x09,
+    Divide10 = 0x09,
     #[doc = "Divide by 11."]
-    DIVIDE_11 = 0x0a,
+    Divide11 = 0x0a,
     #[doc = "Divide by 12."]
-    DIVIDE_12 = 0x0b,
+    Divide12 = 0x0b,
     #[doc = "Divide by 13."]
-    DIVIDE_13 = 0x0c,
+    Divide13 = 0x0c,
     #[doc = "Divide by 14."]
-    DIVIDE_14 = 0x0d,
+    Divide14 = 0x0d,
     #[doc = "Divide by 15."]
-    DIVIDE_15 = 0x0e,
+    Divide15 = 0x0e,
     #[doc = "Divide by 16."]
-    DIVIDE_16 = 0x0f,
+    Divide16 = 0x0f,
     #[doc = "Divide by 17."]
-    DIVIDE_17 = 0x10,
+    Divide17 = 0x10,
     #[doc = "Divide by 18."]
-    DIVIDE_18 = 0x11,
+    Divide18 = 0x11,
     #[doc = "Divide by 19."]
-    DIVIDE_19 = 0x12,
+    Divide19 = 0x12,
     #[doc = "Divide by 20."]
-    DIVIDE_20 = 0x13,
+    Divide20 = 0x13,
     #[doc = "Divide by 21."]
-    DIVIDE_21 = 0x14,
+    Divide21 = 0x14,
     #[doc = "Divide by 22."]
-    DIVIDE_22 = 0x15,
+    Divide22 = 0x15,
     #[doc = "Divide by 23."]
-    DIVIDE_23 = 0x16,
+    Divide23 = 0x16,
     #[doc = "Divide by 24."]
-    DIVIDE_24 = 0x17,
+    Divide24 = 0x17,
     #[doc = "Divide by 25."]
-    DIVIDE_25 = 0x18,
+    Divide25 = 0x18,
     #[doc = "Divide by 26."]
-    DIVIDE_26 = 0x19,
+    Divide26 = 0x19,
     #[doc = "Divide by 27."]
-    DIVIDE_27 = 0x1a,
+    Divide27 = 0x1a,
     #[doc = "Divide by 28."]
-    DIVIDE_28 = 0x1b,
+    Divide28 = 0x1b,
     #[doc = "Divide by 29."]
-    DIVIDE_29 = 0x1c,
+    Divide29 = 0x1c,
     #[doc = "Divide by 30."]
-    DIVIDE_30 = 0x1d,
+    Divide30 = 0x1d,
     #[doc = "Divide by 31."]
-    DIVIDE_31 = 0x1e,
+    Divide31 = 0x1e,
     #[doc = "Divide by 32."]
-    DIVIDE_32 = 0x1f,
+    Divide32 = 0x1f,
     #[doc = "Divide by 33."]
-    DIVIDE_33 = 0x20,
+    Divide33 = 0x20,
     #[doc = "Divide by 34."]
-    DIVIDE_34 = 0x21,
+    Divide34 = 0x21,
     #[doc = "Divide by 35."]
-    DIVIDE_35 = 0x22,
+    Divide35 = 0x22,
     #[doc = "Divide by 36."]
-    DIVIDE_36 = 0x23,
+    Divide36 = 0x23,
     #[doc = "Divide by 37."]
-    DIVIDE_37 = 0x24,
+    Divide37 = 0x24,
     #[doc = "Divide by 38."]
-    DIVIDE_38 = 0x25,
+    Divide38 = 0x25,
     #[doc = "Divide by 39."]
-    DIVIDE_39 = 0x26,
+    Divide39 = 0x26,
     #[doc = "Divide by 40."]
-    DIVIDE_40 = 0x27,
+    Divide40 = 0x27,
     #[doc = "Divide by 41."]
-    DIVIDE_41 = 0x28,
+    Divide41 = 0x28,
     #[doc = "Divide by 42."]
-    DIVIDE_42 = 0x29,
+    Divide42 = 0x29,
     #[doc = "Divide by 43."]
-    DIVIDE_43 = 0x2a,
+    Divide43 = 0x2a,
     #[doc = "Divide by 44."]
-    DIVIDE_44 = 0x2b,
+    Divide44 = 0x2b,
     #[doc = "Divide by 45."]
-    DIVIDE_45 = 0x2c,
+    Divide45 = 0x2c,
     #[doc = "Divide by 46."]
-    DIVIDE_46 = 0x2d,
+    Divide46 = 0x2d,
     #[doc = "Divide by 47."]
-    DIVIDE_47 = 0x2e,
+    Divide47 = 0x2e,
     #[doc = "Divide by 48."]
-    DIVIDE_48 = 0x2f,
+    Divide48 = 0x2f,
     #[doc = "Divide by 49."]
-    DIVIDE_49 = 0x30,
+    Divide49 = 0x30,
     #[doc = "Divide by 50."]
-    DIVIDE_50 = 0x31,
+    Divide50 = 0x31,
     #[doc = "Divide by 51."]
-    DIVIDE_51 = 0x32,
+    Divide51 = 0x32,
     #[doc = "Divide by 52."]
-    DIVIDE_52 = 0x33,
+    Divide52 = 0x33,
     #[doc = "Divide by 53."]
-    DIVIDE_53 = 0x34,
+    Divide53 = 0x34,
     #[doc = "Divide by 54."]
-    DIVIDE_54 = 0x35,
+    Divide54 = 0x35,
     #[doc = "Divide by 55."]
-    DIVIDE_55 = 0x36,
+    Divide55 = 0x36,
     #[doc = "Divide by 56."]
-    DIVIDE_56 = 0x37,
+    Divide56 = 0x37,
     #[doc = "Divide by 57."]
-    DIVIDE_57 = 0x38,
+    Divide57 = 0x38,
     #[doc = "Divide by 58."]
-    DIVIDE_58 = 0x39,
+    Divide58 = 0x39,
     #[doc = "Divide by 59."]
-    DIVIDE_59 = 0x3a,
+    Divide59 = 0x3a,
     #[doc = "Divide by 60."]
-    DIVIDE_60 = 0x3b,
+    Divide60 = 0x3b,
     #[doc = "Divide by 61."]
-    DIVIDE_61 = 0x3c,
+    Divide61 = 0x3c,
     #[doc = "Divide by 62."]
-    DIVIDE_62 = 0x3d,
+    Divide62 = 0x3d,
     #[doc = "Divide by 63."]
-    DIVIDE_63 = 0x3e,
+    Divide63 = 0x3e,
     #[doc = "Divide by 64."]
-    DIVIDE_64 = 0x3f,
+    Divide64 = 0x3f,
 }
 impl CanClkPodf {
     #[inline(always)]
@@ -399,13 +399,13 @@ impl From<CanClkPodf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CanClkSel {
     #[doc = "derive clock from pll3_sw_clk divided clock (60M)."]
-    CAN_CLK_SEL_0 = 0x0,
+    CanClkSel0 = 0x0,
     #[doc = "derive clock from osc_clk (24M)."]
-    CAN_CLK_SEL_1 = 0x01,
+    CanClkSel1 = 0x01,
     #[doc = "derive clock from pll3_sw_clk divided clock (80M)."]
-    CAN_CLK_SEL_2 = 0x02,
+    CanClkSel2 = 0x02,
     #[doc = "Disable FlexCAN clock."]
-    CAN_CLK_SEL_3 = 0x03,
+    CanClkSel3 = 0x03,
 }
 impl CanClkSel {
     #[inline(always)]
@@ -434,9 +434,9 @@ impl From<CanClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CimrArmPodfLoaded {
     #[doc = "don't mask interrupt due to frequency change of arm_podf - interrupt will be created."]
-    ARM_PODF_LOADED_0 = 0x0,
+    ArmPodfLoaded0 = 0x0,
     #[doc = "mask interrupt due to frequency change of arm_podf."]
-    ARM_PODF_LOADED_1 = 0x01,
+    ArmPodfLoaded1 = 0x01,
 }
 impl CimrArmPodfLoaded {
     #[inline(always)]
@@ -465,9 +465,9 @@ impl From<CimrArmPodfLoaded> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CisrArmPodfLoaded {
     #[doc = "interrupt is not generated due to frequency change of arm_podf."]
-    ARM_PODF_LOADED_0 = 0x0,
+    ArmPodfLoaded0 = 0x0,
     #[doc = "interrupt generated due to frequency change of arm_podf."]
-    ARM_PODF_LOADED_1 = 0x01,
+    ArmPodfLoaded1 = 0x01,
 }
 impl CisrArmPodfLoaded {
     #[inline(always)]
@@ -496,9 +496,9 @@ impl From<CisrArmPodfLoaded> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CisrCoscReady {
     #[doc = "interrupt is not generated due to on board oscillator ready."]
-    COSC_READY_0 = 0x0,
+    CoscReady0 = 0x0,
     #[doc = "interrupt generated due to on board oscillator ready."]
-    COSC_READY_1 = 0x01,
+    CoscReady1 = 0x01,
 }
 impl CisrCoscReady {
     #[inline(always)]
@@ -527,9 +527,9 @@ impl From<CisrCoscReady> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ClkOutSel {
     #[doc = "CCM_CLKO1 output drives CCM_CLKO1 clock."]
-    CLK_OUT_SEL_0 = 0x0,
+    ClkOutSel0 = 0x0,
     #[doc = "CCM_CLKO1 output drives CCM_CLKO2 clock."]
-    CLK_OUT_SEL_1 = 0x01,
+    ClkOutSel1 = 0x01,
 }
 impl ClkOutSel {
     #[inline(always)]
@@ -558,21 +558,21 @@ impl From<ClkOutSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Clko1Div {
     #[doc = "divide by 1."]
-    CLKO1_DIV_0 = 0x0,
+    Clko1Div0 = 0x0,
     #[doc = "divide by 2."]
-    CLKO1_DIV_1 = 0x01,
+    Clko1Div1 = 0x01,
     #[doc = "divide by 3."]
-    CLKO1_DIV_2 = 0x02,
+    Clko1Div2 = 0x02,
     #[doc = "divide by 4."]
-    CLKO1_DIV_3 = 0x03,
+    Clko1Div3 = 0x03,
     #[doc = "divide by 5."]
-    CLKO1_DIV_4 = 0x04,
+    Clko1Div4 = 0x04,
     #[doc = "divide by 6."]
-    CLKO1_DIV_5 = 0x05,
+    Clko1Div5 = 0x05,
     #[doc = "divide by 7."]
-    CLKO1_DIV_6 = 0x06,
+    Clko1Div6 = 0x06,
     #[doc = "divide by 8."]
-    CLKO1_DIV_7 = 0x07,
+    Clko1Div7 = 0x07,
 }
 impl Clko1Div {
     #[inline(always)]
@@ -601,9 +601,9 @@ impl From<Clko1Div> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Clko1En {
     #[doc = "CCM_CLKO1 disabled."]
-    CLKO1_EN_0 = 0x0,
+    Clko1En0 = 0x0,
     #[doc = "CCM_CLKO1 enabled."]
-    CLKO1_EN_1 = 0x01,
+    Clko1En1 = 0x01,
 }
 impl Clko1En {
     #[inline(always)]
@@ -632,31 +632,31 @@ impl From<Clko1En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Clko1Sel {
     #[doc = "USB1 PLL clock (divided by 2)."]
-    CLKO1_SEL_0 = 0x0,
+    Clko1Sel0 = 0x0,
     #[doc = "SYS PLL clock (divided by 2)."]
-    CLKO1_SEL_1 = 0x01,
+    Clko1Sel1 = 0x01,
     _RESERVED_2 = 0x02,
     #[doc = "VIDEO PLL clock (divided by 2)."]
-    CLKO1_SEL_3 = 0x03,
+    Clko1Sel3 = 0x03,
     _RESERVED_4 = 0x04,
     #[doc = "semc_clk_root."]
-    CLKO1_SEL_5 = 0x05,
+    Clko1Sel5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
     _RESERVED_8 = 0x08,
     _RESERVED_9 = 0x09,
     #[doc = "lcdif_pix_clk_root."]
-    CLKO1_SEL_10 = 0x0a,
+    Clko1Sel10 = 0x0a,
     #[doc = "ahb_clk_root."]
-    CLKO1_SEL_11 = 0x0b,
+    Clko1Sel11 = 0x0b,
     #[doc = "ipg_clk_root."]
-    CLKO1_SEL_12 = 0x0c,
+    Clko1Sel12 = 0x0c,
     #[doc = "perclk_root."]
-    CLKO1_SEL_13 = 0x0d,
+    Clko1Sel13 = 0x0d,
     #[doc = "ckil_sync_clk_root."]
-    CLKO1_SEL_14 = 0x0e,
+    Clko1Sel14 = 0x0e,
     #[doc = "pll4_main_clk."]
-    CLKO1_SEL_15 = 0x0f,
+    Clko1Sel15 = 0x0f,
 }
 impl Clko1Sel {
     #[inline(always)]
@@ -685,21 +685,21 @@ impl From<Clko1Sel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Clko2Div {
     #[doc = "divide by 1."]
-    CLKO2_DIV_0 = 0x0,
+    Clko2Div0 = 0x0,
     #[doc = "divide by 2."]
-    CLKO2_DIV_1 = 0x01,
+    Clko2Div1 = 0x01,
     #[doc = "divide by 3."]
-    CLKO2_DIV_2 = 0x02,
+    Clko2Div2 = 0x02,
     #[doc = "divide by 4."]
-    CLKO2_DIV_3 = 0x03,
+    Clko2Div3 = 0x03,
     #[doc = "divide by 5."]
-    CLKO2_DIV_4 = 0x04,
+    Clko2Div4 = 0x04,
     #[doc = "divide by 6."]
-    CLKO2_DIV_5 = 0x05,
+    Clko2Div5 = 0x05,
     #[doc = "divide by 7."]
-    CLKO2_DIV_6 = 0x06,
+    Clko2Div6 = 0x06,
     #[doc = "divide by 8."]
-    CLKO2_DIV_7 = 0x07,
+    Clko2Div7 = 0x07,
 }
 impl Clko2Div {
     #[inline(always)]
@@ -728,9 +728,9 @@ impl From<Clko2Div> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Clko2En {
     #[doc = "CCM_CLKO2 disabled."]
-    CLKO2_EN_0 = 0x0,
+    Clko2En0 = 0x0,
     #[doc = "CCM_CLKO2 enabled."]
-    CLKO2_EN_1 = 0x01,
+    Clko2En1 = 0x01,
 }
 impl Clko2En {
     #[inline(always)]
@@ -762,44 +762,44 @@ pub enum Clko2Sel {
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     #[doc = "usdhc1_clk_root."]
-    CLKO2_SEL_3 = 0x03,
+    Clko2Sel3 = 0x03,
     _RESERVED_4 = 0x04,
     _RESERVED_5 = 0x05,
     #[doc = "lpi2c_clk_root."]
-    CLKO2_SEL_6 = 0x06,
+    Clko2Sel6 = 0x06,
     _RESERVED_7 = 0x07,
     _RESERVED_8 = 0x08,
     _RESERVED_9 = 0x09,
     _RESERVED_a = 0x0a,
     #[doc = "csi_clk_root."]
-    CLKO2_SEL_11 = 0x0b,
+    Clko2Sel11 = 0x0b,
     _RESERVED_c = 0x0c,
     _RESERVED_d = 0x0d,
     #[doc = "osc_clk."]
-    CLKO2_SEL_14 = 0x0e,
+    Clko2Sel14 = 0x0e,
     _RESERVED_f = 0x0f,
     _RESERVED_10 = 0x10,
     #[doc = "usdhc2_clk_root."]
-    CLKO2_SEL_17 = 0x11,
+    Clko2Sel17 = 0x11,
     #[doc = "sai1_clk_root."]
-    CLKO2_SEL_18 = 0x12,
+    Clko2Sel18 = 0x12,
     #[doc = "sai2_clk_root."]
-    CLKO2_SEL_19 = 0x13,
+    Clko2Sel19 = 0x13,
     #[doc = "sai3_clk_root (shared with ADC1 and ADC2 alt_clk root)."]
-    CLKO2_SEL_20 = 0x14,
+    Clko2Sel20 = 0x14,
     _RESERVED_15 = 0x15,
     _RESERVED_16 = 0x16,
     #[doc = "can_clk_root (FlexCAN, shared with CANFD)."]
-    CLKO2_SEL_23 = 0x17,
+    Clko2Sel23 = 0x17,
     _RESERVED_18 = 0x18,
     _RESERVED_19 = 0x19,
     _RESERVED_1a = 0x1a,
     #[doc = "flexspi_clk_root."]
-    CLKO2_SEL_27 = 0x1b,
+    Clko2Sel27 = 0x1b,
     #[doc = "uart_clk_root."]
-    CLKO2_SEL_28 = 0x1c,
+    Clko2Sel28 = 0x1c,
     #[doc = "spdif0_clk_root."]
-    CLKO2_SEL_29 = 0x1d,
+    Clko2Sel29 = 0x1d,
     _RESERVED_1e = 0x1e,
     _RESERVED_1f = 0x1f,
 }
@@ -830,9 +830,9 @@ impl From<Clko2Sel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CoscEn {
     #[doc = "disable on chip oscillator."]
-    COSC_EN_0 = 0x0,
+    CoscEn0 = 0x0,
     #[doc = "enable on chip oscillator."]
-    COSC_EN_1 = 0x01,
+    CoscEn1 = 0x01,
 }
 impl CoscEn {
     #[inline(always)]
@@ -861,9 +861,9 @@ impl From<CoscEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CoscPwrdown {
     #[doc = "On chip oscillator will not be powered down, i.e. cosc_pwrdown = '0'."]
-    COSC_PWRDOWN_0 = 0x0,
+    CoscPwrdown0 = 0x0,
     #[doc = "On chip oscillator will be powered down, i.e. cosc_pwrdown = '1'."]
-    COSC_PWRDOWN_1 = 0x01,
+    CoscPwrdown1 = 0x01,
 }
 impl CoscPwrdown {
     #[inline(always)]
@@ -892,13 +892,13 @@ impl From<CoscPwrdown> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CsiClkSel {
     #[doc = "derive clock from osc_clk (24M)."]
-    CSI_CLK_SEL_0 = 0x0,
+    CsiClkSel0 = 0x0,
     #[doc = "derive clock from PLL2 PFD2."]
-    CSI_CLK_SEL_1 = 0x01,
+    CsiClkSel1 = 0x01,
     #[doc = "derive clock from pll3_120M."]
-    CSI_CLK_SEL_2 = 0x02,
+    CsiClkSel2 = 0x02,
     #[doc = "derive clock from PLL3 PFD1."]
-    CSI_CLK_SEL_3 = 0x03,
+    CsiClkSel3 = 0x03,
 }
 impl CsiClkSel {
     #[inline(always)]
@@ -927,21 +927,21 @@ impl From<CsiClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CsiPodf {
     #[doc = "divide by 1."]
-    CSI_PODF_0 = 0x0,
+    CsiPodf0 = 0x0,
     #[doc = "divide by 2."]
-    CSI_PODF_1 = 0x01,
+    CsiPodf1 = 0x01,
     #[doc = "divide by 3."]
-    CSI_PODF_2 = 0x02,
+    CsiPodf2 = 0x02,
     #[doc = "divide by 4."]
-    CSI_PODF_3 = 0x03,
+    CsiPodf3 = 0x03,
     #[doc = "divide by 5."]
-    CSI_PODF_4 = 0x04,
+    CsiPodf4 = 0x04,
     #[doc = "divide by 6."]
-    CSI_PODF_5 = 0x05,
+    CsiPodf5 = 0x05,
     #[doc = "divide by 7."]
-    CSI_PODF_6 = 0x06,
+    CsiPodf6 = 0x06,
     #[doc = "divide by 8."]
-    CSI_PODF_7 = 0x07,
+    CsiPodf7 = 0x07,
 }
 impl CsiPodf {
     #[inline(always)]
@@ -970,9 +970,9 @@ impl From<CsiPodf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CsrCoscReady {
     #[doc = "on board oscillator is not ready."]
-    COSC_READY_0 = 0x0,
+    CoscReady0 = 0x0,
     #[doc = "on board oscillator is ready."]
-    COSC_READY_1 = 0x01,
+    CoscReady1 = 0x01,
 }
 impl CsrCoscReady {
     #[inline(always)]
@@ -1001,9 +1001,9 @@ impl From<CsrCoscReady> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DisRefOsc {
     #[doc = "external high frequency oscillator will be enabled, i.e. CCM_REF_EN_B = '0'."]
-    DIS_REF_OSC_0 = 0x0,
+    DisRefOsc0 = 0x0,
     #[doc = "external high frequency oscillator will be disabled, i.e. CCM_REF_EN_B = '1'."]
-    DIS_REF_OSC_1 = 0x01,
+    DisRefOsc1 = 0x01,
 }
 impl DisRefOsc {
     #[inline(always)]
@@ -1032,9 +1032,9 @@ impl From<DisRefOsc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EfuseProgSupplyGate {
     #[doc = "fuse programing supply voltage is gated off to the efuse module."]
-    EFUSE_PROG_SUPPLY_GATE_0 = 0x0,
+    EfuseProgSupplyGate0 = 0x0,
     #[doc = "allow fuse programing."]
-    EFUSE_PROG_SUPPLY_GATE_1 = 0x01,
+    EfuseProgSupplyGate1 = 0x01,
 }
 impl EfuseProgSupplyGate {
     #[inline(always)]
@@ -1063,21 +1063,21 @@ impl From<EfuseProgSupplyGate> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexio1ClkPodf {
     #[doc = "Divide by 1."]
-    DIVIDE_1 = 0x0,
+    Divide1 = 0x0,
     #[doc = "Divide by 2."]
-    DIVIDE_2 = 0x01,
+    Divide2 = 0x01,
     #[doc = "Divide by 3."]
-    DIVIDE_3 = 0x02,
+    Divide3 = 0x02,
     #[doc = "Divide by 4."]
-    DIVIDE_4 = 0x03,
+    Divide4 = 0x03,
     #[doc = "Divide by 5."]
-    DIVIDE_5 = 0x04,
+    Divide5 = 0x04,
     #[doc = "Divide by 6."]
-    DIVIDE_6 = 0x05,
+    Divide6 = 0x05,
     #[doc = "Divide by 7."]
-    DIVIDE_7 = 0x06,
+    Divide7 = 0x06,
     #[doc = "Divide by 8."]
-    DIVIDE_8 = 0x07,
+    Divide8 = 0x07,
 }
 impl Flexio1ClkPodf {
     #[inline(always)]
@@ -1106,21 +1106,21 @@ impl From<Flexio1ClkPodf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexio1ClkPred {
     #[doc = "Divide by 1."]
-    DIVIDE_1 = 0x0,
+    Divide1 = 0x0,
     #[doc = "Divide by 2."]
-    DIVIDE_2 = 0x01,
+    Divide2 = 0x01,
     #[doc = "Divide by 3."]
-    DIVIDE_3 = 0x02,
+    Divide3 = 0x02,
     #[doc = "Divide by 4."]
-    DIVIDE_4 = 0x03,
+    Divide4 = 0x03,
     #[doc = "Divide by 5."]
-    DIVIDE_5 = 0x04,
+    Divide5 = 0x04,
     #[doc = "Divide by 6."]
-    DIVIDE_6 = 0x05,
+    Divide6 = 0x05,
     #[doc = "Divide by 7."]
-    DIVIDE_7 = 0x06,
+    Divide7 = 0x06,
     #[doc = "Divide by 8."]
-    DIVIDE_8 = 0x07,
+    Divide8 = 0x07,
 }
 impl Flexio1ClkPred {
     #[inline(always)]
@@ -1149,13 +1149,13 @@ impl From<Flexio1ClkPred> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexio1ClkSel {
     #[doc = "derive clock from PLL4."]
-    FLEXIO1_CLK_SEL_0 = 0x0,
+    Flexio1ClkSel0 = 0x0,
     #[doc = "derive clock from PLL3 PFD2."]
-    FLEXIO1_CLK_SEL_1 = 0x01,
+    Flexio1ClkSel1 = 0x01,
     #[doc = "derive clock from PLL5."]
-    FLEXIO1_CLK_SEL_2 = 0x02,
+    Flexio1ClkSel2 = 0x02,
     #[doc = "derive clock from pll3_sw_clk."]
-    FLEXIO1_CLK_SEL_3 = 0x03,
+    Flexio1ClkSel3 = 0x03,
 }
 impl Flexio1ClkSel {
     #[inline(always)]
@@ -1184,21 +1184,21 @@ impl From<Flexio1ClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexio2ClkPodf {
     #[doc = "Divide by 1."]
-    DIVIDE_1 = 0x0,
+    Divide1 = 0x0,
     #[doc = "Divide by 2."]
-    DIVIDE_2 = 0x01,
+    Divide2 = 0x01,
     #[doc = "Divide by 3."]
-    DIVIDE_3 = 0x02,
+    Divide3 = 0x02,
     #[doc = "Divide by 4."]
-    DIVIDE_4 = 0x03,
+    Divide4 = 0x03,
     #[doc = "Divide by 5."]
-    DIVIDE_5 = 0x04,
+    Divide5 = 0x04,
     #[doc = "Divide by 6."]
-    DIVIDE_6 = 0x05,
+    Divide6 = 0x05,
     #[doc = "Divide by 7."]
-    DIVIDE_7 = 0x06,
+    Divide7 = 0x06,
     #[doc = "Divide by 8."]
-    DIVIDE_8 = 0x07,
+    Divide8 = 0x07,
 }
 impl Flexio2ClkPodf {
     #[inline(always)]
@@ -1227,21 +1227,21 @@ impl From<Flexio2ClkPodf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexio2ClkPred {
     #[doc = "divide by 1."]
-    FLEXIO2_CLK_PRED_0 = 0x0,
+    Flexio2ClkPred0 = 0x0,
     #[doc = "divide by 2."]
-    FLEXIO2_CLK_PRED_1 = 0x01,
+    Flexio2ClkPred1 = 0x01,
     #[doc = "divide by 3."]
-    FLEXIO2_CLK_PRED_2 = 0x02,
+    Flexio2ClkPred2 = 0x02,
     #[doc = "divide by 4."]
-    FLEXIO2_CLK_PRED_3 = 0x03,
+    Flexio2ClkPred3 = 0x03,
     #[doc = "divide by 5."]
-    FLEXIO2_CLK_PRED_4 = 0x04,
+    Flexio2ClkPred4 = 0x04,
     #[doc = "divide by 6."]
-    FLEXIO2_CLK_PRED_5 = 0x05,
+    Flexio2ClkPred5 = 0x05,
     #[doc = "divide by 7."]
-    FLEXIO2_CLK_PRED_6 = 0x06,
+    Flexio2ClkPred6 = 0x06,
     #[doc = "divide by 8."]
-    FLEXIO2_CLK_PRED_7 = 0x07,
+    Flexio2ClkPred7 = 0x07,
 }
 impl Flexio2ClkPred {
     #[inline(always)]
@@ -1270,13 +1270,13 @@ impl From<Flexio2ClkPred> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexio2ClkSel {
     #[doc = "derive clock from PLL4 divided clock."]
-    FLEXIO2_CLK_SEL_0 = 0x0,
+    Flexio2ClkSel0 = 0x0,
     #[doc = "derive clock from PLL3 PFD2 clock."]
-    FLEXIO2_CLK_SEL_1 = 0x01,
+    Flexio2ClkSel1 = 0x01,
     #[doc = "derive clock from PLL5 clock."]
-    FLEXIO2_CLK_SEL_2 = 0x02,
+    Flexio2ClkSel2 = 0x02,
     #[doc = "derive clock from pll3_sw_clk."]
-    FLEXIO2_CLK_SEL_3 = 0x03,
+    Flexio2ClkSel3 = 0x03,
 }
 impl Flexio2ClkSel {
     #[inline(always)]
@@ -1305,13 +1305,13 @@ impl From<Flexio2ClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexspi2ClkSel {
     #[doc = "derive clock from PLL2 PFD2."]
-    FLEXSPI2_CLK_SEL_0 = 0x0,
+    Flexspi2ClkSel0 = 0x0,
     #[doc = "derive clock from PLL3 PFD0."]
-    FLEXSPI2_CLK_SEL_1 = 0x01,
+    Flexspi2ClkSel1 = 0x01,
     #[doc = "derive clock from PLL3 PFD1."]
-    FLEXSPI2_CLK_SEL_2 = 0x02,
+    Flexspi2ClkSel2 = 0x02,
     #[doc = "derive clock from PLL2 (pll2_main_clk)."]
-    FLEXSPI2_CLK_SEL_3 = 0x03,
+    Flexspi2ClkSel3 = 0x03,
 }
 impl Flexspi2ClkSel {
     #[inline(always)]
@@ -1340,21 +1340,21 @@ impl From<Flexspi2ClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexspi2Podf {
     #[doc = "divide by 1."]
-    FLEXSPI2_PODF_0 = 0x0,
+    Flexspi2Podf0 = 0x0,
     #[doc = "divide by 2."]
-    FLEXSPI2_PODF_1 = 0x01,
+    Flexspi2Podf1 = 0x01,
     #[doc = "divide by 3."]
-    FLEXSPI2_PODF_2 = 0x02,
+    Flexspi2Podf2 = 0x02,
     #[doc = "divide by 4."]
-    FLEXSPI2_PODF_3 = 0x03,
+    Flexspi2Podf3 = 0x03,
     #[doc = "divide by 5."]
-    FLEXSPI2_PODF_4 = 0x04,
+    Flexspi2Podf4 = 0x04,
     #[doc = "divide by 6."]
-    FLEXSPI2_PODF_5 = 0x05,
+    Flexspi2Podf5 = 0x05,
     #[doc = "divide by 7."]
-    FLEXSPI2_PODF_6 = 0x06,
+    Flexspi2Podf6 = 0x06,
     #[doc = "divide by 8."]
-    FLEXSPI2_PODF_7 = 0x07,
+    Flexspi2Podf7 = 0x07,
 }
 impl Flexspi2Podf {
     #[inline(always)]
@@ -1383,13 +1383,13 @@ impl From<Flexspi2Podf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FlexspiClkSel {
     #[doc = "derive clock from semc_clk_root_pre."]
-    FLEXSPI_CLK_SEL_0 = 0x0,
+    FlexspiClkSel0 = 0x0,
     #[doc = "derive clock from pll3_sw_clk."]
-    FLEXSPI_CLK_SEL_1 = 0x01,
+    FlexspiClkSel1 = 0x01,
     #[doc = "derive clock from PLL2 PFD2."]
-    FLEXSPI_CLK_SEL_2 = 0x02,
+    FlexspiClkSel2 = 0x02,
     #[doc = "derive clock from PLL3 PFD0."]
-    FLEXSPI_CLK_SEL_3 = 0x03,
+    FlexspiClkSel3 = 0x03,
 }
 impl FlexspiClkSel {
     #[inline(always)]
@@ -1418,21 +1418,21 @@ impl From<FlexspiClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FlexspiPodf {
     #[doc = "divide by 1."]
-    FLEXSPI_PODF_0 = 0x0,
+    FlexspiPodf0 = 0x0,
     #[doc = "divide by 2."]
-    FLEXSPI_PODF_1 = 0x01,
+    FlexspiPodf1 = 0x01,
     #[doc = "divide by 3."]
-    FLEXSPI_PODF_2 = 0x02,
+    FlexspiPodf2 = 0x02,
     #[doc = "divide by 4."]
-    FLEXSPI_PODF_3 = 0x03,
+    FlexspiPodf3 = 0x03,
     #[doc = "divide by 5."]
-    FLEXSPI_PODF_4 = 0x04,
+    FlexspiPodf4 = 0x04,
     #[doc = "divide by 6."]
-    FLEXSPI_PODF_5 = 0x05,
+    FlexspiPodf5 = 0x05,
     #[doc = "divide by 7."]
-    FLEXSPI_PODF_6 = 0x06,
+    FlexspiPodf6 = 0x06,
     #[doc = "divide by 8."]
-    FLEXSPI_PODF_7 = 0x07,
+    FlexspiPodf7 = 0x07,
 }
 impl FlexspiPodf {
     #[inline(always)]
@@ -1461,9 +1461,9 @@ impl From<FlexspiPodf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fpl {
     #[doc = "Engage PLL enable default way."]
-    FPL_0 = 0x0,
+    Fpl0 = 0x0,
     #[doc = "Engage PLL enable 3 CKIL clocks earlier at exiting low power mode (STOP). Should be used only if 24MHz OSC was active in low power mode."]
-    FPL_1 = 0x01,
+    Fpl1 = 0x01,
 }
 impl Fpl {
     #[inline(always)]
@@ -1492,9 +1492,9 @@ impl From<Fpl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum IntMemClkLpm {
     #[doc = "Disable the clock to the Arm platform memories when entering Low Power Mode."]
-    INT_MEM_CLK_LPM_0 = 0x0,
+    IntMemClkLpm0 = 0x0,
     #[doc = "Keep the clocks to the Arm platform memories enabled only if an interrupt is pending when entering Low Power Modes (WAIT and STOP without power gating)."]
-    INT_MEM_CLK_LPM_1 = 0x01,
+    IntMemClkLpm1 = 0x01,
 }
 impl IntMemClkLpm {
     #[inline(always)]
@@ -1523,13 +1523,13 @@ impl From<IntMemClkLpm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum IpgPodf {
     #[doc = "divide by 1."]
-    IPG_PODF_0 = 0x0,
+    IpgPodf0 = 0x0,
     #[doc = "divide by 2."]
-    IPG_PODF_1 = 0x01,
+    IpgPodf1 = 0x01,
     #[doc = "divide by 3."]
-    IPG_PODF_2 = 0x02,
+    IpgPodf2 = 0x02,
     #[doc = "divide by 4."]
-    IPG_PODF_3 = 0x03,
+    IpgPodf3 = 0x03,
 }
 impl IpgPodf {
     #[inline(always)]
@@ -1558,21 +1558,21 @@ impl From<IpgPodf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LcdifPodf {
     #[doc = "divide by 1."]
-    LCDIF_PODF_0 = 0x0,
+    LcdifPodf0 = 0x0,
     #[doc = "divide by 2."]
-    LCDIF_PODF_1 = 0x01,
+    LcdifPodf1 = 0x01,
     #[doc = "divide by 3."]
-    LCDIF_PODF_2 = 0x02,
+    LcdifPodf2 = 0x02,
     #[doc = "divide by 4."]
-    LCDIF_PODF_3 = 0x03,
+    LcdifPodf3 = 0x03,
     #[doc = "divide by 5."]
-    LCDIF_PODF_4 = 0x04,
+    LcdifPodf4 = 0x04,
     #[doc = "divide by 6."]
-    LCDIF_PODF_5 = 0x05,
+    LcdifPodf5 = 0x05,
     #[doc = "divide by 7."]
-    LCDIF_PODF_6 = 0x06,
+    LcdifPodf6 = 0x06,
     #[doc = "divide by 8."]
-    LCDIF_PODF_7 = 0x07,
+    LcdifPodf7 = 0x07,
 }
 impl LcdifPodf {
     #[inline(always)]
@@ -1601,17 +1601,17 @@ impl From<LcdifPodf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LcdifPreClkSel {
     #[doc = "derive clock from PLL2."]
-    LCDIF_PRE_CLK_SEL_0 = 0x0,
+    LcdifPreClkSel0 = 0x0,
     #[doc = "derive clock from PLL3 PFD3."]
-    LCDIF_PRE_CLK_SEL_1 = 0x01,
+    LcdifPreClkSel1 = 0x01,
     #[doc = "derive clock from PLL5."]
-    LCDIF_PRE_CLK_SEL_2 = 0x02,
+    LcdifPreClkSel2 = 0x02,
     #[doc = "derive clock from PLL2 PFD0."]
-    LCDIF_PRE_CLK_SEL_3 = 0x03,
+    LcdifPreClkSel3 = 0x03,
     #[doc = "derive clock from PLL2 PFD1."]
-    LCDIF_PRE_CLK_SEL_4 = 0x04,
+    LcdifPreClkSel4 = 0x04,
     #[doc = "derive clock from PLL3 PFD1."]
-    LCDIF_PRE_CLK_SEL_5 = 0x05,
+    LcdifPreClkSel5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
 }
@@ -1642,21 +1642,21 @@ impl From<LcdifPreClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LcdifPred {
     #[doc = "divide by 1."]
-    LCDIF_PRED_0 = 0x0,
+    LcdifPred0 = 0x0,
     #[doc = "divide by 2."]
-    LCDIF_PRED_1 = 0x01,
+    LcdifPred1 = 0x01,
     #[doc = "divide by 3."]
-    LCDIF_PRED_2 = 0x02,
+    LcdifPred2 = 0x02,
     #[doc = "divide by 4."]
-    LCDIF_PRED_3 = 0x03,
+    LcdifPred3 = 0x03,
     #[doc = "divide by 5."]
-    LCDIF_PRED_4 = 0x04,
+    LcdifPred4 = 0x04,
     #[doc = "divide by 6."]
-    LCDIF_PRED_5 = 0x05,
+    LcdifPred5 = 0x05,
     #[doc = "divide by 7."]
-    LCDIF_PRED_6 = 0x06,
+    LcdifPred6 = 0x06,
     #[doc = "divide by 8."]
-    LCDIF_PRED_7 = 0x07,
+    LcdifPred7 = 0x07,
 }
 impl LcdifPred {
     #[inline(always)]
@@ -1685,133 +1685,133 @@ impl From<LcdifPred> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpi2cClkPodf {
     #[doc = "Divide by 1."]
-    DIVIDE_1 = 0x0,
+    Divide1 = 0x0,
     #[doc = "Divide by 2."]
-    DIVIDE_2 = 0x01,
+    Divide2 = 0x01,
     #[doc = "Divide by 3."]
-    DIVIDE_3 = 0x02,
+    Divide3 = 0x02,
     #[doc = "Divide by 4."]
-    DIVIDE_4 = 0x03,
+    Divide4 = 0x03,
     #[doc = "Divide by 5."]
-    DIVIDE_5 = 0x04,
+    Divide5 = 0x04,
     #[doc = "Divide by 6."]
-    DIVIDE_6 = 0x05,
+    Divide6 = 0x05,
     #[doc = "Divide by 7."]
-    DIVIDE_7 = 0x06,
+    Divide7 = 0x06,
     #[doc = "Divide by 8."]
-    DIVIDE_8 = 0x07,
+    Divide8 = 0x07,
     #[doc = "Divide by 9."]
-    DIVIDE_9 = 0x08,
+    Divide9 = 0x08,
     #[doc = "Divide by 10."]
-    DIVIDE_10 = 0x09,
+    Divide10 = 0x09,
     #[doc = "Divide by 11."]
-    DIVIDE_11 = 0x0a,
+    Divide11 = 0x0a,
     #[doc = "Divide by 12."]
-    DIVIDE_12 = 0x0b,
+    Divide12 = 0x0b,
     #[doc = "Divide by 13."]
-    DIVIDE_13 = 0x0c,
+    Divide13 = 0x0c,
     #[doc = "Divide by 14."]
-    DIVIDE_14 = 0x0d,
+    Divide14 = 0x0d,
     #[doc = "Divide by 15."]
-    DIVIDE_15 = 0x0e,
+    Divide15 = 0x0e,
     #[doc = "Divide by 16."]
-    DIVIDE_16 = 0x0f,
+    Divide16 = 0x0f,
     #[doc = "Divide by 17."]
-    DIVIDE_17 = 0x10,
+    Divide17 = 0x10,
     #[doc = "Divide by 18."]
-    DIVIDE_18 = 0x11,
+    Divide18 = 0x11,
     #[doc = "Divide by 19."]
-    DIVIDE_19 = 0x12,
+    Divide19 = 0x12,
     #[doc = "Divide by 20."]
-    DIVIDE_20 = 0x13,
+    Divide20 = 0x13,
     #[doc = "Divide by 21."]
-    DIVIDE_21 = 0x14,
+    Divide21 = 0x14,
     #[doc = "Divide by 22."]
-    DIVIDE_22 = 0x15,
+    Divide22 = 0x15,
     #[doc = "Divide by 23."]
-    DIVIDE_23 = 0x16,
+    Divide23 = 0x16,
     #[doc = "Divide by 24."]
-    DIVIDE_24 = 0x17,
+    Divide24 = 0x17,
     #[doc = "Divide by 25."]
-    DIVIDE_25 = 0x18,
+    Divide25 = 0x18,
     #[doc = "Divide by 26."]
-    DIVIDE_26 = 0x19,
+    Divide26 = 0x19,
     #[doc = "Divide by 27."]
-    DIVIDE_27 = 0x1a,
+    Divide27 = 0x1a,
     #[doc = "Divide by 28."]
-    DIVIDE_28 = 0x1b,
+    Divide28 = 0x1b,
     #[doc = "Divide by 29."]
-    DIVIDE_29 = 0x1c,
+    Divide29 = 0x1c,
     #[doc = "Divide by 30."]
-    DIVIDE_30 = 0x1d,
+    Divide30 = 0x1d,
     #[doc = "Divide by 31."]
-    DIVIDE_31 = 0x1e,
+    Divide31 = 0x1e,
     #[doc = "Divide by 32."]
-    DIVIDE_32 = 0x1f,
+    Divide32 = 0x1f,
     #[doc = "Divide by 33."]
-    DIVIDE_33 = 0x20,
+    Divide33 = 0x20,
     #[doc = "Divide by 34."]
-    DIVIDE_34 = 0x21,
+    Divide34 = 0x21,
     #[doc = "Divide by 35."]
-    DIVIDE_35 = 0x22,
+    Divide35 = 0x22,
     #[doc = "Divide by 36."]
-    DIVIDE_36 = 0x23,
+    Divide36 = 0x23,
     #[doc = "Divide by 37."]
-    DIVIDE_37 = 0x24,
+    Divide37 = 0x24,
     #[doc = "Divide by 38."]
-    DIVIDE_38 = 0x25,
+    Divide38 = 0x25,
     #[doc = "Divide by 39."]
-    DIVIDE_39 = 0x26,
+    Divide39 = 0x26,
     #[doc = "Divide by 40."]
-    DIVIDE_40 = 0x27,
+    Divide40 = 0x27,
     #[doc = "Divide by 41."]
-    DIVIDE_41 = 0x28,
+    Divide41 = 0x28,
     #[doc = "Divide by 42."]
-    DIVIDE_42 = 0x29,
+    Divide42 = 0x29,
     #[doc = "Divide by 43."]
-    DIVIDE_43 = 0x2a,
+    Divide43 = 0x2a,
     #[doc = "Divide by 44."]
-    DIVIDE_44 = 0x2b,
+    Divide44 = 0x2b,
     #[doc = "Divide by 45."]
-    DIVIDE_45 = 0x2c,
+    Divide45 = 0x2c,
     #[doc = "Divide by 46."]
-    DIVIDE_46 = 0x2d,
+    Divide46 = 0x2d,
     #[doc = "Divide by 47."]
-    DIVIDE_47 = 0x2e,
+    Divide47 = 0x2e,
     #[doc = "Divide by 48."]
-    DIVIDE_48 = 0x2f,
+    Divide48 = 0x2f,
     #[doc = "Divide by 49."]
-    DIVIDE_49 = 0x30,
+    Divide49 = 0x30,
     #[doc = "Divide by 50."]
-    DIVIDE_50 = 0x31,
+    Divide50 = 0x31,
     #[doc = "Divide by 51."]
-    DIVIDE_51 = 0x32,
+    Divide51 = 0x32,
     #[doc = "Divide by 52."]
-    DIVIDE_52 = 0x33,
+    Divide52 = 0x33,
     #[doc = "Divide by 53."]
-    DIVIDE_53 = 0x34,
+    Divide53 = 0x34,
     #[doc = "Divide by 54."]
-    DIVIDE_54 = 0x35,
+    Divide54 = 0x35,
     #[doc = "Divide by 55."]
-    DIVIDE_55 = 0x36,
+    Divide55 = 0x36,
     #[doc = "Divide by 56."]
-    DIVIDE_56 = 0x37,
+    Divide56 = 0x37,
     #[doc = "Divide by 57."]
-    DIVIDE_57 = 0x38,
+    Divide57 = 0x38,
     #[doc = "Divide by 58."]
-    DIVIDE_58 = 0x39,
+    Divide58 = 0x39,
     #[doc = "Divide by 59."]
-    DIVIDE_59 = 0x3a,
+    Divide59 = 0x3a,
     #[doc = "Divide by 60."]
-    DIVIDE_60 = 0x3b,
+    Divide60 = 0x3b,
     #[doc = "Divide by 61."]
-    DIVIDE_61 = 0x3c,
+    Divide61 = 0x3c,
     #[doc = "Divide by 62."]
-    DIVIDE_62 = 0x3d,
+    Divide62 = 0x3d,
     #[doc = "Divide by 63."]
-    DIVIDE_63 = 0x3e,
+    Divide63 = 0x3e,
     #[doc = "Divide by 64."]
-    DIVIDE_64 = 0x3f,
+    Divide64 = 0x3f,
 }
 impl Lpi2cClkPodf {
     #[inline(always)]
@@ -1840,9 +1840,9 @@ impl From<Lpi2cClkPodf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpi2cClkSel {
     #[doc = "derive clock from pll3_60m."]
-    LPI2C_CLK_SEL_0 = 0x0,
+    Lpi2cClkSel0 = 0x0,
     #[doc = "derive clock from osc_clk."]
-    LPI2C_CLK_SEL_1 = 0x01,
+    Lpi2cClkSel1 = 0x01,
 }
 impl Lpi2cClkSel {
     #[inline(always)]
@@ -1871,11 +1871,11 @@ impl From<Lpi2cClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpm {
     #[doc = "Remain in run mode."]
-    LPM_0 = 0x0,
+    Lpm0 = 0x0,
     #[doc = "Transfer to wait mode."]
-    LPM_1 = 0x01,
+    Lpm1 = 0x01,
     #[doc = "Transfer to stop mode."]
-    LPM_2 = 0x02,
+    Lpm2 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Lpm {
@@ -1905,13 +1905,13 @@ impl From<Lpm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LpspiClkSel {
     #[doc = "derive clock from PLL3 PFD1 clk."]
-    LPSPI_CLK_SEL_0 = 0x0,
+    LpspiClkSel0 = 0x0,
     #[doc = "derive clock from PLL3 PFD0."]
-    LPSPI_CLK_SEL_1 = 0x01,
+    LpspiClkSel1 = 0x01,
     #[doc = "derive clock from PLL2."]
-    LPSPI_CLK_SEL_2 = 0x02,
+    LpspiClkSel2 = 0x02,
     #[doc = "derive clock from PLL2 PFD2."]
-    LPSPI_CLK_SEL_3 = 0x03,
+    LpspiClkSel3 = 0x03,
 }
 impl LpspiClkSel {
     #[inline(always)]
@@ -1940,21 +1940,21 @@ impl From<LpspiClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LpspiPodf {
     #[doc = "divide by 1."]
-    LPSPI_PODF_0 = 0x0,
+    LpspiPodf0 = 0x0,
     #[doc = "divide by 2."]
-    LPSPI_PODF_1 = 0x01,
+    LpspiPodf1 = 0x01,
     #[doc = "divide by 3."]
-    LPSPI_PODF_2 = 0x02,
+    LpspiPodf2 = 0x02,
     #[doc = "divide by 4."]
-    LPSPI_PODF_3 = 0x03,
+    LpspiPodf3 = 0x03,
     #[doc = "divide by 5."]
-    LPSPI_PODF_4 = 0x04,
+    LpspiPodf4 = 0x04,
     #[doc = "divide by 6."]
-    LPSPI_PODF_5 = 0x05,
+    LpspiPodf5 = 0x05,
     #[doc = "divide by 7."]
-    LPSPI_PODF_6 = 0x06,
+    LpspiPodf6 = 0x06,
     #[doc = "divide by 8."]
-    LPSPI_PODF_7 = 0x07,
+    LpspiPodf7 = 0x07,
 }
 impl LpspiPodf {
     #[inline(always)]
@@ -1983,9 +1983,9 @@ impl From<LpspiPodf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LrfPll {
     #[doc = "interrupt is not generated due to lock ready of all enabled and not bypaseed PLLs."]
-    LRF_PLL_0 = 0x0,
+    LrfPll0 = 0x0,
     #[doc = "interrupt generated due to lock ready of all enabled and not bypaseed PLLs."]
-    LRF_PLL_1 = 0x01,
+    LrfPll1 = 0x01,
 }
 impl LrfPll {
     #[inline(always)]
@@ -2014,9 +2014,9 @@ impl From<LrfPll> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MaskAhbPodfLoaded {
     #[doc = "don't mask interrupt due to frequency change of ahb_podf - interrupt will be created."]
-    MASK_AHB_PODF_LOADED_0 = 0x0,
+    MaskAhbPodfLoaded0 = 0x0,
     #[doc = "mask interrupt due to frequency change of ahb_podf."]
-    MASK_AHB_PODF_LOADED_1 = 0x01,
+    MaskAhbPodfLoaded1 = 0x01,
 }
 impl MaskAhbPodfLoaded {
     #[inline(always)]
@@ -2045,9 +2045,9 @@ impl From<MaskAhbPodfLoaded> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MaskCore0Wfi {
     #[doc = "WFI of core0 is not masked."]
-    MASK_CORE0_WFI_0 = 0x0,
+    MaskCore0Wfi0 = 0x0,
     #[doc = "WFI of core0 is masked."]
-    MASK_CORE0_WFI_1 = 0x01,
+    MaskCore0Wfi1 = 0x01,
 }
 impl MaskCore0Wfi {
     #[inline(always)]
@@ -2076,9 +2076,9 @@ impl From<MaskCore0Wfi> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MaskCoscReady {
     #[doc = "don't mask interrupt due to on board oscillator ready - interrupt will be created."]
-    MASK_COSC_READY_0 = 0x0,
+    MaskCoscReady0 = 0x0,
     #[doc = "mask interrupt due to on board oscillator ready."]
-    MASK_COSC_READY_1 = 0x01,
+    MaskCoscReady1 = 0x01,
 }
 impl MaskCoscReady {
     #[inline(always)]
@@ -2107,9 +2107,9 @@ impl From<MaskCoscReady> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MaskL2ccIdle {
     #[doc = "L2CC IDLE is not masked."]
-    MASK_L2CC_IDLE_0 = 0x0,
+    MaskL2ccIdle0 = 0x0,
     #[doc = "L2CC IDLE is masked."]
-    MASK_L2CC_IDLE_1 = 0x01,
+    MaskL2ccIdle1 = 0x01,
 }
 impl MaskL2ccIdle {
     #[inline(always)]
@@ -2138,9 +2138,9 @@ impl From<MaskL2ccIdle> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MaskLrfPll {
     #[doc = "don't mask interrupt due to lrf of PLLs - interrupt will be created."]
-    MASK_LRF_PLL_0 = 0x0,
+    MaskLrfPll0 = 0x0,
     #[doc = "mask interrupt due to lrf of PLLs."]
-    MASK_LRF_PLL_1 = 0x01,
+    MaskLrfPll1 = 0x01,
 }
 impl MaskLrfPll {
     #[inline(always)]
@@ -2169,9 +2169,9 @@ impl From<MaskLrfPll> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MaskPeriph2ClkSelLoaded {
     #[doc = "don't mask interrupt due to update of periph2_clk_sel - interrupt will be created."]
-    MASK_PERIPH2_CLK_SEL_LOADED_0 = 0x0,
+    MaskPeriph2ClkSelLoaded0 = 0x0,
     #[doc = "mask interrupt due to update of periph2_clk_sel."]
-    MASK_PERIPH2_CLK_SEL_LOADED_1 = 0x01,
+    MaskPeriph2ClkSelLoaded1 = 0x01,
 }
 impl MaskPeriph2ClkSelLoaded {
     #[inline(always)]
@@ -2200,9 +2200,9 @@ impl From<MaskPeriph2ClkSelLoaded> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MaskPeriphClkSelLoaded {
     #[doc = "don't mask interrupt due to update of periph_clk_sel - interrupt will be created."]
-    MASK_PERIPH_CLK_SEL_LOADED_0 = 0x0,
+    MaskPeriphClkSelLoaded0 = 0x0,
     #[doc = "mask interrupt due to update of periph_clk_sel."]
-    MASK_PERIPH_CLK_SEL_LOADED_1 = 0x01,
+    MaskPeriphClkSelLoaded1 = 0x01,
 }
 impl MaskPeriphClkSelLoaded {
     #[inline(always)]
@@ -2231,9 +2231,9 @@ impl From<MaskPeriphClkSelLoaded> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MaskScuIdle {
     #[doc = "SCU IDLE is not masked."]
-    MASK_SCU_IDLE_0 = 0x0,
+    MaskScuIdle0 = 0x0,
     #[doc = "SCU IDLE is masked."]
-    MASK_SCU_IDLE_1 = 0x01,
+    MaskScuIdle1 = 0x01,
 }
 impl MaskScuIdle {
     #[inline(always)]
@@ -2262,9 +2262,9 @@ impl From<MaskScuIdle> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MaskSemcPodfLoaded {
     #[doc = "don't mask interrupt due to frequency change of semc_podf - interrupt will be created."]
-    MASK_SEMC_PODF_LOADED_0 = 0x0,
+    MaskSemcPodfLoaded0 = 0x0,
     #[doc = "mask interrupt due to frequency change of semc_podf."]
-    MASK_SEMC_PODF_LOADED_1 = 0x01,
+    MaskSemcPodfLoaded1 = 0x01,
 }
 impl MaskSemcPodfLoaded {
     #[inline(always)]
@@ -2293,9 +2293,9 @@ impl From<MaskSemcPodfLoaded> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ModEnOvCan1Cpi {
     #[doc = "don't overide module enable signal."]
-    MOD_EN_OV_CAN1_CPI_0 = 0x0,
+    ModEnOvCan1Cpi0 = 0x0,
     #[doc = "overide module enable signal."]
-    MOD_EN_OV_CAN1_CPI_1 = 0x01,
+    ModEnOvCan1Cpi1 = 0x01,
 }
 impl ModEnOvCan1Cpi {
     #[inline(always)]
@@ -2324,9 +2324,9 @@ impl From<ModEnOvCan1Cpi> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ModEnOvCan2Cpi {
     #[doc = "don't override module enable signal."]
-    MOD_EN_OV_CAN2_CPI_0 = 0x0,
+    ModEnOvCan2Cpi0 = 0x0,
     #[doc = "override module enable signal."]
-    MOD_EN_OV_CAN2_CPI_1 = 0x01,
+    ModEnOvCan2Cpi1 = 0x01,
 }
 impl ModEnOvCan2Cpi {
     #[inline(always)]
@@ -2355,9 +2355,9 @@ impl From<ModEnOvCan2Cpi> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ModEnOvCanfdCpi {
     #[doc = "don't override module enable signal."]
-    MOD_EN_OV_CANFD_CPI_0 = 0x0,
+    ModEnOvCanfdCpi0 = 0x0,
     #[doc = "override module enable signal."]
-    MOD_EN_OV_CANFD_CPI_1 = 0x01,
+    ModEnOvCanfdCpi1 = 0x01,
 }
 impl ModEnOvCanfdCpi {
     #[inline(always)]
@@ -2386,9 +2386,9 @@ impl From<ModEnOvCanfdCpi> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ModEnOvGpt {
     #[doc = "don't override module enable signal."]
-    MOD_EN_OV_GPT_0 = 0x0,
+    ModEnOvGpt0 = 0x0,
     #[doc = "override module enable signal."]
-    MOD_EN_OV_GPT_1 = 0x01,
+    ModEnOvGpt1 = 0x01,
 }
 impl ModEnOvGpt {
     #[inline(always)]
@@ -2417,9 +2417,9 @@ impl From<ModEnOvGpt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ModEnOvPit {
     #[doc = "don't override module enable signal."]
-    MOD_EN_OV_PIT_0 = 0x0,
+    ModEnOvPit0 = 0x0,
     #[doc = "override module enable signal."]
-    MOD_EN_OV_PIT_1 = 0x01,
+    ModEnOvPit1 = 0x01,
 }
 impl ModEnOvPit {
     #[inline(always)]
@@ -2448,9 +2448,9 @@ impl From<ModEnOvPit> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ModEnOvTrng {
     #[doc = "don't override module enable signal."]
-    MOD_EN_OV_TRNG_0 = 0x0,
+    ModEnOvTrng0 = 0x0,
     #[doc = "override module enable signal."]
-    MOD_EN_OV_TRNG_1 = 0x01,
+    ModEnOvTrng1 = 0x01,
 }
 impl ModEnOvTrng {
     #[inline(always)]
@@ -2479,9 +2479,9 @@ impl From<ModEnOvTrng> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ModEnUsdhc {
     #[doc = "don't override module enable signal."]
-    MOD_EN_USDHC_0 = 0x0,
+    ModEnUsdhc0 = 0x0,
     #[doc = "override module enable signal."]
-    MOD_EN_USDHC_1 = 0x01,
+    ModEnUsdhc1 = 0x01,
 }
 impl ModEnUsdhc {
     #[inline(always)]
@@ -2510,9 +2510,9 @@ impl From<ModEnUsdhc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PerclkClkSel {
     #[doc = "derive clock from ipg clk root."]
-    PERCLK_CLK_SEL_0 = 0x0,
+    PerclkClkSel0 = 0x0,
     #[doc = "derive clock from osc_clk."]
-    PERCLK_CLK_SEL_1 = 0x01,
+    PerclkClkSel1 = 0x01,
 }
 impl PerclkClkSel {
     #[inline(always)]
@@ -2541,133 +2541,133 @@ impl From<PerclkClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PerclkPodf {
     #[doc = "Divide by 1."]
-    DIVIDE_1 = 0x0,
+    Divide1 = 0x0,
     #[doc = "Divide by 2."]
-    DIVIDE_2 = 0x01,
+    Divide2 = 0x01,
     #[doc = "Divide by 3."]
-    DIVIDE_3 = 0x02,
+    Divide3 = 0x02,
     #[doc = "Divide by 4."]
-    DIVIDE_4 = 0x03,
+    Divide4 = 0x03,
     #[doc = "Divide by 5."]
-    DIVIDE_5 = 0x04,
+    Divide5 = 0x04,
     #[doc = "Divide by 6."]
-    DIVIDE_6 = 0x05,
+    Divide6 = 0x05,
     #[doc = "Divide by 7."]
-    DIVIDE_7 = 0x06,
+    Divide7 = 0x06,
     #[doc = "Divide by 8."]
-    DIVIDE_8 = 0x07,
+    Divide8 = 0x07,
     #[doc = "Divide by 9."]
-    DIVIDE_9 = 0x08,
+    Divide9 = 0x08,
     #[doc = "Divide by 10."]
-    DIVIDE_10 = 0x09,
+    Divide10 = 0x09,
     #[doc = "Divide by 11."]
-    DIVIDE_11 = 0x0a,
+    Divide11 = 0x0a,
     #[doc = "Divide by 12."]
-    DIVIDE_12 = 0x0b,
+    Divide12 = 0x0b,
     #[doc = "Divide by 13."]
-    DIVIDE_13 = 0x0c,
+    Divide13 = 0x0c,
     #[doc = "Divide by 14."]
-    DIVIDE_14 = 0x0d,
+    Divide14 = 0x0d,
     #[doc = "Divide by 15."]
-    DIVIDE_15 = 0x0e,
+    Divide15 = 0x0e,
     #[doc = "Divide by 16."]
-    DIVIDE_16 = 0x0f,
+    Divide16 = 0x0f,
     #[doc = "Divide by 17."]
-    DIVIDE_17 = 0x10,
+    Divide17 = 0x10,
     #[doc = "Divide by 18."]
-    DIVIDE_18 = 0x11,
+    Divide18 = 0x11,
     #[doc = "Divide by 19."]
-    DIVIDE_19 = 0x12,
+    Divide19 = 0x12,
     #[doc = "Divide by 20."]
-    DIVIDE_20 = 0x13,
+    Divide20 = 0x13,
     #[doc = "Divide by 21."]
-    DIVIDE_21 = 0x14,
+    Divide21 = 0x14,
     #[doc = "Divide by 22."]
-    DIVIDE_22 = 0x15,
+    Divide22 = 0x15,
     #[doc = "Divide by 23."]
-    DIVIDE_23 = 0x16,
+    Divide23 = 0x16,
     #[doc = "Divide by 24."]
-    DIVIDE_24 = 0x17,
+    Divide24 = 0x17,
     #[doc = "Divide by 25."]
-    DIVIDE_25 = 0x18,
+    Divide25 = 0x18,
     #[doc = "Divide by 26."]
-    DIVIDE_26 = 0x19,
+    Divide26 = 0x19,
     #[doc = "Divide by 27."]
-    DIVIDE_27 = 0x1a,
+    Divide27 = 0x1a,
     #[doc = "Divide by 28."]
-    DIVIDE_28 = 0x1b,
+    Divide28 = 0x1b,
     #[doc = "Divide by 29."]
-    DIVIDE_29 = 0x1c,
+    Divide29 = 0x1c,
     #[doc = "Divide by 30."]
-    DIVIDE_30 = 0x1d,
+    Divide30 = 0x1d,
     #[doc = "Divide by 31."]
-    DIVIDE_31 = 0x1e,
+    Divide31 = 0x1e,
     #[doc = "Divide by 32."]
-    DIVIDE_32 = 0x1f,
+    Divide32 = 0x1f,
     #[doc = "Divide by 33."]
-    DIVIDE_33 = 0x20,
+    Divide33 = 0x20,
     #[doc = "Divide by 34."]
-    DIVIDE_34 = 0x21,
+    Divide34 = 0x21,
     #[doc = "Divide by 35."]
-    DIVIDE_35 = 0x22,
+    Divide35 = 0x22,
     #[doc = "Divide by 36."]
-    DIVIDE_36 = 0x23,
+    Divide36 = 0x23,
     #[doc = "Divide by 37."]
-    DIVIDE_37 = 0x24,
+    Divide37 = 0x24,
     #[doc = "Divide by 38."]
-    DIVIDE_38 = 0x25,
+    Divide38 = 0x25,
     #[doc = "Divide by 39."]
-    DIVIDE_39 = 0x26,
+    Divide39 = 0x26,
     #[doc = "Divide by 40."]
-    DIVIDE_40 = 0x27,
+    Divide40 = 0x27,
     #[doc = "Divide by 41."]
-    DIVIDE_41 = 0x28,
+    Divide41 = 0x28,
     #[doc = "Divide by 42."]
-    DIVIDE_42 = 0x29,
+    Divide42 = 0x29,
     #[doc = "Divide by 43."]
-    DIVIDE_43 = 0x2a,
+    Divide43 = 0x2a,
     #[doc = "Divide by 44."]
-    DIVIDE_44 = 0x2b,
+    Divide44 = 0x2b,
     #[doc = "Divide by 45."]
-    DIVIDE_45 = 0x2c,
+    Divide45 = 0x2c,
     #[doc = "Divide by 46."]
-    DIVIDE_46 = 0x2d,
+    Divide46 = 0x2d,
     #[doc = "Divide by 47."]
-    DIVIDE_47 = 0x2e,
+    Divide47 = 0x2e,
     #[doc = "Divide by 48."]
-    DIVIDE_48 = 0x2f,
+    Divide48 = 0x2f,
     #[doc = "Divide by 49."]
-    DIVIDE_49 = 0x30,
+    Divide49 = 0x30,
     #[doc = "Divide by 50."]
-    DIVIDE_50 = 0x31,
+    Divide50 = 0x31,
     #[doc = "Divide by 51."]
-    DIVIDE_51 = 0x32,
+    Divide51 = 0x32,
     #[doc = "Divide by 52."]
-    DIVIDE_52 = 0x33,
+    Divide52 = 0x33,
     #[doc = "Divide by 53."]
-    DIVIDE_53 = 0x34,
+    Divide53 = 0x34,
     #[doc = "Divide by 54."]
-    DIVIDE_54 = 0x35,
+    Divide54 = 0x35,
     #[doc = "Divide by 55."]
-    DIVIDE_55 = 0x36,
+    Divide55 = 0x36,
     #[doc = "Divide by 56."]
-    DIVIDE_56 = 0x37,
+    Divide56 = 0x37,
     #[doc = "Divide by 57."]
-    DIVIDE_57 = 0x38,
+    Divide57 = 0x38,
     #[doc = "Divide by 58."]
-    DIVIDE_58 = 0x39,
+    Divide58 = 0x39,
     #[doc = "Divide by 59."]
-    DIVIDE_59 = 0x3a,
+    Divide59 = 0x3a,
     #[doc = "Divide by 60."]
-    DIVIDE_60 = 0x3b,
+    Divide60 = 0x3b,
     #[doc = "Divide by 61."]
-    DIVIDE_61 = 0x3c,
+    Divide61 = 0x3c,
     #[doc = "Divide by 62."]
-    DIVIDE_62 = 0x3d,
+    Divide62 = 0x3d,
     #[doc = "Divide by 63."]
-    DIVIDE_63 = 0x3e,
+    Divide63 = 0x3e,
     #[doc = "Divide by 64."]
-    DIVIDE_64 = 0x3f,
+    Divide64 = 0x3f,
 }
 impl PerclkPodf {
     #[inline(always)]
@@ -2696,9 +2696,9 @@ impl From<PerclkPodf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Periph2ClkSelBusy {
     #[doc = "mux is not busy and its value represents the actual division."]
-    PERIPH2_CLK_SEL_BUSY_0 = 0x0,
+    Periph2ClkSelBusy0 = 0x0,
     #[doc = "mux is busy with handshake process with module. The value read in the periph2_clk_sel represents the previous value of select, and after the handshake periph2_clk_sel value will be applied."]
-    PERIPH2_CLK_SEL_BUSY_1 = 0x01,
+    Periph2ClkSelBusy1 = 0x01,
 }
 impl Periph2ClkSelBusy {
     #[inline(always)]
@@ -2727,9 +2727,9 @@ impl From<Periph2ClkSelBusy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Periph2ClkSelLoaded {
     #[doc = "interrupt is not generated due to frequency change of periph2_clk_sel."]
-    PERIPH2_CLK_SEL_LOADED_0 = 0x0,
+    Periph2ClkSelLoaded0 = 0x0,
     #[doc = "interrupt generated due to frequency change of periph2_clk_sel."]
-    PERIPH2_CLK_SEL_LOADED_1 = 0x01,
+    Periph2ClkSelLoaded1 = 0x01,
 }
 impl Periph2ClkSelLoaded {
     #[inline(always)]
@@ -2758,21 +2758,21 @@ impl From<Periph2ClkSelLoaded> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PeriphClk2Podf {
     #[doc = "divide by 1."]
-    PERIPH_CLK2_PODF_0 = 0x0,
+    PeriphClk2Podf0 = 0x0,
     #[doc = "divide by 2."]
-    PERIPH_CLK2_PODF_1 = 0x01,
+    PeriphClk2Podf1 = 0x01,
     #[doc = "divide by 3."]
-    PERIPH_CLK2_PODF_2 = 0x02,
+    PeriphClk2Podf2 = 0x02,
     #[doc = "divide by 4."]
-    PERIPH_CLK2_PODF_3 = 0x03,
+    PeriphClk2Podf3 = 0x03,
     #[doc = "divide by 5."]
-    PERIPH_CLK2_PODF_4 = 0x04,
+    PeriphClk2Podf4 = 0x04,
     #[doc = "divide by 6."]
-    PERIPH_CLK2_PODF_5 = 0x05,
+    PeriphClk2Podf5 = 0x05,
     #[doc = "divide by 7."]
-    PERIPH_CLK2_PODF_6 = 0x06,
+    PeriphClk2Podf6 = 0x06,
     #[doc = "divide by 8."]
-    PERIPH_CLK2_PODF_7 = 0x07,
+    PeriphClk2Podf7 = 0x07,
 }
 impl PeriphClk2Podf {
     #[inline(always)]
@@ -2801,11 +2801,11 @@ impl From<PeriphClk2Podf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PeriphClk2Sel {
     #[doc = "derive clock from pll3_sw_clk."]
-    PERIPH_CLK2_SEL_0 = 0x0,
+    PeriphClk2Sel0 = 0x0,
     #[doc = "derive clock from osc_clk (pll1_ref_clk)."]
-    PERIPH_CLK2_SEL_1 = 0x01,
+    PeriphClk2Sel1 = 0x01,
     #[doc = "derive clock from pll2_bypass_clk."]
-    PERIPH_CLK2_SEL_2 = 0x02,
+    PeriphClk2Sel2 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl PeriphClk2Sel {
@@ -2835,9 +2835,9 @@ impl From<PeriphClk2Sel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PeriphClkSel {
     #[doc = "derive clock from pre_periph_clk_sel."]
-    PERIPH_CLK_SEL_0 = 0x0,
+    PeriphClkSel0 = 0x0,
     #[doc = "derive clock from periph_clk2_clk_divided."]
-    PERIPH_CLK_SEL_1 = 0x01,
+    PeriphClkSel1 = 0x01,
 }
 impl PeriphClkSel {
     #[inline(always)]
@@ -2866,9 +2866,9 @@ impl From<PeriphClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PeriphClkSelBusy {
     #[doc = "mux is not busy and its value represents the actual division."]
-    PERIPH_CLK_SEL_BUSY_0 = 0x0,
+    PeriphClkSelBusy0 = 0x0,
     #[doc = "mux is busy with handshake process with module. The value read in the periph_clk_sel represents the previous value of select, and after the handshake periph_clk_sel value will be applied."]
-    PERIPH_CLK_SEL_BUSY_1 = 0x01,
+    PeriphClkSelBusy1 = 0x01,
 }
 impl PeriphClkSelBusy {
     #[inline(always)]
@@ -2897,9 +2897,9 @@ impl From<PeriphClkSelBusy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PeriphClkSelLoaded {
     #[doc = "interrupt is not generated due to update of periph_clk_sel."]
-    PERIPH_CLK_SEL_LOADED_0 = 0x0,
+    PeriphClkSelLoaded0 = 0x0,
     #[doc = "interrupt generated due to update of periph_clk_sel."]
-    PERIPH_CLK_SEL_LOADED_1 = 0x01,
+    PeriphClkSelLoaded1 = 0x01,
 }
 impl PeriphClkSelLoaded {
     #[inline(always)]
@@ -2928,9 +2928,9 @@ impl From<PeriphClkSelLoaded> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pll3SwClkSel {
     #[doc = "pll3_main_clk."]
-    PLL3_SW_CLK_SEL_0 = 0x0,
+    Pll3SwClkSel0 = 0x0,
     #[doc = "pll3 bypass clock."]
-    PLL3_SW_CLK_SEL_1 = 0x01,
+    Pll3SwClkSel1 = 0x01,
 }
 impl Pll3SwClkSel {
     #[inline(always)]
@@ -2959,9 +2959,9 @@ impl From<Pll3SwClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PmicDelayScaler {
     #[doc = "clock is not divided."]
-    PMIC_DELAY_SCALER_0 = 0x0,
+    PmicDelayScaler0 = 0x0,
     #[doc = "clock is divided /8."]
-    PMIC_DELAY_SCALER_1 = 0x01,
+    PmicDelayScaler1 = 0x01,
 }
 impl PmicDelayScaler {
     #[inline(always)]
@@ -2990,13 +2990,13 @@ impl From<PmicDelayScaler> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PrePeriphClkSel {
     #[doc = "derive clock from PLL2."]
-    PRE_PERIPH_CLK_SEL_0 = 0x0,
+    PrePeriphClkSel0 = 0x0,
     #[doc = "derive clock from PLL2 PFD2."]
-    PRE_PERIPH_CLK_SEL_1 = 0x01,
+    PrePeriphClkSel1 = 0x01,
     #[doc = "derive clock from PLL2 PFD0."]
-    PRE_PERIPH_CLK_SEL_2 = 0x02,
+    PrePeriphClkSel2 = 0x02,
     #[doc = "derive clock from divided PLL1."]
-    PRE_PERIPH_CLK_SEL_3 = 0x03,
+    PrePeriphClkSel3 = 0x03,
 }
 impl PrePeriphClkSel {
     #[inline(always)]
@@ -3025,9 +3025,9 @@ impl From<PrePeriphClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RbcEn {
     #[doc = "REG_BYPASS_COUNTER disabled."]
-    RBC_EN_0 = 0x0,
+    RbcEn0 = 0x0,
     #[doc = "REG_BYPASS_COUNTER enabled."]
-    RBC_EN_1 = 0x01,
+    RbcEn1 = 0x01,
 }
 impl RbcEn {
     #[inline(always)]
@@ -3056,9 +3056,9 @@ impl From<RbcEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RefEnB {
     #[doc = "value of CCM_REF_EN_B is '0'."]
-    REF_EN_B_0 = 0x0,
+    RefEnB0 = 0x0,
     #[doc = "value of CCM_REF_EN_B is '1'."]
-    REF_EN_B_1 = 0x01,
+    RefEnB1 = 0x01,
 }
 impl RefEnB {
     #[inline(always)]
@@ -3087,9 +3087,9 @@ impl From<RefEnB> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegBypassCount {
     #[doc = "no delay."]
-    REG_BYPASS_COUNT_0 = 0x0,
+    RegBypassCount0 = 0x0,
     #[doc = "1 CKIL clock period delay."]
-    REG_BYPASS_COUNT_1 = 0x01,
+    RegBypassCount1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -3152,7 +3152,7 @@ pub enum RegBypassCount {
     _RESERVED_3d = 0x3d,
     _RESERVED_3e = 0x3e,
     #[doc = "63 CKIL clock periods delay."]
-    REG_BYPASS_COUNT_63 = 0x3f,
+    RegBypassCount63 = 0x3f,
 }
 impl RegBypassCount {
     #[inline(always)]
@@ -3181,133 +3181,133 @@ impl From<RegBypassCount> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai1ClkPodf {
     #[doc = "Divide by 1."]
-    DIVIDE_1 = 0x0,
+    Divide1 = 0x0,
     #[doc = "Divide by 2."]
-    DIVIDE_2 = 0x01,
+    Divide2 = 0x01,
     #[doc = "Divide by 3."]
-    DIVIDE_3 = 0x02,
+    Divide3 = 0x02,
     #[doc = "Divide by 4."]
-    DIVIDE_4 = 0x03,
+    Divide4 = 0x03,
     #[doc = "Divide by 5."]
-    DIVIDE_5 = 0x04,
+    Divide5 = 0x04,
     #[doc = "Divide by 6."]
-    DIVIDE_6 = 0x05,
+    Divide6 = 0x05,
     #[doc = "Divide by 7."]
-    DIVIDE_7 = 0x06,
+    Divide7 = 0x06,
     #[doc = "Divide by 8."]
-    DIVIDE_8 = 0x07,
+    Divide8 = 0x07,
     #[doc = "Divide by 9."]
-    DIVIDE_9 = 0x08,
+    Divide9 = 0x08,
     #[doc = "Divide by 10."]
-    DIVIDE_10 = 0x09,
+    Divide10 = 0x09,
     #[doc = "Divide by 11."]
-    DIVIDE_11 = 0x0a,
+    Divide11 = 0x0a,
     #[doc = "Divide by 12."]
-    DIVIDE_12 = 0x0b,
+    Divide12 = 0x0b,
     #[doc = "Divide by 13."]
-    DIVIDE_13 = 0x0c,
+    Divide13 = 0x0c,
     #[doc = "Divide by 14."]
-    DIVIDE_14 = 0x0d,
+    Divide14 = 0x0d,
     #[doc = "Divide by 15."]
-    DIVIDE_15 = 0x0e,
+    Divide15 = 0x0e,
     #[doc = "Divide by 16."]
-    DIVIDE_16 = 0x0f,
+    Divide16 = 0x0f,
     #[doc = "Divide by 17."]
-    DIVIDE_17 = 0x10,
+    Divide17 = 0x10,
     #[doc = "Divide by 18."]
-    DIVIDE_18 = 0x11,
+    Divide18 = 0x11,
     #[doc = "Divide by 19."]
-    DIVIDE_19 = 0x12,
+    Divide19 = 0x12,
     #[doc = "Divide by 20."]
-    DIVIDE_20 = 0x13,
+    Divide20 = 0x13,
     #[doc = "Divide by 21."]
-    DIVIDE_21 = 0x14,
+    Divide21 = 0x14,
     #[doc = "Divide by 22."]
-    DIVIDE_22 = 0x15,
+    Divide22 = 0x15,
     #[doc = "Divide by 23."]
-    DIVIDE_23 = 0x16,
+    Divide23 = 0x16,
     #[doc = "Divide by 24."]
-    DIVIDE_24 = 0x17,
+    Divide24 = 0x17,
     #[doc = "Divide by 25."]
-    DIVIDE_25 = 0x18,
+    Divide25 = 0x18,
     #[doc = "Divide by 26."]
-    DIVIDE_26 = 0x19,
+    Divide26 = 0x19,
     #[doc = "Divide by 27."]
-    DIVIDE_27 = 0x1a,
+    Divide27 = 0x1a,
     #[doc = "Divide by 28."]
-    DIVIDE_28 = 0x1b,
+    Divide28 = 0x1b,
     #[doc = "Divide by 29."]
-    DIVIDE_29 = 0x1c,
+    Divide29 = 0x1c,
     #[doc = "Divide by 30."]
-    DIVIDE_30 = 0x1d,
+    Divide30 = 0x1d,
     #[doc = "Divide by 31."]
-    DIVIDE_31 = 0x1e,
+    Divide31 = 0x1e,
     #[doc = "Divide by 32."]
-    DIVIDE_32 = 0x1f,
+    Divide32 = 0x1f,
     #[doc = "Divide by 33."]
-    DIVIDE_33 = 0x20,
+    Divide33 = 0x20,
     #[doc = "Divide by 34."]
-    DIVIDE_34 = 0x21,
+    Divide34 = 0x21,
     #[doc = "Divide by 35."]
-    DIVIDE_35 = 0x22,
+    Divide35 = 0x22,
     #[doc = "Divide by 36."]
-    DIVIDE_36 = 0x23,
+    Divide36 = 0x23,
     #[doc = "Divide by 37."]
-    DIVIDE_37 = 0x24,
+    Divide37 = 0x24,
     #[doc = "Divide by 38."]
-    DIVIDE_38 = 0x25,
+    Divide38 = 0x25,
     #[doc = "Divide by 39."]
-    DIVIDE_39 = 0x26,
+    Divide39 = 0x26,
     #[doc = "Divide by 40."]
-    DIVIDE_40 = 0x27,
+    Divide40 = 0x27,
     #[doc = "Divide by 41."]
-    DIVIDE_41 = 0x28,
+    Divide41 = 0x28,
     #[doc = "Divide by 42."]
-    DIVIDE_42 = 0x29,
+    Divide42 = 0x29,
     #[doc = "Divide by 43."]
-    DIVIDE_43 = 0x2a,
+    Divide43 = 0x2a,
     #[doc = "Divide by 44."]
-    DIVIDE_44 = 0x2b,
+    Divide44 = 0x2b,
     #[doc = "Divide by 45."]
-    DIVIDE_45 = 0x2c,
+    Divide45 = 0x2c,
     #[doc = "Divide by 46."]
-    DIVIDE_46 = 0x2d,
+    Divide46 = 0x2d,
     #[doc = "Divide by 47."]
-    DIVIDE_47 = 0x2e,
+    Divide47 = 0x2e,
     #[doc = "Divide by 48."]
-    DIVIDE_48 = 0x2f,
+    Divide48 = 0x2f,
     #[doc = "Divide by 49."]
-    DIVIDE_49 = 0x30,
+    Divide49 = 0x30,
     #[doc = "Divide by 50."]
-    DIVIDE_50 = 0x31,
+    Divide50 = 0x31,
     #[doc = "Divide by 51."]
-    DIVIDE_51 = 0x32,
+    Divide51 = 0x32,
     #[doc = "Divide by 52."]
-    DIVIDE_52 = 0x33,
+    Divide52 = 0x33,
     #[doc = "Divide by 53."]
-    DIVIDE_53 = 0x34,
+    Divide53 = 0x34,
     #[doc = "Divide by 54."]
-    DIVIDE_54 = 0x35,
+    Divide54 = 0x35,
     #[doc = "Divide by 55."]
-    DIVIDE_55 = 0x36,
+    Divide55 = 0x36,
     #[doc = "Divide by 56."]
-    DIVIDE_56 = 0x37,
+    Divide56 = 0x37,
     #[doc = "Divide by 57."]
-    DIVIDE_57 = 0x38,
+    Divide57 = 0x38,
     #[doc = "Divide by 58."]
-    DIVIDE_58 = 0x39,
+    Divide58 = 0x39,
     #[doc = "Divide by 59."]
-    DIVIDE_59 = 0x3a,
+    Divide59 = 0x3a,
     #[doc = "Divide by 60."]
-    DIVIDE_60 = 0x3b,
+    Divide60 = 0x3b,
     #[doc = "Divide by 61."]
-    DIVIDE_61 = 0x3c,
+    Divide61 = 0x3c,
     #[doc = "Divide by 62."]
-    DIVIDE_62 = 0x3d,
+    Divide62 = 0x3d,
     #[doc = "Divide by 63."]
-    DIVIDE_63 = 0x3e,
+    Divide63 = 0x3e,
     #[doc = "Divide by 64."]
-    DIVIDE_64 = 0x3f,
+    Divide64 = 0x3f,
 }
 impl Sai1ClkPodf {
     #[inline(always)]
@@ -3336,21 +3336,21 @@ impl From<Sai1ClkPodf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai1ClkPred {
     #[doc = "divide by 1."]
-    SAI1_CLK_PRED_0 = 0x0,
+    Sai1ClkPred0 = 0x0,
     #[doc = "divide by 2."]
-    SAI1_CLK_PRED_1 = 0x01,
+    Sai1ClkPred1 = 0x01,
     #[doc = "divide by 3."]
-    SAI1_CLK_PRED_2 = 0x02,
+    Sai1ClkPred2 = 0x02,
     #[doc = "divide by 4."]
-    SAI1_CLK_PRED_3 = 0x03,
+    Sai1ClkPred3 = 0x03,
     #[doc = "divide by 5."]
-    SAI1_CLK_PRED_4 = 0x04,
+    Sai1ClkPred4 = 0x04,
     #[doc = "divide by 6."]
-    SAI1_CLK_PRED_5 = 0x05,
+    Sai1ClkPred5 = 0x05,
     #[doc = "divide by 7."]
-    SAI1_CLK_PRED_6 = 0x06,
+    Sai1ClkPred6 = 0x06,
     #[doc = "divide by 8."]
-    SAI1_CLK_PRED_7 = 0x07,
+    Sai1ClkPred7 = 0x07,
 }
 impl Sai1ClkPred {
     #[inline(always)]
@@ -3379,11 +3379,11 @@ impl From<Sai1ClkPred> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai1ClkSel {
     #[doc = "derive clock from PLL3 PFD2."]
-    SAI1_CLK_SEL_0 = 0x0,
+    Sai1ClkSel0 = 0x0,
     #[doc = "derive clock from PLL5."]
-    SAI1_CLK_SEL_1 = 0x01,
+    Sai1ClkSel1 = 0x01,
     #[doc = "derive clock from PLL4."]
-    SAI1_CLK_SEL_2 = 0x02,
+    Sai1ClkSel2 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Sai1ClkSel {
@@ -3413,133 +3413,133 @@ impl From<Sai1ClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai2ClkPodf {
     #[doc = "Divide by 1."]
-    DIVIDE_1 = 0x0,
+    Divide1 = 0x0,
     #[doc = "Divide by 2."]
-    DIVIDE_2 = 0x01,
+    Divide2 = 0x01,
     #[doc = "Divide by 3."]
-    DIVIDE_3 = 0x02,
+    Divide3 = 0x02,
     #[doc = "Divide by 4."]
-    DIVIDE_4 = 0x03,
+    Divide4 = 0x03,
     #[doc = "Divide by 5."]
-    DIVIDE_5 = 0x04,
+    Divide5 = 0x04,
     #[doc = "Divide by 6."]
-    DIVIDE_6 = 0x05,
+    Divide6 = 0x05,
     #[doc = "Divide by 7."]
-    DIVIDE_7 = 0x06,
+    Divide7 = 0x06,
     #[doc = "Divide by 8."]
-    DIVIDE_8 = 0x07,
+    Divide8 = 0x07,
     #[doc = "Divide by 9."]
-    DIVIDE_9 = 0x08,
+    Divide9 = 0x08,
     #[doc = "Divide by 10."]
-    DIVIDE_10 = 0x09,
+    Divide10 = 0x09,
     #[doc = "Divide by 11."]
-    DIVIDE_11 = 0x0a,
+    Divide11 = 0x0a,
     #[doc = "Divide by 12."]
-    DIVIDE_12 = 0x0b,
+    Divide12 = 0x0b,
     #[doc = "Divide by 13."]
-    DIVIDE_13 = 0x0c,
+    Divide13 = 0x0c,
     #[doc = "Divide by 14."]
-    DIVIDE_14 = 0x0d,
+    Divide14 = 0x0d,
     #[doc = "Divide by 15."]
-    DIVIDE_15 = 0x0e,
+    Divide15 = 0x0e,
     #[doc = "Divide by 16."]
-    DIVIDE_16 = 0x0f,
+    Divide16 = 0x0f,
     #[doc = "Divide by 17."]
-    DIVIDE_17 = 0x10,
+    Divide17 = 0x10,
     #[doc = "Divide by 18."]
-    DIVIDE_18 = 0x11,
+    Divide18 = 0x11,
     #[doc = "Divide by 19."]
-    DIVIDE_19 = 0x12,
+    Divide19 = 0x12,
     #[doc = "Divide by 20."]
-    DIVIDE_20 = 0x13,
+    Divide20 = 0x13,
     #[doc = "Divide by 21."]
-    DIVIDE_21 = 0x14,
+    Divide21 = 0x14,
     #[doc = "Divide by 22."]
-    DIVIDE_22 = 0x15,
+    Divide22 = 0x15,
     #[doc = "Divide by 23."]
-    DIVIDE_23 = 0x16,
+    Divide23 = 0x16,
     #[doc = "Divide by 24."]
-    DIVIDE_24 = 0x17,
+    Divide24 = 0x17,
     #[doc = "Divide by 25."]
-    DIVIDE_25 = 0x18,
+    Divide25 = 0x18,
     #[doc = "Divide by 26."]
-    DIVIDE_26 = 0x19,
+    Divide26 = 0x19,
     #[doc = "Divide by 27."]
-    DIVIDE_27 = 0x1a,
+    Divide27 = 0x1a,
     #[doc = "Divide by 28."]
-    DIVIDE_28 = 0x1b,
+    Divide28 = 0x1b,
     #[doc = "Divide by 29."]
-    DIVIDE_29 = 0x1c,
+    Divide29 = 0x1c,
     #[doc = "Divide by 30."]
-    DIVIDE_30 = 0x1d,
+    Divide30 = 0x1d,
     #[doc = "Divide by 31."]
-    DIVIDE_31 = 0x1e,
+    Divide31 = 0x1e,
     #[doc = "Divide by 32."]
-    DIVIDE_32 = 0x1f,
+    Divide32 = 0x1f,
     #[doc = "Divide by 33."]
-    DIVIDE_33 = 0x20,
+    Divide33 = 0x20,
     #[doc = "Divide by 34."]
-    DIVIDE_34 = 0x21,
+    Divide34 = 0x21,
     #[doc = "Divide by 35."]
-    DIVIDE_35 = 0x22,
+    Divide35 = 0x22,
     #[doc = "Divide by 36."]
-    DIVIDE_36 = 0x23,
+    Divide36 = 0x23,
     #[doc = "Divide by 37."]
-    DIVIDE_37 = 0x24,
+    Divide37 = 0x24,
     #[doc = "Divide by 38."]
-    DIVIDE_38 = 0x25,
+    Divide38 = 0x25,
     #[doc = "Divide by 39."]
-    DIVIDE_39 = 0x26,
+    Divide39 = 0x26,
     #[doc = "Divide by 40."]
-    DIVIDE_40 = 0x27,
+    Divide40 = 0x27,
     #[doc = "Divide by 41."]
-    DIVIDE_41 = 0x28,
+    Divide41 = 0x28,
     #[doc = "Divide by 42."]
-    DIVIDE_42 = 0x29,
+    Divide42 = 0x29,
     #[doc = "Divide by 43."]
-    DIVIDE_43 = 0x2a,
+    Divide43 = 0x2a,
     #[doc = "Divide by 44."]
-    DIVIDE_44 = 0x2b,
+    Divide44 = 0x2b,
     #[doc = "Divide by 45."]
-    DIVIDE_45 = 0x2c,
+    Divide45 = 0x2c,
     #[doc = "Divide by 46."]
-    DIVIDE_46 = 0x2d,
+    Divide46 = 0x2d,
     #[doc = "Divide by 47."]
-    DIVIDE_47 = 0x2e,
+    Divide47 = 0x2e,
     #[doc = "Divide by 48."]
-    DIVIDE_48 = 0x2f,
+    Divide48 = 0x2f,
     #[doc = "Divide by 49."]
-    DIVIDE_49 = 0x30,
+    Divide49 = 0x30,
     #[doc = "Divide by 50."]
-    DIVIDE_50 = 0x31,
+    Divide50 = 0x31,
     #[doc = "Divide by 51."]
-    DIVIDE_51 = 0x32,
+    Divide51 = 0x32,
     #[doc = "Divide by 52."]
-    DIVIDE_52 = 0x33,
+    Divide52 = 0x33,
     #[doc = "Divide by 53."]
-    DIVIDE_53 = 0x34,
+    Divide53 = 0x34,
     #[doc = "Divide by 54."]
-    DIVIDE_54 = 0x35,
+    Divide54 = 0x35,
     #[doc = "Divide by 55."]
-    DIVIDE_55 = 0x36,
+    Divide55 = 0x36,
     #[doc = "Divide by 56."]
-    DIVIDE_56 = 0x37,
+    Divide56 = 0x37,
     #[doc = "Divide by 57."]
-    DIVIDE_57 = 0x38,
+    Divide57 = 0x38,
     #[doc = "Divide by 58."]
-    DIVIDE_58 = 0x39,
+    Divide58 = 0x39,
     #[doc = "Divide by 59."]
-    DIVIDE_59 = 0x3a,
+    Divide59 = 0x3a,
     #[doc = "Divide by 60."]
-    DIVIDE_60 = 0x3b,
+    Divide60 = 0x3b,
     #[doc = "Divide by 61."]
-    DIVIDE_61 = 0x3c,
+    Divide61 = 0x3c,
     #[doc = "Divide by 62."]
-    DIVIDE_62 = 0x3d,
+    Divide62 = 0x3d,
     #[doc = "Divide by 63."]
-    DIVIDE_63 = 0x3e,
+    Divide63 = 0x3e,
     #[doc = "Divide by 64."]
-    DIVIDE_64 = 0x3f,
+    Divide64 = 0x3f,
 }
 impl Sai2ClkPodf {
     #[inline(always)]
@@ -3568,21 +3568,21 @@ impl From<Sai2ClkPodf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai2ClkPred {
     #[doc = "divide by 1."]
-    SAI2_CLK_PRED_0 = 0x0,
+    Sai2ClkPred0 = 0x0,
     #[doc = "divide by 2."]
-    SAI2_CLK_PRED_1 = 0x01,
+    Sai2ClkPred1 = 0x01,
     #[doc = "divide by 3."]
-    SAI2_CLK_PRED_2 = 0x02,
+    Sai2ClkPred2 = 0x02,
     #[doc = "divide by 4."]
-    SAI2_CLK_PRED_3 = 0x03,
+    Sai2ClkPred3 = 0x03,
     #[doc = "divide by 5."]
-    SAI2_CLK_PRED_4 = 0x04,
+    Sai2ClkPred4 = 0x04,
     #[doc = "divide by 6."]
-    SAI2_CLK_PRED_5 = 0x05,
+    Sai2ClkPred5 = 0x05,
     #[doc = "divide by 7."]
-    SAI2_CLK_PRED_6 = 0x06,
+    Sai2ClkPred6 = 0x06,
     #[doc = "divide by 8."]
-    SAI2_CLK_PRED_7 = 0x07,
+    Sai2ClkPred7 = 0x07,
 }
 impl Sai2ClkPred {
     #[inline(always)]
@@ -3611,11 +3611,11 @@ impl From<Sai2ClkPred> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai2ClkSel {
     #[doc = "derive clock from PLL3 PFD2."]
-    SAI2_CLK_SEL_0 = 0x0,
+    Sai2ClkSel0 = 0x0,
     #[doc = "derive clock from PLL5."]
-    SAI2_CLK_SEL_1 = 0x01,
+    Sai2ClkSel1 = 0x01,
     #[doc = "derive clock from PLL4."]
-    SAI2_CLK_SEL_2 = 0x02,
+    Sai2ClkSel2 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Sai2ClkSel {
@@ -3645,133 +3645,133 @@ impl From<Sai2ClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai3ClkPodf {
     #[doc = "Divide by 1."]
-    DIVIDE_1 = 0x0,
+    Divide1 = 0x0,
     #[doc = "Divide by 2."]
-    DIVIDE_2 = 0x01,
+    Divide2 = 0x01,
     #[doc = "Divide by 3."]
-    DIVIDE_3 = 0x02,
+    Divide3 = 0x02,
     #[doc = "Divide by 4."]
-    DIVIDE_4 = 0x03,
+    Divide4 = 0x03,
     #[doc = "Divide by 5."]
-    DIVIDE_5 = 0x04,
+    Divide5 = 0x04,
     #[doc = "Divide by 6."]
-    DIVIDE_6 = 0x05,
+    Divide6 = 0x05,
     #[doc = "Divide by 7."]
-    DIVIDE_7 = 0x06,
+    Divide7 = 0x06,
     #[doc = "Divide by 8."]
-    DIVIDE_8 = 0x07,
+    Divide8 = 0x07,
     #[doc = "Divide by 9."]
-    DIVIDE_9 = 0x08,
+    Divide9 = 0x08,
     #[doc = "Divide by 10."]
-    DIVIDE_10 = 0x09,
+    Divide10 = 0x09,
     #[doc = "Divide by 11."]
-    DIVIDE_11 = 0x0a,
+    Divide11 = 0x0a,
     #[doc = "Divide by 12."]
-    DIVIDE_12 = 0x0b,
+    Divide12 = 0x0b,
     #[doc = "Divide by 13."]
-    DIVIDE_13 = 0x0c,
+    Divide13 = 0x0c,
     #[doc = "Divide by 14."]
-    DIVIDE_14 = 0x0d,
+    Divide14 = 0x0d,
     #[doc = "Divide by 15."]
-    DIVIDE_15 = 0x0e,
+    Divide15 = 0x0e,
     #[doc = "Divide by 16."]
-    DIVIDE_16 = 0x0f,
+    Divide16 = 0x0f,
     #[doc = "Divide by 17."]
-    DIVIDE_17 = 0x10,
+    Divide17 = 0x10,
     #[doc = "Divide by 18."]
-    DIVIDE_18 = 0x11,
+    Divide18 = 0x11,
     #[doc = "Divide by 19."]
-    DIVIDE_19 = 0x12,
+    Divide19 = 0x12,
     #[doc = "Divide by 20."]
-    DIVIDE_20 = 0x13,
+    Divide20 = 0x13,
     #[doc = "Divide by 21."]
-    DIVIDE_21 = 0x14,
+    Divide21 = 0x14,
     #[doc = "Divide by 22."]
-    DIVIDE_22 = 0x15,
+    Divide22 = 0x15,
     #[doc = "Divide by 23."]
-    DIVIDE_23 = 0x16,
+    Divide23 = 0x16,
     #[doc = "Divide by 24."]
-    DIVIDE_24 = 0x17,
+    Divide24 = 0x17,
     #[doc = "Divide by 25."]
-    DIVIDE_25 = 0x18,
+    Divide25 = 0x18,
     #[doc = "Divide by 26."]
-    DIVIDE_26 = 0x19,
+    Divide26 = 0x19,
     #[doc = "Divide by 27."]
-    DIVIDE_27 = 0x1a,
+    Divide27 = 0x1a,
     #[doc = "Divide by 28."]
-    DIVIDE_28 = 0x1b,
+    Divide28 = 0x1b,
     #[doc = "Divide by 29."]
-    DIVIDE_29 = 0x1c,
+    Divide29 = 0x1c,
     #[doc = "Divide by 30."]
-    DIVIDE_30 = 0x1d,
+    Divide30 = 0x1d,
     #[doc = "Divide by 31."]
-    DIVIDE_31 = 0x1e,
+    Divide31 = 0x1e,
     #[doc = "Divide by 32."]
-    DIVIDE_32 = 0x1f,
+    Divide32 = 0x1f,
     #[doc = "Divide by 33."]
-    DIVIDE_33 = 0x20,
+    Divide33 = 0x20,
     #[doc = "Divide by 34."]
-    DIVIDE_34 = 0x21,
+    Divide34 = 0x21,
     #[doc = "Divide by 35."]
-    DIVIDE_35 = 0x22,
+    Divide35 = 0x22,
     #[doc = "Divide by 36."]
-    DIVIDE_36 = 0x23,
+    Divide36 = 0x23,
     #[doc = "Divide by 37."]
-    DIVIDE_37 = 0x24,
+    Divide37 = 0x24,
     #[doc = "Divide by 38."]
-    DIVIDE_38 = 0x25,
+    Divide38 = 0x25,
     #[doc = "Divide by 39."]
-    DIVIDE_39 = 0x26,
+    Divide39 = 0x26,
     #[doc = "Divide by 40."]
-    DIVIDE_40 = 0x27,
+    Divide40 = 0x27,
     #[doc = "Divide by 41."]
-    DIVIDE_41 = 0x28,
+    Divide41 = 0x28,
     #[doc = "Divide by 42."]
-    DIVIDE_42 = 0x29,
+    Divide42 = 0x29,
     #[doc = "Divide by 43."]
-    DIVIDE_43 = 0x2a,
+    Divide43 = 0x2a,
     #[doc = "Divide by 44."]
-    DIVIDE_44 = 0x2b,
+    Divide44 = 0x2b,
     #[doc = "Divide by 45."]
-    DIVIDE_45 = 0x2c,
+    Divide45 = 0x2c,
     #[doc = "Divide by 46."]
-    DIVIDE_46 = 0x2d,
+    Divide46 = 0x2d,
     #[doc = "Divide by 47."]
-    DIVIDE_47 = 0x2e,
+    Divide47 = 0x2e,
     #[doc = "Divide by 48."]
-    DIVIDE_48 = 0x2f,
+    Divide48 = 0x2f,
     #[doc = "Divide by 49."]
-    DIVIDE_49 = 0x30,
+    Divide49 = 0x30,
     #[doc = "Divide by 50."]
-    DIVIDE_50 = 0x31,
+    Divide50 = 0x31,
     #[doc = "Divide by 51."]
-    DIVIDE_51 = 0x32,
+    Divide51 = 0x32,
     #[doc = "Divide by 52."]
-    DIVIDE_52 = 0x33,
+    Divide52 = 0x33,
     #[doc = "Divide by 53."]
-    DIVIDE_53 = 0x34,
+    Divide53 = 0x34,
     #[doc = "Divide by 54."]
-    DIVIDE_54 = 0x35,
+    Divide54 = 0x35,
     #[doc = "Divide by 55."]
-    DIVIDE_55 = 0x36,
+    Divide55 = 0x36,
     #[doc = "Divide by 56."]
-    DIVIDE_56 = 0x37,
+    Divide56 = 0x37,
     #[doc = "Divide by 57."]
-    DIVIDE_57 = 0x38,
+    Divide57 = 0x38,
     #[doc = "Divide by 58."]
-    DIVIDE_58 = 0x39,
+    Divide58 = 0x39,
     #[doc = "Divide by 59."]
-    DIVIDE_59 = 0x3a,
+    Divide59 = 0x3a,
     #[doc = "Divide by 60."]
-    DIVIDE_60 = 0x3b,
+    Divide60 = 0x3b,
     #[doc = "Divide by 61."]
-    DIVIDE_61 = 0x3c,
+    Divide61 = 0x3c,
     #[doc = "Divide by 62."]
-    DIVIDE_62 = 0x3d,
+    Divide62 = 0x3d,
     #[doc = "Divide by 63."]
-    DIVIDE_63 = 0x3e,
+    Divide63 = 0x3e,
     #[doc = "Divide by 64."]
-    DIVIDE_64 = 0x3f,
+    Divide64 = 0x3f,
 }
 impl Sai3ClkPodf {
     #[inline(always)]
@@ -3800,21 +3800,21 @@ impl From<Sai3ClkPodf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai3ClkPred {
     #[doc = "divide by 1."]
-    SAI3_CLK_PRED_0 = 0x0,
+    Sai3ClkPred0 = 0x0,
     #[doc = "divide by 2."]
-    SAI3_CLK_PRED_1 = 0x01,
+    Sai3ClkPred1 = 0x01,
     #[doc = "divide by 3."]
-    SAI3_CLK_PRED_2 = 0x02,
+    Sai3ClkPred2 = 0x02,
     #[doc = "divide by 4."]
-    SAI3_CLK_PRED_3 = 0x03,
+    Sai3ClkPred3 = 0x03,
     #[doc = "divide by 5."]
-    SAI3_CLK_PRED_4 = 0x04,
+    Sai3ClkPred4 = 0x04,
     #[doc = "divide by 6."]
-    SAI3_CLK_PRED_5 = 0x05,
+    Sai3ClkPred5 = 0x05,
     #[doc = "divide by 7."]
-    SAI3_CLK_PRED_6 = 0x06,
+    Sai3ClkPred6 = 0x06,
     #[doc = "divide by 8."]
-    SAI3_CLK_PRED_7 = 0x07,
+    Sai3ClkPred7 = 0x07,
 }
 impl Sai3ClkPred {
     #[inline(always)]
@@ -3843,11 +3843,11 @@ impl From<Sai3ClkPred> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai3ClkSel {
     #[doc = "derive clock from PLL3 PFD2."]
-    SAI3_CLK_SEL_0 = 0x0,
+    Sai3ClkSel0 = 0x0,
     #[doc = "derive clock from PLL5."]
-    SAI3_CLK_SEL_1 = 0x01,
+    Sai3ClkSel1 = 0x01,
     #[doc = "derive clock from PLL4."]
-    SAI3_CLK_SEL_2 = 0x02,
+    Sai3ClkSel2 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Sai3ClkSel {
@@ -3877,9 +3877,9 @@ impl From<Sai3ClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sbyos {
     #[doc = "On-chip oscillator will not be powered down, after next entrance to STOP mode. (CCM_REF_EN_B will remain asserted - '0' and cosc_pwrdown will remain de asserted - '0')."]
-    SBYOS_0 = 0x0,
+    Sbyos0 = 0x0,
     #[doc = "On-chip oscillator will be powered down, after next entrance to STOP mode. (CCM_REF_EN_B will be deasserted - '1' and cosc_pwrdown will be asserted - '1'). When returning from STOP mode, external oscillator will be enabled again, on-chip oscillator will return to oscillator mode, and after oscnt count, CCM will continue with the exit from the STOP mode process."]
-    SBYOS_1 = 0x01,
+    Sbyos1 = 0x01,
 }
 impl Sbyos {
     #[inline(always)]
@@ -3908,9 +3908,9 @@ impl From<Sbyos> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SemcAltClkSel {
     #[doc = "PLL2 PFD2 will be selected as alternative clock for SEMC root clock."]
-    SEMC_ALT_CLK_SEL_0 = 0x0,
+    SemcAltClkSel0 = 0x0,
     #[doc = "PLL3 PFD1 will be selected as alternative clock for SEMC root clock."]
-    SEMC_ALT_CLK_SEL_1 = 0x01,
+    SemcAltClkSel1 = 0x01,
 }
 impl SemcAltClkSel {
     #[inline(always)]
@@ -3939,9 +3939,9 @@ impl From<SemcAltClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SemcClkSel {
     #[doc = "Periph_clk output will be used as SEMC clock root."]
-    SEMC_CLK_SEL_0 = 0x0,
+    SemcClkSel0 = 0x0,
     #[doc = "SEMC alternative clock will be used as SEMC clock root."]
-    SEMC_CLK_SEL_1 = 0x01,
+    SemcClkSel1 = 0x01,
 }
 impl SemcClkSel {
     #[inline(always)]
@@ -3970,21 +3970,21 @@ impl From<SemcClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SemcPodf {
     #[doc = "divide by 1."]
-    SEMC_PODF_0 = 0x0,
+    SemcPodf0 = 0x0,
     #[doc = "divide by 2."]
-    SEMC_PODF_1 = 0x01,
+    SemcPodf1 = 0x01,
     #[doc = "divide by 3."]
-    SEMC_PODF_2 = 0x02,
+    SemcPodf2 = 0x02,
     #[doc = "divide by 4."]
-    SEMC_PODF_3 = 0x03,
+    SemcPodf3 = 0x03,
     #[doc = "divide by 5."]
-    SEMC_PODF_4 = 0x04,
+    SemcPodf4 = 0x04,
     #[doc = "divide by 6."]
-    SEMC_PODF_5 = 0x05,
+    SemcPodf5 = 0x05,
     #[doc = "divide by 7."]
-    SEMC_PODF_6 = 0x06,
+    SemcPodf6 = 0x06,
     #[doc = "divide by 8."]
-    SEMC_PODF_7 = 0x07,
+    SemcPodf7 = 0x07,
 }
 impl SemcPodf {
     #[inline(always)]
@@ -4013,9 +4013,9 @@ impl From<SemcPodf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SemcPodfBusy {
     #[doc = "divider is not busy and its value represents the actual division."]
-    SEMC_PODF_BUSY_0 = 0x0,
+    SemcPodfBusy0 = 0x0,
     #[doc = "divider is busy with handshake process with module. The value read in the divider represents the previous value of the division factor, and after the handshake the written value of the semc_podf will be applied."]
-    SEMC_PODF_BUSY_1 = 0x01,
+    SemcPodfBusy1 = 0x01,
 }
 impl SemcPodfBusy {
     #[inline(always)]
@@ -4044,9 +4044,9 @@ impl From<SemcPodfBusy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SemcPodfLoaded {
     #[doc = "interrupt is not generated due to frequency change of semc_podf."]
-    SEMC_PODF_LOADED_0 = 0x0,
+    SemcPodfLoaded0 = 0x0,
     #[doc = "interrupt generated due to frequency change of semc_podf."]
-    SEMC_PODF_LOADED_1 = 0x01,
+    SemcPodfLoaded1 = 0x01,
 }
 impl SemcPodfLoaded {
     #[inline(always)]
@@ -4075,21 +4075,21 @@ impl From<SemcPodfLoaded> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Spdif0ClkPodf {
     #[doc = "Divide by 1."]
-    DIVIDE_1 = 0x0,
+    Divide1 = 0x0,
     #[doc = "Divide by 2."]
-    DIVIDE_2 = 0x01,
+    Divide2 = 0x01,
     #[doc = "Divide by 3."]
-    DIVIDE_3 = 0x02,
+    Divide3 = 0x02,
     #[doc = "Divide by 4."]
-    DIVIDE_4 = 0x03,
+    Divide4 = 0x03,
     #[doc = "Divide by 5."]
-    DIVIDE_5 = 0x04,
+    Divide5 = 0x04,
     #[doc = "Divide by 6."]
-    DIVIDE_6 = 0x05,
+    Divide6 = 0x05,
     #[doc = "Divide by 7."]
-    DIVIDE_7 = 0x06,
+    Divide7 = 0x06,
     #[doc = "Divide by 8."]
-    DIVIDE_8 = 0x07,
+    Divide8 = 0x07,
 }
 impl Spdif0ClkPodf {
     #[inline(always)]
@@ -4118,21 +4118,21 @@ impl From<Spdif0ClkPodf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Spdif0ClkPred {
     #[doc = "Divide by 1."]
-    DIVIDE_1 = 0x0,
+    Divide1 = 0x0,
     #[doc = "Divide by 2."]
-    DIVIDE_2 = 0x01,
+    Divide2 = 0x01,
     #[doc = "Divide by 3."]
-    DIVIDE_3 = 0x02,
+    Divide3 = 0x02,
     #[doc = "Divide by 4."]
-    DIVIDE_4 = 0x03,
+    Divide4 = 0x03,
     #[doc = "Divide by 5."]
-    DIVIDE_5 = 0x04,
+    Divide5 = 0x04,
     #[doc = "Divide by 6."]
-    DIVIDE_6 = 0x05,
+    Divide6 = 0x05,
     #[doc = "Divide by 7."]
-    DIVIDE_7 = 0x06,
+    Divide7 = 0x06,
     #[doc = "Divide by 8."]
-    DIVIDE_8 = 0x07,
+    Divide8 = 0x07,
 }
 impl Spdif0ClkPred {
     #[inline(always)]
@@ -4161,13 +4161,13 @@ impl From<Spdif0ClkPred> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Spdif0ClkSel {
     #[doc = "derive clock from PLL4."]
-    SPDIF0_CLK_SEL_0 = 0x0,
+    Spdif0ClkSel0 = 0x0,
     #[doc = "derive clock from PLL3 PFD2."]
-    SPDIF0_CLK_SEL_1 = 0x01,
+    Spdif0ClkSel1 = 0x01,
     #[doc = "derive clock from PLL5."]
-    SPDIF0_CLK_SEL_2 = 0x02,
+    Spdif0ClkSel2 = 0x02,
     #[doc = "derive clock from pll3_sw_clk."]
-    SPDIF0_CLK_SEL_3 = 0x03,
+    Spdif0ClkSel3 = 0x03,
 }
 impl Spdif0ClkSel {
     #[inline(always)]
@@ -4196,13 +4196,13 @@ impl From<Spdif0ClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum StbyCount {
     #[doc = "CCM will wait (1*pmic_delay_scaler)+1 ckil clock cycles."]
-    STBY_COUNT_0 = 0x0,
+    StbyCount0 = 0x0,
     #[doc = "CCM will wait (3*pmic_delay_scaler)+1 ckil clock cycles."]
-    STBY_COUNT_1 = 0x01,
+    StbyCount1 = 0x01,
     #[doc = "CCM will wait (7*pmic_delay_scaler)+1 ckil clock cycles."]
-    STBY_COUNT_2 = 0x02,
+    StbyCount2 = 0x02,
     #[doc = "CCM will wait (15*pmic_delay_scaler)+1 ckil clock cycles."]
-    STBY_COUNT_3 = 0x03,
+    StbyCount3 = 0x03,
 }
 impl StbyCount {
     #[inline(always)]
@@ -4231,11 +4231,11 @@ impl From<StbyCount> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SysMemDsCtrl {
     #[doc = "Disable memory DS mode always."]
-    SYS_MEM_DS_CTRL_0 = 0x0,
+    SysMemDsCtrl0 = 0x0,
     #[doc = "Enable memory (outside Arm platform) DS mode when system STOP and PLL are disabled."]
-    SYS_MEM_DS_CTRL_1 = 0x01,
+    SysMemDsCtrl1 = 0x01,
     #[doc = "enable memory (outside Arm platform) DS mode when system is in STOP mode."]
-    SYS_MEM_DS_CTRL_2 = 0x02,
+    SysMemDsCtrl2 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl SysMemDsCtrl {
@@ -4265,13 +4265,13 @@ impl From<SysMemDsCtrl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TraceClkSel {
     #[doc = "derive clock from PLL2."]
-    TRACE_CLK_SEL_0 = 0x0,
+    TraceClkSel0 = 0x0,
     #[doc = "derive clock from PLL2 PFD2."]
-    TRACE_CLK_SEL_1 = 0x01,
+    TraceClkSel1 = 0x01,
     #[doc = "derive clock from PLL2 PFD0."]
-    TRACE_CLK_SEL_2 = 0x02,
+    TraceClkSel2 = 0x02,
     #[doc = "derive clock from PLL2 PFD1."]
-    TRACE_CLK_SEL_3 = 0x03,
+    TraceClkSel3 = 0x03,
 }
 impl TraceClkSel {
     #[inline(always)]
@@ -4300,13 +4300,13 @@ impl From<TraceClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TracePodf {
     #[doc = "divide by 1."]
-    TRACE_PODF_0 = 0x0,
+    TracePodf0 = 0x0,
     #[doc = "divide by 2."]
-    TRACE_PODF_1 = 0x01,
+    TracePodf1 = 0x01,
     #[doc = "divide by 3."]
-    TRACE_PODF_2 = 0x02,
+    TracePodf2 = 0x02,
     #[doc = "divide by 4."]
-    TRACE_PODF_3 = 0x03,
+    TracePodf3 = 0x03,
 }
 impl TracePodf {
     #[inline(always)]
@@ -4335,133 +4335,133 @@ impl From<TracePodf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum UartClkPodf {
     #[doc = "Divide by 1."]
-    DIVIDE_1 = 0x0,
+    Divide1 = 0x0,
     #[doc = "Divide by 2."]
-    DIVIDE_2 = 0x01,
+    Divide2 = 0x01,
     #[doc = "Divide by 3."]
-    DIVIDE_3 = 0x02,
+    Divide3 = 0x02,
     #[doc = "Divide by 4."]
-    DIVIDE_4 = 0x03,
+    Divide4 = 0x03,
     #[doc = "Divide by 5."]
-    DIVIDE_5 = 0x04,
+    Divide5 = 0x04,
     #[doc = "Divide by 6."]
-    DIVIDE_6 = 0x05,
+    Divide6 = 0x05,
     #[doc = "Divide by 7."]
-    DIVIDE_7 = 0x06,
+    Divide7 = 0x06,
     #[doc = "Divide by 8."]
-    DIVIDE_8 = 0x07,
+    Divide8 = 0x07,
     #[doc = "Divide by 9."]
-    DIVIDE_9 = 0x08,
+    Divide9 = 0x08,
     #[doc = "Divide by 10."]
-    DIVIDE_10 = 0x09,
+    Divide10 = 0x09,
     #[doc = "Divide by 11."]
-    DIVIDE_11 = 0x0a,
+    Divide11 = 0x0a,
     #[doc = "Divide by 12."]
-    DIVIDE_12 = 0x0b,
+    Divide12 = 0x0b,
     #[doc = "Divide by 13."]
-    DIVIDE_13 = 0x0c,
+    Divide13 = 0x0c,
     #[doc = "Divide by 14."]
-    DIVIDE_14 = 0x0d,
+    Divide14 = 0x0d,
     #[doc = "Divide by 15."]
-    DIVIDE_15 = 0x0e,
+    Divide15 = 0x0e,
     #[doc = "Divide by 16."]
-    DIVIDE_16 = 0x0f,
+    Divide16 = 0x0f,
     #[doc = "Divide by 17."]
-    DIVIDE_17 = 0x10,
+    Divide17 = 0x10,
     #[doc = "Divide by 18."]
-    DIVIDE_18 = 0x11,
+    Divide18 = 0x11,
     #[doc = "Divide by 19."]
-    DIVIDE_19 = 0x12,
+    Divide19 = 0x12,
     #[doc = "Divide by 20."]
-    DIVIDE_20 = 0x13,
+    Divide20 = 0x13,
     #[doc = "Divide by 21."]
-    DIVIDE_21 = 0x14,
+    Divide21 = 0x14,
     #[doc = "Divide by 22."]
-    DIVIDE_22 = 0x15,
+    Divide22 = 0x15,
     #[doc = "Divide by 23."]
-    DIVIDE_23 = 0x16,
+    Divide23 = 0x16,
     #[doc = "Divide by 24."]
-    DIVIDE_24 = 0x17,
+    Divide24 = 0x17,
     #[doc = "Divide by 25."]
-    DIVIDE_25 = 0x18,
+    Divide25 = 0x18,
     #[doc = "Divide by 26."]
-    DIVIDE_26 = 0x19,
+    Divide26 = 0x19,
     #[doc = "Divide by 27."]
-    DIVIDE_27 = 0x1a,
+    Divide27 = 0x1a,
     #[doc = "Divide by 28."]
-    DIVIDE_28 = 0x1b,
+    Divide28 = 0x1b,
     #[doc = "Divide by 29."]
-    DIVIDE_29 = 0x1c,
+    Divide29 = 0x1c,
     #[doc = "Divide by 30."]
-    DIVIDE_30 = 0x1d,
+    Divide30 = 0x1d,
     #[doc = "Divide by 31."]
-    DIVIDE_31 = 0x1e,
+    Divide31 = 0x1e,
     #[doc = "Divide by 32."]
-    DIVIDE_32 = 0x1f,
+    Divide32 = 0x1f,
     #[doc = "Divide by 33."]
-    DIVIDE_33 = 0x20,
+    Divide33 = 0x20,
     #[doc = "Divide by 34."]
-    DIVIDE_34 = 0x21,
+    Divide34 = 0x21,
     #[doc = "Divide by 35."]
-    DIVIDE_35 = 0x22,
+    Divide35 = 0x22,
     #[doc = "Divide by 36."]
-    DIVIDE_36 = 0x23,
+    Divide36 = 0x23,
     #[doc = "Divide by 37."]
-    DIVIDE_37 = 0x24,
+    Divide37 = 0x24,
     #[doc = "Divide by 38."]
-    DIVIDE_38 = 0x25,
+    Divide38 = 0x25,
     #[doc = "Divide by 39."]
-    DIVIDE_39 = 0x26,
+    Divide39 = 0x26,
     #[doc = "Divide by 40."]
-    DIVIDE_40 = 0x27,
+    Divide40 = 0x27,
     #[doc = "Divide by 41."]
-    DIVIDE_41 = 0x28,
+    Divide41 = 0x28,
     #[doc = "Divide by 42."]
-    DIVIDE_42 = 0x29,
+    Divide42 = 0x29,
     #[doc = "Divide by 43."]
-    DIVIDE_43 = 0x2a,
+    Divide43 = 0x2a,
     #[doc = "Divide by 44."]
-    DIVIDE_44 = 0x2b,
+    Divide44 = 0x2b,
     #[doc = "Divide by 45."]
-    DIVIDE_45 = 0x2c,
+    Divide45 = 0x2c,
     #[doc = "Divide by 46."]
-    DIVIDE_46 = 0x2d,
+    Divide46 = 0x2d,
     #[doc = "Divide by 47."]
-    DIVIDE_47 = 0x2e,
+    Divide47 = 0x2e,
     #[doc = "Divide by 48."]
-    DIVIDE_48 = 0x2f,
+    Divide48 = 0x2f,
     #[doc = "Divide by 49."]
-    DIVIDE_49 = 0x30,
+    Divide49 = 0x30,
     #[doc = "Divide by 50."]
-    DIVIDE_50 = 0x31,
+    Divide50 = 0x31,
     #[doc = "Divide by 51."]
-    DIVIDE_51 = 0x32,
+    Divide51 = 0x32,
     #[doc = "Divide by 52."]
-    DIVIDE_52 = 0x33,
+    Divide52 = 0x33,
     #[doc = "Divide by 53."]
-    DIVIDE_53 = 0x34,
+    Divide53 = 0x34,
     #[doc = "Divide by 54."]
-    DIVIDE_54 = 0x35,
+    Divide54 = 0x35,
     #[doc = "Divide by 55."]
-    DIVIDE_55 = 0x36,
+    Divide55 = 0x36,
     #[doc = "Divide by 56."]
-    DIVIDE_56 = 0x37,
+    Divide56 = 0x37,
     #[doc = "Divide by 57."]
-    DIVIDE_57 = 0x38,
+    Divide57 = 0x38,
     #[doc = "Divide by 58."]
-    DIVIDE_58 = 0x39,
+    Divide58 = 0x39,
     #[doc = "Divide by 59."]
-    DIVIDE_59 = 0x3a,
+    Divide59 = 0x3a,
     #[doc = "Divide by 60."]
-    DIVIDE_60 = 0x3b,
+    Divide60 = 0x3b,
     #[doc = "Divide by 61."]
-    DIVIDE_61 = 0x3c,
+    Divide61 = 0x3c,
     #[doc = "Divide by 62."]
-    DIVIDE_62 = 0x3d,
+    Divide62 = 0x3d,
     #[doc = "Divide by 63."]
-    DIVIDE_63 = 0x3e,
+    Divide63 = 0x3e,
     #[doc = "Divide by 64."]
-    DIVIDE_64 = 0x3f,
+    Divide64 = 0x3f,
 }
 impl UartClkPodf {
     #[inline(always)]
@@ -4490,9 +4490,9 @@ impl From<UartClkPodf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum UartClkSel {
     #[doc = "derive clock from pll3_80m."]
-    UART_CLK_SEL_0 = 0x0,
+    UartClkSel0 = 0x0,
     #[doc = "derive clock from osc_clk."]
-    UART_CLK_SEL_1 = 0x01,
+    UartClkSel1 = 0x01,
 }
 impl UartClkSel {
     #[inline(always)]
@@ -4521,9 +4521,9 @@ impl From<UartClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usdhc1ClkSel {
     #[doc = "derive clock from PLL2 PFD2."]
-    USDHC1_CLK_SEL_0 = 0x0,
+    Usdhc1ClkSel0 = 0x0,
     #[doc = "derive clock from PLL2 PFD0."]
-    USDHC1_CLK_SEL_1 = 0x01,
+    Usdhc1ClkSel1 = 0x01,
 }
 impl Usdhc1ClkSel {
     #[inline(always)]
@@ -4552,21 +4552,21 @@ impl From<Usdhc1ClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usdhc1Podf {
     #[doc = "divide by 1."]
-    USDHC1_PODF_0 = 0x0,
+    Usdhc1Podf0 = 0x0,
     #[doc = "divide by 2."]
-    USDHC1_PODF_1 = 0x01,
+    Usdhc1Podf1 = 0x01,
     #[doc = "divide by 3."]
-    USDHC1_PODF_2 = 0x02,
+    Usdhc1Podf2 = 0x02,
     #[doc = "divide by 4."]
-    USDHC1_PODF_3 = 0x03,
+    Usdhc1Podf3 = 0x03,
     #[doc = "divide by 5."]
-    USDHC1_PODF_4 = 0x04,
+    Usdhc1Podf4 = 0x04,
     #[doc = "divide by 6."]
-    USDHC1_PODF_5 = 0x05,
+    Usdhc1Podf5 = 0x05,
     #[doc = "divide by 7."]
-    USDHC1_PODF_6 = 0x06,
+    Usdhc1Podf6 = 0x06,
     #[doc = "divide by 8."]
-    USDHC1_PODF_7 = 0x07,
+    Usdhc1Podf7 = 0x07,
 }
 impl Usdhc1Podf {
     #[inline(always)]
@@ -4595,9 +4595,9 @@ impl From<Usdhc1Podf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usdhc2ClkSel {
     #[doc = "derive clock from PLL2 PFD2."]
-    USDHC2_CLK_SEL_0 = 0x0,
+    Usdhc2ClkSel0 = 0x0,
     #[doc = "derive clock from PLL2 PFD0."]
-    USDHC2_CLK_SEL_1 = 0x01,
+    Usdhc2ClkSel1 = 0x01,
 }
 impl Usdhc2ClkSel {
     #[inline(always)]
@@ -4626,21 +4626,21 @@ impl From<Usdhc2ClkSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usdhc2Podf {
     #[doc = "divide by 1."]
-    USDHC2_PODF_0 = 0x0,
+    Usdhc2Podf0 = 0x0,
     #[doc = "divide by 2."]
-    USDHC2_PODF_1 = 0x01,
+    Usdhc2Podf1 = 0x01,
     #[doc = "divide by 3."]
-    USDHC2_PODF_2 = 0x02,
+    Usdhc2Podf2 = 0x02,
     #[doc = "divide by 4."]
-    USDHC2_PODF_3 = 0x03,
+    Usdhc2Podf3 = 0x03,
     #[doc = "divide by 5."]
-    USDHC2_PODF_4 = 0x04,
+    Usdhc2Podf4 = 0x04,
     #[doc = "divide by 6."]
-    USDHC2_PODF_5 = 0x05,
+    Usdhc2Podf5 = 0x05,
     #[doc = "divide by 7."]
-    USDHC2_PODF_6 = 0x06,
+    Usdhc2Podf6 = 0x06,
     #[doc = "divide by 8."]
-    USDHC2_PODF_7 = 0x07,
+    Usdhc2Podf7 = 0x07,
 }
 impl Usdhc2Podf {
     #[inline(always)]
@@ -4669,9 +4669,9 @@ impl From<Usdhc2Podf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Vstby {
     #[doc = "Voltage will not be changed to standby voltage after next entrance to STOP mode. ( PMIC_STBY_REQ will remain negated - '0')."]
-    VSTBY_0 = 0x0,
+    Vstby0 = 0x0,
     #[doc = "Voltage will be requested to change to standby voltage after next entrance to stop mode. ( PMIC_STBY_REQ will be asserted - '1')."]
-    VSTBY_1 = 0x01,
+    Vstby1 = 0x01,
 }
 impl Vstby {
     #[inline(always)]

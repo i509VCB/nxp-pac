@@ -3,7 +3,7 @@
 pub struct Feature(u16);
 impl Feature {
     #[doc = "Standard feature set."]
-    pub const STANDARD: Self = Self(0x0);
+    pub const Standard: Self = Self(0x0);
 }
 impl Feature {
     pub const fn from_bits(val: u16) -> Feature {
@@ -16,7 +16,7 @@ impl Feature {
 impl core::fmt::Debug for Feature {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("STANDARD"),
+            0x0 => f.write_str("Standard"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -25,7 +25,7 @@ impl core::fmt::Debug for Feature {
 impl defmt::Format for Feature {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "STANDARD"),
+            0x0 => defmt::write!(f, "Standard"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -47,9 +47,9 @@ impl From<Feature> for u16 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hvreq {
     #[doc = "Turn off."]
-    TURN_OFF = 0x0,
+    TurnOff = 0x0,
     #[doc = "Turn on."]
-    TURN_ON = 0x01,
+    TurnOn = 0x01,
 }
 impl Hvreq {
     #[inline(always)]
@@ -78,9 +78,9 @@ impl From<Hvreq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lvreq {
     #[doc = "Turn off."]
-    TURN_OFF = 0x0,
+    TurnOff = 0x0,
     #[doc = "Turn on."]
-    TURN_ON = 0x01,
+    TurnOn = 0x01,
 }
 impl Lvreq {
     #[inline(always)]
@@ -109,9 +109,9 @@ impl From<Lvreq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pdreq {
     #[doc = "PD pin is set to low when OTPC is in idle state. It means EFUSE hardmacro is in standby mode. Idle state means OTPC is not in read and program modes."]
-    NO_ACTION = 0x0,
+    NoAction = 0x0,
     #[doc = "PD pin is set to high when OTPC is in idle state. It means EFUSE hardmacro is in power down mode."]
-    POWER_DN = 0x01,
+    PowerDn = 0x01,
 }
 impl Pdreq {
     #[inline(always)]
@@ -140,9 +140,9 @@ impl From<Pdreq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ReadEfuse {
     #[doc = "Starts program operation when the WR_UNLOCK value is 0x9527; otherwise, takes no action."]
-    PROGRAM = 0x0,
+    Program = 0x0,
     #[doc = "Starts read operation."]
-    READ = 0x01,
+    Read = 0x01,
 }
 impl ReadEfuse {
     #[inline(always)]
@@ -171,9 +171,9 @@ impl From<ReadEfuse> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ReloadShadows {
     #[doc = "No action (when writing) or reload complete (when reading)."]
-    NO_ACTION = 0x0,
+    NoAction = 0x0,
     #[doc = "Reload."]
-    RELOAD = 0x01,
+    Reload = 0x01,
 }
 impl ReloadShadows {
     #[inline(always)]
@@ -202,9 +202,9 @@ impl From<ReloadShadows> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum WrAll1s {
     #[doc = "Uses the WDATA value."]
-    USE_WDATA = 0x0,
+    UseWdata = 0x0,
     #[doc = "Writes all 1s."]
-    USE_ALL1S = 0x01,
+    UseAll1s = 0x01,
 }
 impl WrAll1s {
     #[inline(always)]

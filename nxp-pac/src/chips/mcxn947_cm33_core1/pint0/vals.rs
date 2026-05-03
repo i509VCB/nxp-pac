@@ -3,9 +3,9 @@
 pub struct Cenaf(u8);
 impl Cenaf {
     #[doc = "No operation."]
-    pub const CENAF_0: Self = Self(0x0);
+    pub const Cenaf0: Self = Self(0x0);
     #[doc = "LOW-active interrupt selected or falling-edge interrupt disabled."]
-    pub const CENAF_1: Self = Self(0x01);
+    pub const Cenaf1: Self = Self(0x01);
 }
 impl Cenaf {
     pub const fn from_bits(val: u8) -> Cenaf {
@@ -18,8 +18,8 @@ impl Cenaf {
 impl core::fmt::Debug for Cenaf {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("CENAF_0"),
-            0x01 => f.write_str("CENAF_1"),
+            0x0 => f.write_str("Cenaf0"),
+            0x01 => f.write_str("Cenaf1"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -28,8 +28,8 @@ impl core::fmt::Debug for Cenaf {
 impl defmt::Format for Cenaf {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "CENAF_0"),
-            0x01 => defmt::write!(f, "CENAF_1"),
+            0x0 => defmt::write!(f, "Cenaf0"),
+            0x01 => defmt::write!(f, "Cenaf1"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -51,9 +51,9 @@ impl From<Cenaf> for u8 {
 pub struct Cenrl(u8);
 impl Cenrl {
     #[doc = "No operation."]
-    pub const CENRL_0: Self = Self(0x0);
+    pub const Cenrl0: Self = Self(0x0);
     #[doc = "Disable rising edge or level interrupt."]
-    pub const CENRL_1: Self = Self(0x01);
+    pub const Cenrl1: Self = Self(0x01);
 }
 impl Cenrl {
     pub const fn from_bits(val: u8) -> Cenrl {
@@ -66,8 +66,8 @@ impl Cenrl {
 impl core::fmt::Debug for Cenrl {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("CENRL_0"),
-            0x01 => f.write_str("CENRL_1"),
+            0x0 => f.write_str("Cenrl0"),
+            0x01 => f.write_str("Cenrl1"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -76,8 +76,8 @@ impl core::fmt::Debug for Cenrl {
 impl defmt::Format for Cenrl {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "CENRL_0"),
-            0x01 => defmt::write!(f, "CENRL_1"),
+            0x0 => defmt::write!(f, "Cenrl0"),
+            0x01 => defmt::write!(f, "Cenrl1"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -99,21 +99,21 @@ impl From<Cenrl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cfg0 {
     #[doc = "Constant HIGH."]
-    CONSTANT_HIGH = 0x0,
+    ConstantHigh = 0x0,
     #[doc = "Sticky rising edge."]
-    STICKY_RISING_EDGE = 0x01,
+    StickyRisingEdge = 0x01,
     #[doc = "Sticky falling edge."]
-    STICKY_FALLING_EDGE = 0x02,
+    StickyFallingEdge = 0x02,
     #[doc = "Sticky rising or falling edge."]
-    STICKY_RISING_FALLING_EDGE = 0x03,
+    StickyRisingFallingEdge = 0x03,
     #[doc = "High level."]
-    HIGH_LEVEL = 0x04,
+    HighLevel = 0x04,
     #[doc = "Low level."]
-    LOW_LEVEL = 0x05,
+    LowLevel = 0x05,
     #[doc = "Constant 0."]
-    CONSTANT_ZERO = 0x06,
+    ConstantZero = 0x06,
     #[doc = "Event (Nonsticky rising or falling edge)."]
-    EVENT = 0x07,
+    Event = 0x07,
 }
 impl Cfg0 {
     #[inline(always)]
@@ -142,21 +142,21 @@ impl From<Cfg0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cfg1 {
     #[doc = "Constant HIGH."]
-    CONSTANT_HIGH = 0x0,
+    ConstantHigh = 0x0,
     #[doc = "Sticky rising edge."]
-    STICKY_RISING_EDGE = 0x01,
+    StickyRisingEdge = 0x01,
     #[doc = "Sticky falling edge."]
-    STICKY_FALLING_EDGE = 0x02,
+    StickyFallingEdge = 0x02,
     #[doc = "Sticky rising or falling edge."]
-    STICKY_RISING_FALLING_EDGE = 0x03,
+    StickyRisingFallingEdge = 0x03,
     #[doc = "High level."]
-    HIGH_LEVEL = 0x04,
+    HighLevel = 0x04,
     #[doc = "Low level."]
-    LOW_LEVEL = 0x05,
+    LowLevel = 0x05,
     #[doc = "Constant 0."]
-    CONSTANT_ZERO = 0x06,
+    ConstantZero = 0x06,
     #[doc = "Event (Nonsticky rising or falling edge)."]
-    EVENT = 0x07,
+    Event = 0x07,
 }
 impl Cfg1 {
     #[inline(always)]
@@ -185,21 +185,21 @@ impl From<Cfg1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cfg2 {
     #[doc = "Constant HIGH."]
-    CONSTANT_HIGH = 0x0,
+    ConstantHigh = 0x0,
     #[doc = "Sticky rising edge."]
-    STICKY_RISING_EDGE = 0x01,
+    StickyRisingEdge = 0x01,
     #[doc = "Sticky falling edge."]
-    STICKY_FALLING_EDGE = 0x02,
+    StickyFallingEdge = 0x02,
     #[doc = "Sticky rising or falling edge."]
-    STICKY_RISING_FALLING_EDGE = 0x03,
+    StickyRisingFallingEdge = 0x03,
     #[doc = "High level."]
-    HIGH_LEVEL = 0x04,
+    HighLevel = 0x04,
     #[doc = "Low level."]
-    LOW_LEVEL = 0x05,
+    LowLevel = 0x05,
     #[doc = "Constant 0."]
-    CONSTANT_ZERO = 0x06,
+    ConstantZero = 0x06,
     #[doc = "Event (Nonsticky rising or falling edge)."]
-    EVENT = 0x07,
+    Event = 0x07,
 }
 impl Cfg2 {
     #[inline(always)]
@@ -228,21 +228,21 @@ impl From<Cfg2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cfg3 {
     #[doc = "Constant HIGH."]
-    CONSTANT_HIGH = 0x0,
+    ConstantHigh = 0x0,
     #[doc = "Sticky rising edge."]
-    STICKY_RISING_EDGE = 0x01,
+    StickyRisingEdge = 0x01,
     #[doc = "Sticky falling edge."]
-    STICKY_FALLING_EDGE = 0x02,
+    StickyFallingEdge = 0x02,
     #[doc = "Sticky rising or falling edge."]
-    STICKY_RISING_FALLING_EDGE = 0x03,
+    StickyRisingFallingEdge = 0x03,
     #[doc = "High level."]
-    HIGH_LEVEL = 0x04,
+    HighLevel = 0x04,
     #[doc = "Low level."]
-    LOW_LEVEL = 0x05,
+    LowLevel = 0x05,
     #[doc = "Constant 0."]
-    CONSTANT_ZERO = 0x06,
+    ConstantZero = 0x06,
     #[doc = "Event (Nonsticky rising or falling edge)."]
-    EVENT = 0x07,
+    Event = 0x07,
 }
 impl Cfg3 {
     #[inline(always)]
@@ -271,21 +271,21 @@ impl From<Cfg3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cfg4 {
     #[doc = "Constant HIGH."]
-    CONSTANT_HIGH = 0x0,
+    ConstantHigh = 0x0,
     #[doc = "Sticky rising edge."]
-    STICKY_RISING_EDGE = 0x01,
+    StickyRisingEdge = 0x01,
     #[doc = "Sticky falling edge."]
-    STICKY_FALLING_EDGE = 0x02,
+    StickyFallingEdge = 0x02,
     #[doc = "Sticky rising or falling edge."]
-    STICKY_RISING_FALLING_EDGE = 0x03,
+    StickyRisingFallingEdge = 0x03,
     #[doc = "High level."]
-    HIGH_LEVEL = 0x04,
+    HighLevel = 0x04,
     #[doc = "Low level."]
-    LOW_LEVEL = 0x05,
+    LowLevel = 0x05,
     #[doc = "Constant 0."]
-    CONSTANT_ZERO = 0x06,
+    ConstantZero = 0x06,
     #[doc = "Event (Nonsticky rising or falling edge)."]
-    EVENT = 0x07,
+    Event = 0x07,
 }
 impl Cfg4 {
     #[inline(always)]
@@ -314,21 +314,21 @@ impl From<Cfg4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cfg5 {
     #[doc = "Constant HIGH."]
-    CONSTANT_HIGH = 0x0,
+    ConstantHigh = 0x0,
     #[doc = "Sticky rising edge."]
-    STICKY_RISING_EDGE = 0x01,
+    StickyRisingEdge = 0x01,
     #[doc = "Sticky falling edge."]
-    STICKY_FALLING_EDGE = 0x02,
+    StickyFallingEdge = 0x02,
     #[doc = "Sticky rising or falling edge."]
-    STICKY_RISING_FALLING_EDGE = 0x03,
+    StickyRisingFallingEdge = 0x03,
     #[doc = "High level."]
-    HIGH_LEVEL = 0x04,
+    HighLevel = 0x04,
     #[doc = "Low level."]
-    LOW_LEVEL = 0x05,
+    LowLevel = 0x05,
     #[doc = "Constant 0."]
-    CONSTANT_ZERO = 0x06,
+    ConstantZero = 0x06,
     #[doc = "Event (Nonsticky rising or falling edge)."]
-    EVENT = 0x07,
+    Event = 0x07,
 }
 impl Cfg5 {
     #[inline(always)]
@@ -357,21 +357,21 @@ impl From<Cfg5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cfg6 {
     #[doc = "Constant HIGH."]
-    CONSTANT_HIGH = 0x0,
+    ConstantHigh = 0x0,
     #[doc = "Sticky rising edge."]
-    STICKY_RISING_EDGE = 0x01,
+    StickyRisingEdge = 0x01,
     #[doc = "Sticky falling edge."]
-    STICKY_FALLING_EDGE = 0x02,
+    StickyFallingEdge = 0x02,
     #[doc = "Sticky rising or falling edge."]
-    STICKY_RISING_FALLING_EDGE = 0x03,
+    StickyRisingFallingEdge = 0x03,
     #[doc = "High level."]
-    HIGH_LEVEL = 0x04,
+    HighLevel = 0x04,
     #[doc = "Low level."]
-    LOW_LEVEL = 0x05,
+    LowLevel = 0x05,
     #[doc = "Constant 0."]
-    CONSTANT_ZERO = 0x06,
+    ConstantZero = 0x06,
     #[doc = "Event (Nonsticky rising or falling edge)."]
-    EVENT = 0x07,
+    Event = 0x07,
 }
 impl Cfg6 {
     #[inline(always)]
@@ -400,21 +400,21 @@ impl From<Cfg6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cfg7 {
     #[doc = "Constant HIGH."]
-    CONSTANT_HIGH = 0x0,
+    ConstantHigh = 0x0,
     #[doc = "Sticky rising edge."]
-    STICKY_RISING_EDGE = 0x01,
+    StickyRisingEdge = 0x01,
     #[doc = "Sticky falling edge."]
-    STICKY_FALLING_EDGE = 0x02,
+    StickyFallingEdge = 0x02,
     #[doc = "Sticky rising or falling edge."]
-    STICKY_RISING_FALLING_EDGE = 0x03,
+    StickyRisingFallingEdge = 0x03,
     #[doc = "High level."]
-    HIGH_LEVEL = 0x04,
+    HighLevel = 0x04,
     #[doc = "Low level."]
-    LOW_LEVEL = 0x05,
+    LowLevel = 0x05,
     #[doc = "Constant 0."]
-    CONSTANT_ZERO = 0x06,
+    ConstantZero = 0x06,
     #[doc = "Event (Nonsticky rising or falling edge)."]
-    EVENT = 0x07,
+    Event = 0x07,
 }
 impl Cfg7 {
     #[inline(always)]
@@ -443,9 +443,9 @@ impl From<Cfg7> for u8 {
 pub struct Enaf(u8);
 impl Enaf {
     #[doc = "Disable (set active interrupt level LOW)."]
-    pub const ENAF_0: Self = Self(0x0);
+    pub const Enaf0: Self = Self(0x0);
     #[doc = "Enable (set active interrupt level HIGH)."]
-    pub const ENAF_1: Self = Self(0x01);
+    pub const Enaf1: Self = Self(0x01);
 }
 impl Enaf {
     pub const fn from_bits(val: u8) -> Enaf {
@@ -458,8 +458,8 @@ impl Enaf {
 impl core::fmt::Debug for Enaf {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("ENAF_0"),
-            0x01 => f.write_str("ENAF_1"),
+            0x0 => f.write_str("Enaf0"),
+            0x01 => f.write_str("Enaf1"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -468,8 +468,8 @@ impl core::fmt::Debug for Enaf {
 impl defmt::Format for Enaf {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "ENAF_0"),
-            0x01 => defmt::write!(f, "ENAF_1"),
+            0x0 => defmt::write!(f, "Enaf0"),
+            0x01 => defmt::write!(f, "Enaf1"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -491,9 +491,9 @@ impl From<Enaf> for u8 {
 pub struct Enrl(u8);
 impl Enrl {
     #[doc = "In bit n disables the corresponding interrupt."]
-    pub const ENRL_0: Self = Self(0x0);
+    pub const Enrl0: Self = Self(0x0);
     #[doc = "In bit n enables the corresponding interrupt."]
-    pub const ENRL_1: Self = Self(0x01);
+    pub const Enrl1: Self = Self(0x01);
 }
 impl Enrl {
     pub const fn from_bits(val: u8) -> Enrl {
@@ -506,8 +506,8 @@ impl Enrl {
 impl core::fmt::Debug for Enrl {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("ENRL_0"),
-            0x01 => f.write_str("ENRL_1"),
+            0x0 => f.write_str("Enrl0"),
+            0x01 => f.write_str("Enrl1"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -516,8 +516,8 @@ impl core::fmt::Debug for Enrl {
 impl defmt::Format for Enrl {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "ENRL_0"),
-            0x01 => defmt::write!(f, "ENRL_1"),
+            0x0 => defmt::write!(f, "Enrl0"),
+            0x01 => defmt::write!(f, "Enrl1"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -539,9 +539,9 @@ impl From<Enrl> for u8 {
 pub struct Fdet(u8);
 impl Fdet {
     #[doc = "Read 0- No falling edge (since Reset or you wrote a 1 to this field last time), Write 0- No operation."]
-    pub const FDET_0: Self = Self(0x0);
+    pub const Fdet0: Self = Self(0x0);
     #[doc = "Read 1- Falling edge (since Reset or you wrote a 1 to this field last time), Write 1- Clear falling-edge detection for this bit."]
-    pub const FDET_1: Self = Self(0x01);
+    pub const Fdet1: Self = Self(0x01);
 }
 impl Fdet {
     pub const fn from_bits(val: u8) -> Fdet {
@@ -554,8 +554,8 @@ impl Fdet {
 impl core::fmt::Debug for Fdet {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("FDET_0"),
-            0x01 => f.write_str("FDET_1"),
+            0x0 => f.write_str("Fdet0"),
+            0x01 => f.write_str("Fdet1"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -564,8 +564,8 @@ impl core::fmt::Debug for Fdet {
 impl defmt::Format for Fdet {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "FDET_0"),
-            0x01 => defmt::write!(f, "FDET_1"),
+            0x0 => defmt::write!(f, "Fdet0"),
+            0x01 => defmt::write!(f, "Fdet1"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -587,7 +587,7 @@ impl From<Fdet> for u8 {
 pub struct Pmat(u8);
 impl Pmat {
     #[doc = "The corresponding product term is matched by the current state of the appropriate inputs."]
-    pub const PMAT_1: Self = Self(0x01);
+    pub const Pmat1: Self = Self(0x01);
 }
 impl Pmat {
     pub const fn from_bits(val: u8) -> Pmat {
@@ -600,7 +600,7 @@ impl Pmat {
 impl core::fmt::Debug for Pmat {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("PMAT_1"),
+            0x01 => f.write_str("Pmat1"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -609,7 +609,7 @@ impl core::fmt::Debug for Pmat {
 impl defmt::Format for Pmat {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "PMAT_1"),
+            0x01 => defmt::write!(f, "Pmat1"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -631,9 +631,9 @@ impl From<Pmat> for u8 {
 pub struct Pmode(u8);
 impl Pmode {
     #[doc = "In bit n configures the interrupt to be edge-sensitive."]
-    pub const ISEL_0: Self = Self(0x0);
+    pub const Isel0: Self = Self(0x0);
     #[doc = "In bit n configures the interrupt to be level-sensitive."]
-    pub const ISEL_1: Self = Self(0x01);
+    pub const Isel1: Self = Self(0x01);
 }
 impl Pmode {
     pub const fn from_bits(val: u8) -> Pmode {
@@ -646,8 +646,8 @@ impl Pmode {
 impl core::fmt::Debug for Pmode {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("ISEL_0"),
-            0x01 => f.write_str("ISEL_1"),
+            0x0 => f.write_str("Isel0"),
+            0x01 => f.write_str("Isel1"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -656,8 +656,8 @@ impl core::fmt::Debug for Pmode {
 impl defmt::Format for Pmode {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "ISEL_0"),
-            0x01 => defmt::write!(f, "ISEL_1"),
+            0x0 => defmt::write!(f, "Isel0"),
+            0x01 => defmt::write!(f, "Isel1"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -679,9 +679,9 @@ impl From<Pmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ProdEndpts0 {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Endpoint."]
-    ENDPOINT = 0x01,
+    Endpoint = 0x01,
 }
 impl ProdEndpts0 {
     #[inline(always)]
@@ -710,9 +710,9 @@ impl From<ProdEndpts0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ProdEndpts1 {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Endpoint."]
-    ENDPOINT = 0x01,
+    Endpoint = 0x01,
 }
 impl ProdEndpts1 {
     #[inline(always)]
@@ -741,9 +741,9 @@ impl From<ProdEndpts1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ProdEndpts2 {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Endpoint."]
-    ENDPOINT = 0x01,
+    Endpoint = 0x01,
 }
 impl ProdEndpts2 {
     #[inline(always)]
@@ -772,9 +772,9 @@ impl From<ProdEndpts2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ProdEndpts3 {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Endpoint."]
-    ENDPOINT = 0x01,
+    Endpoint = 0x01,
 }
 impl ProdEndpts3 {
     #[inline(always)]
@@ -803,9 +803,9 @@ impl From<ProdEndpts3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ProdEndpts4 {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Endpoint."]
-    ENDPOINT = 0x01,
+    Endpoint = 0x01,
 }
 impl ProdEndpts4 {
     #[inline(always)]
@@ -834,9 +834,9 @@ impl From<ProdEndpts4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ProdEndpts5 {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Endpoint."]
-    ENDPOINT = 0x01,
+    Endpoint = 0x01,
 }
 impl ProdEndpts5 {
     #[inline(always)]
@@ -865,9 +865,9 @@ impl From<ProdEndpts5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ProdEndpts6 {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Endpoint."]
-    ENDPOINT = 0x01,
+    Endpoint = 0x01,
 }
 impl ProdEndpts6 {
     #[inline(always)]
@@ -896,9 +896,9 @@ impl From<ProdEndpts6> for u8 {
 pub struct Pstat(u8);
 impl Pstat {
     #[doc = "Read 0- Interrupt is not requested, Write 0- No operation."]
-    pub const PSTAT_0: Self = Self(0x0);
+    pub const Pstat0: Self = Self(0x0);
     #[doc = "Read 1- Interrupt is requested, Write 1 (edge-sensitive)- clear rising- and falling-edge detection for this pin, Write 1 (level-sensitive)- switch the active level for this pin in."]
-    pub const PSTAT_1: Self = Self(0x01);
+    pub const Pstat1: Self = Self(0x01);
 }
 impl Pstat {
     pub const fn from_bits(val: u8) -> Pstat {
@@ -911,8 +911,8 @@ impl Pstat {
 impl core::fmt::Debug for Pstat {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("PSTAT_0"),
-            0x01 => f.write_str("PSTAT_1"),
+            0x0 => f.write_str("Pstat0"),
+            0x01 => f.write_str("Pstat1"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -921,8 +921,8 @@ impl core::fmt::Debug for Pstat {
 impl defmt::Format for Pstat {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "PSTAT_0"),
-            0x01 => defmt::write!(f, "PSTAT_1"),
+            0x0 => defmt::write!(f, "Pstat0"),
+            0x01 => defmt::write!(f, "Pstat1"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -944,9 +944,9 @@ impl From<Pstat> for u8 {
 pub struct Rdet(u8);
 impl Rdet {
     #[doc = "Read 0- No rising edge (since Reset or you wrote a 1 to this field last time), Write 0- No operation."]
-    pub const RDET_0: Self = Self(0x0);
+    pub const Rdet0: Self = Self(0x0);
     #[doc = "Read 1- Rising edge (since Reset or you wrote a 1 to this field last time), Write 1- Clear rising-edge detection for this pin."]
-    pub const RDET_1: Self = Self(0x01);
+    pub const Rdet1: Self = Self(0x01);
 }
 impl Rdet {
     pub const fn from_bits(val: u8) -> Rdet {
@@ -959,8 +959,8 @@ impl Rdet {
 impl core::fmt::Debug for Rdet {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("RDET_0"),
-            0x01 => f.write_str("RDET_1"),
+            0x0 => f.write_str("Rdet0"),
+            0x01 => f.write_str("Rdet1"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -969,8 +969,8 @@ impl core::fmt::Debug for Rdet {
 impl defmt::Format for Rdet {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "RDET_0"),
-            0x01 => defmt::write!(f, "RDET_1"),
+            0x0 => defmt::write!(f, "Rdet0"),
+            0x01 => defmt::write!(f, "Rdet1"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -992,9 +992,9 @@ impl From<Rdet> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SelPmatch {
     #[doc = "Pin interrupt."]
-    PIN_INTERRUPT = 0x0,
+    PinInterrupt = 0x0,
     #[doc = "Pattern match."]
-    PATTERN_MATCH = 0x01,
+    PatternMatch = 0x01,
 }
 impl SelPmatch {
     #[inline(always)]
@@ -1023,9 +1023,9 @@ impl From<SelPmatch> for u8 {
 pub struct Setenaf(u8);
 impl Setenaf {
     #[doc = "Writes 0 to IENF."]
-    pub const SETENAF_0: Self = Self(0x0);
+    pub const Setenaf0: Self = Self(0x0);
     #[doc = "Select HIGH-active interrupt or enable falling-edge interrupt."]
-    pub const SETENAF_1: Self = Self(0x01);
+    pub const Setenaf1: Self = Self(0x01);
 }
 impl Setenaf {
     pub const fn from_bits(val: u8) -> Setenaf {
@@ -1038,8 +1038,8 @@ impl Setenaf {
 impl core::fmt::Debug for Setenaf {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("SETENAF_0"),
-            0x01 => f.write_str("SETENAF_1"),
+            0x0 => f.write_str("Setenaf0"),
+            0x01 => f.write_str("Setenaf1"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -1048,8 +1048,8 @@ impl core::fmt::Debug for Setenaf {
 impl defmt::Format for Setenaf {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "SETENAF_0"),
-            0x01 => defmt::write!(f, "SETENAF_1"),
+            0x0 => defmt::write!(f, "Setenaf0"),
+            0x01 => defmt::write!(f, "Setenaf1"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -1071,9 +1071,9 @@ impl From<Setenaf> for u8 {
 pub struct Setenrl(u8);
 impl Setenrl {
     #[doc = "No operation for interrupt n."]
-    pub const SETENRL_0: Self = Self(0x0);
+    pub const Setenrl0: Self = Self(0x0);
     #[doc = "Enable rising edge or level interrupt for interrupt n."]
-    pub const SETENRL_1: Self = Self(0x01);
+    pub const Setenrl1: Self = Self(0x01);
 }
 impl Setenrl {
     pub const fn from_bits(val: u8) -> Setenrl {
@@ -1086,8 +1086,8 @@ impl Setenrl {
 impl core::fmt::Debug for Setenrl {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("SETENRL_0"),
-            0x01 => f.write_str("SETENRL_1"),
+            0x0 => f.write_str("Setenrl0"),
+            0x01 => f.write_str("Setenrl1"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -1096,8 +1096,8 @@ impl core::fmt::Debug for Setenrl {
 impl defmt::Format for Setenrl {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "SETENRL_0"),
-            0x01 => defmt::write!(f, "SETENRL_1"),
+            0x0 => defmt::write!(f, "Setenrl0"),
+            0x01 => defmt::write!(f, "Setenrl1"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -1119,21 +1119,21 @@ impl From<Setenrl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Src0 {
     #[doc = "Input 0 (selects the pin identified in PINSEL0)."]
-    INPUT0 = 0x0,
+    Input0 = 0x0,
     #[doc = "Input 1 (selects the pin identified in PINSEL1)."]
-    INPUT1 = 0x01,
+    Input1 = 0x01,
     #[doc = "Input 2 (selects the pin identified in PINSEL2)."]
-    INPUT2 = 0x02,
+    Input2 = 0x02,
     #[doc = "Input 3 (selects the pin identified in PINSEL3)."]
-    INPUT3 = 0x03,
+    Input3 = 0x03,
     #[doc = "Input 4 (selects the pin identified in PINSEL4)."]
-    INPUT4 = 0x04,
+    Input4 = 0x04,
     #[doc = "Input 5 (selects the pin identified in PINSEL5)."]
-    INPUT5 = 0x05,
+    Input5 = 0x05,
     #[doc = "Input 6 (selects the pin identified in PINSEL6)."]
-    INPUT6 = 0x06,
+    Input6 = 0x06,
     #[doc = "Input 7 (selects the pin identified in PINSEL7)."]
-    INPUT7 = 0x07,
+    Input7 = 0x07,
 }
 impl Src0 {
     #[inline(always)]
@@ -1162,21 +1162,21 @@ impl From<Src0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Src1 {
     #[doc = "Input 0 (selects the pin identified in PINSEL0)."]
-    INPUT0 = 0x0,
+    Input0 = 0x0,
     #[doc = "Input 1 (selects the pin identified in PINSEL1)."]
-    INPUT1 = 0x01,
+    Input1 = 0x01,
     #[doc = "Input 2 (selects the pin identified in PINSEL2)."]
-    INPUT2 = 0x02,
+    Input2 = 0x02,
     #[doc = "Input 3 (selects the pin identified in PINSEL3)."]
-    INPUT3 = 0x03,
+    Input3 = 0x03,
     #[doc = "Input 4 (selects the pin identified in PINSEL4)."]
-    INPUT4 = 0x04,
+    Input4 = 0x04,
     #[doc = "Input 5 (selects the pin identified in PINSEL5)."]
-    INPUT5 = 0x05,
+    Input5 = 0x05,
     #[doc = "Input 6 (selects the pin identified in PINSEL6)."]
-    INPUT6 = 0x06,
+    Input6 = 0x06,
     #[doc = "Input 7 (selects the pin identified in PINSEL7)."]
-    INPUT7 = 0x07,
+    Input7 = 0x07,
 }
 impl Src1 {
     #[inline(always)]
@@ -1205,21 +1205,21 @@ impl From<Src1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Src2 {
     #[doc = "Input 0 (selects the pin identified in PINSEL0)."]
-    INPUT0 = 0x0,
+    Input0 = 0x0,
     #[doc = "Input 1 (selects the pin identified in PINSEL1)."]
-    INPUT1 = 0x01,
+    Input1 = 0x01,
     #[doc = "Input 2 (selects the pin identified in PINSEL2)."]
-    INPUT2 = 0x02,
+    Input2 = 0x02,
     #[doc = "Input 3 (selects the pin identified in PINSEL3)."]
-    INPUT3 = 0x03,
+    Input3 = 0x03,
     #[doc = "Input 4 (selects the pin identified in PINSEL4)."]
-    INPUT4 = 0x04,
+    Input4 = 0x04,
     #[doc = "Input 5 (selects the pin identified in PINSEL5)."]
-    INPUT5 = 0x05,
+    Input5 = 0x05,
     #[doc = "Input 6 (selects the pin identified in PINSEL6)."]
-    INPUT6 = 0x06,
+    Input6 = 0x06,
     #[doc = "Input 7 (selects the pin identified in PINSEL7)."]
-    INPUT7 = 0x07,
+    Input7 = 0x07,
 }
 impl Src2 {
     #[inline(always)]
@@ -1248,21 +1248,21 @@ impl From<Src2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Src3 {
     #[doc = "Input 0 (selects the pin identified in PINSEL0)."]
-    INPUT0 = 0x0,
+    Input0 = 0x0,
     #[doc = "Input 1 (selects the pin identified in PINSEL1)."]
-    INPUT1 = 0x01,
+    Input1 = 0x01,
     #[doc = "Input 2 (selects the pin identified in PINSEL2)."]
-    INPUT2 = 0x02,
+    Input2 = 0x02,
     #[doc = "Input 3 (selects the pin identified in PINSEL3)."]
-    INPUT3 = 0x03,
+    Input3 = 0x03,
     #[doc = "Input 4 (selects the pin identified in PINSEL4)."]
-    INPUT4 = 0x04,
+    Input4 = 0x04,
     #[doc = "Input 5 (selects the pin identified in PINSEL5)."]
-    INPUT5 = 0x05,
+    Input5 = 0x05,
     #[doc = "Input 6 (selects the pin identified in PINSEL6)."]
-    INPUT6 = 0x06,
+    Input6 = 0x06,
     #[doc = "Input 7 (selects the pin identified in PINSEL7)."]
-    INPUT7 = 0x07,
+    Input7 = 0x07,
 }
 impl Src3 {
     #[inline(always)]
@@ -1291,21 +1291,21 @@ impl From<Src3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Src4 {
     #[doc = "Input 0 (selects the pin identified in PINSEL0)."]
-    INPUT0 = 0x0,
+    Input0 = 0x0,
     #[doc = "Input 1 (selects the pin identified in PINSEL1)."]
-    INPUT1 = 0x01,
+    Input1 = 0x01,
     #[doc = "Input 2 (selects the pin identified in PINSEL2)."]
-    INPUT2 = 0x02,
+    Input2 = 0x02,
     #[doc = "Input 3 (selects the pin identified in PINSEL3)."]
-    INPUT3 = 0x03,
+    Input3 = 0x03,
     #[doc = "Input 4 (selects the pin identified in PINSEL4)."]
-    INPUT4 = 0x04,
+    Input4 = 0x04,
     #[doc = "Input 5 (selects the pin identified in PINSEL5)."]
-    INPUT5 = 0x05,
+    Input5 = 0x05,
     #[doc = "Input 6 (selects the pin identified in PINSEL6)."]
-    INPUT6 = 0x06,
+    Input6 = 0x06,
     #[doc = "Input 7 (selects the pin identified in PINSEL7)."]
-    INPUT7 = 0x07,
+    Input7 = 0x07,
 }
 impl Src4 {
     #[inline(always)]
@@ -1334,21 +1334,21 @@ impl From<Src4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Src5 {
     #[doc = "Input 0 (selects the pin identified in PINSEL0)."]
-    INPUT0 = 0x0,
+    Input0 = 0x0,
     #[doc = "Input 1 (selects the pin identified in PINSEL1)."]
-    INPUT1 = 0x01,
+    Input1 = 0x01,
     #[doc = "Input 2 (selects the pin identified in PINSEL2)."]
-    INPUT2 = 0x02,
+    Input2 = 0x02,
     #[doc = "Input 3 (selects the pin identified in PINSEL3)."]
-    INPUT3 = 0x03,
+    Input3 = 0x03,
     #[doc = "Input 4 (selects the pin identified in PINSEL4)."]
-    INPUT4 = 0x04,
+    Input4 = 0x04,
     #[doc = "Input 5 (selects the pin identified in PINSEL5)."]
-    INPUT5 = 0x05,
+    Input5 = 0x05,
     #[doc = "Input 6 (selects the pin identified in PINSEL6)."]
-    INPUT6 = 0x06,
+    Input6 = 0x06,
     #[doc = "Input 7 (selects the pin identified in PINSEL7)."]
-    INPUT7 = 0x07,
+    Input7 = 0x07,
 }
 impl Src5 {
     #[inline(always)]
@@ -1377,21 +1377,21 @@ impl From<Src5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Src6 {
     #[doc = "Input 0 (selects the pin identified in PINSEL0)."]
-    INPUT0 = 0x0,
+    Input0 = 0x0,
     #[doc = "Input 1 (selects the pin identified in PINSEL1)."]
-    INPUT1 = 0x01,
+    Input1 = 0x01,
     #[doc = "Input 2 (selects the pin identified in PINSEL2)."]
-    INPUT2 = 0x02,
+    Input2 = 0x02,
     #[doc = "Input 3 (selects the pin identified in PINSEL3)."]
-    INPUT3 = 0x03,
+    Input3 = 0x03,
     #[doc = "Input 4 (selects the pin identified in PINSEL4)."]
-    INPUT4 = 0x04,
+    Input4 = 0x04,
     #[doc = "Input 5 (selects the pin identified in PINSEL5)."]
-    INPUT5 = 0x05,
+    Input5 = 0x05,
     #[doc = "Input 6 (selects the pin identified in PINSEL6)."]
-    INPUT6 = 0x06,
+    Input6 = 0x06,
     #[doc = "Input 7 (selects the pin identified in PINSEL7)."]
-    INPUT7 = 0x07,
+    Input7 = 0x07,
 }
 impl Src6 {
     #[inline(always)]
@@ -1420,21 +1420,21 @@ impl From<Src6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Src7 {
     #[doc = "Input 0 (selects the pin identified in PINSEL0)."]
-    INPUT0 = 0x0,
+    Input0 = 0x0,
     #[doc = "Input 1 (selects the pin identified in PINSEL1)."]
-    INPUT1 = 0x01,
+    Input1 = 0x01,
     #[doc = "Input 2 (selects the pin identified in PINSEL2)."]
-    INPUT2 = 0x02,
+    Input2 = 0x02,
     #[doc = "Input 3 (selects the pin identified in PINSEL3)."]
-    INPUT3 = 0x03,
+    Input3 = 0x03,
     #[doc = "Input 4 (selects the pin identified in PINSEL4)."]
-    INPUT4 = 0x04,
+    Input4 = 0x04,
     #[doc = "Input 5 (selects the pin identified in PINSEL5)."]
-    INPUT5 = 0x05,
+    Input5 = 0x05,
     #[doc = "Input 6 (selects the pin identified in PINSEL6)."]
-    INPUT6 = 0x06,
+    Input6 = 0x06,
     #[doc = "Input 7 (selects the pin identified in PINSEL7)."]
-    INPUT7 = 0x07,
+    Input7 = 0x07,
 }
 impl Src7 {
     #[inline(always)]

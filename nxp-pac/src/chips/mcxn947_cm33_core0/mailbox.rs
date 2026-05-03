@@ -1,4 +1,4 @@
-#[doc = "Array of registers: IRQ, IRQCLR, IRQSET."]
+#[doc = "Array of registers: IRQ, IRQSET, IRQCLR."]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct Irq {
     ptr: *mut u8,
@@ -46,7 +46,7 @@ impl Mailbox {
     pub const fn as_ptr(&self) -> *mut () {
         self.ptr as _
     }
-    #[doc = "Array of registers: IRQ, IRQCLR, IRQSET."]
+    #[doc = "Array of registers: IRQ, IRQSET, IRQCLR."]
     #[inline(always)]
     pub const fn irq(self, n: usize) -> Irq {
         assert!(n < 2usize);

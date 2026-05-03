@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dir {
     #[doc = "Down direction."]
-    DOWN = 0x0,
+    Down = 0x0,
     #[doc = "Up direction."]
-    UP = 0x01,
+    Up = 0x01,
 }
 impl Dir {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Dir> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hip {
     #[doc = "No action."]
-    NOACTION = 0x0,
+    Noaction = 0x0,
     #[doc = "HOME signal initializes the position counter."]
-    HOME = 0x01,
+    Home = 0x01,
 }
 impl Hip {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Hip> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hirq {
     #[doc = "Not occurred."]
-    NOTRANS = 0x0,
+    Notrans = 0x0,
     #[doc = "Occurred."]
-    TRANSI = 0x01,
+    Transi = 0x01,
 }
 impl Hirq {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Hirq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hne {
     #[doc = "Use positive-going edge-to-trigger initialization of position counters UPOS and LPOS."]
-    POS = 0x0,
+    Pos = 0x0,
     #[doc = "Use negative-going edge-to-trigger initialization of position counters UPOS and LPOS."]
-    NEG = 0x01,
+    Neg = 0x01,
 }
 impl Hne {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<Hne> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Outctl {
     #[doc = "POSMATCH pulses when a match occurs between the position counters (POS) and the corresponding compare value (COMP )."]
-    COMPARE = 0x0,
+    Compare = 0x0,
     #[doc = "POSMATCH pulses when the UPOS, LPOS, REV, or POSD registers are read."]
-    READ = 0x01,
+    Read = 0x01,
 }
 impl Outctl {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<Outctl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ph1 {
     #[doc = "Uses the standard quadrature decoder, where PHASEA and PHASEB represent a two-phase quadrature signal."]
-    USE = 0x0,
+    Use = 0x0,
     #[doc = "Bypasses the quadrature decoder. A positive transition of the PHASEA input generates a count signal. PHASEB input and CTRL\\[REV\\] controls the counter direction. If the value of CTRL\\[REV\\] and PHASEB are identical; then count is up. If the value of CTRL\\[REV\\] and PHASEB is different, then count is down."]
-    BYPASS = 0x01,
+    Bypass = 0x01,
 }
 impl Ph1 {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<Ph1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Qdn {
     #[doc = "Positive quadrature decoder signal."]
-    POSITIVE = 0x0,
+    Positive = 0x0,
     #[doc = "Negative quadrature decoder signal."]
-    NEGATIVE = 0x01,
+    Negative = 0x01,
 }
 impl Qdn {
     #[inline(always)]
@@ -220,9 +220,9 @@ impl From<Qdn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rev {
     #[doc = "Counts normally."]
-    NORMAL = 0x0,
+    Normal = 0x0,
     #[doc = "Counts in the reverse direction."]
-    REVERSE = 0x01,
+    Reverse = 0x01,
 }
 impl Rev {
     #[inline(always)]
@@ -251,9 +251,9 @@ impl From<Rev> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Revmod {
     #[doc = "Use INDEX pulse."]
-    INDEX = 0x0,
+    Index = 0x0,
     #[doc = "Use modulus counting roll-over or roll-under."]
-    COUNT = 0x01,
+    Count = 0x01,
 }
 impl Revmod {
     #[inline(always)]
@@ -282,9 +282,9 @@ impl From<Revmod> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swip {
     #[doc = "No action."]
-    NOACTION = 0x0,
+    Noaction = 0x0,
     #[doc = "Initialize position counter."]
-    INIT = 0x01,
+    Init = 0x01,
 }
 impl Swip {
     #[inline(always)]
@@ -313,9 +313,9 @@ impl From<Swip> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Updpos {
     #[doc = "No action."]
-    NOACTION = 0x0,
+    Noaction = 0x0,
     #[doc = "Clear."]
-    CLEAR = 0x01,
+    Clear = 0x01,
 }
 impl Updpos {
     #[inline(always)]
@@ -344,9 +344,9 @@ impl From<Updpos> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Xirq {
     #[doc = "Not occurred."]
-    NOIND = 0x0,
+    Noind = 0x0,
     #[doc = "Occurred."]
-    INDEX = 0x01,
+    Index = 0x01,
 }
 impl Xirq {
     #[inline(always)]
@@ -375,9 +375,9 @@ impl From<Xirq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Xne {
     #[doc = "Use positive edge."]
-    XNE_0 = 0x0,
+    Xne0 = 0x0,
     #[doc = "Use negative edge."]
-    XNE_1 = 0x01,
+    Xne1 = 0x01,
 }
 impl Xne {
     #[inline(always)]

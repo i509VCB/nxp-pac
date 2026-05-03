@@ -6,193 +6,193 @@ impl OutSel {
     #[doc = "Selects digital glitch detector as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in0_seln(&self) -> u8 {
+    pub const fn in0_se_ln(&self) -> u8 {
         let val = (self.0 >> 0usize) & 0x03;
         val as u8
     }
     #[doc = "Selects digital glitch detector as a trigger source."]
     #[inline(always)]
-    pub const fn set_in0_seln(&mut self, val: u8) {
+    pub const fn set_in0_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
     }
     #[doc = "Selects TDET event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in1_seln(&self) -> u8 {
+    pub const fn in1_se_ln(&self) -> u8 {
         let val = (self.0 >> 2usize) & 0x03;
         val as u8
     }
     #[doc = "Selects TDET event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in1_seln(&mut self, val: u8) {
+    pub const fn set_in1_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
     }
     #[doc = "Selects Code Watchdog 0 event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in2_seln(&self) -> u8 {
+    pub const fn in2_se_ln(&self) -> u8 {
         let val = (self.0 >> 4usize) & 0x03;
         val as u8
     }
     #[doc = "Selects Code Watchdog 0 event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in2_seln(&mut self, val: u8) {
+    pub const fn set_in2_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
     }
     #[doc = "Selects VBAT voltage tamper event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in3_seln(&self) -> u8 {
+    pub const fn in3_se_ln(&self) -> u8 {
         let val = (self.0 >> 6usize) & 0x03;
         val as u8
     }
     #[doc = "Selects VBAT voltage tamper event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in3_seln(&mut self, val: u8) {
+    pub const fn set_in3_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
     }
     #[doc = "Selects low-voltage event on VDD_CORE rail as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in4_seln(&self) -> u8 {
+    pub const fn in4_se_ln(&self) -> u8 {
         let val = (self.0 >> 8usize) & 0x03;
         val as u8
     }
     #[doc = "Selects low-voltage event on VDD_CORE rail as a trigger source."]
     #[inline(always)]
-    pub const fn set_in4_seln(&mut self, val: u8) {
+    pub const fn set_in4_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
     }
     #[doc = "Selects Watchdog 0 timer event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in5_seln(&self) -> u8 {
+    pub const fn in5_se_ln(&self) -> u8 {
         let val = (self.0 >> 10usize) & 0x03;
         val as u8
     }
     #[doc = "Selects Watchdog 0 timer event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in5_seln(&mut self, val: u8) {
+    pub const fn set_in5_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u32) & 0x03) << 10usize);
     }
     #[doc = "Selects Flash ECC mismatch event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in6_seln(&self) -> u8 {
+    pub const fn in6_se_ln(&self) -> u8 {
         let val = (self.0 >> 12usize) & 0x03;
         val as u8
     }
     #[doc = "Selects Flash ECC mismatch event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in6_seln(&mut self, val: u8) {
+    pub const fn set_in6_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 12usize)) | (((val as u32) & 0x03) << 12usize);
     }
     #[doc = "Selects AHB secure bus or MBC bus illegal access event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in7_seln(&self) -> u8 {
+    pub const fn in7_se_ln(&self) -> u8 {
         let val = (self.0 >> 14usize) & 0x03;
         val as u8
     }
     #[doc = "Selects AHB secure bus or MBC bus illegal access event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in7_seln(&mut self, val: u8) {
+    pub const fn set_in7_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 14usize)) | (((val as u32) & 0x03) << 14usize);
     }
     #[doc = "Selects ELS error event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in8_seln(&self) -> u8 {
+    pub const fn in8_se_ln(&self) -> u8 {
         let val = (self.0 >> 16usize) & 0x03;
         val as u8
     }
     #[doc = "Selects ELS error event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in8_seln(&mut self, val: u8) {
+    pub const fn set_in8_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 16usize)) | (((val as u32) & 0x03) << 16usize);
     }
     #[doc = "Selects SPC VDD_CORE glitch detector as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in9_seln(&self) -> u8 {
+    pub const fn in9_se_ln(&self) -> u8 {
         let val = (self.0 >> 18usize) & 0x03;
         val as u8
     }
     #[doc = "Selects SPC VDD_CORE glitch detector as a trigger source."]
     #[inline(always)]
-    pub const fn set_in9_seln(&mut self, val: u8) {
+    pub const fn set_in9_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 18usize)) | (((val as u32) & 0x03) << 18usize);
     }
     #[doc = "Selects PKC error event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in10_seln(&self) -> u8 {
+    pub const fn in10_se_ln(&self) -> u8 {
         let val = (self.0 >> 20usize) & 0x03;
         val as u8
     }
     #[doc = "Selects PKC error event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in10_seln(&mut self, val: u8) {
+    pub const fn set_in10_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 20usize)) | (((val as u32) & 0x03) << 20usize);
     }
     #[doc = "Selects Code Watchdog 1 event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in11_seln(&self) -> u8 {
+    pub const fn in11_se_ln(&self) -> u8 {
         let val = (self.0 >> 22usize) & 0x03;
         val as u8
     }
     #[doc = "Selects Code Watchdog 1 event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in11_seln(&mut self, val: u8) {
+    pub const fn set_in11_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 22usize)) | (((val as u32) & 0x03) << 22usize);
     }
     #[doc = "Selects Watchdog 1 timer event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in12_seln(&self) -> u8 {
+    pub const fn in12_se_ln(&self) -> u8 {
         let val = (self.0 >> 24usize) & 0x03;
         val as u8
     }
     #[doc = "Selects Watchdog 1 timer event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in12_seln(&mut self, val: u8) {
+    pub const fn set_in12_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 24usize)) | (((val as u32) & 0x03) << 24usize);
     }
     #[doc = "Selects FREQME out of range status output as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in13_seln(&self) -> u8 {
+    pub const fn in13_se_ln(&self) -> u8 {
         let val = (self.0 >> 26usize) & 0x03;
         val as u8
     }
     #[doc = "Selects FREQME out of range status output as a trigger source."]
     #[inline(always)]
-    pub const fn set_in13_seln(&mut self, val: u8) {
+    pub const fn set_in13_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 26usize)) | (((val as u32) & 0x03) << 26usize);
     }
     #[doc = "Selects software event 0 as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in14_seln(&self) -> u8 {
+    pub const fn in14_se_ln(&self) -> u8 {
         let val = (self.0 >> 28usize) & 0x03;
         val as u8
     }
     #[doc = "Selects software event 0 as a trigger source."]
     #[inline(always)]
-    pub const fn set_in14_seln(&mut self, val: u8) {
+    pub const fn set_in14_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 28usize)) | (((val as u32) & 0x03) << 28usize);
     }
     #[doc = "Selects software event 1 as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in15_seln(&self) -> u8 {
+    pub const fn in15_se_ln(&self) -> u8 {
         let val = (self.0 >> 30usize) & 0x03;
         val as u8
     }
     #[doc = "Selects software event 1 as a trigger source."]
     #[inline(always)]
-    pub const fn set_in15_seln(&mut self, val: u8) {
+    pub const fn set_in15_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
     }
 }
@@ -205,22 +205,22 @@ impl Default for OutSel {
 impl core::fmt::Debug for OutSel {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("OutSel")
-            .field("in0_seln", &self.in0_seln())
-            .field("in1_seln", &self.in1_seln())
-            .field("in2_seln", &self.in2_seln())
-            .field("in3_seln", &self.in3_seln())
-            .field("in4_seln", &self.in4_seln())
-            .field("in5_seln", &self.in5_seln())
-            .field("in6_seln", &self.in6_seln())
-            .field("in7_seln", &self.in7_seln())
-            .field("in8_seln", &self.in8_seln())
-            .field("in9_seln", &self.in9_seln())
-            .field("in10_seln", &self.in10_seln())
-            .field("in11_seln", &self.in11_seln())
-            .field("in12_seln", &self.in12_seln())
-            .field("in13_seln", &self.in13_seln())
-            .field("in14_seln", &self.in14_seln())
-            .field("in15_seln", &self.in15_seln())
+            .field("in0_se_ln", &self.in0_se_ln())
+            .field("in1_se_ln", &self.in1_se_ln())
+            .field("in2_se_ln", &self.in2_se_ln())
+            .field("in3_se_ln", &self.in3_se_ln())
+            .field("in4_se_ln", &self.in4_se_ln())
+            .field("in5_se_ln", &self.in5_se_ln())
+            .field("in6_se_ln", &self.in6_se_ln())
+            .field("in7_se_ln", &self.in7_se_ln())
+            .field("in8_se_ln", &self.in8_se_ln())
+            .field("in9_se_ln", &self.in9_se_ln())
+            .field("in10_se_ln", &self.in10_se_ln())
+            .field("in11_se_ln", &self.in11_se_ln())
+            .field("in12_se_ln", &self.in12_se_ln())
+            .field("in13_se_ln", &self.in13_se_ln())
+            .field("in14_se_ln", &self.in14_se_ln())
+            .field("in15_se_ln", &self.in15_se_ln())
             .finish()
     }
 }
@@ -229,23 +229,23 @@ impl defmt::Format for OutSel {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "OutSel {{ in0_seln: {=u8:?}, in1_seln: {=u8:?}, in2_seln: {=u8:?}, in3_seln: {=u8:?}, in4_seln: {=u8:?}, in5_seln: {=u8:?}, in6_seln: {=u8:?}, in7_seln: {=u8:?}, in8_seln: {=u8:?}, in9_seln: {=u8:?}, in10_seln: {=u8:?}, in11_seln: {=u8:?}, in12_seln: {=u8:?}, in13_seln: {=u8:?}, in14_seln: {=u8:?}, in15_seln: {=u8:?} }}",
-            self.in0_seln(),
-            self.in1_seln(),
-            self.in2_seln(),
-            self.in3_seln(),
-            self.in4_seln(),
-            self.in5_seln(),
-            self.in6_seln(),
-            self.in7_seln(),
-            self.in8_seln(),
-            self.in9_seln(),
-            self.in10_seln(),
-            self.in11_seln(),
-            self.in12_seln(),
-            self.in13_seln(),
-            self.in14_seln(),
-            self.in15_seln()
+            "OutSel {{ in0_se_ln: {=u8:?}, in1_se_ln: {=u8:?}, in2_se_ln: {=u8:?}, in3_se_ln: {=u8:?}, in4_se_ln: {=u8:?}, in5_se_ln: {=u8:?}, in6_se_ln: {=u8:?}, in7_se_ln: {=u8:?}, in8_se_ln: {=u8:?}, in9_se_ln: {=u8:?}, in10_se_ln: {=u8:?}, in11_se_ln: {=u8:?}, in12_se_ln: {=u8:?}, in13_se_ln: {=u8:?}, in14_se_ln: {=u8:?}, in15_se_ln: {=u8:?} }}",
+            self.in0_se_ln(),
+            self.in1_se_ln(),
+            self.in2_se_ln(),
+            self.in3_se_ln(),
+            self.in4_se_ln(),
+            self.in5_se_ln(),
+            self.in6_se_ln(),
+            self.in7_se_ln(),
+            self.in8_se_ln(),
+            self.in9_se_ln(),
+            self.in10_se_ln(),
+            self.in11_se_ln(),
+            self.in12_se_ln(),
+            self.in13_se_ln(),
+            self.in14_se_ln(),
+            self.in15_se_ln()
         )
     }
 }
@@ -257,193 +257,193 @@ impl OutSel1 {
     #[doc = "Selects SPC VDD_SYS_LVD detect as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in16_seln(&self) -> u8 {
+    pub const fn in16_se_ln(&self) -> u8 {
         let val = (self.0 >> 0usize) & 0x03;
         val as u8
     }
     #[doc = "Selects SPC VDD_SYS_LVD detect as a trigger source."]
     #[inline(always)]
-    pub const fn set_in16_seln(&mut self, val: u8) {
+    pub const fn set_in16_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
     }
     #[doc = "Selects SPC VDD_IO_LVD detect as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in17_seln(&self) -> u8 {
+    pub const fn in17_se_ln(&self) -> u8 {
         let val = (self.0 >> 2usize) & 0x03;
         val as u8
     }
     #[doc = "Selects SPC VDD_IO_LVD detect as a trigger source."]
     #[inline(always)]
-    pub const fn set_in17_seln(&mut self, val: u8) {
+    pub const fn set_in17_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
     }
     #[doc = "Reserved."]
     #[must_use]
     #[inline(always)]
-    pub const fn in18_seln(&self) -> u8 {
+    pub const fn in18_se_ln(&self) -> u8 {
         let val = (self.0 >> 4usize) & 0x03;
         val as u8
     }
     #[doc = "Reserved."]
     #[inline(always)]
-    pub const fn set_in18_seln(&mut self, val: u8) {
+    pub const fn set_in18_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
     }
     #[doc = "Selects VBAT temperature tamper output event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in19_seln(&self) -> u8 {
+    pub const fn in19_se_ln(&self) -> u8 {
         let val = (self.0 >> 6usize) & 0x03;
         val as u8
     }
     #[doc = "Selects VBAT temperature tamper output event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in19_seln(&mut self, val: u8) {
+    pub const fn set_in19_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
     }
     #[doc = "Selects VBAT clock tamper output event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in20_seln(&self) -> u8 {
+    pub const fn in20_se_ln(&self) -> u8 {
         let val = (self.0 >> 8usize) & 0x03;
         val as u8
     }
     #[doc = "Selects VBAT clock tamper output event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in20_seln(&mut self, val: u8) {
+    pub const fn set_in20_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
     }
     #[doc = "Selects INTM interrupt monitor error 0 event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in21_seln(&self) -> u8 {
+    pub const fn in21_se_ln(&self) -> u8 {
         let val = (self.0 >> 10usize) & 0x03;
         val as u8
     }
     #[doc = "Selects INTM interrupt monitor error 0 event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in21_seln(&mut self, val: u8) {
+    pub const fn set_in21_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u32) & 0x03) << 10usize);
     }
     #[doc = "Selects INTM interrupt monitor error 1 event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in22_seln(&self) -> u8 {
+    pub const fn in22_se_ln(&self) -> u8 {
         let val = (self.0 >> 12usize) & 0x03;
         val as u8
     }
     #[doc = "Selects INTM interrupt monitor error 1 event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in22_seln(&mut self, val: u8) {
+    pub const fn set_in22_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 12usize)) | (((val as u32) & 0x03) << 12usize);
     }
     #[doc = "Selects INTM interrupt monitor error 2 event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in23_seln(&self) -> u8 {
+    pub const fn in23_se_ln(&self) -> u8 {
         let val = (self.0 >> 14usize) & 0x03;
         val as u8
     }
     #[doc = "Selects INTM interrupt monitor error 2 event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in23_seln(&mut self, val: u8) {
+    pub const fn set_in23_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 14usize)) | (((val as u32) & 0x03) << 14usize);
     }
     #[doc = "Selects INTM interrupt monitor error 3 event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in24_seln(&self) -> u8 {
+    pub const fn in24_se_ln(&self) -> u8 {
         let val = (self.0 >> 16usize) & 0x03;
         val as u8
     }
     #[doc = "Selects INTM interrupt monitor error 3 event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in24_seln(&mut self, val: u8) {
+    pub const fn set_in24_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 16usize)) | (((val as u32) & 0x03) << 16usize);
     }
     #[doc = "Selects MSF SOCTRIM 0 ECC error event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in25_seln(&self) -> u8 {
+    pub const fn in25_se_ln(&self) -> u8 {
         let val = (self.0 >> 18usize) & 0x03;
         val as u8
     }
     #[doc = "Selects MSF SOCTRIM 0 ECC error event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in25_seln(&mut self, val: u8) {
+    pub const fn set_in25_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 18usize)) | (((val as u32) & 0x03) << 18usize);
     }
     #[doc = "Selects MSF SOCTRIM 1 ECC error event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in26_seln(&self) -> u8 {
+    pub const fn in26_se_ln(&self) -> u8 {
         let val = (self.0 >> 20usize) & 0x03;
         val as u8
     }
     #[doc = "Selects MSF SOCTRIM 1 ECC error event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in26_seln(&mut self, val: u8) {
+    pub const fn set_in26_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 20usize)) | (((val as u32) & 0x03) << 20usize);
     }
     #[doc = "Selects MSF SOCTRIM 2 ECC error event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in27_seln(&self) -> u8 {
+    pub const fn in27_se_ln(&self) -> u8 {
         let val = (self.0 >> 22usize) & 0x03;
         val as u8
     }
     #[doc = "Selects MSF SOCTRIM 2 ECC error event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in27_seln(&mut self, val: u8) {
+    pub const fn set_in27_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 22usize)) | (((val as u32) & 0x03) << 22usize);
     }
     #[doc = "Selects MSF SOCTRIM 3 ECC error event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in28_seln(&self) -> u8 {
+    pub const fn in28_se_ln(&self) -> u8 {
         let val = (self.0 >> 24usize) & 0x03;
         val as u8
     }
     #[doc = "Selects MSF SOCTRIM 3 ECC error event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in28_seln(&mut self, val: u8) {
+    pub const fn set_in28_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 24usize)) | (((val as u32) & 0x03) << 24usize);
     }
     #[doc = "Selects MSF SOCTRIM 4 ECC error event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in29_seln(&self) -> u8 {
+    pub const fn in29_se_ln(&self) -> u8 {
         let val = (self.0 >> 26usize) & 0x03;
         val as u8
     }
     #[doc = "Selects MSF SOCTRIM 4 ECC error event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in29_seln(&mut self, val: u8) {
+    pub const fn set_in29_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 26usize)) | (((val as u32) & 0x03) << 26usize);
     }
     #[doc = "Selects MSF SOCTRIM 5 ECC error event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in30_seln(&self) -> u8 {
+    pub const fn in30_se_ln(&self) -> u8 {
         let val = (self.0 >> 28usize) & 0x03;
         val as u8
     }
     #[doc = "Selects MSF SOCTRIM 5 ECC error event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in30_seln(&mut self, val: u8) {
+    pub const fn set_in30_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 28usize)) | (((val as u32) & 0x03) << 28usize);
     }
     #[doc = "Selects MSF SOCTRIM 6 ECC error event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in31_seln(&self) -> u8 {
+    pub const fn in31_se_ln(&self) -> u8 {
         let val = (self.0 >> 30usize) & 0x03;
         val as u8
     }
     #[doc = "Selects MSF SOCTRIM 6 ECC error event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in31_seln(&mut self, val: u8) {
+    pub const fn set_in31_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
     }
 }
@@ -456,22 +456,22 @@ impl Default for OutSel1 {
 impl core::fmt::Debug for OutSel1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("OutSel1")
-            .field("in16_seln", &self.in16_seln())
-            .field("in17_seln", &self.in17_seln())
-            .field("in18_seln", &self.in18_seln())
-            .field("in19_seln", &self.in19_seln())
-            .field("in20_seln", &self.in20_seln())
-            .field("in21_seln", &self.in21_seln())
-            .field("in22_seln", &self.in22_seln())
-            .field("in23_seln", &self.in23_seln())
-            .field("in24_seln", &self.in24_seln())
-            .field("in25_seln", &self.in25_seln())
-            .field("in26_seln", &self.in26_seln())
-            .field("in27_seln", &self.in27_seln())
-            .field("in28_seln", &self.in28_seln())
-            .field("in29_seln", &self.in29_seln())
-            .field("in30_seln", &self.in30_seln())
-            .field("in31_seln", &self.in31_seln())
+            .field("in16_se_ln", &self.in16_se_ln())
+            .field("in17_se_ln", &self.in17_se_ln())
+            .field("in18_se_ln", &self.in18_se_ln())
+            .field("in19_se_ln", &self.in19_se_ln())
+            .field("in20_se_ln", &self.in20_se_ln())
+            .field("in21_se_ln", &self.in21_se_ln())
+            .field("in22_se_ln", &self.in22_se_ln())
+            .field("in23_se_ln", &self.in23_se_ln())
+            .field("in24_se_ln", &self.in24_se_ln())
+            .field("in25_se_ln", &self.in25_se_ln())
+            .field("in26_se_ln", &self.in26_se_ln())
+            .field("in27_se_ln", &self.in27_se_ln())
+            .field("in28_se_ln", &self.in28_se_ln())
+            .field("in29_se_ln", &self.in29_se_ln())
+            .field("in30_se_ln", &self.in30_se_ln())
+            .field("in31_se_ln", &self.in31_se_ln())
             .finish()
     }
 }
@@ -480,23 +480,23 @@ impl defmt::Format for OutSel1 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "OutSel1 {{ in16_seln: {=u8:?}, in17_seln: {=u8:?}, in18_seln: {=u8:?}, in19_seln: {=u8:?}, in20_seln: {=u8:?}, in21_seln: {=u8:?}, in22_seln: {=u8:?}, in23_seln: {=u8:?}, in24_seln: {=u8:?}, in25_seln: {=u8:?}, in26_seln: {=u8:?}, in27_seln: {=u8:?}, in28_seln: {=u8:?}, in29_seln: {=u8:?}, in30_seln: {=u8:?}, in31_seln: {=u8:?} }}",
-            self.in16_seln(),
-            self.in17_seln(),
-            self.in18_seln(),
-            self.in19_seln(),
-            self.in20_seln(),
-            self.in21_seln(),
-            self.in22_seln(),
-            self.in23_seln(),
-            self.in24_seln(),
-            self.in25_seln(),
-            self.in26_seln(),
-            self.in27_seln(),
-            self.in28_seln(),
-            self.in29_seln(),
-            self.in30_seln(),
-            self.in31_seln()
+            "OutSel1 {{ in16_se_ln: {=u8:?}, in17_se_ln: {=u8:?}, in18_se_ln: {=u8:?}, in19_se_ln: {=u8:?}, in20_se_ln: {=u8:?}, in21_se_ln: {=u8:?}, in22_se_ln: {=u8:?}, in23_se_ln: {=u8:?}, in24_se_ln: {=u8:?}, in25_se_ln: {=u8:?}, in26_se_ln: {=u8:?}, in27_se_ln: {=u8:?}, in28_se_ln: {=u8:?}, in29_se_ln: {=u8:?}, in30_se_ln: {=u8:?}, in31_se_ln: {=u8:?} }}",
+            self.in16_se_ln(),
+            self.in17_se_ln(),
+            self.in18_se_ln(),
+            self.in19_se_ln(),
+            self.in20_se_ln(),
+            self.in21_se_ln(),
+            self.in22_se_ln(),
+            self.in23_se_ln(),
+            self.in24_se_ln(),
+            self.in25_se_ln(),
+            self.in26_se_ln(),
+            self.in27_se_ln(),
+            self.in28_se_ln(),
+            self.in29_se_ln(),
+            self.in30_se_ln(),
+            self.in31_se_ln()
         )
     }
 }
@@ -508,97 +508,97 @@ impl OutSel2 {
     #[doc = "Selects MSF SOCTRIM 7 ECC error event as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in32_seln(&self) -> u8 {
+    pub const fn in32_se_ln(&self) -> u8 {
         let val = (self.0 >> 0usize) & 0x03;
         val as u8
     }
     #[doc = "Selects MSF SOCTRIM 7 ECC error event as a trigger source."]
     #[inline(always)]
-    pub const fn set_in32_seln(&mut self, val: u8) {
+    pub const fn set_in32_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
     }
     #[doc = "Selects GDET0 & 1 SFR error detect as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in33_seln(&self) -> u8 {
+    pub const fn in33_se_ln(&self) -> u8 {
         let val = (self.0 >> 2usize) & 0x03;
         val as u8
     }
     #[doc = "Selects GDET0 & 1 SFR error detect as a trigger source."]
     #[inline(always)]
-    pub const fn set_in33_seln(&mut self, val: u8) {
+    pub const fn set_in33_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
     }
     #[doc = "Selects SPC VDD_CORE_HVD as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in34_seln(&self) -> u8 {
+    pub const fn in34_se_ln(&self) -> u8 {
         let val = (self.0 >> 4usize) & 0x03;
         val as u8
     }
     #[doc = "Selects SPC VDD_CORE_HVD as a trigger source."]
     #[inline(always)]
-    pub const fn set_in34_seln(&mut self, val: u8) {
+    pub const fn set_in34_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
     }
     #[doc = "Selects VDD_SYS_HVD as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in35_seln(&self) -> u8 {
+    pub const fn in35_se_ln(&self) -> u8 {
         let val = (self.0 >> 6usize) & 0x03;
         val as u8
     }
     #[doc = "Selects VDD_SYS_HVD as a trigger source."]
     #[inline(always)]
-    pub const fn set_in35_seln(&mut self, val: u8) {
+    pub const fn set_in35_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
     }
     #[doc = "Selects VDD_IO_HVD as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in36_seln(&self) -> u8 {
+    pub const fn in36_se_ln(&self) -> u8 {
         let val = (self.0 >> 8usize) & 0x03;
         val as u8
     }
     #[doc = "Selects VDD_IO_HVD as a trigger source."]
     #[inline(always)]
-    pub const fn set_in36_seln(&mut self, val: u8) {
+    pub const fn set_in36_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
     }
     #[doc = "Selects FLEXSPI GCM error as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in37_seln(&self) -> u8 {
+    pub const fn in37_se_ln(&self) -> u8 {
         let val = (self.0 >> 10usize) & 0x03;
         val as u8
     }
     #[doc = "Selects FLEXSPI GCM error as a trigger source."]
     #[inline(always)]
-    pub const fn set_in37_seln(&mut self, val: u8) {
+    pub const fn set_in37_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u32) & 0x03) << 10usize);
     }
     #[doc = "Selects SM3 SGI error as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in46_seln(&self) -> u8 {
+    pub const fn in46_se_ln(&self) -> u8 {
         let val = (self.0 >> 28usize) & 0x03;
         val as u8
     }
     #[doc = "Selects SM3 SGI error as a trigger source."]
     #[inline(always)]
-    pub const fn set_in46_seln(&mut self, val: u8) {
+    pub const fn set_in46_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 28usize)) | (((val as u32) & 0x03) << 28usize);
     }
     #[doc = "Selects TRNG HW Error as a trigger source."]
     #[must_use]
     #[inline(always)]
-    pub const fn in47_seln(&self) -> u8 {
+    pub const fn in47_se_ln(&self) -> u8 {
         let val = (self.0 >> 30usize) & 0x03;
         val as u8
     }
     #[doc = "Selects TRNG HW Error as a trigger source."]
     #[inline(always)]
-    pub const fn set_in47_seln(&mut self, val: u8) {
+    pub const fn set_in47_se_ln(&mut self, val: u8) {
         self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
     }
 }
@@ -611,14 +611,14 @@ impl Default for OutSel2 {
 impl core::fmt::Debug for OutSel2 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("OutSel2")
-            .field("in32_seln", &self.in32_seln())
-            .field("in33_seln", &self.in33_seln())
-            .field("in34_seln", &self.in34_seln())
-            .field("in35_seln", &self.in35_seln())
-            .field("in36_seln", &self.in36_seln())
-            .field("in37_seln", &self.in37_seln())
-            .field("in46_seln", &self.in46_seln())
-            .field("in47_seln", &self.in47_seln())
+            .field("in32_se_ln", &self.in32_se_ln())
+            .field("in33_se_ln", &self.in33_se_ln())
+            .field("in34_se_ln", &self.in34_se_ln())
+            .field("in35_se_ln", &self.in35_se_ln())
+            .field("in36_se_ln", &self.in36_se_ln())
+            .field("in37_se_ln", &self.in37_se_ln())
+            .field("in46_se_ln", &self.in46_se_ln())
+            .field("in47_se_ln", &self.in47_se_ln())
             .finish()
     }
 }
@@ -627,15 +627,15 @@ impl defmt::Format for OutSel2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "OutSel2 {{ in32_seln: {=u8:?}, in33_seln: {=u8:?}, in34_seln: {=u8:?}, in35_seln: {=u8:?}, in36_seln: {=u8:?}, in37_seln: {=u8:?}, in46_seln: {=u8:?}, in47_seln: {=u8:?} }}",
-            self.in32_seln(),
-            self.in33_seln(),
-            self.in34_seln(),
-            self.in35_seln(),
-            self.in36_seln(),
-            self.in37_seln(),
-            self.in46_seln(),
-            self.in47_seln()
+            "OutSel2 {{ in32_se_ln: {=u8:?}, in33_se_ln: {=u8:?}, in34_se_ln: {=u8:?}, in35_se_ln: {=u8:?}, in36_se_ln: {=u8:?}, in37_se_ln: {=u8:?}, in46_se_ln: {=u8:?}, in47_se_ln: {=u8:?} }}",
+            self.in32_se_ln(),
+            self.in33_se_ln(),
+            self.in34_se_ln(),
+            self.in35_se_ln(),
+            self.in36_se_ln(),
+            self.in37_se_ln(),
+            self.in46_se_ln(),
+            self.in47_se_ln()
         )
     }
 }

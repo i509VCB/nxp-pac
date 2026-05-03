@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum AnatopUsbOtg1IdSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B0_01 for Mode: ALT3."]
-    GPIO_AD_B0_01_ALT3 = 0x0,
+    GpioAdB001Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_02 for Mode: ALT0."]
-    GPIO_AD_B1_02_ALT0 = 0x01,
+    GpioAdB102Alt0 = 0x01,
 }
 impl AnatopUsbOtg1IdSelectInputDaisy {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<AnatopUsbOtg1IdSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum AnatopUsbOtg2IdSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B0_00 for Mode: ALT3."]
-    GPIO_AD_B0_00_ALT3 = 0x0,
+    GpioAdB000Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_00 for Mode: ALT0."]
-    GPIO_AD_B1_00_ALT0 = 0x01,
+    GpioAdB100Alt0 = 0x01,
 }
 impl AnatopUsbOtg2IdSelectInputDaisy {
     #[inline(always)]
@@ -65,11 +65,11 @@ impl From<AnatopUsbOtg2IdSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CanfdIppIndCanrxSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_37 for Mode: ALT9."]
-    GPIO_EMC_37_ALT9 = 0x0,
+    GpioEmc37Alt9 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_15 for Mode: ALT8."]
-    GPIO_AD_B0_15_ALT8 = 0x01,
+    GpioAdB015Alt8 = 0x01,
     #[doc = "Selecting Pad: GPIO_AD_B0_11 for Mode: ALT8."]
-    GPIO_AD_B0_11_ALT8 = 0x02,
+    GpioAdB011Alt8 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl CanfdIppIndCanrxSelectInputDaisy {
@@ -99,15 +99,15 @@ impl From<CanfdIppIndCanrxSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CcmPmicReadySelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_03 for Mode: ALT6."]
-    GPIO_SD_B1_03_ALT6 = 0x0,
+    GpioSdB103Alt6 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_12 for Mode: ALT1."]
-    GPIO_AD_B0_12_ALT1 = 0x01,
+    GpioAdB012Alt1 = 0x01,
     #[doc = "Selecting Pad: GPIO_AD_B1_01 for Mode: ALT4."]
-    GPIO_AD_B1_01_ALT4 = 0x02,
+    GpioAdB101Alt4 = 0x02,
     #[doc = "Selecting Pad: GPIO_AD_B1_08 for Mode: ALT3."]
-    GPIO_AD_B1_08_ALT3 = 0x03,
+    GpioAdB108Alt3 = 0x03,
     #[doc = "Selecting Pad: GPIO_EMC_32 for Mode: ALT3."]
-    GPIO_EMC_32_ALT3 = 0x04,
+    GpioEmc32Alt3 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
@@ -139,9 +139,9 @@ impl From<CcmPmicReadySelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CsiData02SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B1_15 for Mode: ALT4."]
-    GPIO_AD_B1_15_ALT4 = 0x0,
+    GpioAdB115Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_11 for Mode: ALT4."]
-    GPIO_AD_B0_11_ALT4 = 0x01,
+    GpioAdB011Alt4 = 0x01,
 }
 impl CsiData02SelectInputDaisy {
     #[inline(always)]
@@ -170,9 +170,9 @@ impl From<CsiData02SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CsiData03SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B1_14 for Mode: ALT4."]
-    GPIO_AD_B1_14_ALT4 = 0x0,
+    GpioAdB114Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_10 for Mode: ALT4."]
-    GPIO_AD_B0_10_ALT4 = 0x01,
+    GpioAdB010Alt4 = 0x01,
 }
 impl CsiData03SelectInputDaisy {
     #[inline(always)]
@@ -201,9 +201,9 @@ impl From<CsiData03SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CsiData04SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B1_13 for Mode: ALT4."]
-    GPIO_AD_B1_13_ALT4 = 0x0,
+    GpioAdB113Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_09 for Mode: ALT4."]
-    GPIO_AD_B0_09_ALT4 = 0x01,
+    GpioAdB009Alt4 = 0x01,
 }
 impl CsiData04SelectInputDaisy {
     #[inline(always)]
@@ -232,9 +232,9 @@ impl From<CsiData04SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CsiData05SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B1_12 for Mode: ALT4."]
-    GPIO_AD_B1_12_ALT4 = 0x0,
+    GpioAdB112Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_08 for Mode: ALT4."]
-    GPIO_AD_B0_08_ALT4 = 0x01,
+    GpioAdB008Alt4 = 0x01,
 }
 impl CsiData05SelectInputDaisy {
     #[inline(always)]
@@ -263,9 +263,9 @@ impl From<CsiData05SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CsiData06SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B1_11 for Mode: ALT4."]
-    GPIO_AD_B1_11_ALT4 = 0x0,
+    GpioAdB111Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_07 for Mode: ALT4."]
-    GPIO_AD_B0_07_ALT4 = 0x01,
+    GpioAdB007Alt4 = 0x01,
 }
 impl CsiData06SelectInputDaisy {
     #[inline(always)]
@@ -294,9 +294,9 @@ impl From<CsiData06SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CsiData07SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B1_10 for Mode: ALT4."]
-    GPIO_AD_B1_10_ALT4 = 0x0,
+    GpioAdB110Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_06 for Mode: ALT4."]
-    GPIO_AD_B0_06_ALT4 = 0x01,
+    GpioAdB006Alt4 = 0x01,
 }
 impl CsiData07SelectInputDaisy {
     #[inline(always)]
@@ -325,9 +325,9 @@ impl From<CsiData07SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CsiData08SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B1_09 for Mode: ALT4."]
-    GPIO_AD_B1_09_ALT4 = 0x0,
+    GpioAdB109Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_05 for Mode: ALT4."]
-    GPIO_AD_B0_05_ALT4 = 0x01,
+    GpioAdB005Alt4 = 0x01,
 }
 impl CsiData08SelectInputDaisy {
     #[inline(always)]
@@ -356,9 +356,9 @@ impl From<CsiData08SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CsiData09SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B1_08 for Mode: ALT4."]
-    GPIO_AD_B1_08_ALT4 = 0x0,
+    GpioAdB108Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_04 for Mode: ALT4."]
-    GPIO_AD_B0_04_ALT4 = 0x01,
+    GpioAdB004Alt4 = 0x01,
 }
 impl CsiData09SelectInputDaisy {
     #[inline(always)]
@@ -387,11 +387,11 @@ impl From<CsiData09SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CsiHsyncSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B0_15 for Mode: ALT4."]
-    GPIO_AD_B0_15_ALT4 = 0x0,
+    GpioAdB015Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_07 for Mode: ALT4."]
-    GPIO_AD_B1_07_ALT4 = 0x01,
+    GpioAdB107Alt4 = 0x01,
     #[doc = "Selecting Pad: GPIO_B1_14 for Mode: ALT2."]
-    GPIO_B1_14_ALT2 = 0x02,
+    GpioB114Alt2 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl CsiHsyncSelectInputDaisy {
@@ -421,9 +421,9 @@ impl From<CsiHsyncSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CsiPixclkSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B1_04 for Mode: ALT4."]
-    GPIO_AD_B1_04_ALT4 = 0x0,
+    GpioAdB104Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_B1_12 for Mode: ALT2."]
-    GPIO_B1_12_ALT2 = 0x01,
+    GpioB112Alt2 = 0x01,
 }
 impl CsiPixclkSelectInputDaisy {
     #[inline(always)]
@@ -452,11 +452,11 @@ impl From<CsiPixclkSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CsiVsyncSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B0_14 for Mode: ALT4."]
-    GPIO_AD_B0_14_ALT4 = 0x0,
+    GpioAdB014Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_06 for Mode: ALT4."]
-    GPIO_AD_B1_06_ALT4 = 0x01,
+    GpioAdB106Alt4 = 0x01,
     #[doc = "Selecting Pad: GPIO_B1_13 for Mode: ALT2."]
-    GPIO_B1_13_ALT2 = 0x02,
+    GpioB113Alt2 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl CsiVsyncSelectInputDaisy {
@@ -486,21 +486,21 @@ impl From<CsiVsyncSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dse {
     #[doc = "output driver disabled;."]
-    DSE_0_OUTPUT_DRIVER_DISABLED = 0x0,
+    Dse0OutputDriverDisabled = 0x0,
     #[doc = "R0(150 Ohm @ 3.3V, 260 Ohm@1.8V)."]
-    DSE_1_R0_150_OHM_3_3V_260_OHM_1_8V = 0x01,
+    Dse1R0150Ohm33v260Ohm18v = 0x01,
     #[doc = "R0/2."]
-    DSE_2_R0_2 = 0x02,
+    Dse2R02 = 0x02,
     #[doc = "R0/3."]
-    DSE_3_R0_3 = 0x03,
+    Dse3R03 = 0x03,
     #[doc = "R0/4."]
-    DSE_4_R0_4 = 0x04,
+    Dse4R04 = 0x04,
     #[doc = "R0/5."]
-    DSE_5_R0_5 = 0x05,
+    Dse5R05 = 0x05,
     #[doc = "R0/6."]
-    DSE_6_R0_6 = 0x06,
+    Dse6R06 = 0x06,
     #[doc = "R0/7."]
-    DSE_7_R0_7 = 0x07,
+    Dse7R07 = 0x07,
 }
 impl Dse {
     #[inline(always)]
@@ -529,9 +529,9 @@ impl From<Dse> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Enet0RxdataSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_20 for Mode: ALT3."]
-    GPIO_EMC_20_ALT3 = 0x0,
+    GpioEmc20Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_B1_04 for Mode: ALT3."]
-    GPIO_B1_04_ALT3 = 0x01,
+    GpioB104Alt3 = 0x01,
 }
 impl Enet0RxdataSelectInputDaisy {
     #[inline(always)]
@@ -560,11 +560,11 @@ impl From<Enet0RxdataSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Enet0TimerSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B0_15 for Mode: ALT3."]
-    GPIO_AD_B0_15_ALT3 = 0x0,
+    GpioAdB015Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_11 for Mode: ALT7."]
-    GPIO_AD_B0_11_ALT7 = 0x01,
+    GpioAdB011Alt7 = 0x01,
     #[doc = "Selecting Pad: GPIO_B1_12 for Mode: ALT3."]
-    GPIO_B1_12_ALT3 = 0x02,
+    GpioB112Alt3 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Enet0TimerSelectInputDaisy {
@@ -594,9 +594,9 @@ impl From<Enet0TimerSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Enet1RxdataSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_19 for Mode: ALT3."]
-    GPIO_EMC_19_ALT3 = 0x0,
+    GpioEmc19Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_B1_05 for Mode: ALT3."]
-    GPIO_B1_05_ALT3 = 0x01,
+    GpioB105Alt3 = 0x01,
 }
 impl Enet1RxdataSelectInputDaisy {
     #[inline(always)]
@@ -625,11 +625,11 @@ impl From<Enet1RxdataSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Enet2IpgClkRmiiSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_33 for Mode: ALT9."]
-    GPIO_EMC_33_ALT9 = 0x0,
+    GpioEmc33Alt9 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B0_01 for Mode: ALT9."]
-    GPIO_SD_B0_01_ALT9 = 0x01,
+    GpioSdB001Alt9 = 0x01,
     #[doc = "Selecting Pad: GPIO_B0_15 for Mode: ALT9."]
-    GPIO_B0_15_ALT9 = 0x02,
+    GpioB015Alt9 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Enet2IpgClkRmiiSelectInputDaisy {
@@ -659,9 +659,9 @@ impl From<Enet2IpgClkRmiiSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Enet2IppIndMac0MdioSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_39 for Mode: ALT8."]
-    GPIO_EMC_39_ALT8 = 0x0,
+    GpioEmc39Alt8 = 0x0,
     #[doc = "Selecting Pad: GPIO_B0_01 for Mode: ALT8."]
-    GPIO_B0_01_ALT8 = 0x01,
+    GpioB001Alt8 = 0x01,
 }
 impl Enet2IppIndMac0MdioSelectInputDaisy {
     #[inline(always)]
@@ -690,11 +690,11 @@ impl From<Enet2IppIndMac0MdioSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Enet2IppIndMac0RxdataSelectInput0Daisy {
     #[doc = "Selecting Pad: GPIO_EMC_35 for Mode: ALT8."]
-    GPIO_EMC_35_ALT8 = 0x0,
+    GpioEmc35Alt8 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B0_03 for Mode: ALT8."]
-    GPIO_SD_B0_03_ALT8 = 0x01,
+    GpioSdB003Alt8 = 0x01,
     #[doc = "Selecting Pad: GPIO_B1_01 for Mode: ALT8."]
-    GPIO_B1_01_ALT8 = 0x02,
+    GpioB101Alt8 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Enet2IppIndMac0RxdataSelectInput0Daisy {
@@ -724,11 +724,11 @@ impl From<Enet2IppIndMac0RxdataSelectInput0Daisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Enet2IppIndMac0RxdataSelectInput1Daisy {
     #[doc = "Selecting Pad: GPIO_EMC_36 for Mode: ALT8."]
-    GPIO_EMC_36_ALT8 = 0x0,
+    GpioEmc36Alt8 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B0_04 for Mode: ALT8."]
-    GPIO_SD_B0_04_ALT8 = 0x01,
+    GpioSdB004Alt8 = 0x01,
     #[doc = "Selecting Pad: GPIO_B1_02 for Mode: ALT8."]
-    GPIO_B1_02_ALT8 = 0x02,
+    GpioB102Alt8 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Enet2IppIndMac0RxdataSelectInput1Daisy {
@@ -758,11 +758,11 @@ impl From<Enet2IppIndMac0RxdataSelectInput1Daisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Enet2IppIndMac0RxenSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_37 for Mode: ALT8."]
-    GPIO_EMC_37_ALT8 = 0x0,
+    GpioEmc37Alt8 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B0_05 for Mode: ALT8."]
-    GPIO_SD_B0_05_ALT8 = 0x01,
+    GpioSdB005Alt8 = 0x01,
     #[doc = "Selecting Pad: GPIO_B1_03 for Mode: ALT8."]
-    GPIO_B1_03_ALT8 = 0x02,
+    GpioB103Alt8 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Enet2IppIndMac0RxenSelectInputDaisy {
@@ -792,11 +792,11 @@ impl From<Enet2IppIndMac0RxenSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Enet2IppIndMac0RxerrSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_34 for Mode: ALT8."]
-    GPIO_EMC_34_ALT8 = 0x0,
+    GpioEmc34Alt8 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B0_02 for Mode: ALT8."]
-    GPIO_SD_B0_02_ALT8 = 0x01,
+    GpioSdB002Alt8 = 0x01,
     #[doc = "Selecting Pad: GPIO_B1_00 for Mode: ALT8."]
-    GPIO_B1_00_ALT8 = 0x02,
+    GpioB100Alt8 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Enet2IppIndMac0RxerrSelectInputDaisy {
@@ -826,9 +826,9 @@ impl From<Enet2IppIndMac0RxerrSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Enet2IppIndMac0TimerSelectInput0Daisy {
     #[doc = "Selecting Pad: GPIO_AD_B1_01 for Mode: ALT8."]
-    GPIO_AD_B1_01_ALT8 = 0x0,
+    GpioAdB101Alt8 = 0x0,
     #[doc = "Selecting Pad: GPIO_B0_03 for Mode: ALT8."]
-    GPIO_B0_03_ALT8 = 0x01,
+    GpioB003Alt8 = 0x01,
 }
 impl Enet2IppIndMac0TimerSelectInput0Daisy {
     #[inline(always)]
@@ -857,11 +857,11 @@ impl From<Enet2IppIndMac0TimerSelectInput0Daisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Enet2IppIndMac0TxclkSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_33 for Mode: ALT8."]
-    GPIO_EMC_33_ALT8 = 0x0,
+    GpioEmc33Alt8 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B0_01 for Mode: ALT8."]
-    GPIO_SD_B0_01_ALT8 = 0x01,
+    GpioSdB001Alt8 = 0x01,
     #[doc = "Selecting Pad: GPIO_B0_15 for Mode: ALT8."]
-    GPIO_B0_15_ALT8 = 0x02,
+    GpioB015Alt8 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Enet2IppIndMac0TxclkSelectInputDaisy {
@@ -891,9 +891,9 @@ impl From<Enet2IppIndMac0TxclkSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EnetIpgClkRmiiSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_25 for Mode: ALT4."]
-    GPIO_EMC_25_ALT4 = 0x0,
+    GpioEmc25Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_B1_10 for Mode: ALT6."]
-    GPIO_B1_10_ALT6 = 0x01,
+    GpioB110Alt6 = 0x01,
 }
 impl EnetIpgClkRmiiSelectInputDaisy {
     #[inline(always)]
@@ -922,11 +922,11 @@ impl From<EnetIpgClkRmiiSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EnetMdioSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B1_05 for Mode: ALT1."]
-    GPIO_AD_B1_05_ALT1 = 0x0,
+    GpioAdB105Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_41 for Mode: ALT4."]
-    GPIO_EMC_41_ALT4 = 0x01,
+    GpioEmc41Alt4 = 0x01,
     #[doc = "Selecting Pad: GPIO_B1_15 for Mode: ALT0."]
-    GPIO_B1_15_ALT0 = 0x02,
+    GpioB115Alt0 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl EnetMdioSelectInputDaisy {
@@ -956,9 +956,9 @@ impl From<EnetMdioSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EnetRxenSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_23 for Mode: ALT3."]
-    GPIO_EMC_23_ALT3 = 0x0,
+    GpioEmc23Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_B1_06 for Mode: ALT3."]
-    GPIO_B1_06_ALT3 = 0x01,
+    GpioB106Alt3 = 0x01,
 }
 impl EnetRxenSelectInputDaisy {
     #[inline(always)]
@@ -987,9 +987,9 @@ impl From<EnetRxenSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EnetRxerrSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_26 for Mode: ALT3."]
-    GPIO_EMC_26_ALT3 = 0x0,
+    GpioEmc26Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_B1_11 for Mode: ALT3."]
-    GPIO_B1_11_ALT3 = 0x01,
+    GpioB111Alt3 = 0x01,
 }
 impl EnetRxerrSelectInputDaisy {
     #[inline(always)]
@@ -1018,9 +1018,9 @@ impl From<EnetRxerrSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum EnetTxclkSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_25 for Mode: ALT3."]
-    GPIO_EMC_25_ALT3 = 0x0,
+    GpioEmc25Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_B1_10 for Mode: ALT3."]
-    GPIO_B1_10_ALT3 = 0x01,
+    GpioB110Alt3 = 0x01,
 }
 impl EnetTxclkSelectInputDaisy {
     #[inline(always)]
@@ -1049,13 +1049,13 @@ impl From<EnetTxclkSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexcan1RxSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_03 for Mode: ALT4."]
-    GPIO_SD_B1_03_ALT4 = 0x0,
+    GpioSdB103Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_18 for Mode: ALT3."]
-    GPIO_EMC_18_ALT3 = 0x01,
+    GpioEmc18Alt3 = 0x01,
     #[doc = "Selecting Pad: GPIO_AD_B1_09 for Mode: ALT2."]
-    GPIO_AD_B1_09_ALT2 = 0x02,
+    GpioAdB109Alt2 = 0x02,
     #[doc = "Selecting Pad: GPIO_B0_03 for Mode: ALT2."]
-    GPIO_B0_03_ALT2 = 0x03,
+    GpioB003Alt2 = 0x03,
 }
 impl Flexcan1RxSelectInputDaisy {
     #[inline(always)]
@@ -1084,13 +1084,13 @@ impl From<Flexcan1RxSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexcan2RxSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_10 for Mode: ALT3."]
-    GPIO_EMC_10_ALT3 = 0x0,
+    GpioEmc10Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_03 for Mode: ALT0."]
-    GPIO_AD_B0_03_ALT0 = 0x01,
+    GpioAdB003Alt0 = 0x01,
     #[doc = "Selecting Pad: GPIO_AD_B0_15 for Mode: ALT6."]
-    GPIO_AD_B0_15_ALT6 = 0x02,
+    GpioAdB015Alt6 = 0x02,
     #[doc = "Selecting Pad: GPIO_B1_09 for Mode: ALT6."]
-    GPIO_B1_09_ALT6 = 0x03,
+    GpioB109Alt6 = 0x03,
 }
 impl Flexcan2RxSelectInputDaisy {
     #[inline(always)]
@@ -1119,9 +1119,9 @@ impl From<Flexcan2RxSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexpwm1Pwma0SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_23 for Mode: ALT1."]
-    GPIO_EMC_23_ALT1 = 0x0,
+    GpioEmc23Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B0_00 for Mode: ALT1."]
-    GPIO_SD_B0_00_ALT1 = 0x01,
+    GpioSdB000Alt1 = 0x01,
 }
 impl Flexpwm1Pwma0SelectInputDaisy {
     #[inline(always)]
@@ -1150,9 +1150,9 @@ impl From<Flexpwm1Pwma0SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexpwm1Pwma1SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_25 for Mode: ALT1."]
-    GPIO_EMC_25_ALT1 = 0x0,
+    GpioEmc25Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B0_02 for Mode: ALT1."]
-    GPIO_SD_B0_02_ALT1 = 0x01,
+    GpioSdB002Alt1 = 0x01,
 }
 impl Flexpwm1Pwma1SelectInputDaisy {
     #[inline(always)]
@@ -1181,9 +1181,9 @@ impl From<Flexpwm1Pwma1SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexpwm1Pwma2SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_27 for Mode: ALT1."]
-    GPIO_EMC_27_ALT1 = 0x0,
+    GpioEmc27Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B0_04 for Mode: ALT1."]
-    GPIO_SD_B0_04_ALT1 = 0x01,
+    GpioSdB004Alt1 = 0x01,
 }
 impl Flexpwm1Pwma2SelectInputDaisy {
     #[inline(always)]
@@ -1212,15 +1212,15 @@ impl From<Flexpwm1Pwma2SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexpwm1Pwma3SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_00 for Mode: ALT2."]
-    GPIO_SD_B1_00_ALT2 = 0x0,
+    GpioSdB100Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_12 for Mode: ALT4."]
-    GPIO_EMC_12_ALT4 = 0x01,
+    GpioEmc12Alt4 = 0x01,
     #[doc = "Selecting Pad: GPIO_EMC_38 for Mode: ALT1."]
-    GPIO_EMC_38_ALT1 = 0x02,
+    GpioEmc38Alt1 = 0x02,
     #[doc = "Selecting Pad: GPIO_AD_B0_10 for Mode: ALT1."]
-    GPIO_AD_B0_10_ALT1 = 0x03,
+    GpioAdB010Alt1 = 0x03,
     #[doc = "Selecting Pad: GPIO_B1_00 for Mode: ALT6."]
-    GPIO_B1_00_ALT6 = 0x04,
+    GpioB100Alt6 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
@@ -1252,9 +1252,9 @@ impl From<Flexpwm1Pwma3SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexpwm1Pwmb0SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_24 for Mode: ALT1."]
-    GPIO_EMC_24_ALT1 = 0x0,
+    GpioEmc24Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B0_01 for Mode: ALT1."]
-    GPIO_SD_B0_01_ALT1 = 0x01,
+    GpioSdB001Alt1 = 0x01,
 }
 impl Flexpwm1Pwmb0SelectInputDaisy {
     #[inline(always)]
@@ -1283,9 +1283,9 @@ impl From<Flexpwm1Pwmb0SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexpwm1Pwmb1SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_26 for Mode: ALT1."]
-    GPIO_EMC_26_ALT1 = 0x0,
+    GpioEmc26Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B0_03 for Mode: ALT1."]
-    GPIO_SD_B0_03_ALT1 = 0x01,
+    GpioSdB003Alt1 = 0x01,
 }
 impl Flexpwm1Pwmb1SelectInputDaisy {
     #[inline(always)]
@@ -1314,9 +1314,9 @@ impl From<Flexpwm1Pwmb1SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexpwm1Pwmb2SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_28 for Mode: ALT1."]
-    GPIO_EMC_28_ALT1 = 0x0,
+    GpioEmc28Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B0_05 for Mode: ALT1."]
-    GPIO_SD_B0_05_ALT1 = 0x01,
+    GpioSdB005Alt1 = 0x01,
 }
 impl Flexpwm1Pwmb2SelectInputDaisy {
     #[inline(always)]
@@ -1345,15 +1345,15 @@ impl From<Flexpwm1Pwmb2SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexpwm1Pwmb3SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_01 for Mode: ALT2."]
-    GPIO_SD_B1_01_ALT2 = 0x0,
+    GpioSdB101Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_13 for Mode: ALT4."]
-    GPIO_EMC_13_ALT4 = 0x01,
+    GpioEmc13Alt4 = 0x01,
     #[doc = "Selecting Pad: GPIO_EMC_39 for Mode: ALT1."]
-    GPIO_EMC_39_ALT1 = 0x02,
+    GpioEmc39Alt1 = 0x02,
     #[doc = "Selecting Pad: GPIO_AD_B0_11 for Mode: ALT1."]
-    GPIO_AD_B0_11_ALT1 = 0x03,
+    GpioAdB011Alt1 = 0x03,
     #[doc = "Selecting Pad: GPIO_B1_01 for Mode: ALT6."]
-    GPIO_B1_01_ALT6 = 0x04,
+    GpioB101Alt6 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
@@ -1385,9 +1385,9 @@ impl From<Flexpwm1Pwmb3SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexpwm2Pwma0SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_06 for Mode: ALT1."]
-    GPIO_EMC_06_ALT1 = 0x0,
+    GpioEmc06Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_B0_06 for Mode: ALT2."]
-    GPIO_B0_06_ALT2 = 0x01,
+    GpioB006Alt2 = 0x01,
 }
 impl Flexpwm2Pwma0SelectInputDaisy {
     #[inline(always)]
@@ -1416,9 +1416,9 @@ impl From<Flexpwm2Pwma0SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexpwm2Pwma1SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_08 for Mode: ALT1."]
-    GPIO_EMC_08_ALT1 = 0x0,
+    GpioEmc08Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_B0_08 for Mode: ALT2."]
-    GPIO_B0_08_ALT2 = 0x01,
+    GpioB008Alt2 = 0x01,
 }
 impl Flexpwm2Pwma1SelectInputDaisy {
     #[inline(always)]
@@ -1447,9 +1447,9 @@ impl From<Flexpwm2Pwma1SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexpwm2Pwma2SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_10 for Mode: ALT1."]
-    GPIO_EMC_10_ALT1 = 0x0,
+    GpioEmc10Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_B0_10 for Mode: ALT2."]
-    GPIO_B0_10_ALT2 = 0x01,
+    GpioB010Alt2 = 0x01,
 }
 impl Flexpwm2Pwma2SelectInputDaisy {
     #[inline(always)]
@@ -1478,15 +1478,15 @@ impl From<Flexpwm2Pwma2SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexpwm2Pwma3SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_02 for Mode: ALT2."]
-    GPIO_SD_B1_02_ALT2 = 0x0,
+    GpioSdB102Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_19 for Mode: ALT1."]
-    GPIO_EMC_19_ALT1 = 0x01,
+    GpioEmc19Alt1 = 0x01,
     #[doc = "Selecting Pad: GPIO_AD_B0_00 for Mode: ALT0."]
-    GPIO_AD_B0_00_ALT0 = 0x02,
+    GpioAdB000Alt0 = 0x02,
     #[doc = "Selecting Pad: GPIO_AD_B0_09 for Mode: ALT1."]
-    GPIO_AD_B0_09_ALT1 = 0x03,
+    GpioAdB009Alt1 = 0x03,
     #[doc = "Selecting Pad: GPIO_B1_02 for Mode: ALT6."]
-    GPIO_B1_02_ALT6 = 0x04,
+    GpioB102Alt6 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
@@ -1518,9 +1518,9 @@ impl From<Flexpwm2Pwma3SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexpwm2Pwmb0SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_07 for Mode: ALT1."]
-    GPIO_EMC_07_ALT1 = 0x0,
+    GpioEmc07Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_B0_07 for Mode: ALT2."]
-    GPIO_B0_07_ALT2 = 0x01,
+    GpioB007Alt2 = 0x01,
 }
 impl Flexpwm2Pwmb0SelectInputDaisy {
     #[inline(always)]
@@ -1549,9 +1549,9 @@ impl From<Flexpwm2Pwmb0SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexpwm2Pwmb1SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_09 for Mode: ALT1."]
-    GPIO_EMC_09_ALT1 = 0x0,
+    GpioEmc09Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_B0_09 for Mode: ALT2."]
-    GPIO_B0_09_ALT2 = 0x01,
+    GpioB009Alt2 = 0x01,
 }
 impl Flexpwm2Pwmb1SelectInputDaisy {
     #[inline(always)]
@@ -1580,9 +1580,9 @@ impl From<Flexpwm2Pwmb1SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexpwm2Pwmb2SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_11 for Mode: ALT1."]
-    GPIO_EMC_11_ALT1 = 0x0,
+    GpioEmc11Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_B0_11 for Mode: ALT2."]
-    GPIO_B0_11_ALT2 = 0x01,
+    GpioB011Alt2 = 0x01,
 }
 impl Flexpwm2Pwmb2SelectInputDaisy {
     #[inline(always)]
@@ -1611,13 +1611,13 @@ impl From<Flexpwm2Pwmb2SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexpwm2Pwmb3SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_03 for Mode: ALT2."]
-    GPIO_SD_B1_03_ALT2 = 0x0,
+    GpioSdB103Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_20 for Mode: ALT1."]
-    GPIO_EMC_20_ALT1 = 0x01,
+    GpioEmc20Alt1 = 0x01,
     #[doc = "Selecting Pad: GPIO_AD_B0_01 for Mode: ALT0."]
-    GPIO_AD_B0_01_ALT0 = 0x02,
+    GpioAdB001Alt0 = 0x02,
     #[doc = "Selecting Pad: GPIO_B1_03 for Mode: ALT6."]
-    GPIO_B1_03_ALT6 = 0x03,
+    GpioB103Alt6 = 0x03,
 }
 impl Flexpwm2Pwmb3SelectInputDaisy {
     #[inline(always)]
@@ -1646,9 +1646,9 @@ impl From<Flexpwm2Pwmb3SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexpwm4Pwma0SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_00 for Mode: ALT1."]
-    GPIO_EMC_00_ALT1 = 0x0,
+    GpioEmc00Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_08 for Mode: ALT1."]
-    GPIO_AD_B1_08_ALT1 = 0x01,
+    GpioAdB108Alt1 = 0x01,
 }
 impl Flexpwm4Pwma0SelectInputDaisy {
     #[inline(always)]
@@ -1677,9 +1677,9 @@ impl From<Flexpwm4Pwma0SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexpwm4Pwma1SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_02 for Mode: ALT1."]
-    GPIO_EMC_02_ALT1 = 0x0,
+    GpioEmc02Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_09 for Mode: ALT1."]
-    GPIO_AD_B1_09_ALT1 = 0x01,
+    GpioAdB109Alt1 = 0x01,
 }
 impl Flexpwm4Pwma1SelectInputDaisy {
     #[inline(always)]
@@ -1708,9 +1708,9 @@ impl From<Flexpwm4Pwma1SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexpwm4Pwma2SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_04 for Mode: ALT1."]
-    GPIO_EMC_04_ALT1 = 0x0,
+    GpioEmc04Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_B1_14 for Mode: ALT1."]
-    GPIO_B1_14_ALT1 = 0x01,
+    GpioB114Alt1 = 0x01,
 }
 impl Flexpwm4Pwma2SelectInputDaisy {
     #[inline(always)]
@@ -1739,9 +1739,9 @@ impl From<Flexpwm4Pwma2SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flexpwm4Pwma3SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_17 for Mode: ALT1."]
-    GPIO_EMC_17_ALT1 = 0x0,
+    GpioEmc17Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_B1_15 for Mode: ALT1."]
-    GPIO_B1_15_ALT1 = 0x01,
+    GpioB115Alt1 = 0x01,
 }
 impl Flexpwm4Pwma3SelectInputDaisy {
     #[inline(always)]
@@ -1770,9 +1770,9 @@ impl From<Flexpwm4Pwma3SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FlexspiaData0SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_08 for Mode: ALT1."]
-    GPIO_SD_B1_08_ALT1 = 0x0,
+    GpioSdB108Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_13 for Mode: ALT0."]
-    GPIO_AD_B1_13_ALT0 = 0x01,
+    GpioAdB113Alt0 = 0x01,
 }
 impl FlexspiaData0SelectInputDaisy {
     #[inline(always)]
@@ -1801,9 +1801,9 @@ impl From<FlexspiaData0SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FlexspiaData1SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_09 for Mode: ALT1."]
-    GPIO_SD_B1_09_ALT1 = 0x0,
+    GpioSdB109Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_12 for Mode: ALT0."]
-    GPIO_AD_B1_12_ALT0 = 0x01,
+    GpioAdB112Alt0 = 0x01,
 }
 impl FlexspiaData1SelectInputDaisy {
     #[inline(always)]
@@ -1832,9 +1832,9 @@ impl From<FlexspiaData1SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FlexspiaData2SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_10 for Mode: ALT1."]
-    GPIO_SD_B1_10_ALT1 = 0x0,
+    GpioSdB110Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_11 for Mode: ALT0."]
-    GPIO_AD_B1_11_ALT0 = 0x01,
+    GpioAdB111Alt0 = 0x01,
 }
 impl FlexspiaData2SelectInputDaisy {
     #[inline(always)]
@@ -1863,9 +1863,9 @@ impl From<FlexspiaData2SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FlexspiaData3SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_11 for Mode: ALT1."]
-    GPIO_SD_B1_11_ALT1 = 0x0,
+    GpioSdB111Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_10 for Mode: ALT0."]
-    GPIO_AD_B1_10_ALT0 = 0x01,
+    GpioAdB110Alt0 = 0x01,
 }
 impl FlexspiaData3SelectInputDaisy {
     #[inline(always)]
@@ -1894,9 +1894,9 @@ impl From<FlexspiaData3SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FlexspiaDqsSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_05 for Mode: ALT1."]
-    GPIO_SD_B1_05_ALT1 = 0x0,
+    GpioSdB105Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_09 for Mode: ALT0."]
-    GPIO_AD_B1_09_ALT0 = 0x01,
+    GpioAdB109Alt0 = 0x01,
 }
 impl FlexspiaDqsSelectInputDaisy {
     #[inline(always)]
@@ -1925,9 +1925,9 @@ impl From<FlexspiaDqsSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FlexspiaSckSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_07 for Mode: ALT1."]
-    GPIO_SD_B1_07_ALT1 = 0x0,
+    GpioSdB107Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_14 for Mode: ALT0."]
-    GPIO_AD_B1_14_ALT0 = 0x01,
+    GpioAdB114Alt0 = 0x01,
 }
 impl FlexspiaSckSelectInputDaisy {
     #[inline(always)]
@@ -1956,9 +1956,9 @@ impl From<FlexspiaSckSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FlexspibData0SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_03 for Mode: ALT1."]
-    GPIO_SD_B1_03_ALT1 = 0x0,
+    GpioSdB103Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_07 for Mode: ALT0."]
-    GPIO_AD_B1_07_ALT0 = 0x01,
+    GpioAdB107Alt0 = 0x01,
 }
 impl FlexspibData0SelectInputDaisy {
     #[inline(always)]
@@ -1987,9 +1987,9 @@ impl From<FlexspibData0SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FlexspibData1SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_02 for Mode: ALT1."]
-    GPIO_SD_B1_02_ALT1 = 0x0,
+    GpioSdB102Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_06 for Mode: ALT0."]
-    GPIO_AD_B1_06_ALT0 = 0x01,
+    GpioAdB106Alt0 = 0x01,
 }
 impl FlexspibData1SelectInputDaisy {
     #[inline(always)]
@@ -2018,9 +2018,9 @@ impl From<FlexspibData1SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FlexspibData2SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_01 for Mode: ALT1."]
-    GPIO_SD_B1_01_ALT1 = 0x0,
+    GpioSdB101Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_05 for Mode: ALT0."]
-    GPIO_AD_B1_05_ALT0 = 0x01,
+    GpioAdB105Alt0 = 0x01,
 }
 impl FlexspibData2SelectInputDaisy {
     #[inline(always)]
@@ -2049,9 +2049,9 @@ impl From<FlexspibData2SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FlexspibData3SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_00 for Mode: ALT1."]
-    GPIO_SD_B1_00_ALT1 = 0x0,
+    GpioSdB100Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_04 for Mode: ALT0."]
-    GPIO_AD_B1_04_ALT0 = 0x01,
+    GpioAdB104Alt0 = 0x01,
 }
 impl FlexspibData3SelectInputDaisy {
     #[inline(always)]
@@ -2080,9 +2080,9 @@ impl From<FlexspibData3SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gpt1IppIndCapin1SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_24 for Mode: ALT4."]
-    GPIO_EMC_24_ALT4 = 0x0,
+    GpioEmc24Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_B1_05 for Mode: ALT8."]
-    GPIO_B1_05_ALT8 = 0x01,
+    GpioB105Alt8 = 0x01,
 }
 impl Gpt1IppIndCapin1SelectInputDaisy {
     #[inline(always)]
@@ -2111,9 +2111,9 @@ impl From<Gpt1IppIndCapin1SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gpt1IppIndCapin2SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_23 for Mode: ALT4."]
-    GPIO_EMC_23_ALT4 = 0x0,
+    GpioEmc23Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_B1_06 for Mode: ALT8."]
-    GPIO_B1_06_ALT8 = 0x01,
+    GpioB106Alt8 = 0x01,
 }
 impl Gpt1IppIndCapin2SelectInputDaisy {
     #[inline(always)]
@@ -2142,9 +2142,9 @@ impl From<Gpt1IppIndCapin2SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gpt1IppIndClkinSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B0_13 for Mode: ALT1."]
-    GPIO_AD_B0_13_ALT1 = 0x0,
+    GpioAdB013Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_B1_04 for Mode: ALT8."]
-    GPIO_B1_04_ALT8 = 0x01,
+    GpioB104Alt8 = 0x01,
 }
 impl Gpt1IppIndClkinSelectInputDaisy {
     #[inline(always)]
@@ -2173,9 +2173,9 @@ impl From<Gpt1IppIndClkinSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gpt2IppIndCapin1SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_41 for Mode: ALT1."]
-    GPIO_EMC_41_ALT1 = 0x0,
+    GpioEmc41Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_03 for Mode: ALT8."]
-    GPIO_AD_B1_03_ALT8 = 0x01,
+    GpioAdB103Alt8 = 0x01,
 }
 impl Gpt2IppIndCapin1SelectInputDaisy {
     #[inline(always)]
@@ -2204,9 +2204,9 @@ impl From<Gpt2IppIndCapin1SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gpt2IppIndCapin2SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_40 for Mode: ALT1."]
-    GPIO_EMC_40_ALT1 = 0x0,
+    GpioEmc40Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_04 for Mode: ALT8."]
-    GPIO_AD_B1_04_ALT8 = 0x01,
+    GpioAdB104Alt8 = 0x01,
 }
 impl Gpt2IppIndCapin2SelectInputDaisy {
     #[inline(always)]
@@ -2235,9 +2235,9 @@ impl From<Gpt2IppIndCapin2SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gpt2IppIndClkinSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B0_09 for Mode: ALT7."]
-    GPIO_AD_B0_09_ALT7 = 0x0,
+    GpioAdB009Alt7 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_02 for Mode: ALT8."]
-    GPIO_AD_B1_02_ALT8 = 0x01,
+    GpioAdB102Alt8 = 0x01,
 }
 impl Gpt2IppIndClkinSelectInputDaisy {
     #[inline(always)]
@@ -2266,9 +2266,9 @@ impl From<Gpt2IppIndClkinSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpi2c1SclSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_04 for Mode: ALT2."]
-    GPIO_SD_B1_04_ALT2 = 0x0,
+    GpioSdB104Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_00 for Mode: ALT3."]
-    GPIO_AD_B1_00_ALT3 = 0x01,
+    GpioAdB100Alt3 = 0x01,
 }
 impl Lpi2c1SclSelectInputDaisy {
     #[inline(always)]
@@ -2297,9 +2297,9 @@ impl From<Lpi2c1SclSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpi2c1SdaSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_05 for Mode: ALT2."]
-    GPIO_SD_B1_05_ALT2 = 0x0,
+    GpioSdB105Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_01 for Mode: ALT3."]
-    GPIO_AD_B1_01_ALT3 = 0x01,
+    GpioAdB101Alt3 = 0x01,
 }
 impl Lpi2c1SdaSelectInputDaisy {
     #[inline(always)]
@@ -2328,9 +2328,9 @@ impl From<Lpi2c1SdaSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpi2c2SclSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_11 for Mode: ALT3."]
-    GPIO_SD_B1_11_ALT3 = 0x0,
+    GpioSdB111Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_B0_04 for Mode: ALT2."]
-    GPIO_B0_04_ALT2 = 0x01,
+    GpioB004Alt2 = 0x01,
 }
 impl Lpi2c2SclSelectInputDaisy {
     #[inline(always)]
@@ -2359,9 +2359,9 @@ impl From<Lpi2c2SclSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpi2c2SdaSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_10 for Mode: ALT3."]
-    GPIO_SD_B1_10_ALT3 = 0x0,
+    GpioSdB110Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_B0_05 for Mode: ALT2."]
-    GPIO_B0_05_ALT2 = 0x01,
+    GpioB005Alt2 = 0x01,
 }
 impl Lpi2c2SdaSelectInputDaisy {
     #[inline(always)]
@@ -2390,11 +2390,11 @@ impl From<Lpi2c2SdaSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpi2c3SclSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_22 for Mode: ALT2."]
-    GPIO_EMC_22_ALT2 = 0x0,
+    GpioEmc22Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B0_00 for Mode: ALT2."]
-    GPIO_SD_B0_00_ALT2 = 0x01,
+    GpioSdB000Alt2 = 0x01,
     #[doc = "Selecting Pad: GPIO_AD_B1_07 for Mode: ALT1."]
-    GPIO_AD_B1_07_ALT1 = 0x02,
+    GpioAdB107Alt1 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Lpi2c3SclSelectInputDaisy {
@@ -2424,11 +2424,11 @@ impl From<Lpi2c3SclSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpi2c3SdaSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_21 for Mode: ALT2."]
-    GPIO_EMC_21_ALT2 = 0x0,
+    GpioEmc21Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B0_01 for Mode: ALT2."]
-    GPIO_SD_B0_01_ALT2 = 0x01,
+    GpioSdB001Alt2 = 0x01,
     #[doc = "Selecting Pad: GPIO_AD_B1_06 for Mode: ALT1."]
-    GPIO_AD_B1_06_ALT1 = 0x02,
+    GpioAdB106Alt1 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Lpi2c3SdaSelectInputDaisy {
@@ -2458,9 +2458,9 @@ impl From<Lpi2c3SdaSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpi2c4SclSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_12 for Mode: ALT2."]
-    GPIO_EMC_12_ALT2 = 0x0,
+    GpioEmc12Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_12 for Mode: ALT0."]
-    GPIO_AD_B0_12_ALT0 = 0x01,
+    GpioAdB012Alt0 = 0x01,
 }
 impl Lpi2c4SclSelectInputDaisy {
     #[inline(always)]
@@ -2489,9 +2489,9 @@ impl From<Lpi2c4SclSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpi2c4SdaSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_11 for Mode: ALT2."]
-    GPIO_EMC_11_ALT2 = 0x0,
+    GpioEmc11Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_13 for Mode: ALT0."]
-    GPIO_AD_B0_13_ALT0 = 0x01,
+    GpioAdB013Alt0 = 0x01,
 }
 impl Lpi2c4SdaSelectInputDaisy {
     #[inline(always)]
@@ -2520,9 +2520,9 @@ impl From<Lpi2c4SdaSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi1Pcs0SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B0_01 for Mode: ALT4."]
-    GPIO_SD_B0_01_ALT4 = 0x0,
+    GpioSdB001Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_30 for Mode: ALT3."]
-    GPIO_EMC_30_ALT3 = 0x01,
+    GpioEmc30Alt3 = 0x01,
 }
 impl Lpspi1Pcs0SelectInputDaisy {
     #[inline(always)]
@@ -2551,9 +2551,9 @@ impl From<Lpspi1Pcs0SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi1SckSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_27 for Mode: ALT3."]
-    GPIO_EMC_27_ALT3 = 0x0,
+    GpioEmc27Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B0_00 for Mode: ALT4."]
-    GPIO_SD_B0_00_ALT4 = 0x01,
+    GpioSdB000Alt4 = 0x01,
 }
 impl Lpspi1SckSelectInputDaisy {
     #[inline(always)]
@@ -2582,9 +2582,9 @@ impl From<Lpspi1SckSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi1SdiSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_29 for Mode: ALT3."]
-    GPIO_EMC_29_ALT3 = 0x0,
+    GpioEmc29Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_03 for Mode: ALT4."]
-    GPIO_SD_B0_03_ALT4 = 0x01,
+    GpioSdB003Alt4 = 0x01,
 }
 impl Lpspi1SdiSelectInputDaisy {
     #[inline(always)]
@@ -2613,9 +2613,9 @@ impl From<Lpspi1SdiSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi1SdoSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_28 for Mode: ALT3."]
-    GPIO_EMC_28_ALT3 = 0x0,
+    GpioEmc28Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B0_02 for Mode: ALT4."]
-    GPIO_SD_B0_02_ALT4 = 0x01,
+    GpioSdB002Alt4 = 0x01,
 }
 impl Lpspi1SdoSelectInputDaisy {
     #[inline(always)]
@@ -2644,9 +2644,9 @@ impl From<Lpspi1SdoSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi2Pcs0SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_06 for Mode: ALT4."]
-    GPIO_SD_B1_06_ALT4 = 0x0,
+    GpioSdB106Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_01 for Mode: ALT2."]
-    GPIO_EMC_01_ALT2 = 0x01,
+    GpioEmc01Alt2 = 0x01,
 }
 impl Lpspi2Pcs0SelectInputDaisy {
     #[inline(always)]
@@ -2675,9 +2675,9 @@ impl From<Lpspi2Pcs0SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi2SckSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_07 for Mode: ALT4."]
-    GPIO_SD_B1_07_ALT4 = 0x0,
+    GpioSdB107Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_00 for Mode: ALT2."]
-    GPIO_EMC_00_ALT2 = 0x01,
+    GpioEmc00Alt2 = 0x01,
 }
 impl Lpspi2SckSelectInputDaisy {
     #[inline(always)]
@@ -2706,9 +2706,9 @@ impl From<Lpspi2SckSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi2SdiSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_09 for Mode: ALT4."]
-    GPIO_SD_B1_09_ALT4 = 0x0,
+    GpioSdB109Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_03 for Mode: ALT2."]
-    GPIO_EMC_03_ALT2 = 0x01,
+    GpioEmc03Alt2 = 0x01,
 }
 impl Lpspi2SdiSelectInputDaisy {
     #[inline(always)]
@@ -2737,9 +2737,9 @@ impl From<Lpspi2SdiSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi2SdoSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_08 for Mode: ALT4."]
-    GPIO_SD_B1_08_ALT4 = 0x0,
+    GpioSdB108Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_02 for Mode: ALT2."]
-    GPIO_EMC_02_ALT2 = 0x01,
+    GpioEmc02Alt2 = 0x01,
 }
 impl Lpspi2SdoSelectInputDaisy {
     #[inline(always)]
@@ -2768,9 +2768,9 @@ impl From<Lpspi2SdoSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi3Pcs0SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B0_03 for Mode: ALT7."]
-    GPIO_AD_B0_03_ALT7 = 0x0,
+    GpioAdB003Alt7 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_12 for Mode: ALT2."]
-    GPIO_AD_B1_12_ALT2 = 0x01,
+    GpioAdB112Alt2 = 0x01,
 }
 impl Lpspi3Pcs0SelectInputDaisy {
     #[inline(always)]
@@ -2799,9 +2799,9 @@ impl From<Lpspi3Pcs0SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi3SckSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B0_00 for Mode: ALT7."]
-    GPIO_AD_B0_00_ALT7 = 0x0,
+    GpioAdB000Alt7 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_15 for Mode: ALT2."]
-    GPIO_AD_B1_15_ALT2 = 0x01,
+    GpioAdB115Alt2 = 0x01,
 }
 impl Lpspi3SckSelectInputDaisy {
     #[inline(always)]
@@ -2830,9 +2830,9 @@ impl From<Lpspi3SckSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi3SdiSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B0_02 for Mode: ALT7."]
-    GPIO_AD_B0_02_ALT7 = 0x0,
+    GpioAdB002Alt7 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_13 for Mode: ALT2."]
-    GPIO_AD_B1_13_ALT2 = 0x01,
+    GpioAdB113Alt2 = 0x01,
 }
 impl Lpspi3SdiSelectInputDaisy {
     #[inline(always)]
@@ -2861,9 +2861,9 @@ impl From<Lpspi3SdiSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi3SdoSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B0_01 for Mode: ALT7."]
-    GPIO_AD_B0_01_ALT7 = 0x0,
+    GpioAdB001Alt7 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_14 for Mode: ALT2."]
-    GPIO_AD_B1_14_ALT2 = 0x01,
+    GpioAdB114Alt2 = 0x01,
 }
 impl Lpspi3SdoSelectInputDaisy {
     #[inline(always)]
@@ -2892,9 +2892,9 @@ impl From<Lpspi3SdoSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi4Pcs0SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_B0_00 for Mode: ALT3."]
-    GPIO_B0_00_ALT3 = 0x0,
+    GpioB000Alt3 = 0x0,
     #[doc = "Selecting Pad:GPIO_B1_04 for Mode: ALT1."]
-    GPIO_B1_04_ALT1 = 0x01,
+    GpioB104Alt1 = 0x01,
 }
 impl Lpspi4Pcs0SelectInputDaisy {
     #[inline(always)]
@@ -2923,9 +2923,9 @@ impl From<Lpspi4Pcs0SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi4SckSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_B0_03 for Mode: ALT3."]
-    GPIO_B0_03_ALT3 = 0x0,
+    GpioB003Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_B1_07 for Mode: ALT1."]
-    GPIO_B1_07_ALT1 = 0x01,
+    GpioB107Alt1 = 0x01,
 }
 impl Lpspi4SckSelectInputDaisy {
     #[inline(always)]
@@ -2954,9 +2954,9 @@ impl From<Lpspi4SckSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi4SdiSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_B0_01 for Mode: ALT3."]
-    GPIO_B0_01_ALT3 = 0x0,
+    GpioB001Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_B1_05 for Mode: ALT1."]
-    GPIO_B1_05_ALT1 = 0x01,
+    GpioB105Alt1 = 0x01,
 }
 impl Lpspi4SdiSelectInputDaisy {
     #[inline(always)]
@@ -2985,9 +2985,9 @@ impl From<Lpspi4SdiSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpspi4SdoSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_B0_02 for Mode: ALT3."]
-    GPIO_B0_02_ALT3 = 0x0,
+    GpioB002Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_B1_06 for Mode: ALT1."]
-    GPIO_B1_06_ALT1 = 0x01,
+    GpioB106Alt1 = 0x01,
 }
 impl Lpspi4SdoSelectInputDaisy {
     #[inline(always)]
@@ -3016,9 +3016,9 @@ impl From<Lpspi4SdoSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart2RxSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_10 for Mode: ALT2."]
-    GPIO_SD_B1_10_ALT2 = 0x0,
+    GpioSdB110Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_03 for Mode: ALT2."]
-    GPIO_AD_B1_03_ALT2 = 0x01,
+    GpioAdB103Alt2 = 0x01,
 }
 impl Lpuart2RxSelectInputDaisy {
     #[inline(always)]
@@ -3047,9 +3047,9 @@ impl From<Lpuart2RxSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart2TxSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_11 for Mode: ALT2."]
-    GPIO_SD_B1_11_ALT2 = 0x0,
+    GpioSdB111Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_02 for Mode: ALT2."]
-    GPIO_AD_B1_02_ALT2 = 0x01,
+    GpioAdB102Alt2 = 0x01,
 }
 impl Lpuart2TxSelectInputDaisy {
     #[inline(always)]
@@ -3078,9 +3078,9 @@ impl From<Lpuart2TxSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart3CtsBSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_15 for Mode: ALT2."]
-    GPIO_EMC_15_ALT2 = 0x0,
+    GpioEmc15Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_04 for Mode: ALT2."]
-    GPIO_AD_B1_04_ALT2 = 0x01,
+    GpioAdB104Alt2 = 0x01,
 }
 impl Lpuart3CtsBSelectInputDaisy {
     #[inline(always)]
@@ -3109,11 +3109,11 @@ impl From<Lpuart3CtsBSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart3RxSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B1_07 for Mode: ALT2."]
-    GPIO_AD_B1_07_ALT2 = 0x0,
+    GpioAdB107Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_14 for Mode: ALT2."]
-    GPIO_EMC_14_ALT2 = 0x01,
+    GpioEmc14Alt2 = 0x01,
     #[doc = "Selecting Pad: GPIO_B0_09 for Mode: ALT3."]
-    GPIO_B0_09_ALT3 = 0x02,
+    GpioB009Alt3 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Lpuart3RxSelectInputDaisy {
@@ -3143,11 +3143,11 @@ impl From<Lpuart3RxSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart3TxSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B1_06 for Mode: ALT2."]
-    GPIO_AD_B1_06_ALT2 = 0x0,
+    GpioAdB106Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_13 for Mode: ALT2."]
-    GPIO_EMC_13_ALT2 = 0x01,
+    GpioEmc13Alt2 = 0x01,
     #[doc = "Selecting Pad: GPIO_B0_08 for Mode: ALT3."]
-    GPIO_B0_08_ALT3 = 0x02,
+    GpioB008Alt3 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Lpuart3TxSelectInputDaisy {
@@ -3177,11 +3177,11 @@ impl From<Lpuart3TxSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart4RxSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_01 for Mode: ALT4."]
-    GPIO_SD_B1_01_ALT4 = 0x0,
+    GpioSdB101Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_20 for Mode: ALT2."]
-    GPIO_EMC_20_ALT2 = 0x01,
+    GpioEmc20Alt2 = 0x01,
     #[doc = "Selecting Pad: GPIO_B1_01 for Mode: ALT2."]
-    GPIO_B1_01_ALT2 = 0x02,
+    GpioB101Alt2 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Lpuart4RxSelectInputDaisy {
@@ -3211,11 +3211,11 @@ impl From<Lpuart4RxSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart4TxSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_00 for Mode: ALT4."]
-    GPIO_SD_B1_00_ALT4 = 0x0,
+    GpioSdB100Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_19 for Mode: ALT2."]
-    GPIO_EMC_19_ALT2 = 0x01,
+    GpioEmc19Alt2 = 0x01,
     #[doc = "Selecting Pad: GPIO_B1_00 for Mode: ALT2."]
-    GPIO_B1_00_ALT2 = 0x02,
+    GpioB100Alt2 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Lpuart4TxSelectInputDaisy {
@@ -3245,9 +3245,9 @@ impl From<Lpuart4TxSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart5RxSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_24 for Mode: ALT2."]
-    GPIO_EMC_24_ALT2 = 0x0,
+    GpioEmc24Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_B1_13 for Mode: ALT1."]
-    GPIO_B1_13_ALT1 = 0x01,
+    GpioB113Alt1 = 0x01,
 }
 impl Lpuart5RxSelectInputDaisy {
     #[inline(always)]
@@ -3276,9 +3276,9 @@ impl From<Lpuart5RxSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart5TxSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_23 for Mode: ALT2."]
-    GPIO_EMC_23_ALT2 = 0x0,
+    GpioEmc23Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_B1_12 for Mode: ALT1."]
-    GPIO_B1_12_ALT1 = 0x01,
+    GpioB112Alt1 = 0x01,
 }
 impl Lpuart5TxSelectInputDaisy {
     #[inline(always)]
@@ -3307,9 +3307,9 @@ impl From<Lpuart5TxSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart6RxSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_26 for Mode: ALT2."]
-    GPIO_EMC_26_ALT2 = 0x0,
+    GpioEmc26Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_03 for Mode: ALT2."]
-    GPIO_AD_B0_03_ALT2 = 0x01,
+    GpioAdB003Alt2 = 0x01,
 }
 impl Lpuart6RxSelectInputDaisy {
     #[inline(always)]
@@ -3338,9 +3338,9 @@ impl From<Lpuart6RxSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart6TxSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_25 for Mode: ALT2."]
-    GPIO_EMC_25_ALT2 = 0x0,
+    GpioEmc25Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_02 for Mode: ALT2."]
-    GPIO_AD_B0_02_ALT2 = 0x01,
+    GpioAdB002Alt2 = 0x01,
 }
 impl Lpuart6TxSelectInputDaisy {
     #[inline(always)]
@@ -3369,9 +3369,9 @@ impl From<Lpuart6TxSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart7RxSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_09 for Mode: ALT2."]
-    GPIO_SD_B1_09_ALT2 = 0x0,
+    GpioSdB109Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_32 for Mode: ALT2."]
-    GPIO_EMC_32_ALT2 = 0x01,
+    GpioEmc32Alt2 = 0x01,
 }
 impl Lpuart7RxSelectInputDaisy {
     #[inline(always)]
@@ -3400,9 +3400,9 @@ impl From<Lpuart7RxSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart7TxSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_08 for Mode: ALT2."]
-    GPIO_SD_B1_08_ALT2 = 0x0,
+    GpioSdB108Alt2 = 0x0,
     #[doc = "Selecting Pad:GPIO_EMC_31 for Mode: ALT2."]
-    GPIO_EMC_31_ALT2 = 0x01,
+    GpioEmc31Alt2 = 0x01,
 }
 impl Lpuart7TxSelectInputDaisy {
     #[inline(always)]
@@ -3431,11 +3431,11 @@ impl From<Lpuart7TxSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart8RxSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B0_05 for Mode: ALT2."]
-    GPIO_SD_B0_05_ALT2 = 0x0,
+    GpioSdB005Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_11 for Mode: ALT2."]
-    GPIO_AD_B1_11_ALT2 = 0x01,
+    GpioAdB111Alt2 = 0x01,
     #[doc = "Selecting Pad: GPIO_EMC_39 for Mode: ALT2."]
-    GPIO_EMC_39_ALT2 = 0x02,
+    GpioEmc39Alt2 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Lpuart8RxSelectInputDaisy {
@@ -3465,11 +3465,11 @@ impl From<Lpuart8RxSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpuart8TxSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B0_04 for Mode: ALT2."]
-    GPIO_SD_B0_04_ALT2 = 0x0,
+    GpioSdB004Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_10 for Mode: ALT2."]
-    GPIO_AD_B1_10_ALT2 = 0x01,
+    GpioAdB110Alt2 = 0x01,
     #[doc = "Selecting Pad: GPIO_EMC_38 for Mode: ALT2."]
-    GPIO_EMC_38_ALT2 = 0x02,
+    GpioEmc38Alt2 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Lpuart8TxSelectInputDaisy {
@@ -3499,9 +3499,9 @@ impl From<Lpuart8TxSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NmiSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B0_12 for Mode: ALT7."]
-    GPIO_AD_B0_12_ALT7 = 0x0,
+    GpioAdB012Alt7 = 0x0,
     #[doc = "Selecting Pad: WAKEUP for Mode: ALT7."]
-    WAKEUP_ALT7 = 0x01,
+    WakeupAlt7 = 0x01,
 }
 impl NmiSelectInputDaisy {
     #[inline(always)]
@@ -3530,13 +3530,13 @@ impl From<NmiSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pus {
     #[doc = "100K Ohm Pull Down."]
-    PUS_0_100K_OHM_PULL_DOWN = 0x0,
+    Pus0100kOhmPullDown = 0x0,
     #[doc = "47K Ohm Pull Up."]
-    PUS_1_47K_OHM_PULL_UP = 0x01,
+    Pus147kOhmPullUp = 0x01,
     #[doc = "100K Ohm Pull Up."]
-    PUS_2_100K_OHM_PULL_UP = 0x02,
+    Pus2100kOhmPullUp = 0x02,
     #[doc = "22K Ohm Pull Up."]
-    PUS_3_22K_OHM_PULL_UP = 0x03,
+    Pus322kOhmPullUp = 0x03,
 }
 impl Pus {
     #[inline(always)]
@@ -3565,9 +3565,9 @@ impl From<Pus> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Qtimer2Timer0SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_19 for Mode: ALT4."]
-    GPIO_EMC_19_ALT4 = 0x0,
+    GpioEmc19Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_B0_03 for Mode: ALT1."]
-    GPIO_B0_03_ALT1 = 0x01,
+    GpioB003Alt1 = 0x01,
 }
 impl Qtimer2Timer0SelectInputDaisy {
     #[inline(always)]
@@ -3596,9 +3596,9 @@ impl From<Qtimer2Timer0SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Qtimer2Timer1SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_20 for Mode: ALT4."]
-    GPIO_EMC_20_ALT4 = 0x0,
+    GpioEmc20Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_B0_04 for Mode: ALT1."]
-    GPIO_B0_04_ALT1 = 0x01,
+    GpioB004Alt1 = 0x01,
 }
 impl Qtimer2Timer1SelectInputDaisy {
     #[inline(always)]
@@ -3627,9 +3627,9 @@ impl From<Qtimer2Timer1SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Qtimer2Timer2SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_21 for Mode: ALT4."]
-    GPIO_EMC_21_ALT4 = 0x0,
+    GpioEmc21Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_B0_05 for Mode: ALT1."]
-    GPIO_B0_05_ALT1 = 0x01,
+    GpioB005Alt1 = 0x01,
 }
 impl Qtimer2Timer2SelectInputDaisy {
     #[inline(always)]
@@ -3658,9 +3658,9 @@ impl From<Qtimer2Timer2SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Qtimer2Timer3SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_22 for Mode: ALT4."]
-    GPIO_EMC_22_ALT4 = 0x0,
+    GpioEmc22Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_B1_09 for Mode: ALT1."]
-    GPIO_B1_09_ALT1 = 0x01,
+    GpioB109Alt1 = 0x01,
 }
 impl Qtimer2Timer3SelectInputDaisy {
     #[inline(always)]
@@ -3689,11 +3689,11 @@ impl From<Qtimer2Timer3SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Qtimer3Timer0SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_15 for Mode: ALT4."]
-    GPIO_EMC_15_ALT4 = 0x0,
+    GpioEmc15Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_00 for Mode: ALT1."]
-    GPIO_AD_B1_00_ALT1 = 0x01,
+    GpioAdB100Alt1 = 0x01,
     #[doc = "Selecting Pad: GPIO_B0_06 for Mode: ALT1."]
-    GPIO_B0_06_ALT1 = 0x02,
+    GpioB006Alt1 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Qtimer3Timer0SelectInputDaisy {
@@ -3723,11 +3723,11 @@ impl From<Qtimer3Timer0SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Qtimer3Timer1SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B1_01 for Mode: ALT1."]
-    GPIO_AD_B1_01_ALT1 = 0x0,
+    GpioAdB101Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_16 for Mode: ALT4."]
-    GPIO_EMC_16_ALT4 = 0x01,
+    GpioEmc16Alt4 = 0x01,
     #[doc = "Selecting Pad: GPIO_B0_07 for Mode: ALT1."]
-    GPIO_B0_07_ALT1 = 0x02,
+    GpioB007Alt1 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Qtimer3Timer1SelectInputDaisy {
@@ -3757,11 +3757,11 @@ impl From<Qtimer3Timer1SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Qtimer3Timer2SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_17 for Mode: ALT4."]
-    GPIO_EMC_17_ALT4 = 0x0,
+    GpioEmc17Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_02 for Mode: ALT1."]
-    GPIO_AD_B1_02_ALT1 = 0x01,
+    GpioAdB102Alt1 = 0x01,
     #[doc = "Selecting Pad: GPIO_B0_08 for Mode: ALT1."]
-    GPIO_B0_08_ALT1 = 0x02,
+    GpioB008Alt1 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Qtimer3Timer2SelectInputDaisy {
@@ -3791,11 +3791,11 @@ impl From<Qtimer3Timer2SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Qtimer3Timer3SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_18 for Mode: ALT4."]
-    GPIO_EMC_18_ALT4 = 0x0,
+    GpioEmc18Alt4 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_03 for Mode: ALT1."]
-    GPIO_AD_B1_03_ALT1 = 0x01,
+    GpioAdB103Alt1 = 0x01,
     #[doc = "Selecting Pad: GPIO_B1_10 for Mode: ALT1."]
-    GPIO_B1_10_ALT1 = 0x02,
+    GpioB110Alt1 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Qtimer3Timer3SelectInputDaisy {
@@ -3825,11 +3825,11 @@ impl From<Qtimer3Timer3SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai1Mclk2SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_03 for Mode: ALT3."]
-    GPIO_SD_B1_03_ALT3 = 0x0,
+    GpioSdB103Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_09 for Mode: ALT3."]
-    GPIO_AD_B1_09_ALT3 = 0x01,
+    GpioAdB109Alt3 = 0x01,
     #[doc = "Selecting Pad: GPIO_B0_13 for Mode: ALT3."]
-    GPIO_B0_13_ALT3 = 0x02,
+    GpioB013Alt3 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Sai1Mclk2SelectInputDaisy {
@@ -3859,11 +3859,11 @@ impl From<Sai1Mclk2SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai1RxBclkSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_05 for Mode: ALT3."]
-    GPIO_SD_B1_05_ALT3 = 0x0,
+    GpioSdB105Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_11 for Mode: ALT3."]
-    GPIO_AD_B1_11_ALT3 = 0x01,
+    GpioAdB111Alt3 = 0x01,
     #[doc = "Selecting Pad: GPIO_B0_15 for Mode: ALT3."]
-    GPIO_B0_15_ALT3 = 0x02,
+    GpioB015Alt3 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Sai1RxBclkSelectInputDaisy {
@@ -3893,11 +3893,11 @@ impl From<Sai1RxBclkSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai1RxData0SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_06 for Mode: ALT3."]
-    GPIO_SD_B1_06_ALT3 = 0x0,
+    GpioSdB106Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_12 for Mode: ALT3."]
-    GPIO_AD_B1_12_ALT3 = 0x01,
+    GpioAdB112Alt3 = 0x01,
     #[doc = "Selecting Pad: GPIO_B1_00 for Mode: ALT3."]
-    GPIO_B1_00_ALT3 = 0x02,
+    GpioB100Alt3 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Sai1RxData0SelectInputDaisy {
@@ -3927,9 +3927,9 @@ impl From<Sai1RxData0SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai1RxData1SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_00 for Mode: ALT3."]
-    GPIO_SD_B1_00_ALT3 = 0x0,
+    GpioSdB100Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_B0_10 for Mode: ALT3."]
-    GPIO_B0_10_ALT3 = 0x01,
+    GpioB010Alt3 = 0x01,
 }
 impl Sai1RxData1SelectInputDaisy {
     #[inline(always)]
@@ -3958,9 +3958,9 @@ impl From<Sai1RxData1SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai1RxData2SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_01 for Mode: ALT3."]
-    GPIO_SD_B1_01_ALT3 = 0x0,
+    GpioSdB101Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_B0_11 for Mode: ALT3."]
-    GPIO_B0_11_ALT3 = 0x01,
+    GpioB011Alt3 = 0x01,
 }
 impl Sai1RxData2SelectInputDaisy {
     #[inline(always)]
@@ -3989,9 +3989,9 @@ impl From<Sai1RxData2SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai1RxData3SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_02 for Mode: ALT3."]
-    GPIO_SD_B1_02_ALT3 = 0x0,
+    GpioSdB102Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_B0_12 for Mode: ALT3."]
-    GPIO_B0_12_ALT3 = 0x01,
+    GpioB012Alt3 = 0x01,
 }
 impl Sai1RxData3SelectInputDaisy {
     #[inline(always)]
@@ -4020,11 +4020,11 @@ impl From<Sai1RxData3SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai1RxSyncSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_04 for Mode: ALT3."]
-    GPIO_SD_B1_04_ALT3 = 0x0,
+    GpioSdB104Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_10 for Mode: ALT3."]
-    GPIO_AD_B1_10_ALT3 = 0x01,
+    GpioAdB110Alt3 = 0x01,
     #[doc = "Selecting Pad: GPIO_B0_14 for Mode: ALT3."]
-    GPIO_B0_14_ALT3 = 0x02,
+    GpioB014Alt3 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Sai1RxSyncSelectInputDaisy {
@@ -4054,11 +4054,11 @@ impl From<Sai1RxSyncSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai1TxBclkSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_08 for Mode: ALT3."]
-    GPIO_SD_B1_08_ALT3 = 0x0,
+    GpioSdB108Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_14 for Mode: ALT3."]
-    GPIO_AD_B1_14_ALT3 = 0x01,
+    GpioAdB114Alt3 = 0x01,
     #[doc = "Selecting Pad: GPIO_B1_02 for Mode: ALT3."]
-    GPIO_B1_02_ALT3 = 0x02,
+    GpioB102Alt3 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Sai1TxBclkSelectInputDaisy {
@@ -4088,11 +4088,11 @@ impl From<Sai1TxBclkSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai1TxSyncSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_09 for Mode: ALT3."]
-    GPIO_SD_B1_09_ALT3 = 0x0,
+    GpioSdB109Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_15 for Mode: ALT3."]
-    GPIO_AD_B1_15_ALT3 = 0x01,
+    GpioAdB115Alt3 = 0x01,
     #[doc = "Selecting Pad: GPIO_B1_03 for Mode: ALT3."]
-    GPIO_B1_03_ALT3 = 0x02,
+    GpioB103Alt3 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Sai1TxSyncSelectInputDaisy {
@@ -4122,9 +4122,9 @@ impl From<Sai1TxSyncSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai2Mclk2SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_07 for Mode: ALT2."]
-    GPIO_EMC_07_ALT2 = 0x0,
+    GpioEmc07Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_10 for Mode: ALT3."]
-    GPIO_AD_B0_10_ALT3 = 0x01,
+    GpioAdB010Alt3 = 0x01,
 }
 impl Sai2Mclk2SelectInputDaisy {
     #[inline(always)]
@@ -4153,9 +4153,9 @@ impl From<Sai2Mclk2SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai2RxBclkSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_10 for Mode: ALT2."]
-    GPIO_EMC_10_ALT2 = 0x0,
+    GpioEmc10Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_06 for Mode: ALT3."]
-    GPIO_AD_B0_06_ALT3 = 0x01,
+    GpioAdB006Alt3 = 0x01,
 }
 impl Sai2RxBclkSelectInputDaisy {
     #[inline(always)]
@@ -4184,9 +4184,9 @@ impl From<Sai2RxBclkSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai2RxData0SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_08 for Mode: ALT2."]
-    GPIO_EMC_08_ALT2 = 0x0,
+    GpioEmc08Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_08 for Mode: ALT3."]
-    GPIO_AD_B0_08_ALT3 = 0x01,
+    GpioAdB008Alt3 = 0x01,
 }
 impl Sai2RxData0SelectInputDaisy {
     #[inline(always)]
@@ -4215,9 +4215,9 @@ impl From<Sai2RxData0SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai2RxSyncSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_09 for Mode: ALT2."]
-    GPIO_EMC_09_ALT2 = 0x0,
+    GpioEmc09Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_07 for Mode: ALT3."]
-    GPIO_AD_B0_07_ALT3 = 0x01,
+    GpioAdB007Alt3 = 0x01,
 }
 impl Sai2RxSyncSelectInputDaisy {
     #[inline(always)]
@@ -4246,9 +4246,9 @@ impl From<Sai2RxSyncSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai2TxBclkSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_06 for Mode: ALT2."]
-    GPIO_EMC_06_ALT2 = 0x0,
+    GpioEmc06Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_05 for Mode: ALT3."]
-    GPIO_AD_B0_05_ALT3 = 0x01,
+    GpioAdB005Alt3 = 0x01,
 }
 impl Sai2TxBclkSelectInputDaisy {
     #[inline(always)]
@@ -4277,9 +4277,9 @@ impl From<Sai2TxBclkSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai2TxSyncSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_05 for Mode: ALT2."]
-    GPIO_EMC_05_ALT2 = 0x0,
+    GpioEmc05Alt2 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_04 for Mode: ALT3."]
-    GPIO_AD_B0_04_ALT3 = 0x01,
+    GpioAdB004Alt3 = 0x01,
 }
 impl Sai2TxSyncSelectInputDaisy {
     #[inline(always)]
@@ -4308,9 +4308,9 @@ impl From<Sai2TxSyncSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai3IpgClkSaiMclkSelectInput2Daisy {
     #[doc = "Selecting Pad: GPIO_EMC_37 for Mode: ALT3."]
-    GPIO_EMC_37_ALT3 = 0x0,
+    GpioEmc37Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B1_04 for Mode: ALT8."]
-    GPIO_SD_B1_04_ALT8 = 0x01,
+    GpioSdB104Alt8 = 0x01,
 }
 impl Sai3IpgClkSaiMclkSelectInput2Daisy {
     #[inline(always)]
@@ -4339,9 +4339,9 @@ impl From<Sai3IpgClkSaiMclkSelectInput2Daisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai3IppIndSaiRxbclkSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_35 for Mode: ALT3."]
-    GPIO_EMC_35_ALT3 = 0x0,
+    GpioEmc35Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B1_06 for Mode: ALT8."]
-    GPIO_SD_B1_06_ALT8 = 0x01,
+    GpioSdB106Alt8 = 0x01,
 }
 impl Sai3IppIndSaiRxbclkSelectInputDaisy {
     #[inline(always)]
@@ -4370,9 +4370,9 @@ impl From<Sai3IppIndSaiRxbclkSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai3IppIndSaiRxdataSelectInput0Daisy {
     #[doc = "Selecting Pad: GPIO_EMC_33 for Mode: ALT3."]
-    GPIO_EMC_33_ALT3 = 0x0,
+    GpioEmc33Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B1_00 for Mode: ALT8."]
-    GPIO_SD_B1_00_ALT8 = 0x01,
+    GpioSdB100Alt8 = 0x01,
 }
 impl Sai3IppIndSaiRxdataSelectInput0Daisy {
     #[inline(always)]
@@ -4401,9 +4401,9 @@ impl From<Sai3IppIndSaiRxdataSelectInput0Daisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai3IppIndSaiRxsyncSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_34 for Mode: ALT3."]
-    GPIO_EMC_34_ALT3 = 0x0,
+    GpioEmc34Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B1_05 for Mode: ALT8."]
-    GPIO_SD_B1_05_ALT8 = 0x01,
+    GpioSdB105Alt8 = 0x01,
 }
 impl Sai3IppIndSaiRxsyncSelectInputDaisy {
     #[inline(always)]
@@ -4432,9 +4432,9 @@ impl From<Sai3IppIndSaiRxsyncSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai3IppIndSaiTxbclkSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_38 for Mode: ALT3."]
-    GPIO_EMC_38_ALT3 = 0x0,
+    GpioEmc38Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B1_03 for Mode: ALT8."]
-    GPIO_SD_B1_03_ALT8 = 0x01,
+    GpioSdB103Alt8 = 0x01,
 }
 impl Sai3IppIndSaiTxbclkSelectInputDaisy {
     #[inline(always)]
@@ -4463,9 +4463,9 @@ impl From<Sai3IppIndSaiTxbclkSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sai3IppIndSaiTxsyncSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_39 for Mode: ALT3."]
-    GPIO_EMC_39_ALT3 = 0x0,
+    GpioEmc39Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B1_02 for Mode: ALT8."]
-    GPIO_SD_B1_02_ALT8 = 0x01,
+    GpioSdB102Alt8 = 0x01,
 }
 impl Sai3IppIndSaiTxsyncSelectInputDaisy {
     #[inline(always)]
@@ -4494,13 +4494,13 @@ impl From<Sai3IppIndSaiTxsyncSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SemcIIppIndDqs4SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B0_00 for Mode: ALT9."]
-    GPIO_SD_B0_00_ALT9 = 0x0,
+    GpioSdB000Alt9 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_39 for Mode: ALT9."]
-    GPIO_EMC_39_ALT9 = 0x01,
+    GpioEmc39Alt9 = 0x01,
     #[doc = "Selecting Pad: GPIO_AD_B0_09 for Mode: ALT9."]
-    GPIO_AD_B0_09_ALT9 = 0x02,
+    GpioAdB009Alt9 = 0x02,
     #[doc = "Selecting Pad: GPIO_B1_13 for Mode: ALT8."]
-    GPIO_B1_13_ALT8 = 0x03,
+    GpioB113Alt8 = 0x03,
 }
 impl SemcIIppIndDqs4SelectInputDaisy {
     #[inline(always)]
@@ -4529,9 +4529,9 @@ impl From<SemcIIppIndDqs4SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SpdifInSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B1_03 for Mode: ALT3."]
-    GPIO_AD_B1_03_ALT3 = 0x0,
+    GpioAdB103Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_16 for Mode: ALT3."]
-    GPIO_EMC_16_ALT3 = 0x01,
+    GpioEmc16Alt3 = 0x01,
 }
 impl SpdifInSelectInputDaisy {
     #[inline(always)]
@@ -4560,13 +4560,13 @@ impl From<SpdifInSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Speed {
     #[doc = "low(50MHz)."]
-    SPEED_0_LOW_50MHZ = 0x0,
+    Speed0Low50mHz = 0x0,
     #[doc = "medium(100MHz)."]
-    SPEED_1_MEDIUM_100MHZ = 0x01,
+    Speed1Medium100mHz = 0x01,
     #[doc = "fast(150MHz)."]
-    SPEED_2_FAST_150MHZ = 0x02,
+    Speed2Fast150mHz = 0x02,
     #[doc = "max(200MHz)."]
-    SPEED_3_MAX_200MHZ = 0x03,
+    Speed3Max200mHz = 0x03,
 }
 impl Speed {
     #[inline(always)]
@@ -4595,9 +4595,9 @@ impl From<Speed> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum UsbOtg1OcSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B0_03 for Mode: ALT3."]
-    GPIO_AD_B0_03_ALT3 = 0x0,
+    GpioAdB003Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_03 for Mode: ALT0."]
-    GPIO_AD_B1_03_ALT0 = 0x01,
+    GpioAdB103Alt0 = 0x01,
 }
 impl UsbOtg1OcSelectInputDaisy {
     #[inline(always)]
@@ -4626,9 +4626,9 @@ impl From<UsbOtg1OcSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum UsbOtg2OcSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B0_14 for Mode: ALT0."]
-    GPIO_AD_B0_14_ALT0 = 0x0,
+    GpioAdB014Alt0 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_40 for Mode: ALT3."]
-    GPIO_EMC_40_ALT3 = 0x01,
+    GpioEmc40Alt3 = 0x01,
 }
 impl UsbOtg2OcSelectInputDaisy {
     #[inline(always)]
@@ -4657,11 +4657,11 @@ impl From<UsbOtg2OcSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usdhc1CdBSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_35 for Mode: ALT6."]
-    GPIO_EMC_35_ALT6 = 0x0,
+    GpioEmc35Alt6 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_02 for Mode: ALT6."]
-    GPIO_AD_B1_02_ALT6 = 0x01,
+    GpioAdB102Alt6 = 0x01,
     #[doc = "Selecting Pad: GPIO_B1_12 for Mode: ALT6."]
-    GPIO_B1_12_ALT6 = 0x02,
+    GpioB112Alt6 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Usdhc1CdBSelectInputDaisy {
@@ -4691,13 +4691,13 @@ impl From<Usdhc1CdBSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usdhc1WpSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_12 for Mode: ALT3."]
-    GPIO_EMC_12_ALT3 = 0x0,
+    GpioEmc12Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_36for Mode: ALT6."]
-    GPIO_EMC_36_ALT6 = 0x01,
+    GpioEmc36Alt6 = 0x01,
     #[doc = "Selecting Pad:GPIO_AD_B1_00 for Mode: ALT6."]
-    GPIO_AD_B1_00_ALT6 = 0x02,
+    GpioAdB100Alt6 = 0x02,
     #[doc = "Selecting Pad: GPIO_B1_13 for Mode: ALT6."]
-    GPIO_B1_13_ALT6 = 0x03,
+    GpioB113Alt6 = 0x03,
 }
 impl Usdhc1WpSelectInputDaisy {
     #[inline(always)]
@@ -4726,9 +4726,9 @@ impl From<Usdhc1WpSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usdhc2CdBSelectInputDaisy {
     #[doc = "Selecting Pad:GPIO_AD_B1_03 for Mode: ALT6."]
-    GPIO_AD_B1_03_ALT6 = 0x0,
+    GpioAdB103Alt6 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_39 for Mode: ALT6."]
-    GPIO_EMC_39_ALT6 = 0x01,
+    GpioEmc39Alt6 = 0x01,
 }
 impl Usdhc2CdBSelectInputDaisy {
     #[inline(always)]
@@ -4757,9 +4757,9 @@ impl From<Usdhc2CdBSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usdhc2ClkSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_04 for Mode: ALT0."]
-    GPIO_SD_B1_04_ALT0 = 0x0,
+    GpioSdB104Alt0 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_09 for Mode: ALT6."]
-    GPIO_AD_B1_09_ALT6 = 0x01,
+    GpioAdB109Alt6 = 0x01,
 }
 impl Usdhc2ClkSelectInputDaisy {
     #[inline(always)]
@@ -4788,9 +4788,9 @@ impl From<Usdhc2ClkSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usdhc2CmdSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_05 for Mode: ALT0."]
-    GPIO_SD_B1_05_ALT0 = 0x0,
+    GpioSdB105Alt0 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_08 for Mode: ALT6."]
-    GPIO_AD_B1_08_ALT6 = 0x01,
+    GpioAdB108Alt6 = 0x01,
 }
 impl Usdhc2CmdSelectInputDaisy {
     #[inline(always)]
@@ -4819,9 +4819,9 @@ impl From<Usdhc2CmdSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usdhc2Data0SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_03 for Mode: ALT0."]
-    GPIO_SD_B1_03_ALT0 = 0x0,
+    GpioSdB103Alt0 = 0x0,
     #[doc = "Selecting Pad:GPIO_AD_B1_04 for Mode: ALT6."]
-    GPIO_AD_B1_04_ALT6 = 0x01,
+    GpioAdB104Alt6 = 0x01,
 }
 impl Usdhc2Data0SelectInputDaisy {
     #[inline(always)]
@@ -4850,9 +4850,9 @@ impl From<Usdhc2Data0SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usdhc2Data1SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_02 for Mode: ALT0."]
-    GPIO_SD_B1_02_ALT0 = 0x0,
+    GpioSdB102Alt0 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_05 for Mode: ALT6."]
-    GPIO_AD_B1_05_ALT6 = 0x01,
+    GpioAdB105Alt6 = 0x01,
 }
 impl Usdhc2Data1SelectInputDaisy {
     #[inline(always)]
@@ -4881,9 +4881,9 @@ impl From<Usdhc2Data1SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usdhc2Data2SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_01 for Mode: ALT0."]
-    GPIO_SD_B1_01_ALT0 = 0x0,
+    GpioSdB101Alt0 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_06 for Mode: ALT6."]
-    GPIO_AD_B1_06_ALT6 = 0x01,
+    GpioAdB106Alt6 = 0x01,
 }
 impl Usdhc2Data2SelectInputDaisy {
     #[inline(always)]
@@ -4912,9 +4912,9 @@ impl From<Usdhc2Data2SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usdhc2Data3SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_00 for Mode: ALT0."]
-    GPIO_SD_B1_00_ALT0 = 0x0,
+    GpioSdB100Alt0 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_07 for Mode: ALT6."]
-    GPIO_AD_B1_07_ALT6 = 0x01,
+    GpioAdB107Alt6 = 0x01,
 }
 impl Usdhc2Data3SelectInputDaisy {
     #[inline(always)]
@@ -4943,9 +4943,9 @@ impl From<Usdhc2Data3SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usdhc2Data4SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_08 for Mode: ALT0."]
-    GPIO_SD_B1_08_ALT0 = 0x0,
+    GpioSdB108Alt0 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_12 for Mode: ALT6."]
-    GPIO_AD_B1_12_ALT6 = 0x01,
+    GpioAdB112Alt6 = 0x01,
 }
 impl Usdhc2Data4SelectInputDaisy {
     #[inline(always)]
@@ -4974,9 +4974,9 @@ impl From<Usdhc2Data4SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usdhc2Data5SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_09 for Mode: ALT0."]
-    GPIO_SD_B1_09_ALT0 = 0x0,
+    GpioSdB109Alt0 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_13 for Mode: ALT6."]
-    GPIO_AD_B1_13_ALT6 = 0x01,
+    GpioAdB113Alt6 = 0x01,
 }
 impl Usdhc2Data5SelectInputDaisy {
     #[inline(always)]
@@ -5005,9 +5005,9 @@ impl From<Usdhc2Data5SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usdhc2Data6SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_10 for Mode: ALT0."]
-    GPIO_SD_B1_10_ALT0 = 0x0,
+    GpioSdB110Alt0 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_14 for Mode: ALT6."]
-    GPIO_AD_B1_14_ALT6 = 0x01,
+    GpioAdB114Alt6 = 0x01,
 }
 impl Usdhc2Data6SelectInputDaisy {
     #[inline(always)]
@@ -5036,9 +5036,9 @@ impl From<Usdhc2Data6SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usdhc2Data7SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_SD_B1_11 for Mode: ALT0."]
-    GPIO_SD_B1_11_ALT0 = 0x0,
+    GpioSdB111Alt0 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_15 for Mode: ALT6."]
-    GPIO_AD_B1_15_ALT6 = 0x01,
+    GpioAdB115Alt6 = 0x01,
 }
 impl Usdhc2Data7SelectInputDaisy {
     #[inline(always)]
@@ -5067,9 +5067,9 @@ impl From<Usdhc2Data7SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Usdhc2WpSelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_37 for Mode: ALT6."]
-    GPIO_EMC_37_ALT6 = 0x0,
+    GpioEmc37Alt6 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B1_10 for Mode: ALT6."]
-    GPIO_AD_B1_10_ALT6 = 0x01,
+    GpioAdB110Alt6 = 0x01,
 }
 impl Usdhc2WpSelectInputDaisy {
     #[inline(always)]
@@ -5098,9 +5098,9 @@ impl From<Usdhc2WpSelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Xbar1In02SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_00 for Mode: ALT3."]
-    GPIO_EMC_00_ALT3 = 0x0,
+    GpioEmc00Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_B1_14 for Mode: ALT3."]
-    GPIO_B1_14_ALT3 = 0x01,
+    GpioB114Alt3 = 0x01,
 }
 impl Xbar1In02SelectInputDaisy {
     #[inline(always)]
@@ -5129,9 +5129,9 @@ impl From<Xbar1In02SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Xbar1In03SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_01 for Mode: ALT3."]
-    GPIO_EMC_01_ALT3 = 0x0,
+    GpioEmc01Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_B1_15 for Mode: ALT3."]
-    GPIO_B1_15_ALT3 = 0x01,
+    GpioB115Alt3 = 0x01,
 }
 impl Xbar1In03SelectInputDaisy {
     #[inline(always)]
@@ -5160,9 +5160,9 @@ impl From<Xbar1In03SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Xbar1In04SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_02 for Mode: ALT3."]
-    GPIO_EMC_02_ALT3 = 0x0,
+    GpioEmc02Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B0_00 for Mode: ALT3."]
-    GPIO_SD_B0_00_ALT3 = 0x01,
+    GpioSdB000Alt3 = 0x01,
 }
 impl Xbar1In04SelectInputDaisy {
     #[inline(always)]
@@ -5191,9 +5191,9 @@ impl From<Xbar1In04SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Xbar1In05SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_03 for Mode: ALT3."]
-    GPIO_EMC_03_ALT3 = 0x0,
+    GpioEmc03Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B0_01 for Mode: ALT3."]
-    GPIO_SD_B0_01_ALT3 = 0x01,
+    GpioSdB001Alt3 = 0x01,
 }
 impl Xbar1In05SelectInputDaisy {
     #[inline(always)]
@@ -5222,9 +5222,9 @@ impl From<Xbar1In05SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Xbar1In06SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_04 for Mode: ALT3."]
-    GPIO_EMC_04_ALT3 = 0x0,
+    GpioEmc04Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B0_02 for Mode: ALT3."]
-    GPIO_SD_B0_02_ALT3 = 0x01,
+    GpioSdB002Alt3 = 0x01,
 }
 impl Xbar1In06SelectInputDaisy {
     #[inline(always)]
@@ -5253,9 +5253,9 @@ impl From<Xbar1In06SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Xbar1In07SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_05 for Mode: ALT3."]
-    GPIO_EMC_05_ALT3 = 0x0,
+    GpioEmc05Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B0_03 for Mode: ALT3."]
-    GPIO_SD_B0_03_ALT3 = 0x01,
+    GpioSdB003Alt3 = 0x01,
 }
 impl Xbar1In07SelectInputDaisy {
     #[inline(always)]
@@ -5284,9 +5284,9 @@ impl From<Xbar1In07SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Xbar1In08SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_06 for Mode: ALT3."]
-    GPIO_EMC_06_ALT3 = 0x0,
+    GpioEmc06Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B0_04 for Mode: ALT3."]
-    GPIO_SD_B0_04_ALT3 = 0x01,
+    GpioSdB004Alt3 = 0x01,
 }
 impl Xbar1In08SelectInputDaisy {
     #[inline(always)]
@@ -5315,9 +5315,9 @@ impl From<Xbar1In08SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Xbar1In09SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_07 for Mode: ALT3."]
-    GPIO_EMC_07_ALT3 = 0x0,
+    GpioEmc07Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_SD_B0_05 for Mode: ALT3."]
-    GPIO_SD_B0_05_ALT3 = 0x01,
+    GpioSdB005Alt3 = 0x01,
 }
 impl Xbar1In09SelectInputDaisy {
     #[inline(always)]
@@ -5346,9 +5346,9 @@ impl From<Xbar1In09SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Xbar1In14SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B0_00 for Mode: ALT1."]
-    GPIO_AD_B0_00_ALT1 = 0x0,
+    GpioAdB000Alt1 = 0x0,
     #[doc = "Selecting Pad:GPIO_B1_00 for Mode: ALT1."]
-    GPIO_B1_00_ALT1 = 0x01,
+    GpioB100Alt1 = 0x01,
 }
 impl Xbar1In14SelectInputDaisy {
     #[inline(always)]
@@ -5377,9 +5377,9 @@ impl From<Xbar1In14SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Xbar1In15SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B0_01 for Mode: ALT1."]
-    GPIO_AD_B0_01_ALT1 = 0x0,
+    GpioAdB001Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_B1_01 for Mode: ALT1."]
-    GPIO_B1_01_ALT1 = 0x01,
+    GpioB101Alt1 = 0x01,
 }
 impl Xbar1In15SelectInputDaisy {
     #[inline(always)]
@@ -5408,9 +5408,9 @@ impl From<Xbar1In15SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Xbar1In16SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B0_02 for Mode: ALT1."]
-    GPIO_AD_B0_02_ALT1 = 0x0,
+    GpioAdB002Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_B1_02 for Mode: ALT1."]
-    GPIO_B1_02_ALT1 = 0x01,
+    GpioB102Alt1 = 0x01,
 }
 impl Xbar1In16SelectInputDaisy {
     #[inline(always)]
@@ -5439,13 +5439,13 @@ impl From<Xbar1In16SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Xbar1In17SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_08 for Mode: ALT3."]
-    GPIO_EMC_08_ALT3 = 0x0,
+    GpioEmc08Alt3 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_03 for Mode: ALT1."]
-    GPIO_AD_B0_03_ALT1 = 0x01,
+    GpioAdB003Alt1 = 0x01,
     #[doc = "Selecting Pad: GPIO_AD_B0_05 for Mode: ALT6."]
-    GPIO_AD_B0_05_ALT6 = 0x02,
+    GpioAdB005Alt6 = 0x02,
     #[doc = "Selecting Pad: GPIO_B1_03 for Mode: ALT1."]
-    GPIO_B1_03_ALT1 = 0x03,
+    GpioB103Alt1 = 0x03,
 }
 impl Xbar1In17SelectInputDaisy {
     #[inline(always)]
@@ -5474,9 +5474,9 @@ impl From<Xbar1In17SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Xbar1In18SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_35 for Mode: ALT1."]
-    GPIO_EMC_35_ALT1 = 0x0,
+    GpioEmc35Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_06 for Mode: ALT6."]
-    GPIO_AD_B0_06_ALT6 = 0x01,
+    GpioAdB006Alt6 = 0x01,
 }
 impl Xbar1In18SelectInputDaisy {
     #[inline(always)]
@@ -5505,9 +5505,9 @@ impl From<Xbar1In18SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Xbar1In19SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_14 for Mode: ALT1."]
-    GPIO_EMC_14_ALT1 = 0x0,
+    GpioEmc14Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_07 for Mode: ALT6."]
-    GPIO_AD_B0_07_ALT6 = 0x01,
+    GpioAdB007Alt6 = 0x01,
 }
 impl Xbar1In19SelectInputDaisy {
     #[inline(always)]
@@ -5536,9 +5536,9 @@ impl From<Xbar1In19SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Xbar1In20SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_15 for Mode: ALT1."]
-    GPIO_EMC_15_ALT1 = 0x0,
+    GpioEmc15Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_08 for Mode: ALT6."]
-    GPIO_AD_B0_08_ALT6 = 0x01,
+    GpioAdB008Alt6 = 0x01,
 }
 impl Xbar1In20SelectInputDaisy {
     #[inline(always)]
@@ -5567,9 +5567,9 @@ impl From<Xbar1In20SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Xbar1In21SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_16 for Mode: ALT1."]
-    GPIO_EMC_16_ALT1 = 0x0,
+    GpioEmc16Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_09 for Mode: ALT6."]
-    GPIO_AD_B0_09_ALT6 = 0x01,
+    GpioAdB009Alt6 = 0x01,
 }
 impl Xbar1In21SelectInputDaisy {
     #[inline(always)]
@@ -5598,9 +5598,9 @@ impl From<Xbar1In21SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Xbar1In22SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_36 for Mode: ALT1."]
-    GPIO_EMC_36_ALT1 = 0x0,
+    GpioEmc36Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_10 for Mode: ALT6."]
-    GPIO_AD_B0_10_ALT6 = 0x01,
+    GpioAdB010Alt6 = 0x01,
 }
 impl Xbar1In22SelectInputDaisy {
     #[inline(always)]
@@ -5629,9 +5629,9 @@ impl From<Xbar1In22SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Xbar1In23SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_37 for Mode: ALT1."]
-    GPIO_EMC_37_ALT1 = 0x0,
+    GpioEmc37Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_11 for Mode: ALT6."]
-    GPIO_AD_B0_11_ALT6 = 0x01,
+    GpioAdB011Alt6 = 0x01,
 }
 impl Xbar1In23SelectInputDaisy {
     #[inline(always)]
@@ -5660,9 +5660,9 @@ impl From<Xbar1In23SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Xbar1In24SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_EMC_12 for Mode: ALT1."]
-    GPIO_EMC_12_ALT1 = 0x0,
+    GpioEmc12Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_AD_B0_14 for Mode: ALT1."]
-    GPIO_AD_B0_14_ALT1 = 0x01,
+    GpioAdB014Alt1 = 0x01,
 }
 impl Xbar1In24SelectInputDaisy {
     #[inline(always)]
@@ -5691,9 +5691,9 @@ impl From<Xbar1In24SelectInputDaisy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Xbar1In25SelectInputDaisy {
     #[doc = "Selecting Pad: GPIO_AD_B0_15 for Mode: ALT1."]
-    GPIO_AD_B0_15_ALT1 = 0x0,
+    GpioAdB015Alt1 = 0x0,
     #[doc = "Selecting Pad: GPIO_EMC_13 for Mode: ALT1."]
-    GPIO_EMC_13_ALT1 = 0x01,
+    GpioEmc13Alt1 = 0x01,
 }
 impl Xbar1In25SelectInputDaisy {
     #[inline(always)]

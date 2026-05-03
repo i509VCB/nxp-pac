@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dbge {
     #[doc = "FlexIO is disabled in debug modes."]
-    DISABLE = 0x0,
+    Disable = 0x0,
     #[doc = "FlexIO is enabled in debug modes."]
-    EMABLE = 0x01,
+    Emable = 0x01,
 }
 impl Dbge {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Dbge> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dozen {
     #[doc = "FlexIO enabled in Doze modes."]
-    ENABLE = 0x0,
+    Enable = 0x0,
     #[doc = "FlexIO disabled in Doze modes."]
-    DISABLE = 0x01,
+    Disable = 0x01,
 }
 impl Dozen {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Dozen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fastacc {
     #[doc = "Configures for normal register accesses to FlexIO."]
-    NORMAL = 0x0,
+    Normal = 0x0,
     #[doc = "Configures for fast register accesses to FlexIO."]
-    FAST = 0x01,
+    Fast = 0x01,
 }
 impl Fastacc {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Fastacc> for u8 {
 pub struct Feature(u16);
 impl Feature {
     #[doc = "Standard features implemented."]
-    pub const STANDARD: Self = Self(0x0);
+    pub const Standard: Self = Self(0x0);
     #[doc = "Supports state, logic and parallel modes."]
-    pub const STATE_LOGIC_PARALLEL: Self = Self(0x01);
+    pub const StateLogicParallel: Self = Self(0x01);
 }
 impl Feature {
     pub const fn from_bits(val: u16) -> Feature {
@@ -111,8 +111,8 @@ impl Feature {
 impl core::fmt::Debug for Feature {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("STANDARD"),
-            0x01 => f.write_str("STATE_LOGIC_PARALLEL"),
+            0x0 => f.write_str("Standard"),
+            0x01 => f.write_str("StateLogicParallel"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -121,8 +121,8 @@ impl core::fmt::Debug for Feature {
 impl defmt::Format for Feature {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "STANDARD"),
-            0x01 => defmt::write!(f, "STATE_LOGIC_PARALLEL"),
+            0x0 => defmt::write!(f, "Standard"),
+            0x01 => defmt::write!(f, "StateLogicParallel"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -144,9 +144,9 @@ impl From<Feature> for u16 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Insrc {
     #[doc = "Pin."]
-    PIN = 0x0,
+    Pin = 0x0,
     #[doc = "Shifter N+1 Output."]
-    SHIFTER_NPLUS1 = 0x01,
+    ShifterNplus1 = 0x01,
 }
 impl Insrc {
     #[inline(always)]
@@ -175,13 +175,13 @@ impl From<Insrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ShiftctlPincfg {
     #[doc = "Shifter pin output disabled."]
-    DISABLE = 0x0,
+    Disable = 0x0,
     #[doc = "Shifter pin open drain or bidirectional output enable."]
-    OPEND_BIDIROUTEN = 0x01,
+    OpendBidirouten = 0x01,
     #[doc = "Shifter pin bidirectional output data."]
-    BIDIR_OUTDATA = 0x02,
+    BidirOutdata = 0x02,
     #[doc = "Shifter pin output."]
-    OUTPUT = 0x03,
+    Output = 0x03,
 }
 impl ShiftctlPincfg {
     #[inline(always)]
@@ -210,9 +210,9 @@ impl From<ShiftctlPincfg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ShiftctlPinpol {
     #[doc = "Pin is active high."]
-    ACTIVE_HIGH = 0x0,
+    ActiveHigh = 0x0,
     #[doc = "Pin is active low."]
-    ACTIVE_LOW = 0x01,
+    ActiveLow = 0x01,
 }
 impl ShiftctlPinpol {
     #[inline(always)]
@@ -241,20 +241,20 @@ impl From<ShiftctlPinpol> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Smod {
     #[doc = "Disabled."]
-    DISABLE = 0x0,
+    Disable = 0x0,
     #[doc = "Receive mode. Captures the current Shifter content into the SHIFTBUF on expiration of the Timer."]
-    RECEIVE = 0x01,
+    Receive = 0x01,
     #[doc = "Transmit mode. Load SHIFTBUF contents into the Shifter on expiration of the Timer."]
-    TRANSMIT = 0x02,
+    Transmit = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Match Store mode. Shifter data is compared to SHIFTBUF content on expiration of the Timer."]
-    MATCHSTORE = 0x04,
+    Matchstore = 0x04,
     #[doc = "Match Continuous mode. Shifter data is continuously compared to SHIFTBUF contents."]
-    MATCHCONT = 0x05,
+    Matchcont = 0x05,
     #[doc = "State mode. SHIFTBUF contents are used for storing programmable state attributes."]
-    STATE = 0x06,
+    State = 0x06,
     #[doc = "Logic mode. SHIFTBUF contents are used for implementing programmable logic look up table."]
-    LOGIC = 0x07,
+    Logic = 0x07,
 }
 impl Smod {
     #[inline(always)]
@@ -283,13 +283,13 @@ impl From<Smod> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sstart {
     #[doc = "Start bit disabled for transmitter/receiver/match store, transmitter loads data on enable."]
-    VALUE00 = 0x0,
+    Value00 = 0x0,
     #[doc = "Start bit disabled for transmitter/receiver/match store, transmitter loads data on first shift."]
-    VALUE01 = 0x01,
+    Value01 = 0x01,
     #[doc = "Transmitter outputs start bit value 0 before loading data on first shift, receiver/match store sets error flag if start bit is not 0."]
-    VALUE10 = 0x02,
+    Value10 = 0x02,
     #[doc = "Transmitter outputs start bit value 1 before loading data on first shift, receiver/match store sets error flag if start bit is not 1."]
-    VALUE11 = 0x03,
+    Value11 = 0x03,
 }
 impl Sstart {
     #[inline(always)]
@@ -318,13 +318,13 @@ impl From<Sstart> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sstop {
     #[doc = "Stop bit disabled for transmitter/receiver/match store."]
-    VALUE00 = 0x0,
+    Value00 = 0x0,
     #[doc = "Stop bit disabled for transmitter/receiver/match store, receiver/match store will store receive data on the configured shift edge when timer in stop condition."]
-    VALUE01 = 0x01,
+    Value01 = 0x01,
     #[doc = "Transmitter outputs stop bit value 0 on store, receiver/match store sets error flag if stop bit is not 0, receiver/match store will also store receive data on the configured shift edge when timer in stop condition."]
-    VALUE10 = 0x02,
+    Value10 = 0x02,
     #[doc = "Transmitter outputs stop bit value 1 on store, receiver/match store sets error flag if stop bit is not 1, receiver/match store will also store receive data on the configured shift edge when timer in stop condition."]
-    VALUE11 = 0x03,
+    Value11 = 0x03,
 }
 impl Sstop {
     #[inline(always)]
@@ -353,13 +353,13 @@ impl From<Sstop> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TimctlPincfg {
     #[doc = "Timer pin output disabled."]
-    OUTDISABLE = 0x0,
+    Outdisable = 0x0,
     #[doc = "Timer pin open drain or bidirectional output enable."]
-    OPEND_BIDIROUTEN = 0x01,
+    OpendBidirouten = 0x01,
     #[doc = "Timer pin bidirectional output data."]
-    BIDIR_OUTDATA = 0x02,
+    BidirOutdata = 0x02,
     #[doc = "Timer pin output."]
-    OUTPUT = 0x03,
+    Output = 0x03,
 }
 impl TimctlPincfg {
     #[inline(always)]
@@ -388,9 +388,9 @@ impl From<TimctlPincfg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TimctlPinpol {
     #[doc = "Pin is active high."]
-    ACTIVE_HIGH = 0x0,
+    ActiveHigh = 0x0,
     #[doc = "Pin is active low."]
-    ACTIVE_LOW = 0x01,
+    ActiveLow = 0x01,
 }
 impl TimctlPinpol {
     #[inline(always)]
@@ -419,13 +419,13 @@ impl From<TimctlPinpol> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Timdec {
     #[doc = "Decrement counter on FlexIO clock, Shift clock equals Timer output."]
-    FLEXIO_CLK_SHIFTCLK_TMR_OUT = 0x0,
+    FlexioClkShiftclkTmrOut = 0x0,
     #[doc = "Decrement counter on Trigger input (both edges), Shift clock equals Timer output."]
-    TRIG_EDGE_SHIFTCLK_TMR_OUT = 0x01,
+    TrigEdgeShiftclkTmrOut = 0x01,
     #[doc = "Decrement counter on Pin input (both edges), Shift clock equals Pin input."]
-    PIN_EDGE_SHIFTCLK_TMR_OUT = 0x02,
+    PinEdgeShiftclkTmrOut = 0x02,
     #[doc = "Decrement counter on Trigger input (both edges), Shift clock equals Trigger input."]
-    TRIG_EDGE_SHIFTCLK_TRIG_IN = 0x03,
+    TrigEdgeShiftclkTrigIn = 0x03,
 }
 impl Timdec {
     #[inline(always)]
@@ -454,19 +454,19 @@ impl From<Timdec> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Timdis {
     #[doc = "Timer never disabled."]
-    NEVER = 0x0,
+    Never = 0x0,
     #[doc = "Timer disabled on Timer N-1 disable."]
-    TMR_NMINUS1 = 0x01,
+    TmrNminus1 = 0x01,
     #[doc = "Timer disabled on Timer compare (upper 8-bits match and decrement)."]
-    TMR_CMP = 0x02,
+    TmrCmp = 0x02,
     #[doc = "Timer disabled on Timer compare (upper 8-bits match and decrement) and Trigger Low."]
-    TMR_CMP_TRIGLOW = 0x03,
+    TmrCmpTriglow = 0x03,
     #[doc = "Timer disabled on Pin rising or falling edge."]
-    PIN_EDGE = 0x04,
+    PinEdge = 0x04,
     #[doc = "Timer disabled on Pin rising or falling edge provided Trigger is high."]
-    PIN_EDGE_TRIGHI = 0x05,
+    PinEdgeTrighi = 0x05,
     #[doc = "Timer disabled on Trigger falling edge."]
-    TRIG_FALLEDGE = 0x06,
+    TrigFalledge = 0x06,
     _RESERVED_7 = 0x07,
 }
 impl Timdis {
@@ -496,21 +496,21 @@ impl From<Timdis> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Timena {
     #[doc = "Timer always enabled."]
-    ENABLE = 0x0,
+    Enable = 0x0,
     #[doc = "Timer enabled on Timer N-1 enable."]
-    TMR_NMINUS1_EN = 0x01,
+    TmrNminus1En = 0x01,
     #[doc = "Timer enabled on Trigger high."]
-    TMR_TRIGHI_EN = 0x02,
+    TmrTrighiEn = 0x02,
     #[doc = "Timer enabled on Trigger high and Pin high."]
-    TMR_TRIG_PIN_HI_EN = 0x03,
+    TmrTrigPinHiEn = 0x03,
     #[doc = "Timer enabled on Pin rising edge."]
-    TMR_PINRISE_EN = 0x04,
+    TmrPinriseEn = 0x04,
     #[doc = "Timer enabled on Pin rising edge and Trigger high."]
-    TMR_PINRISE_TRIGHI_EN = 0x05,
+    TmrPinriseTrighiEn = 0x05,
     #[doc = "Timer enabled on Trigger rising edge."]
-    TMR_TRIGRISE_EN = 0x06,
+    TmrTrigriseEn = 0x06,
     #[doc = "Timer enabled on Trigger rising or falling edge."]
-    TMR_TRIGEDGE_EN = 0x07,
+    TmrTrigedgeEn = 0x07,
 }
 impl Timena {
     #[inline(always)]
@@ -539,13 +539,13 @@ impl From<Timena> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Timod {
     #[doc = "Timer Disabled."]
-    DISABLE = 0x0,
+    Disable = 0x0,
     #[doc = "Dual 8-bit counters baud mode."]
-    DUAL8BIT_BAUD = 0x01,
+    Dual8bitBaud = 0x01,
     #[doc = "Dual 8-bit counters PWM high mode."]
-    DUAL8BIT_PWM_H = 0x02,
+    Dual8bitPwmH = 0x02,
     #[doc = "Single 16-bit counter mode."]
-    SINGLE16BIT = 0x03,
+    Single16bit = 0x03,
 }
 impl Timod {
     #[inline(always)]
@@ -574,13 +574,13 @@ impl From<Timod> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Timout {
     #[doc = "Timer output is logic one when enabled and is not affected by timer reset."]
-    ONE = 0x0,
+    One = 0x0,
     #[doc = "Timer output is logic zero when enabled and is not affected by timer reset."]
-    ZERO = 0x01,
+    Zero = 0x01,
     #[doc = "Timer output is logic one when enabled and on timer reset."]
-    ONE_TMRRESET = 0x02,
+    OneTmrreset = 0x02,
     #[doc = "Timer output is logic zero when enabled and on timer reset."]
-    ZERO_TMRRESET = 0x03,
+    ZeroTmrreset = 0x03,
 }
 impl Timout {
     #[inline(always)]
@@ -609,9 +609,9 @@ impl From<Timout> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Timpol {
     #[doc = "Shift on posedge of Shift clock."]
-    POSEDGE = 0x0,
+    Posedge = 0x0,
     #[doc = "Shift on negedge of Shift clock."]
-    NEGEDGE = 0x01,
+    Negedge = 0x01,
 }
 impl Timpol {
     #[inline(always)]
@@ -640,19 +640,19 @@ impl From<Timpol> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Timrst {
     #[doc = "Timer never reset."]
-    NEVER = 0x0,
+    Never = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "Timer reset on Timer Pin equal to Timer Output."]
-    PIN_EQ_TMR_OUT = 0x02,
+    PinEqTmrOut = 0x02,
     #[doc = "Timer reset on Timer Trigger equal to Timer Output."]
-    TRIG_EQ_TMR_OUT = 0x03,
+    TrigEqTmrOut = 0x03,
     #[doc = "Timer reset on Timer Pin rising edge."]
-    PIN_RISE_EDGE = 0x04,
+    PinRiseEdge = 0x04,
     _RESERVED_5 = 0x05,
     #[doc = "Timer reset on Trigger rising edge."]
-    TRIG_RISE_EDGE = 0x06,
+    TrigRiseEdge = 0x06,
     #[doc = "Timer reset on Trigger rising or falling edge."]
-    TRIG_EDGE = 0x07,
+    TrigEdge = 0x07,
 }
 impl Timrst {
     #[inline(always)]
@@ -681,9 +681,9 @@ impl From<Timrst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trgpol {
     #[doc = "Trigger active high."]
-    ACTIVE_HIGH = 0x0,
+    ActiveHigh = 0x0,
     #[doc = "Trigger active low."]
-    ACTIVE_LOW = 0x01,
+    ActiveLow = 0x01,
 }
 impl Trgpol {
     #[inline(always)]
@@ -712,9 +712,9 @@ impl From<Trgpol> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trgsrc {
     #[doc = "External trigger selected."]
-    EXT_TRIG = 0x0,
+    ExtTrig = 0x0,
     #[doc = "Internal trigger selected."]
-    INTERNAL_TRIG = 0x01,
+    InternalTrig = 0x01,
 }
 impl Trgsrc {
     #[inline(always)]
@@ -743,13 +743,13 @@ impl From<Trgsrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tstop {
     #[doc = "Stop bit disabled."]
-    STOP_DISABLE = 0x0,
+    StopDisable = 0x0,
     #[doc = "Stop bit is enabled on timer compare."]
-    ENABLE_TMRCMP = 0x01,
+    EnableTmrcmp = 0x01,
     #[doc = "Stop bit is enabled on timer disable."]
-    ENABLE_TMRDISABLE = 0x02,
+    EnableTmrdisable = 0x02,
     #[doc = "Stop bit is enabled on timer compare and timer disable."]
-    ENABLE_TMR_CMP_DIS = 0x03,
+    EnableTmrCmpDis = 0x03,
 }
 impl Tstop {
     #[inline(always)]

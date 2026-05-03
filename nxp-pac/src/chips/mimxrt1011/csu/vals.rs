@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hp0LCsi {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_CSI_0 = 0x0,
+    LCsi0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_CSI_1 = 0x01,
+    LCsi1 = 0x01,
 }
 impl Hp0LCsi {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Hp0LCsi> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hp0LDcp {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_DCP_0 = 0x0,
+    LDcp0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit cannot be written by the software."]
-    L_DCP_1 = 0x01,
+    LDcp1 = 0x01,
 }
 impl Hp0LDcp {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Hp0LDcp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hp0LDma {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_DMA_0 = 0x0,
+    LDma0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_DMA_1 = 0x01,
+    LDma1 = 0x01,
 }
 impl Hp0LDma {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Hp0LDma> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hp0LEnet {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_ENET_0 = 0x0,
+    LEnet0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_ENET_1 = 0x01,
+    LEnet1 = 0x01,
 }
 impl Hp0LEnet {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<Hp0LEnet> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hp0LLcdif {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_LCDIF_0 = 0x0,
+    LLcdif0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_LCDIF_1 = 0x01,
+    LLcdif1 = 0x01,
 }
 impl Hp0LLcdif {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<Hp0LLcdif> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hp0LPxp {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_PXP_0 = 0x0,
+    LPxp0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_PXP_1 = 0x01,
+    LPxp1 = 0x01,
 }
 impl Hp0LPxp {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<Hp0LPxp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hp0LTpsmp {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_TPSMP_0 = 0x0,
+    LTpsmp0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_TPSMP_1 = 0x01,
+    LTpsmp1 = 0x01,
 }
 impl Hp0LTpsmp {
     #[inline(always)]
@@ -220,9 +220,9 @@ impl From<Hp0LTpsmp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hp0LUsb {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_USB_0 = 0x0,
+    LUsb0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_USB_1 = 0x01,
+    LUsb1 = 0x01,
 }
 impl Hp0LUsb {
     #[inline(always)]
@@ -251,9 +251,9 @@ impl From<Hp0LUsb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hp0LUsdhc1 {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_USDHC1_0 = 0x0,
+    LUsdhc10 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_USDHC1_1 = 0x01,
+    LUsdhc11 = 0x01,
 }
 impl Hp0LUsdhc1 {
     #[inline(always)]
@@ -282,9 +282,9 @@ impl From<Hp0LUsdhc1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hp0LUsdhc2 {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_USDHC2_0 = 0x0,
+    LUsdhc20 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_USDHC2_1 = 0x01,
+    LUsdhc21 = 0x01,
 }
 impl Hp0LUsdhc2 {
     #[inline(always)]
@@ -313,9 +313,9 @@ impl From<Hp0LUsdhc2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HpCsi {
     #[doc = "The hprot1 input signal value is routed to the csu_hprot1 output for the corresponding master."]
-    HP_CSI_0 = 0x0,
+    HpCsi0 = 0x0,
     #[doc = "The HP register bit is routed to the csu_hprot1 output for the corresponding master."]
-    HP_CSI_1 = 0x01,
+    HpCsi1 = 0x01,
 }
 impl HpCsi {
     #[inline(always)]
@@ -344,9 +344,9 @@ impl From<HpCsi> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HpDcp {
     #[doc = "The hprot1 input signal value is routed to the csu_hprot1 output for the corresponding master."]
-    HP_DCP_0 = 0x0,
+    HpDcp0 = 0x0,
     #[doc = "The HP register bit is routed to the csu_hprot1 output for the corresponding master."]
-    HP_DCP_1 = 0x01,
+    HpDcp1 = 0x01,
 }
 impl HpDcp {
     #[inline(always)]
@@ -375,9 +375,9 @@ impl From<HpDcp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HpDma {
     #[doc = "The hprot1 input signal value is routed to the csu_hprot1 output for the corresponding master."]
-    HP_DMA_0 = 0x0,
+    HpDma0 = 0x0,
     #[doc = "The HP register bit is routed to the csu_hprot1 output for the corresponding master."]
-    HP_DMA_1 = 0x01,
+    HpDma1 = 0x01,
 }
 impl HpDma {
     #[inline(always)]
@@ -406,9 +406,9 @@ impl From<HpDma> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HpEnet {
     #[doc = "The hprot1 input signal value is routed to the csu_hprot1 output for the corresponding master."]
-    HP_ENET_0 = 0x0,
+    HpEnet0 = 0x0,
     #[doc = "The HP register bit is routed to the csu_hprot1 output for the corresponding master."]
-    HP_ENET_1 = 0x01,
+    HpEnet1 = 0x01,
 }
 impl HpEnet {
     #[inline(always)]
@@ -437,9 +437,9 @@ impl From<HpEnet> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HpLcdif {
     #[doc = "The hprot1 input signal value is routed to the csu_hprot1 output for the corresponding master."]
-    HP_LCDIF_0 = 0x0,
+    HpLcdif0 = 0x0,
     #[doc = "The HP register bit is routed to the csu_hprot1 output for the corresponding master."]
-    HP_LCDIF_1 = 0x01,
+    HpLcdif1 = 0x01,
 }
 impl HpLcdif {
     #[inline(always)]
@@ -468,9 +468,9 @@ impl From<HpLcdif> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HpPxp {
     #[doc = "The hprot1 input signal value is routed to the csu_hprot1 output for the corresponding master."]
-    HP_PXP_0 = 0x0,
+    HpPxp0 = 0x0,
     #[doc = "The HP register bit is routed to the csu_hprot1 output for the corresponding master."]
-    HP_PXP_1 = 0x01,
+    HpPxp1 = 0x01,
 }
 impl HpPxp {
     #[inline(always)]
@@ -499,9 +499,9 @@ impl From<HpPxp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HpTpsmp {
     #[doc = "The hprot1 input signal value is routed to the csu_hprot1 output for the corresponding master."]
-    HP_TPSMP_0 = 0x0,
+    HpTpsmp0 = 0x0,
     #[doc = "The HP register bit is routed to the csu_hprot1 output for the corresponding master."]
-    HP_TPSMP_1 = 0x01,
+    HpTpsmp1 = 0x01,
 }
 impl HpTpsmp {
     #[inline(always)]
@@ -530,9 +530,9 @@ impl From<HpTpsmp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HpUsb {
     #[doc = "The hprot1 input signal value is routed to the csu_hprot1 output for the corresponding master."]
-    HP_USB_0 = 0x0,
+    HpUsb0 = 0x0,
     #[doc = "The HP register bit is routed to the csu_hprot1 output for the corresponding master."]
-    HP_USB_1 = 0x01,
+    HpUsb1 = 0x01,
 }
 impl HpUsb {
     #[inline(always)]
@@ -561,9 +561,9 @@ impl From<HpUsb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HpUsdhc1 {
     #[doc = "The hprot1 input signal value is routed to the csu_hprot1 output for the corresponding master."]
-    HP_USDHC1_0 = 0x0,
+    HpUsdhc10 = 0x0,
     #[doc = "The HP register bit is routed to the csu_hprot1 output for the corresponding master."]
-    HP_USDHC1_1 = 0x01,
+    HpUsdhc11 = 0x01,
 }
 impl HpUsdhc1 {
     #[inline(always)]
@@ -592,9 +592,9 @@ impl From<HpUsdhc1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HpUsdhc2 {
     #[doc = "The hprot1 input signal value is routed to the csu_hprot1 output for the corresponding master."]
-    HP_USDHC2_0 = 0x0,
+    HpUsdhc20 = 0x0,
     #[doc = "The HP register bit is routed to the csu_hprot1 output for the corresponding master."]
-    HP_USDHC2_1 = 0x01,
+    HpUsdhc21 = 0x01,
 }
 impl HpUsdhc2 {
     #[inline(always)]
@@ -623,9 +623,9 @@ impl From<HpUsdhc2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HpcCsi {
     #[doc = "User mode for the corresponding master."]
-    HPC_CSI_0 = 0x0,
+    HpcCsi0 = 0x0,
     #[doc = "Supervisor mode for the corresponding master."]
-    HPC_CSI_1 = 0x01,
+    HpcCsi1 = 0x01,
 }
 impl HpcCsi {
     #[inline(always)]
@@ -654,9 +654,9 @@ impl From<HpcCsi> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HpcDcp {
     #[doc = "User mode for the corresponding master."]
-    HPC_DCP_0 = 0x0,
+    HpcDcp0 = 0x0,
     #[doc = "Supervisor mode for the corresponding master."]
-    HPC_DCP_1 = 0x01,
+    HpcDcp1 = 0x01,
 }
 impl HpcDcp {
     #[inline(always)]
@@ -685,9 +685,9 @@ impl From<HpcDcp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HpcDma {
     #[doc = "User mode for the corresponding master."]
-    HPC_DMA_0 = 0x0,
+    HpcDma0 = 0x0,
     #[doc = "Supervisor mode for the corresponding master."]
-    HPC_DMA_1 = 0x01,
+    HpcDma1 = 0x01,
 }
 impl HpcDma {
     #[inline(always)]
@@ -716,9 +716,9 @@ impl From<HpcDma> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HpcEnet {
     #[doc = "User mode for the corresponding master."]
-    HPC_ENET_0 = 0x0,
+    HpcEnet0 = 0x0,
     #[doc = "Supervisor mode for the corresponding master."]
-    HPC_ENET_1 = 0x01,
+    HpcEnet1 = 0x01,
 }
 impl HpcEnet {
     #[inline(always)]
@@ -747,9 +747,9 @@ impl From<HpcEnet> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HpcLcdif {
     #[doc = "User mode for the corresponding master."]
-    HPC_LCDIF_0 = 0x0,
+    HpcLcdif0 = 0x0,
     #[doc = "Supervisor mode for the corresponding master."]
-    HPC_LCDIF_1 = 0x01,
+    HpcLcdif1 = 0x01,
 }
 impl HpcLcdif {
     #[inline(always)]
@@ -778,9 +778,9 @@ impl From<HpcLcdif> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HpcPxp {
     #[doc = "User mode for the corresponding master."]
-    HPC_PXP_0 = 0x0,
+    HpcPxp0 = 0x0,
     #[doc = "Supervisor mode for the corresponding master."]
-    HPC_PXP_1 = 0x01,
+    HpcPxp1 = 0x01,
 }
 impl HpcPxp {
     #[inline(always)]
@@ -809,9 +809,9 @@ impl From<HpcPxp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HpcTpsmp {
     #[doc = "User mode for the corresponding master."]
-    HPC_TPSMP_0 = 0x0,
+    HpcTpsmp0 = 0x0,
     #[doc = "Supervisor mode for the corresponding master."]
-    HPC_TPSMP_1 = 0x01,
+    HpcTpsmp1 = 0x01,
 }
 impl HpcTpsmp {
     #[inline(always)]
@@ -840,9 +840,9 @@ impl From<HpcTpsmp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HpcUsb {
     #[doc = "User mode for the corresponding master."]
-    HPC_USB_0 = 0x0,
+    HpcUsb0 = 0x0,
     #[doc = "Supervisor mode for the corresponding master."]
-    HPC_USB_1 = 0x01,
+    HpcUsb1 = 0x01,
 }
 impl HpcUsb {
     #[inline(always)]
@@ -871,9 +871,9 @@ impl From<HpcUsb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HpcUsdhc1 {
     #[doc = "User mode for the corresponding master."]
-    HPC_USDHC1_0 = 0x0,
+    HpcUsdhc10 = 0x0,
     #[doc = "Supervisor mode for the corresponding master."]
-    HPC_USDHC1_1 = 0x01,
+    HpcUsdhc11 = 0x01,
 }
 impl HpcUsdhc1 {
     #[inline(always)]
@@ -902,9 +902,9 @@ impl From<HpcUsdhc1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HpcUsdhc2 {
     #[doc = "User mode for the corresponding master."]
-    HPC_USDHC2_0 = 0x0,
+    HpcUsdhc20 = 0x0,
     #[doc = "Supervisor mode for the corresponding master."]
-    HPC_USDHC2_1 = 0x01,
+    HpcUsdhc21 = 0x01,
 }
 impl HpcUsdhc2 {
     #[inline(always)]
@@ -933,9 +933,9 @@ impl From<HpcUsdhc2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hpcontrol0LCsi {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_CSI_0 = 0x0,
+    LCsi0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_CSI_1 = 0x01,
+    LCsi1 = 0x01,
 }
 impl Hpcontrol0LCsi {
     #[inline(always)]
@@ -964,9 +964,9 @@ impl From<Hpcontrol0LCsi> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hpcontrol0LDcp {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_DCP_0 = 0x0,
+    LDcp0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_DCP_1 = 0x01,
+    LDcp1 = 0x01,
 }
 impl Hpcontrol0LDcp {
     #[inline(always)]
@@ -995,9 +995,9 @@ impl From<Hpcontrol0LDcp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hpcontrol0LDma {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_DMA_0 = 0x0,
+    LDma0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_DMA_1 = 0x01,
+    LDma1 = 0x01,
 }
 impl Hpcontrol0LDma {
     #[inline(always)]
@@ -1026,9 +1026,9 @@ impl From<Hpcontrol0LDma> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hpcontrol0LEnet {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_ENET_0 = 0x0,
+    LEnet0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_ENET_1 = 0x01,
+    LEnet1 = 0x01,
 }
 impl Hpcontrol0LEnet {
     #[inline(always)]
@@ -1057,9 +1057,9 @@ impl From<Hpcontrol0LEnet> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hpcontrol0LLcdif {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_LCDIF_0 = 0x0,
+    LLcdif0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_LCDIF_1 = 0x01,
+    LLcdif1 = 0x01,
 }
 impl Hpcontrol0LLcdif {
     #[inline(always)]
@@ -1088,9 +1088,9 @@ impl From<Hpcontrol0LLcdif> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hpcontrol0LPxp {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_PXP_0 = 0x0,
+    LPxp0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_PXP_1 = 0x01,
+    LPxp1 = 0x01,
 }
 impl Hpcontrol0LPxp {
     #[inline(always)]
@@ -1119,9 +1119,9 @@ impl From<Hpcontrol0LPxp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hpcontrol0LTpsmp {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_TPSMP_0 = 0x0,
+    LTpsmp0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_TPSMP_1 = 0x01,
+    LTpsmp1 = 0x01,
 }
 impl Hpcontrol0LTpsmp {
     #[inline(always)]
@@ -1150,9 +1150,9 @@ impl From<Hpcontrol0LTpsmp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hpcontrol0LUsb {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_USB_0 = 0x0,
+    LUsb0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_USB_1 = 0x01,
+    LUsb1 = 0x01,
 }
 impl Hpcontrol0LUsb {
     #[inline(always)]
@@ -1181,9 +1181,9 @@ impl From<Hpcontrol0LUsb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hpcontrol0LUsdhc1 {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_USDHC1_0 = 0x0,
+    LUsdhc10 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_USDHC1_1 = 0x01,
+    LUsdhc11 = 0x01,
 }
 impl Hpcontrol0LUsdhc1 {
     #[inline(always)]
@@ -1212,9 +1212,9 @@ impl From<Hpcontrol0LUsdhc1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hpcontrol0LUsdhc2 {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_USDHC2_0 = 0x0,
+    LUsdhc20 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_USDHC2_1 = 0x01,
+    LUsdhc21 = 0x01,
 }
 impl Hpcontrol0LUsdhc2 {
     #[inline(always)]
@@ -1243,9 +1243,9 @@ impl From<Hpcontrol0LUsdhc2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LockS1 {
     #[doc = "Not locked. The bits 16-23 can be written by the software."]
-    LOCK_S1_0 = 0x0,
+    LockS10 = 0x0,
     #[doc = "The bits 16-23 are locked and can't be written by the software."]
-    LOCK_S1_1 = 0x01,
+    LockS11 = 0x01,
 }
 impl LockS1 {
     #[inline(always)]
@@ -1274,9 +1274,9 @@ impl From<LockS1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LockS2 {
     #[doc = "Not locked. Bits 7-0 can be written by the software."]
-    LOCK_S2_0 = 0x0,
+    LockS20 = 0x0,
     #[doc = "Bits 7-0 are locked and cannot be written by the software."]
-    LOCK_S2_1 = 0x01,
+    LockS21 = 0x01,
 }
 impl LockS2 {
     #[inline(always)]
@@ -1305,9 +1305,9 @@ impl From<LockS2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NsaCsi {
     #[doc = "Secure access for the corresponding type-1 master."]
-    NSA_CSI_0 = 0x0,
+    NsaCsi0 = 0x0,
     #[doc = "Non-secure access for the corresponding type-1 master."]
-    NSA_CSI_1 = 0x01,
+    NsaCsi1 = 0x01,
 }
 impl NsaCsi {
     #[inline(always)]
@@ -1336,9 +1336,9 @@ impl From<NsaCsi> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NsaDcp {
     #[doc = "Secure access for the corresponding type-1 master."]
-    NSA_DCP_0 = 0x0,
+    NsaDcp0 = 0x0,
     #[doc = "Non-secure access for the corresponding type-1 master."]
-    NSA_DCP_1 = 0x01,
+    NsaDcp1 = 0x01,
 }
 impl NsaDcp {
     #[inline(always)]
@@ -1367,9 +1367,9 @@ impl From<NsaDcp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NsaDma {
     #[doc = "Secure access for the corresponding type-1 master."]
-    NSA_DMA_0 = 0x0,
+    NsaDma0 = 0x0,
     #[doc = "Non-secure access for the corresponding type-1 master."]
-    NSA_DMA_1 = 0x01,
+    NsaDma1 = 0x01,
 }
 impl NsaDma {
     #[inline(always)]
@@ -1398,9 +1398,9 @@ impl From<NsaDma> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NsaEnet {
     #[doc = "Secure access for the corresponding type-1 master."]
-    NSA_ENET_0 = 0x0,
+    NsaEnet0 = 0x0,
     #[doc = "Non-secure access for the corresponding type-1 master."]
-    NSA_ENET_1 = 0x01,
+    NsaEnet1 = 0x01,
 }
 impl NsaEnet {
     #[inline(always)]
@@ -1429,9 +1429,9 @@ impl From<NsaEnet> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NsaLcdif {
     #[doc = "Secure access for the corresponding type-1 master."]
-    NSA_LCDIF_0 = 0x0,
+    NsaLcdif0 = 0x0,
     #[doc = "Non-secure access for the corresponding type-1 master."]
-    NSA_LCDIF_1 = 0x01,
+    NsaLcdif1 = 0x01,
 }
 impl NsaLcdif {
     #[inline(always)]
@@ -1460,9 +1460,9 @@ impl From<NsaLcdif> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NsaPxp {
     #[doc = "Secure access for the corresponding type-1 master."]
-    NSA_PXP_0 = 0x0,
+    NsaPxp0 = 0x0,
     #[doc = "Non-secure access for the corresponding type-1 master."]
-    NSA_PXP_1 = 0x01,
+    NsaPxp1 = 0x01,
 }
 impl NsaPxp {
     #[inline(always)]
@@ -1491,9 +1491,9 @@ impl From<NsaPxp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NsaTpsmp {
     #[doc = "Secure access for the corresponding type-1 master."]
-    NSA_TPSMP_0 = 0x0,
+    NsaTpsmp0 = 0x0,
     #[doc = "Non-secure access for the corresponding type-1 master."]
-    NSA_TPSMP_1 = 0x01,
+    NsaTpsmp1 = 0x01,
 }
 impl NsaTpsmp {
     #[inline(always)]
@@ -1522,9 +1522,9 @@ impl From<NsaTpsmp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NsaUsb {
     #[doc = "Secure access for the corresponding type-1 master."]
-    NSA_USB_0 = 0x0,
+    NsaUsb0 = 0x0,
     #[doc = "Non-secure access for the corresponding type-1 master."]
-    NSA_USB_1 = 0x01,
+    NsaUsb1 = 0x01,
 }
 impl NsaUsb {
     #[inline(always)]
@@ -1553,9 +1553,9 @@ impl From<NsaUsb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NsaUsdhc1 {
     #[doc = "Secure access for the corresponding type-1 master."]
-    NSA_USDHC1_0 = 0x0,
+    NsaUsdhc10 = 0x0,
     #[doc = "Non-secure access for the corresponding type-1 master."]
-    NSA_USDHC1_1 = 0x01,
+    NsaUsdhc11 = 0x01,
 }
 impl NsaUsdhc1 {
     #[inline(always)]
@@ -1584,9 +1584,9 @@ impl From<NsaUsdhc1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NsaUsdhc2 {
     #[doc = "Secure access for the corresponding type-1 master."]
-    NSA_USDHC2_0 = 0x0,
+    NsaUsdhc20 = 0x0,
     #[doc = "Non-secure access for the corresponding type-1 master."]
-    NSA_USDHC2_1 = 0x01,
+    NsaUsdhc21 = 0x01,
 }
 impl NsaUsdhc2 {
     #[inline(always)]
@@ -1615,9 +1615,9 @@ impl From<NsaUsdhc2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NsrS1 {
     #[doc = "The non-secure supervisor read access is disabled for the first slave."]
-    NSR_S1_0 = 0x0,
+    NsrS10 = 0x0,
     #[doc = "The non-secure supervisor read access is enabled for the first slave."]
-    NSR_S1_1 = 0x01,
+    NsrS11 = 0x01,
 }
 impl NsrS1 {
     #[inline(always)]
@@ -1646,9 +1646,9 @@ impl From<NsrS1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NsrS2 {
     #[doc = "The non-secure supervisor read access is disabled for the second slave."]
-    NSR_S2_0 = 0x0,
+    NsrS20 = 0x0,
     #[doc = "The non-secure supervisor read access is enabled for the second slave."]
-    NSR_S2_1 = 0x01,
+    NsrS21 = 0x01,
 }
 impl NsrS2 {
     #[inline(always)]
@@ -1677,9 +1677,9 @@ impl From<NsrS2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NswS1 {
     #[doc = "The non-secure supervisor write access is disabled for the first slave."]
-    NSW_S1_0 = 0x0,
+    NswS10 = 0x0,
     #[doc = "The non-secure supervisor write access is enabled for the first slave."]
-    NSW_S1_1 = 0x01,
+    NswS11 = 0x01,
 }
 impl NswS1 {
     #[inline(always)]
@@ -1708,9 +1708,9 @@ impl From<NswS1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NswS2 {
     #[doc = "The non-secure supervisor write access is disabled for the second slave."]
-    NSW_S2_0 = 0x0,
+    NswS20 = 0x0,
     #[doc = "The non-secure supervisor write access is enabled for the second slave."]
-    NSW_S2_1 = 0x01,
+    NswS21 = 0x01,
 }
 impl NswS2 {
     #[inline(always)]
@@ -1739,9 +1739,9 @@ impl From<NswS2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NurS1 {
     #[doc = "The non-secure user read access is disabled for the first slave."]
-    NUR_S1_0 = 0x0,
+    NurS10 = 0x0,
     #[doc = "The non-secure user read access is enabled for the first slave."]
-    NUR_S1_1 = 0x01,
+    NurS11 = 0x01,
 }
 impl NurS1 {
     #[inline(always)]
@@ -1770,9 +1770,9 @@ impl From<NurS1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NurS2 {
     #[doc = "The non-secure user read access is disabled for the second slave."]
-    NUR_S2_0 = 0x0,
+    NurS20 = 0x0,
     #[doc = "The non-secure user read access is enabled for the second slave."]
-    NUR_S2_1 = 0x01,
+    NurS21 = 0x01,
 }
 impl NurS2 {
     #[inline(always)]
@@ -1801,9 +1801,9 @@ impl From<NurS2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NuwS1 {
     #[doc = "The non-secure user write access is disabled for the first slave."]
-    NUW_S1_0 = 0x0,
+    NuwS10 = 0x0,
     #[doc = "The non-secure user write access is enabled for the first slave."]
-    NUW_S1_1 = 0x01,
+    NuwS11 = 0x01,
 }
 impl NuwS1 {
     #[inline(always)]
@@ -1832,9 +1832,9 @@ impl From<NuwS1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NuwS2 {
     #[doc = "The non-secure user write access is disabled for the second slave."]
-    NUW_S2_0 = 0x0,
+    NuwS20 = 0x0,
     #[doc = "The non-secure user write access is enabled for the second slave."]
-    NUW_S2_1 = 0x01,
+    NuwS21 = 0x01,
 }
 impl NuwS2 {
     #[inline(always)]
@@ -1863,9 +1863,9 @@ impl From<NuwS2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SaLCsi {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_CSI_0 = 0x0,
+    LCsi0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_CSI_1 = 0x01,
+    LCsi1 = 0x01,
 }
 impl SaLCsi {
     #[inline(always)]
@@ -1894,9 +1894,9 @@ impl From<SaLCsi> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SaLDcp {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_DCP_0 = 0x0,
+    LDcp0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_DCP_1 = 0x01,
+    LDcp1 = 0x01,
 }
 impl SaLDcp {
     #[inline(always)]
@@ -1925,9 +1925,9 @@ impl From<SaLDcp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SaLDma {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_DMA_0 = 0x0,
+    LDma0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_DMA_1 = 0x01,
+    LDma1 = 0x01,
 }
 impl SaLDma {
     #[inline(always)]
@@ -1956,9 +1956,9 @@ impl From<SaLDma> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SaLEnet {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_ENET_0 = 0x0,
+    LEnet0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_ENET_1 = 0x01,
+    LEnet1 = 0x01,
 }
 impl SaLEnet {
     #[inline(always)]
@@ -1987,9 +1987,9 @@ impl From<SaLEnet> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SaLLcdif {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_LCDIF_0 = 0x0,
+    LLcdif0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_LCDIF_1 = 0x01,
+    LLcdif1 = 0x01,
 }
 impl SaLLcdif {
     #[inline(always)]
@@ -2018,9 +2018,9 @@ impl From<SaLLcdif> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SaLPxp {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_PXP_0 = 0x0,
+    LPxp0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_PXP_1 = 0x01,
+    LPxp1 = 0x01,
 }
 impl SaLPxp {
     #[inline(always)]
@@ -2049,9 +2049,9 @@ impl From<SaLPxp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SaLTpsmp {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_TPSMP_0 = 0x0,
+    LTpsmp0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_TPSMP_1 = 0x01,
+    LTpsmp1 = 0x01,
 }
 impl SaLTpsmp {
     #[inline(always)]
@@ -2080,9 +2080,9 @@ impl From<SaLTpsmp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SaLUsb {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_USB_0 = 0x0,
+    LUsb0 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_USB_1 = 0x01,
+    LUsb1 = 0x01,
 }
 impl SaLUsb {
     #[inline(always)]
@@ -2111,9 +2111,9 @@ impl From<SaLUsb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SaLUsdhc1 {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_USDHC1_0 = 0x0,
+    LUsdhc10 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_USDHC1_1 = 0x01,
+    LUsdhc11 = 0x01,
 }
 impl SaLUsdhc1 {
     #[inline(always)]
@@ -2142,9 +2142,9 @@ impl From<SaLUsdhc1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SaLUsdhc2 {
     #[doc = "No lock-the adjacent (next lower) bit can be written by the software."]
-    L_USDHC2_0 = 0x0,
+    LUsdhc20 = 0x0,
     #[doc = "Lock-the adjacent (next lower) bit can't be written by the software."]
-    L_USDHC2_1 = 0x01,
+    LUsdhc21 = 0x01,
 }
 impl SaLUsdhc2 {
     #[inline(always)]
@@ -2173,9 +2173,9 @@ impl From<SaLUsdhc2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SsrS1 {
     #[doc = "The secure supervisor read access is disabled for the first slave."]
-    SSR_S1_0 = 0x0,
+    SsrS10 = 0x0,
     #[doc = "The secure supervisor read access is enabled for the first slave."]
-    SSR_S1_1 = 0x01,
+    SsrS11 = 0x01,
 }
 impl SsrS1 {
     #[inline(always)]
@@ -2204,9 +2204,9 @@ impl From<SsrS1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SsrS2 {
     #[doc = "The secure supervisor read access is disabled for the second slave."]
-    SSR_S2_0 = 0x0,
+    SsrS20 = 0x0,
     #[doc = "The secure supervisor read access is enabled for the second slave."]
-    SSR_S2_1 = 0x01,
+    SsrS21 = 0x01,
 }
 impl SsrS2 {
     #[inline(always)]
@@ -2235,9 +2235,9 @@ impl From<SsrS2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SswS1 {
     #[doc = "The secure supervisor write access is disabled for the first slave."]
-    SSW_S1_0 = 0x0,
+    SswS10 = 0x0,
     #[doc = "The secure supervisor write access is enabled for the first slave."]
-    SSW_S1_1 = 0x01,
+    SswS11 = 0x01,
 }
 impl SswS1 {
     #[inline(always)]
@@ -2266,9 +2266,9 @@ impl From<SswS1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SswS2 {
     #[doc = "The secure supervisor write access is disabled for the second slave."]
-    SSW_S2_0 = 0x0,
+    SswS20 = 0x0,
     #[doc = "The secure supervisor write access is enabled for the second slave."]
-    SSW_S2_1 = 0x01,
+    SswS21 = 0x01,
 }
 impl SswS2 {
     #[inline(always)]
@@ -2297,9 +2297,9 @@ impl From<SswS2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SurS1 {
     #[doc = "The secure user read access is disabled for the first slave."]
-    SUR_S1_0 = 0x0,
+    SurS10 = 0x0,
     #[doc = "The secure user read access is enabled for the first slave."]
-    SUR_S1_1 = 0x01,
+    SurS11 = 0x01,
 }
 impl SurS1 {
     #[inline(always)]
@@ -2328,9 +2328,9 @@ impl From<SurS1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SurS2 {
     #[doc = "The secure user read access is disabled for the second slave."]
-    SUR_S2_0 = 0x0,
+    SurS20 = 0x0,
     #[doc = "The secure user read access is enabled for the second slave."]
-    SUR_S2_1 = 0x01,
+    SurS21 = 0x01,
 }
 impl SurS2 {
     #[inline(always)]
@@ -2359,9 +2359,9 @@ impl From<SurS2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SuwS1 {
     #[doc = "The secure user write access is disabled for the first slave."]
-    SUW_S1_0 = 0x0,
+    SuwS10 = 0x0,
     #[doc = "The secure user write access is enabled for the first slave."]
-    SUW_S1_1 = 0x01,
+    SuwS11 = 0x01,
 }
 impl SuwS1 {
     #[inline(always)]
@@ -2390,9 +2390,9 @@ impl From<SuwS1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SuwS2 {
     #[doc = "The secure user write access is disabled for the second slave."]
-    SUW_S2_0 = 0x0,
+    SuwS20 = 0x0,
     #[doc = "The secure user write access is enabled for the second slave."]
-    SUW_S2_1 = 0x01,
+    SuwS21 = 0x01,
 }
 impl SuwS2 {
     #[inline(always)]

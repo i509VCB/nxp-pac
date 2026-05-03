@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Active {
     #[doc = "The sequence is not running."]
-    SEQ_NOT_RUNNING = 0x0,
+    SeqNotRunning = 0x0,
     #[doc = "The sequence is running."]
-    SEQ_RUNNING = 0x01,
+    SeqRunning = 0x01,
 }
 impl Active {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Active> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bc12 {
     #[doc = "Compatible with BC1.1 (default)."]
-    BC11 = 0x0,
+    Bc11 = 0x0,
     #[doc = "Compatible with BC1.2."]
-    BC12 = 0x01,
+    Bc12 = 0x01,
 }
 impl Bc12 {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Bc12> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ClockUnit {
     #[doc = "kHz Speed (between 1 kHz and 1023 kHz)."]
-    KHZ_CLK = 0x0,
+    KhzClk = 0x0,
     #[doc = "MHz Speed (between 1 MHz and 1023 MHz)."]
-    MHZ_CLK = 0x01,
+    MhzClk = 0x01,
 }
 impl ClockUnit {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<ClockUnit> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Iack {
     #[doc = "Do not clear the interrupt."]
-    INT_NOCLEAR = 0x0,
+    IntNoclear = 0x0,
     #[doc = "Clear the IF bit (interrupt flag)."]
-    INT_CLEAR = 0x01,
+    IntClear = 0x01,
 }
 impl Iack {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<Iack> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ie {
     #[doc = "Disable interrupts to the system."]
-    DIS_INT = 0x0,
+    DisInt = 0x0,
     #[doc = "Enable interrupts to the system."]
-    EN_INT = 0x01,
+    EnInt = 0x01,
 }
 impl Ie {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<Ie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum If {
     #[doc = "No interrupt is pending."]
-    INT_PEND = 0x0,
+    IntPend = 0x0,
     #[doc = "An interrupt is pending."]
-    INT_NOPEND = 0x01,
+    IntNopend = 0x01,
 }
 impl If {
     #[inline(always)]
@@ -189,10 +189,10 @@ impl From<If> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ps {
     #[doc = "No overrides. Bit field must remain at this value during normal USB data communication to prevent unexpected conditions on USB_DP and USB_DM pins. (Default)."]
-    NO_OVERRIDE = 0x0,
+    NoOverride = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "Enables VDP_SRC voltage source for the USB_DP pin and IDM_SINK current source for the USB_DM pin."]
-    PRI_DET_OVERRIDE = 0x02,
+    PriDetOverride = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Ps {
@@ -222,13 +222,13 @@ impl From<Ps> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SeqRes {
     #[doc = "No results to report."]
-    NO_RESULT = 0x0,
+    NoResult = 0x0,
     #[doc = "Attached to an SDP. Must comply with USB 2.0 by drawing only 2.5 mA (max) until connected."]
-    CONN_SDP = 0x01,
+    ConnSdp = 0x01,
     #[doc = "Attached to a charging port. The exact meaning depends on bit 18 (value 0: Attached to either a CDP or a DCP. The charger type detection has not completed. value 1: Attached to a CDP. The charger type detection has completed.)."]
-    CONN_CP = 0x02,
+    ConnCp = 0x02,
     #[doc = "Attached to a DCP."]
-    CONN_DCP = 0x03,
+    ConnDcp = 0x03,
 }
 impl SeqRes {
     #[inline(always)]
@@ -257,13 +257,13 @@ impl From<SeqRes> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SeqStat {
     #[doc = "The module is either not enabled, or the module is enabled but the data pins have not yet been detected."]
-    NO_DATA_PIN_CONN = 0x0,
+    NoDataPinConn = 0x0,
     #[doc = "Data pin contact detection is complete."]
-    DATA_PIN_CONN = 0x01,
+    DataPinConn = 0x01,
     #[doc = "Charging port detection is complete."]
-    CP_DET_DONE = 0x02,
+    CpDetDone = 0x02,
     #[doc = "Charger type detection is complete."]
-    CT_DET_DONE = 0x03,
+    CtDetDone = 0x03,
 }
 impl SeqStat {
     #[inline(always)]
@@ -292,9 +292,9 @@ impl From<SeqStat> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sr {
     #[doc = "Do not perform a software reset."]
-    NO_RESET = 0x0,
+    NoReset = 0x0,
     #[doc = "Perform a software reset."]
-    SW_RESET = 0x01,
+    SwReset = 0x01,
 }
 impl Sr {
     #[inline(always)]
