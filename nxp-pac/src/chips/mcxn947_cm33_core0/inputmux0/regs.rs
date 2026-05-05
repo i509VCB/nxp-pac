@@ -14307,889 +14307,73 @@ impl defmt::Format for Dma1ReqEnable3Set {
 #[doc = "EVTG Trigger Input Connections."]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct EvtgTrig0(pub u32);
-impl EvtgTrig0 {
+pub struct EvtgTrig(pub u32);
+impl EvtgTrig {
     #[doc = "EVTG trigger input connections."]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::EvtgTrig0Inp {
+    pub const fn inp(&self) -> super::vals::EvtgTrigInp {
         let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::EvtgTrig0Inp::from_bits(val as u8)
+        super::vals::EvtgTrigInp::from_bits(val as u8)
     }
     #[doc = "EVTG trigger input connections."]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::EvtgTrig0Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::EvtgTrigInp) {
         self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
     }
 }
-impl Default for EvtgTrig0 {
+impl Default for EvtgTrig {
     #[inline(always)]
-    fn default() -> EvtgTrig0 {
-        EvtgTrig0(0)
+    fn default() -> EvtgTrig {
+        EvtgTrig(0)
     }
 }
-impl core::fmt::Debug for EvtgTrig0 {
+impl core::fmt::Debug for EvtgTrig {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("EvtgTrig0")
+        f.debug_struct("EvtgTrig")
             .field("inp", &self.inp())
             .finish()
     }
 }
 #[cfg(feature = "defmt")]
-impl defmt::Format for EvtgTrig0 {
+impl defmt::Format for EvtgTrig {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "EvtgTrig0 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "EVTG Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct EvtgTrig1(pub u32);
-impl EvtgTrig1 {
-    #[doc = "EVTG trigger input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::EvtgTrig1Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::EvtgTrig1Inp::from_bits(val as u8)
-    }
-    #[doc = "EVTG trigger input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::EvtgTrig1Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for EvtgTrig1 {
-    #[inline(always)]
-    fn default() -> EvtgTrig1 {
-        EvtgTrig1(0)
-    }
-}
-impl core::fmt::Debug for EvtgTrig1 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("EvtgTrig1")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for EvtgTrig1 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "EvtgTrig1 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "EVTG Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct EvtgTrig10(pub u32);
-impl EvtgTrig10 {
-    #[doc = "EVTG trigger input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::EvtgTrig10Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::EvtgTrig10Inp::from_bits(val as u8)
-    }
-    #[doc = "EVTG trigger input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::EvtgTrig10Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for EvtgTrig10 {
-    #[inline(always)]
-    fn default() -> EvtgTrig10 {
-        EvtgTrig10(0)
-    }
-}
-impl core::fmt::Debug for EvtgTrig10 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("EvtgTrig10")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for EvtgTrig10 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "EvtgTrig10 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "EVTG Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct EvtgTrig11(pub u32);
-impl EvtgTrig11 {
-    #[doc = "EVTG trigger input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::EvtgTrig11Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::EvtgTrig11Inp::from_bits(val as u8)
-    }
-    #[doc = "EVTG trigger input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::EvtgTrig11Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for EvtgTrig11 {
-    #[inline(always)]
-    fn default() -> EvtgTrig11 {
-        EvtgTrig11(0)
-    }
-}
-impl core::fmt::Debug for EvtgTrig11 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("EvtgTrig11")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for EvtgTrig11 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "EvtgTrig11 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "EVTG Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct EvtgTrig12(pub u32);
-impl EvtgTrig12 {
-    #[doc = "EVTG trigger input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::EvtgTrig12Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::EvtgTrig12Inp::from_bits(val as u8)
-    }
-    #[doc = "EVTG trigger input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::EvtgTrig12Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for EvtgTrig12 {
-    #[inline(always)]
-    fn default() -> EvtgTrig12 {
-        EvtgTrig12(0)
-    }
-}
-impl core::fmt::Debug for EvtgTrig12 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("EvtgTrig12")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for EvtgTrig12 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "EvtgTrig12 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "EVTG Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct EvtgTrig13(pub u32);
-impl EvtgTrig13 {
-    #[doc = "EVTG trigger input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::EvtgTrig13Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::EvtgTrig13Inp::from_bits(val as u8)
-    }
-    #[doc = "EVTG trigger input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::EvtgTrig13Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for EvtgTrig13 {
-    #[inline(always)]
-    fn default() -> EvtgTrig13 {
-        EvtgTrig13(0)
-    }
-}
-impl core::fmt::Debug for EvtgTrig13 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("EvtgTrig13")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for EvtgTrig13 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "EvtgTrig13 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "EVTG Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct EvtgTrig14(pub u32);
-impl EvtgTrig14 {
-    #[doc = "EVTG trigger input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::EvtgTrig14Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::EvtgTrig14Inp::from_bits(val as u8)
-    }
-    #[doc = "EVTG trigger input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::EvtgTrig14Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for EvtgTrig14 {
-    #[inline(always)]
-    fn default() -> EvtgTrig14 {
-        EvtgTrig14(0)
-    }
-}
-impl core::fmt::Debug for EvtgTrig14 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("EvtgTrig14")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for EvtgTrig14 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "EvtgTrig14 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "EVTG Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct EvtgTrig15(pub u32);
-impl EvtgTrig15 {
-    #[doc = "EVTG trigger input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::EvtgTrig15Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::EvtgTrig15Inp::from_bits(val as u8)
-    }
-    #[doc = "EVTG trigger input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::EvtgTrig15Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for EvtgTrig15 {
-    #[inline(always)]
-    fn default() -> EvtgTrig15 {
-        EvtgTrig15(0)
-    }
-}
-impl core::fmt::Debug for EvtgTrig15 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("EvtgTrig15")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for EvtgTrig15 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "EvtgTrig15 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "EVTG Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct EvtgTrig2(pub u32);
-impl EvtgTrig2 {
-    #[doc = "EVTG trigger input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::EvtgTrig2Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::EvtgTrig2Inp::from_bits(val as u8)
-    }
-    #[doc = "EVTG trigger input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::EvtgTrig2Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for EvtgTrig2 {
-    #[inline(always)]
-    fn default() -> EvtgTrig2 {
-        EvtgTrig2(0)
-    }
-}
-impl core::fmt::Debug for EvtgTrig2 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("EvtgTrig2")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for EvtgTrig2 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "EvtgTrig2 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "EVTG Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct EvtgTrig3(pub u32);
-impl EvtgTrig3 {
-    #[doc = "EVTG trigger input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::EvtgTrig3Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::EvtgTrig3Inp::from_bits(val as u8)
-    }
-    #[doc = "EVTG trigger input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::EvtgTrig3Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for EvtgTrig3 {
-    #[inline(always)]
-    fn default() -> EvtgTrig3 {
-        EvtgTrig3(0)
-    }
-}
-impl core::fmt::Debug for EvtgTrig3 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("EvtgTrig3")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for EvtgTrig3 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "EvtgTrig3 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "EVTG Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct EvtgTrig4(pub u32);
-impl EvtgTrig4 {
-    #[doc = "EVTG trigger input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::EvtgTrig4Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::EvtgTrig4Inp::from_bits(val as u8)
-    }
-    #[doc = "EVTG trigger input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::EvtgTrig4Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for EvtgTrig4 {
-    #[inline(always)]
-    fn default() -> EvtgTrig4 {
-        EvtgTrig4(0)
-    }
-}
-impl core::fmt::Debug for EvtgTrig4 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("EvtgTrig4")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for EvtgTrig4 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "EvtgTrig4 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "EVTG Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct EvtgTrig5(pub u32);
-impl EvtgTrig5 {
-    #[doc = "EVTG trigger input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::EvtgTrig5Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::EvtgTrig5Inp::from_bits(val as u8)
-    }
-    #[doc = "EVTG trigger input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::EvtgTrig5Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for EvtgTrig5 {
-    #[inline(always)]
-    fn default() -> EvtgTrig5 {
-        EvtgTrig5(0)
-    }
-}
-impl core::fmt::Debug for EvtgTrig5 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("EvtgTrig5")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for EvtgTrig5 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "EvtgTrig5 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "EVTG Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct EvtgTrig6(pub u32);
-impl EvtgTrig6 {
-    #[doc = "EVTG trigger input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::EvtgTrig6Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::EvtgTrig6Inp::from_bits(val as u8)
-    }
-    #[doc = "EVTG trigger input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::EvtgTrig6Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for EvtgTrig6 {
-    #[inline(always)]
-    fn default() -> EvtgTrig6 {
-        EvtgTrig6(0)
-    }
-}
-impl core::fmt::Debug for EvtgTrig6 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("EvtgTrig6")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for EvtgTrig6 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "EvtgTrig6 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "EVTG Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct EvtgTrig7(pub u32);
-impl EvtgTrig7 {
-    #[doc = "EVTG trigger input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::EvtgTrig7Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::EvtgTrig7Inp::from_bits(val as u8)
-    }
-    #[doc = "EVTG trigger input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::EvtgTrig7Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for EvtgTrig7 {
-    #[inline(always)]
-    fn default() -> EvtgTrig7 {
-        EvtgTrig7(0)
-    }
-}
-impl core::fmt::Debug for EvtgTrig7 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("EvtgTrig7")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for EvtgTrig7 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "EvtgTrig7 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "EVTG Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct EvtgTrig8(pub u32);
-impl EvtgTrig8 {
-    #[doc = "EVTG trigger input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::EvtgTrig8Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::EvtgTrig8Inp::from_bits(val as u8)
-    }
-    #[doc = "EVTG trigger input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::EvtgTrig8Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for EvtgTrig8 {
-    #[inline(always)]
-    fn default() -> EvtgTrig8 {
-        EvtgTrig8(0)
-    }
-}
-impl core::fmt::Debug for EvtgTrig8 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("EvtgTrig8")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for EvtgTrig8 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "EvtgTrig8 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "EVTG Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct EvtgTrig9(pub u32);
-impl EvtgTrig9 {
-    #[doc = "EVTG trigger input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::EvtgTrig9Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::EvtgTrig9Inp::from_bits(val as u8)
-    }
-    #[doc = "EVTG trigger input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::EvtgTrig9Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for EvtgTrig9 {
-    #[inline(always)]
-    fn default() -> EvtgTrig9 {
-        EvtgTrig9(0)
-    }
-}
-impl core::fmt::Debug for EvtgTrig9 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("EvtgTrig9")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for EvtgTrig9 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "EvtgTrig9 {{ inp: {:?} }}", self.inp())
+        defmt::write!(f, "EvtgTrig {{ inp: {:?} }}", self.inp())
     }
 }
 #[doc = "EXT Trigger Connections."]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct ExtTrig0(pub u32);
-impl ExtTrig0 {
+pub struct ExtTrig(pub u32);
+impl ExtTrig {
     #[doc = "TRIG_OUTa pin input connections."]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::ExtTrig0Inp {
+    pub const fn inp(&self) -> super::vals::ExtTrigInp {
         let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::ExtTrig0Inp::from_bits(val as u8)
+        super::vals::ExtTrigInp::from_bits(val as u8)
     }
     #[doc = "TRIG_OUTa pin input connections."]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::ExtTrig0Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::ExtTrigInp) {
         self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
     }
 }
-impl Default for ExtTrig0 {
+impl Default for ExtTrig {
     #[inline(always)]
-    fn default() -> ExtTrig0 {
-        ExtTrig0(0)
+    fn default() -> ExtTrig {
+        ExtTrig(0)
     }
 }
-impl core::fmt::Debug for ExtTrig0 {
+impl core::fmt::Debug for ExtTrig {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ExtTrig0")
-            .field("inp", &self.inp())
-            .finish()
+        f.debug_struct("ExtTrig").field("inp", &self.inp()).finish()
     }
 }
 #[cfg(feature = "defmt")]
-impl defmt::Format for ExtTrig0 {
+impl defmt::Format for ExtTrig {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "ExtTrig0 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "EXT Trigger Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct ExtTrig1(pub u32);
-impl ExtTrig1 {
-    #[doc = "TRIG_OUTa pin input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::ExtTrig1Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::ExtTrig1Inp::from_bits(val as u8)
-    }
-    #[doc = "TRIG_OUTa pin input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::ExtTrig1Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for ExtTrig1 {
-    #[inline(always)]
-    fn default() -> ExtTrig1 {
-        ExtTrig1(0)
-    }
-}
-impl core::fmt::Debug for ExtTrig1 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ExtTrig1")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for ExtTrig1 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "ExtTrig1 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "EXT Trigger Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct ExtTrig2(pub u32);
-impl ExtTrig2 {
-    #[doc = "TRIG_OUTa pin input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::ExtTrig2Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::ExtTrig2Inp::from_bits(val as u8)
-    }
-    #[doc = "TRIG_OUTa pin input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::ExtTrig2Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for ExtTrig2 {
-    #[inline(always)]
-    fn default() -> ExtTrig2 {
-        ExtTrig2(0)
-    }
-}
-impl core::fmt::Debug for ExtTrig2 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ExtTrig2")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for ExtTrig2 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "ExtTrig2 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "EXT Trigger Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct ExtTrig3(pub u32);
-impl ExtTrig3 {
-    #[doc = "TRIG_OUTa pin input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::ExtTrig3Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::ExtTrig3Inp::from_bits(val as u8)
-    }
-    #[doc = "TRIG_OUTa pin input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::ExtTrig3Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for ExtTrig3 {
-    #[inline(always)]
-    fn default() -> ExtTrig3 {
-        ExtTrig3(0)
-    }
-}
-impl core::fmt::Debug for ExtTrig3 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ExtTrig3")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for ExtTrig3 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "ExtTrig3 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "EXT Trigger Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct ExtTrig4(pub u32);
-impl ExtTrig4 {
-    #[doc = "TRIG_OUTa pin input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::ExtTrig4Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::ExtTrig4Inp::from_bits(val as u8)
-    }
-    #[doc = "TRIG_OUTa pin input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::ExtTrig4Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for ExtTrig4 {
-    #[inline(always)]
-    fn default() -> ExtTrig4 {
-        ExtTrig4(0)
-    }
-}
-impl core::fmt::Debug for ExtTrig4 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ExtTrig4")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for ExtTrig4 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "ExtTrig4 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "EXT Trigger Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct ExtTrig5(pub u32);
-impl ExtTrig5 {
-    #[doc = "TRIG_OUTa pin input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::ExtTrig5Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::ExtTrig5Inp::from_bits(val as u8)
-    }
-    #[doc = "TRIG_OUTa pin input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::ExtTrig5Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for ExtTrig5 {
-    #[inline(always)]
-    fn default() -> ExtTrig5 {
-        ExtTrig5(0)
-    }
-}
-impl core::fmt::Debug for ExtTrig5 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ExtTrig5")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for ExtTrig5 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "ExtTrig5 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "EXT Trigger Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct ExtTrig6(pub u32);
-impl ExtTrig6 {
-    #[doc = "TRIG_OUTa pin input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::ExtTrig6Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::ExtTrig6Inp::from_bits(val as u8)
-    }
-    #[doc = "TRIG_OUTa pin input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::ExtTrig6Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for ExtTrig6 {
-    #[inline(always)]
-    fn default() -> ExtTrig6 {
-        ExtTrig6(0)
-    }
-}
-impl core::fmt::Debug for ExtTrig6 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ExtTrig6")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for ExtTrig6 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "ExtTrig6 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "EXT Trigger Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct ExtTrig7(pub u32);
-impl ExtTrig7 {
-    #[doc = "TRIG_OUTa pin input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::ExtTrig7Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::ExtTrig7Inp::from_bits(val as u8)
-    }
-    #[doc = "TRIG_OUTa pin input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::ExtTrig7Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for ExtTrig7 {
-    #[inline(always)]
-    fn default() -> ExtTrig7 {
-        ExtTrig7(0)
-    }
-}
-impl core::fmt::Debug for ExtTrig7 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ExtTrig7")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for ExtTrig7 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "ExtTrig7 {{ inp: {:?} }}", self.inp())
+        defmt::write!(f, "ExtTrig {{ inp: {:?} }}", self.inp())
     }
 }
 #[doc = "PWM0 External Force Trigger Connections."]
@@ -15861,297 +15045,38 @@ impl defmt::Format for Flexcomm9Trig {
 #[doc = "FlexIO Trigger Input Connections."]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct FlexioTrig0(pub u32);
-impl FlexioTrig0 {
+pub struct FlexioTrig(pub u32);
+impl FlexioTrig {
     #[doc = "Input number for FlexIO0."]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::FlexioTrig0Inp {
+    pub const fn inp(&self) -> super::vals::FlexioTrigInp {
         let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::FlexioTrig0Inp::from_bits(val as u8)
+        super::vals::FlexioTrigInp::from_bits(val as u8)
     }
     #[doc = "Input number for FlexIO0."]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::FlexioTrig0Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::FlexioTrigInp) {
         self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
     }
 }
-impl Default for FlexioTrig0 {
+impl Default for FlexioTrig {
     #[inline(always)]
-    fn default() -> FlexioTrig0 {
-        FlexioTrig0(0)
+    fn default() -> FlexioTrig {
+        FlexioTrig(0)
     }
 }
-impl core::fmt::Debug for FlexioTrig0 {
+impl core::fmt::Debug for FlexioTrig {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("FlexioTrig0")
+        f.debug_struct("FlexioTrig")
             .field("inp", &self.inp())
             .finish()
     }
 }
 #[cfg(feature = "defmt")]
-impl defmt::Format for FlexioTrig0 {
+impl defmt::Format for FlexioTrig {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "FlexioTrig0 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "FlexIO Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct FlexioTrig1(pub u32);
-impl FlexioTrig1 {
-    #[doc = "Input number for FlexIO0."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::FlexioTrig1Inp {
-        let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::FlexioTrig1Inp::from_bits(val as u8)
-    }
-    #[doc = "Input number for FlexIO0."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::FlexioTrig1Inp) {
-        self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
-    }
-}
-impl Default for FlexioTrig1 {
-    #[inline(always)]
-    fn default() -> FlexioTrig1 {
-        FlexioTrig1(0)
-    }
-}
-impl core::fmt::Debug for FlexioTrig1 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("FlexioTrig1")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for FlexioTrig1 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "FlexioTrig1 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "FlexIO Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct FlexioTrig2(pub u32);
-impl FlexioTrig2 {
-    #[doc = "Input number for FlexIO0."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::FlexioTrig2Inp {
-        let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::FlexioTrig2Inp::from_bits(val as u8)
-    }
-    #[doc = "Input number for FlexIO0."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::FlexioTrig2Inp) {
-        self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
-    }
-}
-impl Default for FlexioTrig2 {
-    #[inline(always)]
-    fn default() -> FlexioTrig2 {
-        FlexioTrig2(0)
-    }
-}
-impl core::fmt::Debug for FlexioTrig2 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("FlexioTrig2")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for FlexioTrig2 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "FlexioTrig2 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "FlexIO Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct FlexioTrig3(pub u32);
-impl FlexioTrig3 {
-    #[doc = "Input number for FlexIO0."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::FlexioTrig3Inp {
-        let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::FlexioTrig3Inp::from_bits(val as u8)
-    }
-    #[doc = "Input number for FlexIO0."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::FlexioTrig3Inp) {
-        self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
-    }
-}
-impl Default for FlexioTrig3 {
-    #[inline(always)]
-    fn default() -> FlexioTrig3 {
-        FlexioTrig3(0)
-    }
-}
-impl core::fmt::Debug for FlexioTrig3 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("FlexioTrig3")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for FlexioTrig3 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "FlexioTrig3 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "FlexIO Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct FlexioTrig4(pub u32);
-impl FlexioTrig4 {
-    #[doc = "Input number for FlexIO0."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::FlexioTrig4Inp {
-        let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::FlexioTrig4Inp::from_bits(val as u8)
-    }
-    #[doc = "Input number for FlexIO0."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::FlexioTrig4Inp) {
-        self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
-    }
-}
-impl Default for FlexioTrig4 {
-    #[inline(always)]
-    fn default() -> FlexioTrig4 {
-        FlexioTrig4(0)
-    }
-}
-impl core::fmt::Debug for FlexioTrig4 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("FlexioTrig4")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for FlexioTrig4 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "FlexioTrig4 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "FlexIO Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct FlexioTrig5(pub u32);
-impl FlexioTrig5 {
-    #[doc = "Input number for FlexIO0."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::FlexioTrig5Inp {
-        let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::FlexioTrig5Inp::from_bits(val as u8)
-    }
-    #[doc = "Input number for FlexIO0."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::FlexioTrig5Inp) {
-        self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
-    }
-}
-impl Default for FlexioTrig5 {
-    #[inline(always)]
-    fn default() -> FlexioTrig5 {
-        FlexioTrig5(0)
-    }
-}
-impl core::fmt::Debug for FlexioTrig5 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("FlexioTrig5")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for FlexioTrig5 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "FlexioTrig5 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "FlexIO Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct FlexioTrig6(pub u32);
-impl FlexioTrig6 {
-    #[doc = "Input number for FlexIO0."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::FlexioTrig6Inp {
-        let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::FlexioTrig6Inp::from_bits(val as u8)
-    }
-    #[doc = "Input number for FlexIO0."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::FlexioTrig6Inp) {
-        self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
-    }
-}
-impl Default for FlexioTrig6 {
-    #[inline(always)]
-    fn default() -> FlexioTrig6 {
-        FlexioTrig6(0)
-    }
-}
-impl core::fmt::Debug for FlexioTrig6 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("FlexioTrig6")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for FlexioTrig6 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "FlexioTrig6 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "FlexIO Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct FlexioTrig7(pub u32);
-impl FlexioTrig7 {
-    #[doc = "Input number for FlexIO0."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::FlexioTrig7Inp {
-        let val = (self.0 >> 0usize) & 0x7f;
-        super::vals::FlexioTrig7Inp::from_bits(val as u8)
-    }
-    #[doc = "Input number for FlexIO0."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::FlexioTrig7Inp) {
-        self.0 = (self.0 & !(0x7f << 0usize)) | (((val.to_bits() as u32) & 0x7f) << 0usize);
-    }
-}
-impl Default for FlexioTrig7 {
-    #[inline(always)]
-    fn default() -> FlexioTrig7 {
-        FlexioTrig7(0)
-    }
-}
-impl core::fmt::Debug for FlexioTrig7 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("FlexioTrig7")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for FlexioTrig7 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "FlexioTrig7 {{ inp: {:?} }}", self.inp())
+        defmt::write!(f, "FlexioTrig {{ inp: {:?} }}", self.inp())
     }
 }
 #[doc = "Selection for Frequency Measurement Reference Clock."]
@@ -16231,112 +15156,38 @@ impl defmt::Format for FreqmeasTar {
 #[doc = "OPAMP Trigger Input Connections."]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Opamp0Trig(pub u32);
-impl Opamp0Trig {
+pub struct OpampTrig(pub u32);
+impl OpampTrig {
     #[doc = "OPAMP trigger input connections."]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Opamp0TrigInp {
+    pub const fn inp(&self) -> super::vals::OpampTrigInp {
         let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::Opamp0TrigInp::from_bits(val as u8)
+        super::vals::OpampTrigInp::from_bits(val as u8)
     }
     #[doc = "OPAMP trigger input connections."]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Opamp0TrigInp) {
+    pub const fn set_inp(&mut self, val: super::vals::OpampTrigInp) {
         self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
     }
 }
-impl Default for Opamp0Trig {
+impl Default for OpampTrig {
     #[inline(always)]
-    fn default() -> Opamp0Trig {
-        Opamp0Trig(0)
+    fn default() -> OpampTrig {
+        OpampTrig(0)
     }
 }
-impl core::fmt::Debug for Opamp0Trig {
+impl core::fmt::Debug for OpampTrig {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Opamp0Trig")
+        f.debug_struct("OpampTrig")
             .field("inp", &self.inp())
             .finish()
     }
 }
 #[cfg(feature = "defmt")]
-impl defmt::Format for Opamp0Trig {
+impl defmt::Format for OpampTrig {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Opamp0Trig {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "OPAMP Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Opamp1Trig(pub u32);
-impl Opamp1Trig {
-    #[doc = "OPAMP trigger input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Opamp1TrigInp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::Opamp1TrigInp::from_bits(val as u8)
-    }
-    #[doc = "OPAMP trigger input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Opamp1TrigInp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for Opamp1Trig {
-    #[inline(always)]
-    fn default() -> Opamp1Trig {
-        Opamp1Trig(0)
-    }
-}
-impl core::fmt::Debug for Opamp1Trig {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Opamp1Trig")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for Opamp1Trig {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Opamp1Trig {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "OPAMP Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Opamp2Trig(pub u32);
-impl Opamp2Trig {
-    #[doc = "OPAMP trigger input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Opamp2TrigInp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::Opamp2TrigInp::from_bits(val as u8)
-    }
-    #[doc = "OPAMP trigger input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Opamp2TrigInp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for Opamp2Trig {
-    #[inline(always)]
-    fn default() -> Opamp2Trig {
-        Opamp2Trig(0)
-    }
-}
-impl core::fmt::Debug for Opamp2Trig {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Opamp2Trig")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for Opamp2Trig {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Opamp2Trig {{ inp: {:?} }}", self.inp())
+        defmt::write!(f, "OpampTrig {{ inp: {:?} }}", self.inp())
     }
 }
 #[doc = "Pin Interrupt Select."]
@@ -16448,374 +15299,185 @@ impl defmt::Format for Pwm1ExtClk {
         defmt::write!(f, "Pwm1ExtClk {{ trigin: {:?} }}", self.trigin())
     }
 }
-#[doc = "QDC0 Input Connections."]
+#[doc = "QDCouter_loop Input Connections."]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Qdc0Home(pub u32);
-impl Qdc0Home {
+pub struct QdcHome(pub u32);
+impl QdcHome {
     #[doc = "QDC0 HOME input connections."]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Qdc0HomeInp {
+    pub const fn inp(&self) -> super::vals::QdcHomeInp {
         let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::Qdc0HomeInp::from_bits(val as u8)
+        super::vals::QdcHomeInp::from_bits(val as u8)
     }
     #[doc = "QDC0 HOME input connections."]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Qdc0HomeInp) {
+    pub const fn set_inp(&mut self, val: super::vals::QdcHomeInp) {
         self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
     }
 }
-impl Default for Qdc0Home {
+impl Default for QdcHome {
     #[inline(always)]
-    fn default() -> Qdc0Home {
-        Qdc0Home(0)
+    fn default() -> QdcHome {
+        QdcHome(0)
     }
 }
-impl core::fmt::Debug for Qdc0Home {
+impl core::fmt::Debug for QdcHome {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Qdc0Home")
-            .field("inp", &self.inp())
-            .finish()
+        f.debug_struct("QdcHome").field("inp", &self.inp()).finish()
     }
 }
 #[cfg(feature = "defmt")]
-impl defmt::Format for Qdc0Home {
+impl defmt::Format for QdcHome {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Qdc0Home {{ inp: {:?} }}", self.inp())
+        defmt::write!(f, "QdcHome {{ inp: {:?} }}", self.inp())
     }
 }
-#[doc = "QDC0 Input Connections."]
+#[doc = "QDCouter_loop Input Connections."]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Qdc0Index(pub u32);
-impl Qdc0Index {
+pub struct QdcIndex(pub u32);
+impl QdcIndex {
     #[doc = "QDC0 INDEX input connections."]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Qdc0IndexInp {
+    pub const fn inp(&self) -> super::vals::QdcIndexInp {
         let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::Qdc0IndexInp::from_bits(val as u8)
+        super::vals::QdcIndexInp::from_bits(val as u8)
     }
     #[doc = "QDC0 INDEX input connections."]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Qdc0IndexInp) {
+    pub const fn set_inp(&mut self, val: super::vals::QdcIndexInp) {
         self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
     }
 }
-impl Default for Qdc0Index {
+impl Default for QdcIndex {
     #[inline(always)]
-    fn default() -> Qdc0Index {
-        Qdc0Index(0)
+    fn default() -> QdcIndex {
+        QdcIndex(0)
     }
 }
-impl core::fmt::Debug for Qdc0Index {
+impl core::fmt::Debug for QdcIndex {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Qdc0Index")
+        f.debug_struct("QdcIndex")
             .field("inp", &self.inp())
             .finish()
     }
 }
 #[cfg(feature = "defmt")]
-impl defmt::Format for Qdc0Index {
+impl defmt::Format for QdcIndex {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Qdc0Index {{ inp: {:?} }}", self.inp())
+        defmt::write!(f, "QdcIndex {{ inp: {:?} }}", self.inp())
     }
 }
-#[doc = "QDC0 Input Connections."]
+#[doc = "QDCouter_loop Input Connections."]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Qdc0Phasea(pub u32);
-impl Qdc0Phasea {
+pub struct QdcPhasea(pub u32);
+impl QdcPhasea {
     #[doc = "QDC0 PHASEA input connections."]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Qdc0PhaseaInp {
+    pub const fn inp(&self) -> super::vals::QdcPhaseaInp {
         let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::Qdc0PhaseaInp::from_bits(val as u8)
+        super::vals::QdcPhaseaInp::from_bits(val as u8)
     }
     #[doc = "QDC0 PHASEA input connections."]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Qdc0PhaseaInp) {
+    pub const fn set_inp(&mut self, val: super::vals::QdcPhaseaInp) {
         self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
     }
 }
-impl Default for Qdc0Phasea {
+impl Default for QdcPhasea {
     #[inline(always)]
-    fn default() -> Qdc0Phasea {
-        Qdc0Phasea(0)
+    fn default() -> QdcPhasea {
+        QdcPhasea(0)
     }
 }
-impl core::fmt::Debug for Qdc0Phasea {
+impl core::fmt::Debug for QdcPhasea {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Qdc0Phasea")
+        f.debug_struct("QdcPhasea")
             .field("inp", &self.inp())
             .finish()
     }
 }
 #[cfg(feature = "defmt")]
-impl defmt::Format for Qdc0Phasea {
+impl defmt::Format for QdcPhasea {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Qdc0Phasea {{ inp: {:?} }}", self.inp())
+        defmt::write!(f, "QdcPhasea {{ inp: {:?} }}", self.inp())
     }
 }
-#[doc = "QDC0 Input Connections."]
+#[doc = "QDCouter_loop Input Connections."]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Qdc0Phaseb(pub u32);
-impl Qdc0Phaseb {
+pub struct QdcPhaseb(pub u32);
+impl QdcPhaseb {
     #[doc = "QDC0 PHASEB input connections."]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Qdc0PhasebInp {
+    pub const fn inp(&self) -> super::vals::QdcPhasebInp {
         let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::Qdc0PhasebInp::from_bits(val as u8)
+        super::vals::QdcPhasebInp::from_bits(val as u8)
     }
     #[doc = "QDC0 PHASEB input connections."]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Qdc0PhasebInp) {
+    pub const fn set_inp(&mut self, val: super::vals::QdcPhasebInp) {
         self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
     }
 }
-impl Default for Qdc0Phaseb {
+impl Default for QdcPhaseb {
     #[inline(always)]
-    fn default() -> Qdc0Phaseb {
-        Qdc0Phaseb(0)
+    fn default() -> QdcPhaseb {
+        QdcPhaseb(0)
     }
 }
-impl core::fmt::Debug for Qdc0Phaseb {
+impl core::fmt::Debug for QdcPhaseb {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Qdc0Phaseb")
+        f.debug_struct("QdcPhaseb")
             .field("inp", &self.inp())
             .finish()
     }
 }
 #[cfg(feature = "defmt")]
-impl defmt::Format for Qdc0Phaseb {
+impl defmt::Format for QdcPhaseb {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Qdc0Phaseb {{ inp: {:?} }}", self.inp())
+        defmt::write!(f, "QdcPhaseb {{ inp: {:?} }}", self.inp())
     }
 }
-#[doc = "QDC0 Trigger Input Connections."]
+#[doc = "QDCouter_loop Trigger Input Connections."]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Qdc0Trig(pub u32);
-impl Qdc0Trig {
+pub struct QdcTrig(pub u32);
+impl QdcTrig {
     #[doc = "QDC0 trigger input connections."]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Qdc0TrigInp {
+    pub const fn inp(&self) -> super::vals::QdcTrigInp {
         let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::Qdc0TrigInp::from_bits(val as u8)
+        super::vals::QdcTrigInp::from_bits(val as u8)
     }
     #[doc = "QDC0 trigger input connections."]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Qdc0TrigInp) {
+    pub const fn set_inp(&mut self, val: super::vals::QdcTrigInp) {
         self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
     }
 }
-impl Default for Qdc0Trig {
+impl Default for QdcTrig {
     #[inline(always)]
-    fn default() -> Qdc0Trig {
-        Qdc0Trig(0)
+    fn default() -> QdcTrig {
+        QdcTrig(0)
     }
 }
-impl core::fmt::Debug for Qdc0Trig {
+impl core::fmt::Debug for QdcTrig {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Qdc0Trig")
-            .field("inp", &self.inp())
-            .finish()
+        f.debug_struct("QdcTrig").field("inp", &self.inp()).finish()
     }
 }
 #[cfg(feature = "defmt")]
-impl defmt::Format for Qdc0Trig {
+impl defmt::Format for QdcTrig {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Qdc0Trig {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "QDC1 Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Qdc1Home(pub u32);
-impl Qdc1Home {
-    #[doc = "QDC1 HOME input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Qdc1HomeInp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::Qdc1HomeInp::from_bits(val as u8)
-    }
-    #[doc = "QDC1 HOME input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Qdc1HomeInp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for Qdc1Home {
-    #[inline(always)]
-    fn default() -> Qdc1Home {
-        Qdc1Home(0)
-    }
-}
-impl core::fmt::Debug for Qdc1Home {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Qdc1Home")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for Qdc1Home {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Qdc1Home {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "QDC1 Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Qdc1Index(pub u32);
-impl Qdc1Index {
-    #[doc = "QDC1 INDEX input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Qdc1IndexInp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::Qdc1IndexInp::from_bits(val as u8)
-    }
-    #[doc = "QDC1 INDEX input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Qdc1IndexInp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for Qdc1Index {
-    #[inline(always)]
-    fn default() -> Qdc1Index {
-        Qdc1Index(0)
-    }
-}
-impl core::fmt::Debug for Qdc1Index {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Qdc1Index")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for Qdc1Index {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Qdc1Index {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "QDC1 Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Qdc1Phasea(pub u32);
-impl Qdc1Phasea {
-    #[doc = "QDC1 PHASEA input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Qdc1PhaseaInp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::Qdc1PhaseaInp::from_bits(val as u8)
-    }
-    #[doc = "QDC1 PHASEA input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Qdc1PhaseaInp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for Qdc1Phasea {
-    #[inline(always)]
-    fn default() -> Qdc1Phasea {
-        Qdc1Phasea(0)
-    }
-}
-impl core::fmt::Debug for Qdc1Phasea {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Qdc1Phasea")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for Qdc1Phasea {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Qdc1Phasea {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "QDC1 Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Qdc1Phaseb(pub u32);
-impl Qdc1Phaseb {
-    #[doc = "QDC1 PHASEB input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Qdc1PhasebInp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::Qdc1PhasebInp::from_bits(val as u8)
-    }
-    #[doc = "QDC1 PHASEB input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Qdc1PhasebInp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for Qdc1Phaseb {
-    #[inline(always)]
-    fn default() -> Qdc1Phaseb {
-        Qdc1Phaseb(0)
-    }
-}
-impl core::fmt::Debug for Qdc1Phaseb {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Qdc1Phaseb")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for Qdc1Phaseb {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Qdc1Phaseb {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "QDC1 Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Qdc1Trig(pub u32);
-impl Qdc1Trig {
-    #[doc = "QDC1 trigger input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::Qdc1TrigInp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::Qdc1TrigInp::from_bits(val as u8)
-    }
-    #[doc = "QDC1 trigger input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::Qdc1TrigInp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for Qdc1Trig {
-    #[inline(always)]
-    fn default() -> Qdc1Trig {
-        Qdc1Trig(0)
-    }
-}
-impl core::fmt::Debug for Qdc1Trig {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Qdc1Trig")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for Qdc1Trig {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Qdc1Trig {{ inp: {:?} }}", self.inp())
+        defmt::write!(f, "QdcTrig {{ inp: {:?} }}", self.inp())
     }
 }
 #[doc = "Inputmux Register for SCT0 Input."]
@@ -16858,186 +15520,38 @@ impl defmt::Format for Sct0Inmux {
 #[doc = "SINC Filter Channel Trigger Input Connections."]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct SincFilterCh0(pub u32);
-impl SincFilterCh0 {
+pub struct SincFilterCh(pub u32);
+impl SincFilterCh {
     #[doc = "SINC FILTER trigger input connections."]
     #[must_use]
     #[inline(always)]
-    pub const fn inp(&self) -> super::vals::SincFilterCh0Inp {
+    pub const fn inp(&self) -> super::vals::SincFilterChInp {
         let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::SincFilterCh0Inp::from_bits(val as u8)
+        super::vals::SincFilterChInp::from_bits(val as u8)
     }
     #[doc = "SINC FILTER trigger input connections."]
     #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::SincFilterCh0Inp) {
+    pub const fn set_inp(&mut self, val: super::vals::SincFilterChInp) {
         self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
     }
 }
-impl Default for SincFilterCh0 {
+impl Default for SincFilterCh {
     #[inline(always)]
-    fn default() -> SincFilterCh0 {
-        SincFilterCh0(0)
+    fn default() -> SincFilterCh {
+        SincFilterCh(0)
     }
 }
-impl core::fmt::Debug for SincFilterCh0 {
+impl core::fmt::Debug for SincFilterCh {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SincFilterCh0")
+        f.debug_struct("SincFilterCh")
             .field("inp", &self.inp())
             .finish()
     }
 }
 #[cfg(feature = "defmt")]
-impl defmt::Format for SincFilterCh0 {
+impl defmt::Format for SincFilterCh {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "SincFilterCh0 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "SINC Filter Channel Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct SincFilterCh1(pub u32);
-impl SincFilterCh1 {
-    #[doc = "SINC FILTER trigger input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::SincFilterCh1Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::SincFilterCh1Inp::from_bits(val as u8)
-    }
-    #[doc = "SINC FILTER trigger input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::SincFilterCh1Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for SincFilterCh1 {
-    #[inline(always)]
-    fn default() -> SincFilterCh1 {
-        SincFilterCh1(0)
-    }
-}
-impl core::fmt::Debug for SincFilterCh1 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SincFilterCh1")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for SincFilterCh1 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "SincFilterCh1 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "SINC Filter Channel Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct SincFilterCh2(pub u32);
-impl SincFilterCh2 {
-    #[doc = "SINC FILTER trigger input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::SincFilterCh2Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::SincFilterCh2Inp::from_bits(val as u8)
-    }
-    #[doc = "SINC FILTER trigger input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::SincFilterCh2Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for SincFilterCh2 {
-    #[inline(always)]
-    fn default() -> SincFilterCh2 {
-        SincFilterCh2(0)
-    }
-}
-impl core::fmt::Debug for SincFilterCh2 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SincFilterCh2")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for SincFilterCh2 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "SincFilterCh2 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "SINC Filter Channel Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct SincFilterCh3(pub u32);
-impl SincFilterCh3 {
-    #[doc = "SINC FILTER trigger input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::SincFilterCh3Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::SincFilterCh3Inp::from_bits(val as u8)
-    }
-    #[doc = "SINC FILTER trigger input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::SincFilterCh3Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for SincFilterCh3 {
-    #[inline(always)]
-    fn default() -> SincFilterCh3 {
-        SincFilterCh3(0)
-    }
-}
-impl core::fmt::Debug for SincFilterCh3 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SincFilterCh3")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for SincFilterCh3 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "SincFilterCh3 {{ inp: {:?} }}", self.inp())
-    }
-}
-#[doc = "SINC Filter Channel Trigger Input Connections."]
-#[repr(transparent)]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct SincFilterCh4(pub u32);
-impl SincFilterCh4 {
-    #[doc = "SINC FILTER trigger input connections."]
-    #[must_use]
-    #[inline(always)]
-    pub const fn inp(&self) -> super::vals::SincFilterCh4Inp {
-        let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::SincFilterCh4Inp::from_bits(val as u8)
-    }
-    #[doc = "SINC FILTER trigger input connections."]
-    #[inline(always)]
-    pub const fn set_inp(&mut self, val: super::vals::SincFilterCh4Inp) {
-        self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
-    }
-}
-impl Default for SincFilterCh4 {
-    #[inline(always)]
-    fn default() -> SincFilterCh4 {
-        SincFilterCh4(0)
-    }
-}
-impl core::fmt::Debug for SincFilterCh4 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SincFilterCh4")
-            .field("inp", &self.inp())
-            .finish()
-    }
-}
-#[cfg(feature = "defmt")]
-impl defmt::Format for SincFilterCh4 {
-    fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "SincFilterCh4 {{ inp: {:?} }}", self.inp())
+        defmt::write!(f, "SincFilterCh {{ inp: {:?} }}", self.inp())
     }
 }
 #[doc = "Inputmux Register for SMARTDMA Arch B Inputs."]

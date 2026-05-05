@@ -3,13 +3,13 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum AntiPoleSecLevel {
     #[doc = "Secure and privileged Master."]
-    NONSECURE_NONPRIV_MASTER = 0x0,
+    NonsecureNonprivMaster = 0x0,
     #[doc = "Secure and non-privileged Master."]
-    NONSECURE_PRIV_MASTER = 0x01,
+    NonsecurePrivMaster = 0x01,
     #[doc = "Non-secure and privileged Master."]
-    SECURE_NONPRIV_MASTER = 0x02,
+    SecureNonprivMaster = 0x02,
     #[doc = "Non-secure and non-privileged Master."]
-    SECURE_PRIV_MASTER = 0x03,
+    SecurePrivMaster = 0x03,
 }
 impl AntiPoleSecLevel {
     #[inline(always)]
@@ -38,9 +38,9 @@ impl From<AntiPoleSecLevel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DisPufEnroll {
     #[doc = "Command enabled."]
-    ENABLE = 0x0,
+    Enable = 0x0,
     #[doc = "Command disabled."]
-    DISABLE = 0x01,
+    Disable = 0x01,
 }
 impl DisPufEnroll {
     #[inline(always)]
@@ -69,9 +69,9 @@ impl From<DisPufEnroll> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DisPufGenRandomNumber {
     #[doc = "Command enabled."]
-    ENABLE = 0x0,
+    Enable = 0x0,
     #[doc = "Command disabled."]
-    DISABLE = 0x01,
+    Disable = 0x01,
 }
 impl DisPufGenRandomNumber {
     #[inline(always)]
@@ -100,9 +100,9 @@ impl From<DisPufGenRandomNumber> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DisPufGenWrapKey {
     #[doc = "Command enabled."]
-    ENABLE = 0x0,
+    Enable = 0x0,
     #[doc = "Command disabled."]
-    DISABLE = 0x01,
+    Disable = 0x01,
 }
 impl DisPufGenWrapKey {
     #[inline(always)]
@@ -131,9 +131,9 @@ impl From<DisPufGenWrapKey> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DisPufGetKey {
     #[doc = "Command enabled."]
-    ENABLE = 0x0,
+    Enable = 0x0,
     #[doc = "Command disabled."]
-    DISABLE = 0x01,
+    Disable = 0x01,
 }
 impl DisPufGetKey {
     #[inline(always)]
@@ -162,9 +162,9 @@ impl From<DisPufGetKey> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DisPufStart {
     #[doc = "Command enabled."]
-    ENABLE = 0x0,
+    Enable = 0x0,
     #[doc = "Command disabled."]
-    DISABLE = 0x01,
+    Disable = 0x01,
 }
 impl DisPufStart {
     #[inline(always)]
@@ -193,9 +193,9 @@ impl From<DisPufStart> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DisPufStop {
     #[doc = "Command enabled."]
-    ENABLE = 0x0,
+    Enable = 0x0,
     #[doc = "Command disabled."]
-    DISABLE = 0x01,
+    Disable = 0x01,
 }
 impl DisPufStop {
     #[inline(always)]
@@ -224,9 +224,9 @@ impl From<DisPufStop> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DisPufTest {
     #[doc = "Command enabled."]
-    ENABLE = 0x0,
+    Enable = 0x0,
     #[doc = "Command disabled."]
-    DISABLE = 0x01,
+    Disable = 0x01,
 }
 impl DisPufTest {
     #[inline(always)]
@@ -255,9 +255,9 @@ impl From<DisPufTest> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DisPufUnwrapKey {
     #[doc = "Command enabled."]
-    ENABLE = 0x0,
+    Enable = 0x0,
     #[doc = "Command disabled."]
-    DISABLE = 0x01,
+    Disable = 0x01,
 }
 impl DisPufUnwrapKey {
     #[inline(always)]
@@ -286,9 +286,9 @@ impl From<DisPufUnwrapKey> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DisPufWrapKey {
     #[doc = "Command enabled."]
-    ENABLE = 0x0,
+    Enable = 0x0,
     #[doc = "Command disabled."]
-    DISABLE = 0x01,
+    Disable = 0x01,
 }
 impl DisPufWrapKey {
     #[inline(always)]
@@ -317,13 +317,13 @@ impl From<DisPufWrapKey> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SecLevel {
     #[doc = "Non-secure and non-privileged Master."]
-    NONSECURE_NONPRIV_MASTER = 0x0,
+    NonsecureNonprivMaster = 0x0,
     #[doc = "Non-secure and privileged Master."]
-    NONSECURE_PRIV_MASTER = 0x01,
+    NonsecurePrivMaster = 0x01,
     #[doc = "Secure and non-privileged Master."]
-    SECURE_NONPRIV_MASTER = 0x02,
+    SecureNonprivMaster = 0x02,
     #[doc = "Secure and privileged Master."]
-    SECURE_PRIV_MASTER = 0x03,
+    SecurePrivMaster = 0x03,
 }
 impl SecLevel {
     #[inline(always)]

@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cff {
     #[doc = "Falling-edge on COUT has not been detected."]
-    CFF_0 = 0x0,
+    Cff0 = 0x0,
     #[doc = "Falling-edge on COUT has occurred."]
-    CFF_1 = 0x01,
+    Cff1 = 0x01,
 }
 impl Cff {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Cff> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cfr {
     #[doc = "Rising-edge on COUT has not been detected."]
-    CFR_0 = 0x0,
+    Cfr0 = 0x0,
     #[doc = "Rising-edge on COUT has occurred."]
-    CFR_1 = 0x01,
+    Cfr1 = 0x01,
 }
 impl Cfr {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Cfr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cos {
     #[doc = "Set the filtered comparator output (CMPO) to equal COUT."]
-    COS_0 = 0x0,
+    Cos0 = 0x0,
     #[doc = "Set the unfiltered comparator output (CMPO) to equal COUTA."]
-    COS_1 = 0x01,
+    Cos1 = 0x01,
 }
 impl Cos {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Cos> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dacen {
     #[doc = "DAC is disabled."]
-    DACEN_0 = 0x0,
+    Dacen0 = 0x0,
     #[doc = "DAC is enabled."]
-    DACEN_1 = 0x01,
+    Dacen1 = 0x01,
 }
 impl Dacen {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<Dacen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dmaen {
     #[doc = "DMA is disabled."]
-    DMAEN_0 = 0x0,
+    Dmaen0 = 0x0,
     #[doc = "DMA is enabled."]
-    DMAEN_1 = 0x01,
+    Dmaen1 = 0x01,
 }
 impl Dmaen {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<Dmaen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum En {
     #[doc = "Analog Comparator is disabled."]
-    EN_0 = 0x0,
+    En0 = 0x0,
     #[doc = "Analog Comparator is enabled."]
-    EN_1 = 0x01,
+    En1 = 0x01,
 }
 impl En {
     #[inline(always)]
@@ -189,21 +189,21 @@ impl From<En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FilterCnt {
     #[doc = "Filter is disabled. If SE = 1, then COUT is a logic 0. This is not a legal state, and is not recommended. If SE = 0, COUT = COUTA."]
-    FILTER_CNT_0 = 0x0,
+    FilterCnt0 = 0x0,
     #[doc = "One sample must agree. The comparator output is simply sampled."]
-    FILTER_CNT_1 = 0x01,
+    FilterCnt1 = 0x01,
     #[doc = "2 consecutive samples must agree."]
-    FILTER_CNT_2 = 0x02,
+    FilterCnt2 = 0x02,
     #[doc = "3 consecutive samples must agree."]
-    FILTER_CNT_3 = 0x03,
+    FilterCnt3 = 0x03,
     #[doc = "4 consecutive samples must agree."]
-    FILTER_CNT_4 = 0x04,
+    FilterCnt4 = 0x04,
     #[doc = "5 consecutive samples must agree."]
-    FILTER_CNT_5 = 0x05,
+    FilterCnt5 = 0x05,
     #[doc = "6 consecutive samples must agree."]
-    FILTER_CNT_6 = 0x06,
+    FilterCnt6 = 0x06,
     #[doc = "7 consecutive samples must agree."]
-    FILTER_CNT_7 = 0x07,
+    FilterCnt7 = 0x07,
 }
 impl FilterCnt {
     #[inline(always)]
@@ -232,13 +232,13 @@ impl From<FilterCnt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hystctr {
     #[doc = "Level 0."]
-    HYSTCTR_0 = 0x0,
+    Hystctr0 = 0x0,
     #[doc = "Level 1."]
-    HYSTCTR_1 = 0x01,
+    Hystctr1 = 0x01,
     #[doc = "Level 2."]
-    HYSTCTR_2 = 0x02,
+    Hystctr2 = 0x02,
     #[doc = "Level 3."]
-    HYSTCTR_3 = 0x03,
+    Hystctr3 = 0x03,
 }
 impl Hystctr {
     #[inline(always)]
@@ -267,9 +267,9 @@ impl From<Hystctr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ief {
     #[doc = "Interrupt is disabled."]
-    IEF_0 = 0x0,
+    Ief0 = 0x0,
     #[doc = "Interrupt is enabled."]
-    IEF_1 = 0x01,
+    Ief1 = 0x01,
 }
 impl Ief {
     #[inline(always)]
@@ -298,9 +298,9 @@ impl From<Ief> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ier {
     #[doc = "Interrupt is disabled."]
-    IER_0 = 0x0,
+    Ier0 = 0x0,
     #[doc = "Interrupt is enabled."]
-    IER_1 = 0x01,
+    Ier1 = 0x01,
 }
 impl Ier {
     #[inline(always)]
@@ -329,9 +329,9 @@ impl From<Ier> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Inv {
     #[doc = "Does not invert the comparator output."]
-    INV_0 = 0x0,
+    Inv0 = 0x0,
     #[doc = "Inverts the comparator output."]
-    INV_1 = 0x01,
+    Inv1 = 0x01,
 }
 impl Inv {
     #[inline(always)]
@@ -360,21 +360,21 @@ impl From<Inv> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Msel {
     #[doc = "IN0."]
-    MSEL_0 = 0x0,
+    Msel0 = 0x0,
     #[doc = "IN1."]
-    MSEL_1 = 0x01,
+    Msel1 = 0x01,
     #[doc = "IN2."]
-    MSEL_2 = 0x02,
+    Msel2 = 0x02,
     #[doc = "IN3."]
-    MSEL_3 = 0x03,
+    Msel3 = 0x03,
     #[doc = "IN4."]
-    MSEL_4 = 0x04,
+    Msel4 = 0x04,
     #[doc = "IN5."]
-    MSEL_5 = 0x05,
+    Msel5 = 0x05,
     #[doc = "IN6."]
-    MSEL_6 = 0x06,
+    Msel6 = 0x06,
     #[doc = "IN7."]
-    MSEL_7 = 0x07,
+    Msel7 = 0x07,
 }
 impl Msel {
     #[inline(always)]
@@ -403,9 +403,9 @@ impl From<Msel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ope {
     #[doc = "CMPO is not available on the associated CMPO output pin. If the comparator does not own the pin, this field has no effect."]
-    OPE_0 = 0x0,
+    Ope0 = 0x0,
     #[doc = "CMPO is available on the associated CMPO output pin. The comparator output (CMPO) is driven out on the associated CMPO output pin if the comparator owns the pin. If the comparator does not own the field, this bit has no effect."]
-    OPE_1 = 0x01,
+    Ope1 = 0x01,
 }
 impl Ope {
     #[inline(always)]
@@ -434,9 +434,9 @@ impl From<Ope> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pmode {
     #[doc = "Low-Speed (LS) Comparison mode selected. In this mode, CMP has slower output propagation delay and lower current consumption."]
-    PMODE_0 = 0x0,
+    Pmode0 = 0x0,
     #[doc = "High-Speed (HS) Comparison mode selected. In this mode, CMP has faster output propagation delay and higher current consumption."]
-    PMODE_1 = 0x01,
+    Pmode1 = 0x01,
 }
 impl Pmode {
     #[inline(always)]
@@ -465,21 +465,21 @@ impl From<Pmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Psel {
     #[doc = "IN0."]
-    PSEL_0 = 0x0,
+    Psel0 = 0x0,
     #[doc = "IN1."]
-    PSEL_1 = 0x01,
+    Psel1 = 0x01,
     #[doc = "IN2."]
-    PSEL_2 = 0x02,
+    Psel2 = 0x02,
     #[doc = "IN3."]
-    PSEL_3 = 0x03,
+    Psel3 = 0x03,
     #[doc = "IN4."]
-    PSEL_4 = 0x04,
+    Psel4 = 0x04,
     #[doc = "IN5."]
-    PSEL_5 = 0x05,
+    Psel5 = 0x05,
     #[doc = "IN6."]
-    PSEL_6 = 0x06,
+    Psel6 = 0x06,
     #[doc = "IN7."]
-    PSEL_7 = 0x07,
+    Psel7 = 0x07,
 }
 impl Psel {
     #[inline(always)]
@@ -508,9 +508,9 @@ impl From<Psel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Se {
     #[doc = "Sampling mode is not selected."]
-    SE_0 = 0x0,
+    Se0 = 0x0,
     #[doc = "Sampling mode is selected."]
-    SE_1 = 0x01,
+    Se1 = 0x01,
 }
 impl Se {
     #[inline(always)]
@@ -539,9 +539,9 @@ impl From<Se> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Vrsel {
     #[doc = "Vin1 is selected as resistor ladder network supply reference."]
-    VRSEL_0 = 0x0,
+    Vrsel0 = 0x0,
     #[doc = "Vin2 is selected as resistor ladder network supply reference."]
-    VRSEL_1 = 0x01,
+    Vrsel1 = 0x01,
 }
 impl Vrsel {
     #[inline(always)]
@@ -570,9 +570,9 @@ impl From<Vrsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum We {
     #[doc = "Windowing mode is not selected."]
-    WE_0 = 0x0,
+    We0 = 0x0,
     #[doc = "Windowing mode is selected."]
-    WE_1 = 0x01,
+    We1 = 0x01,
 }
 impl We {
     #[inline(always)]

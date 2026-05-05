@@ -6,13 +6,13 @@ impl Fccob {
     #[doc = "CCOBn."]
     #[must_use]
     #[inline(always)]
-    pub const fn ccobn(&self) -> u32 {
+    pub const fn cco_bn(&self) -> u32 {
         let val = (self.0 >> 0usize) & 0xffff_ffff;
         val as u32
     }
     #[doc = "CCOBn."]
     #[inline(always)]
-    pub const fn set_ccobn(&mut self, val: u32) {
+    pub const fn set_cco_bn(&mut self, val: u32) {
         self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
     }
 }
@@ -25,14 +25,14 @@ impl Default for Fccob {
 impl core::fmt::Debug for Fccob {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("Fccob")
-            .field("ccobn", &self.ccobn())
+            .field("cco_bn", &self.cco_bn())
             .finish()
     }
 }
 #[cfg(feature = "defmt")]
 impl defmt::Format for Fccob {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "Fccob {{ ccobn: {=u32:?} }}", self.ccobn())
+        defmt::write!(f, "Fccob {{ cco_bn: {=u32:?} }}", self.cco_bn())
     }
 }
 #[doc = "Flash Configuration Register."]

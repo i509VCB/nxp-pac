@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DtcmErrSigEn {
     #[doc = "Masked."]
-    DTCM_ERR_SIG_EN_0 = 0x0,
+    DtcmErrSigEn0 = 0x0,
     #[doc = "Enabled."]
-    DTCM_ERR_SIG_EN_1 = 0x01,
+    DtcmErrSigEn1 = 0x01,
 }
 impl DtcmErrSigEn {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<DtcmErrSigEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DtcmErrStatEn {
     #[doc = "Masked."]
-    DTCM_ERR_STAT_EN_0 = 0x0,
+    DtcmErrStatEn0 = 0x0,
     #[doc = "Enabled."]
-    DTCM_ERR_STAT_EN_1 = 0x01,
+    DtcmErrStatEn1 = 0x01,
 }
 impl DtcmErrStatEn {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<DtcmErrStatEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DtcmErrStatus {
     #[doc = "DTCM access error does not happen."]
-    DTCM_ERR_STATUS_0 = 0x0,
+    DtcmErrStatus0 = 0x0,
     #[doc = "DTCM access error happens."]
-    DTCM_ERR_STATUS_1 = 0x01,
+    DtcmErrStatus1 = 0x01,
 }
 impl DtcmErrStatus {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<DtcmErrStatus> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DtcmMamSigEn {
     #[doc = "Masked."]
-    DTCM_MAM_SIG_EN_0 = 0x0,
+    DtcmMamSigEn0 = 0x0,
     #[doc = "Enabled."]
-    DTCM_MAM_SIG_EN_1 = 0x01,
+    DtcmMamSigEn1 = 0x01,
 }
 impl DtcmMamSigEn {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<DtcmMamSigEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DtcmMamStatEn {
     #[doc = "Masked."]
-    DTCM_MAM_STAT_EN_0 = 0x0,
+    DtcmMamStatEn0 = 0x0,
     #[doc = "Enabled."]
-    DTCM_MAM_STAT_EN_1 = 0x01,
+    DtcmMamStatEn1 = 0x01,
 }
 impl DtcmMamStatEn {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<DtcmMamStatEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DtcmMamStatus {
     #[doc = "DTCM did not access magic address."]
-    DTCM_MAM_STATUS_0 = 0x0,
+    DtcmMamStatus0 = 0x0,
     #[doc = "DTCM accessed magic address."]
-    DTCM_MAM_STATUS_1 = 0x01,
+    DtcmMamStatus1 = 0x01,
 }
 impl DtcmMamStatus {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<DtcmMamStatus> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DtcmWrRdSel {
     #[doc = "When DTCM read access hits magic address, it will generate interrupt."]
-    DTCM_WR_RD_SEL_0 = 0x0,
+    DtcmWrRdSel0 = 0x0,
     #[doc = "When DTCM write access hits magic address, it will generate interrupt."]
-    DTCM_WR_RD_SEL_1 = 0x01,
+    DtcmWrRdSel1 = 0x01,
 }
 impl DtcmWrRdSel {
     #[inline(always)]
@@ -220,9 +220,9 @@ impl From<DtcmWrRdSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ItcmErrSigEn {
     #[doc = "Masked."]
-    ITCM_ERR_SIG_EN_0 = 0x0,
+    ItcmErrSigEn0 = 0x0,
     #[doc = "Enabled."]
-    ITCM_ERR_SIG_EN_1 = 0x01,
+    ItcmErrSigEn1 = 0x01,
 }
 impl ItcmErrSigEn {
     #[inline(always)]
@@ -251,9 +251,9 @@ impl From<ItcmErrSigEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ItcmErrStatEn {
     #[doc = "Masked."]
-    ITCM_ERR_STAT_EN_0 = 0x0,
+    ItcmErrStatEn0 = 0x0,
     #[doc = "Enabled."]
-    ITCM_ERR_STAT_EN_1 = 0x01,
+    ItcmErrStatEn1 = 0x01,
 }
 impl ItcmErrStatEn {
     #[inline(always)]
@@ -282,9 +282,9 @@ impl From<ItcmErrStatEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ItcmErrStatus {
     #[doc = "ITCM access error does not happen."]
-    ITCM_ERR_STATUS_0 = 0x0,
+    ItcmErrStatus0 = 0x0,
     #[doc = "ITCM access error happens."]
-    ITCM_ERR_STATUS_1 = 0x01,
+    ItcmErrStatus1 = 0x01,
 }
 impl ItcmErrStatus {
     #[inline(always)]
@@ -313,9 +313,9 @@ impl From<ItcmErrStatus> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ItcmMamSigEn {
     #[doc = "Masked."]
-    ITCM_MAM_SIG_EN_0 = 0x0,
+    ItcmMamSigEn0 = 0x0,
     #[doc = "Enabled."]
-    ITCM_MAM_SIG_EN_1 = 0x01,
+    ItcmMamSigEn1 = 0x01,
 }
 impl ItcmMamSigEn {
     #[inline(always)]
@@ -344,9 +344,9 @@ impl From<ItcmMamSigEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ItcmMamStatEn {
     #[doc = "Masked."]
-    ITCM_MAM_STAT_EN_0 = 0x0,
+    ItcmMamStatEn0 = 0x0,
     #[doc = "Enabled."]
-    ITCM_MAM_STAT_EN_1 = 0x01,
+    ItcmMamStatEn1 = 0x01,
 }
 impl ItcmMamStatEn {
     #[inline(always)]
@@ -375,9 +375,9 @@ impl From<ItcmMamStatEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ItcmMamStatus {
     #[doc = "ITCM did not access magic address."]
-    ITCM_MAM_STATUS_0 = 0x0,
+    ItcmMamStatus0 = 0x0,
     #[doc = "ITCM accessed magic address."]
-    ITCM_MAM_STATUS_1 = 0x01,
+    ItcmMamStatus1 = 0x01,
 }
 impl ItcmMamStatus {
     #[inline(always)]
@@ -406,9 +406,9 @@ impl From<ItcmMamStatus> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ItcmWrRdSel {
     #[doc = "When ITCM read access hits magic address, it will generate interrupt."]
-    ITCM_WR_RD_SEL_0 = 0x0,
+    ItcmWrRdSel0 = 0x0,
     #[doc = "When ITCM write access hits magic address, it will generate interrupt."]
-    ITCM_WR_RD_SEL_1 = 0x01,
+    ItcmWrRdSel1 = 0x01,
 }
 impl ItcmWrRdSel {
     #[inline(always)]
@@ -437,9 +437,9 @@ impl From<ItcmWrRdSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum OcramErrSigEn {
     #[doc = "Masked."]
-    OCRAM_ERR_SIG_EN_0 = 0x0,
+    OcramErrSigEn0 = 0x0,
     #[doc = "Enabled."]
-    OCRAM_ERR_SIG_EN_1 = 0x01,
+    OcramErrSigEn1 = 0x01,
 }
 impl OcramErrSigEn {
     #[inline(always)]
@@ -468,9 +468,9 @@ impl From<OcramErrSigEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum OcramErrStatEn {
     #[doc = "Masked."]
-    OCRAM_ERR_STAT_EN_0 = 0x0,
+    OcramErrStatEn0 = 0x0,
     #[doc = "Enabled."]
-    OCRAM_ERR_STAT_EN_1 = 0x01,
+    OcramErrStatEn1 = 0x01,
 }
 impl OcramErrStatEn {
     #[inline(always)]
@@ -499,9 +499,9 @@ impl From<OcramErrStatEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum OcramErrStatus {
     #[doc = "OCRAM access error does not happen."]
-    OCRAM_ERR_STATUS_0 = 0x0,
+    OcramErrStatus0 = 0x0,
     #[doc = "OCRAM access error happens."]
-    OCRAM_ERR_STATUS_1 = 0x01,
+    OcramErrStatus1 = 0x01,
 }
 impl OcramErrStatus {
     #[inline(always)]
@@ -530,9 +530,9 @@ impl From<OcramErrStatus> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum OcramMamSigEn {
     #[doc = "Masked."]
-    OCRAM_MAM_SIG_EN_0 = 0x0,
+    OcramMamSigEn0 = 0x0,
     #[doc = "Enabled."]
-    OCRAM_MAM_SIG_EN_1 = 0x01,
+    OcramMamSigEn1 = 0x01,
 }
 impl OcramMamSigEn {
     #[inline(always)]
@@ -561,9 +561,9 @@ impl From<OcramMamSigEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum OcramMamStatEn {
     #[doc = "Masked."]
-    OCRAM_MAM_STAT_EN_0 = 0x0,
+    OcramMamStatEn0 = 0x0,
     #[doc = "Enabled."]
-    OCRAM_MAM_STAT_EN_1 = 0x01,
+    OcramMamStatEn1 = 0x01,
 }
 impl OcramMamStatEn {
     #[inline(always)]
@@ -592,9 +592,9 @@ impl From<OcramMamStatEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum OcramMamStatus {
     #[doc = "OCRAM did not access magic address."]
-    OCRAM_MAM_STATUS_0 = 0x0,
+    OcramMamStatus0 = 0x0,
     #[doc = "OCRAM accessed magic address."]
-    OCRAM_MAM_STATUS_1 = 0x01,
+    OcramMamStatus1 = 0x01,
 }
 impl OcramMamStatus {
     #[inline(always)]
@@ -623,9 +623,9 @@ impl From<OcramMamStatus> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum OcramWrRdSel {
     #[doc = "When OCRAM read access hits magic address, it will generate interrupt."]
-    OCRAM_WR_RD_SEL_0 = 0x0,
+    OcramWrRdSel0 = 0x0,
     #[doc = "When OCRAM write access hits magic address, it will generate interrupt."]
-    OCRAM_WR_RD_SEL_1 = 0x01,
+    OcramWrRdSel1 = 0x01,
 }
 impl OcramWrRdSel {
     #[inline(always)]
@@ -654,9 +654,9 @@ impl From<OcramWrRdSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TcmRwaitEn {
     #[doc = "TCM read fast mode: Read RAM accesses are expected to be finished in 1-cycle."]
-    TCM_RWAIT_EN_0 = 0x0,
+    TcmRwaitEn0 = 0x0,
     #[doc = "TCM read wait mode: Read RAM accesses are expected to be finished in 2-cycles."]
-    TCM_RWAIT_EN_1 = 0x01,
+    TcmRwaitEn1 = 0x01,
 }
 impl TcmRwaitEn {
     #[inline(always)]
@@ -685,9 +685,9 @@ impl From<TcmRwaitEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TcmWwaitEn {
     #[doc = "TCM write fast mode: Write RAM accesses are expected to be finished in 1-cycle."]
-    TCM_WWAIT_EN_0 = 0x0,
+    TcmWwaitEn0 = 0x0,
     #[doc = "TCM write wait mode: Write RAM accesses are expected to be finished in 2-cycles."]
-    TCM_WWAIT_EN_1 = 0x01,
+    TcmWwaitEn1 = 0x01,
 }
 impl TcmWwaitEn {
     #[inline(always)]

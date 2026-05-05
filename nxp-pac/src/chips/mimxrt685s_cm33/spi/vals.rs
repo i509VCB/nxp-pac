@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cpha {
     #[doc = "Change. The SPI captures serial data on the first clock transition of the transfer (when the clock changes away from the rest state). Data is changed on the following edge."]
-    CHANGE = 0x0,
+    Change = 0x0,
     #[doc = "Capture. The SPI changes serial data on the first clock transition of the transfer (when the clock changes away from the rest state). Data is captured on the following edge."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl Cpha {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Cpha> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cpol {
     #[doc = "Low. The rest state of the clock (between transfers) is low."]
-    LOW = 0x0,
+    Low = 0x0,
     #[doc = "High. The rest state of the clock (between transfers) is high."]
-    HIGH = 0x01,
+    High = 0x01,
 }
 impl Cpol {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Cpol> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lsbf {
     #[doc = "Standard. Data is transmitted and received in standard MSB first order."]
-    STANDARD = 0x0,
+    Standard = 0x0,
     #[doc = "Reverse. Data is transmitted and received in reverse order (LSB first)."]
-    REVERSE = 0x01,
+    Reverse = 0x01,
 }
 impl Lsbf {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Lsbf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Master {
     #[doc = "Slave mode. The SPI will operate in slave mode. SCK, MOSI, and the SSEL signals are inputs, MISO is an output."]
-    SLAVE_MODE = 0x0,
+    SlaveMode = 0x0,
     #[doc = "Master mode. The SPI will operate in master mode. SCK, MOSI, and the SSEL signals are outputs, MISO is an input."]
-    MASTER_MODE = 0x01,
+    MasterMode = 0x01,
 }
 impl Master {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<Master> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rxignore {
     #[doc = "Read received data. Received data must be read in order to allow transmission to progress. SPI transmit will halt when the receive data FIFO is full. In slave mode, an overrun error will occur if received data is not read before new data is received."]
-    READ = 0x0,
+    Read = 0x0,
     #[doc = "Ignore received data. Received data is ignored, allowing transmission without reading unneeded received data. No receiver flags are generated."]
-    IGNORE = 0x01,
+    Ignore = 0x01,
 }
 impl Rxignore {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<Rxignore> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Spol0 {
     #[doc = "Low. The SSEL0 pin is active low."]
-    LOW = 0x0,
+    Low = 0x0,
     #[doc = "High. The SSEL0 pin is active high."]
-    HIGH = 0x01,
+    High = 0x01,
 }
 impl Spol0 {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<Spol0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Spol1 {
     #[doc = "Low. The SSEL1 pin is active low."]
-    LOW = 0x0,
+    Low = 0x0,
     #[doc = "High. The SSEL1 pin is active high."]
-    HIGH = 0x01,
+    High = 0x01,
 }
 impl Spol1 {
     #[inline(always)]
@@ -220,9 +220,9 @@ impl From<Spol1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Spol2 {
     #[doc = "Low. The SSEL2 pin is active low."]
-    LOW = 0x0,
+    Low = 0x0,
     #[doc = "High. The SSEL2 pin is active high."]
-    HIGH = 0x01,
+    High = 0x01,
 }
 impl Spol2 {
     #[inline(always)]
@@ -251,9 +251,9 @@ impl From<Spol2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Spol3 {
     #[doc = "Low. The SSEL3 pin is active low."]
-    LOW = 0x0,
+    Low = 0x0,
     #[doc = "High. The SSEL3 pin is active high."]
-    HIGH = 0x01,
+    High = 0x01,
 }
 impl Spol3 {
     #[inline(always)]
@@ -282,9 +282,9 @@ impl From<Spol3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Txignore {
     #[doc = "Write transmit data. Transmit data must be written for each data exchange between master and slave. In slave mode, an underrun error occurs if transmit data is not provided before needed in a data frame."]
-    WRITETXDATA = 0x0,
+    Writetxdata = 0x0,
     #[doc = "Ignore transmit data. Data can be received without transmitting data (after FIFOWR has been initialized to set TXIGNORE). No transmitter flags are generated. When configured with TXIGNORE = 1, the slave sets the data to always 0."]
-    IGNORETXDATA = 0x01,
+    Ignoretxdata = 0x01,
 }
 impl Txignore {
     #[inline(always)]
@@ -313,9 +313,9 @@ impl From<Txignore> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Txssel0N {
     #[doc = "SSEL0 asserted."]
-    ASSERTED = 0x0,
+    Asserted = 0x0,
     #[doc = "SSEL0 not asserted."]
-    NOT_ASSERTED = 0x01,
+    NotAsserted = 0x01,
 }
 impl Txssel0N {
     #[inline(always)]
@@ -344,9 +344,9 @@ impl From<Txssel0N> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Txssel1N {
     #[doc = "SSEL1 asserted."]
-    ASSERTED = 0x0,
+    Asserted = 0x0,
     #[doc = "SSEL1 not asserted."]
-    NOT_ASSERTED = 0x01,
+    NotAsserted = 0x01,
 }
 impl Txssel1N {
     #[inline(always)]
@@ -375,9 +375,9 @@ impl From<Txssel1N> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Txssel2N {
     #[doc = "SSEL2 asserted."]
-    ASSERTED = 0x0,
+    Asserted = 0x0,
     #[doc = "SSEL2 not asserted."]
-    NOT_ASSERTED = 0x01,
+    NotAsserted = 0x01,
 }
 impl Txssel2N {
     #[inline(always)]
@@ -406,9 +406,9 @@ impl From<Txssel2N> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Txssel3N {
     #[doc = "SSEL3 asserted."]
-    ASSERTED = 0x0,
+    Asserted = 0x0,
     #[doc = "SSEL3 not asserted."]
-    NOT_ASSERTED = 0x01,
+    NotAsserted = 0x01,
 }
 impl Txssel3N {
     #[inline(always)]

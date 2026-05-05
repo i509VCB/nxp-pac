@@ -1,7 +1,7 @@
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
 #![allow(non_upper_case_globals)]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (859f02b 2026-04-15))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (e5ab29f 2026-04-30))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct Data {
     ptr: *mut u8,

@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Active {
     #[doc = "The sequence is not running."]
-    SEQ_NOT_RUNNING = 0x0,
+    SeqNotRunning = 0x0,
     #[doc = "The sequence is running."]
-    SEQ_RUNNING = 0x01,
+    SeqRunning = 0x01,
 }
 impl Active {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Active> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bc12 {
     #[doc = "Compatible with BC1.1."]
-    BC11 = 0x0,
+    Bc11 = 0x0,
     #[doc = "Compatible with BC1.2 (default)."]
-    BC12 = 0x01,
+    Bc12 = 0x01,
 }
 impl Bc12 {
     #[inline(always)]
@@ -66,25 +66,25 @@ impl From<Bc12> for u8 {
 pub enum CheckDm {
     _RESERVED_0 = 0x0,
     #[doc = "1 ms - 15 ms."]
-    MS_1 = 0x01,
+    Ms1 = 0x01,
     #[doc = "1 ms - 15 ms."]
-    MS_2 = 0x02,
+    Ms2 = 0x02,
     #[doc = "1 ms - 15 ms."]
-    MS_3 = 0x03,
+    Ms3 = 0x03,
     #[doc = "1 ms - 15 ms."]
-    MS_4 = 0x04,
+    Ms4 = 0x04,
     #[doc = "1 ms - 15 ms."]
-    MS_5 = 0x05,
+    Ms5 = 0x05,
     #[doc = "1 ms - 15 ms."]
-    MS_6 = 0x06,
+    Ms6 = 0x06,
     #[doc = "1 ms - 15 ms."]
-    MS_7 = 0x07,
+    Ms7 = 0x07,
     #[doc = "1 ms - 15 ms."]
-    MS_8 = 0x08,
+    Ms8 = 0x08,
     #[doc = "1 ms - 15 ms."]
-    MS_9 = 0x09,
+    Ms9 = 0x09,
     #[doc = "1 ms - 15 ms."]
-    MS_10 = 0x0a,
+    Ms10 = 0x0a,
     _RESERVED_b = 0x0b,
     _RESERVED_c = 0x0c,
     _RESERVED_d = 0x0d,
@@ -118,9 +118,9 @@ impl From<CheckDm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ClockUnit {
     #[doc = "kHz Speed (between 4 kHz and 1023 kHz)."]
-    KHZ_CLK = 0x0,
+    KhzClk = 0x0,
     #[doc = "MHz Speed (between 1 MHz and 1023 MHz)."]
-    MHZ_CLK = 0x01,
+    MhzClk = 0x01,
 }
 impl ClockUnit {
     #[inline(always)]
@@ -149,9 +149,9 @@ impl From<ClockUnit> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Iack {
     #[doc = "Do not clear the interrupt."]
-    INT_NOCLEAR = 0x0,
+    IntNoclear = 0x0,
     #[doc = "Clear the IF field (interrupt flag)."]
-    INT_CLEAR = 0x01,
+    IntClear = 0x01,
 }
 impl Iack {
     #[inline(always)]
@@ -180,9 +180,9 @@ impl From<Iack> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ie {
     #[doc = "Disable interrupts to the system."]
-    DIS_INT = 0x0,
+    DisInt = 0x0,
     #[doc = "Enable interrupts to the system."]
-    EN_INT = 0x01,
+    EnInt = 0x01,
 }
 impl Ie {
     #[inline(always)]
@@ -211,9 +211,9 @@ impl From<Ie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum If {
     #[doc = "No interrupt is pending."]
-    INT_PEND = 0x0,
+    IntPend = 0x0,
     #[doc = "An interrupt is pending."]
-    INT_NOPEND = 0x01,
+    IntNopend = 0x01,
 }
 impl If {
     #[inline(always)]
@@ -242,13 +242,13 @@ impl From<If> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ps {
     #[doc = "No overrides. Field must remain at this value during normal USB data communication to prevent unexpected conditions on USB_DP and USB_DM pins. (Default)."]
-    NO_OVERRIDE = 0x0,
+    NoOverride = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "Enables VDP_SRC voltage source for the USB_DP pin and IDM_SINK current source for the USB_DM pin."]
-    PRI_DET_OVERRIDE = 0x02,
+    PriDetOverride = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Enables VDM_SRC voltage source only."]
-    CDP_ADVERT = 0x04,
+    CdpAdvert = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
@@ -280,13 +280,13 @@ impl From<Ps> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SeqRes {
     #[doc = "No results to report."]
-    NO_RESULT = 0x0,
+    NoResult = 0x0,
     #[doc = "Attached to an SDP. Must comply with USB 2.0 by drawing only 2.5 mA (max) until connected."]
-    CONN_SDP = 0x01,
+    ConnSdp = 0x01,
     #[doc = "Attached to a charging port. The exact meaning depends on the STATUS\\[SEQ_STAT\\] field (value 0: Attached to either a CDP or a DCP. The charger type detection has not completed. value 1: Attached to a CDP. The charger type detection has completed.)."]
-    CONN_CP = 0x02,
+    ConnCp = 0x02,
     #[doc = "Attached to a DCP."]
-    CONN_DCP = 0x03,
+    ConnDcp = 0x03,
 }
 impl SeqRes {
     #[inline(always)]
@@ -315,13 +315,13 @@ impl From<SeqRes> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SeqStat {
     #[doc = "The module is either not enabled, or the module is enabled but the data pins have not yet been detected."]
-    NO_DATA_PIN_CONN = 0x0,
+    NoDataPinConn = 0x0,
     #[doc = "Data pin contact detection is complete."]
-    DATA_PIN_CONN = 0x01,
+    DataPinConn = 0x01,
     #[doc = "Charging port detection is complete."]
-    CP_DET_DONE = 0x02,
+    CpDetDone = 0x02,
     #[doc = "Charger type detection is complete."]
-    CT_DET_DONE = 0x03,
+    CtDetDone = 0x03,
 }
 impl SeqStat {
     #[inline(always)]
@@ -350,9 +350,9 @@ impl From<SeqStat> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sr {
     #[doc = "Do not perform a software reset."]
-    NO_RESET = 0x0,
+    NoReset = 0x0,
     #[doc = "Perform a software reset."]
-    SW_RESET = 0x01,
+    SwReset = 0x01,
 }
 impl Sr {
     #[inline(always)]
@@ -381,25 +381,25 @@ impl From<Sr> for u8 {
 pub struct TdcdDbnc(u16);
 impl TdcdDbnc {
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_1: Self = Self(0x01);
+    pub const Ms1: Self = Self(0x01);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_2: Self = Self(0x02);
+    pub const Ms2: Self = Self(0x02);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_3: Self = Self(0x03);
+    pub const Ms3: Self = Self(0x03);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_4: Self = Self(0x04);
+    pub const Ms4: Self = Self(0x04);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_5: Self = Self(0x05);
+    pub const Ms5: Self = Self(0x05);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_6: Self = Self(0x06);
+    pub const Ms6: Self = Self(0x06);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_7: Self = Self(0x07);
+    pub const Ms7: Self = Self(0x07);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_8: Self = Self(0x08);
+    pub const Ms8: Self = Self(0x08);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_9: Self = Self(0x09);
+    pub const Ms9: Self = Self(0x09);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_10: Self = Self(0x0a);
+    pub const Ms10: Self = Self(0x0a);
 }
 impl TdcdDbnc {
     pub const fn from_bits(val: u16) -> TdcdDbnc {
@@ -412,16 +412,16 @@ impl TdcdDbnc {
 impl core::fmt::Debug for TdcdDbnc {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("MS_1"),
-            0x02 => f.write_str("MS_2"),
-            0x03 => f.write_str("MS_3"),
-            0x04 => f.write_str("MS_4"),
-            0x05 => f.write_str("MS_5"),
-            0x06 => f.write_str("MS_6"),
-            0x07 => f.write_str("MS_7"),
-            0x08 => f.write_str("MS_8"),
-            0x09 => f.write_str("MS_9"),
-            0x0a => f.write_str("MS_10"),
+            0x01 => f.write_str("Ms1"),
+            0x02 => f.write_str("Ms2"),
+            0x03 => f.write_str("Ms3"),
+            0x04 => f.write_str("Ms4"),
+            0x05 => f.write_str("Ms5"),
+            0x06 => f.write_str("Ms6"),
+            0x07 => f.write_str("Ms7"),
+            0x08 => f.write_str("Ms8"),
+            0x09 => f.write_str("Ms9"),
+            0x0a => f.write_str("Ms10"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -430,16 +430,16 @@ impl core::fmt::Debug for TdcdDbnc {
 impl defmt::Format for TdcdDbnc {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "MS_1"),
-            0x02 => defmt::write!(f, "MS_2"),
-            0x03 => defmt::write!(f, "MS_3"),
-            0x04 => defmt::write!(f, "MS_4"),
-            0x05 => defmt::write!(f, "MS_5"),
-            0x06 => defmt::write!(f, "MS_6"),
-            0x07 => defmt::write!(f, "MS_7"),
-            0x08 => defmt::write!(f, "MS_8"),
-            0x09 => defmt::write!(f, "MS_9"),
-            0x0a => defmt::write!(f, "MS_10"),
+            0x01 => defmt::write!(f, "Ms1"),
+            0x02 => defmt::write!(f, "Ms2"),
+            0x03 => defmt::write!(f, "Ms3"),
+            0x04 => defmt::write!(f, "Ms4"),
+            0x05 => defmt::write!(f, "Ms5"),
+            0x06 => defmt::write!(f, "Ms6"),
+            0x07 => defmt::write!(f, "Ms7"),
+            0x08 => defmt::write!(f, "Ms8"),
+            0x09 => defmt::write!(f, "Ms9"),
+            0x0a => defmt::write!(f, "Ms10"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -461,25 +461,25 @@ impl From<TdcdDbnc> for u16 {
 pub struct TseqInit(u16);
 impl TseqInit {
     #[doc = "0 ms - 1023 ms."]
-    pub const MS_0: Self = Self(0x0);
+    pub const Ms0: Self = Self(0x0);
     #[doc = "0 ms - 1023 ms."]
-    pub const MS_1: Self = Self(0x01);
+    pub const Ms1: Self = Self(0x01);
     #[doc = "0 ms - 1023 ms."]
-    pub const MS_2: Self = Self(0x02);
+    pub const Ms2: Self = Self(0x02);
     #[doc = "0 ms - 1023 ms."]
-    pub const MS_3: Self = Self(0x03);
+    pub const Ms3: Self = Self(0x03);
     #[doc = "0 ms - 1023 ms."]
-    pub const MS_4: Self = Self(0x04);
+    pub const Ms4: Self = Self(0x04);
     #[doc = "0 ms - 1023 ms."]
-    pub const MS_5: Self = Self(0x05);
+    pub const Ms5: Self = Self(0x05);
     #[doc = "0 ms - 1023 ms."]
-    pub const MS_6: Self = Self(0x06);
+    pub const Ms6: Self = Self(0x06);
     #[doc = "0 ms - 1023 ms."]
-    pub const MS_7: Self = Self(0x07);
+    pub const Ms7: Self = Self(0x07);
     #[doc = "0 ms - 1023 ms."]
-    pub const MS_8: Self = Self(0x08);
+    pub const Ms8: Self = Self(0x08);
     #[doc = "0 ms - 1023 ms."]
-    pub const MS_9: Self = Self(0x09);
+    pub const Ms9: Self = Self(0x09);
 }
 impl TseqInit {
     pub const fn from_bits(val: u16) -> TseqInit {
@@ -492,16 +492,16 @@ impl TseqInit {
 impl core::fmt::Debug for TseqInit {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("MS_0"),
-            0x01 => f.write_str("MS_1"),
-            0x02 => f.write_str("MS_2"),
-            0x03 => f.write_str("MS_3"),
-            0x04 => f.write_str("MS_4"),
-            0x05 => f.write_str("MS_5"),
-            0x06 => f.write_str("MS_6"),
-            0x07 => f.write_str("MS_7"),
-            0x08 => f.write_str("MS_8"),
-            0x09 => f.write_str("MS_9"),
+            0x0 => f.write_str("Ms0"),
+            0x01 => f.write_str("Ms1"),
+            0x02 => f.write_str("Ms2"),
+            0x03 => f.write_str("Ms3"),
+            0x04 => f.write_str("Ms4"),
+            0x05 => f.write_str("Ms5"),
+            0x06 => f.write_str("Ms6"),
+            0x07 => f.write_str("Ms7"),
+            0x08 => f.write_str("Ms8"),
+            0x09 => f.write_str("Ms9"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -510,16 +510,16 @@ impl core::fmt::Debug for TseqInit {
 impl defmt::Format for TseqInit {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "MS_0"),
-            0x01 => defmt::write!(f, "MS_1"),
-            0x02 => defmt::write!(f, "MS_2"),
-            0x03 => defmt::write!(f, "MS_3"),
-            0x04 => defmt::write!(f, "MS_4"),
-            0x05 => defmt::write!(f, "MS_5"),
-            0x06 => defmt::write!(f, "MS_6"),
-            0x07 => defmt::write!(f, "MS_7"),
-            0x08 => defmt::write!(f, "MS_8"),
-            0x09 => defmt::write!(f, "MS_9"),
+            0x0 => defmt::write!(f, "Ms0"),
+            0x01 => defmt::write!(f, "Ms1"),
+            0x02 => defmt::write!(f, "Ms2"),
+            0x03 => defmt::write!(f, "Ms3"),
+            0x04 => defmt::write!(f, "Ms4"),
+            0x05 => defmt::write!(f, "Ms5"),
+            0x06 => defmt::write!(f, "Ms6"),
+            0x07 => defmt::write!(f, "Ms7"),
+            0x08 => defmt::write!(f, "Ms8"),
+            0x09 => defmt::write!(f, "Ms9"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -541,25 +541,25 @@ impl From<TseqInit> for u16 {
 pub struct TvdmsrcOn(u16);
 impl TvdmsrcOn {
     #[doc = "0 ms - 40 ms."]
-    pub const MS_0: Self = Self(0x0);
+    pub const Ms0: Self = Self(0x0);
     #[doc = "0 ms - 40 ms."]
-    pub const MS_1: Self = Self(0x01);
+    pub const Ms1: Self = Self(0x01);
     #[doc = "0 ms - 40 ms."]
-    pub const MS_2: Self = Self(0x02);
+    pub const Ms2: Self = Self(0x02);
     #[doc = "0 ms - 40 ms."]
-    pub const MS_3: Self = Self(0x03);
+    pub const Ms3: Self = Self(0x03);
     #[doc = "0 ms - 40 ms."]
-    pub const MS_4: Self = Self(0x04);
+    pub const Ms4: Self = Self(0x04);
     #[doc = "0 ms - 40 ms."]
-    pub const MS_5: Self = Self(0x05);
+    pub const Ms5: Self = Self(0x05);
     #[doc = "0 ms - 40 ms."]
-    pub const MS_6: Self = Self(0x06);
+    pub const Ms6: Self = Self(0x06);
     #[doc = "0 ms - 40 ms."]
-    pub const MS_7: Self = Self(0x07);
+    pub const Ms7: Self = Self(0x07);
     #[doc = "0 ms - 40 ms."]
-    pub const MS_8: Self = Self(0x08);
+    pub const Ms8: Self = Self(0x08);
     #[doc = "0 ms - 40 ms."]
-    pub const MS_9: Self = Self(0x09);
+    pub const Ms9: Self = Self(0x09);
 }
 impl TvdmsrcOn {
     pub const fn from_bits(val: u16) -> TvdmsrcOn {
@@ -572,16 +572,16 @@ impl TvdmsrcOn {
 impl core::fmt::Debug for TvdmsrcOn {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("MS_0"),
-            0x01 => f.write_str("MS_1"),
-            0x02 => f.write_str("MS_2"),
-            0x03 => f.write_str("MS_3"),
-            0x04 => f.write_str("MS_4"),
-            0x05 => f.write_str("MS_5"),
-            0x06 => f.write_str("MS_6"),
-            0x07 => f.write_str("MS_7"),
-            0x08 => f.write_str("MS_8"),
-            0x09 => f.write_str("MS_9"),
+            0x0 => f.write_str("Ms0"),
+            0x01 => f.write_str("Ms1"),
+            0x02 => f.write_str("Ms2"),
+            0x03 => f.write_str("Ms3"),
+            0x04 => f.write_str("Ms4"),
+            0x05 => f.write_str("Ms5"),
+            0x06 => f.write_str("Ms6"),
+            0x07 => f.write_str("Ms7"),
+            0x08 => f.write_str("Ms8"),
+            0x09 => f.write_str("Ms9"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -590,16 +590,16 @@ impl core::fmt::Debug for TvdmsrcOn {
 impl defmt::Format for TvdmsrcOn {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "MS_0"),
-            0x01 => defmt::write!(f, "MS_1"),
-            0x02 => defmt::write!(f, "MS_2"),
-            0x03 => defmt::write!(f, "MS_3"),
-            0x04 => defmt::write!(f, "MS_4"),
-            0x05 => defmt::write!(f, "MS_5"),
-            0x06 => defmt::write!(f, "MS_6"),
-            0x07 => defmt::write!(f, "MS_7"),
-            0x08 => defmt::write!(f, "MS_8"),
-            0x09 => defmt::write!(f, "MS_9"),
+            0x0 => defmt::write!(f, "Ms0"),
+            0x01 => defmt::write!(f, "Ms1"),
+            0x02 => defmt::write!(f, "Ms2"),
+            0x03 => defmt::write!(f, "Ms3"),
+            0x04 => defmt::write!(f, "Ms4"),
+            0x05 => defmt::write!(f, "Ms5"),
+            0x06 => defmt::write!(f, "Ms6"),
+            0x07 => defmt::write!(f, "Ms7"),
+            0x08 => defmt::write!(f, "Ms8"),
+            0x09 => defmt::write!(f, "Ms9"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -621,25 +621,25 @@ impl From<TvdmsrcOn> for u16 {
 pub struct TvdpsrcCon(u16);
 impl TvdpsrcCon {
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_1: Self = Self(0x01);
+    pub const Ms1: Self = Self(0x01);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_2: Self = Self(0x02);
+    pub const Ms2: Self = Self(0x02);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_3: Self = Self(0x03);
+    pub const Ms3: Self = Self(0x03);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_4: Self = Self(0x04);
+    pub const Ms4: Self = Self(0x04);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_5: Self = Self(0x05);
+    pub const Ms5: Self = Self(0x05);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_6: Self = Self(0x06);
+    pub const Ms6: Self = Self(0x06);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_7: Self = Self(0x07);
+    pub const Ms7: Self = Self(0x07);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_8: Self = Self(0x08);
+    pub const Ms8: Self = Self(0x08);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_9: Self = Self(0x09);
+    pub const Ms9: Self = Self(0x09);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_10: Self = Self(0x0a);
+    pub const Ms10: Self = Self(0x0a);
 }
 impl TvdpsrcCon {
     pub const fn from_bits(val: u16) -> TvdpsrcCon {
@@ -652,16 +652,16 @@ impl TvdpsrcCon {
 impl core::fmt::Debug for TvdpsrcCon {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("MS_1"),
-            0x02 => f.write_str("MS_2"),
-            0x03 => f.write_str("MS_3"),
-            0x04 => f.write_str("MS_4"),
-            0x05 => f.write_str("MS_5"),
-            0x06 => f.write_str("MS_6"),
-            0x07 => f.write_str("MS_7"),
-            0x08 => f.write_str("MS_8"),
-            0x09 => f.write_str("MS_9"),
-            0x0a => f.write_str("MS_10"),
+            0x01 => f.write_str("Ms1"),
+            0x02 => f.write_str("Ms2"),
+            0x03 => f.write_str("Ms3"),
+            0x04 => f.write_str("Ms4"),
+            0x05 => f.write_str("Ms5"),
+            0x06 => f.write_str("Ms6"),
+            0x07 => f.write_str("Ms7"),
+            0x08 => f.write_str("Ms8"),
+            0x09 => f.write_str("Ms9"),
+            0x0a => f.write_str("Ms10"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -670,16 +670,16 @@ impl core::fmt::Debug for TvdpsrcCon {
 impl defmt::Format for TvdpsrcCon {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "MS_1"),
-            0x02 => defmt::write!(f, "MS_2"),
-            0x03 => defmt::write!(f, "MS_3"),
-            0x04 => defmt::write!(f, "MS_4"),
-            0x05 => defmt::write!(f, "MS_5"),
-            0x06 => defmt::write!(f, "MS_6"),
-            0x07 => defmt::write!(f, "MS_7"),
-            0x08 => defmt::write!(f, "MS_8"),
-            0x09 => defmt::write!(f, "MS_9"),
-            0x0a => defmt::write!(f, "MS_10"),
+            0x01 => defmt::write!(f, "Ms1"),
+            0x02 => defmt::write!(f, "Ms2"),
+            0x03 => defmt::write!(f, "Ms3"),
+            0x04 => defmt::write!(f, "Ms4"),
+            0x05 => defmt::write!(f, "Ms5"),
+            0x06 => defmt::write!(f, "Ms6"),
+            0x07 => defmt::write!(f, "Ms7"),
+            0x08 => defmt::write!(f, "Ms8"),
+            0x09 => defmt::write!(f, "Ms9"),
+            0x0a => defmt::write!(f, "Ms10"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -701,25 +701,25 @@ impl From<TvdpsrcCon> for u16 {
 pub struct TvdpsrcOn(u16);
 impl TvdpsrcOn {
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_1: Self = Self(0x01);
+    pub const Ms1: Self = Self(0x01);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_2: Self = Self(0x02);
+    pub const Ms2: Self = Self(0x02);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_3: Self = Self(0x03);
+    pub const Ms3: Self = Self(0x03);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_4: Self = Self(0x04);
+    pub const Ms4: Self = Self(0x04);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_5: Self = Self(0x05);
+    pub const Ms5: Self = Self(0x05);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_6: Self = Self(0x06);
+    pub const Ms6: Self = Self(0x06);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_7: Self = Self(0x07);
+    pub const Ms7: Self = Self(0x07);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_8: Self = Self(0x08);
+    pub const Ms8: Self = Self(0x08);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_9: Self = Self(0x09);
+    pub const Ms9: Self = Self(0x09);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_10: Self = Self(0x0a);
+    pub const Ms10: Self = Self(0x0a);
 }
 impl TvdpsrcOn {
     pub const fn from_bits(val: u16) -> TvdpsrcOn {
@@ -732,16 +732,16 @@ impl TvdpsrcOn {
 impl core::fmt::Debug for TvdpsrcOn {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("MS_1"),
-            0x02 => f.write_str("MS_2"),
-            0x03 => f.write_str("MS_3"),
-            0x04 => f.write_str("MS_4"),
-            0x05 => f.write_str("MS_5"),
-            0x06 => f.write_str("MS_6"),
-            0x07 => f.write_str("MS_7"),
-            0x08 => f.write_str("MS_8"),
-            0x09 => f.write_str("MS_9"),
-            0x0a => f.write_str("MS_10"),
+            0x01 => f.write_str("Ms1"),
+            0x02 => f.write_str("Ms2"),
+            0x03 => f.write_str("Ms3"),
+            0x04 => f.write_str("Ms4"),
+            0x05 => f.write_str("Ms5"),
+            0x06 => f.write_str("Ms6"),
+            0x07 => f.write_str("Ms7"),
+            0x08 => f.write_str("Ms8"),
+            0x09 => f.write_str("Ms9"),
+            0x0a => f.write_str("Ms10"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -750,16 +750,16 @@ impl core::fmt::Debug for TvdpsrcOn {
 impl defmt::Format for TvdpsrcOn {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "MS_1"),
-            0x02 => defmt::write!(f, "MS_2"),
-            0x03 => defmt::write!(f, "MS_3"),
-            0x04 => defmt::write!(f, "MS_4"),
-            0x05 => defmt::write!(f, "MS_5"),
-            0x06 => defmt::write!(f, "MS_6"),
-            0x07 => defmt::write!(f, "MS_7"),
-            0x08 => defmt::write!(f, "MS_8"),
-            0x09 => defmt::write!(f, "MS_9"),
-            0x0a => defmt::write!(f, "MS_10"),
+            0x01 => defmt::write!(f, "Ms1"),
+            0x02 => defmt::write!(f, "Ms2"),
+            0x03 => defmt::write!(f, "Ms3"),
+            0x04 => defmt::write!(f, "Ms4"),
+            0x05 => defmt::write!(f, "Ms5"),
+            0x06 => defmt::write!(f, "Ms6"),
+            0x07 => defmt::write!(f, "Ms7"),
+            0x08 => defmt::write!(f, "Ms8"),
+            0x09 => defmt::write!(f, "Ms9"),
+            0x0a => defmt::write!(f, "Ms10"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -781,25 +781,25 @@ impl From<TvdpsrcOn> for u16 {
 pub struct TwaitAfterPrd(u16);
 impl TwaitAfterPrd {
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_1: Self = Self(0x01);
+    pub const Ms1: Self = Self(0x01);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_2: Self = Self(0x02);
+    pub const Ms2: Self = Self(0x02);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_3: Self = Self(0x03);
+    pub const Ms3: Self = Self(0x03);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_4: Self = Self(0x04);
+    pub const Ms4: Self = Self(0x04);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_5: Self = Self(0x05);
+    pub const Ms5: Self = Self(0x05);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_6: Self = Self(0x06);
+    pub const Ms6: Self = Self(0x06);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_7: Self = Self(0x07);
+    pub const Ms7: Self = Self(0x07);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_8: Self = Self(0x08);
+    pub const Ms8: Self = Self(0x08);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_9: Self = Self(0x09);
+    pub const Ms9: Self = Self(0x09);
     #[doc = "1 ms - 1023 ms."]
-    pub const MS_10: Self = Self(0x0a);
+    pub const Ms10: Self = Self(0x0a);
 }
 impl TwaitAfterPrd {
     pub const fn from_bits(val: u16) -> TwaitAfterPrd {
@@ -812,16 +812,16 @@ impl TwaitAfterPrd {
 impl core::fmt::Debug for TwaitAfterPrd {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("MS_1"),
-            0x02 => f.write_str("MS_2"),
-            0x03 => f.write_str("MS_3"),
-            0x04 => f.write_str("MS_4"),
-            0x05 => f.write_str("MS_5"),
-            0x06 => f.write_str("MS_6"),
-            0x07 => f.write_str("MS_7"),
-            0x08 => f.write_str("MS_8"),
-            0x09 => f.write_str("MS_9"),
-            0x0a => f.write_str("MS_10"),
+            0x01 => f.write_str("Ms1"),
+            0x02 => f.write_str("Ms2"),
+            0x03 => f.write_str("Ms3"),
+            0x04 => f.write_str("Ms4"),
+            0x05 => f.write_str("Ms5"),
+            0x06 => f.write_str("Ms6"),
+            0x07 => f.write_str("Ms7"),
+            0x08 => f.write_str("Ms8"),
+            0x09 => f.write_str("Ms9"),
+            0x0a => f.write_str("Ms10"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -830,16 +830,16 @@ impl core::fmt::Debug for TwaitAfterPrd {
 impl defmt::Format for TwaitAfterPrd {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "MS_1"),
-            0x02 => defmt::write!(f, "MS_2"),
-            0x03 => defmt::write!(f, "MS_3"),
-            0x04 => defmt::write!(f, "MS_4"),
-            0x05 => defmt::write!(f, "MS_5"),
-            0x06 => defmt::write!(f, "MS_6"),
-            0x07 => defmt::write!(f, "MS_7"),
-            0x08 => defmt::write!(f, "MS_8"),
-            0x09 => defmt::write!(f, "MS_9"),
-            0x0a => defmt::write!(f, "MS_10"),
+            0x01 => defmt::write!(f, "Ms1"),
+            0x02 => defmt::write!(f, "Ms2"),
+            0x03 => defmt::write!(f, "Ms3"),
+            0x04 => defmt::write!(f, "Ms4"),
+            0x05 => defmt::write!(f, "Ms5"),
+            0x06 => defmt::write!(f, "Ms6"),
+            0x07 => defmt::write!(f, "Ms7"),
+            0x08 => defmt::write!(f, "Ms8"),
+            0x09 => defmt::write!(f, "Ms9"),
+            0x0a => defmt::write!(f, "Ms10"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }

@@ -3,13 +3,13 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Actstate {
     #[doc = "NO_LATENCY (normal bus operations)."]
-    NO_LATENCY = 0x0,
+    NoLatency = 0x0,
     #[doc = "LATENCY_1MS (1 ms of latency)."]
-    LATENCY_1MS = 0x01,
+    Latency1ms = 0x01,
     #[doc = "LATENCY_100MS (100 ms of latency)."]
-    LATENCY_100MS = 0x02,
+    Latency100ms = 0x02,
     #[doc = "LATENCY_10S (10 seconds of latency)."]
-    LATENCY_10S = 0x03,
+    Latency10s = 0x03,
 }
 impl Actstate {
     #[inline(always)]
@@ -38,15 +38,15 @@ impl From<Actstate> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cause {
     #[doc = "No information (this value occurs when not configured to write DA)."]
-    NONE = 0x0,
+    None = 0x0,
     #[doc = "Set using ENTDAA."]
-    ENTDAA = 0x01,
+    Entdaa = 0x01,
     #[doc = "Set using SETDASA, SETAASA, or SETNEWDA."]
-    SETDASA = 0x02,
+    Setdasa = 0x02,
     #[doc = "Cleared using RSTDAA."]
-    RSTDAA = 0x03,
+    Rstdaa = 0x03,
     #[doc = "Auto MAP change happened last."]
-    AUTOMAP = 0x04,
+    Automap = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
@@ -78,9 +78,9 @@ impl From<Cause> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ccchandle {
     #[doc = "All handling features disabled."]
-    ALL_DISABLED = 0x0,
+    AllDisabled = 0x0,
     #[doc = "The I3C module manages events, activities, status, HDR, and if enabled for it, ID and static-address-related items."]
-    BLOCK_HANDLE = 0x01,
+    BlockHandle = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -123,9 +123,9 @@ impl From<Ccchandle> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Disto {
     #[doc = "Enabled."]
-    ENABLE = 0x0,
+    Enable = 0x0,
     #[doc = "Disabled, if configured."]
-    DISABLE = 0x01,
+    Disable = 0x01,
 }
 impl Disto {
     #[inline(always)]
@@ -154,9 +154,9 @@ impl From<Disto> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dma {
     #[doc = "Not supported."]
-    DMANO = 0x0,
+    Dmano = 0x0,
     #[doc = "Supported."]
-    DMAYES = 0x01,
+    Dmayes = 0x01,
 }
 impl Dma {
     #[inline(always)]
@@ -185,13 +185,13 @@ impl From<Dma> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Evdet {
     #[doc = "NONE (no event or no pending event)."]
-    NONE = 0x0,
+    None = 0x0,
     #[doc = "NO_REQUEST (request is not sent yet; either there is no START condition yet, or is waiting for Bus-Available or Bus-Idle (HJ))."]
-    NO_REQUEST = 0x01,
+    NoRequest = 0x01,
     #[doc = "NACKed (not acknowledged, request sent and rejected); I3C tries again."]
-    NACKED = 0x02,
+    Nacked = 0x02,
     #[doc = "ACKed (acknowledged; request sent and accepted), so done (unless the time control data is still being sent)."]
-    ACKED = 0x03,
+    Acked = 0x03,
 }
 impl Evdet {
     #[inline(always)]
@@ -220,11 +220,11 @@ impl From<Evdet> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Extfifo {
     #[doc = "No external FIFO available."]
-    NO_EXT_FIFO = 0x0,
+    NoExtFifo = 0x0,
     #[doc = "Standard available or free external FIFO."]
-    STD_EXT_FIFO = 0x01,
+    StdExtFifo = 0x01,
     #[doc = "Request track external FIFO."]
-    REQUEST_EXT_FIFO = 0x02,
+    RequestExtFifo = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
     _RESERVED_5 = 0x05,
@@ -258,13 +258,13 @@ impl From<Extfifo> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fiforx {
     #[doc = "Two or three."]
-    FIFO_2BYTE = 0x0,
+    Fifo2byte = 0x0,
     #[doc = "Four."]
-    FIFO_4BYTE = 0x01,
+    Fifo4byte = 0x01,
     #[doc = "Eight."]
-    FIFO_8BYTE = 0x02,
+    Fifo8byte = 0x02,
     #[doc = "16 or larger."]
-    FIFO_16BYTE = 0x03,
+    Fifo16byte = 0x03,
 }
 impl Fiforx {
     #[inline(always)]
@@ -293,13 +293,13 @@ impl From<Fiforx> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fifotx {
     #[doc = "Two."]
-    FIFO_2BYTE = 0x0,
+    Fifo2byte = 0x0,
     #[doc = "Four."]
-    FIFO_4BYTE = 0x01,
+    Fifo4byte = 0x01,
     #[doc = "Eight."]
-    FIFO_8BYTE = 0x02,
+    Fifo8byte = 0x02,
     #[doc = "16 or larger."]
-    FIFO_16BYTE = 0x03,
+    Fifo16byte = 0x03,
 }
 impl Fifotx {
     #[inline(always)]
@@ -328,9 +328,9 @@ impl From<Fifotx> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flushfb {
     #[doc = "No action."]
-    NO_ACTION = 0x0,
+    NoAction = 0x0,
     #[doc = "Flush the buffer."]
-    FLUSH = 0x01,
+    Flush = 0x01,
 }
 impl Flushfb {
     #[inline(always)]
@@ -359,9 +359,9 @@ impl From<Flushfb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flushtb {
     #[doc = "No action."]
-    NO_ACTION = 0x0,
+    NoAction = 0x0,
     #[doc = "Flush the buffer."]
-    FLUSH = 0x01,
+    Flush = 0x01,
 }
 impl Flushtb {
     #[inline(always)]
@@ -390,13 +390,13 @@ impl From<Flushtb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Group {
     #[doc = "v1.1 group addressing not supported."]
-    NOTSUPPORTED = 0x0,
+    Notsupported = 0x0,
     #[doc = "One group supported."]
-    ONE = 0x01,
+    One = 0x01,
     #[doc = "Two groups supported."]
-    TWO = 0x02,
+    Two = 0x02,
     #[doc = "Three groups supported."]
-    THREE = 0x03,
+    Three = 0x03,
 }
 impl Group {
     #[inline(always)]
@@ -425,9 +425,9 @@ impl From<Group> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hdrsupp {
     #[doc = "No HDR modes supported."]
-    NO_HDR = 0x0,
+    NoHdr = 0x0,
     #[doc = "DDR mode supported."]
-    DDR = 0x01,
+    Ddr = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
 }
@@ -458,9 +458,9 @@ impl From<Hdrsupp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hjdis {
     #[doc = "Enabled."]
-    MR_ENABLED = 0x0,
+    MrEnabled = 0x0,
     #[doc = "Disabled."]
-    MR_DISABLED = 0x01,
+    MrDisabled = 0x01,
 }
 impl Hjdis {
     #[inline(always)]
@@ -489,13 +489,13 @@ impl From<Hjdis> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hkeep {
     #[doc = "None."]
-    NONE = 0x0,
+    None = 0x0,
     #[doc = "WIRED_IN."]
-    WIRED_IN = 0x01,
+    WiredIn = 0x01,
     #[doc = "PASSIVE_SDA."]
-    PASSIVE_SDA = 0x02,
+    PassiveSda = 0x02,
     #[doc = "PASSIVE_ON_SDA_SCL."]
-    PASSIVE_ON_SDA_SCL = 0x03,
+    PassiveOnSdaScl = 0x03,
 }
 impl Hkeep {
     #[inline(always)]
@@ -524,9 +524,9 @@ impl From<Hkeep> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum I2c {
     #[doc = "I3C message."]
-    I3CMESSAGE = 0x0,
+    I3cmessage = 0x0,
     #[doc = "I2C message."]
-    I2CMESSAGE = 0x01,
+    I2cmessage = 0x01,
 }
 impl I2c {
     #[inline(always)]
@@ -555,9 +555,9 @@ impl From<I2c> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum IbiMrHj {
     #[doc = "Application cannot generate IBI, CR, or HJ."]
-    ALL_DISABLED = 0x0,
+    AllDisabled = 0x0,
     #[doc = "Application can generate an IBI."]
-    IBI = 0x01,
+    Ibi = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -616,9 +616,9 @@ impl From<IbiMrHj> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ibidis {
     #[doc = "Enabled."]
-    INTERRUPTS_ENABLED = 0x0,
+    InterruptsEnabled = 0x0,
     #[doc = "Disabled."]
-    INTERRUPTS_DISABLED = 0x01,
+    InterruptsDisabled = 0x01,
 }
 impl Ibidis {
     #[inline(always)]
@@ -647,13 +647,13 @@ impl From<Ibidis> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ibiresp {
     #[doc = "ACK (acknowledge)."]
-    ACK = 0x0,
+    Ack = 0x0,
     #[doc = "NACK (reject)."]
-    NACK = 0x01,
+    Nack = 0x01,
     #[doc = "Acknowledge with mandatory byte."]
-    ACK_WITH_MANDATORY = 0x02,
+    AckWithMandatory = 0x02,
     #[doc = "Manual."]
-    MANUAL = 0x03,
+    Manual = 0x03,
 }
 impl Ibiresp {
     #[inline(always)]
@@ -682,13 +682,13 @@ impl From<Ibiresp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ibitype {
     #[doc = "NONE (no IBI: this status occurs when MSTATUS\\[IBIWON\\] becomes 0)."]
-    NONE = 0x0,
+    None = 0x0,
     #[doc = "IBI."]
-    IBI = 0x01,
+    Ibi = 0x01,
     #[doc = "CR."]
-    MR = 0x02,
+    Mr = 0x02,
     #[doc = "HJ."]
-    HJ = 0x03,
+    Hj = 0x03,
 }
 impl Ibitype {
     #[inline(always)]
@@ -717,13 +717,13 @@ impl From<Ibitype> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Idena {
     #[doc = "Application."]
-    APPLICATION = 0x0,
+    Application = 0x0,
     #[doc = "Hardware."]
-    HW = 0x01,
+    Hw = 0x01,
     #[doc = "Hardware, but the I3C module instance handles ID 48b."]
-    HW_BUT = 0x02,
+    HwBut = 0x02,
     #[doc = "A part number register (PARTNO)."]
-    PARTNO = 0x03,
+    Partno = 0x03,
 }
 impl Idena {
     #[inline(always)]
@@ -752,9 +752,9 @@ impl From<Idena> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Idreg {
     #[doc = "All ID register features disabled."]
-    ALL_DISABLED = 0x0,
+    AllDisabled = 0x0,
     #[doc = "ID Instance is a register; used if there is no PARTNO register."]
-    ID_INSTANCE = 0x01,
+    IdInstance = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -797,9 +797,9 @@ impl From<Idreg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Int {
     #[doc = "Not supported."]
-    INTERRUPTSNO = 0x0,
+    Interruptsno = 0x0,
     #[doc = "Supported."]
-    INTERRUPTSYES = 0x01,
+    Interruptsyes = 0x01,
 }
 impl Int {
     #[inline(always)]
@@ -828,9 +828,9 @@ impl From<Int> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Laststatic {
     #[doc = "I3C dynamic address."]
-    I3C = 0x0,
+    I3c = 0x0,
     #[doc = "I2C static address."]
-    I2C = 0x01,
+    I2c = 0x01,
 }
 impl Laststatic {
     #[inline(always)]
@@ -859,9 +859,9 @@ impl From<Laststatic> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Master {
     #[doc = "Not supported."]
-    MASTERNOTSUPPORTED = 0x0,
+    Masternotsupported = 0x0,
     #[doc = "Supported."]
-    MASTERSUPPORTED = 0x01,
+    Mastersupported = 0x01,
 }
 impl Master {
     #[inline(always)]
@@ -890,9 +890,9 @@ impl From<Master> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MctrlDir {
     #[doc = "Write."]
-    DIRWRITE = 0x0,
+    Dirwrite = 0x0,
     #[doc = "Read."]
-    DIRREAD = 0x01,
+    Dirread = 0x01,
 }
 impl MctrlDir {
     #[inline(always)]
@@ -921,13 +921,13 @@ impl From<MctrlDir> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MdatactrlRxtrig {
     #[doc = "Trigger when not empty."]
-    NOT_EMPTY = 0x0,
+    NotEmpty = 0x0,
     #[doc = "Trigger when 1/4 full or more."]
-    QUARTER_OR_MORE = 0x01,
+    QuarterOrMore = 0x01,
     #[doc = "Trigger when 1/2 full or more."]
-    HALF_OR_MORE = 0x02,
+    HalfOrMore = 0x02,
     #[doc = "Trigger when 3/4 full or more."]
-    THREE_QUARTER_OR_MORE = 0x03,
+    ThreeQuarterOrMore = 0x03,
 }
 impl MdatactrlRxtrig {
     #[inline(always)]
@@ -956,13 +956,13 @@ impl From<MdatactrlRxtrig> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MdatactrlTxtrig {
     #[doc = "Trigger when empty."]
-    EMPTY = 0x0,
+    Empty = 0x0,
     #[doc = "Trigger when 1/4 full or less."]
-    QUARTER_OR_LESS = 0x01,
+    QuarterOrLess = 0x01,
     #[doc = "Trigger when 1/2 full or less."]
-    HALF_OR_LESS = 0x02,
+    HalfOrLess = 0x02,
     #[doc = "Trigger when 1 less than full or less (default)."]
-    FULL_OR_LESS = 0x03,
+    FullOrLess = 0x03,
 }
 impl MdatactrlTxtrig {
     #[inline(always)]
@@ -991,11 +991,11 @@ impl From<MdatactrlTxtrig> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MdmactrlDmafb {
     #[doc = "DMA not used."]
-    NOT_USED = 0x0,
+    NotUsed = 0x0,
     #[doc = "Enable DMA for one frame."]
-    ENABLE_ONE_FRAME = 0x01,
+    EnableOneFrame = 0x01,
     #[doc = "Enable DMA until DMA is turned off."]
-    ENABLE = 0x02,
+    Enable = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl MdmactrlDmafb {
@@ -1025,11 +1025,11 @@ impl From<MdmactrlDmafb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MdmactrlDmatb {
     #[doc = "DMA not used."]
-    NOT_USED = 0x0,
+    NotUsed = 0x0,
     #[doc = "Enable DMA for one frame (ended by DMA or terminated)."]
-    ENABLE_ONE_FRAME = 0x01,
+    EnableOneFrame = 0x01,
     #[doc = "Enable DMA until DMA is turned off."]
-    ENABLE = 0x02,
+    Enable = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl MdmactrlDmatb {
@@ -1059,11 +1059,11 @@ impl From<MdmactrlDmatb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MdmactrlDmawidth {
     #[doc = "Byte."]
-    BYTE_0 = 0x0,
+    Byte0 = 0x0,
     #[doc = "Byte."]
-    BYTE_1 = 0x01,
+    Byte1 = 0x01,
     #[doc = "Halfword (16 bits)."]
-    HALF_WORD = 0x02,
+    HalfWord = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl MdmactrlDmawidth {
@@ -1093,9 +1093,9 @@ impl From<MdmactrlDmawidth> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MintclrComplete {
     #[doc = "No effect."]
-    NONE = 0x0,
+    None = 0x0,
     #[doc = "Interrupt enable cleared."]
-    CLEAR = 0x01,
+    Clear = 0x01,
 }
 impl MintclrComplete {
     #[inline(always)]
@@ -1124,9 +1124,9 @@ impl From<MintclrComplete> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MintclrErrwarn {
     #[doc = "No effect."]
-    NONE = 0x0,
+    None = 0x0,
     #[doc = "Interrupt enable cleared."]
-    CLEAR = 0x01,
+    Clear = 0x01,
 }
 impl MintclrErrwarn {
     #[inline(always)]
@@ -1155,9 +1155,9 @@ impl From<MintclrErrwarn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MintclrIbiwon {
     #[doc = "No effect."]
-    NONE = 0x0,
+    None = 0x0,
     #[doc = "Interrupt enable cleared."]
-    CLEAR = 0x01,
+    Clear = 0x01,
 }
 impl MintclrIbiwon {
     #[inline(always)]
@@ -1186,9 +1186,9 @@ impl From<MintclrIbiwon> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MintclrMctrldone {
     #[doc = "No effect."]
-    NONE = 0x0,
+    None = 0x0,
     #[doc = "Interrupt enable cleared."]
-    CLEAR = 0x01,
+    Clear = 0x01,
 }
 impl MintclrMctrldone {
     #[inline(always)]
@@ -1217,9 +1217,9 @@ impl From<MintclrMctrldone> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MintclrNowmaster {
     #[doc = "No effect."]
-    NONE = 0x0,
+    None = 0x0,
     #[doc = "Interrupt enable cleared."]
-    CLEAR = 0x01,
+    Clear = 0x01,
 }
 impl MintclrNowmaster {
     #[inline(always)]
@@ -1248,9 +1248,9 @@ impl From<MintclrNowmaster> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MintclrRxpend {
     #[doc = "No effect."]
-    NONE = 0x0,
+    None = 0x0,
     #[doc = "Interrupt enable cleared."]
-    CLEAR = 0x01,
+    Clear = 0x01,
 }
 impl MintclrRxpend {
     #[inline(always)]
@@ -1279,9 +1279,9 @@ impl From<MintclrRxpend> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MintclrSlvstart {
     #[doc = "No effect."]
-    NONE = 0x0,
+    None = 0x0,
     #[doc = "Interrupt enable cleared."]
-    CLEAR = 0x01,
+    Clear = 0x01,
 }
 impl MintclrSlvstart {
     #[inline(always)]
@@ -1310,9 +1310,9 @@ impl From<MintclrSlvstart> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MintclrTxnotfull {
     #[doc = "No effect."]
-    NONE = 0x0,
+    None = 0x0,
     #[doc = "Interrupt enable cleared."]
-    CLEAR = 0x01,
+    Clear = 0x01,
 }
 impl MintclrTxnotfull {
     #[inline(always)]
@@ -1341,9 +1341,9 @@ impl From<MintclrTxnotfull> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mrdis {
     #[doc = "Enabled."]
-    MR_ENABLED = 0x0,
+    MrEnabled = 0x0,
     #[doc = "Disabled."]
-    MR_DISABLED = 0x01,
+    MrDisabled = 0x01,
 }
 impl Mrdis {
     #[inline(always)]
@@ -1372,9 +1372,9 @@ impl From<Mrdis> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MstatusRxpend {
     #[doc = "No receive message pending."]
-    IDLE = 0x0,
+    Idle = 0x0,
     #[doc = "Receive message pending."]
-    PENDING = 0x01,
+    Pending = 0x01,
 }
 impl MstatusRxpend {
     #[inline(always)]
@@ -1403,9 +1403,9 @@ impl From<MstatusRxpend> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MstatusTxnotfull {
     #[doc = "Receive buffer or FIFO full."]
-    FULL = 0x0,
+    Full = 0x0,
     #[doc = "Receive buffer or FIFO not full."]
-    NOTFULL = 0x01,
+    Notfull = 0x01,
 }
 impl MstatusTxnotfull {
     #[inline(always)]
@@ -1434,13 +1434,13 @@ impl From<MstatusTxnotfull> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mstena {
     #[doc = "CONTROLLER_OFF."]
-    MASTER_OFF = 0x0,
+    MasterOff = 0x0,
     #[doc = "CONTROLLER_ON."]
-    MASTER_ON = 0x01,
+    MasterOn = 0x01,
     #[doc = "CONTROLLER_CAPABLE."]
-    MASTER_CAPABLE = 0x02,
+    MasterCapable = 0x02,
     #[doc = "I2C_CONTROLLER_MODE."]
-    I2C_MASTER_MODE = 0x03,
+    I2cMasterMode = 0x03,
 }
 impl Mstena {
     #[inline(always)]
@@ -1469,9 +1469,9 @@ impl From<Mstena> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MwmsgSdrControlDir {
     #[doc = "Write."]
-    WRITE = 0x0,
+    Write = 0x0,
     #[doc = "Read."]
-    READ = 0x01,
+    Read = 0x01,
 }
 impl MwmsgSdrControlDir {
     #[inline(always)]
@@ -1500,9 +1500,9 @@ impl From<MwmsgSdrControlDir> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Nobyte {
     #[doc = "With mandatory IBI byte."]
-    IBIBYTE = 0x0,
+    Ibibyte = 0x0,
     #[doc = "Without mandatory IBI byte."]
-    NO_IBIBYTE = 0x01,
+    NoIbibyte = 0x01,
 }
 impl Nobyte {
     #[inline(always)]
@@ -1531,20 +1531,20 @@ impl From<Nobyte> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Request {
     #[doc = "NONE."]
-    NONE = 0x0,
+    None = 0x0,
     #[doc = "EMITSTARTADDR."]
-    EMITSTARTADDR = 0x01,
+    Emitstartaddr = 0x01,
     #[doc = "EMITSTOP."]
-    EMITSTOP = 0x02,
+    Emitstop = 0x02,
     #[doc = "IBIACKNACK."]
-    IBIACKNACK = 0x03,
+    Ibiacknack = 0x03,
     #[doc = "PROCESSDAA."]
-    PROCESSDAA = 0x04,
+    Processdaa = 0x04,
     _RESERVED_5 = 0x05,
     #[doc = "Force Exit and Target Reset."]
-    FORCEEXIT = 0x06,
+    Forceexit = 0x06,
     #[doc = "AUTOIBI."]
-    AUTOIBI = 0x07,
+    Autoibi = 0x07,
 }
 impl Request {
     #[inline(always)]
@@ -1573,13 +1573,13 @@ impl From<Request> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Saddr {
     #[doc = "No static address."]
-    NO_STATIC = 0x0,
+    NoStatic = 0x0,
     #[doc = "Static address is fixed in hardware."]
-    STATIC = 0x01,
+    Static = 0x01,
     #[doc = "Hardware controls the static address dynamically (for example, from the pin strap)."]
-    HW_CONTROL = 0x02,
+    HwControl = 0x02,
     #[doc = "SCONFIG register supplies the static address."]
-    CONFIG = 0x03,
+    Config = 0x03,
 }
 impl Saddr {
     #[inline(always)]
@@ -1608,9 +1608,9 @@ impl From<Saddr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum ScapabilitiesTimectrl {
     #[doc = "No time control supported."]
-    NO_TIME_CONTROL_TYPE = 0x0,
+    NoTimeControlType = 0x0,
     #[doc = "At least one time-control type supported."]
-    ATLEAST1_TIME_CONTROL = 0x01,
+    Atleast1TimeControl = 0x01,
 }
 impl ScapabilitiesTimectrl {
     #[inline(always)]
@@ -1639,13 +1639,13 @@ impl From<ScapabilitiesTimectrl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SctrlEvent {
     #[doc = "NORMAL_MODE."]
-    NORMAL_MODE = 0x0,
+    NormalMode = 0x0,
     #[doc = "IBI."]
-    IBI = 0x01,
+    Ibi = 0x01,
     #[doc = "CONTROLLER_REQUEST."]
-    MASTER_REQUEST = 0x02,
+    MasterRequest = 0x02,
     #[doc = "HOT_JOIN_REQUEST."]
-    HOT_JOIN_REQUEST = 0x03,
+    HotJoinRequest = 0x03,
 }
 impl SctrlEvent {
     #[inline(always)]
@@ -1674,9 +1674,9 @@ impl From<SctrlEvent> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SdatactrlRxempty {
     #[doc = "Not empty."]
-    RXISNOTEMPTY = 0x0,
+    Rxisnotempty = 0x0,
     #[doc = "Empty."]
-    RXISEMPTY = 0x01,
+    Rxisempty = 0x01,
 }
 impl SdatactrlRxempty {
     #[inline(always)]
@@ -1705,13 +1705,13 @@ impl From<SdatactrlRxempty> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SdatactrlRxtrig {
     #[doc = "Trigger when not empty."]
-    TRIGGRNOTEMPTY = 0x0,
+    Triggrnotempty = 0x0,
     #[doc = "Trigger when 1/4 or more full."]
-    TRIGGRONEFOURTH = 0x01,
+    Triggronefourth = 0x01,
     #[doc = "Trigger when 1/2 or more full."]
-    TRIGGRONEHALF = 0x02,
+    Triggronehalf = 0x02,
     #[doc = "Trigger when 3/4 or more full."]
-    TRIGGRTHREEFOURTHS = 0x03,
+    Triggrthreefourths = 0x03,
 }
 impl SdatactrlRxtrig {
     #[inline(always)]
@@ -1740,9 +1740,9 @@ impl From<SdatactrlRxtrig> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SdatactrlTxfull {
     #[doc = "Not full."]
-    TXISNOTFULL = 0x0,
+    Txisnotfull = 0x0,
     #[doc = "Full."]
-    TXISFULL = 0x01,
+    Txisfull = 0x01,
 }
 impl SdatactrlTxfull {
     #[inline(always)]
@@ -1771,13 +1771,13 @@ impl From<SdatactrlTxfull> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SdatactrlTxtrig {
     #[doc = "Trigger when empty."]
-    TRIGGREMPTY = 0x0,
+    Triggrempty = 0x0,
     #[doc = "Trigger when 1/4 full or less."]
-    TRIGGRONEFOURTH = 0x01,
+    Triggronefourth = 0x01,
     #[doc = "Trigger when 1/2 full or less."]
-    TRIGGRONEHALF = 0x02,
+    Triggronehalf = 0x02,
     #[doc = "Default (trigger when 1 less than full or less)."]
-    TRIGGRONELESS = 0x03,
+    Triggroneless = 0x03,
 }
 impl SdatactrlTxtrig {
     #[inline(always)]
@@ -1806,11 +1806,11 @@ impl From<SdatactrlTxtrig> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SdmactrlDmafb {
     #[doc = "DMA not used."]
-    NOT_USED = 0x0,
+    NotUsed = 0x0,
     #[doc = "DMA enabled for one frame."]
-    ENABLE_ONE_FRAME = 0x01,
+    EnableOneFrame = 0x01,
     #[doc = "DMA enabled until turned off."]
-    ENABLE = 0x02,
+    Enable = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl SdmactrlDmafb {
@@ -1840,11 +1840,11 @@ impl From<SdmactrlDmafb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SdmactrlDmatb {
     #[doc = "DMA not used."]
-    NOT_USED = 0x0,
+    NotUsed = 0x0,
     #[doc = "DMA enabled for one frame."]
-    ENABLE_ONE_FRAME = 0x01,
+    EnableOneFrame = 0x01,
     #[doc = "DMA enabled until turned off."]
-    ENABLE = 0x02,
+    Enable = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl SdmactrlDmatb {
@@ -1874,11 +1874,11 @@ impl From<SdmactrlDmatb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SdmactrlDmawidth {
     #[doc = "Byte."]
-    BYTE_0 = 0x0,
+    Byte0 = 0x0,
     #[doc = "Byte."]
-    BYTE_1 = 0x01,
+    Byte1 = 0x01,
     #[doc = "Halfword (16 bits) (this value ensures that two bytes are available in the FIFO)."]
-    HALF_WORD = 0x02,
+    HalfWord = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl SdmactrlDmawidth {
@@ -1908,9 +1908,9 @@ impl From<SdmactrlDmawidth> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SdynaddrDavalid {
     #[doc = "DANOTASSIGNED: a dynamic address is not assigned."]
-    DANOTASSIGNED = 0x0,
+    Danotassigned = 0x0,
     #[doc = "DAASSIGNED: a dynamic address is assigned."]
-    DAASSIGNED = 0x01,
+    Daassigned = 0x01,
 }
 impl SdynaddrDavalid {
     #[inline(always)]
@@ -1939,9 +1939,9 @@ impl From<SdynaddrDavalid> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SstatusStart {
     #[doc = "Not detected."]
-    START_NOT_DETECTED = 0x0,
+    StartNotDetected = 0x0,
     #[doc = "Detected."]
-    START_DETECTED = 0x01,
+    StartDetected = 0x01,
 }
 impl SstatusStart {
     #[inline(always)]
@@ -1970,13 +1970,13 @@ impl From<SstatusStart> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SstatusTimectrl {
     #[doc = "NO_TIME_CONTROL (no time control is enabled)."]
-    NO_TIME_CONTROL = 0x0,
+    NoTimeControl = 0x0,
     #[doc = "SYNC_MODE (Synchronous mode is enabled)."]
-    SYNC = 0x01,
+    Sync = 0x01,
     #[doc = "ASYNC_MODE (Asynchronous standard mode (0 or 1) is enabled)."]
-    ASYNC_MODE = 0x02,
+    AsyncMode = 0x02,
     #[doc = "BOTHSYNCASYNC (both Synchronous and Asynchronous modes are enabled)."]
-    BOTHSYNCASYNC = 0x03,
+    Bothsyncasync = 0x03,
 }
 impl SstatusTimectrl {
     #[inline(always)]
@@ -2005,9 +2005,9 @@ impl From<SstatusTimectrl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SstatusTxnotfull {
     #[doc = "Transmit buffer full."]
-    FULL = 0x0,
+    Full = 0x0,
     #[doc = "Transmit buffer not full."]
-    NOT_FULL = 0x01,
+    NotFull = 0x01,
 }
 impl SstatusTxnotfull {
     #[inline(always)]
@@ -2036,21 +2036,21 @@ impl From<SstatusTxnotfull> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum State {
     #[doc = "IDLE (bus has stopped)."]
-    IDLE = 0x0,
+    Idle = 0x0,
     #[doc = "SLVREQ (target request)."]
-    SLVREQ = 0x01,
+    Slvreq = 0x01,
     #[doc = "MSGSDR."]
-    MSGSDR = 0x02,
+    Msgsdr = 0x02,
     #[doc = "NORMACT."]
-    NORMACT = 0x03,
+    Normact = 0x03,
     #[doc = "MSGDDR."]
-    DDR = 0x04,
+    Ddr = 0x04,
     #[doc = "DAA."]
-    DAA = 0x05,
+    Daa = 0x05,
     #[doc = "IBIACK."]
-    IBIACK = 0x06,
+    Ibiack = 0x06,
     #[doc = "IBIRCV."]
-    IBIRCV = 0x07,
+    Ibircv = 0x07,
 }
 impl State {
     #[inline(always)]
@@ -2079,9 +2079,9 @@ impl From<State> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Stccch {
     #[doc = "No CCC message handled."]
-    IDLE = 0x0,
+    Idle = 0x0,
     #[doc = "Handled automatically."]
-    BUSY = 0x01,
+    Busy = 0x01,
 }
 impl Stccch {
     #[inline(always)]
@@ -2110,9 +2110,9 @@ impl From<Stccch> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Stmsg {
     #[doc = "Idle."]
-    IDLE = 0x0,
+    Idle = 0x0,
     #[doc = "Busy."]
-    BUSY = 0x01,
+    Busy = 0x01,
 }
 impl Stmsg {
     #[inline(always)]
@@ -2141,9 +2141,9 @@ impl From<Stmsg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Stnotstop {
     #[doc = "In STOP condition."]
-    STOPPED = 0x0,
+    Stopped = 0x0,
     #[doc = "Busy."]
-    BUSY = 0x01,
+    Busy = 0x01,
 }
 impl Stnotstop {
     #[inline(always)]
@@ -2172,9 +2172,9 @@ impl From<Stnotstop> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Streqrd {
     #[doc = "Not an SDR read."]
-    IDLE = 0x0,
+    Idle = 0x0,
     #[doc = "SDR read from this target or an IBI is being pushed out."]
-    BUSY = 0x01,
+    Busy = 0x01,
 }
 impl Streqrd {
     #[inline(always)]
@@ -2203,9 +2203,9 @@ impl From<Streqrd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Streqwr {
     #[doc = "Not an SDR write."]
-    IDLE = 0x0,
+    Idle = 0x0,
     #[doc = "SDR write data from the controller, but not in ENTDAA mode."]
-    BUSY = 0x01,
+    Busy = 0x01,
 }
 impl Streqwr {
     #[inline(always)]
@@ -2234,11 +2234,11 @@ impl From<Streqwr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Type {
     #[doc = "I3C."]
-    I3C = 0x0,
+    I3c = 0x0,
     #[doc = "I2C."]
-    I2C = 0x01,
+    I2c = 0x01,
     #[doc = "DDR."]
-    DDR = 0x02,
+    Ddr = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Type {

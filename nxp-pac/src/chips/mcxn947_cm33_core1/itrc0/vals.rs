@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum In2421Status {
     #[doc = "Output not triggered."]
-    DISABLE = 0x0,
+    Disable = 0x0,
     #[doc = "Output has been triggered."]
-    ENABLE = 0x01,
+    Enable = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -48,9 +48,9 @@ impl From<In2421Status> for u8 {
 pub struct In3225Status(u8);
 impl In3225Status {
     #[doc = "Output not triggered."]
-    pub const DISABLE: Self = Self(0x0);
+    pub const Disable: Self = Self(0x0);
     #[doc = "Output has been triggered."]
-    pub const ENABLE: Self = Self(0x01);
+    pub const Enable: Self = Self(0x01);
 }
 impl In3225Status {
     pub const fn from_bits(val: u8) -> In3225Status {
@@ -63,8 +63,8 @@ impl In3225Status {
 impl core::fmt::Debug for In3225Status {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("DISABLE"),
-            0x01 => f.write_str("ENABLE"),
+            0x0 => f.write_str("Disable"),
+            0x01 => f.write_str("Enable"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -73,8 +73,8 @@ impl core::fmt::Debug for In3225Status {
 impl defmt::Format for In3225Status {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "DISABLE"),
-            0x01 => defmt::write!(f, "ENABLE"),
+            0x0 => defmt::write!(f, "Disable"),
+            0x01 => defmt::write!(f, "Enable"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }

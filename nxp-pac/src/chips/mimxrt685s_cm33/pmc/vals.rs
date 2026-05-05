@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Activefsm {
     #[doc = "All PMC finite state machines are idle. OK to set APPLYCFG to trigger the PMC state machines."]
-    ACTIVEFSM_0 = 0x0,
+    Activefsm0 = 0x0,
     #[doc = "One or more PMC finite state machines are active, do not set APPLYCFG or write to any PDRUNCFG or CTRL register values that are used by the PMC state machines."]
-    ACTIVEFSM_1 = 0x01,
+    Activefsm1 = 0x01,
 }
 impl Activefsm {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Activefsm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Applycfg {
     #[doc = "Always reads 0. Write 0 has no effect."]
-    APPLYCFG_0 = 0x0,
+    Applycfg0 = 0x0,
     #[doc = "Write 1 = initiate update sequencing of PMC state machines."]
-    APPLYCFG_1 = 0x01,
+    Applycfg1 = 0x01,
 }
 impl Applycfg {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Applycfg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Autowken {
     #[doc = "Auto wakeup interrupt and counter disabled."]
-    AUTOWKEN_0 = 0x0,
+    Autowken0 = 0x0,
     #[doc = "Auto wakeup interrupt generated when PMC sequencer finishes and AUTOWAKE counter = 0 after entering deep sleep mode (but not deep powerdown mode). Interrupt will wake up the M33."]
-    AUTOWKEN_1 = 0x01,
+    Autowken1 = 0x01,
 }
 impl Autowken {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Autowken> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Autowkf {
     #[doc = "No PMC Auto Wakeup Interrupt detected since last time cleared."]
-    AUTOWKF_0 = 0x0,
+    Autowkf0 = 0x0,
     #[doc = "PMC Auto wakeup caused a deep sleep wakeup and interrupt. Write 1 to clear."]
-    AUTOWKF_1 = 0x01,
+    Autowkf1 = 0x01,
 }
 impl Autowkf {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<Autowkf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bufen {
     #[doc = "disabled."]
-    BUFEN_0 = 0x0,
+    Bufen0 = 0x0,
     #[doc = "enabled."]
-    BUFEN_1 = 0x01,
+    Bufen1 = 0x01,
 }
 impl Bufen {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<Bufen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Deeppdf {
     #[doc = "No deep powerdown wakeup since last time flag was cleared."]
-    DEEPPDF_0 = 0x0,
+    Deeppdf0 = 0x0,
     #[doc = "Deep powerdown was entered since the last time this flag was cleared. Write 1 to clear."]
-    DEEPPDF_1 = 0x01,
+    Deeppdf1 = 0x01,
 }
 impl Deeppdf {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<Deeppdf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hvd1v8f {
     #[doc = "vdd1v8 HVD has not triggered an interrupt or reset since last clear."]
-    HVD1V8F_0 = 0x0,
+    Hvd1v8f0 = 0x0,
     #[doc = "vdd1v8 HVD triggered an interrupt or reset since last time this bit was cleared. Write 1 to clear."]
-    HVD1V8F_1 = 0x01,
+    Hvd1v8f1 = 0x01,
 }
 impl Hvd1v8f {
     #[inline(always)]
@@ -220,9 +220,9 @@ impl From<Hvd1v8f> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hvd1v8ie {
     #[doc = "vdd1v8 HVD interrupt disabled."]
-    HVD1V8IE_0 = 0x0,
+    Hvd1v8ie0 = 0x0,
     #[doc = "vdd1v8 HVD causes interrupt and wakeup from deep sleep or deep power down mode."]
-    HVD1V8IE_1 = 0x01,
+    Hvd1v8ie1 = 0x01,
 }
 impl Hvd1v8ie {
     #[inline(always)]
@@ -251,9 +251,9 @@ impl From<Hvd1v8ie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hvd1v8re {
     #[doc = "vdd1v8 HVD reset disabled."]
-    HVD1V8RE_0 = 0x0,
+    Hvd1v8re0 = 0x0,
     #[doc = "vdd1v8 HVD causes reset."]
-    HVD1V8RE_1 = 0x01,
+    Hvd1v8re1 = 0x01,
 }
 impl Hvd1v8re {
     #[inline(always)]
@@ -282,9 +282,9 @@ impl From<Hvd1v8re> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hvdcoref {
     #[doc = "vddcore HVD has not triggered an interrupt or reset since last clear."]
-    HVDCOREF_0 = 0x0,
+    Hvdcoref0 = 0x0,
     #[doc = "vddcore HVD triggered an interrupt or reset since last time this bit was cleared. Write 1 to clear."]
-    HVDCOREF_1 = 0x01,
+    Hvdcoref1 = 0x01,
 }
 impl Hvdcoref {
     #[inline(always)]
@@ -313,9 +313,9 @@ impl From<Hvdcoref> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hvdcoreie {
     #[doc = "vddcore HVD interrupt disabled."]
-    HVDCOREIE_0 = 0x0,
+    Hvdcoreie0 = 0x0,
     #[doc = "vddcore HVD causes interrupt and wakeup from deep sleep."]
-    HVDCOREIE_1 = 0x01,
+    Hvdcoreie1 = 0x01,
 }
 impl Hvdcoreie {
     #[inline(always)]
@@ -344,9 +344,9 @@ impl From<Hvdcoreie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hvdcorere {
     #[doc = "vddcore HVD reset disabled."]
-    HVDCORERE_0 = 0x0,
+    Hvdcorere0 = 0x0,
     #[doc = "vddcore HVD causes reset."]
-    HVDCORERE_1 = 0x01,
+    Hvdcorere1 = 0x01,
 }
 impl Hvdcorere {
     #[inline(always)]
@@ -375,9 +375,9 @@ impl From<Hvdcorere> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Intnpadf {
     #[doc = "No interrupt detected since flag last cleared."]
-    INTNPADF_0 = 0x0,
+    Intnpadf0 = 0x0,
     #[doc = "Pad interrupt caused a wakeup or interrupt event since the last time this flag was cleared. Write 1 to clear."]
-    INTNPADF_1 = 0x01,
+    Intnpadf1 = 0x01,
 }
 impl Intnpadf {
     #[inline(always)]
@@ -406,9 +406,9 @@ impl From<Intnpadf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Intrpaden {
     #[doc = "Interrupt pad low has no effect."]
-    INTRPADEN_0 = 0x0,
+    Intrpaden0 = 0x0,
     #[doc = "Interrupt pad low triggers an interrupt and deep sleep wakeup or deep powerdown wakeup event."]
-    INTRPADEN_1 = 0x01,
+    Intrpaden1 = 0x01,
 }
 impl Intrpaden {
     #[inline(always)]
@@ -437,9 +437,9 @@ impl From<Intrpaden> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lvdcoref {
     #[doc = "vddcore LVD has not triggered an interrupt or reset since last clear."]
-    LVDCOREF_0 = 0x0,
+    Lvdcoref0 = 0x0,
     #[doc = "vddcore LVD triggered an interrupt or reset since last time this bit was cleared. Write 1 to clear."]
-    LVDCOREF_1 = 0x01,
+    Lvdcoref1 = 0x01,
 }
 impl Lvdcoref {
     #[inline(always)]
@@ -468,9 +468,9 @@ impl From<Lvdcoref> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lvdcoreie {
     #[doc = "vddcore LVD interrupt disabled."]
-    LVDCOREIE_0 = 0x0,
+    Lvdcoreie0 = 0x0,
     #[doc = "vddcore LVD causes interrupt and wakeup from deep sleep."]
-    LVDCOREIE_1 = 0x01,
+    Lvdcoreie1 = 0x01,
 }
 impl Lvdcoreie {
     #[inline(always)]
@@ -499,9 +499,9 @@ impl From<Lvdcoreie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lvdcorere {
     #[doc = "vddcore LVD reset disabled."]
-    LVDCORERE_0 = 0x0,
+    Lvdcorere0 = 0x0,
     #[doc = "vddcore LVD causes reset."]
-    LVDCORERE_1 = 0x01,
+    Lvdcorere1 = 0x01,
 }
 impl Lvdcorere {
     #[inline(always)]
@@ -530,9 +530,9 @@ impl From<Lvdcorere> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Por1v8f {
     #[doc = "No vdd1v8 power on event detected since last cleared."]
-    POR1V8F_0 = 0x0,
+    Por1v8f0 = 0x0,
     #[doc = "vdd1v8 power on detect caused a reset or deep pd wakeup. Write 1 to clear."]
-    POR1V8F_1 = 0x01,
+    Por1v8f1 = 0x01,
 }
 impl Por1v8f {
     #[inline(always)]
@@ -561,9 +561,9 @@ impl From<Por1v8f> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Porao18f {
     #[doc = "No vdd_ao18 power on event detected since last cleared."]
-    PORAO18F_0 = 0x0,
+    Porao18f0 = 0x0,
     #[doc = "vdd_ao18 power on detect caused a reset. Write 1 to clear."]
-    PORAO18F_1 = 0x01,
+    Porao18f1 = 0x01,
 }
 impl Porao18f {
     #[inline(always)]
@@ -592,9 +592,9 @@ impl From<Porao18f> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Porcoref {
     #[doc = "vddcore POR was not tripped since the last cleared."]
-    PORCOREF_0 = 0x0,
+    Porcoref0 = 0x0,
     #[doc = "POR triggered by the vddcore POR monitor. Write 1 to clear."]
-    PORCOREF_1 = 0x01,
+    Porcoref1 = 0x01,
 }
 impl Porcoref {
     #[inline(always)]
@@ -623,9 +623,9 @@ impl From<Porcoref> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Resetnpadf {
     #[doc = "No reset detected since last time this flag was cleared."]
-    RESETNPADF_0 = 0x0,
+    Resetnpadf0 = 0x0,
     #[doc = "Reset pad wakeup caused a wakeup or reset event since the last time this bit was cleared. Write 1 to clear."]
-    RESETNPADF_1 = 0x01,
+    Resetnpadf1 = 0x01,
 }
 impl Resetnpadf {
     #[inline(always)]
@@ -654,9 +654,9 @@ impl From<Resetnpadf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rtcf {
     #[doc = "No RTC wakeup detected since last time flag was cleared."]
-    RTCF_0 = 0x0,
+    Rtcf0 = 0x0,
     #[doc = "RTC wakeup caused a deep powerdown wakeup. Write 1 to clear."]
-    RTCF_1 = 0x01,
+    Rtcf1 = 0x01,
 }
 impl Rtcf {
     #[inline(always)]
@@ -685,9 +685,9 @@ impl From<Rtcf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Vdd1v8m0 {
     #[doc = "off."]
-    VDD1V8M0_0 = 0x0,
+    Vdd1v8m00 = 0x0,
     #[doc = "powered."]
-    VDD1V8M0_1 = 0x01,
+    Vdd1v8m01 = 0x01,
 }
 impl Vdd1v8m0 {
     #[inline(always)]
@@ -716,9 +716,9 @@ impl From<Vdd1v8m0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Vdd1v8m1 {
     #[doc = "off."]
-    VDD1V8M1_0 = 0x0,
+    Vdd1v8m10 = 0x0,
     #[doc = "powered."]
-    VDD1V8M1_1 = 0x01,
+    Vdd1v8m11 = 0x01,
 }
 impl Vdd1v8m1 {
     #[inline(always)]
@@ -747,9 +747,9 @@ impl From<Vdd1v8m1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Vdd1v8m2 {
     #[doc = "off."]
-    VDD1V8M2_0 = 0x0,
+    Vdd1v8m20 = 0x0,
     #[doc = "powered."]
-    VDD1V8M2_1 = 0x01,
+    Vdd1v8m21 = 0x01,
 }
 impl Vdd1v8m2 {
     #[inline(always)]
@@ -778,9 +778,9 @@ impl From<Vdd1v8m2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Vdd1v8m3 {
     #[doc = "off."]
-    VDD1V8M3_0 = 0x0,
+    Vdd1v8m30 = 0x0,
     #[doc = "powered."]
-    VDD1V8M3_1 = 0x01,
+    Vdd1v8m31 = 0x01,
 }
 impl Vdd1v8m3 {
     #[inline(always)]
@@ -809,9 +809,9 @@ impl From<Vdd1v8m3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Vddcorem0 {
     #[doc = "off."]
-    VDDCOREM0_0 = 0x0,
+    Vddcorem00 = 0x0,
     #[doc = "powered."]
-    VDDCOREM0_1 = 0x01,
+    Vddcorem01 = 0x01,
 }
 impl Vddcorem0 {
     #[inline(always)]
@@ -840,9 +840,9 @@ impl From<Vddcorem0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Vddcorem1 {
     #[doc = "off."]
-    VDDCOREM1_0 = 0x0,
+    Vddcorem10 = 0x0,
     #[doc = "powered."]
-    VDDCOREM1_1 = 0x01,
+    Vddcorem11 = 0x01,
 }
 impl Vddcorem1 {
     #[inline(always)]
@@ -871,9 +871,9 @@ impl From<Vddcorem1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Vddcorem2 {
     #[doc = "off."]
-    VDDCOREM2_0 = 0x0,
+    Vddcorem20 = 0x0,
     #[doc = "powered."]
-    VDDCOREM2_1 = 0x01,
+    Vddcorem21 = 0x01,
 }
 impl Vddcorem2 {
     #[inline(always)]
@@ -902,9 +902,9 @@ impl From<Vddcorem2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Vddcorem3 {
     #[doc = "off."]
-    VDDCOREM3_0 = 0x0,
+    Vddcorem30 = 0x0,
     #[doc = "powered."]
-    VDDCOREM3_1 = 0x01,
+    Vddcorem31 = 0x01,
 }
 impl Vddcorem3 {
     #[inline(always)]
@@ -933,13 +933,13 @@ impl From<Vddcorem3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Vddio0range {
     #[doc = "1.71 - 3.6V. Consumes static current to detect VDDE0 level."]
-    VDDIO_0RANGE_0 = 0x0,
+    Vddio0range0 = 0x0,
     #[doc = "1.71 - 1.98V, vdde detector off."]
-    VDDIO_0RANGE_1 = 0x01,
+    Vddio0range1 = 0x01,
     #[doc = "3.00 - 3.6V, vdde detector off."]
-    VDDIO_0RANGE_2 = 0x02,
+    Vddio0range2 = 0x02,
     #[doc = "Not allowed (hardware should translate to 10)."]
-    VDDIO_0RANGE_3 = 0x03,
+    Vddio0range3 = 0x03,
 }
 impl Vddio0range {
     #[inline(always)]
@@ -968,13 +968,13 @@ impl From<Vddio0range> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Vddio1range {
     #[doc = "1.71-3.6V. Consumes static current to detect VDDE1 level."]
-    VDDIO_1RANGE_0 = 0x0,
+    Vddio1range0 = 0x0,
     #[doc = "1.71 - 1.98V, vdde detector off."]
-    VDDIO_1RANGE_1 = 0x01,
+    Vddio1range1 = 0x01,
     #[doc = "3.00 - 3.6V, vdde detector off."]
-    VDDIO_1RANGE_2 = 0x02,
+    Vddio1range2 = 0x02,
     #[doc = "Not allowed (hardware should translate to 10)."]
-    VDDIO_1RANGE_3 = 0x03,
+    Vddio1range3 = 0x03,
 }
 impl Vddio1range {
     #[inline(always)]
@@ -1003,13 +1003,13 @@ impl From<Vddio1range> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Vddio2range {
     #[doc = "1.71 - 3.6V. Consumes static current to detect VDDE2 level."]
-    VDDIO_2RANGE_0 = 0x0,
+    Vddio2range0 = 0x0,
     #[doc = "1.71 - 1.98V, vdde detector off."]
-    VDDIO_2RANGE_1 = 0x01,
+    Vddio2range1 = 0x01,
     #[doc = "3.00 - 3.6V, vdde detector off."]
-    VDDIO_2RANGE_2 = 0x02,
+    Vddio2range2 = 0x02,
     #[doc = "Not allowed (hardware should translate to 10)."]
-    VDDIO_2RANGE_3 = 0x03,
+    Vddio2range3 = 0x03,
 }
 impl Vddio2range {
     #[inline(always)]

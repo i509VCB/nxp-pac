@@ -6,13 +6,13 @@ impl LutInpMux {
     #[doc = "Selects the input source to be connected to LUTn_INPx."]
     #[must_use]
     #[inline(always)]
-    pub const fn lutn_inpx(&self) -> super::vals::LutnInpx {
+    pub const fn lu_tn_in_px(&self) -> super::vals::LuTnInPx {
         let val = (self.0 >> 0usize) & 0x3f;
-        super::vals::LutnInpx::from_bits(val as u8)
+        super::vals::LuTnInPx::from_bits(val as u8)
     }
     #[doc = "Selects the input source to be connected to LUTn_INPx."]
     #[inline(always)]
-    pub const fn set_lutn_inpx(&mut self, val: super::vals::LutnInpx) {
+    pub const fn set_lu_tn_in_px(&mut self, val: super::vals::LuTnInPx) {
         self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
     }
 }
@@ -25,14 +25,14 @@ impl Default for LutInpMux {
 impl core::fmt::Debug for LutInpMux {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("LutInpMux")
-            .field("lutn_inpx", &self.lutn_inpx())
+            .field("lu_tn_in_px", &self.lu_tn_in_px())
             .finish()
     }
 }
 #[cfg(feature = "defmt")]
 impl defmt::Format for LutInpMux {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "LutInpMux {{ lutn_inpx: {:?} }}", self.lutn_inpx())
+        defmt::write!(f, "LutInpMux {{ lu_tn_in_px: {:?} }}", self.lu_tn_in_px())
     }
 }
 #[doc = "PLU LUT truth table."]

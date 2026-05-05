@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Buf21en {
     #[doc = "Disables."]
-    DIS = 0x0,
+    Dis = 0x0,
     #[doc = "Enables."]
-    ENA = 0x01,
+    Ena = 0x01,
 }
 impl Buf21en {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Buf21en> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Chopen {
     #[doc = "Disables."]
-    DIS = 0x0,
+    Dis = 0x0,
     #[doc = "Enables."]
-    ENA = 0x01,
+    Ena = 0x01,
 }
 impl Chopen {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Chopen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hcbgen {
     #[doc = "Disables."]
-    DIS = 0x0,
+    Dis = 0x0,
     #[doc = "Enables."]
-    ENA = 0x01,
+    Ena = 0x01,
 }
 impl Hcbgen {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Hcbgen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HiPwrLv {
     #[doc = "Low-power."]
-    LOW = 0x0,
+    Low = 0x0,
     #[doc = "High-power."]
-    HIGH = 0x01,
+    High = 0x01,
 }
 impl HiPwrLv {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<HiPwrLv> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Icompen {
     #[doc = "Disables."]
-    DIS = 0x0,
+    Dis = 0x0,
     #[doc = "Enables."]
-    ENA = 0x01,
+    Ena = 0x01,
 }
 impl Icompen {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<Icompen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LpbgBufEn {
     #[doc = "Disables."]
-    DIS = 0x0,
+    Dis = 0x0,
     #[doc = "Enables."]
-    ENA = 0x01,
+    Ena = 0x01,
 }
 impl LpbgBufEn {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<LpbgBufEn> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lpbgen {
     #[doc = "Disables."]
-    DIS = 0x0,
+    Dis = 0x0,
     #[doc = "Enables."]
-    ENA = 0x01,
+    Ena = 0x01,
 }
 impl Lpbgen {
     #[inline(always)]
@@ -220,9 +220,9 @@ impl From<Lpbgen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Regen {
     #[doc = "Disables."]
-    DIS = 0x0,
+    Dis = 0x0,
     #[doc = "Enables."]
-    ENA = 0x01,
+    Ena = 0x01,
 }
 impl Regen {
     #[inline(always)]
@@ -251,9 +251,9 @@ impl From<Regen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Vrefst {
     #[doc = "Disabled and unstable."]
-    DIS_NOTSTABLE = 0x0,
+    DisNotstable = 0x0,
     #[doc = "Stable."]
-    STABLE = 0x01,
+    Stable = 0x01,
 }
 impl Vrefst {
     #[inline(always)]

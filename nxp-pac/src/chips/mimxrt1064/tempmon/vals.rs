@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tempsense0ClrMeasureTemp {
     #[doc = "Do not start the measurement process."]
-    STOP = 0x0,
+    Stop = 0x0,
     #[doc = "Start the measurement process."]
-    START = 0x01,
+    Start = 0x01,
 }
 impl Tempsense0ClrMeasureTemp {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Tempsense0ClrMeasureTemp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tempsense0ClrPowerDown {
     #[doc = "Enable power to the temperature sensor."]
-    POWER_UP = 0x0,
+    PowerUp = 0x0,
     #[doc = "Power down the temperature sensor."]
-    POWER_DOWN = 0x01,
+    PowerDown = 0x01,
 }
 impl Tempsense0ClrPowerDown {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Tempsense0ClrPowerDown> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tempsense0MeasureTemp {
     #[doc = "Do not start the measurement process."]
-    STOP = 0x0,
+    Stop = 0x0,
     #[doc = "Start the measurement process."]
-    START = 0x01,
+    Start = 0x01,
 }
 impl Tempsense0MeasureTemp {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Tempsense0MeasureTemp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tempsense0PowerDown {
     #[doc = "Enable power to the temperature sensor."]
-    POWER_UP = 0x0,
+    PowerUp = 0x0,
     #[doc = "Power down the temperature sensor."]
-    POWER_DOWN = 0x01,
+    PowerDown = 0x01,
 }
 impl Tempsense0PowerDown {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<Tempsense0PowerDown> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tempsense0SetMeasureTemp {
     #[doc = "Do not start the measurement process."]
-    STOP = 0x0,
+    Stop = 0x0,
     #[doc = "Start the measurement process."]
-    START = 0x01,
+    Start = 0x01,
 }
 impl Tempsense0SetMeasureTemp {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<Tempsense0SetMeasureTemp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tempsense0SetPowerDown {
     #[doc = "Enable power to the temperature sensor."]
-    POWER_UP = 0x0,
+    PowerUp = 0x0,
     #[doc = "Power down the temperature sensor."]
-    POWER_DOWN = 0x01,
+    PowerDown = 0x01,
 }
 impl Tempsense0SetPowerDown {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<Tempsense0SetPowerDown> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tempsense0TogMeasureTemp {
     #[doc = "Do not start the measurement process."]
-    STOP = 0x0,
+    Stop = 0x0,
     #[doc = "Start the measurement process."]
-    START = 0x01,
+    Start = 0x01,
 }
 impl Tempsense0TogMeasureTemp {
     #[inline(always)]
@@ -220,9 +220,9 @@ impl From<Tempsense0TogMeasureTemp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tempsense0TogPowerDown {
     #[doc = "Enable power to the temperature sensor."]
-    POWER_UP = 0x0,
+    PowerUp = 0x0,
     #[doc = "Power down the temperature sensor."]
-    POWER_DOWN = 0x01,
+    PowerDown = 0x01,
 }
 impl Tempsense0TogPowerDown {
     #[inline(always)]
@@ -251,13 +251,13 @@ impl From<Tempsense0TogPowerDown> for u8 {
 pub struct Tempsense1ClrMeasureFreq(u16);
 impl Tempsense1ClrMeasureFreq {
     #[doc = "Defines a single measurement with no repeat."]
-    pub const MEASURE_FREQ_0: Self = Self(0x0);
+    pub const MeasureFreq0: Self = Self(0x0);
     #[doc = "Updates the temperature value at a RTC clock rate."]
-    pub const MEASURE_FREQ_1: Self = Self(0x01);
+    pub const MeasureFreq1: Self = Self(0x01);
     #[doc = "Updates the temperature value at a RTC/2 clock rate."]
-    pub const MEASURE_FREQ_2: Self = Self(0x02);
+    pub const MeasureFreq2: Self = Self(0x02);
     #[doc = "Determines a two second sample period with a 32.768KHz RTC clock. Exact timings depend on the accuracy of the RTC clock."]
-    pub const MEASURE_FREQ_65535: Self = Self(0xffff);
+    pub const MeasureFreq65535: Self = Self(0xffff);
 }
 impl Tempsense1ClrMeasureFreq {
     pub const fn from_bits(val: u16) -> Tempsense1ClrMeasureFreq {
@@ -270,10 +270,10 @@ impl Tempsense1ClrMeasureFreq {
 impl core::fmt::Debug for Tempsense1ClrMeasureFreq {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("MEASURE_FREQ_0"),
-            0x01 => f.write_str("MEASURE_FREQ_1"),
-            0x02 => f.write_str("MEASURE_FREQ_2"),
-            0xffff => f.write_str("MEASURE_FREQ_65535"),
+            0x0 => f.write_str("MeasureFreq0"),
+            0x01 => f.write_str("MeasureFreq1"),
+            0x02 => f.write_str("MeasureFreq2"),
+            0xffff => f.write_str("MeasureFreq65535"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -282,10 +282,10 @@ impl core::fmt::Debug for Tempsense1ClrMeasureFreq {
 impl defmt::Format for Tempsense1ClrMeasureFreq {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "MEASURE_FREQ_0"),
-            0x01 => defmt::write!(f, "MEASURE_FREQ_1"),
-            0x02 => defmt::write!(f, "MEASURE_FREQ_2"),
-            0xffff => defmt::write!(f, "MEASURE_FREQ_65535"),
+            0x0 => defmt::write!(f, "MeasureFreq0"),
+            0x01 => defmt::write!(f, "MeasureFreq1"),
+            0x02 => defmt::write!(f, "MeasureFreq2"),
+            0xffff => defmt::write!(f, "MeasureFreq65535"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -307,13 +307,13 @@ impl From<Tempsense1ClrMeasureFreq> for u16 {
 pub struct Tempsense1MeasureFreq(u16);
 impl Tempsense1MeasureFreq {
     #[doc = "Defines a single measurement with no repeat."]
-    pub const MEASURE_FREQ_0: Self = Self(0x0);
+    pub const MeasureFreq0: Self = Self(0x0);
     #[doc = "Updates the temperature value at a RTC clock rate."]
-    pub const MEASURE_FREQ_1: Self = Self(0x01);
+    pub const MeasureFreq1: Self = Self(0x01);
     #[doc = "Updates the temperature value at a RTC/2 clock rate."]
-    pub const MEASURE_FREQ_2: Self = Self(0x02);
+    pub const MeasureFreq2: Self = Self(0x02);
     #[doc = "Determines a two second sample period with a 32.768KHz RTC clock. Exact timings depend on the accuracy of the RTC clock."]
-    pub const MEASURE_FREQ_65535: Self = Self(0xffff);
+    pub const MeasureFreq65535: Self = Self(0xffff);
 }
 impl Tempsense1MeasureFreq {
     pub const fn from_bits(val: u16) -> Tempsense1MeasureFreq {
@@ -326,10 +326,10 @@ impl Tempsense1MeasureFreq {
 impl core::fmt::Debug for Tempsense1MeasureFreq {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("MEASURE_FREQ_0"),
-            0x01 => f.write_str("MEASURE_FREQ_1"),
-            0x02 => f.write_str("MEASURE_FREQ_2"),
-            0xffff => f.write_str("MEASURE_FREQ_65535"),
+            0x0 => f.write_str("MeasureFreq0"),
+            0x01 => f.write_str("MeasureFreq1"),
+            0x02 => f.write_str("MeasureFreq2"),
+            0xffff => f.write_str("MeasureFreq65535"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -338,10 +338,10 @@ impl core::fmt::Debug for Tempsense1MeasureFreq {
 impl defmt::Format for Tempsense1MeasureFreq {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "MEASURE_FREQ_0"),
-            0x01 => defmt::write!(f, "MEASURE_FREQ_1"),
-            0x02 => defmt::write!(f, "MEASURE_FREQ_2"),
-            0xffff => defmt::write!(f, "MEASURE_FREQ_65535"),
+            0x0 => defmt::write!(f, "MeasureFreq0"),
+            0x01 => defmt::write!(f, "MeasureFreq1"),
+            0x02 => defmt::write!(f, "MeasureFreq2"),
+            0xffff => defmt::write!(f, "MeasureFreq65535"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -363,13 +363,13 @@ impl From<Tempsense1MeasureFreq> for u16 {
 pub struct Tempsense1SetMeasureFreq(u16);
 impl Tempsense1SetMeasureFreq {
     #[doc = "Defines a single measurement with no repeat."]
-    pub const MEASURE_FREQ_0: Self = Self(0x0);
+    pub const MeasureFreq0: Self = Self(0x0);
     #[doc = "Updates the temperature value at a RTC clock rate."]
-    pub const MEASURE_FREQ_1: Self = Self(0x01);
+    pub const MeasureFreq1: Self = Self(0x01);
     #[doc = "Updates the temperature value at a RTC/2 clock rate."]
-    pub const MEASURE_FREQ_2: Self = Self(0x02);
+    pub const MeasureFreq2: Self = Self(0x02);
     #[doc = "Determines a two second sample period with a 32.768KHz RTC clock. Exact timings depend on the accuracy of the RTC clock."]
-    pub const MEASURE_FREQ_65535: Self = Self(0xffff);
+    pub const MeasureFreq65535: Self = Self(0xffff);
 }
 impl Tempsense1SetMeasureFreq {
     pub const fn from_bits(val: u16) -> Tempsense1SetMeasureFreq {
@@ -382,10 +382,10 @@ impl Tempsense1SetMeasureFreq {
 impl core::fmt::Debug for Tempsense1SetMeasureFreq {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("MEASURE_FREQ_0"),
-            0x01 => f.write_str("MEASURE_FREQ_1"),
-            0x02 => f.write_str("MEASURE_FREQ_2"),
-            0xffff => f.write_str("MEASURE_FREQ_65535"),
+            0x0 => f.write_str("MeasureFreq0"),
+            0x01 => f.write_str("MeasureFreq1"),
+            0x02 => f.write_str("MeasureFreq2"),
+            0xffff => f.write_str("MeasureFreq65535"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -394,10 +394,10 @@ impl core::fmt::Debug for Tempsense1SetMeasureFreq {
 impl defmt::Format for Tempsense1SetMeasureFreq {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "MEASURE_FREQ_0"),
-            0x01 => defmt::write!(f, "MEASURE_FREQ_1"),
-            0x02 => defmt::write!(f, "MEASURE_FREQ_2"),
-            0xffff => defmt::write!(f, "MEASURE_FREQ_65535"),
+            0x0 => defmt::write!(f, "MeasureFreq0"),
+            0x01 => defmt::write!(f, "MeasureFreq1"),
+            0x02 => defmt::write!(f, "MeasureFreq2"),
+            0xffff => defmt::write!(f, "MeasureFreq65535"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -419,13 +419,13 @@ impl From<Tempsense1SetMeasureFreq> for u16 {
 pub struct Tempsense1TogMeasureFreq(u16);
 impl Tempsense1TogMeasureFreq {
     #[doc = "Defines a single measurement with no repeat."]
-    pub const MEASURE_FREQ_0: Self = Self(0x0);
+    pub const MeasureFreq0: Self = Self(0x0);
     #[doc = "Updates the temperature value at a RTC clock rate."]
-    pub const MEASURE_FREQ_1: Self = Self(0x01);
+    pub const MeasureFreq1: Self = Self(0x01);
     #[doc = "Updates the temperature value at a RTC/2 clock rate."]
-    pub const MEASURE_FREQ_2: Self = Self(0x02);
+    pub const MeasureFreq2: Self = Self(0x02);
     #[doc = "Determines a two second sample period with a 32.768KHz RTC clock. Exact timings depend on the accuracy of the RTC clock."]
-    pub const MEASURE_FREQ_65535: Self = Self(0xffff);
+    pub const MeasureFreq65535: Self = Self(0xffff);
 }
 impl Tempsense1TogMeasureFreq {
     pub const fn from_bits(val: u16) -> Tempsense1TogMeasureFreq {
@@ -438,10 +438,10 @@ impl Tempsense1TogMeasureFreq {
 impl core::fmt::Debug for Tempsense1TogMeasureFreq {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("MEASURE_FREQ_0"),
-            0x01 => f.write_str("MEASURE_FREQ_1"),
-            0x02 => f.write_str("MEASURE_FREQ_2"),
-            0xffff => f.write_str("MEASURE_FREQ_65535"),
+            0x0 => f.write_str("MeasureFreq0"),
+            0x01 => f.write_str("MeasureFreq1"),
+            0x02 => f.write_str("MeasureFreq2"),
+            0xffff => f.write_str("MeasureFreq65535"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -450,10 +450,10 @@ impl core::fmt::Debug for Tempsense1TogMeasureFreq {
 impl defmt::Format for Tempsense1TogMeasureFreq {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "MEASURE_FREQ_0"),
-            0x01 => defmt::write!(f, "MEASURE_FREQ_1"),
-            0x02 => defmt::write!(f, "MEASURE_FREQ_2"),
-            0xffff => defmt::write!(f, "MEASURE_FREQ_65535"),
+            0x0 => defmt::write!(f, "MeasureFreq0"),
+            0x01 => defmt::write!(f, "MeasureFreq1"),
+            0x02 => defmt::write!(f, "MeasureFreq2"),
+            0xffff => defmt::write!(f, "MeasureFreq65535"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }

@@ -3,15 +3,15 @@
 pub struct Ch0statClrErrorCode(u8);
 impl Ch0statClrErrorCode {
     #[doc = "Error signalled because the next pointer is 0x00000000."]
-    pub const NEXT_CHAIN_IS_0: Self = Self(0x01);
+    pub const NextChainIs0: Self = Self(0x01);
     #[doc = "Error signalled because the semaphore is non-zero and neither chain bit is set."]
-    pub const NO_CHAIN: Self = Self(0x02);
+    pub const NoChain: Self = Self(0x02);
     #[doc = "Error signalled because an error is reported reading/writing the context buffer."]
-    pub const CONTEXT_ERROR: Self = Self(0x03);
+    pub const ContextError: Self = Self(0x03);
     #[doc = "Error signalled because an error is reported reading/writing the payload."]
-    pub const PAYLOAD_ERROR: Self = Self(0x04);
+    pub const PayloadError: Self = Self(0x04);
     #[doc = "Error signalled because the control packet specifies an invalid mode select (for instance, blit + hash)."]
-    pub const INVALID_MODE: Self = Self(0x05);
+    pub const InvalidMode: Self = Self(0x05);
 }
 impl Ch0statClrErrorCode {
     pub const fn from_bits(val: u8) -> Ch0statClrErrorCode {
@@ -24,11 +24,11 @@ impl Ch0statClrErrorCode {
 impl core::fmt::Debug for Ch0statClrErrorCode {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("NEXT_CHAIN_IS_0"),
-            0x02 => f.write_str("NO_CHAIN"),
-            0x03 => f.write_str("CONTEXT_ERROR"),
-            0x04 => f.write_str("PAYLOAD_ERROR"),
-            0x05 => f.write_str("INVALID_MODE"),
+            0x01 => f.write_str("NextChainIs0"),
+            0x02 => f.write_str("NoChain"),
+            0x03 => f.write_str("ContextError"),
+            0x04 => f.write_str("PayloadError"),
+            0x05 => f.write_str("InvalidMode"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -37,11 +37,11 @@ impl core::fmt::Debug for Ch0statClrErrorCode {
 impl defmt::Format for Ch0statClrErrorCode {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "NEXT_CHAIN_IS_0"),
-            0x02 => defmt::write!(f, "NO_CHAIN"),
-            0x03 => defmt::write!(f, "CONTEXT_ERROR"),
-            0x04 => defmt::write!(f, "PAYLOAD_ERROR"),
-            0x05 => defmt::write!(f, "INVALID_MODE"),
+            0x01 => defmt::write!(f, "NextChainIs0"),
+            0x02 => defmt::write!(f, "NoChain"),
+            0x03 => defmt::write!(f, "ContextError"),
+            0x04 => defmt::write!(f, "PayloadError"),
+            0x05 => defmt::write!(f, "InvalidMode"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -63,15 +63,15 @@ impl From<Ch0statClrErrorCode> for u8 {
 pub struct Ch0statErrorCode(u8);
 impl Ch0statErrorCode {
     #[doc = "Error signalled because the next pointer is 0x00000000."]
-    pub const NEXT_CHAIN_IS_0: Self = Self(0x01);
+    pub const NextChainIs0: Self = Self(0x01);
     #[doc = "Error signalled because the semaphore is non-zero and neither chain bit is set."]
-    pub const NO_CHAIN: Self = Self(0x02);
+    pub const NoChain: Self = Self(0x02);
     #[doc = "Error signalled because an error is reported reading/writing the context buffer."]
-    pub const CONTEXT_ERROR: Self = Self(0x03);
+    pub const ContextError: Self = Self(0x03);
     #[doc = "Error signalled because an error is reported reading/writing the payload."]
-    pub const PAYLOAD_ERROR: Self = Self(0x04);
+    pub const PayloadError: Self = Self(0x04);
     #[doc = "Error signalled because the control packet specifies an invalid mode select (for instance, blit + hash)."]
-    pub const INVALID_MODE: Self = Self(0x05);
+    pub const InvalidMode: Self = Self(0x05);
 }
 impl Ch0statErrorCode {
     pub const fn from_bits(val: u8) -> Ch0statErrorCode {
@@ -84,11 +84,11 @@ impl Ch0statErrorCode {
 impl core::fmt::Debug for Ch0statErrorCode {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("NEXT_CHAIN_IS_0"),
-            0x02 => f.write_str("NO_CHAIN"),
-            0x03 => f.write_str("CONTEXT_ERROR"),
-            0x04 => f.write_str("PAYLOAD_ERROR"),
-            0x05 => f.write_str("INVALID_MODE"),
+            0x01 => f.write_str("NextChainIs0"),
+            0x02 => f.write_str("NoChain"),
+            0x03 => f.write_str("ContextError"),
+            0x04 => f.write_str("PayloadError"),
+            0x05 => f.write_str("InvalidMode"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -97,11 +97,11 @@ impl core::fmt::Debug for Ch0statErrorCode {
 impl defmt::Format for Ch0statErrorCode {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "NEXT_CHAIN_IS_0"),
-            0x02 => defmt::write!(f, "NO_CHAIN"),
-            0x03 => defmt::write!(f, "CONTEXT_ERROR"),
-            0x04 => defmt::write!(f, "PAYLOAD_ERROR"),
-            0x05 => defmt::write!(f, "INVALID_MODE"),
+            0x01 => defmt::write!(f, "NextChainIs0"),
+            0x02 => defmt::write!(f, "NoChain"),
+            0x03 => defmt::write!(f, "ContextError"),
+            0x04 => defmt::write!(f, "PayloadError"),
+            0x05 => defmt::write!(f, "InvalidMode"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -123,15 +123,15 @@ impl From<Ch0statErrorCode> for u8 {
 pub struct Ch0statSetErrorCode(u8);
 impl Ch0statSetErrorCode {
     #[doc = "Error signalled because the next pointer is 0x00000000."]
-    pub const NEXT_CHAIN_IS_0: Self = Self(0x01);
+    pub const NextChainIs0: Self = Self(0x01);
     #[doc = "Error signalled because the semaphore is non-zero and neither chain bit is set."]
-    pub const NO_CHAIN: Self = Self(0x02);
+    pub const NoChain: Self = Self(0x02);
     #[doc = "Error signalled because an error is reported reading/writing the context buffer."]
-    pub const CONTEXT_ERROR: Self = Self(0x03);
+    pub const ContextError: Self = Self(0x03);
     #[doc = "Error signalled because an error is reported reading/writing the payload."]
-    pub const PAYLOAD_ERROR: Self = Self(0x04);
+    pub const PayloadError: Self = Self(0x04);
     #[doc = "Error signalled because the control packet specifies an invalid mode select (for instance, blit + hash)."]
-    pub const INVALID_MODE: Self = Self(0x05);
+    pub const InvalidMode: Self = Self(0x05);
 }
 impl Ch0statSetErrorCode {
     pub const fn from_bits(val: u8) -> Ch0statSetErrorCode {
@@ -144,11 +144,11 @@ impl Ch0statSetErrorCode {
 impl core::fmt::Debug for Ch0statSetErrorCode {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("NEXT_CHAIN_IS_0"),
-            0x02 => f.write_str("NO_CHAIN"),
-            0x03 => f.write_str("CONTEXT_ERROR"),
-            0x04 => f.write_str("PAYLOAD_ERROR"),
-            0x05 => f.write_str("INVALID_MODE"),
+            0x01 => f.write_str("NextChainIs0"),
+            0x02 => f.write_str("NoChain"),
+            0x03 => f.write_str("ContextError"),
+            0x04 => f.write_str("PayloadError"),
+            0x05 => f.write_str("InvalidMode"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -157,11 +157,11 @@ impl core::fmt::Debug for Ch0statSetErrorCode {
 impl defmt::Format for Ch0statSetErrorCode {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "NEXT_CHAIN_IS_0"),
-            0x02 => defmt::write!(f, "NO_CHAIN"),
-            0x03 => defmt::write!(f, "CONTEXT_ERROR"),
-            0x04 => defmt::write!(f, "PAYLOAD_ERROR"),
-            0x05 => defmt::write!(f, "INVALID_MODE"),
+            0x01 => defmt::write!(f, "NextChainIs0"),
+            0x02 => defmt::write!(f, "NoChain"),
+            0x03 => defmt::write!(f, "ContextError"),
+            0x04 => defmt::write!(f, "PayloadError"),
+            0x05 => defmt::write!(f, "InvalidMode"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -183,15 +183,15 @@ impl From<Ch0statSetErrorCode> for u8 {
 pub struct Ch0statTogErrorCode(u8);
 impl Ch0statTogErrorCode {
     #[doc = "Error signalled because the next pointer is 0x00000000."]
-    pub const NEXT_CHAIN_IS_0: Self = Self(0x01);
+    pub const NextChainIs0: Self = Self(0x01);
     #[doc = "Error signalled because the semaphore is non-zero and neither chain bit is set."]
-    pub const NO_CHAIN: Self = Self(0x02);
+    pub const NoChain: Self = Self(0x02);
     #[doc = "Error signalled because an error is reported reading/writing the context buffer."]
-    pub const CONTEXT_ERROR: Self = Self(0x03);
+    pub const ContextError: Self = Self(0x03);
     #[doc = "Error signalled because an error is reported reading/writing the payload."]
-    pub const PAYLOAD_ERROR: Self = Self(0x04);
+    pub const PayloadError: Self = Self(0x04);
     #[doc = "Error signalled because the control packet specifies an invalid mode select (for instance, blit + hash)."]
-    pub const INVALID_MODE: Self = Self(0x05);
+    pub const InvalidMode: Self = Self(0x05);
 }
 impl Ch0statTogErrorCode {
     pub const fn from_bits(val: u8) -> Ch0statTogErrorCode {
@@ -204,11 +204,11 @@ impl Ch0statTogErrorCode {
 impl core::fmt::Debug for Ch0statTogErrorCode {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("NEXT_CHAIN_IS_0"),
-            0x02 => f.write_str("NO_CHAIN"),
-            0x03 => f.write_str("CONTEXT_ERROR"),
-            0x04 => f.write_str("PAYLOAD_ERROR"),
-            0x05 => f.write_str("INVALID_MODE"),
+            0x01 => f.write_str("NextChainIs0"),
+            0x02 => f.write_str("NoChain"),
+            0x03 => f.write_str("ContextError"),
+            0x04 => f.write_str("PayloadError"),
+            0x05 => f.write_str("InvalidMode"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -217,11 +217,11 @@ impl core::fmt::Debug for Ch0statTogErrorCode {
 impl defmt::Format for Ch0statTogErrorCode {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "NEXT_CHAIN_IS_0"),
-            0x02 => defmt::write!(f, "NO_CHAIN"),
-            0x03 => defmt::write!(f, "CONTEXT_ERROR"),
-            0x04 => defmt::write!(f, "PAYLOAD_ERROR"),
-            0x05 => defmt::write!(f, "INVALID_MODE"),
+            0x01 => defmt::write!(f, "NextChainIs0"),
+            0x02 => defmt::write!(f, "NoChain"),
+            0x03 => defmt::write!(f, "ContextError"),
+            0x04 => defmt::write!(f, "PayloadError"),
+            0x05 => defmt::write!(f, "InvalidMode"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -243,15 +243,15 @@ impl From<Ch0statTogErrorCode> for u8 {
 pub struct Ch1statClrErrorCode(u8);
 impl Ch1statClrErrorCode {
     #[doc = "Error is signalled because the next pointer is 0x00000000."]
-    pub const NEXT_CHAIN_IS_0: Self = Self(0x01);
+    pub const NextChainIs0: Self = Self(0x01);
     #[doc = "Error is signalled because the semaphore is of a non-zero value and neither of the chain bits is set."]
-    pub const NO_CHAIN: Self = Self(0x02);
+    pub const NoChain: Self = Self(0x02);
     #[doc = "Error is signalled because an error was reported when reading/writing the context buffer."]
-    pub const CONTEXT_ERROR: Self = Self(0x03);
+    pub const ContextError: Self = Self(0x03);
     #[doc = "Error is signalled because an error was reported when reading/writing the payload."]
-    pub const PAYLOAD_ERROR: Self = Self(0x04);
+    pub const PayloadError: Self = Self(0x04);
     #[doc = "Error is signalled because the control packet specifies an invalid mode select (for example, blit + hash)."]
-    pub const INVALID_MODE: Self = Self(0x05);
+    pub const InvalidMode: Self = Self(0x05);
 }
 impl Ch1statClrErrorCode {
     pub const fn from_bits(val: u8) -> Ch1statClrErrorCode {
@@ -264,11 +264,11 @@ impl Ch1statClrErrorCode {
 impl core::fmt::Debug for Ch1statClrErrorCode {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("NEXT_CHAIN_IS_0"),
-            0x02 => f.write_str("NO_CHAIN"),
-            0x03 => f.write_str("CONTEXT_ERROR"),
-            0x04 => f.write_str("PAYLOAD_ERROR"),
-            0x05 => f.write_str("INVALID_MODE"),
+            0x01 => f.write_str("NextChainIs0"),
+            0x02 => f.write_str("NoChain"),
+            0x03 => f.write_str("ContextError"),
+            0x04 => f.write_str("PayloadError"),
+            0x05 => f.write_str("InvalidMode"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -277,11 +277,11 @@ impl core::fmt::Debug for Ch1statClrErrorCode {
 impl defmt::Format for Ch1statClrErrorCode {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "NEXT_CHAIN_IS_0"),
-            0x02 => defmt::write!(f, "NO_CHAIN"),
-            0x03 => defmt::write!(f, "CONTEXT_ERROR"),
-            0x04 => defmt::write!(f, "PAYLOAD_ERROR"),
-            0x05 => defmt::write!(f, "INVALID_MODE"),
+            0x01 => defmt::write!(f, "NextChainIs0"),
+            0x02 => defmt::write!(f, "NoChain"),
+            0x03 => defmt::write!(f, "ContextError"),
+            0x04 => defmt::write!(f, "PayloadError"),
+            0x05 => defmt::write!(f, "InvalidMode"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -303,15 +303,15 @@ impl From<Ch1statClrErrorCode> for u8 {
 pub struct Ch1statErrorCode(u8);
 impl Ch1statErrorCode {
     #[doc = "Error is signalled because the next pointer is 0x00000000."]
-    pub const NEXT_CHAIN_IS_0: Self = Self(0x01);
+    pub const NextChainIs0: Self = Self(0x01);
     #[doc = "Error is signalled because the semaphore is of a non-zero value and neither of the chain bits is set."]
-    pub const NO_CHAIN: Self = Self(0x02);
+    pub const NoChain: Self = Self(0x02);
     #[doc = "Error is signalled because an error was reported when reading/writing the context buffer."]
-    pub const CONTEXT_ERROR: Self = Self(0x03);
+    pub const ContextError: Self = Self(0x03);
     #[doc = "Error is signalled because an error was reported when reading/writing the payload."]
-    pub const PAYLOAD_ERROR: Self = Self(0x04);
+    pub const PayloadError: Self = Self(0x04);
     #[doc = "Error is signalled because the control packet specifies an invalid mode select (for example, blit + hash)."]
-    pub const INVALID_MODE: Self = Self(0x05);
+    pub const InvalidMode: Self = Self(0x05);
 }
 impl Ch1statErrorCode {
     pub const fn from_bits(val: u8) -> Ch1statErrorCode {
@@ -324,11 +324,11 @@ impl Ch1statErrorCode {
 impl core::fmt::Debug for Ch1statErrorCode {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("NEXT_CHAIN_IS_0"),
-            0x02 => f.write_str("NO_CHAIN"),
-            0x03 => f.write_str("CONTEXT_ERROR"),
-            0x04 => f.write_str("PAYLOAD_ERROR"),
-            0x05 => f.write_str("INVALID_MODE"),
+            0x01 => f.write_str("NextChainIs0"),
+            0x02 => f.write_str("NoChain"),
+            0x03 => f.write_str("ContextError"),
+            0x04 => f.write_str("PayloadError"),
+            0x05 => f.write_str("InvalidMode"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -337,11 +337,11 @@ impl core::fmt::Debug for Ch1statErrorCode {
 impl defmt::Format for Ch1statErrorCode {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "NEXT_CHAIN_IS_0"),
-            0x02 => defmt::write!(f, "NO_CHAIN"),
-            0x03 => defmt::write!(f, "CONTEXT_ERROR"),
-            0x04 => defmt::write!(f, "PAYLOAD_ERROR"),
-            0x05 => defmt::write!(f, "INVALID_MODE"),
+            0x01 => defmt::write!(f, "NextChainIs0"),
+            0x02 => defmt::write!(f, "NoChain"),
+            0x03 => defmt::write!(f, "ContextError"),
+            0x04 => defmt::write!(f, "PayloadError"),
+            0x05 => defmt::write!(f, "InvalidMode"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -363,15 +363,15 @@ impl From<Ch1statErrorCode> for u8 {
 pub struct Ch1statSetErrorCode(u8);
 impl Ch1statSetErrorCode {
     #[doc = "Error is signalled because the next pointer is 0x00000000."]
-    pub const NEXT_CHAIN_IS_0: Self = Self(0x01);
+    pub const NextChainIs0: Self = Self(0x01);
     #[doc = "Error is signalled because the semaphore is of a non-zero value and neither of the chain bits is set."]
-    pub const NO_CHAIN: Self = Self(0x02);
+    pub const NoChain: Self = Self(0x02);
     #[doc = "Error is signalled because an error was reported when reading/writing the context buffer."]
-    pub const CONTEXT_ERROR: Self = Self(0x03);
+    pub const ContextError: Self = Self(0x03);
     #[doc = "Error is signalled because an error was reported when reading/writing the payload."]
-    pub const PAYLOAD_ERROR: Self = Self(0x04);
+    pub const PayloadError: Self = Self(0x04);
     #[doc = "Error is signalled because the control packet specifies an invalid mode select (for example, blit + hash)."]
-    pub const INVALID_MODE: Self = Self(0x05);
+    pub const InvalidMode: Self = Self(0x05);
 }
 impl Ch1statSetErrorCode {
     pub const fn from_bits(val: u8) -> Ch1statSetErrorCode {
@@ -384,11 +384,11 @@ impl Ch1statSetErrorCode {
 impl core::fmt::Debug for Ch1statSetErrorCode {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("NEXT_CHAIN_IS_0"),
-            0x02 => f.write_str("NO_CHAIN"),
-            0x03 => f.write_str("CONTEXT_ERROR"),
-            0x04 => f.write_str("PAYLOAD_ERROR"),
-            0x05 => f.write_str("INVALID_MODE"),
+            0x01 => f.write_str("NextChainIs0"),
+            0x02 => f.write_str("NoChain"),
+            0x03 => f.write_str("ContextError"),
+            0x04 => f.write_str("PayloadError"),
+            0x05 => f.write_str("InvalidMode"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -397,11 +397,11 @@ impl core::fmt::Debug for Ch1statSetErrorCode {
 impl defmt::Format for Ch1statSetErrorCode {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "NEXT_CHAIN_IS_0"),
-            0x02 => defmt::write!(f, "NO_CHAIN"),
-            0x03 => defmt::write!(f, "CONTEXT_ERROR"),
-            0x04 => defmt::write!(f, "PAYLOAD_ERROR"),
-            0x05 => defmt::write!(f, "INVALID_MODE"),
+            0x01 => defmt::write!(f, "NextChainIs0"),
+            0x02 => defmt::write!(f, "NoChain"),
+            0x03 => defmt::write!(f, "ContextError"),
+            0x04 => defmt::write!(f, "PayloadError"),
+            0x05 => defmt::write!(f, "InvalidMode"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -423,15 +423,15 @@ impl From<Ch1statSetErrorCode> for u8 {
 pub struct Ch1statTogErrorCode(u8);
 impl Ch1statTogErrorCode {
     #[doc = "Error is signalled because the next pointer is 0x00000000."]
-    pub const NEXT_CHAIN_IS_0: Self = Self(0x01);
+    pub const NextChainIs0: Self = Self(0x01);
     #[doc = "Error is signalled because the semaphore is of a non-zero value and neither of the chain bits is set."]
-    pub const NO_CHAIN: Self = Self(0x02);
+    pub const NoChain: Self = Self(0x02);
     #[doc = "Error is signalled because an error was reported when reading/writing the context buffer."]
-    pub const CONTEXT_ERROR: Self = Self(0x03);
+    pub const ContextError: Self = Self(0x03);
     #[doc = "Error is signalled because an error was reported when reading/writing the payload."]
-    pub const PAYLOAD_ERROR: Self = Self(0x04);
+    pub const PayloadError: Self = Self(0x04);
     #[doc = "Error is signalled because the control packet specifies an invalid mode select (for example, blit + hash)."]
-    pub const INVALID_MODE: Self = Self(0x05);
+    pub const InvalidMode: Self = Self(0x05);
 }
 impl Ch1statTogErrorCode {
     pub const fn from_bits(val: u8) -> Ch1statTogErrorCode {
@@ -444,11 +444,11 @@ impl Ch1statTogErrorCode {
 impl core::fmt::Debug for Ch1statTogErrorCode {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("NEXT_CHAIN_IS_0"),
-            0x02 => f.write_str("NO_CHAIN"),
-            0x03 => f.write_str("CONTEXT_ERROR"),
-            0x04 => f.write_str("PAYLOAD_ERROR"),
-            0x05 => f.write_str("INVALID_MODE"),
+            0x01 => f.write_str("NextChainIs0"),
+            0x02 => f.write_str("NoChain"),
+            0x03 => f.write_str("ContextError"),
+            0x04 => f.write_str("PayloadError"),
+            0x05 => f.write_str("InvalidMode"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -457,11 +457,11 @@ impl core::fmt::Debug for Ch1statTogErrorCode {
 impl defmt::Format for Ch1statTogErrorCode {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "NEXT_CHAIN_IS_0"),
-            0x02 => defmt::write!(f, "NO_CHAIN"),
-            0x03 => defmt::write!(f, "CONTEXT_ERROR"),
-            0x04 => defmt::write!(f, "PAYLOAD_ERROR"),
-            0x05 => defmt::write!(f, "INVALID_MODE"),
+            0x01 => defmt::write!(f, "NextChainIs0"),
+            0x02 => defmt::write!(f, "NoChain"),
+            0x03 => defmt::write!(f, "ContextError"),
+            0x04 => defmt::write!(f, "PayloadError"),
+            0x05 => defmt::write!(f, "InvalidMode"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -483,15 +483,15 @@ impl From<Ch1statTogErrorCode> for u8 {
 pub struct Ch2statClrErrorCode(u8);
 impl Ch2statClrErrorCode {
     #[doc = "Error is signalled because the next pointer is 0x00000000."]
-    pub const NEXT_CHAIN_IS_0: Self = Self(0x01);
+    pub const NextChainIs0: Self = Self(0x01);
     #[doc = "Error is signalled because the semaphore is of a non-zero value and neither of the chain bits is set."]
-    pub const NO_CHAIN: Self = Self(0x02);
+    pub const NoChain: Self = Self(0x02);
     #[doc = "Error is signalled because an error was reported while reading/writing the context buffer."]
-    pub const CONTEXT_ERROR: Self = Self(0x03);
+    pub const ContextError: Self = Self(0x03);
     #[doc = "Error is signalled because an error was reported while reading/writing the payload."]
-    pub const PAYLOAD_ERROR: Self = Self(0x04);
+    pub const PayloadError: Self = Self(0x04);
     #[doc = "Error is signalled because the control packet specifies an invalid mode select (for instance, blit + hash)."]
-    pub const INVALID_MODE: Self = Self(0x05);
+    pub const InvalidMode: Self = Self(0x05);
 }
 impl Ch2statClrErrorCode {
     pub const fn from_bits(val: u8) -> Ch2statClrErrorCode {
@@ -504,11 +504,11 @@ impl Ch2statClrErrorCode {
 impl core::fmt::Debug for Ch2statClrErrorCode {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("NEXT_CHAIN_IS_0"),
-            0x02 => f.write_str("NO_CHAIN"),
-            0x03 => f.write_str("CONTEXT_ERROR"),
-            0x04 => f.write_str("PAYLOAD_ERROR"),
-            0x05 => f.write_str("INVALID_MODE"),
+            0x01 => f.write_str("NextChainIs0"),
+            0x02 => f.write_str("NoChain"),
+            0x03 => f.write_str("ContextError"),
+            0x04 => f.write_str("PayloadError"),
+            0x05 => f.write_str("InvalidMode"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -517,11 +517,11 @@ impl core::fmt::Debug for Ch2statClrErrorCode {
 impl defmt::Format for Ch2statClrErrorCode {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "NEXT_CHAIN_IS_0"),
-            0x02 => defmt::write!(f, "NO_CHAIN"),
-            0x03 => defmt::write!(f, "CONTEXT_ERROR"),
-            0x04 => defmt::write!(f, "PAYLOAD_ERROR"),
-            0x05 => defmt::write!(f, "INVALID_MODE"),
+            0x01 => defmt::write!(f, "NextChainIs0"),
+            0x02 => defmt::write!(f, "NoChain"),
+            0x03 => defmt::write!(f, "ContextError"),
+            0x04 => defmt::write!(f, "PayloadError"),
+            0x05 => defmt::write!(f, "InvalidMode"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -543,15 +543,15 @@ impl From<Ch2statClrErrorCode> for u8 {
 pub struct Ch2statErrorCode(u8);
 impl Ch2statErrorCode {
     #[doc = "Error is signalled because the next pointer is 0x00000000."]
-    pub const NEXT_CHAIN_IS_0: Self = Self(0x01);
+    pub const NextChainIs0: Self = Self(0x01);
     #[doc = "Error is signalled because the semaphore is of a non-zero value and neither of the chain bits is set."]
-    pub const NO_CHAIN: Self = Self(0x02);
+    pub const NoChain: Self = Self(0x02);
     #[doc = "Error is signalled because an error was reported while reading/writing the context buffer."]
-    pub const CONTEXT_ERROR: Self = Self(0x03);
+    pub const ContextError: Self = Self(0x03);
     #[doc = "Error is signalled because an error was reported while reading/writing the payload."]
-    pub const PAYLOAD_ERROR: Self = Self(0x04);
+    pub const PayloadError: Self = Self(0x04);
     #[doc = "Error is signalled because the control packet specifies an invalid mode select (for instance, blit + hash)."]
-    pub const INVALID_MODE: Self = Self(0x05);
+    pub const InvalidMode: Self = Self(0x05);
 }
 impl Ch2statErrorCode {
     pub const fn from_bits(val: u8) -> Ch2statErrorCode {
@@ -564,11 +564,11 @@ impl Ch2statErrorCode {
 impl core::fmt::Debug for Ch2statErrorCode {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("NEXT_CHAIN_IS_0"),
-            0x02 => f.write_str("NO_CHAIN"),
-            0x03 => f.write_str("CONTEXT_ERROR"),
-            0x04 => f.write_str("PAYLOAD_ERROR"),
-            0x05 => f.write_str("INVALID_MODE"),
+            0x01 => f.write_str("NextChainIs0"),
+            0x02 => f.write_str("NoChain"),
+            0x03 => f.write_str("ContextError"),
+            0x04 => f.write_str("PayloadError"),
+            0x05 => f.write_str("InvalidMode"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -577,11 +577,11 @@ impl core::fmt::Debug for Ch2statErrorCode {
 impl defmt::Format for Ch2statErrorCode {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "NEXT_CHAIN_IS_0"),
-            0x02 => defmt::write!(f, "NO_CHAIN"),
-            0x03 => defmt::write!(f, "CONTEXT_ERROR"),
-            0x04 => defmt::write!(f, "PAYLOAD_ERROR"),
-            0x05 => defmt::write!(f, "INVALID_MODE"),
+            0x01 => defmt::write!(f, "NextChainIs0"),
+            0x02 => defmt::write!(f, "NoChain"),
+            0x03 => defmt::write!(f, "ContextError"),
+            0x04 => defmt::write!(f, "PayloadError"),
+            0x05 => defmt::write!(f, "InvalidMode"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -603,15 +603,15 @@ impl From<Ch2statErrorCode> for u8 {
 pub struct Ch2statSetErrorCode(u8);
 impl Ch2statSetErrorCode {
     #[doc = "Error is signalled because the next pointer is 0x00000000."]
-    pub const NEXT_CHAIN_IS_0: Self = Self(0x01);
+    pub const NextChainIs0: Self = Self(0x01);
     #[doc = "Error is signalled because the semaphore is of a non-zero value and neither of the chain bits is set."]
-    pub const NO_CHAIN: Self = Self(0x02);
+    pub const NoChain: Self = Self(0x02);
     #[doc = "Error is signalled because an error was reported while reading/writing the context buffer."]
-    pub const CONTEXT_ERROR: Self = Self(0x03);
+    pub const ContextError: Self = Self(0x03);
     #[doc = "Error is signalled because an error was reported while reading/writing the payload."]
-    pub const PAYLOAD_ERROR: Self = Self(0x04);
+    pub const PayloadError: Self = Self(0x04);
     #[doc = "Error is signalled because the control packet specifies an invalid mode select (for instance, blit + hash)."]
-    pub const INVALID_MODE: Self = Self(0x05);
+    pub const InvalidMode: Self = Self(0x05);
 }
 impl Ch2statSetErrorCode {
     pub const fn from_bits(val: u8) -> Ch2statSetErrorCode {
@@ -624,11 +624,11 @@ impl Ch2statSetErrorCode {
 impl core::fmt::Debug for Ch2statSetErrorCode {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("NEXT_CHAIN_IS_0"),
-            0x02 => f.write_str("NO_CHAIN"),
-            0x03 => f.write_str("CONTEXT_ERROR"),
-            0x04 => f.write_str("PAYLOAD_ERROR"),
-            0x05 => f.write_str("INVALID_MODE"),
+            0x01 => f.write_str("NextChainIs0"),
+            0x02 => f.write_str("NoChain"),
+            0x03 => f.write_str("ContextError"),
+            0x04 => f.write_str("PayloadError"),
+            0x05 => f.write_str("InvalidMode"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -637,11 +637,11 @@ impl core::fmt::Debug for Ch2statSetErrorCode {
 impl defmt::Format for Ch2statSetErrorCode {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "NEXT_CHAIN_IS_0"),
-            0x02 => defmt::write!(f, "NO_CHAIN"),
-            0x03 => defmt::write!(f, "CONTEXT_ERROR"),
-            0x04 => defmt::write!(f, "PAYLOAD_ERROR"),
-            0x05 => defmt::write!(f, "INVALID_MODE"),
+            0x01 => defmt::write!(f, "NextChainIs0"),
+            0x02 => defmt::write!(f, "NoChain"),
+            0x03 => defmt::write!(f, "ContextError"),
+            0x04 => defmt::write!(f, "PayloadError"),
+            0x05 => defmt::write!(f, "InvalidMode"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -663,15 +663,15 @@ impl From<Ch2statSetErrorCode> for u8 {
 pub struct Ch2statTogErrorCode(u8);
 impl Ch2statTogErrorCode {
     #[doc = "Error is signalled because the next pointer is 0x00000000."]
-    pub const NEXT_CHAIN_IS_0: Self = Self(0x01);
+    pub const NextChainIs0: Self = Self(0x01);
     #[doc = "Error is signalled because the semaphore is of a non-zero value and neither of the chain bits is set."]
-    pub const NO_CHAIN: Self = Self(0x02);
+    pub const NoChain: Self = Self(0x02);
     #[doc = "Error is signalled because an error was reported while reading/writing the context buffer."]
-    pub const CONTEXT_ERROR: Self = Self(0x03);
+    pub const ContextError: Self = Self(0x03);
     #[doc = "Error is signalled because an error was reported while reading/writing the payload."]
-    pub const PAYLOAD_ERROR: Self = Self(0x04);
+    pub const PayloadError: Self = Self(0x04);
     #[doc = "Error is signalled because the control packet specifies an invalid mode select (for instance, blit + hash)."]
-    pub const INVALID_MODE: Self = Self(0x05);
+    pub const InvalidMode: Self = Self(0x05);
 }
 impl Ch2statTogErrorCode {
     pub const fn from_bits(val: u8) -> Ch2statTogErrorCode {
@@ -684,11 +684,11 @@ impl Ch2statTogErrorCode {
 impl core::fmt::Debug for Ch2statTogErrorCode {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("NEXT_CHAIN_IS_0"),
-            0x02 => f.write_str("NO_CHAIN"),
-            0x03 => f.write_str("CONTEXT_ERROR"),
-            0x04 => f.write_str("PAYLOAD_ERROR"),
-            0x05 => f.write_str("INVALID_MODE"),
+            0x01 => f.write_str("NextChainIs0"),
+            0x02 => f.write_str("NoChain"),
+            0x03 => f.write_str("ContextError"),
+            0x04 => f.write_str("PayloadError"),
+            0x05 => f.write_str("InvalidMode"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -697,11 +697,11 @@ impl core::fmt::Debug for Ch2statTogErrorCode {
 impl defmt::Format for Ch2statTogErrorCode {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "NEXT_CHAIN_IS_0"),
-            0x02 => defmt::write!(f, "NO_CHAIN"),
-            0x03 => defmt::write!(f, "CONTEXT_ERROR"),
-            0x04 => defmt::write!(f, "PAYLOAD_ERROR"),
-            0x05 => defmt::write!(f, "INVALID_MODE"),
+            0x01 => defmt::write!(f, "NextChainIs0"),
+            0x02 => defmt::write!(f, "NoChain"),
+            0x03 => defmt::write!(f, "ContextError"),
+            0x04 => defmt::write!(f, "PayloadError"),
+            0x05 => defmt::write!(f, "InvalidMode"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -723,15 +723,15 @@ impl From<Ch2statTogErrorCode> for u8 {
 pub struct Ch3statClrErrorCode(u8);
 impl Ch3statClrErrorCode {
     #[doc = "Error is signalled because the next pointer is 0x00000000."]
-    pub const NEXT_CHAIN_IS_0: Self = Self(0x01);
+    pub const NextChainIs0: Self = Self(0x01);
     #[doc = "Error is signalled because the semaphore is of a non-zero value and neither of the chain bits is set."]
-    pub const NO_CHAIN: Self = Self(0x02);
+    pub const NoChain: Self = Self(0x02);
     #[doc = "Error is signalled because an error was reported while reading/writing the context buffer."]
-    pub const CONTEXT_ERROR: Self = Self(0x03);
+    pub const ContextError: Self = Self(0x03);
     #[doc = "Error is signalled because an error was reported while reading/writing the payload."]
-    pub const PAYLOAD_ERROR: Self = Self(0x04);
+    pub const PayloadError: Self = Self(0x04);
     #[doc = "Error is signalled because the control packet specifies an invalid mode select (for example, blit + hash)."]
-    pub const INVALID_MODE: Self = Self(0x05);
+    pub const InvalidMode: Self = Self(0x05);
 }
 impl Ch3statClrErrorCode {
     pub const fn from_bits(val: u8) -> Ch3statClrErrorCode {
@@ -744,11 +744,11 @@ impl Ch3statClrErrorCode {
 impl core::fmt::Debug for Ch3statClrErrorCode {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("NEXT_CHAIN_IS_0"),
-            0x02 => f.write_str("NO_CHAIN"),
-            0x03 => f.write_str("CONTEXT_ERROR"),
-            0x04 => f.write_str("PAYLOAD_ERROR"),
-            0x05 => f.write_str("INVALID_MODE"),
+            0x01 => f.write_str("NextChainIs0"),
+            0x02 => f.write_str("NoChain"),
+            0x03 => f.write_str("ContextError"),
+            0x04 => f.write_str("PayloadError"),
+            0x05 => f.write_str("InvalidMode"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -757,11 +757,11 @@ impl core::fmt::Debug for Ch3statClrErrorCode {
 impl defmt::Format for Ch3statClrErrorCode {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "NEXT_CHAIN_IS_0"),
-            0x02 => defmt::write!(f, "NO_CHAIN"),
-            0x03 => defmt::write!(f, "CONTEXT_ERROR"),
-            0x04 => defmt::write!(f, "PAYLOAD_ERROR"),
-            0x05 => defmt::write!(f, "INVALID_MODE"),
+            0x01 => defmt::write!(f, "NextChainIs0"),
+            0x02 => defmt::write!(f, "NoChain"),
+            0x03 => defmt::write!(f, "ContextError"),
+            0x04 => defmt::write!(f, "PayloadError"),
+            0x05 => defmt::write!(f, "InvalidMode"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -783,15 +783,15 @@ impl From<Ch3statClrErrorCode> for u8 {
 pub struct Ch3statErrorCode(u8);
 impl Ch3statErrorCode {
     #[doc = "Error is signalled because the next pointer is 0x00000000."]
-    pub const NEXT_CHAIN_IS_0: Self = Self(0x01);
+    pub const NextChainIs0: Self = Self(0x01);
     #[doc = "Error is signalled because the semaphore is of a non-zero value and neither of the chain bits is set."]
-    pub const NO_CHAIN: Self = Self(0x02);
+    pub const NoChain: Self = Self(0x02);
     #[doc = "Error is signalled because an error was reported while reading/writing the context buffer."]
-    pub const CONTEXT_ERROR: Self = Self(0x03);
+    pub const ContextError: Self = Self(0x03);
     #[doc = "Error is signalled because an error was reported while reading/writing the payload."]
-    pub const PAYLOAD_ERROR: Self = Self(0x04);
+    pub const PayloadError: Self = Self(0x04);
     #[doc = "Error is signalled because the control packet specifies an invalid mode select (for example, blit + hash)."]
-    pub const INVALID_MODE: Self = Self(0x05);
+    pub const InvalidMode: Self = Self(0x05);
 }
 impl Ch3statErrorCode {
     pub const fn from_bits(val: u8) -> Ch3statErrorCode {
@@ -804,11 +804,11 @@ impl Ch3statErrorCode {
 impl core::fmt::Debug for Ch3statErrorCode {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("NEXT_CHAIN_IS_0"),
-            0x02 => f.write_str("NO_CHAIN"),
-            0x03 => f.write_str("CONTEXT_ERROR"),
-            0x04 => f.write_str("PAYLOAD_ERROR"),
-            0x05 => f.write_str("INVALID_MODE"),
+            0x01 => f.write_str("NextChainIs0"),
+            0x02 => f.write_str("NoChain"),
+            0x03 => f.write_str("ContextError"),
+            0x04 => f.write_str("PayloadError"),
+            0x05 => f.write_str("InvalidMode"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -817,11 +817,11 @@ impl core::fmt::Debug for Ch3statErrorCode {
 impl defmt::Format for Ch3statErrorCode {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "NEXT_CHAIN_IS_0"),
-            0x02 => defmt::write!(f, "NO_CHAIN"),
-            0x03 => defmt::write!(f, "CONTEXT_ERROR"),
-            0x04 => defmt::write!(f, "PAYLOAD_ERROR"),
-            0x05 => defmt::write!(f, "INVALID_MODE"),
+            0x01 => defmt::write!(f, "NextChainIs0"),
+            0x02 => defmt::write!(f, "NoChain"),
+            0x03 => defmt::write!(f, "ContextError"),
+            0x04 => defmt::write!(f, "PayloadError"),
+            0x05 => defmt::write!(f, "InvalidMode"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -843,15 +843,15 @@ impl From<Ch3statErrorCode> for u8 {
 pub struct Ch3statSetErrorCode(u8);
 impl Ch3statSetErrorCode {
     #[doc = "Error is signalled because the next pointer is 0x00000000."]
-    pub const NEXT_CHAIN_IS_0: Self = Self(0x01);
+    pub const NextChainIs0: Self = Self(0x01);
     #[doc = "Error is signalled because the semaphore is of a non-zero value and neither of the chain bits is set."]
-    pub const NO_CHAIN: Self = Self(0x02);
+    pub const NoChain: Self = Self(0x02);
     #[doc = "Error is signalled because an error was reported while reading/writing the context buffer."]
-    pub const CONTEXT_ERROR: Self = Self(0x03);
+    pub const ContextError: Self = Self(0x03);
     #[doc = "Error is signalled because an error was reported while reading/writing the payload."]
-    pub const PAYLOAD_ERROR: Self = Self(0x04);
+    pub const PayloadError: Self = Self(0x04);
     #[doc = "Error is signalled because the control packet specifies an invalid mode select (for example, blit + hash)."]
-    pub const INVALID_MODE: Self = Self(0x05);
+    pub const InvalidMode: Self = Self(0x05);
 }
 impl Ch3statSetErrorCode {
     pub const fn from_bits(val: u8) -> Ch3statSetErrorCode {
@@ -864,11 +864,11 @@ impl Ch3statSetErrorCode {
 impl core::fmt::Debug for Ch3statSetErrorCode {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("NEXT_CHAIN_IS_0"),
-            0x02 => f.write_str("NO_CHAIN"),
-            0x03 => f.write_str("CONTEXT_ERROR"),
-            0x04 => f.write_str("PAYLOAD_ERROR"),
-            0x05 => f.write_str("INVALID_MODE"),
+            0x01 => f.write_str("NextChainIs0"),
+            0x02 => f.write_str("NoChain"),
+            0x03 => f.write_str("ContextError"),
+            0x04 => f.write_str("PayloadError"),
+            0x05 => f.write_str("InvalidMode"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -877,11 +877,11 @@ impl core::fmt::Debug for Ch3statSetErrorCode {
 impl defmt::Format for Ch3statSetErrorCode {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "NEXT_CHAIN_IS_0"),
-            0x02 => defmt::write!(f, "NO_CHAIN"),
-            0x03 => defmt::write!(f, "CONTEXT_ERROR"),
-            0x04 => defmt::write!(f, "PAYLOAD_ERROR"),
-            0x05 => defmt::write!(f, "INVALID_MODE"),
+            0x01 => defmt::write!(f, "NextChainIs0"),
+            0x02 => defmt::write!(f, "NoChain"),
+            0x03 => defmt::write!(f, "ContextError"),
+            0x04 => defmt::write!(f, "PayloadError"),
+            0x05 => defmt::write!(f, "InvalidMode"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -903,15 +903,15 @@ impl From<Ch3statSetErrorCode> for u8 {
 pub struct Ch3statTogErrorCode(u8);
 impl Ch3statTogErrorCode {
     #[doc = "Error is signalled because the next pointer is 0x00000000."]
-    pub const NEXT_CHAIN_IS_0: Self = Self(0x01);
+    pub const NextChainIs0: Self = Self(0x01);
     #[doc = "Error is signalled because the semaphore is of a non-zero value and neither of the chain bits is set."]
-    pub const NO_CHAIN: Self = Self(0x02);
+    pub const NoChain: Self = Self(0x02);
     #[doc = "Error is signalled because an error was reported while reading/writing the context buffer."]
-    pub const CONTEXT_ERROR: Self = Self(0x03);
+    pub const ContextError: Self = Self(0x03);
     #[doc = "Error is signalled because an error was reported while reading/writing the payload."]
-    pub const PAYLOAD_ERROR: Self = Self(0x04);
+    pub const PayloadError: Self = Self(0x04);
     #[doc = "Error is signalled because the control packet specifies an invalid mode select (for example, blit + hash)."]
-    pub const INVALID_MODE: Self = Self(0x05);
+    pub const InvalidMode: Self = Self(0x05);
 }
 impl Ch3statTogErrorCode {
     pub const fn from_bits(val: u8) -> Ch3statTogErrorCode {
@@ -924,11 +924,11 @@ impl Ch3statTogErrorCode {
 impl core::fmt::Debug for Ch3statTogErrorCode {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("NEXT_CHAIN_IS_0"),
-            0x02 => f.write_str("NO_CHAIN"),
-            0x03 => f.write_str("CONTEXT_ERROR"),
-            0x04 => f.write_str("PAYLOAD_ERROR"),
-            0x05 => f.write_str("INVALID_MODE"),
+            0x01 => f.write_str("NextChainIs0"),
+            0x02 => f.write_str("NoChain"),
+            0x03 => f.write_str("ContextError"),
+            0x04 => f.write_str("PayloadError"),
+            0x05 => f.write_str("InvalidMode"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -937,11 +937,11 @@ impl core::fmt::Debug for Ch3statTogErrorCode {
 impl defmt::Format for Ch3statTogErrorCode {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "NEXT_CHAIN_IS_0"),
-            0x02 => defmt::write!(f, "NO_CHAIN"),
-            0x03 => defmt::write!(f, "CONTEXT_ERROR"),
-            0x04 => defmt::write!(f, "PAYLOAD_ERROR"),
-            0x05 => defmt::write!(f, "INVALID_MODE"),
+            0x01 => defmt::write!(f, "NextChainIs0"),
+            0x02 => defmt::write!(f, "NoChain"),
+            0x03 => defmt::write!(f, "ContextError"),
+            0x04 => defmt::write!(f, "PayloadError"),
+            0x05 => defmt::write!(f, "InvalidMode"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -963,13 +963,13 @@ impl From<Ch3statTogErrorCode> for u8 {
 pub struct ChannelctrlClrEnableChannel(u8);
 impl ChannelctrlClrEnableChannel {
     #[doc = "CH0."]
-    pub const CH0: Self = Self(0x01);
+    pub const Ch0: Self = Self(0x01);
     #[doc = "CH1."]
-    pub const CH1: Self = Self(0x02);
+    pub const Ch1: Self = Self(0x02);
     #[doc = "CH2."]
-    pub const CH2: Self = Self(0x04);
+    pub const Ch2: Self = Self(0x04);
     #[doc = "CH3."]
-    pub const CH3: Self = Self(0x08);
+    pub const Ch3: Self = Self(0x08);
 }
 impl ChannelctrlClrEnableChannel {
     pub const fn from_bits(val: u8) -> ChannelctrlClrEnableChannel {
@@ -982,10 +982,10 @@ impl ChannelctrlClrEnableChannel {
 impl core::fmt::Debug for ChannelctrlClrEnableChannel {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("CH0"),
-            0x02 => f.write_str("CH1"),
-            0x04 => f.write_str("CH2"),
-            0x08 => f.write_str("CH3"),
+            0x01 => f.write_str("Ch0"),
+            0x02 => f.write_str("Ch1"),
+            0x04 => f.write_str("Ch2"),
+            0x08 => f.write_str("Ch3"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -994,10 +994,10 @@ impl core::fmt::Debug for ChannelctrlClrEnableChannel {
 impl defmt::Format for ChannelctrlClrEnableChannel {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "CH0"),
-            0x02 => defmt::write!(f, "CH1"),
-            0x04 => defmt::write!(f, "CH2"),
-            0x08 => defmt::write!(f, "CH3"),
+            0x01 => defmt::write!(f, "Ch0"),
+            0x02 => defmt::write!(f, "Ch1"),
+            0x04 => defmt::write!(f, "Ch2"),
+            0x08 => defmt::write!(f, "Ch3"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -1019,13 +1019,13 @@ impl From<ChannelctrlClrEnableChannel> for u8 {
 pub struct ChannelctrlClrHighPriorityChannel(u8);
 impl ChannelctrlClrHighPriorityChannel {
     #[doc = "CH0."]
-    pub const CH0: Self = Self(0x01);
+    pub const Ch0: Self = Self(0x01);
     #[doc = "CH1."]
-    pub const CH1: Self = Self(0x02);
+    pub const Ch1: Self = Self(0x02);
     #[doc = "CH2."]
-    pub const CH2: Self = Self(0x04);
+    pub const Ch2: Self = Self(0x04);
     #[doc = "CH3."]
-    pub const CH3: Self = Self(0x08);
+    pub const Ch3: Self = Self(0x08);
 }
 impl ChannelctrlClrHighPriorityChannel {
     pub const fn from_bits(val: u8) -> ChannelctrlClrHighPriorityChannel {
@@ -1038,10 +1038,10 @@ impl ChannelctrlClrHighPriorityChannel {
 impl core::fmt::Debug for ChannelctrlClrHighPriorityChannel {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("CH0"),
-            0x02 => f.write_str("CH1"),
-            0x04 => f.write_str("CH2"),
-            0x08 => f.write_str("CH3"),
+            0x01 => f.write_str("Ch0"),
+            0x02 => f.write_str("Ch1"),
+            0x04 => f.write_str("Ch2"),
+            0x08 => f.write_str("Ch3"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -1050,10 +1050,10 @@ impl core::fmt::Debug for ChannelctrlClrHighPriorityChannel {
 impl defmt::Format for ChannelctrlClrHighPriorityChannel {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "CH0"),
-            0x02 => defmt::write!(f, "CH1"),
-            0x04 => defmt::write!(f, "CH2"),
-            0x08 => defmt::write!(f, "CH3"),
+            0x01 => defmt::write!(f, "Ch0"),
+            0x02 => defmt::write!(f, "Ch1"),
+            0x04 => defmt::write!(f, "Ch2"),
+            0x08 => defmt::write!(f, "Ch3"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -1075,13 +1075,13 @@ impl From<ChannelctrlClrHighPriorityChannel> for u8 {
 pub struct ChannelctrlEnableChannel(u8);
 impl ChannelctrlEnableChannel {
     #[doc = "CH0."]
-    pub const CH0: Self = Self(0x01);
+    pub const Ch0: Self = Self(0x01);
     #[doc = "CH1."]
-    pub const CH1: Self = Self(0x02);
+    pub const Ch1: Self = Self(0x02);
     #[doc = "CH2."]
-    pub const CH2: Self = Self(0x04);
+    pub const Ch2: Self = Self(0x04);
     #[doc = "CH3."]
-    pub const CH3: Self = Self(0x08);
+    pub const Ch3: Self = Self(0x08);
 }
 impl ChannelctrlEnableChannel {
     pub const fn from_bits(val: u8) -> ChannelctrlEnableChannel {
@@ -1094,10 +1094,10 @@ impl ChannelctrlEnableChannel {
 impl core::fmt::Debug for ChannelctrlEnableChannel {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("CH0"),
-            0x02 => f.write_str("CH1"),
-            0x04 => f.write_str("CH2"),
-            0x08 => f.write_str("CH3"),
+            0x01 => f.write_str("Ch0"),
+            0x02 => f.write_str("Ch1"),
+            0x04 => f.write_str("Ch2"),
+            0x08 => f.write_str("Ch3"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -1106,10 +1106,10 @@ impl core::fmt::Debug for ChannelctrlEnableChannel {
 impl defmt::Format for ChannelctrlEnableChannel {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "CH0"),
-            0x02 => defmt::write!(f, "CH1"),
-            0x04 => defmt::write!(f, "CH2"),
-            0x08 => defmt::write!(f, "CH3"),
+            0x01 => defmt::write!(f, "Ch0"),
+            0x02 => defmt::write!(f, "Ch1"),
+            0x04 => defmt::write!(f, "Ch2"),
+            0x08 => defmt::write!(f, "Ch3"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -1131,13 +1131,13 @@ impl From<ChannelctrlEnableChannel> for u8 {
 pub struct ChannelctrlHighPriorityChannel(u8);
 impl ChannelctrlHighPriorityChannel {
     #[doc = "CH0."]
-    pub const CH0: Self = Self(0x01);
+    pub const Ch0: Self = Self(0x01);
     #[doc = "CH1."]
-    pub const CH1: Self = Self(0x02);
+    pub const Ch1: Self = Self(0x02);
     #[doc = "CH2."]
-    pub const CH2: Self = Self(0x04);
+    pub const Ch2: Self = Self(0x04);
     #[doc = "CH3."]
-    pub const CH3: Self = Self(0x08);
+    pub const Ch3: Self = Self(0x08);
 }
 impl ChannelctrlHighPriorityChannel {
     pub const fn from_bits(val: u8) -> ChannelctrlHighPriorityChannel {
@@ -1150,10 +1150,10 @@ impl ChannelctrlHighPriorityChannel {
 impl core::fmt::Debug for ChannelctrlHighPriorityChannel {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("CH0"),
-            0x02 => f.write_str("CH1"),
-            0x04 => f.write_str("CH2"),
-            0x08 => f.write_str("CH3"),
+            0x01 => f.write_str("Ch0"),
+            0x02 => f.write_str("Ch1"),
+            0x04 => f.write_str("Ch2"),
+            0x08 => f.write_str("Ch3"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -1162,10 +1162,10 @@ impl core::fmt::Debug for ChannelctrlHighPriorityChannel {
 impl defmt::Format for ChannelctrlHighPriorityChannel {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "CH0"),
-            0x02 => defmt::write!(f, "CH1"),
-            0x04 => defmt::write!(f, "CH2"),
-            0x08 => defmt::write!(f, "CH3"),
+            0x01 => defmt::write!(f, "Ch0"),
+            0x02 => defmt::write!(f, "Ch1"),
+            0x04 => defmt::write!(f, "Ch2"),
+            0x08 => defmt::write!(f, "Ch3"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -1187,13 +1187,13 @@ impl From<ChannelctrlHighPriorityChannel> for u8 {
 pub struct ChannelctrlSetEnableChannel(u8);
 impl ChannelctrlSetEnableChannel {
     #[doc = "CH0."]
-    pub const CH0: Self = Self(0x01);
+    pub const Ch0: Self = Self(0x01);
     #[doc = "CH1."]
-    pub const CH1: Self = Self(0x02);
+    pub const Ch1: Self = Self(0x02);
     #[doc = "CH2."]
-    pub const CH2: Self = Self(0x04);
+    pub const Ch2: Self = Self(0x04);
     #[doc = "CH3."]
-    pub const CH3: Self = Self(0x08);
+    pub const Ch3: Self = Self(0x08);
 }
 impl ChannelctrlSetEnableChannel {
     pub const fn from_bits(val: u8) -> ChannelctrlSetEnableChannel {
@@ -1206,10 +1206,10 @@ impl ChannelctrlSetEnableChannel {
 impl core::fmt::Debug for ChannelctrlSetEnableChannel {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("CH0"),
-            0x02 => f.write_str("CH1"),
-            0x04 => f.write_str("CH2"),
-            0x08 => f.write_str("CH3"),
+            0x01 => f.write_str("Ch0"),
+            0x02 => f.write_str("Ch1"),
+            0x04 => f.write_str("Ch2"),
+            0x08 => f.write_str("Ch3"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -1218,10 +1218,10 @@ impl core::fmt::Debug for ChannelctrlSetEnableChannel {
 impl defmt::Format for ChannelctrlSetEnableChannel {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "CH0"),
-            0x02 => defmt::write!(f, "CH1"),
-            0x04 => defmt::write!(f, "CH2"),
-            0x08 => defmt::write!(f, "CH3"),
+            0x01 => defmt::write!(f, "Ch0"),
+            0x02 => defmt::write!(f, "Ch1"),
+            0x04 => defmt::write!(f, "Ch2"),
+            0x08 => defmt::write!(f, "Ch3"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -1243,13 +1243,13 @@ impl From<ChannelctrlSetEnableChannel> for u8 {
 pub struct ChannelctrlSetHighPriorityChannel(u8);
 impl ChannelctrlSetHighPriorityChannel {
     #[doc = "CH0."]
-    pub const CH0: Self = Self(0x01);
+    pub const Ch0: Self = Self(0x01);
     #[doc = "CH1."]
-    pub const CH1: Self = Self(0x02);
+    pub const Ch1: Self = Self(0x02);
     #[doc = "CH2."]
-    pub const CH2: Self = Self(0x04);
+    pub const Ch2: Self = Self(0x04);
     #[doc = "CH3."]
-    pub const CH3: Self = Self(0x08);
+    pub const Ch3: Self = Self(0x08);
 }
 impl ChannelctrlSetHighPriorityChannel {
     pub const fn from_bits(val: u8) -> ChannelctrlSetHighPriorityChannel {
@@ -1262,10 +1262,10 @@ impl ChannelctrlSetHighPriorityChannel {
 impl core::fmt::Debug for ChannelctrlSetHighPriorityChannel {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("CH0"),
-            0x02 => f.write_str("CH1"),
-            0x04 => f.write_str("CH2"),
-            0x08 => f.write_str("CH3"),
+            0x01 => f.write_str("Ch0"),
+            0x02 => f.write_str("Ch1"),
+            0x04 => f.write_str("Ch2"),
+            0x08 => f.write_str("Ch3"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -1274,10 +1274,10 @@ impl core::fmt::Debug for ChannelctrlSetHighPriorityChannel {
 impl defmt::Format for ChannelctrlSetHighPriorityChannel {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "CH0"),
-            0x02 => defmt::write!(f, "CH1"),
-            0x04 => defmt::write!(f, "CH2"),
-            0x08 => defmt::write!(f, "CH3"),
+            0x01 => defmt::write!(f, "Ch0"),
+            0x02 => defmt::write!(f, "Ch1"),
+            0x04 => defmt::write!(f, "Ch2"),
+            0x08 => defmt::write!(f, "Ch3"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -1299,13 +1299,13 @@ impl From<ChannelctrlSetHighPriorityChannel> for u8 {
 pub struct ChannelctrlTogEnableChannel(u8);
 impl ChannelctrlTogEnableChannel {
     #[doc = "CH0."]
-    pub const CH0: Self = Self(0x01);
+    pub const Ch0: Self = Self(0x01);
     #[doc = "CH1."]
-    pub const CH1: Self = Self(0x02);
+    pub const Ch1: Self = Self(0x02);
     #[doc = "CH2."]
-    pub const CH2: Self = Self(0x04);
+    pub const Ch2: Self = Self(0x04);
     #[doc = "CH3."]
-    pub const CH3: Self = Self(0x08);
+    pub const Ch3: Self = Self(0x08);
 }
 impl ChannelctrlTogEnableChannel {
     pub const fn from_bits(val: u8) -> ChannelctrlTogEnableChannel {
@@ -1318,10 +1318,10 @@ impl ChannelctrlTogEnableChannel {
 impl core::fmt::Debug for ChannelctrlTogEnableChannel {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("CH0"),
-            0x02 => f.write_str("CH1"),
-            0x04 => f.write_str("CH2"),
-            0x08 => f.write_str("CH3"),
+            0x01 => f.write_str("Ch0"),
+            0x02 => f.write_str("Ch1"),
+            0x04 => f.write_str("Ch2"),
+            0x08 => f.write_str("Ch3"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -1330,10 +1330,10 @@ impl core::fmt::Debug for ChannelctrlTogEnableChannel {
 impl defmt::Format for ChannelctrlTogEnableChannel {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "CH0"),
-            0x02 => defmt::write!(f, "CH1"),
-            0x04 => defmt::write!(f, "CH2"),
-            0x08 => defmt::write!(f, "CH3"),
+            0x01 => defmt::write!(f, "Ch0"),
+            0x02 => defmt::write!(f, "Ch1"),
+            0x04 => defmt::write!(f, "Ch2"),
+            0x08 => defmt::write!(f, "Ch3"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -1355,13 +1355,13 @@ impl From<ChannelctrlTogEnableChannel> for u8 {
 pub struct ChannelctrlTogHighPriorityChannel(u8);
 impl ChannelctrlTogHighPriorityChannel {
     #[doc = "CH0."]
-    pub const CH0: Self = Self(0x01);
+    pub const Ch0: Self = Self(0x01);
     #[doc = "CH1."]
-    pub const CH1: Self = Self(0x02);
+    pub const Ch1: Self = Self(0x02);
     #[doc = "CH2."]
-    pub const CH2: Self = Self(0x04);
+    pub const Ch2: Self = Self(0x04);
     #[doc = "CH3."]
-    pub const CH3: Self = Self(0x08);
+    pub const Ch3: Self = Self(0x08);
 }
 impl ChannelctrlTogHighPriorityChannel {
     pub const fn from_bits(val: u8) -> ChannelctrlTogHighPriorityChannel {
@@ -1374,10 +1374,10 @@ impl ChannelctrlTogHighPriorityChannel {
 impl core::fmt::Debug for ChannelctrlTogHighPriorityChannel {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("CH0"),
-            0x02 => f.write_str("CH1"),
-            0x04 => f.write_str("CH2"),
-            0x08 => f.write_str("CH3"),
+            0x01 => f.write_str("Ch0"),
+            0x02 => f.write_str("Ch1"),
+            0x04 => f.write_str("Ch2"),
+            0x08 => f.write_str("Ch3"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -1386,10 +1386,10 @@ impl core::fmt::Debug for ChannelctrlTogHighPriorityChannel {
 impl defmt::Format for ChannelctrlTogHighPriorityChannel {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "CH0"),
-            0x02 => defmt::write!(f, "CH1"),
-            0x04 => defmt::write!(f, "CH2"),
-            0x08 => defmt::write!(f, "CH3"),
+            0x01 => defmt::write!(f, "Ch0"),
+            0x02 => defmt::write!(f, "Ch1"),
+            0x04 => defmt::write!(f, "Ch2"),
+            0x08 => defmt::write!(f, "Ch3"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -1411,7 +1411,7 @@ impl From<ChannelctrlTogHighPriorityChannel> for u8 {
 pub struct CipherAlgorithms(u16);
 impl CipherAlgorithms {
     #[doc = "AES128."]
-    pub const AES128: Self = Self(0x01);
+    pub const Aes128: Self = Self(0x01);
 }
 impl CipherAlgorithms {
     pub const fn from_bits(val: u16) -> CipherAlgorithms {
@@ -1424,7 +1424,7 @@ impl CipherAlgorithms {
 impl core::fmt::Debug for CipherAlgorithms {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("AES128"),
+            0x01 => f.write_str("Aes128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -1433,7 +1433,7 @@ impl core::fmt::Debug for CipherAlgorithms {
 impl defmt::Format for CipherAlgorithms {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "AES128"),
+            0x01 => defmt::write!(f, "Aes128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -1455,9 +1455,9 @@ impl From<CipherAlgorithms> for u16 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CipherEncrypt {
     #[doc = "DECRYPT."]
-    DECRYPT = 0x0,
+    Decrypt = 0x0,
     #[doc = "ENCRYPT."]
-    ENCRYPT = 0x01,
+    Encrypt = 0x01,
 }
 impl CipherEncrypt {
     #[inline(always)]
@@ -1486,9 +1486,9 @@ impl From<CipherEncrypt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CipherMode {
     #[doc = "ECB."]
-    ECB = 0x0,
+    Ecb = 0x0,
     #[doc = "CBC."]
-    CBC = 0x01,
+    Cbc = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -1531,7 +1531,7 @@ impl From<CipherMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CipherSelect {
     #[doc = "AES128."]
-    AES128 = 0x0,
+    Aes128 = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -1575,13 +1575,13 @@ impl From<CipherSelect> for u8 {
 pub struct CtrlChannelInterruptEnable(u8);
 impl CtrlChannelInterruptEnable {
     #[doc = "CH0."]
-    pub const CH0: Self = Self(0x01);
+    pub const Ch0: Self = Self(0x01);
     #[doc = "CH1."]
-    pub const CH1: Self = Self(0x02);
+    pub const Ch1: Self = Self(0x02);
     #[doc = "CH2."]
-    pub const CH2: Self = Self(0x04);
+    pub const Ch2: Self = Self(0x04);
     #[doc = "CH3."]
-    pub const CH3: Self = Self(0x08);
+    pub const Ch3: Self = Self(0x08);
 }
 impl CtrlChannelInterruptEnable {
     pub const fn from_bits(val: u8) -> CtrlChannelInterruptEnable {
@@ -1594,10 +1594,10 @@ impl CtrlChannelInterruptEnable {
 impl core::fmt::Debug for CtrlChannelInterruptEnable {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("CH0"),
-            0x02 => f.write_str("CH1"),
-            0x04 => f.write_str("CH2"),
-            0x08 => f.write_str("CH3"),
+            0x01 => f.write_str("Ch0"),
+            0x02 => f.write_str("Ch1"),
+            0x04 => f.write_str("Ch2"),
+            0x08 => f.write_str("Ch3"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -1606,10 +1606,10 @@ impl core::fmt::Debug for CtrlChannelInterruptEnable {
 impl defmt::Format for CtrlChannelInterruptEnable {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "CH0"),
-            0x02 => defmt::write!(f, "CH1"),
-            0x04 => defmt::write!(f, "CH2"),
-            0x08 => defmt::write!(f, "CH3"),
+            0x01 => defmt::write!(f, "Ch0"),
+            0x02 => defmt::write!(f, "Ch1"),
+            0x04 => defmt::write!(f, "Ch2"),
+            0x08 => defmt::write!(f, "Ch3"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -1631,13 +1631,13 @@ impl From<CtrlChannelInterruptEnable> for u8 {
 pub struct CtrlClrChannelInterruptEnable(u8);
 impl CtrlClrChannelInterruptEnable {
     #[doc = "CH0."]
-    pub const CH0: Self = Self(0x01);
+    pub const Ch0: Self = Self(0x01);
     #[doc = "CH1."]
-    pub const CH1: Self = Self(0x02);
+    pub const Ch1: Self = Self(0x02);
     #[doc = "CH2."]
-    pub const CH2: Self = Self(0x04);
+    pub const Ch2: Self = Self(0x04);
     #[doc = "CH3."]
-    pub const CH3: Self = Self(0x08);
+    pub const Ch3: Self = Self(0x08);
 }
 impl CtrlClrChannelInterruptEnable {
     pub const fn from_bits(val: u8) -> CtrlClrChannelInterruptEnable {
@@ -1650,10 +1650,10 @@ impl CtrlClrChannelInterruptEnable {
 impl core::fmt::Debug for CtrlClrChannelInterruptEnable {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("CH0"),
-            0x02 => f.write_str("CH1"),
-            0x04 => f.write_str("CH2"),
-            0x08 => f.write_str("CH3"),
+            0x01 => f.write_str("Ch0"),
+            0x02 => f.write_str("Ch1"),
+            0x04 => f.write_str("Ch2"),
+            0x08 => f.write_str("Ch3"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -1662,10 +1662,10 @@ impl core::fmt::Debug for CtrlClrChannelInterruptEnable {
 impl defmt::Format for CtrlClrChannelInterruptEnable {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "CH0"),
-            0x02 => defmt::write!(f, "CH1"),
-            0x04 => defmt::write!(f, "CH2"),
-            0x08 => defmt::write!(f, "CH3"),
+            0x01 => defmt::write!(f, "Ch0"),
+            0x02 => defmt::write!(f, "Ch1"),
+            0x04 => defmt::write!(f, "Ch2"),
+            0x08 => defmt::write!(f, "Ch3"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -1687,9 +1687,9 @@ impl From<CtrlClrChannelInterruptEnable> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CtrlClrPresentCrypto {
     #[doc = "Absent."]
-    ABSENT = 0x0,
+    Absent = 0x0,
     #[doc = "Present."]
-    PRESENT = 0x01,
+    Present = 0x01,
 }
 impl CtrlClrPresentCrypto {
     #[inline(always)]
@@ -1718,9 +1718,9 @@ impl From<CtrlClrPresentCrypto> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CtrlClrPresentSha {
     #[doc = "Absent."]
-    ABSENT = 0x0,
+    Absent = 0x0,
     #[doc = "Present."]
-    PRESENT = 0x01,
+    Present = 0x01,
 }
 impl CtrlClrPresentSha {
     #[inline(always)]
@@ -1749,9 +1749,9 @@ impl From<CtrlClrPresentSha> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CtrlPresentCrypto {
     #[doc = "Absent."]
-    ABSENT = 0x0,
+    Absent = 0x0,
     #[doc = "Present."]
-    PRESENT = 0x01,
+    Present = 0x01,
 }
 impl CtrlPresentCrypto {
     #[inline(always)]
@@ -1780,9 +1780,9 @@ impl From<CtrlPresentCrypto> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CtrlPresentSha {
     #[doc = "Absent."]
-    ABSENT = 0x0,
+    Absent = 0x0,
     #[doc = "Present."]
-    PRESENT = 0x01,
+    Present = 0x01,
 }
 impl CtrlPresentSha {
     #[inline(always)]
@@ -1811,13 +1811,13 @@ impl From<CtrlPresentSha> for u8 {
 pub struct CtrlSetChannelInterruptEnable(u8);
 impl CtrlSetChannelInterruptEnable {
     #[doc = "CH0."]
-    pub const CH0: Self = Self(0x01);
+    pub const Ch0: Self = Self(0x01);
     #[doc = "CH1."]
-    pub const CH1: Self = Self(0x02);
+    pub const Ch1: Self = Self(0x02);
     #[doc = "CH2."]
-    pub const CH2: Self = Self(0x04);
+    pub const Ch2: Self = Self(0x04);
     #[doc = "CH3."]
-    pub const CH3: Self = Self(0x08);
+    pub const Ch3: Self = Self(0x08);
 }
 impl CtrlSetChannelInterruptEnable {
     pub const fn from_bits(val: u8) -> CtrlSetChannelInterruptEnable {
@@ -1830,10 +1830,10 @@ impl CtrlSetChannelInterruptEnable {
 impl core::fmt::Debug for CtrlSetChannelInterruptEnable {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("CH0"),
-            0x02 => f.write_str("CH1"),
-            0x04 => f.write_str("CH2"),
-            0x08 => f.write_str("CH3"),
+            0x01 => f.write_str("Ch0"),
+            0x02 => f.write_str("Ch1"),
+            0x04 => f.write_str("Ch2"),
+            0x08 => f.write_str("Ch3"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -1842,10 +1842,10 @@ impl core::fmt::Debug for CtrlSetChannelInterruptEnable {
 impl defmt::Format for CtrlSetChannelInterruptEnable {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "CH0"),
-            0x02 => defmt::write!(f, "CH1"),
-            0x04 => defmt::write!(f, "CH2"),
-            0x08 => defmt::write!(f, "CH3"),
+            0x01 => defmt::write!(f, "Ch0"),
+            0x02 => defmt::write!(f, "Ch1"),
+            0x04 => defmt::write!(f, "Ch2"),
+            0x08 => defmt::write!(f, "Ch3"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -1867,9 +1867,9 @@ impl From<CtrlSetChannelInterruptEnable> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CtrlSetPresentCrypto {
     #[doc = "Absent."]
-    ABSENT = 0x0,
+    Absent = 0x0,
     #[doc = "Present."]
-    PRESENT = 0x01,
+    Present = 0x01,
 }
 impl CtrlSetPresentCrypto {
     #[inline(always)]
@@ -1898,9 +1898,9 @@ impl From<CtrlSetPresentCrypto> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CtrlSetPresentSha {
     #[doc = "Absent."]
-    ABSENT = 0x0,
+    Absent = 0x0,
     #[doc = "Present."]
-    PRESENT = 0x01,
+    Present = 0x01,
 }
 impl CtrlSetPresentSha {
     #[inline(always)]
@@ -1929,13 +1929,13 @@ impl From<CtrlSetPresentSha> for u8 {
 pub struct CtrlTogChannelInterruptEnable(u8);
 impl CtrlTogChannelInterruptEnable {
     #[doc = "CH0."]
-    pub const CH0: Self = Self(0x01);
+    pub const Ch0: Self = Self(0x01);
     #[doc = "CH1."]
-    pub const CH1: Self = Self(0x02);
+    pub const Ch1: Self = Self(0x02);
     #[doc = "CH2."]
-    pub const CH2: Self = Self(0x04);
+    pub const Ch2: Self = Self(0x04);
     #[doc = "CH3."]
-    pub const CH3: Self = Self(0x08);
+    pub const Ch3: Self = Self(0x08);
 }
 impl CtrlTogChannelInterruptEnable {
     pub const fn from_bits(val: u8) -> CtrlTogChannelInterruptEnable {
@@ -1948,10 +1948,10 @@ impl CtrlTogChannelInterruptEnable {
 impl core::fmt::Debug for CtrlTogChannelInterruptEnable {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("CH0"),
-            0x02 => f.write_str("CH1"),
-            0x04 => f.write_str("CH2"),
-            0x08 => f.write_str("CH3"),
+            0x01 => f.write_str("Ch0"),
+            0x02 => f.write_str("Ch1"),
+            0x04 => f.write_str("Ch2"),
+            0x08 => f.write_str("Ch3"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -1960,10 +1960,10 @@ impl core::fmt::Debug for CtrlTogChannelInterruptEnable {
 impl defmt::Format for CtrlTogChannelInterruptEnable {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "CH0"),
-            0x02 => defmt::write!(f, "CH1"),
-            0x04 => defmt::write!(f, "CH2"),
-            0x08 => defmt::write!(f, "CH3"),
+            0x01 => defmt::write!(f, "Ch0"),
+            0x02 => defmt::write!(f, "Ch1"),
+            0x04 => defmt::write!(f, "Ch2"),
+            0x08 => defmt::write!(f, "Ch3"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -1985,9 +1985,9 @@ impl From<CtrlTogChannelInterruptEnable> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CtrlTogPresentCrypto {
     #[doc = "Absent."]
-    ABSENT = 0x0,
+    Absent = 0x0,
     #[doc = "Present."]
-    PRESENT = 0x01,
+    Present = 0x01,
 }
 impl CtrlTogPresentCrypto {
     #[inline(always)]
@@ -2016,9 +2016,9 @@ impl From<CtrlTogPresentCrypto> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CtrlTogPresentSha {
     #[doc = "Absent."]
-    ABSENT = 0x0,
+    Absent = 0x0,
     #[doc = "Present."]
-    PRESENT = 0x01,
+    Present = 0x01,
 }
 impl CtrlTogPresentSha {
     #[inline(always)]
@@ -2047,11 +2047,11 @@ impl From<CtrlTogPresentSha> for u8 {
 pub struct HashAlgorithms(u16);
 impl HashAlgorithms {
     #[doc = "SHA1."]
-    pub const SHA1: Self = Self(0x01);
+    pub const Sha1: Self = Self(0x01);
     #[doc = "CRC32."]
-    pub const CRC32: Self = Self(0x02);
+    pub const Crc32: Self = Self(0x02);
     #[doc = "SHA256."]
-    pub const SHA256: Self = Self(0x04);
+    pub const Sha256: Self = Self(0x04);
 }
 impl HashAlgorithms {
     pub const fn from_bits(val: u16) -> HashAlgorithms {
@@ -2064,9 +2064,9 @@ impl HashAlgorithms {
 impl core::fmt::Debug for HashAlgorithms {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("SHA1"),
-            0x02 => f.write_str("CRC32"),
-            0x04 => f.write_str("SHA256"),
+            0x01 => f.write_str("Sha1"),
+            0x02 => f.write_str("Crc32"),
+            0x04 => f.write_str("Sha256"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -2075,9 +2075,9 @@ impl core::fmt::Debug for HashAlgorithms {
 impl defmt::Format for HashAlgorithms {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "SHA1"),
-            0x02 => defmt::write!(f, "CRC32"),
-            0x04 => defmt::write!(f, "SHA256"),
+            0x01 => defmt::write!(f, "Sha1"),
+            0x02 => defmt::write!(f, "Crc32"),
+            0x04 => defmt::write!(f, "Sha256"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -2099,9 +2099,9 @@ impl From<HashAlgorithms> for u16 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HashOutput {
     #[doc = "INPUT."]
-    INPUT = 0x0,
+    Input = 0x0,
     #[doc = "OUTPUT."]
-    OUTPUT = 0x01,
+    Output = 0x01,
 }
 impl HashOutput {
     #[inline(always)]
@@ -2130,11 +2130,11 @@ impl From<HashOutput> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HashSelect {
     #[doc = "SHA1."]
-    SHA1 = 0x0,
+    Sha1 = 0x0,
     #[doc = "CRC32."]
-    CRC32 = 0x01,
+    Crc32 = 0x01,
     #[doc = "SHA256."]
-    SHA256 = 0x02,
+    Sha256 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
     _RESERVED_5 = 0x05,
@@ -2176,15 +2176,15 @@ impl From<HashSelect> for u8 {
 pub struct Index(u8);
 impl Index {
     #[doc = "CONTROL."]
-    pub const CONTROL: Self = Self(0x01);
+    pub const Control: Self = Self(0x01);
     #[doc = "OTPKEY0."]
-    pub const OTPKEY0: Self = Self(0x10);
+    pub const Otpkey0: Self = Self(0x10);
     #[doc = "OTPKEY1."]
-    pub const OTPKEY1: Self = Self(0x11);
+    pub const Otpkey1: Self = Self(0x11);
     #[doc = "OTPKEY2."]
-    pub const OTPKEY2: Self = Self(0x12);
+    pub const Otpkey2: Self = Self(0x12);
     #[doc = "OTPKEY3."]
-    pub const OTPKEY3: Self = Self(0x13);
+    pub const Otpkey3: Self = Self(0x13);
 }
 impl Index {
     pub const fn from_bits(val: u8) -> Index {
@@ -2197,11 +2197,11 @@ impl Index {
 impl core::fmt::Debug for Index {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("CONTROL"),
-            0x10 => f.write_str("OTPKEY0"),
-            0x11 => f.write_str("OTPKEY1"),
-            0x12 => f.write_str("OTPKEY2"),
-            0x13 => f.write_str("OTPKEY3"),
+            0x01 => f.write_str("Control"),
+            0x10 => f.write_str("Otpkey0"),
+            0x11 => f.write_str("Otpkey1"),
+            0x12 => f.write_str("Otpkey2"),
+            0x13 => f.write_str("Otpkey3"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -2210,11 +2210,11 @@ impl core::fmt::Debug for Index {
 impl defmt::Format for Index {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "CONTROL"),
-            0x10 => defmt::write!(f, "OTPKEY0"),
-            0x11 => defmt::write!(f, "OTPKEY1"),
-            0x12 => defmt::write!(f, "OTPKEY2"),
-            0x13 => defmt::write!(f, "OTPKEY3"),
+            0x01 => defmt::write!(f, "Control"),
+            0x10 => defmt::write!(f, "Otpkey0"),
+            0x11 => defmt::write!(f, "Otpkey1"),
+            0x12 => defmt::write!(f, "Otpkey2"),
+            0x13 => defmt::write!(f, "Otpkey3"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -2236,17 +2236,17 @@ impl From<Index> for u8 {
 pub struct KeySelect(u8);
 impl KeySelect {
     #[doc = "KEY0."]
-    pub const KEY0: Self = Self(0x0);
+    pub const Key0: Self = Self(0x0);
     #[doc = "KEY1."]
-    pub const KEY1: Self = Self(0x01);
+    pub const Key1: Self = Self(0x01);
     #[doc = "KEY2."]
-    pub const KEY2: Self = Self(0x02);
+    pub const Key2: Self = Self(0x02);
     #[doc = "KEY3."]
-    pub const KEY3: Self = Self(0x03);
+    pub const Key3: Self = Self(0x03);
     #[doc = "UNIQUE_KEY."]
-    pub const UNIQUE_KEY: Self = Self(0xfe);
+    pub const UniqueKey: Self = Self(0xfe);
     #[doc = "OTP_KEY."]
-    pub const OTP_KEY: Self = Self(0xff);
+    pub const OtpKey: Self = Self(0xff);
 }
 impl KeySelect {
     pub const fn from_bits(val: u8) -> KeySelect {
@@ -2259,12 +2259,12 @@ impl KeySelect {
 impl core::fmt::Debug for KeySelect {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("KEY0"),
-            0x01 => f.write_str("KEY1"),
-            0x02 => f.write_str("KEY2"),
-            0x03 => f.write_str("KEY3"),
-            0xfe => f.write_str("UNIQUE_KEY"),
-            0xff => f.write_str("OTP_KEY"),
+            0x0 => f.write_str("Key0"),
+            0x01 => f.write_str("Key1"),
+            0x02 => f.write_str("Key2"),
+            0x03 => f.write_str("Key3"),
+            0xfe => f.write_str("UniqueKey"),
+            0xff => f.write_str("OtpKey"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -2273,12 +2273,12 @@ impl core::fmt::Debug for KeySelect {
 impl defmt::Format for KeySelect {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "KEY0"),
-            0x01 => defmt::write!(f, "KEY1"),
-            0x02 => defmt::write!(f, "KEY2"),
-            0x03 => defmt::write!(f, "KEY3"),
-            0xfe => defmt::write!(f, "UNIQUE_KEY"),
-            0xff => defmt::write!(f, "OTP_KEY"),
+            0x0 => defmt::write!(f, "Key0"),
+            0x01 => defmt::write!(f, "Key1"),
+            0x02 => defmt::write!(f, "Key2"),
+            0x03 => defmt::write!(f, "Key3"),
+            0xfe => defmt::write!(f, "UniqueKey"),
+            0xff => defmt::write!(f, "OtpKey"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -2300,15 +2300,15 @@ impl From<KeySelect> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum StatClrCurChannel {
     #[doc = "None."]
-    NONE = 0x0,
+    None = 0x0,
     #[doc = "CH0."]
-    CH0 = 0x01,
+    Ch0 = 0x01,
     #[doc = "CH1."]
-    CH1 = 0x02,
+    Ch1 = 0x02,
     #[doc = "CH2."]
-    CH2 = 0x03,
+    Ch2 = 0x03,
     #[doc = "CH3."]
-    CH3 = 0x04,
+    Ch3 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
@@ -2348,13 +2348,13 @@ impl From<StatClrCurChannel> for u8 {
 pub struct StatClrReadyChannels(u8);
 impl StatClrReadyChannels {
     #[doc = "CH0."]
-    pub const CH0: Self = Self(0x01);
+    pub const Ch0: Self = Self(0x01);
     #[doc = "CH1."]
-    pub const CH1: Self = Self(0x02);
+    pub const Ch1: Self = Self(0x02);
     #[doc = "CH2."]
-    pub const CH2: Self = Self(0x04);
+    pub const Ch2: Self = Self(0x04);
     #[doc = "CH3."]
-    pub const CH3: Self = Self(0x08);
+    pub const Ch3: Self = Self(0x08);
 }
 impl StatClrReadyChannels {
     pub const fn from_bits(val: u8) -> StatClrReadyChannels {
@@ -2367,10 +2367,10 @@ impl StatClrReadyChannels {
 impl core::fmt::Debug for StatClrReadyChannels {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("CH0"),
-            0x02 => f.write_str("CH1"),
-            0x04 => f.write_str("CH2"),
-            0x08 => f.write_str("CH3"),
+            0x01 => f.write_str("Ch0"),
+            0x02 => f.write_str("Ch1"),
+            0x04 => f.write_str("Ch2"),
+            0x08 => f.write_str("Ch3"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -2379,10 +2379,10 @@ impl core::fmt::Debug for StatClrReadyChannels {
 impl defmt::Format for StatClrReadyChannels {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "CH0"),
-            0x02 => defmt::write!(f, "CH1"),
-            0x04 => defmt::write!(f, "CH2"),
-            0x08 => defmt::write!(f, "CH3"),
+            0x01 => defmt::write!(f, "Ch0"),
+            0x02 => defmt::write!(f, "Ch1"),
+            0x04 => defmt::write!(f, "Ch2"),
+            0x08 => defmt::write!(f, "Ch3"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -2404,15 +2404,15 @@ impl From<StatClrReadyChannels> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum StatCurChannel {
     #[doc = "None."]
-    NONE = 0x0,
+    None = 0x0,
     #[doc = "CH0."]
-    CH0 = 0x01,
+    Ch0 = 0x01,
     #[doc = "CH1."]
-    CH1 = 0x02,
+    Ch1 = 0x02,
     #[doc = "CH2."]
-    CH2 = 0x03,
+    Ch2 = 0x03,
     #[doc = "CH3."]
-    CH3 = 0x04,
+    Ch3 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
@@ -2452,13 +2452,13 @@ impl From<StatCurChannel> for u8 {
 pub struct StatReadyChannels(u8);
 impl StatReadyChannels {
     #[doc = "CH0."]
-    pub const CH0: Self = Self(0x01);
+    pub const Ch0: Self = Self(0x01);
     #[doc = "CH1."]
-    pub const CH1: Self = Self(0x02);
+    pub const Ch1: Self = Self(0x02);
     #[doc = "CH2."]
-    pub const CH2: Self = Self(0x04);
+    pub const Ch2: Self = Self(0x04);
     #[doc = "CH3."]
-    pub const CH3: Self = Self(0x08);
+    pub const Ch3: Self = Self(0x08);
 }
 impl StatReadyChannels {
     pub const fn from_bits(val: u8) -> StatReadyChannels {
@@ -2471,10 +2471,10 @@ impl StatReadyChannels {
 impl core::fmt::Debug for StatReadyChannels {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("CH0"),
-            0x02 => f.write_str("CH1"),
-            0x04 => f.write_str("CH2"),
-            0x08 => f.write_str("CH3"),
+            0x01 => f.write_str("Ch0"),
+            0x02 => f.write_str("Ch1"),
+            0x04 => f.write_str("Ch2"),
+            0x08 => f.write_str("Ch3"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -2483,10 +2483,10 @@ impl core::fmt::Debug for StatReadyChannels {
 impl defmt::Format for StatReadyChannels {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "CH0"),
-            0x02 => defmt::write!(f, "CH1"),
-            0x04 => defmt::write!(f, "CH2"),
-            0x08 => defmt::write!(f, "CH3"),
+            0x01 => defmt::write!(f, "Ch0"),
+            0x02 => defmt::write!(f, "Ch1"),
+            0x04 => defmt::write!(f, "Ch2"),
+            0x08 => defmt::write!(f, "Ch3"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -2508,15 +2508,15 @@ impl From<StatReadyChannels> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum StatSetCurChannel {
     #[doc = "None."]
-    NONE = 0x0,
+    None = 0x0,
     #[doc = "CH0."]
-    CH0 = 0x01,
+    Ch0 = 0x01,
     #[doc = "CH1."]
-    CH1 = 0x02,
+    Ch1 = 0x02,
     #[doc = "CH2."]
-    CH2 = 0x03,
+    Ch2 = 0x03,
     #[doc = "CH3."]
-    CH3 = 0x04,
+    Ch3 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
@@ -2556,13 +2556,13 @@ impl From<StatSetCurChannel> for u8 {
 pub struct StatSetReadyChannels(u8);
 impl StatSetReadyChannels {
     #[doc = "CH0."]
-    pub const CH0: Self = Self(0x01);
+    pub const Ch0: Self = Self(0x01);
     #[doc = "CH1."]
-    pub const CH1: Self = Self(0x02);
+    pub const Ch1: Self = Self(0x02);
     #[doc = "CH2."]
-    pub const CH2: Self = Self(0x04);
+    pub const Ch2: Self = Self(0x04);
     #[doc = "CH3."]
-    pub const CH3: Self = Self(0x08);
+    pub const Ch3: Self = Self(0x08);
 }
 impl StatSetReadyChannels {
     pub const fn from_bits(val: u8) -> StatSetReadyChannels {
@@ -2575,10 +2575,10 @@ impl StatSetReadyChannels {
 impl core::fmt::Debug for StatSetReadyChannels {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("CH0"),
-            0x02 => f.write_str("CH1"),
-            0x04 => f.write_str("CH2"),
-            0x08 => f.write_str("CH3"),
+            0x01 => f.write_str("Ch0"),
+            0x02 => f.write_str("Ch1"),
+            0x04 => f.write_str("Ch2"),
+            0x08 => f.write_str("Ch3"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -2587,10 +2587,10 @@ impl core::fmt::Debug for StatSetReadyChannels {
 impl defmt::Format for StatSetReadyChannels {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "CH0"),
-            0x02 => defmt::write!(f, "CH1"),
-            0x04 => defmt::write!(f, "CH2"),
-            0x08 => defmt::write!(f, "CH3"),
+            0x01 => defmt::write!(f, "Ch0"),
+            0x02 => defmt::write!(f, "Ch1"),
+            0x04 => defmt::write!(f, "Ch2"),
+            0x08 => defmt::write!(f, "Ch3"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -2612,15 +2612,15 @@ impl From<StatSetReadyChannels> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum StatTogCurChannel {
     #[doc = "None."]
-    NONE = 0x0,
+    None = 0x0,
     #[doc = "CH0."]
-    CH0 = 0x01,
+    Ch0 = 0x01,
     #[doc = "CH1."]
-    CH1 = 0x02,
+    Ch1 = 0x02,
     #[doc = "CH2."]
-    CH2 = 0x03,
+    Ch2 = 0x03,
     #[doc = "CH3."]
-    CH3 = 0x04,
+    Ch3 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
@@ -2660,13 +2660,13 @@ impl From<StatTogCurChannel> for u8 {
 pub struct StatTogReadyChannels(u8);
 impl StatTogReadyChannels {
     #[doc = "CH0."]
-    pub const CH0: Self = Self(0x01);
+    pub const Ch0: Self = Self(0x01);
     #[doc = "CH1."]
-    pub const CH1: Self = Self(0x02);
+    pub const Ch1: Self = Self(0x02);
     #[doc = "CH2."]
-    pub const CH2: Self = Self(0x04);
+    pub const Ch2: Self = Self(0x04);
     #[doc = "CH3."]
-    pub const CH3: Self = Self(0x08);
+    pub const Ch3: Self = Self(0x08);
 }
 impl StatTogReadyChannels {
     pub const fn from_bits(val: u8) -> StatTogReadyChannels {
@@ -2679,10 +2679,10 @@ impl StatTogReadyChannels {
 impl core::fmt::Debug for StatTogReadyChannels {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x01 => f.write_str("CH0"),
-            0x02 => f.write_str("CH1"),
-            0x04 => f.write_str("CH2"),
-            0x08 => f.write_str("CH3"),
+            0x01 => f.write_str("Ch0"),
+            0x02 => f.write_str("Ch1"),
+            0x04 => f.write_str("Ch2"),
+            0x08 => f.write_str("Ch3"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -2691,10 +2691,10 @@ impl core::fmt::Debug for StatTogReadyChannels {
 impl defmt::Format for StatTogReadyChannels {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x01 => defmt::write!(f, "CH0"),
-            0x02 => defmt::write!(f, "CH1"),
-            0x04 => defmt::write!(f, "CH2"),
-            0x08 => defmt::write!(f, "CH3"),
+            0x01 => defmt::write!(f, "Ch0"),
+            0x02 => defmt::write!(f, "Ch1"),
+            0x04 => defmt::write!(f, "Ch2"),
+            0x08 => defmt::write!(f, "Ch3"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }

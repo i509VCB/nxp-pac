@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tempsense0ClrMeasureTemp {
     #[doc = "Do not start the measurement process."]
-    STOP = 0x0,
+    Stop = 0x0,
     #[doc = "Start the measurement process."]
-    START = 0x01,
+    Start = 0x01,
 }
 impl Tempsense0ClrMeasureTemp {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Tempsense0ClrMeasureTemp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tempsense0ClrPowerDown {
     #[doc = "Enable power to the temperature sensor."]
-    POWER_UP = 0x0,
+    PowerUp = 0x0,
     #[doc = "Power down the temperature sensor."]
-    POWER_DOWN = 0x01,
+    PowerDown = 0x01,
 }
 impl Tempsense0ClrPowerDown {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Tempsense0ClrPowerDown> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tempsense0MeasureTemp {
     #[doc = "Do not start the measurement process."]
-    STOP = 0x0,
+    Stop = 0x0,
     #[doc = "Start the measurement process."]
-    START = 0x01,
+    Start = 0x01,
 }
 impl Tempsense0MeasureTemp {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Tempsense0MeasureTemp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tempsense0PowerDown {
     #[doc = "Enable power to the temperature sensor."]
-    POWER_UP = 0x0,
+    PowerUp = 0x0,
     #[doc = "Power down the temperature sensor."]
-    POWER_DOWN = 0x01,
+    PowerDown = 0x01,
 }
 impl Tempsense0PowerDown {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<Tempsense0PowerDown> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tempsense0SetMeasureTemp {
     #[doc = "Do not start the measurement process."]
-    STOP = 0x0,
+    Stop = 0x0,
     #[doc = "Start the measurement process."]
-    START = 0x01,
+    Start = 0x01,
 }
 impl Tempsense0SetMeasureTemp {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<Tempsense0SetMeasureTemp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tempsense0SetPowerDown {
     #[doc = "Enable power to the temperature sensor."]
-    POWER_UP = 0x0,
+    PowerUp = 0x0,
     #[doc = "Power down the temperature sensor."]
-    POWER_DOWN = 0x01,
+    PowerDown = 0x01,
 }
 impl Tempsense0SetPowerDown {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<Tempsense0SetPowerDown> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tempsense0TogMeasureTemp {
     #[doc = "Do not start the measurement process."]
-    STOP = 0x0,
+    Stop = 0x0,
     #[doc = "Start the measurement process."]
-    START = 0x01,
+    Start = 0x01,
 }
 impl Tempsense0TogMeasureTemp {
     #[inline(always)]
@@ -220,9 +220,9 @@ impl From<Tempsense0TogMeasureTemp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tempsense0TogPowerDown {
     #[doc = "Enable power to the temperature sensor."]
-    POWER_UP = 0x0,
+    PowerUp = 0x0,
     #[doc = "Power down the temperature sensor."]
-    POWER_DOWN = 0x01,
+    PowerDown = 0x01,
 }
 impl Tempsense0TogPowerDown {
     #[inline(always)]

@@ -3,11 +3,11 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Base {
     #[doc = "Is offset from 0 in host memory or IO space."]
-    OFFSET = 0x0,
+    Offset = 0x0,
     #[doc = "Uses Base1 offset in host memory (see MAPBASE reg)."]
-    BASE1 = 0x01,
+    Base1 = 0x01,
     #[doc = "Uses Base2 offset in host memory (see MAPBASE reg)."]
-    BASE2 = 0x02,
+    Base2 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Base {
@@ -37,11 +37,11 @@ impl From<Base> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dma0en {
     #[doc = "Disabled. The DMA channel is not used."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Triggers on Host Read empty (whether endpoint and a byte or mailbox and many bytes). Allows reload of memory."]
-    TRIGGERD_ON_HOST_READ = 0x01,
+    TriggerdOnHostRead = 0x01,
     #[doc = "Triggers on Host Write complete/ready (whether endpoint and a byte or mailbox and many bytes)."]
-    TRIGGERS_ON_HOST_WRITE = 0x02,
+    TriggersOnHostWrite = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Dma0en {
@@ -71,11 +71,11 @@ impl From<Dma0en> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dma1en {
     #[doc = "Disabled. The DMA channel is not used."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Triggers on Host Read empty (whether endpoint and a byte or mailbox and many bytes). Allows reload of memory."]
-    TRIGGERD_ON_HOST_READ = 0x01,
+    TriggerdOnHostRead = 0x01,
     #[doc = "Triggers on Host Write complete/ready (whether endpoint and a byte or mailbox and many bytes)."]
-    TRIGGERS_ON_HOST_WRITE = 0x02,
+    TriggersOnHostWrite = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Dma1en {
@@ -105,11 +105,11 @@ impl From<Dma1en> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Enable {
     #[doc = "Disabled. Block is not operational."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "eSPI."]
-    ESPI = 0x01,
+    Espi = 0x01,
     #[doc = "LPC."]
-    LPC = 0x02,
+    Lpc = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Enable {
@@ -139,13 +139,13 @@ impl From<Enable> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flashmx {
     #[doc = "64 bytes."]
-    BYTE64 = 0x0,
+    Byte64 = 0x0,
     #[doc = "128 bytes."]
-    BYTE128 = 0x01,
+    Byte128 = 0x01,
     #[doc = "256 bytes."]
-    BYTE256 = 0x02,
+    Byte256 = 0x02,
     #[doc = "512 bytes."]
-    BYTE512 = 0x03,
+    Byte512 = 0x03,
 }
 impl Flashmx {
     #[inline(always)]
@@ -174,17 +174,17 @@ impl From<Flashmx> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Flshera {
     #[doc = "Flash is not enabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Erase is 4K."]
-    ERASE_4K = 0x01,
+    Erase4k = 0x01,
     #[doc = "Erase is 64K."]
-    ERASE_64K = 0x02,
+    Erase64k = 0x02,
     #[doc = "Erase allows 4K and 64K."]
-    ERASE_4K_64K = 0x03,
+    Erase4k64k = 0x03,
     #[doc = "Erase is 128K."]
-    ERASE_128K = 0x04,
+    Erase128k = 0x04,
     #[doc = "Erase is 256K."]
-    ERASE_256K = 0x05,
+    Erase256k = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
 }
@@ -215,15 +215,15 @@ impl From<Flshera> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Maxspd {
     #[doc = "<=20MHz."]
-    SMALL_THAN_20M = 0x0,
+    SmallThan20m = 0x0,
     #[doc = "<=25MHz (may be 24Mhz)."]
-    SMALL_THAN_25M = 0x01,
+    SmallThan25m = 0x01,
     #[doc = "<=33MHz (may be 30MHz)."]
-    SMALL_THAN_33M = 0x02,
+    SmallThan33m = 0x02,
     #[doc = "<=50MHz (may be 48MHz)."]
-    SMALL_THAN_50M = 0x03,
+    SmallThan50m = 0x03,
     #[doc = "<= 66MHz (may be 60MHz)."]
-    SMALL_THAN_66M = 0x04,
+    SmallThan66m = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
@@ -255,11 +255,11 @@ impl From<Maxspd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum P0addrBaseOrAsz {
     #[doc = "Is offset from 0 in host memory or IO space."]
-    OFFSET_FROM_0 = 0x0,
+    OffsetFrom0 = 0x0,
     #[doc = "Uses BASE0 offset in host memory."]
-    USE_BASE0 = 0x01,
+    UseBase0 = 0x01,
     #[doc = "Uses BASE1 offset in host memory."]
-    USE_BASE1 = 0x02,
+    UseBase1 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl P0addrBaseOrAsz {
@@ -289,28 +289,28 @@ impl From<P0addrBaseOrAsz> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum P0cfgType {
     #[doc = "Unconfigured (reset condition)."]
-    UNCONFIGURED = 0x0,
+    Unconfigured = 0x0,
     #[doc = "ACPI style Endpoint."]
-    ACPI_END = 0x01,
+    AcpiEnd = 0x01,
     #[doc = "ACPI style Index/Data."]
-    ACPI_INDEX = 0x02,
+    AcpiIndex = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Bus Master Mem Single."]
-    BUS_M_MEM_S = 0x04,
+    BusMMemS = 0x04,
     #[doc = "Bus Master Flash Single."]
-    BUS_M_FLASH_S = 0x05,
+    BusMFlashS = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
     #[doc = "Mailbox Shared."]
-    MAILBOX_SHARED = 0x08,
+    MailboxShared = 0x08,
     #[doc = "Mailbox Single."]
-    MAILBOX_SINGLE = 0x09,
+    MailboxSingle = 0x09,
     #[doc = "Mailbox Split."]
-    MAILBOX_SPLIT = 0x0a,
+    MailboxSplit = 0x0a,
     #[doc = "Mailbox OOB Split."]
-    MAILBOX_OOB_SPLIT = 0x0b,
+    MailboxOobSplit = 0x0b,
     #[doc = "Mailbox OEM."]
-    MAILBOX_OEM = 0x0c,
+    MailboxOem = 0x0c,
     _RESERVED_d = 0x0d,
     _RESERVED_e = 0x0e,
     _RESERVED_f = 0x0f,
@@ -342,11 +342,11 @@ impl From<P0cfgType> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum P1addrBaseOrAsz {
     #[doc = "Is offset from 0 in host memory or IO space."]
-    OFFSET_FROM_0 = 0x0,
+    OffsetFrom0 = 0x0,
     #[doc = "Uses BASE0 offset in host memory."]
-    USE_BASE0 = 0x01,
+    UseBase0 = 0x01,
     #[doc = "Uses BASE1 offset in host memory."]
-    USE_BASE1 = 0x02,
+    UseBase1 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl P1addrBaseOrAsz {
@@ -376,28 +376,28 @@ impl From<P1addrBaseOrAsz> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum P1cfgType {
     #[doc = "Unconfigured (reset condition)."]
-    UNCONFIGURED = 0x0,
+    Unconfigured = 0x0,
     #[doc = "ACPI style Endpoint."]
-    ACPI_END = 0x01,
+    AcpiEnd = 0x01,
     #[doc = "ACPI style Index/Data."]
-    ACPI_INDEX = 0x02,
+    AcpiIndex = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Bus Master Mem Single."]
-    BUS_M_MEM_S = 0x04,
+    BusMMemS = 0x04,
     #[doc = "Bus Master Flash Single."]
-    BUS_M_FLASH_S = 0x05,
+    BusMFlashS = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
     #[doc = "Mailbox Shared."]
-    MAILBOX_SHARED = 0x08,
+    MailboxShared = 0x08,
     #[doc = "Mailbox Single."]
-    MAILBOX_SINGLE = 0x09,
+    MailboxSingle = 0x09,
     #[doc = "Mailbox Split."]
-    MAILBOX_SPLIT = 0x0a,
+    MailboxSplit = 0x0a,
     #[doc = "Mailbox OOB Split."]
-    MAILBOX_OOB_SPLIT = 0x0b,
+    MailboxOobSplit = 0x0b,
     #[doc = "Mailbox OEM."]
-    MAILBOX_OEM = 0x0c,
+    MailboxOem = 0x0c,
     _RESERVED_d = 0x0d,
     _RESERVED_e = 0x0e,
     _RESERVED_f = 0x0f,
@@ -429,11 +429,11 @@ impl From<P1cfgType> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum P2addrBaseOrAsz {
     #[doc = "Is offset from 0 in host memory or IO space."]
-    OFFSET_FROM_0 = 0x0,
+    OffsetFrom0 = 0x0,
     #[doc = "Uses BASE0 offset in host memory."]
-    USE_BASE0 = 0x01,
+    UseBase0 = 0x01,
     #[doc = "Uses BASE1 offset in host memory."]
-    USE_BASE1 = 0x02,
+    UseBase1 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl P2addrBaseOrAsz {
@@ -463,28 +463,28 @@ impl From<P2addrBaseOrAsz> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum P2cfgType {
     #[doc = "Unconfigured (reset condition)."]
-    UNCONFIGURED = 0x0,
+    Unconfigured = 0x0,
     #[doc = "ACPI style Endpoint."]
-    ACPI_END = 0x01,
+    AcpiEnd = 0x01,
     #[doc = "ACPI style Index/Data."]
-    ACPI_INDEX = 0x02,
+    AcpiIndex = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Bus Master Mem Single."]
-    BUS_M_MEM_S = 0x04,
+    BusMMemS = 0x04,
     #[doc = "Bus Master Flash Single."]
-    BUS_M_FLASH_S = 0x05,
+    BusMFlashS = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
     #[doc = "Mailbox Shared."]
-    MAILBOX_SHARED = 0x08,
+    MailboxShared = 0x08,
     #[doc = "Mailbox Single."]
-    MAILBOX_SINGLE = 0x09,
+    MailboxSingle = 0x09,
     #[doc = "Mailbox Split."]
-    MAILBOX_SPLIT = 0x0a,
+    MailboxSplit = 0x0a,
     #[doc = "Mailbox OOB Split."]
-    MAILBOX_OOB_SPLIT = 0x0b,
+    MailboxOobSplit = 0x0b,
     #[doc = "Mailbox OEM."]
-    MAILBOX_OEM = 0x0c,
+    MailboxOem = 0x0c,
     _RESERVED_d = 0x0d,
     _RESERVED_e = 0x0e,
     _RESERVED_f = 0x0f,
@@ -516,11 +516,11 @@ impl From<P2cfgType> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum P3addrBaseOrAsz {
     #[doc = "Is offset from 0 in host memory or IO space."]
-    OFFSET_FROM_0 = 0x0,
+    OffsetFrom0 = 0x0,
     #[doc = "Uses BASE0 offset in host memory."]
-    USE_BASE0 = 0x01,
+    UseBase0 = 0x01,
     #[doc = "Uses BASE1 offset in host memory."]
-    USE_BASE1 = 0x02,
+    UseBase1 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl P3addrBaseOrAsz {
@@ -550,28 +550,28 @@ impl From<P3addrBaseOrAsz> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum P3cfgType {
     #[doc = "Unconfigured (reset condition)."]
-    UNCONFIGURED = 0x0,
+    Unconfigured = 0x0,
     #[doc = "ACPI style Endpoint."]
-    ACPI_END = 0x01,
+    AcpiEnd = 0x01,
     #[doc = "ACPI style Index/Data."]
-    ACPI_INDEX = 0x02,
+    AcpiIndex = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Bus Master Mem Single."]
-    BUS_M_MEM_S = 0x04,
+    BusMMemS = 0x04,
     #[doc = "Bus Master Flash Single."]
-    BUS_M_FLASH_S = 0x05,
+    BusMFlashS = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
     #[doc = "Mailbox Shared."]
-    MAILBOX_SHARED = 0x08,
+    MailboxShared = 0x08,
     #[doc = "Mailbox Single."]
-    MAILBOX_SINGLE = 0x09,
+    MailboxSingle = 0x09,
     #[doc = "Mailbox Split."]
-    MAILBOX_SPLIT = 0x0a,
+    MailboxSplit = 0x0a,
     #[doc = "Mailbox OOB Split."]
-    MAILBOX_OOB_SPLIT = 0x0b,
+    MailboxOobSplit = 0x0b,
     #[doc = "Mailbox OEM."]
-    MAILBOX_OEM = 0x0c,
+    MailboxOem = 0x0c,
     _RESERVED_d = 0x0d,
     _RESERVED_e = 0x0e,
     _RESERVED_f = 0x0f,
@@ -603,11 +603,11 @@ impl From<P3cfgType> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum P4addrBaseOrAsz {
     #[doc = "Is offset from 0 in host memory or IO space."]
-    OFFSET_FROM_0 = 0x0,
+    OffsetFrom0 = 0x0,
     #[doc = "Uses BASE0 offset in host memory."]
-    USE_BASE0 = 0x01,
+    UseBase0 = 0x01,
     #[doc = "Uses BASE1 offset in host memory."]
-    USE_BASE1 = 0x02,
+    UseBase1 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl P4addrBaseOrAsz {
@@ -637,28 +637,28 @@ impl From<P4addrBaseOrAsz> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum P4cfgType {
     #[doc = "Unconfigured (reset condition)."]
-    UNCONFIGURED = 0x0,
+    Unconfigured = 0x0,
     #[doc = "ACPI style Endpoint."]
-    ACPI_END = 0x01,
+    AcpiEnd = 0x01,
     #[doc = "ACPI style Index/Data."]
-    ACPI_INDEX = 0x02,
+    AcpiIndex = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Bus Master Mem Single."]
-    BUS_M_MEM_S = 0x04,
+    BusMMemS = 0x04,
     #[doc = "Bus Master Flash Single."]
-    BUS_M_FLASH_S = 0x05,
+    BusMFlashS = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
     #[doc = "Mailbox Shared."]
-    MAILBOX_SHARED = 0x08,
+    MailboxShared = 0x08,
     #[doc = "Mailbox Single."]
-    MAILBOX_SINGLE = 0x09,
+    MailboxSingle = 0x09,
     #[doc = "Mailbox Split."]
-    MAILBOX_SPLIT = 0x0a,
+    MailboxSplit = 0x0a,
     #[doc = "Mailbox OOB Split."]
-    MAILBOX_OOB_SPLIT = 0x0b,
+    MailboxOobSplit = 0x0b,
     #[doc = "Mailbox OEM."]
-    MAILBOX_OEM = 0x0c,
+    MailboxOem = 0x0c,
     _RESERVED_d = 0x0d,
     _RESERVED_e = 0x0e,
     _RESERVED_f = 0x0f,
@@ -690,13 +690,13 @@ impl From<P4cfgType> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Safera {
     #[doc = "Minimally 2KB."]
-    MIN_2KB = 0x0,
+    Min2kb = 0x0,
     #[doc = "Minimally 4KB."]
-    MIN_4KB = 0x01,
+    Min4kb = 0x01,
     #[doc = "Minimally 8KB."]
-    MIN_8KB = 0x02,
+    Min8kb = 0x02,
     #[doc = "Minimally 16KB."]
-    MIN_16KB = 0x03,
+    Min16kb = 0x03,
 }
 impl Safera {
     #[inline(always)]
@@ -725,13 +725,13 @@ impl From<Safera> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Spicap {
     #[doc = "SPI only."]
-    SPI = 0x0,
+    Spi = 0x0,
     #[doc = "BiSPI and SPI."]
-    BSPI_SPI = 0x01,
+    BspiSpi = 0x01,
     #[doc = "FLEXSPI and SPI."]
-    FLEXSPI_SPI = 0x02,
+    FlexspiSpi = 0x02,
     #[doc = "any."]
-    ANY = 0x03,
+    Any = 0x03,
 }
 impl Spicap {
     #[inline(always)]
@@ -760,11 +760,11 @@ impl From<Spicap> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Spimod {
     #[doc = "SPI."]
-    SPI = 0x0,
+    Spi = 0x0,
     #[doc = "BiSPI."]
-    BSPI = 0x01,
+    Bspi = 0x01,
     #[doc = "FLEXSPI."]
-    FLEXSPI = 0x02,
+    Flexspi = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Spimod {
@@ -794,15 +794,15 @@ impl From<Spimod> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Spispd {
     #[doc = "20MHz or less."]
-    LESS_AND_20M = 0x0,
+    LessAnd20m = 0x0,
     #[doc = "25MHz or 24MHz."]
-    FREQ_25M_24M = 0x01,
+    Freq25m24m = 0x01,
     #[doc = "33MHz or 30MHz."]
-    FREQ_33M_30M = 0x02,
+    Freq33m30m = 0x02,
     #[doc = "50MHz or 48MHz."]
-    FREQ_50M_48M = 0x03,
+    Freq50m48m = 0x03,
     #[doc = "66MHz or 60MHz."]
-    FREQ_66M_60M = 0x04,
+    Freq66m60m = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,

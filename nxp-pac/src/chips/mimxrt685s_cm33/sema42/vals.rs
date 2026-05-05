@@ -3,11 +3,11 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gtfsm {
     #[doc = "The gate is unlocked (free)."]
-    GTFSM_0 = 0x0,
+    Gtfsm0 = 0x0,
     #[doc = "The gate has been locked by processor 0."]
-    GTFSM_1 = 0x01,
+    Gtfsm1 = 0x01,
     #[doc = "The gate has been locked by processor 1."]
-    GTFSM_2 = 0x02,
+    Gtfsm2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
     _RESERVED_5 = 0x05,
@@ -49,13 +49,13 @@ impl From<Gtfsm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rstgsm {
     #[doc = "Idle, waiting for the first data pattern write."]
-    RSTGSM_0 = 0x0,
+    Rstgsm0 = 0x0,
     #[doc = "Waiting for the second data pattern write."]
-    RSTGSM_1 = 0x01,
+    Rstgsm1 = 0x01,
     #[doc = "The 2-write sequence has completed. Generate the specified gate reset(s). After the reset is performed, this machine returns to the idle (waiting for first data pattern write) state. The \"01\" state persists for only one clock cycle. Software cannot observe this state."]
-    RSTGSM_2 = 0x02,
+    Rstgsm2 = 0x02,
     #[doc = "This state encoding is never used and therefore reserved."]
-    RSTGSM_3 = 0x03,
+    Rstgsm3 = 0x03,
 }
 impl Rstgsm {
     #[inline(always)]

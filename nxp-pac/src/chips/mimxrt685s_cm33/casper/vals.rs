@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Abbpair {
     #[doc = "Bank-pair 0 (1st)."]
-    PAIR0 = 0x0,
+    Pair0 = 0x0,
     #[doc = "Bank-pair 1 (2nd)."]
-    PAIR1 = 0x01,
+    Pair1 = 0x01,
 }
 impl Abbpair {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Abbpair> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Busy {
     #[doc = "Not busy - is idle."]
-    IDLE = 0x0,
+    Idle = 0x0,
     #[doc = "Is busy."]
-    BUSY = 0x01,
+    Busy = 0x01,
 }
 impl Busy {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Busy> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cdbpair {
     #[doc = "Bank-pair 0 (1st)."]
-    PAIR0 = 0x0,
+    Pair0 = 0x0,
     #[doc = "Bank-pair 1 (2nd)."]
-    PAIR1 = 0x01,
+    Pair1 = 0x01,
 }
 impl Cdbpair {
     #[inline(always)]
@@ -96,13 +96,13 @@ impl From<Cdbpair> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cskip {
     #[doc = "No Skip."]
-    NO_SKIP = 0x0,
+    NoSkip = 0x0,
     #[doc = "Skip if Carry is 1."]
-    SKIP_IF_1 = 0x01,
+    SkipIf1 = 0x01,
     #[doc = "Skip if Carry is 0."]
-    SKIP_IF_0 = 0x02,
+    SkipIf0 = 0x02,
     #[doc = "Set CTRLOFF to CDOFF and Skip."]
-    SET_AND_SKIP = 0x03,
+    SetAndSkip = 0x03,
 }
 impl Cskip {
     #[inline(always)]
@@ -131,9 +131,9 @@ impl From<Cskip> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum IntenclrDone {
     #[doc = "If written 0, ignored."]
-    IGNORED = 0x0,
+    Ignored = 0x0,
     #[doc = "If written 1, do not Interrupt when done."]
-    NO_INTERRUPT = 0x01,
+    NoInterrupt = 0x01,
 }
 impl IntenclrDone {
     #[inline(always)]
@@ -162,7 +162,7 @@ impl From<IntenclrDone> for u8 {
 pub struct Key(u16);
 impl Key {
     #[doc = "If set during write, will allow lock or unlock."]
-    pub const KWY_VALUE: Self = Self(0x073d);
+    pub const KwyValue: Self = Self(0x073d);
 }
 impl Key {
     pub const fn from_bits(val: u16) -> Key {
@@ -175,7 +175,7 @@ impl Key {
 impl core::fmt::Debug for Key {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x073d => f.write_str("KWY_VALUE"),
+            0x073d => f.write_str("KwyValue"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -184,7 +184,7 @@ impl core::fmt::Debug for Key {
 impl defmt::Format for Key {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x073d => defmt::write!(f, "KWY_VALUE"),
+            0x073d => defmt::write!(f, "KwyValue"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -206,9 +206,9 @@ impl From<Key> for u16 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Resbpair {
     #[doc = "Bank-pair 0 (1st)."]
-    PAIR0 = 0x0,
+    Pair0 = 0x0,
     #[doc = "Bank-pair 1 (2nd)."]
-    PAIR1 = 0x01,
+    Pair1 = 0x01,
 }
 impl Resbpair {
     #[inline(always)]
@@ -237,9 +237,9 @@ impl From<Resbpair> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum StatusDone {
     #[doc = "Busy or just cleared."]
-    BUSY = 0x0,
+    Busy = 0x0,
     #[doc = "Completed last operation."]
-    COMPLETED = 0x01,
+    Completed = 0x01,
 }
 impl StatusDone {
     #[inline(always)]

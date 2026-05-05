@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Active {
     #[doc = "Inactive (stopped)."]
-    TIMERISNOTACTIVE = 0x0,
+    Timerisnotactive = 0x0,
     #[doc = "Active."]
-    TIMERISACTIVE = 0x01,
+    Timerisactive = 0x01,
 }
 impl Active {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Active> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Capclr0 {
     #[doc = "Does nothing."]
-    CAPCLR0NOTHING = 0x0,
+    Capclr0nothing = 0x0,
     #[doc = "Clears the CAP0 register value."]
-    CAPCLR0CLEARED = 0x01,
+    Capclr0cleared = 0x01,
 }
 impl Capclr0 {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Capclr0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Capclr1 {
     #[doc = "Does nothing."]
-    CAPCLR1NOTHING = 0x0,
+    Capclr1nothing = 0x0,
     #[doc = "Clears the CAP1 register value."]
-    CAPCLR1CLEARED = 0x01,
+    Capclr1cleared = 0x01,
 }
 impl Capclr1 {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Capclr1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Capclr2 {
     #[doc = "Does nothing."]
-    CAPCLR2NOTHING = 0x0,
+    Capclr2nothing = 0x0,
     #[doc = "Clears the CAP2 register value."]
-    CAPCLR2CLEARED = 0x01,
+    Capclr2cleared = 0x01,
 }
 impl Capclr2 {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<Capclr2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Capclr3 {
     #[doc = "Does nothing."]
-    CAPCLR3NOTHING = 0x0,
+    Capclr3nothing = 0x0,
     #[doc = "Clears the CAP3 register value."]
-    CAPCLR3CLEARED = 0x01,
+    Capclr3cleared = 0x01,
 }
 impl Capclr3 {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<Capclr3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Capen0 {
     #[doc = "Disable."]
-    CAPEN0ISDISABLED = 0x0,
+    Capen0isdisabled = 0x0,
     #[doc = "Enable."]
-    CAPEN0ISENABLED = 0x01,
+    Capen0isenabled = 0x01,
 }
 impl Capen0 {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<Capen0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Capen1 {
     #[doc = "Disable."]
-    CAPEN1ISDISABLED = 0x0,
+    Capen1isdisabled = 0x0,
     #[doc = "Enable."]
-    CAPEN1ISENABLED = 0x01,
+    Capen1isenabled = 0x01,
 }
 impl Capen1 {
     #[inline(always)]
@@ -220,9 +220,9 @@ impl From<Capen1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Capen2 {
     #[doc = "Disable."]
-    CAPEN2ISDISABLED = 0x0,
+    Capen2isdisabled = 0x0,
     #[doc = "Enable."]
-    CAPEN2ISENABLED = 0x01,
+    Capen2isenabled = 0x01,
 }
 impl Capen2 {
     #[inline(always)]
@@ -251,9 +251,9 @@ impl From<Capen2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Capen3 {
     #[doc = "Disable."]
-    CAPEN3ISDISABLED = 0x0,
+    Capen3isdisabled = 0x0,
     #[doc = "Enable."]
-    CAPEN3ISENABLED = 0x01,
+    Capen3isenabled = 0x01,
 }
 impl Capen3 {
     #[inline(always)]
@@ -282,9 +282,9 @@ impl From<Capen3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cappol0 {
     #[doc = "Positive."]
-    CAPPOL0POSEDGECAPTURE = 0x0,
+    Cappol0posedgecapture = 0x0,
     #[doc = "Negative."]
-    CAPPOL0NEGEDGECAPTURE = 0x01,
+    Cappol0negedgecapture = 0x01,
 }
 impl Cappol0 {
     #[inline(always)]
@@ -313,9 +313,9 @@ impl From<Cappol0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cappol1 {
     #[doc = "Positive."]
-    CAPPOL1POSEDGECAPTURE = 0x0,
+    Cappol1posedgecapture = 0x0,
     #[doc = "Negative."]
-    CAPPOL1NEGEDGECAPTURE = 0x01,
+    Cappol1negedgecapture = 0x01,
 }
 impl Cappol1 {
     #[inline(always)]
@@ -344,9 +344,9 @@ impl From<Cappol1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cappol2 {
     #[doc = "Positive."]
-    CAPPOL2POSEDGECAPTURE = 0x0,
+    Cappol2posedgecapture = 0x0,
     #[doc = "Negative."]
-    CAPPOL2NEGEDGECAPTURE = 0x01,
+    Cappol2negedgecapture = 0x01,
 }
 impl Cappol2 {
     #[inline(always)]
@@ -375,9 +375,9 @@ impl From<Cappol2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cappol3 {
     #[doc = "Positive."]
-    CAPPOL3POSEDGECAPTURE = 0x0,
+    Cappol3posedgecapture = 0x0,
     #[doc = "Negative."]
-    CAPPOL3NEGEDGECAPTURE = 0x01,
+    Cappol3negedgecapture = 0x01,
 }
 impl Cappol3 {
     #[inline(always)]
@@ -406,9 +406,9 @@ impl From<Cappol3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Repeat {
     #[doc = "One-time delay."]
-    DELAYONCE = 0x0,
+    Delayonce = 0x0,
     #[doc = "Delay repeats continuously."]
-    DELAYREPEATS = 0x01,
+    Delayrepeats = 0x01,
 }
 impl Repeat {
     #[inline(always)]

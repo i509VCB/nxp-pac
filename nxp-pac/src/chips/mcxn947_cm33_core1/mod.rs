@@ -1,6 +1,7 @@
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6a8c2aa 2026-01-27))"]
+#![allow(non_upper_case_globals)]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (e5ab29f 2026-04-30))"]
 #[derive(Copy, Clone, Debug, PartialEq, Eq)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Interrupt {
@@ -402,7 +403,7 @@ pub const GPIO5: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4004_0000usize as 
 #[doc = "GPIO"]
 pub const GPIO5_ALIAS1: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4004_1000usize as _) };
 #[doc = "PORT"]
-pub const PORT5: port::Port = unsafe { port::Port::from_ptr(0x4004_2000usize as _) };
+pub const PORT5: port5::Port5 = unsafe { port5::Port5::from_ptr(0x4004_2000usize as _) };
 #[doc = "Flash"]
 pub const FMU0: fmu0::Fmu0 = unsafe { fmu0::Fmu0::from_ptr(0x4004_3000usize as _) };
 #[doc = "FlashTest"]
@@ -647,11 +648,11 @@ pub const USBPHY: usbphy::Usbphy = unsafe { usbphy::Usbphy::from_ptr(0x4010_a000
 pub const USBHS1_PHY_DCD: usbhs1_phy_dcd::Usbhs1PhyDcd =
     unsafe { usbhs1_phy_dcd::Usbhs1PhyDcd::from_ptr(0x4010_a800usize as _) };
 #[doc = "USB"]
-pub const USBHS1__USBC: usbhs1__usbc::Usbhs1_usbc =
-    unsafe { usbhs1__usbc::Usbhs1_usbc::from_ptr(0x4010_b000usize as _) };
+pub const USBHS1__USBC: usbhs1__usbc::Usbhs1Usbc =
+    unsafe { usbhs1__usbc::Usbhs1Usbc::from_ptr(0x4010_b000usize as _) };
 #[doc = "USBNC"]
-pub const USBHS1__USBNC: usbhs1__usbnc::Usbhs1_usbnc =
-    unsafe { usbhs1__usbnc::Usbhs1_usbnc::from_ptr(0x4010_b200usize as _) };
+pub const USBHS1__USBNC: usbhs1__usbnc::Usbhs1Usbnc =
+    unsafe { usbhs1__usbnc::Usbhs1Usbnc::from_ptr(0x4010_b200usize as _) };
 #[doc = "MICFIL"]
 pub const PDM: pdm::Pdm = unsafe { pdm::Pdm::from_ptr(0x4010_c000usize as _) };
 #[doc = "ADC"]
@@ -673,15 +674,15 @@ pub const DAC2: dac2::Dac2 = unsafe { dac2::Dac2::from_ptr(0x4011_4000usize as _
 #[doc = "OPAMP"]
 pub const OPAMP2: opamp::Opamp = unsafe { opamp::Opamp::from_ptr(0x4011_5000usize as _) };
 #[doc = "PORT"]
-pub const PORT0: port::Port = unsafe { port::Port::from_ptr(0x4011_6000usize as _) };
+pub const PORT0: port0::Port0 = unsafe { port0::Port0::from_ptr(0x4011_6000usize as _) };
 #[doc = "PORT"]
-pub const PORT1: port::Port = unsafe { port::Port::from_ptr(0x4011_7000usize as _) };
+pub const PORT1: port1::Port1 = unsafe { port1::Port1::from_ptr(0x4011_7000usize as _) };
 #[doc = "PORT"]
-pub const PORT2: port::Port = unsafe { port::Port::from_ptr(0x4011_8000usize as _) };
+pub const PORT2: port2::Port2 = unsafe { port2::Port2::from_ptr(0x4011_8000usize as _) };
 #[doc = "PORT"]
-pub const PORT3: port::Port = unsafe { port::Port::from_ptr(0x4011_9000usize as _) };
+pub const PORT3: port3::Port3 = unsafe { port3::Port3::from_ptr(0x4011_9000usize as _) };
 #[doc = "PORT"]
-pub const PORT4: port::Port = unsafe { port::Port::from_ptr(0x4011_a000usize as _) };
+pub const PORT4: port4::Port4 = unsafe { port4::Port4::from_ptr(0x4011_a000usize as _) };
 #[doc = "AHBSC"]
 pub const AHBSC: ahbsc::Ahbsc = unsafe { ahbsc::Ahbsc::from_ptr(0x4012_0000usize as _) };
 #[doc = "AHBSC"]
@@ -691,7 +692,7 @@ pub const AHBSC_ALIAS2: ahbsc::Ahbsc = unsafe { ahbsc::Ahbsc::from_ptr(0x4012_20
 #[doc = "AHBSC"]
 pub const AHBSC_ALIAS3: ahbsc::Ahbsc = unsafe { ahbsc::Ahbsc::from_ptr(0x4012_3000usize as _) };
 #[doc = "System Control not in System Control Block"]
-pub const SCNSCB: scn_scb::ScnScb = unsafe { scn_scb::ScnScb::from_ptr(0xe000_e000usize as _) };
+pub const SCNSCB: s_cn_scb::SCnScb = unsafe { s_cn_scb::SCnScb::from_ptr(0xe000_e000usize as _) };
 #[doc = "M33 Systick module"]
 pub const SYSTICK1: sys_tick1::SysTick1 =
     unsafe { sys_tick1::SysTick1::from_ptr(0xe000_e010usize as _) };
@@ -753,7 +754,12 @@ pub mod pdm;
 pub mod pint0;
 pub mod pkc0;
 pub mod plu0;
-pub mod port;
+pub mod port0;
+pub mod port1;
+pub mod port2;
+pub mod port3;
+pub mod port4;
+pub mod port5;
 pub mod powerquad;
 pub mod puf;
 pub mod puf_ctrl;
@@ -762,9 +768,9 @@ pub mod qdc;
 pub mod rtc0;
 pub mod rtc_subsystem0;
 pub mod s50;
+pub mod s_cn_scb;
 pub mod sai;
 pub mod scg0;
-pub mod scn_scb;
 pub mod sct0;
 pub mod sema42_0;
 pub mod sinc0;

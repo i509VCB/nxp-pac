@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Atcs0 {
     #[doc = "1 Hz prescaler clock."]
-    FREQ_1_HZ = 0x0,
+    Freq1Hz = 0x0,
     #[doc = "64 Hz prescaler clock."]
-    FREQ_64_HZ = 0x01,
+    Freq64Hz = 0x01,
 }
 impl Atcs0 {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Atcs0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Atcs1 {
     #[doc = "1 Hz prescaler clock."]
-    FREQ_1_HZ = 0x0,
+    Freq1Hz = 0x0,
     #[doc = "64 Hz prescaler clock."]
-    FREQ_64_HZ = 0x01,
+    Freq64Hz = 0x01,
 }
 impl Atcs1 {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Atcs1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Atl0 {
     #[doc = "Locked and writes are ignored."]
-    LOCK = 0x0,
+    Lock = 0x0,
     #[doc = "Not locked and writes complete as normal."]
-    NOT_LOCK = 0x01,
+    NotLock = 0x01,
 }
 impl Atl0 {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Atl0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Atl1 {
     #[doc = "Locked and writes are ignored."]
-    LOCK = 0x0,
+    Lock = 0x0,
     #[doc = "Not locked and writes complete as normal."]
-    NOT_LOCK = 0x01,
+    NotLock = 0x01,
 }
 impl Atl1 {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<Atl1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Crl {
     #[doc = "Locked and writes are ignored."]
-    LOCK = 0x0,
+    Lock = 0x0,
     #[doc = "Not locked and writes complete as normal."]
-    NOT_LOCK = 0x01,
+    NotLock = 0x01,
 }
 impl Crl {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<Crl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Distam {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Automatically disables the prescaler after tamper detection."]
-    AUTO_DIS = 0x01,
+    AutoDis = 0x01,
 }
 impl Distam {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<Distam> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gfe {
     #[doc = "Bypasses."]
-    BYPASS = 0x0,
+    Bypass = 0x0,
     #[doc = "Enables."]
-    ENABLE = 0x01,
+    Enable = 0x01,
 }
 impl Gfe {
     #[inline(always)]
@@ -220,9 +220,9 @@ impl From<Gfe> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gfl0 {
     #[doc = "Locked and writes are ignored."]
-    LOCK = 0x0,
+    Lock = 0x0,
     #[doc = "Not locked and writes complete as normal."]
-    NOT_LOCK = 0x01,
+    NotLock = 0x01,
 }
 impl Gfl0 {
     #[inline(always)]
@@ -251,9 +251,9 @@ impl From<Gfl0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gfl1 {
     #[doc = "Locked and writes are ignored."]
-    LOCK = 0x0,
+    Lock = 0x0,
     #[doc = "Not locked and writes complete as normal."]
-    NOT_LOCK = 0x01,
+    NotLock = 0x01,
 }
 impl Gfl1 {
     #[inline(always)]
@@ -282,9 +282,9 @@ impl From<Gfl1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gfl2 {
     #[doc = "Locked and writes are ignored."]
-    LOCK = 0x0,
+    Lock = 0x0,
     #[doc = "Not locked and writes complete as normal."]
-    NOT_LOCK = 0x01,
+    NotLock = 0x01,
 }
 impl Gfl2 {
     #[inline(always)]
@@ -313,9 +313,9 @@ impl From<Gfl2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gfl3 {
     #[doc = "Locked and writes are ignored."]
-    LOCK = 0x0,
+    Lock = 0x0,
     #[doc = "Not locked and writes complete as normal."]
-    NOT_LOCK = 0x01,
+    NotLock = 0x01,
 }
 impl Gfl3 {
     #[inline(always)]
@@ -344,9 +344,9 @@ impl From<Gfl3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gfl4 {
     #[doc = "Locked and writes are ignored."]
-    LOCK = 0x0,
+    Lock = 0x0,
     #[doc = "Not locked and writes complete as normal."]
-    NOT_LOCK = 0x01,
+    NotLock = 0x01,
 }
 impl Gfl4 {
     #[inline(always)]
@@ -375,9 +375,9 @@ impl From<Gfl4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gfl5 {
     #[doc = "Locked and writes are ignored."]
-    LOCK = 0x0,
+    Lock = 0x0,
     #[doc = "Not locked and writes complete as normal."]
-    NOT_LOCK = 0x01,
+    NotLock = 0x01,
 }
 impl Gfl5 {
     #[inline(always)]
@@ -406,9 +406,9 @@ impl From<Gfl5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gfl6 {
     #[doc = "Locked and writes are ignored."]
-    LOCK = 0x0,
+    Lock = 0x0,
     #[doc = "Not locked and writes complete as normal."]
-    NOT_LOCK = 0x01,
+    NotLock = 0x01,
 }
 impl Gfl6 {
     #[inline(always)]
@@ -437,9 +437,9 @@ impl From<Gfl6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gfl7 {
     #[doc = "Locked and writes are ignored."]
-    LOCK = 0x0,
+    Lock = 0x0,
     #[doc = "Not locked and writes complete as normal."]
-    NOT_LOCK = 0x01,
+    NotLock = 0x01,
 }
 impl Gfl7 {
     #[inline(always)]
@@ -468,9 +468,9 @@ impl From<Gfl7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Gfp {
     #[doc = "512 Hz prescaler clock."]
-    FREQ_512_HZ = 0x0,
+    Freq512Hz = 0x0,
     #[doc = "32.768 kHz clock."]
-    FREQ_32_KHZ = 0x01,
+    Freq32Khz = 0x01,
 }
 impl Gfp {
     #[inline(always)]
@@ -499,9 +499,9 @@ impl From<Gfp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Iel {
     #[doc = "Locked and writes are ignored."]
-    LOCK = 0x0,
+    Lock = 0x0,
     #[doc = "Not locked and writes complete as normal."]
-    NOT_LOCK = 0x01,
+    NotLock = 0x01,
 }
 impl Iel {
     #[inline(always)]
@@ -530,9 +530,9 @@ impl From<Iel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Lrl {
     #[doc = "Locked and writes are ignored."]
-    LOCK = 0x0,
+    Lock = 0x0,
     #[doc = "Not locked and writes complete as normal."]
-    NOT_LOCK = 0x01,
+    NotLock = 0x01,
 }
 impl Lrl {
     #[inline(always)]
@@ -561,9 +561,9 @@ impl From<Lrl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pdl {
     #[doc = "Locked and writes are ignored."]
-    LOCK = 0x0,
+    Lock = 0x0,
     #[doc = "Not locked and writes complete as normal."]
-    NOT_LOCK = 0x01,
+    NotLock = 0x01,
 }
 impl Pdl {
     #[inline(always)]
@@ -592,9 +592,9 @@ impl From<Pdl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ppl {
     #[doc = "Locked and writes are ignored."]
-    LOCK = 0x0,
+    Lock = 0x0,
     #[doc = "Not locked and writes complete as normal."]
-    NOT_LOCK = 0x01,
+    NotLock = 0x01,
 }
 impl Ppl {
     #[inline(always)]
@@ -623,9 +623,9 @@ impl From<Ppl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Srl {
     #[doc = "Locked and writes are ignored."]
-    LOCK = 0x0,
+    Lock = 0x0,
     #[doc = "Not locked and writes complete as normal."]
-    NOT_LOCK = 0x01,
+    NotLock = 0x01,
 }
 impl Srl {
     #[inline(always)]
@@ -654,9 +654,9 @@ impl From<Srl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Swr {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Perform a software reset."]
-    SW_RESET = 0x01,
+    SwReset = 0x01,
 }
 impl Swr {
     #[inline(always)]
@@ -685,9 +685,9 @@ impl From<Swr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tel {
     #[doc = "Locked and writes are ignored."]
-    LOCK = 0x0,
+    Lock = 0x0,
     #[doc = "Not locked and writes complete as normal."]
-    NOT_LOCK = 0x01,
+    NotLock = 0x01,
 }
 impl Tel {
     #[inline(always)]
@@ -716,9 +716,9 @@ impl From<Tel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpd0 {
     #[doc = "Input."]
-    INPUT = 0x0,
+    Input = 0x0,
     #[doc = "Output and drives the inverse of the expected value (tamper pin is asserted)."]
-    OUTPUT = 0x01,
+    Output = 0x01,
 }
 impl Tpd0 {
     #[inline(always)]
@@ -747,9 +747,9 @@ impl From<Tpd0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpd1 {
     #[doc = "Input."]
-    INPUT = 0x0,
+    Input = 0x0,
     #[doc = "Output and drives the inverse of the expected value (tamper pin is asserted)."]
-    OUTPUT = 0x01,
+    Output = 0x01,
 }
 impl Tpd1 {
     #[inline(always)]
@@ -778,9 +778,9 @@ impl From<Tpd1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpd2 {
     #[doc = "Input."]
-    INPUT = 0x0,
+    Input = 0x0,
     #[doc = "Output and drives the inverse of the expected value (tamper pin is asserted)."]
-    OUTPUT = 0x01,
+    Output = 0x01,
 }
 impl Tpd2 {
     #[inline(always)]
@@ -809,9 +809,9 @@ impl From<Tpd2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpd3 {
     #[doc = "Input."]
-    INPUT = 0x0,
+    Input = 0x0,
     #[doc = "Output and drives the inverse of the expected value (tamper pin is asserted)."]
-    OUTPUT = 0x01,
+    Output = 0x01,
 }
 impl Tpd3 {
     #[inline(always)]
@@ -840,9 +840,9 @@ impl From<Tpd3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpd4 {
     #[doc = "Input."]
-    INPUT = 0x0,
+    Input = 0x0,
     #[doc = "Output and drives the inverse of the expected value (tamper pin is asserted)."]
-    OUTPUT = 0x01,
+    Output = 0x01,
 }
 impl Tpd4 {
     #[inline(always)]
@@ -871,9 +871,9 @@ impl From<Tpd4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpd5 {
     #[doc = "Input."]
-    INPUT = 0x0,
+    Input = 0x0,
     #[doc = "Output and drives the inverse of the expected value (tamper pin is asserted)."]
-    OUTPUT = 0x01,
+    Output = 0x01,
 }
 impl Tpd5 {
     #[inline(always)]
@@ -902,9 +902,9 @@ impl From<Tpd5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpd6 {
     #[doc = "Input."]
-    INPUT = 0x0,
+    Input = 0x0,
     #[doc = "Output and drives the inverse of the expected value (tamper pin is asserted)."]
-    OUTPUT = 0x01,
+    Output = 0x01,
 }
 impl Tpd6 {
     #[inline(always)]
@@ -933,9 +933,9 @@ impl From<Tpd6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpd7 {
     #[doc = "Input."]
-    INPUT = 0x0,
+    Input = 0x0,
     #[doc = "Output and drives the inverse of the expected value (tamper pin is asserted)."]
-    OUTPUT = 0x01,
+    Output = 0x01,
 }
 impl Tpd7 {
     #[inline(always)]
@@ -964,13 +964,13 @@ impl From<Tpd7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpex {
     #[doc = "Zero/passive tamper."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Active Tamper 0 output."]
-    VAL_TAMP0 = 0x01,
+    ValTamp0 = 0x01,
     #[doc = "Active Tamper 1 output."]
-    VAL_TAMP1 = 0x02,
+    ValTamp1 = 0x02,
     #[doc = "Active Tamper 0 output XORed with Active Tamper 1 output."]
-    TAMP0_XOR_TAMP1 = 0x03,
+    Tamp0XorTamp1 = 0x03,
 }
 impl Tpex {
     #[inline(always)]
@@ -999,9 +999,9 @@ impl From<Tpex> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpid0 {
     #[doc = "Zero."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "One."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tpid0 {
     #[inline(always)]
@@ -1030,9 +1030,9 @@ impl From<Tpid0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpid1 {
     #[doc = "Zero."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "One."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tpid1 {
     #[inline(always)]
@@ -1061,9 +1061,9 @@ impl From<Tpid1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpid2 {
     #[doc = "Zero."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "One."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tpid2 {
     #[inline(always)]
@@ -1092,9 +1092,9 @@ impl From<Tpid2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpid3 {
     #[doc = "Zero."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "One."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tpid3 {
     #[inline(always)]
@@ -1123,9 +1123,9 @@ impl From<Tpid3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpid4 {
     #[doc = "Zero."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "One."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tpid4 {
     #[inline(always)]
@@ -1154,9 +1154,9 @@ impl From<Tpid4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpid5 {
     #[doc = "Zero."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "One."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tpid5 {
     #[inline(always)]
@@ -1185,9 +1185,9 @@ impl From<Tpid5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpid6 {
     #[doc = "Zero."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "One."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tpid6 {
     #[inline(always)]
@@ -1216,9 +1216,9 @@ impl From<Tpid6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpid7 {
     #[doc = "Zero."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "One."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tpid7 {
     #[inline(always)]
@@ -1247,9 +1247,9 @@ impl From<Tpid7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpod0 {
     #[doc = "Zero."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "One."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tpod0 {
     #[inline(always)]
@@ -1278,9 +1278,9 @@ impl From<Tpod0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpod1 {
     #[doc = "Zero."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "One."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tpod1 {
     #[inline(always)]
@@ -1309,9 +1309,9 @@ impl From<Tpod1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpod2 {
     #[doc = "Zero."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "One."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tpod2 {
     #[inline(always)]
@@ -1340,9 +1340,9 @@ impl From<Tpod2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpod3 {
     #[doc = "Zero."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "One."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tpod3 {
     #[inline(always)]
@@ -1371,9 +1371,9 @@ impl From<Tpod3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpod4 {
     #[doc = "Zero."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "One."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tpod4 {
     #[inline(always)]
@@ -1402,9 +1402,9 @@ impl From<Tpod4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpod5 {
     #[doc = "Zero."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "One."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tpod5 {
     #[inline(always)]
@@ -1433,9 +1433,9 @@ impl From<Tpod5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpod6 {
     #[doc = "Zero."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "One."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tpod6 {
     #[inline(always)]
@@ -1464,9 +1464,9 @@ impl From<Tpod6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpod7 {
     #[doc = "Zero."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "One."]
-    ONE = 0x01,
+    One = 0x01,
 }
 impl Tpod7 {
     #[inline(always)]
@@ -1495,9 +1495,9 @@ impl From<Tpod7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tps {
     #[doc = "Asserts."]
-    ASSERT = 0x0,
+    Assert = 0x0,
     #[doc = "Negates."]
-    NEGATE = 0x01,
+    Negate = 0x01,
 }
 impl Tps {
     #[inline(always)]
@@ -1526,13 +1526,13 @@ impl From<Tps> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpsf {
     #[doc = "Every 8 cycles."]
-    CYCLES_8 = 0x0,
+    Cycles8 = 0x0,
     #[doc = "Every 32 cycles."]
-    CYCLES_32 = 0x01,
+    Cycles32 = 0x01,
     #[doc = "Every 128 cycles."]
-    CYCLES_128 = 0x02,
+    Cycles128 = 0x02,
     #[doc = "Every 512 cycles."]
-    CYCLES_512 = 0x03,
+    Cycles512 = 0x03,
 }
 impl Tpsf {
     #[inline(always)]
@@ -1561,13 +1561,13 @@ impl From<Tpsf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpsw {
     #[doc = "Continuous monitoring, pin sampling disabled."]
-    DISABLE = 0x0,
+    Disable = 0x0,
     #[doc = "2 cycles for pull enable and 1 cycle for input buffer enable."]
-    CYCLES_2 = 0x01,
+    Cycles2 = 0x01,
     #[doc = "4 cycles for pull enable and 2 cycles for input buffer enable."]
-    CYCLES_4 = 0x02,
+    Cycles4 = 0x02,
     #[doc = "8 cycles for pull enable and 4 cycles for input buffer enable."]
-    CYCLES_8 = 0x03,
+    Cycles8 = 0x03,
 }
 impl Tpsw {
     #[inline(always)]
@@ -1596,9 +1596,9 @@ impl From<Tpsw> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tsl {
     #[doc = "Locked and writes are ignored."]
-    LOCK = 0x0,
+    Lock = 0x0,
     #[doc = "Not locked and writes complete as normal."]
-    NOT_LOCK = 0x01,
+    NotLock = 0x01,
 }
 impl Tsl {
     #[inline(always)]
@@ -1627,9 +1627,9 @@ impl From<Tsl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Um {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Allows the clearing of interrupts."]
-    CLEAR_INTS = 0x01,
+    ClearInts = 0x01,
 }
 impl Um {
     #[inline(always)]

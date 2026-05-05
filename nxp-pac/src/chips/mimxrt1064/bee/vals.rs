@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BeeEnable {
     #[doc = "Disable BEE."]
-    BEE_ENABLE_0 = 0x0,
+    BeeEnable0 = 0x0,
     #[doc = "Enable BEE."]
-    BEE_ENABLE_1 = 0x01,
+    BeeEnable1 = 0x01,
 }
 impl BeeEnable {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<BeeEnable> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CtrlAesModeR0 {
     #[doc = "ECB."]
-    CTRL_AES_MODE_R0_0 = 0x0,
+    CtrlAesModeR00 = 0x0,
     #[doc = "CTR."]
-    CTRL_AES_MODE_R0_1 = 0x01,
+    CtrlAesModeR01 = 0x01,
 }
 impl CtrlAesModeR0 {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<CtrlAesModeR0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CtrlAesModeR1 {
     #[doc = "ECB."]
-    CTRL_AES_MODE_R1_0 = 0x0,
+    CtrlAesModeR10 = 0x0,
     #[doc = "CTR."]
-    CTRL_AES_MODE_R1_1 = 0x01,
+    CtrlAesModeR11 = 0x01,
 }
 impl CtrlAesModeR1 {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<CtrlAesModeR1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum KeyRegionSel {
     #[doc = "Load AES key for region0."]
-    KEY_REGION_SEL_0 = 0x0,
+    KeyRegionSel0 = 0x0,
     #[doc = "Load AES key for region1."]
-    KEY_REGION_SEL_1 = 0x01,
+    KeyRegionSel1 = 0x01,
 }
 impl KeyRegionSel {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<KeyRegionSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LittleEndian {
     #[doc = "The input and output data of the AES core is swapped as below: {B15,B14,B13,B12,B11,B10,B9,B8, B7,B6,B5,B4,B3,B2,B1,B0} swap to {B0,B1,B2,B3,B4,B5,B6,B7, B8,B9,B10,B11,B12,B13,B14,B15}, where B0~B15 refers to Byte0 to Byte15."]
-    LITTLE_ENDIAN_0 = 0x0,
+    LittleEndian0 = 0x0,
     #[doc = "The input and output data of AES core is not swapped."]
-    LITTLE_ENDIAN_1 = 0x01,
+    LittleEndian1 = 0x01,
 }
 impl LittleEndian {
     #[inline(always)]

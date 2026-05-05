@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CkDis {
     #[doc = "PUF RAM clock is disabled."]
-    CLOCK_OFF = 0x0,
+    ClockOff = 0x0,
     #[doc = "PUF RAM clock is enabled."]
-    CLOCK_ON = 0x01,
+    ClockOn = 0x01,
 }
 impl CkDis {
     #[inline(always)]
@@ -34,13 +34,13 @@ impl From<CkDis> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum KeyenableKey0 {
     #[doc = "Data coming from the PUF Index 0 interface are NOT shifted in the KEY0 register."]
-    DISABLED_0 = 0x0,
+    Disabled0 = 0x0,
     #[doc = "Data coming from the PUF Index 0 interface are NOT shifted in the KEY0 register."]
-    DISABLED_1 = 0x01,
+    Disabled1 = 0x01,
     #[doc = "Data coming from the PUF Index 0 interface are shifted in the KEY0 register."]
-    ENABLED = 0x02,
+    Enabled = 0x02,
     #[doc = "Data coming from the PUF Index 0 interface are NOT shifted in the KEY0 register."]
-    DISABLED_3 = 0x03,
+    Disabled3 = 0x03,
 }
 impl KeyenableKey0 {
     #[inline(always)]
@@ -69,13 +69,13 @@ impl From<KeyenableKey0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum KeyenableKey1 {
     #[doc = "Data coming from the PUF Index 0 interface are NOT shifted in the KEY1 register."]
-    DISABLED_0 = 0x0,
+    Disabled0 = 0x0,
     #[doc = "Data coming from the PUF Index 0 interface are NOT shifted in the KEY1 register."]
-    DISABLED_1 = 0x01,
+    Disabled1 = 0x01,
     #[doc = "Data coming from the PUF Index 0 interface are shifted in the KEY1 register."]
-    ENABLED = 0x02,
+    Enabled = 0x02,
     #[doc = "Data coming from the PUF Index 0 interface are NOT shifted in the KEY1 register."]
-    DISABLED_3 = 0x03,
+    Disabled3 = 0x03,
 }
 impl KeyenableKey1 {
     #[inline(always)]
@@ -104,13 +104,13 @@ impl From<KeyenableKey1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum KeyenableKey2 {
     #[doc = "Data coming from the PUF Index 0 interface are NOT shifted in the KEY2 register."]
-    DISABLED_0 = 0x0,
+    Disabled0 = 0x0,
     #[doc = "Data coming from the PUF Index 0 interface are NOT shifted in the KEY2 register."]
-    DISABLED_1 = 0x01,
+    Disabled1 = 0x01,
     #[doc = "Data coming from the PUF Index 0 interface are shifted in the KEY2 register."]
-    ENABLED = 0x02,
+    Enabled = 0x02,
     #[doc = "Data coming from the PUF Index 0 interface are NOT shifted in the KEY2 register."]
-    DISABLED_3 = 0x03,
+    Disabled3 = 0x03,
 }
 impl KeyenableKey2 {
     #[inline(always)]
@@ -139,13 +139,13 @@ impl From<KeyenableKey2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum KeyenableKey3 {
     #[doc = "Data coming from the PUF Index 0 interface are NOT shifted in the KEY3 register."]
-    DISABLED_0 = 0x0,
+    Disabled0 = 0x0,
     #[doc = "Data coming from the PUF Index 0 interface are NOT shifted in the KEY3 register."]
-    DISABLED_1 = 0x01,
+    Disabled1 = 0x01,
     #[doc = "Data coming from the PUF Index 0 interface are shifted in the KEY3 register."]
-    ENABLED = 0x02,
+    Enabled = 0x02,
     #[doc = "Data coming from the PUF Index 0 interface are NOT shifted in the KEY3 register."]
-    DISABLED_3 = 0x03,
+    Disabled3 = 0x03,
 }
 impl KeyenableKey3 {
     #[inline(always)]
@@ -174,13 +174,13 @@ impl From<KeyenableKey3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum KeylockKey0 {
     #[doc = "Write access to KEY0MASK, KEYENABLE\\[KEY0\\] and KEYRESET\\[KEY0\\] is NOT allowed."]
-    KEY0LOCK_0 = 0x0,
+    Key0lock0 = 0x0,
     #[doc = "Write access to KEY0MASK, KEYENABLE\\[KEY0\\] and KEYRESET\\[KEY0\\] is NOT allowed."]
-    KEY0LOCK_1 = 0x01,
+    Key0lock1 = 0x01,
     #[doc = "Write access to KEY0MASK, KEYENABLE\\[KEY0\\] and KEYRESET\\[KEY0\\] is allowed."]
-    KEY0UNLOCK = 0x02,
+    Key0unlock = 0x02,
     #[doc = "Write access to KEY0MASK, KEYENABLE\\[KEY0\\] and KEYRESET\\[KEY0\\] is NOT allowed."]
-    KEY0LOCK_3 = 0x03,
+    Key0lock3 = 0x03,
 }
 impl KeylockKey0 {
     #[inline(always)]
@@ -209,13 +209,13 @@ impl From<KeylockKey0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum KeylockKey1 {
     #[doc = "Write access to KEY1MASK, KEYENABLE\\[KEY1\\] and KEYRESET\\[KEY1\\] is NOT allowed."]
-    KEY1LOCK_0 = 0x0,
+    Key1lock0 = 0x0,
     #[doc = "Write access to KEY1MASK, KEYENABLE\\[KEY1\\] and KEYRESET\\[KEY1\\] is NOT allowed."]
-    KEY1LOCK_1 = 0x01,
+    Key1lock1 = 0x01,
     #[doc = "Write access to KEY1MASK, KEYENABLE\\[KEY1\\] and KEYRESET\\[KEY1\\] is allowed."]
-    KEY1UNLOCK = 0x02,
+    Key1unlock = 0x02,
     #[doc = "Write access to KEY1MASK, KEYENABLE\\[KEY1\\] and KEYRESET\\[KEY1\\] is NOT allowed."]
-    KEY1LOCK_3 = 0x03,
+    Key1lock3 = 0x03,
 }
 impl KeylockKey1 {
     #[inline(always)]
@@ -244,13 +244,13 @@ impl From<KeylockKey1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum KeylockKey2 {
     #[doc = "Write access to KEY2MASK, KEYENABLE\\[KEY2\\] and KEYRESET\\[KEY2\\] is NOT allowed."]
-    KEY2LOCK_0 = 0x0,
+    Key2lock0 = 0x0,
     #[doc = "Write access to KEY2MASK, KEYENABLE\\[KEY2\\] and KEYRESET\\[KEY2\\] is NOT allowed."]
-    KEY2LOCK_1 = 0x01,
+    Key2lock1 = 0x01,
     #[doc = "Write access to KEY2MASK, KEYENABLE\\[KEY2\\] and KEYRESET\\[KEY2\\] is allowed."]
-    KEY2UNLOCK = 0x02,
+    Key2unlock = 0x02,
     #[doc = "Write access to KEY2MASK, KEYENABLE\\[KEY2\\] and KEYRESET\\[KEY2\\] is NOT allowed."]
-    KEY2LOCK_3 = 0x03,
+    Key2lock3 = 0x03,
 }
 impl KeylockKey2 {
     #[inline(always)]
@@ -279,13 +279,13 @@ impl From<KeylockKey2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum KeylockKey3 {
     #[doc = "Write access to KEY3MASK, KEYENABLE\\[KEY3\\] and KEYRESET\\[KEY3\\] is NOT allowed."]
-    KEY3LOCK_0 = 0x0,
+    Key3lock0 = 0x0,
     #[doc = "Write access to KEY3MASK, KEYENABLE\\[KEY3\\] and KEYRESET\\[KEY3\\] is NOT allowed."]
-    KEY3LOCK_1 = 0x01,
+    Key3lock1 = 0x01,
     #[doc = "Write access to KEY3MASK, KEYENABLE\\[KEY3\\] and KEYRESET\\[KEY3\\] is allowed."]
-    KEY3UNLOCK = 0x02,
+    Key3unlock = 0x02,
     #[doc = "Write access to KEY3MASK, KEYENABLE\\[KEY3\\] and KEYRESET\\[KEY3\\] is NOT allowed."]
-    KEY3LOCK_3 = 0x03,
+    Key3lock3 = 0x03,
 }
 impl KeylockKey3 {
     #[inline(always)]
@@ -316,7 +316,7 @@ pub enum KeyresetKey0 {
     _RESERVED_0 = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "Reset KEY0 Hold register and SHIFT_STATUS\\[KEY0\\]."]
-    RESET = 0x02,
+    Reset = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl KeyresetKey0 {
@@ -348,7 +348,7 @@ pub enum KeyresetKey1 {
     _RESERVED_0 = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "Reset KEY1 Hold register and SHIFT_STATUS\\[KEY1\\]."]
-    RESET = 0x02,
+    Reset = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl KeyresetKey1 {
@@ -380,7 +380,7 @@ pub enum KeyresetKey2 {
     _RESERVED_0 = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "Reset KEY2 Hold register and SHIFT_STATUS\\[KEY2\\]."]
-    RESET = 0x02,
+    Reset = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl KeyresetKey2 {
@@ -412,7 +412,7 @@ pub enum KeyresetKey3 {
     _RESERVED_0 = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "Reset KEY3 Hold register and SHIFT_STATUS\\[KEY3\\]."]
-    RESET = 0x02,
+    Reset = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl KeyresetKey3 {
@@ -442,9 +442,9 @@ impl From<KeyresetKey3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RamOn {
     #[doc = "Power Off."]
-    POWER_OFF = 0x0,
+    PowerOff = 0x0,
     #[doc = "Power On."]
-    POWER_ON = 0x01,
+    PowerOn = 0x01,
 }
 impl RamOn {
     #[inline(always)]

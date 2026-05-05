@@ -1530,13 +1530,13 @@ impl P0cfg {
     #[doc = "Mailbox: Map interrupt on Read 1st and Write 1st to every read/write (special will still control 0th and last location)."]
     #[must_use]
     #[inline(always)]
-    pub const fn mbint_all(&self) -> bool {
+    pub const fn mb_int_all(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
         val != 0
     }
     #[doc = "Mailbox: Map interrupt on Read 1st and Write 1st to every read/write (special will still control 0th and last location)."]
     #[inline(always)]
-    pub const fn set_mbint_all(&mut self, val: bool) {
+    pub const fn set_mb_int_all(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Stall on any Read of Index/Data and Mailbox (only)."]
@@ -1587,7 +1587,7 @@ impl core::fmt::Debug for P0cfg {
         f.debug_struct("P0cfg")
             .field("type_", &self.type_())
             .field("direction", &self.direction())
-            .field("mbint_all", &self.mbint_all())
+            .field("mb_int_all", &self.mb_int_all())
             .field("stall_rd", &self.stall_rd())
             .field("stall_wr", &self.stall_wr())
             .field("error_ign", &self.error_ign())
@@ -1599,10 +1599,10 @@ impl defmt::Format for P0cfg {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "P0cfg {{ type_: {:?}, direction: {=u8:?}, mbint_all: {=bool:?}, stall_rd: {=bool:?}, stall_wr: {=bool:?}, error_ign: {=bool:?} }}",
+            "P0cfg {{ type_: {:?}, direction: {=u8:?}, mb_int_all: {=bool:?}, stall_rd: {=bool:?}, stall_wr: {=bool:?}, error_ign: {=bool:?} }}",
             self.type_(),
             self.direction(),
-            self.mbint_all(),
+            self.mb_int_all(),
             self.stall_rd(),
             self.stall_wr(),
             self.error_ign()
@@ -1718,8 +1718,8 @@ impl defmt::Format for P0dataOut {
 #[doc = "The Port Set Interrupt-Rule and Set User Status register is used to set: The interrupt causes per port. That is, it is used to select what events from the port should cause an interrupt, if any. The user Status bits. The status byte returned to the host will be composed of both these user bits (which the application defines) and automatically generated status. The interrupt masks then are matched by sticky cause bits in PnSTAT (which can be read and then write-1 cleared). The sticky bits are set whether the interrupt is masked or not, but the masks cause an interrupt when the bits are set and the port is int enabled via INTENSET."]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct P0iruleStat(pub u32);
-impl P0iruleStat {
+pub struct P0iRuleStat(pub u32);
+impl P0iRuleStat {
     #[doc = "User defined status bits. These are salted into the status register as specified in section 4.1 and 4.6."]
     #[must_use]
     #[inline(always)]
@@ -1805,15 +1805,15 @@ impl P0iruleStat {
         self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
 }
-impl Default for P0iruleStat {
+impl Default for P0iRuleStat {
     #[inline(always)]
-    fn default() -> P0iruleStat {
-        P0iruleStat(0)
+    fn default() -> P0iRuleStat {
+        P0iRuleStat(0)
     }
 }
-impl core::fmt::Debug for P0iruleStat {
+impl core::fmt::Debug for P0iRuleStat {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("P0iruleStat")
+        f.debug_struct("P0iRuleStat")
             .field("ustat", &self.ustat())
             .field("interr", &self.interr())
             .field("intrd", &self.intrd())
@@ -1825,11 +1825,11 @@ impl core::fmt::Debug for P0iruleStat {
     }
 }
 #[cfg(feature = "defmt")]
-impl defmt::Format for P0iruleStat {
+impl defmt::Format for P0iRuleStat {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "P0iruleStat {{ ustat: {=u8:?}, interr: {=bool:?}, intrd: {=bool:?}, intwr: {=bool:?}, intspc: {=u8:?}, sstcl: {=u8:?}, srst: {=bool:?} }}",
+            "P0iRuleStat {{ ustat: {=u8:?}, interr: {=bool:?}, intrd: {=bool:?}, intwr: {=bool:?}, intspc: {=u8:?}, sstcl: {=u8:?}, srst: {=bool:?} }}",
             self.ustat(),
             self.interr(),
             self.intrd(),
@@ -1898,8 +1898,8 @@ impl defmt::Format for P0omflen {
 #[doc = "no description available."]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct P0ramuse(pub u32);
-impl P0ramuse {
+pub struct P0ramUse(pub u32);
+impl P0ramUse {
     #[doc = "This is the word offset into the RAM."]
     #[must_use]
     #[inline(always)]
@@ -1925,26 +1925,26 @@ impl P0ramuse {
         self.0 = (self.0 & !(0x07 << 16usize)) | (((val as u32) & 0x07) << 16usize);
     }
 }
-impl Default for P0ramuse {
+impl Default for P0ramUse {
     #[inline(always)]
-    fn default() -> P0ramuse {
-        P0ramuse(0)
+    fn default() -> P0ramUse {
+        P0ramUse(0)
     }
 }
-impl core::fmt::Debug for P0ramuse {
+impl core::fmt::Debug for P0ramUse {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("P0ramuse")
+        f.debug_struct("P0ramUse")
             .field("off", &self.off())
             .field("len", &self.len())
             .finish()
     }
 }
 #[cfg(feature = "defmt")]
-impl defmt::Format for P0ramuse {
+impl defmt::Format for P0ramUse {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "P0ramuse {{ off: {=u16:?}, len: {=u8:?} }}",
+            "P0ramUse {{ off: {=u16:?}, len: {=u8:?} }}",
             self.off(),
             self.len()
         )
@@ -2190,13 +2190,13 @@ impl P1cfg {
     #[doc = "Mailbox: Map interrupt on Read 1st and Write 1st to every read/write (special will still control 0th and last location)."]
     #[must_use]
     #[inline(always)]
-    pub const fn mbint_all(&self) -> bool {
+    pub const fn mb_int_all(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
         val != 0
     }
     #[doc = "Mailbox: Map interrupt on Read 1st and Write 1st to every read/write (special will still control 0th and last location)."]
     #[inline(always)]
-    pub const fn set_mbint_all(&mut self, val: bool) {
+    pub const fn set_mb_int_all(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Stall on any Read of Index/Data and Mailbox (only)."]
@@ -2247,7 +2247,7 @@ impl core::fmt::Debug for P1cfg {
         f.debug_struct("P1cfg")
             .field("type_", &self.type_())
             .field("direction", &self.direction())
-            .field("mbint_all", &self.mbint_all())
+            .field("mb_int_all", &self.mb_int_all())
             .field("stall_rd", &self.stall_rd())
             .field("stall_wr", &self.stall_wr())
             .field("error_ign", &self.error_ign())
@@ -2259,10 +2259,10 @@ impl defmt::Format for P1cfg {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "P1cfg {{ type_: {:?}, direction: {=u8:?}, mbint_all: {=bool:?}, stall_rd: {=bool:?}, stall_wr: {=bool:?}, error_ign: {=bool:?} }}",
+            "P1cfg {{ type_: {:?}, direction: {=u8:?}, mb_int_all: {=bool:?}, stall_rd: {=bool:?}, stall_wr: {=bool:?}, error_ign: {=bool:?} }}",
             self.type_(),
             self.direction(),
-            self.mbint_all(),
+            self.mb_int_all(),
             self.stall_rd(),
             self.stall_wr(),
             self.error_ign()
@@ -2378,8 +2378,8 @@ impl defmt::Format for P1dataOut {
 #[doc = "The Port Set Interrupt-Rule and Set User Status register is used to set: The interrupt causes per port. That is, it is used to select what events from the port should cause an interrupt, if any. The user Status bits. The status byte returned to the host will be composed of both these user bits (which the application defines) and automatically generated status. The interrupt masks then are matched by sticky cause bits in PnSTAT (which can be read and then write-1 cleared). The sticky bits are set whether the interrupt is masked or not, but the masks cause an interrupt when the bits are set and the port is int enabled via INTENSET."]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct P1iruleStat(pub u32);
-impl P1iruleStat {
+pub struct P1iRuleStat(pub u32);
+impl P1iRuleStat {
     #[doc = "User defined status bits. These are salted into the status register as specified in section 4.1 and 4.6."]
     #[must_use]
     #[inline(always)]
@@ -2465,15 +2465,15 @@ impl P1iruleStat {
         self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
 }
-impl Default for P1iruleStat {
+impl Default for P1iRuleStat {
     #[inline(always)]
-    fn default() -> P1iruleStat {
-        P1iruleStat(0)
+    fn default() -> P1iRuleStat {
+        P1iRuleStat(0)
     }
 }
-impl core::fmt::Debug for P1iruleStat {
+impl core::fmt::Debug for P1iRuleStat {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("P1iruleStat")
+        f.debug_struct("P1iRuleStat")
             .field("ustat", &self.ustat())
             .field("interr", &self.interr())
             .field("intrd", &self.intrd())
@@ -2485,11 +2485,11 @@ impl core::fmt::Debug for P1iruleStat {
     }
 }
 #[cfg(feature = "defmt")]
-impl defmt::Format for P1iruleStat {
+impl defmt::Format for P1iRuleStat {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "P1iruleStat {{ ustat: {=u8:?}, interr: {=bool:?}, intrd: {=bool:?}, intwr: {=bool:?}, intspc: {=u8:?}, sstcl: {=u8:?}, srst: {=bool:?} }}",
+            "P1iRuleStat {{ ustat: {=u8:?}, interr: {=bool:?}, intrd: {=bool:?}, intwr: {=bool:?}, intspc: {=u8:?}, sstcl: {=u8:?}, srst: {=bool:?} }}",
             self.ustat(),
             self.interr(),
             self.intrd(),
@@ -2558,8 +2558,8 @@ impl defmt::Format for P1omflen {
 #[doc = "no description available."]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct P1ramuse(pub u32);
-impl P1ramuse {
+pub struct P1ramUse(pub u32);
+impl P1ramUse {
     #[doc = "This is the word offset into the RAM."]
     #[must_use]
     #[inline(always)]
@@ -2585,26 +2585,26 @@ impl P1ramuse {
         self.0 = (self.0 & !(0x07 << 16usize)) | (((val as u32) & 0x07) << 16usize);
     }
 }
-impl Default for P1ramuse {
+impl Default for P1ramUse {
     #[inline(always)]
-    fn default() -> P1ramuse {
-        P1ramuse(0)
+    fn default() -> P1ramUse {
+        P1ramUse(0)
     }
 }
-impl core::fmt::Debug for P1ramuse {
+impl core::fmt::Debug for P1ramUse {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("P1ramuse")
+        f.debug_struct("P1ramUse")
             .field("off", &self.off())
             .field("len", &self.len())
             .finish()
     }
 }
 #[cfg(feature = "defmt")]
-impl defmt::Format for P1ramuse {
+impl defmt::Format for P1ramUse {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "P1ramuse {{ off: {=u16:?}, len: {=u8:?} }}",
+            "P1ramUse {{ off: {=u16:?}, len: {=u8:?} }}",
             self.off(),
             self.len()
         )
@@ -2850,13 +2850,13 @@ impl P2cfg {
     #[doc = "Mailbox: Map interrupt on Read 1st and Write 1st to every read/write (special will still control 0th and last location)."]
     #[must_use]
     #[inline(always)]
-    pub const fn mbint_all(&self) -> bool {
+    pub const fn mb_int_all(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
         val != 0
     }
     #[doc = "Mailbox: Map interrupt on Read 1st and Write 1st to every read/write (special will still control 0th and last location)."]
     #[inline(always)]
-    pub const fn set_mbint_all(&mut self, val: bool) {
+    pub const fn set_mb_int_all(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Stall on any Read of Index/Data and Mailbox (only)."]
@@ -2907,7 +2907,7 @@ impl core::fmt::Debug for P2cfg {
         f.debug_struct("P2cfg")
             .field("type_", &self.type_())
             .field("direction", &self.direction())
-            .field("mbint_all", &self.mbint_all())
+            .field("mb_int_all", &self.mb_int_all())
             .field("stall_rd", &self.stall_rd())
             .field("stall_wr", &self.stall_wr())
             .field("error_ign", &self.error_ign())
@@ -2919,10 +2919,10 @@ impl defmt::Format for P2cfg {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "P2cfg {{ type_: {:?}, direction: {=u8:?}, mbint_all: {=bool:?}, stall_rd: {=bool:?}, stall_wr: {=bool:?}, error_ign: {=bool:?} }}",
+            "P2cfg {{ type_: {:?}, direction: {=u8:?}, mb_int_all: {=bool:?}, stall_rd: {=bool:?}, stall_wr: {=bool:?}, error_ign: {=bool:?} }}",
             self.type_(),
             self.direction(),
-            self.mbint_all(),
+            self.mb_int_all(),
             self.stall_rd(),
             self.stall_wr(),
             self.error_ign()
@@ -3038,8 +3038,8 @@ impl defmt::Format for P2dataOut {
 #[doc = "The Port Set Interrupt-Rule and Set User Status register is used to set: The interrupt causes per port. That is, it is used to select what events from the port should cause an interrupt, if any. The user Status bits. The status byte returned to the host will be composed of both these user bits (which the application defines) and automatically generated status. The interrupt masks then are matched by sticky cause bits in PnSTAT (which can be read and then write-1 cleared). The sticky bits are set whether the interrupt is masked or not, but the masks cause an interrupt when the bits are set and the port is int enabled via INTENSET."]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct P2iruleStat(pub u32);
-impl P2iruleStat {
+pub struct P2iRuleStat(pub u32);
+impl P2iRuleStat {
     #[doc = "User defined status bits. These are salted into the status register as specified in section 4.1 and 4.6."]
     #[must_use]
     #[inline(always)]
@@ -3125,15 +3125,15 @@ impl P2iruleStat {
         self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
 }
-impl Default for P2iruleStat {
+impl Default for P2iRuleStat {
     #[inline(always)]
-    fn default() -> P2iruleStat {
-        P2iruleStat(0)
+    fn default() -> P2iRuleStat {
+        P2iRuleStat(0)
     }
 }
-impl core::fmt::Debug for P2iruleStat {
+impl core::fmt::Debug for P2iRuleStat {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("P2iruleStat")
+        f.debug_struct("P2iRuleStat")
             .field("ustat", &self.ustat())
             .field("interr", &self.interr())
             .field("intrd", &self.intrd())
@@ -3145,11 +3145,11 @@ impl core::fmt::Debug for P2iruleStat {
     }
 }
 #[cfg(feature = "defmt")]
-impl defmt::Format for P2iruleStat {
+impl defmt::Format for P2iRuleStat {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "P2iruleStat {{ ustat: {=u8:?}, interr: {=bool:?}, intrd: {=bool:?}, intwr: {=bool:?}, intspc: {=u8:?}, sstcl: {=u8:?}, srst: {=bool:?} }}",
+            "P2iRuleStat {{ ustat: {=u8:?}, interr: {=bool:?}, intrd: {=bool:?}, intwr: {=bool:?}, intspc: {=u8:?}, sstcl: {=u8:?}, srst: {=bool:?} }}",
             self.ustat(),
             self.interr(),
             self.intrd(),
@@ -3218,8 +3218,8 @@ impl defmt::Format for P2omflen {
 #[doc = "no description available."]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct P2ramuse(pub u32);
-impl P2ramuse {
+pub struct P2ramUse(pub u32);
+impl P2ramUse {
     #[doc = "This is the word offset into the RAM."]
     #[must_use]
     #[inline(always)]
@@ -3245,26 +3245,26 @@ impl P2ramuse {
         self.0 = (self.0 & !(0x07 << 16usize)) | (((val as u32) & 0x07) << 16usize);
     }
 }
-impl Default for P2ramuse {
+impl Default for P2ramUse {
     #[inline(always)]
-    fn default() -> P2ramuse {
-        P2ramuse(0)
+    fn default() -> P2ramUse {
+        P2ramUse(0)
     }
 }
-impl core::fmt::Debug for P2ramuse {
+impl core::fmt::Debug for P2ramUse {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("P2ramuse")
+        f.debug_struct("P2ramUse")
             .field("off", &self.off())
             .field("len", &self.len())
             .finish()
     }
 }
 #[cfg(feature = "defmt")]
-impl defmt::Format for P2ramuse {
+impl defmt::Format for P2ramUse {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "P2ramuse {{ off: {=u16:?}, len: {=u8:?} }}",
+            "P2ramUse {{ off: {=u16:?}, len: {=u8:?} }}",
             self.off(),
             self.len()
         )
@@ -3510,13 +3510,13 @@ impl P3cfg {
     #[doc = "Mailbox: Map interrupt on Read 1st and Write 1st to every read/write (special will still control 0th and last location)."]
     #[must_use]
     #[inline(always)]
-    pub const fn mbint_all(&self) -> bool {
+    pub const fn mb_int_all(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
         val != 0
     }
     #[doc = "Mailbox: Map interrupt on Read 1st and Write 1st to every read/write (special will still control 0th and last location)."]
     #[inline(always)]
-    pub const fn set_mbint_all(&mut self, val: bool) {
+    pub const fn set_mb_int_all(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Stall on any Read of Index/Data and Mailbox (only)."]
@@ -3567,7 +3567,7 @@ impl core::fmt::Debug for P3cfg {
         f.debug_struct("P3cfg")
             .field("type_", &self.type_())
             .field("direction", &self.direction())
-            .field("mbint_all", &self.mbint_all())
+            .field("mb_int_all", &self.mb_int_all())
             .field("stall_rd", &self.stall_rd())
             .field("stall_wr", &self.stall_wr())
             .field("error_ign", &self.error_ign())
@@ -3579,10 +3579,10 @@ impl defmt::Format for P3cfg {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "P3cfg {{ type_: {:?}, direction: {=u8:?}, mbint_all: {=bool:?}, stall_rd: {=bool:?}, stall_wr: {=bool:?}, error_ign: {=bool:?} }}",
+            "P3cfg {{ type_: {:?}, direction: {=u8:?}, mb_int_all: {=bool:?}, stall_rd: {=bool:?}, stall_wr: {=bool:?}, error_ign: {=bool:?} }}",
             self.type_(),
             self.direction(),
-            self.mbint_all(),
+            self.mb_int_all(),
             self.stall_rd(),
             self.stall_wr(),
             self.error_ign()
@@ -3698,8 +3698,8 @@ impl defmt::Format for P3dataOut {
 #[doc = "The Port Set Interrupt-Rule and Set User Status register is used to set: The interrupt causes per port. That is, it is used to select what events from the port should cause an interrupt, if any. The user Status bits. The status byte returned to the host will be composed of both these user bits (which the application defines) and automatically generated status. The interrupt masks then are matched by sticky cause bits in PnSTAT (which can be read and then write-1 cleared). The sticky bits are set whether the interrupt is masked or not, but the masks cause an interrupt when the bits are set and the port is int enabled via INTENSET."]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct P3iruleStat(pub u32);
-impl P3iruleStat {
+pub struct P3iRuleStat(pub u32);
+impl P3iRuleStat {
     #[doc = "User defined status bits. These are salted into the status register as specified in section 4.1 and 4.6."]
     #[must_use]
     #[inline(always)]
@@ -3785,15 +3785,15 @@ impl P3iruleStat {
         self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
 }
-impl Default for P3iruleStat {
+impl Default for P3iRuleStat {
     #[inline(always)]
-    fn default() -> P3iruleStat {
-        P3iruleStat(0)
+    fn default() -> P3iRuleStat {
+        P3iRuleStat(0)
     }
 }
-impl core::fmt::Debug for P3iruleStat {
+impl core::fmt::Debug for P3iRuleStat {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("P3iruleStat")
+        f.debug_struct("P3iRuleStat")
             .field("ustat", &self.ustat())
             .field("interr", &self.interr())
             .field("intrd", &self.intrd())
@@ -3805,11 +3805,11 @@ impl core::fmt::Debug for P3iruleStat {
     }
 }
 #[cfg(feature = "defmt")]
-impl defmt::Format for P3iruleStat {
+impl defmt::Format for P3iRuleStat {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "P3iruleStat {{ ustat: {=u8:?}, interr: {=bool:?}, intrd: {=bool:?}, intwr: {=bool:?}, intspc: {=u8:?}, sstcl: {=u8:?}, srst: {=bool:?} }}",
+            "P3iRuleStat {{ ustat: {=u8:?}, interr: {=bool:?}, intrd: {=bool:?}, intwr: {=bool:?}, intspc: {=u8:?}, sstcl: {=u8:?}, srst: {=bool:?} }}",
             self.ustat(),
             self.interr(),
             self.intrd(),
@@ -3878,8 +3878,8 @@ impl defmt::Format for P3omflen {
 #[doc = "no description available."]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct P3ramuse(pub u32);
-impl P3ramuse {
+pub struct P3ramUse(pub u32);
+impl P3ramUse {
     #[doc = "This is the word offset into the RAM."]
     #[must_use]
     #[inline(always)]
@@ -3905,26 +3905,26 @@ impl P3ramuse {
         self.0 = (self.0 & !(0x07 << 16usize)) | (((val as u32) & 0x07) << 16usize);
     }
 }
-impl Default for P3ramuse {
+impl Default for P3ramUse {
     #[inline(always)]
-    fn default() -> P3ramuse {
-        P3ramuse(0)
+    fn default() -> P3ramUse {
+        P3ramUse(0)
     }
 }
-impl core::fmt::Debug for P3ramuse {
+impl core::fmt::Debug for P3ramUse {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("P3ramuse")
+        f.debug_struct("P3ramUse")
             .field("off", &self.off())
             .field("len", &self.len())
             .finish()
     }
 }
 #[cfg(feature = "defmt")]
-impl defmt::Format for P3ramuse {
+impl defmt::Format for P3ramUse {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "P3ramuse {{ off: {=u16:?}, len: {=u8:?} }}",
+            "P3ramUse {{ off: {=u16:?}, len: {=u8:?} }}",
             self.off(),
             self.len()
         )
@@ -4170,13 +4170,13 @@ impl P4cfg {
     #[doc = "Mailbox: Map interrupt on Read 1st and Write 1st to every read/write (special will still control 0th and last location)."]
     #[must_use]
     #[inline(always)]
-    pub const fn mbint_all(&self) -> bool {
+    pub const fn mb_int_all(&self) -> bool {
         let val = (self.0 >> 7usize) & 0x01;
         val != 0
     }
     #[doc = "Mailbox: Map interrupt on Read 1st and Write 1st to every read/write (special will still control 0th and last location)."]
     #[inline(always)]
-    pub const fn set_mbint_all(&mut self, val: bool) {
+    pub const fn set_mb_int_all(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
     }
     #[doc = "Stall on any Read of Index/Data and Mailbox (only)."]
@@ -4227,7 +4227,7 @@ impl core::fmt::Debug for P4cfg {
         f.debug_struct("P4cfg")
             .field("type_", &self.type_())
             .field("direction", &self.direction())
-            .field("mbint_all", &self.mbint_all())
+            .field("mb_int_all", &self.mb_int_all())
             .field("stall_rd", &self.stall_rd())
             .field("stall_wr", &self.stall_wr())
             .field("error_ign", &self.error_ign())
@@ -4239,10 +4239,10 @@ impl defmt::Format for P4cfg {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "P4cfg {{ type_: {:?}, direction: {=u8:?}, mbint_all: {=bool:?}, stall_rd: {=bool:?}, stall_wr: {=bool:?}, error_ign: {=bool:?} }}",
+            "P4cfg {{ type_: {:?}, direction: {=u8:?}, mb_int_all: {=bool:?}, stall_rd: {=bool:?}, stall_wr: {=bool:?}, error_ign: {=bool:?} }}",
             self.type_(),
             self.direction(),
-            self.mbint_all(),
+            self.mb_int_all(),
             self.stall_rd(),
             self.stall_wr(),
             self.error_ign()
@@ -4358,8 +4358,8 @@ impl defmt::Format for P4dataOut {
 #[doc = "The Port Set Interrupt-Rule and Set User Status register is used to set: The interrupt causes per port. That is, it is used to select what events from the port should cause an interrupt, if any. The user Status bits. The status byte returned to the host will be composed of both these user bits (which the application defines) and automatically generated status. The interrupt masks then are matched by sticky cause bits in PnSTAT (which can be read and then write-1 cleared). The sticky bits are set whether the interrupt is masked or not, but the masks cause an interrupt when the bits are set and the port is int enabled via INTENSET."]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct P4iruleStat(pub u32);
-impl P4iruleStat {
+pub struct P4iRuleStat(pub u32);
+impl P4iRuleStat {
     #[doc = "User defined status bits. These are salted into the status register as specified in section 4.1 and 4.6."]
     #[must_use]
     #[inline(always)]
@@ -4445,15 +4445,15 @@ impl P4iruleStat {
         self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
     }
 }
-impl Default for P4iruleStat {
+impl Default for P4iRuleStat {
     #[inline(always)]
-    fn default() -> P4iruleStat {
-        P4iruleStat(0)
+    fn default() -> P4iRuleStat {
+        P4iRuleStat(0)
     }
 }
-impl core::fmt::Debug for P4iruleStat {
+impl core::fmt::Debug for P4iRuleStat {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("P4iruleStat")
+        f.debug_struct("P4iRuleStat")
             .field("ustat", &self.ustat())
             .field("interr", &self.interr())
             .field("intrd", &self.intrd())
@@ -4465,11 +4465,11 @@ impl core::fmt::Debug for P4iruleStat {
     }
 }
 #[cfg(feature = "defmt")]
-impl defmt::Format for P4iruleStat {
+impl defmt::Format for P4iRuleStat {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "P4iruleStat {{ ustat: {=u8:?}, interr: {=bool:?}, intrd: {=bool:?}, intwr: {=bool:?}, intspc: {=u8:?}, sstcl: {=u8:?}, srst: {=bool:?} }}",
+            "P4iRuleStat {{ ustat: {=u8:?}, interr: {=bool:?}, intrd: {=bool:?}, intwr: {=bool:?}, intspc: {=u8:?}, sstcl: {=u8:?}, srst: {=bool:?} }}",
             self.ustat(),
             self.interr(),
             self.intrd(),
@@ -4538,8 +4538,8 @@ impl defmt::Format for P4omflen {
 #[doc = "no description available."]
 #[repr(transparent)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct P4ramuse(pub u32);
-impl P4ramuse {
+pub struct P4ramUse(pub u32);
+impl P4ramUse {
     #[doc = "This is the word offset into the RAM."]
     #[must_use]
     #[inline(always)]
@@ -4565,26 +4565,26 @@ impl P4ramuse {
         self.0 = (self.0 & !(0x07 << 16usize)) | (((val as u32) & 0x07) << 16usize);
     }
 }
-impl Default for P4ramuse {
+impl Default for P4ramUse {
     #[inline(always)]
-    fn default() -> P4ramuse {
-        P4ramuse(0)
+    fn default() -> P4ramUse {
+        P4ramUse(0)
     }
 }
-impl core::fmt::Debug for P4ramuse {
+impl core::fmt::Debug for P4ramUse {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("P4ramuse")
+        f.debug_struct("P4ramUse")
             .field("off", &self.off())
             .field("len", &self.len())
             .finish()
     }
 }
 #[cfg(feature = "defmt")]
-impl defmt::Format for P4ramuse {
+impl defmt::Format for P4ramUse {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "P4ramuse {{ off: {=u16:?}, len: {=u8:?} }}",
+            "P4ramUse {{ off: {=u16:?}, len: {=u8:?} }}",
             self.off(),
             self.len()
         )

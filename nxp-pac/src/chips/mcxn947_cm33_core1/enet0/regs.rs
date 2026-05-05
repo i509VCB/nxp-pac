@@ -6,13 +6,13 @@ impl DmaCh0Control {
     #[doc = "8xPBL mode."]
     #[must_use]
     #[inline(always)]
-    pub const fn pblx8(&self) -> bool {
+    pub const fn pb_lx8(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
         val != 0
     }
     #[doc = "8xPBL mode."]
     #[inline(always)]
-    pub const fn set_pblx8(&mut self, val: bool) {
+    pub const fn set_pb_lx8(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Descriptor Skip Length."]
@@ -37,7 +37,7 @@ impl Default for DmaCh0Control {
 impl core::fmt::Debug for DmaCh0Control {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DmaCh0Control")
-            .field("pblx8", &self.pblx8())
+            .field("pb_lx8", &self.pb_lx8())
             .field("dsl", &self.dsl())
             .finish()
     }
@@ -47,8 +47,8 @@ impl defmt::Format for DmaCh0Control {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "DmaCh0Control {{ pblx8: {=bool:?}, dsl: {=u8:?} }}",
-            self.pblx8(),
+            "DmaCh0Control {{ pb_lx8: {=bool:?}, dsl: {=u8:?} }}",
+            self.pb_lx8(),
             self.dsl()
         )
     }
@@ -1369,13 +1369,13 @@ impl DmaCh1Control {
     #[doc = "8xPBL mode."]
     #[must_use]
     #[inline(always)]
-    pub const fn pblx8(&self) -> bool {
+    pub const fn pb_lx8(&self) -> bool {
         let val = (self.0 >> 16usize) & 0x01;
         val != 0
     }
     #[doc = "8xPBL mode."]
     #[inline(always)]
-    pub const fn set_pblx8(&mut self, val: bool) {
+    pub const fn set_pb_lx8(&mut self, val: bool) {
         self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
     }
     #[doc = "Descriptor Skip Length."]
@@ -1400,7 +1400,7 @@ impl Default for DmaCh1Control {
 impl core::fmt::Debug for DmaCh1Control {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DmaCh1Control")
-            .field("pblx8", &self.pblx8())
+            .field("pb_lx8", &self.pb_lx8())
             .field("dsl", &self.dsl())
             .finish()
     }
@@ -1410,8 +1410,8 @@ impl defmt::Format for DmaCh1Control {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "DmaCh1Control {{ pblx8: {=bool:?}, dsl: {=u8:?} }}",
-            self.pblx8(),
+            "DmaCh1Control {{ pb_lx8: {=bool:?}, dsl: {=u8:?} }}",
+            self.pb_lx8(),
             self.dsl()
         )
     }

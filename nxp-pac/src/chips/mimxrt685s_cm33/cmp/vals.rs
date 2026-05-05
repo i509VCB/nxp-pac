@@ -3,21 +3,21 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Acph1tc {
     #[doc = "Phase1 active time in one sampling period equals to T."]
-    ACPH1TC_0 = 0x0,
+    Acph1tc0 = 0x0,
     #[doc = "Phase1 active time in one sampling period equals to 2*T."]
-    ACPH1TC_1 = 0x01,
+    Acph1tc1 = 0x01,
     #[doc = "Phase1 active time in one sampling period equals to 4*T."]
-    ACPH1TC_2 = 0x02,
+    Acph1tc2 = 0x02,
     #[doc = "Phase1 active time in one sampling period equals to 8*T."]
-    ACPH1TC_3 = 0x03,
+    Acph1tc3 = 0x03,
     #[doc = "Phase1 active time in one sampling period equals to T."]
-    ACPH1TC_4 = 0x04,
+    Acph1tc4 = 0x04,
     #[doc = "Phase1 active time in one sampling period equals to T."]
-    ACPH1TC_5 = 0x05,
+    Acph1tc5 = 0x05,
     #[doc = "Phase1 active time in one sampling period equals to T."]
-    ACPH1TC_6 = 0x06,
+    Acph1tc6 = 0x06,
     #[doc = "Phase1 active time in one sampling period equals to 0."]
-    ACPH1TC_7 = 0x07,
+    Acph1tc7 = 0x07,
 }
 impl Acph1tc {
     #[inline(always)]
@@ -46,21 +46,21 @@ impl From<Acph1tc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Acph2tc {
     #[doc = "Phase2 active time in one sampling period equals to T."]
-    ACPH2TC_0 = 0x0,
+    Acph2tc0 = 0x0,
     #[doc = "Phase2 active time in one sampling period equals to 2*T."]
-    ACPH2TC_1 = 0x01,
+    Acph2tc1 = 0x01,
     #[doc = "Phase2 active time in one sampling period equals to 4*T."]
-    ACPH2TC_2 = 0x02,
+    Acph2tc2 = 0x02,
     #[doc = "Phase2 active time in one sampling period equals to 8*T."]
-    ACPH2TC_3 = 0x03,
+    Acph2tc3 = 0x03,
     #[doc = "Phase2 active time in one sampling period equals to 16*T."]
-    ACPH2TC_4 = 0x04,
+    Acph2tc4 = 0x04,
     #[doc = "Phase2 active time in one sampling period equals to 32*T."]
-    ACPH2TC_5 = 0x05,
+    Acph2tc5 = 0x05,
     #[doc = "Phase2 active time in one sampling period equals to 64*T."]
-    ACPH2TC_6 = 0x06,
+    Acph2tc6 = 0x06,
     #[doc = "Phase2 active time in one sampling period equals to 16*T."]
-    ACPH2TC_7 = 0x07,
+    Acph2tc7 = 0x07,
 }
 impl Acph2tc {
     #[inline(always)]
@@ -89,21 +89,21 @@ impl From<Acph2tc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Acsat {
     #[doc = "The sampling time equals to T."]
-    ACSAT_0 = 0x0,
+    Acsat0 = 0x0,
     #[doc = "The sampling time equasl to 2*T."]
-    ACSAT_1 = 0x01,
+    Acsat1 = 0x01,
     #[doc = "The sampling time equasl to 4*T."]
-    ACSAT_2 = 0x02,
+    Acsat2 = 0x02,
     #[doc = "The sampling time equasl to 8*T."]
-    ACSAT_3 = 0x03,
+    Acsat3 = 0x03,
     #[doc = "The sampling time equasl to 16*T."]
-    ACSAT_4 = 0x04,
+    Acsat4 = 0x04,
     #[doc = "The sampling time equasl to 32*T."]
-    ACSAT_5 = 0x05,
+    Acsat5 = 0x05,
     #[doc = "The sampling time equasl to 64*T."]
-    ACSAT_6 = 0x06,
+    Acsat6 = 0x06,
     #[doc = "The sampling time equasl to 256*T."]
-    ACSAT_7 = 0x07,
+    Acsat7 = 0x07,
 }
 impl Acsat {
     #[inline(always)]
@@ -132,9 +132,9 @@ impl From<Acsat> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cff {
     #[doc = "A falling edge has not been detected on COUT."]
-    CFF_0 = 0x0,
+    Cff0 = 0x0,
     #[doc = "A falling edge on COUT has occurred."]
-    CFF_1 = 0x01,
+    Cff1 = 0x01,
 }
 impl Cff {
     #[inline(always)]
@@ -163,9 +163,9 @@ impl From<Cff> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cfr {
     #[doc = "A rising edge has not been detected on COUT."]
-    CFR_0 = 0x0,
+    Cfr0 = 0x0,
     #[doc = "A rising edge on COUT has occurred."]
-    CFR_1 = 0x01,
+    Cfr1 = 0x01,
 }
 impl Cfr {
     #[inline(always)]
@@ -194,9 +194,9 @@ impl From<Cfr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cos {
     #[doc = "Set CMPO to equal COUT (filtered comparator output)."]
-    COS_0 = 0x0,
+    Cos0 = 0x0,
     #[doc = "Set CMPO to equal COUTA (unfiltered comparator output)."]
-    COS_1 = 0x01,
+    Cos1 = 0x01,
 }
 impl Cos {
     #[inline(always)]
@@ -225,9 +225,9 @@ impl From<Cos> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dacen {
     #[doc = "DAC is disabled."]
-    DACEN_0 = 0x0,
+    Dacen0 = 0x0,
     #[doc = "DAC is enabled."]
-    DACEN_1 = 0x01,
+    Dacen1 = 0x01,
 }
 impl Dacen {
     #[inline(always)]
@@ -256,9 +256,9 @@ impl From<Dacen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dmaen {
     #[doc = "DMA is disabled."]
-    DMAEN_0 = 0x0,
+    Dmaen0 = 0x0,
     #[doc = "DMA is enabled."]
-    DMAEN_1 = 0x01,
+    Dmaen1 = 0x01,
 }
 impl Dmaen {
     #[inline(always)]
@@ -287,9 +287,9 @@ impl From<Dmaen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dmcs {
     #[doc = "Slow clock is selected for the timing generation."]
-    DMCS_0 = 0x0,
+    Dmcs0 = 0x0,
     #[doc = "Fast clock is selected for the timing generation."]
-    DMCS_1 = 0x01,
+    Dmcs1 = 0x01,
 }
 impl Dmcs {
     #[inline(always)]
@@ -318,9 +318,9 @@ impl From<Dmcs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dmode {
     #[doc = "DAC is selected to work in low speed and low power mode."]
-    DMODE_0 = 0x0,
+    Dmode0 = 0x0,
     #[doc = "DAC is selected to work in high speed high power mode."]
-    DMODE_1 = 0x01,
+    Dmode1 = 0x01,
 }
 impl Dmode {
     #[inline(always)]
@@ -349,9 +349,9 @@ impl From<Dmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum En {
     #[doc = "Analog Comparator is disabled."]
-    EN_0 = 0x0,
+    En0 = 0x0,
     #[doc = "Analog Comparator is enabled."]
-    EN_1 = 0x01,
+    En1 = 0x01,
 }
 impl En {
     #[inline(always)]
@@ -380,21 +380,21 @@ impl From<En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FilterCnt {
     #[doc = "Filter is disabled. If SE = 1, then COUT is a logic zero (this is not a legal state, and is not recommended). If SE = 0, COUT = COUTA."]
-    FILTER_CNT_0 = 0x0,
+    FilterCnt0 = 0x0,
     #[doc = "1 consecutive sample must agree (comparator output is simply sampled)."]
-    FILTER_CNT_1 = 0x01,
+    FilterCnt1 = 0x01,
     #[doc = "2 consecutive samples must agree."]
-    FILTER_CNT_2 = 0x02,
+    FilterCnt2 = 0x02,
     #[doc = "3 consecutive samples must agree."]
-    FILTER_CNT_3 = 0x03,
+    FilterCnt3 = 0x03,
     #[doc = "4 consecutive samples must agree."]
-    FILTER_CNT_4 = 0x04,
+    FilterCnt4 = 0x04,
     #[doc = "5 consecutive samples must agree."]
-    FILTER_CNT_5 = 0x05,
+    FilterCnt5 = 0x05,
     #[doc = "6 consecutive samples must agree."]
-    FILTER_CNT_6 = 0x06,
+    FilterCnt6 = 0x06,
     #[doc = "7 consecutive samples must agree."]
-    FILTER_CNT_7 = 0x07,
+    FilterCnt7 = 0x07,
 }
 impl FilterCnt {
     #[inline(always)]
@@ -423,9 +423,9 @@ impl From<FilterCnt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fxmp {
     #[doc = "The Plus port is fixed. Only the inputs to the Minus port are swept in each round."]
-    FXMP_0 = 0x0,
+    Fxmp0 = 0x0,
     #[doc = "The Minus port is fixed. Only the inputs to the Plus port are swept in each round."]
-    FXMP_1 = 0x01,
+    Fxmp1 = 0x01,
 }
 impl Fxmp {
     #[inline(always)]
@@ -454,20 +454,20 @@ impl From<Fxmp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fxmxch {
     #[doc = "External Reference Input 0 is selected as the fixed reference input for the fixed mux port."]
-    FXMXCH_0 = 0x0,
+    Fxmxch0 = 0x0,
     #[doc = "External Reference Input 1 is selected as the fixed reference input for the fixed mux port."]
-    FXMXCH_1 = 0x01,
+    Fxmxch1 = 0x01,
     #[doc = "External Reference Input 2 is selected as the fixed reference input for the fixed mux port."]
-    FXMXCH_2 = 0x02,
+    Fxmxch2 = 0x02,
     #[doc = "External Reference Input 3 is selected as the fixed reference input for the fixed mux port."]
-    FXMXCH_3 = 0x03,
+    Fxmxch3 = 0x03,
     #[doc = "External Reference Input 4 is selected as the fixed reference input for the fixed mux port."]
-    FXMXCH_4 = 0x04,
+    Fxmxch4 = 0x04,
     #[doc = "External Reference Input 5 is selected as the fixed reference input for the fixed mux port."]
-    FXMXCH_5 = 0x05,
+    Fxmxch5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "The 8bit DAC is selected as the fixed reference input for the fixed mux port."]
-    FXMXCH_7 = 0x07,
+    Fxmxch7 = 0x07,
 }
 impl Fxmxch {
     #[inline(always)]
@@ -496,13 +496,13 @@ impl From<Fxmxch> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hystctr {
     #[doc = "The hard block output has level 0 hysteresis internally."]
-    HYSTCTR_0 = 0x0,
+    Hystctr0 = 0x0,
     #[doc = "The hard block output has level 1 hysteresis internally."]
-    HYSTCTR_1 = 0x01,
+    Hystctr1 = 0x01,
     #[doc = "The hard block output has level 2 hysteresis internally."]
-    HYSTCTR_2 = 0x02,
+    Hystctr2 = 0x02,
     #[doc = "The hard block output has level 3 hysteresis internally."]
-    HYSTCTR_3 = 0x03,
+    Hystctr3 = 0x03,
 }
 impl Hystctr {
     #[inline(always)]
@@ -531,9 +531,9 @@ impl From<Hystctr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ief {
     #[doc = "Interrupt is disabled."]
-    IEF_0 = 0x0,
+    Ief0 = 0x0,
     #[doc = "Interrupt is enabled."]
-    IEF_1 = 0x01,
+    Ief1 = 0x01,
 }
 impl Ief {
     #[inline(always)]
@@ -562,9 +562,9 @@ impl From<Ief> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ier {
     #[doc = "Interrupt is disabled."]
-    IER_0 = 0x0,
+    Ier0 = 0x0,
     #[doc = "Interrupt is enabled."]
-    IER_1 = 0x01,
+    Ier1 = 0x01,
 }
 impl Ier {
     #[inline(always)]
@@ -593,9 +593,9 @@ impl From<Ier> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Invt {
     #[doc = "Does not invert the comparator output."]
-    INVT_0 = 0x0,
+    Invt0 = 0x0,
     #[doc = "Inverts the comparator output."]
-    INVT_1 = 0x01,
+    Invt1 = 0x01,
 }
 impl Invt {
     #[inline(always)]
@@ -624,9 +624,9 @@ impl From<Invt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Linken {
     #[doc = "CMP to DAC link is disabled."]
-    LINKEN_0 = 0x0,
+    Linken0 = 0x0,
     #[doc = "CMP to DAC link is enabled."]
-    LINKEN_1 = 0x01,
+    Linken1 = 0x01,
 }
 impl Linken {
     #[inline(always)]
@@ -655,21 +655,21 @@ impl From<Linken> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Msel {
     #[doc = "Internal Negative Input 0 for Minus Channel -- Internal Minus Input."]
-    MSEL_0 = 0x0,
+    Msel0 = 0x0,
     #[doc = "External Input 1 for Minus Channel -- Reference Input 0."]
-    MSEL_1 = 0x01,
+    Msel1 = 0x01,
     #[doc = "External Input 2 for Minus Channel -- Reference Input 1."]
-    MSEL_2 = 0x02,
+    Msel2 = 0x02,
     #[doc = "External Input 3 for Minus Channel -- Reference Input 2."]
-    MSEL_3 = 0x03,
+    Msel3 = 0x03,
     #[doc = "External Input 4 for Minus Channel -- Reference Input 3."]
-    MSEL_4 = 0x04,
+    Msel4 = 0x04,
     #[doc = "External Input 5 for Minus Channel -- Reference Input 4."]
-    MSEL_5 = 0x05,
+    Msel5 = 0x05,
     #[doc = "External Input 6 for Minus Channel -- Reference Input 5."]
-    MSEL_6 = 0x06,
+    Msel6 = 0x06,
     #[doc = "Internal 8b DAC output."]
-    MSEL_7 = 0x07,
+    Msel7 = 0x07,
 }
 impl Msel {
     #[inline(always)]
@@ -698,9 +698,9 @@ impl From<Msel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Nchcten {
     #[doc = "Negative channel is in Discrete Mode and special timing needs to be configured."]
-    NCHCTEN_0 = 0x0,
+    Nchcten0 = 0x0,
     #[doc = "Negative channel is in Continuous Mode and no special timing is requried."]
-    NCHCTEN_1 = 0x01,
+    Nchcten1 = 0x01,
 }
 impl Nchcten {
     #[inline(always)]
@@ -729,13 +729,13 @@ impl From<Nchcten> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Nsam {
     #[doc = "The comparison result is sampled as soon as the active channel is scanned in one round-robin clock."]
-    NSAM_0 = 0x0,
+    Nsam0 = 0x0,
     #[doc = "The sampling takes place 1 round-robin clock cycle after the next cycle of the round-robin clock."]
-    NSAM_1 = 0x01,
+    Nsam1 = 0x01,
     #[doc = "The sampling takes place 2 round-robin clock cycles after the next cycle of the round-robin clock."]
-    NSAM_2 = 0x02,
+    Nsam2 = 0x02,
     #[doc = "The sampling takes place 3 round-robin clock cycles after the next cycle of the round-robin clock."]
-    NSAM_3 = 0x03,
+    Nsam3 = 0x03,
 }
 impl Nsam {
     #[inline(always)]
@@ -764,9 +764,9 @@ impl From<Nsam> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ope {
     #[doc = "When OPE is 0, the comparator output (after window/filter settings dependent on software configuration) is not available to a packaged pin."]
-    OPE_0 = 0x0,
+    Ope0 = 0x0,
     #[doc = "When OPE is 1, and if the software has configured the comparator to own a packaged pin, the comparator is available in a packaged pin."]
-    OPE_1 = 0x01,
+    Ope1 = 0x01,
 }
 impl Ope {
     #[inline(always)]
@@ -795,9 +795,9 @@ impl From<Ope> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pchcten {
     #[doc = "Positive channel is in Discrete Mode and special timing needs to be configured."]
-    PCHCTEN_0 = 0x0,
+    Pchcten0 = 0x0,
     #[doc = "Positive channel is in Continuous Mode and no special timing is requried."]
-    PCHCTEN_1 = 0x01,
+    Pchcten1 = 0x01,
 }
 impl Pchcten {
     #[inline(always)]
@@ -826,9 +826,9 @@ impl From<Pchcten> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pmode {
     #[doc = "Low Speed (LS) comparison mode is selected."]
-    PMODE_0 = 0x0,
+    Pmode0 = 0x0,
     #[doc = "High Speed (HS) comparison mode is selected."]
-    PMODE_1 = 0x01,
+    Pmode1 = 0x01,
 }
 impl Pmode {
     #[inline(always)]
@@ -857,21 +857,21 @@ impl From<Pmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Psel {
     #[doc = "Internal Posivite Input 0 for Plus Channel -- Internal Minus Input."]
-    PSEL_0 = 0x0,
+    Psel0 = 0x0,
     #[doc = "External Input 1 for Plus Channel -- Reference Input 0."]
-    PSEL_1 = 0x01,
+    Psel1 = 0x01,
     #[doc = "External Input 2 for Plus Channel -- Reference Input 1."]
-    PSEL_2 = 0x02,
+    Psel2 = 0x02,
     #[doc = "External Input 3 for Plus Channel -- Reference Input 2."]
-    PSEL_3 = 0x03,
+    Psel3 = 0x03,
     #[doc = "External Input 4 for Plus Channel -- Reference Input 3."]
-    PSEL_4 = 0x04,
+    Psel4 = 0x04,
     #[doc = "External Input 4 for Plus Channel -- Reference Input 4."]
-    PSEL_5 = 0x05,
+    Psel5 = 0x05,
     #[doc = "External Input 4 for Plus Channel -- Reference Input 5."]
-    PSEL_6 = 0x06,
+    Psel6 = 0x06,
     #[doc = "Internal 8b DAC output."]
-    PSEL_7 = 0x07,
+    Psel7 = 0x07,
 }
 impl Psel {
     #[inline(always)]
@@ -900,9 +900,9 @@ impl From<Psel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rdive {
     #[doc = "The resistor is not enabled even when either NCHEN or PCHEN is set to1 but the actual input is in the range of 0 - 1.8v."]
-    RDIVE_0 = 0x0,
+    Rdive0 = 0x0,
     #[doc = "The resistor is enabled because the inputs are above 1.8v."]
-    RDIVE_1 = 0x01,
+    Rdive1 = 0x01,
 }
 impl Rdive {
     #[inline(always)]
@@ -931,9 +931,9 @@ impl From<Rdive> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rrie {
     #[doc = "The round-robin interrupt is disabled."]
-    RRIE_0 = 0x0,
+    Rrie0 = 0x0,
     #[doc = "The round-robin interrupt is enabled when a comparison result changes from the last sample."]
-    RRIE_1 = 0x01,
+    Rrie1 = 0x01,
 }
 impl Rrie {
     #[inline(always)]
@@ -962,9 +962,9 @@ impl From<Rrie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Se {
     #[doc = "Sampling mode is not selected."]
-    SE_0 = 0x0,
+    Se0 = 0x0,
     #[doc = "Sampling mode is selected."]
-    SE_1 = 0x01,
+    Se1 = 0x01,
 }
 impl Se {
     #[inline(always)]
@@ -993,9 +993,9 @@ impl From<Se> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Vrsel {
     #[doc = "Vin1 is selected as resistor ladder network supply reference Vin. Vin1 is from internal PMC."]
-    VRSEL_0 = 0x0,
+    Vrsel0 = 0x0,
     #[doc = "Vin2 is selected as resistor ladder network supply reference Vin. Vin2 is from PAD."]
-    VRSEL_1 = 0x01,
+    Vrsel1 = 0x01,
 }
 impl Vrsel {
     #[inline(always)]
@@ -1024,9 +1024,9 @@ impl From<Vrsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum We {
     #[doc = "Windowing mode is not selected."]
-    WE_0 = 0x0,
+    We0 = 0x0,
     #[doc = "Windowing mode is selected."]
-    WE_1 = 0x01,
+    We1 = 0x01,
 }
 impl We {
     #[inline(always)]

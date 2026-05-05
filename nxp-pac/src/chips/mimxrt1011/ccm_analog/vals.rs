@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Enable {
     #[doc = "Spread spectrum modulation disabled."]
-    ENABLE_0 = 0x0,
+    Enable0 = 0x0,
     #[doc = "Soread spectrum modulation enabled."]
-    ENABLE_1 = 0x01,
+    Enable1 = 0x01,
 }
 impl Enable {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Enable> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0ClkgateCtrl {
     #[doc = "Allow the logic to automatically gate the clock when the XTAL is powered down."]
-    ALLOW_AUTO_GATE = 0x0,
+    AllowAutoGate = 0x0,
     #[doc = "Prevent the logic from ever gating off the clock."]
-    NO_AUTO_GATE = 0x01,
+    NoAutoGate = 0x01,
 }
 impl Misc0ClkgateCtrl {
     #[inline(always)]
@@ -65,21 +65,21 @@ impl From<Misc0ClkgateCtrl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0ClkgateDelay {
     #[doc = "0.5ms."]
-    CLKGATE_DELAY_0 = 0x0,
+    ClkgateDelay0 = 0x0,
     #[doc = "1.0ms."]
-    CLKGATE_DELAY_1 = 0x01,
+    ClkgateDelay1 = 0x01,
     #[doc = "2.0ms."]
-    CLKGATE_DELAY_2 = 0x02,
+    ClkgateDelay2 = 0x02,
     #[doc = "3.0ms."]
-    CLKGATE_DELAY_3 = 0x03,
+    ClkgateDelay3 = 0x03,
     #[doc = "4.0ms."]
-    CLKGATE_DELAY_4 = 0x04,
+    ClkgateDelay4 = 0x04,
     #[doc = "5.0ms."]
-    CLKGATE_DELAY_5 = 0x05,
+    ClkgateDelay5 = 0x05,
     #[doc = "6.0ms."]
-    CLKGATE_DELAY_6 = 0x06,
+    ClkgateDelay6 = 0x06,
     #[doc = "7.0ms."]
-    CLKGATE_DELAY_7 = 0x07,
+    ClkgateDelay7 = 0x07,
 }
 impl Misc0ClkgateDelay {
     #[inline(always)]
@@ -108,9 +108,9 @@ impl From<Misc0ClkgateDelay> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0ClrClkgateCtrl {
     #[doc = "Allow the logic to automatically gate the clock when the XTAL is powered down."]
-    ALLOW_AUTO_GATE = 0x0,
+    AllowAutoGate = 0x0,
     #[doc = "Prevent the logic from ever gating off the clock."]
-    NO_AUTO_GATE = 0x01,
+    NoAutoGate = 0x01,
 }
 impl Misc0ClrClkgateCtrl {
     #[inline(always)]
@@ -139,21 +139,21 @@ impl From<Misc0ClrClkgateCtrl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0ClrClkgateDelay {
     #[doc = "0.5ms."]
-    CLKGATE_DELAY_0 = 0x0,
+    ClkgateDelay0 = 0x0,
     #[doc = "1.0ms."]
-    CLKGATE_DELAY_1 = 0x01,
+    ClkgateDelay1 = 0x01,
     #[doc = "2.0ms."]
-    CLKGATE_DELAY_2 = 0x02,
+    ClkgateDelay2 = 0x02,
     #[doc = "3.0ms."]
-    CLKGATE_DELAY_3 = 0x03,
+    ClkgateDelay3 = 0x03,
     #[doc = "4.0ms."]
-    CLKGATE_DELAY_4 = 0x04,
+    ClkgateDelay4 = 0x04,
     #[doc = "5.0ms."]
-    CLKGATE_DELAY_5 = 0x05,
+    ClkgateDelay5 = 0x05,
     #[doc = "6.0ms."]
-    CLKGATE_DELAY_6 = 0x06,
+    ClkgateDelay6 = 0x06,
     #[doc = "7.0ms."]
-    CLKGATE_DELAY_7 = 0x07,
+    ClkgateDelay7 = 0x07,
 }
 impl Misc0ClrClkgateDelay {
     #[inline(always)]
@@ -182,9 +182,9 @@ impl From<Misc0ClrClkgateDelay> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0ClrDisconHighSnvs {
     #[doc = "Turn on the switch."]
-    DISCON_HIGH_SNVS_0 = 0x0,
+    DisconHighSnvs0 = 0x0,
     #[doc = "Turn off the switch."]
-    DISCON_HIGH_SNVS_1 = 0x01,
+    DisconHighSnvs1 = 0x01,
 }
 impl Misc0ClrDisconHighSnvs {
     #[inline(always)]
@@ -213,13 +213,13 @@ impl From<Misc0ClrDisconHighSnvs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0ClrOscI {
     #[doc = "Nominal."]
-    NOMINAL = 0x0,
+    Nominal = 0x0,
     #[doc = "Decrease current by 12.5%."]
-    MINUS_12_5_PERCENT = 0x01,
+    Minus125Percent = 0x01,
     #[doc = "Decrease current by 25.0%."]
-    MINUS_25_PERCENT = 0x02,
+    Minus25Percent = 0x02,
     #[doc = "Decrease current by 37.5%."]
-    MINUS_37_5_PERCENT = 0x03,
+    Minus375Percent = 0x03,
 }
 impl Misc0ClrOscI {
     #[inline(always)]
@@ -248,9 +248,9 @@ impl From<Misc0ClrOscI> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0ClrReftopSelfbiasoff {
     #[doc = "Uses coarse bias currents for startup."]
-    REFTOP_SELFBIASOFF_0 = 0x0,
+    ReftopSelfbiasoff0 = 0x0,
     #[doc = "Uses bandgap-based bias currents for best performance."]
-    REFTOP_SELFBIASOFF_1 = 0x01,
+    ReftopSelfbiasoff1 = 0x01,
 }
 impl Misc0ClrReftopSelfbiasoff {
     #[inline(always)]
@@ -279,21 +279,21 @@ impl From<Misc0ClrReftopSelfbiasoff> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0ClrReftopVbgadj {
     #[doc = "Nominal VBG."]
-    REFTOP_VBGADJ_0 = 0x0,
+    ReftopVbgadj0 = 0x0,
     #[doc = "VBG+0.78%."]
-    REFTOP_VBGADJ_1 = 0x01,
+    ReftopVbgadj1 = 0x01,
     #[doc = "VBG+1.56%."]
-    REFTOP_VBGADJ_2 = 0x02,
+    ReftopVbgadj2 = 0x02,
     #[doc = "VBG+2.34%."]
-    REFTOP_VBGADJ_3 = 0x03,
+    ReftopVbgadj3 = 0x03,
     #[doc = "VBG-0.78%."]
-    REFTOP_VBGADJ_4 = 0x04,
+    ReftopVbgadj4 = 0x04,
     #[doc = "VBG-1.56%."]
-    REFTOP_VBGADJ_5 = 0x05,
+    ReftopVbgadj5 = 0x05,
     #[doc = "VBG-2.34%."]
-    REFTOP_VBGADJ_6 = 0x06,
+    ReftopVbgadj6 = 0x06,
     #[doc = "VBG-3.12%."]
-    REFTOP_VBGADJ_7 = 0x07,
+    ReftopVbgadj7 = 0x07,
 }
 impl Misc0ClrReftopVbgadj {
     #[inline(always)]
@@ -322,9 +322,9 @@ impl From<Misc0ClrReftopVbgadj> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0ClrRtcXtalSource {
     #[doc = "Internal ring oscillator."]
-    RTC_XTAL_SOURCE_0 = 0x0,
+    RtcXtalSource0 = 0x0,
     #[doc = "RTC_XTAL."]
-    RTC_XTAL_SOURCE_1 = 0x01,
+    RtcXtalSource1 = 0x01,
 }
 impl Misc0ClrRtcXtalSource {
     #[inline(always)]
@@ -353,13 +353,13 @@ impl From<Misc0ClrRtcXtalSource> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0ClrStopModeConfig {
     #[doc = "All analog except RTC powered down on stop mode assertion."]
-    STOP_MODE_CONFIG_0 = 0x0,
+    StopModeConfig0 = 0x0,
     #[doc = "Beside RTC, analog bandgap, 1p1 and 2p5 regulators are also on."]
-    STOP_MODE_CONFIG_1 = 0x01,
+    StopModeConfig1 = 0x01,
     #[doc = "Beside RTC, 1p1 and 2p5 regulators are also on, low-power bandgap is selected so that the normal analog bandgap together with the rest analog is powered down."]
-    STOP_MODE_CONFIG_2 = 0x02,
+    StopModeConfig2 = 0x02,
     #[doc = "Beside RTC, low-power bandgap is selected and the rest analog is powered down."]
-    STOP_MODE_CONFIG_3 = 0x03,
+    StopModeConfig3 = 0x03,
 }
 impl Misc0ClrStopModeConfig {
     #[inline(always)]
@@ -388,9 +388,9 @@ impl From<Misc0ClrStopModeConfig> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0DisconHighSnvs {
     #[doc = "Turn on the switch."]
-    DISCON_HIGH_SNVS_0 = 0x0,
+    DisconHighSnvs0 = 0x0,
     #[doc = "Turn off the switch."]
-    DISCON_HIGH_SNVS_1 = 0x01,
+    DisconHighSnvs1 = 0x01,
 }
 impl Misc0DisconHighSnvs {
     #[inline(always)]
@@ -419,13 +419,13 @@ impl From<Misc0DisconHighSnvs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0OscI {
     #[doc = "Nominal."]
-    NOMINAL = 0x0,
+    Nominal = 0x0,
     #[doc = "Decrease current by 12.5%."]
-    MINUS_12_5_PERCENT = 0x01,
+    Minus125Percent = 0x01,
     #[doc = "Decrease current by 25.0%."]
-    MINUS_25_PERCENT = 0x02,
+    Minus25Percent = 0x02,
     #[doc = "Decrease current by 37.5%."]
-    MINUS_37_5_PERCENT = 0x03,
+    Minus375Percent = 0x03,
 }
 impl Misc0OscI {
     #[inline(always)]
@@ -454,9 +454,9 @@ impl From<Misc0OscI> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0ReftopSelfbiasoff {
     #[doc = "Uses coarse bias currents for startup."]
-    REFTOP_SELFBIASOFF_0 = 0x0,
+    ReftopSelfbiasoff0 = 0x0,
     #[doc = "Uses bandgap-based bias currents for best performance."]
-    REFTOP_SELFBIASOFF_1 = 0x01,
+    ReftopSelfbiasoff1 = 0x01,
 }
 impl Misc0ReftopSelfbiasoff {
     #[inline(always)]
@@ -485,21 +485,21 @@ impl From<Misc0ReftopSelfbiasoff> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0ReftopVbgadj {
     #[doc = "Nominal VBG."]
-    REFTOP_VBGADJ_0 = 0x0,
+    ReftopVbgadj0 = 0x0,
     #[doc = "VBG+0.78%."]
-    REFTOP_VBGADJ_1 = 0x01,
+    ReftopVbgadj1 = 0x01,
     #[doc = "VBG+1.56%."]
-    REFTOP_VBGADJ_2 = 0x02,
+    ReftopVbgadj2 = 0x02,
     #[doc = "VBG+2.34%."]
-    REFTOP_VBGADJ_3 = 0x03,
+    ReftopVbgadj3 = 0x03,
     #[doc = "VBG-0.78%."]
-    REFTOP_VBGADJ_4 = 0x04,
+    ReftopVbgadj4 = 0x04,
     #[doc = "VBG-1.56%."]
-    REFTOP_VBGADJ_5 = 0x05,
+    ReftopVbgadj5 = 0x05,
     #[doc = "VBG-2.34%."]
-    REFTOP_VBGADJ_6 = 0x06,
+    ReftopVbgadj6 = 0x06,
     #[doc = "VBG-3.12%."]
-    REFTOP_VBGADJ_7 = 0x07,
+    ReftopVbgadj7 = 0x07,
 }
 impl Misc0ReftopVbgadj {
     #[inline(always)]
@@ -528,9 +528,9 @@ impl From<Misc0ReftopVbgadj> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0RtcXtalSource {
     #[doc = "Internal ring oscillator."]
-    RTC_XTAL_SOURCE_0 = 0x0,
+    RtcXtalSource0 = 0x0,
     #[doc = "RTC_XTAL."]
-    RTC_XTAL_SOURCE_1 = 0x01,
+    RtcXtalSource1 = 0x01,
 }
 impl Misc0RtcXtalSource {
     #[inline(always)]
@@ -559,9 +559,9 @@ impl From<Misc0RtcXtalSource> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0SetClkgateCtrl {
     #[doc = "Allow the logic to automatically gate the clock when the XTAL is powered down."]
-    ALLOW_AUTO_GATE = 0x0,
+    AllowAutoGate = 0x0,
     #[doc = "Prevent the logic from ever gating off the clock."]
-    NO_AUTO_GATE = 0x01,
+    NoAutoGate = 0x01,
 }
 impl Misc0SetClkgateCtrl {
     #[inline(always)]
@@ -590,21 +590,21 @@ impl From<Misc0SetClkgateCtrl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0SetClkgateDelay {
     #[doc = "0.5ms."]
-    CLKGATE_DELAY_0 = 0x0,
+    ClkgateDelay0 = 0x0,
     #[doc = "1.0ms."]
-    CLKGATE_DELAY_1 = 0x01,
+    ClkgateDelay1 = 0x01,
     #[doc = "2.0ms."]
-    CLKGATE_DELAY_2 = 0x02,
+    ClkgateDelay2 = 0x02,
     #[doc = "3.0ms."]
-    CLKGATE_DELAY_3 = 0x03,
+    ClkgateDelay3 = 0x03,
     #[doc = "4.0ms."]
-    CLKGATE_DELAY_4 = 0x04,
+    ClkgateDelay4 = 0x04,
     #[doc = "5.0ms."]
-    CLKGATE_DELAY_5 = 0x05,
+    ClkgateDelay5 = 0x05,
     #[doc = "6.0ms."]
-    CLKGATE_DELAY_6 = 0x06,
+    ClkgateDelay6 = 0x06,
     #[doc = "7.0ms."]
-    CLKGATE_DELAY_7 = 0x07,
+    ClkgateDelay7 = 0x07,
 }
 impl Misc0SetClkgateDelay {
     #[inline(always)]
@@ -633,9 +633,9 @@ impl From<Misc0SetClkgateDelay> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0SetDisconHighSnvs {
     #[doc = "Turn on the switch."]
-    DISCON_HIGH_SNVS_0 = 0x0,
+    DisconHighSnvs0 = 0x0,
     #[doc = "Turn off the switch."]
-    DISCON_HIGH_SNVS_1 = 0x01,
+    DisconHighSnvs1 = 0x01,
 }
 impl Misc0SetDisconHighSnvs {
     #[inline(always)]
@@ -664,13 +664,13 @@ impl From<Misc0SetDisconHighSnvs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0SetOscI {
     #[doc = "Nominal."]
-    NOMINAL = 0x0,
+    Nominal = 0x0,
     #[doc = "Decrease current by 12.5%."]
-    MINUS_12_5_PERCENT = 0x01,
+    Minus125Percent = 0x01,
     #[doc = "Decrease current by 25.0%."]
-    MINUS_25_PERCENT = 0x02,
+    Minus25Percent = 0x02,
     #[doc = "Decrease current by 37.5%."]
-    MINUS_37_5_PERCENT = 0x03,
+    Minus375Percent = 0x03,
 }
 impl Misc0SetOscI {
     #[inline(always)]
@@ -699,9 +699,9 @@ impl From<Misc0SetOscI> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0SetReftopSelfbiasoff {
     #[doc = "Uses coarse bias currents for startup."]
-    REFTOP_SELFBIASOFF_0 = 0x0,
+    ReftopSelfbiasoff0 = 0x0,
     #[doc = "Uses bandgap-based bias currents for best performance."]
-    REFTOP_SELFBIASOFF_1 = 0x01,
+    ReftopSelfbiasoff1 = 0x01,
 }
 impl Misc0SetReftopSelfbiasoff {
     #[inline(always)]
@@ -730,21 +730,21 @@ impl From<Misc0SetReftopSelfbiasoff> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0SetReftopVbgadj {
     #[doc = "Nominal VBG."]
-    REFTOP_VBGADJ_0 = 0x0,
+    ReftopVbgadj0 = 0x0,
     #[doc = "VBG+0.78%."]
-    REFTOP_VBGADJ_1 = 0x01,
+    ReftopVbgadj1 = 0x01,
     #[doc = "VBG+1.56%."]
-    REFTOP_VBGADJ_2 = 0x02,
+    ReftopVbgadj2 = 0x02,
     #[doc = "VBG+2.34%."]
-    REFTOP_VBGADJ_3 = 0x03,
+    ReftopVbgadj3 = 0x03,
     #[doc = "VBG-0.78%."]
-    REFTOP_VBGADJ_4 = 0x04,
+    ReftopVbgadj4 = 0x04,
     #[doc = "VBG-1.56%."]
-    REFTOP_VBGADJ_5 = 0x05,
+    ReftopVbgadj5 = 0x05,
     #[doc = "VBG-2.34%."]
-    REFTOP_VBGADJ_6 = 0x06,
+    ReftopVbgadj6 = 0x06,
     #[doc = "VBG-3.12%."]
-    REFTOP_VBGADJ_7 = 0x07,
+    ReftopVbgadj7 = 0x07,
 }
 impl Misc0SetReftopVbgadj {
     #[inline(always)]
@@ -773,9 +773,9 @@ impl From<Misc0SetReftopVbgadj> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0SetRtcXtalSource {
     #[doc = "Internal ring oscillator."]
-    RTC_XTAL_SOURCE_0 = 0x0,
+    RtcXtalSource0 = 0x0,
     #[doc = "RTC_XTAL."]
-    RTC_XTAL_SOURCE_1 = 0x01,
+    RtcXtalSource1 = 0x01,
 }
 impl Misc0SetRtcXtalSource {
     #[inline(always)]
@@ -804,13 +804,13 @@ impl From<Misc0SetRtcXtalSource> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0SetStopModeConfig {
     #[doc = "All analog except RTC powered down on stop mode assertion."]
-    STOP_MODE_CONFIG_0 = 0x0,
+    StopModeConfig0 = 0x0,
     #[doc = "Beside RTC, analog bandgap, 1p1 and 2p5 regulators are also on."]
-    STOP_MODE_CONFIG_1 = 0x01,
+    StopModeConfig1 = 0x01,
     #[doc = "Beside RTC, 1p1 and 2p5 regulators are also on, low-power bandgap is selected so that the normal analog bandgap together with the rest analog is powered down."]
-    STOP_MODE_CONFIG_2 = 0x02,
+    StopModeConfig2 = 0x02,
     #[doc = "Beside RTC, low-power bandgap is selected and the rest analog is powered down."]
-    STOP_MODE_CONFIG_3 = 0x03,
+    StopModeConfig3 = 0x03,
 }
 impl Misc0SetStopModeConfig {
     #[inline(always)]
@@ -839,13 +839,13 @@ impl From<Misc0SetStopModeConfig> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0StopModeConfig {
     #[doc = "All analog except RTC powered down on stop mode assertion."]
-    STOP_MODE_CONFIG_0 = 0x0,
+    StopModeConfig0 = 0x0,
     #[doc = "Beside RTC, analog bandgap, 1p1 and 2p5 regulators are also on."]
-    STOP_MODE_CONFIG_1 = 0x01,
+    StopModeConfig1 = 0x01,
     #[doc = "Beside RTC, 1p1 and 2p5 regulators are also on, low-power bandgap is selected so that the normal analog bandgap together with the rest analog is powered down."]
-    STOP_MODE_CONFIG_2 = 0x02,
+    StopModeConfig2 = 0x02,
     #[doc = "Beside RTC, low-power bandgap is selected and the rest analog is powered down."]
-    STOP_MODE_CONFIG_3 = 0x03,
+    StopModeConfig3 = 0x03,
 }
 impl Misc0StopModeConfig {
     #[inline(always)]
@@ -874,9 +874,9 @@ impl From<Misc0StopModeConfig> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0TogClkgateCtrl {
     #[doc = "Allow the logic to automatically gate the clock when the XTAL is powered down."]
-    ALLOW_AUTO_GATE = 0x0,
+    AllowAutoGate = 0x0,
     #[doc = "Prevent the logic from ever gating off the clock."]
-    NO_AUTO_GATE = 0x01,
+    NoAutoGate = 0x01,
 }
 impl Misc0TogClkgateCtrl {
     #[inline(always)]
@@ -905,21 +905,21 @@ impl From<Misc0TogClkgateCtrl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0TogClkgateDelay {
     #[doc = "0.5ms."]
-    CLKGATE_DELAY_0 = 0x0,
+    ClkgateDelay0 = 0x0,
     #[doc = "1.0ms."]
-    CLKGATE_DELAY_1 = 0x01,
+    ClkgateDelay1 = 0x01,
     #[doc = "2.0ms."]
-    CLKGATE_DELAY_2 = 0x02,
+    ClkgateDelay2 = 0x02,
     #[doc = "3.0ms."]
-    CLKGATE_DELAY_3 = 0x03,
+    ClkgateDelay3 = 0x03,
     #[doc = "4.0ms."]
-    CLKGATE_DELAY_4 = 0x04,
+    ClkgateDelay4 = 0x04,
     #[doc = "5.0ms."]
-    CLKGATE_DELAY_5 = 0x05,
+    ClkgateDelay5 = 0x05,
     #[doc = "6.0ms."]
-    CLKGATE_DELAY_6 = 0x06,
+    ClkgateDelay6 = 0x06,
     #[doc = "7.0ms."]
-    CLKGATE_DELAY_7 = 0x07,
+    ClkgateDelay7 = 0x07,
 }
 impl Misc0TogClkgateDelay {
     #[inline(always)]
@@ -948,9 +948,9 @@ impl From<Misc0TogClkgateDelay> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0TogDisconHighSnvs {
     #[doc = "Turn on the switch."]
-    DISCON_HIGH_SNVS_0 = 0x0,
+    DisconHighSnvs0 = 0x0,
     #[doc = "Turn off the switch."]
-    DISCON_HIGH_SNVS_1 = 0x01,
+    DisconHighSnvs1 = 0x01,
 }
 impl Misc0TogDisconHighSnvs {
     #[inline(always)]
@@ -979,13 +979,13 @@ impl From<Misc0TogDisconHighSnvs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0TogOscI {
     #[doc = "Nominal."]
-    NOMINAL = 0x0,
+    Nominal = 0x0,
     #[doc = "Decrease current by 12.5%."]
-    MINUS_12_5_PERCENT = 0x01,
+    Minus125Percent = 0x01,
     #[doc = "Decrease current by 25.0%."]
-    MINUS_25_PERCENT = 0x02,
+    Minus25Percent = 0x02,
     #[doc = "Decrease current by 37.5%."]
-    MINUS_37_5_PERCENT = 0x03,
+    Minus375Percent = 0x03,
 }
 impl Misc0TogOscI {
     #[inline(always)]
@@ -1014,9 +1014,9 @@ impl From<Misc0TogOscI> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0TogReftopSelfbiasoff {
     #[doc = "Uses coarse bias currents for startup."]
-    REFTOP_SELFBIASOFF_0 = 0x0,
+    ReftopSelfbiasoff0 = 0x0,
     #[doc = "Uses bandgap-based bias currents for best performance."]
-    REFTOP_SELFBIASOFF_1 = 0x01,
+    ReftopSelfbiasoff1 = 0x01,
 }
 impl Misc0TogReftopSelfbiasoff {
     #[inline(always)]
@@ -1045,21 +1045,21 @@ impl From<Misc0TogReftopSelfbiasoff> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0TogReftopVbgadj {
     #[doc = "Nominal VBG."]
-    REFTOP_VBGADJ_0 = 0x0,
+    ReftopVbgadj0 = 0x0,
     #[doc = "VBG+0.78%."]
-    REFTOP_VBGADJ_1 = 0x01,
+    ReftopVbgadj1 = 0x01,
     #[doc = "VBG+1.56%."]
-    REFTOP_VBGADJ_2 = 0x02,
+    ReftopVbgadj2 = 0x02,
     #[doc = "VBG+2.34%."]
-    REFTOP_VBGADJ_3 = 0x03,
+    ReftopVbgadj3 = 0x03,
     #[doc = "VBG-0.78%."]
-    REFTOP_VBGADJ_4 = 0x04,
+    ReftopVbgadj4 = 0x04,
     #[doc = "VBG-1.56%."]
-    REFTOP_VBGADJ_5 = 0x05,
+    ReftopVbgadj5 = 0x05,
     #[doc = "VBG-2.34%."]
-    REFTOP_VBGADJ_6 = 0x06,
+    ReftopVbgadj6 = 0x06,
     #[doc = "VBG-3.12%."]
-    REFTOP_VBGADJ_7 = 0x07,
+    ReftopVbgadj7 = 0x07,
 }
 impl Misc0TogReftopVbgadj {
     #[inline(always)]
@@ -1088,9 +1088,9 @@ impl From<Misc0TogReftopVbgadj> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0TogRtcXtalSource {
     #[doc = "Internal ring oscillator."]
-    RTC_XTAL_SOURCE_0 = 0x0,
+    RtcXtalSource0 = 0x0,
     #[doc = "RTC_XTAL."]
-    RTC_XTAL_SOURCE_1 = 0x01,
+    RtcXtalSource1 = 0x01,
 }
 impl Misc0TogRtcXtalSource {
     #[inline(always)]
@@ -1119,13 +1119,13 @@ impl From<Misc0TogRtcXtalSource> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc0TogStopModeConfig {
     #[doc = "All analog except RTC powered down on stop mode assertion."]
-    STOP_MODE_CONFIG_0 = 0x0,
+    StopModeConfig0 = 0x0,
     #[doc = "Beside RTC, analog bandgap, 1p1 and 2p5 regulators are also on."]
-    STOP_MODE_CONFIG_1 = 0x01,
+    StopModeConfig1 = 0x01,
     #[doc = "Beside RTC, 1p1 and 2p5 regulators are also on, low-power bandgap is selected so that the normal analog bandgap together with the rest analog is powered down."]
-    STOP_MODE_CONFIG_2 = 0x02,
+    StopModeConfig2 = 0x02,
     #[doc = "Beside RTC, low-power bandgap is selected and the rest analog is powered down."]
-    STOP_MODE_CONFIG_3 = 0x03,
+    StopModeConfig3 = 0x03,
 }
 impl Misc0TogStopModeConfig {
     #[inline(always)]
@@ -1154,9 +1154,9 @@ impl From<Misc0TogStopModeConfig> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2AudioDivLsb {
     #[doc = "divide by 1 (Default)."]
-    AUDIO_DIV_LSB_0 = 0x0,
+    AudioDivLsb0 = 0x0,
     #[doc = "divide by 2."]
-    AUDIO_DIV_LSB_1 = 0x01,
+    AudioDivLsb1 = 0x01,
 }
 impl Misc2AudioDivLsb {
     #[inline(always)]
@@ -1185,9 +1185,9 @@ impl From<Misc2AudioDivLsb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2AudioDivMsb {
     #[doc = "divide by 1 (Default)."]
-    AUDIO_DIV_MSB_0 = 0x0,
+    AudioDivMsb0 = 0x0,
     #[doc = "divide by 2."]
-    AUDIO_DIV_MSB_1 = 0x01,
+    AudioDivMsb1 = 0x01,
 }
 impl Misc2AudioDivMsb {
     #[inline(always)]
@@ -1216,9 +1216,9 @@ impl From<Misc2AudioDivMsb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2ClrAudioDivLsb {
     #[doc = "divide by 1 (Default)."]
-    AUDIO_DIV_LSB_0 = 0x0,
+    AudioDivLsb0 = 0x0,
     #[doc = "divide by 2."]
-    AUDIO_DIV_LSB_1 = 0x01,
+    AudioDivLsb1 = 0x01,
 }
 impl Misc2ClrAudioDivLsb {
     #[inline(always)]
@@ -1247,9 +1247,9 @@ impl From<Misc2ClrAudioDivLsb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2ClrAudioDivMsb {
     #[doc = "divide by 1 (Default)."]
-    AUDIO_DIV_MSB_0 = 0x0,
+    AudioDivMsb0 = 0x0,
     #[doc = "divide by 2."]
-    AUDIO_DIV_MSB_1 = 0x01,
+    AudioDivMsb1 = 0x01,
 }
 impl Misc2ClrAudioDivMsb {
     #[inline(always)]
@@ -1278,9 +1278,9 @@ impl From<Misc2ClrAudioDivMsb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2ClrPll3Disable {
     #[doc = "PLL3 is being used by peripherals and is enabled when SoC is not in any low power mode."]
-    PLL3_DISABLE_0 = 0x0,
+    Pll3Disable0 = 0x0,
     #[doc = "PLL3 can be disabled when the SoC is not in any low power mode."]
-    PLL3_DISABLE_1 = 0x01,
+    Pll3Disable1 = 0x01,
 }
 impl Misc2ClrPll3Disable {
     #[inline(always)]
@@ -1313,11 +1313,11 @@ pub enum Misc2ClrReg0BoOffset {
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Brownout offset = 0.100V."]
-    REG0_BO_OFFSET_4 = 0x04,
+    Reg0BoOffset4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "Brownout offset = 0.175V."]
-    REG0_BO_OFFSET_7 = 0x07,
+    Reg0BoOffset7 = 0x07,
 }
 impl Misc2ClrReg0BoOffset {
     #[inline(always)]
@@ -1346,13 +1346,13 @@ impl From<Misc2ClrReg0BoOffset> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2ClrReg0StepTime {
     #[doc = "64."]
-    _64_CLOCKS = 0x0,
+    _64Clocks = 0x0,
     #[doc = "128."]
-    _128_CLOCKS = 0x01,
+    _128Clocks = 0x01,
     #[doc = "256."]
-    _256_CLOCKS = 0x02,
+    _256Clocks = 0x02,
     #[doc = "512."]
-    _512_CLOCKS = 0x03,
+    _512Clocks = 0x03,
 }
 impl Misc2ClrReg0StepTime {
     #[inline(always)]
@@ -1385,11 +1385,11 @@ pub enum Misc2ClrReg1BoOffset {
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Brownout offset = 0.100V."]
-    REG1_BO_OFFSET_4 = 0x04,
+    Reg1BoOffset4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "Brownout offset = 0.175V."]
-    REG1_BO_OFFSET_7 = 0x07,
+    Reg1BoOffset7 = 0x07,
 }
 impl Misc2ClrReg1BoOffset {
     #[inline(always)]
@@ -1418,13 +1418,13 @@ impl From<Misc2ClrReg1BoOffset> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2ClrReg1StepTime {
     #[doc = "64."]
-    _64_CLOCKS = 0x0,
+    _64Clocks = 0x0,
     #[doc = "128."]
-    _128_CLOCKS = 0x01,
+    _128Clocks = 0x01,
     #[doc = "256."]
-    _256_CLOCKS = 0x02,
+    _256Clocks = 0x02,
     #[doc = "512."]
-    _512_CLOCKS = 0x03,
+    _512Clocks = 0x03,
 }
 impl Misc2ClrReg1StepTime {
     #[inline(always)]
@@ -1457,11 +1457,11 @@ pub enum Misc2ClrReg2BoOffset {
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Brownout offset = 0.100V."]
-    REG2_BO_OFFSET_4 = 0x04,
+    Reg2BoOffset4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "Brownout offset = 0.175V."]
-    REG2_BO_OFFSET_7 = 0x07,
+    Reg2BoOffset7 = 0x07,
 }
 impl Misc2ClrReg2BoOffset {
     #[inline(always)]
@@ -1490,13 +1490,13 @@ impl From<Misc2ClrReg2BoOffset> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2ClrReg2StepTime {
     #[doc = "64."]
-    _64_CLOCKS = 0x0,
+    _64Clocks = 0x0,
     #[doc = "128."]
-    _128_CLOCKS = 0x01,
+    _128Clocks = 0x01,
     #[doc = "256."]
-    _256_CLOCKS = 0x02,
+    _256Clocks = 0x02,
     #[doc = "512."]
-    _512_CLOCKS = 0x03,
+    _512Clocks = 0x03,
 }
 impl Misc2ClrReg2StepTime {
     #[inline(always)]
@@ -1525,9 +1525,9 @@ impl From<Misc2ClrReg2StepTime> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2Pll3Disable {
     #[doc = "PLL3 is being used by peripherals and is enabled when SoC is not in any low power mode."]
-    PLL3_DISABLE_0 = 0x0,
+    Pll3Disable0 = 0x0,
     #[doc = "PLL3 can be disabled when the SoC is not in any low power mode."]
-    PLL3_DISABLE_1 = 0x01,
+    Pll3Disable1 = 0x01,
 }
 impl Misc2Pll3Disable {
     #[inline(always)]
@@ -1560,11 +1560,11 @@ pub enum Misc2Reg0BoOffset {
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Brownout offset = 0.100V."]
-    REG0_BO_OFFSET_4 = 0x04,
+    Reg0BoOffset4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "Brownout offset = 0.175V."]
-    REG0_BO_OFFSET_7 = 0x07,
+    Reg0BoOffset7 = 0x07,
 }
 impl Misc2Reg0BoOffset {
     #[inline(always)]
@@ -1593,13 +1593,13 @@ impl From<Misc2Reg0BoOffset> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2Reg0StepTime {
     #[doc = "64."]
-    _64_CLOCKS = 0x0,
+    _64Clocks = 0x0,
     #[doc = "128."]
-    _128_CLOCKS = 0x01,
+    _128Clocks = 0x01,
     #[doc = "256."]
-    _256_CLOCKS = 0x02,
+    _256Clocks = 0x02,
     #[doc = "512."]
-    _512_CLOCKS = 0x03,
+    _512Clocks = 0x03,
 }
 impl Misc2Reg0StepTime {
     #[inline(always)]
@@ -1632,11 +1632,11 @@ pub enum Misc2Reg1BoOffset {
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Brownout offset = 0.100V."]
-    REG1_BO_OFFSET_4 = 0x04,
+    Reg1BoOffset4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "Brownout offset = 0.175V."]
-    REG1_BO_OFFSET_7 = 0x07,
+    Reg1BoOffset7 = 0x07,
 }
 impl Misc2Reg1BoOffset {
     #[inline(always)]
@@ -1665,13 +1665,13 @@ impl From<Misc2Reg1BoOffset> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2Reg1StepTime {
     #[doc = "64."]
-    _64_CLOCKS = 0x0,
+    _64Clocks = 0x0,
     #[doc = "128."]
-    _128_CLOCKS = 0x01,
+    _128Clocks = 0x01,
     #[doc = "256."]
-    _256_CLOCKS = 0x02,
+    _256Clocks = 0x02,
     #[doc = "512."]
-    _512_CLOCKS = 0x03,
+    _512Clocks = 0x03,
 }
 impl Misc2Reg1StepTime {
     #[inline(always)]
@@ -1704,11 +1704,11 @@ pub enum Misc2Reg2BoOffset {
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Brownout offset = 0.100V."]
-    REG2_BO_OFFSET_4 = 0x04,
+    Reg2BoOffset4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "Brownout offset = 0.175V."]
-    REG2_BO_OFFSET_7 = 0x07,
+    Reg2BoOffset7 = 0x07,
 }
 impl Misc2Reg2BoOffset {
     #[inline(always)]
@@ -1737,13 +1737,13 @@ impl From<Misc2Reg2BoOffset> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2Reg2StepTime {
     #[doc = "64."]
-    _64_CLOCKS = 0x0,
+    _64Clocks = 0x0,
     #[doc = "128."]
-    _128_CLOCKS = 0x01,
+    _128Clocks = 0x01,
     #[doc = "256."]
-    _256_CLOCKS = 0x02,
+    _256Clocks = 0x02,
     #[doc = "512."]
-    _512_CLOCKS = 0x03,
+    _512Clocks = 0x03,
 }
 impl Misc2Reg2StepTime {
     #[inline(always)]
@@ -1772,9 +1772,9 @@ impl From<Misc2Reg2StepTime> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2SetAudioDivLsb {
     #[doc = "divide by 1 (Default)."]
-    AUDIO_DIV_LSB_0 = 0x0,
+    AudioDivLsb0 = 0x0,
     #[doc = "divide by 2."]
-    AUDIO_DIV_LSB_1 = 0x01,
+    AudioDivLsb1 = 0x01,
 }
 impl Misc2SetAudioDivLsb {
     #[inline(always)]
@@ -1803,9 +1803,9 @@ impl From<Misc2SetAudioDivLsb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2SetAudioDivMsb {
     #[doc = "divide by 1 (Default)."]
-    AUDIO_DIV_MSB_0 = 0x0,
+    AudioDivMsb0 = 0x0,
     #[doc = "divide by 2."]
-    AUDIO_DIV_MSB_1 = 0x01,
+    AudioDivMsb1 = 0x01,
 }
 impl Misc2SetAudioDivMsb {
     #[inline(always)]
@@ -1834,9 +1834,9 @@ impl From<Misc2SetAudioDivMsb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2SetPll3Disable {
     #[doc = "PLL3 is being used by peripherals and is enabled when SoC is not in any low power mode."]
-    PLL3_DISABLE_0 = 0x0,
+    Pll3Disable0 = 0x0,
     #[doc = "PLL3 can be disabled when the SoC is not in any low power mode."]
-    PLL3_DISABLE_1 = 0x01,
+    Pll3Disable1 = 0x01,
 }
 impl Misc2SetPll3Disable {
     #[inline(always)]
@@ -1869,11 +1869,11 @@ pub enum Misc2SetReg0BoOffset {
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Brownout offset = 0.100V."]
-    REG0_BO_OFFSET_4 = 0x04,
+    Reg0BoOffset4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "Brownout offset = 0.175V."]
-    REG0_BO_OFFSET_7 = 0x07,
+    Reg0BoOffset7 = 0x07,
 }
 impl Misc2SetReg0BoOffset {
     #[inline(always)]
@@ -1902,13 +1902,13 @@ impl From<Misc2SetReg0BoOffset> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2SetReg0StepTime {
     #[doc = "64."]
-    _64_CLOCKS = 0x0,
+    _64Clocks = 0x0,
     #[doc = "128."]
-    _128_CLOCKS = 0x01,
+    _128Clocks = 0x01,
     #[doc = "256."]
-    _256_CLOCKS = 0x02,
+    _256Clocks = 0x02,
     #[doc = "512."]
-    _512_CLOCKS = 0x03,
+    _512Clocks = 0x03,
 }
 impl Misc2SetReg0StepTime {
     #[inline(always)]
@@ -1941,11 +1941,11 @@ pub enum Misc2SetReg1BoOffset {
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Brownout offset = 0.100V."]
-    REG1_BO_OFFSET_4 = 0x04,
+    Reg1BoOffset4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "Brownout offset = 0.175V."]
-    REG1_BO_OFFSET_7 = 0x07,
+    Reg1BoOffset7 = 0x07,
 }
 impl Misc2SetReg1BoOffset {
     #[inline(always)]
@@ -1974,13 +1974,13 @@ impl From<Misc2SetReg1BoOffset> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2SetReg1StepTime {
     #[doc = "64."]
-    _64_CLOCKS = 0x0,
+    _64Clocks = 0x0,
     #[doc = "128."]
-    _128_CLOCKS = 0x01,
+    _128Clocks = 0x01,
     #[doc = "256."]
-    _256_CLOCKS = 0x02,
+    _256Clocks = 0x02,
     #[doc = "512."]
-    _512_CLOCKS = 0x03,
+    _512Clocks = 0x03,
 }
 impl Misc2SetReg1StepTime {
     #[inline(always)]
@@ -2013,11 +2013,11 @@ pub enum Misc2SetReg2BoOffset {
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Brownout offset = 0.100V."]
-    REG2_BO_OFFSET_4 = 0x04,
+    Reg2BoOffset4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "Brownout offset = 0.175V."]
-    REG2_BO_OFFSET_7 = 0x07,
+    Reg2BoOffset7 = 0x07,
 }
 impl Misc2SetReg2BoOffset {
     #[inline(always)]
@@ -2046,13 +2046,13 @@ impl From<Misc2SetReg2BoOffset> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2SetReg2StepTime {
     #[doc = "64."]
-    _64_CLOCKS = 0x0,
+    _64Clocks = 0x0,
     #[doc = "128."]
-    _128_CLOCKS = 0x01,
+    _128Clocks = 0x01,
     #[doc = "256."]
-    _256_CLOCKS = 0x02,
+    _256Clocks = 0x02,
     #[doc = "512."]
-    _512_CLOCKS = 0x03,
+    _512Clocks = 0x03,
 }
 impl Misc2SetReg2StepTime {
     #[inline(always)]
@@ -2081,9 +2081,9 @@ impl From<Misc2SetReg2StepTime> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2TogAudioDivLsb {
     #[doc = "divide by 1 (Default)."]
-    AUDIO_DIV_LSB_0 = 0x0,
+    AudioDivLsb0 = 0x0,
     #[doc = "divide by 2."]
-    AUDIO_DIV_LSB_1 = 0x01,
+    AudioDivLsb1 = 0x01,
 }
 impl Misc2TogAudioDivLsb {
     #[inline(always)]
@@ -2112,9 +2112,9 @@ impl From<Misc2TogAudioDivLsb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2TogAudioDivMsb {
     #[doc = "divide by 1 (Default)."]
-    AUDIO_DIV_MSB_0 = 0x0,
+    AudioDivMsb0 = 0x0,
     #[doc = "divide by 2."]
-    AUDIO_DIV_MSB_1 = 0x01,
+    AudioDivMsb1 = 0x01,
 }
 impl Misc2TogAudioDivMsb {
     #[inline(always)]
@@ -2143,9 +2143,9 @@ impl From<Misc2TogAudioDivMsb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2TogPll3Disable {
     #[doc = "PLL3 is being used by peripherals and is enabled when SoC is not in any low power mode."]
-    PLL3_DISABLE_0 = 0x0,
+    Pll3Disable0 = 0x0,
     #[doc = "PLL3 can be disabled when the SoC is not in any low power mode."]
-    PLL3_DISABLE_1 = 0x01,
+    Pll3Disable1 = 0x01,
 }
 impl Misc2TogPll3Disable {
     #[inline(always)]
@@ -2178,11 +2178,11 @@ pub enum Misc2TogReg0BoOffset {
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Brownout offset = 0.100V."]
-    REG0_BO_OFFSET_4 = 0x04,
+    Reg0BoOffset4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "Brownout offset = 0.175V."]
-    REG0_BO_OFFSET_7 = 0x07,
+    Reg0BoOffset7 = 0x07,
 }
 impl Misc2TogReg0BoOffset {
     #[inline(always)]
@@ -2211,13 +2211,13 @@ impl From<Misc2TogReg0BoOffset> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2TogReg0StepTime {
     #[doc = "64."]
-    _64_CLOCKS = 0x0,
+    _64Clocks = 0x0,
     #[doc = "128."]
-    _128_CLOCKS = 0x01,
+    _128Clocks = 0x01,
     #[doc = "256."]
-    _256_CLOCKS = 0x02,
+    _256Clocks = 0x02,
     #[doc = "512."]
-    _512_CLOCKS = 0x03,
+    _512Clocks = 0x03,
 }
 impl Misc2TogReg0StepTime {
     #[inline(always)]
@@ -2250,11 +2250,11 @@ pub enum Misc2TogReg1BoOffset {
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Brownout offset = 0.100V."]
-    REG1_BO_OFFSET_4 = 0x04,
+    Reg1BoOffset4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "Brownout offset = 0.175V."]
-    REG1_BO_OFFSET_7 = 0x07,
+    Reg1BoOffset7 = 0x07,
 }
 impl Misc2TogReg1BoOffset {
     #[inline(always)]
@@ -2283,13 +2283,13 @@ impl From<Misc2TogReg1BoOffset> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2TogReg1StepTime {
     #[doc = "64."]
-    _64_CLOCKS = 0x0,
+    _64Clocks = 0x0,
     #[doc = "128."]
-    _128_CLOCKS = 0x01,
+    _128Clocks = 0x01,
     #[doc = "256."]
-    _256_CLOCKS = 0x02,
+    _256Clocks = 0x02,
     #[doc = "512."]
-    _512_CLOCKS = 0x03,
+    _512Clocks = 0x03,
 }
 impl Misc2TogReg1StepTime {
     #[inline(always)]
@@ -2322,11 +2322,11 @@ pub enum Misc2TogReg2BoOffset {
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     #[doc = "Brownout offset = 0.100V."]
-    REG2_BO_OFFSET_4 = 0x04,
+    Reg2BoOffset4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "Brownout offset = 0.175V."]
-    REG2_BO_OFFSET_7 = 0x07,
+    Reg2BoOffset7 = 0x07,
 }
 impl Misc2TogReg2BoOffset {
     #[inline(always)]
@@ -2355,13 +2355,13 @@ impl From<Misc2TogReg2BoOffset> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Misc2TogReg2StepTime {
     #[doc = "64."]
-    _64_CLOCKS = 0x0,
+    _64Clocks = 0x0,
     #[doc = "128."]
-    _128_CLOCKS = 0x01,
+    _128Clocks = 0x01,
     #[doc = "256."]
-    _256_CLOCKS = 0x02,
+    _256Clocks = 0x02,
     #[doc = "512."]
-    _512_CLOCKS = 0x03,
+    _512Clocks = 0x03,
 }
 impl Misc2TogReg2StepTime {
     #[inline(always)]
@@ -2390,7 +2390,7 @@ impl From<Misc2TogReg2StepTime> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllAudioBypassClkSrc {
     #[doc = "Select the 24MHz oscillator as source."]
-    REF_CLK_24M = 0x0,
+    RefClk24m = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -2422,7 +2422,7 @@ impl From<PllAudioBypassClkSrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllAudioClrBypassClkSrc {
     #[doc = "Select the 24MHz oscillator as source."]
-    REF_CLK_24M = 0x0,
+    RefClk24m = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -2454,11 +2454,11 @@ impl From<PllAudioClrBypassClkSrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllAudioClrPostDivSelect {
     #[doc = "Divide by 4."]
-    POST_DIV_SELECT_0 = 0x0,
+    PostDivSelect0 = 0x0,
     #[doc = "Divide by 2."]
-    POST_DIV_SELECT_1 = 0x01,
+    PostDivSelect1 = 0x01,
     #[doc = "Divide by 1."]
-    POST_DIV_SELECT_2 = 0x02,
+    PostDivSelect2 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl PllAudioClrPostDivSelect {
@@ -2488,11 +2488,11 @@ impl From<PllAudioClrPostDivSelect> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllAudioPostDivSelect {
     #[doc = "Divide by 4."]
-    POST_DIV_SELECT_0 = 0x0,
+    PostDivSelect0 = 0x0,
     #[doc = "Divide by 2."]
-    POST_DIV_SELECT_1 = 0x01,
+    PostDivSelect1 = 0x01,
     #[doc = "Divide by 1."]
-    POST_DIV_SELECT_2 = 0x02,
+    PostDivSelect2 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl PllAudioPostDivSelect {
@@ -2522,7 +2522,7 @@ impl From<PllAudioPostDivSelect> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllAudioSetBypassClkSrc {
     #[doc = "Select the 24MHz oscillator as source."]
-    REF_CLK_24M = 0x0,
+    RefClk24m = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -2554,11 +2554,11 @@ impl From<PllAudioSetBypassClkSrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllAudioSetPostDivSelect {
     #[doc = "Divide by 4."]
-    POST_DIV_SELECT_0 = 0x0,
+    PostDivSelect0 = 0x0,
     #[doc = "Divide by 2."]
-    POST_DIV_SELECT_1 = 0x01,
+    PostDivSelect1 = 0x01,
     #[doc = "Divide by 1."]
-    POST_DIV_SELECT_2 = 0x02,
+    PostDivSelect2 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl PllAudioSetPostDivSelect {
@@ -2588,7 +2588,7 @@ impl From<PllAudioSetPostDivSelect> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllAudioTogBypassClkSrc {
     #[doc = "Select the 24MHz oscillator as source."]
-    REF_CLK_24M = 0x0,
+    RefClk24m = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -2620,11 +2620,11 @@ impl From<PllAudioTogBypassClkSrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllAudioTogPostDivSelect {
     #[doc = "Divide by 4."]
-    POST_DIV_SELECT_0 = 0x0,
+    PostDivSelect0 = 0x0,
     #[doc = "Divide by 2."]
-    POST_DIV_SELECT_1 = 0x01,
+    PostDivSelect1 = 0x01,
     #[doc = "Divide by 1."]
-    POST_DIV_SELECT_2 = 0x02,
+    PostDivSelect2 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl PllAudioTogPostDivSelect {
@@ -2654,7 +2654,7 @@ impl From<PllAudioTogPostDivSelect> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllEnetBypassClkSrc {
     #[doc = "Select the 24MHz oscillator as source."]
-    REF_CLK_24M = 0x0,
+    RefClk24m = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -2686,7 +2686,7 @@ impl From<PllEnetBypassClkSrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllEnetClrBypassClkSrc {
     #[doc = "Select the 24MHz oscillator as source."]
-    REF_CLK_24M = 0x0,
+    RefClk24m = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -2718,7 +2718,7 @@ impl From<PllEnetClrBypassClkSrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllEnetSetBypassClkSrc {
     #[doc = "Select the 24MHz oscillator as source."]
-    REF_CLK_24M = 0x0,
+    RefClk24m = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -2750,7 +2750,7 @@ impl From<PllEnetSetBypassClkSrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllEnetTogBypassClkSrc {
     #[doc = "Select the 24MHz oscillator as source."]
-    REF_CLK_24M = 0x0,
+    RefClk24m = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -2782,7 +2782,7 @@ impl From<PllEnetTogBypassClkSrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllSysBypassClkSrc {
     #[doc = "Select the 24MHz oscillator as source."]
-    REF_CLK_24M = 0x0,
+    RefClk24m = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -2814,7 +2814,7 @@ impl From<PllSysBypassClkSrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllSysClrBypassClkSrc {
     #[doc = "Select the 24MHz oscillator as source."]
-    REF_CLK_24M = 0x0,
+    RefClk24m = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -2846,7 +2846,7 @@ impl From<PllSysClrBypassClkSrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllSysSetBypassClkSrc {
     #[doc = "Select the 24MHz oscillator as source."]
-    REF_CLK_24M = 0x0,
+    RefClk24m = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -2878,7 +2878,7 @@ impl From<PllSysSetBypassClkSrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllSysTogBypassClkSrc {
     #[doc = "Select the 24MHz oscillator as source."]
-    REF_CLK_24M = 0x0,
+    RefClk24m = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -2910,7 +2910,7 @@ impl From<PllSysTogBypassClkSrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllUsb1BypassClkSrc {
     #[doc = "Select the 24MHz oscillator as source."]
-    REF_CLK_24M = 0x0,
+    RefClk24m = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -2942,7 +2942,7 @@ impl From<PllUsb1BypassClkSrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllUsb1ClrBypassClkSrc {
     #[doc = "Select the 24MHz oscillator as source."]
-    REF_CLK_24M = 0x0,
+    RefClk24m = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -2974,9 +2974,9 @@ impl From<PllUsb1ClrBypassClkSrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllUsb1ClrEnUsbClks {
     #[doc = "PLL outputs for USBPHYn off."]
-    EN_USB_CLKS_0 = 0x0,
+    EnUsbClks0 = 0x0,
     #[doc = "PLL outputs for USBPHYn on."]
-    EN_USB_CLKS_1 = 0x01,
+    EnUsbClks1 = 0x01,
 }
 impl PllUsb1ClrEnUsbClks {
     #[inline(always)]
@@ -3005,9 +3005,9 @@ impl From<PllUsb1ClrEnUsbClks> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllUsb1EnUsbClks {
     #[doc = "PLL outputs for USBPHYn off."]
-    EN_USB_CLKS_0 = 0x0,
+    EnUsbClks0 = 0x0,
     #[doc = "PLL outputs for USBPHYn on."]
-    EN_USB_CLKS_1 = 0x01,
+    EnUsbClks1 = 0x01,
 }
 impl PllUsb1EnUsbClks {
     #[inline(always)]
@@ -3036,7 +3036,7 @@ impl From<PllUsb1EnUsbClks> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllUsb1SetBypassClkSrc {
     #[doc = "Select the 24MHz oscillator as source."]
-    REF_CLK_24M = 0x0,
+    RefClk24m = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -3068,9 +3068,9 @@ impl From<PllUsb1SetBypassClkSrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllUsb1SetEnUsbClks {
     #[doc = "PLL outputs for USBPHYn off."]
-    EN_USB_CLKS_0 = 0x0,
+    EnUsbClks0 = 0x0,
     #[doc = "PLL outputs for USBPHYn on."]
-    EN_USB_CLKS_1 = 0x01,
+    EnUsbClks1 = 0x01,
 }
 impl PllUsb1SetEnUsbClks {
     #[inline(always)]
@@ -3099,7 +3099,7 @@ impl From<PllUsb1SetEnUsbClks> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllUsb1TogBypassClkSrc {
     #[doc = "Select the 24MHz oscillator as source."]
-    REF_CLK_24M = 0x0,
+    RefClk24m = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -3131,9 +3131,9 @@ impl From<PllUsb1TogBypassClkSrc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PllUsb1TogEnUsbClks {
     #[doc = "PLL outputs for USBPHYn off."]
-    EN_USB_CLKS_0 = 0x0,
+    EnUsbClks0 = 0x0,
     #[doc = "PLL outputs for USBPHYn on."]
-    EN_USB_CLKS_1 = 0x01,
+    EnUsbClks1 = 0x01,
 }
 impl PllUsb1TogEnUsbClks {
     #[inline(always)]

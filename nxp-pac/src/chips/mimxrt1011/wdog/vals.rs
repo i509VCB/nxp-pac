@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pde {
     #[doc = "Power Down Counter of WDOG is disabled."]
-    PDE_0 = 0x0,
+    Pde0 = 0x0,
     #[doc = "Power Down Counter of WDOG is enabled (Default)."]
-    PDE_1 = 0x01,
+    Pde1 = 0x01,
 }
 impl Pde {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Pde> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Por {
     #[doc = "Reset is not the result of a power on reset."]
-    POR_0 = 0x0,
+    Por0 = 0x0,
     #[doc = "Reset is the result of a power on reset."]
-    POR_1 = 0x01,
+    Por1 = 0x01,
 }
 impl Por {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Por> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sftw {
     #[doc = "Reset is not the result of a software reset."]
-    SFTW_0 = 0x0,
+    Sftw0 = 0x0,
     #[doc = "Reset is the result of a software reset."]
-    SFTW_1 = 0x01,
+    Sftw1 = 0x01,
 }
 impl Sftw {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Sftw> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sre {
     #[doc = "using original way to generate software reset (default)."]
-    SRE_0 = 0x0,
+    Sre0 = 0x0,
     #[doc = "using new way to generate software reset."]
-    SRE_1 = 0x01,
+    Sre1 = 0x01,
 }
 impl Sre {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<Sre> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Srs {
     #[doc = "Assert system reset signal."]
-    SRS_0 = 0x0,
+    Srs0 = 0x0,
     #[doc = "No effect on the system (Default)."]
-    SRS_1 = 0x01,
+    Srs1 = 0x01,
 }
 impl Srs {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<Srs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tout {
     #[doc = "Reset is not the result of a WDOG timeout."]
-    TOUT_0 = 0x0,
+    Tout0 = 0x0,
     #[doc = "Reset is the result of a WDOG timeout."]
-    TOUT_1 = 0x01,
+    Tout1 = 0x01,
 }
 impl Tout {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<Tout> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wda {
     #[doc = "Assert WDOG_B output."]
-    WDA_0 = 0x0,
+    Wda0 = 0x0,
     #[doc = "No effect on system (Default)."]
-    WDA_1 = 0x01,
+    Wda1 = 0x01,
 }
 impl Wda {
     #[inline(always)]
@@ -220,9 +220,9 @@ impl From<Wda> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wdbg {
     #[doc = "Continue WDOG timer operation (Default)."]
-    WDBG_0 = 0x0,
+    Wdbg0 = 0x0,
     #[doc = "Suspend the watchdog timer."]
-    WDBG_1 = 0x01,
+    Wdbg1 = 0x01,
 }
 impl Wdbg {
     #[inline(always)]
@@ -251,9 +251,9 @@ impl From<Wdbg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wde {
     #[doc = "Disable the Watchdog (Default)."]
-    WDE_0 = 0x0,
+    Wde0 = 0x0,
     #[doc = "Enable the Watchdog."]
-    WDE_1 = 0x01,
+    Wde1 = 0x01,
 }
 impl Wde {
     #[inline(always)]
@@ -282,9 +282,9 @@ impl From<Wde> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wdt {
     #[doc = "No effect on WDOG_B (Default)."]
-    WDT_0 = 0x0,
+    Wdt0 = 0x0,
     #[doc = "Assert WDOG_B upon a Watchdog Time-out event."]
-    WDT_1 = 0x01,
+    Wdt1 = 0x01,
 }
 impl Wdt {
     #[inline(always)]
@@ -313,9 +313,9 @@ impl From<Wdt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wdw {
     #[doc = "Continue WDOG timer operation (Default)."]
-    WDW_0 = 0x0,
+    Wdw0 = 0x0,
     #[doc = "Suspend WDOG timer operation."]
-    WDW_1 = 0x01,
+    Wdw1 = 0x01,
 }
 impl Wdw {
     #[inline(always)]
@@ -344,9 +344,9 @@ impl From<Wdw> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wdzst {
     #[doc = "Continue timer operation (Default)."]
-    WDZST_0 = 0x0,
+    Wdzst0 = 0x0,
     #[doc = "Suspend the watchdog timer."]
-    WDZST_1 = 0x01,
+    Wdzst1 = 0x01,
 }
 impl Wdzst {
     #[inline(always)]
@@ -375,13 +375,13 @@ impl From<Wdzst> for u8 {
 pub struct Wict(u8);
 impl Wict {
     #[doc = "WICT\\[7:0\\] = Time duration between interrupt and time-out is 0 seconds."]
-    pub const WICT_0: Self = Self(0x0);
+    pub const Wict0: Self = Self(0x0);
     #[doc = "WICT\\[7:0\\] = Time duration between interrupt and time-out is 0.5 seconds."]
-    pub const WICT_1: Self = Self(0x01);
+    pub const Wict1: Self = Self(0x01);
     #[doc = "WICT\\[7:0\\] = Time duration between interrupt and time-out is 2 seconds (Default)."]
-    pub const WICT_4: Self = Self(0x04);
+    pub const Wict4: Self = Self(0x04);
     #[doc = "WICT\\[7:0\\] = Time duration between interrupt and time-out is 127.5 seconds."]
-    pub const WICT_255: Self = Self(0xff);
+    pub const Wict255: Self = Self(0xff);
 }
 impl Wict {
     pub const fn from_bits(val: u8) -> Wict {
@@ -394,10 +394,10 @@ impl Wict {
 impl core::fmt::Debug for Wict {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("WICT_0"),
-            0x01 => f.write_str("WICT_1"),
-            0x04 => f.write_str("WICT_4"),
-            0xff => f.write_str("WICT_255"),
+            0x0 => f.write_str("Wict0"),
+            0x01 => f.write_str("Wict1"),
+            0x04 => f.write_str("Wict4"),
+            0xff => f.write_str("Wict255"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -406,10 +406,10 @@ impl core::fmt::Debug for Wict {
 impl defmt::Format for Wict {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "WICT_0"),
-            0x01 => defmt::write!(f, "WICT_1"),
-            0x04 => defmt::write!(f, "WICT_4"),
-            0xff => defmt::write!(f, "WICT_255"),
+            0x0 => defmt::write!(f, "Wict0"),
+            0x01 => defmt::write!(f, "Wict1"),
+            0x04 => defmt::write!(f, "Wict4"),
+            0xff => defmt::write!(f, "Wict255"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -431,9 +431,9 @@ impl From<Wict> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wie {
     #[doc = "Disable Interrupt (Default)."]
-    WIE_0 = 0x0,
+    Wie0 = 0x0,
     #[doc = "Enable Interrupt."]
-    WIE_1 = 0x01,
+    Wie1 = 0x01,
 }
 impl Wie {
     #[inline(always)]
@@ -462,9 +462,9 @@ impl From<Wie> for u8 {
 pub struct Wsr(u16);
 impl Wsr {
     #[doc = "Write to the Watchdog Service Register (WDOG_WSR)."]
-    pub const WSR_21845: Self = Self(0x5555);
+    pub const Wsr21845: Self = Self(0x5555);
     #[doc = "Write to the Watchdog Service Register (WDOG_WSR)."]
-    pub const WSR_43690: Self = Self(0xaaaa);
+    pub const Wsr43690: Self = Self(0xaaaa);
 }
 impl Wsr {
     pub const fn from_bits(val: u16) -> Wsr {
@@ -477,8 +477,8 @@ impl Wsr {
 impl core::fmt::Debug for Wsr {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x5555 => f.write_str("WSR_21845"),
-            0xaaaa => f.write_str("WSR_43690"),
+            0x5555 => f.write_str("Wsr21845"),
+            0xaaaa => f.write_str("Wsr43690"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -487,8 +487,8 @@ impl core::fmt::Debug for Wsr {
 impl defmt::Format for Wsr {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x5555 => defmt::write!(f, "WSR_21845"),
-            0xaaaa => defmt::write!(f, "WSR_43690"),
+            0x5555 => defmt::write!(f, "Wsr21845"),
+            0xaaaa => defmt::write!(f, "Wsr43690"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -510,15 +510,15 @@ impl From<Wsr> for u16 {
 pub struct Wt(u8);
 impl Wt {
     #[doc = "- 0.5 Seconds (Default)."]
-    pub const WT_0: Self = Self(0x0);
+    pub const Wt0: Self = Self(0x0);
     #[doc = "- 1.0 Seconds."]
-    pub const WT_1: Self = Self(0x01);
+    pub const Wt1: Self = Self(0x01);
     #[doc = "- 1.5 Seconds."]
-    pub const WT_2: Self = Self(0x02);
+    pub const Wt2: Self = Self(0x02);
     #[doc = "- 2.0 Seconds."]
-    pub const WT_3: Self = Self(0x03);
+    pub const Wt3: Self = Self(0x03);
     #[doc = "- 128 Seconds."]
-    pub const WT_255: Self = Self(0xff);
+    pub const Wt255: Self = Self(0xff);
 }
 impl Wt {
     pub const fn from_bits(val: u8) -> Wt {
@@ -531,11 +531,11 @@ impl Wt {
 impl core::fmt::Debug for Wt {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("WT_0"),
-            0x01 => f.write_str("WT_1"),
-            0x02 => f.write_str("WT_2"),
-            0x03 => f.write_str("WT_3"),
-            0xff => f.write_str("WT_255"),
+            0x0 => f.write_str("Wt0"),
+            0x01 => f.write_str("Wt1"),
+            0x02 => f.write_str("Wt2"),
+            0x03 => f.write_str("Wt3"),
+            0xff => f.write_str("Wt255"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -544,11 +544,11 @@ impl core::fmt::Debug for Wt {
 impl defmt::Format for Wt {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "WT_0"),
-            0x01 => defmt::write!(f, "WT_1"),
-            0x02 => defmt::write!(f, "WT_2"),
-            0x03 => defmt::write!(f, "WT_3"),
-            0xff => defmt::write!(f, "WT_255"),
+            0x0 => defmt::write!(f, "Wt0"),
+            0x01 => defmt::write!(f, "Wt1"),
+            0x02 => defmt::write!(f, "Wt2"),
+            0x03 => defmt::write!(f, "Wt3"),
+            0xff => defmt::write!(f, "Wt255"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -570,9 +570,9 @@ impl From<Wt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wtis {
     #[doc = "No interrupt has occurred (Default)."]
-    WTIS_0 = 0x0,
+    Wtis0 = 0x0,
     #[doc = "Interrupt has occurred."]
-    WTIS_1 = 0x01,
+    Wtis1 = 0x01,
 }
 impl Wtis {
     #[inline(always)]

@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Active {
     #[doc = "eDMA is idle."]
-    IDLE = 0x0,
+    Idle = 0x0,
     #[doc = "eDMA is executing a channel."]
-    EXECUTION = 0x01,
+    Execution = 0x01,
 }
 impl Active {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Active> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cx {
     #[doc = "Normal operation."]
-    NORMAL_OPERATION = 0x0,
+    NormalOperation = 0x0,
     #[doc = "Cancel the remaining data transfer."]
-    DATA_TRANSFER_CANCEL = 0x01,
+    DataTransferCancel = 0x01,
 }
 impl Cx {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Cx> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dae {
     #[doc = "No destination address configuration error."]
-    NO_ERROR = 0x0,
+    NoError = 0x0,
     #[doc = "Last recorded error was a configuration error detected in the TCDn_DADDR field."]
-    CONFIGURATION_ERROR = 0x01,
+    ConfigurationError = 0x01,
 }
 impl Dae {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Dae> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dbe {
     #[doc = "No destination bus error."]
-    NO_ERROR = 0x0,
+    NoError = 0x0,
     #[doc = "Last recorded error was a bus error on a destination write."]
-    BUS_ERROR = 0x01,
+    BusError = 0x01,
 }
 impl Dbe {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<Dbe> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Doe {
     #[doc = "No destination offset configuration error."]
-    NO_ERROR = 0x0,
+    NoError = 0x0,
     #[doc = "Last recorded error was a configuration error detected in the TCDn_DOFF field."]
-    CONFIGURATION_ERROR = 0x01,
+    ConfigurationError = 0x01,
 }
 impl Doe {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<Doe> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hae {
     #[doc = "Normal operation."]
-    NORMAL_OPERATION = 0x0,
+    NormalOperation = 0x0,
     #[doc = "Any error causes the HALT field to be set to 1."]
-    HALT = 0x01,
+    Halt = 0x01,
 }
 impl Hae {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<Hae> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Halt {
     #[doc = "Normal operation."]
-    NORMAL_OPERATION = 0x0,
+    NormalOperation = 0x0,
     #[doc = "Stall the start of any new channels."]
-    STALL = 0x01,
+    Stall = 0x01,
 }
 impl Halt {
     #[inline(always)]
@@ -220,9 +220,9 @@ impl From<Halt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MpCsrEcx {
     #[doc = "Normal operation."]
-    NORMAL_OPERATION = 0x0,
+    NormalOperation = 0x0,
     #[doc = "Cancel the remaining data transfer."]
-    CANCEL = 0x01,
+    Cancel = 0x01,
 }
 impl MpCsrEcx {
     #[inline(always)]
@@ -251,9 +251,9 @@ impl From<MpCsrEcx> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MpEsEcx {
     #[doc = "No canceled transfers."]
-    NO_CANCELED_TRANSFERS = 0x0,
+    NoCanceledTransfers = 0x0,
     #[doc = "Last recorded entry was a canceled transfer by the error cancel transfer input."]
-    CANCELED_TRANSFER = 0x01,
+    CanceledTransfer = 0x01,
 }
 impl MpEsEcx {
     #[inline(always)]
@@ -282,9 +282,9 @@ impl From<MpEsEcx> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Nce {
     #[doc = "No NBYTES/CITER configuration error."]
-    NO_ERROR = 0x0,
+    NoError = 0x0,
     #[doc = "The last recorded error was NBYTES equal to zero or a CITER not equal to BITER error."]
-    CONFIGURATION_ERROR = 0x01,
+    ConfigurationError = 0x01,
 }
 impl Nce {
     #[inline(always)]
@@ -313,9 +313,9 @@ impl From<Nce> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sae {
     #[doc = "No source address configuration error."]
-    NO_ERROR = 0x0,
+    NoError = 0x0,
     #[doc = "Last recorded error was a configuration error detected in the TCDn_SADDR field."]
-    CONFIGURATION_ERROR = 0x01,
+    ConfigurationError = 0x01,
 }
 impl Sae {
     #[inline(always)]
@@ -344,9 +344,9 @@ impl From<Sae> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sbe {
     #[doc = "No source bus error."]
-    NO_ERROR = 0x0,
+    NoError = 0x0,
     #[doc = "Last recorded error was a bus error on a source read."]
-    BUS_ERROR = 0x01,
+    BusError = 0x01,
 }
 impl Sbe {
     #[inline(always)]
@@ -375,9 +375,9 @@ impl From<Sbe> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sge {
     #[doc = "No scatter/gather configuration error."]
-    NO_ERROR = 0x0,
+    NoError = 0x0,
     #[doc = "Last recorded error was a configuration error detected in the TCDn_DLAST_SGA field."]
-    CONFIGURATION_ERROR = 0x01,
+    ConfigurationError = 0x01,
 }
 impl Sge {
     #[inline(always)]
@@ -406,9 +406,9 @@ impl From<Sge> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Soe {
     #[doc = "No source offset configuration error."]
-    NO_ERROR = 0x0,
+    NoError = 0x0,
     #[doc = "Last recorded error was a configuration error detected in the TCDn_SOFF field."]
-    CONFIGURATION_ERROR = 0x01,
+    ConfigurationError = 0x01,
 }
 impl Soe {
     #[inline(always)]
@@ -437,9 +437,9 @@ impl From<Soe> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Vld {
     #[doc = "No CHn_ES\\[ERR\\] fields are set to 1."]
-    NO_FIELD_SET_ONE = 0x0,
+    NoFieldSetOne = 0x0,
     #[doc = "At least one CHn_ES\\[ERR\\] field is set to 1, indicating a valid error exists that software has not cleared."]
-    ATLEAST_ONE_FIELD = 0x01,
+    AtleastOneField = 0x01,
 }
 impl Vld {
     #[inline(always)]

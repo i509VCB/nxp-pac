@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cap0fe {
     #[doc = "Does not load."]
-    CAP0FE_0 = 0x0,
+    Cap0fe0 = 0x0,
     #[doc = "Loads."]
-    CAPOFE_1 = 0x01,
+    Capofe1 = 0x01,
 }
 impl Cap0fe {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Cap0fe> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cap0i {
     #[doc = "Does not generate."]
-    CAP0I_0 = 0x0,
+    Cap0i0 = 0x0,
     #[doc = "Generates."]
-    CAPOI_1 = 0x01,
+    Capoi1 = 0x01,
 }
 impl Cap0i {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Cap0i> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cap0re {
     #[doc = "Does not load."]
-    CAP0RE_0 = 0x0,
+    Cap0re0 = 0x0,
     #[doc = "Loads."]
-    CAPORE_1 = 0x01,
+    Capore1 = 0x01,
 }
 impl Cap0re {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Cap0re> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cap1fe {
     #[doc = "Does not load."]
-    CAP1FE_0 = 0x0,
+    Cap1fe0 = 0x0,
     #[doc = "Loads."]
-    CAP1FE_1 = 0x01,
+    Cap1fe1 = 0x01,
 }
 impl Cap1fe {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<Cap1fe> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cap1i {
     #[doc = "Does not generates."]
-    CAP1I_0 = 0x0,
+    Cap1i0 = 0x0,
     #[doc = "Generates."]
-    CAP1I_1 = 0x01,
+    Cap1i1 = 0x01,
 }
 impl Cap1i {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<Cap1i> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cap1re {
     #[doc = "Does not load."]
-    CAP1RE_0 = 0x0,
+    Cap1re0 = 0x0,
     #[doc = "Loads."]
-    CAP1RE_1 = 0x01,
+    Cap1re1 = 0x01,
 }
 impl Cap1re {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<Cap1re> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cap2fe {
     #[doc = "Does not load."]
-    CAP2FE_0 = 0x0,
+    Cap2fe0 = 0x0,
     #[doc = "Loads."]
-    CAP2FE_1 = 0x01,
+    Cap2fe1 = 0x01,
 }
 impl Cap2fe {
     #[inline(always)]
@@ -220,9 +220,9 @@ impl From<Cap2fe> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cap2i {
     #[doc = "Does not generate."]
-    CAP2I_0 = 0x0,
+    Cap2i0 = 0x0,
     #[doc = "Generates."]
-    CAP2I_1 = 0x01,
+    Cap2i1 = 0x01,
 }
 impl Cap2i {
     #[inline(always)]
@@ -251,9 +251,9 @@ impl From<Cap2i> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cap2re {
     #[doc = "Does not load."]
-    CAP2RE_0 = 0x0,
+    Cap2re0 = 0x0,
     #[doc = "Loads."]
-    CAP2RE_1 = 0x01,
+    Cap2re1 = 0x01,
 }
 impl Cap2re {
     #[inline(always)]
@@ -282,9 +282,9 @@ impl From<Cap2re> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cap3fe {
     #[doc = "Does not load."]
-    CAP3FE_0 = 0x0,
+    Cap3fe0 = 0x0,
     #[doc = "Loads."]
-    CAP3FE_1 = 0x01,
+    Cap3fe1 = 0x01,
 }
 impl Cap3fe {
     #[inline(always)]
@@ -313,9 +313,9 @@ impl From<Cap3fe> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cap3i {
     #[doc = "Does not generate."]
-    CAP3I_0 = 0x0,
+    Cap3i0 = 0x0,
     #[doc = "Generates."]
-    CAP3I_1 = 0x01,
+    Cap3i1 = 0x01,
 }
 impl Cap3i {
     #[inline(always)]
@@ -344,9 +344,9 @@ impl From<Cap3i> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cap3re {
     #[doc = "Does not load."]
-    CAP3RE_0 = 0x0,
+    Cap3re0 = 0x0,
     #[doc = "Loads."]
-    CAP3RE_1 = 0x01,
+    Cap3re1 = 0x01,
 }
 impl Cap3re {
     #[inline(always)]
@@ -375,13 +375,13 @@ impl From<Cap3re> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cinsel {
     #[doc = "Channel 0, CAPn\\[0\\] for CTIMERn."]
-    CHANNEL_0 = 0x0,
+    Channel0 = 0x0,
     #[doc = "Channel 1, CAPn\\[1\\] for CTIMERn."]
-    CHANNEL_1 = 0x01,
+    Channel1 = 0x01,
     #[doc = "Channel 2, CAPn\\[2\\] for CTIMERn."]
-    CHANNEL_2 = 0x02,
+    Channel2 = 0x02,
     #[doc = "Channel 3, CAPn\\[3\\] for CTIMERn."]
-    CHANNEL_3 = 0x03,
+    Channel3 = 0x03,
 }
 impl Cinsel {
     #[inline(always)]
@@ -410,13 +410,13 @@ impl From<Cinsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ctmode {
     #[doc = "Timer mode."]
-    TIMER = 0x0,
+    Timer = 0x0,
     #[doc = "Counter mode rising edge."]
-    COUNTER_RISING_EDGE = 0x01,
+    CounterRisingEdge = 0x01,
     #[doc = "Counter mode falling edge."]
-    COUNTER_FALLING_EDGE = 0x02,
+    CounterFallingEdge = 0x02,
     #[doc = "Counter mode dual edge."]
-    COUNTER_DUAL_EDGE = 0x03,
+    CounterDualEdge = 0x03,
 }
 impl Ctmode {
     #[inline(always)]
@@ -445,9 +445,9 @@ impl From<Ctmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Em0 {
     #[doc = "Low."]
-    CLEAR = 0x0,
+    Clear = 0x0,
     #[doc = "High."]
-    SET = 0x01,
+    Set = 0x01,
 }
 impl Em0 {
     #[inline(always)]
@@ -476,9 +476,9 @@ impl From<Em0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Em1 {
     #[doc = "Low."]
-    CLEAR = 0x0,
+    Clear = 0x0,
     #[doc = "High."]
-    SET = 0x01,
+    Set = 0x01,
 }
 impl Em1 {
     #[inline(always)]
@@ -507,9 +507,9 @@ impl From<Em1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Em2 {
     #[doc = "Low."]
-    CLEAR = 0x0,
+    Clear = 0x0,
     #[doc = "High."]
-    SET = 0x01,
+    Set = 0x01,
 }
 impl Em2 {
     #[inline(always)]
@@ -538,9 +538,9 @@ impl From<Em2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Em3 {
     #[doc = "Low."]
-    CLEAR = 0x0,
+    Clear = 0x0,
     #[doc = "High."]
-    SET = 0x01,
+    Set = 0x01,
 }
 impl Em3 {
     #[inline(always)]
@@ -569,13 +569,13 @@ impl From<Em3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Emc0 {
     #[doc = "Does nothing."]
-    DO_NOTHING = 0x0,
+    DoNothing = 0x0,
     #[doc = "Goes low."]
-    CLEAR = 0x01,
+    Clear = 0x01,
     #[doc = "Goes high."]
-    SET = 0x02,
+    Set = 0x02,
     #[doc = "Toggles."]
-    TOGGLE = 0x03,
+    Toggle = 0x03,
 }
 impl Emc0 {
     #[inline(always)]
@@ -604,13 +604,13 @@ impl From<Emc0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Emc1 {
     #[doc = "Does nothing."]
-    DO_NOTHING = 0x0,
+    DoNothing = 0x0,
     #[doc = "Goes low."]
-    CLEAR = 0x01,
+    Clear = 0x01,
     #[doc = "Goes high."]
-    SET = 0x02,
+    Set = 0x02,
     #[doc = "Toggles."]
-    TOGGLE = 0x03,
+    Toggle = 0x03,
 }
 impl Emc1 {
     #[inline(always)]
@@ -639,13 +639,13 @@ impl From<Emc1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Emc2 {
     #[doc = "Does nothing."]
-    DO_NOTHING = 0x0,
+    DoNothing = 0x0,
     #[doc = "Goes low."]
-    CLEAR = 0x01,
+    Clear = 0x01,
     #[doc = "Goes high."]
-    SET = 0x02,
+    Set = 0x02,
     #[doc = "Toggles."]
-    TOGGLE = 0x03,
+    Toggle = 0x03,
 }
 impl Emc2 {
     #[inline(always)]
@@ -674,13 +674,13 @@ impl From<Emc2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Emc3 {
     #[doc = "Does nothing."]
-    DO_NOTHING = 0x0,
+    DoNothing = 0x0,
     #[doc = "Goes low."]
-    CLEAR = 0x01,
+    Clear = 0x01,
     #[doc = "Goes high."]
-    SET = 0x02,
+    Set = 0x02,
     #[doc = "Toggles."]
-    TOGGLE = 0x03,
+    Toggle = 0x03,
 }
 impl Emc3 {
     #[inline(always)]
@@ -709,9 +709,9 @@ impl From<Emc3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mr0i {
     #[doc = "Does not generate."]
-    MR0I_0 = 0x0,
+    Mr0i0 = 0x0,
     #[doc = "Generates."]
-    MR0I_1 = 0x01,
+    Mr0i1 = 0x01,
 }
 impl Mr0i {
     #[inline(always)]
@@ -740,9 +740,9 @@ impl From<Mr0i> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mr0r {
     #[doc = "Does not reset."]
-    MR0R_0 = 0x0,
+    Mr0r0 = 0x0,
     #[doc = "Resets."]
-    MR0R_1 = 0x01,
+    Mr0r1 = 0x01,
 }
 impl Mr0r {
     #[inline(always)]
@@ -771,9 +771,9 @@ impl From<Mr0r> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mr0rl {
     #[doc = "Does not reload."]
-    MR0RL_0 = 0x0,
+    Mr0rl0 = 0x0,
     #[doc = "Reloads."]
-    MR0RL_1 = 0x01,
+    Mr0rl1 = 0x01,
 }
 impl Mr0rl {
     #[inline(always)]
@@ -802,9 +802,9 @@ impl From<Mr0rl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mr0s {
     #[doc = "Does not stop."]
-    MR0S_0 = 0x0,
+    Mr0s0 = 0x0,
     #[doc = "Stops."]
-    MR0S_1 = 0x01,
+    Mr0s1 = 0x01,
 }
 impl Mr0s {
     #[inline(always)]
@@ -833,9 +833,9 @@ impl From<Mr0s> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mr1i {
     #[doc = "Does not generate."]
-    MR1I_0 = 0x0,
+    Mr1i0 = 0x0,
     #[doc = "Generates."]
-    MR1I_1 = 0x01,
+    Mr1i1 = 0x01,
 }
 impl Mr1i {
     #[inline(always)]
@@ -864,9 +864,9 @@ impl From<Mr1i> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mr1r {
     #[doc = "Does not reset."]
-    MR1R_0 = 0x0,
+    Mr1r0 = 0x0,
     #[doc = "Resets."]
-    MR1R_1 = 0x01,
+    Mr1r1 = 0x01,
 }
 impl Mr1r {
     #[inline(always)]
@@ -895,9 +895,9 @@ impl From<Mr1r> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mr1rl {
     #[doc = "Does not reload."]
-    MR1RL_0 = 0x0,
+    Mr1rl0 = 0x0,
     #[doc = "Reloads."]
-    MR1RL_1 = 0x01,
+    Mr1rl1 = 0x01,
 }
 impl Mr1rl {
     #[inline(always)]
@@ -926,9 +926,9 @@ impl From<Mr1rl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mr1s {
     #[doc = "Does not stop."]
-    MRIS_0 = 0x0,
+    Mris0 = 0x0,
     #[doc = "Stops."]
-    MRIS_1 = 0x01,
+    Mris1 = 0x01,
 }
 impl Mr1s {
     #[inline(always)]
@@ -957,9 +957,9 @@ impl From<Mr1s> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mr2i {
     #[doc = "Does not generate."]
-    MR2I_0 = 0x0,
+    Mr2i0 = 0x0,
     #[doc = "Generates."]
-    MR2I_1 = 0x01,
+    Mr2i1 = 0x01,
 }
 impl Mr2i {
     #[inline(always)]
@@ -988,9 +988,9 @@ impl From<Mr2i> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mr2r {
     #[doc = "Does not reset."]
-    MR2R_0 = 0x0,
+    Mr2r0 = 0x0,
     #[doc = "Resets."]
-    MR2R_1 = 0x01,
+    Mr2r1 = 0x01,
 }
 impl Mr2r {
     #[inline(always)]
@@ -1019,9 +1019,9 @@ impl From<Mr2r> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mr2rl {
     #[doc = "Does not reload."]
-    MR2RL_0 = 0x0,
+    Mr2rl0 = 0x0,
     #[doc = "Reloads."]
-    MR2RL_1 = 0x01,
+    Mr2rl1 = 0x01,
 }
 impl Mr2rl {
     #[inline(always)]
@@ -1050,9 +1050,9 @@ impl From<Mr2rl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mr2s {
     #[doc = "Does not stop."]
-    MR2S_0 = 0x0,
+    Mr2s0 = 0x0,
     #[doc = "Stops."]
-    MR2S_1 = 0x01,
+    Mr2s1 = 0x01,
 }
 impl Mr2s {
     #[inline(always)]
@@ -1081,9 +1081,9 @@ impl From<Mr2s> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mr3i {
     #[doc = "Does not generate."]
-    MR3I_0 = 0x0,
+    Mr3i0 = 0x0,
     #[doc = "Generates."]
-    MR3I_1 = 0x01,
+    Mr3i1 = 0x01,
 }
 impl Mr3i {
     #[inline(always)]
@@ -1112,9 +1112,9 @@ impl From<Mr3i> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mr3r {
     #[doc = "Does not reset."]
-    MR3R_0 = 0x0,
+    Mr3r0 = 0x0,
     #[doc = "Resets."]
-    MR3R_1 = 0x01,
+    Mr3r1 = 0x01,
 }
 impl Mr3r {
     #[inline(always)]
@@ -1143,9 +1143,9 @@ impl From<Mr3r> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mr3rl {
     #[doc = "Does not reload."]
-    MR3RL_0 = 0x0,
+    Mr3rl0 = 0x0,
     #[doc = "Reloads."]
-    MR3RL_1 = 0x01,
+    Mr3rl1 = 0x01,
 }
 impl Mr3rl {
     #[inline(always)]
@@ -1174,9 +1174,9 @@ impl From<Mr3rl> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mr3s {
     #[doc = "Does not stop."]
-    MR3S_0 = 0x0,
+    Mr3s0 = 0x0,
     #[doc = "Stops."]
-    MR3S_1 = 0x01,
+    Mr3s1 = 0x01,
 }
 impl Mr3s {
     #[inline(always)]
@@ -1205,9 +1205,9 @@ impl From<Mr3s> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pwmen0 {
     #[doc = "Disable."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Enable."]
-    PWM = 0x01,
+    Pwm = 0x01,
 }
 impl Pwmen0 {
     #[inline(always)]
@@ -1236,9 +1236,9 @@ impl From<Pwmen0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pwmen1 {
     #[doc = "Disable."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Enable."]
-    PWM = 0x01,
+    Pwm = 0x01,
 }
 impl Pwmen1 {
     #[inline(always)]
@@ -1267,9 +1267,9 @@ impl From<Pwmen1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pwmen2 {
     #[doc = "Disable."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Enable."]
-    PWM = 0x01,
+    Pwm = 0x01,
 }
 impl Pwmen2 {
     #[inline(always)]
@@ -1298,9 +1298,9 @@ impl From<Pwmen2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pwmen3 {
     #[doc = "Disable."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Enable."]
-    PWM = 0x01,
+    Pwm = 0x01,
 }
 impl Pwmen3 {
     #[inline(always)]
@@ -1329,17 +1329,17 @@ impl From<Pwmen3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Selcc {
     #[doc = "Capture channel 0 rising edge."]
-    CHANNEL_0_RISING = 0x0,
+    Channel0Rising = 0x0,
     #[doc = "Capture channel 0 falling edge."]
-    CHANNEL_0_FALLING = 0x01,
+    Channel0Falling = 0x01,
     #[doc = "Capture channel 1 rising edge."]
-    CHANNEL_1_RISING = 0x02,
+    Channel1Rising = 0x02,
     #[doc = "Capture channel 1 falling edge."]
-    CHANNEL_1_FALLING = 0x03,
+    Channel1Falling = 0x03,
     #[doc = "Capture channel 2 rising edge."]
-    CHANNEL_2_RISING = 0x04,
+    Channel2Rising = 0x04,
     #[doc = "Capture channel 2 falling edge."]
-    CHANNEL_2_FALLING = 0x05,
+    Channel2Falling = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
 }

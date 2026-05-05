@@ -3,18 +3,18 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Adc0fclksel0Sel {
     #[doc = "SFRO Clock."]
-    SFRO_CLK = 0x0,
+    SfroClk = 0x0,
     #[doc = "XTALIN Clock."]
-    XTALIN_CLK = 0x01,
+    XtalinClk = 0x01,
     #[doc = "Low Power Oscillator Clock (LPOSC)."]
-    LPOSC = 0x02,
+    Lposc = 0x02,
     #[doc = "FFRO Clock."]
-    FFRO_CLK = 0x03,
+    FfroClk = 0x03,
     _RESERVED_4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "None, this may be selected in order to reduce power when no output is needed."]
-    NONE = 0x07,
+    None = 0x07,
 }
 impl Adc0fclksel0Sel {
     #[inline(always)]
@@ -43,18 +43,18 @@ impl From<Adc0fclksel0Sel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Adc0fclksel1Sel {
     #[doc = "ADC0FCLKSEL0 Multiplexed Output."]
-    ADC0FCLKSEL0_MUX_OUT = 0x0,
+    Adc0fclksel0MuxOut = 0x0,
     #[doc = "SYSPLL0 MAIN_CLK (PFD0 Output)."]
-    SYSPLL0_MAIN_CLK = 0x01,
+    Syspll0MainClk = 0x01,
     _RESERVED_2 = 0x02,
     #[doc = "SYSPLL0 AUX0_PLL_Clock."]
-    SYSPLL0_AUX0_PLL_CLOCK = 0x03,
+    Syspll0Aux0PllClock = 0x03,
     _RESERVED_4 = 0x04,
     #[doc = "SYSPLL0 AUX1_PLL_Clock."]
-    SYSPLL0_AUX1_PLL_CLOCK = 0x05,
+    Syspll0Aux1PllClock = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "None, this may be selected in order to reduce power when no output is needed."]
-    NONE = 0x07,
+    None = 0x07,
 }
 impl Adc0fclksel1Sel {
     #[inline(always)]
@@ -83,9 +83,9 @@ impl From<Adc0fclksel1Sel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bypass {
     #[doc = "PFD output is PFD programmed clock."]
-    PROGRAMMED_CLK = 0x0,
+    ProgrammedClk = 0x0,
     #[doc = "PFD output is PLL Input clock. (Bypass)."]
-    BYPASS = 0x01,
+    Bypass = 0x01,
 }
 impl Bypass {
     #[inline(always)]
@@ -114,9 +114,9 @@ impl From<Bypass> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BypassEnable {
     #[doc = "Normal Mode."]
-    NORMAL_MODE = 0x0,
+    NormalMode = 0x0,
     #[doc = "Bypass Mode."]
-    BYPASS_MODE = 0x01,
+    BypassMode = 0x01,
 }
 impl BypassEnable {
     #[inline(always)]
@@ -145,7 +145,7 @@ impl From<BypassEnable> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Espifclksel0Sel {
     #[doc = "FFRO Clock (48/60m_irc)."]
-    FFRO_CLK = 0x0,
+    FfroClk = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -153,7 +153,7 @@ pub enum Espifclksel0Sel {
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "None, this may be selected in order to reduce power when no output is needed."]
-    NONE = 0x07,
+    None = 0x07,
 }
 impl Espifclksel0Sel {
     #[inline(always)]
@@ -182,19 +182,19 @@ impl From<Espifclksel0Sel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum FlexspifclkselSel {
     #[doc = "Main Clock."]
-    MAIN_CLK = 0x0,
+    MainClk = 0x0,
     #[doc = "Main System PLL Clock."]
-    MAIN_SYS_PLL_CLK = 0x01,
+    MainSysPllClk = 0x01,
     #[doc = "SYSPLL0 AUX0_PLL_Clock."]
-    SYSPLL0_AUX0_PLL_CLOCK = 0x02,
+    Syspll0Aux0PllClock = 0x02,
     #[doc = "FFRO Clock."]
-    FFRO_CLK = 0x03,
+    FfroClk = 0x03,
     #[doc = "SYSPLL0 AUX1_PLL_Clock."]
-    SYSPLL0_AUX1_PLL_CLOCK = 0x04,
+    Syspll0Aux1PllClock = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "None, this may be selected in order to reduce power when no output is needed."]
-    NONE = 0x07,
+    None = 0x07,
 }
 impl FlexspifclkselSel {
     #[inline(always)]
@@ -223,9 +223,9 @@ impl From<FlexspifclkselSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HoldringoffEna {
     #[doc = "disbale."]
-    DSIABLE = 0x0,
+    Dsiable = 0x0,
     #[doc = "enable."]
-    ENABLE = 0x01,
+    Enable = 0x01,
 }
 impl HoldringoffEna {
     #[inline(always)]
@@ -254,9 +254,9 @@ impl From<HoldringoffEna> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum LpEnable {
     #[doc = "High Gain Mode(HP)."]
-    HP = 0x0,
+    Hp = 0x0,
     #[doc = "Low Power mode (LP)."]
-    LP = 0x01,
+    Lp = 0x01,
 }
 impl LpEnable {
     #[inline(always)]
@@ -285,13 +285,13 @@ impl From<LpEnable> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MainclkselaSel {
     #[doc = "FFRO Clock Divided by 4."]
-    FFRO_DIV_4 = 0x0,
+    FfroDiv4 = 0x0,
     #[doc = "SYSXTALIN Clock."]
-    SYSXTAL_CLK = 0x01,
+    SysxtalClk = 0x01,
     #[doc = "Low Power Oscillator Clock (LPOSC)."]
-    LPOSC = 0x02,
+    Lposc = 0x02,
     #[doc = "FFRO Clock."]
-    FFRO_CLK = 0x03,
+    FfroClk = 0x03,
 }
 impl MainclkselaSel {
     #[inline(always)]
@@ -320,13 +320,13 @@ impl From<MainclkselaSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MainclkselbSel {
     #[doc = "MAINCLKSELA 1st Stage Clock."]
-    MAIN_1ST_CLK = 0x0,
+    Main1stClk = 0x0,
     #[doc = "SFRO Clock."]
-    SFRO_CLK = 0x01,
+    SfroClk = 0x01,
     #[doc = "Main System PLL Clock."]
-    MAIN_PLL_CLK = 0x02,
+    MainPllClk = 0x02,
     #[doc = "RTC 32KHz Clock."]
-    RTC_32K_CLK = 0x03,
+    Rtc32kClk = 0x03,
 }
 impl MainclkselbSel {
     #[inline(always)]
@@ -355,17 +355,17 @@ impl From<MainclkselbSel> for u8 {
 pub struct Mult(u8);
 impl Mult {
     #[doc = "Div 16."]
-    pub const DIV_16: Self = Self(0x10);
+    pub const Div16: Self = Self(0x10);
     #[doc = "Div 17."]
-    pub const DIV_17: Self = Self(0x11);
+    pub const Div17: Self = Self(0x11);
     #[doc = "Div 20."]
-    pub const DIV_20: Self = Self(0x14);
+    pub const Div20: Self = Self(0x14);
     #[doc = "Div 22."]
-    pub const DIV_22: Self = Self(0x16);
+    pub const Div22: Self = Self(0x16);
     #[doc = "Div 27."]
-    pub const DIV_27: Self = Self(0x1b);
+    pub const Div27: Self = Self(0x1b);
     #[doc = "Div 33."]
-    pub const DIV_33: Self = Self(0x21);
+    pub const Div33: Self = Self(0x21);
 }
 impl Mult {
     pub const fn from_bits(val: u8) -> Mult {
@@ -378,12 +378,12 @@ impl Mult {
 impl core::fmt::Debug for Mult {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x10 => f.write_str("DIV_16"),
-            0x11 => f.write_str("DIV_17"),
-            0x14 => f.write_str("DIV_20"),
-            0x16 => f.write_str("DIV_22"),
-            0x1b => f.write_str("DIV_27"),
-            0x21 => f.write_str("DIV_33"),
+            0x10 => f.write_str("Div16"),
+            0x11 => f.write_str("Div17"),
+            0x14 => f.write_str("Div20"),
+            0x16 => f.write_str("Div22"),
+            0x1b => f.write_str("Div27"),
+            0x21 => f.write_str("Div33"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -392,12 +392,12 @@ impl core::fmt::Debug for Mult {
 impl defmt::Format for Mult {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x10 => defmt::write!(f, "DIV_16"),
-            0x11 => defmt::write!(f, "DIV_17"),
-            0x14 => defmt::write!(f, "DIV_20"),
-            0x16 => defmt::write!(f, "DIV_22"),
-            0x1b => defmt::write!(f, "DIV_27"),
-            0x21 => defmt::write!(f, "DIV_33"),
+            0x10 => defmt::write!(f, "Div16"),
+            0x11 => defmt::write!(f, "Div17"),
+            0x14 => defmt::write!(f, "Div20"),
+            0x16 => defmt::write!(f, "Div22"),
+            0x1b => defmt::write!(f, "Div27"),
+            0x21 => defmt::write!(f, "Div33"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -419,9 +419,9 @@ impl From<Mult> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0CasperClk {
     #[doc = "Disable Clock."]
-    DISABLE_CLOCK = 0x0,
+    DisableClock = 0x0,
     #[doc = "Enable Clock."]
-    ENABLE_CLOCK = 0x01,
+    EnableClock = 0x01,
 }
 impl Pscctl0CasperClk {
     #[inline(always)]
@@ -450,9 +450,9 @@ impl From<Pscctl0CasperClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0ClrCasperClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Clears the PSCCTL0 Bit."]
-    CLR_CLOCK = 0x01,
+    ClrClock = 0x01,
 }
 impl Pscctl0ClrCasperClk {
     #[inline(always)]
@@ -481,9 +481,9 @@ impl From<Pscctl0ClrCasperClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0ClrFlexspiOtfadClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Clears the PSCCTL0 Bit."]
-    CLR_CLOCK = 0x01,
+    ClrClock = 0x01,
 }
 impl Pscctl0ClrFlexspiOtfadClk {
     #[inline(always)]
@@ -512,9 +512,9 @@ impl From<Pscctl0ClrFlexspiOtfadClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0ClrHashcryptClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Clears the PSCCTL0 Bit."]
-    CLR_CLOCK = 0x01,
+    ClrClock = 0x01,
 }
 impl Pscctl0ClrHashcryptClk {
     #[inline(always)]
@@ -543,9 +543,9 @@ impl From<Pscctl0ClrHashcryptClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0ClrOtpClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Clears the PSCCTL0 Bit."]
-    CLR_CLOCK = 0x01,
+    ClrClock = 0x01,
 }
 impl Pscctl0ClrOtpClk {
     #[inline(always)]
@@ -574,9 +574,9 @@ impl From<Pscctl0ClrOtpClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0ClrPowerquadClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Clears the PSCCTL0 Bit."]
-    CLR_CLOCK = 0x01,
+    ClrClock = 0x01,
 }
 impl Pscctl0ClrPowerquadClk {
     #[inline(always)]
@@ -605,9 +605,9 @@ impl From<Pscctl0ClrPowerquadClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0ClrPufClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Clears the PSCCTL0 Bit."]
-    CLR_CLOCK = 0x01,
+    ClrClock = 0x01,
 }
 impl Pscctl0ClrPufClk {
     #[inline(always)]
@@ -636,9 +636,9 @@ impl From<Pscctl0ClrPufClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0ClrRngClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Clears the PSCCTL0 Bit."]
-    CLR_CLOCK = 0x01,
+    ClrClock = 0x01,
 }
 impl Pscctl0ClrRngClk {
     #[inline(always)]
@@ -667,9 +667,9 @@ impl From<Pscctl0ClrRngClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0ClrRomCtl128kbClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Clears the PSCCTL0 Bit."]
-    CLR_CLOCK = 0x01,
+    ClrClock = 0x01,
 }
 impl Pscctl0ClrRomCtl128kbClk {
     #[inline(always)]
@@ -698,9 +698,9 @@ impl From<Pscctl0ClrRomCtl128kbClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0ClrSctClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Clears the PSCCTL0 Bit."]
-    CLR_CLOCK = 0x01,
+    ClrClock = 0x01,
 }
 impl Pscctl0ClrSctClk {
     #[inline(always)]
@@ -729,9 +729,9 @@ impl From<Pscctl0ClrSctClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0ClrUsbhsDeviceClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Clears the PSCCTL0 Bit."]
-    CLR_CLOCK = 0x01,
+    ClrClock = 0x01,
 }
 impl Pscctl0ClrUsbhsDeviceClk {
     #[inline(always)]
@@ -760,9 +760,9 @@ impl From<Pscctl0ClrUsbhsDeviceClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0ClrUsbhsHostClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Clears the PSCCTL0 Bit."]
-    CLR_CLOCK = 0x01,
+    ClrClock = 0x01,
 }
 impl Pscctl0ClrUsbhsHostClk {
     #[inline(always)]
@@ -791,9 +791,9 @@ impl From<Pscctl0ClrUsbhsHostClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0ClrUsbhsPhyClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Clears the PSCCTL0 Bit."]
-    CLR_CLOCK = 0x01,
+    ClrClock = 0x01,
 }
 impl Pscctl0ClrUsbhsPhyClk {
     #[inline(always)]
@@ -822,9 +822,9 @@ impl From<Pscctl0ClrUsbhsPhyClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0ClrUsbhsSramClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Clears the PSCCTL0 Bit."]
-    CLR_CLOCK = 0x01,
+    ClrClock = 0x01,
 }
 impl Pscctl0ClrUsbhsSramClk {
     #[inline(always)]
@@ -853,9 +853,9 @@ impl From<Pscctl0ClrUsbhsSramClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0FlexspiOtfadClk {
     #[doc = "Disable Clock."]
-    DISABLE_CLOCK = 0x0,
+    DisableClock = 0x0,
     #[doc = "Enable Clock."]
-    ENABLE_CLOCK = 0x01,
+    EnableClock = 0x01,
 }
 impl Pscctl0FlexspiOtfadClk {
     #[inline(always)]
@@ -884,9 +884,9 @@ impl From<Pscctl0FlexspiOtfadClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0HashcryptClk {
     #[doc = "Disable Clock."]
-    DISABLE_CLOCK = 0x0,
+    DisableClock = 0x0,
     #[doc = "Enable Clock."]
-    ENABLE_CLOCK = 0x01,
+    EnableClock = 0x01,
 }
 impl Pscctl0HashcryptClk {
     #[inline(always)]
@@ -915,9 +915,9 @@ impl From<Pscctl0HashcryptClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0OtpClk {
     #[doc = "Disable Clock."]
-    DISABLE_CLOCK = 0x0,
+    DisableClock = 0x0,
     #[doc = "Enable Clock."]
-    ENABLE_CLOCK = 0x01,
+    EnableClock = 0x01,
 }
 impl Pscctl0OtpClk {
     #[inline(always)]
@@ -946,9 +946,9 @@ impl From<Pscctl0OtpClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0PowerquadClk {
     #[doc = "Disable Clock."]
-    DISABLE_CLOCK = 0x0,
+    DisableClock = 0x0,
     #[doc = "Enable Clock."]
-    ENABLE_CLOCK = 0x01,
+    EnableClock = 0x01,
 }
 impl Pscctl0PowerquadClk {
     #[inline(always)]
@@ -977,9 +977,9 @@ impl From<Pscctl0PowerquadClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0PufClk {
     #[doc = "Disable Clock."]
-    DISABLE_CLOCK = 0x0,
+    DisableClock = 0x0,
     #[doc = "Enable Clock."]
-    ENABLE_CLOCK = 0x01,
+    EnableClock = 0x01,
 }
 impl Pscctl0PufClk {
     #[inline(always)]
@@ -1008,9 +1008,9 @@ impl From<Pscctl0PufClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0RngClk {
     #[doc = "Disable Clock."]
-    DISABLE_CLOCK = 0x0,
+    DisableClock = 0x0,
     #[doc = "Enable Clock."]
-    ENABLE_CLOCK = 0x01,
+    EnableClock = 0x01,
 }
 impl Pscctl0RngClk {
     #[inline(always)]
@@ -1039,9 +1039,9 @@ impl From<Pscctl0RngClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0SctClk {
     #[doc = "Disable Clock."]
-    DISABLE_CLOCK = 0x0,
+    DisableClock = 0x0,
     #[doc = "Enable Clock."]
-    ENABLE_CLOCK = 0x01,
+    EnableClock = 0x01,
 }
 impl Pscctl0SctClk {
     #[inline(always)]
@@ -1070,9 +1070,9 @@ impl From<Pscctl0SctClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0SetCasperClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Sets the PSCCTL0 Bit."]
-    SET_CLOCK = 0x01,
+    SetClock = 0x01,
 }
 impl Pscctl0SetCasperClk {
     #[inline(always)]
@@ -1101,9 +1101,9 @@ impl From<Pscctl0SetCasperClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0SetFlexspiOtfadClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Sets the PSCCTL0 Bit."]
-    SET_CLOCK = 0x01,
+    SetClock = 0x01,
 }
 impl Pscctl0SetFlexspiOtfadClk {
     #[inline(always)]
@@ -1132,9 +1132,9 @@ impl From<Pscctl0SetFlexspiOtfadClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0SetHashcryptClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Sets the PSCCTL0 Bit."]
-    SET_CLOCK = 0x01,
+    SetClock = 0x01,
 }
 impl Pscctl0SetHashcryptClk {
     #[inline(always)]
@@ -1163,9 +1163,9 @@ impl From<Pscctl0SetHashcryptClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0SetOtpClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Sets the PSCCTL0 Bit."]
-    SET_CLOCK = 0x01,
+    SetClock = 0x01,
 }
 impl Pscctl0SetOtpClk {
     #[inline(always)]
@@ -1194,9 +1194,9 @@ impl From<Pscctl0SetOtpClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0SetPowerquadClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Sets the PSCCTL0 Bit."]
-    SET_CLOCK = 0x01,
+    SetClock = 0x01,
 }
 impl Pscctl0SetPowerquadClk {
     #[inline(always)]
@@ -1225,9 +1225,9 @@ impl From<Pscctl0SetPowerquadClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0SetPufClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Sets the PSCCTL0 Bit."]
-    SET_CLOCK = 0x01,
+    SetClock = 0x01,
 }
 impl Pscctl0SetPufClk {
     #[inline(always)]
@@ -1256,9 +1256,9 @@ impl From<Pscctl0SetPufClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0SetRngClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Sets the PSCCTL0 Bit."]
-    SET_CLOCK = 0x01,
+    SetClock = 0x01,
 }
 impl Pscctl0SetRngClk {
     #[inline(always)]
@@ -1287,9 +1287,9 @@ impl From<Pscctl0SetRngClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0SetRomCtl128kbClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Sets the PSCCTL0 Bit."]
-    SET_CLOCK = 0x01,
+    SetClock = 0x01,
 }
 impl Pscctl0SetRomCtl128kbClk {
     #[inline(always)]
@@ -1318,9 +1318,9 @@ impl From<Pscctl0SetRomCtl128kbClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0SetSctClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Sets the PSCCTL0 Bit."]
-    SET_CLOCK = 0x01,
+    SetClock = 0x01,
 }
 impl Pscctl0SetSctClk {
     #[inline(always)]
@@ -1349,9 +1349,9 @@ impl From<Pscctl0SetSctClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0SetUsbhsDeviceClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Sets the PSCCTL0 Bit."]
-    SET_CLOCK = 0x01,
+    SetClock = 0x01,
 }
 impl Pscctl0SetUsbhsDeviceClk {
     #[inline(always)]
@@ -1380,9 +1380,9 @@ impl From<Pscctl0SetUsbhsDeviceClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0SetUsbhsHostClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Sets the PSCCTL0 Bit."]
-    SET_CLOCK = 0x01,
+    SetClock = 0x01,
 }
 impl Pscctl0SetUsbhsHostClk {
     #[inline(always)]
@@ -1411,9 +1411,9 @@ impl From<Pscctl0SetUsbhsHostClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0SetUsbhsPhyClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Sets the PSCCTL0 Bit."]
-    SET_CLOCK = 0x01,
+    SetClock = 0x01,
 }
 impl Pscctl0SetUsbhsPhyClk {
     #[inline(always)]
@@ -1442,9 +1442,9 @@ impl From<Pscctl0SetUsbhsPhyClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0SetUsbhsSramClk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Sets the PSCCTL0 Bit."]
-    SET_CLOCK = 0x01,
+    SetClock = 0x01,
 }
 impl Pscctl0SetUsbhsSramClk {
     #[inline(always)]
@@ -1473,9 +1473,9 @@ impl From<Pscctl0SetUsbhsSramClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0UsbhsDeviceClk {
     #[doc = "Disable Clock."]
-    DISABLE_CLOCK = 0x0,
+    DisableClock = 0x0,
     #[doc = "Enable Clock."]
-    ENABLE_CLOCK = 0x01,
+    EnableClock = 0x01,
 }
 impl Pscctl0UsbhsDeviceClk {
     #[inline(always)]
@@ -1504,9 +1504,9 @@ impl From<Pscctl0UsbhsDeviceClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0UsbhsHostClk {
     #[doc = "Disable Clock."]
-    DISABLE_CLOCK = 0x0,
+    DisableClock = 0x0,
     #[doc = "Enable Clock."]
-    ENABLE_CLOCK = 0x01,
+    EnableClock = 0x01,
 }
 impl Pscctl0UsbhsHostClk {
     #[inline(always)]
@@ -1535,9 +1535,9 @@ impl From<Pscctl0UsbhsHostClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0UsbhsPhyClk {
     #[doc = "Disable Clock."]
-    DISABLE_CLOCK = 0x0,
+    DisableClock = 0x0,
     #[doc = "Enable Clock."]
-    ENABLE_CLOCK = 0x01,
+    EnableClock = 0x01,
 }
 impl Pscctl0UsbhsPhyClk {
     #[inline(always)]
@@ -1566,9 +1566,9 @@ impl From<Pscctl0UsbhsPhyClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl0UsbhsSramClk {
     #[doc = "Disable Clock."]
-    DISABLE_CLOCK = 0x0,
+    DisableClock = 0x0,
     #[doc = "Enable Clock."]
-    ENABLE_CLOCK = 0x01,
+    EnableClock = 0x01,
 }
 impl Pscctl0UsbhsSramClk {
     #[inline(always)]
@@ -1597,9 +1597,9 @@ impl From<Pscctl0UsbhsSramClk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl1Acmp0Clk {
     #[doc = "Disable Clock."]
-    DISABLE_CLOCK = 0x0,
+    DisableClock = 0x0,
     #[doc = "Enable Clock."]
-    ENABLE_CLOCK = 0x01,
+    EnableClock = 0x01,
 }
 impl Pscctl1Acmp0Clk {
     #[inline(always)]
@@ -1628,9 +1628,9 @@ impl From<Pscctl1Acmp0Clk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl1Adc0Clk {
     #[doc = "Disable Clock."]
-    DISABLE_CLOCK = 0x0,
+    DisableClock = 0x0,
     #[doc = "Enable Clock."]
-    ENABLE_CLOCK = 0x01,
+    EnableClock = 0x01,
 }
 impl Pscctl1Adc0Clk {
     #[inline(always)]
@@ -1659,9 +1659,9 @@ impl From<Pscctl1Adc0Clk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl1ClrAcmp0Clk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Clears the PSCCTL1 Bit."]
-    CLR_CLOCK = 0x01,
+    ClrClock = 0x01,
 }
 impl Pscctl1ClrAcmp0Clk {
     #[inline(always)]
@@ -1690,9 +1690,9 @@ impl From<Pscctl1ClrAcmp0Clk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl1ClrAdc0Clk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Clears the PSCCTL1 Bit."]
-    CLR_CLOCK = 0x01,
+    ClrClock = 0x01,
 }
 impl Pscctl1ClrAdc0Clk {
     #[inline(always)]
@@ -1721,9 +1721,9 @@ impl From<Pscctl1ClrAdc0Clk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl1ClrSdio0Clk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Clears the PSCCTL1 Bit."]
-    CLR_CLOCK = 0x01,
+    ClrClock = 0x01,
 }
 impl Pscctl1ClrSdio0Clk {
     #[inline(always)]
@@ -1752,9 +1752,9 @@ impl From<Pscctl1ClrSdio0Clk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl1ClrSdio1Clk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Clears the PSCCTL1 Bit."]
-    CLR_CLOCK = 0x01,
+    ClrClock = 0x01,
 }
 impl Pscctl1ClrSdio1Clk {
     #[inline(always)]
@@ -1783,9 +1783,9 @@ impl From<Pscctl1ClrSdio1Clk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl1ClrShsgpio0Clk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Clears the PSCCTL1 Bit."]
-    CLR_CLOCK = 0x01,
+    ClrClock = 0x01,
 }
 impl Pscctl1ClrShsgpio0Clk {
     #[inline(always)]
@@ -1814,9 +1814,9 @@ impl From<Pscctl1ClrShsgpio0Clk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl1Sdio0Clk {
     #[doc = "Disable Clock."]
-    DISABLE_CLOCK = 0x0,
+    DisableClock = 0x0,
     #[doc = "Enable Clock."]
-    ENABLE_CLOCK = 0x01,
+    EnableClock = 0x01,
 }
 impl Pscctl1Sdio0Clk {
     #[inline(always)]
@@ -1845,9 +1845,9 @@ impl From<Pscctl1Sdio0Clk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl1Sdio1Clk {
     #[doc = "Disable Clock."]
-    DISABLE_CLOCK = 0x0,
+    DisableClock = 0x0,
     #[doc = "Enable Clock."]
-    ENABLE_CLOCK = 0x01,
+    EnableClock = 0x01,
 }
 impl Pscctl1Sdio1Clk {
     #[inline(always)]
@@ -1876,9 +1876,9 @@ impl From<Pscctl1Sdio1Clk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl1SetAcmp0Clk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Sets the PSCCTL1 Bit."]
-    SET_CLOCK = 0x01,
+    SetClock = 0x01,
 }
 impl Pscctl1SetAcmp0Clk {
     #[inline(always)]
@@ -1907,9 +1907,9 @@ impl From<Pscctl1SetAcmp0Clk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl1SetAdc0Clk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Sets the PSCCTL1 Bit."]
-    SET_CLOCK = 0x01,
+    SetClock = 0x01,
 }
 impl Pscctl1SetAdc0Clk {
     #[inline(always)]
@@ -1938,9 +1938,9 @@ impl From<Pscctl1SetAdc0Clk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl1SetSdio0Clk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Sets the PSCCTL1 Bit."]
-    SET_CLOCK = 0x01,
+    SetClock = 0x01,
 }
 impl Pscctl1SetSdio0Clk {
     #[inline(always)]
@@ -1969,9 +1969,9 @@ impl From<Pscctl1SetSdio0Clk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl1SetSdio1Clk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Sets the PSCCTL1 Bit."]
-    SET_CLOCK = 0x01,
+    SetClock = 0x01,
 }
 impl Pscctl1SetSdio1Clk {
     #[inline(always)]
@@ -2000,9 +2000,9 @@ impl From<Pscctl1SetSdio1Clk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl1SetShsgpio0Clk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Sets the PSCCTL1 Bit."]
-    SET_CLOCK = 0x01,
+    SetClock = 0x01,
 }
 impl Pscctl1SetShsgpio0Clk {
     #[inline(always)]
@@ -2031,9 +2031,9 @@ impl From<Pscctl1SetShsgpio0Clk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl1Shsgpio0Clk {
     #[doc = "Disable Clock."]
-    DISABLE_CLOCK = 0x0,
+    DisableClock = 0x0,
     #[doc = "Enable Clock."]
-    ENABLE_CLOCK = 0x01,
+    EnableClock = 0x01,
 }
 impl Pscctl1Shsgpio0Clk {
     #[inline(always)]
@@ -2062,9 +2062,9 @@ impl From<Pscctl1Shsgpio0Clk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl2ClrUtick0Clk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Clears the PSCCTL2 Bit."]
-    CLR_CLOCK = 0x01,
+    ClrClock = 0x01,
 }
 impl Pscctl2ClrUtick0Clk {
     #[inline(always)]
@@ -2093,9 +2093,9 @@ impl From<Pscctl2ClrUtick0Clk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl2ClrWwdt0Clk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Clears the PSCCTL2 Bit."]
-    CLR_CLOCK = 0x01,
+    ClrClock = 0x01,
 }
 impl Pscctl2ClrWwdt0Clk {
     #[inline(always)]
@@ -2124,9 +2124,9 @@ impl From<Pscctl2ClrWwdt0Clk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl2SetUtick0Clk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Sets the PSCCTL2 Bit."]
-    SET_CLOCK = 0x01,
+    SetClock = 0x01,
 }
 impl Pscctl2SetUtick0Clk {
     #[inline(always)]
@@ -2155,9 +2155,9 @@ impl From<Pscctl2SetUtick0Clk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl2SetWwdt0Clk {
     #[doc = "No Effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Sets the PSCCTL2 Bit."]
-    SET_CLOCK = 0x01,
+    SetClock = 0x01,
 }
 impl Pscctl2SetWwdt0Clk {
     #[inline(always)]
@@ -2186,9 +2186,9 @@ impl From<Pscctl2SetWwdt0Clk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl2Utick0Clk {
     #[doc = "Disable Clock."]
-    DISABLE_CLOCK = 0x0,
+    DisableClock = 0x0,
     #[doc = "Enable Clock."]
-    ENABLE_CLOCK = 0x01,
+    EnableClock = 0x01,
 }
 impl Pscctl2Utick0Clk {
     #[inline(always)]
@@ -2217,9 +2217,9 @@ impl From<Pscctl2Utick0Clk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pscctl2Wwdt0Clk {
     #[doc = "Disable Clock."]
-    DISABLE_CLOCK = 0x0,
+    DisableClock = 0x0,
     #[doc = "Enable Clock."]
-    ENABLE_CLOCK = 0x01,
+    EnableClock = 0x01,
 }
 impl Pscctl2Wwdt0Clk {
     #[inline(always)]
@@ -2248,9 +2248,9 @@ impl From<Pscctl2Wwdt0Clk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Reset {
     #[doc = "SYSPLL0 reset is removed."]
-    NORMAL = 0x0,
+    Normal = 0x0,
     #[doc = "SYSPLL0 is placed into reset."]
-    FORCED_INTO_RESET = 0x01,
+    ForcedIntoReset = 0x01,
 }
 impl Reset {
     #[inline(always)]
@@ -2279,9 +2279,9 @@ impl From<Reset> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RomCtl128kb {
     #[doc = "Disable Clock."]
-    DISABLE_CLOCK = 0x0,
+    DisableClock = 0x0,
     #[doc = "Enable Clock."]
-    ENABLE_CLOCK = 0x01,
+    EnableClock = 0x01,
 }
 impl RomCtl128kb {
     #[inline(always)]
@@ -2310,20 +2310,20 @@ impl From<RomCtl128kb> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SctfclkselSel {
     #[doc = "Main Clock."]
-    MAIN_CLK = 0x0,
+    MainClk = 0x0,
     #[doc = "Main System PLL Clock."]
-    MAIN_SYS_PLL_CLK = 0x01,
+    MainSysPllClk = 0x01,
     #[doc = "SYSPLL0 AUX0_PLL_Clock."]
-    SYSPLL0_AUX0_PLL_CLOCK = 0x02,
+    Syspll0Aux0PllClock = 0x02,
     #[doc = "FFRO Clock."]
-    FFRO_CLK = 0x03,
+    FfroClk = 0x03,
     #[doc = "SYSPLL0 AUX1_PLL_Clock."]
-    SYSPLL0_AUX1_PLL_CLOCK = 0x04,
+    Syspll0Aux1PllClock = 0x04,
     #[doc = "AUDIO PLL Clock."]
-    AUDIO_PLL_CLK = 0x05,
+    AudioPllClk = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "None, this may be selected in order to reduce power when no output is needed."]
-    NONE = 0x07,
+    None = 0x07,
 }
 impl SctfclkselSel {
     #[inline(always)]
@@ -2352,19 +2352,19 @@ impl From<SctfclkselSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sdio0fclkselSel {
     #[doc = "Main Clock."]
-    MAIN_CLK = 0x0,
+    MainClk = 0x0,
     #[doc = "Main System PLL Clock."]
-    MAIN_SYS_PLL_CLK = 0x01,
+    MainSysPllClk = 0x01,
     #[doc = "SYSPLL0 AUX0_PLL_Clock."]
-    SYSPLL0_AUX0_PLL_CLOCK = 0x02,
+    Syspll0Aux0PllClock = 0x02,
     #[doc = "FFRO Clock."]
-    FFRO_CLK = 0x03,
+    FfroClk = 0x03,
     #[doc = "SYSPLL0 AUX1_PLL_Clock."]
-    SYSPLL0_AUX1_PLL_CLOCK = 0x04,
+    Syspll0Aux1PllClock = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "None, this may be selected in order to reduce power when no output is needed."]
-    NONE = 0x07,
+    None = 0x07,
 }
 impl Sdio0fclkselSel {
     #[inline(always)]
@@ -2393,19 +2393,19 @@ impl From<Sdio0fclkselSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sdio1fclkselSel {
     #[doc = "Main Clock."]
-    MAIN_CLK = 0x0,
+    MainClk = 0x0,
     #[doc = "Main System PLL Clock."]
-    MAIN_SYS_PLL_CLK = 0x01,
+    MainSysPllClk = 0x01,
     #[doc = "SYSPLL0 AUX0_PLL_Clock."]
-    SYSPLL0_AUX0_PLL_CLOCK = 0x02,
+    Syspll0Aux0PllClock = 0x02,
     #[doc = "FFRO Clock."]
-    FFRO_CLK = 0x03,
+    FfroClk = 0x03,
     #[doc = "SYSPLL0 AUX1_PLL_Clock."]
-    SYSPLL0_AUX1_PLL_CLOCK = 0x04,
+    Syspll0Aux1PllClock = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "None, this may be selected in order to reduce power when no output is needed."]
-    NONE = 0x07,
+    None = 0x07,
 }
 impl Sdio1fclkselSel {
     #[inline(always)]
@@ -2434,16 +2434,16 @@ impl From<Sdio1fclkselSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SysoscbypassSel {
     #[doc = "External XTAL Clock."]
-    EXT_XTAL_CLK = 0x0,
+    ExtXtalClk = 0x0,
     #[doc = "Clock IN Clock."]
-    CLOCK_IN_CLK = 0x01,
+    ClockInClk = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "NONE.this may be selected in order to reduce power when no output is needed."]
-    NONE = 0x07,
+    None = 0x07,
 }
 impl SysoscbypassSel {
     #[inline(always)]
@@ -2472,17 +2472,17 @@ impl From<SysoscbypassSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Syspll0clkselSel {
     #[doc = "SFRO Clock."]
-    SFRO_CLK = 0x0,
+    SfroClk = 0x0,
     #[doc = "SYSXTALIN Clock."]
-    SYSXTAL_CLK = 0x01,
+    SysxtalClk = 0x01,
     #[doc = "FFRO Clock Divided by 2."]
-    FFRO_DIV_2 = 0x02,
+    FfroDiv2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "None, this may be selected in order to reduce power when no output is needed."]
-    NONE = 0x07,
+    None = 0x07,
 }
 impl Syspll0clkselSel {
     #[inline(always)]
@@ -2511,18 +2511,18 @@ impl From<Syspll0clkselSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SystickfclkselSel {
     #[doc = "Systick Divider Output Clock."]
-    SYSTICK_DIV_CLK = 0x0,
+    SystickDivClk = 0x0,
     #[doc = "Low Power Oscillator Clock (LPOSC)."]
-    LPOSC = 0x01,
+    Lposc = 0x01,
     #[doc = "32KHz RTC Clock."]
-    RTC_32KHZ = 0x02,
+    Rtc32khz = 0x02,
     #[doc = "SFRO Clock."]
-    SFRO_CLK = 0x03,
+    SfroClk = 0x03,
     _RESERVED_4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "None, this may be selected in order to reduce power when no output is needed."]
-    NONE = 0x07,
+    None = 0x07,
 }
 impl SystickfclkselSel {
     #[inline(always)]
@@ -2551,11 +2551,11 @@ impl From<SystickfclkselSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TrimRange {
     #[doc = "48MHz."]
-    FFRO_48MHZ = 0x0,
+    Ffro48mHz = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     #[doc = "60MHz."]
-    FFRO_60MHZ = 0x03,
+    Ffro60mHz = 0x03,
 }
 impl TrimRange {
     #[inline(always)]
@@ -2584,9 +2584,9 @@ impl From<TrimRange> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Update {
     #[doc = "Normal Mode."]
-    NORMAL_MODE = 0x0,
+    NormalMode = 0x0,
     #[doc = "Update Safe Mode."]
-    UPDATE_SAFE_MODE = 0x01,
+    UpdateSafeMode = 0x01,
 }
 impl Update {
     #[inline(always)]
@@ -2615,16 +2615,16 @@ impl From<Update> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum UsbhsfclkselSel {
     #[doc = "XTALIN Clock."]
-    XTALIN_CLK = 0x0,
+    XtalinClk = 0x0,
     #[doc = "Main Clock."]
-    MAIN_CLK = 0x01,
+    MainClk = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "None, this may be selected in order to reduce power when no output is needed."]
-    NONE = 0x07,
+    None = 0x07,
 }
 impl UsbhsfclkselSel {
     #[inline(always)]
@@ -2653,7 +2653,7 @@ impl From<UsbhsfclkselSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum UtickfclkselSel {
     #[doc = "Low Power Oscillator Clock (LPOSC)."]
-    LPOSC = 0x0,
+    Lposc = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -2661,7 +2661,7 @@ pub enum UtickfclkselSel {
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "None, this may be selected in order to reduce power when no output is needed."]
-    NONE = 0x07,
+    None = 0x07,
 }
 impl UtickfclkselSel {
     #[inline(always)]
@@ -2690,16 +2690,16 @@ impl From<UtickfclkselSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wakeclk32khzselSel {
     #[doc = "32KHz."]
-    FREQ_32KHZ = 0x0,
+    Freq32khz = 0x0,
     #[doc = "LPOSC (Divided by 32 by default)."]
-    LPOSC = 0x01,
+    Lposc = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "None, this may be selected in order to reduce power when no output is needed."]
-    NONE = 0x07,
+    None = 0x07,
 }
 impl Wakeclk32khzselSel {
     #[inline(always)]
@@ -2728,7 +2728,7 @@ impl From<Wakeclk32khzselSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Wdt0fclkselSel {
     #[doc = "Low Power Oscillator Clock (LPOSC)."]
-    LPOSC = 0x0,
+    Lposc = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -2736,7 +2736,7 @@ pub enum Wdt0fclkselSel {
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "None, this may be selected in order to reduce power when no output is needed."]
-    NONE = 0x07,
+    None = 0x07,
 }
 impl Wdt0fclkselSel {
     #[inline(always)]

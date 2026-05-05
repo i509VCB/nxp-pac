@@ -3,12 +3,12 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mulsize {
     _RESERVED_0 = 0x0,
+    #[doc = "32-bit multiplier."]
+    Value32b = 0x01,
     #[doc = "64-bit multiplier."]
-    BIT64 = 0x01,
+    Value64b = 0x02,
     #[doc = "128-bit multiplier."]
-    BIT128 = 0x02,
-    #[doc = "128-bit multiplier."]
-    VALUE_128B = 0x03,
+    Value128b = 0x03,
 }
 impl Mulsize {
     #[inline(always)]
@@ -37,10 +37,10 @@ impl From<Mulsize> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Redmul {
     #[doc = "full size mode, 3 least significant bits of pointer and length are ignored, minimum supported length 0x0008."]
-    FULLSZ = 0x0,
+    Fullsz = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "64-bit mode, 3 least significant bits of pointer and length are ignored, minimum supported length 0x0008."]
-    VALUE_64BIT = 0x02,
+    Value64bit = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Redmul {

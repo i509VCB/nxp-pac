@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Acfe {
     #[doc = "Compare function disabled."]
-    ACFE_0 = 0x0,
+    Acfe0 = 0x0,
     #[doc = "Compare function enabled."]
-    ACFE_1 = 0x01,
+    Acfe1 = 0x01,
 }
 impl Acfe {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Acfe> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Acfgt {
     #[doc = "Configures \"Less Than Threshold, Outside Range Not Inclusive and Inside Range Not Inclusive\" functionality based on the values placed in the ADC_CV register."]
-    ACFGT_0 = 0x0,
+    Acfgt0 = 0x0,
     #[doc = "Configures \"Greater Than Or Equal To Threshold, Outside Range Inclusive and Inside Range Inclusive\" functionality based on the values placed in the ADC_CV registers."]
-    ACFGT_1 = 0x01,
+    Acfgt1 = 0x01,
 }
 impl Acfgt {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Acfgt> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Acren {
     #[doc = "Range function disabled. Only the compare value 1 of ADC_CV register (CV1) is compared."]
-    ACREN_0 = 0x0,
+    Acren0 = 0x0,
     #[doc = "Range function enabled. Both compare values of ADC_CV registers (CV1 and CV2) are compared."]
-    ACREN_1 = 0x01,
+    Acren1 = 0x01,
 }
 impl Acren {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Acren> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Adacken {
     #[doc = "Asynchronous clock output disabled; Asynchronous clock only enabled if selected by ADICLK and a conversion is active."]
-    ADACKEN_0 = 0x0,
+    Adacken0 = 0x0,
     #[doc = "Asynchronous clock and clock output enabled regardless of the state of the ADC."]
-    ADACKEN_1 = 0x01,
+    Adacken1 = 0x01,
 }
 impl Adacken {
     #[inline(always)]
@@ -127,9 +127,9 @@ impl From<Adacken> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Adact {
     #[doc = "Conversion not in progress."]
-    ADACT_0 = 0x0,
+    Adact0 = 0x0,
     #[doc = "Conversion in progress."]
-    ADACT_1 = 0x01,
+    Adact1 = 0x01,
 }
 impl Adact {
     #[inline(always)]
@@ -158,9 +158,9 @@ impl From<Adact> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Adco {
     #[doc = "One conversion or one set of conversions if the hardware average function is enabled (AVGE=1) after initiating a conversion."]
-    ADCO_0 = 0x0,
+    Adco0 = 0x0,
     #[doc = "Continuous conversions or sets of conversions if the hardware average function is enabled (AVGE=1) after initiating a conversion."]
-    ADCO_1 = 0x01,
+    Adco1 = 0x01,
 }
 impl Adco {
     #[inline(always)]
@@ -189,9 +189,9 @@ impl From<Adco> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Adhsc {
     #[doc = "Normal conversion selected."]
-    ADHSC_0 = 0x0,
+    Adhsc0 = 0x0,
     #[doc = "High speed conversion selected."]
-    ADHSC_1 = 0x01,
+    Adhsc1 = 0x01,
 }
 impl Adhsc {
     #[inline(always)]
@@ -220,13 +220,13 @@ impl From<Adhsc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Adiclk {
     #[doc = "IPG clock."]
-    ADICLK_0 = 0x0,
+    Adiclk0 = 0x0,
     #[doc = "IPG clock divided by 2."]
-    ADICLK_1 = 0x01,
+    Adiclk1 = 0x01,
     #[doc = "Alternate clock (ALTCLK)."]
-    ADICLK_2 = 0x02,
+    Adiclk2 = 0x02,
     #[doc = "Asynchronous clock (ADACK)."]
-    ADICLK_3 = 0x03,
+    Adiclk3 = 0x03,
 }
 impl Adiclk {
     #[inline(always)]
@@ -255,13 +255,13 @@ impl From<Adiclk> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Adiv {
     #[doc = "Input clock."]
-    ADIV_0 = 0x0,
+    Adiv0 = 0x0,
     #[doc = "Input clock / 2."]
-    ADIV_1 = 0x01,
+    Adiv1 = 0x01,
     #[doc = "Input clock / 4."]
-    ADIV_2 = 0x02,
+    Adiv2 = 0x02,
     #[doc = "Input clock / 8."]
-    ADIV_3 = 0x03,
+    Adiv3 = 0x03,
 }
 impl Adiv {
     #[inline(always)]
@@ -290,9 +290,9 @@ impl From<Adiv> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Adlpc {
     #[doc = "ADC hard block not in low power mode."]
-    ADLPC_0 = 0x0,
+    Adlpc0 = 0x0,
     #[doc = "ADC hard block in low power mode."]
-    ADLPC_1 = 0x01,
+    Adlpc1 = 0x01,
 }
 impl Adlpc {
     #[inline(always)]
@@ -321,9 +321,9 @@ impl From<Adlpc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Adlsmp {
     #[doc = "Short sample mode."]
-    ADLSMP_0 = 0x0,
+    Adlsmp0 = 0x0,
     #[doc = "Long sample mode."]
-    ADLSMP_1 = 0x01,
+    Adlsmp1 = 0x01,
 }
 impl Adlsmp {
     #[inline(always)]
@@ -352,13 +352,13 @@ impl From<Adlsmp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Adsts {
     #[doc = "Sample period (ADC clocks) = 3 if ADLSMP=0b Sample period (ADC clocks) = 13 if ADLSMP=1b."]
-    ADSTS_0 = 0x0,
+    Adsts0 = 0x0,
     #[doc = "Sample period (ADC clocks) = 5 if ADLSMP=0b Sample period (ADC clocks) = 17 if ADLSMP=1b."]
-    ADSTS_1 = 0x01,
+    Adsts1 = 0x01,
     #[doc = "Sample period (ADC clocks) = 7 if ADLSMP=0b Sample period (ADC clocks) = 21 if ADLSMP=1b."]
-    ADSTS_2 = 0x02,
+    Adsts2 = 0x02,
     #[doc = "Sample period (ADC clocks) = 9 if ADLSMP=0b Sample period (ADC clocks) = 25 if ADLSMP=1b."]
-    ADSTS_3 = 0x03,
+    Adsts3 = 0x03,
 }
 impl Adsts {
     #[inline(always)]
@@ -387,9 +387,9 @@ impl From<Adsts> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Adtrg {
     #[doc = "Software trigger selected."]
-    ADTRG_0 = 0x0,
+    Adtrg0 = 0x0,
     #[doc = "Hardware trigger selected."]
-    ADTRG_1 = 0x01,
+    Adtrg1 = 0x01,
 }
 impl Adtrg {
     #[inline(always)]
@@ -418,9 +418,9 @@ impl From<Adtrg> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Avge {
     #[doc = "Hardware average function disabled."]
-    AVGE_0 = 0x0,
+    Avge0 = 0x0,
     #[doc = "Hardware average function enabled."]
-    AVGE_1 = 0x01,
+    Avge1 = 0x01,
 }
 impl Avge {
     #[inline(always)]
@@ -449,13 +449,13 @@ impl From<Avge> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Avgs {
     #[doc = "4 samples averaged."]
-    AVGS_0 = 0x0,
+    Avgs0 = 0x0,
     #[doc = "8 samples averaged."]
-    AVGS_1 = 0x01,
+    Avgs1 = 0x01,
     #[doc = "16 samples averaged."]
-    AVGS_2 = 0x02,
+    Avgs2 = 0x02,
     #[doc = "32 samples averaged."]
-    AVGS_3 = 0x03,
+    Avgs3 = 0x03,
 }
 impl Avgs {
     #[inline(always)]
@@ -484,9 +484,9 @@ impl From<Avgs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Awkst {
     #[doc = "No asynchronous interrupt."]
-    AWKST_0 = 0x0,
+    Awkst0 = 0x0,
     #[doc = "Asynchronous wake up interrupt occurred in stop mode."]
-    AWKST_1 = 0x01,
+    Awkst1 = 0x01,
 }
 impl Awkst {
     #[inline(always)]
@@ -515,9 +515,9 @@ impl From<Awkst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Calf {
     #[doc = "Calibration completed normally."]
-    CALF_0 = 0x0,
+    Calf0 = 0x0,
     #[doc = "Calibration failed. ADC accuracy specifications are not guaranteed."]
-    CALF_1 = 0x01,
+    Calf1 = 0x01,
 }
 impl Calf {
     #[inline(always)]
@@ -546,9 +546,9 @@ impl From<Calf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dmaen {
     #[doc = "DMA disabled (default)."]
-    DMAEN_0 = 0x0,
+    Dmaen0 = 0x0,
     #[doc = "DMA enabled."]
-    DMAEN_1 = 0x01,
+    Dmaen1 = 0x01,
 }
 impl Dmaen {
     #[inline(always)]
@@ -593,7 +593,7 @@ pub enum Hc0Adch {
     _RESERVED_e = 0x0e,
     _RESERVED_f = 0x0f,
     #[doc = "External channel selection from ADC_ETC."]
-    ADCH_16 = 0x10,
+    Adch16 = 0x10,
     _RESERVED_11 = 0x11,
     _RESERVED_12 = 0x12,
     _RESERVED_13 = 0x13,
@@ -603,14 +603,14 @@ pub enum Hc0Adch {
     _RESERVED_17 = 0x17,
     _RESERVED_18 = 0x18,
     #[doc = "VREFSH = internal channel, for ADC self-test, hard connected to VRH internally."]
-    ADCH_25 = 0x19,
+    Adch25 = 0x19,
     _RESERVED_1a = 0x1a,
     _RESERVED_1b = 0x1b,
     _RESERVED_1c = 0x1c,
     _RESERVED_1d = 0x1d,
     _RESERVED_1e = 0x1e,
     #[doc = "Conversion Disabled. Hardware Triggers will not initiate any conversion."]
-    ADCH_31 = 0x1f,
+    Adch31 = 0x1f,
 }
 impl Hc0Adch {
     #[inline(always)]
@@ -639,9 +639,9 @@ impl From<Hc0Adch> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hc0Aien {
     #[doc = "Conversion complete interrupt disabled."]
-    AIEN_0 = 0x0,
+    Aien0 = 0x0,
     #[doc = "Conversion complete interrupt enabled."]
-    AIEN_1 = 0x01,
+    Aien1 = 0x01,
 }
 impl Hc0Aien {
     #[inline(always)]
@@ -686,7 +686,7 @@ pub enum HcAdch {
     _RESERVED_e = 0x0e,
     _RESERVED_f = 0x0f,
     #[doc = "External channel selection from ADC_ETC."]
-    ADCH_16 = 0x10,
+    Adch16 = 0x10,
     _RESERVED_11 = 0x11,
     _RESERVED_12 = 0x12,
     _RESERVED_13 = 0x13,
@@ -696,14 +696,14 @@ pub enum HcAdch {
     _RESERVED_17 = 0x17,
     _RESERVED_18 = 0x18,
     #[doc = "VREFSH = internal channel, for ADC self-test, hard connected to VRH internally."]
-    ADCH_25 = 0x19,
+    Adch25 = 0x19,
     _RESERVED_1a = 0x1a,
     _RESERVED_1b = 0x1b,
     _RESERVED_1c = 0x1c,
     _RESERVED_1d = 0x1d,
     _RESERVED_1e = 0x1e,
     #[doc = "Conversion Disabled. Hardware Triggers will not initiate any conversion."]
-    ADCH_31 = 0x1f,
+    Adch31 = 0x1f,
 }
 impl HcAdch {
     #[inline(always)]
@@ -732,9 +732,9 @@ impl From<HcAdch> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum HcAien {
     #[doc = "Conversion complete interrupt disabled."]
-    AIEN_0 = 0x0,
+    Aien0 = 0x0,
     #[doc = "Conversion complete interrupt enabled."]
-    AIEN_1 = 0x01,
+    Aien1 = 0x01,
 }
 impl HcAien {
     #[inline(always)]
@@ -763,11 +763,11 @@ impl From<HcAien> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mode {
     #[doc = "8-bit conversion."]
-    MODE_0 = 0x0,
+    Mode0 = 0x0,
     #[doc = "10-bit conversion."]
-    MODE_1 = 0x01,
+    Mode1 = 0x01,
     #[doc = "12-bit conversion."]
-    MODE_2 = 0x02,
+    Mode2 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Mode {
@@ -797,9 +797,9 @@ impl From<Mode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ovwren {
     #[doc = "Disable the overwriting. Existing Data in Data result register will not be overwritten by subsequent converted data."]
-    OVWREN_0 = 0x0,
+    Ovwren0 = 0x0,
     #[doc = "Enable the overwriting."]
-    OVWREN_1 = 0x01,
+    Ovwren1 = 0x01,
 }
 impl Ovwren {
     #[inline(always)]
@@ -828,7 +828,7 @@ impl From<Ovwren> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Refsel {
     #[doc = "Selects VREFH/VREFL as reference voltage."]
-    REFSEL_0 = 0x0,
+    Refsel0 = 0x0,
     _RESERVED_1 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
@@ -860,9 +860,9 @@ impl From<Refsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sign {
     #[doc = "The offset value is added with the raw result."]
-    SIGN_0 = 0x0,
+    Sign0 = 0x0,
     #[doc = "The offset value is subtracted from the raw converted value."]
-    SIGN_1 = 0x01,
+    Sign1 = 0x01,
 }
 impl Sign {
     #[inline(always)]

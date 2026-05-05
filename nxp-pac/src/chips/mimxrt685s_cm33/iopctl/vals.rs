@@ -3,37 +3,37 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fc15I2cSclFsel {
     #[doc = "Function 0."]
-    FUNCTION_0 = 0x0,
+    Function0 = 0x0,
     #[doc = "Function 1."]
-    FUNCTION_1 = 0x01,
+    Function1 = 0x01,
     #[doc = "Function 2."]
-    FUNCTION_2 = 0x02,
+    Function2 = 0x02,
     #[doc = "Function 3."]
-    FUNCTION_3 = 0x03,
+    Function3 = 0x03,
     #[doc = "Function 4."]
-    FUNCTION_4 = 0x04,
+    Function4 = 0x04,
     #[doc = "Function 5."]
-    FUNCTION_5 = 0x05,
+    Function5 = 0x05,
     #[doc = "Function 6."]
-    FUNCTION_6 = 0x06,
+    Function6 = 0x06,
     #[doc = "Function 7."]
-    FUNCTION_7 = 0x07,
+    Function7 = 0x07,
     #[doc = "Function 8."]
-    FUNCTION_8 = 0x08,
+    Function8 = 0x08,
     #[doc = "Function 9."]
-    FUNCTION_9 = 0x09,
+    Function9 = 0x09,
     #[doc = "Function 10."]
-    FUNCTION_10 = 0x0a,
+    Function10 = 0x0a,
     #[doc = "Function 11."]
-    FUNCTION_11 = 0x0b,
+    Function11 = 0x0b,
     #[doc = "Function 12."]
-    FUNCTION_12 = 0x0c,
+    Function12 = 0x0c,
     #[doc = "Function 13."]
-    FUNCTION_13 = 0x0d,
+    Function13 = 0x0d,
     #[doc = "Function 14."]
-    FUNCTION_14 = 0x0e,
+    Function14 = 0x0e,
     #[doc = "Function 15."]
-    FUNCTION_15 = 0x0f,
+    Function15 = 0x0f,
 }
 impl Fc15I2cSclFsel {
     #[inline(always)]
@@ -62,9 +62,9 @@ impl From<Fc15I2cSclFsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fc15I2cSclFulldrive {
     #[doc = "Normal Drive."]
-    NORMAL_DRIVE = 0x0,
+    NormalDrive = 0x0,
     #[doc = "Full Drive."]
-    FULL_DRIVE = 0x01,
+    FullDrive = 0x01,
 }
 impl Fc15I2cSclFulldrive {
     #[inline(always)]
@@ -93,9 +93,9 @@ impl From<Fc15I2cSclFulldrive> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fc15I2cSclPupdsel {
     #[doc = "Pull-down."]
-    PULL_DOWN = 0x0,
+    PullDown = 0x0,
     #[doc = "Pull-up."]
-    PULL_UP = 0x01,
+    PullUp = 0x01,
 }
 impl Fc15I2cSclPupdsel {
     #[inline(always)]
@@ -124,9 +124,9 @@ impl From<Fc15I2cSclPupdsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fc15I2cSclSlewrate {
     #[doc = "Slew Rate is Normal."]
-    NORMAL = 0x0,
+    Normal = 0x0,
     #[doc = "Slew Rate Slow."]
-    SLOW = 0x01,
+    Slow = 0x01,
 }
 impl Fc15I2cSclSlewrate {
     #[inline(always)]
@@ -155,37 +155,37 @@ impl From<Fc15I2cSclSlewrate> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fc15I2cSdaFsel {
     #[doc = "Function 0."]
-    FUNCTION_0 = 0x0,
+    Function0 = 0x0,
     #[doc = "Function 1."]
-    FUNCTION_1 = 0x01,
+    Function1 = 0x01,
     #[doc = "Function 2."]
-    FUNCTION_2 = 0x02,
+    Function2 = 0x02,
     #[doc = "Function 3."]
-    FUNCTION_3 = 0x03,
+    Function3 = 0x03,
     #[doc = "Function 4."]
-    FUNCTION_4 = 0x04,
+    Function4 = 0x04,
     #[doc = "Function 5."]
-    FUNCTION_5 = 0x05,
+    Function5 = 0x05,
     #[doc = "Function 6."]
-    FUNCTION_6 = 0x06,
+    Function6 = 0x06,
     #[doc = "Function 7."]
-    FUNCTION_7 = 0x07,
+    Function7 = 0x07,
     #[doc = "Function 8."]
-    FUNCTION_8 = 0x08,
+    Function8 = 0x08,
     #[doc = "Function 9."]
-    FUNCTION_9 = 0x09,
+    Function9 = 0x09,
     #[doc = "Function 10."]
-    FUNCTION_10 = 0x0a,
+    Function10 = 0x0a,
     #[doc = "Function 11."]
-    FUNCTION_11 = 0x0b,
+    Function11 = 0x0b,
     #[doc = "Function 12."]
-    FUNCTION_12 = 0x0c,
+    Function12 = 0x0c,
     #[doc = "Function 13."]
-    FUNCTION_13 = 0x0d,
+    Function13 = 0x0d,
     #[doc = "Function 14."]
-    FUNCTION_14 = 0x0e,
+    Function14 = 0x0e,
     #[doc = "Function 15."]
-    FUNCTION_15 = 0x0f,
+    Function15 = 0x0f,
 }
 impl Fc15I2cSdaFsel {
     #[inline(always)]
@@ -214,9 +214,9 @@ impl From<Fc15I2cSdaFsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fc15I2cSdaFulldrive {
     #[doc = "Normal Drive."]
-    NORMAL_DRIVE = 0x0,
+    NormalDrive = 0x0,
     #[doc = "Full Drive."]
-    FULL_DRIVE = 0x01,
+    FullDrive = 0x01,
 }
 impl Fc15I2cSdaFulldrive {
     #[inline(always)]
@@ -245,9 +245,9 @@ impl From<Fc15I2cSdaFulldrive> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fc15I2cSdaPupdsel {
     #[doc = "Pull-down."]
-    PULL_DOWN = 0x0,
+    PullDown = 0x0,
     #[doc = "Pull-up."]
-    PULL_UP = 0x01,
+    PullUp = 0x01,
 }
 impl Fc15I2cSdaPupdsel {
     #[inline(always)]
@@ -276,9 +276,9 @@ impl From<Fc15I2cSdaPupdsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fc15I2cSdaSlewrate {
     #[doc = "Slew Rate is Normal."]
-    NORMAL = 0x0,
+    Normal = 0x0,
     #[doc = "Slew Rate Slow."]
-    SLOW = 0x01,
+    Slow = 0x01,
 }
 impl Fc15I2cSdaSlewrate {
     #[inline(always)]
@@ -307,37 +307,37 @@ impl From<Fc15I2cSdaSlewrate> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fsel {
     #[doc = "Function 0."]
-    FUNCTION_0 = 0x0,
+    Function0 = 0x0,
     #[doc = "Function 1."]
-    FUNCTION_1 = 0x01,
+    Function1 = 0x01,
     #[doc = "Function 2."]
-    FUNCTION_2 = 0x02,
+    Function2 = 0x02,
     #[doc = "Function 3."]
-    FUNCTION_3 = 0x03,
+    Function3 = 0x03,
     #[doc = "Function 4."]
-    FUNCTION_4 = 0x04,
+    Function4 = 0x04,
     #[doc = "Function 5."]
-    FUNCTION_5 = 0x05,
+    Function5 = 0x05,
     #[doc = "Function 6."]
-    FUNCTION_6 = 0x06,
+    Function6 = 0x06,
     #[doc = "Function 7."]
-    FUNCTION_7 = 0x07,
+    Function7 = 0x07,
     #[doc = "Function 8."]
-    FUNCTION_8 = 0x08,
+    Function8 = 0x08,
     #[doc = "Function 9."]
-    FUNCTION_9 = 0x09,
+    Function9 = 0x09,
     #[doc = "Function 10."]
-    FUNCTION_10 = 0x0a,
+    Function10 = 0x0a,
     #[doc = "Function 11."]
-    FUNCTION_11 = 0x0b,
+    Function11 = 0x0b,
     #[doc = "Function 12."]
-    FUNCTION_12 = 0x0c,
+    Function12 = 0x0c,
     #[doc = "Function 13."]
-    FUNCTION_13 = 0x0d,
+    Function13 = 0x0d,
     #[doc = "Function 14."]
-    FUNCTION_14 = 0x0e,
+    Function14 = 0x0e,
     #[doc = "Function 15."]
-    FUNCTION_15 = 0x0f,
+    Function15 = 0x0f,
 }
 impl Fsel {
     #[inline(always)]
@@ -366,9 +366,9 @@ impl From<Fsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Fulldrive {
     #[doc = "Normal Drive."]
-    NORMAL_DRIVE = 0x0,
+    NormalDrive = 0x0,
     #[doc = "Full Drive."]
-    FULL_DRIVE = 0x01,
+    FullDrive = 0x01,
 }
 impl Fulldrive {
     #[inline(always)]
@@ -397,9 +397,9 @@ impl From<Fulldrive> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pupdsel {
     #[doc = "Pull-down."]
-    PULL_DOWN = 0x0,
+    PullDown = 0x0,
     #[doc = "Pull-up."]
-    PULL_UP = 0x01,
+    PullUp = 0x01,
 }
 impl Pupdsel {
     #[inline(always)]
@@ -428,9 +428,9 @@ impl From<Pupdsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Slewrate {
     #[doc = "Slew Rate is Normal."]
-    NORMAL = 0x0,
+    Normal = 0x0,
     #[doc = "Slew Rate Slow."]
-    SLOW = 0x01,
+    Slow = 0x01,
 }
 impl Slewrate {
     #[inline(always)]

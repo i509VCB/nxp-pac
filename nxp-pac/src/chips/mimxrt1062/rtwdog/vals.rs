@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcs {
     #[doc = "Reconfiguring WDOG."]
-    RECONFIG = 0x0,
+    Reconfig = 0x0,
     #[doc = "Reconfiguration is successful."]
-    SUCCESS = 0x01,
+    Success = 0x01,
 }
 impl Rcs {
     #[inline(always)]
@@ -34,13 +34,13 @@ impl From<Rcs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tst {
     #[doc = "Watchdog test mode disabled."]
-    DIS = 0x0,
+    Dis = 0x0,
     #[doc = "Watchdog user mode enabled. (Watchdog test mode disabled.) After testing the watchdog, software should use this setting to indicate that the watchdog is functioning normally in user mode."]
-    EN = 0x01,
+    En = 0x01,
     #[doc = "Watchdog test mode enabled, only the low byte is used. CNT\\[CNTLOW\\] is compared with TOVAL\\[TOVALLOW\\]."]
-    EN_LOW = 0x02,
+    EnLow = 0x02,
     #[doc = "Watchdog test mode enabled, only the high byte is used. CNT\\[CNTHIGH\\] is compared with TOVAL\\[TOVALHIGH\\]."]
-    EN_HIGH = 0x03,
+    EnHigh = 0x03,
 }
 impl Tst {
     #[inline(always)]
@@ -69,9 +69,9 @@ impl From<Tst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ulk {
     #[doc = "WDOG is locked."]
-    LOCK = 0x0,
+    Lock = 0x0,
     #[doc = "WDOG is unlocked."]
-    UNLOCK = 0x01,
+    Unlock = 0x01,
 }
 impl Ulk {
     #[inline(always)]

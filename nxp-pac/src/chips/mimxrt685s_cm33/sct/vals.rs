@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BidirH {
     #[doc = "The H counter counts up to its limit condition, then is cleared to zero."]
-    UP = 0x0,
+    Up = 0x0,
     #[doc = "The H counter counts up to its limit, then counts down to a limit condition or to 0."]
-    UP_DOWN = 0x01,
+    UpDown = 0x01,
 }
 impl BidirH {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<BidirH> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BidirL {
     #[doc = "Up. The counter counts up to a limit condition, then is cleared to zero."]
-    UP = 0x0,
+    Up = 0x0,
     #[doc = "Up-down. The counter counts up to a limit, then counts down to a limit condition or to 0."]
-    UP_DOWN = 0x01,
+    UpDown = 0x01,
 }
 impl BidirL {
     #[inline(always)]
@@ -65,37 +65,37 @@ impl From<BidirL> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cksel {
     #[doc = "Rising edges on input 0."]
-    INPUT_0_RISING_EDGES = 0x0,
+    Input0RisingEdges = 0x0,
     #[doc = "Falling edges on input 0."]
-    INPUT_0_FALLING_EDGE = 0x01,
+    Input0FallingEdge = 0x01,
     #[doc = "Rising edges on input 1."]
-    INPUT_1_RISING_EDGES = 0x02,
+    Input1RisingEdges = 0x02,
     #[doc = "Falling edges on input 1."]
-    INPUT_1_FALLING_EDGE = 0x03,
+    Input1FallingEdge = 0x03,
     #[doc = "Rising edges on input 2."]
-    INPUT_2_RISING_EDGES = 0x04,
+    Input2RisingEdges = 0x04,
     #[doc = "Falling edges on input 2."]
-    INPUT_2_FALLING_EDGE = 0x05,
+    Input2FallingEdge = 0x05,
     #[doc = "Rising edges on input 3."]
-    INPUT_3_RISING_EDGES = 0x06,
+    Input3RisingEdges = 0x06,
     #[doc = "Falling edges on input 3."]
-    INPUT_3_FALLING_EDGE = 0x07,
+    Input3FallingEdge = 0x07,
     #[doc = "Rising edges on input 4."]
-    INPUT_4_RISING_EDGES = 0x08,
+    Input4RisingEdges = 0x08,
     #[doc = "Falling edges on input 4."]
-    INPUT_4_FALLING_EDGE = 0x09,
+    Input4FallingEdge = 0x09,
     #[doc = "Rising edges on input 5."]
-    INPUT_5_RISING_EDGES = 0x0a,
+    Input5RisingEdges = 0x0a,
     #[doc = "Falling edges on input 5."]
-    INPUT_5_FALLING_EDGE = 0x0b,
+    Input5FallingEdge = 0x0b,
     #[doc = "Rising edges on input 6."]
-    INPUT_6_RISING_EDGES = 0x0c,
+    Input6RisingEdges = 0x0c,
     #[doc = "Falling edges on input 6."]
-    INPUT_6_FALLING_EDGE = 0x0d,
+    Input6FallingEdge = 0x0d,
     #[doc = "Rising edges on input 7."]
-    INPUT_7_RISING_EDGES = 0x0e,
+    Input7RisingEdges = 0x0e,
     #[doc = "Falling edges on input 7."]
-    INPUT_7_FALLING_EDGE = 0x0f,
+    Input7FallingEdge = 0x0f,
 }
 impl Cksel {
     #[inline(always)]
@@ -124,13 +124,13 @@ impl From<Cksel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Clkmode {
     #[doc = "System Clock Mode. The system clock clocks the entire SCT module including the counter(s) and counter prescalers."]
-    SYSTEM_CLOCK_MODE = 0x0,
+    SystemClockMode = 0x0,
     #[doc = "Sampled System Clock Mode. The system clock clocks the SCT module, but the counter and prescalers are only enabled to count when the designated edge is detected on the input selected by the CKSEL field. The minimum pulse width on the selected clock-gate input is 1 bus clock period. This mode is the high-performance, sampled-clock mode."]
-    SAMPLED_SYSTEM_CLOCK_MODE = 0x01,
+    SampledSystemClockMode = 0x01,
     #[doc = "SCT Input Clock Mode. The input/edge selected by the CKSEL field clocks the SCT module, including the counters and prescalers, after first being synchronized to the system clock. The minimum pulse width on the clock input is 1 bus clock period. This mode is the low-power, sampled-clock mode."]
-    SCT_INPUT_CLOCK_MODE = 0x02,
+    SctInputClockMode = 0x02,
     #[doc = "Asynchronous Mode. The entire SCT module is clocked directly by the input/edge selected by the CKSEL field. In this mode, the SCT outputs are switched synchronously to the SCT input clock - not the system clock. The input clock rate must be at least half the system clock rate and can be the same or faster than the system clock."]
-    ASYNCHRONOUS_MODE = 0x03,
+    AsynchronousMode = 0x03,
 }
 impl Clkmode {
     #[inline(always)]
@@ -159,13 +159,13 @@ impl From<Clkmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Combmode {
     #[doc = "OR. The event occurs when either the specified match or I/O condition occurs."]
-    OR = 0x0,
+    Or = 0x0,
     #[doc = "MATCH. Uses the specified match only."]
-    MATCH = 0x01,
+    Match = 0x01,
     #[doc = "IO. Uses the specified I/O condition only."]
-    IO = 0x02,
+    Io = 0x02,
     #[doc = "AND. The event occurs when the specified match and I/O condition occur simultaneously."]
-    AND = 0x03,
+    And = 0x03,
 }
 impl Combmode {
     #[inline(always)]
@@ -194,11 +194,11 @@ impl From<Combmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Direction {
     #[doc = "Direction independent. This event is triggered regardless of the count direction."]
-    DIRECTION_INDEPENDENT = 0x0,
+    DirectionIndependent = 0x0,
     #[doc = "Counting up. This event is triggered only during up-counting when BIDIR = 1."]
-    COUNTING_UP = 0x01,
+    CountingUp = 0x01,
     #[doc = "Counting down. This event is triggered only during down-counting when BIDIR = 1."]
-    COUNTING_DOWN = 0x02,
+    CountingDown = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Direction {
@@ -228,9 +228,9 @@ impl From<Direction> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hevent {
     #[doc = "Selects the L state and the L match register selected by MATCHSEL."]
-    L_COUNTER = 0x0,
+    LCounter = 0x0,
     #[doc = "Selects the H state and the H match register selected by MATCHSEL."]
-    H_COUNTER = 0x01,
+    HCounter = 0x01,
 }
 impl Hevent {
     #[inline(always)]
@@ -259,13 +259,13 @@ impl From<Hevent> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Iocond {
     #[doc = "LOW."]
-    LOW = 0x0,
+    Low = 0x0,
     #[doc = "Rise."]
-    RISE = 0x01,
+    Rise = 0x01,
     #[doc = "Fall."]
-    FALL = 0x02,
+    Fall = 0x02,
     #[doc = "HIGH."]
-    HIGH = 0x03,
+    High = 0x03,
 }
 impl Iocond {
     #[inline(always)]
@@ -294,13 +294,13 @@ impl From<Iocond> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O0res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear based on the SETCLR0 field in the OUTPUTDIRCTRL register)."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set based on the SETCLR0 field)."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O0res {
     #[inline(always)]
@@ -329,13 +329,13 @@ impl From<O0res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O10res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear based on the SETCLR10 field in the OUTPUTDIRCTRL register)."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set based on the SETCLR10 field)."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O10res {
     #[inline(always)]
@@ -364,13 +364,13 @@ impl From<O10res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O11res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear based on the SETCLR11 field in the OUTPUTDIRCTRL register)."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set based on the SETCLR11 field)."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O11res {
     #[inline(always)]
@@ -399,13 +399,13 @@ impl From<O11res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O12res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear based on the SETCLR12 field in the OUTPUTDIRCTRL register)."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set based on the SETCLR12 field)."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O12res {
     #[inline(always)]
@@ -434,13 +434,13 @@ impl From<O12res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O13res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear based on the SETCLR13 field in the OUTPUTDIRCTRL register)."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set based on the SETCLR13 field)."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O13res {
     #[inline(always)]
@@ -469,13 +469,13 @@ impl From<O13res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O14res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear based on the SETCLR14 field in the OUTPUTDIRCTRL register)."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set based on the SETCLR14 field)."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O14res {
     #[inline(always)]
@@ -504,13 +504,13 @@ impl From<O14res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O15res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear based on the SETCLR15 field in the OUTPUTDIRCTRL register)."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set based on the SETCLR15 field)."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O15res {
     #[inline(always)]
@@ -539,13 +539,13 @@ impl From<O15res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O1res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear based on the SETCLR1 field in the OUTPUTDIRCTRL register)."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set based on the SETCLR1 field)."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O1res {
     #[inline(always)]
@@ -574,13 +574,13 @@ impl From<O1res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O2res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear based on the SETCLR2 field in the OUTPUTDIRCTRL register)."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output n (or set based on the SETCLR2 field)."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O2res {
     #[inline(always)]
@@ -609,13 +609,13 @@ impl From<O2res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O3res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear based on the SETCLR3 field in the OUTPUTDIRCTRL register)."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set based on the SETCLR3 field)."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O3res {
     #[inline(always)]
@@ -644,13 +644,13 @@ impl From<O3res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O4res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear based on the SETCLR4 field in the OUTPUTDIRCTRL register)."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set based on the SETCLR4 field)."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O4res {
     #[inline(always)]
@@ -679,13 +679,13 @@ impl From<O4res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O5res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear based on the SETCLR5 field in the OUTPUTDIRCTRL register)."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set based on the SETCLR5 field)."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O5res {
     #[inline(always)]
@@ -714,13 +714,13 @@ impl From<O5res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O6res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear based on the SETCLR6 field in the OUTPUTDIRCTRL register)."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set based on the SETCLR6 field)."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O6res {
     #[inline(always)]
@@ -749,13 +749,13 @@ impl From<O6res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O7res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear based on the SETCLR7 field in the OUTPUTDIRCTRL register)."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output n (or set based on the SETCLR7 field)."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O7res {
     #[inline(always)]
@@ -784,13 +784,13 @@ impl From<O7res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O8res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear based on the SETCLR8 field in the OUTPUTDIRCTRL register)."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set based on the SETCLR8 field)."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O8res {
     #[inline(always)]
@@ -819,13 +819,13 @@ impl From<O8res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O9res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear based on the SETCLR9 field in the OUTPUTDIRCTRL register)."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set based on the SETCLR9 field)."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O9res {
     #[inline(always)]
@@ -854,9 +854,9 @@ impl From<O9res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Outsel {
     #[doc = "Selects the inputs selected by IOSEL."]
-    INPUT = 0x0,
+    Input = 0x0,
     #[doc = "Selects the outputs selected by IOSEL."]
-    OUTPUT = 0x01,
+    Output = 0x01,
 }
 impl Outsel {
     #[inline(always)]
@@ -885,11 +885,11 @@ impl From<Outsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr0 {
     #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr0 {
@@ -919,11 +919,11 @@ impl From<Setclr0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr1 {
     #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr1 {
@@ -953,11 +953,11 @@ impl From<Setclr1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr10 {
     #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr10 {
@@ -987,11 +987,11 @@ impl From<Setclr10> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr11 {
     #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr11 {
@@ -1021,11 +1021,11 @@ impl From<Setclr11> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr12 {
     #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr12 {
@@ -1055,11 +1055,11 @@ impl From<Setclr12> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr13 {
     #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr13 {
@@ -1089,11 +1089,11 @@ impl From<Setclr13> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr14 {
     #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr14 {
@@ -1123,11 +1123,11 @@ impl From<Setclr14> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr15 {
     #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr15 {
@@ -1157,11 +1157,11 @@ impl From<Setclr15> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr2 {
     #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr2 {
@@ -1191,11 +1191,11 @@ impl From<Setclr2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr3 {
     #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr3 {
@@ -1225,11 +1225,11 @@ impl From<Setclr3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr4 {
     #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr4 {
@@ -1259,11 +1259,11 @@ impl From<Setclr4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr5 {
     #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr5 {
@@ -1293,11 +1293,11 @@ impl From<Setclr5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr6 {
     #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr6 {
@@ -1327,11 +1327,11 @@ impl From<Setclr6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr7 {
     #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr7 {
@@ -1361,11 +1361,11 @@ impl From<Setclr7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr8 {
     #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr8 {
@@ -1395,11 +1395,11 @@ impl From<Setclr8> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr9 {
     #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr9 {
@@ -1429,9 +1429,9 @@ impl From<Setclr9> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Stateld {
     #[doc = "STATEV value is added into STATE (the carry-out is ignored)."]
-    ADD = 0x0,
+    Add = 0x0,
     #[doc = "STATEV value is loaded into STATE."]
-    LOAD = 0x01,
+    Load = 0x01,
 }
 impl Stateld {
     #[inline(always)]
@@ -1460,9 +1460,9 @@ impl From<Stateld> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Unify {
     #[doc = "The SCT operates as two 16-bit counters named COUNTER_L and COUNTER_H."]
-    DUAL_COUNTER = 0x0,
+    DualCounter = 0x0,
     #[doc = "The SCT operates as a unified 32-bit counter."]
-    UNIFIED_COUNTER = 0x01,
+    UnifiedCounter = 0x01,
 }
 impl Unify {
     #[inline(always)]

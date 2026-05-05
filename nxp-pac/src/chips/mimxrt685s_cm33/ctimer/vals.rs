@@ -3,13 +3,13 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cinsel {
     #[doc = "Channel 0. CAPn.0 for CTIMERn."]
-    CHANNEL_0 = 0x0,
+    Channel0 = 0x0,
     #[doc = "Channel 1. CAPn.1 for CTIMERn."]
-    CHANNEL_1 = 0x01,
+    Channel1 = 0x01,
     #[doc = "Channel 2. CAPn.2 for CTIMERn."]
-    CHANNEL_2 = 0x02,
+    Channel2 = 0x02,
     #[doc = "Channel 3. CAPn.3 for CTIMERn."]
-    CHANNEL_3 = 0x03,
+    Channel3 = 0x03,
 }
 impl Cinsel {
     #[inline(always)]
@@ -38,13 +38,13 @@ impl From<Cinsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ctmode {
     #[doc = "Timer Mode. Incremented every rising APB bus clock edge."]
-    TIMER = 0x0,
+    Timer = 0x0,
     #[doc = "Counter Mode rising edge. TC is incremented on rising edges on the CAP input selected by bits 3:2."]
-    COUNTER_RISING_EDGE = 0x01,
+    CounterRisingEdge = 0x01,
     #[doc = "Counter Mode falling edge. TC is incremented on falling edges on the CAP input selected by bits 3:2."]
-    COUNTER_FALLING_EDGE = 0x02,
+    CounterFallingEdge = 0x02,
     #[doc = "Counter Mode dual edge. TC is incremented on both edges on the CAP input selected by bits 3:2."]
-    COUNTER_DUAL_EDGE = 0x03,
+    CounterDualEdge = 0x03,
 }
 impl Ctmode {
     #[inline(always)]
@@ -73,13 +73,13 @@ impl From<Ctmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Emc0 {
     #[doc = "Do Nothing."]
-    DO_NOTHING = 0x0,
+    DoNothing = 0x0,
     #[doc = "Clear. Clear the corresponding External Match bit/output to 0 (MAT0 pin is LOW if pinned out)."]
-    CLEAR = 0x01,
+    Clear = 0x01,
     #[doc = "Set. Set the corresponding External Match bit/output to 1 (MAT0 pin is HIGH if pinned out)."]
-    SET = 0x02,
+    Set = 0x02,
     #[doc = "Toggle. Toggle the corresponding External Match bit/output."]
-    TOGGLE = 0x03,
+    Toggle = 0x03,
 }
 impl Emc0 {
     #[inline(always)]
@@ -108,13 +108,13 @@ impl From<Emc0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Emc1 {
     #[doc = "Do Nothing."]
-    DO_NOTHING = 0x0,
+    DoNothing = 0x0,
     #[doc = "Clear. Clear the corresponding External Match bit/output to 0 (MAT1 pin is LOW if pinned out)."]
-    CLEAR = 0x01,
+    Clear = 0x01,
     #[doc = "Set. Set the corresponding External Match bit/output to 1 (MAT1 pin is HIGH if pinned out)."]
-    SET = 0x02,
+    Set = 0x02,
     #[doc = "Toggle. Toggle the corresponding External Match bit/output."]
-    TOGGLE = 0x03,
+    Toggle = 0x03,
 }
 impl Emc1 {
     #[inline(always)]
@@ -143,13 +143,13 @@ impl From<Emc1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Emc2 {
     #[doc = "Do Nothing."]
-    DO_NOTHING = 0x0,
+    DoNothing = 0x0,
     #[doc = "Clear. Clear the corresponding External Match bit/output to 0 (MAT2 pin is LOW if pinned out)."]
-    CLEAR = 0x01,
+    Clear = 0x01,
     #[doc = "Set. Set the corresponding External Match bit/output to 1 (MAT2 pin is HIGH if pinned out)."]
-    SET = 0x02,
+    Set = 0x02,
     #[doc = "Toggle. Toggle the corresponding External Match bit/output."]
-    TOGGLE = 0x03,
+    Toggle = 0x03,
 }
 impl Emc2 {
     #[inline(always)]
@@ -178,13 +178,13 @@ impl From<Emc2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Emc3 {
     #[doc = "Do Nothing."]
-    DO_NOTHING = 0x0,
+    DoNothing = 0x0,
     #[doc = "Clear. Clear the corresponding External Match bit/output to 0 (MAT3 pin is LOW if pinned out)."]
-    CLEAR = 0x01,
+    Clear = 0x01,
     #[doc = "Set. Set the corresponding External Match bit/output to 1 (MAT3 pin is HIGH if pinned out)."]
-    SET = 0x02,
+    Set = 0x02,
     #[doc = "Toggle. Toggle the corresponding External Match bit/output."]
-    TOGGLE = 0x03,
+    Toggle = 0x03,
 }
 impl Emc3 {
     #[inline(always)]
@@ -213,9 +213,9 @@ impl From<Emc3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pwmen0 {
     #[doc = "Match. CTIMERn_MAT0 is controlled by EM0."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "PWM. PWM mode is enabled for CTIMERn_MAT0."]
-    PWM = 0x01,
+    Pwm = 0x01,
 }
 impl Pwmen0 {
     #[inline(always)]
@@ -244,9 +244,9 @@ impl From<Pwmen0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pwmen1 {
     #[doc = "Match. CTIMERn_MAT01 is controlled by EM1."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "PWM. PWM mode is enabled for CTIMERn_MAT1."]
-    PWM = 0x01,
+    Pwm = 0x01,
 }
 impl Pwmen1 {
     #[inline(always)]
@@ -275,9 +275,9 @@ impl From<Pwmen1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pwmen2 {
     #[doc = "Match. CTIMERn_MAT2 is controlled by EM2."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "PWM. PWM mode is enabled for CTIMERn_MAT2."]
-    PWM = 0x01,
+    Pwm = 0x01,
 }
 impl Pwmen2 {
     #[inline(always)]
@@ -306,9 +306,9 @@ impl From<Pwmen2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pwmen3 {
     #[doc = "Match. CTIMERn_MAT3 is controlled by EM3."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "PWM. PWM mode is enabled for CT132Bn_MAT3."]
-    PWM = 0x01,
+    Pwm = 0x01,
 }
 impl Pwmen3 {
     #[inline(always)]
@@ -337,17 +337,17 @@ impl From<Pwmen3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Selcc {
     #[doc = "Channel 0 Rising Edge. Rising edge of the signal on capture channel 0 clears the timer (if bit 4 is set)."]
-    CHANNEL_0_RISING = 0x0,
+    Channel0Rising = 0x0,
     #[doc = "Channel 0 Falling Edge. Falling edge of the signal on capture channel 0 clears the timer (if bit 4 is set)."]
-    CHANNEL_0_FALLING = 0x01,
+    Channel0Falling = 0x01,
     #[doc = "Channel 1 Rising Edge. Rising edge of the signal on capture channel 1 clears the timer (if bit 4 is set)."]
-    CHANNEL_1_RISING = 0x02,
+    Channel1Rising = 0x02,
     #[doc = "Channel 1 Falling Edge. Falling edge of the signal on capture channel 1 clears the timer (if bit 4 is set)."]
-    CHANNEL_1_FALLING = 0x03,
+    Channel1Falling = 0x03,
     #[doc = "Channel 2 Rising Edge. Rising edge of the signal on capture channel 2 clears the timer (if bit 4 is set)."]
-    CHANNEL_2_RISING = 0x04,
+    Channel2Rising = 0x04,
     #[doc = "Channel 2 Falling Edge. Falling edge of the signal on capture channel 2 clears the timer (if bit 4 is set)."]
-    CHANNEL_2_FALLING = 0x05,
+    Channel2Falling = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
 }

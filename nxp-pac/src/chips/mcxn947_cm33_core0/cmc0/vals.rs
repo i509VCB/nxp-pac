@@ -5,11 +5,11 @@ pub enum BlrLock {
     _RESERVED_0 = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "BootROM Status and Lock Registers can be written."]
-    LOCK010 = 0x02,
+    Lock010 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
     #[doc = "BootROM Status and Lock Registers cannot be written."]
-    LOCK101 = 0x05,
+    Lock101 = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
 }
@@ -40,9 +40,9 @@ impl From<BlrLock> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CkctrlCkmode {
     #[doc = "No clock gating."]
-    CKMODE0000 = 0x0,
+    Ckmode0000 = 0x0,
     #[doc = "Core clock is gated."]
-    CKMODE0001 = 0x01,
+    Ckmode0001 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -57,7 +57,7 @@ pub enum CkctrlCkmode {
     _RESERVED_d = 0x0d,
     _RESERVED_e = 0x0e,
     #[doc = "Core, platform, and peripheral clocks are gated, and core enters Low-Power mode."]
-    CKMODE1111 = 0x0f,
+    Ckmode1111 = 0x0f,
 }
 impl CkctrlCkmode {
     #[inline(always)]
@@ -86,9 +86,9 @@ impl From<CkctrlCkmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CkstatCkmode {
     #[doc = "Core clock not gated."]
-    CKMODE0000 = 0x0,
+    Ckmode0000 = 0x0,
     #[doc = "Core clock was gated."]
-    CKMODE0001 = 0x01,
+    Ckmode0001 = 0x01,
     _RESERVED_2 = 0x02,
     _RESERVED_3 = 0x03,
     _RESERVED_4 = 0x04,
@@ -103,7 +103,7 @@ pub enum CkstatCkmode {
     _RESERVED_d = 0x0d,
     _RESERVED_e = 0x0e,
     #[doc = "Core, platform, and peripheral clocks were gated, and power domain entered Low-Power mode."]
-    CKMODE1111 = 0x0f,
+    Ckmode1111 = 0x0f,
 }
 impl CkstatCkmode {
     #[inline(always)]
@@ -132,9 +132,9 @@ impl From<CkstatCkmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis0 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis0 {
     #[inline(always)]
@@ -163,9 +163,9 @@ impl From<Dis0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis1 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis1 {
     #[inline(always)]
@@ -194,9 +194,9 @@ impl From<Dis1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis10 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis10 {
     #[inline(always)]
@@ -225,9 +225,9 @@ impl From<Dis10> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis11 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis11 {
     #[inline(always)]
@@ -256,9 +256,9 @@ impl From<Dis11> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis12 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis12 {
     #[inline(always)]
@@ -287,9 +287,9 @@ impl From<Dis12> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis13 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis13 {
     #[inline(always)]
@@ -318,9 +318,9 @@ impl From<Dis13> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis14 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis14 {
     #[inline(always)]
@@ -349,9 +349,9 @@ impl From<Dis14> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis15 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis15 {
     #[inline(always)]
@@ -380,9 +380,9 @@ impl From<Dis15> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis16 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis16 {
     #[inline(always)]
@@ -411,9 +411,9 @@ impl From<Dis16> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis17 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis17 {
     #[inline(always)]
@@ -442,9 +442,9 @@ impl From<Dis17> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis18 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis18 {
     #[inline(always)]
@@ -473,9 +473,9 @@ impl From<Dis18> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis19 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis19 {
     #[inline(always)]
@@ -504,9 +504,9 @@ impl From<Dis19> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis2 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis2 {
     #[inline(always)]
@@ -535,9 +535,9 @@ impl From<Dis2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis20 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis20 {
     #[inline(always)]
@@ -566,9 +566,9 @@ impl From<Dis20> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis21 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis21 {
     #[inline(always)]
@@ -597,9 +597,9 @@ impl From<Dis21> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis22 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis22 {
     #[inline(always)]
@@ -628,9 +628,9 @@ impl From<Dis22> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis23 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis23 {
     #[inline(always)]
@@ -659,9 +659,9 @@ impl From<Dis23> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis24 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis24 {
     #[inline(always)]
@@ -690,9 +690,9 @@ impl From<Dis24> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis25 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis25 {
     #[inline(always)]
@@ -721,9 +721,9 @@ impl From<Dis25> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis26 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis26 {
     #[inline(always)]
@@ -752,9 +752,9 @@ impl From<Dis26> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis27 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis27 {
     #[inline(always)]
@@ -783,9 +783,9 @@ impl From<Dis27> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis28 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis28 {
     #[inline(always)]
@@ -814,9 +814,9 @@ impl From<Dis28> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis29 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis29 {
     #[inline(always)]
@@ -845,9 +845,9 @@ impl From<Dis29> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis3 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis3 {
     #[inline(always)]
@@ -876,9 +876,9 @@ impl From<Dis3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis30 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis30 {
     #[inline(always)]
@@ -907,9 +907,9 @@ impl From<Dis30> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis31 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis31 {
     #[inline(always)]
@@ -938,9 +938,9 @@ impl From<Dis31> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis4 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis4 {
     #[inline(always)]
@@ -969,9 +969,9 @@ impl From<Dis4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis5 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis5 {
     #[inline(always)]
@@ -1000,9 +1000,9 @@ impl From<Dis5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis6 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis6 {
     #[inline(always)]
@@ -1031,9 +1031,9 @@ impl From<Dis6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis7 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis7 {
     #[inline(always)]
@@ -1062,9 +1062,9 @@ impl From<Dis7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis8 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis8 {
     #[inline(always)]
@@ -1093,9 +1093,9 @@ impl From<Dis8> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Dis9 {
     #[doc = "Enables."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disables."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Dis9 {
     #[inline(always)]
@@ -1124,12 +1124,12 @@ impl From<Dis9> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PmctrlmainLpmode {
     #[doc = "Active/Sleep."]
-    LPMODE0000 = 0x0,
+    Lpmode0000 = 0x0,
     #[doc = "Deep Sleep."]
-    LPMODE0001 = 0x01,
+    Lpmode0001 = 0x01,
     _RESERVED_2 = 0x02,
     #[doc = "Power Down."]
-    LPMODE0011 = 0x03,
+    Lpmode0011 = 0x03,
     _RESERVED_4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
@@ -1142,7 +1142,7 @@ pub enum PmctrlmainLpmode {
     _RESERVED_d = 0x0d,
     _RESERVED_e = 0x0e,
     #[doc = "Deep-Power Down."]
-    LPMODE1111 = 0x0f,
+    Lpmode1111 = 0x0f,
 }
 impl PmctrlmainLpmode {
     #[inline(always)]
@@ -1171,12 +1171,12 @@ impl From<PmctrlmainLpmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PmctrlwakeLpmode {
     #[doc = "Active/Sleep."]
-    LPMODE0000 = 0x0,
+    Lpmode0000 = 0x0,
     #[doc = "Deep Sleep."]
-    LPMODE0001 = 0x01,
+    Lpmode0001 = 0x01,
     _RESERVED_2 = 0x02,
     #[doc = "Power Down."]
-    LPMODE0011 = 0x03,
+    Lpmode0011 = 0x03,
     _RESERVED_4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
@@ -1189,7 +1189,7 @@ pub enum PmctrlwakeLpmode {
     _RESERVED_d = 0x0d,
     _RESERVED_e = 0x0e,
     #[doc = "Deep-Power Down."]
-    LPMODE1111 = 0x0f,
+    Lpmode1111 = 0x0f,
 }
 impl PmctrlwakeLpmode {
     #[inline(always)]
@@ -1218,37 +1218,37 @@ impl From<PmctrlwakeLpmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum PmprotLpmode {
     #[doc = "Not allowed."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     #[doc = "Allowed."]
-    EN = 0x01,
+    En = 0x01,
     #[doc = "Allowed."]
-    EN1 = 0x02,
+    En1 = 0x02,
     #[doc = "Allowed."]
-    EN2 = 0x03,
+    En2 = 0x03,
     #[doc = "Allowed."]
-    EN3 = 0x04,
+    En3 = 0x04,
     #[doc = "Allowed."]
-    EN4 = 0x05,
+    En4 = 0x05,
     #[doc = "Allowed."]
-    EN5 = 0x06,
+    En5 = 0x06,
     #[doc = "Allowed."]
-    EN6 = 0x07,
+    En6 = 0x07,
     #[doc = "Allowed."]
-    EN7 = 0x08,
+    En7 = 0x08,
     #[doc = "Allowed."]
-    EN8 = 0x09,
+    En8 = 0x09,
     #[doc = "Allowed."]
-    EN9 = 0x0a,
+    En9 = 0x0a,
     #[doc = "Allowed."]
-    EN10 = 0x0b,
+    En10 = 0x0b,
     #[doc = "Allowed."]
-    EN11 = 0x0c,
+    En11 = 0x0c,
     #[doc = "Allowed."]
-    EN12 = 0x0d,
+    En12 = 0x0d,
     #[doc = "Allowed."]
-    EN13 = 0x0e,
+    En13 = 0x0e,
     #[doc = "Allowed."]
-    EN14 = 0x0f,
+    En14 = 0x0f,
 }
 impl PmprotLpmode {
     #[inline(always)]
@@ -1277,9 +1277,9 @@ impl From<PmprotLpmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret0 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret0 {
     #[inline(always)]
@@ -1308,9 +1308,9 @@ impl From<Ret0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret1 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret1 {
     #[inline(always)]
@@ -1339,9 +1339,9 @@ impl From<Ret1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret10 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret10 {
     #[inline(always)]
@@ -1370,9 +1370,9 @@ impl From<Ret10> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret11 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret11 {
     #[inline(always)]
@@ -1401,9 +1401,9 @@ impl From<Ret11> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret12 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret12 {
     #[inline(always)]
@@ -1432,9 +1432,9 @@ impl From<Ret12> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret13 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret13 {
     #[inline(always)]
@@ -1463,9 +1463,9 @@ impl From<Ret13> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret14 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret14 {
     #[inline(always)]
@@ -1494,9 +1494,9 @@ impl From<Ret14> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret15 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret15 {
     #[inline(always)]
@@ -1525,9 +1525,9 @@ impl From<Ret15> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret16 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret16 {
     #[inline(always)]
@@ -1556,9 +1556,9 @@ impl From<Ret16> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret17 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret17 {
     #[inline(always)]
@@ -1587,9 +1587,9 @@ impl From<Ret17> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret18 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret18 {
     #[inline(always)]
@@ -1618,9 +1618,9 @@ impl From<Ret18> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret19 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret19 {
     #[inline(always)]
@@ -1649,9 +1649,9 @@ impl From<Ret19> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret2 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret2 {
     #[inline(always)]
@@ -1680,9 +1680,9 @@ impl From<Ret2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret20 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret20 {
     #[inline(always)]
@@ -1711,9 +1711,9 @@ impl From<Ret20> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret21 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret21 {
     #[inline(always)]
@@ -1742,9 +1742,9 @@ impl From<Ret21> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret22 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret22 {
     #[inline(always)]
@@ -1773,9 +1773,9 @@ impl From<Ret22> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret23 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret23 {
     #[inline(always)]
@@ -1804,9 +1804,9 @@ impl From<Ret23> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret24 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret24 {
     #[inline(always)]
@@ -1835,9 +1835,9 @@ impl From<Ret24> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret25 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret25 {
     #[inline(always)]
@@ -1866,9 +1866,9 @@ impl From<Ret25> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret26 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret26 {
     #[inline(always)]
@@ -1897,9 +1897,9 @@ impl From<Ret26> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret27 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret27 {
     #[inline(always)]
@@ -1928,9 +1928,9 @@ impl From<Ret27> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret28 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret28 {
     #[inline(always)]
@@ -1959,9 +1959,9 @@ impl From<Ret28> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret29 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret29 {
     #[inline(always)]
@@ -1990,9 +1990,9 @@ impl From<Ret29> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret3 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret3 {
     #[inline(always)]
@@ -2021,9 +2021,9 @@ impl From<Ret3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret30 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret30 {
     #[inline(always)]
@@ -2052,9 +2052,9 @@ impl From<Ret30> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret31 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret31 {
     #[inline(always)]
@@ -2083,9 +2083,9 @@ impl From<Ret31> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret4 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret4 {
     #[inline(always)]
@@ -2114,9 +2114,9 @@ impl From<Ret4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret5 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret5 {
     #[inline(always)]
@@ -2145,9 +2145,9 @@ impl From<Ret5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret6 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret6 {
     #[inline(always)]
@@ -2176,9 +2176,9 @@ impl From<Ret6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret7 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret7 {
     #[inline(always)]
@@ -2207,9 +2207,9 @@ impl From<Ret7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret8 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret8 {
     #[inline(always)]
@@ -2238,9 +2238,9 @@ impl From<Ret8> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ret9 {
     #[doc = "Retains."]
-    POWEREDOFF = 0x0,
+    Poweredoff = 0x0,
     #[doc = "Powers off."]
-    RETAINED = 0x01,
+    Retained = 0x01,
 }
 impl Ret9 {
     #[inline(always)]

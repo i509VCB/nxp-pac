@@ -3,11 +3,11 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Mode {
     #[doc = "Repeat Interrupt mode."]
-    REPEAT_INTERRUPT_MODE = 0x0,
+    RepeatInterruptMode = 0x0,
     #[doc = "One-Shot Interrupt mode."]
-    ONE_SHOT_INTERRUPT_MODE = 0x01,
+    OneShotInterruptMode = 0x01,
     #[doc = "One-Shot Stall mode."]
-    ONE_SHOT_STALL_MODE = 0x02,
+    OneShotStallMode = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Mode {
@@ -37,9 +37,9 @@ impl From<Mode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Multitask {
     #[doc = "Hardware status mode."]
-    HARDWARE_STATUS_MODE = 0x0,
+    HardwareStatusMode = 0x0,
     #[doc = "Multitask mode."]
-    MULTI_TASK_MODE = 0x01,
+    MultiTaskMode = 0x01,
 }
 impl Multitask {
     #[inline(always)]
@@ -68,9 +68,9 @@ impl From<Multitask> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Run {
     #[doc = "Idle state."]
-    IDLE_STATE = 0x0,
+    IdleState = 0x0,
     #[doc = "Running."]
-    RUNNING = 0x01,
+    Running = 0x01,
 }
 impl Run {
     #[inline(always)]

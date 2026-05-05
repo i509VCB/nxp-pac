@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DmaModeSel {
     #[doc = "Trig DMA_REQ with latched signal, REQ will be cleared when ACK and source request cleared."]
-    DMA_MODE_SEL_0 = 0x0,
+    DmaModeSel0 = 0x0,
     #[doc = "Trig DMA_REQ with pulsed signal, REQ will be cleared by ACK only."]
-    DMA_MODE_SEL_1 = 0x01,
+    DmaModeSel1 = 0x01,
 }
 impl DmaModeSel {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<DmaModeSel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Softrst {
     #[doc = "ADC_ETC works normally."]
-    SOFTRST_0 = 0x0,
+    Softrst0 = 0x0,
     #[doc = "All registers inside ADC_ETC will be reset to the default value."]
-    SOFTRST_1 = 0x01,
+    Softrst1 = 0x01,
 }
 impl Softrst {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Softrst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain10B2b0 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG0_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B0_0 = 0x0,
+    B2b00 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B0_1 = 0x01,
+    B2b01 = 0x01,
 }
 impl Trig0Chain10B2b0 {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Trig0Chain10B2b0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain10B2b1 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG1_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B1_0 = 0x0,
+    B2b10 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B1_1 = 0x01,
+    B2b11 = 0x01,
 }
 impl Trig0Chain10B2b1 {
     #[inline(always)]
@@ -127,37 +127,37 @@ impl From<Trig0Chain10B2b1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain10Csel0 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL0_0 = 0x0,
+    Csel00 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL0_1 = 0x01,
+    Csel01 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL0_2 = 0x02,
+    Csel02 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL0_3 = 0x03,
+    Csel03 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL0_4 = 0x04,
+    Csel04 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL0_5 = 0x05,
+    Csel05 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL0_6 = 0x06,
+    Csel06 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL0_7 = 0x07,
+    Csel07 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL0_8 = 0x08,
+    Csel08 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL0_9 = 0x09,
+    Csel09 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL0_10 = 0x0a,
+    Csel010 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL0_11 = 0x0b,
+    Csel011 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL0_12 = 0x0c,
+    Csel012 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL0_13 = 0x0d,
+    Csel013 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL0_14 = 0x0e,
+    Csel014 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL0_15 = 0x0f,
+    Csel015 = 0x0f,
 }
 impl Trig0Chain10Csel0 {
     #[inline(always)]
@@ -186,37 +186,37 @@ impl From<Trig0Chain10Csel0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain10Csel1 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL1_0 = 0x0,
+    Csel10 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL1_1 = 0x01,
+    Csel11 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL1_2 = 0x02,
+    Csel12 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL1_3 = 0x03,
+    Csel13 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL1_4 = 0x04,
+    Csel14 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL1_5 = 0x05,
+    Csel15 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL1_6 = 0x06,
+    Csel16 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL1_7 = 0x07,
+    Csel17 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL1_8 = 0x08,
+    Csel18 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL1_9 = 0x09,
+    Csel19 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL1_10 = 0x0a,
+    Csel110 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL1_11 = 0x0b,
+    Csel111 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL1_12 = 0x0c,
+    Csel112 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL1_13 = 0x0d,
+    Csel113 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL1_14 = 0x0e,
+    Csel114 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL1_15 = 0x0f,
+    Csel115 = 0x0f,
 }
 impl Trig0Chain10Csel1 {
     #[inline(always)]
@@ -245,23 +245,23 @@ impl From<Trig0Chain10Csel1> for u8 {
 pub struct Trig0Chain10Hwts0(u8);
 impl Trig0Chain10Hwts0 {
     #[doc = "no trigger selected."]
-    pub const HWTS0_0: Self = Self(0x0);
+    pub const Hwts00: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS0_1: Self = Self(0x01);
+    pub const Hwts01: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS0_2: Self = Self(0x02);
+    pub const Hwts02: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS0_4: Self = Self(0x04);
+    pub const Hwts04: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS0_8: Self = Self(0x08);
+    pub const Hwts08: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS0_16: Self = Self(0x10);
+    pub const Hwts016: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS0_32: Self = Self(0x20);
+    pub const Hwts032: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS0_64: Self = Self(0x40);
+    pub const Hwts064: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS0_128: Self = Self(0x80);
+    pub const Hwts0128: Self = Self(0x80);
 }
 impl Trig0Chain10Hwts0 {
     pub const fn from_bits(val: u8) -> Trig0Chain10Hwts0 {
@@ -274,15 +274,15 @@ impl Trig0Chain10Hwts0 {
 impl core::fmt::Debug for Trig0Chain10Hwts0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS0_0"),
-            0x01 => f.write_str("HWTS0_1"),
-            0x02 => f.write_str("HWTS0_2"),
-            0x04 => f.write_str("HWTS0_4"),
-            0x08 => f.write_str("HWTS0_8"),
-            0x10 => f.write_str("HWTS0_16"),
-            0x20 => f.write_str("HWTS0_32"),
-            0x40 => f.write_str("HWTS0_64"),
-            0x80 => f.write_str("HWTS0_128"),
+            0x0 => f.write_str("Hwts00"),
+            0x01 => f.write_str("Hwts01"),
+            0x02 => f.write_str("Hwts02"),
+            0x04 => f.write_str("Hwts04"),
+            0x08 => f.write_str("Hwts08"),
+            0x10 => f.write_str("Hwts016"),
+            0x20 => f.write_str("Hwts032"),
+            0x40 => f.write_str("Hwts064"),
+            0x80 => f.write_str("Hwts0128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -291,15 +291,15 @@ impl core::fmt::Debug for Trig0Chain10Hwts0 {
 impl defmt::Format for Trig0Chain10Hwts0 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS0_0"),
-            0x01 => defmt::write!(f, "HWTS0_1"),
-            0x02 => defmt::write!(f, "HWTS0_2"),
-            0x04 => defmt::write!(f, "HWTS0_4"),
-            0x08 => defmt::write!(f, "HWTS0_8"),
-            0x10 => defmt::write!(f, "HWTS0_16"),
-            0x20 => defmt::write!(f, "HWTS0_32"),
-            0x40 => defmt::write!(f, "HWTS0_64"),
-            0x80 => defmt::write!(f, "HWTS0_128"),
+            0x0 => defmt::write!(f, "Hwts00"),
+            0x01 => defmt::write!(f, "Hwts01"),
+            0x02 => defmt::write!(f, "Hwts02"),
+            0x04 => defmt::write!(f, "Hwts04"),
+            0x08 => defmt::write!(f, "Hwts08"),
+            0x10 => defmt::write!(f, "Hwts016"),
+            0x20 => defmt::write!(f, "Hwts032"),
+            0x40 => defmt::write!(f, "Hwts064"),
+            0x80 => defmt::write!(f, "Hwts0128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -321,23 +321,23 @@ impl From<Trig0Chain10Hwts0> for u8 {
 pub struct Trig0Chain10Hwts1(u8);
 impl Trig0Chain10Hwts1 {
     #[doc = "no trigger selected."]
-    pub const HWTS1_0: Self = Self(0x0);
+    pub const Hwts10: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS1_1: Self = Self(0x01);
+    pub const Hwts11: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS1_2: Self = Self(0x02);
+    pub const Hwts12: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS1_4: Self = Self(0x04);
+    pub const Hwts14: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS1_8: Self = Self(0x08);
+    pub const Hwts18: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS1_16: Self = Self(0x10);
+    pub const Hwts116: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS1_32: Self = Self(0x20);
+    pub const Hwts132: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS1_64: Self = Self(0x40);
+    pub const Hwts164: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS1_128: Self = Self(0x80);
+    pub const Hwts1128: Self = Self(0x80);
 }
 impl Trig0Chain10Hwts1 {
     pub const fn from_bits(val: u8) -> Trig0Chain10Hwts1 {
@@ -350,15 +350,15 @@ impl Trig0Chain10Hwts1 {
 impl core::fmt::Debug for Trig0Chain10Hwts1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS1_0"),
-            0x01 => f.write_str("HWTS1_1"),
-            0x02 => f.write_str("HWTS1_2"),
-            0x04 => f.write_str("HWTS1_4"),
-            0x08 => f.write_str("HWTS1_8"),
-            0x10 => f.write_str("HWTS1_16"),
-            0x20 => f.write_str("HWTS1_32"),
-            0x40 => f.write_str("HWTS1_64"),
-            0x80 => f.write_str("HWTS1_128"),
+            0x0 => f.write_str("Hwts10"),
+            0x01 => f.write_str("Hwts11"),
+            0x02 => f.write_str("Hwts12"),
+            0x04 => f.write_str("Hwts14"),
+            0x08 => f.write_str("Hwts18"),
+            0x10 => f.write_str("Hwts116"),
+            0x20 => f.write_str("Hwts132"),
+            0x40 => f.write_str("Hwts164"),
+            0x80 => f.write_str("Hwts1128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -367,15 +367,15 @@ impl core::fmt::Debug for Trig0Chain10Hwts1 {
 impl defmt::Format for Trig0Chain10Hwts1 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS1_0"),
-            0x01 => defmt::write!(f, "HWTS1_1"),
-            0x02 => defmt::write!(f, "HWTS1_2"),
-            0x04 => defmt::write!(f, "HWTS1_4"),
-            0x08 => defmt::write!(f, "HWTS1_8"),
-            0x10 => defmt::write!(f, "HWTS1_16"),
-            0x20 => defmt::write!(f, "HWTS1_32"),
-            0x40 => defmt::write!(f, "HWTS1_64"),
-            0x80 => defmt::write!(f, "HWTS1_128"),
+            0x0 => defmt::write!(f, "Hwts10"),
+            0x01 => defmt::write!(f, "Hwts11"),
+            0x02 => defmt::write!(f, "Hwts12"),
+            0x04 => defmt::write!(f, "Hwts14"),
+            0x08 => defmt::write!(f, "Hwts18"),
+            0x10 => defmt::write!(f, "Hwts116"),
+            0x20 => defmt::write!(f, "Hwts132"),
+            0x40 => defmt::write!(f, "Hwts164"),
+            0x80 => defmt::write!(f, "Hwts1128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -397,13 +397,13 @@ impl From<Trig0Chain10Hwts1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain10Ie0 {
     #[doc = "Generate interrupt on Done0 when segment 0 finish."]
-    IE0_0 = 0x0,
+    Ie00 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 0 finish."]
-    IE0_1 = 0x01,
+    Ie01 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 0 finish."]
-    IE0_2 = 0x02,
+    Ie02 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 0 finish."]
-    IE0_3 = 0x03,
+    Ie03 = 0x03,
 }
 impl Trig0Chain10Ie0 {
     #[inline(always)]
@@ -432,9 +432,9 @@ impl From<Trig0Chain10Ie0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain10Ie0En {
     #[doc = "Interrupt DONE disabled."]
-    IE0_EN_0 = 0x0,
+    Ie0En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 0 finish, an interrupt will be generated on the specific port configured by the IE0."]
-    IE0_EN_1 = 0x01,
+    Ie0En1 = 0x01,
 }
 impl Trig0Chain10Ie0En {
     #[inline(always)]
@@ -463,13 +463,13 @@ impl From<Trig0Chain10Ie0En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain10Ie1 {
     #[doc = "Generate interrupt on Done0 when Segment 1 finish."]
-    IE1_0 = 0x0,
+    Ie10 = 0x0,
     #[doc = "Generate interrupt on Done1 when Segment 1 finish."]
-    IE1_1 = 0x01,
+    Ie11 = 0x01,
     #[doc = "Generate interrupt on Done2 when Segment 1 finish."]
-    IE1_2 = 0x02,
+    Ie12 = 0x02,
     #[doc = "Generate interrupt on Done3 when Segment 1 finish."]
-    IE1_3 = 0x03,
+    Ie13 = 0x03,
 }
 impl Trig0Chain10Ie1 {
     #[inline(always)]
@@ -498,9 +498,9 @@ impl From<Trig0Chain10Ie1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain10Ie1En {
     #[doc = "Interrupt DONE disabled."]
-    IE1_EN_0 = 0x0,
+    Ie1En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 1 finish, an interrupt will be generated on the specific port configured by the IE1."]
-    IE1_EN_1 = 0x01,
+    Ie1En1 = 0x01,
 }
 impl Trig0Chain10Ie1En {
     #[inline(always)]
@@ -529,9 +529,9 @@ impl From<Trig0Chain10Ie1En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain32B2b2 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG2_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B2_0 = 0x0,
+    B2b20 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B2_1 = 0x01,
+    B2b21 = 0x01,
 }
 impl Trig0Chain32B2b2 {
     #[inline(always)]
@@ -560,9 +560,9 @@ impl From<Trig0Chain32B2b2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain32B2b3 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG3_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B3_0 = 0x0,
+    B2b30 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B3_1 = 0x01,
+    B2b31 = 0x01,
 }
 impl Trig0Chain32B2b3 {
     #[inline(always)]
@@ -591,37 +591,37 @@ impl From<Trig0Chain32B2b3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain32Csel2 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL2_0 = 0x0,
+    Csel20 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL2_1 = 0x01,
+    Csel21 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL2_2 = 0x02,
+    Csel22 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL2_3 = 0x03,
+    Csel23 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL2_4 = 0x04,
+    Csel24 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL2_5 = 0x05,
+    Csel25 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL2_6 = 0x06,
+    Csel26 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL2_7 = 0x07,
+    Csel27 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL2_8 = 0x08,
+    Csel28 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL2_9 = 0x09,
+    Csel29 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL2_10 = 0x0a,
+    Csel210 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL2_11 = 0x0b,
+    Csel211 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL2_12 = 0x0c,
+    Csel212 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL2_13 = 0x0d,
+    Csel213 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL2_14 = 0x0e,
+    Csel214 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL2_15 = 0x0f,
+    Csel215 = 0x0f,
 }
 impl Trig0Chain32Csel2 {
     #[inline(always)]
@@ -650,37 +650,37 @@ impl From<Trig0Chain32Csel2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain32Csel3 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL3_0 = 0x0,
+    Csel30 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL3_1 = 0x01,
+    Csel31 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL3_2 = 0x02,
+    Csel32 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL3_3 = 0x03,
+    Csel33 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL3_4 = 0x04,
+    Csel34 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL3_5 = 0x05,
+    Csel35 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL3_6 = 0x06,
+    Csel36 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL3_7 = 0x07,
+    Csel37 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL3_8 = 0x08,
+    Csel38 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL3_9 = 0x09,
+    Csel39 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL3_10 = 0x0a,
+    Csel310 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL3_11 = 0x0b,
+    Csel311 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL3_12 = 0x0c,
+    Csel312 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL3_13 = 0x0d,
+    Csel313 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL3_14 = 0x0e,
+    Csel314 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL3_15 = 0x0f,
+    Csel315 = 0x0f,
 }
 impl Trig0Chain32Csel3 {
     #[inline(always)]
@@ -709,23 +709,23 @@ impl From<Trig0Chain32Csel3> for u8 {
 pub struct Trig0Chain32Hwts2(u8);
 impl Trig0Chain32Hwts2 {
     #[doc = "no trigger selected."]
-    pub const HWTS2_0: Self = Self(0x0);
+    pub const Hwts20: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS2_1: Self = Self(0x01);
+    pub const Hwts21: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS2_2: Self = Self(0x02);
+    pub const Hwts22: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS2_4: Self = Self(0x04);
+    pub const Hwts24: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS2_8: Self = Self(0x08);
+    pub const Hwts28: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS2_16: Self = Self(0x10);
+    pub const Hwts216: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS2_32: Self = Self(0x20);
+    pub const Hwts232: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS2_64: Self = Self(0x40);
+    pub const Hwts264: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS2_128: Self = Self(0x80);
+    pub const Hwts2128: Self = Self(0x80);
 }
 impl Trig0Chain32Hwts2 {
     pub const fn from_bits(val: u8) -> Trig0Chain32Hwts2 {
@@ -738,15 +738,15 @@ impl Trig0Chain32Hwts2 {
 impl core::fmt::Debug for Trig0Chain32Hwts2 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS2_0"),
-            0x01 => f.write_str("HWTS2_1"),
-            0x02 => f.write_str("HWTS2_2"),
-            0x04 => f.write_str("HWTS2_4"),
-            0x08 => f.write_str("HWTS2_8"),
-            0x10 => f.write_str("HWTS2_16"),
-            0x20 => f.write_str("HWTS2_32"),
-            0x40 => f.write_str("HWTS2_64"),
-            0x80 => f.write_str("HWTS2_128"),
+            0x0 => f.write_str("Hwts20"),
+            0x01 => f.write_str("Hwts21"),
+            0x02 => f.write_str("Hwts22"),
+            0x04 => f.write_str("Hwts24"),
+            0x08 => f.write_str("Hwts28"),
+            0x10 => f.write_str("Hwts216"),
+            0x20 => f.write_str("Hwts232"),
+            0x40 => f.write_str("Hwts264"),
+            0x80 => f.write_str("Hwts2128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -755,15 +755,15 @@ impl core::fmt::Debug for Trig0Chain32Hwts2 {
 impl defmt::Format for Trig0Chain32Hwts2 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS2_0"),
-            0x01 => defmt::write!(f, "HWTS2_1"),
-            0x02 => defmt::write!(f, "HWTS2_2"),
-            0x04 => defmt::write!(f, "HWTS2_4"),
-            0x08 => defmt::write!(f, "HWTS2_8"),
-            0x10 => defmt::write!(f, "HWTS2_16"),
-            0x20 => defmt::write!(f, "HWTS2_32"),
-            0x40 => defmt::write!(f, "HWTS2_64"),
-            0x80 => defmt::write!(f, "HWTS2_128"),
+            0x0 => defmt::write!(f, "Hwts20"),
+            0x01 => defmt::write!(f, "Hwts21"),
+            0x02 => defmt::write!(f, "Hwts22"),
+            0x04 => defmt::write!(f, "Hwts24"),
+            0x08 => defmt::write!(f, "Hwts28"),
+            0x10 => defmt::write!(f, "Hwts216"),
+            0x20 => defmt::write!(f, "Hwts232"),
+            0x40 => defmt::write!(f, "Hwts264"),
+            0x80 => defmt::write!(f, "Hwts2128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -785,23 +785,23 @@ impl From<Trig0Chain32Hwts2> for u8 {
 pub struct Trig0Chain32Hwts3(u8);
 impl Trig0Chain32Hwts3 {
     #[doc = "no trigger selected."]
-    pub const HWTS3_0: Self = Self(0x0);
+    pub const Hwts30: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS3_1: Self = Self(0x01);
+    pub const Hwts31: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS3_2: Self = Self(0x02);
+    pub const Hwts32: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS3_4: Self = Self(0x04);
+    pub const Hwts34: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS3_8: Self = Self(0x08);
+    pub const Hwts38: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS3_16: Self = Self(0x10);
+    pub const Hwts316: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS3_32: Self = Self(0x20);
+    pub const Hwts332: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS3_64: Self = Self(0x40);
+    pub const Hwts364: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS3_128: Self = Self(0x80);
+    pub const Hwts3128: Self = Self(0x80);
 }
 impl Trig0Chain32Hwts3 {
     pub const fn from_bits(val: u8) -> Trig0Chain32Hwts3 {
@@ -814,15 +814,15 @@ impl Trig0Chain32Hwts3 {
 impl core::fmt::Debug for Trig0Chain32Hwts3 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS3_0"),
-            0x01 => f.write_str("HWTS3_1"),
-            0x02 => f.write_str("HWTS3_2"),
-            0x04 => f.write_str("HWTS3_4"),
-            0x08 => f.write_str("HWTS3_8"),
-            0x10 => f.write_str("HWTS3_16"),
-            0x20 => f.write_str("HWTS3_32"),
-            0x40 => f.write_str("HWTS3_64"),
-            0x80 => f.write_str("HWTS3_128"),
+            0x0 => f.write_str("Hwts30"),
+            0x01 => f.write_str("Hwts31"),
+            0x02 => f.write_str("Hwts32"),
+            0x04 => f.write_str("Hwts34"),
+            0x08 => f.write_str("Hwts38"),
+            0x10 => f.write_str("Hwts316"),
+            0x20 => f.write_str("Hwts332"),
+            0x40 => f.write_str("Hwts364"),
+            0x80 => f.write_str("Hwts3128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -831,15 +831,15 @@ impl core::fmt::Debug for Trig0Chain32Hwts3 {
 impl defmt::Format for Trig0Chain32Hwts3 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS3_0"),
-            0x01 => defmt::write!(f, "HWTS3_1"),
-            0x02 => defmt::write!(f, "HWTS3_2"),
-            0x04 => defmt::write!(f, "HWTS3_4"),
-            0x08 => defmt::write!(f, "HWTS3_8"),
-            0x10 => defmt::write!(f, "HWTS3_16"),
-            0x20 => defmt::write!(f, "HWTS3_32"),
-            0x40 => defmt::write!(f, "HWTS3_64"),
-            0x80 => defmt::write!(f, "HWTS3_128"),
+            0x0 => defmt::write!(f, "Hwts30"),
+            0x01 => defmt::write!(f, "Hwts31"),
+            0x02 => defmt::write!(f, "Hwts32"),
+            0x04 => defmt::write!(f, "Hwts34"),
+            0x08 => defmt::write!(f, "Hwts38"),
+            0x10 => defmt::write!(f, "Hwts316"),
+            0x20 => defmt::write!(f, "Hwts332"),
+            0x40 => defmt::write!(f, "Hwts364"),
+            0x80 => defmt::write!(f, "Hwts3128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -861,13 +861,13 @@ impl From<Trig0Chain32Hwts3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain32Ie2 {
     #[doc = "Generate interrupt on Done0 when segment 2 finish."]
-    IE2_0 = 0x0,
+    Ie20 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 2 finish."]
-    IE2_1 = 0x01,
+    Ie21 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 2 finish."]
-    IE2_2 = 0x02,
+    Ie22 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 2 finish."]
-    IE2_3 = 0x03,
+    Ie23 = 0x03,
 }
 impl Trig0Chain32Ie2 {
     #[inline(always)]
@@ -896,9 +896,9 @@ impl From<Trig0Chain32Ie2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain32Ie2En {
     #[doc = "Interrupt DONE disabled."]
-    IE2_EN_0 = 0x0,
+    Ie2En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 2 finish, an interrupt will be generated on the specific port configured by the IE2."]
-    IE2_EN_1 = 0x01,
+    Ie2En1 = 0x01,
 }
 impl Trig0Chain32Ie2En {
     #[inline(always)]
@@ -927,13 +927,13 @@ impl From<Trig0Chain32Ie2En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain32Ie3 {
     #[doc = "Generate interrupt on Done0 when segment 3 finish."]
-    IE3_0 = 0x0,
+    Ie30 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 3 finish."]
-    IE3_1 = 0x01,
+    Ie31 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 3 finish."]
-    IE3_2 = 0x02,
+    Ie32 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 3 finish."]
-    IE3_3 = 0x03,
+    Ie33 = 0x03,
 }
 impl Trig0Chain32Ie3 {
     #[inline(always)]
@@ -962,9 +962,9 @@ impl From<Trig0Chain32Ie3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain32Ie3En {
     #[doc = "Interrupt DONE disabled."]
-    IE3_EN_0 = 0x0,
+    Ie3En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 3 finish, an interrupt will be generated on the specific port configured by the IE3."]
-    IE3_EN_1 = 0x01,
+    Ie3En1 = 0x01,
 }
 impl Trig0Chain32Ie3En {
     #[inline(always)]
@@ -993,9 +993,9 @@ impl From<Trig0Chain32Ie3En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain54B2b4 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG4_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B4_0 = 0x0,
+    B2b40 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B4_1 = 0x01,
+    B2b41 = 0x01,
 }
 impl Trig0Chain54B2b4 {
     #[inline(always)]
@@ -1024,9 +1024,9 @@ impl From<Trig0Chain54B2b4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain54B2b5 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG5_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B5_0 = 0x0,
+    B2b50 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B5_1 = 0x01,
+    B2b51 = 0x01,
 }
 impl Trig0Chain54B2b5 {
     #[inline(always)]
@@ -1055,37 +1055,37 @@ impl From<Trig0Chain54B2b5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain54Csel4 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL4_0 = 0x0,
+    Csel40 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL4_1 = 0x01,
+    Csel41 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL4_2 = 0x02,
+    Csel42 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL4_3 = 0x03,
+    Csel43 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL4_4 = 0x04,
+    Csel44 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL4_5 = 0x05,
+    Csel45 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL4_6 = 0x06,
+    Csel46 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL4_7 = 0x07,
+    Csel47 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL4_8 = 0x08,
+    Csel48 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL4_9 = 0x09,
+    Csel49 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL4_10 = 0x0a,
+    Csel410 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL4_11 = 0x0b,
+    Csel411 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL4_12 = 0x0c,
+    Csel412 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL4_13 = 0x0d,
+    Csel413 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL4_14 = 0x0e,
+    Csel414 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL4_15 = 0x0f,
+    Csel415 = 0x0f,
 }
 impl Trig0Chain54Csel4 {
     #[inline(always)]
@@ -1114,37 +1114,37 @@ impl From<Trig0Chain54Csel4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain54Csel5 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL5_0 = 0x0,
+    Csel50 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL5_1 = 0x01,
+    Csel51 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL5_2 = 0x02,
+    Csel52 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL5_3 = 0x03,
+    Csel53 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL5_4 = 0x04,
+    Csel54 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL5_5 = 0x05,
+    Csel55 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL5_6 = 0x06,
+    Csel56 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL5_7 = 0x07,
+    Csel57 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL5_8 = 0x08,
+    Csel58 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL5_9 = 0x09,
+    Csel59 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL5_10 = 0x0a,
+    Csel510 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL5_11 = 0x0b,
+    Csel511 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL5_12 = 0x0c,
+    Csel512 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL5_13 = 0x0d,
+    Csel513 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL5_14 = 0x0e,
+    Csel514 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL5_15 = 0x0f,
+    Csel515 = 0x0f,
 }
 impl Trig0Chain54Csel5 {
     #[inline(always)]
@@ -1173,23 +1173,23 @@ impl From<Trig0Chain54Csel5> for u8 {
 pub struct Trig0Chain54Hwts4(u8);
 impl Trig0Chain54Hwts4 {
     #[doc = "no trigger selected."]
-    pub const HWTS4_0: Self = Self(0x0);
+    pub const Hwts40: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS4_1: Self = Self(0x01);
+    pub const Hwts41: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS4_2: Self = Self(0x02);
+    pub const Hwts42: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS4_4: Self = Self(0x04);
+    pub const Hwts44: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS4_8: Self = Self(0x08);
+    pub const Hwts48: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS4_16: Self = Self(0x10);
+    pub const Hwts416: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS4_32: Self = Self(0x20);
+    pub const Hwts432: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS4_64: Self = Self(0x40);
+    pub const Hwts464: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS4_128: Self = Self(0x80);
+    pub const Hwts4128: Self = Self(0x80);
 }
 impl Trig0Chain54Hwts4 {
     pub const fn from_bits(val: u8) -> Trig0Chain54Hwts4 {
@@ -1202,15 +1202,15 @@ impl Trig0Chain54Hwts4 {
 impl core::fmt::Debug for Trig0Chain54Hwts4 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS4_0"),
-            0x01 => f.write_str("HWTS4_1"),
-            0x02 => f.write_str("HWTS4_2"),
-            0x04 => f.write_str("HWTS4_4"),
-            0x08 => f.write_str("HWTS4_8"),
-            0x10 => f.write_str("HWTS4_16"),
-            0x20 => f.write_str("HWTS4_32"),
-            0x40 => f.write_str("HWTS4_64"),
-            0x80 => f.write_str("HWTS4_128"),
+            0x0 => f.write_str("Hwts40"),
+            0x01 => f.write_str("Hwts41"),
+            0x02 => f.write_str("Hwts42"),
+            0x04 => f.write_str("Hwts44"),
+            0x08 => f.write_str("Hwts48"),
+            0x10 => f.write_str("Hwts416"),
+            0x20 => f.write_str("Hwts432"),
+            0x40 => f.write_str("Hwts464"),
+            0x80 => f.write_str("Hwts4128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -1219,15 +1219,15 @@ impl core::fmt::Debug for Trig0Chain54Hwts4 {
 impl defmt::Format for Trig0Chain54Hwts4 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS4_0"),
-            0x01 => defmt::write!(f, "HWTS4_1"),
-            0x02 => defmt::write!(f, "HWTS4_2"),
-            0x04 => defmt::write!(f, "HWTS4_4"),
-            0x08 => defmt::write!(f, "HWTS4_8"),
-            0x10 => defmt::write!(f, "HWTS4_16"),
-            0x20 => defmt::write!(f, "HWTS4_32"),
-            0x40 => defmt::write!(f, "HWTS4_64"),
-            0x80 => defmt::write!(f, "HWTS4_128"),
+            0x0 => defmt::write!(f, "Hwts40"),
+            0x01 => defmt::write!(f, "Hwts41"),
+            0x02 => defmt::write!(f, "Hwts42"),
+            0x04 => defmt::write!(f, "Hwts44"),
+            0x08 => defmt::write!(f, "Hwts48"),
+            0x10 => defmt::write!(f, "Hwts416"),
+            0x20 => defmt::write!(f, "Hwts432"),
+            0x40 => defmt::write!(f, "Hwts464"),
+            0x80 => defmt::write!(f, "Hwts4128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -1249,23 +1249,23 @@ impl From<Trig0Chain54Hwts4> for u8 {
 pub struct Trig0Chain54Hwts5(u8);
 impl Trig0Chain54Hwts5 {
     #[doc = "no trigger selected."]
-    pub const HWTS5_0: Self = Self(0x0);
+    pub const Hwts50: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS5_1: Self = Self(0x01);
+    pub const Hwts51: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS5_2: Self = Self(0x02);
+    pub const Hwts52: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS5_4: Self = Self(0x04);
+    pub const Hwts54: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS5_8: Self = Self(0x08);
+    pub const Hwts58: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS5_16: Self = Self(0x10);
+    pub const Hwts516: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS5_32: Self = Self(0x20);
+    pub const Hwts532: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS5_64: Self = Self(0x40);
+    pub const Hwts564: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS5_128: Self = Self(0x80);
+    pub const Hwts5128: Self = Self(0x80);
 }
 impl Trig0Chain54Hwts5 {
     pub const fn from_bits(val: u8) -> Trig0Chain54Hwts5 {
@@ -1278,15 +1278,15 @@ impl Trig0Chain54Hwts5 {
 impl core::fmt::Debug for Trig0Chain54Hwts5 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS5_0"),
-            0x01 => f.write_str("HWTS5_1"),
-            0x02 => f.write_str("HWTS5_2"),
-            0x04 => f.write_str("HWTS5_4"),
-            0x08 => f.write_str("HWTS5_8"),
-            0x10 => f.write_str("HWTS5_16"),
-            0x20 => f.write_str("HWTS5_32"),
-            0x40 => f.write_str("HWTS5_64"),
-            0x80 => f.write_str("HWTS5_128"),
+            0x0 => f.write_str("Hwts50"),
+            0x01 => f.write_str("Hwts51"),
+            0x02 => f.write_str("Hwts52"),
+            0x04 => f.write_str("Hwts54"),
+            0x08 => f.write_str("Hwts58"),
+            0x10 => f.write_str("Hwts516"),
+            0x20 => f.write_str("Hwts532"),
+            0x40 => f.write_str("Hwts564"),
+            0x80 => f.write_str("Hwts5128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -1295,15 +1295,15 @@ impl core::fmt::Debug for Trig0Chain54Hwts5 {
 impl defmt::Format for Trig0Chain54Hwts5 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS5_0"),
-            0x01 => defmt::write!(f, "HWTS5_1"),
-            0x02 => defmt::write!(f, "HWTS5_2"),
-            0x04 => defmt::write!(f, "HWTS5_4"),
-            0x08 => defmt::write!(f, "HWTS5_8"),
-            0x10 => defmt::write!(f, "HWTS5_16"),
-            0x20 => defmt::write!(f, "HWTS5_32"),
-            0x40 => defmt::write!(f, "HWTS5_64"),
-            0x80 => defmt::write!(f, "HWTS5_128"),
+            0x0 => defmt::write!(f, "Hwts50"),
+            0x01 => defmt::write!(f, "Hwts51"),
+            0x02 => defmt::write!(f, "Hwts52"),
+            0x04 => defmt::write!(f, "Hwts54"),
+            0x08 => defmt::write!(f, "Hwts58"),
+            0x10 => defmt::write!(f, "Hwts516"),
+            0x20 => defmt::write!(f, "Hwts532"),
+            0x40 => defmt::write!(f, "Hwts564"),
+            0x80 => defmt::write!(f, "Hwts5128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -1325,13 +1325,13 @@ impl From<Trig0Chain54Hwts5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain54Ie4 {
     #[doc = "Generate interrupt on Done0 when segment 4 finish."]
-    IE4_0 = 0x0,
+    Ie40 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 4 finish."]
-    IE4_1 = 0x01,
+    Ie41 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 4 finish."]
-    IE4_2 = 0x02,
+    Ie42 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 4 finish."]
-    IE4_3 = 0x03,
+    Ie43 = 0x03,
 }
 impl Trig0Chain54Ie4 {
     #[inline(always)]
@@ -1360,9 +1360,9 @@ impl From<Trig0Chain54Ie4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain54Ie4En {
     #[doc = "Interrupt DONE disabled."]
-    IE4_EN_0 = 0x0,
+    Ie4En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 4 finish, an interrupt will be generated on the specific port configured by the IE4."]
-    IE4_EN_1 = 0x01,
+    Ie4En1 = 0x01,
 }
 impl Trig0Chain54Ie4En {
     #[inline(always)]
@@ -1391,13 +1391,13 @@ impl From<Trig0Chain54Ie4En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain54Ie5 {
     #[doc = "Generate interrupt on Done0 when segment 5 finish."]
-    IE5_0 = 0x0,
+    Ie50 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 5 finish."]
-    IE5_1 = 0x01,
+    Ie51 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 5 finish."]
-    IE5_2 = 0x02,
+    Ie52 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 5 finish."]
-    IE5_3 = 0x03,
+    Ie53 = 0x03,
 }
 impl Trig0Chain54Ie5 {
     #[inline(always)]
@@ -1426,9 +1426,9 @@ impl From<Trig0Chain54Ie5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain54Ie5En {
     #[doc = "Interrupt DONE disabled."]
-    IE5_EN_0 = 0x0,
+    Ie5En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 5 finish, an interrupt will be generated on the specific port configured by the IE5."]
-    IE5_EN_1 = 0x01,
+    Ie5En1 = 0x01,
 }
 impl Trig0Chain54Ie5En {
     #[inline(always)]
@@ -1457,9 +1457,9 @@ impl From<Trig0Chain54Ie5En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain76B2b6 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG6_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B6_0 = 0x0,
+    B2b60 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B6_1 = 0x01,
+    B2b61 = 0x01,
 }
 impl Trig0Chain76B2b6 {
     #[inline(always)]
@@ -1488,9 +1488,9 @@ impl From<Trig0Chain76B2b6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain76B2b7 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG7_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B7_0 = 0x0,
+    B2b70 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B7_1 = 0x01,
+    B2b71 = 0x01,
 }
 impl Trig0Chain76B2b7 {
     #[inline(always)]
@@ -1519,37 +1519,37 @@ impl From<Trig0Chain76B2b7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain76Csel6 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL6_0 = 0x0,
+    Csel60 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL6_1 = 0x01,
+    Csel61 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL6_2 = 0x02,
+    Csel62 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL6_3 = 0x03,
+    Csel63 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL6_4 = 0x04,
+    Csel64 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL6_5 = 0x05,
+    Csel65 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL6_6 = 0x06,
+    Csel66 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL6_7 = 0x07,
+    Csel67 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL6_8 = 0x08,
+    Csel68 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL6_9 = 0x09,
+    Csel69 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL6_10 = 0x0a,
+    Csel610 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL6_11 = 0x0b,
+    Csel611 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL6_12 = 0x0c,
+    Csel612 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL6_13 = 0x0d,
+    Csel613 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL6_14 = 0x0e,
+    Csel614 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL6_15 = 0x0f,
+    Csel615 = 0x0f,
 }
 impl Trig0Chain76Csel6 {
     #[inline(always)]
@@ -1578,37 +1578,37 @@ impl From<Trig0Chain76Csel6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain76Csel7 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL7_0 = 0x0,
+    Csel70 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL7_1 = 0x01,
+    Csel71 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL7_2 = 0x02,
+    Csel72 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL7_3 = 0x03,
+    Csel73 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL7_4 = 0x04,
+    Csel74 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL7_5 = 0x05,
+    Csel75 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL7_6 = 0x06,
+    Csel76 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL7_7 = 0x07,
+    Csel77 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL7_8 = 0x08,
+    Csel78 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL7_9 = 0x09,
+    Csel79 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL7_10 = 0x0a,
+    Csel710 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL7_11 = 0x0b,
+    Csel711 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL7_12 = 0x0c,
+    Csel712 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL7_13 = 0x0d,
+    Csel713 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL7_14 = 0x0e,
+    Csel714 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL7_15 = 0x0f,
+    Csel715 = 0x0f,
 }
 impl Trig0Chain76Csel7 {
     #[inline(always)]
@@ -1637,23 +1637,23 @@ impl From<Trig0Chain76Csel7> for u8 {
 pub struct Trig0Chain76Hwts6(u8);
 impl Trig0Chain76Hwts6 {
     #[doc = "no trigger selected."]
-    pub const HWTS6_0: Self = Self(0x0);
+    pub const Hwts60: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS6_1: Self = Self(0x01);
+    pub const Hwts61: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS6_2: Self = Self(0x02);
+    pub const Hwts62: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS6_4: Self = Self(0x04);
+    pub const Hwts64: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS6_8: Self = Self(0x08);
+    pub const Hwts68: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS6_16: Self = Self(0x10);
+    pub const Hwts616: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS6_32: Self = Self(0x20);
+    pub const Hwts632: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS6_64: Self = Self(0x40);
+    pub const Hwts664: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS6_128: Self = Self(0x80);
+    pub const Hwts6128: Self = Self(0x80);
 }
 impl Trig0Chain76Hwts6 {
     pub const fn from_bits(val: u8) -> Trig0Chain76Hwts6 {
@@ -1666,15 +1666,15 @@ impl Trig0Chain76Hwts6 {
 impl core::fmt::Debug for Trig0Chain76Hwts6 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS6_0"),
-            0x01 => f.write_str("HWTS6_1"),
-            0x02 => f.write_str("HWTS6_2"),
-            0x04 => f.write_str("HWTS6_4"),
-            0x08 => f.write_str("HWTS6_8"),
-            0x10 => f.write_str("HWTS6_16"),
-            0x20 => f.write_str("HWTS6_32"),
-            0x40 => f.write_str("HWTS6_64"),
-            0x80 => f.write_str("HWTS6_128"),
+            0x0 => f.write_str("Hwts60"),
+            0x01 => f.write_str("Hwts61"),
+            0x02 => f.write_str("Hwts62"),
+            0x04 => f.write_str("Hwts64"),
+            0x08 => f.write_str("Hwts68"),
+            0x10 => f.write_str("Hwts616"),
+            0x20 => f.write_str("Hwts632"),
+            0x40 => f.write_str("Hwts664"),
+            0x80 => f.write_str("Hwts6128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -1683,15 +1683,15 @@ impl core::fmt::Debug for Trig0Chain76Hwts6 {
 impl defmt::Format for Trig0Chain76Hwts6 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS6_0"),
-            0x01 => defmt::write!(f, "HWTS6_1"),
-            0x02 => defmt::write!(f, "HWTS6_2"),
-            0x04 => defmt::write!(f, "HWTS6_4"),
-            0x08 => defmt::write!(f, "HWTS6_8"),
-            0x10 => defmt::write!(f, "HWTS6_16"),
-            0x20 => defmt::write!(f, "HWTS6_32"),
-            0x40 => defmt::write!(f, "HWTS6_64"),
-            0x80 => defmt::write!(f, "HWTS6_128"),
+            0x0 => defmt::write!(f, "Hwts60"),
+            0x01 => defmt::write!(f, "Hwts61"),
+            0x02 => defmt::write!(f, "Hwts62"),
+            0x04 => defmt::write!(f, "Hwts64"),
+            0x08 => defmt::write!(f, "Hwts68"),
+            0x10 => defmt::write!(f, "Hwts616"),
+            0x20 => defmt::write!(f, "Hwts632"),
+            0x40 => defmt::write!(f, "Hwts664"),
+            0x80 => defmt::write!(f, "Hwts6128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -1713,23 +1713,23 @@ impl From<Trig0Chain76Hwts6> for u8 {
 pub struct Trig0Chain76Hwts7(u8);
 impl Trig0Chain76Hwts7 {
     #[doc = "no trigger selected."]
-    pub const HWTS7_0: Self = Self(0x0);
+    pub const Hwts70: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS7_1: Self = Self(0x01);
+    pub const Hwts71: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS7_2: Self = Self(0x02);
+    pub const Hwts72: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS7_4: Self = Self(0x04);
+    pub const Hwts74: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS7_8: Self = Self(0x08);
+    pub const Hwts78: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS7_16: Self = Self(0x10);
+    pub const Hwts716: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS7_32: Self = Self(0x20);
+    pub const Hwts732: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS7_64: Self = Self(0x40);
+    pub const Hwts764: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS7_128: Self = Self(0x80);
+    pub const Hwts7128: Self = Self(0x80);
 }
 impl Trig0Chain76Hwts7 {
     pub const fn from_bits(val: u8) -> Trig0Chain76Hwts7 {
@@ -1742,15 +1742,15 @@ impl Trig0Chain76Hwts7 {
 impl core::fmt::Debug for Trig0Chain76Hwts7 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS7_0"),
-            0x01 => f.write_str("HWTS7_1"),
-            0x02 => f.write_str("HWTS7_2"),
-            0x04 => f.write_str("HWTS7_4"),
-            0x08 => f.write_str("HWTS7_8"),
-            0x10 => f.write_str("HWTS7_16"),
-            0x20 => f.write_str("HWTS7_32"),
-            0x40 => f.write_str("HWTS7_64"),
-            0x80 => f.write_str("HWTS7_128"),
+            0x0 => f.write_str("Hwts70"),
+            0x01 => f.write_str("Hwts71"),
+            0x02 => f.write_str("Hwts72"),
+            0x04 => f.write_str("Hwts74"),
+            0x08 => f.write_str("Hwts78"),
+            0x10 => f.write_str("Hwts716"),
+            0x20 => f.write_str("Hwts732"),
+            0x40 => f.write_str("Hwts764"),
+            0x80 => f.write_str("Hwts7128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -1759,15 +1759,15 @@ impl core::fmt::Debug for Trig0Chain76Hwts7 {
 impl defmt::Format for Trig0Chain76Hwts7 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS7_0"),
-            0x01 => defmt::write!(f, "HWTS7_1"),
-            0x02 => defmt::write!(f, "HWTS7_2"),
-            0x04 => defmt::write!(f, "HWTS7_4"),
-            0x08 => defmt::write!(f, "HWTS7_8"),
-            0x10 => defmt::write!(f, "HWTS7_16"),
-            0x20 => defmt::write!(f, "HWTS7_32"),
-            0x40 => defmt::write!(f, "HWTS7_64"),
-            0x80 => defmt::write!(f, "HWTS7_128"),
+            0x0 => defmt::write!(f, "Hwts70"),
+            0x01 => defmt::write!(f, "Hwts71"),
+            0x02 => defmt::write!(f, "Hwts72"),
+            0x04 => defmt::write!(f, "Hwts74"),
+            0x08 => defmt::write!(f, "Hwts78"),
+            0x10 => defmt::write!(f, "Hwts716"),
+            0x20 => defmt::write!(f, "Hwts732"),
+            0x40 => defmt::write!(f, "Hwts764"),
+            0x80 => defmt::write!(f, "Hwts7128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -1789,13 +1789,13 @@ impl From<Trig0Chain76Hwts7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain76Ie6 {
     #[doc = "Generate interrupt on Done0 when segment 6 finish."]
-    IE6_0 = 0x0,
+    Ie60 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 6 finish."]
-    IE6_1 = 0x01,
+    Ie61 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 6 finish."]
-    IE6_2 = 0x02,
+    Ie62 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 6 finish."]
-    IE6_3 = 0x03,
+    Ie63 = 0x03,
 }
 impl Trig0Chain76Ie6 {
     #[inline(always)]
@@ -1824,9 +1824,9 @@ impl From<Trig0Chain76Ie6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain76Ie6En {
     #[doc = "Interrupt DONE disabled."]
-    IE6_EN_0 = 0x0,
+    Ie6En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 6 finish, an interrupt will be generated on the specific port configured by the IE6."]
-    IE6_EN_1 = 0x01,
+    Ie6En1 = 0x01,
 }
 impl Trig0Chain76Ie6En {
     #[inline(always)]
@@ -1855,13 +1855,13 @@ impl From<Trig0Chain76Ie6En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain76Ie7 {
     #[doc = "Generate interrupt on Done0 when segment 7 finish."]
-    IE7_0 = 0x0,
+    Ie70 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 7 finish."]
-    IE7_1 = 0x01,
+    Ie71 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 7 finish."]
-    IE7_2 = 0x02,
+    Ie72 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 7 finish."]
-    IE7_3 = 0x03,
+    Ie73 = 0x03,
 }
 impl Trig0Chain76Ie7 {
     #[inline(always)]
@@ -1890,9 +1890,9 @@ impl From<Trig0Chain76Ie7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Chain76Ie7En {
     #[doc = "Interrupt DONE disabled."]
-    IE7_EN_0 = 0x0,
+    Ie7En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 7 finish, an interrupt will be generated on the specific port configured by the IE7."]
-    IE7_EN_1 = 0x01,
+    Ie7En1 = 0x01,
 }
 impl Trig0Chain76Ie7En {
     #[inline(always)]
@@ -1921,9 +1921,9 @@ impl From<Trig0Chain76Ie7En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0CtrlSwTrig {
     #[doc = "No software trigger event generated."]
-    SW_TRIG_0 = 0x0,
+    SwTrig0 = 0x0,
     #[doc = "Software trigger event generated."]
-    SW_TRIG_1 = 0x01,
+    SwTrig1 = 0x01,
 }
 impl Trig0CtrlSwTrig {
     #[inline(always)]
@@ -1952,9 +1952,9 @@ impl From<Trig0CtrlSwTrig> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0CtrlSyncMode {
     #[doc = "Synchronization mode disabled, TRIGa and TRIG(a+4) are triggered independently."]
-    SYNC_MODE_0 = 0x0,
+    SyncMode0 = 0x0,
     #[doc = "Synchronization mode enabled, TRIGa and TRIG(a+4) are triggered by TRIGa source synchronously."]
-    SYNC_MODE_1 = 0x01,
+    SyncMode1 = 0x01,
 }
 impl Trig0CtrlSyncMode {
     #[inline(always)]
@@ -1983,21 +1983,21 @@ impl From<Trig0CtrlSyncMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0CtrlTrigChain {
     #[doc = "Trigger chain length is 1."]
-    TRIG_CHAIN_0 = 0x0,
+    TrigChain0 = 0x0,
     #[doc = "Trigger chain length is 2."]
-    TRIG_CHAIN_1 = 0x01,
+    TrigChain1 = 0x01,
     #[doc = "Trigger chain length is 3."]
-    TRIG_CHAIN_2 = 0x02,
+    TrigChain2 = 0x02,
     #[doc = "Trigger chain length is 4."]
-    TRIG_CHAIN_3 = 0x03,
+    TrigChain3 = 0x03,
     #[doc = "Trigger chain length is 5."]
-    TRIG_CHAIN_4 = 0x04,
+    TrigChain4 = 0x04,
     #[doc = "Trigger chain length is 6."]
-    TRIG_CHAIN_5 = 0x05,
+    TrigChain5 = 0x05,
     #[doc = "Trigger chain length is 7."]
-    TRIG_CHAIN_6 = 0x06,
+    TrigChain6 = 0x06,
     #[doc = "Trigger chain length is 8."]
-    TRIG_CHAIN_7 = 0x07,
+    TrigChain7 = 0x07,
 }
 impl Trig0CtrlTrigChain {
     #[inline(always)]
@@ -2026,9 +2026,9 @@ impl From<Trig0CtrlTrigChain> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0CtrlTrigMode {
     #[doc = "Hardware trigger. The softerware trigger will be ignored."]
-    TRIG_MODE_0 = 0x0,
+    TrigMode0 = 0x0,
     #[doc = "Software trigger. The hardware trigger will be ignored."]
-    TRIG_MODE_1 = 0x01,
+    TrigMode1 = 0x01,
 }
 impl Trig0CtrlTrigMode {
     #[inline(always)]
@@ -2057,9 +2057,9 @@ impl From<Trig0CtrlTrigMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Done0 {
     #[doc = "No TRIG0_DONE0 interrupt detected."]
-    TRIG0_DONE0_0 = 0x0,
+    Trig0Done00 = 0x0,
     #[doc = "TRIG0_DONE0 interrupt detected."]
-    TRIG0_DONE0_1 = 0x01,
+    Trig0Done01 = 0x01,
 }
 impl Trig0Done0 {
     #[inline(always)]
@@ -2088,9 +2088,9 @@ impl From<Trig0Done0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Done1 {
     #[doc = "No TRIG0_DONE1 interrupt detected."]
-    TRIG0_DONE1_0 = 0x0,
+    Trig0Done10 = 0x0,
     #[doc = "TRIG0_DONE1 interrupt detected."]
-    TRIG0_DONE1_1 = 0x01,
+    Trig0Done11 = 0x01,
 }
 impl Trig0Done1 {
     #[inline(always)]
@@ -2119,9 +2119,9 @@ impl From<Trig0Done1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Done2 {
     #[doc = "No TRIG0_DONE2 interrupt detected."]
-    TRIG0_DONE2_0 = 0x0,
+    Trig0Done20 = 0x0,
     #[doc = "TRIG0_DONE2 interrupt detected."]
-    TRIG0_DONE2_1 = 0x01,
+    Trig0Done21 = 0x01,
 }
 impl Trig0Done2 {
     #[inline(always)]
@@ -2150,9 +2150,9 @@ impl From<Trig0Done2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Done3 {
     #[doc = "No TRIG0_DONE3 interrupt detected."]
-    TRIG0_DONE3_0 = 0x0,
+    Trig0Done30 = 0x0,
     #[doc = "TRIG0_DONE3 interrupt detected."]
-    TRIG0_DONE3_1 = 0x01,
+    Trig0Done31 = 0x01,
 }
 impl Trig0Done3 {
     #[inline(always)]
@@ -2181,9 +2181,9 @@ impl From<Trig0Done3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Enable {
     #[doc = "TRIG0 DMA request disabled."]
-    TRIG0_ENABLE_0 = 0x0,
+    Trig0Enable0 = 0x0,
     #[doc = "TRIG0 DMA request enabled."]
-    TRIG0_ENABLE_1 = 0x01,
+    Trig0Enable1 = 0x01,
 }
 impl Trig0Enable {
     #[inline(always)]
@@ -2212,9 +2212,9 @@ impl From<Trig0Enable> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Err {
     #[doc = "No TRIG0_ERR interrupt detected."]
-    TRIG0_ERR_0 = 0x0,
+    Trig0Err0 = 0x0,
     #[doc = "TRIG0_ERR interrupt detected."]
-    TRIG0_ERR_1 = 0x01,
+    Trig0Err1 = 0x01,
 }
 impl Trig0Err {
     #[inline(always)]
@@ -2243,9 +2243,9 @@ impl From<Trig0Err> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig0Req {
     #[doc = "TRIG0_REQ not detected."]
-    TRIG0_REQ_0 = 0x0,
+    Trig0Req0 = 0x0,
     #[doc = "TRIG0_REQ detected."]
-    TRIG0_REQ_1 = 0x01,
+    Trig0Req1 = 0x01,
 }
 impl Trig0Req {
     #[inline(always)]
@@ -2274,9 +2274,9 @@ impl From<Trig0Req> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain10B2b0 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG0_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B0_0 = 0x0,
+    B2b00 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B0_1 = 0x01,
+    B2b01 = 0x01,
 }
 impl Trig1Chain10B2b0 {
     #[inline(always)]
@@ -2305,9 +2305,9 @@ impl From<Trig1Chain10B2b0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain10B2b1 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG1_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B1_0 = 0x0,
+    B2b10 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B1_1 = 0x01,
+    B2b11 = 0x01,
 }
 impl Trig1Chain10B2b1 {
     #[inline(always)]
@@ -2336,37 +2336,37 @@ impl From<Trig1Chain10B2b1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain10Csel0 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL0_0 = 0x0,
+    Csel00 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL0_1 = 0x01,
+    Csel01 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL0_2 = 0x02,
+    Csel02 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL0_3 = 0x03,
+    Csel03 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL0_4 = 0x04,
+    Csel04 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL0_5 = 0x05,
+    Csel05 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL0_6 = 0x06,
+    Csel06 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL0_7 = 0x07,
+    Csel07 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL0_8 = 0x08,
+    Csel08 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL0_9 = 0x09,
+    Csel09 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL0_10 = 0x0a,
+    Csel010 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL0_11 = 0x0b,
+    Csel011 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL0_12 = 0x0c,
+    Csel012 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL0_13 = 0x0d,
+    Csel013 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL0_14 = 0x0e,
+    Csel014 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL0_15 = 0x0f,
+    Csel015 = 0x0f,
 }
 impl Trig1Chain10Csel0 {
     #[inline(always)]
@@ -2395,37 +2395,37 @@ impl From<Trig1Chain10Csel0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain10Csel1 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL1_0 = 0x0,
+    Csel10 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL1_1 = 0x01,
+    Csel11 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL1_2 = 0x02,
+    Csel12 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL1_3 = 0x03,
+    Csel13 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL1_4 = 0x04,
+    Csel14 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL1_5 = 0x05,
+    Csel15 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL1_6 = 0x06,
+    Csel16 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL1_7 = 0x07,
+    Csel17 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL1_8 = 0x08,
+    Csel18 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL1_9 = 0x09,
+    Csel19 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL1_10 = 0x0a,
+    Csel110 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL1_11 = 0x0b,
+    Csel111 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL1_12 = 0x0c,
+    Csel112 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL1_13 = 0x0d,
+    Csel113 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL1_14 = 0x0e,
+    Csel114 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL1_15 = 0x0f,
+    Csel115 = 0x0f,
 }
 impl Trig1Chain10Csel1 {
     #[inline(always)]
@@ -2454,23 +2454,23 @@ impl From<Trig1Chain10Csel1> for u8 {
 pub struct Trig1Chain10Hwts0(u8);
 impl Trig1Chain10Hwts0 {
     #[doc = "no trigger selected."]
-    pub const HWTS0_0: Self = Self(0x0);
+    pub const Hwts00: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS0_1: Self = Self(0x01);
+    pub const Hwts01: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS0_2: Self = Self(0x02);
+    pub const Hwts02: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS0_4: Self = Self(0x04);
+    pub const Hwts04: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS0_8: Self = Self(0x08);
+    pub const Hwts08: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS0_16: Self = Self(0x10);
+    pub const Hwts016: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS0_32: Self = Self(0x20);
+    pub const Hwts032: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS0_64: Self = Self(0x40);
+    pub const Hwts064: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS0_128: Self = Self(0x80);
+    pub const Hwts0128: Self = Self(0x80);
 }
 impl Trig1Chain10Hwts0 {
     pub const fn from_bits(val: u8) -> Trig1Chain10Hwts0 {
@@ -2483,15 +2483,15 @@ impl Trig1Chain10Hwts0 {
 impl core::fmt::Debug for Trig1Chain10Hwts0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS0_0"),
-            0x01 => f.write_str("HWTS0_1"),
-            0x02 => f.write_str("HWTS0_2"),
-            0x04 => f.write_str("HWTS0_4"),
-            0x08 => f.write_str("HWTS0_8"),
-            0x10 => f.write_str("HWTS0_16"),
-            0x20 => f.write_str("HWTS0_32"),
-            0x40 => f.write_str("HWTS0_64"),
-            0x80 => f.write_str("HWTS0_128"),
+            0x0 => f.write_str("Hwts00"),
+            0x01 => f.write_str("Hwts01"),
+            0x02 => f.write_str("Hwts02"),
+            0x04 => f.write_str("Hwts04"),
+            0x08 => f.write_str("Hwts08"),
+            0x10 => f.write_str("Hwts016"),
+            0x20 => f.write_str("Hwts032"),
+            0x40 => f.write_str("Hwts064"),
+            0x80 => f.write_str("Hwts0128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -2500,15 +2500,15 @@ impl core::fmt::Debug for Trig1Chain10Hwts0 {
 impl defmt::Format for Trig1Chain10Hwts0 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS0_0"),
-            0x01 => defmt::write!(f, "HWTS0_1"),
-            0x02 => defmt::write!(f, "HWTS0_2"),
-            0x04 => defmt::write!(f, "HWTS0_4"),
-            0x08 => defmt::write!(f, "HWTS0_8"),
-            0x10 => defmt::write!(f, "HWTS0_16"),
-            0x20 => defmt::write!(f, "HWTS0_32"),
-            0x40 => defmt::write!(f, "HWTS0_64"),
-            0x80 => defmt::write!(f, "HWTS0_128"),
+            0x0 => defmt::write!(f, "Hwts00"),
+            0x01 => defmt::write!(f, "Hwts01"),
+            0x02 => defmt::write!(f, "Hwts02"),
+            0x04 => defmt::write!(f, "Hwts04"),
+            0x08 => defmt::write!(f, "Hwts08"),
+            0x10 => defmt::write!(f, "Hwts016"),
+            0x20 => defmt::write!(f, "Hwts032"),
+            0x40 => defmt::write!(f, "Hwts064"),
+            0x80 => defmt::write!(f, "Hwts0128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -2530,23 +2530,23 @@ impl From<Trig1Chain10Hwts0> for u8 {
 pub struct Trig1Chain10Hwts1(u8);
 impl Trig1Chain10Hwts1 {
     #[doc = "no trigger selected."]
-    pub const HWTS1_0: Self = Self(0x0);
+    pub const Hwts10: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS1_1: Self = Self(0x01);
+    pub const Hwts11: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS1_2: Self = Self(0x02);
+    pub const Hwts12: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS1_4: Self = Self(0x04);
+    pub const Hwts14: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS1_8: Self = Self(0x08);
+    pub const Hwts18: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS1_16: Self = Self(0x10);
+    pub const Hwts116: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS1_32: Self = Self(0x20);
+    pub const Hwts132: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS1_64: Self = Self(0x40);
+    pub const Hwts164: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS1_128: Self = Self(0x80);
+    pub const Hwts1128: Self = Self(0x80);
 }
 impl Trig1Chain10Hwts1 {
     pub const fn from_bits(val: u8) -> Trig1Chain10Hwts1 {
@@ -2559,15 +2559,15 @@ impl Trig1Chain10Hwts1 {
 impl core::fmt::Debug for Trig1Chain10Hwts1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS1_0"),
-            0x01 => f.write_str("HWTS1_1"),
-            0x02 => f.write_str("HWTS1_2"),
-            0x04 => f.write_str("HWTS1_4"),
-            0x08 => f.write_str("HWTS1_8"),
-            0x10 => f.write_str("HWTS1_16"),
-            0x20 => f.write_str("HWTS1_32"),
-            0x40 => f.write_str("HWTS1_64"),
-            0x80 => f.write_str("HWTS1_128"),
+            0x0 => f.write_str("Hwts10"),
+            0x01 => f.write_str("Hwts11"),
+            0x02 => f.write_str("Hwts12"),
+            0x04 => f.write_str("Hwts14"),
+            0x08 => f.write_str("Hwts18"),
+            0x10 => f.write_str("Hwts116"),
+            0x20 => f.write_str("Hwts132"),
+            0x40 => f.write_str("Hwts164"),
+            0x80 => f.write_str("Hwts1128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -2576,15 +2576,15 @@ impl core::fmt::Debug for Trig1Chain10Hwts1 {
 impl defmt::Format for Trig1Chain10Hwts1 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS1_0"),
-            0x01 => defmt::write!(f, "HWTS1_1"),
-            0x02 => defmt::write!(f, "HWTS1_2"),
-            0x04 => defmt::write!(f, "HWTS1_4"),
-            0x08 => defmt::write!(f, "HWTS1_8"),
-            0x10 => defmt::write!(f, "HWTS1_16"),
-            0x20 => defmt::write!(f, "HWTS1_32"),
-            0x40 => defmt::write!(f, "HWTS1_64"),
-            0x80 => defmt::write!(f, "HWTS1_128"),
+            0x0 => defmt::write!(f, "Hwts10"),
+            0x01 => defmt::write!(f, "Hwts11"),
+            0x02 => defmt::write!(f, "Hwts12"),
+            0x04 => defmt::write!(f, "Hwts14"),
+            0x08 => defmt::write!(f, "Hwts18"),
+            0x10 => defmt::write!(f, "Hwts116"),
+            0x20 => defmt::write!(f, "Hwts132"),
+            0x40 => defmt::write!(f, "Hwts164"),
+            0x80 => defmt::write!(f, "Hwts1128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -2606,13 +2606,13 @@ impl From<Trig1Chain10Hwts1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain10Ie0 {
     #[doc = "Generate interrupt on Done0 when segment 0 finish."]
-    IE0_0 = 0x0,
+    Ie00 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 0 finish."]
-    IE0_1 = 0x01,
+    Ie01 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 0 finish."]
-    IE0_2 = 0x02,
+    Ie02 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 0 finish."]
-    IE0_3 = 0x03,
+    Ie03 = 0x03,
 }
 impl Trig1Chain10Ie0 {
     #[inline(always)]
@@ -2641,9 +2641,9 @@ impl From<Trig1Chain10Ie0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain10Ie0En {
     #[doc = "Interrupt DONE disabled."]
-    IE0_EN_0 = 0x0,
+    Ie0En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 0 finish, an interrupt will be generated on the specific port configured by the IE0."]
-    IE0_EN_1 = 0x01,
+    Ie0En1 = 0x01,
 }
 impl Trig1Chain10Ie0En {
     #[inline(always)]
@@ -2672,13 +2672,13 @@ impl From<Trig1Chain10Ie0En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain10Ie1 {
     #[doc = "Generate interrupt on Done0 when Segment 1 finish."]
-    IE1_0 = 0x0,
+    Ie10 = 0x0,
     #[doc = "Generate interrupt on Done1 when Segment 1 finish."]
-    IE1_1 = 0x01,
+    Ie11 = 0x01,
     #[doc = "Generate interrupt on Done2 when Segment 1 finish."]
-    IE1_2 = 0x02,
+    Ie12 = 0x02,
     #[doc = "Generate interrupt on Done3 when Segment 1 finish."]
-    IE1_3 = 0x03,
+    Ie13 = 0x03,
 }
 impl Trig1Chain10Ie1 {
     #[inline(always)]
@@ -2707,9 +2707,9 @@ impl From<Trig1Chain10Ie1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain10Ie1En {
     #[doc = "Interrupt DONE disabled."]
-    IE1_EN_0 = 0x0,
+    Ie1En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 1 finish, an interrupt will be generated on the specific port configured by the IE1."]
-    IE1_EN_1 = 0x01,
+    Ie1En1 = 0x01,
 }
 impl Trig1Chain10Ie1En {
     #[inline(always)]
@@ -2738,9 +2738,9 @@ impl From<Trig1Chain10Ie1En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain32B2b2 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG2_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B2_0 = 0x0,
+    B2b20 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B2_1 = 0x01,
+    B2b21 = 0x01,
 }
 impl Trig1Chain32B2b2 {
     #[inline(always)]
@@ -2769,9 +2769,9 @@ impl From<Trig1Chain32B2b2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain32B2b3 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG3_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B3_0 = 0x0,
+    B2b30 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B3_1 = 0x01,
+    B2b31 = 0x01,
 }
 impl Trig1Chain32B2b3 {
     #[inline(always)]
@@ -2800,37 +2800,37 @@ impl From<Trig1Chain32B2b3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain32Csel2 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL2_0 = 0x0,
+    Csel20 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL2_1 = 0x01,
+    Csel21 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL2_2 = 0x02,
+    Csel22 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL2_3 = 0x03,
+    Csel23 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL2_4 = 0x04,
+    Csel24 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL2_5 = 0x05,
+    Csel25 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL2_6 = 0x06,
+    Csel26 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL2_7 = 0x07,
+    Csel27 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL2_8 = 0x08,
+    Csel28 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL2_9 = 0x09,
+    Csel29 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL2_10 = 0x0a,
+    Csel210 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL2_11 = 0x0b,
+    Csel211 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL2_12 = 0x0c,
+    Csel212 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL2_13 = 0x0d,
+    Csel213 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL2_14 = 0x0e,
+    Csel214 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL2_15 = 0x0f,
+    Csel215 = 0x0f,
 }
 impl Trig1Chain32Csel2 {
     #[inline(always)]
@@ -2859,37 +2859,37 @@ impl From<Trig1Chain32Csel2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain32Csel3 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL3_0 = 0x0,
+    Csel30 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL3_1 = 0x01,
+    Csel31 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL3_2 = 0x02,
+    Csel32 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL3_3 = 0x03,
+    Csel33 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL3_4 = 0x04,
+    Csel34 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL3_5 = 0x05,
+    Csel35 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL3_6 = 0x06,
+    Csel36 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL3_7 = 0x07,
+    Csel37 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL3_8 = 0x08,
+    Csel38 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL3_9 = 0x09,
+    Csel39 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL3_10 = 0x0a,
+    Csel310 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL3_11 = 0x0b,
+    Csel311 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL3_12 = 0x0c,
+    Csel312 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL3_13 = 0x0d,
+    Csel313 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL3_14 = 0x0e,
+    Csel314 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL3_15 = 0x0f,
+    Csel315 = 0x0f,
 }
 impl Trig1Chain32Csel3 {
     #[inline(always)]
@@ -2918,23 +2918,23 @@ impl From<Trig1Chain32Csel3> for u8 {
 pub struct Trig1Chain32Hwts2(u8);
 impl Trig1Chain32Hwts2 {
     #[doc = "no trigger selected."]
-    pub const HWTS2_0: Self = Self(0x0);
+    pub const Hwts20: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS2_1: Self = Self(0x01);
+    pub const Hwts21: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS2_2: Self = Self(0x02);
+    pub const Hwts22: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS2_4: Self = Self(0x04);
+    pub const Hwts24: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS2_8: Self = Self(0x08);
+    pub const Hwts28: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS2_16: Self = Self(0x10);
+    pub const Hwts216: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS2_32: Self = Self(0x20);
+    pub const Hwts232: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS2_64: Self = Self(0x40);
+    pub const Hwts264: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS2_128: Self = Self(0x80);
+    pub const Hwts2128: Self = Self(0x80);
 }
 impl Trig1Chain32Hwts2 {
     pub const fn from_bits(val: u8) -> Trig1Chain32Hwts2 {
@@ -2947,15 +2947,15 @@ impl Trig1Chain32Hwts2 {
 impl core::fmt::Debug for Trig1Chain32Hwts2 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS2_0"),
-            0x01 => f.write_str("HWTS2_1"),
-            0x02 => f.write_str("HWTS2_2"),
-            0x04 => f.write_str("HWTS2_4"),
-            0x08 => f.write_str("HWTS2_8"),
-            0x10 => f.write_str("HWTS2_16"),
-            0x20 => f.write_str("HWTS2_32"),
-            0x40 => f.write_str("HWTS2_64"),
-            0x80 => f.write_str("HWTS2_128"),
+            0x0 => f.write_str("Hwts20"),
+            0x01 => f.write_str("Hwts21"),
+            0x02 => f.write_str("Hwts22"),
+            0x04 => f.write_str("Hwts24"),
+            0x08 => f.write_str("Hwts28"),
+            0x10 => f.write_str("Hwts216"),
+            0x20 => f.write_str("Hwts232"),
+            0x40 => f.write_str("Hwts264"),
+            0x80 => f.write_str("Hwts2128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -2964,15 +2964,15 @@ impl core::fmt::Debug for Trig1Chain32Hwts2 {
 impl defmt::Format for Trig1Chain32Hwts2 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS2_0"),
-            0x01 => defmt::write!(f, "HWTS2_1"),
-            0x02 => defmt::write!(f, "HWTS2_2"),
-            0x04 => defmt::write!(f, "HWTS2_4"),
-            0x08 => defmt::write!(f, "HWTS2_8"),
-            0x10 => defmt::write!(f, "HWTS2_16"),
-            0x20 => defmt::write!(f, "HWTS2_32"),
-            0x40 => defmt::write!(f, "HWTS2_64"),
-            0x80 => defmt::write!(f, "HWTS2_128"),
+            0x0 => defmt::write!(f, "Hwts20"),
+            0x01 => defmt::write!(f, "Hwts21"),
+            0x02 => defmt::write!(f, "Hwts22"),
+            0x04 => defmt::write!(f, "Hwts24"),
+            0x08 => defmt::write!(f, "Hwts28"),
+            0x10 => defmt::write!(f, "Hwts216"),
+            0x20 => defmt::write!(f, "Hwts232"),
+            0x40 => defmt::write!(f, "Hwts264"),
+            0x80 => defmt::write!(f, "Hwts2128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -2994,23 +2994,23 @@ impl From<Trig1Chain32Hwts2> for u8 {
 pub struct Trig1Chain32Hwts3(u8);
 impl Trig1Chain32Hwts3 {
     #[doc = "no trigger selected."]
-    pub const HWTS3_0: Self = Self(0x0);
+    pub const Hwts30: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS3_1: Self = Self(0x01);
+    pub const Hwts31: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS3_2: Self = Self(0x02);
+    pub const Hwts32: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS3_4: Self = Self(0x04);
+    pub const Hwts34: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS3_8: Self = Self(0x08);
+    pub const Hwts38: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS3_16: Self = Self(0x10);
+    pub const Hwts316: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS3_32: Self = Self(0x20);
+    pub const Hwts332: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS3_64: Self = Self(0x40);
+    pub const Hwts364: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS3_128: Self = Self(0x80);
+    pub const Hwts3128: Self = Self(0x80);
 }
 impl Trig1Chain32Hwts3 {
     pub const fn from_bits(val: u8) -> Trig1Chain32Hwts3 {
@@ -3023,15 +3023,15 @@ impl Trig1Chain32Hwts3 {
 impl core::fmt::Debug for Trig1Chain32Hwts3 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS3_0"),
-            0x01 => f.write_str("HWTS3_1"),
-            0x02 => f.write_str("HWTS3_2"),
-            0x04 => f.write_str("HWTS3_4"),
-            0x08 => f.write_str("HWTS3_8"),
-            0x10 => f.write_str("HWTS3_16"),
-            0x20 => f.write_str("HWTS3_32"),
-            0x40 => f.write_str("HWTS3_64"),
-            0x80 => f.write_str("HWTS3_128"),
+            0x0 => f.write_str("Hwts30"),
+            0x01 => f.write_str("Hwts31"),
+            0x02 => f.write_str("Hwts32"),
+            0x04 => f.write_str("Hwts34"),
+            0x08 => f.write_str("Hwts38"),
+            0x10 => f.write_str("Hwts316"),
+            0x20 => f.write_str("Hwts332"),
+            0x40 => f.write_str("Hwts364"),
+            0x80 => f.write_str("Hwts3128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -3040,15 +3040,15 @@ impl core::fmt::Debug for Trig1Chain32Hwts3 {
 impl defmt::Format for Trig1Chain32Hwts3 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS3_0"),
-            0x01 => defmt::write!(f, "HWTS3_1"),
-            0x02 => defmt::write!(f, "HWTS3_2"),
-            0x04 => defmt::write!(f, "HWTS3_4"),
-            0x08 => defmt::write!(f, "HWTS3_8"),
-            0x10 => defmt::write!(f, "HWTS3_16"),
-            0x20 => defmt::write!(f, "HWTS3_32"),
-            0x40 => defmt::write!(f, "HWTS3_64"),
-            0x80 => defmt::write!(f, "HWTS3_128"),
+            0x0 => defmt::write!(f, "Hwts30"),
+            0x01 => defmt::write!(f, "Hwts31"),
+            0x02 => defmt::write!(f, "Hwts32"),
+            0x04 => defmt::write!(f, "Hwts34"),
+            0x08 => defmt::write!(f, "Hwts38"),
+            0x10 => defmt::write!(f, "Hwts316"),
+            0x20 => defmt::write!(f, "Hwts332"),
+            0x40 => defmt::write!(f, "Hwts364"),
+            0x80 => defmt::write!(f, "Hwts3128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -3070,13 +3070,13 @@ impl From<Trig1Chain32Hwts3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain32Ie2 {
     #[doc = "Generate interrupt on Done0 when segment 2 finish."]
-    IE2_0 = 0x0,
+    Ie20 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 2 finish."]
-    IE2_1 = 0x01,
+    Ie21 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 2 finish."]
-    IE2_2 = 0x02,
+    Ie22 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 2 finish."]
-    IE2_3 = 0x03,
+    Ie23 = 0x03,
 }
 impl Trig1Chain32Ie2 {
     #[inline(always)]
@@ -3105,9 +3105,9 @@ impl From<Trig1Chain32Ie2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain32Ie2En {
     #[doc = "Interrupt DONE disabled."]
-    IE2_EN_0 = 0x0,
+    Ie2En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 2 finish, an interrupt will be generated on the specific port configured by the IE2."]
-    IE2_EN_1 = 0x01,
+    Ie2En1 = 0x01,
 }
 impl Trig1Chain32Ie2En {
     #[inline(always)]
@@ -3136,13 +3136,13 @@ impl From<Trig1Chain32Ie2En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain32Ie3 {
     #[doc = "Generate interrupt on Done0 when segment 3 finish."]
-    IE3_0 = 0x0,
+    Ie30 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 3 finish."]
-    IE3_1 = 0x01,
+    Ie31 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 3 finish."]
-    IE3_2 = 0x02,
+    Ie32 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 3 finish."]
-    IE3_3 = 0x03,
+    Ie33 = 0x03,
 }
 impl Trig1Chain32Ie3 {
     #[inline(always)]
@@ -3171,9 +3171,9 @@ impl From<Trig1Chain32Ie3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain32Ie3En {
     #[doc = "Interrupt DONE disabled."]
-    IE3_EN_0 = 0x0,
+    Ie3En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 3 finish, an interrupt will be generated on the specific port configured by the IE3."]
-    IE3_EN_1 = 0x01,
+    Ie3En1 = 0x01,
 }
 impl Trig1Chain32Ie3En {
     #[inline(always)]
@@ -3202,9 +3202,9 @@ impl From<Trig1Chain32Ie3En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain54B2b4 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG4_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B4_0 = 0x0,
+    B2b40 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B4_1 = 0x01,
+    B2b41 = 0x01,
 }
 impl Trig1Chain54B2b4 {
     #[inline(always)]
@@ -3233,9 +3233,9 @@ impl From<Trig1Chain54B2b4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain54B2b5 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG5_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B5_0 = 0x0,
+    B2b50 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B5_1 = 0x01,
+    B2b51 = 0x01,
 }
 impl Trig1Chain54B2b5 {
     #[inline(always)]
@@ -3264,37 +3264,37 @@ impl From<Trig1Chain54B2b5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain54Csel4 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL4_0 = 0x0,
+    Csel40 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL4_1 = 0x01,
+    Csel41 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL4_2 = 0x02,
+    Csel42 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL4_3 = 0x03,
+    Csel43 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL4_4 = 0x04,
+    Csel44 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL4_5 = 0x05,
+    Csel45 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL4_6 = 0x06,
+    Csel46 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL4_7 = 0x07,
+    Csel47 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL4_8 = 0x08,
+    Csel48 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL4_9 = 0x09,
+    Csel49 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL4_10 = 0x0a,
+    Csel410 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL4_11 = 0x0b,
+    Csel411 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL4_12 = 0x0c,
+    Csel412 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL4_13 = 0x0d,
+    Csel413 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL4_14 = 0x0e,
+    Csel414 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL4_15 = 0x0f,
+    Csel415 = 0x0f,
 }
 impl Trig1Chain54Csel4 {
     #[inline(always)]
@@ -3323,37 +3323,37 @@ impl From<Trig1Chain54Csel4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain54Csel5 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL5_0 = 0x0,
+    Csel50 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL5_1 = 0x01,
+    Csel51 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL5_2 = 0x02,
+    Csel52 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL5_3 = 0x03,
+    Csel53 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL5_4 = 0x04,
+    Csel54 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL5_5 = 0x05,
+    Csel55 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL5_6 = 0x06,
+    Csel56 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL5_7 = 0x07,
+    Csel57 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL5_8 = 0x08,
+    Csel58 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL5_9 = 0x09,
+    Csel59 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL5_10 = 0x0a,
+    Csel510 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL5_11 = 0x0b,
+    Csel511 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL5_12 = 0x0c,
+    Csel512 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL5_13 = 0x0d,
+    Csel513 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL5_14 = 0x0e,
+    Csel514 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL5_15 = 0x0f,
+    Csel515 = 0x0f,
 }
 impl Trig1Chain54Csel5 {
     #[inline(always)]
@@ -3382,23 +3382,23 @@ impl From<Trig1Chain54Csel5> for u8 {
 pub struct Trig1Chain54Hwts4(u8);
 impl Trig1Chain54Hwts4 {
     #[doc = "no trigger selected."]
-    pub const HWTS4_0: Self = Self(0x0);
+    pub const Hwts40: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS4_1: Self = Self(0x01);
+    pub const Hwts41: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS4_2: Self = Self(0x02);
+    pub const Hwts42: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS4_4: Self = Self(0x04);
+    pub const Hwts44: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS4_8: Self = Self(0x08);
+    pub const Hwts48: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS4_16: Self = Self(0x10);
+    pub const Hwts416: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS4_32: Self = Self(0x20);
+    pub const Hwts432: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS4_64: Self = Self(0x40);
+    pub const Hwts464: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS4_128: Self = Self(0x80);
+    pub const Hwts4128: Self = Self(0x80);
 }
 impl Trig1Chain54Hwts4 {
     pub const fn from_bits(val: u8) -> Trig1Chain54Hwts4 {
@@ -3411,15 +3411,15 @@ impl Trig1Chain54Hwts4 {
 impl core::fmt::Debug for Trig1Chain54Hwts4 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS4_0"),
-            0x01 => f.write_str("HWTS4_1"),
-            0x02 => f.write_str("HWTS4_2"),
-            0x04 => f.write_str("HWTS4_4"),
-            0x08 => f.write_str("HWTS4_8"),
-            0x10 => f.write_str("HWTS4_16"),
-            0x20 => f.write_str("HWTS4_32"),
-            0x40 => f.write_str("HWTS4_64"),
-            0x80 => f.write_str("HWTS4_128"),
+            0x0 => f.write_str("Hwts40"),
+            0x01 => f.write_str("Hwts41"),
+            0x02 => f.write_str("Hwts42"),
+            0x04 => f.write_str("Hwts44"),
+            0x08 => f.write_str("Hwts48"),
+            0x10 => f.write_str("Hwts416"),
+            0x20 => f.write_str("Hwts432"),
+            0x40 => f.write_str("Hwts464"),
+            0x80 => f.write_str("Hwts4128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -3428,15 +3428,15 @@ impl core::fmt::Debug for Trig1Chain54Hwts4 {
 impl defmt::Format for Trig1Chain54Hwts4 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS4_0"),
-            0x01 => defmt::write!(f, "HWTS4_1"),
-            0x02 => defmt::write!(f, "HWTS4_2"),
-            0x04 => defmt::write!(f, "HWTS4_4"),
-            0x08 => defmt::write!(f, "HWTS4_8"),
-            0x10 => defmt::write!(f, "HWTS4_16"),
-            0x20 => defmt::write!(f, "HWTS4_32"),
-            0x40 => defmt::write!(f, "HWTS4_64"),
-            0x80 => defmt::write!(f, "HWTS4_128"),
+            0x0 => defmt::write!(f, "Hwts40"),
+            0x01 => defmt::write!(f, "Hwts41"),
+            0x02 => defmt::write!(f, "Hwts42"),
+            0x04 => defmt::write!(f, "Hwts44"),
+            0x08 => defmt::write!(f, "Hwts48"),
+            0x10 => defmt::write!(f, "Hwts416"),
+            0x20 => defmt::write!(f, "Hwts432"),
+            0x40 => defmt::write!(f, "Hwts464"),
+            0x80 => defmt::write!(f, "Hwts4128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -3458,23 +3458,23 @@ impl From<Trig1Chain54Hwts4> for u8 {
 pub struct Trig1Chain54Hwts5(u8);
 impl Trig1Chain54Hwts5 {
     #[doc = "no trigger selected."]
-    pub const HWTS5_0: Self = Self(0x0);
+    pub const Hwts50: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS5_1: Self = Self(0x01);
+    pub const Hwts51: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS5_2: Self = Self(0x02);
+    pub const Hwts52: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS5_4: Self = Self(0x04);
+    pub const Hwts54: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS5_8: Self = Self(0x08);
+    pub const Hwts58: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS5_16: Self = Self(0x10);
+    pub const Hwts516: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS5_32: Self = Self(0x20);
+    pub const Hwts532: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS5_64: Self = Self(0x40);
+    pub const Hwts564: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS5_128: Self = Self(0x80);
+    pub const Hwts5128: Self = Self(0x80);
 }
 impl Trig1Chain54Hwts5 {
     pub const fn from_bits(val: u8) -> Trig1Chain54Hwts5 {
@@ -3487,15 +3487,15 @@ impl Trig1Chain54Hwts5 {
 impl core::fmt::Debug for Trig1Chain54Hwts5 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS5_0"),
-            0x01 => f.write_str("HWTS5_1"),
-            0x02 => f.write_str("HWTS5_2"),
-            0x04 => f.write_str("HWTS5_4"),
-            0x08 => f.write_str("HWTS5_8"),
-            0x10 => f.write_str("HWTS5_16"),
-            0x20 => f.write_str("HWTS5_32"),
-            0x40 => f.write_str("HWTS5_64"),
-            0x80 => f.write_str("HWTS5_128"),
+            0x0 => f.write_str("Hwts50"),
+            0x01 => f.write_str("Hwts51"),
+            0x02 => f.write_str("Hwts52"),
+            0x04 => f.write_str("Hwts54"),
+            0x08 => f.write_str("Hwts58"),
+            0x10 => f.write_str("Hwts516"),
+            0x20 => f.write_str("Hwts532"),
+            0x40 => f.write_str("Hwts564"),
+            0x80 => f.write_str("Hwts5128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -3504,15 +3504,15 @@ impl core::fmt::Debug for Trig1Chain54Hwts5 {
 impl defmt::Format for Trig1Chain54Hwts5 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS5_0"),
-            0x01 => defmt::write!(f, "HWTS5_1"),
-            0x02 => defmt::write!(f, "HWTS5_2"),
-            0x04 => defmt::write!(f, "HWTS5_4"),
-            0x08 => defmt::write!(f, "HWTS5_8"),
-            0x10 => defmt::write!(f, "HWTS5_16"),
-            0x20 => defmt::write!(f, "HWTS5_32"),
-            0x40 => defmt::write!(f, "HWTS5_64"),
-            0x80 => defmt::write!(f, "HWTS5_128"),
+            0x0 => defmt::write!(f, "Hwts50"),
+            0x01 => defmt::write!(f, "Hwts51"),
+            0x02 => defmt::write!(f, "Hwts52"),
+            0x04 => defmt::write!(f, "Hwts54"),
+            0x08 => defmt::write!(f, "Hwts58"),
+            0x10 => defmt::write!(f, "Hwts516"),
+            0x20 => defmt::write!(f, "Hwts532"),
+            0x40 => defmt::write!(f, "Hwts564"),
+            0x80 => defmt::write!(f, "Hwts5128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -3534,13 +3534,13 @@ impl From<Trig1Chain54Hwts5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain54Ie4 {
     #[doc = "Generate interrupt on Done0 when segment 4 finish."]
-    IE4_0 = 0x0,
+    Ie40 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 4 finish."]
-    IE4_1 = 0x01,
+    Ie41 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 4 finish."]
-    IE4_2 = 0x02,
+    Ie42 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 4 finish."]
-    IE4_3 = 0x03,
+    Ie43 = 0x03,
 }
 impl Trig1Chain54Ie4 {
     #[inline(always)]
@@ -3569,9 +3569,9 @@ impl From<Trig1Chain54Ie4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain54Ie4En {
     #[doc = "Interrupt DONE disabled."]
-    IE4_EN_0 = 0x0,
+    Ie4En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 4 finish, an interrupt will be generated on the specific port configured by the IE4."]
-    IE4_EN_1 = 0x01,
+    Ie4En1 = 0x01,
 }
 impl Trig1Chain54Ie4En {
     #[inline(always)]
@@ -3600,13 +3600,13 @@ impl From<Trig1Chain54Ie4En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain54Ie5 {
     #[doc = "Generate interrupt on Done0 when segment 5 finish."]
-    IE5_0 = 0x0,
+    Ie50 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 5 finish."]
-    IE5_1 = 0x01,
+    Ie51 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 5 finish."]
-    IE5_2 = 0x02,
+    Ie52 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 5 finish."]
-    IE5_3 = 0x03,
+    Ie53 = 0x03,
 }
 impl Trig1Chain54Ie5 {
     #[inline(always)]
@@ -3635,9 +3635,9 @@ impl From<Trig1Chain54Ie5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain54Ie5En {
     #[doc = "Interrupt DONE disabled."]
-    IE5_EN_0 = 0x0,
+    Ie5En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 5 finish, an interrupt will be generated on the specific port configured by the IE5."]
-    IE5_EN_1 = 0x01,
+    Ie5En1 = 0x01,
 }
 impl Trig1Chain54Ie5En {
     #[inline(always)]
@@ -3666,9 +3666,9 @@ impl From<Trig1Chain54Ie5En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain76B2b6 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG6_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B6_0 = 0x0,
+    B2b60 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B6_1 = 0x01,
+    B2b61 = 0x01,
 }
 impl Trig1Chain76B2b6 {
     #[inline(always)]
@@ -3697,9 +3697,9 @@ impl From<Trig1Chain76B2b6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain76B2b7 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG7_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B7_0 = 0x0,
+    B2b70 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B7_1 = 0x01,
+    B2b71 = 0x01,
 }
 impl Trig1Chain76B2b7 {
     #[inline(always)]
@@ -3728,37 +3728,37 @@ impl From<Trig1Chain76B2b7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain76Csel6 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL6_0 = 0x0,
+    Csel60 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL6_1 = 0x01,
+    Csel61 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL6_2 = 0x02,
+    Csel62 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL6_3 = 0x03,
+    Csel63 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL6_4 = 0x04,
+    Csel64 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL6_5 = 0x05,
+    Csel65 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL6_6 = 0x06,
+    Csel66 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL6_7 = 0x07,
+    Csel67 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL6_8 = 0x08,
+    Csel68 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL6_9 = 0x09,
+    Csel69 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL6_10 = 0x0a,
+    Csel610 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL6_11 = 0x0b,
+    Csel611 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL6_12 = 0x0c,
+    Csel612 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL6_13 = 0x0d,
+    Csel613 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL6_14 = 0x0e,
+    Csel614 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL6_15 = 0x0f,
+    Csel615 = 0x0f,
 }
 impl Trig1Chain76Csel6 {
     #[inline(always)]
@@ -3787,37 +3787,37 @@ impl From<Trig1Chain76Csel6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain76Csel7 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL7_0 = 0x0,
+    Csel70 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL7_1 = 0x01,
+    Csel71 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL7_2 = 0x02,
+    Csel72 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL7_3 = 0x03,
+    Csel73 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL7_4 = 0x04,
+    Csel74 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL7_5 = 0x05,
+    Csel75 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL7_6 = 0x06,
+    Csel76 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL7_7 = 0x07,
+    Csel77 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL7_8 = 0x08,
+    Csel78 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL7_9 = 0x09,
+    Csel79 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL7_10 = 0x0a,
+    Csel710 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL7_11 = 0x0b,
+    Csel711 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL7_12 = 0x0c,
+    Csel712 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL7_13 = 0x0d,
+    Csel713 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL7_14 = 0x0e,
+    Csel714 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL7_15 = 0x0f,
+    Csel715 = 0x0f,
 }
 impl Trig1Chain76Csel7 {
     #[inline(always)]
@@ -3846,23 +3846,23 @@ impl From<Trig1Chain76Csel7> for u8 {
 pub struct Trig1Chain76Hwts6(u8);
 impl Trig1Chain76Hwts6 {
     #[doc = "no trigger selected."]
-    pub const HWTS6_0: Self = Self(0x0);
+    pub const Hwts60: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS6_1: Self = Self(0x01);
+    pub const Hwts61: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS6_2: Self = Self(0x02);
+    pub const Hwts62: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS6_4: Self = Self(0x04);
+    pub const Hwts64: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS6_8: Self = Self(0x08);
+    pub const Hwts68: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS6_16: Self = Self(0x10);
+    pub const Hwts616: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS6_32: Self = Self(0x20);
+    pub const Hwts632: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS6_64: Self = Self(0x40);
+    pub const Hwts664: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS6_128: Self = Self(0x80);
+    pub const Hwts6128: Self = Self(0x80);
 }
 impl Trig1Chain76Hwts6 {
     pub const fn from_bits(val: u8) -> Trig1Chain76Hwts6 {
@@ -3875,15 +3875,15 @@ impl Trig1Chain76Hwts6 {
 impl core::fmt::Debug for Trig1Chain76Hwts6 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS6_0"),
-            0x01 => f.write_str("HWTS6_1"),
-            0x02 => f.write_str("HWTS6_2"),
-            0x04 => f.write_str("HWTS6_4"),
-            0x08 => f.write_str("HWTS6_8"),
-            0x10 => f.write_str("HWTS6_16"),
-            0x20 => f.write_str("HWTS6_32"),
-            0x40 => f.write_str("HWTS6_64"),
-            0x80 => f.write_str("HWTS6_128"),
+            0x0 => f.write_str("Hwts60"),
+            0x01 => f.write_str("Hwts61"),
+            0x02 => f.write_str("Hwts62"),
+            0x04 => f.write_str("Hwts64"),
+            0x08 => f.write_str("Hwts68"),
+            0x10 => f.write_str("Hwts616"),
+            0x20 => f.write_str("Hwts632"),
+            0x40 => f.write_str("Hwts664"),
+            0x80 => f.write_str("Hwts6128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -3892,15 +3892,15 @@ impl core::fmt::Debug for Trig1Chain76Hwts6 {
 impl defmt::Format for Trig1Chain76Hwts6 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS6_0"),
-            0x01 => defmt::write!(f, "HWTS6_1"),
-            0x02 => defmt::write!(f, "HWTS6_2"),
-            0x04 => defmt::write!(f, "HWTS6_4"),
-            0x08 => defmt::write!(f, "HWTS6_8"),
-            0x10 => defmt::write!(f, "HWTS6_16"),
-            0x20 => defmt::write!(f, "HWTS6_32"),
-            0x40 => defmt::write!(f, "HWTS6_64"),
-            0x80 => defmt::write!(f, "HWTS6_128"),
+            0x0 => defmt::write!(f, "Hwts60"),
+            0x01 => defmt::write!(f, "Hwts61"),
+            0x02 => defmt::write!(f, "Hwts62"),
+            0x04 => defmt::write!(f, "Hwts64"),
+            0x08 => defmt::write!(f, "Hwts68"),
+            0x10 => defmt::write!(f, "Hwts616"),
+            0x20 => defmt::write!(f, "Hwts632"),
+            0x40 => defmt::write!(f, "Hwts664"),
+            0x80 => defmt::write!(f, "Hwts6128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -3922,23 +3922,23 @@ impl From<Trig1Chain76Hwts6> for u8 {
 pub struct Trig1Chain76Hwts7(u8);
 impl Trig1Chain76Hwts7 {
     #[doc = "no trigger selected."]
-    pub const HWTS7_0: Self = Self(0x0);
+    pub const Hwts70: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS7_1: Self = Self(0x01);
+    pub const Hwts71: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS7_2: Self = Self(0x02);
+    pub const Hwts72: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS7_4: Self = Self(0x04);
+    pub const Hwts74: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS7_8: Self = Self(0x08);
+    pub const Hwts78: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS7_16: Self = Self(0x10);
+    pub const Hwts716: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS7_32: Self = Self(0x20);
+    pub const Hwts732: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS7_64: Self = Self(0x40);
+    pub const Hwts764: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS7_128: Self = Self(0x80);
+    pub const Hwts7128: Self = Self(0x80);
 }
 impl Trig1Chain76Hwts7 {
     pub const fn from_bits(val: u8) -> Trig1Chain76Hwts7 {
@@ -3951,15 +3951,15 @@ impl Trig1Chain76Hwts7 {
 impl core::fmt::Debug for Trig1Chain76Hwts7 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS7_0"),
-            0x01 => f.write_str("HWTS7_1"),
-            0x02 => f.write_str("HWTS7_2"),
-            0x04 => f.write_str("HWTS7_4"),
-            0x08 => f.write_str("HWTS7_8"),
-            0x10 => f.write_str("HWTS7_16"),
-            0x20 => f.write_str("HWTS7_32"),
-            0x40 => f.write_str("HWTS7_64"),
-            0x80 => f.write_str("HWTS7_128"),
+            0x0 => f.write_str("Hwts70"),
+            0x01 => f.write_str("Hwts71"),
+            0x02 => f.write_str("Hwts72"),
+            0x04 => f.write_str("Hwts74"),
+            0x08 => f.write_str("Hwts78"),
+            0x10 => f.write_str("Hwts716"),
+            0x20 => f.write_str("Hwts732"),
+            0x40 => f.write_str("Hwts764"),
+            0x80 => f.write_str("Hwts7128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -3968,15 +3968,15 @@ impl core::fmt::Debug for Trig1Chain76Hwts7 {
 impl defmt::Format for Trig1Chain76Hwts7 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS7_0"),
-            0x01 => defmt::write!(f, "HWTS7_1"),
-            0x02 => defmt::write!(f, "HWTS7_2"),
-            0x04 => defmt::write!(f, "HWTS7_4"),
-            0x08 => defmt::write!(f, "HWTS7_8"),
-            0x10 => defmt::write!(f, "HWTS7_16"),
-            0x20 => defmt::write!(f, "HWTS7_32"),
-            0x40 => defmt::write!(f, "HWTS7_64"),
-            0x80 => defmt::write!(f, "HWTS7_128"),
+            0x0 => defmt::write!(f, "Hwts70"),
+            0x01 => defmt::write!(f, "Hwts71"),
+            0x02 => defmt::write!(f, "Hwts72"),
+            0x04 => defmt::write!(f, "Hwts74"),
+            0x08 => defmt::write!(f, "Hwts78"),
+            0x10 => defmt::write!(f, "Hwts716"),
+            0x20 => defmt::write!(f, "Hwts732"),
+            0x40 => defmt::write!(f, "Hwts764"),
+            0x80 => defmt::write!(f, "Hwts7128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -3998,13 +3998,13 @@ impl From<Trig1Chain76Hwts7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain76Ie6 {
     #[doc = "Generate interrupt on Done0 when segment 6 finish."]
-    IE6_0 = 0x0,
+    Ie60 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 6 finish."]
-    IE6_1 = 0x01,
+    Ie61 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 6 finish."]
-    IE6_2 = 0x02,
+    Ie62 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 6 finish."]
-    IE6_3 = 0x03,
+    Ie63 = 0x03,
 }
 impl Trig1Chain76Ie6 {
     #[inline(always)]
@@ -4033,9 +4033,9 @@ impl From<Trig1Chain76Ie6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain76Ie6En {
     #[doc = "Interrupt DONE disabled."]
-    IE6_EN_0 = 0x0,
+    Ie6En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 6 finish, an interrupt will be generated on the specific port configured by the IE6."]
-    IE6_EN_1 = 0x01,
+    Ie6En1 = 0x01,
 }
 impl Trig1Chain76Ie6En {
     #[inline(always)]
@@ -4064,13 +4064,13 @@ impl From<Trig1Chain76Ie6En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain76Ie7 {
     #[doc = "Generate interrupt on Done0 when segment 7 finish."]
-    IE7_0 = 0x0,
+    Ie70 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 7 finish."]
-    IE7_1 = 0x01,
+    Ie71 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 7 finish."]
-    IE7_2 = 0x02,
+    Ie72 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 7 finish."]
-    IE7_3 = 0x03,
+    Ie73 = 0x03,
 }
 impl Trig1Chain76Ie7 {
     #[inline(always)]
@@ -4099,9 +4099,9 @@ impl From<Trig1Chain76Ie7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Chain76Ie7En {
     #[doc = "Interrupt DONE disabled."]
-    IE7_EN_0 = 0x0,
+    Ie7En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 7 finish, an interrupt will be generated on the specific port configured by the IE7."]
-    IE7_EN_1 = 0x01,
+    Ie7En1 = 0x01,
 }
 impl Trig1Chain76Ie7En {
     #[inline(always)]
@@ -4130,9 +4130,9 @@ impl From<Trig1Chain76Ie7En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1CtrlSwTrig {
     #[doc = "No software trigger event generated."]
-    SW_TRIG_0 = 0x0,
+    SwTrig0 = 0x0,
     #[doc = "Software trigger event generated."]
-    SW_TRIG_1 = 0x01,
+    SwTrig1 = 0x01,
 }
 impl Trig1CtrlSwTrig {
     #[inline(always)]
@@ -4161,9 +4161,9 @@ impl From<Trig1CtrlSwTrig> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1CtrlSyncMode {
     #[doc = "Synchronization mode disabled, TRIGa and TRIG(a+4) are triggered independently."]
-    SYNC_MODE_0 = 0x0,
+    SyncMode0 = 0x0,
     #[doc = "Synchronization mode enabled, TRIGa and TRIG(a+4) are triggered by TRIGa source synchronously."]
-    SYNC_MODE_1 = 0x01,
+    SyncMode1 = 0x01,
 }
 impl Trig1CtrlSyncMode {
     #[inline(always)]
@@ -4192,21 +4192,21 @@ impl From<Trig1CtrlSyncMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1CtrlTrigChain {
     #[doc = "Trigger chain length is 1."]
-    TRIG_CHAIN_0 = 0x0,
+    TrigChain0 = 0x0,
     #[doc = "Trigger chain length is 2."]
-    TRIG_CHAIN_1 = 0x01,
+    TrigChain1 = 0x01,
     #[doc = "Trigger chain length is 3."]
-    TRIG_CHAIN_2 = 0x02,
+    TrigChain2 = 0x02,
     #[doc = "Trigger chain length is 4."]
-    TRIG_CHAIN_3 = 0x03,
+    TrigChain3 = 0x03,
     #[doc = "Trigger chain length is 5."]
-    TRIG_CHAIN_4 = 0x04,
+    TrigChain4 = 0x04,
     #[doc = "Trigger chain length is 6."]
-    TRIG_CHAIN_5 = 0x05,
+    TrigChain5 = 0x05,
     #[doc = "Trigger chain length is 7."]
-    TRIG_CHAIN_6 = 0x06,
+    TrigChain6 = 0x06,
     #[doc = "Trigger chain length is 8."]
-    TRIG_CHAIN_7 = 0x07,
+    TrigChain7 = 0x07,
 }
 impl Trig1CtrlTrigChain {
     #[inline(always)]
@@ -4235,9 +4235,9 @@ impl From<Trig1CtrlTrigChain> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1CtrlTrigMode {
     #[doc = "Hardware trigger. The softerware trigger will be ignored."]
-    TRIG_MODE_0 = 0x0,
+    TrigMode0 = 0x0,
     #[doc = "Software trigger. The hardware trigger will be ignored."]
-    TRIG_MODE_1 = 0x01,
+    TrigMode1 = 0x01,
 }
 impl Trig1CtrlTrigMode {
     #[inline(always)]
@@ -4266,9 +4266,9 @@ impl From<Trig1CtrlTrigMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Done0 {
     #[doc = "No TRIG1_DONE0 interrupt detected."]
-    TRIG1_DONE0_0 = 0x0,
+    Trig1Done00 = 0x0,
     #[doc = "TRIG1_DONE0 interrupt detected."]
-    TRIG1_DONE0_1 = 0x01,
+    Trig1Done01 = 0x01,
 }
 impl Trig1Done0 {
     #[inline(always)]
@@ -4297,9 +4297,9 @@ impl From<Trig1Done0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Done1 {
     #[doc = "No TRIG1_DONE1 interrupt detected."]
-    TRIG1_DONE1_0 = 0x0,
+    Trig1Done10 = 0x0,
     #[doc = "TRIG1_DONE1 interrupt detected."]
-    TRIG1_DONE1_1 = 0x01,
+    Trig1Done11 = 0x01,
 }
 impl Trig1Done1 {
     #[inline(always)]
@@ -4328,9 +4328,9 @@ impl From<Trig1Done1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Done2 {
     #[doc = "No TRIG1_DONE2 interrupt detected."]
-    TRIG1_DONE2_0 = 0x0,
+    Trig1Done20 = 0x0,
     #[doc = "TRIG1_DONE2 interrupt detected."]
-    TRIG1_DONE2_1 = 0x01,
+    Trig1Done21 = 0x01,
 }
 impl Trig1Done2 {
     #[inline(always)]
@@ -4359,9 +4359,9 @@ impl From<Trig1Done2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Done3 {
     #[doc = "No TRIG1_DONE3 interrupt detected."]
-    TRIG1_DONE3_0 = 0x0,
+    Trig1Done30 = 0x0,
     #[doc = "TRIG1_DONE3 interrupt detected."]
-    TRIG1_DONE3_1 = 0x01,
+    Trig1Done31 = 0x01,
 }
 impl Trig1Done3 {
     #[inline(always)]
@@ -4390,9 +4390,9 @@ impl From<Trig1Done3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Enable {
     #[doc = "TRIG1 DMA request disabled."]
-    TRIG1_ENABLE_0 = 0x0,
+    Trig1Enable0 = 0x0,
     #[doc = "TRIG1 DMA request enabled."]
-    TRIG1_ENABLE_1 = 0x01,
+    Trig1Enable1 = 0x01,
 }
 impl Trig1Enable {
     #[inline(always)]
@@ -4421,9 +4421,9 @@ impl From<Trig1Enable> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Err {
     #[doc = "No TRIG1_ERR interrupt detected."]
-    TRIG1_ERR_0 = 0x0,
+    Trig1Err0 = 0x0,
     #[doc = "TRIG1_ERR interrupt detected."]
-    TRIG1_ERR_1 = 0x01,
+    Trig1Err1 = 0x01,
 }
 impl Trig1Err {
     #[inline(always)]
@@ -4452,9 +4452,9 @@ impl From<Trig1Err> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig1Req {
     #[doc = "TRIG1_REQ not detected."]
-    TRIG1_REQ_0 = 0x0,
+    Trig1Req0 = 0x0,
     #[doc = "TRIG1_REQ detected."]
-    TRIG1_REQ_1 = 0x01,
+    Trig1Req1 = 0x01,
 }
 impl Trig1Req {
     #[inline(always)]
@@ -4483,9 +4483,9 @@ impl From<Trig1Req> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain10B2b0 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG0_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B0_0 = 0x0,
+    B2b00 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B0_1 = 0x01,
+    B2b01 = 0x01,
 }
 impl Trig2Chain10B2b0 {
     #[inline(always)]
@@ -4514,9 +4514,9 @@ impl From<Trig2Chain10B2b0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain10B2b1 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG1_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B1_0 = 0x0,
+    B2b10 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B1_1 = 0x01,
+    B2b11 = 0x01,
 }
 impl Trig2Chain10B2b1 {
     #[inline(always)]
@@ -4545,37 +4545,37 @@ impl From<Trig2Chain10B2b1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain10Csel0 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL0_0 = 0x0,
+    Csel00 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL0_1 = 0x01,
+    Csel01 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL0_2 = 0x02,
+    Csel02 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL0_3 = 0x03,
+    Csel03 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL0_4 = 0x04,
+    Csel04 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL0_5 = 0x05,
+    Csel05 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL0_6 = 0x06,
+    Csel06 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL0_7 = 0x07,
+    Csel07 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL0_8 = 0x08,
+    Csel08 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL0_9 = 0x09,
+    Csel09 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL0_10 = 0x0a,
+    Csel010 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL0_11 = 0x0b,
+    Csel011 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL0_12 = 0x0c,
+    Csel012 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL0_13 = 0x0d,
+    Csel013 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL0_14 = 0x0e,
+    Csel014 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL0_15 = 0x0f,
+    Csel015 = 0x0f,
 }
 impl Trig2Chain10Csel0 {
     #[inline(always)]
@@ -4604,37 +4604,37 @@ impl From<Trig2Chain10Csel0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain10Csel1 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL1_0 = 0x0,
+    Csel10 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL1_1 = 0x01,
+    Csel11 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL1_2 = 0x02,
+    Csel12 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL1_3 = 0x03,
+    Csel13 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL1_4 = 0x04,
+    Csel14 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL1_5 = 0x05,
+    Csel15 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL1_6 = 0x06,
+    Csel16 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL1_7 = 0x07,
+    Csel17 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL1_8 = 0x08,
+    Csel18 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL1_9 = 0x09,
+    Csel19 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL1_10 = 0x0a,
+    Csel110 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL1_11 = 0x0b,
+    Csel111 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL1_12 = 0x0c,
+    Csel112 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL1_13 = 0x0d,
+    Csel113 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL1_14 = 0x0e,
+    Csel114 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL1_15 = 0x0f,
+    Csel115 = 0x0f,
 }
 impl Trig2Chain10Csel1 {
     #[inline(always)]
@@ -4663,23 +4663,23 @@ impl From<Trig2Chain10Csel1> for u8 {
 pub struct Trig2Chain10Hwts0(u8);
 impl Trig2Chain10Hwts0 {
     #[doc = "no trigger selected."]
-    pub const HWTS0_0: Self = Self(0x0);
+    pub const Hwts00: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS0_1: Self = Self(0x01);
+    pub const Hwts01: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS0_2: Self = Self(0x02);
+    pub const Hwts02: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS0_4: Self = Self(0x04);
+    pub const Hwts04: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS0_8: Self = Self(0x08);
+    pub const Hwts08: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS0_16: Self = Self(0x10);
+    pub const Hwts016: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS0_32: Self = Self(0x20);
+    pub const Hwts032: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS0_64: Self = Self(0x40);
+    pub const Hwts064: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS0_128: Self = Self(0x80);
+    pub const Hwts0128: Self = Self(0x80);
 }
 impl Trig2Chain10Hwts0 {
     pub const fn from_bits(val: u8) -> Trig2Chain10Hwts0 {
@@ -4692,15 +4692,15 @@ impl Trig2Chain10Hwts0 {
 impl core::fmt::Debug for Trig2Chain10Hwts0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS0_0"),
-            0x01 => f.write_str("HWTS0_1"),
-            0x02 => f.write_str("HWTS0_2"),
-            0x04 => f.write_str("HWTS0_4"),
-            0x08 => f.write_str("HWTS0_8"),
-            0x10 => f.write_str("HWTS0_16"),
-            0x20 => f.write_str("HWTS0_32"),
-            0x40 => f.write_str("HWTS0_64"),
-            0x80 => f.write_str("HWTS0_128"),
+            0x0 => f.write_str("Hwts00"),
+            0x01 => f.write_str("Hwts01"),
+            0x02 => f.write_str("Hwts02"),
+            0x04 => f.write_str("Hwts04"),
+            0x08 => f.write_str("Hwts08"),
+            0x10 => f.write_str("Hwts016"),
+            0x20 => f.write_str("Hwts032"),
+            0x40 => f.write_str("Hwts064"),
+            0x80 => f.write_str("Hwts0128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -4709,15 +4709,15 @@ impl core::fmt::Debug for Trig2Chain10Hwts0 {
 impl defmt::Format for Trig2Chain10Hwts0 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS0_0"),
-            0x01 => defmt::write!(f, "HWTS0_1"),
-            0x02 => defmt::write!(f, "HWTS0_2"),
-            0x04 => defmt::write!(f, "HWTS0_4"),
-            0x08 => defmt::write!(f, "HWTS0_8"),
-            0x10 => defmt::write!(f, "HWTS0_16"),
-            0x20 => defmt::write!(f, "HWTS0_32"),
-            0x40 => defmt::write!(f, "HWTS0_64"),
-            0x80 => defmt::write!(f, "HWTS0_128"),
+            0x0 => defmt::write!(f, "Hwts00"),
+            0x01 => defmt::write!(f, "Hwts01"),
+            0x02 => defmt::write!(f, "Hwts02"),
+            0x04 => defmt::write!(f, "Hwts04"),
+            0x08 => defmt::write!(f, "Hwts08"),
+            0x10 => defmt::write!(f, "Hwts016"),
+            0x20 => defmt::write!(f, "Hwts032"),
+            0x40 => defmt::write!(f, "Hwts064"),
+            0x80 => defmt::write!(f, "Hwts0128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -4739,23 +4739,23 @@ impl From<Trig2Chain10Hwts0> for u8 {
 pub struct Trig2Chain10Hwts1(u8);
 impl Trig2Chain10Hwts1 {
     #[doc = "no trigger selected."]
-    pub const HWTS1_0: Self = Self(0x0);
+    pub const Hwts10: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS1_1: Self = Self(0x01);
+    pub const Hwts11: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS1_2: Self = Self(0x02);
+    pub const Hwts12: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS1_4: Self = Self(0x04);
+    pub const Hwts14: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS1_8: Self = Self(0x08);
+    pub const Hwts18: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS1_16: Self = Self(0x10);
+    pub const Hwts116: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS1_32: Self = Self(0x20);
+    pub const Hwts132: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS1_64: Self = Self(0x40);
+    pub const Hwts164: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS1_128: Self = Self(0x80);
+    pub const Hwts1128: Self = Self(0x80);
 }
 impl Trig2Chain10Hwts1 {
     pub const fn from_bits(val: u8) -> Trig2Chain10Hwts1 {
@@ -4768,15 +4768,15 @@ impl Trig2Chain10Hwts1 {
 impl core::fmt::Debug for Trig2Chain10Hwts1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS1_0"),
-            0x01 => f.write_str("HWTS1_1"),
-            0x02 => f.write_str("HWTS1_2"),
-            0x04 => f.write_str("HWTS1_4"),
-            0x08 => f.write_str("HWTS1_8"),
-            0x10 => f.write_str("HWTS1_16"),
-            0x20 => f.write_str("HWTS1_32"),
-            0x40 => f.write_str("HWTS1_64"),
-            0x80 => f.write_str("HWTS1_128"),
+            0x0 => f.write_str("Hwts10"),
+            0x01 => f.write_str("Hwts11"),
+            0x02 => f.write_str("Hwts12"),
+            0x04 => f.write_str("Hwts14"),
+            0x08 => f.write_str("Hwts18"),
+            0x10 => f.write_str("Hwts116"),
+            0x20 => f.write_str("Hwts132"),
+            0x40 => f.write_str("Hwts164"),
+            0x80 => f.write_str("Hwts1128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -4785,15 +4785,15 @@ impl core::fmt::Debug for Trig2Chain10Hwts1 {
 impl defmt::Format for Trig2Chain10Hwts1 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS1_0"),
-            0x01 => defmt::write!(f, "HWTS1_1"),
-            0x02 => defmt::write!(f, "HWTS1_2"),
-            0x04 => defmt::write!(f, "HWTS1_4"),
-            0x08 => defmt::write!(f, "HWTS1_8"),
-            0x10 => defmt::write!(f, "HWTS1_16"),
-            0x20 => defmt::write!(f, "HWTS1_32"),
-            0x40 => defmt::write!(f, "HWTS1_64"),
-            0x80 => defmt::write!(f, "HWTS1_128"),
+            0x0 => defmt::write!(f, "Hwts10"),
+            0x01 => defmt::write!(f, "Hwts11"),
+            0x02 => defmt::write!(f, "Hwts12"),
+            0x04 => defmt::write!(f, "Hwts14"),
+            0x08 => defmt::write!(f, "Hwts18"),
+            0x10 => defmt::write!(f, "Hwts116"),
+            0x20 => defmt::write!(f, "Hwts132"),
+            0x40 => defmt::write!(f, "Hwts164"),
+            0x80 => defmt::write!(f, "Hwts1128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -4815,13 +4815,13 @@ impl From<Trig2Chain10Hwts1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain10Ie0 {
     #[doc = "Generate interrupt on Done0 when segment 0 finish."]
-    IE0_0 = 0x0,
+    Ie00 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 0 finish."]
-    IE0_1 = 0x01,
+    Ie01 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 0 finish."]
-    IE0_2 = 0x02,
+    Ie02 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 0 finish."]
-    IE0_3 = 0x03,
+    Ie03 = 0x03,
 }
 impl Trig2Chain10Ie0 {
     #[inline(always)]
@@ -4850,9 +4850,9 @@ impl From<Trig2Chain10Ie0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain10Ie0En {
     #[doc = "Interrupt DONE disabled."]
-    IE0_EN_0 = 0x0,
+    Ie0En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 0 finish, an interrupt will be generated on the specific port configured by the IE0."]
-    IE0_EN_1 = 0x01,
+    Ie0En1 = 0x01,
 }
 impl Trig2Chain10Ie0En {
     #[inline(always)]
@@ -4881,13 +4881,13 @@ impl From<Trig2Chain10Ie0En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain10Ie1 {
     #[doc = "Generate interrupt on Done0 when Segment 1 finish."]
-    IE1_0 = 0x0,
+    Ie10 = 0x0,
     #[doc = "Generate interrupt on Done1 when Segment 1 finish."]
-    IE1_1 = 0x01,
+    Ie11 = 0x01,
     #[doc = "Generate interrupt on Done2 when Segment 1 finish."]
-    IE1_2 = 0x02,
+    Ie12 = 0x02,
     #[doc = "Generate interrupt on Done3 when Segment 1 finish."]
-    IE1_3 = 0x03,
+    Ie13 = 0x03,
 }
 impl Trig2Chain10Ie1 {
     #[inline(always)]
@@ -4916,9 +4916,9 @@ impl From<Trig2Chain10Ie1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain10Ie1En {
     #[doc = "Interrupt DONE disabled."]
-    IE1_EN_0 = 0x0,
+    Ie1En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 1 finish, an interrupt will be generated on the specific port configured by the IE1."]
-    IE1_EN_1 = 0x01,
+    Ie1En1 = 0x01,
 }
 impl Trig2Chain10Ie1En {
     #[inline(always)]
@@ -4947,9 +4947,9 @@ impl From<Trig2Chain10Ie1En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain32B2b2 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG2_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B2_0 = 0x0,
+    B2b20 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B2_1 = 0x01,
+    B2b21 = 0x01,
 }
 impl Trig2Chain32B2b2 {
     #[inline(always)]
@@ -4978,9 +4978,9 @@ impl From<Trig2Chain32B2b2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain32B2b3 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG3_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B3_0 = 0x0,
+    B2b30 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B3_1 = 0x01,
+    B2b31 = 0x01,
 }
 impl Trig2Chain32B2b3 {
     #[inline(always)]
@@ -5009,37 +5009,37 @@ impl From<Trig2Chain32B2b3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain32Csel2 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL2_0 = 0x0,
+    Csel20 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL2_1 = 0x01,
+    Csel21 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL2_2 = 0x02,
+    Csel22 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL2_3 = 0x03,
+    Csel23 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL2_4 = 0x04,
+    Csel24 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL2_5 = 0x05,
+    Csel25 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL2_6 = 0x06,
+    Csel26 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL2_7 = 0x07,
+    Csel27 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL2_8 = 0x08,
+    Csel28 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL2_9 = 0x09,
+    Csel29 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL2_10 = 0x0a,
+    Csel210 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL2_11 = 0x0b,
+    Csel211 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL2_12 = 0x0c,
+    Csel212 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL2_13 = 0x0d,
+    Csel213 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL2_14 = 0x0e,
+    Csel214 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL2_15 = 0x0f,
+    Csel215 = 0x0f,
 }
 impl Trig2Chain32Csel2 {
     #[inline(always)]
@@ -5068,37 +5068,37 @@ impl From<Trig2Chain32Csel2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain32Csel3 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL3_0 = 0x0,
+    Csel30 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL3_1 = 0x01,
+    Csel31 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL3_2 = 0x02,
+    Csel32 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL3_3 = 0x03,
+    Csel33 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL3_4 = 0x04,
+    Csel34 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL3_5 = 0x05,
+    Csel35 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL3_6 = 0x06,
+    Csel36 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL3_7 = 0x07,
+    Csel37 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL3_8 = 0x08,
+    Csel38 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL3_9 = 0x09,
+    Csel39 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL3_10 = 0x0a,
+    Csel310 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL3_11 = 0x0b,
+    Csel311 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL3_12 = 0x0c,
+    Csel312 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL3_13 = 0x0d,
+    Csel313 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL3_14 = 0x0e,
+    Csel314 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL3_15 = 0x0f,
+    Csel315 = 0x0f,
 }
 impl Trig2Chain32Csel3 {
     #[inline(always)]
@@ -5127,23 +5127,23 @@ impl From<Trig2Chain32Csel3> for u8 {
 pub struct Trig2Chain32Hwts2(u8);
 impl Trig2Chain32Hwts2 {
     #[doc = "no trigger selected."]
-    pub const HWTS2_0: Self = Self(0x0);
+    pub const Hwts20: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS2_1: Self = Self(0x01);
+    pub const Hwts21: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS2_2: Self = Self(0x02);
+    pub const Hwts22: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS2_4: Self = Self(0x04);
+    pub const Hwts24: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS2_8: Self = Self(0x08);
+    pub const Hwts28: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS2_16: Self = Self(0x10);
+    pub const Hwts216: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS2_32: Self = Self(0x20);
+    pub const Hwts232: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS2_64: Self = Self(0x40);
+    pub const Hwts264: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS2_128: Self = Self(0x80);
+    pub const Hwts2128: Self = Self(0x80);
 }
 impl Trig2Chain32Hwts2 {
     pub const fn from_bits(val: u8) -> Trig2Chain32Hwts2 {
@@ -5156,15 +5156,15 @@ impl Trig2Chain32Hwts2 {
 impl core::fmt::Debug for Trig2Chain32Hwts2 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS2_0"),
-            0x01 => f.write_str("HWTS2_1"),
-            0x02 => f.write_str("HWTS2_2"),
-            0x04 => f.write_str("HWTS2_4"),
-            0x08 => f.write_str("HWTS2_8"),
-            0x10 => f.write_str("HWTS2_16"),
-            0x20 => f.write_str("HWTS2_32"),
-            0x40 => f.write_str("HWTS2_64"),
-            0x80 => f.write_str("HWTS2_128"),
+            0x0 => f.write_str("Hwts20"),
+            0x01 => f.write_str("Hwts21"),
+            0x02 => f.write_str("Hwts22"),
+            0x04 => f.write_str("Hwts24"),
+            0x08 => f.write_str("Hwts28"),
+            0x10 => f.write_str("Hwts216"),
+            0x20 => f.write_str("Hwts232"),
+            0x40 => f.write_str("Hwts264"),
+            0x80 => f.write_str("Hwts2128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -5173,15 +5173,15 @@ impl core::fmt::Debug for Trig2Chain32Hwts2 {
 impl defmt::Format for Trig2Chain32Hwts2 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS2_0"),
-            0x01 => defmt::write!(f, "HWTS2_1"),
-            0x02 => defmt::write!(f, "HWTS2_2"),
-            0x04 => defmt::write!(f, "HWTS2_4"),
-            0x08 => defmt::write!(f, "HWTS2_8"),
-            0x10 => defmt::write!(f, "HWTS2_16"),
-            0x20 => defmt::write!(f, "HWTS2_32"),
-            0x40 => defmt::write!(f, "HWTS2_64"),
-            0x80 => defmt::write!(f, "HWTS2_128"),
+            0x0 => defmt::write!(f, "Hwts20"),
+            0x01 => defmt::write!(f, "Hwts21"),
+            0x02 => defmt::write!(f, "Hwts22"),
+            0x04 => defmt::write!(f, "Hwts24"),
+            0x08 => defmt::write!(f, "Hwts28"),
+            0x10 => defmt::write!(f, "Hwts216"),
+            0x20 => defmt::write!(f, "Hwts232"),
+            0x40 => defmt::write!(f, "Hwts264"),
+            0x80 => defmt::write!(f, "Hwts2128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -5203,23 +5203,23 @@ impl From<Trig2Chain32Hwts2> for u8 {
 pub struct Trig2Chain32Hwts3(u8);
 impl Trig2Chain32Hwts3 {
     #[doc = "no trigger selected."]
-    pub const HWTS3_0: Self = Self(0x0);
+    pub const Hwts30: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS3_1: Self = Self(0x01);
+    pub const Hwts31: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS3_2: Self = Self(0x02);
+    pub const Hwts32: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS3_4: Self = Self(0x04);
+    pub const Hwts34: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS3_8: Self = Self(0x08);
+    pub const Hwts38: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS3_16: Self = Self(0x10);
+    pub const Hwts316: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS3_32: Self = Self(0x20);
+    pub const Hwts332: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS3_64: Self = Self(0x40);
+    pub const Hwts364: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS3_128: Self = Self(0x80);
+    pub const Hwts3128: Self = Self(0x80);
 }
 impl Trig2Chain32Hwts3 {
     pub const fn from_bits(val: u8) -> Trig2Chain32Hwts3 {
@@ -5232,15 +5232,15 @@ impl Trig2Chain32Hwts3 {
 impl core::fmt::Debug for Trig2Chain32Hwts3 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS3_0"),
-            0x01 => f.write_str("HWTS3_1"),
-            0x02 => f.write_str("HWTS3_2"),
-            0x04 => f.write_str("HWTS3_4"),
-            0x08 => f.write_str("HWTS3_8"),
-            0x10 => f.write_str("HWTS3_16"),
-            0x20 => f.write_str("HWTS3_32"),
-            0x40 => f.write_str("HWTS3_64"),
-            0x80 => f.write_str("HWTS3_128"),
+            0x0 => f.write_str("Hwts30"),
+            0x01 => f.write_str("Hwts31"),
+            0x02 => f.write_str("Hwts32"),
+            0x04 => f.write_str("Hwts34"),
+            0x08 => f.write_str("Hwts38"),
+            0x10 => f.write_str("Hwts316"),
+            0x20 => f.write_str("Hwts332"),
+            0x40 => f.write_str("Hwts364"),
+            0x80 => f.write_str("Hwts3128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -5249,15 +5249,15 @@ impl core::fmt::Debug for Trig2Chain32Hwts3 {
 impl defmt::Format for Trig2Chain32Hwts3 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS3_0"),
-            0x01 => defmt::write!(f, "HWTS3_1"),
-            0x02 => defmt::write!(f, "HWTS3_2"),
-            0x04 => defmt::write!(f, "HWTS3_4"),
-            0x08 => defmt::write!(f, "HWTS3_8"),
-            0x10 => defmt::write!(f, "HWTS3_16"),
-            0x20 => defmt::write!(f, "HWTS3_32"),
-            0x40 => defmt::write!(f, "HWTS3_64"),
-            0x80 => defmt::write!(f, "HWTS3_128"),
+            0x0 => defmt::write!(f, "Hwts30"),
+            0x01 => defmt::write!(f, "Hwts31"),
+            0x02 => defmt::write!(f, "Hwts32"),
+            0x04 => defmt::write!(f, "Hwts34"),
+            0x08 => defmt::write!(f, "Hwts38"),
+            0x10 => defmt::write!(f, "Hwts316"),
+            0x20 => defmt::write!(f, "Hwts332"),
+            0x40 => defmt::write!(f, "Hwts364"),
+            0x80 => defmt::write!(f, "Hwts3128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -5279,13 +5279,13 @@ impl From<Trig2Chain32Hwts3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain32Ie2 {
     #[doc = "Generate interrupt on Done0 when segment 2 finish."]
-    IE2_0 = 0x0,
+    Ie20 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 2 finish."]
-    IE2_1 = 0x01,
+    Ie21 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 2 finish."]
-    IE2_2 = 0x02,
+    Ie22 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 2 finish."]
-    IE2_3 = 0x03,
+    Ie23 = 0x03,
 }
 impl Trig2Chain32Ie2 {
     #[inline(always)]
@@ -5314,9 +5314,9 @@ impl From<Trig2Chain32Ie2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain32Ie2En {
     #[doc = "Interrupt DONE disabled."]
-    IE2_EN_0 = 0x0,
+    Ie2En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 2 finish, an interrupt will be generated on the specific port configured by the IE2."]
-    IE2_EN_1 = 0x01,
+    Ie2En1 = 0x01,
 }
 impl Trig2Chain32Ie2En {
     #[inline(always)]
@@ -5345,13 +5345,13 @@ impl From<Trig2Chain32Ie2En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain32Ie3 {
     #[doc = "Generate interrupt on Done0 when segment 3 finish."]
-    IE3_0 = 0x0,
+    Ie30 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 3 finish."]
-    IE3_1 = 0x01,
+    Ie31 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 3 finish."]
-    IE3_2 = 0x02,
+    Ie32 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 3 finish."]
-    IE3_3 = 0x03,
+    Ie33 = 0x03,
 }
 impl Trig2Chain32Ie3 {
     #[inline(always)]
@@ -5380,9 +5380,9 @@ impl From<Trig2Chain32Ie3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain32Ie3En {
     #[doc = "Interrupt DONE disabled."]
-    IE3_EN_0 = 0x0,
+    Ie3En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 3 finish, an interrupt will be generated on the specific port configured by the IE3."]
-    IE3_EN_1 = 0x01,
+    Ie3En1 = 0x01,
 }
 impl Trig2Chain32Ie3En {
     #[inline(always)]
@@ -5411,9 +5411,9 @@ impl From<Trig2Chain32Ie3En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain54B2b4 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG4_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B4_0 = 0x0,
+    B2b40 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B4_1 = 0x01,
+    B2b41 = 0x01,
 }
 impl Trig2Chain54B2b4 {
     #[inline(always)]
@@ -5442,9 +5442,9 @@ impl From<Trig2Chain54B2b4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain54B2b5 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG5_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B5_0 = 0x0,
+    B2b50 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B5_1 = 0x01,
+    B2b51 = 0x01,
 }
 impl Trig2Chain54B2b5 {
     #[inline(always)]
@@ -5473,37 +5473,37 @@ impl From<Trig2Chain54B2b5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain54Csel4 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL4_0 = 0x0,
+    Csel40 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL4_1 = 0x01,
+    Csel41 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL4_2 = 0x02,
+    Csel42 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL4_3 = 0x03,
+    Csel43 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL4_4 = 0x04,
+    Csel44 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL4_5 = 0x05,
+    Csel45 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL4_6 = 0x06,
+    Csel46 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL4_7 = 0x07,
+    Csel47 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL4_8 = 0x08,
+    Csel48 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL4_9 = 0x09,
+    Csel49 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL4_10 = 0x0a,
+    Csel410 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL4_11 = 0x0b,
+    Csel411 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL4_12 = 0x0c,
+    Csel412 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL4_13 = 0x0d,
+    Csel413 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL4_14 = 0x0e,
+    Csel414 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL4_15 = 0x0f,
+    Csel415 = 0x0f,
 }
 impl Trig2Chain54Csel4 {
     #[inline(always)]
@@ -5532,37 +5532,37 @@ impl From<Trig2Chain54Csel4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain54Csel5 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL5_0 = 0x0,
+    Csel50 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL5_1 = 0x01,
+    Csel51 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL5_2 = 0x02,
+    Csel52 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL5_3 = 0x03,
+    Csel53 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL5_4 = 0x04,
+    Csel54 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL5_5 = 0x05,
+    Csel55 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL5_6 = 0x06,
+    Csel56 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL5_7 = 0x07,
+    Csel57 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL5_8 = 0x08,
+    Csel58 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL5_9 = 0x09,
+    Csel59 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL5_10 = 0x0a,
+    Csel510 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL5_11 = 0x0b,
+    Csel511 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL5_12 = 0x0c,
+    Csel512 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL5_13 = 0x0d,
+    Csel513 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL5_14 = 0x0e,
+    Csel514 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL5_15 = 0x0f,
+    Csel515 = 0x0f,
 }
 impl Trig2Chain54Csel5 {
     #[inline(always)]
@@ -5591,23 +5591,23 @@ impl From<Trig2Chain54Csel5> for u8 {
 pub struct Trig2Chain54Hwts4(u8);
 impl Trig2Chain54Hwts4 {
     #[doc = "no trigger selected."]
-    pub const HWTS4_0: Self = Self(0x0);
+    pub const Hwts40: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS4_1: Self = Self(0x01);
+    pub const Hwts41: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS4_2: Self = Self(0x02);
+    pub const Hwts42: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS4_4: Self = Self(0x04);
+    pub const Hwts44: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS4_8: Self = Self(0x08);
+    pub const Hwts48: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS4_16: Self = Self(0x10);
+    pub const Hwts416: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS4_32: Self = Self(0x20);
+    pub const Hwts432: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS4_64: Self = Self(0x40);
+    pub const Hwts464: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS4_128: Self = Self(0x80);
+    pub const Hwts4128: Self = Self(0x80);
 }
 impl Trig2Chain54Hwts4 {
     pub const fn from_bits(val: u8) -> Trig2Chain54Hwts4 {
@@ -5620,15 +5620,15 @@ impl Trig2Chain54Hwts4 {
 impl core::fmt::Debug for Trig2Chain54Hwts4 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS4_0"),
-            0x01 => f.write_str("HWTS4_1"),
-            0x02 => f.write_str("HWTS4_2"),
-            0x04 => f.write_str("HWTS4_4"),
-            0x08 => f.write_str("HWTS4_8"),
-            0x10 => f.write_str("HWTS4_16"),
-            0x20 => f.write_str("HWTS4_32"),
-            0x40 => f.write_str("HWTS4_64"),
-            0x80 => f.write_str("HWTS4_128"),
+            0x0 => f.write_str("Hwts40"),
+            0x01 => f.write_str("Hwts41"),
+            0x02 => f.write_str("Hwts42"),
+            0x04 => f.write_str("Hwts44"),
+            0x08 => f.write_str("Hwts48"),
+            0x10 => f.write_str("Hwts416"),
+            0x20 => f.write_str("Hwts432"),
+            0x40 => f.write_str("Hwts464"),
+            0x80 => f.write_str("Hwts4128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -5637,15 +5637,15 @@ impl core::fmt::Debug for Trig2Chain54Hwts4 {
 impl defmt::Format for Trig2Chain54Hwts4 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS4_0"),
-            0x01 => defmt::write!(f, "HWTS4_1"),
-            0x02 => defmt::write!(f, "HWTS4_2"),
-            0x04 => defmt::write!(f, "HWTS4_4"),
-            0x08 => defmt::write!(f, "HWTS4_8"),
-            0x10 => defmt::write!(f, "HWTS4_16"),
-            0x20 => defmt::write!(f, "HWTS4_32"),
-            0x40 => defmt::write!(f, "HWTS4_64"),
-            0x80 => defmt::write!(f, "HWTS4_128"),
+            0x0 => defmt::write!(f, "Hwts40"),
+            0x01 => defmt::write!(f, "Hwts41"),
+            0x02 => defmt::write!(f, "Hwts42"),
+            0x04 => defmt::write!(f, "Hwts44"),
+            0x08 => defmt::write!(f, "Hwts48"),
+            0x10 => defmt::write!(f, "Hwts416"),
+            0x20 => defmt::write!(f, "Hwts432"),
+            0x40 => defmt::write!(f, "Hwts464"),
+            0x80 => defmt::write!(f, "Hwts4128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -5667,23 +5667,23 @@ impl From<Trig2Chain54Hwts4> for u8 {
 pub struct Trig2Chain54Hwts5(u8);
 impl Trig2Chain54Hwts5 {
     #[doc = "no trigger selected."]
-    pub const HWTS5_0: Self = Self(0x0);
+    pub const Hwts50: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS5_1: Self = Self(0x01);
+    pub const Hwts51: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS5_2: Self = Self(0x02);
+    pub const Hwts52: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS5_4: Self = Self(0x04);
+    pub const Hwts54: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS5_8: Self = Self(0x08);
+    pub const Hwts58: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS5_16: Self = Self(0x10);
+    pub const Hwts516: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS5_32: Self = Self(0x20);
+    pub const Hwts532: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS5_64: Self = Self(0x40);
+    pub const Hwts564: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS5_128: Self = Self(0x80);
+    pub const Hwts5128: Self = Self(0x80);
 }
 impl Trig2Chain54Hwts5 {
     pub const fn from_bits(val: u8) -> Trig2Chain54Hwts5 {
@@ -5696,15 +5696,15 @@ impl Trig2Chain54Hwts5 {
 impl core::fmt::Debug for Trig2Chain54Hwts5 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS5_0"),
-            0x01 => f.write_str("HWTS5_1"),
-            0x02 => f.write_str("HWTS5_2"),
-            0x04 => f.write_str("HWTS5_4"),
-            0x08 => f.write_str("HWTS5_8"),
-            0x10 => f.write_str("HWTS5_16"),
-            0x20 => f.write_str("HWTS5_32"),
-            0x40 => f.write_str("HWTS5_64"),
-            0x80 => f.write_str("HWTS5_128"),
+            0x0 => f.write_str("Hwts50"),
+            0x01 => f.write_str("Hwts51"),
+            0x02 => f.write_str("Hwts52"),
+            0x04 => f.write_str("Hwts54"),
+            0x08 => f.write_str("Hwts58"),
+            0x10 => f.write_str("Hwts516"),
+            0x20 => f.write_str("Hwts532"),
+            0x40 => f.write_str("Hwts564"),
+            0x80 => f.write_str("Hwts5128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -5713,15 +5713,15 @@ impl core::fmt::Debug for Trig2Chain54Hwts5 {
 impl defmt::Format for Trig2Chain54Hwts5 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS5_0"),
-            0x01 => defmt::write!(f, "HWTS5_1"),
-            0x02 => defmt::write!(f, "HWTS5_2"),
-            0x04 => defmt::write!(f, "HWTS5_4"),
-            0x08 => defmt::write!(f, "HWTS5_8"),
-            0x10 => defmt::write!(f, "HWTS5_16"),
-            0x20 => defmt::write!(f, "HWTS5_32"),
-            0x40 => defmt::write!(f, "HWTS5_64"),
-            0x80 => defmt::write!(f, "HWTS5_128"),
+            0x0 => defmt::write!(f, "Hwts50"),
+            0x01 => defmt::write!(f, "Hwts51"),
+            0x02 => defmt::write!(f, "Hwts52"),
+            0x04 => defmt::write!(f, "Hwts54"),
+            0x08 => defmt::write!(f, "Hwts58"),
+            0x10 => defmt::write!(f, "Hwts516"),
+            0x20 => defmt::write!(f, "Hwts532"),
+            0x40 => defmt::write!(f, "Hwts564"),
+            0x80 => defmt::write!(f, "Hwts5128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -5743,13 +5743,13 @@ impl From<Trig2Chain54Hwts5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain54Ie4 {
     #[doc = "Generate interrupt on Done0 when segment 4 finish."]
-    IE4_0 = 0x0,
+    Ie40 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 4 finish."]
-    IE4_1 = 0x01,
+    Ie41 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 4 finish."]
-    IE4_2 = 0x02,
+    Ie42 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 4 finish."]
-    IE4_3 = 0x03,
+    Ie43 = 0x03,
 }
 impl Trig2Chain54Ie4 {
     #[inline(always)]
@@ -5778,9 +5778,9 @@ impl From<Trig2Chain54Ie4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain54Ie4En {
     #[doc = "Interrupt DONE disabled."]
-    IE4_EN_0 = 0x0,
+    Ie4En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 4 finish, an interrupt will be generated on the specific port configured by the IE4."]
-    IE4_EN_1 = 0x01,
+    Ie4En1 = 0x01,
 }
 impl Trig2Chain54Ie4En {
     #[inline(always)]
@@ -5809,13 +5809,13 @@ impl From<Trig2Chain54Ie4En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain54Ie5 {
     #[doc = "Generate interrupt on Done0 when segment 5 finish."]
-    IE5_0 = 0x0,
+    Ie50 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 5 finish."]
-    IE5_1 = 0x01,
+    Ie51 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 5 finish."]
-    IE5_2 = 0x02,
+    Ie52 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 5 finish."]
-    IE5_3 = 0x03,
+    Ie53 = 0x03,
 }
 impl Trig2Chain54Ie5 {
     #[inline(always)]
@@ -5844,9 +5844,9 @@ impl From<Trig2Chain54Ie5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain54Ie5En {
     #[doc = "Interrupt DONE disabled."]
-    IE5_EN_0 = 0x0,
+    Ie5En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 5 finish, an interrupt will be generated on the specific port configured by the IE5."]
-    IE5_EN_1 = 0x01,
+    Ie5En1 = 0x01,
 }
 impl Trig2Chain54Ie5En {
     #[inline(always)]
@@ -5875,9 +5875,9 @@ impl From<Trig2Chain54Ie5En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain76B2b6 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG6_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B6_0 = 0x0,
+    B2b60 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B6_1 = 0x01,
+    B2b61 = 0x01,
 }
 impl Trig2Chain76B2b6 {
     #[inline(always)]
@@ -5906,9 +5906,9 @@ impl From<Trig2Chain76B2b6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain76B2b7 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG7_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B7_0 = 0x0,
+    B2b70 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B7_1 = 0x01,
+    B2b71 = 0x01,
 }
 impl Trig2Chain76B2b7 {
     #[inline(always)]
@@ -5937,37 +5937,37 @@ impl From<Trig2Chain76B2b7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain76Csel6 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL6_0 = 0x0,
+    Csel60 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL6_1 = 0x01,
+    Csel61 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL6_2 = 0x02,
+    Csel62 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL6_3 = 0x03,
+    Csel63 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL6_4 = 0x04,
+    Csel64 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL6_5 = 0x05,
+    Csel65 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL6_6 = 0x06,
+    Csel66 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL6_7 = 0x07,
+    Csel67 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL6_8 = 0x08,
+    Csel68 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL6_9 = 0x09,
+    Csel69 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL6_10 = 0x0a,
+    Csel610 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL6_11 = 0x0b,
+    Csel611 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL6_12 = 0x0c,
+    Csel612 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL6_13 = 0x0d,
+    Csel613 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL6_14 = 0x0e,
+    Csel614 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL6_15 = 0x0f,
+    Csel615 = 0x0f,
 }
 impl Trig2Chain76Csel6 {
     #[inline(always)]
@@ -5996,37 +5996,37 @@ impl From<Trig2Chain76Csel6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain76Csel7 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL7_0 = 0x0,
+    Csel70 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL7_1 = 0x01,
+    Csel71 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL7_2 = 0x02,
+    Csel72 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL7_3 = 0x03,
+    Csel73 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL7_4 = 0x04,
+    Csel74 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL7_5 = 0x05,
+    Csel75 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL7_6 = 0x06,
+    Csel76 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL7_7 = 0x07,
+    Csel77 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL7_8 = 0x08,
+    Csel78 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL7_9 = 0x09,
+    Csel79 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL7_10 = 0x0a,
+    Csel710 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL7_11 = 0x0b,
+    Csel711 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL7_12 = 0x0c,
+    Csel712 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL7_13 = 0x0d,
+    Csel713 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL7_14 = 0x0e,
+    Csel714 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL7_15 = 0x0f,
+    Csel715 = 0x0f,
 }
 impl Trig2Chain76Csel7 {
     #[inline(always)]
@@ -6055,23 +6055,23 @@ impl From<Trig2Chain76Csel7> for u8 {
 pub struct Trig2Chain76Hwts6(u8);
 impl Trig2Chain76Hwts6 {
     #[doc = "no trigger selected."]
-    pub const HWTS6_0: Self = Self(0x0);
+    pub const Hwts60: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS6_1: Self = Self(0x01);
+    pub const Hwts61: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS6_2: Self = Self(0x02);
+    pub const Hwts62: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS6_4: Self = Self(0x04);
+    pub const Hwts64: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS6_8: Self = Self(0x08);
+    pub const Hwts68: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS6_16: Self = Self(0x10);
+    pub const Hwts616: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS6_32: Self = Self(0x20);
+    pub const Hwts632: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS6_64: Self = Self(0x40);
+    pub const Hwts664: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS6_128: Self = Self(0x80);
+    pub const Hwts6128: Self = Self(0x80);
 }
 impl Trig2Chain76Hwts6 {
     pub const fn from_bits(val: u8) -> Trig2Chain76Hwts6 {
@@ -6084,15 +6084,15 @@ impl Trig2Chain76Hwts6 {
 impl core::fmt::Debug for Trig2Chain76Hwts6 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS6_0"),
-            0x01 => f.write_str("HWTS6_1"),
-            0x02 => f.write_str("HWTS6_2"),
-            0x04 => f.write_str("HWTS6_4"),
-            0x08 => f.write_str("HWTS6_8"),
-            0x10 => f.write_str("HWTS6_16"),
-            0x20 => f.write_str("HWTS6_32"),
-            0x40 => f.write_str("HWTS6_64"),
-            0x80 => f.write_str("HWTS6_128"),
+            0x0 => f.write_str("Hwts60"),
+            0x01 => f.write_str("Hwts61"),
+            0x02 => f.write_str("Hwts62"),
+            0x04 => f.write_str("Hwts64"),
+            0x08 => f.write_str("Hwts68"),
+            0x10 => f.write_str("Hwts616"),
+            0x20 => f.write_str("Hwts632"),
+            0x40 => f.write_str("Hwts664"),
+            0x80 => f.write_str("Hwts6128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -6101,15 +6101,15 @@ impl core::fmt::Debug for Trig2Chain76Hwts6 {
 impl defmt::Format for Trig2Chain76Hwts6 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS6_0"),
-            0x01 => defmt::write!(f, "HWTS6_1"),
-            0x02 => defmt::write!(f, "HWTS6_2"),
-            0x04 => defmt::write!(f, "HWTS6_4"),
-            0x08 => defmt::write!(f, "HWTS6_8"),
-            0x10 => defmt::write!(f, "HWTS6_16"),
-            0x20 => defmt::write!(f, "HWTS6_32"),
-            0x40 => defmt::write!(f, "HWTS6_64"),
-            0x80 => defmt::write!(f, "HWTS6_128"),
+            0x0 => defmt::write!(f, "Hwts60"),
+            0x01 => defmt::write!(f, "Hwts61"),
+            0x02 => defmt::write!(f, "Hwts62"),
+            0x04 => defmt::write!(f, "Hwts64"),
+            0x08 => defmt::write!(f, "Hwts68"),
+            0x10 => defmt::write!(f, "Hwts616"),
+            0x20 => defmt::write!(f, "Hwts632"),
+            0x40 => defmt::write!(f, "Hwts664"),
+            0x80 => defmt::write!(f, "Hwts6128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -6131,23 +6131,23 @@ impl From<Trig2Chain76Hwts6> for u8 {
 pub struct Trig2Chain76Hwts7(u8);
 impl Trig2Chain76Hwts7 {
     #[doc = "no trigger selected."]
-    pub const HWTS7_0: Self = Self(0x0);
+    pub const Hwts70: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS7_1: Self = Self(0x01);
+    pub const Hwts71: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS7_2: Self = Self(0x02);
+    pub const Hwts72: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS7_4: Self = Self(0x04);
+    pub const Hwts74: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS7_8: Self = Self(0x08);
+    pub const Hwts78: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS7_16: Self = Self(0x10);
+    pub const Hwts716: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS7_32: Self = Self(0x20);
+    pub const Hwts732: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS7_64: Self = Self(0x40);
+    pub const Hwts764: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS7_128: Self = Self(0x80);
+    pub const Hwts7128: Self = Self(0x80);
 }
 impl Trig2Chain76Hwts7 {
     pub const fn from_bits(val: u8) -> Trig2Chain76Hwts7 {
@@ -6160,15 +6160,15 @@ impl Trig2Chain76Hwts7 {
 impl core::fmt::Debug for Trig2Chain76Hwts7 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS7_0"),
-            0x01 => f.write_str("HWTS7_1"),
-            0x02 => f.write_str("HWTS7_2"),
-            0x04 => f.write_str("HWTS7_4"),
-            0x08 => f.write_str("HWTS7_8"),
-            0x10 => f.write_str("HWTS7_16"),
-            0x20 => f.write_str("HWTS7_32"),
-            0x40 => f.write_str("HWTS7_64"),
-            0x80 => f.write_str("HWTS7_128"),
+            0x0 => f.write_str("Hwts70"),
+            0x01 => f.write_str("Hwts71"),
+            0x02 => f.write_str("Hwts72"),
+            0x04 => f.write_str("Hwts74"),
+            0x08 => f.write_str("Hwts78"),
+            0x10 => f.write_str("Hwts716"),
+            0x20 => f.write_str("Hwts732"),
+            0x40 => f.write_str("Hwts764"),
+            0x80 => f.write_str("Hwts7128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -6177,15 +6177,15 @@ impl core::fmt::Debug for Trig2Chain76Hwts7 {
 impl defmt::Format for Trig2Chain76Hwts7 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS7_0"),
-            0x01 => defmt::write!(f, "HWTS7_1"),
-            0x02 => defmt::write!(f, "HWTS7_2"),
-            0x04 => defmt::write!(f, "HWTS7_4"),
-            0x08 => defmt::write!(f, "HWTS7_8"),
-            0x10 => defmt::write!(f, "HWTS7_16"),
-            0x20 => defmt::write!(f, "HWTS7_32"),
-            0x40 => defmt::write!(f, "HWTS7_64"),
-            0x80 => defmt::write!(f, "HWTS7_128"),
+            0x0 => defmt::write!(f, "Hwts70"),
+            0x01 => defmt::write!(f, "Hwts71"),
+            0x02 => defmt::write!(f, "Hwts72"),
+            0x04 => defmt::write!(f, "Hwts74"),
+            0x08 => defmt::write!(f, "Hwts78"),
+            0x10 => defmt::write!(f, "Hwts716"),
+            0x20 => defmt::write!(f, "Hwts732"),
+            0x40 => defmt::write!(f, "Hwts764"),
+            0x80 => defmt::write!(f, "Hwts7128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -6207,13 +6207,13 @@ impl From<Trig2Chain76Hwts7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain76Ie6 {
     #[doc = "Generate interrupt on Done0 when segment 6 finish."]
-    IE6_0 = 0x0,
+    Ie60 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 6 finish."]
-    IE6_1 = 0x01,
+    Ie61 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 6 finish."]
-    IE6_2 = 0x02,
+    Ie62 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 6 finish."]
-    IE6_3 = 0x03,
+    Ie63 = 0x03,
 }
 impl Trig2Chain76Ie6 {
     #[inline(always)]
@@ -6242,9 +6242,9 @@ impl From<Trig2Chain76Ie6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain76Ie6En {
     #[doc = "Interrupt DONE disabled."]
-    IE6_EN_0 = 0x0,
+    Ie6En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 6 finish, an interrupt will be generated on the specific port configured by the IE6."]
-    IE6_EN_1 = 0x01,
+    Ie6En1 = 0x01,
 }
 impl Trig2Chain76Ie6En {
     #[inline(always)]
@@ -6273,13 +6273,13 @@ impl From<Trig2Chain76Ie6En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain76Ie7 {
     #[doc = "Generate interrupt on Done0 when segment 7 finish."]
-    IE7_0 = 0x0,
+    Ie70 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 7 finish."]
-    IE7_1 = 0x01,
+    Ie71 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 7 finish."]
-    IE7_2 = 0x02,
+    Ie72 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 7 finish."]
-    IE7_3 = 0x03,
+    Ie73 = 0x03,
 }
 impl Trig2Chain76Ie7 {
     #[inline(always)]
@@ -6308,9 +6308,9 @@ impl From<Trig2Chain76Ie7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Chain76Ie7En {
     #[doc = "Interrupt DONE disabled."]
-    IE7_EN_0 = 0x0,
+    Ie7En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 7 finish, an interrupt will be generated on the specific port configured by the IE7."]
-    IE7_EN_1 = 0x01,
+    Ie7En1 = 0x01,
 }
 impl Trig2Chain76Ie7En {
     #[inline(always)]
@@ -6339,9 +6339,9 @@ impl From<Trig2Chain76Ie7En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2CtrlSwTrig {
     #[doc = "No software trigger event generated."]
-    SW_TRIG_0 = 0x0,
+    SwTrig0 = 0x0,
     #[doc = "Software trigger event generated."]
-    SW_TRIG_1 = 0x01,
+    SwTrig1 = 0x01,
 }
 impl Trig2CtrlSwTrig {
     #[inline(always)]
@@ -6370,9 +6370,9 @@ impl From<Trig2CtrlSwTrig> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2CtrlSyncMode {
     #[doc = "Synchronization mode disabled, TRIGa and TRIG(a+4) are triggered independently."]
-    SYNC_MODE_0 = 0x0,
+    SyncMode0 = 0x0,
     #[doc = "Synchronization mode enabled, TRIGa and TRIG(a+4) are triggered by TRIGa source synchronously."]
-    SYNC_MODE_1 = 0x01,
+    SyncMode1 = 0x01,
 }
 impl Trig2CtrlSyncMode {
     #[inline(always)]
@@ -6401,21 +6401,21 @@ impl From<Trig2CtrlSyncMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2CtrlTrigChain {
     #[doc = "Trigger chain length is 1."]
-    TRIG_CHAIN_0 = 0x0,
+    TrigChain0 = 0x0,
     #[doc = "Trigger chain length is 2."]
-    TRIG_CHAIN_1 = 0x01,
+    TrigChain1 = 0x01,
     #[doc = "Trigger chain length is 3."]
-    TRIG_CHAIN_2 = 0x02,
+    TrigChain2 = 0x02,
     #[doc = "Trigger chain length is 4."]
-    TRIG_CHAIN_3 = 0x03,
+    TrigChain3 = 0x03,
     #[doc = "Trigger chain length is 5."]
-    TRIG_CHAIN_4 = 0x04,
+    TrigChain4 = 0x04,
     #[doc = "Trigger chain length is 6."]
-    TRIG_CHAIN_5 = 0x05,
+    TrigChain5 = 0x05,
     #[doc = "Trigger chain length is 7."]
-    TRIG_CHAIN_6 = 0x06,
+    TrigChain6 = 0x06,
     #[doc = "Trigger chain length is 8."]
-    TRIG_CHAIN_7 = 0x07,
+    TrigChain7 = 0x07,
 }
 impl Trig2CtrlTrigChain {
     #[inline(always)]
@@ -6444,9 +6444,9 @@ impl From<Trig2CtrlTrigChain> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2CtrlTrigMode {
     #[doc = "Hardware trigger. The softerware trigger will be ignored."]
-    TRIG_MODE_0 = 0x0,
+    TrigMode0 = 0x0,
     #[doc = "Software trigger. The hardware trigger will be ignored."]
-    TRIG_MODE_1 = 0x01,
+    TrigMode1 = 0x01,
 }
 impl Trig2CtrlTrigMode {
     #[inline(always)]
@@ -6475,9 +6475,9 @@ impl From<Trig2CtrlTrigMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Done0 {
     #[doc = "No TRIG2_DONE0 interrupt detected."]
-    TRIG2_DONE0_0 = 0x0,
+    Trig2Done00 = 0x0,
     #[doc = "TRIG2_DONE0 interrupt detected."]
-    TRIG2_DONE0_1 = 0x01,
+    Trig2Done01 = 0x01,
 }
 impl Trig2Done0 {
     #[inline(always)]
@@ -6506,9 +6506,9 @@ impl From<Trig2Done0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Done1 {
     #[doc = "No TRIG2_DONE1 interrupt detected."]
-    TRIG2_DONE1_0 = 0x0,
+    Trig2Done10 = 0x0,
     #[doc = "TRIG2_DONE1 interrupt detected."]
-    TRIG2_DONE1_1 = 0x01,
+    Trig2Done11 = 0x01,
 }
 impl Trig2Done1 {
     #[inline(always)]
@@ -6537,9 +6537,9 @@ impl From<Trig2Done1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Done2 {
     #[doc = "No TRIG2_DONE2 interrupt detected."]
-    TRIG2_DONE2_0 = 0x0,
+    Trig2Done20 = 0x0,
     #[doc = "TRIG2_DONE2 interrupt detected."]
-    TRIG2_DONE2_1 = 0x01,
+    Trig2Done21 = 0x01,
 }
 impl Trig2Done2 {
     #[inline(always)]
@@ -6568,9 +6568,9 @@ impl From<Trig2Done2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Done3 {
     #[doc = "No TRIG2_DONE3 interrupt detected."]
-    TRIG2_DONE3_0 = 0x0,
+    Trig2Done30 = 0x0,
     #[doc = "TRIG2_DONE3 interrupt detected."]
-    TRIG2_DONE3_1 = 0x01,
+    Trig2Done31 = 0x01,
 }
 impl Trig2Done3 {
     #[inline(always)]
@@ -6599,9 +6599,9 @@ impl From<Trig2Done3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Enable {
     #[doc = "TRIG2 DMA request disabled."]
-    TRIG2_ENABLE_0 = 0x0,
+    Trig2Enable0 = 0x0,
     #[doc = "TRIG2 DMA request enabled."]
-    TRIG2_ENABLE_1 = 0x01,
+    Trig2Enable1 = 0x01,
 }
 impl Trig2Enable {
     #[inline(always)]
@@ -6630,9 +6630,9 @@ impl From<Trig2Enable> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Err {
     #[doc = "No TRIG2_ERR interrupt detected."]
-    TRIG2_ERR_0 = 0x0,
+    Trig2Err0 = 0x0,
     #[doc = "TRIG2_ERR interrupt detected."]
-    TRIG2_ERR_1 = 0x01,
+    Trig2Err1 = 0x01,
 }
 impl Trig2Err {
     #[inline(always)]
@@ -6661,9 +6661,9 @@ impl From<Trig2Err> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig2Req {
     #[doc = "TRIG2_REQ not detected."]
-    TRIG2_REQ_0 = 0x0,
+    Trig2Req0 = 0x0,
     #[doc = "TRIG2_REQ detected."]
-    TRIG2_REQ_1 = 0x01,
+    Trig2Req1 = 0x01,
 }
 impl Trig2Req {
     #[inline(always)]
@@ -6692,9 +6692,9 @@ impl From<Trig2Req> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain10B2b0 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG0_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B0_0 = 0x0,
+    B2b00 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B0_1 = 0x01,
+    B2b01 = 0x01,
 }
 impl Trig3Chain10B2b0 {
     #[inline(always)]
@@ -6723,9 +6723,9 @@ impl From<Trig3Chain10B2b0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain10B2b1 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG1_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B1_0 = 0x0,
+    B2b10 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B1_1 = 0x01,
+    B2b11 = 0x01,
 }
 impl Trig3Chain10B2b1 {
     #[inline(always)]
@@ -6754,37 +6754,37 @@ impl From<Trig3Chain10B2b1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain10Csel0 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL0_0 = 0x0,
+    Csel00 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL0_1 = 0x01,
+    Csel01 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL0_2 = 0x02,
+    Csel02 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL0_3 = 0x03,
+    Csel03 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL0_4 = 0x04,
+    Csel04 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL0_5 = 0x05,
+    Csel05 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL0_6 = 0x06,
+    Csel06 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL0_7 = 0x07,
+    Csel07 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL0_8 = 0x08,
+    Csel08 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL0_9 = 0x09,
+    Csel09 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL0_10 = 0x0a,
+    Csel010 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL0_11 = 0x0b,
+    Csel011 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL0_12 = 0x0c,
+    Csel012 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL0_13 = 0x0d,
+    Csel013 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL0_14 = 0x0e,
+    Csel014 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL0_15 = 0x0f,
+    Csel015 = 0x0f,
 }
 impl Trig3Chain10Csel0 {
     #[inline(always)]
@@ -6813,37 +6813,37 @@ impl From<Trig3Chain10Csel0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain10Csel1 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL1_0 = 0x0,
+    Csel10 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL1_1 = 0x01,
+    Csel11 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL1_2 = 0x02,
+    Csel12 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL1_3 = 0x03,
+    Csel13 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL1_4 = 0x04,
+    Csel14 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL1_5 = 0x05,
+    Csel15 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL1_6 = 0x06,
+    Csel16 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL1_7 = 0x07,
+    Csel17 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL1_8 = 0x08,
+    Csel18 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL1_9 = 0x09,
+    Csel19 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL1_10 = 0x0a,
+    Csel110 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL1_11 = 0x0b,
+    Csel111 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL1_12 = 0x0c,
+    Csel112 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL1_13 = 0x0d,
+    Csel113 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL1_14 = 0x0e,
+    Csel114 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL1_15 = 0x0f,
+    Csel115 = 0x0f,
 }
 impl Trig3Chain10Csel1 {
     #[inline(always)]
@@ -6872,23 +6872,23 @@ impl From<Trig3Chain10Csel1> for u8 {
 pub struct Trig3Chain10Hwts0(u8);
 impl Trig3Chain10Hwts0 {
     #[doc = "no trigger selected."]
-    pub const HWTS0_0: Self = Self(0x0);
+    pub const Hwts00: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS0_1: Self = Self(0x01);
+    pub const Hwts01: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS0_2: Self = Self(0x02);
+    pub const Hwts02: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS0_4: Self = Self(0x04);
+    pub const Hwts04: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS0_8: Self = Self(0x08);
+    pub const Hwts08: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS0_16: Self = Self(0x10);
+    pub const Hwts016: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS0_32: Self = Self(0x20);
+    pub const Hwts032: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS0_64: Self = Self(0x40);
+    pub const Hwts064: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS0_128: Self = Self(0x80);
+    pub const Hwts0128: Self = Self(0x80);
 }
 impl Trig3Chain10Hwts0 {
     pub const fn from_bits(val: u8) -> Trig3Chain10Hwts0 {
@@ -6901,15 +6901,15 @@ impl Trig3Chain10Hwts0 {
 impl core::fmt::Debug for Trig3Chain10Hwts0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS0_0"),
-            0x01 => f.write_str("HWTS0_1"),
-            0x02 => f.write_str("HWTS0_2"),
-            0x04 => f.write_str("HWTS0_4"),
-            0x08 => f.write_str("HWTS0_8"),
-            0x10 => f.write_str("HWTS0_16"),
-            0x20 => f.write_str("HWTS0_32"),
-            0x40 => f.write_str("HWTS0_64"),
-            0x80 => f.write_str("HWTS0_128"),
+            0x0 => f.write_str("Hwts00"),
+            0x01 => f.write_str("Hwts01"),
+            0x02 => f.write_str("Hwts02"),
+            0x04 => f.write_str("Hwts04"),
+            0x08 => f.write_str("Hwts08"),
+            0x10 => f.write_str("Hwts016"),
+            0x20 => f.write_str("Hwts032"),
+            0x40 => f.write_str("Hwts064"),
+            0x80 => f.write_str("Hwts0128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -6918,15 +6918,15 @@ impl core::fmt::Debug for Trig3Chain10Hwts0 {
 impl defmt::Format for Trig3Chain10Hwts0 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS0_0"),
-            0x01 => defmt::write!(f, "HWTS0_1"),
-            0x02 => defmt::write!(f, "HWTS0_2"),
-            0x04 => defmt::write!(f, "HWTS0_4"),
-            0x08 => defmt::write!(f, "HWTS0_8"),
-            0x10 => defmt::write!(f, "HWTS0_16"),
-            0x20 => defmt::write!(f, "HWTS0_32"),
-            0x40 => defmt::write!(f, "HWTS0_64"),
-            0x80 => defmt::write!(f, "HWTS0_128"),
+            0x0 => defmt::write!(f, "Hwts00"),
+            0x01 => defmt::write!(f, "Hwts01"),
+            0x02 => defmt::write!(f, "Hwts02"),
+            0x04 => defmt::write!(f, "Hwts04"),
+            0x08 => defmt::write!(f, "Hwts08"),
+            0x10 => defmt::write!(f, "Hwts016"),
+            0x20 => defmt::write!(f, "Hwts032"),
+            0x40 => defmt::write!(f, "Hwts064"),
+            0x80 => defmt::write!(f, "Hwts0128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -6948,23 +6948,23 @@ impl From<Trig3Chain10Hwts0> for u8 {
 pub struct Trig3Chain10Hwts1(u8);
 impl Trig3Chain10Hwts1 {
     #[doc = "no trigger selected."]
-    pub const HWTS1_0: Self = Self(0x0);
+    pub const Hwts10: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS1_1: Self = Self(0x01);
+    pub const Hwts11: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS1_2: Self = Self(0x02);
+    pub const Hwts12: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS1_4: Self = Self(0x04);
+    pub const Hwts14: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS1_8: Self = Self(0x08);
+    pub const Hwts18: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS1_16: Self = Self(0x10);
+    pub const Hwts116: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS1_32: Self = Self(0x20);
+    pub const Hwts132: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS1_64: Self = Self(0x40);
+    pub const Hwts164: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS1_128: Self = Self(0x80);
+    pub const Hwts1128: Self = Self(0x80);
 }
 impl Trig3Chain10Hwts1 {
     pub const fn from_bits(val: u8) -> Trig3Chain10Hwts1 {
@@ -6977,15 +6977,15 @@ impl Trig3Chain10Hwts1 {
 impl core::fmt::Debug for Trig3Chain10Hwts1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS1_0"),
-            0x01 => f.write_str("HWTS1_1"),
-            0x02 => f.write_str("HWTS1_2"),
-            0x04 => f.write_str("HWTS1_4"),
-            0x08 => f.write_str("HWTS1_8"),
-            0x10 => f.write_str("HWTS1_16"),
-            0x20 => f.write_str("HWTS1_32"),
-            0x40 => f.write_str("HWTS1_64"),
-            0x80 => f.write_str("HWTS1_128"),
+            0x0 => f.write_str("Hwts10"),
+            0x01 => f.write_str("Hwts11"),
+            0x02 => f.write_str("Hwts12"),
+            0x04 => f.write_str("Hwts14"),
+            0x08 => f.write_str("Hwts18"),
+            0x10 => f.write_str("Hwts116"),
+            0x20 => f.write_str("Hwts132"),
+            0x40 => f.write_str("Hwts164"),
+            0x80 => f.write_str("Hwts1128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -6994,15 +6994,15 @@ impl core::fmt::Debug for Trig3Chain10Hwts1 {
 impl defmt::Format for Trig3Chain10Hwts1 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS1_0"),
-            0x01 => defmt::write!(f, "HWTS1_1"),
-            0x02 => defmt::write!(f, "HWTS1_2"),
-            0x04 => defmt::write!(f, "HWTS1_4"),
-            0x08 => defmt::write!(f, "HWTS1_8"),
-            0x10 => defmt::write!(f, "HWTS1_16"),
-            0x20 => defmt::write!(f, "HWTS1_32"),
-            0x40 => defmt::write!(f, "HWTS1_64"),
-            0x80 => defmt::write!(f, "HWTS1_128"),
+            0x0 => defmt::write!(f, "Hwts10"),
+            0x01 => defmt::write!(f, "Hwts11"),
+            0x02 => defmt::write!(f, "Hwts12"),
+            0x04 => defmt::write!(f, "Hwts14"),
+            0x08 => defmt::write!(f, "Hwts18"),
+            0x10 => defmt::write!(f, "Hwts116"),
+            0x20 => defmt::write!(f, "Hwts132"),
+            0x40 => defmt::write!(f, "Hwts164"),
+            0x80 => defmt::write!(f, "Hwts1128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -7024,13 +7024,13 @@ impl From<Trig3Chain10Hwts1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain10Ie0 {
     #[doc = "Generate interrupt on Done0 when segment 0 finish."]
-    IE0_0 = 0x0,
+    Ie00 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 0 finish."]
-    IE0_1 = 0x01,
+    Ie01 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 0 finish."]
-    IE0_2 = 0x02,
+    Ie02 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 0 finish."]
-    IE0_3 = 0x03,
+    Ie03 = 0x03,
 }
 impl Trig3Chain10Ie0 {
     #[inline(always)]
@@ -7059,9 +7059,9 @@ impl From<Trig3Chain10Ie0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain10Ie0En {
     #[doc = "Interrupt DONE disabled."]
-    IE0_EN_0 = 0x0,
+    Ie0En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 0 finish, an interrupt will be generated on the specific port configured by the IE0."]
-    IE0_EN_1 = 0x01,
+    Ie0En1 = 0x01,
 }
 impl Trig3Chain10Ie0En {
     #[inline(always)]
@@ -7090,13 +7090,13 @@ impl From<Trig3Chain10Ie0En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain10Ie1 {
     #[doc = "Generate interrupt on Done0 when Segment 1 finish."]
-    IE1_0 = 0x0,
+    Ie10 = 0x0,
     #[doc = "Generate interrupt on Done1 when Segment 1 finish."]
-    IE1_1 = 0x01,
+    Ie11 = 0x01,
     #[doc = "Generate interrupt on Done2 when Segment 1 finish."]
-    IE1_2 = 0x02,
+    Ie12 = 0x02,
     #[doc = "Generate interrupt on Done3 when Segment 1 finish."]
-    IE1_3 = 0x03,
+    Ie13 = 0x03,
 }
 impl Trig3Chain10Ie1 {
     #[inline(always)]
@@ -7125,9 +7125,9 @@ impl From<Trig3Chain10Ie1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain10Ie1En {
     #[doc = "Interrupt DONE disabled."]
-    IE1_EN_0 = 0x0,
+    Ie1En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 1 finish, an interrupt will be generated on the specific port configured by the IE1."]
-    IE1_EN_1 = 0x01,
+    Ie1En1 = 0x01,
 }
 impl Trig3Chain10Ie1En {
     #[inline(always)]
@@ -7156,9 +7156,9 @@ impl From<Trig3Chain10Ie1En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain32B2b2 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG2_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B2_0 = 0x0,
+    B2b20 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B2_1 = 0x01,
+    B2b21 = 0x01,
 }
 impl Trig3Chain32B2b2 {
     #[inline(always)]
@@ -7187,9 +7187,9 @@ impl From<Trig3Chain32B2b2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain32B2b3 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG3_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B3_0 = 0x0,
+    B2b30 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B3_1 = 0x01,
+    B2b31 = 0x01,
 }
 impl Trig3Chain32B2b3 {
     #[inline(always)]
@@ -7218,37 +7218,37 @@ impl From<Trig3Chain32B2b3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain32Csel2 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL2_0 = 0x0,
+    Csel20 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL2_1 = 0x01,
+    Csel21 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL2_2 = 0x02,
+    Csel22 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL2_3 = 0x03,
+    Csel23 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL2_4 = 0x04,
+    Csel24 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL2_5 = 0x05,
+    Csel25 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL2_6 = 0x06,
+    Csel26 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL2_7 = 0x07,
+    Csel27 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL2_8 = 0x08,
+    Csel28 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL2_9 = 0x09,
+    Csel29 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL2_10 = 0x0a,
+    Csel210 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL2_11 = 0x0b,
+    Csel211 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL2_12 = 0x0c,
+    Csel212 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL2_13 = 0x0d,
+    Csel213 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL2_14 = 0x0e,
+    Csel214 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL2_15 = 0x0f,
+    Csel215 = 0x0f,
 }
 impl Trig3Chain32Csel2 {
     #[inline(always)]
@@ -7277,37 +7277,37 @@ impl From<Trig3Chain32Csel2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain32Csel3 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL3_0 = 0x0,
+    Csel30 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL3_1 = 0x01,
+    Csel31 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL3_2 = 0x02,
+    Csel32 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL3_3 = 0x03,
+    Csel33 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL3_4 = 0x04,
+    Csel34 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL3_5 = 0x05,
+    Csel35 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL3_6 = 0x06,
+    Csel36 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL3_7 = 0x07,
+    Csel37 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL3_8 = 0x08,
+    Csel38 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL3_9 = 0x09,
+    Csel39 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL3_10 = 0x0a,
+    Csel310 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL3_11 = 0x0b,
+    Csel311 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL3_12 = 0x0c,
+    Csel312 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL3_13 = 0x0d,
+    Csel313 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL3_14 = 0x0e,
+    Csel314 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL3_15 = 0x0f,
+    Csel315 = 0x0f,
 }
 impl Trig3Chain32Csel3 {
     #[inline(always)]
@@ -7336,23 +7336,23 @@ impl From<Trig3Chain32Csel3> for u8 {
 pub struct Trig3Chain32Hwts2(u8);
 impl Trig3Chain32Hwts2 {
     #[doc = "no trigger selected."]
-    pub const HWTS2_0: Self = Self(0x0);
+    pub const Hwts20: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS2_1: Self = Self(0x01);
+    pub const Hwts21: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS2_2: Self = Self(0x02);
+    pub const Hwts22: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS2_4: Self = Self(0x04);
+    pub const Hwts24: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS2_8: Self = Self(0x08);
+    pub const Hwts28: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS2_16: Self = Self(0x10);
+    pub const Hwts216: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS2_32: Self = Self(0x20);
+    pub const Hwts232: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS2_64: Self = Self(0x40);
+    pub const Hwts264: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS2_128: Self = Self(0x80);
+    pub const Hwts2128: Self = Self(0x80);
 }
 impl Trig3Chain32Hwts2 {
     pub const fn from_bits(val: u8) -> Trig3Chain32Hwts2 {
@@ -7365,15 +7365,15 @@ impl Trig3Chain32Hwts2 {
 impl core::fmt::Debug for Trig3Chain32Hwts2 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS2_0"),
-            0x01 => f.write_str("HWTS2_1"),
-            0x02 => f.write_str("HWTS2_2"),
-            0x04 => f.write_str("HWTS2_4"),
-            0x08 => f.write_str("HWTS2_8"),
-            0x10 => f.write_str("HWTS2_16"),
-            0x20 => f.write_str("HWTS2_32"),
-            0x40 => f.write_str("HWTS2_64"),
-            0x80 => f.write_str("HWTS2_128"),
+            0x0 => f.write_str("Hwts20"),
+            0x01 => f.write_str("Hwts21"),
+            0x02 => f.write_str("Hwts22"),
+            0x04 => f.write_str("Hwts24"),
+            0x08 => f.write_str("Hwts28"),
+            0x10 => f.write_str("Hwts216"),
+            0x20 => f.write_str("Hwts232"),
+            0x40 => f.write_str("Hwts264"),
+            0x80 => f.write_str("Hwts2128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -7382,15 +7382,15 @@ impl core::fmt::Debug for Trig3Chain32Hwts2 {
 impl defmt::Format for Trig3Chain32Hwts2 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS2_0"),
-            0x01 => defmt::write!(f, "HWTS2_1"),
-            0x02 => defmt::write!(f, "HWTS2_2"),
-            0x04 => defmt::write!(f, "HWTS2_4"),
-            0x08 => defmt::write!(f, "HWTS2_8"),
-            0x10 => defmt::write!(f, "HWTS2_16"),
-            0x20 => defmt::write!(f, "HWTS2_32"),
-            0x40 => defmt::write!(f, "HWTS2_64"),
-            0x80 => defmt::write!(f, "HWTS2_128"),
+            0x0 => defmt::write!(f, "Hwts20"),
+            0x01 => defmt::write!(f, "Hwts21"),
+            0x02 => defmt::write!(f, "Hwts22"),
+            0x04 => defmt::write!(f, "Hwts24"),
+            0x08 => defmt::write!(f, "Hwts28"),
+            0x10 => defmt::write!(f, "Hwts216"),
+            0x20 => defmt::write!(f, "Hwts232"),
+            0x40 => defmt::write!(f, "Hwts264"),
+            0x80 => defmt::write!(f, "Hwts2128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -7412,23 +7412,23 @@ impl From<Trig3Chain32Hwts2> for u8 {
 pub struct Trig3Chain32Hwts3(u8);
 impl Trig3Chain32Hwts3 {
     #[doc = "no trigger selected."]
-    pub const HWTS3_0: Self = Self(0x0);
+    pub const Hwts30: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS3_1: Self = Self(0x01);
+    pub const Hwts31: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS3_2: Self = Self(0x02);
+    pub const Hwts32: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS3_4: Self = Self(0x04);
+    pub const Hwts34: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS3_8: Self = Self(0x08);
+    pub const Hwts38: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS3_16: Self = Self(0x10);
+    pub const Hwts316: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS3_32: Self = Self(0x20);
+    pub const Hwts332: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS3_64: Self = Self(0x40);
+    pub const Hwts364: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS3_128: Self = Self(0x80);
+    pub const Hwts3128: Self = Self(0x80);
 }
 impl Trig3Chain32Hwts3 {
     pub const fn from_bits(val: u8) -> Trig3Chain32Hwts3 {
@@ -7441,15 +7441,15 @@ impl Trig3Chain32Hwts3 {
 impl core::fmt::Debug for Trig3Chain32Hwts3 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS3_0"),
-            0x01 => f.write_str("HWTS3_1"),
-            0x02 => f.write_str("HWTS3_2"),
-            0x04 => f.write_str("HWTS3_4"),
-            0x08 => f.write_str("HWTS3_8"),
-            0x10 => f.write_str("HWTS3_16"),
-            0x20 => f.write_str("HWTS3_32"),
-            0x40 => f.write_str("HWTS3_64"),
-            0x80 => f.write_str("HWTS3_128"),
+            0x0 => f.write_str("Hwts30"),
+            0x01 => f.write_str("Hwts31"),
+            0x02 => f.write_str("Hwts32"),
+            0x04 => f.write_str("Hwts34"),
+            0x08 => f.write_str("Hwts38"),
+            0x10 => f.write_str("Hwts316"),
+            0x20 => f.write_str("Hwts332"),
+            0x40 => f.write_str("Hwts364"),
+            0x80 => f.write_str("Hwts3128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -7458,15 +7458,15 @@ impl core::fmt::Debug for Trig3Chain32Hwts3 {
 impl defmt::Format for Trig3Chain32Hwts3 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS3_0"),
-            0x01 => defmt::write!(f, "HWTS3_1"),
-            0x02 => defmt::write!(f, "HWTS3_2"),
-            0x04 => defmt::write!(f, "HWTS3_4"),
-            0x08 => defmt::write!(f, "HWTS3_8"),
-            0x10 => defmt::write!(f, "HWTS3_16"),
-            0x20 => defmt::write!(f, "HWTS3_32"),
-            0x40 => defmt::write!(f, "HWTS3_64"),
-            0x80 => defmt::write!(f, "HWTS3_128"),
+            0x0 => defmt::write!(f, "Hwts30"),
+            0x01 => defmt::write!(f, "Hwts31"),
+            0x02 => defmt::write!(f, "Hwts32"),
+            0x04 => defmt::write!(f, "Hwts34"),
+            0x08 => defmt::write!(f, "Hwts38"),
+            0x10 => defmt::write!(f, "Hwts316"),
+            0x20 => defmt::write!(f, "Hwts332"),
+            0x40 => defmt::write!(f, "Hwts364"),
+            0x80 => defmt::write!(f, "Hwts3128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -7488,13 +7488,13 @@ impl From<Trig3Chain32Hwts3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain32Ie2 {
     #[doc = "Generate interrupt on Done0 when segment 2 finish."]
-    IE2_0 = 0x0,
+    Ie20 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 2 finish."]
-    IE2_1 = 0x01,
+    Ie21 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 2 finish."]
-    IE2_2 = 0x02,
+    Ie22 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 2 finish."]
-    IE2_3 = 0x03,
+    Ie23 = 0x03,
 }
 impl Trig3Chain32Ie2 {
     #[inline(always)]
@@ -7523,9 +7523,9 @@ impl From<Trig3Chain32Ie2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain32Ie2En {
     #[doc = "Interrupt DONE disabled."]
-    IE2_EN_0 = 0x0,
+    Ie2En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 2 finish, an interrupt will be generated on the specific port configured by the IE2."]
-    IE2_EN_1 = 0x01,
+    Ie2En1 = 0x01,
 }
 impl Trig3Chain32Ie2En {
     #[inline(always)]
@@ -7554,13 +7554,13 @@ impl From<Trig3Chain32Ie2En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain32Ie3 {
     #[doc = "Generate interrupt on Done0 when segment 3 finish."]
-    IE3_0 = 0x0,
+    Ie30 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 3 finish."]
-    IE3_1 = 0x01,
+    Ie31 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 3 finish."]
-    IE3_2 = 0x02,
+    Ie32 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 3 finish."]
-    IE3_3 = 0x03,
+    Ie33 = 0x03,
 }
 impl Trig3Chain32Ie3 {
     #[inline(always)]
@@ -7589,9 +7589,9 @@ impl From<Trig3Chain32Ie3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain32Ie3En {
     #[doc = "Interrupt DONE disabled."]
-    IE3_EN_0 = 0x0,
+    Ie3En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 3 finish, an interrupt will be generated on the specific port configured by the IE3."]
-    IE3_EN_1 = 0x01,
+    Ie3En1 = 0x01,
 }
 impl Trig3Chain32Ie3En {
     #[inline(always)]
@@ -7620,9 +7620,9 @@ impl From<Trig3Chain32Ie3En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain54B2b4 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG4_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B4_0 = 0x0,
+    B2b40 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B4_1 = 0x01,
+    B2b41 = 0x01,
 }
 impl Trig3Chain54B2b4 {
     #[inline(always)]
@@ -7651,9 +7651,9 @@ impl From<Trig3Chain54B2b4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain54B2b5 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG5_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B5_0 = 0x0,
+    B2b50 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B5_1 = 0x01,
+    B2b51 = 0x01,
 }
 impl Trig3Chain54B2b5 {
     #[inline(always)]
@@ -7682,37 +7682,37 @@ impl From<Trig3Chain54B2b5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain54Csel4 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL4_0 = 0x0,
+    Csel40 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL4_1 = 0x01,
+    Csel41 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL4_2 = 0x02,
+    Csel42 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL4_3 = 0x03,
+    Csel43 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL4_4 = 0x04,
+    Csel44 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL4_5 = 0x05,
+    Csel45 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL4_6 = 0x06,
+    Csel46 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL4_7 = 0x07,
+    Csel47 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL4_8 = 0x08,
+    Csel48 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL4_9 = 0x09,
+    Csel49 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL4_10 = 0x0a,
+    Csel410 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL4_11 = 0x0b,
+    Csel411 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL4_12 = 0x0c,
+    Csel412 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL4_13 = 0x0d,
+    Csel413 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL4_14 = 0x0e,
+    Csel414 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL4_15 = 0x0f,
+    Csel415 = 0x0f,
 }
 impl Trig3Chain54Csel4 {
     #[inline(always)]
@@ -7741,37 +7741,37 @@ impl From<Trig3Chain54Csel4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain54Csel5 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL5_0 = 0x0,
+    Csel50 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL5_1 = 0x01,
+    Csel51 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL5_2 = 0x02,
+    Csel52 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL5_3 = 0x03,
+    Csel53 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL5_4 = 0x04,
+    Csel54 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL5_5 = 0x05,
+    Csel55 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL5_6 = 0x06,
+    Csel56 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL5_7 = 0x07,
+    Csel57 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL5_8 = 0x08,
+    Csel58 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL5_9 = 0x09,
+    Csel59 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL5_10 = 0x0a,
+    Csel510 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL5_11 = 0x0b,
+    Csel511 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL5_12 = 0x0c,
+    Csel512 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL5_13 = 0x0d,
+    Csel513 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL5_14 = 0x0e,
+    Csel514 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL5_15 = 0x0f,
+    Csel515 = 0x0f,
 }
 impl Trig3Chain54Csel5 {
     #[inline(always)]
@@ -7800,23 +7800,23 @@ impl From<Trig3Chain54Csel5> for u8 {
 pub struct Trig3Chain54Hwts4(u8);
 impl Trig3Chain54Hwts4 {
     #[doc = "no trigger selected."]
-    pub const HWTS4_0: Self = Self(0x0);
+    pub const Hwts40: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS4_1: Self = Self(0x01);
+    pub const Hwts41: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS4_2: Self = Self(0x02);
+    pub const Hwts42: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS4_4: Self = Self(0x04);
+    pub const Hwts44: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS4_8: Self = Self(0x08);
+    pub const Hwts48: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS4_16: Self = Self(0x10);
+    pub const Hwts416: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS4_32: Self = Self(0x20);
+    pub const Hwts432: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS4_64: Self = Self(0x40);
+    pub const Hwts464: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS4_128: Self = Self(0x80);
+    pub const Hwts4128: Self = Self(0x80);
 }
 impl Trig3Chain54Hwts4 {
     pub const fn from_bits(val: u8) -> Trig3Chain54Hwts4 {
@@ -7829,15 +7829,15 @@ impl Trig3Chain54Hwts4 {
 impl core::fmt::Debug for Trig3Chain54Hwts4 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS4_0"),
-            0x01 => f.write_str("HWTS4_1"),
-            0x02 => f.write_str("HWTS4_2"),
-            0x04 => f.write_str("HWTS4_4"),
-            0x08 => f.write_str("HWTS4_8"),
-            0x10 => f.write_str("HWTS4_16"),
-            0x20 => f.write_str("HWTS4_32"),
-            0x40 => f.write_str("HWTS4_64"),
-            0x80 => f.write_str("HWTS4_128"),
+            0x0 => f.write_str("Hwts40"),
+            0x01 => f.write_str("Hwts41"),
+            0x02 => f.write_str("Hwts42"),
+            0x04 => f.write_str("Hwts44"),
+            0x08 => f.write_str("Hwts48"),
+            0x10 => f.write_str("Hwts416"),
+            0x20 => f.write_str("Hwts432"),
+            0x40 => f.write_str("Hwts464"),
+            0x80 => f.write_str("Hwts4128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -7846,15 +7846,15 @@ impl core::fmt::Debug for Trig3Chain54Hwts4 {
 impl defmt::Format for Trig3Chain54Hwts4 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS4_0"),
-            0x01 => defmt::write!(f, "HWTS4_1"),
-            0x02 => defmt::write!(f, "HWTS4_2"),
-            0x04 => defmt::write!(f, "HWTS4_4"),
-            0x08 => defmt::write!(f, "HWTS4_8"),
-            0x10 => defmt::write!(f, "HWTS4_16"),
-            0x20 => defmt::write!(f, "HWTS4_32"),
-            0x40 => defmt::write!(f, "HWTS4_64"),
-            0x80 => defmt::write!(f, "HWTS4_128"),
+            0x0 => defmt::write!(f, "Hwts40"),
+            0x01 => defmt::write!(f, "Hwts41"),
+            0x02 => defmt::write!(f, "Hwts42"),
+            0x04 => defmt::write!(f, "Hwts44"),
+            0x08 => defmt::write!(f, "Hwts48"),
+            0x10 => defmt::write!(f, "Hwts416"),
+            0x20 => defmt::write!(f, "Hwts432"),
+            0x40 => defmt::write!(f, "Hwts464"),
+            0x80 => defmt::write!(f, "Hwts4128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -7876,23 +7876,23 @@ impl From<Trig3Chain54Hwts4> for u8 {
 pub struct Trig3Chain54Hwts5(u8);
 impl Trig3Chain54Hwts5 {
     #[doc = "no trigger selected."]
-    pub const HWTS5_0: Self = Self(0x0);
+    pub const Hwts50: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS5_1: Self = Self(0x01);
+    pub const Hwts51: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS5_2: Self = Self(0x02);
+    pub const Hwts52: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS5_4: Self = Self(0x04);
+    pub const Hwts54: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS5_8: Self = Self(0x08);
+    pub const Hwts58: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS5_16: Self = Self(0x10);
+    pub const Hwts516: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS5_32: Self = Self(0x20);
+    pub const Hwts532: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS5_64: Self = Self(0x40);
+    pub const Hwts564: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS5_128: Self = Self(0x80);
+    pub const Hwts5128: Self = Self(0x80);
 }
 impl Trig3Chain54Hwts5 {
     pub const fn from_bits(val: u8) -> Trig3Chain54Hwts5 {
@@ -7905,15 +7905,15 @@ impl Trig3Chain54Hwts5 {
 impl core::fmt::Debug for Trig3Chain54Hwts5 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS5_0"),
-            0x01 => f.write_str("HWTS5_1"),
-            0x02 => f.write_str("HWTS5_2"),
-            0x04 => f.write_str("HWTS5_4"),
-            0x08 => f.write_str("HWTS5_8"),
-            0x10 => f.write_str("HWTS5_16"),
-            0x20 => f.write_str("HWTS5_32"),
-            0x40 => f.write_str("HWTS5_64"),
-            0x80 => f.write_str("HWTS5_128"),
+            0x0 => f.write_str("Hwts50"),
+            0x01 => f.write_str("Hwts51"),
+            0x02 => f.write_str("Hwts52"),
+            0x04 => f.write_str("Hwts54"),
+            0x08 => f.write_str("Hwts58"),
+            0x10 => f.write_str("Hwts516"),
+            0x20 => f.write_str("Hwts532"),
+            0x40 => f.write_str("Hwts564"),
+            0x80 => f.write_str("Hwts5128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -7922,15 +7922,15 @@ impl core::fmt::Debug for Trig3Chain54Hwts5 {
 impl defmt::Format for Trig3Chain54Hwts5 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS5_0"),
-            0x01 => defmt::write!(f, "HWTS5_1"),
-            0x02 => defmt::write!(f, "HWTS5_2"),
-            0x04 => defmt::write!(f, "HWTS5_4"),
-            0x08 => defmt::write!(f, "HWTS5_8"),
-            0x10 => defmt::write!(f, "HWTS5_16"),
-            0x20 => defmt::write!(f, "HWTS5_32"),
-            0x40 => defmt::write!(f, "HWTS5_64"),
-            0x80 => defmt::write!(f, "HWTS5_128"),
+            0x0 => defmt::write!(f, "Hwts50"),
+            0x01 => defmt::write!(f, "Hwts51"),
+            0x02 => defmt::write!(f, "Hwts52"),
+            0x04 => defmt::write!(f, "Hwts54"),
+            0x08 => defmt::write!(f, "Hwts58"),
+            0x10 => defmt::write!(f, "Hwts516"),
+            0x20 => defmt::write!(f, "Hwts532"),
+            0x40 => defmt::write!(f, "Hwts564"),
+            0x80 => defmt::write!(f, "Hwts5128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -7952,13 +7952,13 @@ impl From<Trig3Chain54Hwts5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain54Ie4 {
     #[doc = "Generate interrupt on Done0 when segment 4 finish."]
-    IE4_0 = 0x0,
+    Ie40 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 4 finish."]
-    IE4_1 = 0x01,
+    Ie41 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 4 finish."]
-    IE4_2 = 0x02,
+    Ie42 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 4 finish."]
-    IE4_3 = 0x03,
+    Ie43 = 0x03,
 }
 impl Trig3Chain54Ie4 {
     #[inline(always)]
@@ -7987,9 +7987,9 @@ impl From<Trig3Chain54Ie4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain54Ie4En {
     #[doc = "Interrupt DONE disabled."]
-    IE4_EN_0 = 0x0,
+    Ie4En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 4 finish, an interrupt will be generated on the specific port configured by the IE4."]
-    IE4_EN_1 = 0x01,
+    Ie4En1 = 0x01,
 }
 impl Trig3Chain54Ie4En {
     #[inline(always)]
@@ -8018,13 +8018,13 @@ impl From<Trig3Chain54Ie4En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain54Ie5 {
     #[doc = "Generate interrupt on Done0 when segment 5 finish."]
-    IE5_0 = 0x0,
+    Ie50 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 5 finish."]
-    IE5_1 = 0x01,
+    Ie51 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 5 finish."]
-    IE5_2 = 0x02,
+    Ie52 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 5 finish."]
-    IE5_3 = 0x03,
+    Ie53 = 0x03,
 }
 impl Trig3Chain54Ie5 {
     #[inline(always)]
@@ -8053,9 +8053,9 @@ impl From<Trig3Chain54Ie5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain54Ie5En {
     #[doc = "Interrupt DONE disabled."]
-    IE5_EN_0 = 0x0,
+    Ie5En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 5 finish, an interrupt will be generated on the specific port configured by the IE5."]
-    IE5_EN_1 = 0x01,
+    Ie5En1 = 0x01,
 }
 impl Trig3Chain54Ie5En {
     #[inline(always)]
@@ -8084,9 +8084,9 @@ impl From<Trig3Chain54Ie5En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain76B2b6 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG6_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B6_0 = 0x0,
+    B2b60 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B6_1 = 0x01,
+    B2b61 = 0x01,
 }
 impl Trig3Chain76B2b6 {
     #[inline(always)]
@@ -8115,9 +8115,9 @@ impl From<Trig3Chain76B2b6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain76B2b7 {
     #[doc = "Disable B2B. Wait until delay value defined by TRIG7_COUNTER\\[SAMPLE_INTERVAL\\] is reached."]
-    B2B7_0 = 0x0,
+    B2b70 = 0x0,
     #[doc = "Enable B2B. When Segment 0 finished (ADC COCO) then automatically trigger next ADC conversion, no need to wait until interval delay reached."]
-    B2B7_1 = 0x01,
+    B2b71 = 0x01,
 }
 impl Trig3Chain76B2b7 {
     #[inline(always)]
@@ -8146,37 +8146,37 @@ impl From<Trig3Chain76B2b7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain76Csel6 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL6_0 = 0x0,
+    Csel60 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL6_1 = 0x01,
+    Csel61 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL6_2 = 0x02,
+    Csel62 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL6_3 = 0x03,
+    Csel63 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL6_4 = 0x04,
+    Csel64 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL6_5 = 0x05,
+    Csel65 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL6_6 = 0x06,
+    Csel66 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL6_7 = 0x07,
+    Csel67 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL6_8 = 0x08,
+    Csel68 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL6_9 = 0x09,
+    Csel69 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL6_10 = 0x0a,
+    Csel610 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL6_11 = 0x0b,
+    Csel611 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL6_12 = 0x0c,
+    Csel612 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL6_13 = 0x0d,
+    Csel613 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL6_14 = 0x0e,
+    Csel614 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL6_15 = 0x0f,
+    Csel615 = 0x0f,
 }
 impl Trig3Chain76Csel6 {
     #[inline(always)]
@@ -8205,37 +8205,37 @@ impl From<Trig3Chain76Csel6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain76Csel7 {
     #[doc = "ADC Channel 0 selected."]
-    CSEL7_0 = 0x0,
+    Csel70 = 0x0,
     #[doc = "ADC Channel 1 selected."]
-    CSEL7_1 = 0x01,
+    Csel71 = 0x01,
     #[doc = "ADC Channel 2 selected."]
-    CSEL7_2 = 0x02,
+    Csel72 = 0x02,
     #[doc = "ADC Channel 3 selected."]
-    CSEL7_3 = 0x03,
+    Csel73 = 0x03,
     #[doc = "ADC Channel 4 selected."]
-    CSEL7_4 = 0x04,
+    Csel74 = 0x04,
     #[doc = "ADC Channel 5 selected."]
-    CSEL7_5 = 0x05,
+    Csel75 = 0x05,
     #[doc = "ADC Channel 6 selected."]
-    CSEL7_6 = 0x06,
+    Csel76 = 0x06,
     #[doc = "ADC Channel 7 selected."]
-    CSEL7_7 = 0x07,
+    Csel77 = 0x07,
     #[doc = "ADC Channel 8 selected."]
-    CSEL7_8 = 0x08,
+    Csel78 = 0x08,
     #[doc = "ADC Channel 9 selected."]
-    CSEL7_9 = 0x09,
+    Csel79 = 0x09,
     #[doc = "ADC Channel 10 selected."]
-    CSEL7_10 = 0x0a,
+    Csel710 = 0x0a,
     #[doc = "ADC Channel 11 selected."]
-    CSEL7_11 = 0x0b,
+    Csel711 = 0x0b,
     #[doc = "ADC Channel 12 selected."]
-    CSEL7_12 = 0x0c,
+    Csel712 = 0x0c,
     #[doc = "ADC Channel 13 selected."]
-    CSEL7_13 = 0x0d,
+    Csel713 = 0x0d,
     #[doc = "ADC Channel 14 selected."]
-    CSEL7_14 = 0x0e,
+    Csel714 = 0x0e,
     #[doc = "ADC Channel 15 selected."]
-    CSEL7_15 = 0x0f,
+    Csel715 = 0x0f,
 }
 impl Trig3Chain76Csel7 {
     #[inline(always)]
@@ -8264,23 +8264,23 @@ impl From<Trig3Chain76Csel7> for u8 {
 pub struct Trig3Chain76Hwts6(u8);
 impl Trig3Chain76Hwts6 {
     #[doc = "no trigger selected."]
-    pub const HWTS6_0: Self = Self(0x0);
+    pub const Hwts60: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS6_1: Self = Self(0x01);
+    pub const Hwts61: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS6_2: Self = Self(0x02);
+    pub const Hwts62: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS6_4: Self = Self(0x04);
+    pub const Hwts64: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS6_8: Self = Self(0x08);
+    pub const Hwts68: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS6_16: Self = Self(0x10);
+    pub const Hwts616: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS6_32: Self = Self(0x20);
+    pub const Hwts632: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS6_64: Self = Self(0x40);
+    pub const Hwts664: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS6_128: Self = Self(0x80);
+    pub const Hwts6128: Self = Self(0x80);
 }
 impl Trig3Chain76Hwts6 {
     pub const fn from_bits(val: u8) -> Trig3Chain76Hwts6 {
@@ -8293,15 +8293,15 @@ impl Trig3Chain76Hwts6 {
 impl core::fmt::Debug for Trig3Chain76Hwts6 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS6_0"),
-            0x01 => f.write_str("HWTS6_1"),
-            0x02 => f.write_str("HWTS6_2"),
-            0x04 => f.write_str("HWTS6_4"),
-            0x08 => f.write_str("HWTS6_8"),
-            0x10 => f.write_str("HWTS6_16"),
-            0x20 => f.write_str("HWTS6_32"),
-            0x40 => f.write_str("HWTS6_64"),
-            0x80 => f.write_str("HWTS6_128"),
+            0x0 => f.write_str("Hwts60"),
+            0x01 => f.write_str("Hwts61"),
+            0x02 => f.write_str("Hwts62"),
+            0x04 => f.write_str("Hwts64"),
+            0x08 => f.write_str("Hwts68"),
+            0x10 => f.write_str("Hwts616"),
+            0x20 => f.write_str("Hwts632"),
+            0x40 => f.write_str("Hwts664"),
+            0x80 => f.write_str("Hwts6128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -8310,15 +8310,15 @@ impl core::fmt::Debug for Trig3Chain76Hwts6 {
 impl defmt::Format for Trig3Chain76Hwts6 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS6_0"),
-            0x01 => defmt::write!(f, "HWTS6_1"),
-            0x02 => defmt::write!(f, "HWTS6_2"),
-            0x04 => defmt::write!(f, "HWTS6_4"),
-            0x08 => defmt::write!(f, "HWTS6_8"),
-            0x10 => defmt::write!(f, "HWTS6_16"),
-            0x20 => defmt::write!(f, "HWTS6_32"),
-            0x40 => defmt::write!(f, "HWTS6_64"),
-            0x80 => defmt::write!(f, "HWTS6_128"),
+            0x0 => defmt::write!(f, "Hwts60"),
+            0x01 => defmt::write!(f, "Hwts61"),
+            0x02 => defmt::write!(f, "Hwts62"),
+            0x04 => defmt::write!(f, "Hwts64"),
+            0x08 => defmt::write!(f, "Hwts68"),
+            0x10 => defmt::write!(f, "Hwts616"),
+            0x20 => defmt::write!(f, "Hwts632"),
+            0x40 => defmt::write!(f, "Hwts664"),
+            0x80 => defmt::write!(f, "Hwts6128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -8340,23 +8340,23 @@ impl From<Trig3Chain76Hwts6> for u8 {
 pub struct Trig3Chain76Hwts7(u8);
 impl Trig3Chain76Hwts7 {
     #[doc = "no trigger selected."]
-    pub const HWTS7_0: Self = Self(0x0);
+    pub const Hwts70: Self = Self(0x0);
     #[doc = "ADC TRIG0 selected."]
-    pub const HWTS7_1: Self = Self(0x01);
+    pub const Hwts71: Self = Self(0x01);
     #[doc = "ADC TRIG1 selected."]
-    pub const HWTS7_2: Self = Self(0x02);
+    pub const Hwts72: Self = Self(0x02);
     #[doc = "ADC TRIG2 selected."]
-    pub const HWTS7_4: Self = Self(0x04);
+    pub const Hwts74: Self = Self(0x04);
     #[doc = "ADC TRIG3 selected."]
-    pub const HWTS7_8: Self = Self(0x08);
+    pub const Hwts78: Self = Self(0x08);
     #[doc = "ADC TRIG4 selected."]
-    pub const HWTS7_16: Self = Self(0x10);
+    pub const Hwts716: Self = Self(0x10);
     #[doc = "ADC TRIG5 selected."]
-    pub const HWTS7_32: Self = Self(0x20);
+    pub const Hwts732: Self = Self(0x20);
     #[doc = "ADC TRIG6 selected."]
-    pub const HWTS7_64: Self = Self(0x40);
+    pub const Hwts764: Self = Self(0x40);
     #[doc = "ADC TRIG7 selected."]
-    pub const HWTS7_128: Self = Self(0x80);
+    pub const Hwts7128: Self = Self(0x80);
 }
 impl Trig3Chain76Hwts7 {
     pub const fn from_bits(val: u8) -> Trig3Chain76Hwts7 {
@@ -8369,15 +8369,15 @@ impl Trig3Chain76Hwts7 {
 impl core::fmt::Debug for Trig3Chain76Hwts7 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("HWTS7_0"),
-            0x01 => f.write_str("HWTS7_1"),
-            0x02 => f.write_str("HWTS7_2"),
-            0x04 => f.write_str("HWTS7_4"),
-            0x08 => f.write_str("HWTS7_8"),
-            0x10 => f.write_str("HWTS7_16"),
-            0x20 => f.write_str("HWTS7_32"),
-            0x40 => f.write_str("HWTS7_64"),
-            0x80 => f.write_str("HWTS7_128"),
+            0x0 => f.write_str("Hwts70"),
+            0x01 => f.write_str("Hwts71"),
+            0x02 => f.write_str("Hwts72"),
+            0x04 => f.write_str("Hwts74"),
+            0x08 => f.write_str("Hwts78"),
+            0x10 => f.write_str("Hwts716"),
+            0x20 => f.write_str("Hwts732"),
+            0x40 => f.write_str("Hwts764"),
+            0x80 => f.write_str("Hwts7128"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -8386,15 +8386,15 @@ impl core::fmt::Debug for Trig3Chain76Hwts7 {
 impl defmt::Format for Trig3Chain76Hwts7 {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "HWTS7_0"),
-            0x01 => defmt::write!(f, "HWTS7_1"),
-            0x02 => defmt::write!(f, "HWTS7_2"),
-            0x04 => defmt::write!(f, "HWTS7_4"),
-            0x08 => defmt::write!(f, "HWTS7_8"),
-            0x10 => defmt::write!(f, "HWTS7_16"),
-            0x20 => defmt::write!(f, "HWTS7_32"),
-            0x40 => defmt::write!(f, "HWTS7_64"),
-            0x80 => defmt::write!(f, "HWTS7_128"),
+            0x0 => defmt::write!(f, "Hwts70"),
+            0x01 => defmt::write!(f, "Hwts71"),
+            0x02 => defmt::write!(f, "Hwts72"),
+            0x04 => defmt::write!(f, "Hwts74"),
+            0x08 => defmt::write!(f, "Hwts78"),
+            0x10 => defmt::write!(f, "Hwts716"),
+            0x20 => defmt::write!(f, "Hwts732"),
+            0x40 => defmt::write!(f, "Hwts764"),
+            0x80 => defmt::write!(f, "Hwts7128"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -8416,13 +8416,13 @@ impl From<Trig3Chain76Hwts7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain76Ie6 {
     #[doc = "Generate interrupt on Done0 when segment 6 finish."]
-    IE6_0 = 0x0,
+    Ie60 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 6 finish."]
-    IE6_1 = 0x01,
+    Ie61 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 6 finish."]
-    IE6_2 = 0x02,
+    Ie62 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 6 finish."]
-    IE6_3 = 0x03,
+    Ie63 = 0x03,
 }
 impl Trig3Chain76Ie6 {
     #[inline(always)]
@@ -8451,9 +8451,9 @@ impl From<Trig3Chain76Ie6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain76Ie6En {
     #[doc = "Interrupt DONE disabled."]
-    IE6_EN_0 = 0x0,
+    Ie6En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 6 finish, an interrupt will be generated on the specific port configured by the IE6."]
-    IE6_EN_1 = 0x01,
+    Ie6En1 = 0x01,
 }
 impl Trig3Chain76Ie6En {
     #[inline(always)]
@@ -8482,13 +8482,13 @@ impl From<Trig3Chain76Ie6En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain76Ie7 {
     #[doc = "Generate interrupt on Done0 when segment 7 finish."]
-    IE7_0 = 0x0,
+    Ie70 = 0x0,
     #[doc = "Generate interrupt on Done1 when segment 7 finish."]
-    IE7_1 = 0x01,
+    Ie71 = 0x01,
     #[doc = "Generate interrupt on Done2 when segment 7 finish."]
-    IE7_2 = 0x02,
+    Ie72 = 0x02,
     #[doc = "Generate interrupt on Done3 when segment 7 finish."]
-    IE7_3 = 0x03,
+    Ie73 = 0x03,
 }
 impl Trig3Chain76Ie7 {
     #[inline(always)]
@@ -8517,9 +8517,9 @@ impl From<Trig3Chain76Ie7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Chain76Ie7En {
     #[doc = "Interrupt DONE disabled."]
-    IE7_EN_0 = 0x0,
+    Ie7En0 = 0x0,
     #[doc = "Interrupt DONE enabled. When segment 7 finish, an interrupt will be generated on the specific port configured by the IE7."]
-    IE7_EN_1 = 0x01,
+    Ie7En1 = 0x01,
 }
 impl Trig3Chain76Ie7En {
     #[inline(always)]
@@ -8548,9 +8548,9 @@ impl From<Trig3Chain76Ie7En> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3CtrlSwTrig {
     #[doc = "No software trigger event generated."]
-    SW_TRIG_0 = 0x0,
+    SwTrig0 = 0x0,
     #[doc = "Software trigger event generated."]
-    SW_TRIG_1 = 0x01,
+    SwTrig1 = 0x01,
 }
 impl Trig3CtrlSwTrig {
     #[inline(always)]
@@ -8579,9 +8579,9 @@ impl From<Trig3CtrlSwTrig> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3CtrlSyncMode {
     #[doc = "Synchronization mode disabled, TRIGa and TRIG(a+4) are triggered independently."]
-    SYNC_MODE_0 = 0x0,
+    SyncMode0 = 0x0,
     #[doc = "Synchronization mode enabled, TRIGa and TRIG(a+4) are triggered by TRIGa source synchronously."]
-    SYNC_MODE_1 = 0x01,
+    SyncMode1 = 0x01,
 }
 impl Trig3CtrlSyncMode {
     #[inline(always)]
@@ -8610,21 +8610,21 @@ impl From<Trig3CtrlSyncMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3CtrlTrigChain {
     #[doc = "Trigger chain length is 1."]
-    TRIG_CHAIN_0 = 0x0,
+    TrigChain0 = 0x0,
     #[doc = "Trigger chain length is 2."]
-    TRIG_CHAIN_1 = 0x01,
+    TrigChain1 = 0x01,
     #[doc = "Trigger chain length is 3."]
-    TRIG_CHAIN_2 = 0x02,
+    TrigChain2 = 0x02,
     #[doc = "Trigger chain length is 4."]
-    TRIG_CHAIN_3 = 0x03,
+    TrigChain3 = 0x03,
     #[doc = "Trigger chain length is 5."]
-    TRIG_CHAIN_4 = 0x04,
+    TrigChain4 = 0x04,
     #[doc = "Trigger chain length is 6."]
-    TRIG_CHAIN_5 = 0x05,
+    TrigChain5 = 0x05,
     #[doc = "Trigger chain length is 7."]
-    TRIG_CHAIN_6 = 0x06,
+    TrigChain6 = 0x06,
     #[doc = "Trigger chain length is 8."]
-    TRIG_CHAIN_7 = 0x07,
+    TrigChain7 = 0x07,
 }
 impl Trig3CtrlTrigChain {
     #[inline(always)]
@@ -8653,9 +8653,9 @@ impl From<Trig3CtrlTrigChain> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3CtrlTrigMode {
     #[doc = "Hardware trigger. The softerware trigger will be ignored."]
-    TRIG_MODE_0 = 0x0,
+    TrigMode0 = 0x0,
     #[doc = "Software trigger. The hardware trigger will be ignored."]
-    TRIG_MODE_1 = 0x01,
+    TrigMode1 = 0x01,
 }
 impl Trig3CtrlTrigMode {
     #[inline(always)]
@@ -8684,9 +8684,9 @@ impl From<Trig3CtrlTrigMode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Done0 {
     #[doc = "No TRIG3_DONE0 interrupt detected."]
-    TRIG3_DONE0_0 = 0x0,
+    Trig3Done00 = 0x0,
     #[doc = "TRIG3_DONE0 interrupt detected."]
-    TRIG3_DONE0_1 = 0x01,
+    Trig3Done01 = 0x01,
 }
 impl Trig3Done0 {
     #[inline(always)]
@@ -8715,9 +8715,9 @@ impl From<Trig3Done0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Done1 {
     #[doc = "No TRIG3_DONE1 interrupt detected."]
-    TRIG3_DONE1_0 = 0x0,
+    Trig3Done10 = 0x0,
     #[doc = "TRIG3_DONE1 interrupt detected."]
-    TRIG3_DONE1_1 = 0x01,
+    Trig3Done11 = 0x01,
 }
 impl Trig3Done1 {
     #[inline(always)]
@@ -8746,9 +8746,9 @@ impl From<Trig3Done1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Done2 {
     #[doc = "No TRIG3_DONE2 interrupt detected."]
-    TRIG3_DONE2_0 = 0x0,
+    Trig3Done20 = 0x0,
     #[doc = "TRIG3_DONE2 interrupt detected."]
-    TRIG3_DONE2_1 = 0x01,
+    Trig3Done21 = 0x01,
 }
 impl Trig3Done2 {
     #[inline(always)]
@@ -8777,9 +8777,9 @@ impl From<Trig3Done2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Done3 {
     #[doc = "No TRIG3_DONE3 interrupt detected."]
-    TRIG3_DONE3_0 = 0x0,
+    Trig3Done30 = 0x0,
     #[doc = "TRIG3_DONE3 interrupt detected."]
-    TRIG3_DONE3_1 = 0x01,
+    Trig3Done31 = 0x01,
 }
 impl Trig3Done3 {
     #[inline(always)]
@@ -8808,9 +8808,9 @@ impl From<Trig3Done3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Enable {
     #[doc = "TRIG3 DMA request disabled."]
-    TRIG3_ENABLE_0 = 0x0,
+    Trig3Enable0 = 0x0,
     #[doc = "TRIG3 DMA request enabled."]
-    TRIG3_ENABLE_1 = 0x01,
+    Trig3Enable1 = 0x01,
 }
 impl Trig3Enable {
     #[inline(always)]
@@ -8839,9 +8839,9 @@ impl From<Trig3Enable> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Err {
     #[doc = "No TRIG3_ERR interrupt detected."]
-    TRIG3_ERR_0 = 0x0,
+    Trig3Err0 = 0x0,
     #[doc = "TRIG3_ERR interrupt detected."]
-    TRIG3_ERR_1 = 0x01,
+    Trig3Err1 = 0x01,
 }
 impl Trig3Err {
     #[inline(always)]
@@ -8870,9 +8870,9 @@ impl From<Trig3Err> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig3Req {
     #[doc = "TRIG3_REQ not detected."]
-    TRIG3_REQ_0 = 0x0,
+    Trig3Req0 = 0x0,
     #[doc = "TRIG3_REQ detected."]
-    TRIG3_REQ_1 = 0x01,
+    Trig3Req1 = 0x01,
 }
 impl Trig3Req {
     #[inline(always)]
@@ -8901,9 +8901,9 @@ impl From<Trig3Req> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig4Done0 {
     #[doc = "No TRIG4_DONE0 interrupt detected."]
-    TRIG4_DONE0_0 = 0x0,
+    Trig4Done00 = 0x0,
     #[doc = "TRIG4_DONE0 interrupt detected."]
-    TRIG4_DONE0_1 = 0x01,
+    Trig4Done01 = 0x01,
 }
 impl Trig4Done0 {
     #[inline(always)]
@@ -8932,9 +8932,9 @@ impl From<Trig4Done0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig4Done1 {
     #[doc = "No TRIG4_DONE1 interrupt detected."]
-    TRIG4_DONE1_0 = 0x0,
+    Trig4Done10 = 0x0,
     #[doc = "TRIG4_DONE1 interrupt detected."]
-    TRIG4_DONE1_1 = 0x01,
+    Trig4Done11 = 0x01,
 }
 impl Trig4Done1 {
     #[inline(always)]
@@ -8963,9 +8963,9 @@ impl From<Trig4Done1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig4Done2 {
     #[doc = "No TRIG4_DONE2 interrupt detected."]
-    TRIG4_DONE2_0 = 0x0,
+    Trig4Done20 = 0x0,
     #[doc = "TRIG4_DONE2 interrupt detected."]
-    TRIG4_DONE2_1 = 0x01,
+    Trig4Done21 = 0x01,
 }
 impl Trig4Done2 {
     #[inline(always)]
@@ -8994,9 +8994,9 @@ impl From<Trig4Done2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig4Done3 {
     #[doc = "No TRIG4_DONE3 interrupt detected."]
-    TRIG4_DONE3_0 = 0x0,
+    Trig4Done30 = 0x0,
     #[doc = "TRIG4_DONE3 interrupt detected."]
-    TRIG4_DONE3_1 = 0x01,
+    Trig4Done31 = 0x01,
 }
 impl Trig4Done3 {
     #[inline(always)]
@@ -9025,9 +9025,9 @@ impl From<Trig4Done3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig4Enable {
     #[doc = "TRIG4 DMA request disabled."]
-    TRIG4_ENABLE_0 = 0x0,
+    Trig4Enable0 = 0x0,
     #[doc = "TRIG4 DMA request enabled."]
-    TRIG4_ENABLE_1 = 0x01,
+    Trig4Enable1 = 0x01,
 }
 impl Trig4Enable {
     #[inline(always)]
@@ -9056,9 +9056,9 @@ impl From<Trig4Enable> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig4Err {
     #[doc = "No TRIG4_ERR interrupt detected."]
-    TRIG4_ERR_0 = 0x0,
+    Trig4Err0 = 0x0,
     #[doc = "TRIG4_ERR interrupt detected."]
-    TRIG4_ERR_1 = 0x01,
+    Trig4Err1 = 0x01,
 }
 impl Trig4Err {
     #[inline(always)]
@@ -9087,9 +9087,9 @@ impl From<Trig4Err> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig4Req {
     #[doc = "TRIG4_REQ not detected."]
-    TRIG4_REQ_0 = 0x0,
+    Trig4Req0 = 0x0,
     #[doc = "TRIG4_REQ detected."]
-    TRIG4_REQ_1 = 0x01,
+    Trig4Req1 = 0x01,
 }
 impl Trig4Req {
     #[inline(always)]
@@ -9118,9 +9118,9 @@ impl From<Trig4Req> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig5Done0 {
     #[doc = "No TRIG5_DONE0 interrupt detected."]
-    TRIG5_DONE0_0 = 0x0,
+    Trig5Done00 = 0x0,
     #[doc = "TRIG5_DONE0 interrupt detected."]
-    TRIG5_DONE0_1 = 0x01,
+    Trig5Done01 = 0x01,
 }
 impl Trig5Done0 {
     #[inline(always)]
@@ -9149,9 +9149,9 @@ impl From<Trig5Done0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig5Done1 {
     #[doc = "No TRIG5_DONE1 interrupt detected."]
-    TRIG5_DONE1_0 = 0x0,
+    Trig5Done10 = 0x0,
     #[doc = "TRIG5_DONE1 interrupt detected."]
-    TRIG5_DONE1_1 = 0x01,
+    Trig5Done11 = 0x01,
 }
 impl Trig5Done1 {
     #[inline(always)]
@@ -9180,9 +9180,9 @@ impl From<Trig5Done1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig5Done2 {
     #[doc = "No TRIG5_DONE2 interrupt detected."]
-    TRIG5_DONE2_0 = 0x0,
+    Trig5Done20 = 0x0,
     #[doc = "TRIG5_DONE2 interrupt detected."]
-    TRIG5_DONE2_1 = 0x01,
+    Trig5Done21 = 0x01,
 }
 impl Trig5Done2 {
     #[inline(always)]
@@ -9211,9 +9211,9 @@ impl From<Trig5Done2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig5Done3 {
     #[doc = "No TRIG5_DONE3 interrupt detected."]
-    TRIG5_DONE3_0 = 0x0,
+    Trig5Done30 = 0x0,
     #[doc = "TRIG5_DONE3 interrupt detected."]
-    TRIG5_DONE3_1 = 0x01,
+    Trig5Done31 = 0x01,
 }
 impl Trig5Done3 {
     #[inline(always)]
@@ -9242,9 +9242,9 @@ impl From<Trig5Done3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig5Enable {
     #[doc = "TRIG5 DMA request disabled."]
-    TRIG5_ENABLE_0 = 0x0,
+    Trig5Enable0 = 0x0,
     #[doc = "TRIG5 DMA request enabled."]
-    TRIG5_ENABLE_1 = 0x01,
+    Trig5Enable1 = 0x01,
 }
 impl Trig5Enable {
     #[inline(always)]
@@ -9273,9 +9273,9 @@ impl From<Trig5Enable> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig5Err {
     #[doc = "No TRIG5_ERR interrupt detected."]
-    TRIG5_ERR_0 = 0x0,
+    Trig5Err0 = 0x0,
     #[doc = "TRIG5_ERR interrupt detected."]
-    TRIG5_ERR_1 = 0x01,
+    Trig5Err1 = 0x01,
 }
 impl Trig5Err {
     #[inline(always)]
@@ -9304,9 +9304,9 @@ impl From<Trig5Err> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig5Req {
     #[doc = "TRIG5_REQ not detected."]
-    TRIG5_REQ_0 = 0x0,
+    Trig5Req0 = 0x0,
     #[doc = "TRIG5_REQ detected."]
-    TRIG5_REQ_1 = 0x01,
+    Trig5Req1 = 0x01,
 }
 impl Trig5Req {
     #[inline(always)]
@@ -9335,9 +9335,9 @@ impl From<Trig5Req> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig6Done0 {
     #[doc = "No TRIG6_DONE0 interrupt detected."]
-    TRIG6_DONE0_0 = 0x0,
+    Trig6Done00 = 0x0,
     #[doc = "TRIG6_DONE0 interrupt detected."]
-    TRIG6_DONE0_1 = 0x01,
+    Trig6Done01 = 0x01,
 }
 impl Trig6Done0 {
     #[inline(always)]
@@ -9366,9 +9366,9 @@ impl From<Trig6Done0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig6Done1 {
     #[doc = "No TRIG6_DONE1 interrupt detected."]
-    TRIG6_DONE1_0 = 0x0,
+    Trig6Done10 = 0x0,
     #[doc = "TRIG6_DONE1 interrupt detected."]
-    TRIG6_DONE1_1 = 0x01,
+    Trig6Done11 = 0x01,
 }
 impl Trig6Done1 {
     #[inline(always)]
@@ -9397,9 +9397,9 @@ impl From<Trig6Done1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig6Done2 {
     #[doc = "No TRIG6_DONE2 interrupt detected."]
-    TRIG6_DONE2_0 = 0x0,
+    Trig6Done20 = 0x0,
     #[doc = "TRIG6_DONE2 interrupt detected."]
-    TRIG6_DONE2_1 = 0x01,
+    Trig6Done21 = 0x01,
 }
 impl Trig6Done2 {
     #[inline(always)]
@@ -9428,9 +9428,9 @@ impl From<Trig6Done2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig6Done3 {
     #[doc = "No TRIG6_DONE3 interrupt detected."]
-    TRIG6_DONE3_0 = 0x0,
+    Trig6Done30 = 0x0,
     #[doc = "TRIG6_DONE3 interrupt detected."]
-    TRIG6_DONE3_1 = 0x01,
+    Trig6Done31 = 0x01,
 }
 impl Trig6Done3 {
     #[inline(always)]
@@ -9459,9 +9459,9 @@ impl From<Trig6Done3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig6Enable {
     #[doc = "TRIG6 DMA request disabled."]
-    TRIG6_ENABLE_0 = 0x0,
+    Trig6Enable0 = 0x0,
     #[doc = "TRIG6 DMA request enabled."]
-    TRIG6_ENABLE_1 = 0x01,
+    Trig6Enable1 = 0x01,
 }
 impl Trig6Enable {
     #[inline(always)]
@@ -9490,9 +9490,9 @@ impl From<Trig6Enable> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig6Err {
     #[doc = "No TRIG6_ERR interrupt detected."]
-    TRIG6_ERR_0 = 0x0,
+    Trig6Err0 = 0x0,
     #[doc = "TRIG6_ERR interrupt detected."]
-    TRIG6_ERR_1 = 0x01,
+    Trig6Err1 = 0x01,
 }
 impl Trig6Err {
     #[inline(always)]
@@ -9521,9 +9521,9 @@ impl From<Trig6Err> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig6Req {
     #[doc = "TRIG6_REQ not detected."]
-    TRIG6_REQ_0 = 0x0,
+    Trig6Req0 = 0x0,
     #[doc = "TRIG6_REQ detected."]
-    TRIG6_REQ_1 = 0x01,
+    Trig6Req1 = 0x01,
 }
 impl Trig6Req {
     #[inline(always)]
@@ -9552,9 +9552,9 @@ impl From<Trig6Req> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig7Done0 {
     #[doc = "No TRIG7_DONE0 interrupt detected."]
-    TRIG7_DONE0_0 = 0x0,
+    Trig7Done00 = 0x0,
     #[doc = "TRIG7_DONE0 interrupt detected."]
-    TRIG7_DONE0_1 = 0x01,
+    Trig7Done01 = 0x01,
 }
 impl Trig7Done0 {
     #[inline(always)]
@@ -9583,9 +9583,9 @@ impl From<Trig7Done0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig7Done1 {
     #[doc = "No TRIG7_DONE1 interrupt detected."]
-    TRIG7_DONE1_0 = 0x0,
+    Trig7Done10 = 0x0,
     #[doc = "TRIG7_DONE1 interrupt detected."]
-    TRIG7_DONE1_1 = 0x01,
+    Trig7Done11 = 0x01,
 }
 impl Trig7Done1 {
     #[inline(always)]
@@ -9614,9 +9614,9 @@ impl From<Trig7Done1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig7Done2 {
     #[doc = "No TRIG7_DONE2 interrupt detected."]
-    TRIG7_DONE2_0 = 0x0,
+    Trig7Done20 = 0x0,
     #[doc = "TRIG7_DONE2 interrupt detected."]
-    TRIG7_DONE2_1 = 0x01,
+    Trig7Done21 = 0x01,
 }
 impl Trig7Done2 {
     #[inline(always)]
@@ -9645,9 +9645,9 @@ impl From<Trig7Done2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig7Done3 {
     #[doc = "No TRIG7_DONE3 interrupt detected."]
-    TRIG7_DONE3_0 = 0x0,
+    Trig7Done30 = 0x0,
     #[doc = "TRIG7_DONE3 interrupt detected."]
-    TRIG7_DONE3_1 = 0x01,
+    Trig7Done31 = 0x01,
 }
 impl Trig7Done3 {
     #[inline(always)]
@@ -9676,9 +9676,9 @@ impl From<Trig7Done3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig7Enable {
     #[doc = "TRIG7 DMA request disabled."]
-    TRIG7_ENABLE_0 = 0x0,
+    Trig7Enable0 = 0x0,
     #[doc = "TRIG7 DMA request enabled."]
-    TRIG7_ENABLE_1 = 0x01,
+    Trig7Enable1 = 0x01,
 }
 impl Trig7Enable {
     #[inline(always)]
@@ -9707,9 +9707,9 @@ impl From<Trig7Enable> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig7Err {
     #[doc = "No TRIG7_ERR interrupt detected."]
-    TRIG7_ERR_0 = 0x0,
+    Trig7Err0 = 0x0,
     #[doc = "TRIG7_ERR interrupt detected."]
-    TRIG7_ERR_1 = 0x01,
+    Trig7Err1 = 0x01,
 }
 impl Trig7Err {
     #[inline(always)]
@@ -9738,9 +9738,9 @@ impl From<Trig7Err> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Trig7Req {
     #[doc = "TRIG7_REQ not detected."]
-    TRIG7_REQ_0 = 0x0,
+    Trig7Req0 = 0x0,
     #[doc = "TRIG7_REQ detected."]
-    TRIG7_REQ_1 = 0x01,
+    Trig7Req1 = 0x01,
 }
 impl Trig7Req {
     #[inline(always)]
@@ -9769,15 +9769,15 @@ impl From<Trig7Req> for u8 {
 pub struct TrigEnable(u8);
 impl TrigEnable {
     #[doc = "disable all 8 external XBAR triggers."]
-    pub const TRIG_ENABLE_0: Self = Self(0x0);
+    pub const TrigEnable0: Self = Self(0x0);
     #[doc = "enable external XBAR trigger0."]
-    pub const TRIG_ENABLE_1: Self = Self(0x01);
+    pub const TrigEnable1: Self = Self(0x01);
     #[doc = "enable external XBAR trigger1."]
-    pub const TRIG_ENABLE_2: Self = Self(0x02);
+    pub const TrigEnable2: Self = Self(0x02);
     #[doc = "enable external XBAR trigger0 and trigger1."]
-    pub const TRIG_ENABLE_3: Self = Self(0x03);
+    pub const TrigEnable3: Self = Self(0x03);
     #[doc = "enable all 8 external XBAR triggers."]
-    pub const TRIG_ENABLE_255: Self = Self(0xff);
+    pub const TrigEnable255: Self = Self(0xff);
 }
 impl TrigEnable {
     pub const fn from_bits(val: u8) -> TrigEnable {
@@ -9790,11 +9790,11 @@ impl TrigEnable {
 impl core::fmt::Debug for TrigEnable {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("TRIG_ENABLE_0"),
-            0x01 => f.write_str("TRIG_ENABLE_1"),
-            0x02 => f.write_str("TRIG_ENABLE_2"),
-            0x03 => f.write_str("TRIG_ENABLE_3"),
-            0xff => f.write_str("TRIG_ENABLE_255"),
+            0x0 => f.write_str("TrigEnable0"),
+            0x01 => f.write_str("TrigEnable1"),
+            0x02 => f.write_str("TrigEnable2"),
+            0x03 => f.write_str("TrigEnable3"),
+            0xff => f.write_str("TrigEnable255"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -9803,11 +9803,11 @@ impl core::fmt::Debug for TrigEnable {
 impl defmt::Format for TrigEnable {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "TRIG_ENABLE_0"),
-            0x01 => defmt::write!(f, "TRIG_ENABLE_1"),
-            0x02 => defmt::write!(f, "TRIG_ENABLE_2"),
-            0x03 => defmt::write!(f, "TRIG_ENABLE_3"),
-            0xff => defmt::write!(f, "TRIG_ENABLE_255"),
+            0x0 => defmt::write!(f, "TrigEnable0"),
+            0x01 => defmt::write!(f, "TrigEnable1"),
+            0x02 => defmt::write!(f, "TrigEnable2"),
+            0x03 => defmt::write!(f, "TrigEnable3"),
+            0xff => defmt::write!(f, "TrigEnable255"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }

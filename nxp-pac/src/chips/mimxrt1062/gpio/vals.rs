@@ -3,13 +3,13 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Icr {
     #[doc = "Interrupt 0 is low-level sensitive."]
-    LOW_LEVEL = 0x0,
+    LowLevel = 0x0,
     #[doc = "Interrupt 0 is high-level sensitive."]
-    HIGH_LEVEL = 0x01,
+    HighLevel = 0x01,
     #[doc = "Interrupt 0 is rising-edge sensitive."]
-    RISING_EDGE = 0x02,
+    RisingEdge = 0x02,
     #[doc = "Interrupt 0 is falling-edge sensitive."]
-    FALLING_EDGE = 0x03,
+    FallingEdge = 0x03,
 }
 impl Icr {
     #[inline(always)]

@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cc {
     #[doc = "Clock on character. In synchronous mode, SCLK cycles only when characters are being sent on Un_TXD or to complete a character that is being received."]
-    CLOCK_ON_CHARACTER = 0x0,
+    ClockOnCharacter = 0x0,
     #[doc = "Continuous clock. SCLK runs continuously in synchronous mode, allowing characters to be received on Un_RxD independently from transmission on Un_TXD)."]
-    CONTINOUS_CLOCK = 0x01,
+    ContinousClock = 0x01,
 }
 impl Cc {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Clkpol {
     #[doc = "Falling edge. Un_RXD is sampled on the falling edge of SCLK."]
-    FALLING_EDGE = 0x0,
+    FallingEdge = 0x0,
     #[doc = "Rising edge. Un_RXD is sampled on the rising edge of SCLK."]
-    RISING_EDGE = 0x01,
+    RisingEdge = 0x01,
 }
 impl Clkpol {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Clkpol> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Clrcconrx {
     #[doc = "No effect. No effect on the CC bit."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Auto-clear. The CC bit is automatically cleared when a complete character has been received. This bit is cleared at the same time."]
-    AUTO_CLEAR = 0x01,
+    AutoClear = 0x01,
 }
 impl Clrcconrx {
     #[inline(always)]
@@ -96,11 +96,11 @@ impl From<Clrcconrx> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Datalen {
     #[doc = "7 bit Data length."]
-    BIT_7 = 0x0,
+    Bit7 = 0x0,
     #[doc = "8 bit Data length."]
-    BIT_8 = 0x01,
+    Bit8 = 0x01,
     #[doc = "9 bit data length. The 9th bit is commonly used for addressing in multidrop mode. See the ADDRDET bit in the CTL register."]
-    BIT_9 = 0x02,
+    Bit9 = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Datalen {
@@ -130,9 +130,9 @@ impl From<Datalen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Loop {
     #[doc = "Normal operation."]
-    NORMAL = 0x0,
+    Normal = 0x0,
     #[doc = "Loopback mode. This provides a mechanism to perform diagnostic loopback testing for USART data. Serial data from the transmitter (Un_TXD) is connected internally to serial input of the receive (Un_RXD). Un_TXD and Un_RTS activity will also appear on external pins if these functions are configured to appear on device pins. The receiver RTS signal is also looped back to CTS and performs flow control if enabled by CTSEN."]
-    LOOPBACK = 0x01,
+    Loopback = 0x01,
 }
 impl Loop {
     #[inline(always)]
@@ -161,9 +161,9 @@ impl From<Loop> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Oepol {
     #[doc = "Low. If selected by OESEL, the output enable is active low."]
-    LOW = 0x0,
+    Low = 0x0,
     #[doc = "High. If selected by OESEL, the output enable is active high."]
-    HIGH = 0x01,
+    High = 0x01,
 }
 impl Oepol {
     #[inline(always)]
@@ -192,9 +192,9 @@ impl From<Oepol> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Oesel {
     #[doc = "Standard. The RTS signal is used as the standard flow control function."]
-    STANDARD = 0x0,
+    Standard = 0x0,
     #[doc = "RS-485. The RTS signal configured to provide an output enable signal to control an RS-485 transceiver."]
-    RS_485 = 0x01,
+    Rs485 = 0x01,
 }
 impl Oesel {
     #[inline(always)]
@@ -223,12 +223,12 @@ impl From<Oesel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Paritysel {
     #[doc = "No parity."]
-    NO_PARITY = 0x0,
+    NoParity = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "Even parity. Adds a bit to each character such that the number of 1s in a transmitted character is even, and the number of 1s in a received character is expected to be even."]
-    EVEN_PARITY = 0x02,
+    EvenParity = 0x02,
     #[doc = "Odd parity. Adds a bit to each character such that the number of 1s in a transmitted character is odd, and the number of 1s in a received character is expected to be odd."]
-    ODD_PARITY = 0x03,
+    OddParity = 0x03,
 }
 impl Paritysel {
     #[inline(always)]
@@ -257,9 +257,9 @@ impl From<Paritysel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rxpol {
     #[doc = "Standard. The RX signal is used as it arrives from the pin. This means that the RX rest value is 1, start bit is 0, data is not inverted, and the stop bit is 1."]
-    STANDARD = 0x0,
+    Standard = 0x0,
     #[doc = "Inverted. The RX signal is inverted before being used by the USART. This means that the RX rest value is 0, start bit is 1, data is inverted, and the stop bit is 0."]
-    INVERTED = 0x01,
+    Inverted = 0x01,
 }
 impl Rxpol {
     #[inline(always)]
@@ -288,9 +288,9 @@ impl From<Rxpol> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Stoplen {
     #[doc = "1 stop bit."]
-    BIT_1 = 0x0,
+    Bit1 = 0x0,
     #[doc = "2 stop bits. This setting should only be used for asynchronous communication."]
-    BITS_2 = 0x01,
+    Bits2 = 0x01,
 }
 impl Stoplen {
     #[inline(always)]
@@ -319,9 +319,9 @@ impl From<Stoplen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Syncen {
     #[doc = "Asynchronous mode."]
-    ASYNCHRONOUS_MODE = 0x0,
+    AsynchronousMode = 0x0,
     #[doc = "Synchronous mode."]
-    SYNCHRONOUS_MODE = 0x01,
+    SynchronousMode = 0x01,
 }
 impl Syncen {
     #[inline(always)]
@@ -350,9 +350,9 @@ impl From<Syncen> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Syncmst {
     #[doc = "Slave. When synchronous mode is enabled, the USART is a slave."]
-    SLAVE = 0x0,
+    Slave = 0x0,
     #[doc = "Master. When synchronous mode is enabled, the USART is a master."]
-    MASTER = 0x01,
+    Master = 0x01,
 }
 impl Syncmst {
     #[inline(always)]
@@ -381,9 +381,9 @@ impl From<Syncmst> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Txbrken {
     #[doc = "Normal operation."]
-    NORMAL = 0x0,
+    Normal = 0x0,
     #[doc = "Continuous break. Continuous break is sent immediately when this bit is set, and remains until this bit is cleared. A break may be sent without danger of corrupting any currently transmitting character if the transmitter is first disabled (TXDIS in CTL is set) and then waiting for the transmitter to be disabled (TXDISINT in STAT = 1) before writing 1 to TXBRKEN."]
-    CONTINOUS = 0x01,
+    Continous = 0x01,
 }
 impl Txbrken {
     #[inline(always)]
@@ -412,9 +412,9 @@ impl From<Txbrken> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Txdis {
     #[doc = "Not disabled. USART transmitter is not disabled."]
-    ENABLED = 0x0,
+    Enabled = 0x0,
     #[doc = "Disabled. USART transmitter is disabled after any character currently being transmitted is complete. This feature can be used to facilitate software flow control."]
-    DISABLED = 0x01,
+    Disabled = 0x01,
 }
 impl Txdis {
     #[inline(always)]
@@ -443,9 +443,9 @@ impl From<Txdis> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Txpol {
     #[doc = "Standard. The TX signal is sent out without change. This means that the TX rest value is 1, start bit is 0, data is not inverted, and the stop bit is 1."]
-    STANDARD = 0x0,
+    Standard = 0x0,
     #[doc = "Inverted. The TX signal is inverted by the USART before being sent out. This means that the TX rest value is 0, start bit is 1, data is inverted, and the stop bit is 0."]
-    INVERTED = 0x01,
+    Inverted = 0x01,
 }
 impl Txpol {
     #[inline(always)]

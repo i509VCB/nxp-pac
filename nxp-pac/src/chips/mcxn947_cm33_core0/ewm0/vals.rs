@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Inten {
     #[doc = "Deasserts interrupt requests."]
-    ZERO = 0x0,
+    Zero = 0x0,
     #[doc = "Generates interrupt requests."]
-    INT_REQ = 0x01,
+    IntReq = 0x01,
 }
 impl Inten {
     #[inline(always)]

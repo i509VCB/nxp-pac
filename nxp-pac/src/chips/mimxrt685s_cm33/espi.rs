@@ -106,7 +106,7 @@ impl Espi {
     }
     #[doc = "The Port Set Interrupt-Rule and Set User Status register is used to set: The interrupt causes per port. That is, it is used to select what events from the port should cause an interrupt, if any. The user Status bits. The status byte returned to the host will be composed of both these user bits (which the application defines) and automatically generated status. The interrupt masks then are matched by sticky cause bits in PnSTAT (which can be read and then write-1 cleared). The sticky bits are set whether the interrupt is masked or not, but the masks cause an interrupt when the bits are set and the port is int enabled via INTENSET."]
     #[inline(always)]
-    pub const fn p0irule_stat(self) -> crate::common::Reg<regs::P0iruleStat, crate::common::RW> {
+    pub const fn p0i_rule_stat(self) -> crate::common::Reg<regs::P0iRuleStat, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0108usize) as _) }
     }
     #[doc = "The Port Address register is used to set the mapped address in the LPC/eSPI memory space. For normal Ports, this is a 16-bit location in IO space or a 32-bit offset into PCIe address mapped space. It is not used for OOB, Bus Mastering, or Flash; see the PnOMFLEN register for those. For Endpoints, it is the base of a dword (64 bits). For Index/Data, it is the base of a word (32 bits). For mailbox memory, the address is modulus the length of the mailbox (x2 for both directions). So, if a 16-byte mailbox (single), the offset must have bits 3:0 set to 0 (that is &~0xF). If split directions, then normally bits 4:0 would be set to 0 (that is &~0x1F)."]
@@ -131,7 +131,7 @@ impl Espi {
     }
     #[doc = "no description available."]
     #[inline(always)]
-    pub const fn p0ramuse(self) -> crate::common::Reg<regs::P0ramuse, crate::common::RW> {
+    pub const fn p0ram_use(self) -> crate::common::Reg<regs::P0ramUse, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0114usize) as _) }
     }
     #[doc = "no description available."]
@@ -146,7 +146,7 @@ impl Espi {
     }
     #[doc = "The Port Set Interrupt-Rule and Set User Status register is used to set: The interrupt causes per port. That is, it is used to select what events from the port should cause an interrupt, if any. The user Status bits. The status byte returned to the host will be composed of both these user bits (which the application defines) and automatically generated status. The interrupt masks then are matched by sticky cause bits in PnSTAT (which can be read and then write-1 cleared). The sticky bits are set whether the interrupt is masked or not, but the masks cause an interrupt when the bits are set and the port is int enabled via INTENSET."]
     #[inline(always)]
-    pub const fn p1irule_stat(self) -> crate::common::Reg<regs::P1iruleStat, crate::common::RW> {
+    pub const fn p1i_rule_stat(self) -> crate::common::Reg<regs::P1iRuleStat, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0128usize) as _) }
     }
     #[doc = "The Port Address register is used to set the mapped address in the LPC/eSPI memory space. For normal Ports, this is a 16-bit location in IO space or a 32-bit offset into PCIe address mapped space. It is not used for OOB, Bus Mastering, or Flash; see the PnOMFLEN register for those. For Endpoints, it is the base of a dword (64 bits). For Index/Data, it is the base of a word (32 bits). For mailbox memory, the address is modulus the length of the mailbox (x2 for both directions). So, if a 16-byte mailbox (single), the offset must have bits 3:0 set to 0 (that is &~0xF). If split directions, then normally bits 4:0 would be set to 0 (that is &~0x1F)."]
@@ -171,7 +171,7 @@ impl Espi {
     }
     #[doc = "no description available."]
     #[inline(always)]
-    pub const fn p1ramuse(self) -> crate::common::Reg<regs::P1ramuse, crate::common::RW> {
+    pub const fn p1ram_use(self) -> crate::common::Reg<regs::P1ramUse, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0134usize) as _) }
     }
     #[doc = "no description available."]
@@ -186,7 +186,7 @@ impl Espi {
     }
     #[doc = "The Port Set Interrupt-Rule and Set User Status register is used to set: The interrupt causes per port. That is, it is used to select what events from the port should cause an interrupt, if any. The user Status bits. The status byte returned to the host will be composed of both these user bits (which the application defines) and automatically generated status. The interrupt masks then are matched by sticky cause bits in PnSTAT (which can be read and then write-1 cleared). The sticky bits are set whether the interrupt is masked or not, but the masks cause an interrupt when the bits are set and the port is int enabled via INTENSET."]
     #[inline(always)]
-    pub const fn p2irule_stat(self) -> crate::common::Reg<regs::P2iruleStat, crate::common::RW> {
+    pub const fn p2i_rule_stat(self) -> crate::common::Reg<regs::P2iRuleStat, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0148usize) as _) }
     }
     #[doc = "The Port Address register is used to set the mapped address in the LPC/eSPI memory space. For normal Ports, this is a 16-bit location in IO space or a 32-bit offset into PCIe address mapped space. It is not used for OOB, Bus Mastering, or Flash; see the PnOMFLEN register for those. For Endpoints, it is the base of a dword (64 bits). For Index/Data, it is the base of a word (32 bits). For mailbox memory, the address is modulus the length of the mailbox (x2 for both directions). So, if a 16-byte mailbox (single), the offset must have bits 3:0 set to 0 (that is &~0xF). If split directions, then normally bits 4:0 would be set to 0 (that is &~0x1F)."]
@@ -211,7 +211,7 @@ impl Espi {
     }
     #[doc = "no description available."]
     #[inline(always)]
-    pub const fn p2ramuse(self) -> crate::common::Reg<regs::P2ramuse, crate::common::RW> {
+    pub const fn p2ram_use(self) -> crate::common::Reg<regs::P2ramUse, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0154usize) as _) }
     }
     #[doc = "no description available."]
@@ -226,7 +226,7 @@ impl Espi {
     }
     #[doc = "The Port Set Interrupt-Rule and Set User Status register is used to set: The interrupt causes per port. That is, it is used to select what events from the port should cause an interrupt, if any. The user Status bits. The status byte returned to the host will be composed of both these user bits (which the application defines) and automatically generated status. The interrupt masks then are matched by sticky cause bits in PnSTAT (which can be read and then write-1 cleared). The sticky bits are set whether the interrupt is masked or not, but the masks cause an interrupt when the bits are set and the port is int enabled via INTENSET."]
     #[inline(always)]
-    pub const fn p3irule_stat(self) -> crate::common::Reg<regs::P3iruleStat, crate::common::RW> {
+    pub const fn p3i_rule_stat(self) -> crate::common::Reg<regs::P3iRuleStat, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0168usize) as _) }
     }
     #[doc = "The Port Address register is used to set the mapped address in the LPC/eSPI memory space. For normal Ports, this is a 16-bit location in IO space or a 32-bit offset into PCIe address mapped space. It is not used for OOB, Bus Mastering, or Flash; see the PnOMFLEN register for those. For Endpoints, it is the base of a dword (64 bits). For Index/Data, it is the base of a word (32 bits). For mailbox memory, the address is modulus the length of the mailbox (x2 for both directions). So, if a 16-byte mailbox (single), the offset must have bits 3:0 set to 0 (that is &~0xF). If split directions, then normally bits 4:0 would be set to 0 (that is &~0x1F)."]
@@ -251,7 +251,7 @@ impl Espi {
     }
     #[doc = "no description available."]
     #[inline(always)]
-    pub const fn p3ramuse(self) -> crate::common::Reg<regs::P3ramuse, crate::common::RW> {
+    pub const fn p3ram_use(self) -> crate::common::Reg<regs::P3ramUse, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0174usize) as _) }
     }
     #[doc = "no description available."]
@@ -266,7 +266,7 @@ impl Espi {
     }
     #[doc = "The Port Set Interrupt-Rule and Set User Status register is used to set: The interrupt causes per port. That is, it is used to select what events from the port should cause an interrupt, if any. The user Status bits. The status byte returned to the host will be composed of both these user bits (which the application defines) and automatically generated status. The interrupt masks then are matched by sticky cause bits in PnSTAT (which can be read and then write-1 cleared). The sticky bits are set whether the interrupt is masked or not, but the masks cause an interrupt when the bits are set and the port is int enabled via INTENSET."]
     #[inline(always)]
-    pub const fn p4irule_stat(self) -> crate::common::Reg<regs::P4iruleStat, crate::common::RW> {
+    pub const fn p4i_rule_stat(self) -> crate::common::Reg<regs::P4iRuleStat, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0188usize) as _) }
     }
     #[doc = "The Port Address register is used to set the mapped address in the LPC/eSPI memory space. For normal Ports, this is a 16-bit location in IO space or a 32-bit offset into PCIe address mapped space. It is not used for OOB, Bus Mastering, or Flash; see the PnOMFLEN register for those. For Endpoints, it is the base of a dword (64 bits). For Index/Data, it is the base of a word (32 bits). For mailbox memory, the address is modulus the length of the mailbox (x2 for both directions). So, if a 16-byte mailbox (single), the offset must have bits 3:0 set to 0 (that is &~0xF). If split directions, then normally bits 4:0 would be set to 0 (that is &~0x1F)."]
@@ -291,7 +291,7 @@ impl Espi {
     }
     #[doc = "no description available."]
     #[inline(always)]
-    pub const fn p4ramuse(self) -> crate::common::Reg<regs::P4ramuse, crate::common::RW> {
+    pub const fn p4ram_use(self) -> crate::common::Reg<regs::P4ramUse, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0194usize) as _) }
     }
 }

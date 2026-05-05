@@ -466,13 +466,13 @@ impl C2 {
     #[doc = "ACOn."]
     #[must_use]
     #[inline(always)]
-    pub const fn acon(&self) -> u8 {
+    pub const fn ac_on(&self) -> u8 {
         let val = (self.0 >> 0usize) & 0x3f;
         val as u8
     }
     #[doc = "ACOn."]
     #[inline(always)]
-    pub const fn set_acon(&mut self, val: u8) {
+    pub const fn set_ac_on(&mut self, val: u8) {
         self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
     }
     #[doc = "Comparator and DAC initialization delay modulus."]
@@ -617,7 +617,7 @@ impl Default for C2 {
 impl core::fmt::Debug for C2 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("C2")
-            .field("acon", &self.acon())
+            .field("ac_on", &self.ac_on())
             .field("initmod", &self.initmod())
             .field("nsam", &self.nsam())
             .field("ch0f", &self.ch0f())
@@ -637,8 +637,8 @@ impl defmt::Format for C2 {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "C2 {{ acon: {=u8:?}, initmod: {=u8:?}, nsam: {:?}, ch0f: {=bool:?}, ch1f: {=bool:?}, ch2f: {=bool:?}, ch3f: {=bool:?}, ch4f: {=bool:?}, ch5f: {=bool:?}, fxmxch: {:?}, fxmp: {:?}, rrie: {:?} }}",
-            self.acon(),
+            "C2 {{ ac_on: {=u8:?}, initmod: {=u8:?}, nsam: {:?}, ch0f: {=bool:?}, ch1f: {=bool:?}, ch2f: {=bool:?}, ch3f: {=bool:?}, ch4f: {=bool:?}, ch5f: {=bool:?}, fxmxch: {:?}, fxmp: {:?}, rrie: {:?} }}",
+            self.ac_on(),
             self.initmod(),
             self.nsam(),
             self.ch0f(),

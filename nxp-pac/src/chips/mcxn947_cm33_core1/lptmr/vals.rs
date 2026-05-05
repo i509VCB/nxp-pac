@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pbyp {
     #[doc = "Prescaler and glitch filter enable."]
-    PBYP0 = 0x0,
+    Pbyp0 = 0x0,
     #[doc = "Prescaler and glitch filter bypass."]
-    PBYP1 = 0x01,
+    Pbyp1 = 0x01,
 }
 impl Pbyp {
     #[inline(always)]
@@ -34,13 +34,13 @@ impl From<Pbyp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pcs {
     #[doc = "Clock 0."]
-    PCS00 = 0x0,
+    Pcs00 = 0x0,
     #[doc = "Clock 1."]
-    PCS01 = 0x01,
+    Pcs01 = 0x01,
     #[doc = "Clock 2."]
-    PCS10 = 0x02,
+    Pcs10 = 0x02,
     #[doc = "Clock 3."]
-    PCS11 = 0x03,
+    Pcs11 = 0x03,
 }
 impl Pcs {
     #[inline(always)]
@@ -69,37 +69,37 @@ impl From<Pcs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Prescale {
     #[doc = "Prescaler divides the prescaler clock by 2; glitch filter does not support this configuration."]
-    PRESCALE0000 = 0x0,
+    Prescale0000 = 0x0,
     #[doc = "Prescaler divides the prescaler clock by 4; glitch filter recognizes change on input pin after two rising clock edges."]
-    PRESCALE0001 = 0x01,
+    Prescale0001 = 0x01,
     #[doc = "Prescaler divides the prescaler clock by 8; glitch filter recognizes change on input pin after four rising clock edges."]
-    PRESCALE0010 = 0x02,
+    Prescale0010 = 0x02,
     #[doc = "Prescaler divides the prescaler clock by 16; glitch filter recognizes change on input pin after eight rising clock edges."]
-    PRESCALE0011 = 0x03,
+    Prescale0011 = 0x03,
     #[doc = "Prescaler divides the prescaler clock by 32; glitch filter recognizes change on input pin after 16 rising clock edges."]
-    PRESCALE0100 = 0x04,
+    Prescale0100 = 0x04,
     #[doc = "Prescaler divides the prescaler clock by 64; glitch filter recognizes change on input pin after 32 rising clock edges."]
-    PRESCALE0101 = 0x05,
+    Prescale0101 = 0x05,
     #[doc = "Prescaler divides the prescaler clock by 128; glitch filter recognizes change on input pin after 64 rising clock edges."]
-    PRESCALE0110 = 0x06,
+    Prescale0110 = 0x06,
     #[doc = "Prescaler divides the prescaler clock by 256; glitch filter recognizes change on input pin after 128 rising clock edges."]
-    PRESCALE0111 = 0x07,
+    Prescale0111 = 0x07,
     #[doc = "Prescaler divides the prescaler clock by 512; glitch filter recognizes change on input pin after 256 rising clock edges."]
-    PRESCALE1000 = 0x08,
+    Prescale1000 = 0x08,
     #[doc = "Prescaler divides the prescaler clock by 1024; glitch filter recognizes change on input pin after 512 rising clock edges."]
-    PRESCALE1001 = 0x09,
+    Prescale1001 = 0x09,
     #[doc = "Prescaler divides the prescaler clock by 2048; glitch filter recognizes change on input pin after 1024 rising clock edges."]
-    PRESCALE1010 = 0x0a,
+    Prescale1010 = 0x0a,
     #[doc = "Prescaler divides the prescaler clock by 4096; glitch filter recognizes change on input pin after 2048 rising clock edges."]
-    PRESCALE1011 = 0x0b,
+    Prescale1011 = 0x0b,
     #[doc = "Prescaler divides the prescaler clock by 8192; glitch filter recognizes change on input pin after 4096 rising clock edges."]
-    PRESCALE1100 = 0x0c,
+    Prescale1100 = 0x0c,
     #[doc = "Prescaler divides the prescaler clock by 16,384; glitch filter recognizes change on input pin after 8192 rising clock edges."]
-    PRESCALE1101 = 0x0d,
+    Prescale1101 = 0x0d,
     #[doc = "Prescaler divides the prescaler clock by 32,768; glitch filter recognizes change on input pin after 16,384 rising clock edges."]
-    PRESCALE1110 = 0x0e,
+    Prescale1110 = 0x0e,
     #[doc = "Prescaler divides the prescaler clock by 65,536; glitch filter recognizes change on input pin after 32,768 rising clock edges."]
-    PRESCALE1111 = 0x0f,
+    Prescale1111 = 0x0f,
 }
 impl Prescale {
     #[inline(always)]
@@ -128,9 +128,9 @@ impl From<Prescale> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcf {
     #[doc = "CNR != (CMR + 1)."]
-    TCF0 = 0x0,
+    Tcf0 = 0x0,
     #[doc = "CNR = (CMR + 1)."]
-    TCF1 = 0x01,
+    Tcf1 = 0x01,
 }
 impl Tcf {
     #[inline(always)]
@@ -159,9 +159,9 @@ impl From<Tcf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tdre {
     #[doc = "Disable."]
-    TRDE0 = 0x0,
+    Trde0 = 0x0,
     #[doc = "Enable."]
-    TRDE1 = 0x01,
+    Trde1 = 0x01,
 }
 impl Tdre {
     #[inline(always)]
@@ -190,9 +190,9 @@ impl From<Tdre> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ten {
     #[doc = "Disable."]
-    TEN0 = 0x0,
+    Ten0 = 0x0,
     #[doc = "Enable."]
-    TEN1 = 0x01,
+    Ten1 = 0x01,
 }
 impl Ten {
     #[inline(always)]
@@ -221,9 +221,9 @@ impl From<Ten> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tfc {
     #[doc = "Reset when TCF asserts."]
-    TFC0 = 0x0,
+    Tfc0 = 0x0,
     #[doc = "Reset on overflow."]
-    TFC1 = 0x01,
+    Tfc1 = 0x01,
 }
 impl Tfc {
     #[inline(always)]
@@ -252,9 +252,9 @@ impl From<Tfc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tie {
     #[doc = "Disable."]
-    TIE0 = 0x0,
+    Tie0 = 0x0,
     #[doc = "Enable."]
-    TIE1 = 0x01,
+    Tie1 = 0x01,
 }
 impl Tie {
     #[inline(always)]
@@ -283,9 +283,9 @@ impl From<Tie> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tms {
     #[doc = "Time Counter."]
-    TMS0 = 0x0,
+    Tms0 = 0x0,
     #[doc = "Pulse Counter."]
-    TMS1 = 0x01,
+    Tms1 = 0x01,
 }
 impl Tms {
     #[inline(always)]
@@ -314,9 +314,9 @@ impl From<Tms> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tpp {
     #[doc = "Active-high."]
-    TPP0 = 0x0,
+    Tpp0 = 0x0,
     #[doc = "Active-low."]
-    TPP1 = 0x01,
+    Tpp1 = 0x01,
 }
 impl Tpp {
     #[inline(always)]
@@ -345,13 +345,13 @@ impl From<Tpp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tps {
     #[doc = "Input 0."]
-    TPS00 = 0x0,
+    Tps00 = 0x0,
     #[doc = "Input 1."]
-    TPS01 = 0x01,
+    Tps01 = 0x01,
     #[doc = "Input 2."]
-    TPS10 = 0x02,
+    Tps10 = 0x02,
     #[doc = "Input 3."]
-    TPS11 = 0x03,
+    Tps11 = 0x03,
 }
 impl Tps {
     #[inline(always)]

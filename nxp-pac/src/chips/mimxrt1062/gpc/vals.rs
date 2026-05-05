@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MegaPdnReq {
     #[doc = "No Request."]
-    MEGA_PDN_REQ_0 = 0x0,
+    MegaPdnReq0 = 0x0,
     #[doc = "Request power down sequence."]
-    MEGA_PDN_REQ_1 = 0x01,
+    MegaPdnReq1 = 0x01,
 }
 impl MegaPdnReq {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<MegaPdnReq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum MegaPupReq {
     #[doc = "No Request."]
-    MEGA_PUP_REQ_0 = 0x0,
+    MegaPupReq0 = 0x0,
     #[doc = "Request power up sequence."]
-    MEGA_PUP_REQ_1 = 0x01,
+    MegaPupReq1 = 0x01,
 }
 impl MegaPupReq {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<MegaPupReq> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pdram0Pge {
     #[doc = "FlexRAM PDRAM0 domain will keep power even if the CPU core is powered down."]
-    PDRAM0_PGE_0 = 0x0,
+    Pdram0Pge0 = 0x0,
     #[doc = "FlexRAM PDRAM0 domain will be powered down when the CPU core is powered down.."]
-    PDRAM0_PGE_1 = 0x01,
+    Pdram0Pge1 = 0x01,
 }
 impl Pdram0Pge {
     #[inline(always)]

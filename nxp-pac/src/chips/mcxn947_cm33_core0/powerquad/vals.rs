@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum CppreSat8 {
     #[doc = "8 bits."]
-    SAT_8_BITS = 0x0,
+    Sat8Bits = 0x0,
     #[doc = "16 bits."]
-    SAT_16_BITS = 0x01,
+    Sat16Bits = 0x01,
 }
 impl CppreSat8 {
     #[inline(always)]
@@ -34,16 +34,16 @@ impl From<CppreSat8> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DecodeMachine {
     #[doc = "Coprocessor."]
-    COPROCESSOR = 0x0,
+    Coprocessor = 0x0,
     #[doc = "Matrix engine."]
-    MATRIX = 0x01,
+    Matrix = 0x01,
     #[doc = "Transform engine."]
-    TRANSFORM = 0x02,
+    Transform = 0x02,
     #[doc = "Filter engine."]
-    FILTER = 0x03,
+    Filter = 0x03,
     _RESERVED_4 = 0x04,
     #[doc = "CORDIC engine."]
-    CORDIC = 0x05,
+    Cordic = 0x05,
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
     _RESERVED_8 = 0x08,
@@ -86,7 +86,7 @@ pub enum InaFormatext {
     #[doc = "Q31 32-bit fixed-point integer."]
     Q31 = 0x01,
     #[doc = "F32 32-bit floating-point format."]
-    FLOAT = 0x02,
+    Float = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl InaFormatext {
@@ -120,7 +120,7 @@ pub enum InaFormatint {
     #[doc = "Q31 32-bit fixed-point integer."]
     Q31 = 0x01,
     #[doc = "F32 32-bit floating-point format."]
-    FLOAT = 0x02,
+    Float = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl InaFormatint {
@@ -154,7 +154,7 @@ pub enum InbFormatext {
     #[doc = "Q31 32-bit fixed-point integer."]
     Q31 = 0x01,
     #[doc = "F32 32-bit floating-point format."]
-    FLOAT = 0x02,
+    Float = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl InbFormatext {
@@ -188,7 +188,7 @@ pub enum InbFormatint {
     #[doc = "Q31 32-bit fixed-point integer."]
     Q31 = 0x01,
     #[doc = "F32 32-bit floating-point format."]
-    FLOAT = 0x02,
+    Float = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl InbFormatint {
@@ -222,7 +222,7 @@ pub enum OutFormatext {
     #[doc = "Q31 32-bit fixed-point integer."]
     Q31 = 0x01,
     #[doc = "F32 32-bit floating-point format."]
-    FLOAT = 0x02,
+    Float = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl OutFormatext {
@@ -256,7 +256,7 @@ pub enum OutFormatint {
     #[doc = "Q31 32-bit fixed-point integer."]
     Q31 = 0x01,
     #[doc = "F32 32-bit floating-point format."]
-    FLOAT = 0x02,
+    Float = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl OutFormatint {
@@ -290,7 +290,7 @@ pub enum TmpFormatext {
     #[doc = "Q31 32-bit fixed-point integer."]
     Q31 = 0x01,
     #[doc = "F32 32-bit floating-point format."]
-    FLOAT = 0x02,
+    Float = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl TmpFormatext {
@@ -324,7 +324,7 @@ pub enum TmpFormatint {
     #[doc = "Q31 32-bit fixed-point integer."]
     Q31 = 0x01,
     #[doc = "F32 32-bit floating-point format."]
-    FLOAT = 0x02,
+    Float = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl TmpFormatint {

@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BidirH {
     #[doc = "Up."]
-    UP = 0x0,
+    Up = 0x0,
     #[doc = "Up-down."]
-    UP_DOWN = 0x01,
+    UpDown = 0x01,
 }
 impl BidirH {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<BidirH> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum BidirL {
     #[doc = "Up."]
-    UP = 0x0,
+    Up = 0x0,
     #[doc = "Up-down."]
-    UP_DOWN = 0x01,
+    UpDown = 0x01,
 }
 impl BidirL {
     #[inline(always)]
@@ -65,37 +65,37 @@ impl From<BidirL> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Cksel {
     #[doc = "Rising edges on input 0."]
-    INPUT_0_RISING_EDGES = 0x0,
+    Input0RisingEdges = 0x0,
     #[doc = "Falling edges on input 0."]
-    INPUT_0_FALLING_EDGES = 0x01,
+    Input0FallingEdges = 0x01,
     #[doc = "Rising edges on input 1."]
-    INPUT_1_RISING_EDGES = 0x02,
+    Input1RisingEdges = 0x02,
     #[doc = "Falling edges on input 1."]
-    INPUT_1_FALLING_EDGES = 0x03,
+    Input1FallingEdges = 0x03,
     #[doc = "Rising edges on input 2."]
-    INPUT_2_RISING_EDGES = 0x04,
+    Input2RisingEdges = 0x04,
     #[doc = "Falling edges on input 2."]
-    INPUT_2_FALLING_EDGES = 0x05,
+    Input2FallingEdges = 0x05,
     #[doc = "Rising edges on input 3."]
-    INPUT_3_RISING_EDGES = 0x06,
+    Input3RisingEdges = 0x06,
     #[doc = "Falling edges on input 3."]
-    INPUT_3_FALLING_EDGES = 0x07,
+    Input3FallingEdges = 0x07,
     #[doc = "Rising edges on input 4."]
-    INPUT_4_RISING_EDGES = 0x08,
+    Input4RisingEdges = 0x08,
     #[doc = "Falling edges on input 4."]
-    INPUT_4_FALLING_EDGES = 0x09,
+    Input4FallingEdges = 0x09,
     #[doc = "Rising edges on input 5."]
-    INPUT_5_RISING_EDGES = 0x0a,
+    Input5RisingEdges = 0x0a,
     #[doc = "Falling edges on input 5."]
-    INPUT_5_FALLING_EDGES = 0x0b,
+    Input5FallingEdges = 0x0b,
     #[doc = "Rising edges on input 6."]
-    INPUT_6_RISING_EDGES = 0x0c,
+    Input6RisingEdges = 0x0c,
     #[doc = "Falling edges on input 6."]
-    INPUT_6_FALLING_EDGES = 0x0d,
+    Input6FallingEdges = 0x0d,
     #[doc = "Rising edges on input 7."]
-    INPUT_7_RISING_EDGES = 0x0e,
+    Input7RisingEdges = 0x0e,
     #[doc = "Falling edges on input 7."]
-    INPUT_7_FALLING_EDGES = 0x0f,
+    Input7FallingEdges = 0x0f,
 }
 impl Cksel {
     #[inline(always)]
@@ -124,13 +124,13 @@ impl From<Cksel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Clkmode {
     #[doc = "System Clock mode."]
-    SYSTEM_CLOCK_MODE = 0x0,
+    SystemClockMode = 0x0,
     #[doc = "Sampled System Clock mode."]
-    SAMPLED_SYSTEM_CLOCK_MODE = 0x01,
+    SampledSystemClockMode = 0x01,
     #[doc = "SCT Input Clock mode."]
-    SCT_INPUT_CLOCK_MODE = 0x02,
+    SctInputClockMode = 0x02,
     #[doc = "Asynchronous mode."]
-    ASYNCHRONOUS_MODE = 0x03,
+    AsynchronousMode = 0x03,
 }
 impl Clkmode {
     #[inline(always)]
@@ -159,13 +159,13 @@ impl From<Clkmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Combmode {
     #[doc = "OR (the event occurs when either the specified match or I/O condition occurs)."]
-    OR = 0x0,
+    Or = 0x0,
     #[doc = "MATCH (uses the specified match only)."]
-    MATCH = 0x01,
+    Match = 0x01,
     #[doc = "IO (uses the specified I/O condition only)."]
-    IO = 0x02,
+    Io = 0x02,
     #[doc = "AND (the event occurs when the specified match and I/O condition occur simultaneously)."]
-    AND = 0x03,
+    And = 0x03,
 }
 impl Combmode {
     #[inline(always)]
@@ -194,11 +194,11 @@ impl From<Combmode> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Direction {
     #[doc = "Direction independent (event triggered regardless of the count direction)."]
-    DIRECTION_INDEPENDENT = 0x0,
+    DirectionIndependent = 0x0,
     #[doc = "Counting up (event triggered only during up-counting when CTRL\\[BIDIR\\] = 1)."]
-    COUNTING_UP = 0x01,
+    CountingUp = 0x01,
     #[doc = "Counting down (event triggered only during down-counting when CTRL\\[BIDIR\\] = 1)."]
-    COUNTING_DOWN = 0x02,
+    CountingDown = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Direction {
@@ -228,9 +228,9 @@ impl From<Direction> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DownH {
     #[doc = "Up."]
-    UP = 0x0,
+    Up = 0x0,
     #[doc = "Down."]
-    DOWN = 0x01,
+    Down = 0x01,
 }
 impl DownH {
     #[inline(always)]
@@ -259,9 +259,9 @@ impl From<DownH> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum DownL {
     #[doc = "Up."]
-    UP = 0x0,
+    Up = 0x0,
     #[doc = "Down."]
-    DOWN = 0x01,
+    Down = 0x01,
 }
 impl DownL {
     #[inline(always)]
@@ -290,9 +290,9 @@ impl From<DownL> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Hevent {
     #[doc = "Low counter (selects the L state and the L match register that the MATCHSEL field specifies)."]
-    L_COUNTER = 0x0,
+    LCounter = 0x0,
     #[doc = "High counter (selects the H state and the H match register that the MATCHSEL field specifies)."]
-    H_COUNTER = 0x01,
+    HCounter = 0x01,
 }
 impl Hevent {
     #[inline(always)]
@@ -321,13 +321,13 @@ impl From<Hevent> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Iocond {
     #[doc = "Low."]
-    LOW = 0x0,
+    Low = 0x0,
     #[doc = "Rise."]
-    RISE = 0x01,
+    Rise = 0x01,
     #[doc = "Fall."]
-    FALL = 0x02,
+    Fall = 0x02,
     #[doc = "High."]
-    HIGH = 0x03,
+    High = 0x03,
 }
 impl Iocond {
     #[inline(always)]
@@ -356,9 +356,9 @@ impl From<Iocond> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NoreloadH {
     #[doc = "Reloaded."]
-    RELOAD_H = 0x0,
+    ReloadH = 0x0,
     #[doc = "Not reloaded."]
-    NO_RELOAD_H = 0x01,
+    NoReloadH = 0x01,
 }
 impl NoreloadH {
     #[inline(always)]
@@ -387,9 +387,9 @@ impl From<NoreloadH> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum NoreloadL {
     #[doc = "Reloaded."]
-    RELOAD = 0x0,
+    Reload = 0x0,
     #[doc = "Not reloaded."]
-    NO_RELOAD = 0x01,
+    NoReload = 0x01,
 }
 impl NoreloadL {
     #[inline(always)]
@@ -418,13 +418,13 @@ impl From<NoreloadL> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O0res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear, based on OUTPUTDIRCTRL\\[SETCLRn\\])."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set, based on OUTPUTDIRCTRL\\[SETCLRn\\])."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O0res {
     #[inline(always)]
@@ -453,13 +453,13 @@ impl From<O0res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O1res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear, based on OUTPUTDIRCTRL\\[SETCLRn\\])."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set, based on OUTPUTDIRCTRL\\[SETCLRn\\])."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O1res {
     #[inline(always)]
@@ -488,13 +488,13 @@ impl From<O1res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O2res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear, based on OUTPUTDIRCTRL\\[SETCLRn\\])."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set, based on OUTPUTDIRCTRL\\[SETCLRn\\])."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O2res {
     #[inline(always)]
@@ -523,13 +523,13 @@ impl From<O2res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O3res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear, based on OUTPUTDIRCTRL\\[SETCLRn\\])."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set, based on OUTPUTDIRCTRL\\[SETCLRn\\])."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O3res {
     #[inline(always)]
@@ -558,13 +558,13 @@ impl From<O3res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O4res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear, based on OUTPUTDIRCTRL\\[SETCLRn\\])."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set, based on OUTPUTDIRCTRL\\[SETCLRn\\])."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O4res {
     #[inline(always)]
@@ -593,13 +593,13 @@ impl From<O4res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O5res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear, based on OUTPUTDIRCTRL\\[SETCLRn\\])."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set, based on OUTPUTDIRCTRL\\[SETCLRn\\])."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O5res {
     #[inline(always)]
@@ -628,13 +628,13 @@ impl From<O5res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O6res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear, based on OUTPUTDIRCTRL\\[SETCLRn\\])."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set, based on OUTPUTDIRCTRL\\[SETCLRn\\])."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O6res {
     #[inline(always)]
@@ -663,13 +663,13 @@ impl From<O6res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O7res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear, based on OUTPUTDIRCTRL\\[SETCLRn\\])."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set, based on OUTPUTDIRCTRL\\[SETCLRn\\])."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O7res {
     #[inline(always)]
@@ -698,13 +698,13 @@ impl From<O7res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O8res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear, based on OUTPUTDIRCTRL\\[SETCLRn\\])."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set, based on OUTPUTDIRCTRL\\[SETCLRn\\])."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O8res {
     #[inline(always)]
@@ -733,13 +733,13 @@ impl From<O8res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum O9res {
     #[doc = "No change."]
-    NO_CHANGE = 0x0,
+    NoChange = 0x0,
     #[doc = "Set output (or clear, based on OUTPUTDIRCTRL\\[SETCLRn\\])."]
-    SET = 0x01,
+    Set = 0x01,
     #[doc = "Clear output (or set, based on OUTPUTDIRCTRL\\[SETCLRn\\])."]
-    CLEAR = 0x02,
+    Clear = 0x02,
     #[doc = "Toggle output."]
-    TOGGLE_OUTPUT = 0x03,
+    ToggleOutput = 0x03,
 }
 impl O9res {
     #[inline(always)]
@@ -768,9 +768,9 @@ impl From<O9res> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Out0 {
     #[doc = "Forces the corresponding output low."]
-    LOW = 0x0,
+    Low = 0x0,
     #[doc = "Forces the corresponding output high."]
-    HIGH = 0x01,
+    High = 0x01,
 }
 impl Out0 {
     #[inline(always)]
@@ -799,9 +799,9 @@ impl From<Out0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Out1 {
     #[doc = "Forces the corresponding output low."]
-    LOW = 0x0,
+    Low = 0x0,
     #[doc = "Forces the corresponding output high."]
-    HIGH = 0x01,
+    High = 0x01,
 }
 impl Out1 {
     #[inline(always)]
@@ -830,9 +830,9 @@ impl From<Out1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Out2 {
     #[doc = "Forces the corresponding output low."]
-    LOW = 0x0,
+    Low = 0x0,
     #[doc = "Forces the corresponding output high."]
-    HIGH = 0x01,
+    High = 0x01,
 }
 impl Out2 {
     #[inline(always)]
@@ -861,9 +861,9 @@ impl From<Out2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Out3 {
     #[doc = "Forces the corresponding output low."]
-    LOW = 0x0,
+    Low = 0x0,
     #[doc = "Forces the corresponding output high."]
-    HIGH = 0x01,
+    High = 0x01,
 }
 impl Out3 {
     #[inline(always)]
@@ -892,9 +892,9 @@ impl From<Out3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Out4 {
     #[doc = "Forces the corresponding output low."]
-    LOW = 0x0,
+    Low = 0x0,
     #[doc = "Forces the corresponding output high."]
-    HIGH = 0x01,
+    High = 0x01,
 }
 impl Out4 {
     #[inline(always)]
@@ -923,9 +923,9 @@ impl From<Out4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Out5 {
     #[doc = "Forces the corresponding output low."]
-    LOW = 0x0,
+    Low = 0x0,
     #[doc = "Forces the corresponding output high."]
-    HIGH = 0x01,
+    High = 0x01,
 }
 impl Out5 {
     #[inline(always)]
@@ -954,9 +954,9 @@ impl From<Out5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Out6 {
     #[doc = "Forces the corresponding output low."]
-    LOW = 0x0,
+    Low = 0x0,
     #[doc = "Forces the corresponding output high."]
-    HIGH = 0x01,
+    High = 0x01,
 }
 impl Out6 {
     #[inline(always)]
@@ -985,9 +985,9 @@ impl From<Out6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Out7 {
     #[doc = "Forces the corresponding output low."]
-    LOW = 0x0,
+    Low = 0x0,
     #[doc = "Forces the corresponding output high."]
-    HIGH = 0x01,
+    High = 0x01,
 }
 impl Out7 {
     #[inline(always)]
@@ -1016,9 +1016,9 @@ impl From<Out7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Out8 {
     #[doc = "Forces the corresponding output low."]
-    LOW = 0x0,
+    Low = 0x0,
     #[doc = "Forces the corresponding output high."]
-    HIGH = 0x01,
+    High = 0x01,
 }
 impl Out8 {
     #[inline(always)]
@@ -1047,9 +1047,9 @@ impl From<Out8> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Out9 {
     #[doc = "Forces the corresponding output low."]
-    LOW = 0x0,
+    Low = 0x0,
     #[doc = "Forces the corresponding output high."]
-    HIGH = 0x01,
+    High = 0x01,
 }
 impl Out9 {
     #[inline(always)]
@@ -1078,9 +1078,9 @@ impl From<Out9> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Outsel {
     #[doc = "Inputs."]
-    INPUT = 0x0,
+    Input = 0x0,
     #[doc = "Outputs."]
-    OUTPUT = 0x01,
+    Output = 0x01,
 }
 impl Outsel {
     #[inline(always)]
@@ -1109,9 +1109,9 @@ impl From<Outsel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodH0 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodH0 {
     #[inline(always)]
@@ -1140,9 +1140,9 @@ impl From<RegmodH0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodH1 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodH1 {
     #[inline(always)]
@@ -1171,9 +1171,9 @@ impl From<RegmodH1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodH10 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodH10 {
     #[inline(always)]
@@ -1202,9 +1202,9 @@ impl From<RegmodH10> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodH11 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodH11 {
     #[inline(always)]
@@ -1233,9 +1233,9 @@ impl From<RegmodH11> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodH12 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodH12 {
     #[inline(always)]
@@ -1264,9 +1264,9 @@ impl From<RegmodH12> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodH13 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodH13 {
     #[inline(always)]
@@ -1295,9 +1295,9 @@ impl From<RegmodH13> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodH14 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodH14 {
     #[inline(always)]
@@ -1326,9 +1326,9 @@ impl From<RegmodH14> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodH15 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodH15 {
     #[inline(always)]
@@ -1357,9 +1357,9 @@ impl From<RegmodH15> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodH2 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodH2 {
     #[inline(always)]
@@ -1388,9 +1388,9 @@ impl From<RegmodH2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodH3 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodH3 {
     #[inline(always)]
@@ -1419,9 +1419,9 @@ impl From<RegmodH3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodH4 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodH4 {
     #[inline(always)]
@@ -1450,9 +1450,9 @@ impl From<RegmodH4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodH5 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodH5 {
     #[inline(always)]
@@ -1481,9 +1481,9 @@ impl From<RegmodH5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodH6 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodH6 {
     #[inline(always)]
@@ -1512,9 +1512,9 @@ impl From<RegmodH6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodH7 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodH7 {
     #[inline(always)]
@@ -1543,9 +1543,9 @@ impl From<RegmodH7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodH8 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodH8 {
     #[inline(always)]
@@ -1574,9 +1574,9 @@ impl From<RegmodH8> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodH9 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodH9 {
     #[inline(always)]
@@ -1605,9 +1605,9 @@ impl From<RegmodH9> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodL0 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodL0 {
     #[inline(always)]
@@ -1636,9 +1636,9 @@ impl From<RegmodL0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodL1 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodL1 {
     #[inline(always)]
@@ -1667,9 +1667,9 @@ impl From<RegmodL1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodL10 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodL10 {
     #[inline(always)]
@@ -1698,9 +1698,9 @@ impl From<RegmodL10> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodL11 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodL11 {
     #[inline(always)]
@@ -1729,9 +1729,9 @@ impl From<RegmodL11> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodL12 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodL12 {
     #[inline(always)]
@@ -1760,9 +1760,9 @@ impl From<RegmodL12> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodL13 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodL13 {
     #[inline(always)]
@@ -1791,9 +1791,9 @@ impl From<RegmodL13> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodL14 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodL14 {
     #[inline(always)]
@@ -1822,9 +1822,9 @@ impl From<RegmodL14> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodL15 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodL15 {
     #[inline(always)]
@@ -1853,9 +1853,9 @@ impl From<RegmodL15> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodL2 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodL2 {
     #[inline(always)]
@@ -1884,9 +1884,9 @@ impl From<RegmodL2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodL3 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodL3 {
     #[inline(always)]
@@ -1915,9 +1915,9 @@ impl From<RegmodL3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodL4 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodL4 {
     #[inline(always)]
@@ -1946,9 +1946,9 @@ impl From<RegmodL4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodL5 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodL5 {
     #[inline(always)]
@@ -1977,9 +1977,9 @@ impl From<RegmodL5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodL6 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodL6 {
     #[inline(always)]
@@ -2008,9 +2008,9 @@ impl From<RegmodL6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodL7 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodL7 {
     #[inline(always)]
@@ -2039,9 +2039,9 @@ impl From<RegmodL7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodL8 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodL8 {
     #[inline(always)]
@@ -2070,9 +2070,9 @@ impl From<RegmodL8> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RegmodL9 {
     #[doc = "Match."]
-    MATCH = 0x0,
+    Match = 0x0,
     #[doc = "Capture."]
-    CAPTURE = 0x01,
+    Capture = 0x01,
 }
 impl RegmodL9 {
     #[inline(always)]
@@ -2101,11 +2101,11 @@ impl From<RegmodL9> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr0 {
     #[doc = "Not dependent on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Reversed when counter H is counting down (do not use this value when CONFIG\\[UNIFY\\] = 1)."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr0 {
@@ -2135,11 +2135,11 @@ impl From<Setclr0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr1 {
     #[doc = "Not dependent on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Reversed when counter H is counting down (do not use this value when CONFIG\\[UNIFY\\] = 1)."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr1 {
@@ -2169,11 +2169,11 @@ impl From<Setclr1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr2 {
     #[doc = "Not dependent on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Reversed when counter H is counting down (do not use this value when CONFIG\\[UNIFY\\] = 1)."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr2 {
@@ -2203,11 +2203,11 @@ impl From<Setclr2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr3 {
     #[doc = "Not dependent on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Reversed when counter H is counting down (do not use this value when CONFIG\\[UNIFY\\] = 1)."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr3 {
@@ -2237,11 +2237,11 @@ impl From<Setclr3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr4 {
     #[doc = "Not dependent on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Reversed when counter H is counting down (do not use this value when CONFIG\\[UNIFY\\] = 1)."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr4 {
@@ -2271,11 +2271,11 @@ impl From<Setclr4> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr5 {
     #[doc = "Not dependent on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Reversed when counter H is counting down (do not use this value when CONFIG\\[UNIFY\\] = 1)."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr5 {
@@ -2305,11 +2305,11 @@ impl From<Setclr5> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr6 {
     #[doc = "Not dependent on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Reversed when counter H is counting down (do not use this value when CONFIG\\[UNIFY\\] = 1)."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr6 {
@@ -2339,11 +2339,11 @@ impl From<Setclr6> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr7 {
     #[doc = "Not dependent on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Reversed when counter H is counting down (do not use this value when CONFIG\\[UNIFY\\] = 1)."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr7 {
@@ -2373,11 +2373,11 @@ impl From<Setclr7> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr8 {
     #[doc = "Not dependent on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Reversed when counter H is counting down (do not use this value when CONFIG\\[UNIFY\\] = 1)."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr8 {
@@ -2407,11 +2407,11 @@ impl From<Setclr8> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Setclr9 {
     #[doc = "Not dependent on the direction of any counter."]
-    INDEPENDENT = 0x0,
+    Independent = 0x0,
     #[doc = "Reversed when counter L or the unified counter is counting down."]
-    L_REVERSED = 0x01,
+    LReversed = 0x01,
     #[doc = "Reversed when counter H is counting down (do not use this value when CONFIG\\[UNIFY\\] = 1)."]
-    H_REVERSED = 0x02,
+    HReversed = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl Setclr9 {
@@ -2441,9 +2441,9 @@ impl From<Setclr9> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Stateld {
     #[doc = "Value of STATEV added to that of STATE (the carry out is ignored)."]
-    ADD = 0x0,
+    Add = 0x0,
     #[doc = "Value of STATEV loaded into that of STATE."]
-    LOAD = 0x01,
+    Load = 0x01,
 }
 impl Stateld {
     #[inline(always)]
@@ -2472,9 +2472,9 @@ impl From<Stateld> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Unify {
     #[doc = "Dual counters, COUNTER_L and COUNTER_H."]
-    DUAL_COUNTER = 0x0,
+    DualCounter = 0x0,
     #[doc = "Unified counter."]
-    UNIFIED_COUNTER = 0x01,
+    UnifiedCounter = 0x01,
 }
 impl Unify {
     #[inline(always)]

@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum I2cm {
     #[doc = "Clear."]
-    CLR = 0x0,
+    Clr = 0x0,
     #[doc = "Set."]
-    SET = 0x01,
+    Set = 0x01,
 }
 impl I2cm {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<I2cm> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum I2cs {
     #[doc = "Clear."]
-    CLR = 0x0,
+    Clr = 0x0,
     #[doc = "Set."]
-    SET = 0x01,
+    Set = 0x01,
 }
 impl I2cs {
     #[inline(always)]
@@ -65,18 +65,18 @@ impl From<I2cs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Persel {
     #[doc = "No peripheral selected."]
-    NONE = 0x0,
+    None = 0x0,
     #[doc = "UART."]
-    UART = 0x01,
+    Uart = 0x01,
     #[doc = "SPI."]
-    SPI = 0x02,
+    Spi = 0x02,
     #[doc = "I2C."]
-    I2C = 0x03,
+    I2c = 0x03,
     _RESERVED_4 = 0x04,
     _RESERVED_5 = 0x05,
     _RESERVED_6 = 0x06,
     #[doc = "UART and I2C."]
-    UARTI2C = 0x07,
+    Uarti2c = 0x07,
 }
 impl Persel {
     #[inline(always)]
@@ -105,9 +105,9 @@ impl From<Persel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Spi {
     #[doc = "Clear."]
-    CLR = 0x0,
+    Clr = 0x0,
     #[doc = "Set."]
-    SET = 0x01,
+    Set = 0x01,
 }
 impl Spi {
     #[inline(always)]
@@ -136,9 +136,9 @@ impl From<Spi> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Uartrx {
     #[doc = "Clear."]
-    CLR = 0x0,
+    Clr = 0x0,
     #[doc = "Set."]
-    SET = 0x01,
+    Set = 0x01,
 }
 impl Uartrx {
     #[inline(always)]
@@ -167,9 +167,9 @@ impl From<Uartrx> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Uarttx {
     #[doc = "Clear."]
-    CLR = 0x0,
+    Clr = 0x0,
     #[doc = "Set."]
-    SET = 0x01,
+    Set = 0x01,
 }
 impl Uarttx {
     #[inline(always)]

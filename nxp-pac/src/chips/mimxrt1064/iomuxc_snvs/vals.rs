@@ -3,21 +3,21 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadOnoffDse {
     #[doc = "HI-Z."]
-    DSE_0 = 0x0,
+    Dse0 = 0x0,
     #[doc = "Dual/Single voltage: 262/260 Ohm @ 1.8V, 247/157 Ohm @ 3.3V."]
-    DSE_1 = 0x01,
+    Dse1 = 0x01,
     #[doc = "Dual/Single voltage: 134/130 Ohm @ 1.8V, 126/78 Ohm @ 3.3V."]
-    DSE_2 = 0x02,
+    Dse2 = 0x02,
     #[doc = "Dual/Single voltage: 88/88 Ohm @ 1.8V, 84/53 Ohm @ 3.3V."]
-    DSE_3 = 0x03,
+    Dse3 = 0x03,
     #[doc = "Dual/Single voltage: 62/65 Ohm @ 1.8V, 57/39 Ohm @ 3.3V."]
-    DSE_4 = 0x04,
+    Dse4 = 0x04,
     #[doc = "Dual/Single voltage: 51/52 Ohm @ 1.8V, 47/32 Ohm @ 3.3V."]
-    DSE_5 = 0x05,
+    Dse5 = 0x05,
     #[doc = "Dual/Single voltage: 43/43 Ohm @ 1.8V, 40/26 Ohm @ 3.3V."]
-    DSE_6 = 0x06,
+    Dse6 = 0x06,
     #[doc = "Dual/Single voltage: 37/37 Ohm @ 1.8V, 34/23 Ohm @ 3.3V."]
-    DSE_7 = 0x07,
+    Dse7 = 0x07,
 }
 impl SwPadCtlPadOnoffDse {
     #[inline(always)]
@@ -46,9 +46,9 @@ impl From<SwPadCtlPadOnoffDse> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadOnoffHys {
     #[doc = "Hysteresis Disabled (CMOS input)."]
-    HYS_0_HYSTERESIS_DISABLED = 0x0,
+    Hys0HysteresisDisabled = 0x0,
     #[doc = "Hysteresis Enabled (Schmitt Trigger input)."]
-    HYS_1_HYSTERESIS_ENABLED = 0x01,
+    Hys1HysteresisEnabled = 0x01,
 }
 impl SwPadCtlPadOnoffHys {
     #[inline(always)]
@@ -77,9 +77,9 @@ impl From<SwPadCtlPadOnoffHys> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadOnoffOde {
     #[doc = "Open Drain Disabled (Output is CMOS)."]
-    ODE_0_OPEN_DRAIN_DISABLED = 0x0,
+    Ode0OpenDrainDisabled = 0x0,
     #[doc = "Open Drain Enabled (Output is Open Drain)."]
-    ODE_1_OPEN_DRAIN_ENABLED = 0x01,
+    Ode1OpenDrainEnabled = 0x01,
 }
 impl SwPadCtlPadOnoffOde {
     #[inline(always)]
@@ -108,9 +108,9 @@ impl From<SwPadCtlPadOnoffOde> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadOnoffPke {
     #[doc = "Pull/Keeper Disabled."]
-    PKE_0_PULL_KEEPER_DISABLED = 0x0,
+    Pke0PullKeeperDisabled = 0x0,
     #[doc = "Pull/Keeper Enabled."]
-    PKE_1_PULL_KEEPER_ENABLED = 0x01,
+    Pke1PullKeeperEnabled = 0x01,
 }
 impl SwPadCtlPadOnoffPke {
     #[inline(always)]
@@ -139,9 +139,9 @@ impl From<SwPadCtlPadOnoffPke> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadOnoffPue {
     #[doc = "Keep the previous output value when the output driver is disabled."]
-    PUE_0_KEEPER = 0x0,
+    Pue0Keeper = 0x0,
     #[doc = "Pull-up or pull-down (determined by PUS field)."]
-    PUE_1_PULL = 0x01,
+    Pue1Pull = 0x01,
 }
 impl SwPadCtlPadOnoffPue {
     #[inline(always)]
@@ -170,13 +170,13 @@ impl From<SwPadCtlPadOnoffPue> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadOnoffPus {
     #[doc = "100K Ohm Pull Down."]
-    PUS_0_100K_OHM_PULL_DOWN = 0x0,
+    Pus0100kOhmPullDown = 0x0,
     #[doc = "47K Ohm Pull Up."]
-    PUS_1_47K_OHM_PULL_UP = 0x01,
+    Pus147kOhmPullUp = 0x01,
     #[doc = "100K Ohm Pull Up."]
-    PUS_2_100K_OHM_PULL_UP = 0x02,
+    Pus2100kOhmPullUp = 0x02,
     #[doc = "22K Ohm Pull Up."]
-    PUS_3_22K_OHM_PULL_UP = 0x03,
+    Pus322kOhmPullUp = 0x03,
 }
 impl SwPadCtlPadOnoffPus {
     #[inline(always)]
@@ -207,7 +207,7 @@ pub enum SwPadCtlPadOnoffSpeed {
     _RESERVED_0 = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "100MHz."]
-    MEDIUM = 0x02,
+    Medium = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl SwPadCtlPadOnoffSpeed {
@@ -237,9 +237,9 @@ impl From<SwPadCtlPadOnoffSpeed> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadOnoffSre {
     #[doc = "Slow Slew Rate."]
-    SRE_0_SLOW_SLEW_RATE = 0x0,
+    Sre0SlowSlewRate = 0x0,
     #[doc = "Fast Slew Rate."]
-    SRE_1_FAST_SLEW_RATE = 0x01,
+    Sre1FastSlewRate = 0x01,
 }
 impl SwPadCtlPadOnoffSre {
     #[inline(always)]
@@ -268,21 +268,21 @@ impl From<SwPadCtlPadOnoffSre> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadPmicOnReqDse {
     #[doc = "HI-Z."]
-    DSE_0 = 0x0,
+    Dse0 = 0x0,
     #[doc = "Dual/Single voltage: 262/260 Ohm @ 1.8V, 247/157 Ohm @ 3.3V."]
-    DSE_1 = 0x01,
+    Dse1 = 0x01,
     #[doc = "Dual/Single voltage: 134/130 Ohm @ 1.8V, 126/78 Ohm @ 3.3V."]
-    DSE_2 = 0x02,
+    Dse2 = 0x02,
     #[doc = "Dual/Single voltage: 88/88 Ohm @ 1.8V, 84/53 Ohm @ 3.3V."]
-    DSE_3 = 0x03,
+    Dse3 = 0x03,
     #[doc = "Dual/Single voltage: 62/65 Ohm @ 1.8V, 57/39 Ohm @ 3.3V."]
-    DSE_4 = 0x04,
+    Dse4 = 0x04,
     #[doc = "Dual/Single voltage: 51/52 Ohm @ 1.8V, 47/32 Ohm @ 3.3V."]
-    DSE_5 = 0x05,
+    Dse5 = 0x05,
     #[doc = "Dual/Single voltage: 43/43 Ohm @ 1.8V, 40/26 Ohm @ 3.3V."]
-    DSE_6 = 0x06,
+    Dse6 = 0x06,
     #[doc = "Dual/Single voltage: 37/37 Ohm @ 1.8V, 34/23 Ohm @ 3.3V."]
-    DSE_7 = 0x07,
+    Dse7 = 0x07,
 }
 impl SwPadCtlPadPmicOnReqDse {
     #[inline(always)]
@@ -311,9 +311,9 @@ impl From<SwPadCtlPadPmicOnReqDse> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadPmicOnReqHys {
     #[doc = "Hysteresis Disabled (CMOS input)."]
-    HYS_0_HYSTERESIS_DISABLED = 0x0,
+    Hys0HysteresisDisabled = 0x0,
     #[doc = "Hysteresis Enabled (Schmitt Trigger input)."]
-    HYS_1_HYSTERESIS_ENABLED = 0x01,
+    Hys1HysteresisEnabled = 0x01,
 }
 impl SwPadCtlPadPmicOnReqHys {
     #[inline(always)]
@@ -342,9 +342,9 @@ impl From<SwPadCtlPadPmicOnReqHys> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadPmicOnReqOde {
     #[doc = "Open Drain Disabled (Output is CMOS)."]
-    ODE_0_OPEN_DRAIN_DISABLED = 0x0,
+    Ode0OpenDrainDisabled = 0x0,
     #[doc = "Open Drain Enabled (Output is Open Drain)."]
-    ODE_1_OPEN_DRAIN_ENABLED = 0x01,
+    Ode1OpenDrainEnabled = 0x01,
 }
 impl SwPadCtlPadPmicOnReqOde {
     #[inline(always)]
@@ -373,9 +373,9 @@ impl From<SwPadCtlPadPmicOnReqOde> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadPmicOnReqPke {
     #[doc = "Pull/Keeper Disabled."]
-    PKE_0_PULL_KEEPER_DISABLED = 0x0,
+    Pke0PullKeeperDisabled = 0x0,
     #[doc = "Pull/Keeper Enabled."]
-    PKE_1_PULL_KEEPER_ENABLED = 0x01,
+    Pke1PullKeeperEnabled = 0x01,
 }
 impl SwPadCtlPadPmicOnReqPke {
     #[inline(always)]
@@ -404,9 +404,9 @@ impl From<SwPadCtlPadPmicOnReqPke> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadPmicOnReqPue {
     #[doc = "Keep the previous output value when the output driver is disabled."]
-    PUE_0_KEEPER = 0x0,
+    Pue0Keeper = 0x0,
     #[doc = "Pull-up or pull-down (determined by PUS field)."]
-    PUE_1_PULL = 0x01,
+    Pue1Pull = 0x01,
 }
 impl SwPadCtlPadPmicOnReqPue {
     #[inline(always)]
@@ -435,13 +435,13 @@ impl From<SwPadCtlPadPmicOnReqPue> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadPmicOnReqPus {
     #[doc = "100K Ohm Pull Down."]
-    PUS_0_100K_OHM_PULL_DOWN = 0x0,
+    Pus0100kOhmPullDown = 0x0,
     #[doc = "47K Ohm Pull Up."]
-    PUS_1_47K_OHM_PULL_UP = 0x01,
+    Pus147kOhmPullUp = 0x01,
     #[doc = "100K Ohm Pull Up."]
-    PUS_2_100K_OHM_PULL_UP = 0x02,
+    Pus2100kOhmPullUp = 0x02,
     #[doc = "22K Ohm Pull Up."]
-    PUS_3_22K_OHM_PULL_UP = 0x03,
+    Pus322kOhmPullUp = 0x03,
 }
 impl SwPadCtlPadPmicOnReqPus {
     #[inline(always)]
@@ -472,7 +472,7 @@ pub enum SwPadCtlPadPmicOnReqSpeed {
     _RESERVED_0 = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "100MHz."]
-    MEDIUM = 0x02,
+    Medium = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl SwPadCtlPadPmicOnReqSpeed {
@@ -502,9 +502,9 @@ impl From<SwPadCtlPadPmicOnReqSpeed> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadPmicOnReqSre {
     #[doc = "Slow Slew Rate."]
-    SRE_0_SLOW_SLEW_RATE = 0x0,
+    Sre0SlowSlewRate = 0x0,
     #[doc = "Fast Slew Rate."]
-    SRE_1_FAST_SLEW_RATE = 0x01,
+    Sre1FastSlewRate = 0x01,
 }
 impl SwPadCtlPadPmicOnReqSre {
     #[inline(always)]
@@ -533,21 +533,21 @@ impl From<SwPadCtlPadPmicOnReqSre> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadPmicStbyReqDse {
     #[doc = "HI-Z."]
-    DSE_0 = 0x0,
+    Dse0 = 0x0,
     #[doc = "Dual/Single voltage: 262/260 Ohm @ 1.8V, 247/157 Ohm @ 3.3V."]
-    DSE_1 = 0x01,
+    Dse1 = 0x01,
     #[doc = "Dual/Single voltage: 134/130 Ohm @ 1.8V, 126/78 Ohm @ 3.3V."]
-    DSE_2 = 0x02,
+    Dse2 = 0x02,
     #[doc = "Dual/Single voltage: 88/88 Ohm @ 1.8V, 84/53 Ohm @ 3.3V."]
-    DSE_3 = 0x03,
+    Dse3 = 0x03,
     #[doc = "Dual/Single voltage: 62/65 Ohm @ 1.8V, 57/39 Ohm @ 3.3V."]
-    DSE_4 = 0x04,
+    Dse4 = 0x04,
     #[doc = "Dual/Single voltage: 51/52 Ohm @ 1.8V, 47/32 Ohm @ 3.3V."]
-    DSE_5 = 0x05,
+    Dse5 = 0x05,
     #[doc = "Dual/Single voltage: 43/43 Ohm @ 1.8V, 40/26 Ohm @ 3.3V."]
-    DSE_6 = 0x06,
+    Dse6 = 0x06,
     #[doc = "Dual/Single voltage: 37/37 Ohm @ 1.8V, 34/23 Ohm @ 3.3V."]
-    DSE_7 = 0x07,
+    Dse7 = 0x07,
 }
 impl SwPadCtlPadPmicStbyReqDse {
     #[inline(always)]
@@ -576,9 +576,9 @@ impl From<SwPadCtlPadPmicStbyReqDse> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadPmicStbyReqHys {
     #[doc = "Hysteresis Disabled (CMOS input)."]
-    HYS_0_HYSTERESIS_DISABLED = 0x0,
+    Hys0HysteresisDisabled = 0x0,
     #[doc = "Hysteresis Enabled (Schmitt Trigger input)."]
-    HYS_1_HYSTERESIS_ENABLED = 0x01,
+    Hys1HysteresisEnabled = 0x01,
 }
 impl SwPadCtlPadPmicStbyReqHys {
     #[inline(always)]
@@ -607,9 +607,9 @@ impl From<SwPadCtlPadPmicStbyReqHys> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadPmicStbyReqOde {
     #[doc = "Open Drain Disabled (Output is CMOS)."]
-    ODE_0_OPEN_DRAIN_DISABLED = 0x0,
+    Ode0OpenDrainDisabled = 0x0,
     #[doc = "Open Drain Enabled (Output is Open Drain)."]
-    ODE_1_OPEN_DRAIN_ENABLED = 0x01,
+    Ode1OpenDrainEnabled = 0x01,
 }
 impl SwPadCtlPadPmicStbyReqOde {
     #[inline(always)]
@@ -638,9 +638,9 @@ impl From<SwPadCtlPadPmicStbyReqOde> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadPmicStbyReqPke {
     #[doc = "Pull/Keeper Disabled."]
-    PKE_0_PULL_KEEPER_DISABLED = 0x0,
+    Pke0PullKeeperDisabled = 0x0,
     #[doc = "Pull/Keeper Enabled."]
-    PKE_1_PULL_KEEPER_ENABLED = 0x01,
+    Pke1PullKeeperEnabled = 0x01,
 }
 impl SwPadCtlPadPmicStbyReqPke {
     #[inline(always)]
@@ -669,9 +669,9 @@ impl From<SwPadCtlPadPmicStbyReqPke> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadPmicStbyReqPue {
     #[doc = "Keep the previous output value when the output driver is disabled."]
-    PUE_0_KEEPER = 0x0,
+    Pue0Keeper = 0x0,
     #[doc = "Pull-up or pull-down (determined by PUS field)."]
-    PUE_1_PULL = 0x01,
+    Pue1Pull = 0x01,
 }
 impl SwPadCtlPadPmicStbyReqPue {
     #[inline(always)]
@@ -700,13 +700,13 @@ impl From<SwPadCtlPadPmicStbyReqPue> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadPmicStbyReqPus {
     #[doc = "100K Ohm Pull Down."]
-    PUS_0_100K_OHM_PULL_DOWN = 0x0,
+    Pus0100kOhmPullDown = 0x0,
     #[doc = "47K Ohm Pull Up."]
-    PUS_1_47K_OHM_PULL_UP = 0x01,
+    Pus147kOhmPullUp = 0x01,
     #[doc = "100K Ohm Pull Up."]
-    PUS_2_100K_OHM_PULL_UP = 0x02,
+    Pus2100kOhmPullUp = 0x02,
     #[doc = "22K Ohm Pull Up."]
-    PUS_3_22K_OHM_PULL_UP = 0x03,
+    Pus322kOhmPullUp = 0x03,
 }
 impl SwPadCtlPadPmicStbyReqPus {
     #[inline(always)]
@@ -737,7 +737,7 @@ pub enum SwPadCtlPadPmicStbyReqSpeed {
     _RESERVED_0 = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "100MHz."]
-    MEDIUM = 0x02,
+    Medium = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl SwPadCtlPadPmicStbyReqSpeed {
@@ -767,9 +767,9 @@ impl From<SwPadCtlPadPmicStbyReqSpeed> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadPmicStbyReqSre {
     #[doc = "Slow Slew Rate."]
-    SRE_0_SLOW_SLEW_RATE = 0x0,
+    Sre0SlowSlewRate = 0x0,
     #[doc = "Fast Slew Rate."]
-    SRE_1_FAST_SLEW_RATE = 0x01,
+    Sre1FastSlewRate = 0x01,
 }
 impl SwPadCtlPadPmicStbyReqSre {
     #[inline(always)]
@@ -798,21 +798,21 @@ impl From<SwPadCtlPadPmicStbyReqSre> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadPorBDse {
     #[doc = "HI-Z."]
-    DSE_0 = 0x0,
+    Dse0 = 0x0,
     #[doc = "Dual/Single voltage: 262/260 Ohm @ 1.8V, 247/157 Ohm @ 3.3V."]
-    DSE_1 = 0x01,
+    Dse1 = 0x01,
     #[doc = "Dual/Single voltage: 134/130 Ohm @ 1.8V, 126/78 Ohm @ 3.3V."]
-    DSE_2 = 0x02,
+    Dse2 = 0x02,
     #[doc = "Dual/Single voltage: 88/88 Ohm @ 1.8V, 84/53 Ohm @ 3.3V."]
-    DSE_3 = 0x03,
+    Dse3 = 0x03,
     #[doc = "Dual/Single voltage: 62/65 Ohm @ 1.8V, 57/39 Ohm @ 3.3V."]
-    DSE_4 = 0x04,
+    Dse4 = 0x04,
     #[doc = "Dual/Single voltage: 51/52 Ohm @ 1.8V, 47/32 Ohm @ 3.3V."]
-    DSE_5 = 0x05,
+    Dse5 = 0x05,
     #[doc = "Dual/Single voltage: 43/43 Ohm @ 1.8V, 40/26 Ohm @ 3.3V."]
-    DSE_6 = 0x06,
+    Dse6 = 0x06,
     #[doc = "Dual/Single voltage: 37/37 Ohm @ 1.8V, 34/23 Ohm @ 3.3V."]
-    DSE_7 = 0x07,
+    Dse7 = 0x07,
 }
 impl SwPadCtlPadPorBDse {
     #[inline(always)]
@@ -841,9 +841,9 @@ impl From<SwPadCtlPadPorBDse> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadPorBHys {
     #[doc = "Hysteresis Disabled (CMOS input)."]
-    HYS_0_HYSTERESIS_DISABLED = 0x0,
+    Hys0HysteresisDisabled = 0x0,
     #[doc = "Hysteresis Enabled (Schmitt Trigger input)."]
-    HYS_1_HYSTERESIS_ENABLED = 0x01,
+    Hys1HysteresisEnabled = 0x01,
 }
 impl SwPadCtlPadPorBHys {
     #[inline(always)]
@@ -872,9 +872,9 @@ impl From<SwPadCtlPadPorBHys> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadPorBOde {
     #[doc = "Open Drain Disabled (Output is CMOS)."]
-    ODE_0_OPEN_DRAIN_DISABLED = 0x0,
+    Ode0OpenDrainDisabled = 0x0,
     #[doc = "Open Drain Enabled (Output is Open Drain)."]
-    ODE_1_OPEN_DRAIN_ENABLED = 0x01,
+    Ode1OpenDrainEnabled = 0x01,
 }
 impl SwPadCtlPadPorBOde {
     #[inline(always)]
@@ -903,9 +903,9 @@ impl From<SwPadCtlPadPorBOde> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadPorBPke {
     #[doc = "Pull/Keeper Disabled."]
-    PKE_0_PULL_KEEPER_DISABLED = 0x0,
+    Pke0PullKeeperDisabled = 0x0,
     #[doc = "Pull/Keeper Enabled."]
-    PKE_1_PULL_KEEPER_ENABLED = 0x01,
+    Pke1PullKeeperEnabled = 0x01,
 }
 impl SwPadCtlPadPorBPke {
     #[inline(always)]
@@ -934,9 +934,9 @@ impl From<SwPadCtlPadPorBPke> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadPorBPue {
     #[doc = "Keep the previous output value when the output driver is disabled."]
-    PUE_0_KEEPER = 0x0,
+    Pue0Keeper = 0x0,
     #[doc = "Pull-up or pull-down (determined by PUS field)."]
-    PUE_1_PULL = 0x01,
+    Pue1Pull = 0x01,
 }
 impl SwPadCtlPadPorBPue {
     #[inline(always)]
@@ -965,13 +965,13 @@ impl From<SwPadCtlPadPorBPue> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadPorBPus {
     #[doc = "100K Ohm Pull Down."]
-    PUS_0_100K_OHM_PULL_DOWN = 0x0,
+    Pus0100kOhmPullDown = 0x0,
     #[doc = "47K Ohm Pull Up."]
-    PUS_1_47K_OHM_PULL_UP = 0x01,
+    Pus147kOhmPullUp = 0x01,
     #[doc = "100K Ohm Pull Up."]
-    PUS_2_100K_OHM_PULL_UP = 0x02,
+    Pus2100kOhmPullUp = 0x02,
     #[doc = "22K Ohm Pull Up."]
-    PUS_3_22K_OHM_PULL_UP = 0x03,
+    Pus322kOhmPullUp = 0x03,
 }
 impl SwPadCtlPadPorBPus {
     #[inline(always)]
@@ -1002,7 +1002,7 @@ pub enum SwPadCtlPadPorBSpeed {
     _RESERVED_0 = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "100MHz."]
-    MEDIUM = 0x02,
+    Medium = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl SwPadCtlPadPorBSpeed {
@@ -1032,9 +1032,9 @@ impl From<SwPadCtlPadPorBSpeed> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadPorBSre {
     #[doc = "Slow Slew Rate."]
-    SRE_0_SLOW_SLEW_RATE = 0x0,
+    Sre0SlowSlewRate = 0x0,
     #[doc = "Fast Slew Rate."]
-    SRE_1_FAST_SLEW_RATE = 0x01,
+    Sre1FastSlewRate = 0x01,
 }
 impl SwPadCtlPadPorBSre {
     #[inline(always)]
@@ -1063,21 +1063,21 @@ impl From<SwPadCtlPadPorBSre> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadTestModeDse {
     #[doc = "HI-Z."]
-    DSE_0 = 0x0,
+    Dse0 = 0x0,
     #[doc = "Dual/Single voltage: 262/260 Ohm @ 1.8V, 247/157 Ohm @ 3.3V."]
-    DSE_1 = 0x01,
+    Dse1 = 0x01,
     #[doc = "Dual/Single voltage: 134/130 Ohm @ 1.8V, 126/78 Ohm @ 3.3V."]
-    DSE_2 = 0x02,
+    Dse2 = 0x02,
     #[doc = "Dual/Single voltage: 88/88 Ohm @ 1.8V, 84/53 Ohm @ 3.3V."]
-    DSE_3 = 0x03,
+    Dse3 = 0x03,
     #[doc = "Dual/Single voltage: 62/65 Ohm @ 1.8V, 57/39 Ohm @ 3.3V."]
-    DSE_4 = 0x04,
+    Dse4 = 0x04,
     #[doc = "Dual/Single voltage: 51/52 Ohm @ 1.8V, 47/32 Ohm @ 3.3V."]
-    DSE_5 = 0x05,
+    Dse5 = 0x05,
     #[doc = "Dual/Single voltage: 43/43 Ohm @ 1.8V, 40/26 Ohm @ 3.3V."]
-    DSE_6 = 0x06,
+    Dse6 = 0x06,
     #[doc = "Dual/Single voltage: 37/37 Ohm @ 1.8V, 34/23 Ohm @ 3.3V."]
-    DSE_7 = 0x07,
+    Dse7 = 0x07,
 }
 impl SwPadCtlPadTestModeDse {
     #[inline(always)]
@@ -1106,9 +1106,9 @@ impl From<SwPadCtlPadTestModeDse> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadTestModeHys {
     #[doc = "Hysteresis Disabled (CMOS input)."]
-    HYS_0_HYSTERESIS_DISABLED = 0x0,
+    Hys0HysteresisDisabled = 0x0,
     #[doc = "Hysteresis Enabled (Schmitt Trigger input)."]
-    HYS_1_HYSTERESIS_ENABLED = 0x01,
+    Hys1HysteresisEnabled = 0x01,
 }
 impl SwPadCtlPadTestModeHys {
     #[inline(always)]
@@ -1137,9 +1137,9 @@ impl From<SwPadCtlPadTestModeHys> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadTestModeOde {
     #[doc = "Open Drain Disabled (Output is CMOS)."]
-    ODE_0_OPEN_DRAIN_DISABLED = 0x0,
+    Ode0OpenDrainDisabled = 0x0,
     #[doc = "Open Drain Enabled (Output is Open Drain)."]
-    ODE_1_OPEN_DRAIN_ENABLED = 0x01,
+    Ode1OpenDrainEnabled = 0x01,
 }
 impl SwPadCtlPadTestModeOde {
     #[inline(always)]
@@ -1168,9 +1168,9 @@ impl From<SwPadCtlPadTestModeOde> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadTestModePke {
     #[doc = "Pull/Keeper Disabled."]
-    PKE_0_PULL_KEEPER_DISABLED = 0x0,
+    Pke0PullKeeperDisabled = 0x0,
     #[doc = "Pull/Keeper Enabled."]
-    PKE_1_PULL_KEEPER_ENABLED = 0x01,
+    Pke1PullKeeperEnabled = 0x01,
 }
 impl SwPadCtlPadTestModePke {
     #[inline(always)]
@@ -1199,9 +1199,9 @@ impl From<SwPadCtlPadTestModePke> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadTestModePue {
     #[doc = "Keep the previous output value when the output driver is disabled."]
-    PUE_0_KEEPER = 0x0,
+    Pue0Keeper = 0x0,
     #[doc = "Pull-up or pull-down (determined by PUS field)."]
-    PUE_1_PULL = 0x01,
+    Pue1Pull = 0x01,
 }
 impl SwPadCtlPadTestModePue {
     #[inline(always)]
@@ -1230,13 +1230,13 @@ impl From<SwPadCtlPadTestModePue> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadTestModePus {
     #[doc = "100K Ohm Pull Down."]
-    PUS_0_100K_OHM_PULL_DOWN = 0x0,
+    Pus0100kOhmPullDown = 0x0,
     #[doc = "47K Ohm Pull Up."]
-    PUS_1_47K_OHM_PULL_UP = 0x01,
+    Pus147kOhmPullUp = 0x01,
     #[doc = "100K Ohm Pull Up."]
-    PUS_2_100K_OHM_PULL_UP = 0x02,
+    Pus2100kOhmPullUp = 0x02,
     #[doc = "22K Ohm Pull Up."]
-    PUS_3_22K_OHM_PULL_UP = 0x03,
+    Pus322kOhmPullUp = 0x03,
 }
 impl SwPadCtlPadTestModePus {
     #[inline(always)]
@@ -1267,7 +1267,7 @@ pub enum SwPadCtlPadTestModeSpeed {
     _RESERVED_0 = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "100MHz."]
-    MEDIUM = 0x02,
+    Medium = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl SwPadCtlPadTestModeSpeed {
@@ -1297,9 +1297,9 @@ impl From<SwPadCtlPadTestModeSpeed> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadTestModeSre {
     #[doc = "Slow Slew Rate."]
-    SRE_0_SLOW_SLEW_RATE = 0x0,
+    Sre0SlowSlewRate = 0x0,
     #[doc = "Fast Slew Rate."]
-    SRE_1_FAST_SLEW_RATE = 0x01,
+    Sre1FastSlewRate = 0x01,
 }
 impl SwPadCtlPadTestModeSre {
     #[inline(always)]
@@ -1328,21 +1328,21 @@ impl From<SwPadCtlPadTestModeSre> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadWakeupDse {
     #[doc = "HI-Z."]
-    DSE_0 = 0x0,
+    Dse0 = 0x0,
     #[doc = "Dual/Single voltage: 262/260 Ohm @ 1.8V, 247/157 Ohm @ 3.3V."]
-    DSE_1 = 0x01,
+    Dse1 = 0x01,
     #[doc = "Dual/Single voltage: 134/130 Ohm @ 1.8V, 126/78 Ohm @ 3.3V."]
-    DSE_2 = 0x02,
+    Dse2 = 0x02,
     #[doc = "Dual/Single voltage: 88/88 Ohm @ 1.8V, 84/53 Ohm @ 3.3V."]
-    DSE_3 = 0x03,
+    Dse3 = 0x03,
     #[doc = "Dual/Single voltage: 62/65 Ohm @ 1.8V, 57/39 Ohm @ 3.3V."]
-    DSE_4 = 0x04,
+    Dse4 = 0x04,
     #[doc = "Dual/Single voltage: 51/52 Ohm @ 1.8V, 47/32 Ohm @ 3.3V."]
-    DSE_5 = 0x05,
+    Dse5 = 0x05,
     #[doc = "Dual/Single voltage: 43/43 Ohm @ 1.8V, 40/26 Ohm @ 3.3V."]
-    DSE_6 = 0x06,
+    Dse6 = 0x06,
     #[doc = "Dual/Single voltage: 37/37 Ohm @ 1.8V, 34/23 Ohm @ 3.3V."]
-    DSE_7 = 0x07,
+    Dse7 = 0x07,
 }
 impl SwPadCtlPadWakeupDse {
     #[inline(always)]
@@ -1371,9 +1371,9 @@ impl From<SwPadCtlPadWakeupDse> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadWakeupHys {
     #[doc = "Hysteresis Disabled (CMOS input)."]
-    HYS_0_HYSTERESIS_DISABLED = 0x0,
+    Hys0HysteresisDisabled = 0x0,
     #[doc = "Hysteresis Enabled (Schmitt Trigger input)."]
-    HYS_1_HYSTERESIS_ENABLED = 0x01,
+    Hys1HysteresisEnabled = 0x01,
 }
 impl SwPadCtlPadWakeupHys {
     #[inline(always)]
@@ -1402,9 +1402,9 @@ impl From<SwPadCtlPadWakeupHys> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadWakeupOde {
     #[doc = "Open Drain Disabled (Output is CMOS)."]
-    ODE_0_OPEN_DRAIN_DISABLED = 0x0,
+    Ode0OpenDrainDisabled = 0x0,
     #[doc = "Open Drain Enabled (Output is Open Drain)."]
-    ODE_1_OPEN_DRAIN_ENABLED = 0x01,
+    Ode1OpenDrainEnabled = 0x01,
 }
 impl SwPadCtlPadWakeupOde {
     #[inline(always)]
@@ -1433,9 +1433,9 @@ impl From<SwPadCtlPadWakeupOde> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadWakeupPke {
     #[doc = "Pull/Keeper Disabled."]
-    PKE_0_PULL_KEEPER_DISABLED = 0x0,
+    Pke0PullKeeperDisabled = 0x0,
     #[doc = "Pull/Keeper Enabled."]
-    PKE_1_PULL_KEEPER_ENABLED = 0x01,
+    Pke1PullKeeperEnabled = 0x01,
 }
 impl SwPadCtlPadWakeupPke {
     #[inline(always)]
@@ -1464,9 +1464,9 @@ impl From<SwPadCtlPadWakeupPke> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadWakeupPue {
     #[doc = "Keep the previous output value when the output driver is disabled."]
-    PUE_0_KEEPER = 0x0,
+    Pue0Keeper = 0x0,
     #[doc = "Pull-up or pull-down (determined by PUS field)."]
-    PUE_1_PULL = 0x01,
+    Pue1Pull = 0x01,
 }
 impl SwPadCtlPadWakeupPue {
     #[inline(always)]
@@ -1495,13 +1495,13 @@ impl From<SwPadCtlPadWakeupPue> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadWakeupPus {
     #[doc = "100K Ohm Pull Down."]
-    PUS_0_100K_OHM_PULL_DOWN = 0x0,
+    Pus0100kOhmPullDown = 0x0,
     #[doc = "47K Ohm Pull Up."]
-    PUS_1_47K_OHM_PULL_UP = 0x01,
+    Pus147kOhmPullUp = 0x01,
     #[doc = "100K Ohm Pull Up."]
-    PUS_2_100K_OHM_PULL_UP = 0x02,
+    Pus2100kOhmPullUp = 0x02,
     #[doc = "22K Ohm Pull Up."]
-    PUS_3_22K_OHM_PULL_UP = 0x03,
+    Pus322kOhmPullUp = 0x03,
 }
 impl SwPadCtlPadWakeupPus {
     #[inline(always)]
@@ -1532,7 +1532,7 @@ pub enum SwPadCtlPadWakeupSpeed {
     _RESERVED_0 = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "100MHz."]
-    MEDIUM = 0x02,
+    Medium = 0x02,
     _RESERVED_3 = 0x03,
 }
 impl SwPadCtlPadWakeupSpeed {
@@ -1562,9 +1562,9 @@ impl From<SwPadCtlPadWakeupSpeed> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum SwPadCtlPadWakeupSre {
     #[doc = "Slow Slew Rate."]
-    SRE_0_SLOW_SLEW_RATE = 0x0,
+    Sre0SlowSlewRate = 0x0,
     #[doc = "Fast Slew Rate."]
-    SRE_1_FAST_SLEW_RATE = 0x01,
+    Sre1FastSlewRate = 0x01,
 }
 impl SwPadCtlPadWakeupSre {
     #[inline(always)]

@@ -1,6 +1,7 @@
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6a8c2aa 2026-01-27))"]
+#![allow(non_upper_case_globals)]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (e5ab29f 2026-04-30))"]
 #[derive(Copy, Clone, Debug, PartialEq, Eq)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Interrupt {
@@ -342,7 +343,7 @@ pub const SECGPIO: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4015_4000usize a
 pub const HASHCRYPT: hashcrypt::Hashcrypt =
     unsafe { hashcrypt::Hashcrypt::from_ptr(0x4015_8000usize as _) };
 #[doc = "System Control not in System Control Block"]
-pub const SCNSCB: scn_scb::ScnScb = unsafe { scn_scb::ScnScb::from_ptr(0xe000_e000usize as _) };
+pub const SCNSCB: s_cn_scb::SCnScb = unsafe { s_cn_scb::SCnScb::from_ptr(0xe000_e000usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
 pub const NVIC_PRIO_BITS: u8 = 3;
@@ -386,7 +387,7 @@ pub mod puf;
 pub mod rstctl0;
 pub mod rstctl1;
 pub mod rtc;
-pub mod scn_scb;
+pub mod s_cn_scb;
 pub mod sct;
 pub mod sema42;
 pub mod spi;

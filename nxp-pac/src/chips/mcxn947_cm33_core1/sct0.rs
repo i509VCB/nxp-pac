@@ -1,4 +1,4 @@
-#[doc = "Array of registers: EV_CTRL, EV_STATE."]
+#[doc = "Array of registers: EV_STATE, EV_CTRL."]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct Event {
     ptr: *mut u8,
@@ -25,7 +25,7 @@ impl Event {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
 }
-#[doc = "Array of registers: OUT_CLR, OUT_SET."]
+#[doc = "Array of registers: OUT_SET, OUT_CLR."]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct Out {
     ptr: *mut u8,
@@ -507,13 +507,13 @@ impl Sct0 {
             crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0240usize + n * 4usize) as _)
         }
     }
-    #[doc = "Array of registers: EV_CTRL, EV_STATE."]
+    #[doc = "Array of registers: EV_STATE, EV_CTRL."]
     #[inline(always)]
     pub const fn event(self, n: usize) -> Event {
         assert!(n < 16usize);
         unsafe { Event::from_ptr(self.ptr.wrapping_add(0x0300usize + n * 8usize) as _) }
     }
-    #[doc = "Array of registers: OUT_CLR, OUT_SET."]
+    #[doc = "Array of registers: OUT_SET, OUT_CLR."]
     #[inline(always)]
     pub const fn out(self, n: usize) -> Out {
         assert!(n < 10usize);

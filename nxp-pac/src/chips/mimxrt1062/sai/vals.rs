@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Chmod {
     #[doc = "TDM mode, transmit data pins are tri-stated when slots are masked or channels are disabled."]
-    TDM_MODE = 0x0,
+    TdmMode = 0x0,
     #[doc = "Output mode, transmit data pins are never tri-stated and will output zero when slots are masked or channels are disabled."]
-    OUTPUT_MODE = 0x01,
+    OutputMode = 0x01,
 }
 impl Chmod {
     #[inline(always)]
@@ -34,7 +34,7 @@ impl From<Chmod> for u8 {
 pub struct Feature(u16);
 impl Feature {
     #[doc = "Standard feature set."]
-    pub const STD: Self = Self(0x0);
+    pub const Std: Self = Self(0x0);
 }
 impl Feature {
     pub const fn from_bits(val: u16) -> Feature {
@@ -47,7 +47,7 @@ impl Feature {
 impl core::fmt::Debug for Feature {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("STD"),
+            0x0 => f.write_str("Std"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -56,7 +56,7 @@ impl core::fmt::Debug for Feature {
 impl defmt::Format for Feature {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "STD"),
+            0x0 => defmt::write!(f, "Std"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -78,9 +78,9 @@ impl From<Feature> for u16 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcr2Bcd {
     #[doc = "Bit clock is generated externally in Slave mode."]
-    EXT_SLAVE_MODE = 0x0,
+    ExtSlaveMode = 0x0,
     #[doc = "Bit clock is generated internally in Master mode."]
-    INT_MASTER_MODE = 0x01,
+    IntMasterMode = 0x01,
 }
 impl Rcr2Bcd {
     #[inline(always)]
@@ -109,9 +109,9 @@ impl From<Rcr2Bcd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcr2Bci {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Internal logic is clocked as if bit clock was externally generated."]
-    CLOCKED_AS_IF_EXT_GENERATED = 0x01,
+    ClockedAsIfExtGenerated = 0x01,
 }
 impl Rcr2Bci {
     #[inline(always)]
@@ -140,9 +140,9 @@ impl From<Rcr2Bci> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcr2Bcp {
     #[doc = "Bit Clock is active high with drive outputs on rising edge and sample inputs on falling edge."]
-    ACTIVE_HIGH = 0x0,
+    ActiveHigh = 0x0,
     #[doc = "Bit Clock is active low with drive outputs on falling edge and sample inputs on rising edge."]
-    ACTIVE_LOW = 0x01,
+    ActiveLow = 0x01,
 }
 impl Rcr2Bcp {
     #[inline(always)]
@@ -171,9 +171,9 @@ impl From<Rcr2Bcp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcr2Bcs {
     #[doc = "Use the normal bit clock source."]
-    NORMAL = 0x0,
+    Normal = 0x0,
     #[doc = "Swap the bit clock source."]
-    SWAP_BIT_CLK_SOURCE = 0x01,
+    SwapBitClkSource = 0x01,
 }
 impl Rcr2Bcs {
     #[inline(always)]
@@ -202,13 +202,13 @@ impl From<Rcr2Bcs> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcr2Msel {
     #[doc = "Bus Clock selected."]
-    BUS_CLOCK = 0x0,
+    BusClock = 0x0,
     #[doc = "Master Clock (MCLK) 1 option selected."]
-    MCLK1 = 0x01,
+    Mclk1 = 0x01,
     #[doc = "Master Clock (MCLK) 2 option selected."]
-    MCLK2 = 0x02,
+    Mclk2 = 0x02,
     #[doc = "Master Clock (MCLK) 3 option selected."]
-    MCLK3 = 0x03,
+    Mclk3 = 0x03,
 }
 impl Rcr2Msel {
     #[inline(always)]
@@ -237,9 +237,9 @@ impl From<Rcr2Msel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcr2Sync {
     #[doc = "Asynchronous mode."]
-    ASYNC = 0x0,
+    Async = 0x0,
     #[doc = "Synchronous with transmitter."]
-    SYNC_W_TX = 0x01,
+    SyncWTx = 0x01,
 }
 impl Rcr2Sync {
     #[inline(always)]
@@ -268,12 +268,12 @@ impl From<Rcr2Sync> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcr4Fpack {
     #[doc = "FIFO packing is disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "8-bit FIFO packing is enabled."]
-    EIGHT_BIT_PACKING = 0x02,
+    EightBitPacking = 0x02,
     #[doc = "16-bit FIFO packing is enabled."]
-    SIXTEEN_BIT_PACKING = 0x03,
+    SixteenBitPacking = 0x03,
 }
 impl Rcr4Fpack {
     #[inline(always)]
@@ -302,9 +302,9 @@ impl From<Rcr4Fpack> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcr4Fsd {
     #[doc = "Frame Sync is generated externally in Slave mode."]
-    EXT_SLAVE_MODE = 0x0,
+    ExtSlaveMode = 0x0,
     #[doc = "Frame Sync is generated internally in Master mode."]
-    INT_MASTER_MODE = 0x01,
+    IntMasterMode = 0x01,
 }
 impl Rcr4Fsd {
     #[inline(always)]
@@ -333,9 +333,9 @@ impl From<Rcr4Fsd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Rcr4Fsp {
     #[doc = "Frame sync is active high."]
-    ACTIVE_HIGH = 0x0,
+    ActiveHigh = 0x0,
     #[doc = "Frame sync is active low."]
-    ACTIVE_LOW = 0x01,
+    ActiveLow = 0x01,
 }
 impl Rcr4Fsp {
     #[inline(always)]
@@ -364,9 +364,9 @@ impl From<Rcr4Fsp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RcsrFr {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "FIFO reset."]
-    FIFO_RESET = 0x01,
+    FifoReset = 0x01,
 }
 impl RcsrFr {
     #[inline(always)]
@@ -395,9 +395,9 @@ impl From<RcsrFr> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RcsrFrf {
     #[doc = "Receive FIFO watermark not reached."]
-    BELOW_WATERMARK = 0x0,
+    BelowWatermark = 0x0,
     #[doc = "Receive FIFO watermark has been reached."]
-    WATERMARK_REACHED = 0x01,
+    WatermarkReached = 0x01,
 }
 impl RcsrFrf {
     #[inline(always)]
@@ -426,9 +426,9 @@ impl From<RcsrFrf> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum RcsrSr {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "Software reset."]
-    SW_RESET = 0x01,
+    SwReset = 0x01,
 }
 impl RcsrSr {
     #[inline(always)]
@@ -457,9 +457,9 @@ impl From<RcsrSr> for u8 {
 pub struct Rwm(u32);
 impl Rwm {
     #[doc = "Word N is enabled."]
-    pub const WORD_N_ENABLED: Self = Self(0x0);
+    pub const WordNEnabled: Self = Self(0x0);
     #[doc = "Word N is masked."]
-    pub const WORD_N_MASKED: Self = Self(0x01);
+    pub const WordNMasked: Self = Self(0x01);
 }
 impl Rwm {
     pub const fn from_bits(val: u32) -> Rwm {
@@ -472,8 +472,8 @@ impl Rwm {
 impl core::fmt::Debug for Rwm {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("WORD_N_ENABLED"),
-            0x01 => f.write_str("WORD_N_MASKED"),
+            0x0 => f.write_str("WordNEnabled"),
+            0x01 => f.write_str("WordNMasked"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -482,8 +482,8 @@ impl core::fmt::Debug for Rwm {
 impl defmt::Format for Rwm {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "WORD_N_ENABLED"),
-            0x01 => defmt::write!(f, "WORD_N_MASKED"),
+            0x0 => defmt::write!(f, "WordNEnabled"),
+            0x01 => defmt::write!(f, "WordNMasked"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }
@@ -505,9 +505,9 @@ impl From<Rwm> for u32 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcr2Bcd {
     #[doc = "Bit clock is generated externally in Slave mode."]
-    EXT_IN_SLAVE = 0x0,
+    ExtInSlave = 0x0,
     #[doc = "Bit clock is generated internally in Master mode."]
-    INT_IN_MASTER = 0x01,
+    IntInMaster = 0x01,
 }
 impl Tcr2Bcd {
     #[inline(always)]
@@ -536,9 +536,9 @@ impl From<Tcr2Bcd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcr2Bcp {
     #[doc = "Bit clock is active high with drive outputs on rising edge and sample inputs on falling edge."]
-    ACTIVE_HIGH = 0x0,
+    ActiveHigh = 0x0,
     #[doc = "Bit clock is active low with drive outputs on falling edge and sample inputs on rising edge."]
-    ACTIVE_LOW = 0x01,
+    ActiveLow = 0x01,
 }
 impl Tcr2Bcp {
     #[inline(always)]
@@ -567,13 +567,13 @@ impl From<Tcr2Bcp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcr2Msel {
     #[doc = "Bus Clock selected."]
-    BUS_CLOCK = 0x0,
+    BusClock = 0x0,
     #[doc = "Master Clock (MCLK) 1 option selected."]
-    MCLK1 = 0x01,
+    Mclk1 = 0x01,
     #[doc = "Master Clock (MCLK) 2 option selected."]
-    MCLK2 = 0x02,
+    Mclk2 = 0x02,
     #[doc = "Master Clock (MCLK) 3 option selected."]
-    MCLK3 = 0x03,
+    Mclk3 = 0x03,
 }
 impl Tcr2Msel {
     #[inline(always)]
@@ -602,9 +602,9 @@ impl From<Tcr2Msel> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcr2Sync {
     #[doc = "Asynchronous mode."]
-    ASYNC = 0x0,
+    Async = 0x0,
     #[doc = "Synchronous with receiver."]
-    SYNC_W_RX = 0x01,
+    SyncWRx = 0x01,
 }
 impl Tcr2Sync {
     #[inline(always)]
@@ -633,12 +633,12 @@ impl From<Tcr2Sync> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcr4Fpack {
     #[doc = "FIFO packing is disabled."]
-    DISABLED = 0x0,
+    Disabled = 0x0,
     _RESERVED_1 = 0x01,
     #[doc = "8-bit FIFO packing is enabled."]
-    EIGHT_BIT_FIFO_PACKING = 0x02,
+    EightBitFifoPacking = 0x02,
     #[doc = "16-bit FIFO packing is enabled."]
-    SIXTEEN_BIT_FIFO_PACKING = 0x03,
+    SixteenBitFifoPacking = 0x03,
 }
 impl Tcr4Fpack {
     #[inline(always)]
@@ -667,9 +667,9 @@ impl From<Tcr4Fpack> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcr4Fsd {
     #[doc = "Frame sync is generated externally in Slave mode."]
-    EXT_IN_SLAVE_MODE = 0x0,
+    ExtInSlaveMode = 0x0,
     #[doc = "Frame sync is generated internally in Master mode."]
-    INT_IN_MASTER_MODE = 0x01,
+    IntInMasterMode = 0x01,
 }
 impl Tcr4Fsd {
     #[inline(always)]
@@ -698,9 +698,9 @@ impl From<Tcr4Fsd> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcr4Fsp {
     #[doc = "Frame sync is active high."]
-    ACTIVE_HIGH = 0x0,
+    ActiveHigh = 0x0,
     #[doc = "Frame sync is active low."]
-    ACTIVE_LOW = 0x01,
+    ActiveLow = 0x01,
 }
 impl Tcr4Fsp {
     #[inline(always)]
@@ -729,9 +729,9 @@ impl From<Tcr4Fsp> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Tcr4Ondem {
     #[doc = "Internal frame sync is generated continuously."]
-    CONTINUOUS_FRAME_SYNC = 0x0,
+    ContinuousFrameSync = 0x0,
     #[doc = "Internal frame sync is generated when the FIFO warning flag is clear."]
-    ON_DEMAND_FRAME_SYNC = 0x01,
+    OnDemandFrameSync = 0x01,
 }
 impl Tcr4Ondem {
     #[inline(always)]
@@ -760,9 +760,9 @@ impl From<Tcr4Ondem> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum TcsrFr {
     #[doc = "No effect."]
-    NO_EFFECT = 0x0,
+    NoEffect = 0x0,
     #[doc = "FIFO reset."]
-    RESET = 0x01,
+    Reset = 0x01,
 }
 impl TcsrFr {
     #[inline(always)]
@@ -791,9 +791,9 @@ impl From<TcsrFr> for u8 {
 pub struct Twm(u32);
 impl Twm {
     #[doc = "Word N is enabled."]
-    pub const WORD_N_ENABLED: Self = Self(0x0);
+    pub const WordNEnabled: Self = Self(0x0);
     #[doc = "Word N is masked. The transmit data pins are tri-stated or drive zero when masked."]
-    pub const WORD_N_MASKED: Self = Self(0x01);
+    pub const WordNMasked: Self = Self(0x01);
 }
 impl Twm {
     pub const fn from_bits(val: u32) -> Twm {
@@ -806,8 +806,8 @@ impl Twm {
 impl core::fmt::Debug for Twm {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         match self.0 {
-            0x0 => f.write_str("WORD_N_ENABLED"),
-            0x01 => f.write_str("WORD_N_MASKED"),
+            0x0 => f.write_str("WordNEnabled"),
+            0x01 => f.write_str("WordNMasked"),
             other => core::write!(f, "0x{:02X}", other),
         }
     }
@@ -816,8 +816,8 @@ impl core::fmt::Debug for Twm {
 impl defmt::Format for Twm {
     fn format(&self, f: defmt::Formatter) {
         match self.0 {
-            0x0 => defmt::write!(f, "WORD_N_ENABLED"),
-            0x01 => defmt::write!(f, "WORD_N_MASKED"),
+            0x0 => defmt::write!(f, "WordNEnabled"),
+            0x01 => defmt::write!(f, "WordNMasked"),
             other => defmt::write!(f, "0x{:02X}", other),
         }
     }

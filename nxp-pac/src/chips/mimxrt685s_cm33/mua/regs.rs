@@ -54,49 +54,49 @@ impl Cr {
     #[doc = "GIRn."]
     #[must_use]
     #[inline(always)]
-    pub const fn girn(&self) -> super::vals::Girn {
+    pub const fn gi_rn(&self) -> super::vals::GiRn {
         let val = (self.0 >> 16usize) & 0x0f;
-        super::vals::Girn::from_bits(val as u8)
+        super::vals::GiRn::from_bits(val as u8)
     }
     #[doc = "GIRn."]
     #[inline(always)]
-    pub const fn set_girn(&mut self, val: super::vals::Girn) {
+    pub const fn set_gi_rn(&mut self, val: super::vals::GiRn) {
         self.0 = (self.0 & !(0x0f << 16usize)) | (((val.to_bits() as u32) & 0x0f) << 16usize);
     }
     #[doc = "TIEn."]
     #[must_use]
     #[inline(always)]
-    pub const fn tien(&self) -> super::vals::Tien {
+    pub const fn ti_en(&self) -> super::vals::TiEn {
         let val = (self.0 >> 20usize) & 0x0f;
-        super::vals::Tien::from_bits(val as u8)
+        super::vals::TiEn::from_bits(val as u8)
     }
     #[doc = "TIEn."]
     #[inline(always)]
-    pub const fn set_tien(&mut self, val: super::vals::Tien) {
+    pub const fn set_ti_en(&mut self, val: super::vals::TiEn) {
         self.0 = (self.0 & !(0x0f << 20usize)) | (((val.to_bits() as u32) & 0x0f) << 20usize);
     }
     #[doc = "RIEn."]
     #[must_use]
     #[inline(always)]
-    pub const fn rien(&self) -> super::vals::Rien {
+    pub const fn ri_en(&self) -> super::vals::RiEn {
         let val = (self.0 >> 24usize) & 0x0f;
-        super::vals::Rien::from_bits(val as u8)
+        super::vals::RiEn::from_bits(val as u8)
     }
     #[doc = "RIEn."]
     #[inline(always)]
-    pub const fn set_rien(&mut self, val: super::vals::Rien) {
+    pub const fn set_ri_en(&mut self, val: super::vals::RiEn) {
         self.0 = (self.0 & !(0x0f << 24usize)) | (((val.to_bits() as u32) & 0x0f) << 24usize);
     }
     #[doc = "GIEn."]
     #[must_use]
     #[inline(always)]
-    pub const fn gien(&self) -> super::vals::Gien {
+    pub const fn gi_en(&self) -> super::vals::GiEn {
         let val = (self.0 >> 28usize) & 0x0f;
-        super::vals::Gien::from_bits(val as u8)
+        super::vals::GiEn::from_bits(val as u8)
     }
     #[doc = "GIEn."]
     #[inline(always)]
-    pub const fn set_gien(&mut self, val: super::vals::Gien) {
+    pub const fn set_gi_en(&mut self, val: super::vals::GiEn) {
         self.0 = (self.0 & !(0x0f << 28usize)) | (((val.to_bits() as u32) & 0x0f) << 28usize);
     }
 }
@@ -113,10 +113,10 @@ impl core::fmt::Debug for Cr {
             .field("mur", &self.mur())
             .field("rdie", &self.rdie())
             .field("raie", &self.raie())
-            .field("girn", &self.girn())
-            .field("tien", &self.tien())
-            .field("rien", &self.rien())
-            .field("gien", &self.gien())
+            .field("gi_rn", &self.gi_rn())
+            .field("ti_en", &self.ti_en())
+            .field("ri_en", &self.ri_en())
+            .field("gi_en", &self.gi_en())
             .finish()
     }
 }
@@ -125,15 +125,15 @@ impl defmt::Format for Cr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Cr {{ fn_: {:?}, mur: {:?}, rdie: {:?}, raie: {:?}, girn: {:?}, tien: {:?}, rien: {:?}, gien: {:?} }}",
+            "Cr {{ fn_: {:?}, mur: {:?}, rdie: {:?}, raie: {:?}, gi_rn: {:?}, ti_en: {:?}, ri_en: {:?}, gi_en: {:?} }}",
             self.fn_(),
             self.mur(),
             self.rdie(),
             self.raie(),
-            self.girn(),
-            self.tien(),
-            self.rien(),
-            self.gien()
+            self.gi_rn(),
+            self.ti_en(),
+            self.ri_en(),
+            self.gi_en()
         )
     }
 }
@@ -301,37 +301,37 @@ impl Sr {
     #[doc = "TEn."]
     #[must_use]
     #[inline(always)]
-    pub const fn ten(&self) -> super::vals::Ten {
+    pub const fn t_en(&self) -> super::vals::TEn {
         let val = (self.0 >> 20usize) & 0x0f;
-        super::vals::Ten::from_bits(val as u8)
+        super::vals::TEn::from_bits(val as u8)
     }
     #[doc = "TEn."]
     #[inline(always)]
-    pub const fn set_ten(&mut self, val: super::vals::Ten) {
+    pub const fn set_t_en(&mut self, val: super::vals::TEn) {
         self.0 = (self.0 & !(0x0f << 20usize)) | (((val.to_bits() as u32) & 0x0f) << 20usize);
     }
     #[doc = "RFn."]
     #[must_use]
     #[inline(always)]
-    pub const fn rfn(&self) -> super::vals::Rfn {
+    pub const fn r_fn(&self) -> super::vals::RFn {
         let val = (self.0 >> 24usize) & 0x0f;
-        super::vals::Rfn::from_bits(val as u8)
+        super::vals::RFn::from_bits(val as u8)
     }
     #[doc = "RFn."]
     #[inline(always)]
-    pub const fn set_rfn(&mut self, val: super::vals::Rfn) {
+    pub const fn set_r_fn(&mut self, val: super::vals::RFn) {
         self.0 = (self.0 & !(0x0f << 24usize)) | (((val.to_bits() as u32) & 0x0f) << 24usize);
     }
     #[doc = "GIPn."]
     #[must_use]
     #[inline(always)]
-    pub const fn gipn(&self) -> super::vals::Gipn {
+    pub const fn gi_pn(&self) -> super::vals::GiPn {
         let val = (self.0 >> 28usize) & 0x0f;
-        super::vals::Gipn::from_bits(val as u8)
+        super::vals::GiPn::from_bits(val as u8)
     }
     #[doc = "GIPn."]
     #[inline(always)]
-    pub const fn set_gipn(&mut self, val: super::vals::Gipn) {
+    pub const fn set_gi_pn(&mut self, val: super::vals::GiPn) {
         self.0 = (self.0 & !(0x0f << 28usize)) | (((val.to_bits() as u32) & 0x0f) << 28usize);
     }
 }
@@ -351,9 +351,9 @@ impl core::fmt::Debug for Sr {
             .field("fup", &self.fup())
             .field("rdip", &self.rdip())
             .field("raip", &self.raip())
-            .field("ten", &self.ten())
-            .field("rfn", &self.rfn())
-            .field("gipn", &self.gipn())
+            .field("t_en", &self.t_en())
+            .field("r_fn", &self.r_fn())
+            .field("gi_pn", &self.gi_pn())
             .finish()
     }
 }
@@ -362,7 +362,7 @@ impl defmt::Format for Sr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Sr {{ fn_: {:?}, ep: {:?}, pm: {:?}, rs: {:?}, fup: {:?}, rdip: {:?}, raip: {:?}, ten: {:?}, rfn: {:?}, gipn: {:?} }}",
+            "Sr {{ fn_: {:?}, ep: {:?}, pm: {:?}, rs: {:?}, fup: {:?}, rdip: {:?}, raip: {:?}, t_en: {:?}, r_fn: {:?}, gi_pn: {:?} }}",
             self.fn_(),
             self.ep(),
             self.pm(),
@@ -370,9 +370,9 @@ impl defmt::Format for Sr {
             self.fup(),
             self.rdip(),
             self.raip(),
-            self.ten(),
-            self.rfn(),
-            self.gipn()
+            self.t_en(),
+            self.r_fn(),
+            self.gi_pn()
         )
     }
 }

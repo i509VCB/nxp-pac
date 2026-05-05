@@ -3,13 +3,13 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt010Pt0Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT0_AC_0 = 0x0,
+    Pt0Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT0_AC_1 = 0x01,
+    Pt0Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT0_AC_2 = 0x02,
+    Pt0Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT0_AC_3 = 0x03,
+    Pt0Ac3 = 0x03,
 }
 impl Bfcrt010Pt0Ac {
     #[inline(always)]
@@ -38,13 +38,13 @@ impl From<Bfcrt010Pt0Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt010Pt0Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT0_BC_0 = 0x0,
+    Pt0Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT0_BC_1 = 0x01,
+    Pt0Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT0_BC_2 = 0x02,
+    Pt0Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT0_BC_3 = 0x03,
+    Pt0Bc3 = 0x03,
 }
 impl Bfcrt010Pt0Bc {
     #[inline(always)]
@@ -73,13 +73,13 @@ impl From<Bfcrt010Pt0Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt010Pt0Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    PT0_CC_0 = 0x0,
+    Pt0Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    PT0_CC_1 = 0x01,
+    Pt0Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    PT0_CC_2 = 0x02,
+    Pt0Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    PT0_CC_3 = 0x03,
+    Pt0Cc3 = 0x03,
 }
 impl Bfcrt010Pt0Cc {
     #[inline(always)]
@@ -108,13 +108,13 @@ impl From<Bfcrt010Pt0Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt010Pt0Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT0_DC_0 = 0x0,
+    Pt0Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT0_DC_1 = 0x01,
+    Pt0Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT0_DC_2 = 0x02,
+    Pt0Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT0_DC_3 = 0x03,
+    Pt0Dc3 = 0x03,
 }
 impl Bfcrt010Pt0Dc {
     #[inline(always)]
@@ -143,13 +143,13 @@ impl From<Bfcrt010Pt0Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt010Pt1Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT1_AC_0 = 0x0,
+    Pt1Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT1_AC_1 = 0x01,
+    Pt1Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT1_AC_2 = 0x02,
+    Pt1Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT1_AC_3 = 0x03,
+    Pt1Ac3 = 0x03,
 }
 impl Bfcrt010Pt1Ac {
     #[inline(always)]
@@ -178,13 +178,13 @@ impl From<Bfcrt010Pt1Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt010Pt1Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT1_BC_0 = 0x0,
+    Pt1Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT1_BC_1 = 0x01,
+    Pt1Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT1_BC_2 = 0x02,
+    Pt1Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT1_BC_3 = 0x03,
+    Pt1Bc3 = 0x03,
 }
 impl Bfcrt010Pt1Bc {
     #[inline(always)]
@@ -213,13 +213,13 @@ impl From<Bfcrt010Pt1Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt010Pt1Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    PT1_CC_0 = 0x0,
+    Pt1Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    PT1_CC_1 = 0x01,
+    Pt1Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    PT1_CC_2 = 0x02,
+    Pt1Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    PT1_CC_3 = 0x03,
+    Pt1Cc3 = 0x03,
 }
 impl Bfcrt010Pt1Cc {
     #[inline(always)]
@@ -248,13 +248,13 @@ impl From<Bfcrt010Pt1Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt010Pt1Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT1_DC_0 = 0x0,
+    Pt1Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT1_DC_1 = 0x01,
+    Pt1Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT1_DC_2 = 0x02,
+    Pt1Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT1_DC_3 = 0x03,
+    Pt1Dc3 = 0x03,
 }
 impl Bfcrt010Pt1Dc {
     #[inline(always)]
@@ -283,13 +283,13 @@ impl From<Bfcrt010Pt1Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt011Pt0Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT0_AC_0 = 0x0,
+    Pt0Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT0_AC_1 = 0x01,
+    Pt0Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT0_AC_2 = 0x02,
+    Pt0Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT0_AC_3 = 0x03,
+    Pt0Ac3 = 0x03,
 }
 impl Bfcrt011Pt0Ac {
     #[inline(always)]
@@ -318,13 +318,13 @@ impl From<Bfcrt011Pt0Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt011Pt0Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT0_BC_0 = 0x0,
+    Pt0Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT0_BC_1 = 0x01,
+    Pt0Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT0_BC_2 = 0x02,
+    Pt0Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT0_BC_3 = 0x03,
+    Pt0Bc3 = 0x03,
 }
 impl Bfcrt011Pt0Bc {
     #[inline(always)]
@@ -353,13 +353,13 @@ impl From<Bfcrt011Pt0Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt011Pt0Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    PT0_CC_0 = 0x0,
+    Pt0Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    PT0_CC_1 = 0x01,
+    Pt0Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    PT0_CC_2 = 0x02,
+    Pt0Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    PT0_CC_3 = 0x03,
+    Pt0Cc3 = 0x03,
 }
 impl Bfcrt011Pt0Cc {
     #[inline(always)]
@@ -388,13 +388,13 @@ impl From<Bfcrt011Pt0Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt011Pt0Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT0_DC_0 = 0x0,
+    Pt0Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT0_DC_1 = 0x01,
+    Pt0Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT0_DC_2 = 0x02,
+    Pt0Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT0_DC_3 = 0x03,
+    Pt0Dc3 = 0x03,
 }
 impl Bfcrt011Pt0Dc {
     #[inline(always)]
@@ -423,13 +423,13 @@ impl From<Bfcrt011Pt0Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt011Pt1Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT1_AC_0 = 0x0,
+    Pt1Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT1_AC_1 = 0x01,
+    Pt1Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT1_AC_2 = 0x02,
+    Pt1Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT1_AC_3 = 0x03,
+    Pt1Ac3 = 0x03,
 }
 impl Bfcrt011Pt1Ac {
     #[inline(always)]
@@ -458,13 +458,13 @@ impl From<Bfcrt011Pt1Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt011Pt1Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT1_BC_0 = 0x0,
+    Pt1Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT1_BC_1 = 0x01,
+    Pt1Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT1_BC_2 = 0x02,
+    Pt1Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT1_BC_3 = 0x03,
+    Pt1Bc3 = 0x03,
 }
 impl Bfcrt011Pt1Bc {
     #[inline(always)]
@@ -493,13 +493,13 @@ impl From<Bfcrt011Pt1Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt011Pt1Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    PT1_CC_0 = 0x0,
+    Pt1Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    PT1_CC_1 = 0x01,
+    Pt1Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    PT1_CC_2 = 0x02,
+    Pt1Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    PT1_CC_3 = 0x03,
+    Pt1Cc3 = 0x03,
 }
 impl Bfcrt011Pt1Cc {
     #[inline(always)]
@@ -528,13 +528,13 @@ impl From<Bfcrt011Pt1Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt011Pt1Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT1_DC_0 = 0x0,
+    Pt1Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT1_DC_1 = 0x01,
+    Pt1Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT1_DC_2 = 0x02,
+    Pt1Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT1_DC_3 = 0x03,
+    Pt1Dc3 = 0x03,
 }
 impl Bfcrt011Pt1Dc {
     #[inline(always)]
@@ -563,13 +563,13 @@ impl From<Bfcrt011Pt1Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt012Pt0Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT0_AC_0 = 0x0,
+    Pt0Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT0_AC_1 = 0x01,
+    Pt0Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT0_AC_2 = 0x02,
+    Pt0Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT0_AC_3 = 0x03,
+    Pt0Ac3 = 0x03,
 }
 impl Bfcrt012Pt0Ac {
     #[inline(always)]
@@ -598,13 +598,13 @@ impl From<Bfcrt012Pt0Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt012Pt0Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT0_BC_0 = 0x0,
+    Pt0Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT0_BC_1 = 0x01,
+    Pt0Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT0_BC_2 = 0x02,
+    Pt0Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT0_BC_3 = 0x03,
+    Pt0Bc3 = 0x03,
 }
 impl Bfcrt012Pt0Bc {
     #[inline(always)]
@@ -633,13 +633,13 @@ impl From<Bfcrt012Pt0Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt012Pt0Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    PT0_CC_0 = 0x0,
+    Pt0Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    PT0_CC_1 = 0x01,
+    Pt0Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    PT0_CC_2 = 0x02,
+    Pt0Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    PT0_CC_3 = 0x03,
+    Pt0Cc3 = 0x03,
 }
 impl Bfcrt012Pt0Cc {
     #[inline(always)]
@@ -668,13 +668,13 @@ impl From<Bfcrt012Pt0Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt012Pt0Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT0_DC_0 = 0x0,
+    Pt0Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT0_DC_1 = 0x01,
+    Pt0Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT0_DC_2 = 0x02,
+    Pt0Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT0_DC_3 = 0x03,
+    Pt0Dc3 = 0x03,
 }
 impl Bfcrt012Pt0Dc {
     #[inline(always)]
@@ -703,13 +703,13 @@ impl From<Bfcrt012Pt0Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt012Pt1Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT1_AC_0 = 0x0,
+    Pt1Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT1_AC_1 = 0x01,
+    Pt1Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT1_AC_2 = 0x02,
+    Pt1Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT1_AC_3 = 0x03,
+    Pt1Ac3 = 0x03,
 }
 impl Bfcrt012Pt1Ac {
     #[inline(always)]
@@ -738,13 +738,13 @@ impl From<Bfcrt012Pt1Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt012Pt1Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT1_BC_0 = 0x0,
+    Pt1Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT1_BC_1 = 0x01,
+    Pt1Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT1_BC_2 = 0x02,
+    Pt1Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT1_BC_3 = 0x03,
+    Pt1Bc3 = 0x03,
 }
 impl Bfcrt012Pt1Bc {
     #[inline(always)]
@@ -773,13 +773,13 @@ impl From<Bfcrt012Pt1Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt012Pt1Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    PT1_CC_0 = 0x0,
+    Pt1Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    PT1_CC_1 = 0x01,
+    Pt1Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    PT1_CC_2 = 0x02,
+    Pt1Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    PT1_CC_3 = 0x03,
+    Pt1Cc3 = 0x03,
 }
 impl Bfcrt012Pt1Cc {
     #[inline(always)]
@@ -808,13 +808,13 @@ impl From<Bfcrt012Pt1Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt012Pt1Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT1_DC_0 = 0x0,
+    Pt1Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT1_DC_1 = 0x01,
+    Pt1Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT1_DC_2 = 0x02,
+    Pt1Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT1_DC_3 = 0x03,
+    Pt1Dc3 = 0x03,
 }
 impl Bfcrt012Pt1Dc {
     #[inline(always)]
@@ -843,13 +843,13 @@ impl From<Bfcrt012Pt1Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt013Pt0Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT0_AC_0 = 0x0,
+    Pt0Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT0_AC_1 = 0x01,
+    Pt0Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT0_AC_2 = 0x02,
+    Pt0Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT0_AC_3 = 0x03,
+    Pt0Ac3 = 0x03,
 }
 impl Bfcrt013Pt0Ac {
     #[inline(always)]
@@ -878,13 +878,13 @@ impl From<Bfcrt013Pt0Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt013Pt0Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT0_BC_0 = 0x0,
+    Pt0Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT0_BC_1 = 0x01,
+    Pt0Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT0_BC_2 = 0x02,
+    Pt0Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT0_BC_3 = 0x03,
+    Pt0Bc3 = 0x03,
 }
 impl Bfcrt013Pt0Bc {
     #[inline(always)]
@@ -913,13 +913,13 @@ impl From<Bfcrt013Pt0Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt013Pt0Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    PT0_CC_0 = 0x0,
+    Pt0Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    PT0_CC_1 = 0x01,
+    Pt0Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    PT0_CC_2 = 0x02,
+    Pt0Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    PT0_CC_3 = 0x03,
+    Pt0Cc3 = 0x03,
 }
 impl Bfcrt013Pt0Cc {
     #[inline(always)]
@@ -948,13 +948,13 @@ impl From<Bfcrt013Pt0Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt013Pt0Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT0_DC_0 = 0x0,
+    Pt0Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT0_DC_1 = 0x01,
+    Pt0Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT0_DC_2 = 0x02,
+    Pt0Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT0_DC_3 = 0x03,
+    Pt0Dc3 = 0x03,
 }
 impl Bfcrt013Pt0Dc {
     #[inline(always)]
@@ -983,13 +983,13 @@ impl From<Bfcrt013Pt0Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt013Pt1Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT1_AC_0 = 0x0,
+    Pt1Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT1_AC_1 = 0x01,
+    Pt1Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT1_AC_2 = 0x02,
+    Pt1Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT1_AC_3 = 0x03,
+    Pt1Ac3 = 0x03,
 }
 impl Bfcrt013Pt1Ac {
     #[inline(always)]
@@ -1018,13 +1018,13 @@ impl From<Bfcrt013Pt1Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt013Pt1Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT1_BC_0 = 0x0,
+    Pt1Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT1_BC_1 = 0x01,
+    Pt1Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT1_BC_2 = 0x02,
+    Pt1Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT1_BC_3 = 0x03,
+    Pt1Bc3 = 0x03,
 }
 impl Bfcrt013Pt1Bc {
     #[inline(always)]
@@ -1053,13 +1053,13 @@ impl From<Bfcrt013Pt1Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt013Pt1Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    PT1_CC_0 = 0x0,
+    Pt1Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    PT1_CC_1 = 0x01,
+    Pt1Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    PT1_CC_2 = 0x02,
+    Pt1Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    PT1_CC_3 = 0x03,
+    Pt1Cc3 = 0x03,
 }
 impl Bfcrt013Pt1Cc {
     #[inline(always)]
@@ -1088,13 +1088,13 @@ impl From<Bfcrt013Pt1Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt013Pt1Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT1_DC_0 = 0x0,
+    Pt1Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT1_DC_1 = 0x01,
+    Pt1Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT1_DC_2 = 0x02,
+    Pt1Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT1_DC_3 = 0x03,
+    Pt1Dc3 = 0x03,
 }
 impl Bfcrt013Pt1Dc {
     #[inline(always)]
@@ -1123,13 +1123,13 @@ impl From<Bfcrt013Pt1Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt230Pt2Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT2_AC_0 = 0x0,
+    Pt2Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT2_AC_1 = 0x01,
+    Pt2Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT2_AC_2 = 0x02,
+    Pt2Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT2_AC_3 = 0x03,
+    Pt2Ac3 = 0x03,
 }
 impl Bfcrt230Pt2Ac {
     #[inline(always)]
@@ -1158,13 +1158,13 @@ impl From<Bfcrt230Pt2Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt230Pt2Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT2_BC_0 = 0x0,
+    Pt2Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT2_BC_1 = 0x01,
+    Pt2Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT2_BC_2 = 0x02,
+    Pt2Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT2_BC_3 = 0x03,
+    Pt2Bc3 = 0x03,
 }
 impl Bfcrt230Pt2Bc {
     #[inline(always)]
@@ -1193,13 +1193,13 @@ impl From<Bfcrt230Pt2Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt230Pt2Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    PT2_CC_0 = 0x0,
+    Pt2Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    PT2_CC_1 = 0x01,
+    Pt2Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    PT2_CC_2 = 0x02,
+    Pt2Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    PT2_CC_3 = 0x03,
+    Pt2Cc3 = 0x03,
 }
 impl Bfcrt230Pt2Cc {
     #[inline(always)]
@@ -1228,13 +1228,13 @@ impl From<Bfcrt230Pt2Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt230Pt2Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT2_DC_0 = 0x0,
+    Pt2Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT2_DC_1 = 0x01,
+    Pt2Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT2_DC_2 = 0x02,
+    Pt2Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT2_DC_3 = 0x03,
+    Pt2Dc3 = 0x03,
 }
 impl Bfcrt230Pt2Dc {
     #[inline(always)]
@@ -1263,13 +1263,13 @@ impl From<Bfcrt230Pt2Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt230Pt3Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT3_AC_0 = 0x0,
+    Pt3Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT3_AC_1 = 0x01,
+    Pt3Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT3_AC_2 = 0x02,
+    Pt3Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT3_AC_3 = 0x03,
+    Pt3Ac3 = 0x03,
 }
 impl Bfcrt230Pt3Ac {
     #[inline(always)]
@@ -1298,13 +1298,13 @@ impl From<Bfcrt230Pt3Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt230Pt3Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT3_BC_0 = 0x0,
+    Pt3Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT3_BC_1 = 0x01,
+    Pt3Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT3_BC_2 = 0x02,
+    Pt3Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT3_BC_3 = 0x03,
+    Pt3Bc3 = 0x03,
 }
 impl Bfcrt230Pt3Bc {
     #[inline(always)]
@@ -1333,13 +1333,13 @@ impl From<Bfcrt230Pt3Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt230Pt3Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    PT3_CC_0 = 0x0,
+    Pt3Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    PT3_CC_1 = 0x01,
+    Pt3Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    PT3_CC_2 = 0x02,
+    Pt3Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    PT3_CC_3 = 0x03,
+    Pt3Cc3 = 0x03,
 }
 impl Bfcrt230Pt3Cc {
     #[inline(always)]
@@ -1368,13 +1368,13 @@ impl From<Bfcrt230Pt3Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt230Pt3Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT3_DC_0 = 0x0,
+    Pt3Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT3_DC_1 = 0x01,
+    Pt3Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT3_DC_2 = 0x02,
+    Pt3Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT3_DC_3 = 0x03,
+    Pt3Dc3 = 0x03,
 }
 impl Bfcrt230Pt3Dc {
     #[inline(always)]
@@ -1403,13 +1403,13 @@ impl From<Bfcrt230Pt3Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt231Pt2Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT2_AC_0 = 0x0,
+    Pt2Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT2_AC_1 = 0x01,
+    Pt2Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT2_AC_2 = 0x02,
+    Pt2Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT2_AC_3 = 0x03,
+    Pt2Ac3 = 0x03,
 }
 impl Bfcrt231Pt2Ac {
     #[inline(always)]
@@ -1438,13 +1438,13 @@ impl From<Bfcrt231Pt2Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt231Pt2Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT2_BC_0 = 0x0,
+    Pt2Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT2_BC_1 = 0x01,
+    Pt2Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT2_BC_2 = 0x02,
+    Pt2Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT2_BC_3 = 0x03,
+    Pt2Bc3 = 0x03,
 }
 impl Bfcrt231Pt2Bc {
     #[inline(always)]
@@ -1473,13 +1473,13 @@ impl From<Bfcrt231Pt2Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt231Pt2Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    PT2_CC_0 = 0x0,
+    Pt2Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    PT2_CC_1 = 0x01,
+    Pt2Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    PT2_CC_2 = 0x02,
+    Pt2Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    PT2_CC_3 = 0x03,
+    Pt2Cc3 = 0x03,
 }
 impl Bfcrt231Pt2Cc {
     #[inline(always)]
@@ -1508,13 +1508,13 @@ impl From<Bfcrt231Pt2Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt231Pt2Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT2_DC_0 = 0x0,
+    Pt2Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT2_DC_1 = 0x01,
+    Pt2Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT2_DC_2 = 0x02,
+    Pt2Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT2_DC_3 = 0x03,
+    Pt2Dc3 = 0x03,
 }
 impl Bfcrt231Pt2Dc {
     #[inline(always)]
@@ -1543,13 +1543,13 @@ impl From<Bfcrt231Pt2Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt231Pt3Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT3_AC_0 = 0x0,
+    Pt3Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT3_AC_1 = 0x01,
+    Pt3Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT3_AC_2 = 0x02,
+    Pt3Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT3_AC_3 = 0x03,
+    Pt3Ac3 = 0x03,
 }
 impl Bfcrt231Pt3Ac {
     #[inline(always)]
@@ -1578,13 +1578,13 @@ impl From<Bfcrt231Pt3Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt231Pt3Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT3_BC_0 = 0x0,
+    Pt3Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT3_BC_1 = 0x01,
+    Pt3Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT3_BC_2 = 0x02,
+    Pt3Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT3_BC_3 = 0x03,
+    Pt3Bc3 = 0x03,
 }
 impl Bfcrt231Pt3Bc {
     #[inline(always)]
@@ -1613,13 +1613,13 @@ impl From<Bfcrt231Pt3Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt231Pt3Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    PT3_CC_0 = 0x0,
+    Pt3Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    PT3_CC_1 = 0x01,
+    Pt3Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    PT3_CC_2 = 0x02,
+    Pt3Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    PT3_CC_3 = 0x03,
+    Pt3Cc3 = 0x03,
 }
 impl Bfcrt231Pt3Cc {
     #[inline(always)]
@@ -1648,13 +1648,13 @@ impl From<Bfcrt231Pt3Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt231Pt3Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT3_DC_0 = 0x0,
+    Pt3Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT3_DC_1 = 0x01,
+    Pt3Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT3_DC_2 = 0x02,
+    Pt3Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT3_DC_3 = 0x03,
+    Pt3Dc3 = 0x03,
 }
 impl Bfcrt231Pt3Dc {
     #[inline(always)]
@@ -1683,13 +1683,13 @@ impl From<Bfcrt231Pt3Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt232Pt2Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT2_AC_0 = 0x0,
+    Pt2Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT2_AC_1 = 0x01,
+    Pt2Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT2_AC_2 = 0x02,
+    Pt2Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT2_AC_3 = 0x03,
+    Pt2Ac3 = 0x03,
 }
 impl Bfcrt232Pt2Ac {
     #[inline(always)]
@@ -1718,13 +1718,13 @@ impl From<Bfcrt232Pt2Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt232Pt2Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT2_BC_0 = 0x0,
+    Pt2Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT2_BC_1 = 0x01,
+    Pt2Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT2_BC_2 = 0x02,
+    Pt2Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT2_BC_3 = 0x03,
+    Pt2Bc3 = 0x03,
 }
 impl Bfcrt232Pt2Bc {
     #[inline(always)]
@@ -1753,13 +1753,13 @@ impl From<Bfcrt232Pt2Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt232Pt2Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    PT2_CC_0 = 0x0,
+    Pt2Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    PT2_CC_1 = 0x01,
+    Pt2Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    PT2_CC_2 = 0x02,
+    Pt2Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    PT2_CC_3 = 0x03,
+    Pt2Cc3 = 0x03,
 }
 impl Bfcrt232Pt2Cc {
     #[inline(always)]
@@ -1788,13 +1788,13 @@ impl From<Bfcrt232Pt2Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt232Pt2Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT2_DC_0 = 0x0,
+    Pt2Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT2_DC_1 = 0x01,
+    Pt2Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT2_DC_2 = 0x02,
+    Pt2Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT2_DC_3 = 0x03,
+    Pt2Dc3 = 0x03,
 }
 impl Bfcrt232Pt2Dc {
     #[inline(always)]
@@ -1823,13 +1823,13 @@ impl From<Bfcrt232Pt2Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt232Pt3Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT3_AC_0 = 0x0,
+    Pt3Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT3_AC_1 = 0x01,
+    Pt3Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT3_AC_2 = 0x02,
+    Pt3Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT3_AC_3 = 0x03,
+    Pt3Ac3 = 0x03,
 }
 impl Bfcrt232Pt3Ac {
     #[inline(always)]
@@ -1858,13 +1858,13 @@ impl From<Bfcrt232Pt3Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt232Pt3Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT3_BC_0 = 0x0,
+    Pt3Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT3_BC_1 = 0x01,
+    Pt3Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT3_BC_2 = 0x02,
+    Pt3Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT3_BC_3 = 0x03,
+    Pt3Bc3 = 0x03,
 }
 impl Bfcrt232Pt3Bc {
     #[inline(always)]
@@ -1893,13 +1893,13 @@ impl From<Bfcrt232Pt3Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt232Pt3Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    PT3_CC_0 = 0x0,
+    Pt3Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    PT3_CC_1 = 0x01,
+    Pt3Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    PT3_CC_2 = 0x02,
+    Pt3Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    PT3_CC_3 = 0x03,
+    Pt3Cc3 = 0x03,
 }
 impl Bfcrt232Pt3Cc {
     #[inline(always)]
@@ -1928,13 +1928,13 @@ impl From<Bfcrt232Pt3Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt232Pt3Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT3_DC_0 = 0x0,
+    Pt3Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT3_DC_1 = 0x01,
+    Pt3Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT3_DC_2 = 0x02,
+    Pt3Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT3_DC_3 = 0x03,
+    Pt3Dc3 = 0x03,
 }
 impl Bfcrt232Pt3Dc {
     #[inline(always)]
@@ -1963,13 +1963,13 @@ impl From<Bfcrt232Pt3Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt233Pt2Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT2_AC_0 = 0x0,
+    Pt2Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT2_AC_1 = 0x01,
+    Pt2Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT2_AC_2 = 0x02,
+    Pt2Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT2_AC_3 = 0x03,
+    Pt2Ac3 = 0x03,
 }
 impl Bfcrt233Pt2Ac {
     #[inline(always)]
@@ -1998,13 +1998,13 @@ impl From<Bfcrt233Pt2Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt233Pt2Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT2_BC_0 = 0x0,
+    Pt2Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT2_BC_1 = 0x01,
+    Pt2Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT2_BC_2 = 0x02,
+    Pt2Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT2_BC_3 = 0x03,
+    Pt2Bc3 = 0x03,
 }
 impl Bfcrt233Pt2Bc {
     #[inline(always)]
@@ -2033,13 +2033,13 @@ impl From<Bfcrt233Pt2Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt233Pt2Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    PT2_CC_0 = 0x0,
+    Pt2Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    PT2_CC_1 = 0x01,
+    Pt2Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    PT2_CC_2 = 0x02,
+    Pt2Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    PT2_CC_3 = 0x03,
+    Pt2Cc3 = 0x03,
 }
 impl Bfcrt233Pt2Cc {
     #[inline(always)]
@@ -2068,13 +2068,13 @@ impl From<Bfcrt233Pt2Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt233Pt2Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT2_DC_0 = 0x0,
+    Pt2Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT2_DC_1 = 0x01,
+    Pt2Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT2_DC_2 = 0x02,
+    Pt2Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT2_DC_3 = 0x03,
+    Pt2Dc3 = 0x03,
 }
 impl Bfcrt233Pt2Dc {
     #[inline(always)]
@@ -2103,13 +2103,13 @@ impl From<Bfcrt233Pt2Dc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt233Pt3Ac {
     #[doc = "Force the A input in this product term to a logical zero."]
-    PT3_AC_0 = 0x0,
+    Pt3Ac0 = 0x0,
     #[doc = "Pass the A input in this product term."]
-    PT3_AC_1 = 0x01,
+    Pt3Ac1 = 0x01,
     #[doc = "Complement the A input in this product term."]
-    PT3_AC_2 = 0x02,
+    Pt3Ac2 = 0x02,
     #[doc = "Force the A input in this product term to a logical one."]
-    PT3_AC_3 = 0x03,
+    Pt3Ac3 = 0x03,
 }
 impl Bfcrt233Pt3Ac {
     #[inline(always)]
@@ -2138,13 +2138,13 @@ impl From<Bfcrt233Pt3Ac> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt233Pt3Bc {
     #[doc = "Force the B input in this product term to a logical zero."]
-    PT3_BC_0 = 0x0,
+    Pt3Bc0 = 0x0,
     #[doc = "Pass the B input in this product term."]
-    PT3_BC_1 = 0x01,
+    Pt3Bc1 = 0x01,
     #[doc = "Complement the B input in this product term."]
-    PT3_BC_2 = 0x02,
+    Pt3Bc2 = 0x02,
     #[doc = "Force the B input in this product term to a logical one."]
-    PT3_BC_3 = 0x03,
+    Pt3Bc3 = 0x03,
 }
 impl Bfcrt233Pt3Bc {
     #[inline(always)]
@@ -2173,13 +2173,13 @@ impl From<Bfcrt233Pt3Bc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt233Pt3Cc {
     #[doc = "Force the C input in this product term to a logical zero."]
-    PT3_CC_0 = 0x0,
+    Pt3Cc0 = 0x0,
     #[doc = "Pass the C input in this product term."]
-    PT3_CC_1 = 0x01,
+    Pt3Cc1 = 0x01,
     #[doc = "Complement the C input in this product term."]
-    PT3_CC_2 = 0x02,
+    Pt3Cc2 = 0x02,
     #[doc = "Force the C input in this product term to a logical one."]
-    PT3_CC_3 = 0x03,
+    Pt3Cc3 = 0x03,
 }
 impl Bfcrt233Pt3Cc {
     #[inline(always)]
@@ -2208,13 +2208,13 @@ impl From<Bfcrt233Pt3Cc> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Bfcrt233Pt3Dc {
     #[doc = "Force the D input in this product term to a logical zero."]
-    PT3_DC_0 = 0x0,
+    Pt3Dc0 = 0x0,
     #[doc = "Pass the D input in this product term."]
-    PT3_DC_1 = 0x01,
+    Pt3Dc1 = 0x01,
     #[doc = "Complement the D input in this product term."]
-    PT3_DC_2 = 0x02,
+    Pt3Dc2 = 0x02,
     #[doc = "Force the D input in this product term to a logical one."]
-    PT3_DC_3 = 0x03,
+    Pt3Dc3 = 0x03,
 }
 impl Bfcrt233Pt3Dc {
     #[inline(always)]

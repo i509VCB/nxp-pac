@@ -1,11 +1,11 @@
 #[doc = "USB."]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Usbhs1_usbc {
+pub struct Usbhs1Usbc {
     ptr: *mut u8,
 }
-unsafe impl Send for Usbhs1_usbc {}
-unsafe impl Sync for Usbhs1_usbc {}
-impl Usbhs1_usbc {
+unsafe impl Send for Usbhs1Usbc {}
+unsafe impl Sync for Usbhs1Usbc {}
+impl Usbhs1Usbc {
     #[inline(always)]
     pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
         Self { ptr: ptr as _ }

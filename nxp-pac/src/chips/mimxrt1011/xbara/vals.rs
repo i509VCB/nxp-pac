@@ -3,9 +3,9 @@
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Den0 {
     #[doc = "DMA disabled."]
-    DEN0_0 = 0x0,
+    Den00 = 0x0,
     #[doc = "DMA enabled."]
-    DEN0_1 = 0x01,
+    Den01 = 0x01,
 }
 impl Den0 {
     #[inline(always)]
@@ -34,9 +34,9 @@ impl From<Den0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Den1 {
     #[doc = "DMA disabled."]
-    DEN1_0 = 0x0,
+    Den10 = 0x0,
     #[doc = "DMA enabled."]
-    DEN1_1 = 0x01,
+    Den11 = 0x01,
 }
 impl Den1 {
     #[inline(always)]
@@ -65,9 +65,9 @@ impl From<Den1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Den2 {
     #[doc = "DMA disabled."]
-    DEN2_0 = 0x0,
+    Den20 = 0x0,
     #[doc = "DMA enabled."]
-    DEN2_1 = 0x01,
+    Den21 = 0x01,
 }
 impl Den2 {
     #[inline(always)]
@@ -96,9 +96,9 @@ impl From<Den2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Den3 {
     #[doc = "DMA disabled."]
-    DEN3_0 = 0x0,
+    Den30 = 0x0,
     #[doc = "DMA enabled."]
-    DEN3_1 = 0x01,
+    Den31 = 0x01,
 }
 impl Den3 {
     #[inline(always)]
@@ -127,13 +127,13 @@ impl From<Den3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Edge0 {
     #[doc = "STS0 never asserts."]
-    EDGE0_0 = 0x0,
+    Edge00 = 0x0,
     #[doc = "STS0 asserts on rising edges of XBAR_OUT0."]
-    EDGE0_1 = 0x01,
+    Edge01 = 0x01,
     #[doc = "STS0 asserts on falling edges of XBAR_OUT0."]
-    EDGE0_2 = 0x02,
+    Edge02 = 0x02,
     #[doc = "STS0 asserts on rising and falling edges of XBAR_OUT0."]
-    EDGE0_3 = 0x03,
+    Edge03 = 0x03,
 }
 impl Edge0 {
     #[inline(always)]
@@ -162,13 +162,13 @@ impl From<Edge0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Edge1 {
     #[doc = "STS1 never asserts."]
-    EDGE1_0 = 0x0,
+    Edge10 = 0x0,
     #[doc = "STS1 asserts on rising edges of XBAR_OUT1."]
-    EDGE1_1 = 0x01,
+    Edge11 = 0x01,
     #[doc = "STS1 asserts on falling edges of XBAR_OUT1."]
-    EDGE1_2 = 0x02,
+    Edge12 = 0x02,
     #[doc = "STS1 asserts on rising and falling edges of XBAR_OUT1."]
-    EDGE1_3 = 0x03,
+    Edge13 = 0x03,
 }
 impl Edge1 {
     #[inline(always)]
@@ -197,13 +197,13 @@ impl From<Edge1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Edge2 {
     #[doc = "STS2 never asserts."]
-    EDGE2_0 = 0x0,
+    Edge20 = 0x0,
     #[doc = "STS2 asserts on rising edges of XBAR_OUT2."]
-    EDGE2_1 = 0x01,
+    Edge21 = 0x01,
     #[doc = "STS2 asserts on falling edges of XBAR_OUT2."]
-    EDGE2_2 = 0x02,
+    Edge22 = 0x02,
     #[doc = "STS2 asserts on rising and falling edges of XBAR_OUT2."]
-    EDGE2_3 = 0x03,
+    Edge23 = 0x03,
 }
 impl Edge2 {
     #[inline(always)]
@@ -232,13 +232,13 @@ impl From<Edge2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Edge3 {
     #[doc = "STS3 never asserts."]
-    EDGE3_0 = 0x0,
+    Edge30 = 0x0,
     #[doc = "STS3 asserts on rising edges of XBAR_OUT3."]
-    EDGE3_1 = 0x01,
+    Edge31 = 0x01,
     #[doc = "STS3 asserts on falling edges of XBAR_OUT3."]
-    EDGE3_2 = 0x02,
+    Edge32 = 0x02,
     #[doc = "STS3 asserts on rising and falling edges of XBAR_OUT3."]
-    EDGE3_3 = 0x03,
+    Edge33 = 0x03,
 }
 impl Edge3 {
     #[inline(always)]
@@ -267,9 +267,9 @@ impl From<Edge3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ien0 {
     #[doc = "Interrupt disabled."]
-    IEN0_0 = 0x0,
+    Ien00 = 0x0,
     #[doc = "Interrupt enabled."]
-    IEN0_1 = 0x01,
+    Ien01 = 0x01,
 }
 impl Ien0 {
     #[inline(always)]
@@ -298,9 +298,9 @@ impl From<Ien0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ien1 {
     #[doc = "Interrupt disabled."]
-    IEN1_0 = 0x0,
+    Ien10 = 0x0,
     #[doc = "Interrupt enabled."]
-    IEN1_1 = 0x01,
+    Ien11 = 0x01,
 }
 impl Ien1 {
     #[inline(always)]
@@ -329,9 +329,9 @@ impl From<Ien1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ien2 {
     #[doc = "Interrupt disabled."]
-    IEN2_0 = 0x0,
+    Ien20 = 0x0,
     #[doc = "Interrupt enabled."]
-    IEN2_1 = 0x01,
+    Ien21 = 0x01,
 }
 impl Ien2 {
     #[inline(always)]
@@ -360,9 +360,9 @@ impl From<Ien2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Ien3 {
     #[doc = "Interrupt disabled."]
-    IEN3_0 = 0x0,
+    Ien30 = 0x0,
     #[doc = "Interrupt enabled."]
-    IEN3_1 = 0x01,
+    Ien31 = 0x01,
 }
 impl Ien3 {
     #[inline(always)]
@@ -391,9 +391,9 @@ impl From<Ien3> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sts0 {
     #[doc = "Active edge not yet detected on XBAR_OUT0."]
-    STS0_0 = 0x0,
+    Sts00 = 0x0,
     #[doc = "Active edge detected on XBAR_OUT0."]
-    STS0_1 = 0x01,
+    Sts01 = 0x01,
 }
 impl Sts0 {
     #[inline(always)]
@@ -422,9 +422,9 @@ impl From<Sts0> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sts1 {
     #[doc = "Active edge not yet detected on XBAR_OUT1."]
-    STS1_0 = 0x0,
+    Sts10 = 0x0,
     #[doc = "Active edge detected on XBAR_OUT1."]
-    STS1_1 = 0x01,
+    Sts11 = 0x01,
 }
 impl Sts1 {
     #[inline(always)]
@@ -453,9 +453,9 @@ impl From<Sts1> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sts2 {
     #[doc = "Active edge not yet detected on XBAR_OUT2."]
-    STS2_0 = 0x0,
+    Sts20 = 0x0,
     #[doc = "Active edge detected on XBAR_OUT2."]
-    STS2_1 = 0x01,
+    Sts21 = 0x01,
 }
 impl Sts2 {
     #[inline(always)]
@@ -484,9 +484,9 @@ impl From<Sts2> for u8 {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Sts3 {
     #[doc = "Active edge not yet detected on XBAR_OUT3."]
-    STS3_0 = 0x0,
+    Sts30 = 0x0,
     #[doc = "Active edge detected on XBAR_OUT3."]
-    STS3_1 = 0x01,
+    Sts31 = 0x01,
 }
 impl Sts3 {
     #[inline(always)]
