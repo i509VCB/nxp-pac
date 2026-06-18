@@ -1,0 +1,660 @@
+block/Usbnc:
+  description: USBNC.
+  items:
+  - name: CTRL1
+    description: USB Control 1.
+    byte_offset: 0
+    fieldset: CTRL1
+  - name: CTRL2
+    description: USB Control 2.
+    byte_offset: 4
+    fieldset: CTRL2
+  - name: HSIC_DLL_CFG4
+    description: HSIC DLL Configure Register 4.
+    byte_offset: 44
+    fieldset: HSIC_DLL_CFG4
+  - name: LPM_CSR0
+    description: USB LPM Control and Status 0.
+    byte_offset: 160
+    fieldset: LPM_CSR0
+  - name: LPM_CSR1
+    description: USB LPM Control and Status 1.
+    byte_offset: 164
+    fieldset: LPM_CSR1
+  - name: LPM_CSR2
+    description: USB LPM Control and Status 2.
+    byte_offset: 168
+    fieldset: LPM_CSR2
+  - name: CLK_RECOVER_CTRL
+    description: USB Clock Recovery Control.
+    byte_offset: 512
+    bit_size: 8
+    fieldset: CLK_RECOVER_CTRL
+  - name: CLK_RECOVER_IRC_EN
+    description: FIRC Oscillator Enable.
+    byte_offset: 516
+    bit_size: 8
+    fieldset: CLK_RECOVER_IRC_EN
+  - name: CLK_RECOVER_INT_EN
+    description: Clock Recovery Combined Interrupt Enable.
+    byte_offset: 532
+    bit_size: 8
+    fieldset: CLK_RECOVER_INT_EN
+  - name: CLK_RECOVER_INT_STATUS
+    description: Clock Recovery Separated Interrupt Status.
+    byte_offset: 540
+    bit_size: 8
+    fieldset: CLK_RECOVER_INT_STATUS
+fieldset/CLK_RECOVER_CTRL:
+  description: USB Clock Recovery Control.
+  bit_size: 8
+  fields:
+  - name: TRIM_INIT_VAL_SEL
+    description: Selects the source for the initial FIRC192M trim fine value used after a reset.
+    bit_offset: 3
+    bit_size: 1
+    enum: TRIM_INIT_VAL_SEL
+  - name: RESTART_IFRTRIM_EN
+    description: Restart from IFR Trim Value.
+    bit_offset: 5
+    bit_size: 1
+    enum: RESTART_IFRTRIM_EN
+  - name: RESET_RESUME_ROUGH_EN
+    description: Reset or Resume to Rough Phase Enable.
+    bit_offset: 6
+    bit_size: 1
+    enum: RESET_RESUME_ROUGH_EN
+  - name: CLOCK_RECOVER_EN
+    description: Crystal-Less USB Enable.
+    bit_offset: 7
+    bit_size: 1
+    enum: CLOCK_RECOVER_EN
+fieldset/CLK_RECOVER_INT_EN:
+  description: Clock Recovery Combined Interrupt Enable.
+  bit_size: 8
+  fields:
+  - name: OVF_ERROR_EN
+    description: Overflow error interrupt enable.
+    bit_offset: 4
+    bit_size: 1
+    enum: OVF_ERROR_EN
+fieldset/CLK_RECOVER_INT_STATUS:
+  description: Clock Recovery Separated Interrupt Status.
+  bit_size: 8
+  fields:
+  - name: OVF_ERROR
+    description: Overflow Error Interrupt Status Flag.
+    bit_offset: 4
+    bit_size: 1
+    enum: OVF_ERROR
+fieldset/CLK_RECOVER_IRC_EN:
+  description: FIRC Oscillator Enable.
+  bit_size: 8
+  fields:
+  - name: IRC_EN
+    description: Fast IRC enable.
+    bit_offset: 1
+    bit_size: 1
+    enum: IRC_EN
+fieldset/CTRL1:
+  description: USB Control 1.
+  fields:
+  - name: OVER_CUR_DIS
+    description: Overcurrent Disable.
+    bit_offset: 7
+    bit_size: 1
+    enum: OVER_CUR_DIS
+  - name: OVER_CUR_POL
+    description: Overcurrent Polarity.
+    bit_offset: 8
+    bit_size: 1
+    enum: OVER_CUR_POL
+  - name: PWR_POL
+    description: Power Polarity.
+    bit_offset: 9
+    bit_size: 1
+    enum: PWR_POL
+  - name: WIE
+    description: Wake-Up Interrupt Enable.
+    bit_offset: 10
+    bit_size: 1
+    enum: WIE
+  - name: WKUP_SW_EN
+    description: Software Wake-Up Enable.
+    bit_offset: 14
+    bit_size: 1
+    enum: WKUP_SW_EN
+  - name: WKUP_SW
+    description: Software Wake-Up.
+    bit_offset: 15
+    bit_size: 1
+    enum: WKUP_SW
+  - name: WKUP_ID_EN
+    description: Wake-Up After ID Change Enable.
+    bit_offset: 16
+    bit_size: 1
+    enum: WKUP_ID_EN
+  - name: WKUP_VBUS_EN
+    description: Wake-Up After VBUS Change Enable.
+    bit_offset: 17
+    bit_size: 1
+    enum: WKUP_VBUS_EN
+  - name: REMOTE_WAKEUP_EN
+    description: Remote Wake-Up Enable.
+    bit_offset: 28
+    bit_size: 1
+    enum: REMOTE_WAKEUP_EN
+  - name: WKUP_DPDM_EN
+    description: Wake-Up After DP or DM Change Enable.
+    bit_offset: 29
+    bit_size: 1
+    enum: WKUP_DPDM_EN
+  - name: WIR
+    description: Wake-Up Interrupt Request.
+    bit_offset: 31
+    bit_size: 1
+    enum: WIR
+fieldset/CTRL2:
+  description: USB Control 2.
+  fields:
+  - name: VBUS_SOURCE_SEL
+    description: VBUS Source Select.
+    bit_offset: 0
+    bit_size: 2
+    enum: VBUS_SOURCE_SEL
+  - name: UTMI_CLK_VLD
+    description: UTMI Clock Valid Flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: UTMI_CLK_VLD
+fieldset/HSIC_DLL_CFG4:
+  description: HSIC DLL Configure Register 4.
+  fields:
+  - name: LPM_EN_ENDP_CHK
+    description: LPM EXT token ENDP check enable.
+    bit_offset: 30
+    bit_size: 1
+    enum: LPM_EN_ENDP_CHK
+  - name: FS_ISO_B2B_FIXEN
+    description: FS Isochronous back to back transfer enable.
+    bit_offset: 31
+    bit_size: 1
+    enum: FS_ISO_B2B_FIXEN
+fieldset/LPM_CSR0:
+  description: USB LPM Control and Status 0.
+  fields:
+  - name: LPM_EN
+    description: Link Power Management Feature Enable.
+    bit_offset: 0
+    bit_size: 1
+    enum: LPM_EN
+  - name: LPM_ERRATA_EN
+    description: Link Power Management ECN Errata Feature Enable.
+    bit_offset: 1
+    bit_size: 1
+    enum: LPM_ERRATA_EN
+  - name: LPM_AUTO_PHCD
+    description: Auto Low-Power Mode.
+    bit_offset: 3
+    bit_size: 1
+    enum: LPM_AUTO_PHCD
+  - name: LPM_RESUMEOK
+    description: LPM Resume OK.
+    bit_offset: 30
+    bit_size: 1
+    enum: LPM_RESUMEOK
+  - name: LPM_L1_ACTIVE
+    description: LPM Active.
+    bit_offset: 31
+    bit_size: 1
+    enum: LPM_L1_ACTIVE
+fieldset/LPM_CSR1:
+  description: USB LPM Control and Status 1.
+  fields:
+  - name: LPM_DEV_BESLTHRES
+    description: Device Required Host Initiated Resume Duration.
+    bit_offset: 0
+    bit_size: 4
+    enum: LPM_DEV_BESLTHRES
+  - name: LPM_DEV_RES
+    description: LPM Device Response.
+    bit_offset: 4
+    bit_size: 1
+    enum: LPM_DEV_RES
+  - name: LPM_DEV_DP
+    description: LPM Device Data Pending.
+    bit_offset: 5
+    bit_size: 1
+    enum: LPM_DEV_DP
+  - name: LPM_DEV_RSPSTS
+    description: LPM Device Response Status.
+    bit_offset: 20
+    bit_size: 2
+    enum: LPM_DEV_RSPSTS
+  - name: LPM_DEV_RWKENRCVD
+    description: LPM Device Received bRemoteWake.
+    bit_offset: 23
+    bit_size: 1
+    enum: LPM_DEV_RWKENRCVD
+  - name: LPM_DEV_LNKSTRCVD
+    description: LPM Device Received bLinkState.
+    bit_offset: 24
+    bit_size: 4
+    enum: LPM_DEV_LNKSTRCVD
+  - name: LPM_DEV_BESLRCVD
+    description: LPM Device Received BESL.
+    bit_offset: 28
+    bit_size: 4
+fieldset/LPM_CSR2:
+  description: USB LPM Control and Status 2.
+  fields:
+  - name: LPM_HST_SEND
+    description: LPM Host Send Extension Token.
+    bit_offset: 0
+    bit_size: 1
+    enum: LPM_HST_SEND
+  - name: LPM_HST_DEVADD
+    description: LPM Host Extension Token's Device Address.
+    bit_offset: 1
+    bit_size: 7
+  - name: LPM_HST_BESL
+    description: LPM Host Extension Token's BESL or HIRD.
+    bit_offset: 8
+    bit_size: 4
+  - name: LPM_HST_RWKEN
+    description: LPM Host Extension Token's bRemoteWake.
+    bit_offset: 12
+    bit_size: 1
+    enum: LPM_HST_RWKEN
+  - name: LPM_HST_STSRCVD
+    description: LPM Host Response Status from the Device.
+    bit_offset: 28
+    bit_size: 3
+    enum: LPM_HST_STSRCVD
+enum/CLOCK_RECOVER_EN:
+  bit_size: 1
+  variants:
+  - name: DIS_CLK_RECOVER
+    description: Disable.
+    value: 0
+  - name: EN_CLK_RECOVER
+    description: Enable.
+    value: 1
+enum/FS_ISO_B2B_FIXEN:
+  bit_size: 1
+  variants:
+  - name: FS_ISO_B2B_FIXEN_0
+    description: Disabled.
+    value: 0
+  - name: FS_ISO_B2B_FIXEN_1
+    description: Enabled.
+    value: 1
+enum/IRC_EN:
+  bit_size: 1
+  variants:
+  - name: DIS_IRC
+    description: Disable.
+    value: 0
+  - name: EN_IRC
+    description: Enable.
+    value: 1
+enum/LPM_AUTO_PHCD:
+  bit_size: 1
+  variants:
+  - name: LPM_AUTO_PHCD0
+    description: Disable.
+    value: 0
+  - name: LPM_AUTO_PHCD1
+    description: Enable.
+    value: 1
+enum/LPM_DEV_BESLTHRES:
+  bit_size: 4
+  variants:
+  - name: LPM_DEV_BESLTHRES0
+    description: 75 us, if LPM_ERRATA_EN = 1; 50 us, if LPM_ERRATA_EN = 0.
+    value: 0
+  - name: LPM_DEV_BESLTHRES1
+    description: 100 us, if LPM_ERRATA_EN = 1; 125 us, if LPM_ERRATA_EN = 0.
+    value: 1
+  - name: LPM_DEV_BESLTHRES2
+    description: 150 us, if LPM_ERRATA_EN = 1; 200 us, if LPM_ERRATA_EN = 0.
+    value: 2
+  - name: LPM_DEV_BESLTHRES3
+    description: 250 us, if LPM_ERRATA_EN = 1; 275 us, if LPM_ERRATA_EN = 0.
+    value: 3
+  - name: LPM_DEV_BESLTHRES4
+    description: 350 us, if LPM_ERRATA_EN = 1; 350 us, if LPM_ERRATA_EN = 0.
+    value: 4
+  - name: LPM_DEV_BESLTHRES5
+    description: 450 us, if LPM_ERRATA_EN = 1; 425 us, if LPM_ERRATA_EN = 0.
+    value: 5
+  - name: LPM_DEV_BESLTHRES6
+    description: 950 us, if LPM_ERRATA_EN = 1; 500 us, if LPM_ERRATA_EN = 0.
+    value: 6
+  - name: LPM_DEV_BESLTHRES7
+    description: 1950 us, if LPM_ERRATA_EN = 1; 575 us, if LPM_ERRATA_EN = 0.
+    value: 7
+  - name: LPM_DEV_BESLTHRES8
+    description: 2950 us, if LPM_ERRATA_EN = 1; 650 us, if LPM_ERRATA_EN = 0.
+    value: 8
+  - name: LPM_DEV_BESLTHRES9
+    description: 3950 us, if LPM_ERRATA_EN = 1; 725 us, if LPM_ERRATA_EN = 0.
+    value: 9
+  - name: LPM_DEV_BESLTHRESA
+    description: 4950 us, if LPM_ERRATA_EN = 1; 800 us, if LPM_ERRATA_EN = 0.
+    value: 10
+  - name: LPM_DEV_BESLTHRESB
+    description: 5950 us, if LPM_ERRATA_EN = 1; 875 us, if LPM_ERRATA_EN = 0.
+    value: 11
+  - name: LPM_DEV_BESLTHRESC
+    description: 6950 us, if LPM_ERRATA_EN = 1; 950 us, if LPM_ERRATA_EN = 0.
+    value: 12
+  - name: LPM_DEV_BESLTHRESD
+    description: 7950 us, if LPM_ERRATA_EN = 1; 1025 us, if LPM_ERRATA_EN = 0.
+    value: 13
+  - name: LPM_DEV_BESLTHRESE
+    description: 8950 us, if LPM_ERRATA_EN = 1; 1100 us, if LPM_ERRATA_EN = 0.
+    value: 14
+  - name: LPM_DEV_BESLTHRESF
+    description: 9950 us, if LPM_ERRATA_EN = 1; 1175 us, if LPM_ERRATA_EN = 0.
+    value: 15
+enum/LPM_DEV_DP:
+  bit_size: 1
+  variants:
+  - name: LPM_DEV_DP0
+    description: Not pending.
+    value: 0
+  - name: LPM_DEV_DP1
+    description: Pending.
+    value: 1
+enum/LPM_DEV_LNKSTRCVD:
+  bit_size: 4
+  variants:
+  - name: LPM_DEV_LNKSTRCVD1
+    description: L1 (Sleep mode).
+    value: 1
+enum/LPM_DEV_RES:
+  bit_size: 1
+  variants:
+  - name: LPM_DEV_RES0
+    description: Fourth condition not needed.
+    value: 0
+  - name: LPM_DEV_RES1
+    description: Fourth condition needed.
+    value: 1
+enum/LPM_DEV_RSPSTS:
+  bit_size: 2
+  variants:
+  - name: LPM_DEV_RSPSTS0
+    description: Invalid.
+    value: 0
+  - name: LPM_DEV_RSPSTS1
+    description: ACK.
+    value: 1
+  - name: LPM_DEV_RSPSTS2
+    description: NYET.
+    value: 2
+  - name: LPM_DEV_RSPSTS3
+    description: STALL.
+    value: 3
+enum/LPM_DEV_RWKENRCVD:
+  bit_size: 1
+  variants:
+  - name: LPM_DEV_RWKENRCVD0
+    description: '0.'
+    value: 0
+  - name: LPM_DEV_RWKENRCVD1
+    description: '1.'
+    value: 1
+enum/LPM_EN:
+  bit_size: 1
+  variants:
+  - name: LPM_EN0
+    description: Disable.
+    value: 0
+  - name: LPM_EN1
+    description: Enable.
+    value: 1
+enum/LPM_EN_ENDP_CHK:
+  bit_size: 1
+  variants:
+  - name: LPM_EN_ENDP_CHK_0
+    description: Disabled.
+    value: 0
+  - name: LPM_EN_ENDP_CHK_1
+    description: Enabled.
+    value: 1
+enum/LPM_ERRATA_EN:
+  bit_size: 1
+  variants:
+  - name: LPM_ERRATA_EN0
+    description: Disable.
+    value: 0
+  - name: LPM_ERRATA_EN1
+    description: Enable.
+    value: 1
+enum/LPM_HST_RWKEN:
+  bit_size: 1
+  variants:
+  - name: LPM_HST_RWKEN0
+    description: Disable.
+    value: 0
+  - name: LPM_HST_RWKEN1
+    description: Enable.
+    value: 1
+enum/LPM_HST_SEND:
+  bit_size: 1
+  variants:
+  - name: LPM_HST_SEND0
+    description: LPM transaction did not happen or is complete.
+    value: 0
+  - name: LPM_HST_SEND1
+    description: LPM transaction is ongoing.
+    value: 1
+enum/LPM_HST_STSRCVD:
+  bit_size: 3
+  variants:
+  - name: LPM_HST_STSRCVD0
+    description: Invalid.
+    value: 0
+  - name: LPM_HST_STSRCVD1
+    description: ACK.
+    value: 1
+  - name: LPM_HST_STSRCVD2
+    description: NYET.
+    value: 2
+  - name: LPM_HST_STSRCVD3
+    description: STALL.
+    value: 3
+  - name: LPM_HST_STSRCVD4
+    description: Timeout.
+    value: 4
+  - name: LPM_HST_STSRCVD5
+    description: ERR.
+    value: 5
+enum/LPM_L1_ACTIVE:
+  bit_size: 1
+  variants:
+  - name: LPM_L1_ACTIVE0
+    description: Inactive.
+    value: 0
+  - name: LPM_L1_ACTIVE1
+    description: Active.
+    value: 1
+enum/LPM_RESUMEOK:
+  bit_size: 1
+  variants:
+  - name: LPM_RESUMEOK0
+    description: Cannot resume.
+    value: 0
+  - name: LPM_RESUMEOK1
+    description: Can resume.
+    value: 1
+enum/OVER_CUR_DIS:
+  bit_size: 1
+  variants:
+  - name: OVRCRNT_DETCT_EN
+    description: Enable.
+    value: 0
+  - name: OVRCRNT_DETCT_DIS
+    description: Disable.
+    value: 1
+enum/OVER_CUR_POL:
+  bit_size: 1
+  variants:
+  - name: ACTIVE_HI_OVRCRNT
+    description: Active high.
+    value: 0
+  - name: ACTIVE_LOW_OVRCRNT
+    description: Active low.
+    value: 1
+enum/OVF_ERROR:
+  bit_size: 1
+  variants:
+  - name: INT_NO
+    description: Interrupt did not occur.
+    value: 0
+  - name: INT_YES
+    description: Unmasked interrupt occurred.
+    value: 1
+enum/OVF_ERROR_EN:
+  bit_size: 1
+  variants:
+  - name: MASK_OVF_ERR_INT
+    description: The interrupt is masked.
+    value: 0
+  - name: EN_OVF_ERR_INT
+    description: The interrupt is enabled.
+    value: 1
+enum/PWR_POL:
+  bit_size: 1
+  variants:
+  - name: ACTIVE_LO_PMIC
+    description: Active low.
+    value: 0
+  - name: ACTIVE_HI_PMIC
+    description: Active high.
+    value: 1
+enum/REMOTE_WAKEUP_EN:
+  bit_size: 1
+  variants:
+  - name: REMOTE_WKUP_DIS
+    description: Disable.
+    value: 0
+  - name: REMOTE_WKUP_EN
+    description: Enable.
+    value: 1
+enum/RESET_RESUME_ROUGH_EN:
+  bit_size: 1
+  variants:
+  - name: KEEP_TRIM_FINE_ON_RESET
+    description: Always works in tracking phase after the first time rough phase, to track transition.
+    value: 0
+  - name: USE_IFR_TRIM_FINE_ON_RESET
+    description: Go back to rough stage whenever a bus reset or bus resume occurs.
+    value: 1
+enum/RESTART_IFRTRIM_EN:
+  bit_size: 1
+  variants:
+  - name: LOAD_TRIM_FINE_MID
+    description: Trim fine adjustment always works based on the previous updated trim fine value.
+    value: 0
+  - name: LOAD_TRIM_FINE_IFR
+    description: Trim fine restarts from the IFR trim value whenever you detect bus_reset or bus_resume or deassert module enable.
+    value: 1
+enum/TRIM_INIT_VAL_SEL:
+  bit_size: 1
+  variants:
+  - name: INIT_TRIM_FINE_MID
+    description: Mid-scale.
+    value: 0
+  - name: INIT_TRIM_FINE_IFR
+    description: IFR.
+    value: 1
+enum/UTMI_CLK_VLD:
+  bit_size: 1
+  variants:
+  - name: NOTVALID
+    description: Not valid.
+    value: 0
+  - name: VALID
+    description: Valid.
+    value: 1
+enum/VBUS_SOURCE_SEL:
+  bit_size: 2
+  variants:
+  - name: VBUS_VALID
+    description: vbus_valid.
+    value: 0
+  - name: SESS_VALID_1
+    description: sess_valid.
+    value: 1
+  - name: SESS_VALID_2
+    description: sess_valid.
+    value: 2
+  - name: SESS_VALID_3
+    description: sess_valid.
+    value: 3
+enum/WIE:
+  bit_size: 1
+  variants:
+  - name: INT_DIS
+    description: Disable.
+    value: 0
+  - name: INT_EN
+    description: Enable.
+    value: 1
+enum/WIR:
+  bit_size: 1
+  variants:
+  - name: NO_WKUP_REQ
+    description: Not received.
+    value: 0
+  - name: WKUP_REQ
+    description: Received.
+    value: 1
+enum/WKUP_DPDM_EN:
+  bit_size: 1
+  variants:
+  - name: DPDM_WKUP_DIS
+    description: Disable only when VBUS is invalid.
+    value: 0
+  - name: DPDM_WKUP_EN
+    description: Enable (default).
+    value: 1
+enum/WKUP_ID_EN:
+  bit_size: 1
+  variants:
+  - name: WKUP_ID_DIS
+    description: Disable.
+    value: 0
+  - name: WKUP_ID_EN
+    description: Enable.
+    value: 1
+enum/WKUP_SW:
+  bit_size: 1
+  variants:
+  - name: INACTIVE
+    description: Inactive.
+    value: 0
+  - name: FORCE_WKUP
+    description: Force wake-up.
+    value: 1
+enum/WKUP_SW_EN:
+  bit_size: 1
+  variants:
+  - name: SW_WKUP_DIS
+    description: Disable.
+    value: 0
+  - name: SW_WKUP_EN
+    description: Enable.
+    value: 1
+enum/WKUP_VBUS_EN:
+  bit_size: 1
+  variants:
+  - name: WKUP_VBUS_DIS
+    description: Disable.
+    value: 0
+  - name: WKUP_VBUS_EN
+    description: Enable.
+    value: 1

@@ -1,0 +1,2966 @@
+block/Usbphy:
+  description: Universal Serial Bus 2.0 Integrated PHY.
+  items:
+  - name: PWD
+    description: Power Down.
+    byte_offset: 0
+    fieldset: PWD
+  - name: PWD_SET
+    description: Power Down.
+    byte_offset: 4
+    fieldset: PWD_SET
+  - name: PWD_CLR
+    description: Power Down.
+    byte_offset: 8
+    fieldset: PWD_CLR
+  - name: PWD_TOG
+    description: Power Down.
+    byte_offset: 12
+    fieldset: PWD_TOG
+  - name: TX
+    description: TX Control.
+    byte_offset: 16
+    fieldset: TX
+  - name: TX_SET
+    description: TX Control.
+    byte_offset: 20
+    fieldset: TX_SET
+  - name: TX_CLR
+    description: TX Control.
+    byte_offset: 24
+    fieldset: TX_CLR
+  - name: TX_TOG
+    description: TX Control.
+    byte_offset: 28
+    fieldset: TX_TOG
+  - name: RX
+    description: RX Control.
+    byte_offset: 32
+    fieldset: RX
+  - name: RX_SET
+    description: RX Control.
+    byte_offset: 36
+    fieldset: RX_SET
+  - name: RX_CLR
+    description: RX Control.
+    byte_offset: 40
+    fieldset: RX_CLR
+  - name: RX_TOG
+    description: RX Control.
+    byte_offset: 44
+    fieldset: RX_TOG
+  - name: CTRL
+    description: General Purpose Control.
+    byte_offset: 48
+    fieldset: CTRL
+  - name: CTRL_SET
+    description: General Purpose Control.
+    byte_offset: 52
+    fieldset: CTRL_SET
+  - name: CTRL_CLR
+    description: General Purpose Control.
+    byte_offset: 56
+    fieldset: CTRL_CLR
+  - name: CTRL_TOG
+    description: General Purpose Control.
+    byte_offset: 60
+    fieldset: CTRL_TOG
+  - name: STATUS
+    description: Status.
+    byte_offset: 64
+    fieldset: STATUS
+  - name: DEBUG0
+    description: Debug 0.
+    byte_offset: 80
+    fieldset: DEBUG0
+  - name: DEBUG0_SET
+    description: Debug 0.
+    byte_offset: 84
+    fieldset: DEBUG0_SET
+  - name: DEBUG0_CLR
+    description: Debug 0.
+    byte_offset: 88
+    fieldset: DEBUG0_CLR
+  - name: DEBUG0_TOG
+    description: Debug 0.
+    byte_offset: 92
+    fieldset: DEBUG0_TOG
+  - name: VERSION
+    description: Version.
+    byte_offset: 128
+    access: Read
+    fieldset: VERSION
+  - name: IP
+    description: IP Block.
+    byte_offset: 144
+    fieldset: IP
+  - name: IP_SET
+    description: IP Block.
+    byte_offset: 148
+    fieldset: IP_SET
+  - name: IP_CLR
+    description: IP Block.
+    byte_offset: 152
+    fieldset: IP_CLR
+  - name: IP_TOG
+    description: IP Block.
+    byte_offset: 156
+    fieldset: IP_TOG
+  - name: PLL_SIC
+    description: PLL SIC.
+    byte_offset: 160
+    fieldset: PLL_SIC
+  - name: PLL_SIC_SET
+    description: PLL SIC.
+    byte_offset: 164
+    fieldset: PLL_SIC_SET
+  - name: PLL_SIC_CLR
+    description: PLL SIC.
+    byte_offset: 168
+    fieldset: PLL_SIC_CLR
+  - name: PLL_SIC_TOG
+    description: PLL SIC.
+    byte_offset: 172
+    fieldset: PLL_SIC_TOG
+  - name: USB1_VBUS_DETECT
+    description: VBUS Detect.
+    byte_offset: 192
+    fieldset: USB1_VBUS_DETECT
+  - name: USB1_VBUS_DETECT_SET
+    description: VBUS Detect.
+    byte_offset: 196
+    fieldset: USB1_VBUS_DETECT_SET
+  - name: USB1_VBUS_DETECT_CLR
+    description: VBUS Detect.
+    byte_offset: 200
+    fieldset: USB1_VBUS_DETECT_CLR
+  - name: USB1_VBUS_DETECT_TOG
+    description: VBUS Detect.
+    byte_offset: 204
+    fieldset: USB1_VBUS_DETECT_TOG
+  - name: USB1_VBUS_DET_STAT
+    description: VBUS Detect Status.
+    byte_offset: 208
+    access: Read
+    fieldset: USB1_VBUS_DET_STAT
+  - name: USB1_VBUS_DET_STAT_SET
+    description: VBUS Detect Status.
+    byte_offset: 212
+    access: Read
+    fieldset: USB1_VBUS_DET_STAT_SET
+  - name: USB1_VBUS_DET_STAT_CLR
+    description: VBUS Detect Status.
+    byte_offset: 216
+    access: Read
+    fieldset: USB1_VBUS_DET_STAT_CLR
+  - name: USB1_VBUS_DET_STAT_TOG
+    description: VBUS Detect Status.
+    byte_offset: 220
+    access: Read
+    fieldset: USB1_VBUS_DET_STAT_TOG
+  - name: USB1_CHRG_DETECT
+    description: Charger Detect.
+    byte_offset: 224
+    fieldset: USB1_CHRG_DETECT
+  - name: USB1_CHRG_DETECT_SET
+    description: Charger Detect.
+    byte_offset: 228
+    fieldset: USB1_CHRG_DETECT_SET
+  - name: USB1_CHRG_DETECT_CLR
+    description: Charger Detect.
+    byte_offset: 232
+    fieldset: USB1_CHRG_DETECT_CLR
+  - name: USB1_CHRG_DETECT_TOG
+    description: Charger Detect.
+    byte_offset: 236
+    fieldset: USB1_CHRG_DETECT_TOG
+  - name: USB1_CHRG_DET_STAT
+    description: Charger Detect Status.
+    byte_offset: 240
+    access: Read
+    fieldset: USB1_CHRG_DET_STAT
+  - name: USB1_CHRG_DET_STAT_SET
+    description: Charger Detect Status.
+    byte_offset: 244
+    access: Read
+    fieldset: USB1_CHRG_DET_STAT_SET
+  - name: USB1_CHRG_DET_STAT_CLR
+    description: Charger Detect Status.
+    byte_offset: 248
+    access: Read
+    fieldset: USB1_CHRG_DET_STAT_CLR
+  - name: USB1_CHRG_DET_STAT_TOG
+    description: Charger Detect Status.
+    byte_offset: 252
+    access: Read
+    fieldset: USB1_CHRG_DET_STAT_TOG
+  - name: ANACTRL
+    description: Analog Control.
+    byte_offset: 256
+    fieldset: ANACTRL
+  - name: ANACTRL_SET
+    description: Analog Control.
+    byte_offset: 260
+    fieldset: ANACTRL_SET
+  - name: ANACTRL_CLR
+    description: Analog Control.
+    byte_offset: 264
+    fieldset: ANACTRL_CLR
+  - name: ANACTRL_TOG
+    description: Analog Control.
+    byte_offset: 268
+    fieldset: ANACTRL_TOG
+  - name: TRIM_OVERRIDE_EN
+    description: Trim.
+    byte_offset: 304
+    fieldset: TRIM_OVERRIDE_EN
+  - name: TRIM_OVERRIDE_EN_SET
+    description: Trim.
+    byte_offset: 308
+    fieldset: TRIM_OVERRIDE_EN_SET
+  - name: TRIM_OVERRIDE_EN_CLR
+    description: Trim.
+    byte_offset: 312
+    fieldset: TRIM_OVERRIDE_EN_CLR
+  - name: TRIM_OVERRIDE_EN_TOG
+    description: Trim.
+    byte_offset: 316
+    fieldset: TRIM_OVERRIDE_EN_TOG
+  - name: PFDA
+    description: PFD A.
+    byte_offset: 320
+    fieldset: PFDA
+  - name: PFDA_SET
+    description: PFD A.
+    byte_offset: 324
+    fieldset: PFDA_SET
+  - name: PFDA_CLR
+    description: PFD A.
+    byte_offset: 328
+    fieldset: PFDA_CLR
+  - name: PFDA_TOG
+    description: PFD A.
+    byte_offset: 332
+    fieldset: PFDA_TOG
+fieldset/ANACTRL:
+  description: Analog Control.
+  fields:
+  - name: LVI_EN
+    description: Internal Low Voltage Detector Enable.
+    bit_offset: 1
+    bit_size: 1
+    enum: LVI_EN
+  - name: PFD_CLK_SEL
+    description: PFD Clock Selection.
+    bit_offset: 2
+    bit_size: 2
+    enum: PFD_CLK_SEL
+  - name: DEV_PULLDOWN
+    description: Device Pulldown Enable.
+    bit_offset: 10
+    bit_size: 1
+    enum: DEV_PULLDOWN
+fieldset/ANACTRL_CLR:
+  description: Analog Control.
+  fields:
+  - name: LVI_EN
+    description: Internal Low Voltage Detector Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: PFD_CLK_SEL
+    description: PFD Clock Selection.
+    bit_offset: 2
+    bit_size: 2
+  - name: DEV_PULLDOWN
+    description: Device Pulldown Enable.
+    bit_offset: 10
+    bit_size: 1
+fieldset/ANACTRL_SET:
+  description: Analog Control.
+  fields:
+  - name: LVI_EN
+    description: Internal Low Voltage Detector Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: PFD_CLK_SEL
+    description: PFD Clock Selection.
+    bit_offset: 2
+    bit_size: 2
+  - name: DEV_PULLDOWN
+    description: Device Pulldown Enable.
+    bit_offset: 10
+    bit_size: 1
+fieldset/ANACTRL_TOG:
+  description: Analog Control.
+  fields:
+  - name: LVI_EN
+    description: Internal Low Voltage Detector Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: PFD_CLK_SEL
+    description: PFD Clock Selection.
+    bit_offset: 2
+    bit_size: 2
+  - name: DEV_PULLDOWN
+    description: Device Pulldown Enable.
+    bit_offset: 10
+    bit_size: 1
+fieldset/CTRL:
+  description: General Purpose Control.
+  fields:
+  - name: ENOTG_ID_CHG_IRQ
+    description: OTG ID Change Interrupt Enable.
+    bit_offset: 0
+    bit_size: 1
+    enum: ENOTG_ID_CHG_IRQ
+  - name: ENHOSTDISCONDETECT
+    description: Host Disconnect Detection Enable.
+    bit_offset: 1
+    bit_size: 1
+    enum: ENHOSTDISCONDETECT
+  - name: ENIRQHOSTDISCON
+    description: Enable Interrupt for Host Disconnect.
+    bit_offset: 2
+    bit_size: 1
+    enum: ENIRQHOSTDISCON
+  - name: HOSTDISCONDETECT_IRQ
+    description: Host Disconnect Detection Interrupt.
+    bit_offset: 3
+    bit_size: 1
+    enum: HOSTDISCONDETECT_IRQ
+  - name: ENDEVPLUGINDETECT
+    description: Enable Nonstandard Resistive Plugged-In Detection.
+    bit_offset: 4
+    bit_size: 1
+    enum: ENDEVPLUGINDETECT
+  - name: DEVPLUGIN_POLARITY
+    description: Device Plug-In Polarity.
+    bit_offset: 5
+    bit_size: 1
+    enum: DEVPLUGIN_POLARITY
+  - name: OTG_ID_CHG_IRQ
+    description: OTG ID Change Interrupt.
+    bit_offset: 6
+    bit_size: 1
+    enum: OTG_ID_CHG_IRQ
+  - name: ENOTGIDDETECT
+    description: Enable Internal OTG ID Detector.
+    bit_offset: 7
+    bit_size: 1
+    enum: ENOTGIDDETECT
+  - name: RESUMEIRQSTICKY
+    description: Resume Interrupt Sticky.
+    bit_offset: 8
+    bit_size: 1
+    enum: RESUMEIRQSTICKY
+  - name: ENIRQRESUMEDETECT
+    description: Resume Detection Interrupt Enable.
+    bit_offset: 9
+    bit_size: 1
+    enum: ENIRQRESUMEDETECT
+  - name: RESUME_IRQ
+    description: Resume Interrupt.
+    bit_offset: 10
+    bit_size: 1
+    enum: RESUME_IRQ
+  - name: ENIRQDEVPLUGIN
+    description: Enable Interrupt for Nonstandard Resistive Plugged-In Detection.
+    bit_offset: 11
+    bit_size: 1
+    enum: ENIRQDEVPLUGIN
+  - name: DEVPLUGIN_IRQ
+    description: Device Plug-In Interrupt.
+    bit_offset: 12
+    bit_size: 1
+  - name: DATA_ON_LRADC
+    description: APB Clock Switch Option.
+    bit_offset: 13
+    bit_size: 1
+  - name: ENUTMILEVEL2
+    description: UTMI Level 2 Enable.
+    bit_offset: 14
+    bit_size: 1
+    enum: ENUTMILEVEL2
+  - name: ENUTMILEVEL3
+    description: UTMI Level 3 Enable.
+    bit_offset: 15
+    bit_size: 1
+    enum: ENUTMILEVEL3
+  - name: ENIRQWAKEUP
+    description: Wake-Up Interrupt Enable.
+    bit_offset: 16
+    bit_size: 1
+    enum: ENIRQWAKEUP
+  - name: WAKEUP_IRQ
+    description: Wake-Up Interrupt.
+    bit_offset: 17
+    bit_size: 1
+  - name: AUTORESUME_EN
+    description: Autoresume Enable.
+    bit_offset: 18
+    bit_size: 1
+    enum: AUTORESUME_EN
+  - name: ENAUTOCLR_CLKGATE
+    description: Autoclear Clock Gate Enable.
+    bit_offset: 19
+    bit_size: 1
+    enum: ENAUTOCLR_CLKGATE
+  - name: ENAUTOCLR_PHY_PWD
+    description: PHY PWD Autoclear Enable.
+    bit_offset: 20
+    bit_size: 1
+    enum: ENAUTOCLR_PHY_PWD
+  - name: OTG_ID_VALUE
+    description: OTG ID Value.
+    bit_offset: 27
+    bit_size: 1
+    enum: OTG_ID_VALUE
+  - name: UTMI_SUSPENDM
+    description: UTMI Suspend.
+    bit_offset: 29
+    bit_size: 1
+    enum: UTMI_SUSPENDM
+  - name: CLKGATE
+    description: UTMI Clock Gate.
+    bit_offset: 30
+    bit_size: 1
+    enum: CLKGATE
+  - name: SFTRST
+    description: Software Reset.
+    bit_offset: 31
+    bit_size: 1
+    enum: SFTRST
+fieldset/CTRL_CLR:
+  description: General Purpose Control.
+  fields:
+  - name: ENOTG_ID_CHG_IRQ
+    description: OTG ID Change Interrupt Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: ENHOSTDISCONDETECT
+    description: Host Disconnect Detection Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: ENIRQHOSTDISCON
+    description: Enable Interrupt for Host Disconnect.
+    bit_offset: 2
+    bit_size: 1
+  - name: HOSTDISCONDETECT_IRQ
+    description: Host Disconnect Detection Interrupt.
+    bit_offset: 3
+    bit_size: 1
+  - name: ENDEVPLUGINDETECT
+    description: Enable Nonstandard Resistive Plugged-In Detection.
+    bit_offset: 4
+    bit_size: 1
+  - name: DEVPLUGIN_POLARITY
+    description: Device Plug-In Polarity.
+    bit_offset: 5
+    bit_size: 1
+  - name: OTG_ID_CHG_IRQ
+    description: OTG ID Change Interrupt.
+    bit_offset: 6
+    bit_size: 1
+  - name: ENOTGIDDETECT
+    description: Enable Internal OTG ID Detector.
+    bit_offset: 7
+    bit_size: 1
+  - name: RESUMEIRQSTICKY
+    description: Resume Interrupt Sticky.
+    bit_offset: 8
+    bit_size: 1
+  - name: ENIRQRESUMEDETECT
+    description: Resume Detection Interrupt Enable.
+    bit_offset: 9
+    bit_size: 1
+  - name: RESUME_IRQ
+    description: Resume Interrupt.
+    bit_offset: 10
+    bit_size: 1
+  - name: ENIRQDEVPLUGIN
+    description: Enable Interrupt for Nonstandard Resistive Plugged-In Detection.
+    bit_offset: 11
+    bit_size: 1
+  - name: DEVPLUGIN_IRQ
+    description: Device Plug-In Interrupt.
+    bit_offset: 12
+    bit_size: 1
+  - name: DATA_ON_LRADC
+    description: APB Clock Switch Option.
+    bit_offset: 13
+    bit_size: 1
+  - name: ENUTMILEVEL2
+    description: UTMI Level 2 Enable.
+    bit_offset: 14
+    bit_size: 1
+  - name: ENUTMILEVEL3
+    description: UTMI Level 3 Enable.
+    bit_offset: 15
+    bit_size: 1
+  - name: ENIRQWAKEUP
+    description: Wake-Up Interrupt Enable.
+    bit_offset: 16
+    bit_size: 1
+  - name: WAKEUP_IRQ
+    description: Wake-Up Interrupt.
+    bit_offset: 17
+    bit_size: 1
+  - name: AUTORESUME_EN
+    description: Autoresume Enable.
+    bit_offset: 18
+    bit_size: 1
+  - name: ENAUTOCLR_CLKGATE
+    description: Autoclear Clock Gate Enable.
+    bit_offset: 19
+    bit_size: 1
+  - name: ENAUTOCLR_PHY_PWD
+    description: PHY PWD Autoclear Enable.
+    bit_offset: 20
+    bit_size: 1
+  - name: OTG_ID_VALUE
+    description: OTG ID Value.
+    bit_offset: 27
+    bit_size: 1
+  - name: UTMI_SUSPENDM
+    description: UTMI Suspend.
+    bit_offset: 29
+    bit_size: 1
+  - name: CLKGATE
+    description: UTMI Clock Gate.
+    bit_offset: 30
+    bit_size: 1
+  - name: SFTRST
+    description: Software Reset.
+    bit_offset: 31
+    bit_size: 1
+fieldset/CTRL_SET:
+  description: General Purpose Control.
+  fields:
+  - name: ENOTG_ID_CHG_IRQ
+    description: OTG ID Change Interrupt Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: ENHOSTDISCONDETECT
+    description: Host Disconnect Detection Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: ENIRQHOSTDISCON
+    description: Enable Interrupt for Host Disconnect.
+    bit_offset: 2
+    bit_size: 1
+  - name: HOSTDISCONDETECT_IRQ
+    description: Host Disconnect Detection Interrupt.
+    bit_offset: 3
+    bit_size: 1
+  - name: ENDEVPLUGINDETECT
+    description: Enable Nonstandard Resistive Plugged-In Detection.
+    bit_offset: 4
+    bit_size: 1
+  - name: DEVPLUGIN_POLARITY
+    description: Device Plug-In Polarity.
+    bit_offset: 5
+    bit_size: 1
+  - name: OTG_ID_CHG_IRQ
+    description: OTG ID Change Interrupt.
+    bit_offset: 6
+    bit_size: 1
+  - name: ENOTGIDDETECT
+    description: Enable Internal OTG ID Detector.
+    bit_offset: 7
+    bit_size: 1
+  - name: RESUMEIRQSTICKY
+    description: Resume Interrupt Sticky.
+    bit_offset: 8
+    bit_size: 1
+  - name: ENIRQRESUMEDETECT
+    description: Resume Detection Interrupt Enable.
+    bit_offset: 9
+    bit_size: 1
+  - name: RESUME_IRQ
+    description: Resume Interrupt.
+    bit_offset: 10
+    bit_size: 1
+  - name: ENIRQDEVPLUGIN
+    description: Enable Interrupt for Nonstandard Resistive Plugged-In Detection.
+    bit_offset: 11
+    bit_size: 1
+  - name: DEVPLUGIN_IRQ
+    description: Device Plug-In Interrupt.
+    bit_offset: 12
+    bit_size: 1
+  - name: DATA_ON_LRADC
+    description: APB Clock Switch Option.
+    bit_offset: 13
+    bit_size: 1
+  - name: ENUTMILEVEL2
+    description: UTMI Level 2 Enable.
+    bit_offset: 14
+    bit_size: 1
+  - name: ENUTMILEVEL3
+    description: UTMI Level 3 Enable.
+    bit_offset: 15
+    bit_size: 1
+  - name: ENIRQWAKEUP
+    description: Wake-Up Interrupt Enable.
+    bit_offset: 16
+    bit_size: 1
+  - name: WAKEUP_IRQ
+    description: Wake-Up Interrupt.
+    bit_offset: 17
+    bit_size: 1
+  - name: AUTORESUME_EN
+    description: Autoresume Enable.
+    bit_offset: 18
+    bit_size: 1
+  - name: ENAUTOCLR_CLKGATE
+    description: Autoclear Clock Gate Enable.
+    bit_offset: 19
+    bit_size: 1
+  - name: ENAUTOCLR_PHY_PWD
+    description: PHY PWD Autoclear Enable.
+    bit_offset: 20
+    bit_size: 1
+  - name: OTG_ID_VALUE
+    description: OTG ID Value.
+    bit_offset: 27
+    bit_size: 1
+  - name: UTMI_SUSPENDM
+    description: UTMI Suspend.
+    bit_offset: 29
+    bit_size: 1
+  - name: CLKGATE
+    description: UTMI Clock Gate.
+    bit_offset: 30
+    bit_size: 1
+  - name: SFTRST
+    description: Software Reset.
+    bit_offset: 31
+    bit_size: 1
+fieldset/CTRL_TOG:
+  description: General Purpose Control.
+  fields:
+  - name: ENOTG_ID_CHG_IRQ
+    description: OTG ID Change Interrupt Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: ENHOSTDISCONDETECT
+    description: Host Disconnect Detection Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: ENIRQHOSTDISCON
+    description: Enable Interrupt for Host Disconnect.
+    bit_offset: 2
+    bit_size: 1
+  - name: HOSTDISCONDETECT_IRQ
+    description: Host Disconnect Detection Interrupt.
+    bit_offset: 3
+    bit_size: 1
+  - name: ENDEVPLUGINDETECT
+    description: Enable Nonstandard Resistive Plugged-In Detection.
+    bit_offset: 4
+    bit_size: 1
+  - name: DEVPLUGIN_POLARITY
+    description: Device Plug-In Polarity.
+    bit_offset: 5
+    bit_size: 1
+  - name: OTG_ID_CHG_IRQ
+    description: OTG ID Change Interrupt.
+    bit_offset: 6
+    bit_size: 1
+  - name: ENOTGIDDETECT
+    description: Enable Internal OTG ID Detector.
+    bit_offset: 7
+    bit_size: 1
+  - name: RESUMEIRQSTICKY
+    description: Resume Interrupt Sticky.
+    bit_offset: 8
+    bit_size: 1
+  - name: ENIRQRESUMEDETECT
+    description: Resume Detection Interrupt Enable.
+    bit_offset: 9
+    bit_size: 1
+  - name: RESUME_IRQ
+    description: Resume Interrupt.
+    bit_offset: 10
+    bit_size: 1
+  - name: ENIRQDEVPLUGIN
+    description: Enable Interrupt for Nonstandard Resistive Plugged-In Detection.
+    bit_offset: 11
+    bit_size: 1
+  - name: DEVPLUGIN_IRQ
+    description: Device Plug-In Interrupt.
+    bit_offset: 12
+    bit_size: 1
+  - name: DATA_ON_LRADC
+    description: APB Clock Switch Option.
+    bit_offset: 13
+    bit_size: 1
+  - name: ENUTMILEVEL2
+    description: UTMI Level 2 Enable.
+    bit_offset: 14
+    bit_size: 1
+  - name: ENUTMILEVEL3
+    description: UTMI Level 3 Enable.
+    bit_offset: 15
+    bit_size: 1
+  - name: ENIRQWAKEUP
+    description: Wake-Up Interrupt Enable.
+    bit_offset: 16
+    bit_size: 1
+  - name: WAKEUP_IRQ
+    description: Wake-Up Interrupt.
+    bit_offset: 17
+    bit_size: 1
+  - name: AUTORESUME_EN
+    description: Autoresume Enable.
+    bit_offset: 18
+    bit_size: 1
+  - name: ENAUTOCLR_CLKGATE
+    description: Autoclear Clock Gate Enable.
+    bit_offset: 19
+    bit_size: 1
+  - name: ENAUTOCLR_PHY_PWD
+    description: PHY PWD Autoclear Enable.
+    bit_offset: 20
+    bit_size: 1
+  - name: OTG_ID_VALUE
+    description: OTG ID Value.
+    bit_offset: 27
+    bit_size: 1
+  - name: UTMI_SUSPENDM
+    description: UTMI Suspend.
+    bit_offset: 29
+    bit_size: 1
+  - name: CLKGATE
+    description: UTMI Clock Gate.
+    bit_offset: 30
+    bit_size: 1
+  - name: SFTRST
+    description: Software Reset.
+    bit_offset: 31
+    bit_size: 1
+fieldset/DEBUG0:
+  description: Debug 0.
+  fields:
+  - name: OTGIDPIOLOCK
+    description: Hold OTG_ID.
+    bit_offset: 0
+    bit_size: 1
+  - name: HSTPULLDOWN
+    description: Host Pulldown Overdrive Mode.
+    bit_offset: 2
+    bit_size: 2
+    enum: HSTPULLDOWN
+  - name: ENHSTPULLDOWN
+    description: Enable Host Pulldown Overdrive Mode.
+    bit_offset: 4
+    bit_size: 2
+    enum: ENHSTPULLDOWN
+fieldset/DEBUG0_CLR:
+  description: Debug 0.
+  fields:
+  - name: OTGIDPIOLOCK
+    description: Hold OTG_ID.
+    bit_offset: 0
+    bit_size: 1
+  - name: HSTPULLDOWN
+    description: Host Pulldown Overdrive Mode.
+    bit_offset: 2
+    bit_size: 2
+  - name: ENHSTPULLDOWN
+    description: Enable Host Pulldown Overdrive Mode.
+    bit_offset: 4
+    bit_size: 2
+fieldset/DEBUG0_SET:
+  description: Debug 0.
+  fields:
+  - name: OTGIDPIOLOCK
+    description: Hold OTG_ID.
+    bit_offset: 0
+    bit_size: 1
+  - name: HSTPULLDOWN
+    description: Host Pulldown Overdrive Mode.
+    bit_offset: 2
+    bit_size: 2
+  - name: ENHSTPULLDOWN
+    description: Enable Host Pulldown Overdrive Mode.
+    bit_offset: 4
+    bit_size: 2
+fieldset/DEBUG0_TOG:
+  description: Debug 0.
+  fields:
+  - name: OTGIDPIOLOCK
+    description: Hold OTG_ID.
+    bit_offset: 0
+    bit_size: 1
+  - name: HSTPULLDOWN
+    description: Host Pulldown Overdrive Mode.
+    bit_offset: 2
+    bit_size: 2
+  - name: ENHSTPULLDOWN
+    description: Enable Host Pulldown Overdrive Mode.
+    bit_offset: 4
+    bit_size: 2
+fieldset/IP:
+  description: IP Block.
+  fields:
+  - name: POWER_CONTROL_SUSPEND_OPTION
+    description: Power Control Suspend Option.
+    bit_offset: 0
+    bit_size: 1
+fieldset/IP_CLR:
+  description: IP Block.
+  fields:
+  - name: POWER_CONTROL_SUSPEND_OPTION
+    description: Power Control Suspend Option.
+    bit_offset: 0
+    bit_size: 1
+fieldset/IP_SET:
+  description: IP Block.
+  fields:
+  - name: POWER_CONTROL_SUSPEND_OPTION
+    description: Power Control Suspend Option.
+    bit_offset: 0
+    bit_size: 1
+fieldset/IP_TOG:
+  description: IP Block.
+  fields:
+  - name: POWER_CONTROL_SUSPEND_OPTION
+    description: Power Control Suspend Option.
+    bit_offset: 0
+    bit_size: 1
+fieldset/PFDA:
+  description: PFD A.
+  fields:
+  - name: PFD0_CLKGATE
+    description: PFD0 Clock Gate.
+    bit_offset: 0
+    bit_size: 1
+    enum: PFD0_CLKGATE
+  - name: PFD0_FRAC
+    description: PFD0 Fractional Divider.
+    bit_offset: 1
+    bit_size: 6
+  - name: PFD0_STABLE
+    description: PFD0 Stable Signal.
+    bit_offset: 7
+    bit_size: 1
+    enum: PFD0_STABLE
+fieldset/PFDA_CLR:
+  description: PFD A.
+  fields:
+  - name: PFD0_CLKGATE
+    description: PFD0 Clock Gate.
+    bit_offset: 0
+    bit_size: 1
+  - name: PFD0_FRAC
+    description: PFD0 Fractional Divider.
+    bit_offset: 1
+    bit_size: 6
+  - name: PFD0_STABLE
+    description: PFD0 Stable Signal.
+    bit_offset: 7
+    bit_size: 1
+fieldset/PFDA_SET:
+  description: PFD A.
+  fields:
+  - name: PFD0_CLKGATE
+    description: PFD0 Clock Gate.
+    bit_offset: 0
+    bit_size: 1
+  - name: PFD0_FRAC
+    description: PFD0 Fractional Divider.
+    bit_offset: 1
+    bit_size: 6
+  - name: PFD0_STABLE
+    description: PFD0 Stable Signal.
+    bit_offset: 7
+    bit_size: 1
+fieldset/PFDA_TOG:
+  description: PFD A.
+  fields:
+  - name: PFD0_CLKGATE
+    description: PFD0 Clock Gate.
+    bit_offset: 0
+    bit_size: 1
+  - name: PFD0_FRAC
+    description: PFD0 Fractional Divider.
+    bit_offset: 1
+    bit_size: 6
+  - name: PFD0_STABLE
+    description: PFD0 Stable Signal.
+    bit_offset: 7
+    bit_size: 1
+fieldset/PLL_SIC:
+  description: PLL SIC.
+  fields:
+  - name: MISC2_CONTROL0
+    description: Miscellaneous Control.
+    bit_offset: 5
+    bit_size: 1
+    enum: MISC2_CONTROL0
+  - name: PLL_EN_USB_CLKS
+    description: PLL Multi-Phase Clock Outputs Enable.
+    bit_offset: 6
+    bit_size: 1
+    enum: PLL_EN_USB_CLKS
+  - name: PLL_POWER
+    description: USB PLL Powerup Control.
+    bit_offset: 12
+    bit_size: 1
+    enum: PLL_POWER
+  - name: PLL_ENABLE
+    description: PLL Output Clock Enable.
+    bit_offset: 13
+    bit_size: 1
+    enum: PLL_ENABLE
+  - name: PLL_BYPASS
+    description: Bypass USB PLL.
+    bit_offset: 16
+    bit_size: 1
+    enum: PLL_BYPASS
+  - name: REFBIAS_PWD_SEL
+    description: Reference Bias Power Control.
+    bit_offset: 19
+    bit_size: 1
+    enum: REFBIAS_PWD_SEL
+  - name: REFBIAS_PWD
+    description: Power Down Reference Bias.
+    bit_offset: 20
+    bit_size: 1
+    enum: REFBIAS_PWD
+  - name: PLL_REG_ENABLE
+    description: Enable PLL Regulator.
+    bit_offset: 21
+    bit_size: 1
+    enum: PLL_REG_ENABLE
+  - name: PLL_DIV_SEL
+    description: PLL Divider Value Configuration.
+    bit_offset: 22
+    bit_size: 3
+    enum: PLL_DIV_SEL
+  - name: PLL_PREDIV
+    description: PLL Pre-Divider.
+    bit_offset: 30
+    bit_size: 1
+    enum: PLL_PREDIV
+  - name: PLL_LOCK
+    description: USB PLL Lock Status Indicator.
+    bit_offset: 31
+    bit_size: 1
+    enum: PLL_LOCK
+fieldset/PLL_SIC_CLR:
+  description: PLL SIC.
+  fields:
+  - name: MISC2_CONTROL0
+    description: Miscellaneous Control.
+    bit_offset: 5
+    bit_size: 1
+  - name: PLL_EN_USB_CLKS
+    description: PLL Multi-Phase Clock Outputs Enable.
+    bit_offset: 6
+    bit_size: 1
+  - name: PLL_POWER
+    description: USB PLL Powerup Control.
+    bit_offset: 12
+    bit_size: 1
+  - name: PLL_ENABLE
+    description: PLL Output Clock Enable.
+    bit_offset: 13
+    bit_size: 1
+  - name: PLL_BYPASS
+    description: Bypass USB PLL.
+    bit_offset: 16
+    bit_size: 1
+  - name: REFBIAS_PWD_SEL
+    description: Reference Bias Power Control.
+    bit_offset: 19
+    bit_size: 1
+  - name: REFBIAS_PWD
+    description: Power Down Reference Bias.
+    bit_offset: 20
+    bit_size: 1
+  - name: PLL_REG_ENABLE
+    description: Enable PLL Regulator.
+    bit_offset: 21
+    bit_size: 1
+  - name: PLL_DIV_SEL
+    description: PLL Divider Value Configuration.
+    bit_offset: 22
+    bit_size: 3
+  - name: PLL_PREDIV
+    description: PLL Pre-Divider.
+    bit_offset: 30
+    bit_size: 1
+  - name: PLL_LOCK
+    description: USB PLL Lock Status Indicator.
+    bit_offset: 31
+    bit_size: 1
+fieldset/PLL_SIC_SET:
+  description: PLL SIC.
+  fields:
+  - name: MISC2_CONTROL0
+    description: Miscellaneous Control.
+    bit_offset: 5
+    bit_size: 1
+  - name: PLL_EN_USB_CLKS
+    description: PLL Multi-Phase Clock Outputs Enable.
+    bit_offset: 6
+    bit_size: 1
+  - name: PLL_POWER
+    description: USB PLL Powerup Control.
+    bit_offset: 12
+    bit_size: 1
+  - name: PLL_ENABLE
+    description: PLL Output Clock Enable.
+    bit_offset: 13
+    bit_size: 1
+  - name: PLL_BYPASS
+    description: Bypass USB PLL.
+    bit_offset: 16
+    bit_size: 1
+  - name: REFBIAS_PWD_SEL
+    description: Reference Bias Power Control.
+    bit_offset: 19
+    bit_size: 1
+  - name: REFBIAS_PWD
+    description: Power Down Reference Bias.
+    bit_offset: 20
+    bit_size: 1
+  - name: PLL_REG_ENABLE
+    description: Enable PLL Regulator.
+    bit_offset: 21
+    bit_size: 1
+  - name: PLL_DIV_SEL
+    description: PLL Divider Value Configuration.
+    bit_offset: 22
+    bit_size: 3
+  - name: PLL_PREDIV
+    description: PLL Pre-Divider.
+    bit_offset: 30
+    bit_size: 1
+  - name: PLL_LOCK
+    description: USB PLL Lock Status Indicator.
+    bit_offset: 31
+    bit_size: 1
+fieldset/PLL_SIC_TOG:
+  description: PLL SIC.
+  fields:
+  - name: MISC2_CONTROL0
+    description: Miscellaneous Control.
+    bit_offset: 5
+    bit_size: 1
+  - name: PLL_EN_USB_CLKS
+    description: PLL Multi-Phase Clock Outputs Enable.
+    bit_offset: 6
+    bit_size: 1
+  - name: PLL_POWER
+    description: USB PLL Powerup Control.
+    bit_offset: 12
+    bit_size: 1
+  - name: PLL_ENABLE
+    description: PLL Output Clock Enable.
+    bit_offset: 13
+    bit_size: 1
+  - name: PLL_BYPASS
+    description: Bypass USB PLL.
+    bit_offset: 16
+    bit_size: 1
+  - name: REFBIAS_PWD_SEL
+    description: Reference Bias Power Control.
+    bit_offset: 19
+    bit_size: 1
+  - name: REFBIAS_PWD
+    description: Power Down Reference Bias.
+    bit_offset: 20
+    bit_size: 1
+  - name: PLL_REG_ENABLE
+    description: Enable PLL Regulator.
+    bit_offset: 21
+    bit_size: 1
+  - name: PLL_DIV_SEL
+    description: PLL Divider Value Configuration.
+    bit_offset: 22
+    bit_size: 3
+  - name: PLL_PREDIV
+    description: PLL Pre-Divider.
+    bit_offset: 30
+    bit_size: 1
+  - name: PLL_LOCK
+    description: USB PLL Lock Status Indicator.
+    bit_offset: 31
+    bit_size: 1
+fieldset/PWD:
+  description: Power Down.
+  fields:
+  - name: TXPWDFS
+    description: Power Down USB FS TX Drivers.
+    bit_offset: 10
+    bit_size: 1
+    enum: TXPWDFS
+  - name: TXPWDIBIAS
+    description: Power Down USBPHY TX Current Bias Block.
+    bit_offset: 11
+    bit_size: 1
+    enum: TXPWDIBIAS
+  - name: TXPWDV2I
+    description: Power Down USBPHY TX V-I Converter and Current Mirror.
+    bit_offset: 12
+    bit_size: 1
+    enum: TXPWDV2I
+  - name: RXPWDENV
+    description: Power Down USB HS RX Envelope Detector.
+    bit_offset: 17
+    bit_size: 1
+    enum: RXPWDENV
+  - name: RXPWD1PT1
+    description: Power Down USB FS Differential Receiver.
+    bit_offset: 18
+    bit_size: 1
+    enum: RXPWD1PT1
+  - name: RXPWDDIFF
+    description: Power Down USB HS Differential Receiver.
+    bit_offset: 19
+    bit_size: 1
+    enum: RXPWDDIFF
+  - name: RXPWDRX
+    description: Power Down USBPHY Receiver Circuits.
+    bit_offset: 20
+    bit_size: 1
+    enum: RXPWDRX
+fieldset/PWD_CLR:
+  description: Power Down.
+  fields:
+  - name: TXPWDFS
+    description: Power Down USB FS TX Drivers.
+    bit_offset: 10
+    bit_size: 1
+  - name: TXPWDIBIAS
+    description: Power Down USBPHY TX Current Bias Block.
+    bit_offset: 11
+    bit_size: 1
+  - name: TXPWDV2I
+    description: Power Down USBPHY TX V-I Converter and Current Mirror.
+    bit_offset: 12
+    bit_size: 1
+  - name: RXPWDENV
+    description: Power Down USB HS RX Envelope Detector.
+    bit_offset: 17
+    bit_size: 1
+  - name: RXPWD1PT1
+    description: Power Down USB FS Differential Receiver.
+    bit_offset: 18
+    bit_size: 1
+  - name: RXPWDDIFF
+    description: Power Down USB HS Differential Receiver.
+    bit_offset: 19
+    bit_size: 1
+  - name: RXPWDRX
+    description: Power Down USBPHY Receiver Circuits.
+    bit_offset: 20
+    bit_size: 1
+fieldset/PWD_SET:
+  description: Power Down.
+  fields:
+  - name: TXPWDFS
+    description: Power Down USB FS TX Drivers.
+    bit_offset: 10
+    bit_size: 1
+  - name: TXPWDIBIAS
+    description: Power Down USBPHY TX Current Bias Block.
+    bit_offset: 11
+    bit_size: 1
+  - name: TXPWDV2I
+    description: Power Down USBPHY TX V-I Converter and Current Mirror.
+    bit_offset: 12
+    bit_size: 1
+  - name: RXPWDENV
+    description: Power Down USB HS RX Envelope Detector.
+    bit_offset: 17
+    bit_size: 1
+  - name: RXPWD1PT1
+    description: Power Down USB FS Differential Receiver.
+    bit_offset: 18
+    bit_size: 1
+  - name: RXPWDDIFF
+    description: Power Down USB HS Differential Receiver.
+    bit_offset: 19
+    bit_size: 1
+  - name: RXPWDRX
+    description: Power Down USBPHY Receiver Circuits.
+    bit_offset: 20
+    bit_size: 1
+fieldset/PWD_TOG:
+  description: Power Down.
+  fields:
+  - name: TXPWDFS
+    description: Power Down USB FS TX Drivers.
+    bit_offset: 10
+    bit_size: 1
+  - name: TXPWDIBIAS
+    description: Power Down USBPHY TX Current Bias Block.
+    bit_offset: 11
+    bit_size: 1
+  - name: TXPWDV2I
+    description: Power Down USBPHY TX V-I Converter and Current Mirror.
+    bit_offset: 12
+    bit_size: 1
+  - name: RXPWDENV
+    description: Power Down USB HS RX Envelope Detector.
+    bit_offset: 17
+    bit_size: 1
+  - name: RXPWD1PT1
+    description: Power Down USB FS Differential Receiver.
+    bit_offset: 18
+    bit_size: 1
+  - name: RXPWDDIFF
+    description: Power Down USB HS Differential Receiver.
+    bit_offset: 19
+    bit_size: 1
+  - name: RXPWDRX
+    description: Power Down USBPHY Receiver Circuits.
+    bit_offset: 20
+    bit_size: 1
+fieldset/RX:
+  description: RX Control.
+  fields:
+  - name: ENVADJ
+    description: Envelope Detector Trip Point.
+    bit_offset: 0
+    bit_size: 3
+    enum: ENVADJ
+  - name: DISCONADJ
+    description: Disconnect Detector Trip Point.
+    bit_offset: 4
+    bit_size: 3
+    enum: DISCONADJ
+fieldset/RX_CLR:
+  description: RX Control.
+  fields:
+  - name: ENVADJ
+    description: Envelope Detector Trip Point.
+    bit_offset: 0
+    bit_size: 3
+  - name: DISCONADJ
+    description: Disconnect Detector Trip Point.
+    bit_offset: 4
+    bit_size: 3
+fieldset/RX_SET:
+  description: RX Control.
+  fields:
+  - name: ENVADJ
+    description: Envelope Detector Trip Point.
+    bit_offset: 0
+    bit_size: 3
+  - name: DISCONADJ
+    description: Disconnect Detector Trip Point.
+    bit_offset: 4
+    bit_size: 3
+fieldset/RX_TOG:
+  description: RX Control.
+  fields:
+  - name: ENVADJ
+    description: Envelope Detector Trip Point.
+    bit_offset: 0
+    bit_size: 3
+  - name: DISCONADJ
+    description: Disconnect Detector Trip Point.
+    bit_offset: 4
+    bit_size: 3
+fieldset/STATUS:
+  description: Status.
+  fields:
+  - name: OK_STATUS_3V
+    description: USB 3.3 V and 1.8 V Supply Status.
+    bit_offset: 0
+    bit_size: 1
+    enum: OK_STATUS_3V
+  - name: HOSTDISCONDETECT_STATUS
+    description: Host Disconnect Status.
+    bit_offset: 3
+    bit_size: 1
+    enum: HOSTDISCONDETECT_STATUS
+  - name: DEVPLUGIN_STATUS
+    description: Status Indicator for Nonstandard Resistive Plugged-In Detection.
+    bit_offset: 6
+    bit_size: 1
+    enum: DEVPLUGIN_STATUS
+  - name: OTGID_STATUS
+    description: OTG ID Status.
+    bit_offset: 8
+    bit_size: 1
+    enum: OTGID_STATUS
+  - name: RESUME_STATUS
+    description: Resume Status.
+    bit_offset: 10
+    bit_size: 1
+fieldset/TRIM_OVERRIDE_EN:
+  description: Trim.
+  fields:
+  - name: DIV_SEL_OVERRIDE
+    description: Override Enable for PLL Divider Value.
+    bit_offset: 0
+    bit_size: 1
+    enum: DIV_SEL_OVERRIDE
+  - name: TX_D_CAL_OVERRIDE
+    description: Override Enable for HS TX Output Current Trim.
+    bit_offset: 2
+    bit_size: 1
+    enum: TX_D_CAL_OVERRIDE
+  - name: TX_CAL45DP_OVERRIDE
+    description: Override Enable for USB_DP Series Termination Trim.
+    bit_offset: 3
+    bit_size: 1
+    enum: TX_CAL45DP_OVERRIDE
+  - name: TX_CAL45DM_OVERRIDE
+    description: Override Enable for USB_DM Series Termination Trim.
+    bit_offset: 4
+    bit_size: 1
+    enum: TX_CAL45DM_OVERRIDE
+  - name: PLL_CTRL0_DIV_SEL
+    description: PLL Divider Value Configuration Bits from Outside USBPHY.
+    bit_offset: 15
+    bit_size: 3
+  - name: USBPHY_TX_D_CAL
+    description: HS TX Output Current Trim Bits from Outside USBPHY.
+    bit_offset: 20
+    bit_size: 4
+    enum: USBPHY_TX_D_CAL
+  - name: USBPHY_TX_CAL45DP
+    description: DP Series Termination Resistance Trim Bits from Outside USBPHY.
+    bit_offset: 24
+    bit_size: 4
+  - name: USBPHY_TX_CAL45DN
+    description: DM Series Termination Resistance Trim Bits from Outside USBPHY.
+    bit_offset: 28
+    bit_size: 4
+fieldset/TRIM_OVERRIDE_EN_CLR:
+  description: Trim.
+  fields:
+  - name: DIV_SEL_OVERRIDE
+    description: Override Enable for PLL Divider Value.
+    bit_offset: 0
+    bit_size: 1
+  - name: TX_D_CAL_OVERRIDE
+    description: Override Enable for HS TX Output Current Trim.
+    bit_offset: 2
+    bit_size: 1
+  - name: TX_CAL45DP_OVERRIDE
+    description: Override Enable for USB_DP Series Termination Trim.
+    bit_offset: 3
+    bit_size: 1
+  - name: TX_CAL45DM_OVERRIDE
+    description: Override Enable for USB_DM Series Termination Trim.
+    bit_offset: 4
+    bit_size: 1
+  - name: PLL_CTRL0_DIV_SEL
+    description: PLL Divider Value Configuration Bits from Outside USBPHY.
+    bit_offset: 15
+    bit_size: 3
+  - name: USBPHY_TX_D_CAL
+    description: HS TX Output Current Trim Bits from Outside USBPHY.
+    bit_offset: 20
+    bit_size: 4
+  - name: USBPHY_TX_CAL45DP
+    description: DP Series Termination Resistance Trim Bits from Outside USBPHY.
+    bit_offset: 24
+    bit_size: 4
+  - name: USBPHY_TX_CAL45DN
+    description: DM Series Termination Resistance Trim Bits from Outside USBPHY.
+    bit_offset: 28
+    bit_size: 4
+fieldset/TRIM_OVERRIDE_EN_SET:
+  description: Trim.
+  fields:
+  - name: DIV_SEL_OVERRIDE
+    description: Override Enable for PLL Divider Value.
+    bit_offset: 0
+    bit_size: 1
+  - name: TX_D_CAL_OVERRIDE
+    description: Override Enable for HS TX Output Current Trim.
+    bit_offset: 2
+    bit_size: 1
+  - name: TX_CAL45DP_OVERRIDE
+    description: Override Enable for USB_DP Series Termination Trim.
+    bit_offset: 3
+    bit_size: 1
+  - name: TX_CAL45DM_OVERRIDE
+    description: Override Enable for USB_DM Series Termination Trim.
+    bit_offset: 4
+    bit_size: 1
+  - name: PLL_CTRL0_DIV_SEL
+    description: PLL Divider Value Configuration Bits from Outside USBPHY.
+    bit_offset: 15
+    bit_size: 3
+  - name: USBPHY_TX_D_CAL
+    description: HS TX Output Current Trim Bits from Outside USBPHY.
+    bit_offset: 20
+    bit_size: 4
+  - name: USBPHY_TX_CAL45DP
+    description: DP Series Termination Resistance Trim Bits from Outside USBPHY.
+    bit_offset: 24
+    bit_size: 4
+  - name: USBPHY_TX_CAL45DN
+    description: DM Series Termination Resistance Trim Bits from Outside USBPHY.
+    bit_offset: 28
+    bit_size: 4
+fieldset/TRIM_OVERRIDE_EN_TOG:
+  description: Trim.
+  fields:
+  - name: DIV_SEL_OVERRIDE
+    description: Override Enable for PLL Divider Value.
+    bit_offset: 0
+    bit_size: 1
+  - name: TX_D_CAL_OVERRIDE
+    description: Override Enable for HS TX Output Current Trim.
+    bit_offset: 2
+    bit_size: 1
+  - name: TX_CAL45DP_OVERRIDE
+    description: Override Enable for USB_DP Series Termination Trim.
+    bit_offset: 3
+    bit_size: 1
+  - name: TX_CAL45DM_OVERRIDE
+    description: Override Enable for USB_DM Series Termination Trim.
+    bit_offset: 4
+    bit_size: 1
+  - name: PLL_CTRL0_DIV_SEL
+    description: PLL Divider Value Configuration Bits from Outside USBPHY.
+    bit_offset: 15
+    bit_size: 3
+  - name: USBPHY_TX_D_CAL
+    description: HS TX Output Current Trim Bits from Outside USBPHY.
+    bit_offset: 20
+    bit_size: 4
+  - name: USBPHY_TX_CAL45DP
+    description: DP Series Termination Resistance Trim Bits from Outside USBPHY.
+    bit_offset: 24
+    bit_size: 4
+  - name: USBPHY_TX_CAL45DN
+    description: DM Series Termination Resistance Trim Bits from Outside USBPHY.
+    bit_offset: 28
+    bit_size: 4
+fieldset/TX:
+  description: TX Control.
+  fields:
+  - name: D_CAL
+    description: HS TX Output Current Trim.
+    bit_offset: 0
+    bit_size: 4
+    enum: D_CAL
+  - name: TXCAL45DN
+    description: DM Series Termination Resistance Trim.
+    bit_offset: 8
+    bit_size: 4
+  - name: TXCAL45DP
+    description: DP Series Termination Resistance Trim.
+    bit_offset: 16
+    bit_size: 4
+fieldset/TX_CLR:
+  description: TX Control.
+  fields:
+  - name: D_CAL
+    description: HS TX Output Current Trim.
+    bit_offset: 0
+    bit_size: 4
+  - name: TXCAL45DN
+    description: DM Series Termination Resistance Trim.
+    bit_offset: 8
+    bit_size: 4
+  - name: TXCAL45DP
+    description: DP Series Termination Resistance Trim.
+    bit_offset: 16
+    bit_size: 4
+fieldset/TX_SET:
+  description: TX Control.
+  fields:
+  - name: D_CAL
+    description: HS TX Output Current Trim.
+    bit_offset: 0
+    bit_size: 4
+  - name: TXCAL45DN
+    description: DM Series Termination Resistance Trim.
+    bit_offset: 8
+    bit_size: 4
+  - name: TXCAL45DP
+    description: DP Series Termination Resistance Trim.
+    bit_offset: 16
+    bit_size: 4
+fieldset/TX_TOG:
+  description: TX Control.
+  fields:
+  - name: D_CAL
+    description: HS TX Output Current Trim.
+    bit_offset: 0
+    bit_size: 4
+  - name: TXCAL45DN
+    description: DM Series Termination Resistance Trim.
+    bit_offset: 8
+    bit_size: 4
+  - name: TXCAL45DP
+    description: DP Series Termination Resistance Trim.
+    bit_offset: 16
+    bit_size: 4
+fieldset/USB1_CHRG_DETECT:
+  description: Charger Detect.
+  fields:
+  - name: DETECT_SEC
+    description: Secondary Detection Function Enable.
+    bit_offset: 1
+    bit_size: 1
+    enum: DETECT_SEC
+  - name: PULLUP_DP
+    description: DP Pullup Resistor Enable Override Control.
+    bit_offset: 2
+    bit_size: 1
+    enum: PULLUP_DP
+  - name: VDM_SRC_ENABLE
+    description: VDM_SRC Function Enable.
+    bit_offset: 4
+    bit_size: 1
+    enum: VDM_SRC_ENABLE
+  - name: CHK_CONTACT
+    description: BC Data Contact Detect Function Enable.
+    bit_offset: 18
+    bit_size: 1
+    enum: CHK_CONTACT
+  - name: CHK_CHRG_B
+    description: BC Charger Detection Function Enable.
+    bit_offset: 19
+    bit_size: 1
+    enum: CHK_CHRG_B
+  - name: EN_B
+    description: Selection of BC v1.2 Function Enable.
+    bit_offset: 20
+    bit_size: 1
+    enum: EN_B
+  - name: DCDSEL
+    description: DCD Selection.
+    bit_offset: 31
+    bit_size: 1
+    enum: DCDSEL
+fieldset/USB1_CHRG_DETECT_CLR:
+  description: Charger Detect.
+  fields:
+  - name: DETECT_SEC
+    description: Secondary Detection Function Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: PULLUP_DP
+    description: DP Pullup Resistor Enable Override Control.
+    bit_offset: 2
+    bit_size: 1
+  - name: VDM_SRC_ENABLE
+    description: VDM_SRC Function Enable.
+    bit_offset: 4
+    bit_size: 1
+  - name: CHK_CONTACT
+    description: BC Data Contact Detect Function Enable.
+    bit_offset: 18
+    bit_size: 1
+  - name: CHK_CHRG_B
+    description: BC Charger Detection Function Enable.
+    bit_offset: 19
+    bit_size: 1
+  - name: EN_B
+    description: Selection of BC v1.2 Function Enable.
+    bit_offset: 20
+    bit_size: 1
+  - name: DCDSEL
+    description: DCD Selection.
+    bit_offset: 31
+    bit_size: 1
+fieldset/USB1_CHRG_DETECT_SET:
+  description: Charger Detect.
+  fields:
+  - name: DETECT_SEC
+    description: Secondary Detection Function Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: PULLUP_DP
+    description: DP Pullup Resistor Enable Override Control.
+    bit_offset: 2
+    bit_size: 1
+  - name: VDM_SRC_ENABLE
+    description: VDM_SRC Function Enable.
+    bit_offset: 4
+    bit_size: 1
+  - name: CHK_CONTACT
+    description: BC Data Contact Detect Function Enable.
+    bit_offset: 18
+    bit_size: 1
+  - name: CHK_CHRG_B
+    description: BC Charger Detection Function Enable.
+    bit_offset: 19
+    bit_size: 1
+  - name: EN_B
+    description: Selection of BC v1.2 Function Enable.
+    bit_offset: 20
+    bit_size: 1
+  - name: DCDSEL
+    description: DCD Selection.
+    bit_offset: 31
+    bit_size: 1
+fieldset/USB1_CHRG_DETECT_TOG:
+  description: Charger Detect.
+  fields:
+  - name: DETECT_SEC
+    description: Secondary Detection Function Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: PULLUP_DP
+    description: DP Pullup Resistor Enable Override Control.
+    bit_offset: 2
+    bit_size: 1
+  - name: VDM_SRC_ENABLE
+    description: VDM_SRC Function Enable.
+    bit_offset: 4
+    bit_size: 1
+  - name: CHK_CONTACT
+    description: BC Data Contact Detect Function Enable.
+    bit_offset: 18
+    bit_size: 1
+  - name: CHK_CHRG_B
+    description: BC Charger Detection Function Enable.
+    bit_offset: 19
+    bit_size: 1
+  - name: EN_B
+    description: Selection of BC v1.2 Function Enable.
+    bit_offset: 20
+    bit_size: 1
+  - name: DCDSEL
+    description: DCD Selection.
+    bit_offset: 31
+    bit_size: 1
+fieldset/USB1_CHRG_DET_STAT:
+  description: Charger Detect Status.
+  fields:
+  - name: PLUG_CONTACT
+    description: Battery Charging Data Contact Detection Phase Output.
+    bit_offset: 0
+    bit_size: 1
+    enum: PLUG_CONTACT
+  - name: CHRG_DETECTED
+    description: Battery Charging Primary Detection Phase Output.
+    bit_offset: 1
+    bit_size: 1
+    enum: CHRG_DETECTED
+  - name: DM_STATE
+    description: DM Voltage.
+    bit_offset: 2
+    bit_size: 1
+    enum: DM_STATE
+  - name: DP_STATE
+    description: DP Voltage.
+    bit_offset: 3
+    bit_size: 1
+    enum: DP_STATE
+  - name: SECDET_DCP
+    description: Battery Charging Secondary Detection Phase Output.
+    bit_offset: 4
+    bit_size: 1
+    enum: SECDET_DCP
+fieldset/USB1_CHRG_DET_STAT_CLR:
+  description: Charger Detect Status.
+  fields:
+  - name: PLUG_CONTACT
+    description: Battery Charging Data Contact Detection Phase Output.
+    bit_offset: 0
+    bit_size: 1
+  - name: CHRG_DETECTED
+    description: Battery Charging Primary Detection Phase Output.
+    bit_offset: 1
+    bit_size: 1
+  - name: DM_STATE
+    description: DM Voltage.
+    bit_offset: 2
+    bit_size: 1
+  - name: DP_STATE
+    description: DP Voltage.
+    bit_offset: 3
+    bit_size: 1
+  - name: SECDET_DCP
+    description: Battery Charging Secondary Detection Phase Output.
+    bit_offset: 4
+    bit_size: 1
+fieldset/USB1_CHRG_DET_STAT_SET:
+  description: Charger Detect Status.
+  fields:
+  - name: PLUG_CONTACT
+    description: Battery Charging Data Contact Detection Phase Output.
+    bit_offset: 0
+    bit_size: 1
+  - name: CHRG_DETECTED
+    description: Battery Charging Primary Detection Phase Output.
+    bit_offset: 1
+    bit_size: 1
+  - name: DM_STATE
+    description: DM Voltage.
+    bit_offset: 2
+    bit_size: 1
+  - name: DP_STATE
+    description: DP Voltage.
+    bit_offset: 3
+    bit_size: 1
+  - name: SECDET_DCP
+    description: Battery Charging Secondary Detection Phase Output.
+    bit_offset: 4
+    bit_size: 1
+fieldset/USB1_CHRG_DET_STAT_TOG:
+  description: Charger Detect Status.
+  fields:
+  - name: PLUG_CONTACT
+    description: Battery Charging Data Contact Detection Phase Output.
+    bit_offset: 0
+    bit_size: 1
+  - name: CHRG_DETECTED
+    description: Battery Charging Primary Detection Phase Output.
+    bit_offset: 1
+    bit_size: 1
+  - name: DM_STATE
+    description: DM Voltage.
+    bit_offset: 2
+    bit_size: 1
+  - name: DP_STATE
+    description: DP Voltage.
+    bit_offset: 3
+    bit_size: 1
+  - name: SECDET_DCP
+    description: Battery Charging Secondary Detection Phase Output.
+    bit_offset: 4
+    bit_size: 1
+fieldset/USB1_VBUS_DETECT:
+  description: VBUS Detect.
+  fields:
+  - name: VBUSVALID_THRESH
+    description: VBUS Comparator Threshold.
+    bit_offset: 0
+    bit_size: 3
+    enum: VBUSVALID_THRESH
+  - name: VBUS_OVERRIDE_EN
+    description: VBUS Detect Signal Local Override Enable.
+    bit_offset: 3
+    bit_size: 1
+    enum: VBUS_OVERRIDE_EN
+  - name: SESSEND_OVERRIDE
+    description: Override Value for SESSEND.
+    bit_offset: 4
+    bit_size: 1
+  - name: BVALID_OVERRIDE
+    description: Override Value for B-Device Session Valid.
+    bit_offset: 5
+    bit_size: 1
+  - name: AVALID_OVERRIDE
+    description: Override Value for A-Device Session Valid.
+    bit_offset: 6
+    bit_size: 1
+  - name: VBUSVALID_OVERRIDE
+    description: Override Value for the VBUS_VALID Signal.
+    bit_offset: 7
+    bit_size: 1
+  - name: VBUSVALID_SEL
+    description: VBUS_VALID Selection.
+    bit_offset: 8
+    bit_size: 1
+    enum: VBUSVALID_SEL
+  - name: VBUS_SOURCE_SEL
+    description: VBUS_VALID Source Selection.
+    bit_offset: 9
+    bit_size: 2
+    enum: VBUS_SOURCE_SEL
+  - name: ID_OVERRIDE_EN
+    description: Enable Local ID Pin Status Override.
+    bit_offset: 11
+    bit_size: 1
+    enum: ID_OVERRIDE_EN
+  - name: ID_OVERRIDE
+    description: ID Pin Status Local Override.
+    bit_offset: 12
+    bit_size: 1
+  - name: EXT_ID_OVERRIDE_EN
+    description: External ID Override Enable.
+    bit_offset: 13
+    bit_size: 1
+    enum: EXT_ID_OVERRIDE_EN
+  - name: EXT_VBUS_OVERRIDE_EN
+    description: External VBUS Override Enable.
+    bit_offset: 14
+    bit_size: 1
+    enum: EXT_VBUS_OVERRIDE_EN
+  - name: VBUSVALID_TO_B
+    description: VBUS_VALID Comparator Selection.
+    bit_offset: 18
+    bit_size: 1
+    enum: VBUSVALID_TO_B
+  - name: VBUSVALID_PWRUP_CMPS
+    description: VBUS_VALID Comparator Enable.
+    bit_offset: 20
+    bit_size: 3
+    enum: VBUSVALID_PWRUP_CMPS
+  - name: DISCHARGE_VBUS
+    description: VBUS Discharge Resistor.
+    bit_offset: 26
+    bit_size: 1
+    enum: DISCHARGE_VBUS
+fieldset/USB1_VBUS_DETECT_CLR:
+  description: VBUS Detect.
+  fields:
+  - name: VBUSVALID_THRESH
+    description: VBUS Comparator Threshold.
+    bit_offset: 0
+    bit_size: 3
+  - name: VBUS_OVERRIDE_EN
+    description: VBUS Detect Signal Local Override Enable.
+    bit_offset: 3
+    bit_size: 1
+  - name: SESSEND_OVERRIDE
+    description: Override Value for SESSEND.
+    bit_offset: 4
+    bit_size: 1
+  - name: BVALID_OVERRIDE
+    description: Override Value for B-Device Session Valid.
+    bit_offset: 5
+    bit_size: 1
+  - name: AVALID_OVERRIDE
+    description: Override Value for A-Device Session Valid.
+    bit_offset: 6
+    bit_size: 1
+  - name: VBUSVALID_OVERRIDE
+    description: Override Value for the VBUS_VALID Signal.
+    bit_offset: 7
+    bit_size: 1
+  - name: VBUSVALID_SEL
+    description: VBUS_VALID Selection.
+    bit_offset: 8
+    bit_size: 1
+  - name: VBUS_SOURCE_SEL
+    description: VBUS_VALID Source Selection.
+    bit_offset: 9
+    bit_size: 2
+  - name: ID_OVERRIDE_EN
+    description: Enable Local ID Pin Status Override.
+    bit_offset: 11
+    bit_size: 1
+  - name: ID_OVERRIDE
+    description: ID Pin Status Local Override.
+    bit_offset: 12
+    bit_size: 1
+  - name: EXT_ID_OVERRIDE_EN
+    description: External ID Override Enable.
+    bit_offset: 13
+    bit_size: 1
+  - name: EXT_VBUS_OVERRIDE_EN
+    description: External VBUS Override Enable.
+    bit_offset: 14
+    bit_size: 1
+  - name: VBUSVALID_TO_B
+    description: VBUS_VALID Comparator Selection.
+    bit_offset: 18
+    bit_size: 1
+  - name: VBUSVALID_PWRUP_CMPS
+    description: VBUS_VALID Comparator Enable.
+    bit_offset: 20
+    bit_size: 3
+  - name: DISCHARGE_VBUS
+    description: VBUS Discharge Resistor.
+    bit_offset: 26
+    bit_size: 1
+fieldset/USB1_VBUS_DETECT_SET:
+  description: VBUS Detect.
+  fields:
+  - name: VBUSVALID_THRESH
+    description: VBUS Comparator Threshold.
+    bit_offset: 0
+    bit_size: 3
+  - name: VBUS_OVERRIDE_EN
+    description: VBUS Detect Signal Local Override Enable.
+    bit_offset: 3
+    bit_size: 1
+  - name: SESSEND_OVERRIDE
+    description: Override Value for SESSEND.
+    bit_offset: 4
+    bit_size: 1
+  - name: BVALID_OVERRIDE
+    description: Override Value for B-Device Session Valid.
+    bit_offset: 5
+    bit_size: 1
+  - name: AVALID_OVERRIDE
+    description: Override Value for A-Device Session Valid.
+    bit_offset: 6
+    bit_size: 1
+  - name: VBUSVALID_OVERRIDE
+    description: Override Value for the VBUS_VALID Signal.
+    bit_offset: 7
+    bit_size: 1
+  - name: VBUSVALID_SEL
+    description: VBUS_VALID Selection.
+    bit_offset: 8
+    bit_size: 1
+  - name: VBUS_SOURCE_SEL
+    description: VBUS_VALID Source Selection.
+    bit_offset: 9
+    bit_size: 2
+  - name: ID_OVERRIDE_EN
+    description: Enable Local ID Pin Status Override.
+    bit_offset: 11
+    bit_size: 1
+  - name: ID_OVERRIDE
+    description: ID Pin Status Local Override.
+    bit_offset: 12
+    bit_size: 1
+  - name: EXT_ID_OVERRIDE_EN
+    description: External ID Override Enable.
+    bit_offset: 13
+    bit_size: 1
+  - name: EXT_VBUS_OVERRIDE_EN
+    description: External VBUS Override Enable.
+    bit_offset: 14
+    bit_size: 1
+  - name: VBUSVALID_TO_B
+    description: VBUS_VALID Comparator Selection.
+    bit_offset: 18
+    bit_size: 1
+  - name: VBUSVALID_PWRUP_CMPS
+    description: VBUS_VALID Comparator Enable.
+    bit_offset: 20
+    bit_size: 3
+  - name: DISCHARGE_VBUS
+    description: VBUS Discharge Resistor.
+    bit_offset: 26
+    bit_size: 1
+fieldset/USB1_VBUS_DETECT_TOG:
+  description: VBUS Detect.
+  fields:
+  - name: VBUSVALID_THRESH
+    description: VBUS Comparator Threshold.
+    bit_offset: 0
+    bit_size: 3
+  - name: VBUS_OVERRIDE_EN
+    description: VBUS Detect Signal Local Override Enable.
+    bit_offset: 3
+    bit_size: 1
+  - name: SESSEND_OVERRIDE
+    description: Override Value for SESSEND.
+    bit_offset: 4
+    bit_size: 1
+  - name: BVALID_OVERRIDE
+    description: Override Value for B-Device Session Valid.
+    bit_offset: 5
+    bit_size: 1
+  - name: AVALID_OVERRIDE
+    description: Override Value for A-Device Session Valid.
+    bit_offset: 6
+    bit_size: 1
+  - name: VBUSVALID_OVERRIDE
+    description: Override Value for the VBUS_VALID Signal.
+    bit_offset: 7
+    bit_size: 1
+  - name: VBUSVALID_SEL
+    description: VBUS_VALID Selection.
+    bit_offset: 8
+    bit_size: 1
+  - name: VBUS_SOURCE_SEL
+    description: VBUS_VALID Source Selection.
+    bit_offset: 9
+    bit_size: 2
+  - name: ID_OVERRIDE_EN
+    description: Enable Local ID Pin Status Override.
+    bit_offset: 11
+    bit_size: 1
+  - name: ID_OVERRIDE
+    description: ID Pin Status Local Override.
+    bit_offset: 12
+    bit_size: 1
+  - name: EXT_ID_OVERRIDE_EN
+    description: External ID Override Enable.
+    bit_offset: 13
+    bit_size: 1
+  - name: EXT_VBUS_OVERRIDE_EN
+    description: External VBUS Override Enable.
+    bit_offset: 14
+    bit_size: 1
+  - name: VBUSVALID_TO_B
+    description: VBUS_VALID Comparator Selection.
+    bit_offset: 18
+    bit_size: 1
+  - name: VBUSVALID_PWRUP_CMPS
+    description: VBUS_VALID Comparator Enable.
+    bit_offset: 20
+    bit_size: 3
+  - name: DISCHARGE_VBUS
+    description: VBUS Discharge Resistor.
+    bit_offset: 26
+    bit_size: 1
+fieldset/USB1_VBUS_DET_STAT:
+  description: VBUS Detect Status.
+  fields:
+  - name: SESSEND
+    description: Session End Indicator.
+    bit_offset: 0
+    bit_size: 1
+    enum: SESSEND
+  - name: BVALID
+    description: B-Device Session Valid Status.
+    bit_offset: 1
+    bit_size: 1
+    enum: BVALID
+  - name: AVALID
+    description: A-Device Session Valid Status.
+    bit_offset: 2
+    bit_size: 1
+    enum: AVALID
+  - name: VBUS_VALID
+    description: VBUS Voltage Status.
+    bit_offset: 3
+    bit_size: 1
+    enum: VBUS_VALID
+  - name: VBUS_VALID_3V
+    description: VBUS_VALID_3V Detector Status.
+    bit_offset: 4
+    bit_size: 1
+    enum: VBUS_VALID_3V
+  - name: EXT_ID
+    description: OTG ID External Override Status.
+    bit_offset: 5
+    bit_size: 1
+fieldset/USB1_VBUS_DET_STAT_CLR:
+  description: VBUS Detect Status.
+  fields:
+  - name: SESSEND
+    description: Session End Indicator.
+    bit_offset: 0
+    bit_size: 1
+  - name: BVALID
+    description: B-Device Session Valid Status.
+    bit_offset: 1
+    bit_size: 1
+  - name: AVALID
+    description: A-Device Session Valid Status.
+    bit_offset: 2
+    bit_size: 1
+  - name: VBUS_VALID
+    description: VBUS Voltage Status.
+    bit_offset: 3
+    bit_size: 1
+  - name: VBUS_VALID_3V
+    description: VBUS_VALID_3V Detector Status.
+    bit_offset: 4
+    bit_size: 1
+  - name: EXT_ID
+    description: OTG ID External Override Status.
+    bit_offset: 5
+    bit_size: 1
+fieldset/USB1_VBUS_DET_STAT_SET:
+  description: VBUS Detect Status.
+  fields:
+  - name: SESSEND
+    description: Session End Indicator.
+    bit_offset: 0
+    bit_size: 1
+  - name: BVALID
+    description: B-Device Session Valid Status.
+    bit_offset: 1
+    bit_size: 1
+  - name: AVALID
+    description: A-Device Session Valid Status.
+    bit_offset: 2
+    bit_size: 1
+  - name: VBUS_VALID
+    description: VBUS Voltage Status.
+    bit_offset: 3
+    bit_size: 1
+  - name: VBUS_VALID_3V
+    description: VBUS_VALID_3V Detector Status.
+    bit_offset: 4
+    bit_size: 1
+  - name: EXT_ID
+    description: OTG ID External Override Status.
+    bit_offset: 5
+    bit_size: 1
+fieldset/USB1_VBUS_DET_STAT_TOG:
+  description: VBUS Detect Status.
+  fields:
+  - name: SESSEND
+    description: Session End Indicator.
+    bit_offset: 0
+    bit_size: 1
+  - name: BVALID
+    description: B-Device Session Valid Status.
+    bit_offset: 1
+    bit_size: 1
+  - name: AVALID
+    description: A-Device Session Valid Status.
+    bit_offset: 2
+    bit_size: 1
+  - name: VBUS_VALID
+    description: VBUS Voltage Status.
+    bit_offset: 3
+    bit_size: 1
+  - name: VBUS_VALID_3V
+    description: VBUS_VALID_3V Detector Status.
+    bit_offset: 4
+    bit_size: 1
+  - name: EXT_ID
+    description: OTG ID External Override Status.
+    bit_offset: 5
+    bit_size: 1
+fieldset/VERSION:
+  description: Version.
+  fields:
+  - name: STEP
+    description: Step.
+    bit_offset: 0
+    bit_size: 16
+  - name: MINOR
+    description: Minor.
+    bit_offset: 16
+    bit_size: 8
+  - name: MAJOR
+    description: Major.
+    bit_offset: 24
+    bit_size: 8
+enum/AUTORESUME_EN:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/AVALID:
+  bit_size: 1
+  variants:
+  - name: AVALID_LO
+    description: Below threshold.
+    value: 0
+  - name: AVALID_HI
+    description: Above threshold.
+    value: 1
+enum/BVALID:
+  bit_size: 1
+  variants:
+  - name: BVALID_LO
+    description: Below threshold.
+    value: 0
+  - name: BVALID_HI
+    description: Above threshold.
+    value: 1
+enum/CHK_CHRG_B:
+  bit_size: 1
+  variants:
+  - name: BC_CHRGDET_ENABLE
+    description: Enable.
+    value: 0
+  - name: BC_CHRGDET_DISABLE
+    description: Disable.
+    value: 1
+enum/CHK_CONTACT:
+  bit_size: 1
+  variants:
+  - name: BC_DCD_DISABLE
+    description: Disable.
+    value: 0
+  - name: BC_DCD_ENABLE
+    description: Enable.
+    value: 1
+enum/CHRG_DETECTED:
+  bit_size: 1
+  variants:
+  - name: SDP_DETECT
+    description: SDP detected.
+    value: 0
+  - name: CHRG_PORT_DETECT
+    description: Charging port detected.
+    value: 1
+enum/CLKGATE:
+  bit_size: 1
+  variants:
+  - name: RUN_CLOCKS
+    description: Run clocks.
+    value: 0
+  - name: GATE_CLOCKS
+    description: Gate clocks.
+    value: 1
+enum/DCDSEL:
+  bit_size: 1
+  variants:
+  - name: CHRGDET_CTRL
+    description: Fields in USB1_CHRG_DETECT.
+    value: 0
+  - name: USBHSDCD_CTRL
+    description: Fields and state machines in the USBHSDCD module.
+    value: 1
+enum/DETECT_SEC:
+  bit_size: 1
+  variants:
+  - name: BC_SECDET_DISABLE
+    description: Disable.
+    value: 0
+  - name: BC_SECDET_ENABLE
+    description: Enable.
+    value: 1
+enum/DEVPLUGIN_POLARITY:
+  bit_size: 1
+  variants:
+  - name: PLUGGED_IN
+    description: Plugged in.
+    value: 0
+  - name: UNPLUGGED
+    description: Unplugged.
+    value: 1
+enum/DEVPLUGIN_STATUS:
+  bit_size: 1
+  variants:
+  - name: NO_CABLE
+    description: No attachment detected.
+    value: 0
+  - name: CABLE_ATTACH
+    description: Cable attachment detected.
+    value: 1
+enum/DEV_PULLDOWN:
+  bit_size: 1
+  variants:
+  - name: DEV_PULLDOWN_DIS
+    description: Disable.
+    value: 0
+  - name: DEV_PULLDOWN_EN
+    description: Enable.
+    value: 1
+enum/DISCHARGE_VBUS:
+  bit_size: 1
+  variants:
+  - name: VBUS_DCHG_OFF
+    description: Disable.
+    value: 0
+  - name: VBUS_DCHG_ON
+    description: Enable.
+    value: 1
+enum/DISCONADJ:
+  bit_size: 3
+  variants:
+  - name: DISCON_TRIM_NOM
+    description: 0.56875 V.
+    value: 0
+  - name: DISCON_TRIM_LO
+    description: 0.55000 V.
+    value: 1
+  - name: DISCON_TRIM_MEDHI
+    description: 0.58125 V.
+    value: 2
+  - name: DISCON_TRIM_HI
+    description: 0.60000 V.
+    value: 3
+enum/DIV_SEL_OVERRIDE:
+  bit_size: 1
+  variants:
+  - name: USE_TRIM0_PLLDIV
+    description: TRIM_OVERRIDE_EN.
+    value: 0
+  - name: USE_PLL_SIC_PLLDIV
+    description: PLL_SIC.
+    value: 1
+enum/DM_STATE:
+  bit_size: 1
+  variants:
+  - name: DM_SERX_LO
+    description: USB_DM pin voltage is <= 0.8 V.
+    value: 0
+  - name: DM_SERX_HI
+    description: USB_DM pin voltage is >= 2.0 V.
+    value: 1
+enum/DP_STATE:
+  bit_size: 1
+  variants:
+  - name: DP_SERX_LO
+    description: USB_DP pin voltage is <= 0.8 V.
+    value: 0
+  - name: DP_SERX_HI
+    description: USB_DP pin voltage is >= 2.0 V.
+    value: 1
+enum/D_CAL:
+  bit_size: 4
+  variants:
+  - name: MAX_CURRENT
+    description: Maximum current, approximately 19% above nominal.
+    value: 0
+  - name: NOMINAL
+    description: Nominal.
+    value: 7
+  - name: MIN_CURRENT
+    description: Minimum current, approximately 19% below nominal.
+    value: 15
+enum/ENAUTOCLR_CLKGATE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENAUTOCLR_PHY_PWD:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENDEVPLUGINDETECT:
+  bit_size: 1
+  variants:
+  - name: PLUGIN_DISABLE
+    description: Disable.
+    value: 0
+  - name: PLUGIN_ENABLE
+    description: Enable.
+    value: 1
+enum/ENHOSTDISCONDETECT:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENHSTPULLDOWN:
+  bit_size: 2
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENIRQDEVPLUGIN:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENIRQHOSTDISCON:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENIRQRESUMEDETECT:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENIRQWAKEUP:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENOTGIDDETECT:
+  bit_size: 1
+  variants:
+  - name: ID_DET_DISABLE
+    description: Disable.
+    value: 0
+  - name: ID_DET_ENABLE
+    description: Enable.
+    value: 1
+enum/ENOTG_ID_CHG_IRQ:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENUTMILEVEL2:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENUTMILEVEL3:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENVADJ:
+  bit_size: 3
+  variants:
+  - name: ENV_TRIM_NOM
+    description: 0.1000 V.
+    value: 0
+  - name: ENV_TRIM_MEDHI
+    description: 0.1125 V.
+    value: 1
+  - name: ENV_TRIM_HI
+    description: 0.1250 V.
+    value: 2
+  - name: ENV_TRIM_LO
+    description: 0.0875 V.
+    value: 3
+enum/EN_B:
+  bit_size: 1
+  variants:
+  - name: BC_ENABLE
+    description: Enable.
+    value: 0
+  - name: BC_DISABLE
+    description: Disable.
+    value: 1
+enum/EXT_ID_OVERRIDE_EN:
+  bit_size: 1
+  variants:
+  - name: USE_PHY_ID
+    description: Internal detector or local override.
+    value: 0
+  - name: USE_EXT_ID
+    description: External ID signal value.
+    value: 1
+enum/EXT_VBUS_OVERRIDE_EN:
+  bit_size: 1
+  variants:
+  - name: USE_PHY_VBUS
+    description: Internal detector or local override.
+    value: 0
+  - name: USB_EXT_VBUS
+    description: External VBUS_VALID value.
+    value: 1
+enum/HOSTDISCONDETECT_IRQ:
+  bit_size: 1
+  variants:
+  - name: CONNECTED
+    description: Connected.
+    value: 0
+  - name: DISCONNECTED
+    description: Disconnected.
+    value: 1
+enum/HOSTDISCONDETECT_STATUS:
+  bit_size: 1
+  variants:
+  - name: NO_DISCONNECT
+    description: Not detected.
+    value: 0
+  - name: DISCONNECT
+    description: Detected.
+    value: 1
+enum/HSTPULLDOWN:
+  bit_size: 2
+  variants:
+  - name: DISCONNECT
+    description: Disconnect.
+    value: 0
+  - name: CONNECT
+    description: Connect.
+    value: 1
+enum/ID_OVERRIDE_EN:
+  bit_size: 1
+  variants:
+  - name: NO_PHY_ID_OVERRIDE
+    description: Use ID pin detector or external override.
+    value: 0
+  - name: USE_PHY_ID_OVERRIDE
+    description: Allow local override of ID pin detection status.
+    value: 1
+enum/LVI_EN:
+  bit_size: 1
+  variants:
+  - name: LVI_3V_DISABLE
+    description: Disable.
+    value: 0
+  - name: LVI_3V_ENABLE
+    description: Enable.
+    value: 1
+enum/MISC2_CONTROL0:
+  bit_size: 1
+  variants:
+  - name: PLL_ON_SUSPEND
+    description: Power up PLL.
+    value: 0
+  - name: PLL_OFF_SUSPEND
+    description: Power down PLL.
+    value: 1
+enum/OK_STATUS_3V:
+  bit_size: 1
+  variants:
+  - name: POWER_3_1P8_OK
+    description: Not powered.
+    value: 0
+  - name: POWER_3_1P8_BAD
+    description: Powered.
+    value: 1
+enum/OTGID_STATUS:
+  bit_size: 1
+  variants:
+  - name: ID_HOST
+    description: Host.
+    value: 0
+  - name: ID_DEVICE
+    description: Device.
+    value: 1
+enum/OTG_ID_CHG_IRQ:
+  bit_size: 1
+  variants:
+  - name: No_ID_CHG_IRQ
+    description: No ID change interrupt.
+    value: 0
+  - name: ID_CHG_IRQ
+    description: ID change interrupt.
+    value: 1
+enum/OTG_ID_VALUE:
+  bit_size: 1
+  variants:
+  - name: ID_HOST
+    description: Host.
+    value: 0
+  - name: ID_DEVICE
+    description: Device.
+    value: 1
+enum/PFD0_CLKGATE:
+  bit_size: 1
+  variants:
+  - name: PFD0_CLK_EN
+    description: Enable.
+    value: 0
+  - name: PFD0_CLK_DIS
+    description: Disable.
+    value: 1
+enum/PFD0_STABLE:
+  bit_size: 1
+  variants:
+  - name: NOT_STABLE
+    description: Not stable.
+    value: 0
+  - name: STABLE
+    description: Stable.
+    value: 1
+enum/PFD_CLK_SEL:
+  bit_size: 2
+  variants:
+  - name: PFD_CLK_BYPASS
+    description: USB1PFDCLK = USB PLL reference clock.
+    value: 0
+  - name: PFD_CLK_DIV_4
+    description: USB1PFDCLK = pfd_clk / 4.
+    value: 1
+  - name: PFD_CLK_DIV_2
+    description: USB1PFDCLK frequency = pfd_clk / 2.
+    value: 2
+  - name: PFD_CLK_DIV_1
+    description: USB1PFDCLK = pfd_clk.
+    value: 3
+enum/PLL_BYPASS:
+  bit_size: 1
+  variants:
+  - name: PLL_NO_BYPASS
+    description: 480 MHz output clock.
+    value: 0
+  - name: PLL_BYPASS
+    description: Input reference clock.
+    value: 1
+enum/PLL_DIV_SEL:
+  bit_size: 3
+  variants:
+  - name: PLL_DIV_15
+    description: Configure for a 32 MHz input clock (divide by 15).
+    value: 0
+  - name: PLL_DIV_16
+    description: Configure for a 30 MHz input clock (divide by 16).
+    value: 1
+  - name: PLL_DIV_20
+    description: Configure for a 24 MHz input clock (divide by 20).
+    value: 2
+  - name: PLL_DIV_24
+    description: Configure for a 20 MHz input clock (divide by 24).
+    value: 4
+  - name: PLL_DIV_25
+    description: Configure for a 19.2 MHz input clock (divide by 25).
+    value: 5
+  - name: PLL_DIV_30
+    description: Configure for a 16 MHz input clock (divide by 30).
+    value: 6
+  - name: PLL_DIV_32
+    description: Configure for a 12 MHz input clock (divide by 40).
+    value: 7
+enum/PLL_ENABLE:
+  bit_size: 1
+  variants:
+  - name: PLL_OUT_DISABLE
+    description: Disable.
+    value: 0
+  - name: PLL_OUT_ENABLE
+    description: Enable.
+    value: 1
+enum/PLL_EN_USB_CLKS:
+  bit_size: 1
+  variants:
+  - name: PLL_MP_DISABLE
+    description: Disable.
+    value: 0
+  - name: PLL_MP_ENABLE
+    description: Enable.
+    value: 1
+enum/PLL_LOCK:
+  bit_size: 1
+  variants:
+  - name: PLL_NOT_LOCKED
+    description: Not locked.
+    value: 0
+  - name: PLL_LOCKED
+    description: Locked.
+    value: 1
+enum/PLL_POWER:
+  bit_size: 1
+  variants:
+  - name: PLL_FORCE_PWD
+    description: Power down.
+    value: 0
+  - name: PLL_ALLOW_POWERUP
+    description: Allow powerup.
+    value: 1
+enum/PLL_PREDIV:
+  bit_size: 1
+  variants:
+  - name: PREDIV_1
+    description: Uses the undivided reference clock for PLL loop.
+    value: 0
+  - name: PREDIV_2
+    description: Divides the reference clock by two for PLL loop.
+    value: 1
+enum/PLL_REG_ENABLE:
+  bit_size: 1
+  variants:
+  - name: PLL_REG_DISABLE
+    description: Disable.
+    value: 0
+  - name: PLL_REG_ENABLE
+    description: Enable.
+    value: 1
+enum/PLUG_CONTACT:
+  bit_size: 1
+  variants:
+  - name: NO_DC_DETECTED
+    description: Not detected.
+    value: 0
+  - name: DC_DETECED
+    description: Detected.
+    value: 1
+enum/PULLUP_DP:
+  bit_size: 1
+  variants:
+  - name: DP_PUE_NORMAL
+    description: Disable.
+    value: 0
+  - name: DP_PUE_OVERRIDE
+    description: Enable.
+    value: 1
+enum/REFBIAS_PWD:
+  bit_size: 1
+  variants:
+  - name: REFBIAS_ENABLED
+    description: Enable.
+    value: 0
+  - name: REFBIAS_PWD
+    description: Disable or power down.
+    value: 1
+enum/REFBIAS_PWD_SEL:
+  bit_size: 1
+  variants:
+  - name: BIAS_PLLPOWER
+    description: PLL_POWER internal state signal.
+    value: 0
+  - name: BIAS_REFBIAS_PWD
+    description: REFBIAS_PWD.
+    value: 1
+enum/RESUMEIRQSTICKY:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: During the resume or reset state signaling period.
+    value: 0
+  - name: ENABLE
+    description: Until you write 0 to it.
+    value: 1
+enum/RESUME_IRQ:
+  bit_size: 1
+  variants:
+  - name: NORESIRQ
+    description: No resume interrupt.
+    value: 0
+  - name: RESIRQ
+    description: Resume interrupt.
+    value: 1
+enum/RXPWD1PT1:
+  bit_size: 1
+  variants:
+  - name: FS_RXDIFF_ENABLE
+    description: Enable.
+    value: 0
+  - name: FS_RXDIFF_PWD
+    description: Disable or power down.
+    value: 1
+enum/RXPWDDIFF:
+  bit_size: 1
+  variants:
+  - name: HS_RXDIFF_ENABLE
+    description: Enable.
+    value: 0
+  - name: HS_RXDIFF_PWD
+    description: Disable or power down.
+    value: 1
+enum/RXPWDENV:
+  bit_size: 1
+  variants:
+  - name: RX_ENVHD_ENABLE
+    description: Enable.
+    value: 0
+  - name: RX_ENVHD_PWD
+    description: Disable or power down.
+    value: 1
+enum/RXPWDRX:
+  bit_size: 1
+  variants:
+  - name: RX_BIAS_ENABLE
+    description: Enable.
+    value: 0
+  - name: RX_BIAS_PWD
+    description: Disable or power down.
+    value: 1
+enum/SECDET_DCP:
+  bit_size: 1
+  variants:
+  - name: SECDET_CDP
+    description: CDP detected.
+    value: 0
+  - name: SECDET_DCP
+    description: DCP detected.
+    value: 1
+enum/SESSEND:
+  bit_size: 1
+  variants:
+  - name: SESSEND_LO
+    description: Above threshold.
+    value: 0
+  - name: SESSEND_HI
+    description: Below threshold.
+    value: 1
+enum/SFTRST:
+  bit_size: 1
+  variants:
+  - name: RELEASE_RESET
+    description: Release from reset.
+    value: 0
+  - name: SOFT_RESET
+    description: Soft-reset.
+    value: 1
+enum/TXPWDFS:
+  bit_size: 1
+  variants:
+  - name: FSTX_BIAS_ENABLE
+    description: Provide bias to enable.
+    value: 0
+  - name: FSTX_BIAS_PWD
+    description: Disable or power down.
+    value: 1
+enum/TXPWDIBIAS:
+  bit_size: 1
+  variants:
+  - name: IBIAS_ENABLE
+    description: Enable.
+    value: 0
+  - name: IBIAS_PWD
+    description: Disable or power down.
+    value: 1
+enum/TXPWDV2I:
+  bit_size: 1
+  variants:
+  - name: V2I_BIAS_ENABLE
+    description: Enable.
+    value: 0
+  - name: V2I_BIAS_PWD
+    description: Disable or power down.
+    value: 1
+enum/TX_CAL45DM_OVERRIDE:
+  bit_size: 1
+  variants:
+  - name: USE_TRIM0_CAL45DN
+    description: TRIM_OVERRIDE_EN.
+    value: 0
+  - name: USE_TX_CAL45DN
+    description: TX.
+    value: 1
+enum/TX_CAL45DP_OVERRIDE:
+  bit_size: 1
+  variants:
+  - name: USE_TRIM0_CAL45DP
+    description: TRIM_OVERRIDE_EN.
+    value: 0
+  - name: USE_TX_CAL45DP
+    description: TX.
+    value: 1
+enum/TX_D_CAL_OVERRIDE:
+  bit_size: 1
+  variants:
+  - name: USE_TRIM0_DCAL
+    description: TRIM_OVERRIDE_EN.
+    value: 0
+  - name: USE_TX_DCAL
+    description: TX.
+    value: 1
+enum/USBPHY_TX_D_CAL:
+  bit_size: 4
+  variants:
+  - name: MAX_CURRENT
+    description: Maximum current, approximately 19% above nominal.
+    value: 0
+  - name: NOMINAL
+    description: Nominal.
+    value: 7
+  - name: MIN_CURRENT
+    description: Minimum current, approximately 19% below nominal.
+    value: 15
+enum/UTMI_SUSPENDM:
+  bit_size: 1
+  variants:
+  - name: NOT_SUSPENDED
+    description: Not suspended.
+    value: 0
+  - name: SUSPENDED
+    description: Suspended.
+    value: 1
+enum/VBUSVALID_PWRUP_CMPS:
+  bit_size: 3
+  variants:
+  - name: SESS_VLD_DISABLE
+    description: Disable or power down the session valid detector.
+    value: 0
+  - name: V3V_DISABLE
+    description: Disable or power down the VBUS_VALID_3V detector.
+    value: 0
+  - name: VBUS_VALID_DISABLE
+    description: Disable or power down the VBUS_VALID comparator.
+    value: 0
+  - name: VBUS_VALID_ENABLE
+    description: Enable the VBUS_VALID comparator.
+    value: 1
+  - name: SESS_VLD_ENABLE
+    description: Enable the session valid detector.
+    value: 2
+  - name: V3V_ENABLE
+    description: Enable the VBUS_VALID_3V detector.
+    value: 4
+enum/VBUSVALID_SEL:
+  bit_size: 1
+  variants:
+  - name: VBUS_VLD_OUT
+    description: VBUS_VALID comparator result.
+    value: 0
+  - name: VBUS_VLD_3V_OUT
+    description: VBUS_VALID_3V comparator result.
+    value: 1
+enum/VBUSVALID_THRESH:
+  bit_size: 3
+  variants:
+  - name: VBUS_VLD_4P0
+    description: 4.0 V.
+    value: 0
+  - name: VBUS_VLD_4P1
+    description: 4.1 V.
+    value: 1
+  - name: VBUS_VLD_4P2
+    description: 4.2 V.
+    value: 2
+  - name: VBUS_VLD_4P3
+    description: 4.3 V.
+    value: 3
+  - name: VBUS_VLD_4P4
+    description: 4.4 V.
+    value: 4
+  - name: VBUS_VLD_4P5
+    description: 4.5 V.
+    value: 5
+  - name: VBUS_VLD_4P6
+    description: 4.6 V.
+    value: 6
+  - name: VBUS_VLD_4P7
+    description: 4.7 V.
+    value: 7
+enum/VBUSVALID_TO_B:
+  bit_size: 1
+  variants:
+  - name: USE_VBUS_VLD
+    description: VBUS_VALID comparator.
+    value: 0
+  - name: USE_SESS_VLD
+    description: Session valid detector.
+    value: 1
+enum/VBUS_OVERRIDE_EN:
+  bit_size: 1
+  variants:
+  - name: VBUS_NO_OVERRIDE
+    description: Results of VBUS_VALID and session valid comparators for VBUS_VALID, AVALID, BVALID, and SESSEND.
+    value: 0
+  - name: VBUS_OVERRIDE
+    description: Override values for VBUS_VALID, AVALID, BVALID, and SESSEND.
+    value: 1
+enum/VBUS_SOURCE_SEL:
+  bit_size: 2
+  variants:
+  - name: USE_VBUS_VLD
+    description: VBUS_VALID comparator result.
+    value: 0
+  - name: USE_ASESS_VLD
+    description: Session valid comparator result.
+    value: 1
+  - name: USE_BSESS_VLD
+    description: Session valid comparator result.
+    value: 2
+enum/VBUS_VALID:
+  bit_size: 1
+  variants:
+  - name: VBUS_LO
+    description: Below threshold.
+    value: 0
+  - name: VBUS_HI
+    description: Above threshold.
+    value: 1
+enum/VBUS_VALID_3V:
+  bit_size: 1
+  variants:
+  - name: VBUS_VLD3V_LO
+    description: Below threshold.
+    value: 0
+  - name: VBUS_VLD3V_HI
+    description: Above threshold.
+    value: 1
+enum/VDM_SRC_ENABLE:
+  bit_size: 1
+  variants:
+  - name: DCD_VDM_SRC_DISABLE
+    description: Disable.
+    value: 0
+  - name: DCD_VDM_SRC_ENABLE
+    description: Enable.
+    value: 1

@@ -12245,8 +12245,8 @@ pub const PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "USB1",
-        address: 0,
-        driver_name: "",
+        address: 0x4002E000,
+        driver_name: "mcxa/USBHS",
         signals: &[
             Signal {
                 name: "OTGn_ID",
@@ -12297,9 +12297,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         gate: None,
     },
     Peripheral {
+        name: "USBNC",
+        address: 0x4002E200,
+        driver_name: "mcxa/USBNC",
+        signals: &[],
+        flexcomm: None,
+        dma_muxing: &[],
+        gate: None,
+    },
+    Peripheral {
         name: "USB1_HS_PHY",
-        address: 0,
-        driver_name: "",
+        address: 0x4002F000,
+        driver_name: "mcxa/USBPHY",
         signals: &[],
         flexcomm: None,
         dma_muxing: &[],
