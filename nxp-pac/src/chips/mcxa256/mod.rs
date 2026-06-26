@@ -41,8 +41,8 @@ pub enum Interrupt {
     WUU0 = 18,
     #[doc = "19 - CAN0"]
     CAN0 = 19,
-    #[doc = "20 - RESERVED36"]
-    RESERVED36 = 20,
+    #[doc = "20 - CAN1"]
+    CAN1 = 20,
     #[doc = "23 - FLEXIO"]
     FLEXIO = 23,
     #[doc = "24 - I3C0"]

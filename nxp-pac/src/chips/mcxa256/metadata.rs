@@ -1184,7 +1184,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
                         iomuxc_daisy: None,
                     },
                     SignalPin {
-                        pin: "P2_0",
+                        pin: "P2_1",
                         alt: 11u8,
                         iomuxc_daisy: None,
                     },
@@ -10826,7 +10826,7 @@ pub const INTERRUPTS: &[(&str, u32)] = &[
     ("TDET", 17u32),
     ("WUU0", 18u32),
     ("CAN0", 19u32),
-    ("RESERVED36", 20u32),
+    ("CAN1", 20u32),
     ("FLEXIO", 23u32),
     ("I3C0", 24u32),
     ("LPI2C0", 26u32),
