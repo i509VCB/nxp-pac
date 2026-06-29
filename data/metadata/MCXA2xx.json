@@ -1127,7 +1127,12 @@
           "mux": "DMA3",
           "request": 2
         }
-      ]
+      ],
+      "gate": {
+        "enable": "mrcc_glb_cc1",
+        "reset": "mrcc_glb_rst1",
+        "config": "CanConfig"
+      }
     },
     {
       "name": "CAN1",
@@ -1199,7 +1204,12 @@
           "mux": "DMA3",
           "request": 87
         }
-      ]
+      ],
+      "gate": {
+        "enable": "mrcc_glb_cc1",
+        "reset": "mrcc_glb_rst1",
+        "config": "CanConfig"
+      }
     },
     {
       "name": "CDOG0",

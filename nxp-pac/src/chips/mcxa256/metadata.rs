@@ -1127,7 +1127,11 @@ pub const PERIPHERALS: &[Peripheral] = &[
             mux: "DMA3",
             request: 2,
         }],
-        gate: None,
+        gate: Some(Gate {
+            enable: "mrcc_glb_cc1",
+            reset: Some("mrcc_glb_rst1"),
+            config: Some("CanConfig"),
+        }),
     },
     Peripheral {
         name: "CAN1",
@@ -1213,7 +1217,11 @@ pub const PERIPHERALS: &[Peripheral] = &[
             mux: "DMA3",
             request: 87,
         }],
-        gate: None,
+        gate: Some(Gate {
+            enable: "mrcc_glb_cc1",
+            reset: Some("mrcc_glb_rst1"),
+            config: Some("CanConfig"),
+        }),
     },
     Peripheral {
         name: "CDOG0",
