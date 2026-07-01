@@ -19,7 +19,7 @@ unsafe extern "C" {
     fn TDET();
     fn WUU0();
     fn CAN0();
-    fn RESERVED36();
+    fn CAN1();
     fn FLEXIO();
     fn I3C0();
     fn LPI2C0();
@@ -124,9 +124,7 @@ pub static __INTERRUPTS: [Vector; 122] = [
     Vector { _handler: TDET },
     Vector { _handler: WUU0 },
     Vector { _handler: CAN0 },
-    Vector {
-        _handler: RESERVED36,
-    },
+    Vector { _handler: CAN1 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _handler: FLEXIO },

@@ -523,7 +523,7 @@
     "TDET": 17,
     "WUU0": 18,
     "CAN0": 19,
-    "RESERVED36": 20,
+    "CAN1": 20,
     "FLEXIO": 23,
     "I3C0": 24,
     "LPI2C0": 26,
@@ -1127,7 +1127,12 @@
           "mux": "DMA3",
           "request": 2
         }
-      ]
+      ],
+      "gate": {
+        "enable": "mrcc_glb_cc1",
+        "reset": "mrcc_glb_rst1",
+        "config": "CanConfig"
+      }
     },
     {
       "name": "CAN1",
@@ -1175,7 +1180,7 @@
               "alt": 11
             },
             {
-              "pin": "P2_0",
+              "pin": "P2_1",
               "alt": 11
             },
             {
@@ -1199,7 +1204,12 @@
           "mux": "DMA3",
           "request": 87
         }
-      ]
+      ],
+      "gate": {
+        "enable": "mrcc_glb_cc1",
+        "reset": "mrcc_glb_rst1",
+        "config": "CanConfig"
+      }
     },
     {
       "name": "CDOG0",
