@@ -10,6 +10,7 @@ pub const META_PERIPHERALS: &[&str] = &[
     "mcxa/DAC",
     "mcxa/DMA",
     "mcxa/EDMA_TCD",
+    "mcxa/ESPI",
     "mcxa/FLEXIO",
     "mcxa/FLEXPWM",
     "mcxa/FLEXSPI",

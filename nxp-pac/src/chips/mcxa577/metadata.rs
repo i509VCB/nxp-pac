@@ -12759,9 +12759,9 @@ pub const PERIPHERALS: &[Peripheral] = &[
         gate: None,
     },
     Peripheral {
-        name: "eSPI0",
+        name: "ESPI0",
         address: 0x4001F000,
-        driver_name: "",
+        driver_name: "mcxa/ESPI",
         signals: &[
             Signal {
                 name: "CLK",

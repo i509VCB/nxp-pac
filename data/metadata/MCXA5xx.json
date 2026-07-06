@@ -11010,8 +11010,9 @@
       "signals": []
     },
     {
-      "name": "eSPI0",
+      "name": "ESPI0",
       "address": "0x4001F000",
+      "block": "mcxa/ESPI",
       "signals": [
         {
           "name": "CLK",
