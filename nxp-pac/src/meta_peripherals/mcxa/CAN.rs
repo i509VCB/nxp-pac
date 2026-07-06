@@ -338,6 +338,27 @@ impl Can {
     pub const fn erfsr(self) -> crate::pac::common::Reg<Erfsr, crate::pac::common::RW> {
         unsafe { crate::pac::common::Reg::from_ptr(self.ptr.wrapping_add(0x0c14usize) as _) }
     }
+    #[doc = "Enhanced RX FIFO output element CS field. Reads the CS word of the oldest element in the Enhanced RX FIFO."]
+    #[inline(always)]
+    pub const fn erfifo_cs(self) -> crate::pac::common::Reg<Cs, crate::pac::common::R> {
+        unsafe { crate::pac::common::Reg::from_ptr(self.ptr.wrapping_add(0x2000usize) as _) }
+    }
+    #[doc = "Enhanced RX FIFO output element ID field. Reads the ID word of the oldest element in the Enhanced RX FIFO."]
+    #[inline(always)]
+    pub const fn erfifo_id(self) -> crate::pac::common::Reg<Id, crate::pac::common::R> {
+        unsafe { crate::pac::common::Reg::from_ptr(self.ptr.wrapping_add(0x2004usize) as _) }
+    }
+    #[doc = "Enhanced RX FIFO output element DATA words. Reads the payload of the oldest element in the Enhanced RX FIFO (up to 16 words / 64 bytes)."]
+    #[inline(always)]
+    pub const fn erfifo_data(
+        self,
+        n: usize,
+    ) -> crate::pac::common::Reg<u32, crate::pac::common::R> {
+        assert!(n < 16usize);
+        unsafe {
+            crate::pac::common::Reg::from_ptr(self.ptr.wrapping_add(0x2008usize + n * 4usize) as _)
+        }
+    }
     #[doc = "Enhanced RX FIFO Filter Element."]
     #[inline(always)]
     pub const fn erffel(self, n: usize) -> crate::pac::common::Reg<Erffel, crate::pac::common::RW> {
