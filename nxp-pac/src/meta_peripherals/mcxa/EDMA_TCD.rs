@@ -137,6 +137,29 @@ impl Tcd {
 }
 #[doc = "DMA TCD."]
 #[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Tcd12 {
+    ptr: *mut u8,
+}
+unsafe impl Send for Tcd12 {}
+unsafe impl Sync for Tcd12 {}
+impl Tcd12 {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "Array of registers: CH_CSR, CH_ES, CH_INT, CH_MUX, CH_PRI, CH_SBR, TCD_ATTR, TCD_BITER_ELINKNO, TCD_BITER_ELINKYES, TCD_CITER_ELINKNO, TCD_CITER_ELINKYES, TCD_CSR, TCD_DADDR, TCD_DLAST_SGA, TCD_DOFF, TCD_NBYTES_MLOFFNO, TCD_NBYTES_MLOFFYES, TCD_SADDR, TCD_SLAST_SDA, TCD_SOFF."]
+    #[inline(always)]
+    pub const fn tcd(self, n: usize) -> Tcd {
+        assert!(n < 12usize);
+        unsafe { Tcd::from_ptr(self.ptr.wrapping_add(0x0usize + n * 4096usize) as _) }
+    }
+}
+#[doc = "DMA TCD."]
+#[derive(Copy, Clone, Eq, PartialEq)]
 pub struct Tcd4 {
     ptr: *mut u8,
 }

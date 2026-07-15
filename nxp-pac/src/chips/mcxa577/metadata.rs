@@ -12742,7 +12742,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "EDMA_0_TCD",
         address: 0x40081000,
-        driver_name: "mcxa/EDMA_TCD::TCD8",
+        driver_name: "mcxa/EDMA_TCD::TCD12",
         signals: &[],
         flexcomm: None,
         dma_muxing: &[],
