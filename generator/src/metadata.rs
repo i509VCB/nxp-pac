@@ -136,6 +136,8 @@ pub struct Gate {
     pub enable: String,
     pub reset: Option<String>,
     pub config: Option<String>,
+    #[serde(default)]
+    pub bit: Option<String>,
 }
 
 fn generate_metadata(name: &str, metadata: &Metadata) -> TokenStream {
@@ -260,6 +262,7 @@ fn generate_metadata(name: &str, metadata: &Metadata) -> TokenStream {
                 enable,
                 reset,
                 config,
+                bit,
             }) => {
                 let reset = match reset {
                     Some(reset) => quote! { Some(#reset) },
@@ -269,12 +272,17 @@ fn generate_metadata(name: &str, metadata: &Metadata) -> TokenStream {
                     Some(config) => quote! { Some(#config) },
                     None => quote! { None },
                 };
+                let bit = match bit.clone() {
+                    Some(bit) => { bit },
+                    None => { name.to_lowercase() }
+                };
 
                 quote! {
                     Some(Gate {
                         enable: #enable,
                         reset: #reset,
                         config: #config,
+                        bit: #bit,
                     })
                 }
             }

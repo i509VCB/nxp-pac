@@ -1230,7 +1230,8 @@
       "gate": {
         "enable": "mrcc_glb_cc2",
         "reset": "mrcc_glb_rst2",
-        "config": "CanConfig"
+        "config": "CanConfig",
+        "bit": "flexcan0"
       }
     },
     {
@@ -1307,7 +1308,8 @@
       "gate": {
         "enable": "mrcc_glb_cc2",
         "reset": "mrcc_glb_rst2",
-        "config": "CanConfig"
+        "config": "CanConfig",
+        "bit": "flexcan1"
       }
     },
     {

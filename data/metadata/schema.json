@@ -148,6 +148,10 @@
             "config": {
               "description": "The name of the config type used for setting up the clocks",
               "type": "string"
+            },
+            "bit": {
+              "description": "The name of the bit field inside the MRCC registers. Defaults to the lowercased peripheral name if not manually specified.",
+              "type": "string"
             }
           },
           "required": [
