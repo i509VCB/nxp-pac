@@ -11000,7 +11000,7 @@
     {
       "name": "EDMA_0_TCD",
       "address": "0x40081000",
-      "block": "mcxa/EDMA_TCD::TCD8",
+      "block": "mcxa/EDMA_TCD::TCD12",
       "signals": []
     },
     {
