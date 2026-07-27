@@ -252,6 +252,23 @@ block/Can:
       stride: 4
     byte_offset: 12288
     fieldset: Erffel
+  - name: erfifo_cs
+    description: Enhanced RX FIFO output element CS field. Reads the CS word of the oldest element in the Enhanced RX FIFO.
+    byte_offset: 8192
+    access: Read
+    fieldset: Cs
+  - name: erfifo_id
+    description: Enhanced RX FIFO output element ID field. Reads the ID word of the oldest element in the Enhanced RX FIFO.
+    byte_offset: 8196
+    access: Read
+    fieldset: Id
+  - name: erfifo_data
+    description: Enhanced RX FIFO output element DATA words. Reads the payload of the oldest element in the Enhanced RX FIFO (up to 16 words / 64 bytes).
+    array:
+      len: 16
+      stride: 4
+    byte_offset: 8200
+    access: Read
 block/Wmb:
   description: 'Array of registers: WMB_CS, WMB_D03, WMB_D47, WMB_ID.'
   items:

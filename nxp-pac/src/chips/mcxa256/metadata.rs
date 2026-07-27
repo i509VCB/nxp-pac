@@ -810,6 +810,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_cc1",
             reset: Some("mrcc_glb_rst1"),
             config: Some("AdcConfig"),
+            bit: "adc0",
         }),
     },
     Peripheral {
@@ -1017,6 +1018,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_cc1",
             reset: Some("mrcc_glb_rst1"),
             config: Some("AdcConfig"),
+            bit: "adc1",
         }),
     },
     Peripheral {
@@ -1131,6 +1133,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_cc1",
             reset: Some("mrcc_glb_rst1"),
             config: Some("CanConfig"),
+            bit: "flexcan0",
         }),
     },
     Peripheral {
@@ -1221,6 +1224,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_cc1",
             reset: Some("mrcc_glb_rst1"),
             config: Some("CanConfig"),
+            bit: "flexcan1",
         }),
     },
     Peripheral {
@@ -1469,6 +1473,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_cc0",
             reset: Some("mrcc_glb_rst0"),
             config: None,
+            bit: "crc0",
         }),
     },
     Peripheral {
@@ -2036,6 +2041,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_cc0",
             reset: Some("mrcc_glb_rst0"),
             config: Some("CTimerConfig"),
+            bit: "ctimer0",
         }),
     },
     Peripheral {
@@ -2528,6 +2534,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_cc0",
             reset: Some("mrcc_glb_rst0"),
             config: Some("CTimerConfig"),
+            bit: "ctimer1",
         }),
     },
     Peripheral {
@@ -3040,6 +3047,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_cc0",
             reset: Some("mrcc_glb_rst0"),
             config: Some("CTimerConfig"),
+            bit: "ctimer2",
         }),
     },
     Peripheral {
@@ -3547,6 +3555,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_cc0",
             reset: Some("mrcc_glb_rst0"),
             config: Some("CTimerConfig"),
+            bit: "ctimer3",
         }),
     },
     Peripheral {
@@ -4049,6 +4058,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_cc0",
             reset: Some("mrcc_glb_rst0"),
             config: Some("CTimerConfig"),
+            bit: "ctimer4",
         }),
     },
     Peripheral {
@@ -4074,6 +4084,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_cc1",
             reset: Some("mrcc_glb_rst1"),
             config: Some("DacConfig"),
+            bit: "dac0",
         }),
     },
     Peripheral {
@@ -4133,6 +4144,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_acc0",
             reset: Some("mrcc_glb_rst0"),
             config: None,
+            bit: "dma0",
         }),
     },
     Peripheral {
@@ -6101,6 +6113,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_acc2",
             reset: Some("mrcc_glb_rst2"),
             config: None,
+            bit: "gpio0",
         }),
     },
     Peripheral {
@@ -6326,6 +6339,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_acc2",
             reset: Some("mrcc_glb_rst2"),
             config: None,
+            bit: "gpio1",
         }),
     },
     Peripheral {
@@ -6587,6 +6601,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_acc2",
             reset: Some("mrcc_glb_rst2"),
             config: None,
+            bit: "gpio2",
         }),
     },
     Peripheral {
@@ -6893,6 +6908,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_acc2",
             reset: Some("mrcc_glb_rst2"),
             config: None,
+            bit: "gpio3",
         }),
     },
     Peripheral {
@@ -6983,6 +6999,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_acc2",
             reset: Some("mrcc_glb_rst2"),
             config: None,
+            bit: "gpio4",
         }),
     },
     Peripheral {
@@ -7066,6 +7083,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_cc0",
             reset: Some("mrcc_glb_rst0"),
             config: Some("I3cConfig"),
+            bit: "i3c0",
         }),
     },
     Peripheral {
@@ -7079,6 +7097,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_cc0",
             reset: Some("mrcc_glb_rst0"),
             config: None,
+            bit: "inputmux0",
         }),
     },
     Peripheral {
@@ -7187,6 +7206,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_acc0",
             reset: Some("mrcc_glb_rst0"),
             config: Some("Lpi2cConfig"),
+            bit: "lpi2c0",
         }),
     },
     Peripheral {
@@ -7276,6 +7296,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_acc0",
             reset: Some("mrcc_glb_rst0"),
             config: Some("Lpi2cConfig"),
+            bit: "lpi2c1",
         }),
     },
     Peripheral {
@@ -7374,6 +7395,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_acc1",
             reset: Some("mrcc_glb_rst1"),
             config: Some("Lpi2cConfig"),
+            bit: "lpi2c2",
         }),
     },
     Peripheral {
@@ -7458,6 +7480,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_acc1",
             reset: Some("mrcc_glb_rst1"),
             config: Some("Lpi2cConfig"),
+            bit: "lpi2c3",
         }),
     },
     Peripheral {
@@ -7595,6 +7618,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_acc0",
             reset: Some("mrcc_glb_rst0"),
             config: Some("LpspiConfig"),
+            bit: "lpspi0",
         }),
     },
     Peripheral {
@@ -7737,6 +7761,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_acc0",
             reset: Some("mrcc_glb_rst0"),
             config: Some("LpspiConfig"),
+            bit: "lpspi1",
         }),
     },
     Peripheral {
@@ -7878,6 +7903,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_acc0",
             reset: Some("mrcc_glb_rst0"),
             config: Some("LpuartConfig"),
+            bit: "lpuart0",
         }),
     },
     Peripheral {
@@ -8012,6 +8038,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_acc0",
             reset: Some("mrcc_glb_rst0"),
             config: Some("LpuartConfig"),
+            bit: "lpuart1",
         }),
     },
     Peripheral {
@@ -8151,6 +8178,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_acc0",
             reset: Some("mrcc_glb_rst0"),
             config: Some("LpuartConfig"),
+            bit: "lpuart2",
         }),
     },
     Peripheral {
@@ -8260,6 +8288,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_acc0",
             reset: Some("mrcc_glb_rst0"),
             config: Some("LpuartConfig"),
+            bit: "lpuart3",
         }),
     },
     Peripheral {
@@ -8379,6 +8408,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_acc0",
             reset: Some("mrcc_glb_rst0"),
             config: Some("LpuartConfig"),
+            bit: "lpuart4",
         }),
     },
     Peripheral {
@@ -8508,6 +8538,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_acc1",
             reset: Some("mrcc_glb_rst1"),
             config: Some("LpuartConfig"),
+            bit: "lpuart5",
         }),
     },
     Peripheral {
@@ -8598,6 +8629,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_cc1",
             reset: Some("mrcc_glb_rst1"),
             config: Some("OsTimerConfig"),
+            bit: "ostimer0",
         }),
     },
     Peripheral {
@@ -8620,6 +8652,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_cc1",
             reset: Some("mrcc_glb_rst1"),
             config: None,
+            bit: "port0",
         }),
     },
     Peripheral {
@@ -8633,6 +8666,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_cc1",
             reset: Some("mrcc_glb_rst1"),
             config: None,
+            bit: "port1",
         }),
     },
     Peripheral {
@@ -8646,6 +8680,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_cc1",
             reset: Some("mrcc_glb_rst1"),
             config: None,
+            bit: "port2",
         }),
     },
     Peripheral {
@@ -8659,6 +8694,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_cc1",
             reset: Some("mrcc_glb_rst1"),
             config: None,
+            bit: "port3",
         }),
     },
     Peripheral {
@@ -8672,6 +8708,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_cc1",
             reset: Some("mrcc_glb_rst1"),
             config: None,
+            bit: "port4",
         }),
     },
     Peripheral {
@@ -8764,6 +8801,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_cc1",
             reset: None,
             config: Some("Clk1MConfig"),
+            bit: "sgi0",
         }),
     },
     Peripheral {
@@ -10352,6 +10390,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_cc1",
             reset: Some("mrcc_glb_rst1"),
             config: None,
+            bit: "trng0",
         }),
     },
     Peripheral {
@@ -10775,6 +10814,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
             enable: "mrcc_glb_acc0",
             reset: None,
             config: Some("Clk1MConfig"),
+            bit: "wwdt0",
         }),
     },
     Peripheral {

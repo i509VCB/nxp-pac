@@ -79,6 +79,7 @@ pub struct Gate {
     pub enable: &'static str,
     pub reset: Option<&'static str>,
     pub config: Option<&'static str>,
+    pub bit: &'static str,
 }
 
 pub use _generated::*;
