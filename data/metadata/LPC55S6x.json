@@ -126,6 +126,7 @@
     { "name": "VREFN" }
   ],
   "peripherals": [
+    {"name": "ADC0", "signals": []},
     {
       "name": "DMA0",
       "signals": [
