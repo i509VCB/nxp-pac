@@ -339,6 +339,15 @@ pub const PINS: &[Pin] = &[
 ];
 pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
+        name: "ADC0",
+        address: 0,
+        driver_name: "",
+        signals: &[],
+        flexcomm: None,
+        dma_muxing: &[],
+        gate: None,
+    },
+    Peripheral {
         name: "DMA0",
         address: 0,
         driver_name: "",
