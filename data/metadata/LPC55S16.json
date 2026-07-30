@@ -515,6 +515,11 @@
       "name": "USBHSD",
       "address": "0x4009_4000",
       "signals": []
+    },
+    {
+      "name": "USB0",
+      "address": "0x4008_4000",
+      "signals": []
     }
   ]
 }
