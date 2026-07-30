@@ -434,6 +434,78 @@
       ]
     },
     {
+      "name": "SPI0",
+      "flexcomm": "FLEXCOMM0",
+      "signals": [
+        { "name": "MISO", "pins": [ { "pin": "PIO1_6", "alt": 1 } ] },
+        { "name": "MOSI", "pins": [ { "pin": "PIO1_5", "alt": 1 } ] },
+        { "name": "SCK", "pins": [ { "pin": "PIO1_4", "alt": 1 } ] }
+      ]
+    },
+    {
+      "name": "SPI1",
+      "flexcomm": "FLEXCOMM1",
+      "signals": [
+        { "name": "MISO", "pins": [ { "pin": "PIO1_11", "alt": 2 } ] },
+        { "name": "MOSI", "pins": [ { "pin": "PIO1_10", "alt": 2 } ] },
+        { "name": "SCK", "pins": [ { "pin": "PIO1_9", "alt": 2 } ] }
+      ]
+    },
+    {
+      "name": "SPI2",
+      "flexcomm": "FLEXCOMM2",
+      "signals": [
+        { "name": "MISO", "pins": [ { "pin": "PIO1_25", "alt": 1 } ] },
+        { "name": "MOSI", "pins": [ { "pin": "PIO1_24", "alt": 1 } ] },
+        { "name": "SCK", "pins": [ { "pin": "PIO1_23", "alt": 1 } ] }
+      ]
+    },
+    {
+      "name": "SPI3",
+      "flexcomm": "FLEXCOMM3",
+      "signals": [
+        { "name": "MISO", "pins": [ { "pin": "PIO0_2", "alt": 1 } ] },
+        { "name": "MOSI", "pins": [ { "pin": "PIO0_3", "alt": 1 } ] },
+        { "name": "SCK", "pins": [ { "pin": "PIO0_0", "alt": 2 } ] }
+      ]
+    },
+    {
+      "name": "SPI4",
+      "flexcomm": "FLEXCOMM4",
+      "signals": [
+        { "name": "MISO", "pins": [ { "pin": "PIO1_20", "alt": 5 } ] },
+        { "name": "MOSI", "pins": [ { "pin": "PIO1_21", "alt": 5 } ] },
+        { "name": "SCK", "pins": [ { "pin": "PIO1_19", "alt": 5 } ] }
+      ]
+    },
+    {
+      "name": "SPI5",
+      "flexcomm": "FLEXCOMM5",
+      "signals": [
+        { "name": "MISO", "pins": [ { "pin": "PIO0_9", "alt": 3 } ] },
+        { "name": "MOSI", "pins": [ { "pin": "PIO0_8", "alt": 3 } ] },
+        { "name": "SCK", "pins": [ { "pin": "PIO0_7", "alt": 3 } ] }
+      ]
+    },
+    {
+      "name": "SPI6",
+      "flexcomm": "FLEXCOMM6",
+      "signals": [
+        { "name": "MISO", "pins": [ { "pin": "PIO1_16", "alt": 2 } ] },
+        { "name": "MOSI", "pins": [ { "pin": "PIO1_13", "alt": 2 } ] },
+        { "name": "SCK", "pins": [ { "pin": "PIO1_12", "alt": 2 } ] }
+      ]
+    },
+    {
+      "name": "SPI7",
+      "flexcomm": "FLEXCOMM7",
+      "signals": [
+        { "name": "MISO", "pins": [ { "pin": "PIO0_19", "alt": 7 } ] },
+        { "name": "MOSI", "pins": [ { "pin": "PIO0_20", "alt": 7 } ] },
+        { "name": "SCK", "pins": [ { "pin": "PIO0_21", "alt": 7 } ] }
+      ]
+    },
+    {
       "name": "SCT0",
       "signals": [
         {
