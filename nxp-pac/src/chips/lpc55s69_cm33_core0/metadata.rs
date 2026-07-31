@@ -1972,6 +1972,15 @@ pub const PERIPHERALS: &[Peripheral] = &[
         dma_muxing: &[],
         gate: None,
     },
+    Peripheral {
+        name: "HASHCRYPT",
+        address: 0x400A_4000,
+        driver_name: "",
+        signals: &[],
+        flexcomm: None,
+        dma_muxing: &[],
+        gate: None,
+    },
 ];
 pub const INTERRUPTS: &[(&str, u32)] = &[
     ("WDT_BOD", 0u32),
