@@ -593,6 +593,11 @@
       "name": "USB0",
       "address": "0x4008_4000",
       "signals": []
+    },
+    {
+      "name": "HASHCRYPT",
+      "address": "0x400A_4000",
+      "signals": []
     }
   ]
 }
