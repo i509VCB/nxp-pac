@@ -1,0 +1,1029 @@
+{
+  "$schema": "./schema.json",
+  "$comment": "MCXN947",
+  "chips": [
+    "MCXN947"
+  ],
+  "nvic_prio_bits": 3,
+  "interrupts": {
+    "ETB0": 149,
+    "CTI0": 155,
+    "PINT0": 47,
+    "CTIMER0": 31,
+    "CTIMER1": 32,
+    "CTIMER2": 34,
+    "CTIMER3": 55,
+    "CTIMER4": 56,
+    "FREQME": 71,
+    "UTICK0": 29,
+    "MRT0": 30,
+    "WWDT0": 152,
+    "WWDT1": 153,
+    "I3C0": 95,
+    "I3C1": 96,
+    "GDET": 98,
+    "ITRC0": 132,
+    "PKC": 74,
+    "PKC_ERR": 135,
+    "PUF": 75,
+    "BSP32": 133,
+    "SMARTDMA": 53,
+    "PLU": 70,
+    "GPIO50": 27,
+    "GPIO51": 28,
+    "PORT_EFT": 148,
+    "FMU0": 138,
+    "SCG": 145,
+    "SPC": 146,
+    "WUU": 147,
+    "CMC0": 154,
+    "OS_EVENT": 57,
+    "LPTMR0": 143,
+    "LPTMR1": 144,
+    "RTC": 52,
+    "TSI_END_OF_SCAN": 101,
+    "TSI_OUT_OF_SCAN": 102,
+    "HSCMP0": 109,
+    "HSCMP1": 110,
+    "HSCMP2": 111,
+    "ELS": 73,
+    "ELS_ERR": 134,
+    "VBAT0": 99,
+    "ERM_SINGLE_BIT_ERROR": 136,
+    "ERM_MULTI_BIT_ERROR": 137,
+    "EDMA_0_CH0": 1,
+    "EDMA_0_CH1": 2,
+    "EDMA_0_CH2": 3,
+    "EDMA_0_CH3": 4,
+    "EDMA_0_CH4": 5,
+    "EDMA_0_CH5": 6,
+    "EDMA_0_CH6": 7,
+    "EDMA_0_CH7": 8,
+    "EDMA_0_CH8": 9,
+    "EDMA_0_CH9": 10,
+    "EDMA_0_CH10": 11,
+    "EDMA_0_CH11": 12,
+    "EDMA_0_CH12": 13,
+    "EDMA_0_CH13": 14,
+    "EDMA_0_CH14": 15,
+    "EDMA_0_CH15": 16,
+    "EDMA_1_CH0": 77,
+    "EDMA_1_CH1": 78,
+    "EDMA_1_CH2": 79,
+    "EDMA_1_CH3": 80,
+    "EDMA_1_CH4": 81,
+    "EDMA_1_CH5": 82,
+    "EDMA_1_CH6": 83,
+    "EDMA_1_CH7": 84,
+    "EDMA_1_CH8": 85,
+    "EDMA_1_CH9": 86,
+    "EDMA_1_CH10": 87,
+    "EDMA_1_CH11": 88,
+    "EDMA_1_CH12": 89,
+    "EDMA_1_CH13": 90,
+    "EDMA_1_CH14": 91,
+    "EDMA_1_CH15": 92,
+    "SCT0": 33,
+    "LP_FLEXCOMM0": 35,
+    "LP_FLEXCOMM1": 36,
+    "LP_FLEXCOMM2": 37,
+    "LP_FLEXCOMM3": 38,
+    "LP_FLEXCOMM4": 39,
+    "LP_FLEXCOMM5": 40,
+    "LP_FLEXCOMM6": 41,
+    "LP_FLEXCOMM7": 42,
+    "LP_FLEXCOMM8": 43,
+    "LP_FLEXCOMM9": 44,
+    "GPIO00": 17,
+    "GPIO01": 18,
+    "GPIO10": 19,
+    "GPIO11": 20,
+    "GPIO20": 21,
+    "GPIO21": 22,
+    "GPIO30": 23,
+    "GPIO31": 24,
+    "GPIO40": 25,
+    "GPIO41": 26,
+    "MAILBOX": 54,
+    "CDOG0": 93,
+    "CDOG1": 94,
+    "PQ": 76,
+    "EWM0": 100,
+    "SEC_VIO": 72,
+    "FLEXSPI0": 58,
+    "FLEXPWM0_RELOAD_ERROR": 112,
+    "FLEXPWM0_FAULT": 113,
+    "FLEXPWM0_SUBMODULE0": 114,
+    "FLEXPWM0_SUBMODULE1": 115,
+    "FLEXPWM0_SUBMODULE2": 116,
+    "FLEXPWM0_SUBMODULE3": 117,
+    "FLEXPWM1_RELOAD_ERROR": 118,
+    "FLEXPWM1_FAULT": 119,
+    "FLEXPWM1_SUBMODULE0": 120,
+    "FLEXPWM1_SUBMODULE1": 121,
+    "FLEXPWM1_SUBMODULE2": 122,
+    "FLEXPWM1_SUBMODULE3": 123,
+    "QDC0_COMPARE": 124,
+    "QDC0_HOME": 125,
+    "QDC0_WDG_SAB": 126,
+    "QDC0_IDX": 127,
+    "QDC1_COMPARE": 128,
+    "QDC1_HOME": 129,
+    "QDC1_WDG_SAB": 130,
+    "QDC1_IDX": 131,
+    "CAN0": 62,
+    "CAN1": 63,
+    "USB0_DCD": 51,
+    "USB0_FS": 50,
+    "ETHERNET": 139,
+    "ETHERNET_PMT": 140,
+    "ETHERNET_MACLP": 141,
+    "EMVSIM0": 103,
+    "EMVSIM1": 104,
+    "FLEXIO": 105,
+    "SAI0": 59,
+    "SAI1": 60,
+    "SINC_FILTER": 142,
+    "USDHC0": 61,
+    "USB1_HS_PHY": 66,
+    "USB1_HS": 67,
+    "PDM_EVENT": 48,
+    "ADC0": 45,
+    "ADC1": 46,
+    "DAC0": 106,
+    "DAC1": 107,
+    "DAC2": 108,
+    "SEC_HYPERVISOR_CALL": 68,
+    "OR": 0,
+    "RESERVED65": 49,
+    "RESERVED80": 64,
+    "RESERVED81": 65,
+    "RESERVED85": 69,
+    "NPU": 97,
+    "RESERVED166": 150,
+    "RESERVED167": 151
+  },
+  "pins": [],
+  "peripherals": [
+    {
+      "name": "SYSCON0",
+      "address": "0x40000000",
+      "signals": []
+    },
+    {
+      "name": "PINT0",
+      "address": "0x40004000",
+      "signals": []
+    },
+    {
+      "name": "INPUTMUX0",
+      "address": "0x40006000",
+      "signals": []
+    },
+    {
+      "name": "CTIMER0",
+      "address": "0x4000C000",
+      "signals": []
+    },
+    {
+      "name": "CTIMER1",
+      "address": "0x4000D000",
+      "signals": []
+    },
+    {
+      "name": "CTIMER2",
+      "address": "0x4000E000",
+      "signals": []
+    },
+    {
+      "name": "CTIMER3",
+      "address": "0x4000F000",
+      "signals": []
+    },
+    {
+      "name": "CTIMER4",
+      "address": "0x40010000",
+      "signals": []
+    },
+    {
+      "name": "FREQME0",
+      "address": "0x40011000",
+      "signals": []
+    },
+    {
+      "name": "UTICK0",
+      "address": "0x40012000",
+      "signals": []
+    },
+    {
+      "name": "MRT0",
+      "address": "0x40013000",
+      "signals": []
+    },
+    {
+      "name": "WWDT0",
+      "address": "0x40016000",
+      "signals": []
+    },
+    {
+      "name": "WWDT1",
+      "address": "0x40017000",
+      "signals": []
+    },
+    {
+      "name": "CACHE64_CTRL0",
+      "address": "0x4001B000",
+      "signals": []
+    },
+    {
+      "name": "CACHE64_POLSEL0",
+      "address": "0x4001B000",
+      "signals": []
+    },
+    {
+      "name": "I3C0",
+      "address": "0x40021000",
+      "signals": []
+    },
+    {
+      "name": "I3C1",
+      "address": "0x40022000",
+      "signals": []
+    },
+    {
+      "name": "GDET0",
+      "address": "0x40024000",
+      "signals": []
+    },
+    {
+      "name": "GDET1",
+      "address": "0x40025000",
+      "signals": []
+    },
+    {
+      "name": "ITRC0",
+      "address": "0x40026000",
+      "signals": []
+    },
+    {
+      "name": "PKC0",
+      "address": "0x4002B000",
+      "signals": []
+    },
+    {
+      "name": "PUF",
+      "address": "0x4002C000",
+      "signals": []
+    },
+    {
+      "name": "PUF_ALIAS1",
+      "address": "0x4002D000",
+      "signals": []
+    },
+    {
+      "name": "PUF_ALIAS2",
+      "address": "0x4002E000",
+      "signals": []
+    },
+    {
+      "name": "PUF_ALIAS3",
+      "address": "0x4002F000",
+      "signals": []
+    },
+    {
+      "name": "PUF_CTRL",
+      "address": "0x4002C000",
+      "signals": []
+    },
+    {
+      "name": "PUF_CTRL_ALIAS1",
+      "address": "0x4002D000",
+      "signals": []
+    },
+    {
+      "name": "PUF_CTRL_ALIAS2",
+      "address": "0x4002E000",
+      "signals": []
+    },
+    {
+      "name": "PUF_CTRL_ALIAS3",
+      "address": "0x4002F000",
+      "signals": []
+    },
+    {
+      "name": "BSP32_0",
+      "address": "0x40032000",
+      "signals": []
+    },
+    {
+      "name": "SMARTDMA0",
+      "address": "0x40033000",
+      "signals": []
+    },
+    {
+      "name": "PLU0",
+      "address": "0x40034000",
+      "signals": []
+    },
+    {
+      "name": "GPIO5",
+      "address": "0x40040000",
+      "signals": []
+    },
+    {
+      "name": "GPIO5_ALIAS1",
+      "address": "0x40041000",
+      "signals": []
+    },
+    {
+      "name": "PORT5",
+      "address": "0x40042000",
+      "signals": []
+    },
+    {
+      "name": "FMU0",
+      "address": "0x40043000",
+      "signals": []
+    },
+    {
+      "name": "FMU0TEST",
+      "address": "0x40043000",
+      "signals": []
+    },
+    {
+      "name": "SCG0",
+      "address": "0x40044000",
+      "signals": []
+    },
+    {
+      "name": "SPC0",
+      "address": "0x40045000",
+      "signals": []
+    },
+    {
+      "name": "WUU0",
+      "address": "0x40046000",
+      "signals": []
+    },
+    {
+      "name": "CMC0",
+      "address": "0x40048000",
+      "signals": []
+    },
+    {
+      "name": "OSTIMER0",
+      "address": "0x40049000",
+      "signals": []
+    },
+    {
+      "name": "LPTMR0",
+      "address": "0x4004A000",
+      "signals": []
+    },
+    {
+      "name": "LPTMR1",
+      "address": "0x4004B000",
+      "signals": []
+    },
+    {
+      "name": "RTC0",
+      "address": "0x4004C000",
+      "signals": []
+    },
+    {
+      "name": "RTC_SUBSYSTEM0",
+      "address": "0x4004C000",
+      "signals": []
+    },
+    {
+      "name": "TSI0",
+      "address": "0x40050000",
+      "signals": []
+    },
+    {
+      "name": "CMP0",
+      "address": "0x40051000",
+      "signals": []
+    },
+    {
+      "name": "CMP1",
+      "address": "0x40052000",
+      "signals": []
+    },
+    {
+      "name": "CMP2",
+      "address": "0x40053000",
+      "signals": []
+    },
+    {
+      "name": "ELS",
+      "address": "0x40054000",
+      "signals": []
+    },
+    {
+      "name": "ELS_ALIAS1",
+      "address": "0x40055000",
+      "signals": []
+    },
+    {
+      "name": "ELS_ALIAS2",
+      "address": "0x40056000",
+      "signals": []
+    },
+    {
+      "name": "ELS_ALIAS3",
+      "address": "0x40057000",
+      "signals": []
+    },
+    {
+      "name": "TDET0",
+      "address": "0x40058000",
+      "signals": []
+    },
+    {
+      "name": "VBAT0",
+      "address": "0x40059000",
+      "signals": []
+    },
+    {
+      "name": "EIM0",
+      "address": "0x4005B000",
+      "signals": []
+    },
+    {
+      "name": "ERM0",
+      "address": "0x4005C000",
+      "signals": []
+    },
+    {
+      "name": "INTM0",
+      "address": "0x4005D000",
+      "signals": []
+    },
+    {
+      "name": "EDMA_0_TCD",
+      "address": "0x40081000",
+      "signals": []
+    },
+    {
+      "name": "SCT0",
+      "address": "0x40091000",
+      "signals": []
+    },
+    {
+      "name": "LPSPI0",
+      "address": "0x40092000",
+      "signals": []
+    },
+    {
+      "name": "LPSPI1",
+      "address": "0x40093000",
+      "signals": []
+    },
+    {
+      "name": "LPSPI2",
+      "address": "0x40094000",
+      "signals": []
+    },
+    {
+      "name": "LPSPI3",
+      "address": "0x40095000",
+      "signals": []
+    },
+    {
+      "name": "LPSPI4",
+      "address": "0x400B4000",
+      "signals": []
+    },
+    {
+      "name": "LPSPI5",
+      "address": "0x400B5000",
+      "signals": []
+    },
+    {
+      "name": "LPSPI6",
+      "address": "0x400B6000",
+      "signals": []
+    },
+    {
+      "name": "LPSPI7",
+      "address": "0x400B7000",
+      "signals": []
+    },
+    {
+      "name": "LPSPI8",
+      "address": "0x400B8000",
+      "signals": []
+    },
+    {
+      "name": "LPSPI9",
+      "address": "0x400B9000",
+      "signals": []
+    },
+    {
+      "name": "LPUART0",
+      "address": "0x40092000",
+      "signals": []
+    },
+    {
+      "name": "LPUART1",
+      "address": "0x40093000",
+      "signals": []
+    },
+    {
+      "name": "LPUART2",
+      "address": "0x40094000",
+      "signals": []
+    },
+    {
+      "name": "LPUART3",
+      "address": "0x40095000",
+      "signals": []
+    },
+    {
+      "name": "LPUART4",
+      "address": "0x400B4000",
+      "signals": []
+    },
+    {
+      "name": "LPUART5",
+      "address": "0x400B5000",
+      "signals": []
+    },
+    {
+      "name": "LPUART6",
+      "address": "0x400B6000",
+      "signals": []
+    },
+    {
+      "name": "LPUART7",
+      "address": "0x400B7000",
+      "signals": []
+    },
+    {
+      "name": "LPUART8",
+      "address": "0x400B8000",
+      "signals": []
+    },
+    {
+      "name": "LPUART9",
+      "address": "0x400B9000",
+      "signals": []
+    },
+    {
+      "name": "LP_FLEXCOMM0",
+      "address": "0x40092000",
+      "signals": []
+    },
+    {
+      "name": "LP_FLEXCOMM1",
+      "address": "0x40093000",
+      "signals": []
+    },
+    {
+      "name": "LP_FLEXCOMM2",
+      "address": "0x40094000",
+      "signals": []
+    },
+    {
+      "name": "LP_FLEXCOMM3",
+      "address": "0x40095000",
+      "signals": []
+    },
+    {
+      "name": "LP_FLEXCOMM4",
+      "address": "0x400B4000",
+      "signals": []
+    },
+    {
+      "name": "LP_FLEXCOMM5",
+      "address": "0x400B5000",
+      "signals": []
+    },
+    {
+      "name": "LP_FLEXCOMM6",
+      "address": "0x400B6000",
+      "signals": []
+    },
+    {
+      "name": "LP_FLEXCOMM7",
+      "address": "0x400B7000",
+      "signals": []
+    },
+    {
+      "name": "LP_FLEXCOMM8",
+      "address": "0x400B8000",
+      "signals": []
+    },
+    {
+      "name": "LP_FLEXCOMM9",
+      "address": "0x400B9000",
+      "signals": []
+    },
+    {
+      "name": "LPI2C0",
+      "address": "0x40092800",
+      "signals": []
+    },
+    {
+      "name": "LPI2C1",
+      "address": "0x40093800",
+      "signals": []
+    },
+    {
+      "name": "LPI2C2",
+      "address": "0x40094800",
+      "signals": []
+    },
+    {
+      "name": "LPI2C3",
+      "address": "0x40095800",
+      "signals": []
+    },
+    {
+      "name": "LPI2C4",
+      "address": "0x400B4800",
+      "signals": []
+    },
+    {
+      "name": "LPI2C5",
+      "address": "0x400B5800",
+      "signals": []
+    },
+    {
+      "name": "LPI2C6",
+      "address": "0x400B6800",
+      "signals": []
+    },
+    {
+      "name": "LPI2C7",
+      "address": "0x400B7800",
+      "signals": []
+    },
+    {
+      "name": "LPI2C8",
+      "address": "0x400B8800",
+      "signals": []
+    },
+    {
+      "name": "LPI2C9",
+      "address": "0x400B9800",
+      "signals": []
+    },
+    {
+      "name": "GPIO0",
+      "address": "0x40096000",
+      "signals": []
+    },
+    {
+      "name": "GPIO0_ALIAS1",
+      "address": "0x40097000",
+      "signals": []
+    },
+    {
+      "name": "GPIO1",
+      "address": "0x40098000",
+      "signals": []
+    },
+    {
+      "name": "GPIO1_ALIAS1",
+      "address": "0x40099000",
+      "signals": []
+    },
+    {
+      "name": "GPIO2",
+      "address": "0x4009A000",
+      "signals": []
+    },
+    {
+      "name": "GPIO2_ALIAS1",
+      "address": "0x4009B000",
+      "signals": []
+    },
+    {
+      "name": "GPIO3",
+      "address": "0x4009C000",
+      "signals": []
+    },
+    {
+      "name": "GPIO3_ALIAS1",
+      "address": "0x4009D000",
+      "signals": []
+    },
+    {
+      "name": "GPIO4",
+      "address": "0x4009E000",
+      "signals": []
+    },
+    {
+      "name": "GPIO4_ALIAS1",
+      "address": "0x4009F000",
+      "signals": []
+    },
+    {
+      "name": "EDMA_1_TCD",
+      "address": "0x400A1000",
+      "signals": []
+    },
+    {
+      "name": "SEMA42_0",
+      "address": "0x400B1000",
+      "signals": []
+    },
+    {
+      "name": "MAILBOX",
+      "address": "0x400B2000",
+      "signals": []
+    },
+    {
+      "name": "CDOG0",
+      "address": "0x400BB000",
+      "signals": []
+    },
+    {
+      "name": "CDOG1",
+      "address": "0x400BC000",
+      "signals": []
+    },
+    {
+      "name": "DM0",
+      "address": "0x400BD000",
+      "signals": []
+    },
+    {
+      "name": "POWERQUAD",
+      "address": "0x400BF000",
+      "signals": []
+    },
+    {
+      "name": "EWM0",
+      "address": "0x400C0000",
+      "signals": []
+    },
+    {
+      "name": "CMX_PERFMON0",
+      "address": "0x400C1000",
+      "signals": []
+    },
+    {
+      "name": "CMX_PERFMON1",
+      "address": "0x400C2000",
+      "signals": []
+    },
+    {
+      "name": "TRDC",
+      "address": "0x400C7000",
+      "signals": []
+    },
+    {
+      "name": "FLEXSPI0",
+      "address": "0x400C8000",
+      "signals": []
+    },
+    {
+      "name": "OTPC0",
+      "address": "0x400C9000",
+      "signals": []
+    },
+    {
+      "name": "CRC0",
+      "address": "0x400CB000",
+      "signals": []
+    },
+    {
+      "name": "NPX0",
+      "address": "0x400CC000",
+      "signals": []
+    },
+    {
+      "name": "PWM0",
+      "address": "0x400CE000",
+      "signals": []
+    },
+    {
+      "name": "PWM1",
+      "address": "0x400D0000",
+      "signals": []
+    },
+    {
+      "name": "QDC0",
+      "address": "0x400CF000",
+      "signals": []
+    },
+    {
+      "name": "QDC1",
+      "address": "0x400D1000",
+      "signals": []
+    },
+    {
+      "name": "EVTG0",
+      "address": "0x400D2000",
+      "signals": []
+    },
+    {
+      "name": "CAN0",
+      "address": "0x400D4000",
+      "signals": []
+    },
+    {
+      "name": "CAN1",
+      "address": "0x400D8000",
+      "signals": []
+    },
+    {
+      "name": "USBDCD0",
+      "address": "0x400DC000",
+      "signals": []
+    },
+    {
+      "name": "USBFS0",
+      "address": "0x400DD000",
+      "signals": []
+    },
+    {
+      "name": "ENET0",
+      "address": "0x40100000",
+      "signals": []
+    },
+    {
+      "name": "EMVSIM0",
+      "address": "0x40103000",
+      "signals": []
+    },
+    {
+      "name": "EMVSIM1",
+      "address": "0x40104000",
+      "signals": []
+    },
+    {
+      "name": "FLEXIO0",
+      "address": "0x40105000",
+      "signals": []
+    },
+    {
+      "name": "SAI0",
+      "address": "0x40106000",
+      "signals": []
+    },
+    {
+      "name": "SAI1",
+      "address": "0x40107000",
+      "signals": []
+    },
+    {
+      "name": "SINC0",
+      "address": "0x40108000",
+      "signals": []
+    },
+    {
+      "name": "USDHC0",
+      "address": "0x40109000",
+      "signals": []
+    },
+    {
+      "name": "USBPHY",
+      "address": "0x4010A000",
+      "signals": []
+    },
+    {
+      "name": "USBHS1_PHY_DCD",
+      "address": "0x4010A800",
+      "signals": []
+    },
+    {
+      "name": "USBHS1__USBC",
+      "address": "0x4010B000",
+      "signals": []
+    },
+    {
+      "name": "USBHS1__USBNC",
+      "address": "0x4010B200",
+      "signals": []
+    },
+    {
+      "name": "PDM",
+      "address": "0x4010C000",
+      "signals": []
+    },
+    {
+      "name": "ADC0",
+      "address": "0x4010D000",
+      "signals": []
+    },
+    {
+      "name": "ADC1",
+      "address": "0x4010E000",
+      "signals": []
+    },
+    {
+      "name": "DAC0",
+      "address": "0x4010F000",
+      "signals": []
+    },
+    {
+      "name": "DAC1",
+      "address": "0x40112000",
+      "signals": []
+    },
+    {
+      "name": "OPAMP0",
+      "address": "0x40110000",
+      "signals": []
+    },
+    {
+      "name": "OPAMP1",
+      "address": "0x40113000",
+      "signals": []
+    },
+    {
+      "name": "OPAMP2",
+      "address": "0x40115000",
+      "signals": []
+    },
+    {
+      "name": "VREF0",
+      "address": "0x40111000",
+      "signals": []
+    },
+    {
+      "name": "DAC2",
+      "address": "0x40114000",
+      "signals": []
+    },
+    {
+      "name": "PORT0",
+      "address": "0x40116000",
+      "signals": []
+    },
+    {
+      "name": "PORT1",
+      "address": "0x40117000",
+      "signals": []
+    },
+    {
+      "name": "PORT2",
+      "address": "0x40118000",
+      "signals": []
+    },
+    {
+      "name": "PORT3",
+      "address": "0x40119000",
+      "signals": []
+    },
+    {
+      "name": "PORT4",
+      "address": "0x4011A000",
+      "signals": []
+    },
+    {
+      "name": "AHBSC",
+      "address": "0x40120000",
+      "signals": []
+    },
+    {
+      "name": "AHBSC_ALIAS1",
+      "address": "0x40121000",
+      "signals": []
+    },
+    {
+      "name": "AHBSC_ALIAS2",
+      "address": "0x40122000",
+      "signals": []
+    },
+    {
+      "name": "AHBSC_ALIAS3",
+      "address": "0x40123000",
+      "signals": []
+    },
+    {
+      "name": "SCnSCB",
+      "address": "0xE000E000",
+      "signals": []
+    },
+    {
+      "name": "SysTick0",
+      "address": "0xE000E010",
+      "signals": []
+    },
+    {
+      "name": "NVIC",
+      "address": "0xE000E100",
+      "signals": []
+    },
+    {
+      "name": "SCB",
+      "address": "0xE000ED00",
+      "signals": []
+    },
+    {
+      "name": "MPU",
+      "address": "0xE000ED90",
+      "signals": []
+    },
+    {
+      "name": "SAU",
+      "address": "0xE000EDD0",
+      "signals": []
+    }
+  ]
+}
