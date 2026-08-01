@@ -3,5 +3,9 @@ includes:
   - cm33.yaml
   - useless.yaml
   - mcx/gpio.yaml
+  - mcx/port.yaml
+  - mcx/ctimer.yaml
+  - mcx/wwdt.yaml
+  - mcx/i3c.yaml
 transforms:
   - !Sort

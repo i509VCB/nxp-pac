@@ -1,0 +1,17 @@
+transforms:
+  # Merge any i3c peripherals, and allow overlapping registers
+  - !MergeBlocks
+    from: i3c\d+::I3c\d+
+    to: i3c::I3c
+    main: i3c::I3c
+    check: NoCheck
+
+  # Delete enums that could be bools.
+  - !DeleteEnums
+    from: i3c\d*::Mintclr(.+)
+
+  - !DeleteEnums
+    from: i3c\d*::(.+)Flush(f|t)b
+
+  - !DeleteEnums
+    from: i3c\d*::Mstatus(Txnotfull|Rxpend)

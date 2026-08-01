@@ -1,0 +1,196 @@
+block/Sema42:
+  description: SEMA42.
+  items:
+  - name: gate3
+    description: Gate.
+    byte_offset: 0
+    bit_size: 8
+    fieldset: Gate
+  - name: gate2
+    description: Gate.
+    byte_offset: 1
+    bit_size: 8
+    fieldset: Gate
+  - name: gate1
+    description: Gate.
+    byte_offset: 2
+    bit_size: 8
+    fieldset: Gate
+  - name: gate0
+    description: Gate.
+    byte_offset: 3
+    bit_size: 8
+    fieldset: Gate
+  - name: gate7
+    description: Gate.
+    byte_offset: 4
+    bit_size: 8
+    fieldset: Gate
+  - name: gate6
+    description: Gate.
+    byte_offset: 5
+    bit_size: 8
+    fieldset: Gate
+  - name: gate5
+    description: Gate.
+    byte_offset: 6
+    bit_size: 8
+    fieldset: Gate
+  - name: gate4
+    description: Gate.
+    byte_offset: 7
+    bit_size: 8
+    fieldset: Gate
+  - name: gate11
+    description: Gate.
+    byte_offset: 8
+    bit_size: 8
+    fieldset: Gate
+  - name: gate10
+    description: Gate.
+    byte_offset: 9
+    bit_size: 8
+    fieldset: Gate
+  - name: gate9
+    description: Gate.
+    byte_offset: 10
+    bit_size: 8
+    fieldset: Gate
+  - name: gate8
+    description: Gate.
+    byte_offset: 11
+    bit_size: 8
+    fieldset: Gate
+  - name: gate15
+    description: Gate.
+    byte_offset: 12
+    bit_size: 8
+    fieldset: Gate
+  - name: gate14
+    description: Gate.
+    byte_offset: 13
+    bit_size: 8
+    fieldset: Gate
+  - name: gate13
+    description: Gate.
+    byte_offset: 14
+    bit_size: 8
+    fieldset: Gate
+  - name: gate12
+    description: Gate.
+    byte_offset: 15
+    bit_size: 8
+    fieldset: Gate
+  - name: rstgt_r
+    description: Reset Gate Read.
+    byte_offset: 66
+    access: Read
+    bit_size: 16
+    fieldset: RstgtR
+  - name: rstgt_w
+    description: Reset Gate Write.
+    byte_offset: 66
+    access: Write
+    bit_size: 16
+    fieldset: RstgtW
+fieldset/Gate:
+  description: Gate.
+  bit_size: 8
+  fields:
+  - name: gtfsm
+    description: Gate Finite State Machine.
+    bit_offset: 0
+    bit_size: 4
+    enum: GateGtfsm
+fieldset/RstgtR:
+  description: Reset Gate Read.
+  bit_size: 16
+  fields:
+  - name: rstgtn
+    description: Reset Gate Number.
+    bit_offset: 0
+    bit_size: 8
+  - name: rstgms
+    description: Reset Gate Domain.
+    bit_offset: 8
+    bit_size: 4
+  - name: rstgsm
+    description: Reset Gate Finite State Machine.
+    bit_offset: 12
+    bit_size: 2
+    enum: Rstgsm
+fieldset/RstgtW:
+  description: Reset Gate Write.
+  bit_size: 16
+  fields:
+  - name: rstgtn
+    description: Reset Gate Number.
+    bit_offset: 0
+    bit_size: 8
+  - name: rstgdp
+    description: Reset Gate Data Pattern.
+    bit_offset: 8
+    bit_size: 8
+enum/GateGtfsm:
+  bit_size: 4
+  variants:
+  - name: Unlocked
+    description: The gate is unlocked (free).
+    value: 0
+  - name: LockedByD0
+    description: Domain 0 locked the gate.
+    value: 1
+  - name: LockedByD1
+    description: Domain 1 locked the gate.
+    value: 2
+  - name: LockedByD2
+    description: Domain 2 locked the gate.
+    value: 3
+  - name: LockedByD3
+    description: Domain 3 locked the gate.
+    value: 4
+  - name: LockedByD4
+    description: Domain 4 locked the gate.
+    value: 5
+  - name: LockedByD5
+    description: Domain 5 locked the gate.
+    value: 6
+  - name: LockedByD6
+    description: Domain 6 locked the gate.
+    value: 7
+  - name: LockedByD7
+    description: Domain 7 locked the gate.
+    value: 8
+  - name: LockedByD8
+    description: Domain 8 locked the gate.
+    value: 9
+  - name: LockedByD9
+    description: Domain 9 locked the gate.
+    value: 10
+  - name: LockedByD10
+    description: Domain 10 locked the gate.
+    value: 11
+  - name: LockedByD11
+    description: Domain 11 locked the gate.
+    value: 12
+  - name: LockedByD12
+    description: Domain 12 locked the gate.
+    value: 13
+  - name: LockedByD13
+    description: Domain 13 locked the gate.
+    value: 14
+  - name: LockedByD14
+    description: Domain 14 locked the gate.
+    value: 15
+enum/Rstgsm:
+  bit_size: 2
+  variants:
+  - name: Idle
+    description: Idle, waiting for the first data pattern write.
+    value: 0
+  - name: Waiting
+    description: Waiting for the second data pattern write.
+    value: 1
+  - name: TwoWriteDone
+    description: The 2-write sequence has completed. Generate the specified gate reset(s). After the reset is performed, this machine returns to the idle (waiting for first data pattern write) state.
+    value: 2

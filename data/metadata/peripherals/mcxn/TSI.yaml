@@ -1,0 +1,1608 @@
+block/Tsi:
+  description: TSI.
+  items:
+  - name: config
+    description: TSI CONFIG (TSI_CONFIG) for Self-Capacitor.
+    byte_offset: 0
+    fieldset: Config
+  - name: config_mutual
+    description: TSI CONFIG (TSI_CONFIG) for Mutual-Capacitor.
+    byte_offset: 0
+    fieldset: ConfigMutual
+  - name: tshd
+    description: TSI Threshold.
+    byte_offset: 4
+    fieldset: Tshd
+  - name: gencs
+    description: TSI General Control and Status.
+    byte_offset: 8
+    fieldset: Gencs
+  - name: mul
+    description: TSI Mutual-Capacitance.
+    byte_offset: 12
+    fieldset: Mul
+  - name: sinc
+    description: TSI SINC Filter.
+    byte_offset: 16
+    fieldset: Sinc
+  - name: ssc0
+    description: TSI SSC 0.
+    byte_offset: 20
+    fieldset: Ssc0
+  - name: ssc1
+    description: TSI SSC 1.
+    byte_offset: 24
+    fieldset: Ssc1
+  - name: ssc2
+    description: TSI SSC 2.
+    byte_offset: 28
+    fieldset: Ssc2
+  - name: baseline
+    description: TSI Baseline.
+    byte_offset: 32
+    fieldset: Baseline
+  - name: chmerge
+    description: TSI Channel Merge.
+    byte_offset: 36
+    fieldset: Chmerge
+  - name: shield
+    description: TSI Shield.
+    byte_offset: 40
+    fieldset: Shield
+  - name: data
+    description: TSI Data and Status.
+    byte_offset: 256
+    fieldset: Data
+  - name: misc
+    description: TSI Miscellaneous.
+    byte_offset: 264
+    fieldset: Misc
+  - name: trig
+    description: TSI AUTO TRIG.
+    byte_offset: 268
+    fieldset: Trig
+fieldset/Baseline:
+  description: TSI Baseline.
+  fields:
+  - name: baseline
+    description: Baseline.
+    bit_offset: 0
+    bit_size: 16
+  - name: base_trace_debounce
+    description: Base Trace Debounce.
+    bit_offset: 16
+    bit_size: 4
+    enum: BaseTraceDebounce
+  - name: base_trace_en
+    description: Baseline Trace Enable.
+    bit_offset: 20
+    bit_size: 1
+  - name: theshold_ratio
+    description: Threshold Ratio.
+    bit_offset: 28
+    bit_size: 3
+    enum: ThesholdRatio
+  - name: threshold_trace_en
+    description: Threshold Trace Enable.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Chmerge:
+  description: TSI Channel Merge.
+  fields:
+  - name: channel_enable
+    description: Channel Enable.
+    bit_offset: 0
+    bit_size: 25
+    enum: ChannelEnable
+fieldset/Config:
+  description: TSI CONFIG (TSI_CONFIG) for Self-Capacitor.
+  fields:
+  - name: mode
+    description: Mode.
+    bit_offset: 0
+    bit_size: 1
+    enum: ConfigMode
+  - name: tsich
+    description: TSI Channel.
+    bit_offset: 1
+    bit_size: 5
+    enum: Tsich
+  - name: s_noise
+    description: Self-Capacitance Noise Cancelation.
+    bit_offset: 19
+    bit_size: 1
+  - name: s_xch
+    description: Self-Capacitance Charge Current Multiple.
+    bit_offset: 20
+    bit_size: 3
+    enum: SXch
+  - name: s_xin
+    description: Self-Capacitance Input Current Multiple.
+    bit_offset: 23
+    bit_size: 1
+    enum: SXin
+  - name: s_ctrim
+    description: Capacitor Trim Setting.
+    bit_offset: 24
+    bit_size: 3
+    enum: SCtrim
+  - name: s_sen
+    description: Self-Capacitance Sensitivity Boost.
+    bit_offset: 27
+    bit_size: 1
+  - name: s_xdn
+    description: Self-Capacitance Discharge Current Multiple.
+    bit_offset: 28
+    bit_size: 3
+    enum: SXdn
+  - name: s_xin_add
+    description: S_XIN Adjust Ratio.
+    bit_offset: 31
+    bit_size: 1
+fieldset/ConfigMutual:
+  description: TSI CONFIG (TSI_CONFIG) for Mutual-Capacitor.
+  fields:
+  - name: mode
+    description: Mode.
+    bit_offset: 0
+    bit_size: 1
+    enum: ConfigMutualMode
+  - name: m_nmirror
+    description: NMOS Current Mirror.
+    bit_offset: 1
+    bit_size: 2
+    enum: MNmirror
+  - name: m_pmirrorr
+    description: PMOS Current Mirror on Right Side.
+    bit_offset: 3
+    bit_size: 2
+    enum: MPmirrorr
+  - name: m_pmirrorl
+    description: PMOS Current Mirror on Left Side.
+    bit_offset: 5
+    bit_size: 3
+    enum: MPmirrorl
+  - name: m_sel_rx
+    description: Mutual-Capacitance RX Channel Selection.
+    bit_offset: 8
+    bit_size: 5
+    enum: MSelRx
+  - name: m_sel_tx
+    description: Mutual-Capacitance TX Channel Selection.
+    bit_offset: 13
+    bit_size: 3
+    enum: MSelTx
+  - name: m_cnt_en
+    description: Mutual-Capacitance Counter Enable.
+    bit_offset: 16
+    bit_size: 1
+  - name: m_tx_pd_en
+    description: Mutual-Capacitance TX Pulldown Enable.
+    bit_offset: 17
+    bit_size: 1
+  - name: m_sen_boost
+    description: Mutual-Capacitance Sensitivity Boost.
+    bit_offset: 18
+    bit_size: 5
+    enum: MSenBoost
+  - name: m_pre_res
+    description: Mutual-Capacitance Precharge Resistor.
+    bit_offset: 26
+    bit_size: 3
+    enum: MPreRes
+  - name: m_pre_current
+    description: Mutual-Capacitance Precharge Current.
+    bit_offset: 29
+    bit_size: 3
+    enum: MPreCurrent
+fieldset/Data:
+  description: TSI Data and Status.
+  fields:
+  - name: tsicnt
+    description: TSI Conversion Counter Value.
+    bit_offset: 0
+    bit_size: 16
+  - name: eosf
+    description: End-of-Scan Flag.
+    bit_offset: 27
+    bit_size: 1
+  - name: overrunf
+    description: Overrun Flag.
+    bit_offset: 29
+    bit_size: 1
+  - name: outrgf
+    description: Out-of-Range Flag.
+    bit_offset: 30
+    bit_size: 1
+fieldset/Gencs:
+  description: TSI General Control and Status.
+  fields:
+  - name: dmaen_eos
+    description: In-Progress DMA Transfer Request Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: dmaen_outrg
+    description: Out-of-Range DMA Transfer Request Enable.
+    bit_offset: 2
+    bit_size: 1
+  - name: stm
+    description: Scan Trigger Mode.
+    bit_offset: 3
+    bit_size: 1
+    enum: Stm
+  - name: stpe
+    description: TSI Stop Enable.
+    bit_offset: 4
+    bit_size: 1
+  - name: tsien
+    description: TSI Enable.
+    bit_offset: 5
+    bit_size: 1
+  - name: swts
+    description: Software Trigger Start.
+    bit_offset: 7
+    bit_size: 1
+  - name: ctrim_fine
+    description: Capacitor Fine Trim.
+    bit_offset: 9
+    bit_size: 3
+    enum: CtrimFine
+  - name: dvolt
+    description: Delta Voltage.
+    bit_offset: 12
+    bit_size: 3
+    enum: Dvolt
+  - name: debounce
+    description: Debounce.
+    bit_offset: 16
+    bit_size: 5
+    enum: Debounce
+  - name: s_prox_en
+    description: Proximity Enable Signal.
+    bit_offset: 22
+    bit_size: 1
+  - name: setclk
+    description: Set Clock.
+    bit_offset: 24
+    bit_size: 3
+    enum: Setclk
+  - name: esor
+    description: End-of-Scan Interrupt Enable.
+    bit_offset: 27
+    bit_size: 1
+  - name: outrg_en
+    description: Out-of-Range Interrupt Enable.
+    bit_offset: 30
+    bit_size: 1
+fieldset/Misc:
+  description: TSI Miscellaneous.
+  fields:
+  - name: osc_clk_sel
+    description: Oscillator Clock Select.
+    bit_offset: 19
+    bit_size: 1
+    enum: OscClkSel
+  - name: test_finger
+    description: Test Finger.
+    bit_offset: 20
+    bit_size: 3
+    enum: TestFinger
+  - name: test_finger_en
+    description: Test Finger Function Enable Signals.
+    bit_offset: 23
+    bit_size: 1
+  - name: clkdivider
+    description: TSI Clock Divider.
+    bit_offset: 24
+    bit_size: 5
+fieldset/Mul:
+  description: TSI Mutual-Capacitance.
+  fields:
+  - name: m_vpre_choose
+    description: Mutual-Capacitance Prevoltage.
+    bit_offset: 1
+    bit_size: 1
+    enum: MVpreChoose
+  - name: m_mode
+    description: Mutual-Capacitance Mode.
+    bit_offset: 2
+    bit_size: 1
+    enum: MMode
+  - name: m_trim_cap
+    description: Mutual-Capacitance Trim Cap.
+    bit_offset: 3
+    bit_size: 2
+    enum: MTrimCap
+  - name: m_tx_used
+    description: Mutual-Capacitance TX Used.
+    bit_offset: 5
+    bit_size: 8
+    enum: MTxUsed
+  - name: m_trim
+    description: Mutual-Capacitance Trim.
+    bit_offset: 16
+    bit_size: 16
+fieldset/Shield:
+  description: TSI Shield.
+  fields:
+  - name: shield_enable
+    description: Shield Enable.
+    bit_offset: 0
+    bit_size: 4
+    enum: ShieldEnable
+  - name: m_sen_res
+    description: Mutual-Capacitance Sensitivity Resistor.
+    bit_offset: 25
+    bit_size: 6
+    enum: MSenRes
+fieldset/Sinc:
+  description: TSI SINC Filter.
+  fields:
+  - name: ssc_control_out
+    description: SSC Output Control.
+    bit_offset: 0
+    bit_size: 1
+  - name: sinc_valid
+    description: SINC Valid.
+    bit_offset: 1
+    bit_size: 1
+  - name: sinc_overflow_flag
+    description: SINC Overflow Flag.
+    bit_offset: 2
+    bit_size: 1
+  - name: switch_enable
+    description: Switch Enable.
+    bit_offset: 3
+    bit_size: 1
+  - name: decimation
+    description: Decimation.
+    bit_offset: 16
+    bit_size: 5
+    enum: Decimation
+  - name: order
+    description: Order.
+    bit_offset: 21
+    bit_size: 1
+    enum: Order
+  - name: cutoff
+    description: Cutoff.
+    bit_offset: 24
+    bit_size: 4
+    enum: Cutoff
+fieldset/Ssc0:
+  description: TSI SSC 0.
+  fields:
+  - name: ssc_prescale_num
+    description: SSC Prescale Number.
+    bit_offset: 0
+    bit_size: 8
+    enum: SscPrescaleNum
+  - name: base_nocharge_num
+    description: Base Nocharge Number.
+    bit_offset: 16
+    bit_size: 4
+    enum: BaseNochargeNum
+  - name: charge_num
+    description: Charge Number.
+    bit_offset: 20
+    bit_size: 4
+    enum: ChargeNum
+  - name: ssc_control_reverse
+    description: SSC Control Reverse.
+    bit_offset: 24
+    bit_size: 1
+    enum: SscControlReverse
+  - name: ssc_mode
+    description: SSC Mode.
+    bit_offset: 25
+    bit_size: 2
+    enum: SscMode
+  - name: prbs_outsel
+    description: PRBS Output Selection.
+    bit_offset: 28
+    bit_size: 4
+    enum: PrbsOutsel
+fieldset/Ssc1:
+  description: TSI SSC 1.
+  fields:
+  - name: prbs_seed_lo
+    description: PRBS Low Seed.
+    bit_offset: 0
+    bit_size: 8
+  - name: prbs_seed_hi
+    description: PRBS High Seed.
+    bit_offset: 8
+    bit_size: 8
+  - name: prbs_weight_lo
+    description: PRBS Low Weight.
+    bit_offset: 16
+    bit_size: 8
+  - name: prbs_weight_hi
+    description: PRBS High Weight.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Ssc2:
+  description: TSI SSC 2.
+  fields:
+  - name: move_repeat_num
+    description: Move Repeat Number.
+    bit_offset: 0
+    bit_size: 5
+    enum: MoveRepeatNum
+  - name: move_steps_num
+    description: Move Steps Number.
+    bit_offset: 8
+    bit_size: 3
+    enum: MoveStepsNum
+  - name: move_nocharge_max
+    description: Move Nocharge Maximum.
+    bit_offset: 16
+    bit_size: 6
+  - name: move_nocharge_min
+    description: Move Nocharge Minimum.
+    bit_offset: 28
+    bit_size: 4
+    enum: MoveNochargeMin
+fieldset/Trig:
+  description: TSI AUTO TRIG.
+  fields:
+  - name: trig_period_counter
+    description: Trigger Period Counter.
+    bit_offset: 0
+    bit_size: 20
+  - name: trig_clk_divider
+    description: Trigger Clock Divider.
+    bit_offset: 24
+    bit_size: 5
+    enum: TrigClkDivider
+  - name: trig_en
+    description: Trigger Enable.
+    bit_offset: 30
+    bit_size: 1
+  - name: trig_clk_sel
+    description: Trigger Clock Select.
+    bit_offset: 31
+    bit_size: 1
+    enum: TrigClkSel
+fieldset/Tshd:
+  description: TSI Threshold.
+  fields:
+  - name: thresl
+    description: TSI Wakeup Channel Low Threshold.
+    bit_offset: 0
+    bit_size: 16
+  - name: thresh
+    description: TSI Wakeup Channel High Threshold.
+    bit_offset: 16
+    bit_size: 16
+enum/BaseNochargeNum:
+  bit_size: 4
+  variants:
+  - name: Ssc1
+    description: '1.'
+    value: 0
+  - name: Ssc2
+    description: '2.'
+    value: 1
+  - name: Ssc3
+    description: '3.'
+    value: 2
+  - name: Ssc4
+    description: '4.'
+    value: 3
+  - name: Ssc5
+    description: '5.'
+    value: 4
+  - name: Ssc6
+    description: '6.'
+    value: 5
+  - name: Ssc7
+    description: '7.'
+    value: 6
+  - name: Ssc8
+    description: '8.'
+    value: 7
+  - name: Ssc9
+    description: '9.'
+    value: 8
+  - name: Ssc10
+    description: '10.'
+    value: 9
+  - name: Ssc11
+    description: '11.'
+    value: 10
+  - name: Ssc12
+    description: '12.'
+    value: 11
+  - name: Ssc13
+    description: '13.'
+    value: 12
+  - name: Ssc14
+    description: '14.'
+    value: 13
+  - name: Ssc15
+    description: '15.'
+    value: 14
+  - name: Ssc16
+    description: '16.'
+    value: 15
+enum/BaseTraceDebounce:
+  bit_size: 4
+  variants:
+  - name: Ctr0
+    description: '0.'
+    value: 0
+  - name: Ctr1
+    description: 1 / 16.
+    value: 1
+  - name: Ctr2
+    description: 2 / 16.
+    value: 2
+  - name: Ctr3
+    description: 3 / 16.
+    value: 3
+  - name: CtrN
+    description: n / 16.
+    value: 8
+enum/ChannelEnable:
+  bit_size: 25
+  variants:
+  - name: Notchosen
+    description: Channel not chosen for proximity pad.
+    value: 0
+  - name: Chosen
+    description: Channel chosen for proximity pad.
+    value: 1
+enum/ChargeNum:
+  bit_size: 4
+  variants:
+  - name: Ssc1
+    description: '1.'
+    value: 0
+  - name: Ssc2
+    description: '2.'
+    value: 1
+  - name: Ssc3
+    description: '3.'
+    value: 2
+  - name: Ssc4
+    description: '4.'
+    value: 3
+  - name: Ssc5
+    description: '5.'
+    value: 4
+  - name: Ssc6
+    description: '6.'
+    value: 5
+  - name: Ssc7
+    description: '7.'
+    value: 6
+  - name: Ssc8
+    description: '8.'
+    value: 7
+  - name: Ssc9
+    description: '9.'
+    value: 8
+  - name: Ssc10
+    description: '10.'
+    value: 9
+  - name: Ssc11
+    description: '11.'
+    value: 10
+  - name: Ssc12
+    description: '12.'
+    value: 11
+  - name: Ssc13
+    description: '13.'
+    value: 12
+  - name: Ssc14
+    description: '14.'
+    value: 13
+  - name: Ssc15
+    description: '15.'
+    value: 14
+  - name: Ssc16
+    description: '16.'
+    value: 15
+enum/ConfigMode:
+  bit_size: 1
+  variants:
+  - name: SelfCp
+    description: Self capacitance.
+    value: 0
+  - name: MtlCp
+    description: Mutual capacitance.
+    value: 1
+enum/ConfigMutualMode:
+  bit_size: 1
+  variants:
+  - name: ConfigSfCp
+    description: Self capacitance.
+    value: 0
+  - name: ConfigMtCp
+    description: Mutual capacitance.
+    value: 1
+enum/CtrimFine:
+  bit_size: 3
+  variants:
+  - name: Ctrim3125
+    description: 0.3125 pF.
+    value: 0
+  - name: Ctrim625
+    description: 0.625 pF.
+    value: 1
+  - name: Ctrim31253
+    description: 0.3125 * 3 pF.
+    value: 2
+  - name: Ctrim31254
+    description: 0.3125 * 4 pF.
+    value: 3
+  - name: Ctrim31255
+    description: 0.3125 * 5 pF.
+    value: 4
+  - name: Ctrim31256
+    description: 0.3125 * 6 pF.
+    value: 5
+  - name: Ctrim1875
+    description: 2.1875 pF.
+    value: 6
+  - name: Ctrim25
+    description: 2.5 pF.
+    value: 7
+enum/Cutoff:
+  bit_size: 4
+  variants:
+  - name: Div1
+    description: div = 1.
+    value: 0
+  - name: Div2
+    description: div = 2.
+    value: 1
+  - name: Div4
+    description: div = 4.
+    value: 2
+  - name: Div8
+    description: div = 8.
+    value: 3
+  - name: Div16
+    description: div = 16.
+    value: 4
+  - name: Div32
+    description: div = 32.
+    value: 5
+  - name: Div64
+    description: div = 64.
+    value: 6
+  - name: Div128
+    description: div = 128.
+    value: 7
+  - name: DivNc1
+    description: Do not use.
+    value: 8
+  - name: DivNc2
+    description: Do not use.
+    value: 9
+  - name: DivNc3
+    description: Do not use.
+    value: 10
+  - name: DivNc4
+    description: Do not use.
+    value: 11
+  - name: DivNc5
+    description: Do not use.
+    value: 12
+  - name: DivNc6
+    description: Do not use.
+    value: 13
+  - name: DivNc7
+    description: Do not use.
+    value: 14
+  - name: DivNc8
+    description: Do not use.
+    value: 15
+enum/Debounce:
+  bit_size: 5
+  variants:
+  - name: Int1
+    description: '1.'
+    value: 0
+  - name: Int2
+    description: '2.'
+    value: 1
+  - name: IntN
+    description: n.
+    value: 16
+enum/Decimation:
+  bit_size: 5
+  variants:
+  - name: Dec1
+    description: '1.'
+    value: 0
+  - name: Dec2
+    description: '2.'
+    value: 1
+  - name: Dec3
+    description: '3.'
+    value: 2
+  - name: Dec4
+    description: '4.'
+    value: 3
+  - name: Dec5
+    description: '5.'
+    value: 4
+  - name: Dec6
+    description: '6.'
+    value: 5
+  - name: Dec7
+    description: '7.'
+    value: 6
+  - name: Dec8
+    description: '8.'
+    value: 7
+  - name: Dec9
+    description: '9.'
+    value: 8
+  - name: Dec10
+    description: '10.'
+    value: 9
+  - name: Dec11
+    description: '11.'
+    value: 10
+  - name: Dec12
+    description: '12.'
+    value: 11
+  - name: Dec13
+    description: '13.'
+    value: 12
+  - name: Dec14
+    description: '14.'
+    value: 13
+  - name: Dec15
+    description: '15.'
+    value: 14
+  - name: Dec16
+    description: '16.'
+    value: 15
+  - name: Dec17
+    description: '17.'
+    value: 16
+  - name: Dec18
+    description: '18.'
+    value: 17
+  - name: Dec19
+    description: '19.'
+    value: 18
+  - name: Dec20
+    description: '20.'
+    value: 19
+  - name: Dec21
+    description: '21.'
+    value: 20
+  - name: Dec22
+    description: '22.'
+    value: 21
+  - name: Dec23
+    description: '23.'
+    value: 22
+  - name: Dec24
+    description: '24.'
+    value: 23
+  - name: Dec25
+    description: '25.'
+    value: 24
+  - name: Dec26
+    description: '26.'
+    value: 25
+  - name: Dec27
+    description: '27.'
+    value: 26
+  - name: Dec28
+    description: '28.'
+    value: 27
+  - name: Dec29
+    description: '29.'
+    value: 28
+  - name: Dec30
+    description: '30.'
+    value: 29
+  - name: Dec31
+    description: '31.'
+    value: 30
+  - name: Dec32
+    description: '32.'
+    value: 31
+enum/Dvolt:
+  bit_size: 3
+  variants:
+  - name: Volt17
+    description: Vm = 0.6 V, Vp = 1.7 V.
+    value: 0
+  - name: Volt19
+    description: Vm = 0.6 V, Vp = 1.9 V.
+    value: 1
+  - name: Volt21
+    description: Vm = 0.6 V, Vp = 2.1 V.
+    value: 2
+  - name: Volt23
+    description: Vm = 0.6 V, Vp = 2.3 V.
+    value: 3
+  - name: Volt25
+    description: Vm = 0.6 V, Vp = 2.5 V.
+    value: 4
+  - name: Volt27
+    description: Vm = 0.6 V, Vp = 2.7 V.
+    value: 5
+enum/MMode:
+  bit_size: 1
+  variants:
+  - name: Mode0
+    description: '- 5 V ~ + 5 V.'
+    value: 0
+  - name: Mode5
+    description: 0 V ~ + 5 V.
+    value: 1
+enum/MNmirror:
+  bit_size: 2
+  variants:
+  - name: M1
+    description: m = 1.
+    value: 0
+  - name: M2
+    description: m = 2.
+    value: 1
+  - name: M3
+    description: m = 3.
+    value: 2
+  - name: M4
+    description: m = 4.
+    value: 3
+enum/MPmirrorl:
+  bit_size: 3
+  variants:
+  - name: Mpl4
+    description: m = 4.
+    value: 0
+  - name: Mpl8
+    description: m = 8.
+    value: 1
+  - name: Mpl12
+    description: m = 12.
+    value: 2
+  - name: Mpl16
+    description: m = 16.
+    value: 3
+  - name: Mpl20
+    description: m = 20.
+    value: 4
+  - name: Mpl24
+    description: m = 24.
+    value: 5
+  - name: Mpl28
+    description: m = 28.
+    value: 6
+  - name: Mpl32
+    description: m = 32.
+    value: 7
+enum/MPmirrorr:
+  bit_size: 2
+  variants:
+  - name: Mp1
+    description: m = 1.
+    value: 0
+  - name: Mp2
+    description: m = 2.
+    value: 1
+  - name: Mp3
+    description: m = 3.
+    value: 2
+  - name: Mp4
+    description: m = 4.
+    value: 3
+enum/MPreCurrent:
+  bit_size: 3
+  variants:
+  - name: Cur1
+    description: 1 uA.
+    value: 0
+  - name: Cur2
+    description: 2 uA.
+    value: 1
+  - name: Cur3
+    description: 3 uA.
+    value: 2
+  - name: Cur4
+    description: 4 uA.
+    value: 3
+  - name: Cur5
+    description: 5 uA.
+    value: 4
+  - name: Cur6
+    description: 6 uA.
+    value: 5
+  - name: Cur7
+    description: 7 uA.
+    value: 6
+  - name: Cur8
+    description: 8 uA.
+    value: 7
+enum/MPreRes:
+  bit_size: 3
+  variants:
+  - name: Res1
+    description: 1 k.
+    value: 0
+  - name: Res2
+    description: 2 k.
+    value: 1
+  - name: Res3
+    description: 3 k.
+    value: 2
+  - name: Res4
+    description: 4 k.
+    value: 3
+  - name: Res5
+    description: 5 k.
+    value: 4
+  - name: Res6
+    description: 6 k.
+    value: 5
+  - name: Res7
+    description: 7 k.
+    value: 6
+  - name: Res8
+    description: 8 k.
+    value: 7
+enum/MSelRx:
+  bit_size: 5
+  variants:
+  - name: Tsi8
+    description: TSI[8].
+    value: 0
+  - name: Tsi9
+    description: TSI[9].
+    value: 1
+  - name: Tsi10
+    description: TSI[10].
+    value: 2
+  - name: Tsi11
+    description: TSI[11].
+    value: 3
+  - name: Tsi12
+    description: TSI[12].
+    value: 4
+  - name: Tsi13
+    description: TSI[13].
+    value: 5
+  - name: Tsi14
+    description: TSI[14].
+    value: 6
+  - name: Tsi15
+    description: TSI[15].
+    value: 7
+  - name: Tsi16
+    description: TSI[16].
+    value: 8
+  - name: Tsi17
+    description: TSI[17].
+    value: 9
+  - name: Tsi18
+    description: TSI[18].
+    value: 10
+  - name: Tsi19
+    description: TSI[19].
+    value: 11
+  - name: Tsi20
+    description: TSI[20].
+    value: 12
+  - name: Tsi21
+    description: TSI[21].
+    value: 13
+  - name: Tsi22
+    description: TSI[22].
+    value: 14
+  - name: Tsi23
+    description: TSI[23].
+    value: 15
+  - name: Tsi24
+    description: TSI[24].
+    value: 16
+enum/MSelTx:
+  bit_size: 3
+  variants:
+  - name: TsiTx0
+    description: TSI[0].
+    value: 0
+  - name: TsiTx1
+    description: TSI[1].
+    value: 1
+  - name: TsiTx2
+    description: TSI[2].
+    value: 2
+  - name: TsiTx3
+    description: TSI[3].
+    value: 3
+  - name: TsiTx4
+    description: TSI[4].
+    value: 4
+  - name: TsiTx5
+    description: TSI[5].
+    value: 5
+  - name: TsiTx6
+    description: TSI[6].
+    value: 6
+  - name: TsiTx7
+    description: TSI[7].
+    value: 7
+enum/MSenBoost:
+  bit_size: 5
+  variants:
+  - name: Bst0
+    description: 0 uA.
+    value: 0
+  - name: Bst2
+    description: 2 uA.
+    value: 1
+  - name: Bst4
+    description: 4 uA.
+    value: 2
+  - name: Bst6
+    description: 6 uA.
+    value: 3
+  - name: Bst8
+    description: 8 uA.
+    value: 4
+  - name: Bst10
+    description: 10 uA.
+    value: 5
+  - name: Bst12
+    description: 12 uA.
+    value: 6
+  - name: Bst14
+    description: 14 uA.
+    value: 7
+  - name: Bst2n
+    description: 2 * n uA.
+    value: 16
+enum/MSenRes:
+  bit_size: 6
+  variants:
+  - name: Res10
+    description: 10 k.
+    value: 0
+  - name: Res253
+    description: 10 k + (2.5 / 3) k (just for auto-calibration).
+    value: 1
+  - name: Res125
+    description: 12.5 k (default).
+    value: 2
+  - name: Res25
+    description: 25 k.
+    value: 14
+enum/MTrimCap:
+  bit_size: 2
+  variants:
+  - name: Cp0
+    description: 0 pF.
+    value: 0
+  - name: Cp10
+    description: 10 pF.
+    value: 1
+  - name: Cp101
+    description: 10 pF.
+    value: 2
+  - name: Cp20
+    description: 20 pF.
+    value: 3
+enum/MTxUsed:
+  bit_size: 8
+  variants:
+  - name: Gpio
+    description: GPIO.
+    value: 0
+  - name: Mtcp
+    description: Mutual capacitance.
+    value: 1
+enum/MVpreChoose:
+  bit_size: 1
+  variants:
+  - name: Internal
+    description: Internal 1.2 V.
+    value: 0
+  - name: External
+    description: External 1.2 V from PMC.
+    value: 1
+enum/MoveNochargeMin:
+  bit_size: 4
+  variants:
+  - name: Mv1
+    description: (1 + SSC0[BASE_NOCHARGE_NUM]).
+    value: 0
+  - name: Mv2
+    description: (2 + SSC0[BASE_NOCHARGE_NUM]).
+    value: 1
+  - name: Mv3
+    description: (3 + SSC0[BASE_NOCHARGE_NUM]).
+    value: 2
+  - name: Mv4
+    description: (4 + SSC0[BASE_NOCHARGE_NUM]).
+    value: 3
+  - name: Mv5
+    description: (5 + SSC0[BASE_NOCHARGE_NUM]).
+    value: 4
+  - name: Mv6
+    description: (6 + SSC0[BASE_NOCHARGE_NUM]).
+    value: 5
+  - name: Mv7
+    description: (7 + SSC0[BASE_NOCHARGE_NUM]).
+    value: 6
+  - name: Mv8
+    description: (8 + SSC0[BASE_NOCHARGE_NUM]).
+    value: 7
+  - name: Mv9
+    description: (9 + SSC0[BASE_NOCHARGE_NUM]).
+    value: 8
+  - name: Mv10
+    description: (10 + SSC0[BASE_NOCHARGE_NUM]).
+    value: 9
+  - name: Mv11
+    description: (11 + SSC0[BASE_NOCHARGE_NUM]).
+    value: 10
+  - name: Mv12
+    description: (12 + SSC0[BASE_NOCHARGE_NUM]).
+    value: 11
+  - name: Mv13
+    description: (13 + SSC0[BASE_NOCHARGE_NUM]).
+    value: 12
+  - name: Mv14
+    description: (14 + SSC0[BASE_NOCHARGE_NUM]).
+    value: 13
+  - name: Mv15
+    description: (15 + SSC0[BASE_NOCHARGE_NUM]).
+    value: 14
+  - name: Mv16
+    description: (16 + SSC0[BASE_NOCHARGE_NUM]).
+    value: 15
+enum/MoveRepeatNum:
+  bit_size: 5
+  variants:
+  - name: Updn1
+    description: '1.'
+    value: 0
+  - name: Updn2
+    description: '2.'
+    value: 1
+  - name: Updn3
+    description: '3.'
+    value: 2
+  - name: Updn4
+    description: '4.'
+    value: 3
+  - name: Updn5
+    description: '5.'
+    value: 4
+  - name: Updn6
+    description: '6.'
+    value: 5
+  - name: Updn7
+    description: '7.'
+    value: 6
+enum/MoveStepsNum:
+  bit_size: 3
+  variants:
+  - name: Updn0
+    description: '0.'
+    value: 0
+  - name: Updn1
+    description: '1.'
+    value: 1
+  - name: Updn2
+    description: '2.'
+    value: 2
+  - name: Updn3
+    description: '3.'
+    value: 3
+  - name: Updn4
+    description: '4.'
+    value: 4
+  - name: Updn5
+    description: '5.'
+    value: 5
+  - name: Updn6
+    description: '6.'
+    value: 6
+  - name: Updn7
+    description: '7.'
+    value: 7
+enum/Order:
+  bit_size: 1
+  variants:
+  - name: Ord1
+    description: Order 1.
+    value: 0
+  - name: Ord2
+    description: Order 2.
+    value: 1
+enum/OscClkSel:
+  bit_size: 1
+  variants:
+  - name: OscTsi
+    description: Analog oscillator.
+    value: 0
+  - name: OscSoc
+    description: Chip.
+    value: 1
+enum/PrbsOutsel:
+  bit_size: 4
+  variants:
+  - name: Nc1
+    description: Do not use.
+    value: 0
+  - name: Nc2
+    description: Do not use.
+    value: 1
+  - name: Prbs2
+    description: '2.'
+    value: 2
+  - name: Prbs3
+    description: '3.'
+    value: 3
+  - name: Prbs4
+    description: '4.'
+    value: 4
+  - name: Prbs5
+    description: '5.'
+    value: 5
+  - name: Prbs6
+    description: '6.'
+    value: 6
+  - name: Prbs7
+    description: '7.'
+    value: 7
+  - name: Prbs8
+    description: '8.'
+    value: 8
+  - name: Prbs9
+    description: '9.'
+    value: 9
+  - name: Prbs10
+    description: '10.'
+    value: 10
+  - name: Prbs11
+    description: '11.'
+    value: 11
+  - name: Prbs12
+    description: '12.'
+    value: 12
+  - name: Prbs13
+    description: '13.'
+    value: 13
+  - name: Prbs14
+    description: '14.'
+    value: 14
+  - name: Prbs15
+    description: '15.'
+    value: 15
+enum/SCtrim:
+  bit_size: 3
+  variants:
+  - name: Ctrim25
+    description: 2.5 pF.
+    value: 0
+  - name: Ctrim5
+    description: 5.0 pF.
+    value: 1
+  - name: Ctrim75
+    description: 7.5 pF.
+    value: 2
+  - name: Ctrim10
+    description: 10 pF.
+    value: 3
+  - name: Ctrim125
+    description: 12.5 pF.
+    value: 4
+  - name: Ctrim15
+    description: 15.0 pF.
+    value: 5
+  - name: Ctrim175
+    description: 17.5 pF.
+    value: 6
+  - name: Ctrim20
+    description: 20 pF.
+    value: 7
+enum/SXch:
+  bit_size: 3
+  variants:
+  - name: Def16
+    description: 1 / 16.
+    value: 0
+  - name: Def8
+    description: 1 / 8.
+    value: 1
+  - name: Def4
+    description: 1 / 4.
+    value: 2
+  - name: Def2
+    description: 1 / 2.
+    value: 3
+enum/SXdn:
+  bit_size: 3
+  variants:
+  - name: XdnDef16
+    description: 1 / 16.
+    value: 0
+  - name: XdnDef8
+    description: 1 / 8.
+    value: 1
+  - name: XdnDef4
+    description: 1 / 4.
+    value: 2
+  - name: XdnDef2
+    description: 1 / 2.
+    value: 3
+enum/SXin:
+  bit_size: 1
+  variants:
+  - name: XinDef8
+    description: 1 / 8.
+    value: 0
+  - name: XinDef4
+    description: 1 / 4.
+    value: 1
+enum/Setclk:
+  bit_size: 3
+  variants:
+  - name: Setclk2737
+    description: 27.37 MHz.
+    value: 0
+  - name: Setclk2223
+    description: 22.23 MHz.
+    value: 1
+  - name: Setclk1873
+    description: 18.73 MHz.
+    value: 2
+  - name: Setclk1616
+    description: 16.65 MHz.
+    value: 3
+  - name: Setclk1427
+    description: 14.27 MHz.
+    value: 4
+  - name: Setclk1273
+    description: 12.73 MHz.
+    value: 5
+  - name: Setclk1149
+    description: 11.49 MHz.
+    value: 6
+  - name: Setclk1046
+    description: 10.46 MHz.
+    value: 7
+enum/ShieldEnable:
+  bit_size: 4
+  variants:
+  - name: Disabled
+    description: Disables.
+    value: 0
+  - name: Enabled
+    description: Enables.
+    value: 1
+enum/SscControlReverse:
+  bit_size: 1
+  variants:
+  - name: Enabled
+    description: Polarity retained.
+    value: 0
+  - name: Disabled
+    description: Polarity reversed.
+    value: 1
+enum/SscMode:
+  bit_size: 2
+  variants:
+  - name: Prbs
+    description: PRBS mode.
+    value: 0
+  - name: Updn
+    description: Up-Down Counter mode.
+    value: 1
+  - name: Disabled
+    description: Disables SSC function.
+    value: 2
+  - name: Nc
+    description: Do not use.
+    value: 3
+enum/SscPrescaleNum:
+  bit_size: 8
+  variants:
+  - name: Div1
+    description: div = 1.
+    value: 0
+  - name: Div2
+    description: div = 2.
+    value: 1
+  - name: Div4
+    description: div = 4.
+    value: 3
+  - name: Div8
+    description: div = 8.
+    value: 7
+  - name: Div16
+    description: div = 16.
+    value: 15
+  - name: Div32
+    description: div = 32.
+    value: 31
+  - name: Div64
+    description: div = 64.
+    value: 63
+  - name: Div128
+    description: div = 128.
+    value: 127
+  - name: Div256
+    description: div = 256.
+    value: 255
+enum/Stm:
+  bit_size: 1
+  variants:
+  - name: SwtrigScn
+    description: Software trigger scan.
+    value: 0
+  - name: HwtrigScn
+    description: Hardware trigger scan.
+    value: 1
+enum/TestFinger:
+  bit_size: 3
+  variants:
+  - name: Fin148
+    description: Finger capacitor is 148 pF.
+    value: 0
+  - name: Fin296
+    description: Finger capacitor is 296 pF.
+    value: 1
+  - name: Fin444
+    description: Finger capacitor is 444 pF.
+    value: 2
+  - name: Fin592
+    description: Finger capacitor is 592 pF.
+    value: 3
+  - name: Fin740
+    description: Finger capacitor is 740 pF.
+    value: 4
+  - name: Fin888
+    description: Finger capacitor is 888 pF.
+    value: 5
+  - name: Fin1036
+    description: Finger capacitor is 1036 pF.
+    value: 6
+  - name: Fin1184
+    description: Finger capacitor is 1184 pF.
+    value: 7
+enum/ThesholdRatio:
+  bit_size: 3
+  variants:
+  - name: Tshd2
+    description: thresholdh = (baseline + counter) / 2 and thresholdl = (baseline - counter) / 2.
+    value: 0
+  - name: Tshd4
+    description: thresholdh = (baseline + counter) / 4 and thresholdl = (baseline - counter) / 4.
+    value: 1
+  - name: Tshd8
+    description: thresholdh = (baseline + counter) / 8 and thresholdl = (baseline - counter) / 8.
+    value: 2
+  - name: Tshd16
+    description: thresholdh = (baseline + counter) / 16 and thresholdl = (baseline - counter) / 16.
+    value: 3
+  - name: Tshd32
+    description: thresholdh = (baseline + counter) / 32 and thresholdl = (baseline - counter) / 32.
+    value: 4
+  - name: Tshd64
+    description: thresholdh = (baseline + counter) / 64 and thresholdl = (baseline - counter) / 64.
+    value: 5
+  - name: Tshd128
+    description: thresholdh = (baseline + counter) / 128 and thresholdl = (baseline - counter) / 128.
+    value: 6
+  - name: Tshd256
+    description: thresholdh = (baseline + counter) / 256 and thresholdl = (baseline - counter) / 256.
+    value: 7
+enum/TrigClkDivider:
+  bit_size: 5
+  variants:
+  - name: DivNo
+    description: No divider.
+    value: 0
+  - name: Div2
+    description: Divided by 2.
+    value: 1
+  - name: Div3
+    description: Divided by 3.
+    value: 2
+  - name: Div4
+    description: Divided by 4.
+    value: 3
+  - name: DivN
+    description: Divided by n.
+    value: 16
+enum/TrigClkSel:
+  bit_size: 1
+  variants:
+  - name: Clk32
+    description: 32 k clock.
+    value: 0
+  - name: ClkSoc
+    description: clksoc.
+    value: 1
+enum/Tsich:
+  bit_size: 5
+  variants:
+  - name: SelfCp0
+    description: Channel 0.
+    value: 0
+  - name: SelfCp1
+    description: Channel 1.
+    value: 1
+  - name: SelfCp2
+    description: Channel 2.
+    value: 2
+  - name: SelfCp3
+    description: Channel 3.
+    value: 3
+  - name: SelfCp4
+    description: Channel 4.
+    value: 4
+  - name: SelfCp5
+    description: Channel 5.
+    value: 5
+  - name: SelfCp6
+    description: Channel 6.
+    value: 6
+  - name: SelfCp7
+    description: Channel 7.
+    value: 7
+  - name: SelfCp8
+    description: Channel 8.
+    value: 8
+  - name: SelfCp9
+    description: Channel 9.
+    value: 9
+  - name: SelfCp10
+    description: Channel 10.
+    value: 10
+  - name: SelfCp11
+    description: Channel 11.
+    value: 11
+  - name: SelfCp12
+    description: Channel 12.
+    value: 12
+  - name: SelfCp13
+    description: Channel 13.
+    value: 13
+  - name: SelfCp14
+    description: Channel 14.
+    value: 14
+  - name: SelfCp15
+    description: Channel 15.
+    value: 15
+  - name: SelfCp16
+    description: Channel 16.
+    value: 16
+  - name: SelfCp17
+    description: Channel 17.
+    value: 17
+  - name: SelfCp18
+    description: Channel 18.
+    value: 18
+  - name: SelfCp19
+    description: Channel 19.
+    value: 19
+  - name: SelfCp20
+    description: Channel 20.
+    value: 20
+  - name: SelfCp21
+    description: Channel 21.
+    value: 21
+  - name: SelfCp22
+    description: Channel 22.
+    value: 22
+  - name: SelfCp23
+    description: Channel 23.
+    value: 23
+  - name: SelfCp24
+    description: Channel 24.
+    value: 24

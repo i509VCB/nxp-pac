@@ -21,6 +21,7 @@ includes:
   - mcxa/dma.yaml
   - mcxa/flexpwm.yaml
   - mcxa/gpio.yaml
+  - mcx/gpio.yaml
   - mcxa/i3c.yaml
   - mcxa/inputmux.yaml
   - mcxa/lpi2c.yaml

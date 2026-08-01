@@ -1,0 +1,198 @@
+block/Usbhs1Usbnc:
+  description: USBNC.
+  items:
+  - name: ctrl1
+    description: USB OTG Control 1.
+    byte_offset: 0
+    fieldset: Ctrl1
+  - name: ctrl2
+    description: USB OTG Control 2.
+    byte_offset: 4
+    fieldset: Ctrl2
+  - name: hsic_ctrl
+    description: USB Host HSIC Control.
+    byte_offset: 16
+    fieldset: HsicCtrl
+fieldset/Ctrl1:
+  description: USB OTG Control 1.
+  fields:
+  - name: over_cur_dis
+    description: Disable Overcurrent Detection.
+    bit_offset: 7
+    bit_size: 1
+    enum: OverCurDis
+  - name: over_cur_pol
+    description: Polarity of Overcurrent.
+    bit_offset: 8
+    bit_size: 1
+    enum: OverCurPol
+  - name: pwr_pol
+    description: Power Polarity.
+    bit_offset: 9
+    bit_size: 1
+    enum: PwrPol
+  - name: wie
+    description: Wake-up Interrupt Enable.
+    bit_offset: 10
+    bit_size: 1
+    enum: Wie
+  - name: wkup_sw_en
+    description: Software Wake-up Enable.
+    bit_offset: 14
+    bit_size: 1
+    enum: WkupSwEn
+  - name: wkup_sw
+    description: Software Wake-up.
+    bit_offset: 15
+    bit_size: 1
+    enum: WkupSw
+  - name: wkup_id_en
+    description: Wake-up on ID Change Enable.
+    bit_offset: 16
+    bit_size: 1
+    enum: WkupIdEn
+  - name: wkup_vbus_en
+    description: Wake-up on VBUS Change Enable.
+    bit_offset: 17
+    bit_size: 1
+    enum: WkupVbusEn
+  - name: wkup_dpdm_en
+    description: Wake-up on DPDM Change Enable.
+    bit_offset: 29
+    bit_size: 1
+    enum: WkupDpdmEn
+  - name: wir
+    description: Wake-up Interrupt Request.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Ctrl2:
+  description: USB OTG Control 2.
+  fields:
+  - name: vbus_source_sel
+    description: VBUS Source Select.
+    bit_offset: 0
+    bit_size: 2
+    enum: VbusSourceSel
+  - name: auturesume_en
+    description: Auto Resume Enable.
+    bit_offset: 2
+    bit_size: 1
+  - name: lowspeed_en
+    description: Low Speed Enable.
+    bit_offset: 3
+    bit_size: 1
+  - name: utmi_clk_vld
+    description: UTMI Clock Valid.
+    bit_offset: 31
+    bit_size: 1
+fieldset/HsicCtrl:
+  description: USB Host HSIC Control.
+  fields:
+  - name: hsic_clk_on
+    description: HSIC Clock ON.
+    bit_offset: 11
+    bit_size: 1
+  - name: hsic_en
+    description: Host HSIC Enable.
+    bit_offset: 12
+    bit_size: 1
+  - name: clk_vld
+    description: Clock Valid.
+    bit_offset: 31
+    bit_size: 1
+enum/OverCurDis:
+  bit_size: 1
+  variants:
+  - name: OvrcrntDetctEn
+    description: Enables.
+    value: 0
+  - name: OvrcrntDetctDis
+    description: Disables.
+    value: 1
+enum/OverCurPol:
+  bit_size: 1
+  variants:
+  - name: ActiveHiOvrcrnt
+    description: High active (high on this signal represents an overcurrent condition).
+    value: 0
+  - name: ActiveLowOvrcrnt
+    description: Low active (low on this signal represents an overcurrent condition).
+    value: 1
+enum/PwrPol:
+  bit_size: 1
+  variants:
+  - name: ActiveLoPmic
+    description: PMIC Power Pin is Low active.
+    value: 0
+  - name: ActiveHiPmic
+    description: PMIC Power Pin is High active.
+    value: 1
+enum/VbusSourceSel:
+  bit_size: 2
+  variants:
+  - name: VbusValid
+    description: vbus_valid.
+    value: 0
+  - name: SessValid1
+    description: sess_valid.
+    value: 1
+  - name: SessValid2
+    description: sess_valid.
+    value: 2
+  - name: SessValid3
+    description: sess_valid.
+    value: 3
+enum/Wie:
+  bit_size: 1
+  variants:
+  - name: IntDis
+    description: Interrupt Disabled.
+    value: 0
+  - name: IntEn
+    description: Interrupt Enabled.
+    value: 1
+enum/WkupDpdmEn:
+  bit_size: 1
+  variants:
+  - name: DpdmWkupDis
+    description: DPDM changes wake-up to be disabled only when VBUS is 0.
+    value: 0
+  - name: DpdmWkupEn
+    description: DPDM changes wake-up to be enabled, it is for device only.
+    value: 1
+enum/WkupIdEn:
+  bit_size: 1
+  variants:
+  - name: WkupIdDis
+    description: Disables.
+    value: 0
+  - name: WkupIdEn
+    description: Enables.
+    value: 1
+enum/WkupSw:
+  bit_size: 1
+  variants:
+  - name: Inactive
+    description: Inactive.
+    value: 0
+  - name: ForceWkup
+    description: Force wake-up.
+    value: 1
+enum/WkupSwEn:
+  bit_size: 1
+  variants:
+  - name: SwWkupDis
+    description: Disables.
+    value: 0
+  - name: SwWkupEn
+    description: Enables.
+    value: 1
+enum/WkupVbusEn:
+  bit_size: 1
+  variants:
+  - name: WkupVbusDis
+    description: Disables.
+    value: 0
+  - name: WkupVbusEn
+    description: Enables.
+    value: 1

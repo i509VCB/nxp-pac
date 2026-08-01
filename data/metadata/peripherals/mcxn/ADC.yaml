@@ -1,0 +1,1535 @@
+block/Adc:
+  description: ADC.
+  items:
+  - name: verid
+    description: Version ID Register.
+    byte_offset: 0
+    access: Read
+    fieldset: Verid
+  - name: param
+    description: Parameter Register.
+    byte_offset: 4
+    access: Read
+    fieldset: Param
+  - name: ctrl
+    description: Control Register.
+    byte_offset: 16
+    fieldset: Ctrl
+  - name: stat
+    description: Status Register.
+    byte_offset: 20
+    fieldset: Stat
+  - name: ie
+    description: Interrupt Enable Register.
+    byte_offset: 24
+    fieldset: Ie
+  - name: de
+    description: DMA Enable Register.
+    byte_offset: 28
+    fieldset: De
+  - name: cfg
+    description: Configuration Register.
+    byte_offset: 32
+    fieldset: Cfg
+  - name: pause
+    description: Pause Register.
+    byte_offset: 36
+    fieldset: Pause
+  - name: swtrig
+    description: Software Trigger Register.
+    byte_offset: 52
+    fieldset: Swtrig
+  - name: tstat
+    description: Trigger Status Register.
+    byte_offset: 56
+    fieldset: Tstat
+  - name: ofstrim
+    description: Offset Trim Register.
+    byte_offset: 64
+    fieldset: Ofstrim
+  - name: tctrl
+    description: Trigger Control Register.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 160
+    fieldset: Tctrl
+  - name: fctrl
+    description: FIFO Control Register.
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 224
+    fieldset: Fctrl
+  - name: gcc
+    description: Gain Calibration Control.
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 240
+    access: Read
+    fieldset: Gcc
+  - name: gcr
+    description: Gain Calculation Result.
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 248
+    fieldset: Gcr
+  - name: cmdl
+    description: Command Low Buffer Register.
+    array:
+      len: 15
+      stride: 8
+    byte_offset: 256
+    fieldset: Cmdl
+  - name: cmdh
+    description: Command High Buffer Register.
+    array:
+      len: 15
+      stride: 8
+    byte_offset: 260
+    fieldset: Cmdh
+  - name: cv
+    description: Compare Value Register.
+    array:
+      len: 15
+      stride: 4
+    byte_offset: 512
+    fieldset: Cv
+  - name: resfifo
+    description: Data Result FIFO Register.
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 768
+    access: Read
+    fieldset: Resfifo
+  - name: cal_gar
+    description: Calibration General A-Side Registers.
+    array:
+      len: 33
+      stride: 4
+    byte_offset: 1024
+    fieldset: CalGar
+  - name: cal_gbr
+    description: Calibration General B-Side Registers.
+    array:
+      len: 33
+      stride: 4
+    byte_offset: 1280
+    fieldset: CalGbr
+fieldset/CalGar:
+  description: Calibration General A-Side Registers.
+  fields:
+  - name: cal_gar_val
+    description: Calibration General A Side Register Element.
+    bit_offset: 0
+    bit_size: 11
+fieldset/CalGbr:
+  description: Calibration General B-Side Registers.
+  fields:
+  - name: cal_gbr_val
+    description: Calibration General B Side Register Element.
+    bit_offset: 0
+    bit_size: 11
+fieldset/Cfg:
+  description: Configuration Register.
+  fields:
+  - name: tprictrl
+    description: ADC Trigger Priority Control.
+    bit_offset: 0
+    bit_size: 2
+    enum: Tprictrl
+  - name: pwrsel
+    description: Power Configuration Select.
+    bit_offset: 4
+    bit_size: 2
+    enum: Pwrsel
+  - name: refsel
+    description: Voltage Reference Selection.
+    bit_offset: 6
+    bit_size: 2
+    enum: Refsel
+  - name: tres
+    description: Trigger Resume Enable.
+    bit_offset: 8
+    bit_size: 1
+  - name: tcmdres
+    description: Trigger Command Resume.
+    bit_offset: 9
+    bit_size: 1
+  - name: hpt_exdi
+    description: High-Priority Trigger Exception Disable.
+    bit_offset: 10
+    bit_size: 1
+    enum: HptExdi
+  - name: pudly
+    description: Power-up Delay.
+    bit_offset: 16
+    bit_size: 8
+  - name: pwren
+    description: ADC Analog Pre-Enable.
+    bit_offset: 28
+    bit_size: 1
+fieldset/Cmdh:
+  description: Command High Buffer Register.
+  fields:
+  - name: cmpen
+    description: Compare Function Enable.
+    bit_offset: 0
+    bit_size: 2
+    enum: CmdhCmpen
+  - name: wait_trig
+    description: Wait for Trigger Assertion Before Execution.
+    bit_offset: 2
+    bit_size: 1
+  - name: lwi
+    description: Loop with Increment.
+    bit_offset: 7
+    bit_size: 1
+  - name: sts
+    description: Sample Time Select.
+    bit_offset: 8
+    bit_size: 3
+    enum: CmdhSts
+  - name: avgs
+    description: Hardware Average Select.
+    bit_offset: 12
+    bit_size: 4
+    enum: CmdhAvgs
+  - name: loop_
+    description: Loop Count Select.
+    bit_offset: 16
+    bit_size: 4
+    enum: CmdhLoop
+  - name: next
+    description: Next Command Select.
+    bit_offset: 24
+    bit_size: 4
+    enum: CmdhNext
+fieldset/Cmdl:
+  description: Command Low Buffer Register.
+  fields:
+  - name: adch
+    description: Input Channel Select.
+    bit_offset: 0
+    bit_size: 5
+    enum: CmdlAdch
+  - name: ctype
+    description: Conversion Type.
+    bit_offset: 5
+    bit_size: 2
+    enum: CmdlCtype
+  - name: mode
+    description: Select Resolution of Conversions.
+    bit_offset: 7
+    bit_size: 1
+    enum: CmdlMode
+  - name: altb_adch
+    description: Alternate Channel B Input Channel Select.
+    bit_offset: 16
+    bit_size: 5
+    enum: CmdlAltbAdch
+  - name: altben
+    description: Alternate Channel B Select Enable.
+    bit_offset: 21
+    bit_size: 1
+fieldset/Ctrl:
+  description: Control Register.
+  fields:
+  - name: adcen
+    description: ADC Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: rst
+    description: Software Reset.
+    bit_offset: 1
+    bit_size: 1
+    enum: Rst
+  - name: dozen
+    description: Doze Enable.
+    bit_offset: 2
+    bit_size: 1
+    enum: Dozen
+  - name: cal_req
+    description: Auto-Calibration Request.
+    bit_offset: 3
+    bit_size: 1
+    enum: CalReq
+  - name: calofs
+    description: Offset Calibration Request.
+    bit_offset: 4
+    bit_size: 1
+    enum: Calofs
+  - name: rstfifo0
+    description: Reset FIFO 0.
+    bit_offset: 8
+    bit_size: 1
+    enum: Rstfifo0
+  - name: rstfifo1
+    description: Reset FIFO 1.
+    bit_offset: 9
+    bit_size: 1
+    enum: Rstfifo1
+  - name: cal_avgs
+    description: Auto-Calibration Averages.
+    bit_offset: 16
+    bit_size: 4
+    enum: CalAvgs
+fieldset/Cv:
+  description: Compare Value Register.
+  fields:
+  - name: cvl
+    description: Compare Value Low.
+    bit_offset: 0
+    bit_size: 16
+  - name: cvh
+    description: Compare Value High.
+    bit_offset: 16
+    bit_size: 16
+fieldset/De:
+  description: DMA Enable Register.
+  fields:
+  - name: fwmde0
+    description: FIFO 0 Watermark DMA Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: fwmde1
+    description: FIFO1 Watermark DMA Enable.
+    bit_offset: 1
+    bit_size: 1
+fieldset/Fctrl:
+  description: FIFO Control Register.
+  fields:
+  - name: fcount
+    description: Result FIFO Counter.
+    bit_offset: 0
+    bit_size: 5
+  - name: fwmark
+    description: Watermark Level Selection.
+    bit_offset: 16
+    bit_size: 4
+fieldset/Gcc:
+  description: Gain Calibration Control.
+  fields:
+  - name: gain_cal
+    description: Gain Calibration Value.
+    bit_offset: 0
+    bit_size: 16
+  - name: rdy
+    description: Gain Calibration Value Valid.
+    bit_offset: 24
+    bit_size: 1
+    enum: GccRdy
+fieldset/Gcr:
+  description: Gain Calculation Result.
+  fields:
+  - name: gcalr
+    description: Gain Calculation Result.
+    bit_offset: 0
+    bit_size: 16
+  - name: rdy
+    description: Gain Calculation Ready.
+    bit_offset: 24
+    bit_size: 1
+fieldset/Ie:
+  description: Interrupt Enable Register.
+  fields:
+  - name: fwmie0
+    description: FIFO 0 Watermark Interrupt Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: fofie0
+    description: Result FIFO 0 Overflow Interrupt Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: fwmie1
+    description: FIFO1 Watermark Interrupt Enable.
+    bit_offset: 2
+    bit_size: 1
+  - name: fofie1
+    description: Result FIFO1 Overflow Interrupt Enable.
+    bit_offset: 3
+    bit_size: 1
+  - name: texc_ie
+    description: Trigger Exception Interrupt Enable.
+    bit_offset: 8
+    bit_size: 1
+  - name: tcomp_ie
+    description: Trigger Completion Interrupt Enable.
+    bit_offset: 16
+    bit_size: 4
+    enum: TcompIe
+fieldset/Ofstrim:
+  description: Offset Trim Register.
+  fields:
+  - name: ofstrim_a
+    description: Trim for Offset.
+    bit_offset: 0
+    bit_size: 5
+  - name: ofstrim_b
+    description: Trim for Offset.
+    bit_offset: 16
+    bit_size: 5
+fieldset/Param:
+  description: Parameter Register.
+  fields:
+  - name: trig_num
+    description: Trigger Number.
+    bit_offset: 0
+    bit_size: 8
+  - name: fifosize
+    description: Result FIFO Depth.
+    bit_offset: 8
+    bit_size: 8
+    enum: Fifosize
+  - name: cv_num
+    description: Compare Value Number.
+    bit_offset: 16
+    bit_size: 8
+  - name: cmd_num
+    description: Command Buffer Number.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Pause:
+  description: Pause Register.
+  fields:
+  - name: pausedly
+    description: Pause Delay.
+    bit_offset: 0
+    bit_size: 9
+  - name: pauseen
+    description: Pause Enable.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Resfifo:
+  description: Data Result FIFO Register.
+  fields:
+  - name: d
+    description: Data Result.
+    bit_offset: 0
+    bit_size: 16
+  - name: tsrc
+    description: Trigger Source.
+    bit_offset: 16
+    bit_size: 2
+    enum: Tsrc
+  - name: loopcnt
+    description: Loop Count Value.
+    bit_offset: 20
+    bit_size: 4
+    enum: Loopcnt
+  - name: cmdsrc
+    description: Command Buffer Source.
+    bit_offset: 24
+    bit_size: 4
+    enum: Cmdsrc
+  - name: valid
+    description: FIFO Entry is Valid.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Stat:
+  description: Status Register.
+  fields:
+  - name: rdy0
+    description: Result FIFO 0 Ready Flag.
+    bit_offset: 0
+    bit_size: 1
+    enum: Rdy0
+  - name: fof0
+    description: Result FIFO 0 Overflow Flag.
+    bit_offset: 1
+    bit_size: 1
+    enum: Fof0
+  - name: rdy1
+    description: Result FIFO1 Ready Flag.
+    bit_offset: 2
+    bit_size: 1
+    enum: Rdy1
+  - name: fof1
+    description: Result FIFO1 Overflow Flag.
+    bit_offset: 3
+    bit_size: 1
+    enum: Fof1
+  - name: texc_int
+    description: Interrupt Flag For High-Priority Trigger Exception.
+    bit_offset: 8
+    bit_size: 1
+    enum: TexcInt
+  - name: tcomp_int
+    description: Interrupt Flag For Trigger Completion.
+    bit_offset: 9
+    bit_size: 1
+    enum: TcompInt
+  - name: cal_rdy
+    description: Calibration Ready.
+    bit_offset: 10
+    bit_size: 1
+    enum: CalRdy
+  - name: adc_active
+    description: ADC Active.
+    bit_offset: 11
+    bit_size: 1
+    enum: AdcActive
+  - name: trgact
+    description: Trigger Active.
+    bit_offset: 16
+    bit_size: 2
+    enum: Trgact
+  - name: cmdact
+    description: Command Active.
+    bit_offset: 24
+    bit_size: 4
+    enum: Cmdact
+fieldset/Swtrig:
+  description: Software Trigger Register.
+  fields:
+  - name: swt0
+    description: Software Trigger 0.
+    bit_offset: 0
+    bit_size: 1
+    enum: Swt0
+  - name: swt1
+    description: Software Trigger 1.
+    bit_offset: 1
+    bit_size: 1
+    enum: Swt1
+  - name: swt2
+    description: Software Trigger 2.
+    bit_offset: 2
+    bit_size: 1
+    enum: Swt2
+  - name: swt3
+    description: Software Trigger 3.
+    bit_offset: 3
+    bit_size: 1
+    enum: Swt3
+fieldset/Tctrl:
+  description: Trigger Control Register.
+  fields:
+  - name: hten
+    description: Trigger Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: fifo_sel_a
+    description: SAR Result Destination for Channel A.
+    bit_offset: 1
+    bit_size: 1
+    enum: FifoSelA
+  - name: fifo_sel_b
+    description: SAR Result Destination for Channel B.
+    bit_offset: 2
+    bit_size: 1
+    enum: FifoSelB
+  - name: tpri
+    description: Trigger Priority Setting.
+    bit_offset: 8
+    bit_size: 2
+    enum: Tpri
+  - name: rsync
+    description: Trigger Resync.
+    bit_offset: 15
+    bit_size: 1
+  - name: tdly
+    description: Trigger Delay Select.
+    bit_offset: 16
+    bit_size: 4
+  - name: tcmd
+    description: Trigger Command Select.
+    bit_offset: 24
+    bit_size: 4
+    enum: Tcmd
+fieldset/Tstat:
+  description: Trigger Status Register.
+  fields:
+  - name: texc_num
+    description: Trigger Exception Number.
+    bit_offset: 0
+    bit_size: 4
+    enum: TexcNum
+  - name: tcomp_flag
+    description: Trigger Completion Flag.
+    bit_offset: 16
+    bit_size: 4
+    enum: TcompFlag
+fieldset/Verid:
+  description: Version ID Register.
+  fields:
+  - name: res
+    description: Resolution.
+    bit_offset: 0
+    bit_size: 1
+    enum: Res
+  - name: diffen
+    description: Differential Supported.
+    bit_offset: 1
+    bit_size: 1
+    enum: Diffen
+  - name: mvi
+    description: Multiple Vref Implemented.
+    bit_offset: 3
+    bit_size: 1
+    enum: Mvi
+  - name: csw
+    description: Channel Scale Width.
+    bit_offset: 4
+    bit_size: 3
+    enum: Csw
+  - name: vr1rngi
+    description: Voltage Reference 1 Range Control Bit Implemented.
+    bit_offset: 8
+    bit_size: 1
+    enum: Vr1rngi
+  - name: iadcki
+    description: Internal ADC Clock Implemented.
+    bit_offset: 9
+    bit_size: 1
+    enum: Iadcki
+  - name: calofsi
+    description: Calibration Function Implemented.
+    bit_offset: 10
+    bit_size: 1
+    enum: Calofsi
+  - name: num_sec
+    description: Number of Single-Ended Outputs Supported.
+    bit_offset: 11
+    bit_size: 1
+    enum: NumSec
+  - name: num_fifo
+    description: Number of FIFOs.
+    bit_offset: 12
+    bit_size: 3
+    enum: NumFifo
+  - name: minor
+    description: Minor Version Number.
+    bit_offset: 16
+    bit_size: 8
+  - name: major
+    description: Major Version Number.
+    bit_offset: 24
+    bit_size: 8
+enum/AdcActive:
+  bit_size: 1
+  variants:
+  - name: NotActive
+    description: ADC is idle. There are no pending triggers to service and no active commands are being processed.
+    value: 0
+  - name: Busy
+    description: ADC is processing a conversion, running through the power-up delay, or servicing a trigger.
+    value: 1
+enum/CalAvgs:
+  bit_size: 4
+  variants:
+  - name: NoAverage
+    description: Single conversion.
+    value: 0
+  - name: Average2
+    description: 2 conversions averaged.
+    value: 1
+  - name: Average4
+    description: 4 conversions averaged.
+    value: 2
+  - name: Average8
+    description: 8 conversions averaged.
+    value: 3
+  - name: Average16
+    description: 16 conversions averaged.
+    value: 4
+  - name: Average32
+    description: 32 conversions averaged.
+    value: 5
+  - name: Average64
+    description: 64 conversions averaged.
+    value: 6
+  - name: Average128
+    description: 128 conversions averaged.
+    value: 7
+  - name: Average256
+    description: 256 conversions averaged.
+    value: 8
+  - name: Average512
+    description: 512 conversions averaged.
+    value: 9
+  - name: Average1024
+    description: 1024 conversions averaged.
+    value: 10
+enum/CalRdy:
+  bit_size: 1
+  variants:
+  - name: NotSet
+    description: Calibration is incomplete or has not been run.
+    value: 0
+  - name: HardwareCalStepCompleted
+    description: ADC is calibrated.
+    value: 1
+enum/CalReq:
+  bit_size: 1
+  variants:
+  - name: NoCalibrationRequest
+    description: No request made.
+    value: 0
+  - name: CalibrationRequestPending
+    description: Request has been made.
+    value: 1
+enum/Calofs:
+  bit_size: 1
+  variants:
+  - name: NoActiveOffsetCalibrationRequest
+    description: Calibration function disabled.
+    value: 0
+  - name: OffsetCalibrationRequestPending
+    description: Request for offset calibration function.
+    value: 1
+enum/Calofsi:
+  bit_size: 1
+  variants:
+  - name: CalFunctionNotAvailable
+    description: Not implemented.
+    value: 0
+  - name: CalFunctionAvailable
+    description: Implemented.
+    value: 1
+enum/Cmdact:
+  bit_size: 4
+  variants:
+  - name: NoCommandActive
+    description: No command currently in progress.
+    value: 0
+  - name: Command1
+    description: Command 1 currently being executed.
+    value: 1
+  - name: Command2
+    description: Command 2 currently being executed.
+    value: 2
+  - name: CommandX3
+    description: Associated command number currently being executed.
+    value: 3
+  - name: CommandX4
+    description: Associated command number currently being executed.
+    value: 4
+  - name: CommandX5
+    description: Associated command number currently being executed.
+    value: 5
+  - name: CommandX6
+    description: Associated command number currently being executed.
+    value: 6
+  - name: CommandX7
+    description: Associated command number currently being executed.
+    value: 7
+  - name: CommandX8
+    description: Associated command number currently being executed.
+    value: 8
+  - name: CommandX9
+    description: Associated command number currently being executed.
+    value: 9
+enum/CmdhAvgs:
+  bit_size: 4
+  variants:
+  - name: NoAverage
+    description: Single conversion.
+    value: 0
+  - name: Average2
+    description: '2.'
+    value: 1
+  - name: Average4
+    description: '4.'
+    value: 2
+  - name: Average8
+    description: '8.'
+    value: 3
+  - name: Average16
+    description: '16.'
+    value: 4
+  - name: Average32
+    description: '32.'
+    value: 5
+  - name: Average64
+    description: '64.'
+    value: 6
+  - name: Average128
+    description: '128.'
+    value: 7
+  - name: Average256
+    description: '256.'
+    value: 8
+  - name: Average512
+    description: '512.'
+    value: 9
+  - name: Average1024
+    description: '1024.'
+    value: 10
+enum/CmdhCmpen:
+  bit_size: 2
+  variants:
+  - name: DisabledAlwaysStoreResult
+    description: Disabled.
+    value: 0
+  - name: CompareResultStoreIfTrue
+    description: Enabled. Store on true.
+    value: 2
+  - name: CompareResultKeepConvertingUntilTrueStoreIfTrue
+    description: Enabled. Repeat channel acquisition (sample, convert, and compare) until true.
+    value: 3
+enum/CmdhLoop:
+  bit_size: 4
+  variants:
+  - name: CmdExec1x
+    description: Looping not enabled. Command executes one time.
+    value: 0
+  - name: CmdExec2x
+    description: Loop one time. Command executes two times.
+    value: 1
+  - name: CmdExec3x
+    description: Loop two times. Command executes three times.
+    value: 2
+  - name: CmdExecutesCorrespondingTimes3
+    description: Loop corresponding number of times. Command executes LOOP + 1 times.
+    value: 3
+  - name: CmdExecutesCorrespondingTimes4
+    description: Loop corresponding number of times. Command executes LOOP + 1 times.
+    value: 4
+  - name: CmdExecutesCorrespondingTimes5
+    description: Loop corresponding number of times. Command executes LOOP + 1 times.
+    value: 5
+  - name: CmdExecutesCorrespondingTimes6
+    description: Loop corresponding number of times. Command executes LOOP + 1 times.
+    value: 6
+  - name: CmdExecutesCorrespondingTimes7
+    description: Loop corresponding number of times. Command executes LOOP + 1 times.
+    value: 7
+  - name: CmdExecutesCorrespondingTimes8
+    description: Loop corresponding number of times. Command executes LOOP + 1 times.
+    value: 8
+  - name: CmdExecutesCorrespondingTimes9
+    description: Loop corresponding number of times. Command executes LOOP + 1 times.
+    value: 9
+  - name: CmdExec15x
+    description: Loop 15 times. Command executes 16 times.
+    value: 15
+enum/CmdhNext:
+  bit_size: 4
+  variants:
+  - name: NoNextCmdTerminateOnFinish
+    description: No next command defined. Terminate conversions at completion of current command. If lower priority trigger pending, begin command associated with lower priority trigger.
+    value: 0
+  - name: DoCmd1Next
+    description: CMD1.
+    value: 1
+  - name: DoCorrespondingCmdNext2
+    description: Select corresponding CMD command buffer register as next command.
+    value: 2
+  - name: DoCorrespondingCmdNext3
+    description: Select corresponding CMD command buffer register as next command.
+    value: 3
+  - name: DoCorrespondingCmdNext4
+    description: Select corresponding CMD command buffer register as next command.
+    value: 4
+  - name: DoCorrespondingCmdNext5
+    description: Select corresponding CMD command buffer register as next command.
+    value: 5
+  - name: DoCorrespondingCmdNext6
+    description: Select corresponding CMD command buffer register as next command.
+    value: 6
+  - name: DoCorrespondingCmdNext7
+    description: Select corresponding CMD command buffer register as next command.
+    value: 7
+  - name: DoCorrespondingCmdNext8
+    description: Select corresponding CMD command buffer register as next command.
+    value: 8
+  - name: DoCorrespondingCmdNext9
+    description: Select corresponding CMD command buffer register as next command.
+    value: 9
+  - name: DoCmd15Next
+    description: CMD15.
+    value: 15
+enum/CmdhSts:
+  bit_size: 3
+  variants:
+  - name: Sample3p5
+    description: Minimum sample time of 3.5 ADCK cycles.
+    value: 0
+  - name: Sample5p5
+    description: 5.5 ADCK cycles.
+    value: 1
+  - name: Sample7p5
+    description: 7.5 ADCK cycles.
+    value: 2
+  - name: Sample11p5
+    description: 11.5 ADCK cycles.
+    value: 3
+  - name: Sample19p5
+    description: 19.5 ADCK cycles.
+    value: 4
+  - name: Sample35p5
+    description: 35.5 ADCK cycles.
+    value: 5
+  - name: Sample67p5
+    description: 67.5 ADCK cycles.
+    value: 6
+  - name: Sample131p5
+    description: 131.5 ADCK cycles.
+    value: 7
+enum/CmdlAdch:
+  bit_size: 5
+  variants:
+  - name: SelectCh0
+    description: CH0A or CH0B or CH0A/CH0B pair.
+    value: 0
+  - name: SelectCh1
+    description: CH1A or CH1B or CH1A/CH1B pair.
+    value: 1
+  - name: SelectCh2
+    description: CH2A or CH2B or CH2A/CH2B pair.
+    value: 2
+  - name: SelectCh3
+    description: CH3A or CH3B or CH3A/CH3B pair.
+    value: 3
+  - name: SelectCorrespondingChannel4
+    description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+    value: 4
+  - name: SelectCorrespondingChannel5
+    description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+    value: 5
+  - name: SelectCorrespondingChannel6
+    description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+    value: 6
+  - name: SelectCorrespondingChannel7
+    description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+    value: 7
+  - name: SelectCorrespondingChannel8
+    description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+    value: 8
+  - name: SelectCorrespondingChannel9
+    description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+    value: 9
+  - name: SelectCh30
+    description: CH30A or CH30B or CH30A/CH30B pair.
+    value: 30
+  - name: SelectCh31
+    description: CH31A or CH31B or CH31A/CH31B pair.
+    value: 31
+enum/CmdlAltbAdch:
+  bit_size: 5
+  variants:
+  - name: SelectCh0b
+    description: Select CH0B.
+    value: 0
+  - name: SelectCh1b
+    description: Select CH1B.
+    value: 1
+  - name: SelectCh2b
+    description: Select CH2B.
+    value: 2
+  - name: SelectCh3b
+    description: Select CH3B.
+    value: 3
+  - name: SelectCorrespondingCHnB4
+    description: Select corresponding channel CHnB.
+    value: 4
+  - name: SelectCorrespondingCHnB5
+    description: Select corresponding channel CHnB.
+    value: 5
+  - name: SelectCorrespondingCHnB6
+    description: Select corresponding channel CHnB.
+    value: 6
+  - name: SelectCorrespondingCHnB7
+    description: Select corresponding channel CHnB.
+    value: 7
+  - name: SelectCorrespondingCHnB8
+    description: Select corresponding channel CHnB.
+    value: 8
+  - name: SelectCorrespondingCHnB9
+    description: Select corresponding channel CHnB.
+    value: 9
+  - name: SelectCh30b
+    description: Select CH30B.
+    value: 30
+  - name: SelectCh31b
+    description: Select CH31B.
+    value: 31
+enum/CmdlCtype:
+  bit_size: 2
+  variants:
+  - name: SingleEndedASideChannel
+    description: Single-Ended mode. Only A-side channel is converted.
+    value: 0
+  - name: SingleEndedBSideChannel
+    description: Single-Ended mode. Only B-side channel is converted.
+    value: 1
+  - name: DifferentialAMinusB
+    description: Differential mode. A-B.
+    value: 2
+  - name: DualAAndB
+    description: Dual-Single-Ended mode. Both A-side and B-side channels are converted independently.
+    value: 3
+enum/CmdlMode:
+  bit_size: 1
+  variants:
+  - name: Data12Bits
+    description: Standard resolution. Single-ended 12-bit conversion; differential 13-bit conversion with 2's complement output.
+    value: 0
+  - name: Data16Bits
+    description: High resolution. Single-ended 16-bit conversion; differential 16-bit conversion with 2's complement output.
+    value: 1
+enum/Cmdsrc:
+  bit_size: 4
+  variants:
+  - name: NotValid
+    description: Not a valid value CMDSRC value for a data word in RESFIFO. 0h is only found in the initial FIFO state, prior to the storage of an ADC conversion result into a RESFIFO buffer.
+    value: 0
+  - name: Cmd1
+    description: CMD1.
+    value: 1
+  - name: CorrespondingCmd2
+    description: Corresponding command buffer used as control settings for this conversion.
+    value: 2
+  - name: CorrespondingCmd3
+    description: Corresponding command buffer used as control settings for this conversion.
+    value: 3
+  - name: CorrespondingCmd4
+    description: Corresponding command buffer used as control settings for this conversion.
+    value: 4
+  - name: CorrespondingCmd5
+    description: Corresponding command buffer used as control settings for this conversion.
+    value: 5
+  - name: CorrespondingCmd6
+    description: Corresponding command buffer used as control settings for this conversion.
+    value: 6
+  - name: CorrespondingCmd7
+    description: Corresponding command buffer used as control settings for this conversion.
+    value: 7
+  - name: CorrespondingCmd8
+    description: Corresponding command buffer used as control settings for this conversion.
+    value: 8
+  - name: CorrespondingCmd9
+    description: Corresponding command buffer used as control settings for this conversion.
+    value: 9
+  - name: Cmd15
+    description: CMD15.
+    value: 15
+enum/Csw:
+  bit_size: 3
+  variants:
+  - name: CscaleNotSupported
+    description: Not supported.
+    value: 0
+  - name: BitWidth1
+    description: Supported with one-bit CSCALE control field.
+    value: 1
+  - name: BitWidth6
+    description: Supported with six-bit CSCALE control field.
+    value: 6
+enum/Diffen:
+  bit_size: 1
+  variants:
+  - name: DifferentialNotSupported
+    description: Not supported.
+    value: 0
+  - name: DifferentialSupported
+    description: Supported. CMDLn[CTYPE] controls fields implemented.
+    value: 1
+enum/Dozen:
+  bit_size: 1
+  variants:
+  - name: Enabled
+    description: ADC is enabled in low-power mode.
+    value: 0
+  - name: Disabled
+    description: ADC is disabled in low-power mode.
+    value: 1
+enum/FifoSelA:
+  bit_size: 1
+  variants:
+  - name: StoreToFifo0
+    description: FIFO 0.
+    value: 0
+  - name: StoreToFifo1
+    description: FIFO 1.
+    value: 1
+enum/FifoSelB:
+  bit_size: 1
+  variants:
+  - name: StoreToFifo0
+    description: FIFO 0.
+    value: 0
+  - name: StoreToFifo1
+    description: FIFO 1.
+    value: 1
+enum/Fifosize:
+  bit_size: 8
+  variants:
+  - name: Entries2
+    description: '2.'
+    value: 1
+  - name: Entries4
+    description: '4.'
+    value: 4
+  - name: Entries8
+    description: '8.'
+    value: 8
+  - name: Entries16
+    description: '16.'
+    value: 16
+  - name: Entries32
+    description: '32.'
+    value: 32
+  - name: Entries64
+    description: '64.'
+    value: 64
+enum/Fof0:
+  bit_size: 1
+  variants:
+  - name: NoOverflow
+    description: No result FIFO 0 overflow has occurred since the last time that the flag was cleared.
+    value: 0
+  - name: OverflowDetected
+    description: At least one result FIFO 0 overflow has occurred since the last time that the flag was cleared.
+    value: 1
+enum/Fof1:
+  bit_size: 1
+  variants:
+  - name: NoOverflow
+    description: No result FIFO1 overflow has occurred since the last time that the flag was cleared.
+    value: 0
+  - name: OverflowDetected
+    description: At least one result FIFO1 overflow has occurred since the last time that the flag was cleared.
+    value: 1
+enum/GccRdy:
+  bit_size: 1
+  variants:
+  - name: GainCalNotValid
+    description: Invalid.
+    value: 0
+  - name: HardwareCalRoutineCompleted
+    description: Valid.
+    value: 1
+enum/HptExdi:
+  bit_size: 1
+  variants:
+  - name: Enabled
+    description: Enabled.
+    value: 0
+  - name: Disabled
+    description: Disabled.
+    value: 1
+enum/Iadcki:
+  bit_size: 1
+  variants:
+  - name: InternalClkNotAvailable
+    description: Not implemented.
+    value: 0
+  - name: InternalClkAvailable
+    description: Implemented.
+    value: 1
+enum/Loopcnt:
+  bit_size: 4
+  variants:
+  - name: Result1
+    description: Result is from initial conversion in command.
+    value: 0
+  - name: Result2
+    description: Result is from second conversion in command.
+    value: 1
+  - name: CorrespondingResult2
+    description: Result is from (LOOPCNT + 1) conversion in command.
+    value: 2
+  - name: CorrespondingResult3
+    description: Result is from (LOOPCNT + 1) conversion in command.
+    value: 3
+  - name: CorrespondingResult4
+    description: Result is from (LOOPCNT + 1) conversion in command.
+    value: 4
+  - name: CorrespondingResult5
+    description: Result is from (LOOPCNT + 1) conversion in command.
+    value: 5
+  - name: CorrespondingResult6
+    description: Result is from (LOOPCNT + 1) conversion in command.
+    value: 6
+  - name: CorrespondingResult7
+    description: Result is from (LOOPCNT + 1) conversion in command.
+    value: 7
+  - name: CorrespondingResult8
+    description: Result is from (LOOPCNT + 1) conversion in command.
+    value: 8
+  - name: CorrespondingResult9
+    description: Result is from (LOOPCNT + 1) conversion in command.
+    value: 9
+  - name: Result16
+    description: Result is from 16th conversion in command.
+    value: 15
+enum/Mvi:
+  bit_size: 1
+  variants:
+  - name: MultipleRefNotSupported
+    description: Single VREFH input supported.
+    value: 0
+  - name: MultipleRefSupported
+    description: Multiple VREFH inputs supported.
+    value: 1
+enum/NumFifo:
+  bit_size: 3
+  variants:
+  - name: NoFifoImplemented
+    description: N/A.
+    value: 0
+  - name: Cnt1
+    description: One.
+    value: 1
+  - name: Cnt2
+    description: Two.
+    value: 2
+  - name: Cnt3
+    description: Three.
+    value: 3
+  - name: Cnt4
+    description: Four.
+    value: 4
+enum/NumSec:
+  bit_size: 1
+  variants:
+  - name: SingleConvertor
+    description: One.
+    value: 0
+  - name: DualConvertor
+    description: Two.
+    value: 1
+enum/Pwrsel:
+  bit_size: 2
+  variants:
+  - name: Lowest
+    description: Low power.
+    value: 0
+  - name: Highest
+    description: High power.
+    value: 2
+enum/Rdy0:
+  bit_size: 1
+  variants:
+  - name: BelowThreshold
+    description: Not above watermark.
+    value: 0
+  - name: AboveThreshold
+    description: Above watermark.
+    value: 1
+enum/Rdy1:
+  bit_size: 1
+  variants:
+  - name: BelowThreshold
+    description: Not above watermark.
+    value: 0
+  - name: AboveThreshold
+    description: Above watermark.
+    value: 1
+enum/Refsel:
+  bit_size: 2
+  variants:
+  - name: Option1
+    description: Option 1.
+    value: 0
+  - name: Option2
+    description: Option 2.
+    value: 1
+  - name: Option3
+    description: Option 3.
+    value: 2
+enum/Res:
+  bit_size: 1
+  variants:
+  - name: Max13Bit
+    description: Up to 13-bit differential or 12-bit single-ended resolution supported.
+    value: 0
+  - name: Max16Bit
+    description: Up to 16-bit differential or 16-bit single-ended resolution supported. CMDLn[MODE] available for selecting the resolution of conversions for the associated command.
+    value: 1
+enum/Rst:
+  bit_size: 1
+  variants:
+  - name: ReleasedFromReset
+    description: ADC logic is not reset.
+    value: 0
+  - name: HeldInReset
+    description: ADC logic is reset.
+    value: 1
+enum/Rstfifo0:
+  bit_size: 1
+  variants:
+  - name: NoAction
+    description: No effect.
+    value: 0
+  - name: TriggerReset
+    description: FIFO 0 is reset.
+    value: 1
+enum/Rstfifo1:
+  bit_size: 1
+  variants:
+  - name: NoAction
+    description: No effect.
+    value: 0
+  - name: TriggerReset
+    description: FIFO 1 is reset.
+    value: 1
+enum/Swt0:
+  bit_size: 1
+  variants:
+  - name: NoTrigger
+    description: No trigger 0 event generated.
+    value: 0
+  - name: InitiateTrigger0
+    description: Trigger 0 event generated.
+    value: 1
+enum/Swt1:
+  bit_size: 1
+  variants:
+  - name: NoTrigger
+    description: No trigger 1 event generated.
+    value: 0
+  - name: InitiateTrigger1
+    description: Trigger 1 event generated.
+    value: 1
+enum/Swt2:
+  bit_size: 1
+  variants:
+  - name: NoTrigger
+    description: No trigger 2 event generated.
+    value: 0
+  - name: InitiateTrigger2
+    description: Trigger 2 event generated.
+    value: 1
+enum/Swt3:
+  bit_size: 1
+  variants:
+  - name: NoTrigger
+    description: No trigger 3 event generated.
+    value: 0
+  - name: InitiateTrigger3
+    description: Trigger 3 event generated.
+    value: 1
+enum/Tcmd:
+  bit_size: 4
+  variants:
+  - name: NotValid
+    description: Not a valid selection from the command buffer. Trigger event is ignored.
+    value: 0
+  - name: ExecuteCmd1
+    description: CMD1.
+    value: 1
+  - name: ExecuteCorrespondingCmd2
+    description: Corresponding CMD is executed.
+    value: 2
+  - name: ExecuteCorrespondingCmd3
+    description: Corresponding CMD is executed.
+    value: 3
+  - name: ExecuteCorrespondingCmd4
+    description: Corresponding CMD is executed.
+    value: 4
+  - name: ExecuteCorrespondingCmd5
+    description: Corresponding CMD is executed.
+    value: 5
+  - name: ExecuteCorrespondingCmd6
+    description: Corresponding CMD is executed.
+    value: 6
+  - name: ExecuteCorrespondingCmd7
+    description: Corresponding CMD is executed.
+    value: 7
+  - name: ExecuteCorrespondingCmd8
+    description: Corresponding CMD is executed.
+    value: 8
+  - name: ExecuteCorrespondingCmd9
+    description: Corresponding CMD is executed.
+    value: 9
+  - name: ExecuteCmd15
+    description: CMD15.
+    value: 15
+enum/TcompFlag:
+  bit_size: 4
+  variants:
+  - name: NoTrigger
+    description: No triggers have been completed. Trigger completion interrupts are disabled.
+    value: 0
+  - name: Bit0MeansTrigger0Completed
+    description: Trigger 0 has been completed and trigger 0 has enabled completion interrupts.
+    value: 1
+  - name: Bit1MeansTrigger1Completed
+    description: Trigger 1 has been completed and trigger 1 has enabled completion interrupts.
+    value: 2
+  - name: SetBitsIndicateTriggerXCompleted3
+    description: Associated trigger sequence has completed and has enabled completion interrupts.
+    value: 3
+  - name: SetBitsIndicateTriggerXCompleted4
+    description: Associated trigger sequence has completed and has enabled completion interrupts.
+    value: 4
+  - name: SetBitsIndicateTriggerXCompleted5
+    description: Associated trigger sequence has completed and has enabled completion interrupts.
+    value: 5
+  - name: SetBitsIndicateTriggerXCompleted6
+    description: Associated trigger sequence has completed and has enabled completion interrupts.
+    value: 6
+  - name: SetBitsIndicateTriggerXCompleted7
+    description: Associated trigger sequence has completed and has enabled completion interrupts.
+    value: 7
+  - name: SetBitsIndicateTriggerXCompleted8
+    description: Associated trigger sequence has completed and has enabled completion interrupts.
+    value: 8
+  - name: SetBitsIndicateTriggerXCompleted9
+    description: Associated trigger sequence has completed and has enabled completion interrupts.
+    value: 9
+  - name: AllBitsSetIndicateAllTriggersCompleted
+    description: Every trigger sequence has been completed and every trigger has enabled completion interrupts.
+    value: 15
+enum/TcompIe:
+  bit_size: 4
+  variants:
+  - name: Disabled
+    description: All disabled.
+    value: 0
+  - name: Trigger0CompleteEnabled
+    description: Trigger completion interrupts are enabled for trigger source 0 only.
+    value: 1
+  - name: Trigger1CompleteEnabled
+    description: Trigger completion interrupts are enabled for trigger source 1 only.
+    value: 2
+  - name: TriggerXCompleteEnabled3
+    description: Associated trigger completion interrupts are enabled.
+    value: 3
+  - name: TriggerXCompleteEnabled4
+    description: Associated trigger completion interrupts are enabled.
+    value: 4
+  - name: TriggerXCompleteEnabled5
+    description: Associated trigger completion interrupts are enabled.
+    value: 5
+  - name: TriggerXCompleteEnabled6
+    description: Associated trigger completion interrupts are enabled.
+    value: 6
+  - name: TriggerXCompleteEnabled7
+    description: Associated trigger completion interrupts are enabled.
+    value: 7
+  - name: TriggerXCompleteEnabled8
+    description: Associated trigger completion interrupts are enabled.
+    value: 8
+  - name: TriggerXCompleteEnabled9
+    description: Associated trigger completion interrupts are enabled.
+    value: 9
+  - name: AllTriggerCompletesEnabled
+    description: All enabled.
+    value: 15
+enum/TcompInt:
+  bit_size: 1
+  variants:
+  - name: FlagClear
+    description: Either IE[TCOMP_IE] = 0, or no trigger sequences have run to completion.
+    value: 0
+  - name: CompletionDetected
+    description: Trigger sequence has been completed and all data is stored in the associated FIFO.
+    value: 1
+enum/TexcInt:
+  bit_size: 1
+  variants:
+  - name: NoException
+    description: No trigger exceptions have occurred.
+    value: 0
+  - name: ExceptionDetected
+    description: A trigger exception has occurred and is pending acknowledgment.
+    value: 1
+enum/TexcNum:
+  bit_size: 4
+  variants:
+  - name: NoExceptions
+    description: No triggers have been interrupted by a high-priority exception.
+    value: 0
+  - name: Bit0MeansTrigger0Interrupted
+    description: Trigger 0 has been interrupted by a high-priority exception.
+    value: 1
+  - name: Bit1MeansTrigger1Interrupted
+    description: Trigger 1 has been interrupted by a high-priority exception.
+    value: 2
+  - name: SetBitsIndicateTriggerXInterrupted3
+    description: Associated trigger sequence has interrupted by a high-priority exception.
+    value: 3
+  - name: SetBitsIndicateTriggerXInterrupted4
+    description: Associated trigger sequence has interrupted by a high-priority exception.
+    value: 4
+  - name: SetBitsIndicateTriggerXInterrupted5
+    description: Associated trigger sequence has interrupted by a high-priority exception.
+    value: 5
+  - name: SetBitsIndicateTriggerXInterrupted6
+    description: Associated trigger sequence has interrupted by a high-priority exception.
+    value: 6
+  - name: SetBitsIndicateTriggerXInterrupted7
+    description: Associated trigger sequence has interrupted by a high-priority exception.
+    value: 7
+  - name: SetBitsIndicateTriggerXInterrupted8
+    description: Associated trigger sequence has interrupted by a high-priority exception.
+    value: 8
+  - name: SetBitsIndicateTriggerXInterrupted9
+    description: Associated trigger sequence has interrupted by a high-priority exception.
+    value: 9
+  - name: AllBitsSetIndicateAllTriggersInterrupted
+    description: Every trigger sequence has been interrupted by a high-priority exception.
+    value: 15
+enum/Tpri:
+  bit_size: 2
+  variants:
+  - name: HighestPriority
+    description: Highest priority, Level 1.
+    value: 0
+  - name: CorrespondingLowerPriority1
+    description: Set to corresponding priority level.
+    value: 1
+  - name: CorrespondingLowerPriority2
+    description: Set to corresponding priority level.
+    value: 2
+  - name: LowestPriority
+    description: Lowest priority, Level 4.
+    value: 3
+enum/Tprictrl:
+  bit_size: 2
+  variants:
+  - name: AbortCurrentOnPriority
+    description: Current conversion is aborted and the new command specified by the trigger is started.
+    value: 0
+  - name: FinishCurrentOnPriority
+    description: Current command is stopped after completing the current conversion. If averaging is enabled, the averaging loop is completed. CMDHn[LOOP] is ignored and the higher-priority trigger is serviced.
+    value: 1
+  - name: FinishSequenceOnPriority
+    description: Current command is completed (averaging, looping, compare) before servicing the higher-priority trigger.
+    value: 2
+enum/Trgact:
+  bit_size: 2
+  variants:
+  - name: Trig0
+    description: Command (sequence) associated with Trigger 0 currently being executed.
+    value: 0
+  - name: Trig1
+    description: Command (sequence) associated with Trigger 1 currently being executed.
+    value: 1
+  - name: Trig2
+    description: Command (sequence) associated with Trigger 2 currently being executed.
+    value: 2
+  - name: Trig3
+    description: Command (sequence) associated with Trigger 3 currently being executed.
+    value: 3
+enum/Tsrc:
+  bit_size: 2
+  variants:
+  - name: Trigger0
+    description: Trigger source 0.
+    value: 0
+  - name: Trigger1
+    description: Trigger source 1.
+    value: 1
+  - name: Trigger2
+    description: Trigger source 2.
+    value: 2
+  - name: Trigger3
+    description: Trigger source 3.
+    value: 3
+enum/Vr1rngi:
+  bit_size: 1
+  variants:
+  - name: Ref1FixedVoltageRange
+    description: Range control not required.
+    value: 0
+  - name: Ref1SelectableVoltageRange
+    description: Range control required.
+    value: 1

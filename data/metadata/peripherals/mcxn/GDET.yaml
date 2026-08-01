@@ -1,0 +1,212 @@
+block/Gdet:
+  description: no description available.
+  items:
+  - name: gdet_conf_0
+    description: GDET configuration 0 register.
+    byte_offset: 0
+    fieldset: GdetConf0
+  - name: gdet_conf_1
+    description: GDET configuration 1 register.
+    byte_offset: 4
+    fieldset: GdetConf1
+  - name: gdet_enable1
+    description: GDET enable register.
+    byte_offset: 8
+    fieldset: GdetEnable1
+  - name: gdet_conf_2
+    description: GDET configuration 2 register.
+    byte_offset: 12
+    fieldset: GdetConf2
+  - name: gdet_conf_3
+    description: GDET configuration 3 register.
+    byte_offset: 16
+    fieldset: GdetConf3
+  - name: gdet_conf_4
+    description: GDET configuration 4 register.
+    byte_offset: 20
+    fieldset: GdetConf4
+  - name: gdet_conf_5
+    description: GDET configuration 5 register.
+    byte_offset: 24
+    fieldset: GdetConf5
+  - name: gdet_reset
+    description: GDET reset register.
+    byte_offset: 4032
+    fieldset: GdetReset
+  - name: gdet_test
+    description: GDET test Register.
+    byte_offset: 4036
+    fieldset: GdetTest
+  - name: gdet_dly_ctrl
+    description: GDET delay control register.
+    byte_offset: 4044
+    fieldset: GdetDlyCtrl
+fieldset/GdetConf0:
+  description: GDET configuration 0 register.
+  fields:
+  - name: field_3_0
+    description: GDET configuration 0 Field 3_0.
+    bit_offset: 0
+    bit_size: 4
+  - name: sbz
+    description: Should be left to zero.
+    bit_offset: 4
+    bit_size: 1
+  - name: rfu
+    description: Reserved for Future Use.
+    bit_offset: 5
+    bit_size: 27
+fieldset/GdetConf1:
+  description: GDET configuration 1 register.
+  fields:
+  - name: field_1_0
+    description: GDET configuration 1 Field 1_0.
+    bit_offset: 0
+    bit_size: 2
+  - name: field_3_2
+    description: GDET configuration 1 Field 3_2.
+    bit_offset: 2
+    bit_size: 2
+  - name: sbz
+    description: Should be left to zero.
+    bit_offset: 4
+    bit_size: 1
+    array:
+      len: 3
+      stride: 1
+  - name: field_7
+    description: GDET configuration 1 Field 7.
+    bit_offset: 7
+    bit_size: 1
+  - name: field_8
+    description: GDET configuration 1 Field 8.
+    bit_offset: 8
+    bit_size: 1
+  - name: sbz4
+    description: Should be left to zero.
+    bit_offset: 9
+    bit_size: 1
+  - name: sbz5
+    description: Should be left to zero.
+    bit_offset: 10
+    bit_size: 1
+  - name: rfu
+    description: Reserved for Future Use.
+    bit_offset: 11
+    bit_size: 21
+fieldset/GdetConf2:
+  description: GDET configuration 2 register.
+  fields:
+  - name: field_6_0
+    description: GDET configuration 2 Field 6_0.
+    bit_offset: 0
+    bit_size: 7
+  - name: rfu1
+    description: Reserved for Future Use.
+    bit_offset: 7
+    bit_size: 9
+  - name: field_21_16
+    description: GDET configuration 2 Field 21_16.
+    bit_offset: 16
+    bit_size: 6
+  - name: rfu2
+    description: Reserved for Future Use.
+    bit_offset: 22
+    bit_size: 2
+  - name: field_29_24
+    description: GDET configuration 2 Field 29_24.
+    bit_offset: 24
+    bit_size: 6
+  - name: rfu3
+    description: Reserved for Future Use.
+    bit_offset: 30
+    bit_size: 2
+fieldset/GdetConf3:
+  description: GDET configuration 3 register.
+  fields:
+  - name: field_6_0
+    description: GDET configuration 3 Field 6_0.
+    bit_offset: 0
+    bit_size: 7
+  - name: rfu1
+    description: Reserved for Future Use.
+    bit_offset: 7
+    bit_size: 25
+fieldset/GdetConf4:
+  description: GDET configuration 4 register.
+  fields:
+  - name: field_6_0
+    description: GDET configuration 4 Field 6_0.
+    bit_offset: 0
+    bit_size: 7
+  - name: rfu1
+    description: Reserved for Future Use.
+    bit_offset: 7
+    bit_size: 25
+fieldset/GdetConf5:
+  description: GDET configuration 5 register.
+  fields:
+  - name: field_5_0
+    description: GDET configuration 5 Field 5_0.
+    bit_offset: 0
+    bit_size: 6
+  - name: field_11_6
+    description: GDET configuration 5 Field 11_6.
+    bit_offset: 6
+    bit_size: 6
+  - name: rfu1
+    description: Reserved for Future Use.
+    bit_offset: 12
+    bit_size: 20
+fieldset/GdetDlyCtrl:
+  description: GDET delay control register.
+  fields:
+  - name: vol_sel
+    description: GDET delay control of the voltage mode. Used to select the trim code appropiate to the voltage mode.
+    bit_offset: 0
+    bit_size: 2
+  - name: sw_vol_ctrl
+    description: Select the control of the trim code to the delay line via HW port (0) or SW SFR (1).
+    bit_offset: 2
+    bit_size: 1
+  - name: rfu
+    description: Reserved for Future Use.
+    bit_offset: 3
+    bit_size: 29
+fieldset/GdetEnable1:
+  description: GDET enable register.
+  fields:
+  - name: en1
+    description: If set, the detector will be clock gated.
+    bit_offset: 0
+    bit_size: 1
+  - name: rfu
+    description: Reserved for Future Use.
+    bit_offset: 1
+    bit_size: 31
+fieldset/GdetReset:
+  description: GDET reset register.
+  fields:
+  - name: rfu1
+    description: Reserved for Future Use.
+    bit_offset: 0
+    bit_size: 3
+  - name: sft_rst
+    description: Soft reset for the core reset (SFR configuration will be preseved).This register reads as 0.
+    bit_offset: 3
+    bit_size: 1
+  - name: rfu2
+    description: Reserved for Future Use.
+    bit_offset: 4
+    bit_size: 28
+fieldset/GdetTest:
+  description: GDET test Register.
+  fields:
+  - name: sbz
+    description: Should be left to zero.
+    bit_offset: 0
+    bit_size: 1
+  - name: rfu
+    description: Reserved for Future Use.
+    bit_offset: 1
+    bit_size: 31

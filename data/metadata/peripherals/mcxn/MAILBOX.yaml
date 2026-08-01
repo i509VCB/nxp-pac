@@ -1,0 +1,59 @@
+block/Irq:
+  description: 'Array of registers: IRQ, IRQSET, IRQCLR.'
+  items:
+  - name: irq
+    description: name (CPUn) Interrupt.
+    byte_offset: 0
+    fieldset: IrqReg
+  - name: irqset
+    description: name (CPUn) Interrupt Set.
+    byte_offset: 4
+    access: Write
+    fieldset: Irqset
+  - name: irqclr
+    description: name (CPUn) Interrupt Clear.
+    byte_offset: 8
+    access: Write
+    fieldset: Irqclr
+block/Mailbox:
+  description: MAILBOX.
+  items:
+  - name: irq
+    description: 'Array of registers: IRQ, IRQSET, IRQCLR.'
+    array:
+      len: 2
+      stride: 16
+    byte_offset: 0
+    block: Irq
+  - name: mutex
+    description: Mutual Exclusion.
+    byte_offset: 248
+    fieldset: Mutex
+fieldset/IrqReg:
+  description: name (CPUn) Interrupt.
+  fields:
+  - name: intreq
+    description: Interrupt Request.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Irqclr:
+  description: name (CPUn) Interrupt Clear.
+  fields:
+  - name: intreqclr
+    description: Interrupt Request Clear 0.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Irqset:
+  description: name (CPUn) Interrupt Set.
+  fields:
+  - name: intreqset
+    description: Interrupt Request Set 0.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Mutex:
+  description: Mutual Exclusion.
+  fields:
+  - name: ex
+    description: Mutual Exclusion Request.
+    bit_offset: 0
+    bit_size: 1

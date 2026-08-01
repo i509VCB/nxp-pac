@@ -1,0 +1,68 @@
+block/Dm:
+  description: Debug Mail Box.
+  items:
+  - name: csw
+    description: Command and Status Word.
+    byte_offset: 0
+    fieldset: Csw
+  - name: request
+    description: Request Value.
+    byte_offset: 4
+    fieldset: Request
+  - name: return_
+    description: Return Value.
+    byte_offset: 8
+    fieldset: Return
+  - name: id
+    description: Identification.
+    byte_offset: 252
+    access: Read
+    fieldset: Id
+fieldset/Csw:
+  description: Command and Status Word.
+  fields:
+  - name: resynch_req
+    description: Resynchronization Request.
+    bit_offset: 0
+    bit_size: 1
+  - name: req_pending
+    description: Request Pending.
+    bit_offset: 1
+    bit_size: 1
+  - name: dbg_or_err
+    description: DBGMB Overrun Error.
+    bit_offset: 2
+    bit_size: 1
+  - name: ahb_or_err
+    description: AHB Overrun Error.
+    bit_offset: 3
+    bit_size: 1
+  - name: soft_reset
+    description: Soft Reset.
+    bit_offset: 4
+    bit_size: 1
+  - name: chip_reset_req
+    description: Chip Reset Request.
+    bit_offset: 5
+    bit_size: 1
+fieldset/Id:
+  description: Identification.
+  fields:
+  - name: id
+    description: Identification Value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Request:
+  description: Request Value.
+  fields:
+  - name: request
+    description: Request Value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Return:
+  description: Return Value.
+  fields:
+  - name: ret
+    description: Return Value.
+    bit_offset: 0
+    bit_size: 32

@@ -1,0 +1,55 @@
+block/Cache64Polsel:
+  description: CACHE64_POLSEL.
+  items:
+  - name: reg0_top
+    description: Region 0 Top Boundary.
+    byte_offset: 20
+    fieldset: Reg0Top
+  - name: reg1_top
+    description: Region 1 Top Boundary.
+    byte_offset: 24
+    fieldset: Reg1Top
+  - name: polsel
+    description: Policy Select.
+    byte_offset: 28
+    fieldset: Polsel
+fieldset/Polsel:
+  description: Policy Select.
+  fields:
+  - name: reg_policy
+    description: Policy Select For Region.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 3
+      stride: 2
+    enum: RegPolicy
+fieldset/Reg0Top:
+  description: Region 0 Top Boundary.
+  fields:
+  - name: reg0_top
+    description: Upper Limit Of Region 0.
+    bit_offset: 10
+    bit_size: 19
+fieldset/Reg1Top:
+  description: Region 1 Top Boundary.
+  fields:
+  - name: reg1_top
+    description: Upper Limit Of Region 1.
+    bit_offset: 10
+    bit_size: 19
+enum/RegPolicy:
+  bit_size: 2
+  variants:
+  - name: Noncacheable
+    description: Noncacheable.
+    value: 0
+  - name: WriteThrough
+    description: Write-through.
+    value: 1
+  - name: WriteBack
+    description: Write-back.
+    value: 2
+  - name: Invalid
+    description: Invalid.
+    value: 3

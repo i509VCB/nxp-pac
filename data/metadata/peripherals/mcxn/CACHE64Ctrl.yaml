@@ -1,0 +1,285 @@
+block/Cache64Ctrl:
+  description: CACHE64_CTRL.
+  items:
+  - name: ccr
+    description: Cache Control.
+    byte_offset: 2048
+    fieldset: Ccr
+  - name: clcr
+    description: Cache Line Control.
+    byte_offset: 2052
+    fieldset: Clcr
+  - name: csar
+    description: Cache Search Address.
+    byte_offset: 2056
+    fieldset: Csar
+  - name: ccvr
+    description: Cache Read/Write Value.
+    byte_offset: 2060
+    fieldset: Ccvr
+fieldset/Ccr:
+  description: Cache Control.
+  fields:
+  - name: encache
+    description: Cache Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: enwrbuf
+    description: Enable Write Buffer.
+    bit_offset: 1
+    bit_size: 1
+  - name: frcwt
+    description: Force Write Through Mode.
+    bit_offset: 2
+    bit_size: 1
+  - name: frcnoallc
+    description: Forces No Allocation On Cache Misses.
+    bit_offset: 3
+    bit_size: 1
+    enum: Frcnoallc
+  - name: invw0
+    description: Invalidate Way 0.
+    bit_offset: 24
+    bit_size: 1
+    enum: Invw0
+  - name: pushw0
+    description: Push Way 0.
+    bit_offset: 25
+    bit_size: 1
+    enum: Pushw0
+  - name: invw1
+    description: Invalidate Way 1.
+    bit_offset: 26
+    bit_size: 1
+    enum: Invw1
+  - name: pushw1
+    description: Push Way 1.
+    bit_offset: 27
+    bit_size: 1
+    enum: Pushw1
+  - name: go
+    description: Initiate Cache Command.
+    bit_offset: 31
+    bit_size: 1
+    enum: Go
+fieldset/Ccvr:
+  description: Cache Read/Write Value.
+  fields:
+  - name: data
+    description: Cache Read/Write Data.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Clcr:
+  description: Cache Line Control.
+  fields:
+  - name: lgo
+    description: Initiate Cache Line Command.
+    bit_offset: 0
+    bit_size: 1
+    enum: ClcrLgo
+  - name: cacheaddr
+    description: Cache Address.
+    bit_offset: 2
+    bit_size: 11
+  - name: wsel
+    description: Way Select.
+    bit_offset: 14
+    bit_size: 1
+    enum: Wsel
+  - name: tdsel
+    description: Tag Or Data Select.
+    bit_offset: 16
+    bit_size: 1
+    enum: Tdsel
+  - name: lcivb
+    description: Line Command Initial Valid Bit.
+    bit_offset: 20
+    bit_size: 1
+    enum: Lcivb
+  - name: lcimb
+    description: Line Command Initial Modified Bit.
+    bit_offset: 21
+    bit_size: 1
+    enum: Lcimb
+  - name: lcway
+    description: Line Command Way.
+    bit_offset: 22
+    bit_size: 1
+    enum: Lcway
+  - name: lcmd
+    description: Line Command.
+    bit_offset: 24
+    bit_size: 2
+    enum: Lcmd
+  - name: ladsel
+    description: Line Address Select.
+    bit_offset: 26
+    bit_size: 1
+    enum: Ladsel
+  - name: lacc
+    description: Line Access Type.
+    bit_offset: 27
+    bit_size: 1
+    enum: Lacc
+fieldset/Csar:
+  description: Cache Search Address.
+  fields:
+  - name: lgo
+    description: Initiate Cache Line Command.
+    bit_offset: 0
+    bit_size: 1
+    enum: CsarLgo
+  - name: phyaddr
+    description: Physical Address.
+    bit_offset: 1
+    bit_size: 31
+enum/ClcrLgo:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: 'Write: no effect; Read: no line command active.'
+    value: 0
+  - name: InitCmd
+    description: 'Write: initiate line command; Read: line command active.'
+    value: 1
+enum/CsarLgo:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: 'Write: no effect; Read: no line command active.'
+    value: 0
+  - name: InitCmd
+    description: 'Write: initiate line command; Read: line command active.'
+    value: 1
+enum/Frcnoallc:
+  bit_size: 1
+  variants:
+  - name: Allconcache
+    description: Allocation on cache misses.
+    value: 0
+  - name: Frcno
+    description: Forces no allocation on cache misses (FRCWT must be asserted).
+    value: 1
+enum/Go:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: 'Write: no effect; Read: no cache command active.'
+    value: 0
+  - name: InitCmd
+    description: 'Write: initiates cache command; Read: cache command active.'
+    value: 1
+enum/Invw0:
+  bit_size: 1
+  variants:
+  - name: NoOperation
+    description: No operation.
+    value: 0
+  - name: Invw0
+    description: Invalidates all lines in way 0.
+    value: 1
+enum/Invw1:
+  bit_size: 1
+  variants:
+  - name: NoOperation
+    description: No operation.
+    value: 0
+  - name: Invw1
+    description: Invalidates all lines in way 1.
+    value: 1
+enum/Lacc:
+  bit_size: 1
+  variants:
+  - name: Read
+    description: Read.
+    value: 0
+  - name: Write
+    description: Write.
+    value: 1
+enum/Ladsel:
+  bit_size: 1
+  variants:
+  - name: CacheAddr
+    description: Cache.
+    value: 0
+  - name: PhysAddr
+    description: Physical.
+    value: 1
+enum/Lcimb:
+  bit_size: 1
+  variants:
+  - name: Lcimb0
+    description: Initial state 0.
+    value: 0
+  - name: Lcimb1
+    description: Initial state 1.
+    value: 1
+enum/Lcivb:
+  bit_size: 1
+  variants:
+  - name: Lcivb0
+    description: Initial state 0.
+    value: 0
+  - name: Lcivb1
+    description: Initial state 1.
+    value: 1
+enum/Lcmd:
+  bit_size: 2
+  variants:
+  - name: SearchRw
+    description: Search and read or write.
+    value: 0
+  - name: Invalidate
+    description: Invalidate.
+    value: 1
+  - name: Push
+    description: Push.
+    value: 2
+  - name: Clear
+    description: Clear.
+    value: 3
+enum/Lcway:
+  bit_size: 1
+  variants:
+  - name: Way0
+    description: Way 0.
+    value: 0
+  - name: Way1
+    description: Way 1.
+    value: 1
+enum/Pushw0:
+  bit_size: 1
+  variants:
+  - name: NoOperation
+    description: No operation.
+    value: 0
+  - name: Pushw0
+    description: Push all modified lines in way 0.
+    value: 1
+enum/Pushw1:
+  bit_size: 1
+  variants:
+  - name: NoOperation
+    description: No operation.
+    value: 0
+  - name: Pushw1
+    description: Push all modified lines in way 1.
+    value: 1
+enum/Tdsel:
+  bit_size: 1
+  variants:
+  - name: Data
+    description: Data.
+    value: 0
+  - name: Tag
+    description: Tag.
+    value: 1
+enum/Wsel:
+  bit_size: 1
+  variants:
+  - name: Way0
+    description: Way 0.
+    value: 0
+  - name: Way1
+    description: Way 1.
+    value: 1

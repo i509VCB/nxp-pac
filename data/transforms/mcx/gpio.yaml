@@ -36,3 +36,76 @@ transforms:
 
   - !Delete
     from: gpio(\d+)(_alias(\d+))?::(.*)
+
+  - !DeleteEnums
+    from: gpio::(Feature|Icnp|Icns|Pcnp|Pcns)
+
+  - !DeleteEnums
+    from: gpio::(Ptto|Pdi|Pdo|Giwe|Isf)(\d+)
+
+  - !MergeEnums
+    from: gpio::(Pdd|Pid|Ptso|Ptco)(\d+)
+    to: gpio::$1
+
+  - !MakeFieldArray
+    fieldsets: gpio::Pddr
+    from: pdd(\d+)
+    to: pdd
+
+  - !MakeFieldArray
+    fieldsets: gpio::Pidr
+    from: pid(\d+)
+    to: pid
+
+  - !MakeFieldArray
+    fieldsets: gpio::Psor
+    from: ptso(\d+)
+    to: ptso
+
+  - !MakeFieldArray
+    fieldsets: gpio::Pcor
+    from: ptco(\d+)
+    to: ptco
+
+  - !MakeFieldArray
+    fieldsets: gpio::Ptor
+    from: ptto(\d+)
+    to: ptto
+
+  - !MakeFieldArray
+    fieldsets: gpio::Pdir
+    from: pdi(\d+)
+    to: pdi
+
+  - !MakeFieldArray
+    fieldsets: gpio::Pdor
+    from: pdo(\d+)
+    to: pdo
+
+  - !MakeFieldArray
+    fieldsets: gpio::Pcnp
+    from: npe(\d+)
+    to: npe
+
+  - !MakeFieldArray
+    fieldsets: gpio::Pcns
+    from: nse(\d+)
+    to: nse
+
+  - !MakeFieldArray
+    fieldsets: gpio::Gic(h|l)r
+    from: giwe(\d+)
+    to: giwe
+
+  - !MergeEnums
+    from: gpio::Icr\d+(Irqc|Irqs|Lk|Isf)
+    to: gpio::$1
+
+  - !MergeFieldsets
+    from: gpio::Icr\d+
+    to: gpio::Icr
+
+  - !MakeRegisterArray
+    blocks: gpio::Gpio
+    from: icr(\d+)
+    to: icr

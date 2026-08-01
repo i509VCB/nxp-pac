@@ -1,0 +1,1047 @@
+block/Emvsim:
+  description: EMVSIM.
+  items:
+  - name: ver_id
+    description: Version ID.
+    byte_offset: 0
+    access: Read
+    fieldset: VerId
+  - name: param
+    description: Parameters.
+    byte_offset: 4
+    access: Read
+    fieldset: Param
+  - name: clkcfg
+    description: Clock Configuration.
+    byte_offset: 8
+    fieldset: Clkcfg
+  - name: divisor
+    description: Baud Rate Divisor.
+    byte_offset: 12
+    fieldset: Divisor
+  - name: ctrl
+    description: Control.
+    byte_offset: 16
+    fieldset: Ctrl
+  - name: int_mask
+    description: Interrupt Mask.
+    byte_offset: 20
+    fieldset: IntMask
+  - name: rx_thd
+    description: Receiver Threshold.
+    byte_offset: 24
+    fieldset: RxThd
+  - name: tx_thd
+    description: Transmitter Threshold.
+    byte_offset: 28
+    fieldset: TxThd
+  - name: rx_status
+    description: Receive Status.
+    byte_offset: 32
+    fieldset: RxStatus
+  - name: tx_status
+    description: Transmitter Status.
+    byte_offset: 36
+    fieldset: TxStatus
+  - name: pcsr
+    description: Port Control and Status.
+    byte_offset: 40
+    fieldset: Pcsr
+  - name: rx_buf
+    description: Receive Data Read Buffer.
+    byte_offset: 44
+    access: Read
+    fieldset: RxBuf
+  - name: tx_buf
+    description: Transmit Data Buffer.
+    byte_offset: 48
+    fieldset: TxBuf
+  - name: tx_getu
+    description: Transmitter Guard ETU Value.
+    byte_offset: 52
+    fieldset: TxGetu
+  - name: cwt_val
+    description: Character Wait Time Value.
+    byte_offset: 56
+    fieldset: CwtVal
+  - name: bwt_val
+    description: Block Wait Time Value.
+    byte_offset: 60
+    fieldset: BwtVal
+  - name: bgt_val
+    description: Block Guard Time Value.
+    byte_offset: 64
+    fieldset: BgtVal
+  - name: gpcnt0_val
+    description: General Purpose Counter 0 Timeout Value.
+    byte_offset: 68
+    fieldset: Gpcnt0Val
+  - name: gpcnt1_val
+    description: General Purpose Counter 1 Timeout Value.
+    byte_offset: 72
+    fieldset: Gpcnt1Val
+fieldset/BgtVal:
+  description: Block Guard Time Value.
+  fields:
+  - name: bgt
+    description: Block Guard Time Value.
+    bit_offset: 0
+    bit_size: 16
+fieldset/BwtVal:
+  description: Block Wait Time Value.
+  fields:
+  - name: bwt
+    description: Block Wait Time Value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Clkcfg:
+  description: Clock Configuration.
+  fields:
+  - name: clk_prsc
+    description: Clock Prescaler Value.
+    bit_offset: 0
+    bit_size: 8
+  - name: gpcnt1_clk_sel
+    description: General Purpose Counter 1 Clock Select.
+    bit_offset: 8
+    bit_size: 2
+    enum: Gpcnt1ClkSel
+  - name: gpcnt0_clk_sel
+    description: General Purpose Counter 0 Clock Select.
+    bit_offset: 10
+    bit_size: 2
+    enum: Gpcnt0ClkSel
+fieldset/Ctrl:
+  description: Control.
+  fields:
+  - name: ic
+    description: Inverse Convention.
+    bit_offset: 0
+    bit_size: 1
+    enum: Ic
+  - name: icm
+    description: Initial Character Mode.
+    bit_offset: 1
+    bit_size: 1
+  - name: anack
+    description: Auto NACK Enable.
+    bit_offset: 2
+    bit_size: 1
+  - name: onack
+    description: Overrun NACK Enable.
+    bit_offset: 3
+    bit_size: 1
+  - name: flsh_rx
+    description: Flush Receiver.
+    bit_offset: 8
+    bit_size: 1
+    enum: FlshRx
+  - name: flsh_tx
+    description: Flush Transmitter.
+    bit_offset: 9
+    bit_size: 1
+    enum: FlshTx
+  - name: sw_rst
+    description: Software Reset.
+    bit_offset: 10
+    bit_size: 1
+    enum: SwRst
+  - name: kill_clocks
+    description: Kill Internal Clocks.
+    bit_offset: 11
+    bit_size: 1
+    enum: KillClocks
+  - name: doze_en
+    description: Doze Enable.
+    bit_offset: 12
+    bit_size: 1
+    enum: DozeEn
+  - name: stop_en
+    description: STOP Enable.
+    bit_offset: 13
+    bit_size: 1
+    enum: StopEn
+  - name: rcv_en
+    description: Receiver Enable.
+    bit_offset: 16
+    bit_size: 1
+  - name: xmt_en
+    description: Transmitter Enable.
+    bit_offset: 17
+    bit_size: 1
+  - name: rcvr_11
+    description: Receiver 11 ETU Mode Enable.
+    bit_offset: 18
+    bit_size: 1
+    enum: Rcvr11
+  - name: rx_dma_en
+    description: Receive DMA Enable.
+    bit_offset: 19
+    bit_size: 1
+  - name: tx_dma_en
+    description: Transmit DMA Enable.
+    bit_offset: 20
+    bit_size: 1
+  - name: inv_crc_val
+    description: Invert CRC Output Value Bits.
+    bit_offset: 24
+    bit_size: 1
+  - name: crc_out_flip
+    description: CRC Output Value Bit Reversal Or Flip Control.
+    bit_offset: 25
+    bit_size: 1
+  - name: crc_in_flip
+    description: CRC Input Byte's Bit Reversal Or Flip Control.
+    bit_offset: 26
+    bit_size: 1
+  - name: cwt_en
+    description: CWT Counter Enable.
+    bit_offset: 27
+    bit_size: 1
+  - name: lrc_en
+    description: LRC Enable.
+    bit_offset: 28
+    bit_size: 1
+  - name: crc_en
+    description: CRC Enable.
+    bit_offset: 29
+    bit_size: 1
+  - name: xmt_crc_lrc
+    description: Transmit CRC or LRC Enable.
+    bit_offset: 30
+    bit_size: 1
+  - name: bwt_en
+    description: Block Wait Time Counter Enable.
+    bit_offset: 31
+    bit_size: 1
+fieldset/CwtVal:
+  description: Character Wait Time Value.
+  fields:
+  - name: cwt
+    description: Character Wait Time Value.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Divisor:
+  description: Baud Rate Divisor.
+  fields:
+  - name: divisor_value
+    description: Divisor (F/D) Value.
+    bit_offset: 0
+    bit_size: 9
+    enum: DivisorValue
+fieldset/Gpcnt0Val:
+  description: General Purpose Counter 0 Timeout Value.
+  fields:
+  - name: gpcnt0
+    description: General Purpose Counter 0 Timeout Value.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Gpcnt1Val:
+  description: General Purpose Counter 1 Timeout Value.
+  fields:
+  - name: gpcnt1
+    description: General Purpose Counter 1 Timeout Value.
+    bit_offset: 0
+    bit_size: 16
+fieldset/IntMask:
+  description: Interrupt Mask.
+  fields:
+  - name: rdt_im
+    description: Receive Data Threshold Interrupt Mask.
+    bit_offset: 0
+    bit_size: 1
+    enum: RdtIm
+  - name: tc_im
+    description: Transmit Complete Interrupt Mask.
+    bit_offset: 1
+    bit_size: 1
+    enum: TcIm
+  - name: rfo_im
+    description: Receive FIFO Overflow Interrupt Mask.
+    bit_offset: 2
+    bit_size: 1
+    enum: RfoIm
+  - name: etc_im
+    description: Early Transmit Complete Interrupt Mask.
+    bit_offset: 3
+    bit_size: 1
+    enum: EtcIm
+  - name: tfe_im
+    description: Transmit FIFO Empty Interrupt Mask.
+    bit_offset: 4
+    bit_size: 1
+    enum: TfeIm
+  - name: tnack_im
+    description: Transmit NACK Threshold Interrupt Mask.
+    bit_offset: 5
+    bit_size: 1
+    enum: TnackIm
+  - name: tff_im
+    description: Transmit FIFO Full Interrupt Mask.
+    bit_offset: 6
+    bit_size: 1
+    enum: TffIm
+  - name: tdt_im
+    description: Transmit Data Threshold Interrupt Mask.
+    bit_offset: 7
+    bit_size: 1
+    enum: TdtIm
+  - name: gpcnt0_im
+    description: General Purpose Timer 0 Timeout Interrupt Mask.
+    bit_offset: 8
+    bit_size: 1
+    enum: Gpcnt0Im
+  - name: cwt_err_im
+    description: Character Wait Time Error Interrupt Mask.
+    bit_offset: 9
+    bit_size: 1
+    enum: CwtErrIm
+  - name: rnack_im
+    description: Receiver NACK Threshold Interrupt Mask.
+    bit_offset: 10
+    bit_size: 1
+    enum: RnackIm
+  - name: bwt_err_im
+    description: Block Wait Time Error Interrupt Mask.
+    bit_offset: 11
+    bit_size: 1
+    enum: BwtErrIm
+  - name: bgt_err_im
+    description: Block Guard Time Error Interrupt.
+    bit_offset: 12
+    bit_size: 1
+    enum: BgtErrIm
+  - name: gpcnt1_im
+    description: General Purpose Counter 1 Timeout Interrupt Mask.
+    bit_offset: 13
+    bit_size: 1
+    enum: Gpcnt1Im
+  - name: rx_data_im
+    description: Receive Data Interrupt Mask.
+    bit_offset: 14
+    bit_size: 1
+    enum: RxDataIm
+  - name: pef_im
+    description: Parity Error Interrupt Mask.
+    bit_offset: 15
+    bit_size: 1
+    enum: PefIm
+fieldset/Param:
+  description: Parameters.
+  fields:
+  - name: rx_fifo_depth
+    description: Receive FIFO Depth.
+    bit_offset: 0
+    bit_size: 8
+  - name: tx_fifo_depth
+    description: Transmit FIFO Depth.
+    bit_offset: 8
+    bit_size: 8
+fieldset/Pcsr:
+  description: Port Control and Status.
+  fields:
+  - name: sapd
+    description: Auto Power Down Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: svcc_en
+    description: Vcc Enable for Smart Card.
+    bit_offset: 1
+    bit_size: 1
+  - name: vccenp
+    description: VCC Enable Polarity Control.
+    bit_offset: 2
+    bit_size: 1
+    enum: Vccenp
+  - name: srst
+    description: Reset Smart Card.
+    bit_offset: 3
+    bit_size: 1
+    enum: Srst
+  - name: scen
+    description: Clock Enable for Smart Card.
+    bit_offset: 4
+    bit_size: 1
+  - name: scsp
+    description: Smart Card Clock Stop Polarity.
+    bit_offset: 5
+    bit_size: 1
+    enum: Scsp
+  - name: spd
+    description: Auto Power-Down Control.
+    bit_offset: 7
+    bit_size: 1
+    enum: Spd
+  - name: spdim
+    description: Smart Card Presence Detect Interrupt Mask.
+    bit_offset: 24
+    bit_size: 1
+    enum: Spdim
+  - name: spdif
+    description: Smart Card Presence Detect Interrupt Flag.
+    bit_offset: 25
+    bit_size: 1
+  - name: spdp
+    description: Smart Card Presence Detect Pin Status.
+    bit_offset: 26
+    bit_size: 1
+    enum: Spdp
+  - name: spdes
+    description: SIM Presence Detect Edge Select.
+    bit_offset: 27
+    bit_size: 1
+    enum: Spdes
+fieldset/RxBuf:
+  description: Receive Data Read Buffer.
+  fields:
+  - name: rx_byte
+    description: Receive Data Byte Read.
+    bit_offset: 0
+    bit_size: 8
+fieldset/RxStatus:
+  description: Receive Status.
+  fields:
+  - name: rfo
+    description: Receive FIFO Overflow Flag.
+    bit_offset: 0
+    bit_size: 1
+    enum: Rfo
+  - name: rx_data
+    description: Receive Data Interrupt Flag.
+    bit_offset: 4
+    bit_size: 1
+  - name: rdtf
+    description: Receive Data Threshold Interrupt Flag.
+    bit_offset: 5
+    bit_size: 1
+    enum: Rdtf
+  - name: lrc_ok
+    description: LRC Check OK Flag.
+    bit_offset: 6
+    bit_size: 1
+    enum: LrcOk
+  - name: crc_ok
+    description: CRC Check OK Flag.
+    bit_offset: 7
+    bit_size: 1
+    enum: CrcOk
+  - name: cwt_err
+    description: Character Wait Time Error Flag.
+    bit_offset: 8
+    bit_size: 1
+  - name: rte
+    description: Received NACK Threshold Error Flag.
+    bit_offset: 9
+    bit_size: 1
+    enum: Rte
+  - name: bwt_err
+    description: Block Wait Time Error Flag.
+    bit_offset: 10
+    bit_size: 1
+    enum: BwtErr
+  - name: bgt_err
+    description: Block Guard Time Error Flag.
+    bit_offset: 11
+    bit_size: 1
+    enum: BgtErr
+  - name: pef
+    description: Parity Error Flag.
+    bit_offset: 12
+    bit_size: 1
+  - name: fef
+    description: Frame Error Flag.
+    bit_offset: 13
+    bit_size: 1
+  - name: rx_wptr
+    description: Receive FIFO Write Pointer Value.
+    bit_offset: 16
+    bit_size: 4
+  - name: rx_cnt
+    description: Receive FIFO Byte Count.
+    bit_offset: 24
+    bit_size: 4
+    enum: RxCnt
+fieldset/RxThd:
+  description: Receiver Threshold.
+  fields:
+  - name: rdt
+    description: Receiver Data Threshold Value.
+    bit_offset: 0
+    bit_size: 4
+  - name: rnck_thd
+    description: Receiver NACK Threshold Value.
+    bit_offset: 8
+    bit_size: 4
+fieldset/TxBuf:
+  description: Transmit Data Buffer.
+  fields:
+  - name: tx_byte
+    description: Transmit Data Byte.
+    bit_offset: 0
+    bit_size: 8
+fieldset/TxGetu:
+  description: Transmitter Guard ETU Value.
+  fields:
+  - name: getu
+    description: Transmitter Guard Time Value in ETU.
+    bit_offset: 0
+    bit_size: 8
+fieldset/TxStatus:
+  description: Transmitter Status.
+  fields:
+  - name: tnte
+    description: Transmit NACK Threshold Error Flag.
+    bit_offset: 0
+    bit_size: 1
+    enum: Tnte
+  - name: tfe
+    description: Transmit FIFO Empty Flag.
+    bit_offset: 3
+    bit_size: 1
+    enum: Tfe
+  - name: etcf
+    description: Early Transmit Complete Flag.
+    bit_offset: 4
+    bit_size: 1
+    enum: Etcf
+  - name: tcf
+    description: Transmit Complete Flag.
+    bit_offset: 5
+    bit_size: 1
+    enum: Tcf
+  - name: tff
+    description: Transmit FIFO Full Flag.
+    bit_offset: 6
+    bit_size: 1
+    enum: Tff
+  - name: tdtf
+    description: Transmit Data Threshold Flag.
+    bit_offset: 7
+    bit_size: 1
+    enum: Tdtf
+  - name: gpcnt0_to
+    description: General Purpose Counter 0 Timeout Flag.
+    bit_offset: 8
+    bit_size: 1
+    enum: Gpcnt0To
+  - name: gpcnt1_to
+    description: General Purpose Counter 1 Timeout Flag.
+    bit_offset: 9
+    bit_size: 1
+    enum: Gpcnt1To
+  - name: tx_rptr
+    description: Transmit FIFO Read Pointer.
+    bit_offset: 16
+    bit_size: 4
+  - name: tx_cnt
+    description: Transmit FIFO Byte Count.
+    bit_offset: 24
+    bit_size: 4
+    enum: TxCnt
+fieldset/TxThd:
+  description: Transmitter Threshold.
+  fields:
+  - name: tdt
+    description: Transmitter Data Threshold Value.
+    bit_offset: 0
+    bit_size: 4
+  - name: tnck_thd
+    description: Transmitter NACK Threshold Value.
+    bit_offset: 8
+    bit_size: 4
+fieldset/VerId:
+  description: Version ID.
+  fields:
+  - name: ver
+    description: Version ID.
+    bit_offset: 0
+    bit_size: 32
+enum/BgtErr:
+  bit_size: 1
+  variants:
+  - name: BgtErrSufficient
+    description: Sufficient.
+    value: 0
+  - name: BgtErrToosmall
+    description: Too small.
+    value: 1
+enum/BgtErrIm:
+  bit_size: 1
+  variants:
+  - name: IntEnabled
+    description: Enable.
+    value: 0
+  - name: IntMasked
+    description: Masked.
+    value: 1
+enum/BwtErr:
+  bit_size: 1
+  variants:
+  - name: BwtErrNo
+    description: Not exceeded.
+    value: 0
+  - name: BwtErrYes
+    description: Exceeded.
+    value: 1
+enum/BwtErrIm:
+  bit_size: 1
+  variants:
+  - name: IntEnabled
+    description: Enable.
+    value: 0
+  - name: IntMasked
+    description: Masked.
+    value: 1
+enum/CrcOk:
+  bit_size: 1
+  variants:
+  - name: CrcNotok
+    description: Current CRC value does not match remainder.
+    value: 0
+  - name: CrcOk
+    description: Current calculated CRC value matches the expected result.
+    value: 1
+enum/CwtErrIm:
+  bit_size: 1
+  variants:
+  - name: IntEnabled
+    description: Enable.
+    value: 0
+  - name: IntDisabled
+    description: Masked.
+    value: 1
+enum/DivisorValue:
+  bit_size: 9
+  variants:
+  - name: Invalid0
+    description: Invalid. As per ISO 7816 specification, the minimum value of F/D is 5.
+    value: 0
+  - name: Invalid1
+    description: Invalid. As per ISO 7816 specification, the minimum value of F/D is 5.
+    value: 1
+  - name: Invalid2
+    description: Invalid. As per ISO 7816 specification, the minimum value of F/D is 5.
+    value: 2
+  - name: Invalid3
+    description: Invalid. As per ISO 7816 specification, the minimum value of F/D is 5.
+    value: 3
+  - name: Invalid4
+    description: Invalid. As per ISO 7816 specification, the minimum value of F/D is 5.
+    value: 4
+  - name: Valid5
+    description: Divisor value F/D.
+    value: 5
+  - name: Valid6
+    description: Divisor value F/D.
+    value: 6
+  - name: Valid7
+    description: Divisor value F/D.
+    value: 7
+  - name: Valid8
+    description: Divisor value F/D.
+    value: 8
+  - name: Valid9
+    description: Divisor value F/D.
+    value: 9
+enum/DozeEn:
+  bit_size: 1
+  variants:
+  - name: DozeGate
+    description: Disable.
+    value: 0
+  - name: DozeNogate
+    description: Enable.
+    value: 1
+enum/EtcIm:
+  bit_size: 1
+  variants:
+  - name: IntEnabled
+    description: Enable.
+    value: 0
+  - name: IntMasked
+    description: Masked.
+    value: 1
+enum/Etcf:
+  bit_size: 1
+  variants:
+  - name: EtxPending
+    description: Pending or incomplete.
+    value: 0
+  - name: EtxComplete
+    description: Complete.
+    value: 1
+enum/FlshRx:
+  bit_size: 1
+  variants:
+  - name: Normalop
+    description: Normal.
+    value: 0
+  - name: Resethold
+    description: Reset.
+    value: 1
+enum/FlshTx:
+  bit_size: 1
+  variants:
+  - name: Normalop
+    description: Normal.
+    value: 0
+  - name: Resethold
+    description: Reset.
+    value: 1
+enum/Gpcnt0ClkSel:
+  bit_size: 2
+  variants:
+  - name: Disabled
+    description: Disable/reset.
+    value: 0
+  - name: Cardclk
+    description: Card clock.
+    value: 1
+  - name: Rxclk
+    description: Receive clock.
+    value: 2
+  - name: Txclk
+    description: ETU clock (transmit clock).
+    value: 3
+enum/Gpcnt0Im:
+  bit_size: 1
+  variants:
+  - name: IntEnabled
+    description: Enable.
+    value: 0
+  - name: IntMasked
+    description: Masked.
+    value: 1
+enum/Gpcnt0To:
+  bit_size: 1
+  variants:
+  - name: Gpcnt0ToNotreached
+    description: GPCNT0 not reached, or flag cleared.
+    value: 0
+  - name: Gpcnt0ToReached
+    description: GPCNT0 reached.
+    value: 1
+enum/Gpcnt1ClkSel:
+  bit_size: 2
+  variants:
+  - name: Disabled
+    description: Disable/reset.
+    value: 0
+  - name: Cardclk
+    description: Card clock.
+    value: 1
+  - name: Rxclk
+    description: Receive clock.
+    value: 2
+  - name: Txclk
+    description: ETU clock (transmit clock).
+    value: 3
+enum/Gpcnt1Im:
+  bit_size: 1
+  variants:
+  - name: IntEnabled
+    description: Enable.
+    value: 0
+  - name: IntMasked
+    description: Masked.
+    value: 1
+enum/Gpcnt1To:
+  bit_size: 1
+  variants:
+  - name: Gpcnt1ToNotreached
+    description: GPCNT1 not reached, or flag cleared.
+    value: 0
+  - name: Gpcnt1ToReached
+    description: GPCNT1 reached.
+    value: 1
+enum/Ic:
+  bit_size: 1
+  variants:
+  - name: DirConvention
+    description: Direct.
+    value: 0
+  - name: InvConvention
+    description: Inverse.
+    value: 1
+enum/KillClocks:
+  bit_size: 1
+  variants:
+  - name: InclkEnabled
+    description: Enable.
+    value: 0
+  - name: InclkDisabled
+    description: Disable.
+    value: 1
+enum/LrcOk:
+  bit_size: 1
+  variants:
+  - name: LrcNotok
+    description: No match.
+    value: 0
+  - name: LrcOk
+    description: Match.
+    value: 1
+enum/PefIm:
+  bit_size: 1
+  variants:
+  - name: IntEnabled
+    description: Enable.
+    value: 0
+  - name: IntMasked
+    description: Masked.
+    value: 1
+enum/Rcvr11:
+  bit_size: 1
+  variants:
+  - name: Rcvr12
+    description: 12 ETU operation.
+    value: 0
+  - name: Rcvr11
+    description: 11 ETU operation.
+    value: 1
+enum/RdtIm:
+  bit_size: 1
+  variants:
+  - name: IntEnabled
+    description: Enable.
+    value: 0
+  - name: IntMasked
+    description: Masked.
+    value: 1
+enum/Rdtf:
+  bit_size: 1
+  variants:
+  - name: LessthanRxthresh
+    description: Less than threshold.
+    value: 0
+  - name: GreaterEqRxthresh
+    description: Greater than or equal to threshold.
+    value: 1
+enum/Rfo:
+  bit_size: 1
+  variants:
+  - name: NoOverrun
+    description: No overrun error.
+    value: 0
+  - name: Overflow
+    description: Overrun error.
+    value: 1
+enum/RfoIm:
+  bit_size: 1
+  variants:
+  - name: IntEnabled
+    description: Enable.
+    value: 0
+  - name: IntMasked
+    description: Masked.
+    value: 1
+enum/RnackIm:
+  bit_size: 1
+  variants:
+  - name: IntEnabled
+    description: Enable.
+    value: 0
+  - name: IntMasked
+    description: Masked.
+    value: 1
+enum/Rte:
+  bit_size: 1
+  variants:
+  - name: LessthanNackthresh
+    description: Less than.
+    value: 0
+  - name: GreaterEqNackthresh
+    description: Equal to.
+    value: 1
+enum/RxCnt:
+  bit_size: 4
+  variants:
+  - name: FifoEmpty
+    description: FIFO empty.
+    value: 0
+enum/RxDataIm:
+  bit_size: 1
+  variants:
+  - name: IntEnabled
+    description: Enable.
+    value: 0
+  - name: IntMasked
+    description: Masked.
+    value: 1
+enum/Scsp:
+  bit_size: 1
+  variants:
+  - name: ScspLogic0
+    description: Logic 0.
+    value: 0
+  - name: ScspLogic1
+    description: Logic 1.
+    value: 1
+enum/Spd:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: No.
+    value: 0
+  - name: Powerdown
+    description: Yes.
+    value: 1
+enum/Spdes:
+  bit_size: 1
+  variants:
+  - name: FallingEdge
+    description: Falling edge.
+    value: 0
+  - name: RisingEdge
+    description: Rising edge.
+    value: 1
+enum/Spdim:
+  bit_size: 1
+  variants:
+  - name: IntEnabled
+    description: Enable.
+    value: 0
+  - name: IntMasked
+    description: Mask.
+    value: 1
+enum/Spdp:
+  bit_size: 1
+  variants:
+  - name: LogicLow
+    description: Logic low.
+    value: 0
+  - name: LogicHigh
+    description: Logic high.
+    value: 1
+enum/Srst:
+  bit_size: 1
+  variants:
+  - name: Asserted
+    description: Assert.
+    value: 0
+  - name: DeAsserted
+    description: Deassert.
+    value: 1
+enum/StopEn:
+  bit_size: 1
+  variants:
+  - name: StopAllClks
+    description: Disable.
+    value: 0
+  - name: OnlySckOn
+    description: Enable.
+    value: 1
+enum/SwRst:
+  bit_size: 1
+  variants:
+  - name: Normalop
+    description: Normal.
+    value: 0
+  - name: Resethold
+    description: Reset.
+    value: 1
+enum/TcIm:
+  bit_size: 1
+  variants:
+  - name: IntEnabled
+    description: Enable.
+    value: 0
+  - name: IntMasked
+    description: Masked.
+    value: 1
+enum/Tcf:
+  bit_size: 1
+  variants:
+  - name: TxPending
+    description: Pending or incomplete.
+    value: 0
+  - name: TxComplete
+    description: Complete.
+    value: 1
+enum/TdtIm:
+  bit_size: 1
+  variants:
+  - name: IntEnabled
+    description: Enable.
+    value: 0
+  - name: IntMasked
+    description: Masked.
+    value: 1
+enum/Tdtf:
+  bit_size: 1
+  variants:
+  - name: LessthanTxthresh
+    description: Threshold exceeded or this field written to 0.
+    value: 0
+  - name: GreaterEqTxthresh
+    description: Threshold not exceeded.
+    value: 1
+enum/Tfe:
+  bit_size: 1
+  variants:
+  - name: FifoEmpty
+    description: Not empty.
+    value: 0
+  - name: FifoNotempty
+    description: Empty.
+    value: 1
+enum/TfeIm:
+  bit_size: 1
+  variants:
+  - name: IntEnabled
+    description: Enable.
+    value: 0
+  - name: IntMasked
+    description: Masked.
+    value: 1
+enum/Tff:
+  bit_size: 1
+  variants:
+  - name: TxFifoNotfull
+    description: Not full.
+    value: 0
+  - name: TxFifoFull
+    description: Full.
+    value: 1
+enum/TffIm:
+  bit_size: 1
+  variants:
+  - name: IntEnabled
+    description: Enable.
+    value: 0
+  - name: IntMasked
+    description: Masked.
+    value: 1
+enum/TnackIm:
+  bit_size: 1
+  variants:
+  - name: IntEnabled
+    description: Enable.
+    value: 0
+  - name: IntMasked
+    description: Masked.
+    value: 1
+enum/Tnte:
+  bit_size: 1
+  variants:
+  - name: LessthanNackthresh
+    description: Threshold not reached.
+    value: 0
+  - name: GreaterEqNackthresh
+    description: Threshold reached.
+    value: 1
+enum/TxCnt:
+  bit_size: 4
+  variants:
+  - name: FifoEmpty
+    description: FIFO empty.
+    value: 0
+enum/Vccenp:
+  bit_size: 1
+  variants:
+  - name: ActiveHigh
+    description: Active high.
+    value: 0
+  - name: ActiveLow
+    description: Active low.
+    value: 1

@@ -1,0 +1,834 @@
+block/Evtg:
+  description: EVTG.
+  items:
+  - name: evtg_inst
+    description: 'Array of registers: EVTG_AOI0_BFT01, EVTG_AOI0_BFT23, EVTG_AOI1_BFT01, EVTG_AOI1_BFT23, EVTG_CTRL, EVTG_AOI0_FILT, EVTG_AOI1_FILT.'
+    array:
+      len: 4
+      stride: 16
+    byte_offset: 0
+    block: EvtgInst
+block/EvtgInst:
+  description: 'Array of registers: EVTG_AOI0_BFT01, EVTG_AOI0_BFT23, EVTG_AOI1_BFT01, EVTG_AOI1_BFT23, EVTG_CTRL, EVTG_AOI0_FILT, EVTG_AOI1_FILT.'
+  items:
+  - name: evtg_aoi0_bft01
+    description: AOI0 Boolean Function Term 0 and 1 Configuration.
+    byte_offset: 0
+    bit_size: 16
+    fieldset: EvtgAoi0Bft01
+  - name: evtg_aoi0_bft23
+    description: AOI0 Boolean Function Term 2 and 3 Configuration.
+    byte_offset: 2
+    bit_size: 16
+    fieldset: EvtgAoi0Bft23
+  - name: evtg_aoi1_bft01
+    description: AOI1 Boolean Function Term 0 and 1 Configuration.
+    byte_offset: 4
+    bit_size: 16
+    fieldset: EvtgAoi1Bft01
+  - name: evtg_aoi1_bft23
+    description: AOI1 Boolean Function Term 2 and 3 Configuration.
+    byte_offset: 6
+    bit_size: 16
+    fieldset: EvtgAoi1Bft23
+  - name: evtg_ctrl
+    description: Control and Status.
+    byte_offset: 10
+    bit_size: 16
+    fieldset: EvtgCtrl
+  - name: evtg_aoi0_filt
+    description: AOI0 Output Filter.
+    byte_offset: 12
+    bit_size: 16
+    fieldset: EvtgAoi0Filt
+  - name: evtg_aoi1_filt
+    description: AOI1 Output Filter.
+    byte_offset: 14
+    bit_size: 16
+    fieldset: EvtgAoi1Filt
+fieldset/EvtgAoi0Bft01:
+  description: AOI0 Boolean Function Term 0 and 1 Configuration.
+  bit_size: 16
+  fields:
+  - name: pt1_dc
+    description: Product Term 1, D Input Configuration.
+    bit_offset: 0
+    bit_size: 2
+    enum: EvtgAoi0Bft01Pt1Dc
+  - name: pt1_cc
+    description: Product Term 1, C Input Configuration.
+    bit_offset: 2
+    bit_size: 2
+    enum: EvtgAoi0Bft01Pt1Cc
+  - name: pt1_bc
+    description: Product Term 1, B Input Configuration.
+    bit_offset: 4
+    bit_size: 2
+    enum: EvtgAoi0Bft01Pt1Bc
+  - name: pt1_ac
+    description: Product Term 1, A Input Configuration.
+    bit_offset: 6
+    bit_size: 2
+    enum: EvtgAoi0Bft01Pt1Ac
+  - name: pt0_dc
+    description: Product Term 0, D Input Configuration.
+    bit_offset: 8
+    bit_size: 2
+    enum: EvtgAoi0Bft01Pt0Dc
+  - name: pt0_cc
+    description: Product Term 0, C Input Configuration.
+    bit_offset: 10
+    bit_size: 2
+    enum: EvtgAoi0Bft01Pt0Cc
+  - name: pt0_bc
+    description: Product Term 0, B Input Configuration.
+    bit_offset: 12
+    bit_size: 2
+    enum: EvtgAoi0Bft01Pt0Bc
+  - name: pt0_ac
+    description: Product Term 0, A Input Configuration.
+    bit_offset: 14
+    bit_size: 2
+    enum: EvtgAoi0Bft01Pt0Ac
+fieldset/EvtgAoi0Bft23:
+  description: AOI0 Boolean Function Term 2 and 3 Configuration.
+  bit_size: 16
+  fields:
+  - name: pt3_dc
+    description: Product Term 3, D Input Configuration.
+    bit_offset: 0
+    bit_size: 2
+    enum: EvtgAoi0Bft23Pt3Dc
+  - name: pt3_cc
+    description: Product Term 3, C Input Configuration.
+    bit_offset: 2
+    bit_size: 2
+    enum: EvtgAoi0Bft23Pt3Cc
+  - name: pt3_bc
+    description: Product Term 3, B Input Configuration.
+    bit_offset: 4
+    bit_size: 2
+    enum: EvtgAoi0Bft23Pt3Bc
+  - name: pt3_ac
+    description: Product Term 3, A Input Configuration.
+    bit_offset: 6
+    bit_size: 2
+    enum: EvtgAoi0Bft23Pt3Ac
+  - name: pt2_dc
+    description: Product Term 2, D Input Configuration.
+    bit_offset: 8
+    bit_size: 2
+    enum: EvtgAoi0Bft23Pt2Dc
+  - name: pt2_cc
+    description: Product Term 2, C Input Configuration.
+    bit_offset: 10
+    bit_size: 2
+    enum: EvtgAoi0Bft23Pt2Cc
+  - name: pt2_bc
+    description: Product Term 2, B Input Configuration.
+    bit_offset: 12
+    bit_size: 2
+    enum: EvtgAoi0Bft23Pt2Bc
+  - name: pt2_ac
+    description: Product Term 2, A Input Configuration.
+    bit_offset: 14
+    bit_size: 2
+    enum: EvtgAoi0Bft23Pt2Ac
+fieldset/EvtgAoi0Filt:
+  description: AOI0 Output Filter.
+  bit_size: 16
+  fields:
+  - name: filt_per
+    description: Output Filter Sample Period.
+    bit_offset: 0
+    bit_size: 8
+  - name: filt_cnt
+    description: Output Filter Sample Count.
+    bit_offset: 8
+    bit_size: 3
+fieldset/EvtgAoi1Bft01:
+  description: AOI1 Boolean Function Term 0 and 1 Configuration.
+  bit_size: 16
+  fields:
+  - name: pt1_dc
+    description: Product Term 1, D Input Configuration.
+    bit_offset: 0
+    bit_size: 2
+    enum: EvtgAoi1Bft01Pt1Dc
+  - name: pt1_cc
+    description: Product Term 1, C Input Configuration.
+    bit_offset: 2
+    bit_size: 2
+    enum: EvtgAoi1Bft01Pt1Cc
+  - name: pt1_bc
+    description: Product Term 1, B Input Configuration.
+    bit_offset: 4
+    bit_size: 2
+    enum: EvtgAoi1Bft01Pt1Bc
+  - name: pt1_ac
+    description: Product Term 1, A Input Configuration.
+    bit_offset: 6
+    bit_size: 2
+    enum: EvtgAoi1Bft01Pt1Ac
+  - name: pt0_dc
+    description: Product Term 0, D Input Configuration.
+    bit_offset: 8
+    bit_size: 2
+    enum: EvtgAoi1Bft01Pt0Dc
+  - name: pt0_cc
+    description: Product Term 0, C Input Configuration.
+    bit_offset: 10
+    bit_size: 2
+    enum: EvtgAoi1Bft01Pt0Cc
+  - name: pt0_bc
+    description: Product Term 0, B Input Configuration.
+    bit_offset: 12
+    bit_size: 2
+    enum: EvtgAoi1Bft01Pt0Bc
+  - name: pt0_ac
+    description: Product Term 0, A Input Configuration.
+    bit_offset: 14
+    bit_size: 2
+    enum: EvtgAoi1Bft01Pt0Ac
+fieldset/EvtgAoi1Bft23:
+  description: AOI1 Boolean Function Term 2 and 3 Configuration.
+  bit_size: 16
+  fields:
+  - name: pt3_dc
+    description: Product Term 3, D Input Configuration.
+    bit_offset: 0
+    bit_size: 2
+    enum: EvtgAoi1Bft23Pt3Dc
+  - name: pt3_cc
+    description: Product Term 3, C Input Configuration.
+    bit_offset: 2
+    bit_size: 2
+    enum: EvtgAoi1Bft23Pt3Cc
+  - name: pt3_bc
+    description: Product Term 3, B Input Configuration.
+    bit_offset: 4
+    bit_size: 2
+    enum: EvtgAoi1Bft23Pt3Bc
+  - name: pt3_ac
+    description: Product Term 3, A Input Configuration.
+    bit_offset: 6
+    bit_size: 2
+    enum: EvtgAoi1Bft23Pt3Ac
+  - name: pt2_dc
+    description: Product Term 2, D Input Configuration.
+    bit_offset: 8
+    bit_size: 2
+    enum: EvtgAoi1Bft23Pt2Dc
+  - name: pt2_cc
+    description: Product Term 2, C Input Configuration.
+    bit_offset: 10
+    bit_size: 2
+    enum: EvtgAoi1Bft23Pt2Cc
+  - name: pt2_bc
+    description: Product Term 2, B Input Configuration.
+    bit_offset: 12
+    bit_size: 2
+    enum: EvtgAoi1Bft23Pt2Bc
+  - name: pt2_ac
+    description: Product Term 2, A Input Configuration.
+    bit_offset: 14
+    bit_size: 2
+    enum: EvtgAoi1Bft23Pt2Ac
+fieldset/EvtgAoi1Filt:
+  description: AOI1 Output Filter.
+  bit_size: 16
+  fields:
+  - name: filt_per
+    description: Output Filter Sample Period.
+    bit_offset: 0
+    bit_size: 8
+  - name: filt_cnt
+    description: Output Filter Sample Count.
+    bit_offset: 8
+    bit_size: 3
+fieldset/EvtgCtrl:
+  description: Control and Status.
+  bit_size: 16
+  fields:
+  - name: ff_init
+    description: Flip flop Initial Value Configuration.
+    bit_offset: 0
+    bit_size: 1
+    enum: FfInit
+  - name: init_en
+    description: Flip-Flop Initial Output Enable Control.
+    bit_offset: 1
+    bit_size: 1
+    enum: InitEn
+  - name: mode_sel
+    description: Flip-Flop Mode Selection.
+    bit_offset: 2
+    bit_size: 3
+    enum: ModeSel
+  - name: fb_ovrd
+    description: EVTG Output Feedback Override Control.
+    bit_offset: 6
+    bit_size: 2
+    enum: FbOvrd
+  - name: sync_ctrl
+    description: Synchronize Control.
+    bit_offset: 8
+    bit_size: 4
+    enum: SyncCtrl
+  - name: force_bypass
+    description: Force Bypass Control.
+    bit_offset: 12
+    bit_size: 2
+    enum: ForceBypass
+enum/EvtgAoi0Bft01Pt0Ac:
+  bit_size: 2
+  variants:
+  - name: Pt0Ac0
+    description: Force the A input in this product term to a logical zero.
+    value: 0
+  - name: Pt0Ac1
+    description: Pass the A input in this product term.
+    value: 1
+  - name: Pt0Ac2
+    description: Complement the A input in this product term.
+    value: 2
+  - name: Pt0Ac3
+    description: Force the A input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi0Bft01Pt0Bc:
+  bit_size: 2
+  variants:
+  - name: Pt0Bc0
+    description: Force the B input in this product term to a logical zero.
+    value: 0
+  - name: Pt0Bc1
+    description: Pass the B input in this product term.
+    value: 1
+  - name: Pt0Bc2
+    description: Complement the B input in this product term.
+    value: 2
+  - name: Pt0Bc3
+    description: Force the B input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi0Bft01Pt0Cc:
+  bit_size: 2
+  variants:
+  - name: Cc00
+    description: Force the C input in this product term to a logical zero.
+    value: 0
+  - name: Cc01
+    description: Pass the C input in this product term.
+    value: 1
+  - name: Cc02
+    description: Complement the C input in this product term.
+    value: 2
+  - name: Cc03
+    description: Force the C input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi0Bft01Pt0Dc:
+  bit_size: 2
+  variants:
+  - name: Dc0
+    description: Force the D input in this product term to a logical zero.
+    value: 0
+  - name: Dc1
+    description: Pass the D input in this product term.
+    value: 1
+  - name: Dc2
+    description: Complement the D input in this product term.
+    value: 2
+  - name: Dc3
+    description: Force the D input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi0Bft01Pt1Ac:
+  bit_size: 2
+  variants:
+  - name: Ac0
+    description: Force the A input in this product term to a logical zero.
+    value: 0
+  - name: Ac1
+    description: Pass the A input in this product term.
+    value: 1
+  - name: Ac2
+    description: Complement the A input in this product term.
+    value: 2
+  - name: Ac3
+    description: Force the A input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi0Bft01Pt1Bc:
+  bit_size: 2
+  variants:
+  - name: Bc0
+    description: Force the B input in this product term to a logical zero.
+    value: 0
+  - name: Bc1
+    description: Pass the B input in this product term.
+    value: 1
+  - name: Bc2
+    description: Complement the B input in this product term.
+    value: 2
+  - name: Bc3
+    description: Force the B input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi0Bft01Pt1Cc:
+  bit_size: 2
+  variants:
+  - name: Cc0
+    description: Force the C input in this product term to a logical zero.
+    value: 0
+  - name: Cc1
+    description: Pass the C input in this product term.
+    value: 1
+  - name: Cc2
+    description: Complement the C input in this product term.
+    value: 2
+  - name: Cc3
+    description: Force the C input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi0Bft01Pt1Dc:
+  bit_size: 2
+  variants:
+  - name: Pt1Dc0
+    description: Force the D input in this product term to a logical zero.
+    value: 0
+  - name: Pt1Dc1
+    description: Pass the D input in this product term.
+    value: 1
+  - name: Pt1Dc2
+    description: Complement the D input in this product term.
+    value: 2
+  - name: Pt1Dc3
+    description: Force the D input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi0Bft23Pt2Ac:
+  bit_size: 2
+  variants:
+  - name: Pt2Ac0
+    description: Force the A input in this product term to a logical zero.
+    value: 0
+  - name: Pt2Ac1
+    description: Pass the A input in this product term.
+    value: 1
+  - name: Pt2Ac2
+    description: Complement the A input in this product term.
+    value: 2
+  - name: Pt2Ac3
+    description: Force the A input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi0Bft23Pt2Bc:
+  bit_size: 2
+  variants:
+  - name: Pt2Bc0
+    description: Force the B input in this product term to a logical zero.
+    value: 0
+  - name: Pt2Bc1
+    description: Pass the B input in this product term.
+    value: 1
+  - name: Pt2Bc2
+    description: Complement the B input in this product term.
+    value: 2
+  - name: Pt2Bc3
+    description: Force the B input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi0Bft23Pt2Cc:
+  bit_size: 2
+  variants:
+  - name: Pt2Cc0
+    description: Force the C input in this product term to a logical zero.
+    value: 0
+  - name: Pt2Cc1
+    description: Pass the C input in this product term.
+    value: 1
+  - name: Pt2Cc2
+    description: Complement the C input in this product term.
+    value: 2
+  - name: Pt2Cc3
+    description: Force the C input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi0Bft23Pt2Dc:
+  bit_size: 2
+  variants:
+  - name: Pt2Dc0
+    description: Force the D input in this product term to a logical zero.
+    value: 0
+  - name: Pt2Dc1
+    description: Pass the D input in this product term.
+    value: 1
+  - name: Pt2Dc2
+    description: Complement the D input in this product term.
+    value: 2
+  - name: Pt2Dc3
+    description: Force the D input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi0Bft23Pt3Ac:
+  bit_size: 2
+  variants:
+  - name: Pt3Ac0
+    description: Force the A input in this product term to a logical zero.
+    value: 0
+  - name: Pt3Ac1
+    description: Pass the A input in this product term.
+    value: 1
+  - name: Pt3Ac2
+    description: Complement the A input in this product term.
+    value: 2
+  - name: Pt3Ac3
+    description: Force the A input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi0Bft23Pt3Bc:
+  bit_size: 2
+  variants:
+  - name: Pt3Bc0
+    description: Force the B input in this product term to a logical zero.
+    value: 0
+  - name: Pt3Bc1
+    description: Pass the B input in this product term.
+    value: 1
+  - name: Pt3Bc2
+    description: Complement the B input in this product term.
+    value: 2
+  - name: Pt3Bc3
+    description: Force the B input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi0Bft23Pt3Cc:
+  bit_size: 2
+  variants:
+  - name: Pt3Cc0
+    description: Force the C input in this product term to a logical zero.
+    value: 0
+  - name: Pt3Cc1
+    description: Pass the C input in this product term.
+    value: 1
+  - name: Pt3Cc2
+    description: Complement the C input in this product term.
+    value: 2
+  - name: Pt3Cc3
+    description: Force the C input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi0Bft23Pt3Dc:
+  bit_size: 2
+  variants:
+  - name: Pt3Dc0
+    description: Force the D input in this product term to a logical zero.
+    value: 0
+  - name: Pt3Dc1
+    description: Pass the D input in this product term.
+    value: 1
+  - name: Pt3Dc2
+    description: Complement the D input in this product term.
+    value: 2
+  - name: Pt3Dc3
+    description: Force the D input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi1Bft01Pt0Ac:
+  bit_size: 2
+  variants:
+  - name: Pt0Ac0
+    description: Force the A input in this product term to a logical zero.
+    value: 0
+  - name: Pt0Ac1
+    description: Pass the A input in this product term.
+    value: 1
+  - name: Pt0Ac2
+    description: Complement the A input in this product term.
+    value: 2
+  - name: Pt0Ac3
+    description: Force the A input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi1Bft01Pt0Bc:
+  bit_size: 2
+  variants:
+  - name: Pt0Bc0
+    description: Force the B input in this product term to a logical zero.
+    value: 0
+  - name: Pt0Bc1
+    description: Pass the B input in this product term.
+    value: 1
+  - name: Pt0Bc2
+    description: Complement the B input in this product term.
+    value: 2
+  - name: Pt0Bc3
+    description: Force the B input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi1Bft01Pt0Cc:
+  bit_size: 2
+  variants:
+  - name: Pt0Cc0
+    description: Force the C input in this product term to a logical zero.
+    value: 0
+  - name: Pt0Cc1
+    description: Pass the C input in this product term.
+    value: 1
+  - name: Pt0Cc2
+    description: Complement the C input in this product term.
+    value: 2
+  - name: Pt0Cc3
+    description: Force the C input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi1Bft01Pt0Dc:
+  bit_size: 2
+  variants:
+  - name: Pt0Dc0
+    description: Force the D input in this product term to a logical zero.
+    value: 0
+  - name: Pt0Dc1
+    description: Pass the D input in this product term.
+    value: 1
+  - name: Pt0Dc2
+    description: Complement the D input in this product term.
+    value: 2
+  - name: Pt0Dc3
+    description: Force the D input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi1Bft01Pt1Ac:
+  bit_size: 2
+  variants:
+  - name: Pt1Ac0
+    description: Force the A input in this product term to a logical zero.
+    value: 0
+  - name: Pt1Ac1
+    description: Pass the A input in this product term.
+    value: 1
+  - name: Pt1Ac2
+    description: Complement the A input in this product term.
+    value: 2
+  - name: Pt1Ac3
+    description: Force the A input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi1Bft01Pt1Bc:
+  bit_size: 2
+  variants:
+  - name: Pt1Bc0
+    description: Force the B input in this product term to a logical zero.
+    value: 0
+  - name: Pt1Bc1
+    description: Pass the B input in this product term.
+    value: 1
+  - name: Pt1Bc2
+    description: Complement the B input in this product term.
+    value: 2
+  - name: Pt1Bc3
+    description: Force the B input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi1Bft01Pt1Cc:
+  bit_size: 2
+  variants:
+  - name: Pt1Cc0
+    description: Force the C input in this product term to a logical zero.
+    value: 0
+  - name: Pt1Cc1
+    description: Pass the C input in this product term.
+    value: 1
+  - name: Pt1Cc2
+    description: Complement the C input in this product term.
+    value: 2
+  - name: Pt1Cc3
+    description: Force the C input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi1Bft01Pt1Dc:
+  bit_size: 2
+  variants:
+  - name: Pt1Dc0
+    description: Force the D input in this product term to a logical zero.
+    value: 0
+  - name: Pt1Dc1
+    description: Pass the D input in this product term.
+    value: 1
+  - name: Pt1Dc2
+    description: Complement the D input in this product term.
+    value: 2
+  - name: Pt1Dc3
+    description: Force the D input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi1Bft23Pt2Ac:
+  bit_size: 2
+  variants:
+  - name: Pt2Ac0
+    description: Force the A input in this product term to a logical zero.
+    value: 0
+  - name: Pt2Ac1
+    description: Pass the A input in this product term.
+    value: 1
+  - name: Pt2Ac2
+    description: Complement the A input in this product term.
+    value: 2
+  - name: Pt2Ac3
+    description: Force the A input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi1Bft23Pt2Bc:
+  bit_size: 2
+  variants:
+  - name: Pt2Bc0
+    description: Force the B input in this product term to a logical zero.
+    value: 0
+  - name: Pt2Bc1
+    description: Pass the B input in this product term.
+    value: 1
+  - name: Pt2Bc2
+    description: Complement the B input in this product term.
+    value: 2
+  - name: Pt2Bc3
+    description: Force the B input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi1Bft23Pt2Cc:
+  bit_size: 2
+  variants:
+  - name: Pt2Cc0
+    description: Force the C input in this product term to a logical zero.
+    value: 0
+  - name: Pt2Cc1
+    description: Pass the C input in this product term.
+    value: 1
+  - name: Pt2Cc2
+    description: Complement the C input in this product term.
+    value: 2
+  - name: Pt2Cc3
+    description: Force the C input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi1Bft23Pt2Dc:
+  bit_size: 2
+  variants:
+  - name: Pt2Dc0
+    description: Force the D input in this product term to a logical zero.
+    value: 0
+  - name: Pt2Dc1
+    description: Pass the D input in this product term.
+    value: 1
+  - name: Pt2Dc2
+    description: Complement the D input in this product term.
+    value: 2
+  - name: Pt2Dc3
+    description: Force the D input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi1Bft23Pt3Ac:
+  bit_size: 2
+  variants:
+  - name: Pt3Ac0
+    description: Force the A input in this product term to a logical zero.
+    value: 0
+  - name: Pt3Ac1
+    description: Pass the A input in this product term.
+    value: 1
+  - name: Pt3Ac2
+    description: Complement the A input in this product term.
+    value: 2
+  - name: Pt3Ac3
+    description: Force the A input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi1Bft23Pt3Bc:
+  bit_size: 2
+  variants:
+  - name: Pt3Bc0
+    description: Force the B input in this product term to a logical zero.
+    value: 0
+  - name: Pt3Bc1
+    description: Pass the B input in this product term.
+    value: 1
+  - name: Pt3Bc2
+    description: Complement the B input in this product term.
+    value: 2
+  - name: Pt3Bc3
+    description: Force the B input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi1Bft23Pt3Cc:
+  bit_size: 2
+  variants:
+  - name: Pt3Cc0
+    description: Force the C input in this product term to a logical zero.
+    value: 0
+  - name: Pt3Cc1
+    description: Pass the C input in this product term.
+    value: 1
+  - name: Pt3Cc2
+    description: Complement the C input in this product term.
+    value: 2
+  - name: Pt3Cc3
+    description: Force the C input in this product term to a logical one.
+    value: 3
+enum/EvtgAoi1Bft23Pt3Dc:
+  bit_size: 2
+  variants:
+  - name: Pt3Dc0
+    description: Force the D input in this product term to a logical zero.
+    value: 0
+  - name: Pt3Dc1
+    description: Pass the D input in this product term.
+    value: 1
+  - name: Pt3Dc2
+    description: Complement the D input in this product term.
+    value: 2
+  - name: Pt3Dc3
+    description: Force the D input in this product term to a logical one.
+    value: 3
+enum/FbOvrd:
+  bit_size: 2
+  variants:
+  - name: An
+    description: Replace An.
+    value: 0
+  - name: Bn
+    description: Replace Bn.
+    value: 1
+  - name: Cn
+    description: Replace Cn.
+    value: 2
+  - name: Dn
+    description: Replace Dn.
+    value: 3
+enum/FfInit:
+  bit_size: 1
+  variants:
+  - name: Ff0
+    description: '0.'
+    value: 0
+  - name: Ff1
+    description: '1.'
+    value: 1
+enum/ForceBypass:
+  bit_size: 2
+  variants:
+  - name: Nfb0
+    description: Will not force the bypass.
+    value: 0
+  - name: FFfA
+    description: Whatever MODE_SEL is, will force bypass flip-flop and route the AOI_0(Filter_0) value directly to EVTG_OUTA.
+    value: 1
+enum/InitEn:
+  bit_size: 1
+  variants:
+  - name: Pulse
+    description: Write 0 does not generate enable pulse.
+    value: 0
+  - name: NoPulse
+    description: Write 1 generates enable pulse.
+    value: 1
+enum/ModeSel:
+  bit_size: 3
+  variants:
+  - name: Bypass
+    description: Bypass mode.
+    value: 0
+  - name: Rs
+    description: RS Trigger mode.
+    value: 1
+  - name: Tff
+    description: T-FF mode.
+    value: 2
+  - name: Dff
+    description: D-FF mode.
+    value: 3
+  - name: Jkff
+    description: JK-FF mode.
+    value: 4
+  - name: Latch
+    description: Latch mode.
+    value: 5
+enum/SyncCtrl:
+  bit_size: 4
+  variants:
+  - name: ANotsync
+    description: EVTG input "An" will not be synced.
+    value: 0
+  - name: ASync
+    description: EVTG input "An" will be synced by two bus clk cycles.
+    value: 1

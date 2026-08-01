@@ -1,0 +1,429 @@
+block/Itrc0:
+  description: Intrusion and Tamper Response Controller.
+  items:
+  - name: status
+    description: ITRC outputs and IN0 to IN15 Status.
+    byte_offset: 0
+    fieldset: Status
+  - name: status1
+    description: ITRC IN16 to IN47 Status.
+    byte_offset: 4
+    fieldset: Status1
+  - name: ou_tx_sel
+    description: 'Array of registers: OUT_SEL[%s].'
+    array:
+      len: 7
+      stride: 8
+    byte_offset: 8
+    block: OuTxSel
+  - name: ou_tx_sel_1
+    description: 'Array of registers: OUT_SEL_1[%s].'
+    array:
+      len: 7
+      stride: 8
+    byte_offset: 72
+    block: OuTxSel1
+  - name: ou_tx_sel_2
+    description: 'Array of registers: OUT_SEL_2[%s].'
+    array:
+      len: 7
+      stride: 8
+    byte_offset: 136
+    block: OuTxSel2
+  - name: sw_event0
+    description: Software event 0.
+    byte_offset: 240
+    access: Write
+    fieldset: SwEvent0
+  - name: sw_event1
+    description: Software event 1.
+    byte_offset: 244
+    access: Write
+    fieldset: SwEvent1
+block/OuTxSel:
+  description: 'Array of registers: OUT_SEL[%s].'
+  items:
+  - name: out_sel
+    description: Trigger Source IN0 to IN15 selector.
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 0
+    fieldset: OutSel
+block/OuTxSel1:
+  description: 'Array of registers: OUT_SEL_1[%s].'
+  items:
+  - name: out_sel_1
+    description: Trigger Source IN16 to IN31 selector.
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 0
+    fieldset: OutSel1
+block/OuTxSel2:
+  description: 'Array of registers: OUT_SEL_2[%s].'
+  items:
+  - name: out_sel_2
+    description: Trigger source IN32 to IN47 selector.
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 0
+    fieldset: OutSel2
+fieldset/OutSel:
+  description: Trigger Source IN0 to IN15 selector.
+  fields:
+  - name: in0_se_ln
+    description: Selects digital glitch detector as a trigger source.
+    bit_offset: 0
+    bit_size: 2
+  - name: in1_se_ln
+    description: Selects TDET event as a trigger source.
+    bit_offset: 2
+    bit_size: 2
+  - name: in2_se_ln
+    description: Selects Code Watchdog 0 event as a trigger source.
+    bit_offset: 4
+    bit_size: 2
+  - name: in3_se_ln
+    description: Selects VBAT voltage tamper event as a trigger source.
+    bit_offset: 6
+    bit_size: 2
+  - name: in4_se_ln
+    description: Selects low-voltage event on VDD_CORE rail as a trigger source.
+    bit_offset: 8
+    bit_size: 2
+  - name: in5_se_ln
+    description: Selects Watchdog 0 timer event as a trigger source.
+    bit_offset: 10
+    bit_size: 2
+  - name: in6_se_ln
+    description: Selects Flash ECC mismatch event as a trigger source.
+    bit_offset: 12
+    bit_size: 2
+  - name: in7_se_ln
+    description: Selects AHB secure bus or MBC bus illegal access event as a trigger source.
+    bit_offset: 14
+    bit_size: 2
+  - name: in8_se_ln
+    description: Selects ELS error event as a trigger source.
+    bit_offset: 16
+    bit_size: 2
+  - name: in9_se_ln
+    description: Selects SPC VDD_CORE glitch detector as a trigger source.
+    bit_offset: 18
+    bit_size: 2
+  - name: in10_se_ln
+    description: Selects PKC error event as a trigger source.
+    bit_offset: 20
+    bit_size: 2
+  - name: in11_se_ln
+    description: Selects Code Watchdog 1 event as a trigger source.
+    bit_offset: 22
+    bit_size: 2
+  - name: in12_se_ln
+    description: Selects Watchdog 1 timer event as a trigger source.
+    bit_offset: 24
+    bit_size: 2
+  - name: in13_se_ln
+    description: Selects FREQME out of range status output as a trigger source.
+    bit_offset: 26
+    bit_size: 2
+  - name: in14_se_ln
+    description: Selects software event 0 as a trigger source.
+    bit_offset: 28
+    bit_size: 2
+  - name: in15_se_ln
+    description: Selects software event 1 as a trigger source.
+    bit_offset: 30
+    bit_size: 2
+fieldset/OutSel1:
+  description: Trigger Source IN16 to IN31 selector.
+  fields:
+  - name: in16_se_ln
+    description: Selects SPC VDD_SYS_LVD detect as a trigger source.
+    bit_offset: 0
+    bit_size: 2
+  - name: in17_se_ln
+    description: Selects SPC VDD_IO_LVD detect as a trigger source.
+    bit_offset: 2
+    bit_size: 2
+  - name: in18_se_ln
+    description: Reserved.
+    bit_offset: 4
+    bit_size: 2
+  - name: in19_se_ln
+    description: Selects VBAT temperature tamper output event as a trigger source.
+    bit_offset: 6
+    bit_size: 2
+  - name: in20_se_ln
+    description: Selects VBAT clock tamper output event as a trigger source.
+    bit_offset: 8
+    bit_size: 2
+  - name: in21_se_ln
+    description: Selects INTM interrupt monitor error 0 event as a trigger source.
+    bit_offset: 10
+    bit_size: 2
+  - name: in22_se_ln
+    description: Selects INTM interrupt monitor error 1 event as a trigger source.
+    bit_offset: 12
+    bit_size: 2
+  - name: in23_se_ln
+    description: Selects INTM interrupt monitor error 2 event as a trigger source.
+    bit_offset: 14
+    bit_size: 2
+  - name: in24_se_ln
+    description: Selects INTM interrupt monitor error 3 event as a trigger source.
+    bit_offset: 16
+    bit_size: 2
+  - name: in25_se_ln
+    description: Selects MSF SOCTRIM 0 ECC error event as a trigger source.
+    bit_offset: 18
+    bit_size: 2
+  - name: in26_se_ln
+    description: Selects MSF SOCTRIM 1 ECC error event as a trigger source.
+    bit_offset: 20
+    bit_size: 2
+  - name: in27_se_ln
+    description: Selects MSF SOCTRIM 2 ECC error event as a trigger source.
+    bit_offset: 22
+    bit_size: 2
+  - name: in28_se_ln
+    description: Selects MSF SOCTRIM 3 ECC error event as a trigger source.
+    bit_offset: 24
+    bit_size: 2
+  - name: in29_se_ln
+    description: Selects MSF SOCTRIM 4 ECC error event as a trigger source.
+    bit_offset: 26
+    bit_size: 2
+  - name: in30_se_ln
+    description: Selects MSF SOCTRIM 5 ECC error event as a trigger source.
+    bit_offset: 28
+    bit_size: 2
+  - name: in31_se_ln
+    description: Selects MSF SOCTRIM 6 ECC error event as a trigger source.
+    bit_offset: 30
+    bit_size: 2
+fieldset/OutSel2:
+  description: Trigger source IN32 to IN47 selector.
+  fields:
+  - name: in32_se_ln
+    description: Selects MSF SOCTRIM 7 ECC error event as a trigger source.
+    bit_offset: 0
+    bit_size: 2
+  - name: in33_se_ln
+    description: Selects GDET0 & 1 SFR error detect as a trigger source.
+    bit_offset: 2
+    bit_size: 2
+  - name: in34_se_ln
+    description: Selects SPC VDD_CORE_HVD as a trigger source.
+    bit_offset: 4
+    bit_size: 2
+  - name: in35_se_ln
+    description: Selects VDD_SYS_HVD as a trigger source.
+    bit_offset: 6
+    bit_size: 2
+  - name: in36_se_ln
+    description: Selects VDD_IO_HVD as a trigger source.
+    bit_offset: 8
+    bit_size: 2
+  - name: in37_se_ln
+    description: Selects FLEXSPI GCM error as a trigger source.
+    bit_offset: 10
+    bit_size: 2
+  - name: in46_se_ln
+    description: Selects SM3 SGI error as a trigger source.
+    bit_offset: 28
+    bit_size: 2
+  - name: in47_se_ln
+    description: Selects TRNG HW Error as a trigger source.
+    bit_offset: 30
+    bit_size: 2
+fieldset/Status:
+  description: ITRC outputs and IN0 to IN15 Status.
+  fields:
+  - name: in0_status
+    description: GDET0 & 1 interrupt.
+    bit_offset: 0
+    bit_size: 1
+  - name: in1_status
+    description: TDET tamper output.
+    bit_offset: 1
+    bit_size: 1
+  - name: in2_status
+    description: Code Watchdog 0 interrupt.
+    bit_offset: 2
+    bit_size: 1
+  - name: in3_status
+    description: VBAT volt tamper output.
+    bit_offset: 3
+    bit_size: 1
+  - name: in4_status
+    description: SPC VDD_CORE_LVD detect.
+    bit_offset: 4
+    bit_size: 1
+  - name: in5_status
+    description: Watch Dog timer event occurred.
+    bit_offset: 5
+    bit_size: 1
+  - name: in6_status
+    description: Flash ECC mismatch event occurred.
+    bit_offset: 6
+    bit_size: 1
+  - name: in7_status
+    description: AHB secure bus checkers detected illegal access.
+    bit_offset: 7
+    bit_size: 1
+  - name: in8_status
+    description: ELS error event occurred.
+    bit_offset: 8
+    bit_size: 1
+  - name: in9_status
+    description: SPC VDD_CORE glitch detect event occurred.
+    bit_offset: 9
+    bit_size: 1
+  - name: in10_status
+    description: PKC module detected an error event.
+    bit_offset: 10
+    bit_size: 1
+  - name: in11_status
+    description: Code Watchdog 1 interrupt.
+    bit_offset: 11
+    bit_size: 1
+  - name: in112_status
+    description: Watchdog 1 timer event interrupt.
+    bit_offset: 12
+    bit_size: 1
+  - name: in113_status
+    description: FREQME out of range status output.
+    bit_offset: 13
+    bit_size: 1
+  - name: in14_status
+    description: Software event 0 occurred.
+    bit_offset: 14
+    bit_size: 1
+  - name: in15_status
+    description: Software event 1 occurred.
+    bit_offset: 15
+    bit_size: 1
+  - name: out0_status
+    description: ITRC triggered ITRC_IRQ output.
+    bit_offset: 16
+    bit_size: 1
+  - name: out1_status
+    description: ITRC triggered ELS_RESET to clear ELS key store.
+    bit_offset: 17
+    bit_size: 1
+  - name: out2_status
+    description: ITRC triggered PUF_ZEROIZE to clear PUF key store and RAM.
+    bit_offset: 18
+    bit_size: 1
+  - name: out3_status
+    description: ITRC triggered RAM_ZEROIZE.
+    bit_offset: 19
+    bit_size: 1
+  - name: out4_status
+    description: ITRC triggered CHIP_RESET to reset the chip after all other response process finished.
+    bit_offset: 20
+    bit_size: 1
+  - name: out5_status
+    description: ITRC triggered TMPR_OUT0 internal signal connected to various on-chip multiplexers.
+    bit_offset: 21
+    bit_size: 1
+  - name: out6_status
+    description: ITRC triggered TMPR_OUT1 internal signal connected to various on-chip multiplexers.
+    bit_offset: 22
+    bit_size: 1
+fieldset/Status1:
+  description: ITRC IN16 to IN47 Status.
+  fields:
+  - name: in16_status
+    description: SSPC VDD_SYS_LVD detect event occurred.
+    bit_offset: 0
+    bit_size: 1
+  - name: in17_status
+    description: SPC VDD_IO_LVD detect event occurred.
+    bit_offset: 1
+    bit_size: 1
+  - name: in18_status
+    description: Reserved.
+    bit_offset: 2
+    bit_size: 1
+  - name: in19_status
+    description: Reserved.
+    bit_offset: 3
+    bit_size: 1
+  - name: in20_status
+    description: VBAT clock tamper output event occurred.
+    bit_offset: 4
+    bit_size: 1
+  - name: in24_21_status
+    description: INTM interrupt monitor error 3~0 event occurred.
+    bit_offset: 5
+    bit_size: 4
+    enum: In2421Status
+  - name: in32_25_status
+    description: MSF SOCTRIM 7~0 ECC error event occurred.
+    bit_offset: 9
+    bit_size: 8
+    enum: In3225Status
+  - name: in33_status
+    description: GDET0/1 SFR error event occurred.
+    bit_offset: 17
+    bit_size: 1
+  - name: in34_status
+    description: SPC VDD_CORE high voltage detect event occurred.
+    bit_offset: 18
+    bit_size: 1
+  - name: in35_status
+    description: SPC VDD_SYS_HVD high voltage detect event occurred.
+    bit_offset: 19
+    bit_size: 1
+  - name: in36_status
+    description: SPC VDD_IO high voltage detect event occurred.
+    bit_offset: 20
+    bit_size: 1
+  - name: in37_status
+    description: FLEXSPI GCM error event occurred.
+    bit_offset: 21
+    bit_size: 1
+  - name: in46_status
+    description: SM3 SGI error event occurred.
+    bit_offset: 30
+    bit_size: 1
+  - name: in47_status
+    description: TRNG HW error event occurred.
+    bit_offset: 31
+    bit_size: 1
+fieldset/SwEvent0:
+  description: Software event 0.
+  fields:
+  - name: trigger_sw_event_0
+    description: Trigger software event 0.
+    bit_offset: 0
+    bit_size: 32
+fieldset/SwEvent1:
+  description: Software event 1.
+  fields:
+  - name: trigger_sw_event_1
+    description: Trigger software event 1.
+    bit_offset: 0
+    bit_size: 32
+enum/In2421Status:
+  bit_size: 4
+  variants:
+  - name: Disable
+    description: Output not triggered.
+    value: 0
+  - name: Enable
+    description: Output has been triggered.
+    value: 1
+enum/In3225Status:
+  bit_size: 8
+  variants:
+  - name: Disable
+    description: Output not triggered.
+    value: 0
+  - name: Enable
+    description: Output has been triggered.
+    value: 1

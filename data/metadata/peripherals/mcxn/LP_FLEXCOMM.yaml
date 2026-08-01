@@ -1,0 +1,131 @@
+block/LpFlexcomm:
+  description: LP_FLEXCOMM.
+  items:
+  - name: istat
+    description: Interrupt Status.
+    byte_offset: 4084
+    access: Read
+    fieldset: Istat
+  - name: pselid
+    description: Peripheral Select and ID.
+    byte_offset: 4088
+    fieldset: Pselid
+fieldset/Istat:
+  description: Interrupt Status.
+  fields:
+  - name: uarttx
+    description: UART TX Interrupt.
+    bit_offset: 0
+    bit_size: 1
+    enum: Uarttx
+  - name: uartrx
+    description: UART RX Interrupt.
+    bit_offset: 1
+    bit_size: 1
+    enum: Uartrx
+  - name: spi
+    description: SPI Interrupt.
+    bit_offset: 2
+    bit_size: 1
+    enum: Spi
+  - name: i2cm
+    description: I2C Controller Interrupt.
+    bit_offset: 4
+    bit_size: 1
+    enum: I2cm
+  - name: i2cs
+    description: I2C Subordinate Interrupt.
+    bit_offset: 5
+    bit_size: 1
+    enum: I2cs
+fieldset/Pselid:
+  description: Peripheral Select and ID.
+  fields:
+  - name: persel
+    description: Peripheral Select.
+    bit_offset: 0
+    bit_size: 3
+    enum: Persel
+  - name: lock
+    description: Lock.
+    bit_offset: 3
+    bit_size: 1
+  - name: uartpresent
+    description: UART Present.
+    bit_offset: 4
+    bit_size: 1
+  - name: spipresent
+    description: SPI Present.
+    bit_offset: 5
+    bit_size: 1
+  - name: i2cpresent
+    description: I2C Present.
+    bit_offset: 6
+    bit_size: 1
+  - name: id
+    description: LP_FLEXCOMM interface ID.
+    bit_offset: 12
+    bit_size: 20
+enum/I2cm:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Clear.
+    value: 0
+  - name: Set
+    description: Set.
+    value: 1
+enum/I2cs:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Clear.
+    value: 0
+  - name: Set
+    description: Set.
+    value: 1
+enum/Persel:
+  bit_size: 3
+  variants:
+  - name: None
+    description: No peripheral selected.
+    value: 0
+  - name: Uart
+    description: UART.
+    value: 1
+  - name: Spi
+    description: SPI.
+    value: 2
+  - name: I2c
+    description: I2C.
+    value: 3
+  - name: Uarti2c
+    description: UART and I2C.
+    value: 7
+enum/Spi:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Clear.
+    value: 0
+  - name: Set
+    description: Set.
+    value: 1
+enum/Uartrx:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Clear.
+    value: 0
+  - name: Set
+    description: Set.
+    value: 1
+enum/Uarttx:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Clear.
+    value: 0
+  - name: Set
+    description: Set.
+    value: 1

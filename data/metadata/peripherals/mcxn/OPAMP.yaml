@@ -1,0 +1,242 @@
+block/Opamp:
+  description: OPAMP.
+  items:
+  - name: verid
+    description: Version ID.
+    byte_offset: 0
+    access: Read
+    fieldset: Verid
+  - name: param
+    description: Parameter.
+    byte_offset: 4
+    access: Read
+    fieldset: Param
+  - name: opamp_ctr
+    description: OPAMP Control.
+    byte_offset: 8
+    fieldset: OpampCtr
+fieldset/OpampCtr:
+  description: OPAMP Control.
+  fields:
+  - name: en
+    description: OPAMP Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: mode
+    description: Mode Selection.
+    bit_offset: 1
+    bit_size: 1
+    enum: Mode
+  - name: biasc
+    description: Bias Current Trim Selection.
+    bit_offset: 2
+    bit_size: 2
+    enum: Biasc
+  - name: intref
+    description: Provide OPAMP rail to rail voltage selection.
+    bit_offset: 4
+    bit_size: 2
+    enum: Intref
+  - name: trigmd
+    description: Trigger Mode.
+    bit_offset: 8
+    bit_size: 1
+  - name: inpsel
+    description: Positive Input Channel Selection.
+    bit_offset: 9
+    bit_size: 1
+    enum: Inpsel
+  - name: inpf
+    description: Positive Input Connection Status.
+    bit_offset: 12
+    bit_size: 1
+    enum: Inpf
+  - name: bufen
+    description: Reference Buffer.
+    bit_offset: 16
+    bit_size: 1
+  - name: pref
+    description: Positive Reference Voltage Selection.
+    bit_offset: 17
+    bit_size: 2
+    enum: Pref
+  - name: adcsw1
+    description: Measure Switch 1.
+    bit_offset: 20
+    bit_size: 1
+  - name: adcsw2
+    description: Measure Switch 2.
+    bit_offset: 21
+    bit_size: 1
+  - name: outsw
+    description: Output Switch.
+    bit_offset: 22
+    bit_size: 1
+  - name: pgain
+    description: Positive PGA Selection.
+    bit_offset: 24
+    bit_size: 3
+    enum: Pgain
+  - name: ngain
+    description: Negative PGA Selection.
+    bit_offset: 28
+    bit_size: 3
+    enum: Ngain
+fieldset/Param:
+  description: Parameter.
+  fields:
+  - name: pga_function
+    description: PGA Function Option.
+    bit_offset: 0
+    bit_size: 1
+    enum: PgaFunction
+fieldset/Verid:
+  description: Version ID.
+  fields:
+  - name: feature
+    description: Feature Specification Number.
+    bit_offset: 0
+    bit_size: 16
+  - name: minor
+    description: Minor Version Number.
+    bit_offset: 16
+    bit_size: 8
+  - name: major
+    description: Major Version Number.
+    bit_offset: 24
+    bit_size: 8
+enum/Biasc:
+  bit_size: 2
+  variants:
+  - name: Def
+    description: Default.
+    value: 0
+  - name: Inc
+    description: Increase current.
+    value: 1
+  - name: Dec
+    description: Decrease current.
+    value: 2
+  - name: FurDec
+    description: Further decrease current.
+    value: 3
+enum/Inpf:
+  bit_size: 1
+  variants:
+  - name: Inp0
+    description: Positive input 0 (INP0).
+    value: 0
+  - name: Inp1
+    description: Positive input 1 (INP1).
+    value: 1
+enum/Inpsel:
+  bit_size: 1
+  variants:
+  - name: Inp0
+    description: When OPAMP is not in trigger mode, select positive input 0 (INP0).
+    value: 0
+  - name: Inp1
+    description: When OPAMP is not in trigger mode, select positive input 1 (INP1).
+    value: 1
+enum/Intref:
+  bit_size: 2
+  variants:
+  - name: Vdda2
+    description: Select OPAMP input rail to rail voltage from 0 to VDD_ANA.
+    value: 0
+  - name: Vdda3v
+    description: Select OPAMP input rail to rail voltage from 0 to VDD_ANA-0.8V.
+    value: 1
+  - name: Vssa3v
+    description: Select OPAMP input rail to rail voltage from 0.8V to VDD_ANA.
+    value: 2
+  - name: Not
+    description: Not allowed.
+    value: 3
+enum/Mode:
+  bit_size: 1
+  variants:
+  - name: Low
+    description: High performance mode.
+    value: 0
+  - name: High
+    description: Low power mode.
+    value: 1
+enum/Ngain:
+  bit_size: 3
+  variants:
+  - name: Buffer
+    description: Buffer.
+    value: 0
+  - name: G1
+    description: Ngain=1.
+    value: 1
+  - name: G2
+    description: Ngain=2.
+    value: 2
+  - name: G4
+    description: Ngain=4.
+    value: 3
+  - name: G8
+    description: Ngain=8.
+    value: 4
+  - name: G16
+    description: Ngain=16.
+    value: 5
+  - name: G33
+    description: Ngain=33.
+    value: 6
+  - name: G64
+    description: Ngain=64.
+    value: 7
+enum/PgaFunction:
+  bit_size: 1
+  variants:
+  - name: CoreAmp
+    description: Core amplifier enabled.
+    value: 0
+  - name: Pga
+    description: PGA function enabled.
+    value: 1
+enum/Pgain:
+  bit_size: 3
+  variants:
+  - name: Inp1
+    description: Positive input 1 (INP1).
+    value: 0
+  - name: G2
+    description: Pgain=1.
+    value: 1
+  - name: G3
+    description: Pgain=2.
+    value: 2
+  - name: G5
+    description: Pgain=4.
+    value: 3
+  - name: G9
+    description: Pgain=8.
+    value: 4
+  - name: G17
+    description: Pgain=16.
+    value: 5
+  - name: G34
+    description: Pgain=33.
+    value: 6
+  - name: G65
+    description: Pgain=64.
+    value: 7
+enum/Pref:
+  bit_size: 2
+  variants:
+  - name: Val0
+    description: Input 0.
+    value: 0
+  - name: Val1
+    description: Input 1.
+    value: 1
+  - name: Val2
+    description: Input 2.
+    value: 2
+  - name: Val3
+    description: Input 3.
+    value: 3

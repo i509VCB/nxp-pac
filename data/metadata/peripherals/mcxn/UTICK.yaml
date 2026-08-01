@@ -1,0 +1,138 @@
+block/Utick:
+  description: UTICK.
+  items:
+  - name: ctrl
+    description: Control.
+    byte_offset: 0
+    fieldset: Ctrl
+  - name: stat
+    description: Status.
+    byte_offset: 4
+    fieldset: Stat
+  - name: cfg
+    description: Capture Configuration.
+    byte_offset: 8
+    fieldset: Cfg
+  - name: capclr
+    description: Capture Clear.
+    byte_offset: 12
+    access: Write
+    fieldset: Capclr
+  - name: cap
+    description: Capture.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 16
+    access: Read
+    fieldset: Cap
+fieldset/Cap:
+  description: Capture.
+  fields:
+  - name: cap_value
+    description: Captured Value for the Related Capture Event.
+    bit_offset: 0
+    bit_size: 31
+  - name: valid
+    description: Captured Value Valid Flag.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Capclr:
+  description: Capture Clear.
+  fields:
+  - name: capclr
+    description: Clear Capture.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 4
+      stride: 1
+    enum: CapclrVal
+fieldset/Cfg:
+  description: Capture Configuration.
+  fields:
+  - name: capen
+    description: Enable Capture.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 4
+      stride: 1
+    enum: Capen
+  - name: cappol
+    description: Capture Polarity.
+    bit_offset: 8
+    bit_size: 1
+    array:
+      len: 4
+      stride: 1
+    enum: Cappol
+fieldset/Ctrl:
+  description: Control.
+  fields:
+  - name: delayval
+    description: Tick Interval.
+    bit_offset: 0
+    bit_size: 31
+  - name: repeat
+    description: Repeat Delay.
+    bit_offset: 31
+    bit_size: 1
+    enum: Repeat
+fieldset/Stat:
+  description: Status.
+  fields:
+  - name: intr
+    description: Interrupt Flag.
+    bit_offset: 0
+    bit_size: 1
+  - name: active
+    description: Timer Active Flag.
+    bit_offset: 1
+    bit_size: 1
+    enum: Active
+enum/Active:
+  bit_size: 1
+  variants:
+  - name: Timerisnotactive
+    description: Inactive (stopped).
+    value: 0
+  - name: Timerisactive
+    description: Active.
+    value: 1
+enum/CapclrVal:
+  bit_size: 1
+  variants:
+  - name: Capclr0
+    description: Does nothing.
+    value: 0
+  - name: Capclr1
+    description: Clears the CAP register value.
+    value: 1
+enum/Capen:
+  bit_size: 1
+  variants:
+  - name: Capen0
+    description: Disable.
+    value: 0
+  - name: Capen1
+    description: Enable.
+    value: 1
+enum/Cappol:
+  bit_size: 1
+  variants:
+  - name: Cappol0
+    description: Positive.
+    value: 0
+  - name: Cappol1
+    description: Negative.
+    value: 1
+enum/Repeat:
+  bit_size: 1
+  variants:
+  - name: Delayonce
+    description: One-time delay.
+    value: 0
+  - name: Delayrepeats
+    description: Delay repeats continuously.
+    value: 1

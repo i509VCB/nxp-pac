@@ -1,0 +1,7655 @@
+block/Syscon:
+  description: SYSCON.
+  items:
+  - name: ahbmatprio
+    description: AHB Matrix Priority Control.
+    byte_offset: 16
+    fieldset: Ahbmatprio
+  - name: cpu0stckcal
+    description: Secure CPU0 System Tick Calibration.
+    byte_offset: 56
+    fieldset: Cpu0stckcal
+  - name: cpu0nstckcal
+    description: Non-Secure CPU0 System Tick Calibration.
+    byte_offset: 60
+    fieldset: Cpu0nstckcal
+  - name: cpu1stckcal
+    description: System tick calibration for CPU1.
+    byte_offset: 64
+    fieldset: Cpu1stckcal
+  - name: nmisrc
+    description: NMI Source Select.
+    byte_offset: 72
+    fieldset: Nmisrc
+  - name: presetctrl0
+    description: Peripheral Reset Control 0.
+    byte_offset: 256
+    fieldset: Presetctrl0
+  - name: presetctrl1
+    description: Peripheral Reset Control 1.
+    byte_offset: 260
+    fieldset: Presetctrl1
+  - name: presetctrl2
+    description: Peripheral Reset Control 2.
+    byte_offset: 264
+    fieldset: Presetctrl2
+  - name: presetctrl3
+    description: Peripheral Reset Control 3.
+    byte_offset: 268
+    fieldset: Presetctrl3
+  - name: presetctrlset
+    description: Peripheral Reset Control Set.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 288
+    access: Write
+    fieldset: Presetctrlset
+  - name: presetctrlclr
+    description: Peripheral Reset Control Clear.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 320
+    access: Write
+    fieldset: Presetctrlclr
+  - name: ahbclkctrl0
+    description: AHB Clock Control 0.
+    byte_offset: 512
+    fieldset: Ahbclkctrl0
+  - name: ahbclkctrl1
+    description: AHB Clock Control 1.
+    byte_offset: 516
+    fieldset: Ahbclkctrl1
+  - name: ahbclkctrl2
+    description: AHB Clock Control 2.
+    byte_offset: 520
+    fieldset: Ahbclkctrl2
+  - name: ahbclkctrl3
+    description: AHB Clock Control 3.
+    byte_offset: 524
+    fieldset: Ahbclkctrl3
+  - name: ahbclkctrlset
+    description: AHB Clock Control Set.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 544
+    access: Write
+    fieldset: Ahbclkctrlset
+  - name: ahbclkctrlclr
+    description: AHB Clock Control Clear.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 576
+    access: Write
+    fieldset: Ahbclkctrlclr
+  - name: systickclksel0
+    description: CPU0 System Tick Timer Source Select.
+    byte_offset: 608
+    fieldset: Systickclksel0
+  - name: systickclksel1
+    description: CPU1 System Tick Timer Source Select.
+    byte_offset: 612
+    fieldset: Systickclksel1
+  - name: traceclksel
+    description: Trace Clock Source Select.
+    byte_offset: 616
+    fieldset: Traceclksel
+  - name: ctimerclksel
+    description: CTIMER Clock Source Select.
+    array:
+      len: 5
+      stride: 4
+    byte_offset: 620
+    fieldset: Ctimerclksel
+  - name: clkoutsel
+    description: CLKOUT Clock Source Select.
+    byte_offset: 648
+    fieldset: Clkoutsel
+  - name: adc0clksel
+    description: ADC0 Clock Source Select.
+    byte_offset: 676
+    fieldset: Adc0clksel
+  - name: usb0clksel
+    description: USB-FS Clock Source Select.
+    byte_offset: 680
+    fieldset: Usb0clksel
+  - name: fcclksel
+    description: LP_FLEXCOMM Clock Source Select for Fractional Rate Divider.
+    array:
+      len: 10
+      stride: 4
+    byte_offset: 688
+    fieldset: Fcclksel
+  - name: sctclksel
+    description: SCTimer/PWM Clock Source Select.
+    byte_offset: 752
+    fieldset: Sctclksel
+  - name: systickclkdiv0
+    description: CPU0 System Tick Timer Divider.
+    byte_offset: 768
+    fieldset: Systickclkdiv0
+  - name: systickclkdiv1
+    description: CPU1 System Tick Timer Divider.
+    byte_offset: 772
+    fieldset: Systickclkdiv1
+  - name: traceclkdiv
+    description: TRACE Clock Divider.
+    byte_offset: 776
+    fieldset: Traceclkdiv
+  - name: tsiclksel
+    description: TSI Function Clock Source Select.
+    byte_offset: 848
+    fieldset: Tsiclksel
+  - name: sincfiltclksel
+    description: SINC FILTER Function Clock Source Select.
+    byte_offset: 864
+    fieldset: Sincfiltclksel
+  - name: slowclkdiv
+    description: SLOW_CLK Clock Divider.
+    byte_offset: 888
+    fieldset: Slowclkdiv
+  - name: tsiclkdiv
+    description: TSI Function Clock Divider.
+    byte_offset: 892
+    fieldset: Tsiclkdiv
+  - name: ahbclkdiv
+    description: System Clock Divider.
+    byte_offset: 896
+    fieldset: Ahbclkdiv
+  - name: clkoutdiv
+    description: CLKOUT Clock Divider.
+    byte_offset: 900
+    fieldset: Clkoutdiv
+  - name: frohfdiv
+    description: FRO_HF_DIV Clock Divider.
+    byte_offset: 904
+    fieldset: Frohfdiv
+  - name: wdt0clkdiv
+    description: WDT0 Clock Divider.
+    byte_offset: 908
+    fieldset: Wdt0clkdiv
+  - name: adc0clkdiv
+    description: ADC0 Clock Divider.
+    byte_offset: 916
+    fieldset: Adc0clkdiv
+  - name: usb0clkdiv
+    description: USB-FS Clock Divider.
+    byte_offset: 920
+    fieldset: Usb0clkdiv
+  - name: sctclkdiv
+    description: SCT/PWM Clock Divider.
+    byte_offset: 948
+    fieldset: Sctclkdiv
+  - name: pllclkdiv
+    description: PLL Clock Divider.
+    byte_offset: 964
+    fieldset: Pllclkdiv
+  - name: ctimerclkdiv
+    description: CTimer Clock Divider.
+    array:
+      len: 5
+      stride: 4
+    byte_offset: 976
+    fieldset: Ctimerclkdiv
+  - name: pll1clk0div
+    description: PLL1 Clock 0 Divider.
+    byte_offset: 996
+    fieldset: Pll1clk0div
+  - name: pll1clk1div
+    description: PLL1 Clock 1 Divider.
+    byte_offset: 1000
+    fieldset: Pll1clk1div
+  - name: utickclkdiv
+    description: UTICK Clock Divider.
+    byte_offset: 1008
+    fieldset: Utickclkdiv
+  - name: clkout_frgctrl
+    description: CLKOUT FRG Control.
+    byte_offset: 1012
+    fieldset: ClkoutFrgctrl
+  - name: clkunlock
+    description: Clock Configuration Unlock.
+    byte_offset: 1020
+    fieldset: Clkunlock
+  - name: nvm_ctrl
+    description: NVM Control.
+    byte_offset: 1024
+    fieldset: NvmCtrl
+  - name: romcr
+    description: ROM Wait State.
+    byte_offset: 1028
+    fieldset: Romcr
+  - name: smart_dmaint
+    description: SmartDMA Interrupt Hijack.
+    byte_offset: 1044
+    fieldset: SmartDmaint
+  - name: adc1clksel
+    description: ADC1 Clock Source Select.
+    byte_offset: 1124
+    fieldset: Adc1clksel
+  - name: adc1clkdiv
+    description: ADC1 Clock Divider.
+    byte_offset: 1128
+    fieldset: Adc1clkdiv
+  - name: ram_interleave
+    description: Control PKC RAM Interleave Access.
+    byte_offset: 1136
+    fieldset: RamInterleave
+  - name: dacclksel
+    description: DAC Functional Clock Selection.
+    array:
+      len: 3
+      stride: 8
+    byte_offset: 1168
+    fieldset: Dacclksel
+  - name: dacclkdiv
+    description: DAC functional clock divider.
+    array:
+      len: 3
+      stride: 8
+    byte_offset: 1172
+    fieldset: Dacclkdiv
+  - name: flex_spiclksel
+    description: FlexSPI Clock Selection.
+    byte_offset: 1192
+    fieldset: FlexSpiclksel
+  - name: flex_spiclkdiv
+    description: FlexSPI Clock Divider.
+    byte_offset: 1196
+    fieldset: FlexSpiclkdiv
+  - name: pllclkdivsel
+    description: PLL Clock Divider Clock Selection.
+    byte_offset: 1324
+    fieldset: Pllclkdivsel
+  - name: i3c0fclksel
+    description: I3C0 Functional Clock Selection.
+    byte_offset: 1328
+    fieldset: I3c0fclksel
+  - name: i3c0fclkstcsel
+    description: I3C0 FCLK_STC Clock Selection.
+    byte_offset: 1332
+    fieldset: I3c0fclkstcsel
+  - name: i3c0fclkstcdiv
+    description: I3C0 FCLK_STC Clock Divider.
+    byte_offset: 1336
+    fieldset: I3c0fclkstcdiv
+  - name: i3c0fclksdiv
+    description: I3C0 FCLK Slow Clock Divider.
+    byte_offset: 1340
+    fieldset: I3c0fclksdiv
+  - name: i3c0fclkdiv
+    description: I3C0 Functional Clock FCLK Divider.
+    byte_offset: 1344
+    fieldset: I3c0fclkdiv
+  - name: i3c0fclkssel
+    description: I3C0 FCLK Slow Selection.
+    byte_offset: 1348
+    fieldset: I3c0fclkssel
+  - name: micfilfclksel
+    description: MICFIL Clock Selection.
+    byte_offset: 1352
+    fieldset: Micfilfclksel
+  - name: micfilfclkdiv
+    description: MICFIL Clock Division.
+    byte_offset: 1356
+    fieldset: Micfilfclkdiv
+  - name: u_sdhcclksel
+    description: uSDHC Clock Selection.
+    byte_offset: 1368
+    fieldset: USdhcclksel
+  - name: u_sdhcclkdiv
+    description: uSDHC Function Clock Divider.
+    byte_offset: 1372
+    fieldset: USdhcclkdiv
+  - name: flexioclksel
+    description: FLEXIO Clock Selection.
+    byte_offset: 1376
+    fieldset: Flexioclksel
+  - name: flexioclkdiv
+    description: FLEXIO Function Clock Divider.
+    byte_offset: 1380
+    fieldset: Flexioclkdiv
+  - name: flexcan0clksel
+    description: FLEXCAN0 Clock Selection.
+    byte_offset: 1440
+    fieldset: Flexcan0clksel
+  - name: flexcan0clkdiv
+    description: FLEXCAN0 Function Clock Divider.
+    byte_offset: 1444
+    fieldset: Flexcan0clkdiv
+  - name: flexcan1clksel
+    description: FLEXCAN1 Clock Selection.
+    byte_offset: 1448
+    fieldset: Flexcan1clksel
+  - name: flexcan1clkdiv
+    description: FLEXCAN1 Function Clock Divider.
+    byte_offset: 1452
+    fieldset: Flexcan1clkdiv
+  - name: enetrmiiclksel
+    description: Ethernet RMII Clock Selection.
+    byte_offset: 1456
+    fieldset: Enetrmiiclksel
+  - name: enetrmiiclkdiv
+    description: Ethernet RMII Function Clock Divider.
+    byte_offset: 1460
+    fieldset: Enetrmiiclkdiv
+  - name: enetptprefclksel
+    description: Ethernet PTP REF Clock Selection.
+    byte_offset: 1464
+    fieldset: Enetptprefclksel
+  - name: enetptprefclkdiv
+    description: Ethernet PTP REF Function Clock Divider.
+    byte_offset: 1468
+    fieldset: Enetptprefclkdiv
+  - name: enet_phy_intf_sel
+    description: Ethernet PHY Interface Select.
+    byte_offset: 1472
+    fieldset: EnetPhyIntfSel
+  - name: enet_sbd_flow_ctrl
+    description: Sideband Flow Control.
+    byte_offset: 1476
+    fieldset: EnetSbdFlowCtrl
+  - name: ewm0clksel
+    description: EWM0 Clock Selection.
+    byte_offset: 1492
+    fieldset: Ewm0clksel
+  - name: wdt1clksel
+    description: WDT1 Clock Selection.
+    byte_offset: 1496
+    fieldset: Wdt1clksel
+  - name: wdt1clkdiv
+    description: WDT1 Function Clock Divider.
+    byte_offset: 1500
+    fieldset: Wdt1clkdiv
+  - name: ostimerclksel
+    description: OSTIMER Clock Selection.
+    byte_offset: 1504
+    fieldset: Ostimerclksel
+  - name: cmpfclksel
+    description: CMP Function Clock Selection.
+    array:
+      len: 3
+      stride: 16
+    byte_offset: 1520
+    fieldset: Cmpfclksel
+  - name: cmpfclkdiv
+    description: CMP Function Clock Divider.
+    array:
+      len: 3
+      stride: 16
+    byte_offset: 1524
+    fieldset: Cmpfclkdiv
+  # cmp0/1/2rrclksel are intentionally NOT consolidated into an array like
+  # cmpfclksel/cmpfclkdiv/cmprrclkdiv above: Cmp2rrclkselSel's Enum5 variant
+  # description reads "PLL1_clk0 clock0." while Cmp0/Cmp1's read "PLL1_clk0
+  # clock." - a real (likely just a typo) content difference between
+  # instances, so they're kept as separate registers/fieldsets rather than
+  # silently papering over it with a merge.
+  - name: cmp0rrclksel
+    description: CMP0 Round Robin Clock Selection.
+    byte_offset: 1528
+    fieldset: Cmp0rrclksel
+  - name: cmprrclkdiv
+    description: CMP Round Robin Clock Divider.
+    array:
+      len: 3
+      stride: 16
+    byte_offset: 1532
+    fieldset: Cmprrclkdiv
+  - name: cmp1rrclksel
+    description: CMP1 Round Robin Clock Source Select.
+    byte_offset: 1544
+    fieldset: Cmp1rrclksel
+  - name: cmp2rrclksel
+    description: CMP2 Round Robin Clock Source Select.
+    byte_offset: 1560
+    fieldset: Cmp2rrclksel
+  - name: cpuctrl
+    description: CPU Control for Multiple Processors.
+    byte_offset: 2048
+    fieldset: Cpuctrl
+  - name: cpboot
+    description: Coprocessor Boot Address.
+    byte_offset: 2052
+    fieldset: Cpboot
+  - name: cpustat
+    description: CPU Status.
+    byte_offset: 2060
+    access: Read
+    fieldset: Cpustat
+  - name: lpcac_ctrl
+    description: LPCAC Control.
+    byte_offset: 2084
+    fieldset: LpcacCtrl
+  - name: flexcommclkdiv
+    description: LP_FLEXCOMM Clock Divider.
+    array:
+      len: 10
+      stride: 4
+    byte_offset: 2128
+    fieldset: Flexcommclkdiv
+  - name: utickclksel
+    description: UTICK Function Clock Source Select.
+    byte_offset: 2168
+    fieldset: Utickclksel
+  - name: sai0clksel
+    description: SAI0 Function Clock Source Select.
+    byte_offset: 2176
+    fieldset: Sai0clksel
+  - name: sai1clksel
+    description: SAI1 Function Clock Source Select.
+    byte_offset: 2180
+    fieldset: Sai1clksel
+  - name: sai0clkdiv
+    description: SAI0 Function Clock Division.
+    byte_offset: 2184
+    fieldset: Sai0clkdiv
+  - name: sai1clkdiv
+    description: SAI1 Function Clock Division.
+    byte_offset: 2188
+    fieldset: Sai1clkdiv
+  - name: emvsim0clksel
+    description: EMVSIM0 Clock Source Select.
+    byte_offset: 2192
+    fieldset: Emvsim0clksel
+  - name: emvsim1clksel
+    description: EMVSIM1 Clock Source Select.
+    byte_offset: 2196
+    fieldset: Emvsim1clksel
+  - name: emvsim0clkdiv
+    description: EMVSIM0 Function Clock Division.
+    byte_offset: 2200
+    fieldset: Emvsim0clkdiv
+  - name: emvsim1clkdiv
+    description: EMVSIM1 Function Clock Division.
+    byte_offset: 2204
+    fieldset: Emvsim1clkdiv
+  - name: key_retain_ctrl
+    description: Key Retain Control.
+    byte_offset: 2384
+    fieldset: KeyRetainCtrl
+  - name: ref_clk_ctrl
+    description: FRO 48MHz Reference Clock Control.
+    byte_offset: 2400
+    fieldset: RefClkCtrl
+  - name: ref_clk_ctrl_set
+    description: FRO 48MHz Reference Clock Control Set.
+    byte_offset: 2404
+    access: Write
+    fieldset: RefClkCtrlSet
+  - name: ref_clk_ctrl_clr
+    description: FRO 48MHz Reference Clock Control Clear.
+    byte_offset: 2408
+    access: Write
+    fieldset: RefClkCtrlClr
+  - name: gdet_ctrl
+    description: GDET Control Register.
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 2412
+    fieldset: GdetCtrl
+  - name: els_asset_prot
+    description: ELS Asset Protection Register.
+    byte_offset: 2420
+    fieldset: ElsAssetProt
+  - name: els_lock_ctrl
+    description: ELS Lock Control.
+    byte_offset: 2424
+    fieldset: ElsLockCtrl
+  - name: els_lock_ctrl_dp
+    description: ELS Lock Control DP.
+    byte_offset: 2428
+    fieldset: ElsLockCtrlDp
+  - name: els_otp_lc_state
+    description: Life Cycle State Register.
+    byte_offset: 2432
+    access: Read
+    fieldset: ElsOtpLcState
+  - name: els_otp_lc_state_dp
+    description: Life Cycle State Register (Duplicate).
+    byte_offset: 2436
+    access: Read
+    fieldset: ElsOtpLcStateDp
+  - name: els_temporal_state
+    description: ELS Temporal State.
+    byte_offset: 2440
+    fieldset: ElsTemporalState
+  - name: els_kdf_mask
+    description: Key Derivation Function Mask.
+    byte_offset: 2444
+    fieldset: ElsKdfMask
+  - name: els_as_cfg0
+    description: ELS AS Configuration.
+    byte_offset: 2512
+    access: Read
+    fieldset: ElsAsCfg0
+  - name: els_as_cfg1
+    description: ELS AS Configuration1.
+    byte_offset: 2516
+    access: Read
+    fieldset: ElsAsCfg1
+  - name: els_as_cfg2
+    description: ELS AS Configuration2.
+    byte_offset: 2520
+    access: Read
+    fieldset: ElsAsCfg2
+  - name: els_as_cfg3
+    description: ELS AS Configuration3.
+    byte_offset: 2524
+    access: Read
+    fieldset: ElsAsCfg3
+  - name: els_as_st0
+    description: ELS AS State Register.
+    byte_offset: 2528
+    access: Read
+    fieldset: ElsAsSt0
+  - name: els_as_st1
+    description: ELS AS State1.
+    byte_offset: 2532
+    access: Read
+    fieldset: ElsAsSt1
+  - name: els_as_boot_log0
+    description: 'Boot state captured during boot: Main ROM log.'
+    byte_offset: 2536
+    access: Read
+    fieldset: ElsAsBootLog0
+  - name: els_as_boot_log1
+    description: 'Boot state captured during boot: Library log.'
+    byte_offset: 2540
+    access: Read
+    fieldset: ElsAsBootLog1
+  - name: els_as_boot_log2
+    description: 'Boot state captured during boot: Hardware status signals log.'
+    byte_offset: 2544
+    access: Read
+    fieldset: ElsAsBootLog2
+  - name: els_as_boot_log3
+    description: 'Boot state captured during boot: Security log.'
+    byte_offset: 2548
+    access: Read
+    fieldset: ElsAsBootLog3
+  - name: els_as_flag0
+    description: ELS AS Flag0.
+    byte_offset: 2552
+    access: Read
+    fieldset: ElsAsFlag0
+  - name: els_as_flag1
+    description: ELS AS Flag1.
+    byte_offset: 2556
+    access: Read
+    fieldset: ElsAsFlag1
+  - name: clock_ctrl
+    description: Clock Control.
+    byte_offset: 2584
+    fieldset: ClockCtrl
+  - name: i3c1fclksel
+    description: I3C1 Functional Clock Selection.
+    byte_offset: 2864
+    fieldset: I3c1fclksel
+  - name: i3c1fclkstcsel
+    description: Selects the I3C1 Time Control clock.
+    byte_offset: 2868
+    fieldset: I3c1fclkstcsel
+  - name: i3c1fclkstcdiv
+    description: I3C1 FCLK_STC Clock Divider.
+    byte_offset: 2872
+    fieldset: I3c1fclkstcdiv
+  - name: i3c1fclksdiv
+    description: I3C1 FCLK Slow clock Divider.
+    byte_offset: 2876
+    fieldset: I3c1fclksdiv
+  - name: i3c1fclkdiv
+    description: I3C1 Functional Clock FCLK Divider.
+    byte_offset: 2880
+    fieldset: I3c1fclkdiv
+  - name: i3c1fclkssel
+    description: I3C1 FCLK Slow Selection.
+    byte_offset: 2884
+    fieldset: I3c1fclkssel
+  - name: etb_status
+    description: ETB Counter Status Register.
+    byte_offset: 2896
+    fieldset: EtbStatus
+  - name: etb_counter_ctrl
+    description: ETB Counter Control Register.
+    byte_offset: 2900
+    fieldset: EtbCounterCtrl
+  - name: etb_counter_reload
+    description: ETB Counter Reload Register.
+    byte_offset: 2904
+    fieldset: EtbCounterReload
+  - name: etb_counter_value
+    description: ETB Counter Value Register.
+    byte_offset: 2908
+    access: Read
+    fieldset: EtbCounterValue
+  - name: gray_code_lsb
+    description: Gray to Binary Converter Gray code_gray[31:0].
+    byte_offset: 2912
+    fieldset: GrayCodeLsb
+  - name: gray_code_msb
+    description: Gray to Binary Converter Gray code_gray[41:32].
+    byte_offset: 2916
+    fieldset: GrayCodeMsb
+  - name: binary_code_lsb
+    description: Gray to Binary Converter Binary Code [31:0].
+    byte_offset: 2920
+    access: Read
+    fieldset: BinaryCodeLsb
+  - name: binary_code_msb
+    description: Gray to Binary Converter Binary Code [41:32].
+    byte_offset: 2924
+    access: Read
+    fieldset: BinaryCodeMsb
+  - name: autoclkgateoverride
+    description: Control Automatic Clock Gating.
+    byte_offset: 3588
+    fieldset: Autoclkgateoverride
+  - name: autoclkgateoverridec
+    description: Control Automatic Clock Gating C.
+    byte_offset: 3628
+    fieldset: Autoclkgateoverridec
+  - name: pwm0subctl
+    description: PWM0 Submodule Control.
+    byte_offset: 3640
+    fieldset: Pwm0subctl
+  - name: pwm1subctl
+    description: PWM1 Submodule Control.
+    byte_offset: 3644
+    fieldset: Pwm1subctl
+  - name: ctimerglobalstarten
+    description: CTIMER Global Start Enable.
+    byte_offset: 3648
+    fieldset: Ctimerglobalstarten
+  - name: ecc_enable_ctrl
+    description: RAM ECC Enable Control.
+    byte_offset: 3652
+    fieldset: EccEnableCtrl
+  - name: debug_lock_en
+    description: Control Write Access to Security.
+    byte_offset: 4000
+    fieldset: DebugLockEn
+  - name: debug_features
+    description: Cortex Debug Features Control.
+    byte_offset: 4004
+    fieldset: DebugFeatures
+  - name: debug_features_dp
+    description: Cortex Debug Features Control (Duplicate).
+    byte_offset: 4008
+    fieldset: DebugFeaturesDp
+  - name: swd_access_cpu0
+    description: CPU0 Software Debug Access.
+    byte_offset: 4020
+    fieldset: SwdAccessCpu0
+  - name: swd_access_cpu1
+    description: CPU1 Software Debug Access.
+    byte_offset: 4024
+    access: Write
+    fieldset: SwdAccessCpu1
+  - name: debug_auth_beacon
+    description: Debug Authentication BEACON.
+    byte_offset: 4032
+    fieldset: DebugAuthBeacon
+  - name: swd_access_dsp
+    description: DSP Software Debug Access.
+    byte_offset: 4036
+    fieldset: SwdAccessDsp
+  - name: jtag_id
+    description: JTAG Chip ID.
+    byte_offset: 4080
+    access: Read
+    fieldset: JtagId
+  - name: device_type
+    description: Device Type.
+    byte_offset: 4084
+    access: Read
+    fieldset: DeviceType
+  - name: device_id0
+    description: Device ID.
+    byte_offset: 4088
+    access: Read
+    fieldset: DeviceId0
+  - name: dieid
+    description: Chip Revision ID and Number.
+    byte_offset: 4092
+    access: Read
+    fieldset: Dieid
+fieldset/Adc0clkdiv:
+  description: ADC0 Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 3
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: Adc0clkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: Adc0clkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: Adc0clkdivUnstab
+fieldset/Adc0clksel:
+  description: ADC0 Clock Source Select.
+  fields:
+  - name: sel
+    description: Selects the ADC0 clock source.
+    bit_offset: 0
+    bit_size: 3
+    enum: Adc0clkselSel
+fieldset/Adc1clkdiv:
+  description: ADC1 Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 3
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: Adc1clkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: Adc1clkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: Adc1clkdivUnstab
+fieldset/Adc1clksel:
+  description: ADC1 Clock Source Select.
+  fields:
+  - name: sel
+    description: Selects the ADC1 clock source.
+    bit_offset: 0
+    bit_size: 3
+    enum: Adc1clkselSel
+fieldset/Ahbclkctrl0:
+  description: AHB Clock Control 0.
+  fields:
+  - name: rom
+    description: Enables the clock for the ROM.
+    bit_offset: 1
+    bit_size: 1
+  - name: ramb_ctrl
+    description: Enables the clock for the RAMB Controller.
+    bit_offset: 2
+    bit_size: 1
+  - name: ramc_ctrl
+    description: Enables the clock for the RAMC Controller.
+    bit_offset: 3
+    bit_size: 1
+  - name: ramd_ctrl
+    description: Enables the clock for the RAMD Controller.
+    bit_offset: 4
+    bit_size: 1
+  - name: rame_ctrl
+    description: Enables the clock for the RAME Controller.
+    bit_offset: 5
+    bit_size: 1
+  - name: ramf_ctrl
+    description: Enables the clock for the RAMF Controller.
+    bit_offset: 6
+    bit_size: 1
+  - name: ramg_ctrl
+    description: Enables the clock for the RAMG Controller.
+    bit_offset: 7
+    bit_size: 1
+  - name: ramh_ctrl
+    description: Enables the clock for the RAMH Controller.
+    bit_offset: 8
+    bit_size: 1
+  - name: fmu
+    description: Enables the clock for the Flash Management Unit.
+    bit_offset: 9
+    bit_size: 1
+  - name: fmc
+    description: Enables the clock for the Flash Memory Controller.
+    bit_offset: 10
+    bit_size: 1
+  - name: flexspi
+    description: Enables the clock for FlexSPI.
+    bit_offset: 11
+    bit_size: 1
+  - name: mux
+    description: Enables the clock for INPUTMUX.
+    bit_offset: 12
+    bit_size: 1
+  - name: port
+    description: Enables the clock for the PORT controller.
+    bit_offset: 13
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+  - name: gpio
+    description: Enables the clock for GPIO.
+    bit_offset: 19
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+  - name: pint
+    description: Enables the clock for PINT.
+    bit_offset: 25
+    bit_size: 1
+  - name: dma0
+    description: Enables the clock for DMA0.
+    bit_offset: 26
+    bit_size: 1
+  - name: crc
+    description: Enables the clock for CRC.
+    bit_offset: 27
+    bit_size: 1
+  - name: wwdt0
+    description: Enables the clock for WWDT0.
+    bit_offset: 28
+    bit_size: 1
+  - name: wwdt1
+    description: Enables the clock for WWDT1.
+    bit_offset: 29
+    bit_size: 1
+  - name: mailbox
+    description: Enables the clock for the Inter CPU communication Mailbox.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Ahbclkctrl1:
+  description: AHB Clock Control 1.
+  fields:
+  - name: mrt
+    description: Enables the clock for MRT.
+    bit_offset: 0
+    bit_size: 1
+  - name: ostimer
+    description: Enables the clock for the OS Event Timer.
+    bit_offset: 1
+    bit_size: 1
+  - name: sct
+    description: Enables the clock for SCT.
+    bit_offset: 2
+    bit_size: 1
+  - name: adc0
+    description: Enables the clock for ADC0.
+    bit_offset: 3
+    bit_size: 1
+  - name: adc1
+    description: Enables the clock for ADC1.
+    bit_offset: 4
+    bit_size: 1
+  - name: dac0
+    description: Enables the clock for DAC0.
+    bit_offset: 5
+    bit_size: 1
+  - name: rtc
+    description: Enables the clock for RTC.
+    bit_offset: 6
+    bit_size: 1
+  - name: evsim0
+    description: Enables the clock for EVSIM0.
+    bit_offset: 8
+    bit_size: 1
+  - name: evsim1
+    description: Enables the clock for EVSIM1.
+    bit_offset: 9
+    bit_size: 1
+  - name: utick
+    description: Enables the clock for UTICK.
+    bit_offset: 10
+    bit_size: 1
+  - name: fc
+    description: Enables the clock for LP_FLEXCOMM.
+    bit_offset: 11
+    bit_size: 1
+    array:
+      len: 10
+      stride: 1
+  - name: micfil
+    description: Enables the clock for MICFIL.
+    bit_offset: 21
+    bit_size: 1
+  - name: timer2
+    description: Enables the clock for CTIMER2.
+    bit_offset: 22
+    bit_size: 1
+  - name: usb0_fs_dcd
+    description: Enables the clock for USB-FS DCD.
+    bit_offset: 24
+    bit_size: 1
+  - name: usb0_fs
+    description: Enables the clock for USB-FS.
+    bit_offset: 25
+    bit_size: 1
+  - name: timer0
+    description: Enables the clock for CTIMER0.
+    bit_offset: 26
+    bit_size: 1
+  - name: timer1
+    description: Enables the clock for CTIMER1.
+    bit_offset: 27
+    bit_size: 1
+  - name: pkc_ram
+    description: Enables the clock for PKC RAM.
+    bit_offset: 29
+    bit_size: 1
+  - name: smart_dma
+    description: Enables the clock for SmartDMA.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Ahbclkctrl2:
+  description: AHB Clock Control 2.
+  fields:
+  - name: dma1
+    description: Enables the clock for DMA1.
+    bit_offset: 1
+    bit_size: 1
+  - name: enet
+    description: Enables the clock for Ethernet.
+    bit_offset: 2
+    bit_size: 1
+  - name: u_sdhc
+    description: Enables the clock for uSDHC.
+    bit_offset: 3
+    bit_size: 1
+  - name: flexio
+    description: Enables the clock for Flexio.
+    bit_offset: 4
+    bit_size: 1
+  - name: sai0
+    description: Enables the clock for SAI0.
+    bit_offset: 5
+    bit_size: 1
+  - name: sai1
+    description: Enables the clock for SAI1.
+    bit_offset: 6
+    bit_size: 1
+  - name: tro
+    description: Enables the clock for TRO.
+    bit_offset: 7
+    bit_size: 1
+  - name: freqme
+    description: Enables the clock for the Frequency meter.
+    bit_offset: 8
+    bit_size: 1
+  - name: trng
+    description: Enables the clock for TRNG.
+    bit_offset: 13
+    bit_size: 1
+  - name: flexcan0
+    description: Enables the clock for FLEXCAN0.
+    bit_offset: 14
+    bit_size: 1
+  - name: flexcan1
+    description: Enables the clock for FLEXCAN1.
+    bit_offset: 15
+    bit_size: 1
+  - name: usb_hs
+    description: Enables the clock for USB HS.
+    bit_offset: 16
+    bit_size: 1
+  - name: usb_hs_phy
+    description: Enables the clock for USB HS PHY.
+    bit_offset: 17
+    bit_size: 1
+  - name: els
+    description: Enables the clock for ELS.
+    bit_offset: 18
+    bit_size: 1
+  - name: pq
+    description: Enables the clock for Powerquad.
+    bit_offset: 19
+    bit_size: 1
+  - name: plu_lut
+    description: Enables the clock for PLU_LUT.
+    bit_offset: 20
+    bit_size: 1
+  - name: timer3
+    description: Enables the clock for CTIMER3.
+    bit_offset: 21
+    bit_size: 1
+  - name: timer4
+    description: Enables the clock for CTIMER4.
+    bit_offset: 22
+    bit_size: 1
+  - name: puf
+    description: Enables the clock for PUF.
+    bit_offset: 23
+    bit_size: 1
+  - name: pkc
+    description: Enables the clock for PKC.
+    bit_offset: 24
+    bit_size: 1
+  - name: scg
+    description: Enables the clock for SCG.
+    bit_offset: 26
+    bit_size: 1
+  - name: gdet
+    description: Enables the clock for GDET0 and GDET1.
+    bit_offset: 29
+    bit_size: 1
+  - name: sm3
+    description: Enables the clock for SM3.
+    bit_offset: 30
+    bit_size: 1
+fieldset/Ahbclkctrl3:
+  description: AHB Clock Control 3.
+  fields:
+  - name: i3c0
+    description: Enables the clock for I3C0.
+    bit_offset: 0
+    bit_size: 1
+  - name: i3c1
+    description: Enables the clock for I3C1.
+    bit_offset: 1
+    bit_size: 1
+  - name: sinc
+    description: Enables the clock for SINC.
+    bit_offset: 2
+    bit_size: 1
+  - name: coolflux
+    description: Enables the clock for CoolFlux.
+    bit_offset: 3
+    bit_size: 1
+  - name: qdc0
+    description: Enables the clock for QDC0.
+    bit_offset: 4
+    bit_size: 1
+  - name: qdc1
+    description: Enables the clock for QDC1.
+    bit_offset: 5
+    bit_size: 1
+  - name: pwm0
+    description: Enables the clock for PWM0.
+    bit_offset: 6
+    bit_size: 1
+  - name: pwm1
+    description: Enables the clock for PWM1.
+    bit_offset: 7
+    bit_size: 1
+  - name: evtg
+    description: Enables the clock for EVTG.
+    bit_offset: 8
+    bit_size: 1
+  - name: dac1
+    description: Enables the clock for DAC1.
+    bit_offset: 11
+    bit_size: 1
+  - name: dac2
+    description: Enables the clock for DAC2.
+    bit_offset: 12
+    bit_size: 1
+  - name: opamp
+    description: Enables the clock for OPAMP.
+    bit_offset: 13
+    bit_size: 1
+    array:
+      len: 3
+      stride: 1
+  - name: cmp2
+    description: Enables the clock for CMP2.
+    bit_offset: 18
+    bit_size: 1
+  - name: vref
+    description: Enables the clock for VREF.
+    bit_offset: 19
+    bit_size: 1
+  - name: coolflux_apb
+    description: Enables the clock for CoolFlux APB.
+    bit_offset: 20
+    bit_size: 1
+  - name: npu
+    description: Enables the clock for NPU.
+    bit_offset: 21
+    bit_size: 1
+  - name: tsi
+    description: Enables the clock for TSI.
+    bit_offset: 22
+    bit_size: 1
+  - name: ewm
+    description: Enables the clock for EWM.
+    bit_offset: 23
+    bit_size: 1
+  - name: eim
+    description: Enables the clock for EIM.
+    bit_offset: 24
+    bit_size: 1
+  - name: erm
+    description: Enables the clock for ERM.
+    bit_offset: 25
+    bit_size: 1
+  - name: intm
+    description: Enables the clock for INTM.
+    bit_offset: 26
+    bit_size: 1
+  - name: sema42
+    description: Enables the clock for Semaphore.
+    bit_offset: 27
+    bit_size: 1
+fieldset/Ahbclkctrlclr:
+  description: AHB Clock Control Clear.
+  fields:
+  - name: data
+    description: Data array value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Ahbclkctrlset:
+  description: AHB Clock Control Set.
+  fields:
+  - name: data
+    description: Data array value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Ahbclkdiv:
+  description: System Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: AhbclkdivUnstab
+fieldset/Ahbmatprio:
+  description: AHB Matrix Priority Control.
+  fields:
+  - name: pri_cpu0_cbus
+    description: CPU0 C-AHB bus master priority level.
+    bit_offset: 0
+    bit_size: 2
+    enum: PriCpu0Cbus
+  - name: pri_cpu0_sbus
+    description: CPU0 S-AHB bus master priority level.
+    bit_offset: 2
+    bit_size: 2
+    enum: PriCpu0Sbus
+  - name: pri_cpu1_sbus_smart_dma_d
+    description: CPU1 S-AHB/SmartDMA-D bus master priority level.
+    bit_offset: 4
+    bit_size: 2
+    enum: PriCpu1SbusSmartDmaD
+  - name: pri_cpu1_cbus_smart_dma_i
+    description: CPU1 C-AHB/SmartDMA-I bus master priority level.
+    bit_offset: 6
+    bit_size: 2
+    enum: PriCpu1CbusSmartDmaI
+  - name: dma0
+    description: DMA0 controller bus master priority level.
+    bit_offset: 8
+    bit_size: 2
+    enum: AhbmatprioDma0
+  - name: dma1
+    description: DMA1 controller bus master priority level.
+    bit_offset: 10
+    bit_size: 2
+    enum: AhbmatprioDma1
+  - name: pri_pkc_els
+    description: PKC and ELS bus master priority level.
+    bit_offset: 12
+    bit_size: 2
+    enum: PriPkcEls
+  - name: pri_npu_pq
+    description: NPU O bus and Powerquad bus master priority level.
+    bit_offset: 14
+    bit_size: 2
+    enum: PriNpuPq
+  - name: pri_coolflux_i
+    description: CoolFlux I bus master priority level.
+    bit_offset: 16
+    bit_size: 2
+    enum: PriCoolfluxI
+  - name: pri_coolflux_x
+    description: CoolFlux X bus master priority level.
+    bit_offset: 18
+    bit_size: 2
+    enum: PriCoolfluxX
+  - name: pri_coolflux_y_espi
+    description: CoolFlux Y bus master priority level.
+    bit_offset: 20
+    bit_size: 2
+    enum: PriCoolfluxYEspi
+  - name: pri_npu_d
+    description: NPU D bus master priority level.
+    bit_offset: 22
+    bit_size: 2
+    enum: PriNpuD
+  - name: pri_usb_fs_enet
+    description: USB-FS and ENET bus master priority level.
+    bit_offset: 24
+    bit_size: 2
+    enum: PriUsbFsEnet
+  - name: pri_usb_hs
+    description: USB-HS bus master priority level.
+    bit_offset: 26
+    bit_size: 2
+    enum: PriUsbHs
+  - name: pri_usdhc
+    description: USDHC bus master priority level.
+    bit_offset: 28
+    bit_size: 2
+    enum: PriUsdhc
+fieldset/Autoclkgateoverride:
+  description: Control Automatic Clock Gating.
+  fields:
+  - name: ramb_ctrl
+    description: Controls automatic clock gating for the RAMB Controller.
+    bit_offset: 2
+    bit_size: 1
+  - name: ramc_ctrl
+    description: Controls automatic clock gating for the RAMC Controller.
+    bit_offset: 3
+    bit_size: 1
+  - name: ramd_ctrl
+    description: Controls automatic clock gating for the RAMD Controller.
+    bit_offset: 4
+    bit_size: 1
+  - name: rame_ctrl
+    description: Controls automatic clock gating for the RAMD Controller.
+    bit_offset: 5
+    bit_size: 1
+  - name: ramf_ctrl
+    description: Controls automatic clock gating for the RAMF Controller.
+    bit_offset: 6
+    bit_size: 1
+  - name: ramg_ctrl
+    description: Controls automatic clock gating for the RAMG Controller.
+    bit_offset: 7
+    bit_size: 1
+  - name: ramh_ctrl
+    description: Controls automatic clock gating for the RAMG Controller.
+    bit_offset: 8
+    bit_size: 1
+fieldset/Autoclkgateoverridec:
+  description: Control Automatic Clock Gating C.
+  fields:
+  - name: ramx
+    description: Controls automatic clock gating of the RAMX controller.
+    bit_offset: 30
+    bit_size: 1
+  - name: rama
+    description: Controls automatic clock gating of the RAMA controller.
+    bit_offset: 31
+    bit_size: 1
+fieldset/BinaryCodeLsb:
+  description: Gray to Binary Converter Binary Code [31:0].
+  fields:
+  - name: code_bin_31_0
+    description: Binary code [31:0].
+    bit_offset: 0
+    bit_size: 32
+fieldset/BinaryCodeMsb:
+  description: Gray to Binary Converter Binary Code [41:32].
+  fields:
+  - name: code_bin_41_32
+    description: Binary code [41:32].
+    bit_offset: 0
+    bit_size: 10
+fieldset/ClkoutFrgctrl:
+  description: CLKOUT FRG Control.
+  fields:
+  - name: div
+    description: Divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: mult
+    description: Numerator value.
+    bit_offset: 8
+    bit_size: 8
+fieldset/Clkoutdiv:
+  description: CLKOUT Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: ClkoutdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: ClkoutdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: ClkoutdivUnstab
+fieldset/Clkoutsel:
+  description: CLKOUT Clock Source Select.
+  fields:
+  - name: sel
+    description: Selects the CLKOUT clock source.
+    bit_offset: 0
+    bit_size: 4
+    enum: ClkoutselSel
+fieldset/Clkunlock:
+  description: Clock Configuration Unlock.
+  fields:
+  - name: unlock
+    description: Controls clock configuration registers access (for example, xxxDIV, xxxSEL).
+    bit_offset: 0
+    bit_size: 1
+    enum: Unlock
+fieldset/ClockCtrl:
+  description: Clock Control.
+  fields:
+  - name: clkin_ena_fm_usbh_lpt
+    description: Enables the clk_in clock for the Frequency Measurement, USB HS and LPTMR0/1 modules.
+    bit_offset: 1
+    bit_size: 1
+  - name: fro1mhz_ena
+    description: Enables the FRO_1MHz clock for RTC module and for UTICK.
+    bit_offset: 2
+    bit_size: 1
+  - name: fro12mhz_ena
+    description: Enables the FRO_12MHz clock for the Flash, LPTMR0/1, and Frequency Measurement modules.
+    bit_offset: 3
+    bit_size: 1
+  - name: fro_hf_ena
+    description: Enables FRO HF clock for the Frequency Measure module.
+    bit_offset: 4
+    bit_size: 1
+  - name: clkin_ena
+    description: Enables clk_in clock for MICFIL, CAN0/1, I3C0/1, SAI0/1, clkout.
+    bit_offset: 5
+    bit_size: 1
+  - name: fro1mhz_clk_ena
+    description: Enables FRO_1MHz clock for clock muxing in clock gen.
+    bit_offset: 6
+    bit_size: 1
+  - name: plu_deglitch_clk_ena
+    description: Enables clocks FRO_1MHz and FRO_12MHz for PLU deglitching.
+    bit_offset: 9
+    bit_size: 1
+fieldset/Cmp0rrclksel:
+  description: CMP0 Round Robin Clock Selection.
+  fields:
+  - name: sel
+    description: Selects the CMP0 round robin clock.
+    bit_offset: 0
+    bit_size: 3
+    enum: Cmp0rrclkselSel
+fieldset/Cmp1rrclksel:
+  description: CMP1 Round Robin Clock Source Select.
+  fields:
+  - name: sel
+    description: Selects the CMP1 round robin clock.
+    bit_offset: 0
+    bit_size: 3
+    enum: Cmp1rrclkselSel
+fieldset/Cmp2rrclksel:
+  description: CMP2 Round Robin Clock Source Select.
+  fields:
+  - name: sel
+    description: Selects the CMP2 round robin clock.
+    bit_offset: 0
+    bit_size: 3
+    enum: Cmp2rrclkselSel
+fieldset/Cmpfclkdiv:
+  description: CMP Function Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 4
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: CmpfclkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: CmpfclkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: CmpfclkdivUnstab
+fieldset/Cmpfclksel:
+  description: CMP Function Clock Selection.
+  fields:
+  - name: sel
+    description: Selects the CMP function clock.
+    bit_offset: 0
+    bit_size: 3
+    enum: CmpfclkselSel
+fieldset/Cmprrclkdiv:
+  description: CMP Round Robin Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 4
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: CmprrclkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: CmprrclkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: CmprrclkdivUnstab
+fieldset/Cpboot:
+  description: Coprocessor Boot Address.
+  fields:
+  - name: cpboot
+    description: Coprocessor Boot VTOR Address [31:7] for CPU1.
+    bit_offset: 7
+    bit_size: 25
+fieldset/Cpu0nstckcal:
+  description: Non-Secure CPU0 System Tick Calibration.
+  fields:
+  - name: tenms
+    description: Reload value for 10 ms (100 Hz) timing, subject to system clock skew errors. If the value reads as zero, the calibration value is not known.
+    bit_offset: 0
+    bit_size: 24
+  - name: skew
+    description: Indicates whether the TENMS value is exact.
+    bit_offset: 24
+    bit_size: 1
+    enum: Cpu0nstckcalSkew
+  - name: noref
+    description: Indicates whether the device provides a reference clock to the processor.
+    bit_offset: 25
+    bit_size: 1
+    enum: Cpu0nstckcalNoref
+fieldset/Cpu0stckcal:
+  description: Secure CPU0 System Tick Calibration.
+  fields:
+  - name: tenms
+    description: Reload value for 10 ms (100 Hz) timing, subject to system clock skew errors. If the value reads as zero, the calibration value is not known.
+    bit_offset: 0
+    bit_size: 24
+  - name: skew
+    description: Whether the TENMS value is exact.
+    bit_offset: 24
+    bit_size: 1
+    enum: Cpu0stckcalSkew
+  - name: noref
+    description: Whether the device provides a reference clock to the processor.
+    bit_offset: 25
+    bit_size: 1
+    enum: Cpu0stckcalNoref
+fieldset/Cpu1stckcal:
+  description: System tick calibration for CPU1.
+  fields:
+  - name: tenms
+    description: Reload value for 10 ms (100 Hz) timing, subject to system clock skew errors. If the value reads as zero, the calibration value is not known.
+    bit_offset: 0
+    bit_size: 24
+  - name: skew
+    description: Indicates whether the TENMS value is exact.
+    bit_offset: 24
+    bit_size: 1
+    enum: Cpu1stckcalSkew
+  - name: noref
+    description: Indicates whether the device provides a reference clock to the processor.
+    bit_offset: 25
+    bit_size: 1
+    enum: Cpu1stckcalNoref
+fieldset/Cpuctrl:
+  description: CPU Control for Multiple Processors.
+  fields:
+  - name: cpu1clken
+    description: Enables the CPU1 clock.
+    bit_offset: 3
+    bit_size: 1
+  - name: cpu1rsten
+    description: CPU1 reset.
+    bit_offset: 5
+    bit_size: 1
+    enum: Cpu1rsten
+  - name: prot
+    description: Write Protect.
+    bit_offset: 16
+    bit_size: 16
+    enum: Prot
+fieldset/Cpustat:
+  description: CPU Status.
+  fields:
+  - name: cpu0sleeping
+    description: CPU0 sleeping state.
+    bit_offset: 0
+    bit_size: 1
+    enum: Cpu0sleeping
+  - name: cpu1sleeping
+    description: CPU1 sleeping state.
+    bit_offset: 1
+    bit_size: 1
+    enum: Cpu1sleeping
+  - name: cpu0lockup
+    description: CPU0 lockup state.
+    bit_offset: 2
+    bit_size: 1
+    enum: Cpu0lockup
+  - name: cpu1lockup
+    description: CPU1 lockup state.
+    bit_offset: 3
+    bit_size: 1
+    enum: Cpu1lockup
+fieldset/Ctimerclkdiv:
+  description: CTimer Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: CtimerclkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: CtimerclkdivUnstab
+fieldset/Ctimerclksel:
+  description: CTIMER Clock Source Select.
+  fields:
+  - name: sel
+    description: Selects the CTIMER clock source.
+    bit_offset: 0
+    bit_size: 4
+    enum: CtimerclkselSel
+fieldset/Ctimerglobalstarten:
+  description: CTIMER Global Start Enable.
+  fields:
+  - name: ctimer_clk_en
+    description: Enables the CTIMER function clock.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+fieldset/Dacclkdiv:
+  description: DAC functional clock divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 3
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: DacclkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: DacclkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: DacclkdivUnstab
+fieldset/Dacclksel:
+  description: DAC Functional Clock Selection.
+  fields:
+  - name: sel
+    description: Selects the DAC clock source.
+    bit_offset: 0
+    bit_size: 3
+    enum: DacclkselSel
+fieldset/DebugAuthBeacon:
+  description: Debug Authentication BEACON.
+  fields:
+  - name: beacon
+    description: Sets by the debug authentication code in ROM to pass the debug beacons (Credential Beacon and Authentication Beacon) to the application code.
+    bit_offset: 0
+    bit_size: 32
+fieldset/DebugFeatures:
+  description: Cortex Debug Features Control.
+  fields:
+  - name: cpu0_dbgen
+    description: CPU0 invasive debug control.
+    bit_offset: 0
+    bit_size: 2
+    enum: DebugFeaturesCpu0Dbgen
+  - name: cpu0_niden
+    description: CPU0 non-invasive debug control.
+    bit_offset: 2
+    bit_size: 2
+    enum: DebugFeaturesCpu0Niden
+  - name: cpu0_spiden
+    description: CPU0 secure privileged invasive debug control.
+    bit_offset: 4
+    bit_size: 2
+    enum: DebugFeaturesCpu0Spiden
+  - name: cpu0_spniden
+    description: CPU0 secure privileged non-invasive debug control.
+    bit_offset: 6
+    bit_size: 2
+    enum: DebugFeaturesCpu0Spniden
+  - name: cpu1_dbgen
+    description: CPU1 invasive debug control.
+    bit_offset: 8
+    bit_size: 2
+    enum: DebugFeaturesCpu1Dbgen
+  - name: cpu1_niden
+    description: CPU1 non-invasive debug control.
+    bit_offset: 10
+    bit_size: 2
+    enum: DebugFeaturesCpu1Niden
+  - name: dsp_dbgden
+    description: DSP invasive debug control.
+    bit_offset: 12
+    bit_size: 2
+    enum: DspDbgden
+fieldset/DebugFeaturesDp:
+  description: Cortex Debug Features Control (Duplicate).
+  fields:
+  - name: cpu0_dbgen
+    description: CPU0 invasive debug control.
+    bit_offset: 0
+    bit_size: 2
+    enum: DebugFeaturesDpCpu0Dbgen
+  - name: cpu0_niden
+    description: CPU0 non-invasive debug control.
+    bit_offset: 2
+    bit_size: 2
+    enum: DebugFeaturesDpCpu0Niden
+  - name: cpu0_spiden
+    description: CPU0 secure privileged invasive debug control.
+    bit_offset: 4
+    bit_size: 2
+    enum: DebugFeaturesDpCpu0Spiden
+  - name: cpu0_spniden
+    description: CPU0 secure privileged non-invasive debug control.
+    bit_offset: 6
+    bit_size: 2
+    enum: DebugFeaturesDpCpu0Spniden
+  - name: cpu1_dbgen
+    description: CPU1 invasive debug control.
+    bit_offset: 8
+    bit_size: 2
+    enum: DebugFeaturesDpCpu1Dbgen
+  - name: cpu1_niden
+    description: CPU1 non-invasive debug control.
+    bit_offset: 10
+    bit_size: 2
+    enum: DebugFeaturesDpCpu1Niden
+  - name: dsp_dbgen
+    description: DSP invasive debug control.
+    bit_offset: 12
+    bit_size: 2
+    enum: DspDbgen
+fieldset/DebugLockEn:
+  description: Control Write Access to Security.
+  fields:
+  - name: lock_all
+    description: Controls write access to the security registers.
+    bit_offset: 0
+    bit_size: 4
+    enum: LockAll
+fieldset/DeviceId0:
+  description: Device ID.
+  fields:
+  - name: rom_rev_minor
+    description: ROM revision.
+    bit_offset: 20
+    bit_size: 4
+fieldset/DeviceType:
+  description: Device Type.
+  fields:
+  - name: device_type
+    description: Indicates DEVICE TYPE.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Dieid:
+  description: Chip Revision ID and Number.
+  fields:
+  - name: minor_revision
+    description: Chip minor revision.
+    bit_offset: 0
+    bit_size: 4
+  - name: major_revision
+    description: Chip major revision.
+    bit_offset: 4
+    bit_size: 4
+  - name: mco_num_in_die_id
+    description: Chip number.
+    bit_offset: 8
+    bit_size: 20
+fieldset/EccEnableCtrl:
+  description: RAM ECC Enable Control.
+  fields:
+  - name: rama_ecc_enable
+    description: RAMA ECC enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: ramb_ramx_ecc_enable
+    description: RAMB and RAMX ECC enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: ramd_ramc_ecc_enable
+    description: RAMD and RAMC ECC enable.
+    bit_offset: 2
+    bit_size: 1
+  - name: ramf_rame_ecc_enable
+    description: RAMF and RAME ECC enable.
+    bit_offset: 3
+    bit_size: 1
+fieldset/ElsAsBootLog0:
+  description: 'Boot state captured during boot: Main ROM log.'
+  fields:
+  - name: boot_image
+    description: Boot image source used during this boot.
+    bit_offset: 0
+    bit_size: 4
+    enum: BootImage
+  - name: cmac
+    description: CMAC verify is used instead of ECDSA verify on this boot.
+    bit_offset: 4
+    bit_size: 1
+  - name: ecdsa
+    description: ECDSA P-384 verification is done on this boot.
+    bit_offset: 6
+    bit_size: 1
+  - name: off_chip
+    description: Off-chip Prince is enabled during boot.
+    bit_offset: 7
+    bit_size: 1
+  - name: on_chip
+    description: On-chip Prince is enabled during boot.
+    bit_offset: 8
+    bit_size: 1
+  - name: cdi_csr
+    description: CDI based device keys are derived for CSR harvesting on this boot.
+    bit_offset: 9
+    bit_size: 1
+  - name: cdi_dice
+    description: CDI per DICE specification is computed on this boot.
+    bit_offset: 10
+    bit_size: 1
+  - name: trustzone
+    description: TrustZone preset data is loaded during this boot.
+    bit_offset: 11
+    bit_size: 1
+  - name: debug_auth
+    description: Debug authentication done in this session prior to boot.
+    bit_offset: 12
+    bit_size: 1
+  - name: itrc
+    description: ITRC zeroize event is handled in this session of boot.
+    bit_offset: 13
+    bit_size: 1
+  - name: dig_gdet
+    description: Digital glitch detector is enabled during boot.
+    bit_offset: 14
+    bit_size: 1
+  - name: ana_gdet
+    description: Analog glitch detector is enabled during boot.
+    bit_offset: 15
+    bit_size: 1
+  - name: deep_pd
+    description: Boot from deep-power down state.
+    bit_offset: 16
+    bit_size: 1
+  - name: low_power
+    description: Last low-power mode value. ROM copies SPC_LP_MODE field from SPC->SC[7:4].
+    bit_offset: 24
+    bit_size: 4
+  - name: isp
+    description: ISP pin state at boot time. ROM copies CMC->MR0[0].
+    bit_offset: 31
+    bit_size: 1
+fieldset/ElsAsBootLog1:
+  description: 'Boot state captured during boot: Library log.'
+  fields:
+  - name: ro_tk
+    description: RoTK index used for this boot.
+    bit_offset: 0
+    bit_size: 2
+  - name: fips
+    description: FIPS self-test is executed and PASS during this boot. When a bit is set, means self-test is executed and it FAILS. When a bit is clear, means corresponding self-test is executed and PASS or it is not executed.
+    bit_offset: 2
+    bit_size: 8
+  - name: sb3
+    description: SB3 type (valid after nboot_sb3_load_manifest()).
+    bit_offset: 10
+    bit_size: 2
+    enum: Sb3
+fieldset/ElsAsBootLog2:
+  description: 'Boot state captured during boot: Hardware status signals log.'
+  fields:
+  - name: cmc_srs0
+    description: CMC->SRS[5:0].
+    bit_offset: 0
+    bit_size: 6
+  - name: vbat_status0
+    description: VBAT->STATUSA[1:0] | ~VBAT->STATUSB[1:0].
+    bit_offset: 6
+    bit_size: 2
+  - name: cmc_srs1
+    description: CMC->SRS[16:8].
+    bit_offset: 8
+    bit_size: 9
+  - name: vbat_status1
+    description: VBAT->STATUSA[11:6] | ~VBAT->STATUSB[11:6].
+    bit_offset: 18
+    bit_size: 6
+  - name: cmc_srs2
+    description: CMC->SRS[31:24].
+    bit_offset: 24
+    bit_size: 8
+fieldset/ElsAsBootLog3:
+  description: 'Boot state captured during boot: Security log.'
+  fields:
+  - name: err_auth_fail_count
+    description: CFPA->ERR_AUTH_FAIL_COUNT[7:0].
+    bit_offset: 0
+    bit_size: 8
+  - name: err_itrc_count
+    description: CFPA->ERR_ITRC_COUNT[7:0].
+    bit_offset: 8
+    bit_size: 8
+fieldset/ElsAsCfg0:
+  description: ELS AS Configuration.
+  fields:
+  - name: cfg_lc_state
+    description: LC state configuration bit.
+    bit_offset: 0
+    bit_size: 8
+  - name: cfg_lvd_core_reset_enabled
+    description: When SPC CORE LVD analog detector are turned on, and CORE LVD reset are enabled, this bit indicates state 1.
+    bit_offset: 9
+    bit_size: 1
+  - name: cfg_lvd_core_irq_enabled
+    description: When SPC CORE LVD analog detector are turned on, and CORE LVD IRQ are enabled, this bit indicates state 1.
+    bit_offset: 11
+    bit_size: 1
+  - name: cfg_wdt0_enabled
+    description: When WatchDog Timer 0 is activated, this bit indicates state 1.
+    bit_offset: 12
+    bit_size: 1
+  - name: cfg_cwdt0_enabled
+    description: When Code WatchDog Timer 0 is activated, this bit indicates state 1.
+    bit_offset: 13
+    bit_size: 1
+  - name: cfg_els_gdet_enabled
+    description: When either GDET is enabled, this bit indicates state 1.
+    bit_offset: 14
+    bit_size: 1
+  - name: cfg_ana_gdet_reset_enabled
+    description: When SPC analog glitch detect reset is enabled, this bit indicates state 1.
+    bit_offset: 15
+    bit_size: 1
+  - name: cfg_ana_gdet_irq_enabled
+    description: When SPC analog glitch detect IRQ is enabled, this bit indicates state 1.
+    bit_offset: 16
+    bit_size: 1
+  - name: cfg_tamper_det_enabled
+    description: When tamper detector is enabled in TDET, this bit indicates state 1.
+    bit_offset: 17
+    bit_size: 1
+  - name: cfg_lvd_vsys_reset_enabled
+    description: When SPC VSYS LVD analog detector are turned on and VSYS LVD reset are enabled, this bit indicates state 1.
+    bit_offset: 18
+    bit_size: 1
+  - name: cfg_lvd_vddio_reset_enabled
+    description: When SPC VDDIO LVD analog detector are turned on and VDDIO LVD reset are enabled, this bit indicates state 1.
+    bit_offset: 19
+    bit_size: 1
+  - name: cfg_lvd_vsys_irq_enabled
+    description: When SPC VSYS LVD analog detector are turned on and VSYS LVD irq are enabled, this bit indicates state 1.
+    bit_offset: 20
+    bit_size: 1
+  - name: cfg_lvd_vddio_irq_enabled
+    description: When SPC VDDIO LVD analog detector are turned on and VDDIO LVD irq are enabled, this bit indicates state 1.
+    bit_offset: 21
+    bit_size: 1
+  - name: cfg_wdt1_enabled
+    description: When WatchDog Timer 1 is activated, this bit indicates state 1.
+    bit_offset: 22
+    bit_size: 1
+  - name: cfg_cwdt1_enabled
+    description: When Code WatchDog Timer 1 is activated, this bit indicates state 1.
+    bit_offset: 23
+    bit_size: 1
+  - name: cfg_temptamper_det_enabled
+    description: When temperature tamper detector is enabled in VBAT, this bit indicates state 1.
+    bit_offset: 24
+    bit_size: 1
+  - name: cfg_voltamper_det_enabled
+    description: When voltage tamper detector is enabled in VBAT, this bit indicates state 1.
+    bit_offset: 25
+    bit_size: 1
+  - name: cfg_lhttamper_det_enabled
+    description: When light tamper detector is enabled in VBAT, this bit indicates state 1.
+    bit_offset: 26
+    bit_size: 1
+  - name: cfg_clktamper_det_enabled
+    description: When clk tamper detector is enabled in VBAT, this bit indicates state 1.
+    bit_offset: 27
+    bit_size: 1
+  - name: cfg_qk_disable_enroll
+    description: When QK PUF "qk_disable_enroll" input is driven 1, this bit indicates state 1.
+    bit_offset: 28
+    bit_size: 1
+  - name: cfg_qk_disable_wrap
+    description: When QK PUF "qk_disable_wrap" input is driven 1, this bit indicates state 1.
+    bit_offset: 29
+    bit_size: 1
+fieldset/ElsAsCfg1:
+  description: ELS AS Configuration1.
+  fields:
+  - name: cfg_sec_dis_strict_mode
+    description: When CFG_SEC_ENA_SEC_CHK indicates state 0 or when DISABLE_STRICT_MODE bits in MISC_CTRL_REG and MISC_CTRL_DP_REG on the AHB secure controller are equal to 01, this bit indicates state 1.
+    bit_offset: 1
+    bit_size: 1
+  - name: cfg_sec_dis_viol_abort
+    description: When the DISABLE_VIOLATION_ABORT bits in MISC_CTRL_REG and MISC_CTRL_DP_REG on the AHB secure controller are not equal to 10, this bit indicates state 1.
+    bit_offset: 2
+    bit_size: 1
+  - name: cfg_sec_ena_ns_priv_chk
+    description: When the ENABLE_NS_PRIV_CHECK bits in MISC_CTRL_REG and MISC_CTRL_DP_REG on the AHB secure controller are not equal to 10, this bit indicates state 1.
+    bit_offset: 3
+    bit_size: 1
+  - name: cfg_sec_ena_s_priv_chk
+    description: When the ENABLE_S_PRIV_CHECK bits in MISC_CTRL_REG and MISC_CTRL_DP_REG on the AHB secure controller are not equal to 10, this bit indicates state 1.
+    bit_offset: 4
+    bit_size: 1
+  - name: cfg_sec_ena_sec_chk
+    description: When the ENABLE_SECURE_CHECKING bits in MISC_CTRL_REG and MISC_CTRL_DP_REG on the AHB secure controller are not equal to 10, this bit indicates state 1.
+    bit_offset: 5
+    bit_size: 1
+  - name: cfg_sec_idau_allns
+    description: When the IDAU_ALL_NS bits in MISC_CTRL_REG and MISC_CTRL_DP_REG on the AHB secure controller are equal to 01, this bit indicates state 1.
+    bit_offset: 6
+    bit_size: 1
+  - name: cfg_sec_lock_ns_mpu
+    description: When the LOCK_NS_MPU bits in CPU0_LOCK_REG on the AHB secure controller are not equal to 10, this bit indicates state 1.
+    bit_offset: 8
+    bit_size: 1
+  - name: cfg_sec_lock_ns_vtor
+    description: When the LOCK_NS_VTOR bits in CPU0_LOCK_REG on the AHB secure controller are not equal to 10, this bit indicates state 1.
+    bit_offset: 9
+    bit_size: 1
+  - name: cfg_sec_lock_s_mpu
+    description: When the LOCK_S_MPU bits in CPU0_LOCK_REG on the AHB secure controller are not equal to 10, this bit indicates state 1.
+    bit_offset: 10
+    bit_size: 1
+  - name: cfg_sec_lock_s_vtaircr
+    description: When the LOCK_S_VTAIRCR bits in CPU0_LOCK_REG on the AHB secure controller are not equal to 10, this bit indicates state 1.
+    bit_offset: 11
+    bit_size: 1
+  - name: cfg_sec_lock_sau
+    description: When the LOCK_SAU bits in CPU0_LOCK_REG on the AHB secure controller are not equal to 10, this bit indicates state 1.
+    bit_offset: 12
+    bit_size: 1
+  - name: metal_version
+    description: metal version.
+    bit_offset: 13
+    bit_size: 8
+  - name: rom_patch_version
+    description: ROM patch version.
+    bit_offset: 21
+    bit_size: 4
+  - name: cfg_hvd_core_reset_enabled
+    description: When SPC CORE HVD analog detector are turned on, and CORE HVD reset are enabled, this bit indicates state 1.
+    bit_offset: 26
+    bit_size: 1
+  - name: cfg_hvd_core_irq_enabled
+    description: When SPC CORE HVD analog detector are turned on, and CORE HVD IRQ are enabled, this bit indicates state 1.
+    bit_offset: 27
+    bit_size: 1
+  - name: cfg_hvd_vsys_reset_enabled
+    description: When SPC VSYS HVD analog detector are turned on and VSYS HVD reset are enabled, this bit indicates state 1.
+    bit_offset: 28
+    bit_size: 1
+  - name: cfg_hvd_vddio_reset_enabled
+    description: When SPC VDDIO HVD analog detector are turned on and VDDIO HVD reset are enabled, this bit indicates state 1.
+    bit_offset: 29
+    bit_size: 1
+  - name: cfg_hvd_vsys_irq_enabled
+    description: When SPC VSYS HVD analog detector are turned on and VSYS HVD irq are enabled, this bit indicates state 1.
+    bit_offset: 30
+    bit_size: 1
+  - name: cfg_hvd_vddio_irq_enabled
+    description: When SPC VDDIO HVD analog detector are turned on and VDDIO HVD irq are enabled, this bit indicates state 1.
+    bit_offset: 31
+    bit_size: 1
+fieldset/ElsAsCfg2:
+  description: ELS AS Configuration2.
+  fields:
+  - name: cfg_els_cmd_en
+    description: ELS configuration command enable bit.
+    bit_offset: 0
+    bit_size: 32
+fieldset/ElsAsCfg3:
+  description: ELS AS Configuration3.
+  fields:
+  - name: device_type
+    description: Device type identification data.
+    bit_offset: 0
+    bit_size: 32
+fieldset/ElsAsFlag0:
+  description: ELS AS Flag0.
+  fields:
+  - name: flag_ap_enable_cpu0
+    description: This flag bit is set as 1 when DAP enables AP0 for CPU0 (CM33) debug access. The register is cleared 0 by PMC reset event.
+    bit_offset: 0
+    bit_size: 1
+  - name: flag_ap_enable_cpu1
+    description: This flag bit is set as 1 when DAP enables AP1 for CPU1 (CM33) debug access. The register is cleared 0 by PMC reset event.
+    bit_offset: 1
+    bit_size: 1
+  - name: flag_ap_enable_dsp
+    description: This flag bit is set as 1 when DAP enables AP3 for DSP (CoolFlux) debug access. The register is cleared 0 by PMC reset event.
+    bit_offset: 2
+    bit_size: 1
+  - name: efuse_attack_detect
+    description: OTPC can output attack_detect signal when it detects attack when load shadow registers. The output will be cleared by reset. ELS_AS_FLAG is reset by PoR, so the status can be recorded.
+    bit_offset: 3
+    bit_size: 1
+  - name: flag_lvd_core_occured
+    description: This flag register is set 1 when VDD_CORE LVD event is triggered. This register is cleared 0 by PMC reset event.
+    bit_offset: 5
+    bit_size: 1
+  - name: flag_wdt0_reset_occured
+    description: This flag bit is set as 1 when WatchDog Timer 0 reset is enabled and reset event is triggered. This register is cleared 0 by AO domain POR.
+    bit_offset: 8
+    bit_size: 1
+  - name: flag_cwdt0_reset_occured
+    description: This flag bit is set as 1 when Code WatchDog Timer 0 reset is enabled and reset event is triggered. This register is cleared 0 by AO domain POR.
+    bit_offset: 9
+    bit_size: 1
+  - name: flag_wdt0_irq_occured
+    description: This flag bit is set as 1 when WatchDog Timer 0 IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event.
+    bit_offset: 10
+    bit_size: 1
+  - name: flag_cwdt0_irq_occured
+    description: This flag bit is set as 1 when Code WatchDog Timer 0 IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event.
+    bit_offset: 11
+    bit_size: 1
+  - name: flag_qk_error
+    description: This flag bit is set as 1 when QK_ERROR is flagged from QK PUF block. This register is cleared 0 by PMC reset event.
+    bit_offset: 12
+    bit_size: 1
+  - name: flag_els_glitch_detected
+    description: This flag bit is set as 1 when GDET error is flagged. This register is cleared 0 by PMC reset event.
+    bit_offset: 13
+    bit_size: 1
+  - name: flag_ana_glitch_detected
+    description: This flag bit is set as 1 when ANALOG GDET error is flagged in SYSCON block. This register is cleared 0 by PMC reset event.
+    bit_offset: 14
+    bit_size: 1
+  - name: flag_tamper_event_detected
+    description: This flag bit is set as 1 when tamper event is flagged from TDET. This register is cleared 0 by AO domain POR or by PMC reset event, if tamper detection event is cleared by software.
+    bit_offset: 15
+    bit_size: 1
+  - name: flag_flash_ecc_invalid
+    description: This flag bit is set as 1 when FLASH controller indicates ECC error. This register is cleared 0 by PMC reset event.
+    bit_offset: 16
+    bit_size: 1
+  - name: flag_sec_viol_irq_ocurred
+    description: This flag bit is set as 1 when security violation is indicated from FLASH sub-system or AHB bus matrix.
+    bit_offset: 17
+    bit_size: 1
+  - name: flag_cpu0_ns_c_acc_occured
+    description: This flag bit is set as 1 when CPU0 (CM33) makes non-secure code transactions. This register is cleared 0 by PMC reset event.
+    bit_offset: 18
+    bit_size: 1
+  - name: flag_cpu0_ns_d_acc_occured
+    description: This flag bit is set as 1 when CPU0 (CM33) makes non-secure data transactions. This register is cleared 0 by PMC reset event.
+    bit_offset: 19
+    bit_size: 1
+  - name: flag_lvd_vsys_occured
+    description: This flag register is set 1 when VDD_SYS LVD event is triggered. This register is cleared 0 by PMC reset event.
+    bit_offset: 20
+    bit_size: 1
+  - name: flag_lvd_vddio_occured
+    description: This flag register is set 1 when VDD LVD event is triggered. This register is cleared 0 by PMC reset event.
+    bit_offset: 21
+    bit_size: 1
+  - name: flag_wdt1_reset_occured
+    description: This flag bit is set as 1 when WatchDog Timer 1 reset is enabled and reset event is triggered. This register is cleared 0 by AO domain POR.
+    bit_offset: 22
+    bit_size: 1
+  - name: flag_cwdt1_reset_occured
+    description: This flag bit is set as 1 when Code WatchDog Timer 1 reset is enabled and reset event is triggered. This register is cleared 0 by AO domain POR.
+    bit_offset: 23
+    bit_size: 1
+  - name: flag_wdt1_irq_occured
+    description: This flag bit is set as 1 when WatchDog Timer 1 IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event.
+    bit_offset: 24
+    bit_size: 1
+  - name: flag_cwdt1_irq_occured
+    description: This flag bit is set as 1 when Code WatchDog Timer 1 IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event.
+    bit_offset: 25
+    bit_size: 1
+  - name: flag_temptamper_det_irq_occured
+    description: This flag bit is set as 1 when temperature temper IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event.
+    bit_offset: 26
+    bit_size: 1
+  - name: flag_voltamper_det_irq_occured
+    description: This flag bit is set as 1 when voltage temper IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event.
+    bit_offset: 27
+    bit_size: 1
+  - name: flag_lhttamper_det_irq_occured
+    description: This flag bit is set as 1 when light temper IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event.
+    bit_offset: 28
+    bit_size: 1
+  - name: flag_clktamper_det_irq_occured
+    description: This flag bit is set as 1 when clock temper IRQ is enabled and IRQ event is triggered. This register is cleared 0 by PMC reset event.
+    bit_offset: 29
+    bit_size: 1
+fieldset/ElsAsFlag1:
+  description: ELS AS Flag1.
+  fields:
+  - name: flag_hvd_core_occured
+    description: This flag bit is set as 1 when HVD from VDD_CORE power domain is triggered.
+    bit_offset: 29
+    bit_size: 1
+  - name: flag_hvd_vsys_occured
+    description: This flag bit is set as 1 when HVD from VDD_SYS power domain is triggered.
+    bit_offset: 30
+    bit_size: 1
+  - name: flag_hvd_vddio_occured
+    description: This flag bit is set as 1 when HVD from VDD power domain is triggered.
+    bit_offset: 31
+    bit_size: 1
+fieldset/ElsAsSt0:
+  description: ELS AS State Register.
+  fields:
+  - name: st_temporal_state
+    description: TEMPORAL_STATE[3:0] in the ELS_TEMPORAL_STATE register reflects this register.
+    bit_offset: 0
+    bit_size: 4
+  - name: st_cpu0_dbgen
+    description: When CPU0 (CM33) "deben" input is state 1, this bit indicates state 1.
+    bit_offset: 4
+    bit_size: 1
+  - name: st_cpu0_niden
+    description: When CPU0 (CM33) "niden" input is state 1, this bit indicates state 1.
+    bit_offset: 5
+    bit_size: 1
+  - name: st_cpu0_spiden
+    description: When CPU0 (CM33) "spiden" input is state 1, this bit indicates state 1.
+    bit_offset: 6
+    bit_size: 1
+  - name: st_cpu0_spniden
+    description: When CPU0 (CM33) "spniden" input is state 1, this bit indicates state 1.
+    bit_offset: 7
+    bit_size: 1
+  - name: st_cpu1_dbgen
+    description: When CPU1 (CM33) "deben" input is state 1, this bit indicates state 1.
+    bit_offset: 8
+    bit_size: 1
+  - name: st_cpu1_niden
+    description: When CPU1 (CM33) "niden" input is state 1, this bit indicates state 1.
+    bit_offset: 9
+    bit_size: 1
+  - name: st_dap_enable_cpu0
+    description: When DAP to AP0 for CPU0 (CM33) debug access is allowed, this bit indicates state 1.
+    bit_offset: 10
+    bit_size: 1
+  - name: st_dap_enable_cpu1
+    description: When DAP to AP1 for CPU1 (CM33) debug access is allowed, this bit indicates state 1.
+    bit_offset: 11
+    bit_size: 1
+  - name: st_dap_enable_dsp
+    description: When DAP to AP3 for DSP (CoolFlux) debug access is allowed, this bit indicates state 1.
+    bit_offset: 12
+    bit_size: 1
+  - name: st_allow_test_access
+    description: When JTAG TAP access is allowed, this bit indicates state 1.
+    bit_offset: 14
+    bit_size: 1
+  - name: st_xo32k_failed
+    description: When XO32K oscillation fail flag is state 1, this bit indicates state 1.
+    bit_offset: 15
+    bit_size: 1
+  - name: st_xo40m_failed
+    description: When XO40M oscillation fail flag is state 1, this bit indicates state 1.
+    bit_offset: 16
+    bit_size: 1
+  - name: st_ifr_load_failed
+    description: When IFR load fail flag is state 1, this bit indicates state 1.
+    bit_offset: 17
+    bit_size: 1
+  - name: st_glitch_detect_flag
+    description: GLITCH_DETECT_FLAG is state of 4-bit Glitch Ripple Counter output.
+    bit_offset: 18
+    bit_size: 4
+fieldset/ElsAsSt1:
+  description: ELS AS State1.
+  fields:
+  - name: st_qk_puf_score
+    description: These register bits indicate the state of "qk_puf_score[3:0]" outputs from QK PUF block.
+    bit_offset: 0
+    bit_size: 4
+  - name: st_qk_zeroized
+    description: This register bit indicates the state of "qk_zeroized" output from QK PUF block.
+    bit_offset: 4
+    bit_size: 1
+  - name: st_main_clk_is_ext
+    description: When MAIN_CLK is running from external clock source either XO32M, XO32K or GPIO CLKIN, this bit indicates state 1.
+    bit_offset: 5
+    bit_size: 1
+  - name: st_dcdc_vout
+    description: VOUT[1:0] setting on DCDC0 register in SPC block will reflect to this register. Default is 1.0V.
+    bit_offset: 6
+    bit_size: 2
+  - name: st_dcdc_ds
+    description: DCDC drive strength setting. Default is normal drive.
+    bit_offset: 8
+    bit_size: 2
+  - name: st_boot_mode
+    description: ISP pin status during boot. By default ISP pin is pulled up. If want to enter ISP mode during boot, ISP pin should be pull down when out of reset.
+    bit_offset: 10
+    bit_size: 2
+  - name: st_boot_retry_cnt
+    description: BOOT_RETRY_CNT[3:0] in the ELS_BOOT_RETRY_CNT register reflects this register.
+    bit_offset: 12
+    bit_size: 4
+  - name: st_ldo_core_vout
+    description: VOUT[1:0] setting on LDO Core register in SPC block will reflect to this register. Default is 1.0V.
+    bit_offset: 16
+    bit_size: 2
+  - name: st_ldo_core_ds
+    description: LDO_CORE drive strength setting. Default is normal drive.
+    bit_offset: 18
+    bit_size: 2
+fieldset/ElsAssetProt:
+  description: ELS Asset Protection Register.
+  fields:
+  - name: asset_protection
+    description: ELS asset protection. This field controls the asset protection port to the ELS module. Refer to the ELS chapter in the SRM for more details.
+    bit_offset: 0
+    bit_size: 2
+    enum: AssetProtection
+fieldset/ElsKdfMask:
+  description: Key Derivation Function Mask.
+  fields:
+  - name: kdf_mask
+    description: Key derivation function mask.
+    bit_offset: 0
+    bit_size: 32
+fieldset/ElsLockCtrl:
+  description: ELS Lock Control.
+  fields:
+  - name: lock_ctrl
+    description: ELS Lock Control.
+    bit_offset: 0
+    bit_size: 2
+fieldset/ElsLockCtrlDp:
+  description: ELS Lock Control DP.
+  fields:
+  - name: lock_ctrl_dp
+    description: Refer to ELS_LOCK_CTRL[1:0].
+    bit_offset: 0
+    bit_size: 2
+fieldset/ElsOtpLcState:
+  description: Life Cycle State Register.
+  fields:
+  - name: otp_lc_state
+    description: OTP life cycle state.
+    bit_offset: 0
+    bit_size: 8
+fieldset/ElsOtpLcStateDp:
+  description: Life Cycle State Register (Duplicate).
+  fields:
+  - name: otp_lc_state_dp
+    description: OTP life cycle state.
+    bit_offset: 0
+    bit_size: 8
+fieldset/ElsTemporalState:
+  description: ELS Temporal State.
+  fields:
+  - name: temporal_state
+    description: Temporal state.
+    bit_offset: 0
+    bit_size: 4
+fieldset/Emvsim0clkdiv:
+  description: EMVSIM0 Function Clock Division.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 3
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: Emvsim0clkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: Emvsim0clkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: Emvsim0clkdivUnstab
+fieldset/Emvsim0clksel:
+  description: EMVSIM0 Clock Source Select.
+  fields:
+  - name: sel
+    description: Selects the EMVSIM0 function clock source.
+    bit_offset: 0
+    bit_size: 3
+    enum: Emvsim0clkselSel
+fieldset/Emvsim1clkdiv:
+  description: EMVSIM1 Function Clock Division.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 3
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: Emvsim1clkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: Emvsim1clkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: Emvsim1clkdivUnstab
+fieldset/Emvsim1clksel:
+  description: EMVSIM1 Clock Source Select.
+  fields:
+  - name: sel
+    description: Selects the EMVSIM1 function clock source.
+    bit_offset: 0
+    bit_size: 3
+    enum: Emvsim1clkselSel
+fieldset/EnetPhyIntfSel:
+  description: Ethernet PHY Interface Select.
+  fields:
+  - name: phy_sel
+    description: Selects the PHY interface.
+    bit_offset: 2
+    bit_size: 1
+    enum: PhySel
+fieldset/EnetSbdFlowCtrl:
+  description: Sideband Flow Control.
+  fields:
+  - name: sel_ch0
+    description: Sideband Flow Control for channel0.
+    bit_offset: 0
+    bit_size: 1
+  - name: sel_ch1
+    description: Sideband Flow Control for channel1.
+    bit_offset: 1
+    bit_size: 1
+fieldset/Enetptprefclkdiv:
+  description: Ethernet PTP REF Function Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: EnetptprefclkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: EnetptprefclkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: EnetptprefclkdivUnstab
+fieldset/Enetptprefclksel:
+  description: Ethernet PTP REF Clock Selection.
+  fields:
+  - name: sel
+    description: Selects the Ethernet PTP REF clock.
+    bit_offset: 0
+    bit_size: 3
+    enum: EnetptprefclkselSel
+fieldset/Enetrmiiclkdiv:
+  description: Ethernet RMII Function Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: EnetrmiiclkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: EnetrmiiclkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: EnetrmiiclkdivUnstab
+fieldset/Enetrmiiclksel:
+  description: Ethernet RMII Clock Selection.
+  fields:
+  - name: sel
+    description: Selects the Ethernet RMII clock.
+    bit_offset: 0
+    bit_size: 3
+    enum: EnetrmiiclkselSel
+fieldset/EtbCounterCtrl:
+  description: ETB Counter Control Register.
+  fields:
+  - name: cnten
+    description: Enables the ETB counter.
+    bit_offset: 0
+    bit_size: 1
+  - name: rspt
+    description: Response Type.
+    bit_offset: 1
+    bit_size: 2
+    enum: Rspt
+  - name: rlrq
+    description: Reload request.
+    bit_offset: 3
+    bit_size: 1
+fieldset/EtbCounterReload:
+  description: ETB Counter Reload Register.
+  fields:
+  - name: reload
+    description: Byte count reload value.
+    bit_offset: 0
+    bit_size: 11
+fieldset/EtbCounterValue:
+  description: ETB Counter Value Register.
+  fields:
+  - name: counter_value
+    description: Byte count counter value.
+    bit_offset: 0
+    bit_size: 11
+fieldset/EtbStatus:
+  description: ETB Counter Status Register.
+  fields:
+  - name: irq
+    description: ETB Interrupt.
+    bit_offset: 1
+    bit_size: 1
+  - name: nmi
+    description: ETB NMI.
+    bit_offset: 2
+    bit_size: 1
+  - name: dbg_halt_req
+    description: Debug halt request.
+    bit_offset: 3
+    bit_size: 1
+fieldset/Ewm0clksel:
+  description: EWM0 Clock Selection.
+  fields:
+  - name: sel
+    description: Selects the EWM0 clock.
+    bit_offset: 0
+    bit_size: 1
+    enum: Ewm0clkselSel
+fieldset/Fcclksel:
+  description: LP_FLEXCOMM Clock Source Select for Fractional Rate Divider.
+  fields:
+  - name: sel
+    description: Selects the LP_FLEXCOMM clock source for Fractional Rate Divider.
+    bit_offset: 0
+    bit_size: 3
+    enum: FcclkselSel
+fieldset/FlexSpiclkdiv:
+  description: FlexSPI Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 3
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: FlexSpiclkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: FlexSpiclkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: FlexSpiclkdivUnstab
+fieldset/FlexSpiclksel:
+  description: FlexSPI Clock Selection.
+  fields:
+  - name: sel
+    description: Selects the FlexSPI clock.
+    bit_offset: 0
+    bit_size: 4
+    enum: FlexSpiclkselSel
+fieldset/Flexcan0clkdiv:
+  description: FLEXCAN0 Function Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: Flexcan0clkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: Flexcan0clkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: Flexcan0clkdivUnstab
+fieldset/Flexcan0clksel:
+  description: FLEXCAN0 Clock Selection.
+  fields:
+  - name: sel
+    description: Selects the FLEXCAN0 clock.
+    bit_offset: 0
+    bit_size: 3
+    enum: Flexcan0clkselSel
+fieldset/Flexcan1clkdiv:
+  description: FLEXCAN1 Function Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: Flexcan1clkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: Flexcan1clkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: Flexcan1clkdivUnstab
+fieldset/Flexcan1clksel:
+  description: FLEXCAN1 Clock Selection.
+  fields:
+  - name: sel
+    description: Selects the FLEXCAN1 clock.
+    bit_offset: 0
+    bit_size: 3
+    enum: Flexcan1clkselSel
+fieldset/Flexcommclkdiv:
+  description: LP_FLEXCOMM Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: FlexcommclkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: FlexcommclkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: FlexcommclkdivUnstab
+fieldset/Flexioclkdiv:
+  description: FLEXIO Function Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: FlexioclkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: FlexioclkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: FlexioclkdivUnstab
+fieldset/Flexioclksel:
+  description: FLEXIO Clock Selection.
+  fields:
+  - name: sel
+    description: Selects the FLEXIO clock.
+    bit_offset: 0
+    bit_size: 3
+    enum: FlexioclkselSel
+fieldset/Frohfdiv:
+  description: FRO_HF_DIV Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: FrohfdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: FrohfdivUnstab
+fieldset/GdetCtrl:
+  description: GDET Control Register.
+  fields:
+  - name: gdet_evtcnt_clr
+    description: Controls the GDET clean event counter.
+    bit_offset: 0
+    bit_size: 1
+  - name: gdet_err_clr
+    description: Clears GDET error status.
+    bit_offset: 1
+    bit_size: 1
+  - name: gdet_iso_sw
+    description: GDET isolation control.
+    bit_offset: 2
+    bit_size: 2
+    enum: GdetIsoSw
+  - name: event_cnt
+    description: Event count value.
+    bit_offset: 8
+    bit_size: 8
+  - name: pos_sync
+    description: Positive glitch detected.
+    bit_offset: 16
+    bit_size: 1
+  - name: neg_sync
+    description: Negative glitch detected.
+    bit_offset: 17
+    bit_size: 1
+  - name: event_clr_flag
+    description: Event counter cleared.
+    bit_offset: 18
+    bit_size: 1
+fieldset/GrayCodeLsb:
+  description: Gray to Binary Converter Gray code_gray[31:0].
+  fields:
+  - name: code_gray_31_0
+    description: Gray code [31:0].
+    bit_offset: 0
+    bit_size: 32
+fieldset/GrayCodeMsb:
+  description: Gray to Binary Converter Gray code_gray[41:32].
+  fields:
+  - name: code_gray_41_32
+    description: Gray code [41:32].
+    bit_offset: 0
+    bit_size: 10
+fieldset/I3c0fclkdiv:
+  description: I3C0 Functional Clock FCLK Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: I3c0fclkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: I3c0fclkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: I3c0fclkdivUnstab
+fieldset/I3c0fclksdiv:
+  description: I3C0 FCLK Slow Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: I3c0fclksdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: I3c0fclksdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: I3c0fclksdivUnstab
+fieldset/I3c0fclksel:
+  description: I3C0 Functional Clock Selection.
+  fields:
+  - name: sel
+    description: Selects the I3C0 clock.
+    bit_offset: 0
+    bit_size: 3
+    enum: I3c0fclkselSel
+fieldset/I3c0fclkssel:
+  description: I3C0 FCLK Slow Selection.
+  fields:
+  - name: sel
+    description: Selects the I3C FCLK Slow clock.
+    bit_offset: 0
+    bit_size: 3
+    enum: I3c0fclksselSel
+fieldset/I3c0fclkstcdiv:
+  description: I3C0 FCLK_STC Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: I3c0fclkstcdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: I3c0fclkstcdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: I3c0fclkstcdivUnstab
+fieldset/I3c0fclkstcsel:
+  description: I3C0 FCLK_STC Clock Selection.
+  fields:
+  - name: sel
+    description: Selects the I3C0 Time Control clock.
+    bit_offset: 0
+    bit_size: 3
+    enum: I3c0fclkstcselSel
+fieldset/I3c1fclkdiv:
+  description: I3C1 Functional Clock FCLK Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: I3c1fclkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: I3c1fclkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: I3c1fclkdivUnstab
+fieldset/I3c1fclksdiv:
+  description: I3C1 FCLK Slow clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: I3c1fclksdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: I3c1fclksdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: I3c1fclksdivUnstab
+fieldset/I3c1fclksel:
+  description: I3C1 Functional Clock Selection.
+  fields:
+  - name: sel
+    description: I3C1 clock select.
+    bit_offset: 0
+    bit_size: 3
+    enum: I3c1fclkselSel
+fieldset/I3c1fclkssel:
+  description: I3C1 FCLK Slow Selection.
+  fields:
+  - name: sel
+    description: I3C1 FCLK Slow Clock Select.
+    bit_offset: 0
+    bit_size: 3
+    enum: I3c1fclksselSel
+fieldset/I3c1fclkstcdiv:
+  description: I3C1 FCLK_STC Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: I3c1fclkstcdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: I3c1fclkstcdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: I3c1fclkstcdivUnstab
+fieldset/I3c1fclkstcsel:
+  description: Selects the I3C1 Time Control clock.
+  fields:
+  - name: sel
+    description: I3C1 FCLK_STC clock select.
+    bit_offset: 0
+    bit_size: 3
+    enum: I3c1fclkstcselSel
+fieldset/JtagId:
+  description: JTAG Chip ID.
+  fields:
+  - name: jtag_id
+    description: Indicates the device ID.
+    bit_offset: 0
+    bit_size: 32
+fieldset/KeyRetainCtrl:
+  description: Key Retain Control.
+  fields:
+  - name: key_retain_valid
+    description: Indicates if the PUF key has been retained in the VBAT domain and has not been reset or otherwise invalidated by software.
+    bit_offset: 0
+    bit_size: 1
+  - name: key_retain_done
+    description: Indicates the successful completion of the key_save or key_load routine. Once set, to clear the key_retain_done flag, both key_save and key_load should be cleared by software.
+    bit_offset: 1
+    bit_size: 1
+  - name: key_save
+    description: Do not set both KEY_SAVE and KEY_LOAD at the same time.
+    bit_offset: 16
+    bit_size: 1
+  - name: key_load
+    description: Do not set both KEY_SAVE and KEY_LOAD at the same time.
+    bit_offset: 17
+    bit_size: 1
+fieldset/LpcacCtrl:
+  description: LPCAC Control.
+  fields:
+  - name: dis_lpcac
+    description: Disables/enables the cache function.
+    bit_offset: 0
+    bit_size: 1
+    enum: DisLpcac
+  - name: clr_lpcac
+    description: Clears the cache function.
+    bit_offset: 1
+    bit_size: 1
+    enum: ClrLpcac
+  - name: frc_no_alloc
+    description: Forces no allocation.
+    bit_offset: 2
+    bit_size: 1
+    enum: FrcNoAlloc
+  - name: parity_miss_en
+    description: Enables parity miss.
+    bit_offset: 3
+    bit_size: 1
+  - name: dis_lpcac_wtbf
+    description: Disable LPCAC Write Through Buffer.
+    bit_offset: 4
+    bit_size: 1
+  - name: lim_lpcac_wtbf
+    description: Limit LPCAC Write Through Buffer.
+    bit_offset: 5
+    bit_size: 1
+  - name: parity_fault_en
+    description: Enable parity error report.
+    bit_offset: 6
+    bit_size: 1
+  - name: lpcac_xom
+    description: LPCAC XOM(eXecute-Only-Memory) attribute control.
+    bit_offset: 7
+    bit_size: 1
+fieldset/Micfilfclkdiv:
+  description: MICFIL Clock Division.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 3
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: MicfilfclkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: MicfilfclkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: MicfilfclkdivUnstab
+fieldset/Micfilfclksel:
+  description: MICFIL Clock Selection.
+  fields:
+  - name: sel
+    description: Selects the MICFIL clock.
+    bit_offset: 0
+    bit_size: 4
+    enum: MicfilfclkselSel
+fieldset/Nmisrc:
+  description: NMI Source Select.
+  fields:
+  - name: irqcpu0
+    description: The IRQ number of the interrupt that acts as the Non-Maskable Interrupt (NMI) for CPU0, if enabled by NMIENCPU0.
+    bit_offset: 0
+    bit_size: 8
+  - name: irqcpu1
+    description: The IRQ number of the interrupt that acts as the Non-Maskable Interrupt (NMI) for CPU1, if enabled by NMIENCPU1.
+    bit_offset: 8
+    bit_size: 8
+  - name: nmiencpu1
+    description: Enables the Non-Maskable Interrupt (NMI) source selected by IRQCPU1.
+    bit_offset: 30
+    bit_size: 1
+  - name: nmiencpu0
+    description: Enables the Non-Maskable Interrupt (NMI) source selected by IRQCPU0.
+    bit_offset: 31
+    bit_size: 1
+fieldset/NvmCtrl:
+  description: NVM Control.
+  fields:
+  - name: dis_flash_spec
+    description: Flash speculation control.
+    bit_offset: 0
+    bit_size: 1
+    enum: DisFlashSpec
+  - name: dis_data_spec
+    description: Flash data speculation control.
+    bit_offset: 1
+    bit_size: 1
+    enum: DisDataSpec
+  - name: dis_flash_cache
+    description: Flash cache control.
+    bit_offset: 2
+    bit_size: 1
+    enum: DisFlashCache
+  - name: dis_flash_inst
+    description: Flash instruction cache control.
+    bit_offset: 3
+    bit_size: 1
+    enum: DisFlashInst
+  - name: dis_flash_data
+    description: Flash data cache control.
+    bit_offset: 4
+    bit_size: 1
+    enum: DisFlashData
+  - name: clr_flash_cache
+    description: Clear flash cache control.
+    bit_offset: 5
+    bit_size: 1
+    enum: ClrFlashCache
+  - name: flash_stall_en
+    description: FLASH stall on busy control.
+    bit_offset: 10
+    bit_size: 1
+    enum: FlashStallEn
+  - name: dis_mbecc_err_inst
+    description: Bus error on instruction multi-bit ECC error control.
+    bit_offset: 16
+    bit_size: 1
+    enum: DisMbeccErrInst
+  - name: dis_mbecc_err_data
+    description: Bus error on data multi-bit ECC error control.
+    bit_offset: 17
+    bit_size: 1
+    enum: DisMbeccErrData
+fieldset/Ostimerclksel:
+  description: OSTIMER Clock Selection.
+  fields:
+  - name: sel
+    description: Selects the OS Event Timer clock.
+    bit_offset: 0
+    bit_size: 2
+    enum: OstimerclkselSel
+fieldset/Pll1clk0div:
+  description: PLL1 Clock 0 Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: Pll1clk0divReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: Pll1clk0divHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: Pll1clk0divUnstab
+fieldset/Pll1clk1div:
+  description: PLL1 Clock 1 Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: Pll1clk1divReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: Pll1clk1divHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: Pll1clk1divUnstab
+fieldset/Pllclkdiv:
+  description: PLL Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: PllclkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: PllclkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: PllclkdivUnstab
+fieldset/Pllclkdivsel:
+  description: PLL Clock Divider Clock Selection.
+  fields:
+  - name: sel
+    description: Selects the PLL Clock Divider source clock.
+    bit_offset: 0
+    bit_size: 3
+    enum: PllclkdivselSel
+fieldset/Presetctrl0:
+  description: Peripheral Reset Control 0.
+  fields:
+  - name: fmu_rst
+    description: Flash management unit reset control.
+    bit_offset: 9
+    bit_size: 1
+    enum: FmuRst
+  - name: flexspi_rst
+    description: FlexSPI reset control.
+    bit_offset: 11
+    bit_size: 1
+    enum: FlexspiRst
+  - name: mux_rst
+    description: INPUTMUX reset control.
+    bit_offset: 12
+    bit_size: 1
+    enum: MuxRst
+  - name: port_rst
+    description: PORT controller reset control.
+    bit_offset: 13
+    bit_size: 1
+    enum: PortRst
+    array:
+      len: 5
+      stride: 1
+  - name: gpio_rst
+    description: GPIO reset control.
+    bit_offset: 19
+    bit_size: 1
+    enum: GpioRst
+    array:
+      len: 5
+      stride: 1
+  - name: pint_rst
+    description: PINT reset control.
+    bit_offset: 25
+    bit_size: 1
+    enum: PintRst
+  - name: dma0_rst
+    description: DMA0 reset control.
+    bit_offset: 26
+    bit_size: 1
+    enum: Dma0Rst
+  - name: crc_rst
+    description: CRC reset control.
+    bit_offset: 27
+    bit_size: 1
+    enum: CrcRst
+  - name: mailbox_rst
+    description: Inter-CPU communication Mailbox reset control.
+    bit_offset: 31
+    bit_size: 1
+    enum: MailboxRst
+fieldset/Presetctrl1:
+  description: Peripheral Reset Control 1.
+  fields:
+  - name: mrt_rst
+    description: MRT reset control.
+    bit_offset: 0
+    bit_size: 1
+    enum: MrtRst
+  - name: ostimer_rst
+    description: OS Event Timer reset control.
+    bit_offset: 1
+    bit_size: 1
+    enum: OstimerRst
+  - name: sct_rst
+    description: SCT reset control.
+    bit_offset: 2
+    bit_size: 1
+    enum: SctRst
+  - name: adc0_rst
+    description: ADC0 reset control.
+    bit_offset: 3
+    bit_size: 1
+    enum: Adc0Rst
+  - name: adc1_rst
+    description: ADC1 reset control.
+    bit_offset: 4
+    bit_size: 1
+    enum: Adc1Rst
+  - name: dac0_rst
+    description: DAC0 reset control.
+    bit_offset: 5
+    bit_size: 1
+    enum: Dac0Rst
+  - name: rtc_rst
+    description: RTC reset control.
+    bit_offset: 6
+    bit_size: 1
+    enum: RtcRst
+  - name: evsim0_rst
+    description: EVSIM0 reset control.
+    bit_offset: 8
+    bit_size: 1
+    enum: Evsim0Rst
+  - name: evsim1_rst
+    description: EVSIM1 reset control.
+    bit_offset: 9
+    bit_size: 1
+    enum: Evsim1Rst
+  - name: utick_rst
+    description: UTICK reset control.
+    bit_offset: 10
+    bit_size: 1
+    enum: UtickRst
+  - name: fc_rst
+    description: LP_FLEXCOMM reset control.
+    bit_offset: 11
+    bit_size: 1
+    enum: FcRst
+    array:
+      len: 10
+      stride: 1
+  - name: micfil_rst
+    description: MICFIL reset control.
+    bit_offset: 21
+    bit_size: 1
+    enum: MicfilRst
+  - name: timer2_rst
+    description: CTIMER2 reset control.
+    bit_offset: 22
+    bit_size: 1
+    enum: Timer2Rst
+  - name: usb0_fs_dcd_rst
+    description: USB FS DCD reset control.
+    bit_offset: 24
+    bit_size: 1
+    enum: Usb0FsDcdRst
+  - name: usb0_fs_rst
+    description: USB FS reset control.
+    bit_offset: 25
+    bit_size: 1
+    enum: Usb0FsRst
+  - name: timer0_rst
+    description: CTIMER0 reset control.
+    bit_offset: 26
+    bit_size: 1
+    enum: Timer0Rst
+  - name: timer1_rst
+    description: CTIMER1 reset control.
+    bit_offset: 27
+    bit_size: 1
+    enum: Timer1Rst
+  - name: smart_dma_rst
+    description: SmartDMA reset control.
+    bit_offset: 31
+    bit_size: 1
+    enum: SmartDmaRst
+fieldset/Presetctrl2:
+  description: Peripheral Reset Control 2.
+  fields:
+  - name: dma1_rst
+    description: DMA1 reset control.
+    bit_offset: 1
+    bit_size: 1
+    enum: Dma1Rst
+  - name: enet_rst
+    description: Ethernet reset control.
+    bit_offset: 2
+    bit_size: 1
+    enum: EnetRst
+  - name: usdhc_rst
+    description: uSDHC reset control.
+    bit_offset: 3
+    bit_size: 1
+    enum: UsdhcRst
+  - name: flexio_rst
+    description: FLEXIO reset control.
+    bit_offset: 4
+    bit_size: 1
+    enum: FlexioRst
+  - name: sai0_rst
+    description: SAI0 reset control.
+    bit_offset: 5
+    bit_size: 1
+    enum: Sai0Rst
+  - name: sai1_rst
+    description: SAI1 reset control.
+    bit_offset: 6
+    bit_size: 1
+    enum: Sai1Rst
+  - name: tro_rst
+    description: TRO reset control.
+    bit_offset: 7
+    bit_size: 1
+    enum: TroRst
+  - name: freqme_rst
+    description: FREQME reset control.
+    bit_offset: 8
+    bit_size: 1
+    enum: FreqmeRst
+  - name: trng_rst
+    description: TRNG reset control.
+    bit_offset: 13
+    bit_size: 1
+    enum: TrngRst
+  - name: flexcan0_rst
+    description: CAN0 reset control.
+    bit_offset: 14
+    bit_size: 1
+    enum: Flexcan0Rst
+  - name: flexcan1_rst
+    description: CAN1 reset control.
+    bit_offset: 15
+    bit_size: 1
+    enum: Flexcan1Rst
+  - name: usb_hs_rst
+    description: USB HS reset control.
+    bit_offset: 16
+    bit_size: 1
+    enum: UsbHsRst
+  - name: usb_hs_phy_rst
+    description: USB HS PHY reset control.
+    bit_offset: 17
+    bit_size: 1
+    enum: UsbHsPhyRst
+  - name: pq_rst
+    description: PowerQuad reset control.
+    bit_offset: 19
+    bit_size: 1
+    enum: PqRst
+  - name: plu_rst
+    description: PLU reset control.
+    bit_offset: 20
+    bit_size: 1
+    enum: PluRst
+  - name: timer3_rst
+    description: CTIMER3 reset control.
+    bit_offset: 21
+    bit_size: 1
+    enum: Timer3Rst
+  - name: timer4_rst
+    description: CTIMER4 reset control.
+    bit_offset: 22
+    bit_size: 1
+    enum: Timer4Rst
+  - name: puf_rst
+    description: PUF reset control.
+    bit_offset: 23
+    bit_size: 1
+    enum: PufRst
+  - name: pkc_rst
+    description: PKC reset control.
+    bit_offset: 24
+    bit_size: 1
+    enum: PkcRst
+  - name: sm3_rst
+    description: SM3 reset control.
+    bit_offset: 30
+    bit_size: 1
+    enum: Sm3Rst
+fieldset/Presetctrl3:
+  description: Peripheral Reset Control 3.
+  fields:
+  - name: i3c0_rst
+    description: I3C0 reset control.
+    bit_offset: 0
+    bit_size: 1
+    enum: I3c0Rst
+  - name: i3c1_rst
+    description: I3C1 reset control.
+    bit_offset: 1
+    bit_size: 1
+    enum: I3c1Rst
+  - name: sinc_rst
+    description: SINC reset control.
+    bit_offset: 2
+    bit_size: 1
+    enum: SincRst
+  - name: coolflux_rst
+    description: CoolFlux reset control.
+    bit_offset: 3
+    bit_size: 1
+    enum: CoolfluxRst
+  - name: qdc0_rst
+    description: QDC0 reset control.
+    bit_offset: 4
+    bit_size: 1
+    enum: Qdc0Rst
+  - name: qdc1_rst
+    description: QDC1 reset control.
+    bit_offset: 5
+    bit_size: 1
+    enum: Qdc1Rst
+  - name: pwm0_rst
+    description: PWM0 reset control.
+    bit_offset: 6
+    bit_size: 1
+    enum: Pwm0Rst
+  - name: pwm1_rst
+    description: PWM1 reset control.
+    bit_offset: 7
+    bit_size: 1
+    enum: Pwm1Rst
+  - name: aoi0_rst
+    description: AOI0 reset control.
+    bit_offset: 8
+    bit_size: 1
+    enum: Aoi0Rst
+  - name: dac1_rst
+    description: DAC1 reset control.
+    bit_offset: 11
+    bit_size: 1
+    enum: Dac1Rst
+  - name: dac2_rst
+    description: DAC2 reset control.
+    bit_offset: 12
+    bit_size: 1
+    enum: Dac2Rst
+  - name: opamp_rst
+    description: OPAMP reset control.
+    bit_offset: 13
+    bit_size: 1
+    enum: OpampRst
+    array:
+      len: 3
+      stride: 1
+  - name: cmp2_rst
+    description: CMP2 reset control.
+    bit_offset: 18
+    bit_size: 1
+    enum: Cmp2Rst
+  - name: vref_rst
+    description: VREF reset control.
+    bit_offset: 19
+    bit_size: 1
+    enum: VrefRst
+  - name: coolflux_apb_rst
+    description: CoolFlux APB reset control.
+    bit_offset: 20
+    bit_size: 1
+    enum: CoolfluxApbRst
+  - name: npu_rst
+    description: NPU reset control.
+    bit_offset: 21
+    bit_size: 1
+    enum: NpuRst
+  - name: tsi_rst
+    description: TSI reset control.
+    bit_offset: 22
+    bit_size: 1
+    enum: TsiRst
+  - name: ewm_rst
+    description: EWM reset control.
+    bit_offset: 23
+    bit_size: 1
+    enum: EwmRst
+  - name: eim_rst
+    description: EIM reset control.
+    bit_offset: 24
+    bit_size: 1
+    enum: EimRst
+  - name: sema42_rst
+    description: Semaphore reset control.
+    bit_offset: 27
+    bit_size: 1
+    enum: Sema42Rst
+fieldset/Presetctrlclr:
+  description: Peripheral Reset Control Clear.
+  fields:
+  - name: data
+    description: Data array value, refer to corresponding position in PRESETCTRLn.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Presetctrlset:
+  description: Peripheral Reset Control Set.
+  fields:
+  - name: data
+    description: Data array value, refer to corresponding position in PRESETCTRLn.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Pwm0subctl:
+  description: PWM0 Submodule Control.
+  fields:
+  - name: clk_en
+    description: Enables PWM0 SUB Clock.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 4
+      stride: 1
+  - name: dmavalm
+    description: PWM0 submodule DMA compare value done mask.
+    bit_offset: 12
+    bit_size: 1
+    array:
+      len: 4
+      stride: 1
+fieldset/Pwm1subctl:
+  description: PWM1 Submodule Control.
+  fields:
+  - name: clk_en
+    description: Enables PWM1 SUB Clock.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 4
+      stride: 1
+  - name: dmavalm
+    description: PWM1 submodule DMA compare value done mask.
+    bit_offset: 12
+    bit_size: 1
+    array:
+      len: 4
+      stride: 1
+fieldset/RamInterleave:
+  description: Control PKC RAM Interleave Access.
+  fields:
+  - name: interleave
+    description: Controls PKC RAM access for PKC RAM 0 and PKC RAM 1.
+    bit_offset: 0
+    bit_size: 1
+    enum: Interleave
+fieldset/RefClkCtrl:
+  description: FRO 48MHz Reference Clock Control.
+  fields:
+  - name: gdet_refclk_en
+    description: GDET reference clock enable bit.
+    bit_offset: 0
+    bit_size: 1
+  - name: trng_refclk_en
+    description: ELS TRNG reference clock enable bit.
+    bit_offset: 1
+    bit_size: 1
+fieldset/RefClkCtrlClr:
+  description: FRO 48MHz Reference Clock Control Clear.
+  fields:
+  - name: gdet_refclk_en_clr
+    description: GDET reference clock enable clear bit.
+    bit_offset: 0
+    bit_size: 1
+  - name: trng_refclk_en_clr
+    description: ELS TRNG reference clock enable clear bit.
+    bit_offset: 1
+    bit_size: 1
+fieldset/RefClkCtrlSet:
+  description: FRO 48MHz Reference Clock Control Set.
+  fields:
+  - name: gdet_refclk_en_set
+    description: GDET reference clock enable set bit.
+    bit_offset: 0
+    bit_size: 1
+  - name: trng_refclk_en_set
+    description: ELS TRNG reference clock enable set bit.
+    bit_offset: 1
+    bit_size: 1
+fieldset/Romcr:
+  description: ROM Wait State.
+  fields:
+  - name: rom_wait
+    description: ROM waiting Arm core and other masters for one cycle.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Sai0clkdiv:
+  description: SAI0 Function Clock Division.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 3
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: Sai0clkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: Sai0clkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: Sai0clkdivUnstab
+fieldset/Sai0clksel:
+  description: SAI0 Function Clock Source Select.
+  fields:
+  - name: sel
+    description: Selects the clock source.
+    bit_offset: 0
+    bit_size: 3
+    enum: Sai0clkselSel
+fieldset/Sai1clkdiv:
+  description: SAI1 Function Clock Division.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 3
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: Sai1clkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: Sai1clkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: Sai1clkdivUnstab
+fieldset/Sai1clksel:
+  description: SAI1 Function Clock Source Select.
+  fields:
+  - name: sel
+    description: Selects the clock source.
+    bit_offset: 0
+    bit_size: 3
+    enum: Sai1clkselSel
+fieldset/Sctclkdiv:
+  description: SCT/PWM Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: SctclkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: SctclkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: SctclkdivUnstab
+fieldset/Sctclksel:
+  description: SCTimer/PWM Clock Source Select.
+  fields:
+  - name: sel
+    description: Selects the SCTimer/PWM clock source.
+    bit_offset: 0
+    bit_size: 4
+    enum: SctclkselSel
+fieldset/Sincfiltclksel:
+  description: SINC FILTER Function Clock Source Select.
+  fields:
+  - name: sel
+    description: Selects the SINC FILTER function clock source.
+    bit_offset: 0
+    bit_size: 3
+    enum: SincfiltclkselSel
+fieldset/Slowclkdiv:
+  description: SLOW_CLK Clock Divider.
+  fields:
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: SlowclkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: SlowclkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: SlowclkdivUnstab
+fieldset/SmartDmaint:
+  description: SmartDMA Interrupt Hijack.
+  fields:
+  - name: int0
+    description: SmartDMA hijack NVIC IRQ1.
+    bit_offset: 0
+    bit_size: 1
+  - name: int1
+    description: SmartDMA hijack NVIC IRQ17.
+    bit_offset: 1
+    bit_size: 1
+  - name: int2
+    description: SmartDMA hijack NVIC IRQ18.
+    bit_offset: 2
+    bit_size: 1
+  - name: int3
+    description: SmartDMA hijack NVIC IRQ29.
+    bit_offset: 3
+    bit_size: 1
+  - name: int4
+    description: SmartDMA hijack NVIC IRQ30.
+    bit_offset: 4
+    bit_size: 1
+  - name: int5
+    description: SmartDMA hijack NVIC IRQ31.
+    bit_offset: 5
+    bit_size: 1
+  - name: int6
+    description: SmartDMA hijack NVIC IRQ32.
+    bit_offset: 6
+    bit_size: 1
+  - name: int7
+    description: SmartDMA hijack NVIC IRQ33.
+    bit_offset: 7
+    bit_size: 1
+  - name: int8
+    description: SmartDMA hijack NVIC IRQ34.
+    bit_offset: 8
+    bit_size: 1
+  - name: int9
+    description: SmartDMA hijack NVIC IRQ35.
+    bit_offset: 9
+    bit_size: 1
+  - name: int10
+    description: SmartDMA hijack NVIC IRQ36.
+    bit_offset: 10
+    bit_size: 1
+  - name: int11
+    description: SmartDMA hijack NVIC IRQ37.
+    bit_offset: 11
+    bit_size: 1
+  - name: int12
+    description: SmartDMA hijack NVIC IRQ38.
+    bit_offset: 12
+    bit_size: 1
+  - name: int13
+    description: SmartDMA hijack NVIC IRQ39.
+    bit_offset: 13
+    bit_size: 1
+  - name: int14
+    description: SmartDMA hijack NVIC IRQ40.
+    bit_offset: 14
+    bit_size: 1
+  - name: int15
+    description: SmartDMA hijack NVIC IRQ41.
+    bit_offset: 15
+    bit_size: 1
+  - name: int16
+    description: SmartDMA hijack NVIC IRQ42.
+    bit_offset: 16
+    bit_size: 1
+  - name: int17
+    description: SmartDMA hijack NVIC IRQ45.
+    bit_offset: 17
+    bit_size: 1
+  - name: int18
+    description: SmartDMA hijack NVIC IRQ47.
+    bit_offset: 18
+    bit_size: 1
+  - name: int19
+    description: SmartDMA hijack NVIC IRQ50.
+    bit_offset: 19
+    bit_size: 1
+  - name: int20
+    description: SmartDMA hijack NVIC IRQ51.
+    bit_offset: 20
+    bit_size: 1
+  - name: int21
+    description: SmartDMA hijack NVIC IRQ66.
+    bit_offset: 21
+    bit_size: 1
+  - name: int22
+    description: SmartDMA hijack NVIC IRQ67.
+    bit_offset: 22
+    bit_size: 1
+  - name: int23
+    description: SmartDMA hijack NVIC IRQ77.
+    bit_offset: 23
+    bit_size: 1
+fieldset/SwdAccessCpu0:
+  description: CPU0 Software Debug Access.
+  fields:
+  - name: sec_code
+    description: 'CPU0 SWD-AP: 0x12345678.'
+    bit_offset: 0
+    bit_size: 32
+    enum: SwdAccessCpu0SecCode
+fieldset/SwdAccessCpu1:
+  description: CPU1 Software Debug Access.
+  fields:
+  - name: sec_code
+    description: 'Security code to allow CPU1 DAP: 0x12345678.'
+    bit_offset: 0
+    bit_size: 32
+    enum: SwdAccessCpu1SecCode
+fieldset/SwdAccessDsp:
+  description: DSP Software Debug Access.
+  fields:
+  - name: sec_code
+    description: 'DSP SWD-AP: 0x12345678.'
+    bit_offset: 0
+    bit_size: 32
+    enum: SwdAccessDspSecCode
+fieldset/Systickclkdiv0:
+  description: CPU0 System Tick Timer Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: Systickclkdiv0Reset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: Systickclkdiv0Halt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: Systickclkdiv0Unstab
+fieldset/Systickclkdiv1:
+  description: CPU1 System Tick Timer Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: Systickclkdiv1Reset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: Systickclkdiv1Halt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: Systickclkdiv1Unstab
+fieldset/Systickclksel0:
+  description: CPU0 System Tick Timer Source Select.
+  fields:
+  - name: sel
+    description: Selects the System Tick Timer for CPU0 source.
+    bit_offset: 0
+    bit_size: 3
+    enum: Systickclksel0Sel
+fieldset/Systickclksel1:
+  description: CPU1 System Tick Timer Source Select.
+  fields:
+  - name: sel
+    description: Selects the System Tick Timer for CPU1 source.
+    bit_offset: 0
+    bit_size: 3
+    enum: Systickclksel1Sel
+fieldset/Traceclkdiv:
+  description: TRACE Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: TraceclkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: TraceclkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: TraceclkdivUnstab
+fieldset/Traceclksel:
+  description: Trace Clock Source Select.
+  fields:
+  - name: sel
+    description: Selects the trace clock source.
+    bit_offset: 0
+    bit_size: 3
+    enum: TraceclkselSel
+fieldset/Tsiclkdiv:
+  description: TSI Function Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value:.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: TsiclkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: TsiclkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: TsiclkdivUnstab
+fieldset/Tsiclksel:
+  description: TSI Function Clock Source Select.
+  fields:
+  - name: sel
+    description: Selects the TSI function clock source.
+    bit_offset: 0
+    bit_size: 3
+    enum: TsiclkselSel
+fieldset/USdhcclkdiv:
+  description: uSDHC Function Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: USdhcclkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: USdhcclkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: USdhcclkdivUnstab
+fieldset/USdhcclksel:
+  description: uSDHC Clock Selection.
+  fields:
+  - name: sel
+    description: Selects the uSDHC clock.
+    bit_offset: 0
+    bit_size: 3
+    enum: USdhcclkselSel
+fieldset/Usb0clkdiv:
+  description: USB-FS Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 8
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: Usb0clkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: Usb0clkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: Usb0clkdivUnstab
+fieldset/Usb0clksel:
+  description: USB-FS Clock Source Select.
+  fields:
+  - name: sel
+    description: Selects the USB-FS clock source.
+    bit_offset: 0
+    bit_size: 3
+    enum: Usb0clkselSel
+fieldset/Utickclkdiv:
+  description: UTICK Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 6
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: UtickclkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: UtickclkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: UtickclkdivUnstab
+fieldset/Utickclksel:
+  description: UTICK Function Clock Source Select.
+  fields:
+  - name: sel
+    description: Selects the clock source.
+    bit_offset: 0
+    bit_size: 2
+    enum: UtickclkselSel
+fieldset/Wdt0clkdiv:
+  description: WDT0 Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 6
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: Wdt0clkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: Wdt0clkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: Wdt0clkdivUnstab
+fieldset/Wdt1clkdiv:
+  description: WDT1 Function Clock Divider.
+  fields:
+  - name: div
+    description: Clock divider value.
+    bit_offset: 0
+    bit_size: 6
+  - name: reset
+    description: Resets the divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: Wdt1clkdivReset
+  - name: halt
+    description: Halts the divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: Wdt1clkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: Wdt1clkdivUnstab
+fieldset/Wdt1clksel:
+  description: WDT1 Clock Selection.
+  fields:
+  - name: sel
+    description: Selects the WDT1 clock.
+    bit_offset: 0
+    bit_size: 2
+    enum: Wdt1clkselSel
+enum/Adc0Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Adc0clkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/Adc0clkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/Adc0clkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/Adc0clkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0x0
+    description: No clock.
+    value: 0
+  - name: Enum0x1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum0x2
+    description: FRO_HF clock.
+    value: 2
+  - name: Enum0x3
+    description: FRO 12 MHz clock.
+    value: 3
+  - name: Enum0x4
+    description: Clk_in.
+    value: 4
+  - name: Enum0x5
+    description: PLL1_clk0 clock.
+    value: 5
+  - name: Enum0x6
+    description: USB PLL clock.
+    value: 6
+  - name: Enum0x7
+    description: No clock.
+    value: 7
+enum/Adc1Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Adc1clkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/Adc1clkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/Adc1clkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/Adc1clkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0x0
+    description: No clock.
+    value: 0
+  - name: Enum0x1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum0x2
+    description: FRO_HF clock.
+    value: 2
+  - name: Enum0x3
+    description: FRO 12 MHz clock.
+    value: 3
+  - name: Enum0x4
+    description: Clk_in clock.
+    value: 4
+  - name: Enum0x5
+    description: PLL1_clk0 clock.
+    value: 5
+  - name: Enum0x6
+    description: USB PLL clock.
+    value: 6
+  - name: Enum0x7
+    description: No clock.
+    value: 7
+enum/AhbclkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/AhbmatprioDma0:
+  bit_size: 2
+  variants:
+  - name: Level0
+    description: level 0.
+    value: 0
+  - name: Level1
+    description: level 1.
+    value: 1
+  - name: Level2
+    description: level 2.
+    value: 2
+  - name: Level3
+    description: level 3.
+    value: 3
+enum/AhbmatprioDma1:
+  bit_size: 2
+  variants:
+  - name: Level0
+    description: level 0.
+    value: 0
+  - name: Level1
+    description: level 1.
+    value: 1
+  - name: Level2
+    description: level 2.
+    value: 2
+  - name: Level3
+    description: level 3.
+    value: 3
+enum/Aoi0Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/AssetProtection:
+  bit_size: 2
+  variants:
+  - name: Value0
+    description: ELS asset is protected.
+    value: 0
+  - name: Value1
+    description: ELS asset is not protected.
+    value: 1
+  - name: Value2
+    description: ELS asset is protected.
+    value: 2
+  - name: Value3
+    description: ELS asset is protected.
+    value: 3
+enum/BootImage:
+  bit_size: 4
+  variants:
+  - name: Enum0
+    description: Internal flash image 0.
+    value: 0
+  - name: Enum1
+    description: Internal flash image 1.
+    value: 1
+  - name: Enum2
+    description: FlexSPI flash image 0.
+    value: 2
+  - name: Enum3
+    description: FlexSPI flash image 1.
+    value: 3
+  - name: Enum4
+    description: Recovery SPI flash image.
+    value: 4
+  - name: Enum5
+    description: Serial boot image (write-memory and execute ISP command used).
+    value: 5
+  - name: Enum6
+    description: Receive SB3 containing SB_JUMP command is used.
+    value: 6
+  - name: Enum7
+    description: Customer SBL/recovery image (Bank1 IFR0).
+    value: 7
+  - name: Enum8
+    description: NXP MAD recovery image (Bank1 IFR0).
+    value: 8
+  - name: Enum9
+    description: NXP ROM extension (NMPA - Bank0 IFR0).
+    value: 9
+enum/ClkoutdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/ClkoutdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/ClkoutdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/ClkoutselSel:
+  bit_size: 4
+  variants:
+  - name: Enum0x0
+    description: Main clock (main_clk).
+    value: 0
+  - name: Enum0x1
+    description: PLL0 clock (pll0_clk).
+    value: 1
+  - name: Enum0x2
+    description: CLKIN clock (clk_in).
+    value: 2
+  - name: Enum0x3
+    description: FRO_HF clock (fro_hf).
+    value: 3
+  - name: Enum0x4
+    description: FRO 12 MHz clock (fro_12m).
+    value: 4
+  - name: Enum0x5
+    description: PLL1_clk0 clock (pll1_clk).
+    value: 5
+  - name: Enum0x6
+    description: LP Oscillator clock (lp_osc).
+    value: 6
+  - name: Enum0x7
+    description: USB PLL clock (usb_pll_clk).
+    value: 7
+  - name: Enum0x8
+    description: No clock.
+    value: 8
+  - name: Enum0x9
+    description: No clock.
+    value: 9
+  - name: Enum0xA
+    description: No clock.
+    value: 10
+  - name: Enum0xB
+    description: No clock.
+    value: 11
+  - name: Enum0xC
+    description: No clock.
+    value: 12
+  - name: Enum0xD
+    description: No clock.
+    value: 13
+  - name: Enum0xE
+    description: No clock.
+    value: 14
+  - name: Enum0xF
+    description: No clock.
+    value: 15
+enum/ClrFlashCache:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: No clear flash cache.
+    value: 0
+  - name: Disable
+    description: Clears flash cache.
+    value: 1
+enum/ClrLpcac:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Unclears the cache.
+    value: 0
+  - name: Disable
+    description: Clears the cache.
+    value: 1
+enum/Cmp0rrclkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0
+    description: No clock.
+    value: 0
+  - name: Enum1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum2
+    description: FRO_HF clock.
+    value: 2
+  - name: Enum3
+    description: FRO_12M clock.
+    value: 3
+  - name: Enum4
+    description: CLKIN clock.
+    value: 4
+  - name: Enum5
+    description: PLL1_clk0 clock.
+    value: 5
+  - name: Enum6
+    description: USB PLL clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+enum/Cmp1rrclkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0
+    description: No clock.
+    value: 0
+  - name: Enum1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum2
+    description: FRO_HF clock.
+    value: 2
+  - name: Enum3
+    description: FRO_12M clock.
+    value: 3
+  - name: Enum4
+    description: CLKIN clock.
+    value: 4
+  - name: Enum5
+    description: PLL1_clk0 clock.
+    value: 5
+  - name: Enum6
+    description: USB PLL clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+enum/Cmp2Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/CmpfclkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/CmpfclkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/CmpfclkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/CmpfclkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0
+    description: No clock.
+    value: 0
+  - name: Enum1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum2
+    description: FRO_HF clock.
+    value: 2
+  - name: Enum3
+    description: FRO_12M clock.
+    value: 3
+  - name: Enum4
+    description: CLKIN clock.
+    value: 4
+  - name: Enum5
+    description: PLL1_clk0 clock.
+    value: 5
+  - name: Enum6
+    description: USB PLL clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+enum/CmprrclkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/CmprrclkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/CmprrclkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/Cmp2rrclkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0
+    description: No clock.
+    value: 0
+  - name: Enum1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum2
+    description: FRO_HF clock.
+    value: 2
+  - name: Enum3
+    description: FRO_12M clock.
+    value: 3
+  - name: Enum4
+    description: CLKIN clock.
+    value: 4
+  - name: Enum5
+    description: PLL1_clk0 clock0.
+    value: 5
+  - name: Enum6
+    description: USB PLL clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+enum/CoolfluxApbRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/CoolfluxRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Cpu0lockup:
+  bit_size: 1
+  variants:
+  - name: Awake
+    description: CPU is not in lockup.
+    value: 0
+  - name: Sleeping
+    description: CPU is in lockup.
+    value: 1
+enum/Cpu0nstckcalNoref:
+  bit_size: 1
+  variants:
+  - name: YesRef
+    description: Reference clock is provided.
+    value: 0
+  - name: NoRef
+    description: No reference clock is provided.
+    value: 1
+enum/Cpu0nstckcalSkew:
+  bit_size: 1
+  variants:
+  - name: Exact
+    description: TENMS value is exact.
+    value: 0
+  - name: Inexact
+    description: TENMS value is not exact or not given.
+    value: 1
+enum/Cpu0sleeping:
+  bit_size: 1
+  variants:
+  - name: Awake
+    description: CPU is not sleeping.
+    value: 0
+  - name: Sleeping
+    description: CPU is sleeping.
+    value: 1
+enum/Cpu0stckcalNoref:
+  bit_size: 1
+  variants:
+  - name: YesRef
+    description: Reference clock is provided.
+    value: 0
+  - name: NoRef
+    description: No reference clock is provided.
+    value: 1
+enum/Cpu0stckcalSkew:
+  bit_size: 1
+  variants:
+  - name: Exact
+    description: TENMS value is exact.
+    value: 0
+  - name: Inexact
+    description: TENMS value is not exact or not given.
+    value: 1
+enum/Cpu1lockup:
+  bit_size: 1
+  variants:
+  - name: Awake
+    description: CPU is not in lockup.
+    value: 0
+  - name: Sleeping
+    description: CPU is in lockup.
+    value: 1
+enum/Cpu1rsten:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: The CPU1 is not reset.
+    value: 0
+  - name: Asserted
+    description: The CPU1 is reset.
+    value: 1
+enum/Cpu1sleeping:
+  bit_size: 1
+  variants:
+  - name: Awake
+    description: CPU is not sleeping.
+    value: 0
+  - name: Sleeping
+    description: CPU is sleeping.
+    value: 1
+enum/Cpu1stckcalNoref:
+  bit_size: 1
+  variants:
+  - name: YesRef1
+    description: Reference clock is provided.
+    value: 0
+  - name: NoRef1
+    description: No reference clock is provided.
+    value: 1
+enum/Cpu1stckcalSkew:
+  bit_size: 1
+  variants:
+  - name: Exact1
+    description: TENMS value is exact.
+    value: 0
+  - name: Inexact1
+    description: TENMS value is not exact or not given.
+    value: 1
+enum/CrcRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/CtimerclkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Divider clock is running.
+    value: 0
+  - name: Disable
+    description: Divider clock has stopped.
+    value: 1
+enum/CtimerclkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Stable divider clock.
+    value: 0
+  - name: Disable
+    description: Unstable clock frequency.
+    value: 1
+enum/CtimerclkselSel:
+  bit_size: 4
+  variants:
+  - name: Enum0x0
+    description: FRO_1M clock.
+    value: 0
+  - name: Enum0x1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum0x2
+    description: PLL1_clk0 clock.
+    value: 2
+  - name: Enum0x3
+    description: FRO_HF clock.
+    value: 3
+  - name: Enum0x4
+    description: FRO 12MHz clock.
+    value: 4
+  - name: Enum0x5
+    description: SAI0 MCLK IN clock.
+    value: 5
+  - name: Enum0x6
+    description: LP Oscillator clock.
+    value: 6
+  - name: Enum0x7
+    description: No clock.
+    value: 7
+  - name: Enum0x8
+    description: SAI1 MCLK IN clock.
+    value: 8
+  - name: Enum0x9
+    description: SAI0 TX_BCLK clock.
+    value: 9
+  - name: Enum0xA
+    description: SAI0 RX_BCLK clock.
+    value: 10
+  - name: Enum0xB
+    description: SAI1 TX_BCLK clock.
+    value: 11
+  - name: Enum0xC
+    description: SAI1 RX_BCLK clock.
+    value: 12
+  - name: Enum0xD
+    description: No clock.
+    value: 13
+  - name: Enum0xE
+    description: No clock.
+    value: 14
+  - name: Enum0xF
+    description: No clock.
+    value: 15
+enum/Dac0Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Dac1Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Dac2Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/DacclkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/DacclkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/DacclkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/DacclkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0x0
+    description: No clock.
+    value: 0
+  - name: Enum0x1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum0x2
+    description: Clk_in.
+    value: 2
+  - name: Enum0x3
+    description: FRO_HF.
+    value: 3
+  - name: Enum0x4
+    description: FRO_12M.
+    value: 4
+  - name: Enum0x5
+    description: PLL1_clk0 clock.
+    value: 5
+  - name: Enum0x6
+    description: No clock.
+    value: 6
+  - name: Enum0x7
+    description: No clock.
+    value: 7
+enum/DebugFeaturesCpu0Dbgen:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disables debug.
+    value: 1
+  - name: Enable
+    description: Enables debug.
+    value: 2
+enum/DebugFeaturesCpu0Niden:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disables debug.
+    value: 1
+  - name: Enable
+    description: Enables debug.
+    value: 2
+enum/DebugFeaturesCpu0Spiden:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disables debug.
+    value: 1
+  - name: Enable
+    description: Enables debug.
+    value: 2
+enum/DebugFeaturesCpu0Spniden:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disables debug.
+    value: 1
+  - name: Enable
+    description: Enables debug.
+    value: 2
+enum/DebugFeaturesCpu1Dbgen:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disables debug.
+    value: 1
+  - name: Enable
+    description: Enables debug.
+    value: 2
+enum/DebugFeaturesCpu1Niden:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disables debug.
+    value: 1
+  - name: Enable
+    description: Enables debug.
+    value: 2
+enum/DebugFeaturesDpCpu0Dbgen:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disables debug.
+    value: 1
+  - name: Enable
+    description: Enables debug.
+    value: 2
+enum/DebugFeaturesDpCpu0Niden:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disables debug.
+    value: 1
+  - name: Enable
+    description: Enables debug.
+    value: 2
+enum/DebugFeaturesDpCpu0Spiden:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disables debug.
+    value: 1
+  - name: Enable
+    description: Enables debug.
+    value: 2
+enum/DebugFeaturesDpCpu0Spniden:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disables debug.
+    value: 1
+  - name: Enable
+    description: Enables debug.
+    value: 2
+enum/DebugFeaturesDpCpu1Dbgen:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disables debug.
+    value: 1
+  - name: Enable
+    description: Enables debug.
+    value: 2
+enum/DebugFeaturesDpCpu1Niden:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disables debug.
+    value: 1
+  - name: Enable
+    description: Enables debug.
+    value: 2
+enum/DisDataSpec:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Enables data speculation.
+    value: 0
+  - name: Disable
+    description: Disables data speculation.
+    value: 1
+enum/DisFlashCache:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Enables flash cache.
+    value: 0
+  - name: Disable
+    description: Disables flash cache.
+    value: 1
+enum/DisFlashData:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Enables flash data cache when DIS_FLASH_CACHE=0.
+    value: 0
+  - name: Disable
+    description: Disables flash data cache.
+    value: 1
+enum/DisFlashInst:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Enables flash instruction cache when DIS_FLASH_CACHE=0.
+    value: 0
+  - name: Disable
+    description: Disables flash instruction cache.
+    value: 1
+enum/DisFlashSpec:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Enables flash speculation.
+    value: 0
+  - name: Disable
+    description: Disables flash speculation.
+    value: 1
+enum/DisLpcac:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Enabled.
+    value: 0
+  - name: Disable
+    description: Disabled.
+    value: 1
+enum/DisMbeccErrData:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Enables bus error on multi-bit ECC error for data.
+    value: 0
+  - name: Disable
+    description: Disables bus error on multi-bit ECC error for data.
+    value: 1
+enum/DisMbeccErrInst:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Enables bus error on multi-bit ECC error for instruction.
+    value: 0
+  - name: Disable
+    description: Disables bus error on multi-bit ECC error for instruction.
+    value: 1
+enum/Dma0Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Dma1Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/DspDbgden:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disables debug.
+    value: 1
+  - name: Enable
+    description: Enables debug.
+    value: 2
+enum/DspDbgen:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disables debug.
+    value: 1
+  - name: Enable
+    description: Enables debug.
+    value: 2
+enum/EimRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Emvsim0clkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/Emvsim0clkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/Emvsim0clkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/Emvsim0clkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0
+    description: No clock.
+    value: 0
+  - name: Enum1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum2
+    description: CLKIN clock.
+    value: 2
+  - name: Enum3
+    description: FRO_HF clock.
+    value: 3
+  - name: Enum4
+    description: FRO_12M clock.
+    value: 4
+  - name: Enum5
+    description: PLL1_clk0 clock0.
+    value: 5
+  - name: Enum6
+    description: No clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+enum/Emvsim1clkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/Emvsim1clkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/Emvsim1clkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/Emvsim1clkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0
+    description: No clock.
+    value: 0
+  - name: Enum1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum2
+    description: CLKIN clock.
+    value: 2
+  - name: Enum3
+    description: FRO_HF clock.
+    value: 3
+  - name: Enum4
+    description: FRO_12M clock.
+    value: 4
+  - name: Enum5
+    description: PLL1_clk0 clock0.
+    value: 5
+  - name: Enum6
+    description: No clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+enum/EnetRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/EnetptprefclkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/EnetptprefclkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/EnetptprefclkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/EnetptprefclkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0
+    description: No clock.
+    value: 0
+  - name: Enum1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum2
+    description: CLKIN clock.
+    value: 2
+  - name: Enum3
+    description: No clock.
+    value: 3
+  - name: Enum4
+    description: enet0_tx_clk clock.
+    value: 4
+  - name: Enum5
+    description: pll1_clk1 clock.
+    value: 5
+  - name: Enum6
+    description: No clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+enum/EnetrmiiclkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/EnetrmiiclkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/EnetrmiiclkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/EnetrmiiclkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0
+    description: No clock.
+    value: 0
+  - name: Enum1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum2
+    description: CLKIN clock.
+    value: 2
+  - name: Enum3
+    description: No clock.
+    value: 3
+  - name: Enum4
+    description: No clock.
+    value: 4
+  - name: Enum5
+    description: PLL1_clk0 clock.
+    value: 5
+  - name: Enum6
+    description: No clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+enum/Evsim0Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Evsim1Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Ewm0clkselSel:
+  bit_size: 1
+  variants:
+  - name: Enum0
+    description: clk_16k[2].
+    value: 0
+  - name: Enum1
+    description: xtal32k[2].
+    value: 1
+enum/EwmRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/FcRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/FcclkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0x0
+    description: No clock.
+    value: 0
+  - name: Enum0x1
+    description: PLL divided clock.
+    value: 1
+  - name: Enum0x2
+    description: FRO 12 MHz clock.
+    value: 2
+  - name: Enum0x3
+    description: fro_hf_div clock.
+    value: 3
+  - name: Enum0x4
+    description: clk_1m clock.
+    value: 4
+  - name: Enum0x5
+    description: USB PLL clock.
+    value: 5
+  - name: Enum0x6
+    description: LP Oscillator clock.
+    value: 6
+  - name: Enum0x7
+    description: No clock.
+    value: 7
+enum/FlashStallEn:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: No stall on FLASH busy.
+    value: 0
+  - name: Disable
+    description: Stall on FLASH busy.
+    value: 1
+enum/FlexSpiclkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/FlexSpiclkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/FlexSpiclkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/FlexSpiclkselSel:
+  bit_size: 4
+  variants:
+  - name: Enum0
+    description: No clock.
+    value: 0
+  - name: Enum1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum2
+    description: No clock.
+    value: 2
+  - name: Enum3
+    description: FRO_HF.
+    value: 3
+  - name: Enum4
+    description: No clock.
+    value: 4
+  - name: Enum5
+    description: pll1_clock.
+    value: 5
+  - name: Enum6
+    description: USB PLL clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+  - name: Enum8
+    description: No clock.
+    value: 8
+  - name: Enum9
+    description: No clock.
+    value: 9
+  - name: Enum10
+    description: No clock.
+    value: 10
+  - name: Enum11
+    description: No clock.
+    value: 11
+  - name: Enum12
+    description: No clock.
+    value: 12
+  - name: Enum13
+    description: No clock.
+    value: 13
+  - name: Enum14
+    description: No clock.
+    value: 14
+  - name: Enum15
+    description: No clock.
+    value: 15
+enum/Flexcan0Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Flexcan0clkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/Flexcan0clkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/Flexcan0clkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/Flexcan0clkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0
+    description: No clock.
+    value: 0
+  - name: Enum1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum2
+    description: CLKIN clock.
+    value: 2
+  - name: Enum3
+    description: FRO_HF clock.
+    value: 3
+  - name: Enum4
+    description: No clock.
+    value: 4
+  - name: Enum5
+    description: PLL1_clk0 clock.
+    value: 5
+  - name: Enum6
+    description: USB PLL clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+enum/Flexcan1Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Flexcan1clkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/Flexcan1clkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/Flexcan1clkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/Flexcan1clkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0
+    description: No clock.
+    value: 0
+  - name: Enum1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum2
+    description: CLKIN clock.
+    value: 2
+  - name: Enum3
+    description: FRO_HF clock.
+    value: 3
+  - name: Enum4
+    description: No clock.
+    value: 4
+  - name: Enum5
+    description: PLL1_clk0 clock.
+    value: 5
+  - name: Enum6
+    description: USB PLL clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+enum/FlexcommclkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/FlexcommclkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/FlexcommclkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/FlexioRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/FlexioclkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/FlexioclkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/FlexioclkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/FlexioclkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0
+    description: No clock.
+    value: 0
+  - name: Enum1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum2
+    description: CLKIN clock.
+    value: 2
+  - name: Enum3
+    description: FRO_HF clock.
+    value: 3
+  - name: Enum4
+    description: FRO_12M clock.
+    value: 4
+  - name: Enum5
+    description: PLL1_clk0 clock.
+    value: 5
+  - name: Enum6
+    description: USB PLL clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+enum/FlexspiRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/FmuRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/FrcNoAlloc:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Forces allocation.
+    value: 0
+  - name: Disable
+    description: Forces no allocation.
+    value: 1
+enum/FreqmeRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/FrohfdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running, this bit is set to 0 when the register is written.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/FrohfdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/GdetIsoSw:
+  bit_size: 2
+  variants:
+  - name: Disable0
+    description: Isolation is disabled.
+    value: 0
+  - name: Disable1
+    description: Isolation is disabled.
+    value: 1
+  - name: Enable
+    description: Isolation is enabled. When both GDET0_CTRL/GDET1_CTRL GDET_ISO_SW are "10", isolation_on is asserted.
+    value: 2
+  - name: Disable3
+    description: Isolation is disabled.
+    value: 3
+enum/GpioRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/I3c0Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/I3c0fclkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/I3c0fclkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/I3c0fclkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/I3c0fclksdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/I3c0fclksdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/I3c0fclksdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/I3c0fclkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0
+    description: No clock.
+    value: 0
+  - name: Enum1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum2
+    description: CLKIN clock.
+    value: 2
+  - name: Enum3
+    description: FRO_HF clock.
+    value: 3
+  - name: Enum4
+    description: No clock.
+    value: 4
+  - name: Enum5
+    description: PLL1_clk0 clock.
+    value: 5
+  - name: Enum6
+    description: USB PLL clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+enum/I3c0fclksselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0
+    description: FRO_1M clock.
+    value: 0
+  - name: Enum1
+    description: No clock.
+    value: 1
+  - name: Enum2
+    description: No clock.
+    value: 2
+  - name: Enum3
+    description: No clock.
+    value: 3
+  - name: Enum4
+    description: No clock.
+    value: 4
+  - name: Enum5
+    description: No clock.
+    value: 5
+  - name: Enum6
+    description: No clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+enum/I3c0fclkstcdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/I3c0fclkstcdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/I3c0fclkstcdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/I3c0fclkstcselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0
+    description: I3C0 functional clock I3C0FCLK.
+    value: 0
+  - name: Enum1
+    description: FRO_1M clock.
+    value: 1
+  - name: Enum2
+    description: No clock.
+    value: 2
+  - name: Enum3
+    description: No clock.
+    value: 3
+  - name: Enum4
+    description: No clock.
+    value: 4
+  - name: Enum5
+    description: No clock.
+    value: 5
+  - name: Enum6
+    description: No clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+enum/I3c1Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/I3c1fclkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/I3c1fclkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/I3c1fclkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/I3c1fclksdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/I3c1fclksdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/I3c1fclksdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/I3c1fclkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0
+    description: No clock.
+    value: 0
+  - name: Enum1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum2
+    description: CLKIN clock.
+    value: 2
+  - name: Enum3
+    description: FRO_HF clock.
+    value: 3
+  - name: Enum4
+    description: No clock.
+    value: 4
+  - name: Enum5
+    description: PLL1_clk0 clock.
+    value: 5
+  - name: Enum6
+    description: USB PLL clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+enum/I3c1fclksselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0
+    description: FRO_1M clock.
+    value: 0
+  - name: Enum1
+    description: No clock.
+    value: 1
+  - name: Enum2
+    description: No clock.
+    value: 2
+  - name: Enum3
+    description: No clock.
+    value: 3
+  - name: Enum4
+    description: No clock.
+    value: 4
+  - name: Enum5
+    description: No clock.
+    value: 5
+  - name: Enum6
+    description: No clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+enum/I3c1fclkstcdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/I3c1fclkstcdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/I3c1fclkstcdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/I3c1fclkstcselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0
+    description: I3C1 functional clock I3C1FCLK.
+    value: 0
+  - name: Enum1
+    description: FRO_1M clock.
+    value: 1
+  - name: Enum2
+    description: No clock.
+    value: 2
+  - name: Enum3
+    description: No clock.
+    value: 3
+  - name: Enum4
+    description: No clock.
+    value: 4
+  - name: Enum5
+    description: No clock.
+    value: 5
+  - name: Enum6
+    description: No clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+enum/Interleave:
+  bit_size: 1
+  variants:
+  - name: Normal
+    description: RAM access to PKC RAM 0 and PKC RAM 1 is consecutive.
+    value: 0
+  - name: Interleave
+    description: RAM access to PKC RAM 0 and PKC RAM 1 is interleaved. This setting is need for PKC L0 memory access.
+    value: 1
+enum/LockAll:
+  bit_size: 4
+  variants:
+  - name: Disable
+    description: 'Any other value than b1010: disables write access to all registers.'
+    value: 0
+  - name: Enable
+    description: Enables write access to all registers.
+    value: 10
+enum/MailboxRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/MicfilRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/MicfilfclkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/MicfilfclkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/MicfilfclkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/MicfilfclkselSel:
+  bit_size: 4
+  variants:
+  - name: Enum0
+    description: FRO_12M clock.
+    value: 0
+  - name: Enum1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum2
+    description: CLKIN clock.
+    value: 2
+  - name: Enum3
+    description: FRO_HF clock.
+    value: 3
+  - name: Enum4
+    description: PLL1_clk0 clock.
+    value: 4
+  - name: Enum5
+    description: SAI0_MCLK clock.
+    value: 5
+  - name: Enum6
+    description: USB PLL clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+  - name: Enum8
+    description: SAI1_MCLK clock.
+    value: 8
+  - name: Enum9
+    description: No clock.
+    value: 9
+  - name: Enum10
+    description: No clock.
+    value: 10
+  - name: Enum11
+    description: No clock.
+    value: 11
+  - name: Enum12
+    description: No clock.
+    value: 12
+  - name: Enum13
+    description: No clock.
+    value: 13
+  - name: Enum14
+    description: No clock.
+    value: 14
+  - name: Enum15
+    description: No clock.
+    value: 15
+enum/MrtRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/MuxRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/NpuRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/OpampRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/OstimerRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/OstimerclkselSel:
+  bit_size: 2
+  variants:
+  - name: Enum0
+    description: clk_16k[2].
+    value: 0
+  - name: Enum1
+    description: xtal32k[2].
+    value: 1
+  - name: Enum2
+    description: clk_1m clock.
+    value: 2
+  - name: Enum3
+    description: No clock.
+    value: 3
+enum/PhySel:
+  bit_size: 1
+  variants:
+  - name: Mii
+    description: Selects MII PHY Interface.
+    value: 0
+  - name: Rmii
+    description: Selects RMII PHY Interface.
+    value: 1
+enum/PintRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/PkcRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Pll1clk0divHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/Pll1clk0divReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/Pll1clk0divUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/Pll1clk1divHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/Pll1clk1divReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/Pll1clk1divUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/PllclkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/PllclkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/PllclkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/PllclkdivselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0
+    description: PLL0 clock.
+    value: 0
+  - name: Enum1
+    description: pll1_clk0.
+    value: 1
+  - name: Enum2
+    description: No clock.
+    value: 2
+  - name: Enum3
+    description: No clock.
+    value: 3
+  - name: Enum4
+    description: No clock.
+    value: 4
+  - name: Enum5
+    description: No clock.
+    value: 5
+  - name: Enum6
+    description: No clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+enum/PluRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/PortRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/PqRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/PriCoolfluxI:
+  bit_size: 2
+  variants:
+  - name: Level0
+    description: level 0.
+    value: 0
+  - name: Level1
+    description: level 1.
+    value: 1
+  - name: Level2
+    description: level 2.
+    value: 2
+  - name: Level3
+    description: level 3.
+    value: 3
+enum/PriCoolfluxX:
+  bit_size: 2
+  variants:
+  - name: Level0
+    description: level 0.
+    value: 0
+  - name: Level1
+    description: level 1.
+    value: 1
+  - name: Level2
+    description: level 2.
+    value: 2
+  - name: Level3
+    description: level 3.
+    value: 3
+enum/PriCoolfluxYEspi:
+  bit_size: 2
+  variants:
+  - name: Level0
+    description: level 0.
+    value: 0
+  - name: Level1
+    description: level 1.
+    value: 1
+  - name: Level2
+    description: level 2.
+    value: 2
+  - name: Level3
+    description: level 3.
+    value: 3
+enum/PriCpu0Cbus:
+  bit_size: 2
+  variants:
+  - name: Level0
+    description: level 0.
+    value: 0
+  - name: Level1
+    description: level 1.
+    value: 1
+  - name: Level2
+    description: level 2.
+    value: 2
+  - name: Level3
+    description: level 3.
+    value: 3
+enum/PriCpu0Sbus:
+  bit_size: 2
+  variants:
+  - name: Level0
+    description: level 0.
+    value: 0
+  - name: Level1
+    description: level 1.
+    value: 1
+  - name: Level2
+    description: level 2.
+    value: 2
+  - name: Level3
+    description: level 3.
+    value: 3
+enum/PriCpu1CbusSmartDmaI:
+  bit_size: 2
+  variants:
+  - name: Level0
+    description: level 0.
+    value: 0
+  - name: Level1
+    description: level 1.
+    value: 1
+  - name: Level2
+    description: level 2.
+    value: 2
+  - name: Level3
+    description: level 3.
+    value: 3
+enum/PriCpu1SbusSmartDmaD:
+  bit_size: 2
+  variants:
+  - name: Level0
+    description: level 0.
+    value: 0
+  - name: Level1
+    description: level 1.
+    value: 1
+  - name: Level2
+    description: level 2.
+    value: 2
+  - name: Level3
+    description: level 3.
+    value: 3
+enum/PriNpuD:
+  bit_size: 2
+  variants:
+  - name: Level0
+    description: level 0.
+    value: 0
+  - name: Level1
+    description: level 1.
+    value: 1
+  - name: Level2
+    description: level 2.
+    value: 2
+  - name: Level3
+    description: level 3.
+    value: 3
+enum/PriNpuPq:
+  bit_size: 2
+  variants:
+  - name: Level0
+    description: level 0.
+    value: 0
+  - name: Level1
+    description: level 1.
+    value: 1
+  - name: Level2
+    description: level 2.
+    value: 2
+  - name: Level3
+    description: level 3.
+    value: 3
+enum/PriPkcEls:
+  bit_size: 2
+  variants:
+  - name: Level0
+    description: level 0.
+    value: 0
+  - name: Level1
+    description: level 1.
+    value: 1
+  - name: Level2
+    description: level 2.
+    value: 2
+  - name: Level3
+    description: level 3.
+    value: 3
+enum/PriUsbFsEnet:
+  bit_size: 2
+  variants:
+  - name: Level0
+    description: level 0.
+    value: 0
+  - name: Level1
+    description: level 1.
+    value: 1
+  - name: Level2
+    description: level 2.
+    value: 2
+  - name: Level3
+    description: level 3.
+    value: 3
+enum/PriUsbHs:
+  bit_size: 2
+  variants:
+  - name: Level0
+    description: level 0.
+    value: 0
+  - name: Level1
+    description: level 1.
+    value: 1
+  - name: Level2
+    description: level 2.
+    value: 2
+  - name: Level3
+    description: level 3.
+    value: 3
+enum/PriUsdhc:
+  bit_size: 2
+  variants:
+  - name: Level0
+    description: level 0.
+    value: 0
+  - name: Level1
+    description: level 1.
+    value: 1
+  - name: Level2
+    description: level 2.
+    value: 2
+  - name: Level3
+    description: level 3.
+    value: 3
+enum/Prot:
+  bit_size: 16
+  variants:
+  - name: Prot
+    description: For write operation to have an effect.
+    value: 49348
+enum/PufRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Pwm0Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Pwm1Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Qdc0Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Qdc1Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Rspt:
+  bit_size: 2
+  variants:
+  - name: NoResp
+    description: No response when the ETB count expires.
+    value: 0
+  - name: Interrupt
+    description: Generates a normal interrupt when the ETB count expires.
+    value: 1
+  - name: Nmi
+    description: Generates an NMI interrupt when the ETB count expires.
+    value: 2
+  - name: DebugHalt
+    description: Generates a debug halt when the ETB count expires via CPU0 CTICHIN[2].
+    value: 3
+enum/RtcRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Sai0Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Sai0clkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/Sai0clkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/Sai0clkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/Sai0clkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0
+    description: No clock.
+    value: 0
+  - name: Enum1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum2
+    description: CLKIN clock.
+    value: 2
+  - name: Enum3
+    description: FRO_HF clock.
+    value: 3
+  - name: Enum4
+    description: PLL1_CLK0 clock.
+    value: 4
+  - name: Enum5
+    description: No clock.
+    value: 5
+  - name: Enum6
+    description: USB PLL clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+enum/Sai1Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Sai1clkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/Sai1clkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/Sai1clkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/Sai1clkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0
+    description: No clock.
+    value: 0
+  - name: Enum1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum2
+    description: CLKIN clock.
+    value: 2
+  - name: Enum3
+    description: FRO_HF clock.
+    value: 3
+  - name: Enum4
+    description: PLL1_CLK0 clock.
+    value: 4
+  - name: Enum5
+    description: No clock.
+    value: 5
+  - name: Enum6
+    description: USB PLL clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+enum/Sb3:
+  bit_size: 2
+  variants:
+  - name: Customer
+    description: customer fw load/update file.
+    value: 0
+  - name: Nxp
+    description: NXP Provisioning FW.
+    value: 1
+  - name: Oem
+    description: ELS signed OEM Provisioning FW.
+    value: 2
+enum/SctRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/SctclkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/SctclkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/SctclkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/SctclkselSel:
+  bit_size: 4
+  variants:
+  - name: Enum0x0
+    description: No clock.
+    value: 0
+  - name: Enum0x1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum0x2
+    description: CLKIN clock.
+    value: 2
+  - name: Enum0x3
+    description: FRO_HF clock.
+    value: 3
+  - name: Enum0x4
+    description: PLL1_clk0 clock.
+    value: 4
+  - name: Enum0x5
+    description: SAI0 MCLK_IN clock.
+    value: 5
+  - name: Enum0x6
+    description: USB PLL clock.
+    value: 6
+  - name: Enum0x7
+    description: No clock.
+    value: 7
+  - name: Enum0x8
+    description: SAI1 MCLK_IN clock.
+    value: 8
+  - name: Enum0x9
+    description: No clock.
+    value: 9
+  - name: Enum0xA
+    description: No clock.
+    value: 10
+  - name: Enum0xB
+    description: No clock.
+    value: 11
+  - name: Enum0xC
+    description: No clock.
+    value: 12
+  - name: Enum0xD
+    description: No clock.
+    value: 13
+  - name: Enum0xE
+    description: No clock.
+    value: 14
+  - name: Enum0xF
+    description: No clock.
+    value: 15
+enum/Sema42Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/SincRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/SincfiltclkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0x0
+    description: No clock.
+    value: 0
+  - name: Enum0x1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum0x2
+    description: clk_in.
+    value: 2
+  - name: Enum0x3
+    description: FRO_HF clock.
+    value: 3
+  - name: Enum0x4
+    description: FRO_12Mhz clock.
+    value: 4
+  - name: Enum0x5
+    description: PLL1_clk0 clock.
+    value: 5
+  - name: Enum0x6
+    description: USB PLL clock.
+    value: 6
+  - name: Enum0x7
+    description: No clock.
+    value: 7
+enum/SlowclkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/SlowclkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/SlowclkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/Sm3Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/SmartDmaRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/SwdAccessCpu0SecCode:
+  bit_size: 32
+  variants:
+  - name: Disable
+    description: CPU0 DAP is not allowed. Reading back register is read as 0x5.
+    value: 0
+  - name: Enable
+    description: Value to write to enable CPU0 SWD access. Reading back register is read as 0xA.
+    value: 305419896
+enum/SwdAccessCpu1SecCode:
+  bit_size: 32
+  variants:
+  - name: Disable
+    description: CPU1 DAP is not allowed.
+    value: 0
+  - name: Enable
+    description: Security code to allow CPU1 DAP.
+    value: 305419896
+enum/SwdAccessDspSecCode:
+  bit_size: 32
+  variants:
+  - name: Disable
+    description: DSP DAP is not allowed. Reading back register is read as 0x5.
+    value: 0
+  - name: Enable
+    description: Value to write to enable DSP SWD access. Reading back register is read as 0xA.
+    value: 305419896
+enum/Systickclkdiv0Halt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/Systickclkdiv0Reset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/Systickclkdiv0Unstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/Systickclkdiv1Halt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/Systickclkdiv1Reset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/Systickclkdiv1Unstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/Systickclksel0Sel:
+  bit_size: 3
+  variants:
+  - name: Enum0x0
+    description: SYSTICKCLKDIV0 output.
+    value: 0
+  - name: Enum0x1
+    description: Clk 1 MHz clock.
+    value: 1
+  - name: Enum0x2
+    description: LP Oscillator clock.
+    value: 2
+  - name: Enum0x3
+    description: No clock.
+    value: 3
+  - name: Enum0x4
+    description: No clock.
+    value: 4
+  - name: Enum0x5
+    description: No clock.
+    value: 5
+  - name: Enum0x6
+    description: No clock.
+    value: 6
+  - name: Enum0x7
+    description: No clock.
+    value: 7
+enum/Systickclksel1Sel:
+  bit_size: 3
+  variants:
+  - name: Enum0x0
+    description: SYSTICKCLKDIV1 output.
+    value: 0
+  - name: Enum0x1
+    description: Clk 1 MHz clock.
+    value: 1
+  - name: Enum0x2
+    description: LP Oscillator clock.
+    value: 2
+  - name: Enum0x3
+    description: No clock.
+    value: 3
+  - name: Enum0x4
+    description: No clock.
+    value: 4
+  - name: Enum0x5
+    description: No clock.
+    value: 5
+  - name: Enum0x6
+    description: No clock.
+    value: 6
+  - name: Enum0x7
+    description: No clock.
+    value: 7
+enum/Timer0Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Timer1Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Timer2Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Timer3Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Timer4Rst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/TraceclkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/TraceclkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/TraceclkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/TraceclkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0x0
+    description: TRACECLKDIV output.
+    value: 0
+  - name: Enum0x1
+    description: Clk 1 MHz clock.
+    value: 1
+  - name: Enum0x2
+    description: LP Oscillator clock.
+    value: 2
+  - name: Enum0x3
+    description: No clock.
+    value: 3
+  - name: Enum0x4
+    description: No clock.
+    value: 4
+  - name: Enum0x5
+    description: No clock.
+    value: 5
+  - name: Enum0x6
+    description: No clock.
+    value: 6
+  - name: Enum0x7
+    description: No clock.
+    value: 7
+enum/TrngRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/TroRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/TsiRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/TsiclkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/TsiclkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/TsiclkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/TsiclkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0x0
+    description: No clock.
+    value: 0
+  - name: Enum0x1
+    description: No clock.
+    value: 1
+  - name: Enum0x2
+    description: clk_in.
+    value: 2
+  - name: Enum0x3
+    description: No clock.
+    value: 3
+  - name: Enum0x4
+    description: FRO_12Mhz clock.
+    value: 4
+  - name: Enum0x5
+    description: No clock.
+    value: 5
+  - name: Enum0x6
+    description: No clock.
+    value: 6
+  - name: Enum0x7
+    description: No clock.
+    value: 7
+enum/USdhcclkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/USdhcclkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/USdhcclkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/USdhcclkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0
+    description: No clock.
+    value: 0
+  - name: Enum1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum2
+    description: CLKIN clock.
+    value: 2
+  - name: Enum3
+    description: FRO_HF clock.
+    value: 3
+  - name: Enum4
+    description: FRO_12M clock.
+    value: 4
+  - name: Enum5
+    description: pll1_clk1 clock.
+    value: 5
+  - name: Enum6
+    description: USB PLL clock.
+    value: 6
+  - name: Enum7
+    description: No clock.
+    value: 7
+enum/Unlock:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Updates are allowed to all clock configuration registers.
+    value: 0
+  - name: Freeze
+    description: Freezes all clock configuration registers update.
+    value: 1
+enum/Usb0FsDcdRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Usb0FsRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Usb0clkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/Usb0clkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/Usb0clkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/Usb0clkselSel:
+  bit_size: 3
+  variants:
+  - name: Enum0x0
+    description: No clock.
+    value: 0
+  - name: Enum0x1
+    description: PLL0 clock.
+    value: 1
+  - name: Enum0x2
+    description: No clock.
+    value: 2
+  - name: Enum0x3
+    description: Clk 48 MHz clock.
+    value: 3
+  - name: Enum0x4
+    description: Clk_in.
+    value: 4
+  - name: Enum0x5
+    description: PLL1_clk0 clock.
+    value: 5
+  - name: Enum0x6
+    description: USB PLL clock.
+    value: 6
+  - name: Enum0x7
+    description: No clock.
+    value: 7
+enum/UsbHsPhyRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/UsbHsRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/UsdhcRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/UtickRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/UtickclkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/UtickclkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/UtickclkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/UtickclkselSel:
+  bit_size: 2
+  variants:
+  - name: Enum0
+    description: clk_in.
+    value: 0
+  - name: Enum1
+    description: xtal32k[2].
+    value: 1
+  - name: Enum2
+    description: clk_1m clock.
+    value: 2
+  - name: Enum3
+    description: No clock.
+    value: 3
+enum/VrefRst:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Block is not reset.
+    value: 0
+  - name: Asserted
+    description: Block is reset.
+    value: 1
+enum/Wdt0clkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/Wdt0clkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/Wdt0clkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/Wdt1clkdivHalt:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Divider clock is running.
+    value: 0
+  - name: Halt
+    description: Divider clock is stopped.
+    value: 1
+enum/Wdt1clkdivReset:
+  bit_size: 1
+  variants:
+  - name: Released
+    description: Divider is not reset.
+    value: 0
+  - name: Asserted
+    description: Divider is reset.
+    value: 1
+enum/Wdt1clkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: Stable
+    description: Divider clock is stable.
+    value: 0
+  - name: Ongoing
+    description: Clock frequency is not stable.
+    value: 1
+enum/Wdt1clkselSel:
+  bit_size: 2
+  variants:
+  - name: Enum0
+    description: FRO16K clock 2.
+    value: 0
+  - name: Enum1
+    description: fro_hf_div clock.
+    value: 1
+  - name: Enum2
+    description: clk_1m clock.
+    value: 2
+  - name: Enum3
+    description: clk_1m clock.
+    value: 3

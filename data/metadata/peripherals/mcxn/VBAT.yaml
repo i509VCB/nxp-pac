@@ -1,0 +1,1384 @@
+block/Vbat:
+  description: VBAT.
+  items:
+  - name: verid
+    description: Version ID.
+    byte_offset: 0
+    access: Read
+    fieldset: Verid
+  - name: statusa
+    description: Status A.
+    byte_offset: 16
+    fieldset: Statusa
+  - name: statusb
+    description: Status B.
+    byte_offset: 20
+    fieldset: Statusb
+  - name: irqena
+    description: Interrupt Enable A.
+    byte_offset: 24
+    fieldset: Irqena
+  - name: irqenb
+    description: Interrupt Enable B.
+    byte_offset: 28
+    fieldset: Irqenb
+  - name: wakena
+    description: Wake-up Enable A.
+    byte_offset: 32
+    fieldset: Wakena
+  - name: wakenb
+    description: Wake-up Enable B.
+    byte_offset: 36
+    fieldset: Wakenb
+  - name: tampera
+    description: Tamper Enable A.
+    byte_offset: 40
+    fieldset: Tampera
+  - name: tamperb
+    description: Tamper Enable B.
+    byte_offset: 44
+    fieldset: Tamperb
+  - name: locka
+    description: Lock A.
+    byte_offset: 48
+    fieldset: Locka
+  - name: lockb
+    description: Lock B.
+    byte_offset: 52
+    fieldset: Lockb
+  - name: wakecfg
+    description: Wake-up Configuration.
+    byte_offset: 56
+    fieldset: Wakecfg
+  - name: oscctla
+    description: Oscillator Control A.
+    byte_offset: 256
+    fieldset: Oscctla
+  - name: oscctlb
+    description: Oscillator Control B.
+    byte_offset: 260
+    fieldset: Oscctlb
+  - name: osccfga
+    description: Oscillator Configuration A.
+    byte_offset: 264
+    fieldset: Osccfga
+  - name: osccfgb
+    description: Oscillator Configuration B.
+    byte_offset: 268
+    fieldset: Osccfgb
+  - name: osclcka
+    description: Oscillator Lock A.
+    byte_offset: 280
+    fieldset: Osclcka
+  - name: osclckb
+    description: Oscillator Lock B.
+    byte_offset: 284
+    fieldset: Osclckb
+  - name: oscclke
+    description: Oscillator Clock Enable.
+    byte_offset: 288
+    fieldset: Oscclke
+  - name: froctla
+    description: FRO16K Control A.
+    byte_offset: 512
+    fieldset: Froctla
+  - name: froctlb
+    description: FRO16K Control B.
+    byte_offset: 516
+    fieldset: Froctlb
+  - name: frolcka
+    description: FRO16K Lock A.
+    byte_offset: 536
+    fieldset: Frolcka
+  - name: frolckb
+    description: FRO16K Lock B.
+    byte_offset: 540
+    fieldset: Frolckb
+  - name: froclke
+    description: FRO16K Clock Enable.
+    byte_offset: 544
+    fieldset: Froclke
+  - name: ldoctla
+    description: LDO_RAM Control A.
+    byte_offset: 768
+    fieldset: Ldoctla
+  - name: ldoctlb
+    description: LDO_RAM Control B.
+    byte_offset: 772
+    fieldset: Ldoctlb
+  - name: ldolcka
+    description: LDO_RAM Lock A.
+    byte_offset: 792
+    fieldset: Ldolcka
+  - name: ldolckb
+    description: LDO_RAM Lock B.
+    byte_offset: 796
+    fieldset: Ldolckb
+  - name: ldoramc
+    description: RAM Control.
+    byte_offset: 800
+    fieldset: Ldoramc
+  - name: ldotimer0
+    description: Bandgap Timer 0.
+    byte_offset: 816
+    fieldset: Ldotimer0
+  - name: ldotimer1
+    description: Bandgap Timer 1.
+    byte_offset: 824
+    fieldset: Ldotimer1
+  - name: monctla
+    description: CLKMON Control A.
+    byte_offset: 1024
+    fieldset: Monctla
+  - name: monctlb
+    description: CLKMON Control B.
+    byte_offset: 1028
+    fieldset: Monctlb
+  - name: moncfga
+    description: CLKMON Configuration A.
+    byte_offset: 1032
+    fieldset: Moncfga
+  - name: moncfgb
+    description: CLKMON Configuration B.
+    byte_offset: 1036
+    fieldset: Moncfgb
+  - name: monlcka
+    description: CLKMON Lock A.
+    byte_offset: 1048
+    fieldset: Monlcka
+  - name: monlckb
+    description: CLKMON Lock B.
+    byte_offset: 1052
+    fieldset: Monlckb
+  - name: tamctla
+    description: TAMPER Control A.
+    byte_offset: 1280
+    fieldset: Tamctla
+  - name: tamctlb
+    description: TAMPER Control B.
+    byte_offset: 1284
+    fieldset: Tamctlb
+  - name: tamlcka
+    description: TAMPER Lock A.
+    byte_offset: 1304
+    fieldset: Tamlcka
+  - name: tamlckb
+    description: TAMPER Lock B.
+    byte_offset: 1308
+    fieldset: Tamlckb
+  - name: swictla
+    description: Switch Control A.
+    byte_offset: 1536
+    fieldset: Swictla
+  - name: swictlb
+    description: Switch Control B.
+    byte_offset: 1540
+    fieldset: Swictlb
+  - name: swilcka
+    description: Switch Lock A.
+    byte_offset: 1560
+    fieldset: Swilcka
+  - name: swilckb
+    description: Switch Lock B.
+    byte_offset: 1564
+    fieldset: Swilckb
+  - name: wakeup
+    description: 'Array of registers: WAKEUPA, WAKEUPB.'
+    array:
+      len: 2
+      stride: 8
+    byte_offset: 1792
+    block: Wakeup
+  - name: waklcka
+    description: Wakeup Lock A.
+    byte_offset: 2040
+    fieldset: Waklcka
+  - name: waklckb
+    description: Wakeup Lock B.
+    byte_offset: 2044
+    fieldset: Waklckb
+block/Wakeup:
+  description: 'Array of registers: WAKEUPA, WAKEUPB.'
+  items:
+  - name: wakeupa
+    description: Wakeup 0 Register A.
+    byte_offset: 0
+    fieldset: Wakeupa
+  - name: wakeupb
+    description: Wakeup 0 Register B.
+    byte_offset: 4
+    fieldset: Wakeupb
+fieldset/Froclke:
+  description: FRO16K Clock Enable.
+  fields:
+  - name: clke
+    description: Clock Enable.
+    bit_offset: 0
+    bit_size: 4
+fieldset/Froctla:
+  description: FRO16K Control A.
+  fields:
+  - name: fro_en
+    description: FRO16K Enable.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Froctlb:
+  description: FRO16K Control B.
+  fields:
+  - name: inverse
+    description: Inverse Value.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Frolcka:
+  description: FRO16K Lock A.
+  fields:
+  - name: lock
+    description: Lock.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Frolckb:
+  description: FRO16K Lock B.
+  fields:
+  - name: lock
+    description: Lock.
+    bit_offset: 0
+    bit_size: 1
+    enum: FrolckbLock
+fieldset/Irqena:
+  description: Interrupt Enable A.
+  fields:
+  - name: por_det
+    description: POR Detect.
+    bit_offset: 0
+    bit_size: 1
+  - name: wakeup_flag
+    description: Wakeup Pin Flag.
+    bit_offset: 1
+    bit_size: 1
+    enum: IrqenaWakeupFlag
+  - name: timer0_flag
+    description: Bandgap Timer 0.
+    bit_offset: 2
+    bit_size: 1
+  - name: timer1_flag
+    description: Bandgap Timer 2.
+    bit_offset: 3
+    bit_size: 1
+  - name: ldo_rdy
+    description: LDO Ready.
+    bit_offset: 4
+    bit_size: 1
+  - name: osc_rdy
+    description: OSC32k Ready.
+    bit_offset: 5
+    bit_size: 1
+  - name: clock_det
+    description: Clock Detect.
+    bit_offset: 6
+    bit_size: 1
+  - name: config_det
+    description: Configuration Detect.
+    bit_offset: 7
+    bit_size: 1
+    enum: IrqenaConfigDet
+  - name: volt_det
+    description: Voltage Detect.
+    bit_offset: 8
+    bit_size: 1
+  - name: temp_det
+    description: Temperature Detect.
+    bit_offset: 9
+    bit_size: 1
+  - name: light_det
+    description: Light Detect.
+    bit_offset: 10
+    bit_size: 1
+  - name: sec0_det
+    description: Input 0 Detect.
+    bit_offset: 12
+    bit_size: 1
+  - name: irq_det
+    description: Interrupt Detect.
+    bit_offset: 16
+    bit_size: 1
+    array:
+      len: 4
+      stride: 1
+fieldset/Irqenb:
+  description: Interrupt Enable B.
+  fields:
+  - name: inverse
+    description: Inverse Value.
+    bit_offset: 0
+    bit_size: 20
+fieldset/Ldoctla:
+  description: LDO_RAM Control A.
+  fields:
+  - name: bg_en
+    description: Bandgap Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: ldo_en
+    description: LDO Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: refresh_en
+    description: Refresh Enable.
+    bit_offset: 2
+    bit_size: 1
+fieldset/Ldoctlb:
+  description: LDO_RAM Control B.
+  fields:
+  - name: inverse
+    description: Inverse Value.
+    bit_offset: 0
+    bit_size: 3
+fieldset/Ldolcka:
+  description: LDO_RAM Lock A.
+  fields:
+  - name: lock
+    description: Lock.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Ldolckb:
+  description: LDO_RAM Lock B.
+  fields:
+  - name: lock
+    description: Lock.
+    bit_offset: 0
+    bit_size: 1
+    enum: LdolckbLock
+fieldset/Ldoramc:
+  description: RAM Control.
+  fields:
+  - name: iso
+    description: Isolate SRAM.
+    bit_offset: 0
+    bit_size: 1
+  - name: swi
+    description: Switch SRAM.
+    bit_offset: 1
+    bit_size: 1
+  - name: ret
+    description: Retention.
+    bit_offset: 8
+    bit_size: 1
+    array:
+      len: 4
+      stride: 1
+fieldset/Ldotimer0:
+  description: Bandgap Timer 0.
+  fields:
+  - name: timcfg
+    description: Timeout Configuration.
+    bit_offset: 0
+    bit_size: 3
+    enum: Timcfg
+  - name: timen
+    description: Bandgap Timeout Period Enable.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Ldotimer1:
+  description: Bandgap Timer 1.
+  fields:
+  - name: timcfg
+    description: Timeout Configuration.
+    bit_offset: 0
+    bit_size: 24
+  - name: timen
+    description: Bandgap Timeout Period Enable.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Locka:
+  description: Lock A.
+  fields:
+  - name: lock
+    description: Lock.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Lockb:
+  description: Lock B.
+  fields:
+  - name: lock
+    description: Lock.
+    bit_offset: 0
+    bit_size: 1
+    enum: LockbLock
+fieldset/Moncfga:
+  description: CLKMON Configuration A.
+  fields:
+  - name: freq_trim
+    description: Frequency Trim.
+    bit_offset: 0
+    bit_size: 2
+    enum: FreqTrim
+  - name: divide_trim
+    description: Divide Trim.
+    bit_offset: 2
+    bit_size: 1
+    enum: DivideTrim
+  - name: rsvd_trim
+    description: Reserved Trim.
+    bit_offset: 3
+    bit_size: 5
+fieldset/Moncfgb:
+  description: CLKMON Configuration B.
+  fields:
+  - name: inverse
+    description: Inverse value.
+    bit_offset: 0
+    bit_size: 8
+fieldset/Monctla:
+  description: CLKMON Control A.
+  fields:
+  - name: mon_en
+    description: CLKMON Enable.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Monctlb:
+  description: CLKMON Control B.
+  fields:
+  - name: inverse
+    description: Inverse value.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Monlcka:
+  description: CLKMON Lock A.
+  fields:
+  - name: lock
+    description: Lock.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Monlckb:
+  description: CLKMON Lock B.
+  fields:
+  - name: lock
+    description: Lock.
+    bit_offset: 0
+    bit_size: 1
+    enum: MonlckbLock
+fieldset/Osccfga:
+  description: Oscillator Configuration A.
+  fields:
+  - name: cmp_trim
+    description: Comparator Trim.
+    bit_offset: 0
+    bit_size: 2
+    enum: CmpTrim
+  - name: cap2_trim
+    description: CAP2_TRIM.
+    bit_offset: 2
+    bit_size: 1
+  - name: dly_trim
+    description: Delay Trim.
+    bit_offset: 3
+    bit_size: 4
+    enum: DlyTrim
+  - name: cap_trim
+    description: Capacitor Trim.
+    bit_offset: 7
+    bit_size: 2
+    enum: CapTrim
+  - name: init_trim
+    description: Initialization Trim.
+    bit_offset: 9
+    bit_size: 3
+    enum: InitTrim
+fieldset/Osccfgb:
+  description: Oscillator Configuration B.
+  fields:
+  - name: inverse
+    description: Inverse Value.
+    bit_offset: 0
+    bit_size: 12
+fieldset/Oscclke:
+  description: Oscillator Clock Enable.
+  fields:
+  - name: clke
+    description: Clock Enable.
+    bit_offset: 0
+    bit_size: 4
+fieldset/Oscctla:
+  description: Oscillator Control A.
+  fields:
+  - name: osc_en
+    description: Crystal Oscillator Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: osc_byp_en
+    description: Crystal Oscillator Bypass Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: coarse_amp_gain
+    description: Amplifier gain adjustment bits to allow the use of a wide range of external crystal ESR values See the device datasheet for the ranges supported by this device.
+    bit_offset: 2
+    bit_size: 2
+    enum: CoarseAmpGain
+  - name: cap_sel_en
+    description: Crystal Load Capacitance Selection Enable.
+    bit_offset: 7
+    bit_size: 1
+  - name: extal_cap_sel
+    description: Crystal Load Capacitance Selection.
+    bit_offset: 8
+    bit_size: 4
+    enum: ExtalCapSel
+  - name: xtal_cap_sel
+    description: Crystal Load Capacitance Selection.
+    bit_offset: 12
+    bit_size: 4
+    enum: XtalCapSel
+  - name: mode_en
+    description: Mode Enable.
+    bit_offset: 16
+    bit_size: 2
+    enum: ModeEn
+  - name: supply_det
+    description: Supply Detector Trim.
+    bit_offset: 18
+    bit_size: 2
+    enum: SupplyDet
+fieldset/Oscctlb:
+  description: Oscillator Control B.
+  fields:
+  - name: inverse
+    description: Inverse Value.
+    bit_offset: 0
+    bit_size: 20
+fieldset/Osclcka:
+  description: Oscillator Lock A.
+  fields:
+  - name: lock
+    description: Lock.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Osclckb:
+  description: Oscillator Lock B.
+  fields:
+  - name: lock
+    description: Lock.
+    bit_offset: 0
+    bit_size: 1
+    enum: OsclckbLock
+fieldset/Statusa:
+  description: Status A.
+  fields:
+  - name: por_det
+    description: POR Detect Flag.
+    bit_offset: 0
+    bit_size: 1
+    enum: StatusaPorDet
+  - name: wakeup_flag
+    description: Wakeup Pin Flag.
+    bit_offset: 1
+    bit_size: 1
+    enum: StatusaWakeupFlag
+  - name: timer0_flag
+    description: Bandgap Timer 0 Flag.
+    bit_offset: 2
+    bit_size: 1
+    enum: StatusaTimer0Flag
+  - name: timer1_flag
+    description: Bandgap Timer 1 Flag.
+    bit_offset: 3
+    bit_size: 1
+    enum: StatusaTimer1Flag
+  - name: ldo_rdy
+    description: LDO Ready.
+    bit_offset: 4
+    bit_size: 1
+    enum: StatusaLdoRdy
+  - name: osc_rdy
+    description: OSC32k Ready.
+    bit_offset: 5
+    bit_size: 1
+    enum: StatusaOscRdy
+  - name: clock_det
+    description: Clock Detect.
+    bit_offset: 6
+    bit_size: 1
+    enum: StatusaClockDet
+  - name: config_det
+    description: Configuration Detect Flag.
+    bit_offset: 7
+    bit_size: 1
+    enum: StatusaConfigDet
+  - name: volt_det
+    description: Voltage Detect.
+    bit_offset: 8
+    bit_size: 1
+    enum: StatusaVoltDet
+  - name: temp_det
+    description: Temperature Detect.
+    bit_offset: 9
+    bit_size: 1
+    enum: StatusaTempDet
+  - name: light_det
+    description: Light Detect.
+    bit_offset: 10
+    bit_size: 1
+    enum: StatusaLightDet
+  - name: sec0_det
+    description: Input 0 Detect.
+    bit_offset: 12
+    bit_size: 1
+    enum: StatusaSec0Det
+  - name: irq_det
+    description: Interrupt Detect.
+    bit_offset: 16
+    bit_size: 1
+    array:
+      len: 4
+      stride: 1
+    enum: StatusaIrqDet
+fieldset/Statusb:
+  description: Status B.
+  fields:
+  - name: inverse
+    description: Inverse value.
+    bit_offset: 0
+    bit_size: 20
+fieldset/Swictla:
+  description: Switch Control A.
+  fields:
+  - name: swi_en
+    description: Switch Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: lp_en
+    description: Low Power Enable.
+    bit_offset: 1
+    bit_size: 1
+fieldset/Swictlb:
+  description: Switch Control B.
+  fields:
+  - name: inverse
+    description: Inverse Value.
+    bit_offset: 0
+    bit_size: 2
+fieldset/Swilcka:
+  description: Switch Lock A.
+  fields:
+  - name: lock
+    description: Lock.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Swilckb:
+  description: Switch Lock B.
+  fields:
+  - name: lock
+    description: Lock.
+    bit_offset: 0
+    bit_size: 1
+    enum: SwilckbLock
+fieldset/Tamctla:
+  description: TAMPER Control A.
+  fields:
+  - name: volt_en
+    description: Voltage Detect Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: temp_en
+    description: Temperature Detect Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: light_en
+    description: Light Detect Enable.
+    bit_offset: 2
+    bit_size: 1
+fieldset/Tamctlb:
+  description: TAMPER Control B.
+  fields:
+  - name: inverse
+    description: Inverse value.
+    bit_offset: 0
+    bit_size: 4
+fieldset/Tamlcka:
+  description: TAMPER Lock A.
+  fields:
+  - name: lock
+    description: Lock.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Tamlckb:
+  description: TAMPER Lock B.
+  fields:
+  - name: lock
+    description: Lock.
+    bit_offset: 0
+    bit_size: 1
+    enum: TamlckbLock
+fieldset/Tampera:
+  description: Tamper Enable A.
+  fields:
+  - name: por_det
+    description: POR Detect.
+    bit_offset: 0
+    bit_size: 1
+  - name: clock_det
+    description: Clock Detect.
+    bit_offset: 6
+    bit_size: 1
+  - name: config_det
+    description: Configuration Detect.
+    bit_offset: 7
+    bit_size: 1
+    enum: TamperaConfigDet
+  - name: volt_det
+    description: Voltage Detect.
+    bit_offset: 8
+    bit_size: 1
+  - name: temp_det
+    description: Temperature Detect.
+    bit_offset: 9
+    bit_size: 1
+  - name: light_det
+    description: Light Detect.
+    bit_offset: 10
+    bit_size: 1
+  - name: sec0_det
+    description: Input 0 Detect.
+    bit_offset: 12
+    bit_size: 1
+fieldset/Tamperb:
+  description: Tamper Enable B.
+  fields:
+  - name: inverse
+    description: Inverse value.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Verid:
+  description: Version ID.
+  fields:
+  - name: feature
+    description: Feature Specification Number.
+    bit_offset: 0
+    bit_size: 16
+  - name: minor
+    description: Minor Version Number.
+    bit_offset: 16
+    bit_size: 8
+  - name: major
+    description: Major Version Number.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Wakecfg:
+  description: Wake-up Configuration.
+  fields:
+  - name: out
+    description: Output.
+    bit_offset: 0
+    bit_size: 1
+    enum: Out
+fieldset/Wakena:
+  description: Wake-up Enable A.
+  fields:
+  - name: por_det
+    description: POR Detect.
+    bit_offset: 0
+    bit_size: 1
+  - name: wakeup_flag
+    description: Wake-up Pin Flag.
+    bit_offset: 1
+    bit_size: 1
+    enum: WakenaWakeupFlag
+  - name: timer0_flag
+    description: Bandgap Timer 0.
+    bit_offset: 2
+    bit_size: 1
+  - name: timer1_flag
+    description: Bandgap Timer 2.
+    bit_offset: 3
+    bit_size: 1
+  - name: ldo_rdy
+    description: LDO Ready.
+    bit_offset: 4
+    bit_size: 1
+  - name: osc_rdy
+    description: OSC32K Ready.
+    bit_offset: 5
+    bit_size: 1
+  - name: clock_det
+    description: Clock Detect.
+    bit_offset: 6
+    bit_size: 1
+  - name: config_det
+    description: Configuration Detect.
+    bit_offset: 7
+    bit_size: 1
+    enum: WakenaConfigDet
+  - name: volt_det
+    description: Voltage Detect.
+    bit_offset: 8
+    bit_size: 1
+  - name: temp_det
+    description: Temperature Detect.
+    bit_offset: 9
+    bit_size: 1
+  - name: light_det
+    description: Light Detect.
+    bit_offset: 10
+    bit_size: 1
+  - name: sec0_det
+    description: Input 0 Detect.
+    bit_offset: 12
+    bit_size: 1
+  - name: irq_det
+    description: Interrupt Detect.
+    bit_offset: 16
+    bit_size: 1
+    array:
+      len: 4
+      stride: 1
+fieldset/Wakenb:
+  description: Wake-up Enable B.
+  fields:
+  - name: inverse
+    description: Inverse Value.
+    bit_offset: 0
+    bit_size: 20
+fieldset/Wakeupa:
+  description: Wakeup 0 Register A.
+  fields:
+  - name: reg
+    description: Register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Wakeupb:
+  description: Wakeup 0 Register B.
+  fields:
+  - name: inverse
+    description: Inverse value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Waklcka:
+  description: Wakeup Lock A.
+  fields:
+  - name: lock
+    description: Lock.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Waklckb:
+  description: Wakeup Lock B.
+  fields:
+  - name: lock
+    description: Lock.
+    bit_offset: 0
+    bit_size: 1
+    enum: WaklckbLock
+enum/CapTrim:
+  bit_size: 2
+  variants:
+  - name: Val0
+    description: Default (when CAP2_TRIM = 0 and CAP_TRIM[1:0] = 00 ).
+    value: 0
+  - name: Val1
+    description: -1us (when CAP2_TRIM = 0 and CAP_TRIM[1:0] = 01).
+    value: 1
+  - name: Val2
+    description: -2us (when CAP2_TRIM = 0 and CAP_TRIM[1:0] = 10) or or +3.5us (when CAP2_TRIM = 1 and CAP_TRIM[1:0] = 10).
+    value: 2
+  - name: Val3
+    description: -2.5us (when CAP2_TRIM = 0 and CAP_TRIM[1:0] = 11) or +1us (when CAP2_TRIM = 1 and CAP_TRIM[1:0] = 11).
+    value: 3
+enum/CmpTrim:
+  bit_size: 2
+  variants:
+  - name: CmpTrim0
+    description: 760 mV.
+    value: 0
+  - name: CmpTrim1
+    description: 770 mV.
+    value: 1
+  - name: CmpTrim3
+    description: 740 mV.
+    value: 3
+enum/CoarseAmpGain:
+  bit_size: 2
+  variants:
+  - name: Gain05
+    description: ESR Range 0.
+    value: 0
+  - name: Gain10
+    description: ESR Range 1.
+    value: 1
+  - name: Gain18
+    description: ESR Range 2.
+    value: 2
+  - name: Gain33
+    description: ESR Range 3.
+    value: 3
+enum/DivideTrim:
+  bit_size: 1
+  variants:
+  - name: Cfg0
+    description: Clock monitor operates at 1 kHz.
+    value: 0
+  - name: Cfg1
+    description: Clock monitor operates at 64 Hz.
+    value: 1
+enum/DlyTrim:
+  bit_size: 4
+  variants:
+  - name: DlyTrim0
+    description: P current 9(nA) and N Current 6(nA).
+    value: 0
+  - name: DlyTrim1
+    description: P current 13(nA) and N Current 6(nA).
+    value: 1
+  - name: DlyTrim3
+    description: P current 4(nA) and N Current 6(nA).
+    value: 3
+  - name: DlyTrim4
+    description: P current 9(nA) and N Current 4(nA).
+    value: 4
+  - name: DlyTrim5
+    description: P current 13(nA) and N Current 4(nA).
+    value: 5
+  - name: DlyTrim7
+    description: P current 4(nA) and N Current 4(nA).
+    value: 7
+  - name: DlyTrim8
+    description: P current 9(nA) and N Current 2(nA).
+    value: 8
+  - name: DlyTrim9
+    description: P current 13(nA) and N Current 2(nA).
+    value: 9
+  - name: DlyTrim11
+    description: P current 4(nA) and N Current 2(nA).
+    value: 11
+enum/ExtalCapSel:
+  bit_size: 4
+  variants:
+  - name: Sel0
+    description: 0 pF.
+    value: 0
+  - name: Sel2
+    description: 2 pF.
+    value: 1
+  - name: Sel4
+    description: 4 pF.
+    value: 2
+  - name: Sel6
+    description: 6 pF.
+    value: 3
+  - name: Sel8
+    description: 8 pF.
+    value: 4
+  - name: Sel10
+    description: 10 pF.
+    value: 5
+  - name: Sel12
+    description: 12 pF.
+    value: 6
+  - name: Sel14
+    description: 14 pF.
+    value: 7
+  - name: Sel16
+    description: 16 pF.
+    value: 8
+  - name: Sel18
+    description: 18 pF.
+    value: 9
+  - name: Sel20
+    description: 20 pF.
+    value: 10
+  - name: Sel22
+    description: 22 pF.
+    value: 11
+  - name: Sel24
+    description: 24 pF.
+    value: 12
+  - name: Sel26
+    description: 26 pF.
+    value: 13
+  - name: Sel28
+    description: 28 pF.
+    value: 14
+  - name: Sel30
+    description: 30 pF.
+    value: 15
+enum/FreqTrim:
+  bit_size: 2
+  variants:
+  - name: Cfg0
+    description: Clock monitor asserts 2 cycle after expected edge.
+    value: 0
+  - name: Cfg1
+    description: Clock monitor asserts 4 cycles after expected edge.
+    value: 1
+  - name: Cfg2
+    description: Clock monitor asserts 6 cycles after expected edge.
+    value: 2
+  - name: Cfg3
+    description: Clock monitor asserts 8 cycles after expected edge.
+    value: 3
+enum/FrolckbLock:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Block.
+    value: 0
+  - name: Disable
+    description: Do not block.
+    value: 1
+enum/InitTrim:
+  bit_size: 3
+  variants:
+  - name: Sel0
+    description: 8 s.
+    value: 0
+  - name: Sel1
+    description: 4 s.
+    value: 1
+  - name: Sel2
+    description: 2 s.
+    value: 2
+  - name: Sel3
+    description: 1 s.
+    value: 3
+  - name: Sel4
+    description: 0.5 s.
+    value: 4
+  - name: Sel5
+    description: 0.25 s.
+    value: 5
+  - name: Sel6
+    description: 0.125 s.
+    value: 6
+  - name: Sel7
+    description: 0.5 ms.
+    value: 7
+enum/IrqenaConfigDet:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Disable.
+    value: 0
+  - name: Set
+    description: Enable.
+    value: 1
+enum/IrqenaWakeupFlag:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Disable.
+    value: 0
+  - name: Set
+    description: Enable.
+    value: 1
+enum/LdolckbLock:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Block.
+    value: 0
+  - name: Disable
+    description: Do not block.
+    value: 1
+enum/LockbLock:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Enables lock.
+    value: 0
+  - name: Disable
+    description: Disables lock.
+    value: 1
+enum/ModeEn:
+  bit_size: 2
+  variants:
+  - name: Hp
+    description: Normal mode.
+    value: 0
+  - name: Lp
+    description: Startup mode.
+    value: 1
+  - name: Sw
+    description: Low power mode.
+    value: 3
+enum/MonlckbLock:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Lock is enabled.
+    value: 0
+  - name: Disable
+    description: Lock is disabled.
+    value: 1
+enum/OsclckbLock:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Block.
+    value: 0
+  - name: Disable
+    description: Do not block.
+    value: 1
+enum/Out:
+  bit_size: 1
+  variants:
+  - name: On
+    description: Logic zero (asserted).
+    value: 0
+  - name: Off
+    description: Logic one.
+    value: 1
+enum/StatusaClockDet:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Clock error not detected.
+    value: 0
+  - name: Set
+    description: Clock error detected.
+    value: 1
+enum/StatusaConfigDet:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Not detected.
+    value: 0
+  - name: Set
+    description: Detected.
+    value: 1
+enum/StatusaIrqDet:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Not asserted.
+    value: 0
+  - name: Set
+    description: Asserted.
+    value: 1
+enum/StatusaLdoRdy:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Disabled (not ready).
+    value: 0
+  - name: Set
+    description: Enabled (ready).
+    value: 1
+enum/StatusaLightDet:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Light error not detected.
+    value: 0
+  - name: Set
+    description: Light error detected.
+    value: 1
+enum/StatusaOscRdy:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Disabled (clock not ready).
+    value: 0
+  - name: Set
+    description: Enabled (clock ready).
+    value: 1
+enum/StatusaPorDet:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Not reset.
+    value: 0
+  - name: Set
+    description: Reset.
+    value: 1
+enum/StatusaSec0Det:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Security input 0 not detected.
+    value: 0
+  - name: Set
+    description: Security input 0 detected.
+    value: 1
+enum/StatusaTempDet:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Temperature error not detected.
+    value: 0
+  - name: Set
+    description: Temperature error detected.
+    value: 1
+enum/StatusaTimer0Flag:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Not reached.
+    value: 0
+  - name: Set
+    description: Reached.
+    value: 1
+enum/StatusaTimer1Flag:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Not reached.
+    value: 0
+  - name: Set
+    description: Reached.
+    value: 1
+enum/StatusaVoltDet:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Not detected.
+    value: 0
+  - name: Set
+    description: Detected.
+    value: 1
+enum/StatusaWakeupFlag:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Not asserted.
+    value: 0
+  - name: Set
+    description: Asserted.
+    value: 1
+enum/SupplyDet:
+  bit_size: 2
+  variants:
+  - name: SupplyDet0
+    description: VBAT supply is less than 3V.
+    value: 0
+  - name: SupplyDet1
+    description: VBAT supply is greater than 3V.
+    value: 1
+enum/SwilckbLock:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Block.
+    value: 0
+  - name: Disable
+    description: Do not block.
+    value: 1
+enum/TamlckbLock:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Lock is enabled.
+    value: 0
+  - name: Disable
+    description: Lock is disabled.
+    value: 1
+enum/TamperaConfigDet:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Tamper disabled.
+    value: 0
+  - name: Set
+    description: Tamper enabled.
+    value: 1
+enum/Timcfg:
+  bit_size: 3
+  variants:
+  - name: Cfg1000
+    description: 1 s.
+    value: 0
+  - name: Cfg500
+    description: 500 ms.
+    value: 1
+  - name: Cfg250
+    description: 250 ms.
+    value: 2
+  - name: Cfg125
+    description: 125 ms.
+    value: 3
+  - name: Cfg62
+    description: 62.5 ms.
+    value: 4
+  - name: Cfg31
+    description: 31.25 ms.
+    value: 5
+  - name: Cfg15
+    description: 15.625 ms.
+    value: 6
+  - name: Cfg7
+    description: 7.8125 ms.
+    value: 7
+enum/WakenaConfigDet:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Disable.
+    value: 0
+  - name: Set
+    description: Enable.
+    value: 1
+enum/WakenaWakeupFlag:
+  bit_size: 1
+  variants:
+  - name: Clr
+    description: Disable.
+    value: 0
+  - name: Set
+    description: Enable.
+    value: 1
+enum/WaklckbLock:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Lock is enabled.
+    value: 0
+  - name: Disable
+    description: Lock is disabled.
+    value: 1
+enum/XtalCapSel:
+  bit_size: 4
+  variants:
+  - name: Sel0
+    description: 0 pF.
+    value: 0
+  - name: Sel2
+    description: 2 pF.
+    value: 1
+  - name: Sel4
+    description: 4 pF.
+    value: 2
+  - name: Sel6
+    description: 6 pF.
+    value: 3
+  - name: Sel8
+    description: 8 pF.
+    value: 4
+  - name: Sel10
+    description: 10 pF.
+    value: 5
+  - name: Sel12
+    description: 12 pF.
+    value: 6
+  - name: Sel14
+    description: 14 pF.
+    value: 7
+  - name: Sel16
+    description: 16 pF.
+    value: 8
+  - name: Sel18
+    description: 18 pF.
+    value: 9
+  - name: Sel20
+    description: 20 pF.
+    value: 10
+  - name: Sel22
+    description: 22 pF.
+    value: 11
+  - name: Sel24
+    description: 24 pF.
+    value: 12
+  - name: Sel26
+    description: 26 pF.
+    value: 13
+  - name: Sel28
+    description: 28 pF.
+    value: 14
+  - name: Sel30
+    description: 30 pF.
+    value: 15

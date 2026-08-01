@@ -1,0 +1,60 @@
+block/RtcSubsystem:
+  description: RTC_SUBSYSTEM.
+  items:
+  - name: subsecond_ctrl
+    description: Subsecond Control.
+    byte_offset: 2048
+    fieldset: SubsecondCtrl
+  - name: subsecond_cnt
+    description: Subsecond Counter.
+    byte_offset: 2052
+    access: Read
+    fieldset: SubsecondCnt
+  - name: wake_timer_ctrl
+    description: Wake Timer Control.
+    byte_offset: 3072
+    fieldset: WakeTimerCtrl
+  - name: wake_timer_cnt
+    description: Wake Timer Counter.
+    byte_offset: 3084
+    fieldset: WakeTimerCnt
+fieldset/SubsecondCnt:
+  description: Subsecond Counter.
+  fields:
+  - name: subsecond_cnt
+    description: Current Subsecond Counter Value.
+    bit_offset: 0
+    bit_size: 16
+fieldset/SubsecondCtrl:
+  description: Subsecond Control.
+  fields:
+  - name: sub_second_cnt_en
+    description: Subsecond Counter Enable.
+    bit_offset: 0
+    bit_size: 1
+fieldset/WakeTimerCnt:
+  description: Wake Timer Counter.
+  fields:
+  - name: wake_cnt
+    description: Wake Counter.
+    bit_offset: 0
+    bit_size: 32
+fieldset/WakeTimerCtrl:
+  description: Wake Timer Control.
+  fields:
+  - name: wake_flag
+    description: Wake Timer Status Flag.
+    bit_offset: 1
+    bit_size: 1
+  - name: clr_wake_timer
+    description: Clear Wake Timer.
+    bit_offset: 2
+    bit_size: 1
+  - name: osc_div_ena
+    description: OSC Divide Enable.
+    bit_offset: 4
+    bit_size: 1
+  - name: intr_en
+    description: Enable Interrupt.
+    bit_offset: 5
+    bit_size: 1

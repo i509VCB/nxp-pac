@@ -1,0 +1,516 @@
+block/Pkc0:
+  description: no description available.
+  items:
+  - name: pkc_status
+    description: Status Register.
+    byte_offset: 0
+    access: Read
+    fieldset: PkcStatus
+  - name: pkc_ctrl
+    description: Control Register.
+    byte_offset: 4
+    fieldset: PkcCtrl
+  - name: pkc_cfg
+    description: Configuration register.
+    byte_offset: 8
+    fieldset: PkcCfg
+  - name: pkc_mode1
+    description: Mode register, parameter set 1.
+    byte_offset: 16
+    fieldset: PkcMode1
+  - name: pkc_xyptr1
+    description: X+Y pointer register, parameter set 1.
+    byte_offset: 20
+    fieldset: PkcXyptr1
+  - name: pkc_zrptr1
+    description: Z+R pointer register, parameter set 1.
+    byte_offset: 24
+    fieldset: PkcZrptr1
+  - name: pkc_len1
+    description: Length register, parameter set 1.
+    byte_offset: 28
+    fieldset: PkcLen1
+  - name: pkc_mode2
+    description: Mode register, parameter set 2.
+    byte_offset: 32
+    fieldset: PkcMode2
+  - name: pkc_xyptr2
+    description: X+Y pointer register, parameter set 2.
+    byte_offset: 36
+    fieldset: PkcXyptr2
+  - name: pkc_zrptr2
+    description: Z+R pointer register, parameter set 2.
+    byte_offset: 40
+    fieldset: PkcZrptr2
+  - name: pkc_len2
+    description: Length register, parameter set 2.
+    byte_offset: 44
+    fieldset: PkcLen2
+  - name: pkc_uptr
+    description: Universal pointer FUP program.
+    byte_offset: 64
+    fieldset: PkcUptr
+  - name: pkc_uptrt
+    description: Universal pointer FUP table.
+    byte_offset: 68
+    fieldset: PkcUptrt
+  - name: pkc_ulen
+    description: Universal pointer length.
+    byte_offset: 72
+    fieldset: PkcUlen
+  - name: pkc_mcdata
+    description: MC pattern data interface.
+    byte_offset: 80
+    fieldset: PkcMcdata
+  - name: pkc_version
+    description: PKC version register.
+    byte_offset: 96
+    access: Read
+    fieldset: PkcVersion
+  - name: pkc_soft_rst
+    description: Software reset.
+    byte_offset: 4016
+    access: Write
+    fieldset: PkcSoftRst
+  - name: pkc_access_err
+    description: Access Error.
+    byte_offset: 4032
+    access: Read
+    fieldset: PkcAccessErr
+  - name: pkc_access_err_clr
+    description: Clear Access Error.
+    byte_offset: 4036
+    access: Write
+    fieldset: PkcAccessErrClr
+  - name: pkc_int_clr_enable
+    description: Interrupt enable clear.
+    byte_offset: 4056
+    access: Write
+    fieldset: PkcIntClrEnable
+  - name: pkc_int_set_enable
+    description: Interrupt enable set.
+    byte_offset: 4060
+    access: Write
+    fieldset: PkcIntSetEnable
+  - name: pkc_int_status
+    description: Interrupt status.
+    byte_offset: 4064
+    access: Read
+    fieldset: PkcIntStatus
+  - name: pkc_int_enable
+    description: Interrupt enable.
+    byte_offset: 4068
+    access: Read
+    fieldset: PkcIntEnable
+  - name: pkc_int_clr_status
+    description: Interrupt status clear.
+    byte_offset: 4072
+    access: Write
+    fieldset: PkcIntClrStatus
+  - name: pkc_int_set_status
+    description: Interrupt status set.
+    byte_offset: 4076
+    access: Write
+    fieldset: PkcIntSetStatus
+  - name: pkc_module_id
+    description: Module ID.
+    byte_offset: 4092
+    access: Read
+    fieldset: PkcModuleId
+fieldset/PkcAccessErr:
+  description: Access Error.
+  fields:
+  - name: apb_notav
+    description: APB Error.
+    bit_offset: 0
+    bit_size: 1
+  - name: apb_wrgmd
+    description: APB Error.
+    bit_offset: 1
+    bit_size: 1
+  - name: apb_master
+    description: APB Master that triggered first APB error (APB_WRGMD or APB_NOTAV).
+    bit_offset: 4
+    bit_size: 4
+  - name: ahb
+    description: AHB Error.
+    bit_offset: 10
+    bit_size: 1
+  - name: pkcc
+    description: Error in PKC coprocessor kernel.
+    bit_offset: 16
+    bit_size: 1
+  - name: fdet
+    description: Error due to error detection circuitry.
+    bit_offset: 17
+    bit_size: 1
+  - name: ctrl
+    description: Error in PKC software control.
+    bit_offset: 18
+    bit_size: 1
+  - name: ucrc
+    description: Error in layer2 CRC check.
+    bit_offset: 19
+    bit_size: 1
+fieldset/PkcAccessErrClr:
+  description: Clear Access Error.
+  fields:
+  - name: err_clr
+    description: Write 1 to reset PKC_ACCESS_ERR SFR.
+    bit_offset: 0
+    bit_size: 1
+fieldset/PkcCfg:
+  description: Configuration register.
+  fields:
+  - name: idleop
+    description: Idle operation feature not available in this version (flag is don't care).
+    bit_offset: 0
+    bit_size: 1
+  - name: rfu1
+    description: RFU.
+    bit_offset: 1
+    bit_size: 1
+  - name: rfu2
+    description: RFU.
+    bit_offset: 2
+    bit_size: 1
+  - name: clkrnd
+    description: Clock randomization feature not available in this version (flag is don't care).
+    bit_offset: 3
+    bit_size: 1
+  - name: redmulnoise
+    description: Noise in reduced multiplier mode feature not available in this version (flag is don't care).
+    bit_offset: 4
+    bit_size: 1
+  - name: rnddly
+    description: Random delay feature not available in this version (flag is don't care).
+    bit_offset: 5
+    bit_size: 3
+  - name: sbxnoise
+    description: Noise feature not available in this version (flag is don't care).
+    bit_offset: 8
+    bit_size: 1
+  - name: alpnoise
+    description: Noise feature not available in this version (flag is don't care).
+    bit_offset: 9
+    bit_size: 1
+  - name: fmulnoise
+    description: Noise feature not available in this version (flag is don't care).
+    bit_offset: 10
+    bit_size: 1
+fieldset/PkcCtrl:
+  description: Control Register.
+  fields:
+  - name: reset
+    description: PKC reset control bit.
+    bit_offset: 0
+    bit_size: 1
+  - name: stop
+    description: Freeze PKC calculation.
+    bit_offset: 1
+    bit_size: 1
+  - name: god1
+    description: Control bit to start direct operation using parameter set 1.
+    bit_offset: 2
+    bit_size: 1
+  - name: god2
+    description: Control bit to start direct operation using parameter set 2.
+    bit_offset: 3
+    bit_size: 1
+  - name: gom1
+    description: Control bit to start MC pattern using parameter set 1.
+    bit_offset: 4
+    bit_size: 1
+  - name: gom2
+    description: Control bit to start MC pattern using parameter set 2.
+    bit_offset: 5
+    bit_size: 1
+  - name: gou
+    description: Control bit to start pipe operation.
+    bit_offset: 6
+    bit_size: 1
+  - name: gf2conv
+    description: Convert to GF2 calculation modes.
+    bit_offset: 7
+    bit_size: 1
+  - name: clrcache
+    description: Clear universal pointer cache.
+    bit_offset: 8
+    bit_size: 1
+  - name: cache_en
+    description: Enable universal pointer cache.
+    bit_offset: 9
+    bit_size: 1
+  - name: redmul
+    description: Reduced multiplier mode.
+    bit_offset: 10
+    bit_size: 2
+    enum: Redmul
+fieldset/PkcIntClrEnable:
+  description: Interrupt enable clear.
+  fields:
+  - name: en_pdone
+    description: Write to clear PDONE interrupt enable flag (PKC_INT_ENABLE[EN_PDONE]=0).
+    bit_offset: 0
+    bit_size: 1
+fieldset/PkcIntClrStatus:
+  description: Interrupt status clear.
+  fields:
+  - name: int_pdone
+    description: Write to clear End-of-computation status flag (PKC_INT_STATUS[INT_PDONE]=0).
+    bit_offset: 0
+    bit_size: 1
+fieldset/PkcIntEnable:
+  description: Interrupt enable.
+  fields:
+  - name: en_pdone
+    description: PDONE interrupt enable flag.
+    bit_offset: 0
+    bit_size: 1
+fieldset/PkcIntSetEnable:
+  description: Interrupt enable set.
+  fields:
+  - name: en_pdone
+    description: Write to set PDONE interrupt enable flag (PKC_INT_ENABLE[EN_PDONE]=1).
+    bit_offset: 0
+    bit_size: 1
+fieldset/PkcIntSetStatus:
+  description: Interrupt status set.
+  fields:
+  - name: int_pdone
+    description: Write to set End-of-computation status flag (PKC_INT_STATUS[INT_PDONE]=1) to trigger a PKC interrupt via software, e.
+    bit_offset: 0
+    bit_size: 1
+fieldset/PkcIntStatus:
+  description: Interrupt status.
+  fields:
+  - name: int_pdone
+    description: End-of-computation status flag.
+    bit_offset: 0
+    bit_size: 1
+fieldset/PkcLen1:
+  description: Length register, parameter set 1.
+  fields:
+  - name: len
+    description: Operand length.
+    bit_offset: 0
+    bit_size: 16
+  - name: mclen
+    description: Loop counter for microcode pattern.
+    bit_offset: 16
+    bit_size: 16
+fieldset/PkcLen2:
+  description: Length register, parameter set 2.
+  fields:
+  - name: len
+    description: Operand length.
+    bit_offset: 0
+    bit_size: 16
+  - name: mclen
+    description: Loop counter for microcode pattern.
+    bit_offset: 16
+    bit_size: 16
+fieldset/PkcMcdata:
+  description: MC pattern data interface.
+  fields:
+  - name: mcdata
+    description: Microcode read/write data.
+    bit_offset: 0
+    bit_size: 32
+fieldset/PkcMode1:
+  description: Mode register, parameter set 1.
+  fields:
+  - name: mode
+    description: Calculation Mode / MC Start address.
+    bit_offset: 0
+    bit_size: 8
+fieldset/PkcMode2:
+  description: Mode register, parameter set 2.
+  fields:
+  - name: mode
+    description: Calculation Mode / MC Start address.
+    bit_offset: 0
+    bit_size: 8
+fieldset/PkcModuleId:
+  description: Module ID.
+  fields:
+  - name: size
+    description: Address space of the IP.
+    bit_offset: 0
+    bit_size: 8
+  - name: minor_rev
+    description: Minor revision.
+    bit_offset: 8
+    bit_size: 4
+  - name: major_rev
+    description: Major revision.
+    bit_offset: 12
+    bit_size: 4
+  - name: id
+    description: Module ID.
+    bit_offset: 16
+    bit_size: 16
+fieldset/PkcSoftRst:
+  description: Software reset.
+  fields:
+  - name: soft_rst
+    description: Write 1 to reset module (0 has no effect).
+    bit_offset: 0
+    bit_size: 1
+fieldset/PkcStatus:
+  description: Status Register.
+  fields:
+  - name: activ
+    description: PKC ACTIV.
+    bit_offset: 0
+    bit_size: 1
+  - name: carry
+    description: Carry overflow flag.
+    bit_offset: 1
+    bit_size: 1
+  - name: zero
+    description: Zero result flag.
+    bit_offset: 2
+    bit_size: 1
+  - name: goany
+    description: Combined GO status flag.
+    bit_offset: 3
+    bit_size: 1
+  - name: locked
+    description: Parameter set locked.
+    bit_offset: 5
+    bit_size: 2
+fieldset/PkcUlen:
+  description: Universal pointer length.
+  fields:
+  - name: len
+    description: Length of universal pointer calculation.
+    bit_offset: 0
+    bit_size: 8
+fieldset/PkcUptr:
+  description: Universal pointer FUP program.
+  fields:
+  - name: ptr
+    description: Pointer to start address of PKC FUP program.
+    bit_offset: 0
+    bit_size: 32
+fieldset/PkcUptrt:
+  description: Universal pointer FUP table.
+  fields:
+  - name: ptr
+    description: Pointer to start address of PKC FUP table.
+    bit_offset: 0
+    bit_size: 32
+fieldset/PkcVersion:
+  description: PKC version register.
+  fields:
+  - name: mulsize
+    description: Native multiplier size and operand granularity.
+    bit_offset: 0
+    bit_size: 2
+    enum: Mulsize
+  - name: mcavail
+    description: MC feature (layer1 calculation) is available.
+    bit_offset: 2
+    bit_size: 1
+  - name: upavail
+    description: UP feature (layer2 calculation) is available.
+    bit_offset: 3
+    bit_size: 1
+  - name: upcacheavail
+    description: UP cache is available.
+    bit_offset: 4
+    bit_size: 1
+  - name: gf2avail
+    description: GF2 calculation modes are available.
+    bit_offset: 5
+    bit_size: 1
+  - name: paramnum
+    description: Number of parameter sets for real calculation.
+    bit_offset: 6
+    bit_size: 2
+  - name: sbx0avail
+    description: SBX0 operation is available.
+    bit_offset: 8
+    bit_size: 1
+  - name: sbx1avail
+    description: SBX1 operation is available.
+    bit_offset: 9
+    bit_size: 1
+  - name: sbx2avail
+    description: SBX2 operation is available.
+    bit_offset: 10
+    bit_size: 1
+  - name: sbx3avail
+    description: SBX3 operation is available.
+    bit_offset: 11
+    bit_size: 1
+  - name: mcreconf_size
+    description: Size of reconfigurable MC table in bytes.
+    bit_offset: 12
+    bit_size: 8
+fieldset/PkcXyptr1:
+  description: X+Y pointer register, parameter set 1.
+  fields:
+  - name: xptr
+    description: Start address of X operand in PKCRAM with byte granularity.
+    bit_offset: 0
+    bit_size: 16
+  - name: yptr
+    description: Start address of Y operand in PKCRAM with byte granularity.
+    bit_offset: 16
+    bit_size: 16
+fieldset/PkcXyptr2:
+  description: X+Y pointer register, parameter set 2.
+  fields:
+  - name: xptr
+    description: Start address of X operand in PKCRAM with byte granularity.
+    bit_offset: 0
+    bit_size: 16
+  - name: yptr
+    description: Start address of Y operand in PKCRAM with byte granularity.
+    bit_offset: 16
+    bit_size: 16
+fieldset/PkcZrptr1:
+  description: Z+R pointer register, parameter set 1.
+  fields:
+  - name: zptr
+    description: Start address of Z operand in PKCRAM with byte granularity or constant for calculation modes using CONST.
+    bit_offset: 0
+    bit_size: 16
+  - name: rptr
+    description: Start address of R result in PKCRAM with byte granularity.
+    bit_offset: 16
+    bit_size: 16
+fieldset/PkcZrptr2:
+  description: Z+R pointer register, parameter set 2.
+  fields:
+  - name: zpt
+    description: Start address of Z operand in PKCRAM with byte granularity or constant for calculation modes using CONST.
+    bit_offset: 0
+    bit_size: 16
+  - name: rptr
+    description: Start address of R result in PKCRAM with byte granularity.
+    bit_offset: 16
+    bit_size: 16
+enum/Mulsize:
+  bit_size: 2
+  variants:
+  - name: Value32b
+    description: 32-bit multiplier.
+    value: 1
+  - name: Value64b
+    description: 64-bit multiplier.
+    value: 2
+  - name: Value128b
+    description: 128-bit multiplier.
+    value: 3
+enum/Redmul:
+  bit_size: 2
+  variants:
+  - name: Fullsz
+    description: full size mode, 3 least significant bits of pointer and length are ignored, minimum supported length 0x0008.
+    value: 0
+  - name: Value64bit
+    description: 64-bit mode, 3 least significant bits of pointer and length are ignored, minimum supported length 0x0008.
+    value: 2

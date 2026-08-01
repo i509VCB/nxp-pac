@@ -1,0 +1,162 @@
+block/Smartdma:
+  description: SmartDMA.
+  items:
+  - name: bootadr
+    description: Boot Address.
+    byte_offset: 32
+    fieldset: Bootadr
+  - name: ctrl
+    description: Control.
+    byte_offset: 36
+    fieldset: Ctrl
+  - name: pc
+    description: Program Counter.
+    byte_offset: 40
+    access: Read
+    fieldset: Pc
+  - name: sp
+    description: Stack Pointer.
+    byte_offset: 44
+    access: Read
+    fieldset: Sp
+  - name: break_addr
+    description: Breakpoint Address.
+    byte_offset: 48
+    fieldset: BreakAddr
+  - name: break_vect
+    description: Breakpoint Vector.
+    byte_offset: 52
+    fieldset: BreakVect
+  - name: emer_vect
+    description: Emergency Vector.
+    byte_offset: 56
+    fieldset: EmerVect
+  - name: emer_sel
+    description: Emergency Select.
+    byte_offset: 60
+    fieldset: EmerSel
+  - name: arm2ezh
+    description: ARM to EZH Interrupt Control.
+    byte_offset: 64
+    fieldset: Arm2ezh
+  - name: ezh2arm
+    description: EZH to ARM Trigger.
+    byte_offset: 68
+    fieldset: Ezh2arm
+  - name: pendtrap
+    description: Pending Trap Control.
+    byte_offset: 72
+    fieldset: Pendtrap
+fieldset/Arm2ezh:
+  description: ARM to EZH Interrupt Control.
+  fields:
+  - name: ie
+    description: Interrupt Enable.
+    bit_offset: 0
+    bit_size: 2
+  - name: gp
+    description: General purpose register bits.
+    bit_offset: 2
+    bit_size: 30
+fieldset/Bootadr:
+  description: Boot Address.
+  fields:
+  - name: addr
+    description: 32-bit boot address, the boot address should be 4-byte aligned.
+    bit_offset: 2
+    bit_size: 30
+fieldset/BreakAddr:
+  description: Breakpoint Address.
+  fields:
+  - name: addr
+    description: 32-bit address to swap to EZHB_BREAK_VECT location.
+    bit_offset: 2
+    bit_size: 30
+fieldset/BreakVect:
+  description: Breakpoint Vector.
+  fields:
+  - name: vec
+    description: Vector address of user debug routine.
+    bit_offset: 2
+    bit_size: 30
+fieldset/Ctrl:
+  description: Control.
+  fields:
+  - name: start
+    description: Start Bit Ignition.
+    bit_offset: 0
+    bit_size: 1
+  - name: exf
+    description: External Flag.
+    bit_offset: 1
+    bit_size: 1
+  - name: errdis
+    description: Error Disable.
+    bit_offset: 2
+    bit_size: 1
+  - name: bufen
+    description: Buffer Enable.
+    bit_offset: 3
+    bit_size: 1
+  - name: syncen
+    description: Sync Enable.
+    bit_offset: 4
+    bit_size: 1
+  - name: wkey
+    description: Write Key.
+    bit_offset: 16
+    bit_size: 16
+fieldset/EmerSel:
+  description: Emergency Select.
+  fields:
+  - name: en
+    description: Emergency code routine.
+    bit_offset: 8
+    bit_size: 1
+  - name: rq
+    description: Software emergency request.
+    bit_offset: 9
+    bit_size: 1
+fieldset/EmerVect:
+  description: Emergency Vector.
+  fields:
+  - name: vec
+    description: Vector address of emergency code routine.
+    bit_offset: 2
+    bit_size: 30
+fieldset/Ezh2arm:
+  description: EZH to ARM Trigger.
+  fields:
+  - name: gp
+    description: General purpose register bits Writing to EZH2ARM triggers the ARM interrupt when ARM2EZH [1:0] == 2h.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Pc:
+  description: Program Counter.
+  fields:
+  - name: pc
+    description: Program Counter.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Pendtrap:
+  description: Pending Trap Control.
+  fields:
+  - name: status
+    description: Status Flag or Pending Trap Request.
+    bit_offset: 0
+    bit_size: 8
+  - name: pol
+    description: Polarity.
+    bit_offset: 8
+    bit_size: 8
+  - name: en
+    description: Enable Pending Trap.
+    bit_offset: 16
+    bit_size: 8
+fieldset/Sp:
+  description: Stack Pointer.
+  fields:
+  - name: sp
+    description: Stack Pointer.
+    bit_offset: 0
+    bit_size: 32

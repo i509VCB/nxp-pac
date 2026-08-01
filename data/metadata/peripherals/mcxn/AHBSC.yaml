@@ -1,0 +1,4559 @@
+block/Ahbsc:
+  description: AHBSC.
+  items:
+  - name: flash00_mem_rule
+    description: Flash Memory Rule.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 16
+    fieldset: Flash00MemRule
+  - name: flash01_mem_rule
+    description: Flash Memory Rule.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 32
+    fieldset: Flash01MemRule
+  - name: flash02_mem_rule
+    description: Flash Memory Rule.
+    byte_offset: 48
+    fieldset: Flash02MemRule
+  - name: flash03_mem_rule
+    description: Flash Memory Rule.
+    byte_offset: 64
+    fieldset: Flash03MemRule
+  - name: rom_mem_rule
+    description: ROM Memory Rule.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 96
+    fieldset: RomMemRule
+  - name: ramx_mem_rule
+    description: RAMX Memory Rule.
+    array:
+      len: 3
+      stride: 4
+    byte_offset: 128
+    fieldset: RamxMemRule
+  - name: rama_mem_rule
+    description: RAMA Memory Rule 0.
+    byte_offset: 160
+    fieldset: RamaMemRule
+  - name: ramb_mem_rule
+    description: RAMB Memory Rule.
+    byte_offset: 192
+    fieldset: RambMemRule
+  - name: ramc_mem_rule
+    description: RAMC Memory Rule.
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 224
+    fieldset: RamcMemRule
+  - name: ramd_mem_rule
+    description: RAMD Memory Rule.
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 256
+    fieldset: RamdMemRule
+  - name: rame_mem_rule
+    description: RAME Memory Rule.
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 288
+    fieldset: RameMemRule
+  - name: ramf_mem_rule
+    description: RAMF Memory Rule.
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 320
+    fieldset: RamfMemRule
+  - name: ramg_mem_rule
+    description: RAMG Memory Rule.
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 352
+    fieldset: RamgMemRule
+  - name: ramh_mem_rule
+    description: RAMH Memory Rule.
+    byte_offset: 384
+    fieldset: RamhMemRule
+  - name: apb_peripheral_group0_mem_rule0
+    description: APB Bridge Group 0 Memory Rule 0.
+    byte_offset: 416
+    fieldset: ApbPeripheralGroup0MemRule0
+  - name: apb_peripheral_group0_mem_rule1
+    description: APB Bridge Group 0 Memory Rule 1.
+    byte_offset: 420
+    fieldset: ApbPeripheralGroup0MemRule1
+  - name: apb_peripheral_group0_mem_rule2
+    description: APB Bridge Group 0 Rule 2.
+    byte_offset: 424
+    fieldset: ApbPeripheralGroup0MemRule2
+  - name: apb_peripheral_group0_mem_rule3
+    description: APB Bridge Group 0 Memory Rule 3.
+    byte_offset: 428
+    fieldset: ApbPeripheralGroup0MemRule3
+  - name: apb_peripheral_group1_mem_rule0
+    description: APB Bridge Group 1 Memory Rule 0.
+    byte_offset: 432
+    fieldset: ApbPeripheralGroup1MemRule0
+  - name: apb_peripheral_group1_mem_rule1
+    description: APB Bridge Group 1 Memory Rule 1.
+    byte_offset: 436
+    fieldset: ApbPeripheralGroup1MemRule1
+  - name: apb_peripheral_group1_mem_rule2
+    description: APB Bridge Group 1 Memory Rule 2.
+    byte_offset: 444
+    fieldset: ApbPeripheralGroup1MemRule2
+  - name: aips_bridge_group0_mem_rule0
+    description: AIPS Bridge Group 0 Memory Rule 0.
+    byte_offset: 448
+    fieldset: AipsBridgeGroup0MemRule0
+  - name: aips_bridge_group0_mem_rule1
+    description: AIPS Bridge Group 0 Memory Rule 1.
+    byte_offset: 452
+    fieldset: AipsBridgeGroup0MemRule1
+  - name: aips_bridge_group0_mem_rule2
+    description: AIPS Bridge Group 0 Memory Rule 2.
+    byte_offset: 456
+    fieldset: AipsBridgeGroup0MemRule2
+  - name: aips_bridge_group0_mem_rule3
+    description: AIPS Bridge Group 0 Memory Rule 3.
+    byte_offset: 460
+    fieldset: AipsBridgeGroup0MemRule3
+  - name: ahb_peripheral0_slave_port_p12_slave_rule0
+    description: AHB Peripheral 0 Slave Port 12 Slave Rule 0.
+    byte_offset: 464
+    fieldset: AhbPeripheral0SlavePortP12SlaveRule0
+  - name: ahb_peripheral0_slave_port_p12_slave_rule1
+    description: AHB Peripheral 0 Slave Port 12 Slave Rule 1.
+    byte_offset: 468
+    fieldset: AhbPeripheral0SlavePortP12SlaveRule1
+  - name: ahb_peripheral0_slave_port_p12_slave_rule2
+    description: AHB Peripheral 0 Slave Port 12 Slave Rule 2.
+    byte_offset: 472
+    fieldset: AhbPeripheral0SlavePortP12SlaveRule2
+  - name: aips_bridge_group1_mem_rule0
+    description: AIPS Bridge Group 1 Rule 0.
+    byte_offset: 480
+    fieldset: AipsBridgeGroup1MemRule0
+  - name: aips_bridge_group1_mem_rule1
+    description: AIPS Bridge Group 1 Rule 1.
+    byte_offset: 484
+    fieldset: AipsBridgeGroup1MemRule1
+  - name: ahb_peripheral1_slave_port_p13_slave_rule0
+    description: AHB Peripheral 1 Slave Port 13 Slave Rule 0.
+    byte_offset: 496
+    fieldset: AhbPeripheral1SlavePortP13SlaveRule0
+  - name: ahb_peripheral1_slave_port_p13_slave_rule1
+    description: AHB Peripheral 1 Slave Port 13 Slave Rule 1.
+    byte_offset: 500
+    fieldset: AhbPeripheral1SlavePortP13SlaveRule1
+  - name: ahb_peripheral1_slave_port_p13_slave_rule2
+    description: AHB Peripheral 1 Slave Port 13 Slave Rule 2.
+    byte_offset: 504
+    fieldset: AhbPeripheral1SlavePortP13SlaveRule2
+  - name: aips_bridge_group2_mem_rule0
+    description: AIPS Bridge Group 2 Rule 0.
+    byte_offset: 512
+    fieldset: AipsBridgeGroup2MemRule0
+  - name: aips_bridge_group2_mem_rule1
+    description: AIPS Bridge Group 2 Memory Rule 1.
+    byte_offset: 516
+    fieldset: AipsBridgeGroup2MemRule1
+  - name: aips_bridge_group3_mem_rule0
+    description: AIPS Bridge Group 3 Rule 0.
+    byte_offset: 544
+    fieldset: AipsBridgeGroup3MemRule0
+  - name: aips_bridge_group3_mem_rule1
+    description: AIPS Bridge Group 3 Memory Rule 1.
+    byte_offset: 548
+    fieldset: AipsBridgeGroup3MemRule1
+  - name: aips_bridge_group3_mem_rule2
+    description: AIPS Bridge Group 3 Rule 2.
+    byte_offset: 552
+    fieldset: AipsBridgeGroup3MemRule2
+  - name: aips_bridge_group3_mem_rule3
+    description: AIPS Bridge Group 3 Rule 3.
+    byte_offset: 556
+    fieldset: AipsBridgeGroup3MemRule3
+  - name: aips_bridge_group4_mem_rule0
+    description: AIPS Bridge Group 4 Rule 0.
+    byte_offset: 576
+    fieldset: AipsBridgeGroup4MemRule0
+  - name: aips_bridge_group4_mem_rule1
+    description: AIPS Bridge Group 4 Rule 1.
+    byte_offset: 580
+    fieldset: AipsBridgeGroup4MemRule1
+  - name: aips_bridge_group4_mem_rule2
+    description: AIPS Bridge Group 4 Rule 2.
+    byte_offset: 584
+    fieldset: AipsBridgeGroup4MemRule2
+  - name: aips_bridge_group4_mem_rule3
+    description: AIPS Bridge Group 4 Rule 3.
+    byte_offset: 588
+    fieldset: AipsBridgeGroup4MemRule3
+  - name: ahb_secure_ctrl_peripheral_rule0
+    description: AHB Secure Control Peripheral Rule 0.
+    byte_offset: 592
+    fieldset: AhbSecureCtrlPeripheralRule0
+  - name: flexspi0_region0_mem_rule
+    description: FLEXSPI0 Region 0 Memory Rule.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 624
+    fieldset: Flexspi0Region0MemRule
+  - name: flexspi0_region1_6_mem_rule
+    description: 'Array of registers: FLEXSPI0_REGION_MEM_RULE0.'
+    array:
+      len: 6
+      stride: 16
+    byte_offset: 640
+    block: Flexspi0Region16MemRule
+  - name: flexspi0_region7_mem_rule
+    description: FLEXSPI0 Region 7 Memory Rule.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 736
+    fieldset: Flexspi0Region7MemRule
+  - name: flexspi0_region8_13_mem_rule
+    description: 'Array of registers: FLEXSPI0_REGION_MEM_RULE0.'
+    array:
+      len: 6
+      stride: 16
+    byte_offset: 752
+    block: Flexspi0Region813MemRule
+  - name: sec_vio_addr
+    description: Security Violation Address.
+    array:
+      len: 32
+      stride: 4
+    byte_offset: 3584
+    access: Read
+    fieldset: SecVioAddr
+  - name: sec_vio_misc_info
+    description: Security Violation Miscellaneous Information at Address.
+    array:
+      len: 32
+      stride: 4
+    byte_offset: 3712
+    access: Read
+    fieldset: SecVioMiscInfo
+  - name: sec_vio_info_valid
+    description: Security Violation Info Validity for Address.
+    byte_offset: 3840
+    fieldset: SecVioInfoValid
+  - name: sec_gpio_mask
+    description: GPIO Mask for Port index.
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 3968
+    fieldset: SecGpioMask
+  - name: sec_cpu1_int_mask
+    description: Secure Interrupt Mask for CPU1.
+    array:
+      len: 5
+      stride: 4
+    byte_offset: 3992
+    fieldset: SecCpu1IntMask
+  - name: sec_gp_reg_lock
+    description: Secure Mask Lock.
+    byte_offset: 4028
+    fieldset: SecGpRegLock
+  - name: master_sec_level
+    description: Master Secure Level.
+    byte_offset: 4048
+    fieldset: MasterSecLevel
+  - name: master_sec_anti_pol_reg
+    description: Master Secure Level.
+    byte_offset: 4052
+    fieldset: MasterSecAntiPolReg
+  - name: cpu0_lock_reg
+    description: Miscellaneous CPU0 Control Signals.
+    byte_offset: 4076
+    fieldset: Cpu0LockReg
+  - name: cpu1_lock_reg
+    description: Miscellaneous CPU1 Control Signals.
+    byte_offset: 4080
+    fieldset: Cpu1LockReg
+  - name: misc_ctrl_dp_reg
+    description: Secure Control Duplicate.
+    byte_offset: 4088
+    fieldset: MiscCtrlDpReg
+  - name: misc_ctrl_reg
+    description: Secure Control.
+    byte_offset: 4092
+    fieldset: MiscCtrlReg
+block/Flexspi0Region16MemRule:
+  description: 'Array of registers: FLEXSPI0_REGION_MEM_RULE0.'
+  items:
+  - name: flexspi0_region_mem_rule0
+    description: FLEXSPI0 Region index Memory Rule 0.
+    byte_offset: 0
+    fieldset: Flexspi0Region16MemRuleFlexspi0RegionMemRule0
+block/Flexspi0Region813MemRule:
+  description: 'Array of registers: FLEXSPI0_REGION_MEM_RULE0.'
+  items:
+  - name: flexspi0_region_mem_rule0
+    description: FLEXSPI0 Region index Memory Rule 0.
+    byte_offset: 0
+    fieldset: Flexspi0Region813MemRuleFlexspi0RegionMemRule0
+fieldset/AhbPeripheral0SlavePortP12SlaveRule0:
+  description: AHB Peripheral 0 Slave Port 12 Slave Rule 0.
+  fields:
+  - name: e_dma0_ch15
+    description: eDMA0_CH15.
+    bit_offset: 4
+    bit_size: 2
+    enum: EDma0Ch15
+  - name: sct0
+    description: SCT0.
+    bit_offset: 8
+    bit_size: 2
+    enum: Sct0
+  - name: lp_flexcomm
+    description: LP_FLEXCOMM.
+    bit_offset: 12
+    bit_size: 2
+    array:
+      len: 4
+      stride: 4
+    enum: LpFlexcomm
+  - name: gpio0_alias0
+    description: GPIO0_ALIAS0.
+    bit_offset: 28
+    bit_size: 2
+    enum: Gpio0Alias0
+fieldset/AhbPeripheral0SlavePortP12SlaveRule1:
+  description: AHB Peripheral 0 Slave Port 12 Slave Rule 1.
+  fields:
+  - name: gpio0_alias1
+    description: GPIO0_ALIAS1.
+    bit_offset: 0
+    bit_size: 2
+    enum: Gpio0Alias1
+  - name: gpio1_alias0
+    description: GPIO1_ALIAS0.
+    bit_offset: 4
+    bit_size: 2
+    enum: Gpio1Alias0
+  - name: gpio1_alias1
+    description: GPIO1_ALIAS1.
+    bit_offset: 8
+    bit_size: 2
+    enum: Gpio1Alias1
+  - name: gpio2_alias0
+    description: GPIO2_ALIAS0.
+    bit_offset: 12
+    bit_size: 2
+    enum: Gpio2Alias0
+  - name: gpio2_alias1
+    description: GPIO2_ALIAS1.
+    bit_offset: 16
+    bit_size: 2
+    enum: Gpio2Alias1
+  - name: gpio3_alias0
+    description: GPIO3_ALIAS0.
+    bit_offset: 20
+    bit_size: 2
+    enum: Gpio3Alias0
+  - name: gpio3_alias1
+    description: GPIO3_ALIAS1.
+    bit_offset: 24
+    bit_size: 2
+    enum: Gpio3Alias1
+  - name: gpio4_alias0
+    description: GPIO4_ALIAS0.
+    bit_offset: 28
+    bit_size: 2
+    enum: Gpio4Alias0
+fieldset/AhbPeripheral0SlavePortP12SlaveRule2:
+  description: AHB Peripheral 0 Slave Port 12 Slave Rule 2.
+  fields:
+  - name: gpio4_alias1
+    description: GPIO4_ALIAS1.
+    bit_offset: 0
+    bit_size: 2
+    enum: Gpio4Alias1
+fieldset/AhbPeripheral1SlavePortP13SlaveRule0:
+  description: AHB Peripheral 1 Slave Port 13 Slave Rule 0.
+  fields:
+  - name: e_dma1_ch15
+    description: eDMA1_CH15.
+    bit_offset: 4
+    bit_size: 2
+    enum: EDma1Ch15
+  - name: sema42
+    description: SEMA42.
+    bit_offset: 8
+    bit_size: 2
+    enum: Sema42
+  - name: mailbox
+    description: MAILBOX.
+    bit_offset: 12
+    bit_size: 2
+    enum: Mailbox
+  - name: pkc_ram
+    description: PKC_RAM.
+    bit_offset: 16
+    bit_size: 2
+    enum: PkcRam
+  - name: flexcomm
+    description: FLEXCOMM.
+    bit_offset: 20
+    bit_size: 2
+    array:
+      len: 3
+      stride: 4
+    enum: Flexcomm
+fieldset/AhbPeripheral1SlavePortP13SlaveRule1:
+  description: AHB Peripheral 1 Slave Port 13 Slave Rule 1.
+  fields:
+  - name: flexcomm
+    description: FLEXCOMM.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 3
+      stride: 4
+    enum: Flexcomm
+  - name: usb_fs_otg_ram
+    description: USB FS OTG RAM.
+    bit_offset: 12
+    bit_size: 2
+    enum: UsbFsOtgRam
+  - name: cdog0
+    description: CDOG0.
+    bit_offset: 16
+    bit_size: 2
+    enum: Cdog0
+  - name: cdog1
+    description: CDOG1.
+    bit_offset: 20
+    bit_size: 2
+    enum: Cdog1
+  - name: debug_mailbox
+    description: DEBUG_MAILBOX.
+    bit_offset: 24
+    bit_size: 2
+    enum: DebugMailbox
+  - name: npu
+    description: NPU.
+    bit_offset: 28
+    bit_size: 2
+    enum: Npu
+fieldset/AhbPeripheral1SlavePortP13SlaveRule2:
+  description: AHB Peripheral 1 Slave Port 13 Slave Rule 2.
+  fields:
+  - name: powerquad
+    description: POWERQUAD.
+    bit_offset: 0
+    bit_size: 2
+    enum: Powerquad
+fieldset/AhbSecureCtrlPeripheralRule0:
+  description: AHB Secure Control Peripheral Rule 0.
+  fields:
+  - name: rule
+    description: Rule.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 4
+      stride: 4
+    enum: AhbSecureCtrlPeripheralRule0Rule
+fieldset/AipsBridgeGroup0MemRule0:
+  description: AIPS Bridge Group 0 Memory Rule 0.
+  fields:
+  - name: gpio5_alias0
+    description: GPIO5_ALIAS0.
+    bit_offset: 0
+    bit_size: 2
+    enum: Gpio5Alias0
+  - name: gpio5_alias1
+    description: GPIO5_ALIAS2.
+    bit_offset: 4
+    bit_size: 2
+    enum: Gpio5Alias1
+  - name: port5
+    description: PORT5.
+    bit_offset: 8
+    bit_size: 2
+    enum: Port5
+  - name: fmu0
+    description: FMU0.
+    bit_offset: 12
+    bit_size: 2
+    enum: Fmu0
+  - name: scg0
+    description: SCG0.
+    bit_offset: 16
+    bit_size: 2
+    enum: Scg0
+  - name: spc0
+    description: SPC0.
+    bit_offset: 20
+    bit_size: 2
+    enum: Spc0
+  - name: wuu0
+    description: WUU0.
+    bit_offset: 24
+    bit_size: 2
+    enum: Wuu0
+  - name: tro0
+    description: TRO0.
+    bit_offset: 28
+    bit_size: 2
+    enum: Tro0
+fieldset/AipsBridgeGroup0MemRule1:
+  description: AIPS Bridge Group 0 Memory Rule 1.
+  fields:
+  - name: lptmr0
+    description: LPTMR0.
+    bit_offset: 8
+    bit_size: 2
+    enum: Lptmr0
+  - name: lptmr1
+    description: LPTMR1.
+    bit_offset: 12
+    bit_size: 2
+    enum: Lptmr1
+  - name: rtc
+    description: RTC.
+    bit_offset: 16
+    bit_size: 2
+    enum: Rtc
+  - name: fmu_test
+    description: FMU_TEST.
+    bit_offset: 24
+    bit_size: 2
+    enum: FmuTest
+fieldset/AipsBridgeGroup0MemRule2:
+  description: AIPS Bridge Group 0 Memory Rule 2.
+  fields:
+  - name: tsi
+    description: TSI.
+    bit_offset: 0
+    bit_size: 2
+    enum: Tsi
+  - name: cmp
+    description: CMP.
+    bit_offset: 4
+    bit_size: 2
+    array:
+      len: 3
+      stride: 4
+    enum: Cmp
+  - name: els
+    description: ELS.
+    bit_offset: 16
+    bit_size: 2
+    enum: Els
+  - name: els_alias
+    description: ELS_ALIAS.
+    bit_offset: 20
+    bit_size: 2
+    array:
+      len: 3
+      stride: 4
+    enum: ElsAlias
+fieldset/AipsBridgeGroup0MemRule3:
+  description: AIPS Bridge Group 0 Memory Rule 3.
+  fields:
+  - name: digtmp
+    description: DIGTMP.
+    bit_offset: 0
+    bit_size: 2
+    enum: Digtmp
+  - name: vbat
+    description: VBAT.
+    bit_offset: 4
+    bit_size: 2
+    enum: Vbat
+  - name: trng
+    description: TRNG.
+    bit_offset: 8
+    bit_size: 2
+    enum: Trng
+  - name: eim0
+    description: EIM0.
+    bit_offset: 12
+    bit_size: 2
+    enum: Eim0
+  - name: erm0
+    description: ERM0.
+    bit_offset: 16
+    bit_size: 2
+    enum: Erm0
+  - name: intm0
+    description: INTM0.
+    bit_offset: 20
+    bit_size: 2
+    enum: Intm0
+fieldset/AipsBridgeGroup1MemRule0:
+  description: AIPS Bridge Group 1 Rule 0.
+  fields:
+  - name: e_dma0_mp
+    description: eDMA0_MP.
+    bit_offset: 0
+    bit_size: 2
+    enum: EDma0Mp
+  - name: e_dma0_ch0
+    description: eDMA0_CH0.
+    bit_offset: 4
+    bit_size: 2
+    enum: EDma0Ch0
+  - name: e_dma0_ch1
+    description: eDMA0_CH1.
+    bit_offset: 8
+    bit_size: 2
+    enum: EDma0Ch1
+  - name: e_dma0_ch2
+    description: eDMA0_CH2.
+    bit_offset: 12
+    bit_size: 2
+    enum: EDma0Ch2
+  - name: e_dma0_ch3
+    description: FLEXSPI0 Registers.
+    bit_offset: 16
+    bit_size: 2
+    enum: EDma0Ch3
+  - name: e_dma0_ch4
+    description: eDMA0_CH4.
+    bit_offset: 20
+    bit_size: 2
+    enum: EDma0Ch4
+  - name: e_dma0_ch5
+    description: eDMA0_CH5.
+    bit_offset: 24
+    bit_size: 2
+    enum: EDma0Ch5
+  - name: e_dma0_ch6
+    description: eDMA0_CH6.
+    bit_offset: 28
+    bit_size: 2
+    enum: EDma0Ch6
+fieldset/AipsBridgeGroup1MemRule1:
+  description: AIPS Bridge Group 1 Rule 1.
+  fields:
+  - name: e_dma0_ch7
+    description: eDMA0_CH7.
+    bit_offset: 0
+    bit_size: 2
+    enum: EDma0Ch7
+  - name: e_dma0_ch8
+    description: eDMA0_CH8.
+    bit_offset: 4
+    bit_size: 2
+    enum: EDma0Ch8
+  - name: e_dma0_ch9
+    description: eDMA0_CH9.
+    bit_offset: 8
+    bit_size: 2
+    enum: EDma0Ch9
+  - name: e_dma0_ch10
+    description: eDMA0_CH10.
+    bit_offset: 12
+    bit_size: 2
+    enum: EDma0Ch10
+  - name: e_dma0_ch11
+    description: FLEXSPI0.
+    bit_offset: 16
+    bit_size: 2
+    enum: EDma0Ch11
+  - name: e_dma0_ch12
+    description: eDMA0_CH12.
+    bit_offset: 20
+    bit_size: 2
+    enum: EDma0Ch12
+  - name: e_dma0_ch13
+    description: eDMA0_CH13.
+    bit_offset: 24
+    bit_size: 2
+    enum: EDma0Ch13
+  - name: e_dma0_ch14
+    description: eDMA0_CH14.
+    bit_offset: 28
+    bit_size: 2
+    enum: EDma0Ch14
+fieldset/AipsBridgeGroup2MemRule0:
+  description: AIPS Bridge Group 2 Rule 0.
+  fields:
+  - name: e_dma1_mp
+    description: eDMA1_MP.
+    bit_offset: 0
+    bit_size: 2
+    enum: EDma1Mp
+  - name: e_dma1_ch
+    description: eDMA1_CH.
+    bit_offset: 4
+    bit_size: 2
+    array:
+      len: 7
+      stride: 4
+    enum: EDma1Ch
+fieldset/AipsBridgeGroup2MemRule1:
+  description: AIPS Bridge Group 2 Memory Rule 1.
+  fields:
+  - name: e_dma1_ch
+    description: eDMA1_CH.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 8
+      stride: 4
+    enum: EDma1Ch
+fieldset/AipsBridgeGroup3MemRule0:
+  description: AIPS Bridge Group 3 Rule 0.
+  fields:
+  - name: ewm0
+    description: EWM0.
+    bit_offset: 0
+    bit_size: 2
+    enum: Ewm0
+  - name: lpcac
+    description: LPCAC.
+    bit_offset: 4
+    bit_size: 2
+    enum: Lpcac
+  - name: flexspi_cmx
+    description: FLEXSPI_CMX.
+    bit_offset: 8
+    bit_size: 2
+    enum: FlexspiCmx
+  - name: sfa
+    description: SFA.
+    bit_offset: 20
+    bit_size: 2
+    enum: Sfa
+  - name: mbc
+    description: MBC.
+    bit_offset: 28
+    bit_size: 2
+    enum: Mbc
+fieldset/AipsBridgeGroup3MemRule1:
+  description: AIPS Bridge Group 3 Memory Rule 1.
+  fields:
+  - name: flexspi
+    description: FLEXSPI.
+    bit_offset: 0
+    bit_size: 2
+    enum: Flexspi
+  - name: otpc
+    description: OTPC.
+    bit_offset: 4
+    bit_size: 2
+    enum: Otpc
+  - name: crc
+    description: CRC.
+    bit_offset: 12
+    bit_size: 2
+    enum: Crc
+  - name: npx
+    description: NPX.
+    bit_offset: 16
+    bit_size: 2
+    enum: Npx
+  - name: pwm
+    description: PWM.
+    bit_offset: 24
+    bit_size: 2
+    enum: Pwm
+  - name: enc
+    description: ENC.
+    bit_offset: 28
+    bit_size: 2
+    enum: Enc
+fieldset/AipsBridgeGroup3MemRule2:
+  description: AIPS Bridge Group 3 Rule 2.
+  fields:
+  - name: pwm1
+    description: PWM1.
+    bit_offset: 0
+    bit_size: 2
+    enum: Pwm1
+  - name: enc1
+    description: ENC1.
+    bit_offset: 4
+    bit_size: 2
+    enum: Enc1
+  - name: evtg
+    description: EVTG.
+    bit_offset: 8
+    bit_size: 2
+    enum: Evtg
+  - name: can0_rule
+    description: CAN0 RULE.
+    bit_offset: 16
+    bit_size: 2
+    array:
+      len: 4
+      stride: 4
+    enum: Can0Rule
+fieldset/AipsBridgeGroup3MemRule3:
+  description: AIPS Bridge Group 3 Rule 3.
+  fields:
+  - name: can1_rule
+    description: CAN1 RULE.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 4
+      stride: 4
+    enum: Can1Rule
+  - name: usbdcd
+    description: USBDCD.
+    bit_offset: 16
+    bit_size: 2
+    enum: Usbdcd
+  - name: usbfs
+    description: USBFS.
+    bit_offset: 20
+    bit_size: 2
+    enum: Usbfs
+fieldset/AipsBridgeGroup4MemRule0:
+  description: AIPS Bridge Group 4 Rule 0.
+  fields:
+  - name: enet
+    description: ENET.
+    bit_offset: 0
+    bit_size: 4
+    enum: Enet
+  - name: emvsim0
+    description: EMVSIM0.
+    bit_offset: 12
+    bit_size: 2
+    enum: Emvsim0
+  - name: emvsim1
+    description: EMVSIM1.
+    bit_offset: 16
+    bit_size: 2
+    enum: Emvsim1
+  - name: flexio
+    description: FLEXIO.
+    bit_offset: 20
+    bit_size: 2
+    enum: Flexio
+  - name: sai0
+    description: SAI0.
+    bit_offset: 24
+    bit_size: 2
+    enum: Sai0
+  - name: sai1
+    description: SAI1.
+    bit_offset: 28
+    bit_size: 2
+    enum: Sai1
+fieldset/AipsBridgeGroup4MemRule1:
+  description: AIPS Bridge Group 4 Rule 1.
+  fields:
+  - name: sinc0
+    description: SINC0.
+    bit_offset: 0
+    bit_size: 2
+    enum: Sinc0
+  - name: u_sdhc0
+    description: uSDHC0.
+    bit_offset: 4
+    bit_size: 2
+    enum: USdhc0
+  - name: usbhsphy
+    description: USBHSPHY.
+    bit_offset: 8
+    bit_size: 2
+    enum: Usbhsphy
+  - name: usbhs
+    description: USBHS.
+    bit_offset: 12
+    bit_size: 2
+    enum: Usbhs
+  - name: micd
+    description: MICD.
+    bit_offset: 16
+    bit_size: 2
+    enum: Micd
+  - name: adc0
+    description: ADC0.
+    bit_offset: 20
+    bit_size: 2
+    enum: Adc0
+  - name: adc1
+    description: ADC1.
+    bit_offset: 24
+    bit_size: 2
+    enum: Adc1
+  - name: dac0
+    description: DAC0.
+    bit_offset: 28
+    bit_size: 2
+    enum: Dac0
+fieldset/AipsBridgeGroup4MemRule2:
+  description: AIPS Bridge Group 4 Rule 2.
+  fields:
+  - name: opamp0
+    description: OPAMP0.
+    bit_offset: 0
+    bit_size: 2
+    enum: Opamp0
+  - name: vref
+    description: VREF.
+    bit_offset: 4
+    bit_size: 2
+    enum: Vref
+  - name: dac
+    description: DAC.
+    bit_offset: 8
+    bit_size: 2
+    enum: Dac
+  - name: opamp1
+    description: OPAMP1.
+    bit_offset: 12
+    bit_size: 2
+    enum: Opamp1
+  - name: hpdac0
+    description: HPDAC0.
+    bit_offset: 16
+    bit_size: 2
+    enum: Hpdac0
+  - name: opamp2
+    description: OPAMP2.
+    bit_offset: 20
+    bit_size: 2
+    enum: Opamp2
+  - name: port0
+    description: PORT0.
+    bit_offset: 24
+    bit_size: 2
+    enum: Port0
+  - name: port1
+    description: PORT1.
+    bit_offset: 28
+    bit_size: 2
+    enum: Port1
+fieldset/AipsBridgeGroup4MemRule3:
+  description: AIPS Bridge Group 4 Rule 3.
+  fields:
+  - name: port
+    description: PORT.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 3
+      stride: 4
+    enum: Port
+  - name: mtr0
+    description: MTR0.
+    bit_offset: 24
+    bit_size: 2
+    enum: Mtr0
+  - name: atx0
+    description: ATX0.
+    bit_offset: 28
+    bit_size: 2
+    enum: Atx0
+fieldset/ApbPeripheralGroup0MemRule0:
+  description: APB Bridge Group 0 Memory Rule 0.
+  fields:
+  - name: syscon
+    description: SYSCON.
+    bit_offset: 0
+    bit_size: 2
+    enum: Syscon
+  - name: pint0
+    description: PINT0.
+    bit_offset: 16
+    bit_size: 2
+    enum: Pint0
+  - name: inputmux
+    description: INPUTMUX.
+    bit_offset: 24
+    bit_size: 2
+    enum: Inputmux
+fieldset/ApbPeripheralGroup0MemRule1:
+  description: APB Bridge Group 0 Memory Rule 1.
+  fields:
+  - name: ctimer
+    description: CTIMER.
+    bit_offset: 16
+    bit_size: 2
+    array:
+      len: 4
+      stride: 4
+    enum: Ctimer
+fieldset/ApbPeripheralGroup0MemRule2:
+  description: APB Bridge Group 0 Rule 2.
+  fields:
+  - name: ctimer4
+    description: CTIMER4.
+    bit_offset: 0
+    bit_size: 2
+    enum: Ctimer4
+  - name: freqme0
+    description: FREQME0.
+    bit_offset: 4
+    bit_size: 2
+    enum: Freqme0
+  - name: utcik0
+    description: UTCIK0.
+    bit_offset: 8
+    bit_size: 2
+    enum: Utcik0
+  - name: mrt0
+    description: MRT0.
+    bit_offset: 12
+    bit_size: 2
+    enum: Mrt0
+  - name: ostimer0
+    description: OSTIMER0.
+    bit_offset: 16
+    bit_size: 2
+    enum: Ostimer0
+  - name: wwdt0
+    description: WWDT0.
+    bit_offset: 24
+    bit_size: 2
+    enum: Wwdt0
+  - name: wwdt1
+    description: WWDT1.
+    bit_offset: 28
+    bit_size: 2
+    enum: Wwdt1
+fieldset/ApbPeripheralGroup0MemRule3:
+  description: APB Bridge Group 0 Memory Rule 3.
+  fields:
+  - name: cache64_polsel0
+    description: CACHE64_POLSEL0.
+    bit_offset: 12
+    bit_size: 2
+    enum: Cache64Polsel0
+fieldset/ApbPeripheralGroup1MemRule0:
+  description: APB Bridge Group 1 Memory Rule 0.
+  fields:
+  - name: i3c0
+    description: I3C0.
+    bit_offset: 4
+    bit_size: 2
+    enum: I3c0
+  - name: i3c1
+    description: I3C1.
+    bit_offset: 8
+    bit_size: 2
+    enum: I3c1
+  - name: gdet
+    description: GDET.
+    bit_offset: 20
+    bit_size: 2
+    enum: Gdet
+  - name: itrc
+    description: ITRC.
+    bit_offset: 24
+    bit_size: 2
+    enum: Itrc
+fieldset/ApbPeripheralGroup1MemRule1:
+  description: APB Bridge Group 1 Memory Rule 1.
+  fields:
+  - name: pkc
+    description: PKC.
+    bit_offset: 12
+    bit_size: 2
+    enum: ApbPeripheralGroup1MemRule1Pkc
+  - name: puf_alias
+    description: PUF_ALIAS.
+    bit_offset: 16
+    bit_size: 2
+    array:
+      len: 4
+      stride: 4
+    enum: PufAlias
+fieldset/ApbPeripheralGroup1MemRule2:
+  description: APB Bridge Group 1 Memory Rule 2.
+  fields:
+  - name: sm3
+    description: SM3.
+    bit_offset: 4
+    bit_size: 2
+    enum: Sm3
+  - name: coolflux
+    description: COOLFLUX.
+    bit_offset: 8
+    bit_size: 2
+    enum: Coolflux
+  - name: smartdma
+    description: SmartDMA.
+    bit_offset: 12
+    bit_size: 2
+    enum: ApbPeripheralGroup1MemRule2Smartdma
+  - name: plu
+    description: PLU.
+    bit_offset: 16
+    bit_size: 2
+    enum: Plu
+fieldset/Cpu0LockReg:
+  description: Miscellaneous CPU0 Control Signals.
+  fields:
+  - name: lock_ns_vtor
+    description: LOCK_NS_VTOR.
+    bit_offset: 0
+    bit_size: 2
+    enum: Cpu0LockRegLockNsVtor
+  - name: lock_ns_mpu
+    description: LOCK_NS_MPU.
+    bit_offset: 2
+    bit_size: 2
+    enum: Cpu0LockRegLockNsMpu
+  - name: lock_s_vtaircr
+    description: LOCK_S_VTAIRCR.
+    bit_offset: 4
+    bit_size: 2
+    enum: LockSVtaircr
+  - name: lock_s_mpu
+    description: LOCK_S_MPU.
+    bit_offset: 6
+    bit_size: 2
+    enum: LockSMpu
+  - name: lock_sau
+    description: LOCK_SAU.
+    bit_offset: 8
+    bit_size: 2
+    enum: LockSau
+  - name: cm33_lock_reg_lock
+    description: CM33_LOCK_REG_LOCK.
+    bit_offset: 30
+    bit_size: 2
+    enum: Cm33LockRegLock
+fieldset/Cpu1LockReg:
+  description: Miscellaneous CPU1 Control Signals.
+  fields:
+  - name: lock_ns_vtor
+    description: LOCK_NS_VTOR.
+    bit_offset: 0
+    bit_size: 2
+    enum: Cpu1LockRegLockNsVtor
+  - name: lock_ns_mpu
+    description: LOCK_NS_MPU.
+    bit_offset: 2
+    bit_size: 2
+    enum: Cpu1LockRegLockNsMpu
+fieldset/Flash00MemRule:
+  description: Flash Memory Rule.
+  fields:
+  - name: rule
+    description: Rule.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 8
+      stride: 4
+    enum: Flash00MemRuleRule
+fieldset/Flash01MemRule:
+  description: Flash Memory Rule.
+  fields:
+  - name: rule
+    description: Rule.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 8
+      stride: 4
+    enum: Flash01MemRuleRule
+fieldset/Flash02MemRule:
+  description: Flash Memory Rule.
+  fields:
+  - name: rule
+    description: Rule.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 4
+      stride: 4
+    enum: Flash02MemRuleRule
+fieldset/Flash03MemRule:
+  description: Flash Memory Rule.
+  fields:
+  - name: rule
+    description: Rule.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 8
+      stride: 4
+    enum: Flash03MemRuleRule
+fieldset/Flexspi0Region0MemRule:
+  description: FLEXSPI0 Region 0 Memory Rule.
+  fields:
+  - name: rule
+    description: Rule.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 8
+      stride: 4
+    enum: Flexspi0Region0MemRuleRule
+fieldset/Flexspi0Region16MemRuleFlexspi0RegionMemRule0:
+  description: FLEXSPI0 Region index Memory Rule 0.
+  fields:
+  - name: rule
+    description: Rule.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 6
+      stride: 4
+    enum: Flexspi0Region16MemRuleFlexspi0RegionMemRule0Rule
+fieldset/Flexspi0Region7MemRule:
+  description: FLEXSPI0 Region 7 Memory Rule.
+  fields:
+  - name: rule
+    description: Rule.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 8
+      stride: 4
+    enum: Flexspi0Region7MemRuleRule
+fieldset/Flexspi0Region813MemRuleFlexspi0RegionMemRule0:
+  description: FLEXSPI0 Region index Memory Rule 0.
+  fields:
+  - name: rule
+    description: Rule.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 6
+      stride: 4
+    enum: Flexspi0Region813MemRuleFlexspi0RegionMemRule0Rule
+fieldset/MasterSecAntiPolReg:
+  description: Master Secure Level.
+  fields:
+  - name: cpu1
+    description: CPU1.
+    bit_offset: 2
+    bit_size: 2
+    enum: MasterSecAntiPolRegCpu1
+  - name: smartdma
+    description: SMARTDMA Data.
+    bit_offset: 4
+    bit_size: 2
+    enum: MasterSecAntiPolRegSmartdma
+  - name: e_dma0
+    description: eDMA0.
+    bit_offset: 6
+    bit_size: 2
+    enum: MasterSecAntiPolRegEDma0
+  - name: e_dma1
+    description: eDMA1.
+    bit_offset: 8
+    bit_size: 2
+    enum: MasterSecAntiPolRegEDma1
+  - name: pkc
+    description: PKC.
+    bit_offset: 10
+    bit_size: 2
+    enum: MasterSecAntiPolRegPkc
+  - name: pq
+    description: PowerQuad.
+    bit_offset: 14
+    bit_size: 2
+    enum: MasterSecAntiPolRegPq
+  - name: npuo
+    description: NPU Operands.
+    bit_offset: 16
+    bit_size: 2
+    enum: MasterSecAntiPolRegNpuo
+  - name: coolfluxi
+    description: Coolflux Instruction.
+    bit_offset: 18
+    bit_size: 2
+    enum: MasterSecAntiPolRegCoolfluxi
+  - name: usb_fs
+    description: USB_FS.
+    bit_offset: 22
+    bit_size: 2
+    enum: MasterSecAntiPolRegUsbFs
+  - name: ethernet
+    description: Ethernet.
+    bit_offset: 24
+    bit_size: 2
+    enum: MasterSecAntiPolRegEthernet
+  - name: usb_hs
+    description: USB HS.
+    bit_offset: 26
+    bit_size: 2
+    enum: MasterSecAntiPolRegUsbHs
+  - name: usdhc
+    description: uSDHC.
+    bit_offset: 28
+    bit_size: 2
+    enum: MasterSecAntiPolRegUsdhc
+  - name: master_sec_level_antipol_lock
+    description: Master SEC Level Antipol Lock.
+    bit_offset: 30
+    bit_size: 2
+    enum: MasterSecLevelAntipolLock
+fieldset/MasterSecLevel:
+  description: Master Secure Level.
+  fields:
+  - name: cpu1
+    description: CPU1.
+    bit_offset: 2
+    bit_size: 2
+    enum: MasterSecLevelCpu1
+  - name: smartdma
+    description: SMARTDMA Data.
+    bit_offset: 4
+    bit_size: 2
+    enum: MasterSecLevelSmartdma
+  - name: e_dma0
+    description: eDMA0.
+    bit_offset: 6
+    bit_size: 2
+    enum: MasterSecLevelEDma0
+  - name: e_dma1
+    description: eDMA1.
+    bit_offset: 8
+    bit_size: 2
+    enum: MasterSecLevelEDma1
+  - name: pkc
+    description: PKC.
+    bit_offset: 10
+    bit_size: 2
+    enum: MasterSecLevelPkc
+  - name: pq
+    description: PowerQuad.
+    bit_offset: 14
+    bit_size: 2
+    enum: MasterSecLevelPq
+  - name: npuo
+    description: NPU Operands.
+    bit_offset: 16
+    bit_size: 2
+    enum: MasterSecLevelNpuo
+  - name: coolfluxi
+    description: Coolflux Instruction.
+    bit_offset: 18
+    bit_size: 2
+    enum: MasterSecLevelCoolfluxi
+  - name: usb_fs
+    description: USB_FS.
+    bit_offset: 22
+    bit_size: 2
+    enum: MasterSecLevelUsbFs
+  - name: ethernet
+    description: Ethernet.
+    bit_offset: 24
+    bit_size: 2
+    enum: MasterSecLevelEthernet
+  - name: usb_hs
+    description: USB HS.
+    bit_offset: 26
+    bit_size: 2
+    enum: MasterSecLevelUsbHs
+  - name: usdhc
+    description: uSDHC.
+    bit_offset: 28
+    bit_size: 2
+    enum: MasterSecLevelUsdhc
+  - name: master_sec_level_lock
+    description: Master SEC Level Lock.
+    bit_offset: 30
+    bit_size: 2
+    enum: MasterSecLevelLock
+fieldset/MiscCtrlDpReg:
+  description: Secure Control Duplicate.
+  fields:
+  - name: write_lock
+    description: Write Lock.
+    bit_offset: 0
+    bit_size: 2
+    enum: MiscCtrlDpRegWriteLock
+  - name: enable_secure_checking
+    description: Enable Secure Checking.
+    bit_offset: 2
+    bit_size: 2
+    enum: MiscCtrlDpRegEnableSecureChecking
+  - name: enable_s_priv_check
+    description: Enable Secure Privilege Checking.
+    bit_offset: 4
+    bit_size: 2
+    enum: MiscCtrlDpRegEnableSPrivCheck
+  - name: enable_ns_priv_check
+    description: Enable Non-Secure Privilege Checking.
+    bit_offset: 6
+    bit_size: 2
+    enum: MiscCtrlDpRegEnableNsPrivCheck
+  - name: disable_violation_abort
+    description: Disable Violation Abort.
+    bit_offset: 8
+    bit_size: 2
+    enum: MiscCtrlDpRegDisableViolationAbort
+  - name: disable_strict_mode
+    description: Disable Strict Mode.
+    bit_offset: 10
+    bit_size: 2
+    enum: MiscCtrlDpRegDisableStrictMode
+  - name: idau_all_ns
+    description: IDAU All Non-Secure.
+    bit_offset: 14
+    bit_size: 2
+    enum: MiscCtrlDpRegIdauAllNs
+fieldset/MiscCtrlReg:
+  description: Secure Control.
+  fields:
+  - name: write_lock
+    description: Write Lock.
+    bit_offset: 0
+    bit_size: 2
+    enum: MiscCtrlRegWriteLock
+  - name: enable_secure_checking
+    description: Enable Secure Checking.
+    bit_offset: 2
+    bit_size: 2
+    enum: MiscCtrlRegEnableSecureChecking
+  - name: enable_s_priv_check
+    description: Enable Secure Privilege Checking.
+    bit_offset: 4
+    bit_size: 2
+    enum: MiscCtrlRegEnableSPrivCheck
+  - name: enable_ns_priv_check
+    description: Enable Non-Secure Privilege Checking.
+    bit_offset: 6
+    bit_size: 2
+    enum: MiscCtrlRegEnableNsPrivCheck
+  - name: disable_violation_abort
+    description: Disable Violation Abort.
+    bit_offset: 8
+    bit_size: 2
+    enum: MiscCtrlRegDisableViolationAbort
+  - name: disable_strict_mode
+    description: Disable Strict Mode.
+    bit_offset: 10
+    bit_size: 2
+    enum: MiscCtrlRegDisableStrictMode
+  - name: idau_all_ns
+    description: IDAU All Non-Secure.
+    bit_offset: 14
+    bit_size: 2
+    enum: MiscCtrlRegIdauAllNs
+fieldset/RamaMemRule:
+  description: RAMA Memory Rule 0.
+  fields:
+  - name: rule
+    description: Rule.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 8
+      stride: 4
+    enum: RamaMemRuleRule
+fieldset/RambMemRule:
+  description: RAMB Memory Rule.
+  fields:
+  - name: rule
+    description: Rule.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 8
+      stride: 4
+    enum: RambMemRuleRule
+fieldset/RamcMemRule:
+  description: RAMC Memory Rule.
+  fields:
+  - name: rule
+    description: Rule.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 8
+      stride: 4
+    enum: RamcMemRuleRule
+fieldset/RamdMemRule:
+  description: RAMD Memory Rule.
+  fields:
+  - name: rule
+    description: Rule.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 8
+      stride: 4
+    enum: RamdMemRuleRule
+fieldset/RameMemRule:
+  description: RAME Memory Rule.
+  fields:
+  - name: rule
+    description: Rule.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 8
+      stride: 4
+    enum: RameMemRuleRule
+fieldset/RamfMemRule:
+  description: RAMF Memory Rule.
+  fields:
+  - name: rule
+    description: Rule.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 8
+      stride: 4
+    enum: RamfMemRuleRule
+fieldset/RamgMemRule:
+  description: RAMG Memory Rule.
+  fields:
+  - name: rule
+    description: Rule.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 8
+      stride: 4
+    enum: RamgMemRuleRule
+fieldset/RamhMemRule:
+  description: RAMH Memory Rule.
+  fields:
+  - name: rule
+    description: Rule.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 8
+      stride: 4
+    enum: RamhMemRuleRule
+fieldset/RamxMemRule:
+  description: RAMX Memory Rule.
+  fields:
+  - name: rule
+    description: Rule.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 8
+      stride: 4
+    enum: RamxMemRuleRule
+fieldset/RomMemRule:
+  description: ROM Memory Rule.
+  fields:
+  - name: rule
+    description: Rule.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 8
+      stride: 4
+    enum: RomMemRuleRule
+fieldset/SecCpu1IntMask:
+  description: Secure Interrupt Mask for CPU1.
+  fields:
+  - name: int_mask
+    description: Mask bit.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 32
+      stride: 1
+    enum: IntMask
+fieldset/SecGpRegLock:
+  description: Secure Mask Lock.
+  fields:
+  - name: sec_gpio_mask0_lock
+    description: Secure GPIO _MASK0 Lock.
+    bit_offset: 0
+    bit_size: 2
+    enum: SecGpioMask0Lock
+  - name: sec_gpio_mask1_lock
+    description: Secure GPIO _MASK1 Lock.
+    bit_offset: 2
+    bit_size: 2
+    enum: SecGpioMask1Lock
+  - name: sec_cpu1_int_mask_lock
+    description: SEC_CPU1_INT_MASK Lock.
+    bit_offset: 12
+    bit_size: 2
+    array:
+      len: 5
+      stride: 2
+    enum: SecCpu1IntMaskLock
+fieldset/SecGpioMask:
+  description: GPIO Mask for Port index.
+  fields:
+  - name: pio0_pin_sec_mask
+    description: Mask bit.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 32
+      stride: 1
+    enum: Pio0PinSecMask
+fieldset/SecVioAddr:
+  description: Security Violation Address.
+  fields:
+  - name: sec_vio_addr
+    description: Security violation address for AHB layer a reset value 0.
+    bit_offset: 0
+    bit_size: 32
+fieldset/SecVioInfoValid:
+  description: Security Violation Info Validity for Address.
+  fields:
+  - name: vio_info_valid
+    description: Violation information valid flag for AHB port index.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 19
+      stride: 1
+fieldset/SecVioMiscInfo:
+  description: Security Violation Miscellaneous Information at Address.
+  fields:
+  - name: sec_vio_info_write
+    description: Security violation access read/write indicator.
+    bit_offset: 0
+    bit_size: 1
+    enum: SecVioInfoWrite
+  - name: sec_vio_info_data_access
+    description: Security Violation Info Data Access.
+    bit_offset: 1
+    bit_size: 1
+    enum: SecVioInfoDataAccess
+  - name: sec_vio_info_master_sec_level
+    description: Security Violation Info Master Security Level.
+    bit_offset: 4
+    bit_size: 4
+  - name: sec_vio_info_master
+    description: Security violation master number.
+    bit_offset: 8
+    bit_size: 5
+    enum: SecVioInfoMaster
+enum/Adc0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Adc1:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/AhbSecureCtrlPeripheralRule0Rule:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/ApbPeripheralGroup1MemRule1Pkc:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/ApbPeripheralGroup1MemRule2Smartdma:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Atx0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Cache64Polsel0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Can0Rule:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Can1Rule:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Cdog0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Cdog1:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Cm33LockRegLock:
+  bit_size: 2
+  variants:
+  - name: Cm33LockRegLockEq1
+    description: CM33_LOCK_REG_LOCK is 1.
+    value: 1
+  - name: Cm33LockRegLockEq0
+    description: CM33_LOCK_REG_LOCK is 0.
+    value: 2
+enum/Cmp:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Coolflux:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Cpu0LockRegLockNsMpu:
+  bit_size: 2
+  variants:
+  - name: LockNsMpuEq1
+    description: CM33 (CPU0) LOCK_NS_MPU is 1.
+    value: 1
+  - name: LockNsMpuEq0
+    description: CM33 (CPU0) LOCK_NS_MPU is 0.
+    value: 2
+enum/Cpu0LockRegLockNsVtor:
+  bit_size: 2
+  variants:
+  - name: LockNsVtorEq1
+    description: CM33 (CPU0) LOCKNSVTOR is 1.
+    value: 1
+  - name: LockNsVtorEq0
+    description: CM33 (CPU0) LOCKNSVTOR is 0.
+    value: 2
+enum/Cpu1LockRegLockNsMpu:
+  bit_size: 2
+  variants:
+  - name: LockNsMpuEq1
+    description: CM33 (CPU0) LOCK_NS_MPU is 1.
+    value: 1
+  - name: LockNsMpuEq0
+    description: CM33 (CPU0) LOCK_NS_MPU is 0.
+    value: 2
+enum/Cpu1LockRegLockNsVtor:
+  bit_size: 2
+  variants:
+  - name: LockNsVtorEq1
+    description: CM33 (CPU0) LOCKNSVTOR is 1.
+    value: 1
+  - name: LockNsVtorEq0
+    description: CM33 (CPU0) LOCKNSVTOR is 0.
+    value: 2
+enum/Crc:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Ctimer:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Ctimer4:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Dac:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Dac0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/DebugMailbox:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Digtmp:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/EDma0Ch0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/EDma0Ch1:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/EDma0Ch10:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/EDma0Ch11:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/EDma0Ch12:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/EDma0Ch13:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/EDma0Ch14:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/EDma0Ch15:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/EDma0Ch2:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/EDma0Ch3:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/EDma0Ch4:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/EDma0Ch5:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/EDma0Ch6:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/EDma0Ch7:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/EDma0Ch8:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/EDma0Ch9:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/EDma0Mp:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/EDma1Ch:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/EDma1Ch15:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/EDma1Mp:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Eim0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Els:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/ElsAlias:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Emvsim0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Emvsim1:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Enc:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Enc1:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Enet:
+  bit_size: 4
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Erm0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Evtg:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Ewm0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Flash00MemRuleRule:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Flash01MemRuleRule:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Flash02MemRuleRule:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Flash03MemRuleRule:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Flexcomm:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Flexio:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Flexspi:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Flexspi0Region0MemRuleRule:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Flexspi0Region16MemRuleFlexspi0RegionMemRule0Rule:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Flexspi0Region7MemRuleRule:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Flexspi0Region813MemRuleFlexspi0RegionMemRule0Rule:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/FlexspiCmx:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Fmu0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/FmuTest:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Freqme0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Gdet:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Gpio0Alias0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Gpio0Alias1:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Gpio1Alias0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Gpio1Alias1:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Gpio2Alias0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Gpio2Alias1:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Gpio3Alias0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Gpio3Alias1:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Gpio4Alias0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Gpio4Alias1:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Gpio5Alias0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Gpio5Alias1:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Hpdac0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/I3c0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/I3c1:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Inputmux:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/IntMask:
+  bit_size: 1
+  variants:
+  - name: Masked
+    description: Masked.
+    value: 0
+  - name: NotMasked
+    description: Not masked.
+    value: 1
+enum/Intm0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Itrc:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/LockSMpu:
+  bit_size: 2
+  variants:
+  - name: LockSMpuEq1
+    description: CM33 (CPU0) LOCK_S_MPU is 1.
+    value: 1
+  - name: LockSMpuEq0
+    description: CM33 (CPU0) LOCK_S_MPU is 0.
+    value: 2
+enum/LockSVtaircr:
+  bit_size: 2
+  variants:
+  - name: LockSVtaircrEq1
+    description: CM33 (CPU0) LOCK_S_VTAIRCR is 1.
+    value: 1
+  - name: LockSVtaircrEq0
+    description: CM33 (CPU0) LOCK_S_VTAIRCR is 0.
+    value: 2
+enum/LockSau:
+  bit_size: 2
+  variants:
+  - name: LockSauEq1
+    description: CM33 (CPU0) LOCK_SAU is 1.
+    value: 1
+  - name: LockSauEq0
+    description: CM33 (CPU0) LOCK_SAU is 0.
+    value: 2
+enum/LpFlexcomm:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Lpcac:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Lptmr0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Lptmr1:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Mailbox:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/MasterSecAntiPolRegCoolfluxi:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Secure and privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Secure and non-privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Non-secure and privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Non-secure and non-privileged Master.
+    value: 3
+enum/MasterSecAntiPolRegCpu1:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Secure and privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Secure and non-privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Non-secure and privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Non-secure and non-privileged Master.
+    value: 3
+enum/MasterSecAntiPolRegEDma0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Secure and privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Secure and non-privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Non-secure and privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Non-secure and non-privileged Master.
+    value: 3
+enum/MasterSecAntiPolRegEDma1:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Secure and privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Secure and non-privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Non-secure and privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Non-secure and non-privileged Master.
+    value: 3
+enum/MasterSecAntiPolRegEthernet:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Secure and privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Secure and non-privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Non-secure and privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Non-secure and non-privileged Master.
+    value: 3
+enum/MasterSecAntiPolRegNpuo:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Secure and privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Secure and non-privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Non-secure and privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Non-secure and non-privileged Master.
+    value: 3
+enum/MasterSecAntiPolRegPkc:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Secure and privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Secure and non-privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Non-secure and privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Non-secure and non-privileged Master.
+    value: 3
+enum/MasterSecAntiPolRegPq:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Secure and privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Secure and non-privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Non-secure and privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Non-secure and non-privileged Master.
+    value: 3
+enum/MasterSecAntiPolRegSmartdma:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Secure and privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Secure and non-privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Non-secure and privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Non-secure and non-privileged Master.
+    value: 3
+enum/MasterSecAntiPolRegUsbFs:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Secure and privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Secure and non-privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Non-secure and privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Non-secure and non-privileged Master.
+    value: 3
+enum/MasterSecAntiPolRegUsbHs:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Secure and privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Secure and non-privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Non-secure and privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Non-secure and non-privileged Master.
+    value: 3
+enum/MasterSecAntiPolRegUsdhc:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Secure and privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Secure and non-privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Non-secure and privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Non-secure and non-privileged Master.
+    value: 3
+enum/MasterSecLevelAntipolLock:
+  bit_size: 2
+  variants:
+  - name: Enable
+    description: MASTER_SEC_LEVEL_LOCK cannot be written.
+    value: 1
+  - name: Disable
+    description: MASTER_SEC_LEVEL_LOCK can be written.
+    value: 2
+enum/MasterSecLevelCoolfluxi:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Non-secure and non-privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Non-secure and privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Secure and non-privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Secure and privileged Master.
+    value: 3
+enum/MasterSecLevelCpu1:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Non-secure and non-privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Non-secure and privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Secure and non-privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Secure and privileged Master.
+    value: 3
+enum/MasterSecLevelEDma0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Non-secure and non-privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Non-secure and privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Secure and non-privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Secure and privileged Master.
+    value: 3
+enum/MasterSecLevelEDma1:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Non-secure and non-privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Non-secure and privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Secure and non-privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Secure and privileged Master.
+    value: 3
+enum/MasterSecLevelEthernet:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Non-secure and non-privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Non-secure and privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Secure and non-privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Secure and privileged Master.
+    value: 3
+enum/MasterSecLevelLock:
+  bit_size: 2
+  variants:
+  - name: Enable
+    description: MASTER_SEC_LEVEL_LOCK cannot be written.
+    value: 1
+  - name: Disable
+    description: MASTER_SEC_LEVEL_LOCK can be written.
+    value: 2
+enum/MasterSecLevelNpuo:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Non-secure and non-privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Non-secure and privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Secure and non-privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Secure and privileged Master.
+    value: 3
+enum/MasterSecLevelPkc:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Non-secure and non-privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Non-secure and privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Secure and non-privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Secure and privileged Master.
+    value: 3
+enum/MasterSecLevelPq:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Non-secure and non-privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Non-secure and privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Secure and non-privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Secure and privileged Master.
+    value: 3
+enum/MasterSecLevelSmartdma:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Non-secure and non-privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Non-secure and privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Secure and non-privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Secure and privileged Master.
+    value: 3
+enum/MasterSecLevelUsbFs:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Non-secure and non-privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Non-secure and privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Secure and non-privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Secure and privileged Master.
+    value: 3
+enum/MasterSecLevelUsbHs:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Non-secure and non-privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Non-secure and privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Secure and non-privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Secure and privileged Master.
+    value: 3
+enum/MasterSecLevelUsdhc:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Non-secure and non-privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Non-secure and privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Secure and non-privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Secure and privileged Master.
+    value: 3
+enum/Mbc:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Micd:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/MiscCtrlDpRegDisableStrictMode:
+  bit_size: 2
+  variants:
+  - name: Ahbtm
+    description: Master can access memories and peripherals at the same level or below that level.
+    value: 1
+  - name: Ahbsm1
+    description: Master can access memories and peripherals at same level only.
+    value: 2
+enum/MiscCtrlDpRegDisableViolationAbort:
+  bit_size: 2
+  variants:
+  - name: NoAbort
+    description: The violation detected by the secure checker will not cause an abort, but a secure_violation_irq (interrupt request) will still be asserted and serviced by ISR.
+    value: 1
+  - name: Abort
+    description: The violation detected by the secure checker will cause an abort.
+    value: 2
+enum/MiscCtrlDpRegEnableNsPrivCheck:
+  bit_size: 2
+  variants:
+  - name: Enabled
+    description: Enables the privilege checking of non-secure mode access.
+    value: 1
+  - name: Disabled
+    description: Disables the privilege checking of non-secure mode access.
+    value: 2
+enum/MiscCtrlDpRegEnableSPrivCheck:
+  bit_size: 2
+  variants:
+  - name: Enabled
+    description: Enables the privilege checking of secure mode access.
+    value: 1
+  - name: Disabled
+    description: Disables the privilege checking of secure mode access.
+    value: 2
+enum/MiscCtrlDpRegEnableSecureChecking:
+  bit_size: 2
+  variants:
+  - name: Enabled
+    description: Enables secure checking. Violation can be detected when the security level of a transaction does not meet the security rule of the slave or memory to be accessed.
+    value: 1
+  - name: Disabled
+    description: Disables secure checking. Even if the security level of a transaction does not conform to the security rule of the slave or memory, it will not be detected as a violation.
+    value: 2
+enum/MiscCtrlDpRegIdauAllNs:
+  bit_size: 2
+  variants:
+  - name: Disabled
+    description: IDAU is disabled, which means that all memories are attributed as non-secure memory.
+    value: 1
+  - name: Enabled
+    description: IDAU is enabled (restrictive mode).
+    value: 2
+enum/MiscCtrlDpRegWriteLock:
+  bit_size: 2
+  variants:
+  - name: Locked
+    description: Writes to this register and to the Memory and Peripheral RULE registers are not allowed.
+    value: 1
+  - name: NotLocked
+    description: Writes to this register and to the Memory and Peripheral RULE registers are allowed.
+    value: 2
+enum/MiscCtrlRegDisableStrictMode:
+  bit_size: 2
+  variants:
+  - name: Ahbtm
+    description: Master strict mode is on and can access memories and peripherals at the same level or below that level.
+    value: 1
+  - name: Ahbsm1
+    description: Master strict mode is disabled and can access memories and peripherals at same level only.
+    value: 2
+enum/MiscCtrlRegDisableViolationAbort:
+  bit_size: 2
+  variants:
+  - name: NoAbort
+    description: The violation detected by the secure checker will not cause an abort, but a secure_violation_irq (interrupt request) will still be asserted and serviced by ISR.
+    value: 1
+  - name: Abort
+    description: The violation detected by the secure checker will cause an abort.
+    value: 2
+enum/MiscCtrlRegEnableNsPrivCheck:
+  bit_size: 2
+  variants:
+  - name: Enabled
+    description: Enables privilege checking of non-secure mode access.
+    value: 1
+  - name: Disabled
+    description: Disables privilege checking of non-secure mode access is disabled.
+    value: 2
+enum/MiscCtrlRegEnableSPrivCheck:
+  bit_size: 2
+  variants:
+  - name: Enabled
+    description: Enables privilege checking of secure mode access.
+    value: 1
+  - name: Disabled
+    description: Disables privilege checking of secure mode access.
+    value: 2
+enum/MiscCtrlRegEnableSecureChecking:
+  bit_size: 2
+  variants:
+  - name: Enabled
+    description: Enables secure checking. Violation can be detected when the security level of a transaction does not meet the security rule of the slave or memory to be accessed.
+    value: 1
+  - name: Disabled
+    description: Disables secure checking. Even if the security level of a transaction does not conform to the security rule of the slave or memory, it will not be detected as a violation.
+    value: 2
+enum/MiscCtrlRegIdauAllNs:
+  bit_size: 2
+  variants:
+  - name: Disabled
+    description: IDAU is disabled, which means that all memories are attributed as non-secure memory.
+    value: 1
+  - name: Enabled
+    description: IDAU is enabled (restrictive mode).
+    value: 2
+enum/MiscCtrlRegWriteLock:
+  bit_size: 2
+  variants:
+  - name: Locked
+    description: Writes to this register and to the Memory and Peripheral RULE registers are not allowed.
+    value: 1
+  - name: NotLocked
+    description: Writes to this register and to the Memory and Peripheral RULE registers are allowed.
+    value: 2
+enum/Mrt0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Mtr0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Npu:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Npx:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Opamp0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Opamp1:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Opamp2:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Ostimer0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Otpc:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Pint0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Pio0PinSecMask:
+  bit_size: 1
+  variants:
+  - name: Masked
+    description: Masked.
+    value: 0
+  - name: NotMasked
+    description: Not masked.
+    value: 1
+enum/PkcRam:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Plu:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Port:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Port0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Port1:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Port5:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Powerquad:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/PufAlias:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Pwm:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Pwm1:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/RamaMemRuleRule:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/RambMemRuleRule:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/RamcMemRuleRule:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/RamdMemRuleRule:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/RameMemRuleRule:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/RamfMemRuleRule:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/RamgMemRuleRule:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/RamhMemRuleRule:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/RamxMemRuleRule:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/RomMemRuleRule:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Rtc:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Sai0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Sai1:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Scg0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Sct0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/SecCpu1IntMaskLock:
+  bit_size: 2
+  variants:
+  - name: CannotBeWritten
+    description: Cannot be written.
+    value: 1
+  - name: CanBeWritten
+    description: Can be written.
+    value: 2
+enum/SecGpioMask0Lock:
+  bit_size: 2
+  variants:
+  - name: CannotBeWritten
+    description: SEC_GPIO_MASK0 cannot be written.
+    value: 1
+  - name: CanBeWritten
+    description: SEC_GPIO_MASK0 can be written.
+    value: 2
+enum/SecGpioMask1Lock:
+  bit_size: 2
+  variants:
+  - name: CannotBeWritten
+    description: SEC_GPIO_MASK1 cannot be written.
+    value: 1
+  - name: CanBeWritten
+    description: SEC_GPIO_MASK1 can be written.
+    value: 2
+enum/SecVioInfoDataAccess:
+  bit_size: 1
+  variants:
+  - name: Code
+    description: Code.
+    value: 0
+  - name: Data
+    description: Data.
+    value: 1
+enum/SecVioInfoMaster:
+  bit_size: 5
+  variants:
+  - name: Cpu0Code
+    description: M33 Code.
+    value: 0
+  - name: Cpu0Sys
+    description: M33 System.
+    value: 1
+  - name: Cpu1Code
+    description: CPU1 (Mirco-CM33) Code.
+    value: 2
+  - name: SdmaInstr
+    description: SMARTDMA Instruction.
+    value: 3
+  - name: Cpu1Sys
+    description: CPU1 (Mirco-CM33) system.
+    value: 4
+  - name: SdmaData
+    description: SMARTDMA Data.
+    value: 5
+  - name: EDma0
+    description: eDMA0.
+    value: 6
+  - name: EDma1
+    description: eDMA1.
+    value: 7
+  - name: Pkc
+    description: PKC.
+    value: 8
+  - name: Cssv2
+    description: ELS S50.
+    value: 9
+  - name: Pq
+    description: PKC M0.
+    value: 10
+  - name: Npuo
+    description: NPU Operands.
+    value: 11
+  - name: Dspi
+    description: DSP Instruction.
+    value: 12
+  - name: Dspx
+    description: DSPX.
+    value: 13
+  - name: Dspy
+    description: DSPY.
+    value: 14
+  - name: Npud
+    description: NPU Data.
+    value: 16
+  - name: UsbFs
+    description: USB FS.
+    value: 17
+  - name: Ethernet
+    description: Ethernet.
+    value: 18
+  - name: UsbHs
+    description: USB HS.
+    value: 19
+  - name: Usdhc
+    description: uSDHC.
+    value: 20
+enum/SecVioInfoWrite:
+  bit_size: 1
+  variants:
+  - name: Read
+    description: Read access.
+    value: 0
+  - name: Write
+    description: Write access.
+    value: 1
+enum/Sema42:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Sfa:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Sinc0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Sm3:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Spc0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Syscon:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Trng:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Tro0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Tsi:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/USdhc0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/UsbFsOtgRam:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Usbdcd:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Usbfs:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Usbhs:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Usbhsphy:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Utcik0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Vbat:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Vref:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Wuu0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Wwdt0:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3
+enum/Wwdt1:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivUserAllowed
+    description: Non-secure and non-privilege user access allowed.
+    value: 0
+  - name: NonsecurePrivUserAllowed
+    description: Non-secure and privilege access allowed.
+    value: 1
+  - name: SecureNonprivUserAllowed
+    description: Secure and non-privilege user access allowed.
+    value: 2
+  - name: SecurePrivUserAllowed
+    description: Secure and privilege user access allowed.
+    value: 3

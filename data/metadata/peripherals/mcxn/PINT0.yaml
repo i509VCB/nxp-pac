@@ -1,0 +1,353 @@
+block/Pint0:
+  description: Pin Interrupts and Pattern Match.
+  items:
+  - name: isel
+    description: Pin Interrupt Mode.
+    byte_offset: 0
+    fieldset: Isel
+  - name: ienr
+    description: Pin Interrupt Level or Rising-Edge Interrupt Enable.
+    byte_offset: 4
+    fieldset: Ienr
+  - name: sienr
+    description: Pin Interrupt Level or Rising-Edge Interrupt Set.
+    byte_offset: 8
+    access: Write
+    fieldset: Sienr
+  - name: cienr
+    description: Pin Interrupt Level (Rising-Edge Interrupt) Clear.
+    byte_offset: 12
+    fieldset: Cienr
+  - name: ienf
+    description: Pin Interrupt Active Level or Falling-Edge Interrupt Enable.
+    byte_offset: 16
+    fieldset: Ienf
+  - name: sienf
+    description: Pin Interrupt Active Level or Falling-Edge Interrupt Set.
+    byte_offset: 20
+    access: Write
+    fieldset: Sienf
+  - name: cienf
+    description: Pin Interrupt Active Level or Falling-Edge Interrupt Clear.
+    byte_offset: 24
+    access: Write
+    fieldset: Cienf
+  - name: rise
+    description: Pin Interrupt Rising Edge.
+    byte_offset: 28
+    fieldset: Rise
+  - name: fall
+    description: Pin Interrupt Falling Edge.
+    byte_offset: 32
+    fieldset: Fall
+  - name: ist
+    description: Pin Interrupt Status.
+    byte_offset: 36
+    fieldset: Ist
+  - name: pmctrl
+    description: Pattern-Match Interrupt Control.
+    byte_offset: 40
+    fieldset: Pmctrl
+  - name: pmsrc
+    description: Pattern-Match Interrupt Bit-Slice Source.
+    byte_offset: 44
+    fieldset: Pmsrc
+  - name: pmcfg
+    description: Pattern-Match Interrupt Bit Slice Configuration.
+    byte_offset: 48
+    fieldset: Pmcfg
+fieldset/Cienf:
+  description: Pin Interrupt Active Level or Falling-Edge Interrupt Clear.
+  fields:
+  - name: cenaf
+    description: Writes 0 to IENF.
+    bit_offset: 0
+    bit_size: 8
+    enum: Cenaf
+fieldset/Cienr:
+  description: Pin Interrupt Level (Rising-Edge Interrupt) Clear.
+  fields:
+  - name: cenrl
+    description: Clear bits in IENR.
+    bit_offset: 0
+    bit_size: 8
+    enum: Cenrl
+fieldset/Fall:
+  description: Pin Interrupt Falling Edge.
+  fields:
+  - name: fdet
+    description: Falling-Edge Detect.
+    bit_offset: 0
+    bit_size: 8
+    enum: Fdet
+fieldset/Ienf:
+  description: Pin Interrupt Active Level or Falling-Edge Interrupt Enable.
+  fields:
+  - name: enaf
+    description: Enables Interrupt.
+    bit_offset: 0
+    bit_size: 8
+    enum: Enaf
+fieldset/Ienr:
+  description: Pin Interrupt Level or Rising-Edge Interrupt Enable.
+  fields:
+  - name: enrl
+    description: Enables Interrupt.
+    bit_offset: 0
+    bit_size: 8
+    enum: Enrl
+fieldset/Isel:
+  description: Pin Interrupt Mode.
+  fields:
+  - name: pmode
+    description: Interrupt mode.
+    bit_offset: 0
+    bit_size: 8
+    enum: Pmode
+fieldset/Ist:
+  description: Pin Interrupt Status.
+  fields:
+  - name: pstat
+    description: Pin Interrupt Status.
+    bit_offset: 0
+    bit_size: 8
+    enum: Pstat
+fieldset/Pmcfg:
+  description: Pattern-Match Interrupt Bit Slice Configuration.
+  fields:
+  - name: prod_endpts
+    description: Determines whether the slice is an endpoint. The slice is not an endpoint. The slice is the endpoint of a product term (minterm). The corresponding pin interrupt in the NVIC is raised if the minterm evaluates as true.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 7
+      stride: 1
+    enum: ProdEndpts
+  - name: cfg
+    description: Match Configuration.
+    bit_offset: 8
+    bit_size: 3
+    array:
+      len: 8
+      stride: 3
+    enum: Cfg
+fieldset/Pmctrl:
+  description: Pattern-Match Interrupt Control.
+  fields:
+  - name: sel_pmatch
+    description: Specifies whether the pin interrupts are controlled by the pin interrupt function or by the pattern-match function. If this value is 0b, interrupts are driven in response to the standard pin interrupt function. If this value is 1b, interrupts are driven in response to pattern matches.
+    bit_offset: 0
+    bit_size: 1
+    enum: SelPmatch
+  - name: ena_rxev
+    description: Enables the RXEV output to the CPU and/or to a GPIO output, when the specified Boolean expression evaluates to true. If this value is 0b, RXEV output to the CPU is disabled. If this value is 1b, RXEV output to the CPU is enabled.
+    bit_offset: 1
+    bit_size: 1
+  - name: pmat
+    description: Pattern Matches.
+    bit_offset: 24
+    bit_size: 8
+    enum: Pmat
+fieldset/Pmsrc:
+  description: Pattern-Match Interrupt Bit-Slice Source.
+  fields:
+  - name: src
+    description: Selects the input source for the bit slice.
+    bit_offset: 8
+    bit_size: 3
+    array:
+      len: 8
+      stride: 3
+    enum: Src
+fieldset/Rise:
+  description: Pin Interrupt Rising Edge.
+  fields:
+  - name: rdet
+    description: Rising-Edge Detect.
+    bit_offset: 0
+    bit_size: 8
+    enum: Rdet
+fieldset/Sienf:
+  description: Pin Interrupt Active Level or Falling-Edge Interrupt Set.
+  fields:
+  - name: setenaf
+    description: Write 1 to this address to clear to disable interrupts. Bit a sets bit n in IENF.
+    bit_offset: 0
+    bit_size: 8
+    enum: Setenaf
+fieldset/Sienr:
+  description: Pin Interrupt Level or Rising-Edge Interrupt Set.
+  fields:
+  - name: setenrl
+    description: Configures IENR.
+    bit_offset: 0
+    bit_size: 8
+    enum: Setenrl
+enum/Cenaf:
+  bit_size: 8
+  variants:
+  - name: Cenaf0
+    description: No operation.
+    value: 0
+  - name: Cenaf1
+    description: LOW-active interrupt selected or falling-edge interrupt disabled.
+    value: 1
+enum/Cenrl:
+  bit_size: 8
+  variants:
+  - name: Cenrl0
+    description: No operation.
+    value: 0
+  - name: Cenrl1
+    description: Disable rising edge or level interrupt.
+    value: 1
+enum/Cfg:
+  bit_size: 3
+  variants:
+  - name: ConstantHigh
+    description: Constant HIGH.
+    value: 0
+  - name: StickyRisingEdge
+    description: Sticky rising edge.
+    value: 1
+  - name: StickyFallingEdge
+    description: Sticky falling edge.
+    value: 2
+  - name: StickyRisingFallingEdge
+    description: Sticky rising or falling edge.
+    value: 3
+  - name: HighLevel
+    description: High level.
+    value: 4
+  - name: LowLevel
+    description: Low level.
+    value: 5
+  - name: ConstantZero
+    description: Constant 0.
+    value: 6
+  - name: Event
+    description: Event (Nonsticky rising or falling edge).
+    value: 7
+enum/Enaf:
+  bit_size: 8
+  variants:
+  - name: Enaf0
+    description: Disable (set active interrupt level LOW).
+    value: 0
+  - name: Enaf1
+    description: Enable (set active interrupt level HIGH).
+    value: 1
+enum/Enrl:
+  bit_size: 8
+  variants:
+  - name: Enrl0
+    description: In bit n disables the corresponding interrupt.
+    value: 0
+  - name: Enrl1
+    description: In bit n enables the corresponding interrupt.
+    value: 1
+enum/Fdet:
+  bit_size: 8
+  variants:
+  - name: Fdet0
+    description: Read 0- No falling edge (since Reset or you wrote a 1 to this field last time), Write 0- No operation.
+    value: 0
+  - name: Fdet1
+    description: Read 1- Falling edge (since Reset or you wrote a 1 to this field last time), Write 1- Clear falling-edge detection for this bit.
+    value: 1
+enum/Pmat:
+  bit_size: 8
+  variants:
+  - name: Pmat1
+    description: The corresponding product term is matched by the current state of the appropriate inputs.
+    value: 1
+enum/Pmode:
+  bit_size: 8
+  variants:
+  - name: Isel0
+    description: In bit n configures the interrupt to be edge-sensitive.
+    value: 0
+  - name: Isel1
+    description: In bit n configures the interrupt to be level-sensitive.
+    value: 1
+enum/ProdEndpts:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: No effect.
+    value: 0
+  - name: Endpoint
+    description: Endpoint.
+    value: 1
+enum/Pstat:
+  bit_size: 8
+  variants:
+  - name: Pstat0
+    description: Read 0- Interrupt is not requested, Write 0- No operation.
+    value: 0
+  - name: Pstat1
+    description: Read 1- Interrupt is requested, Write 1 (edge-sensitive)- clear rising- and falling-edge detection for this pin, Write 1 (level-sensitive)- switch the active level for this pin in.
+    value: 1
+enum/Rdet:
+  bit_size: 8
+  variants:
+  - name: Rdet0
+    description: Read 0- No rising edge (since Reset or you wrote a 1 to this field last time), Write 0- No operation.
+    value: 0
+  - name: Rdet1
+    description: Read 1- Rising edge (since Reset or you wrote a 1 to this field last time), Write 1- Clear rising-edge detection for this pin.
+    value: 1
+enum/SelPmatch:
+  bit_size: 1
+  variants:
+  - name: PinInterrupt
+    description: Pin interrupt.
+    value: 0
+  - name: PatternMatch
+    description: Pattern match.
+    value: 1
+enum/Setenaf:
+  bit_size: 8
+  variants:
+  - name: Setenaf0
+    description: Writes 0 to IENF.
+    value: 0
+  - name: Setenaf1
+    description: Select HIGH-active interrupt or enable falling-edge interrupt.
+    value: 1
+enum/Setenrl:
+  bit_size: 8
+  variants:
+  - name: Setenrl0
+    description: No operation for interrupt n.
+    value: 0
+  - name: Setenrl1
+    description: Enable rising edge or level interrupt for interrupt n.
+    value: 1
+enum/Src:
+  bit_size: 3
+  variants:
+  - name: Input0
+    description: Input 0 (selects the pin identified in PINSEL0).
+    value: 0
+  - name: Input1
+    description: Input 1 (selects the pin identified in PINSEL1).
+    value: 1
+  - name: Input2
+    description: Input 2 (selects the pin identified in PINSEL2).
+    value: 2
+  - name: Input3
+    description: Input 3 (selects the pin identified in PINSEL3).
+    value: 3
+  - name: Input4
+    description: Input 4 (selects the pin identified in PINSEL4).
+    value: 4
+  - name: Input5
+    description: Input 5 (selects the pin identified in PINSEL5).
+    value: 5
+  - name: Input6
+    description: Input 6 (selects the pin identified in PINSEL6).
+    value: 6
+  - name: Input7
+    description: Input 7 (selects the pin identified in PINSEL7).
+    value: 7

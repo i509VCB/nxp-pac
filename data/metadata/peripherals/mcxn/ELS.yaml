@@ -1,0 +1,761 @@
+block/Els:
+  description: no description available.
+  items:
+  - name: STATUS
+    description: Status Register.
+    byte_offset: 0
+    access: Read
+    fieldset: STATUS
+  - name: CTRL
+    description: Control Register.
+    byte_offset: 4
+    fieldset: CTRL
+  - name: CMDCFG0
+    description: Command Configuration.
+    byte_offset: 8
+    fieldset: CMDCFG0
+  - name: CFG
+    description: Configuration Register.
+    byte_offset: 12
+    fieldset: CFG
+  - name: KIDX0
+    description: Keystore Index 0.
+    byte_offset: 16
+    fieldset: KIDX0
+  - name: KIDX1
+    description: Keystore Index 1.
+    byte_offset: 20
+    fieldset: KIDX1
+  - name: KPROPIN
+    description: Key Properties Request.
+    byte_offset: 24
+    fieldset: KPROPIN
+  - name: DMA_SRC
+    description: DMA Source.
+    array:
+      len: 3
+      stride: 8
+    byte_offset: 32
+    fieldset: DMA_SRC
+  - name: DMA_SRC0_LEN
+    description: DMA Source 0 Length.
+    byte_offset: 36
+    fieldset: DMA_SRC0_LEN
+  - name: DMA_SRC2_LEN
+    description: DMA Source 2 Length.
+    byte_offset: 52
+    fieldset: DMA_SRC2_LEN
+  - name: DMA_RES0
+    description: DMA Result 0.
+    byte_offset: 56
+    fieldset: DMA_RES0
+  - name: DMA_RES0_LEN
+    description: DMA Result 0 Length.
+    byte_offset: 60
+    fieldset: DMA_RES0_LEN
+  - name: INT_ENABLE
+    description: Interrupt Enable.
+    byte_offset: 64
+    fieldset: INT_ENABLE
+  - name: INT_STATUS_CLR
+    description: Interrupt Status Clear.
+    byte_offset: 68
+    access: Write
+    fieldset: INT_STATUS_CLR
+  - name: INT_STATUS_SET
+    description: Interrupt Status Set.
+    byte_offset: 72
+    access: Write
+    fieldset: INT_STATUS_SET
+  - name: ERR_STATUS
+    description: Error Status.
+    byte_offset: 76
+    access: Read
+    fieldset: ERR_STATUS
+  - name: ERR_STATUS_CLR
+    description: Error Status Clear.
+    byte_offset: 80
+    access: Write
+    fieldset: ERR_STATUS_CLR
+  - name: VERSION
+    description: Version Register.
+    byte_offset: 84
+    access: Read
+    fieldset: VERSION
+  - name: PRNG_DATOUT
+    description: PRNG SW Read Out.
+    byte_offset: 92
+    access: Read
+    fieldset: PRNG_DATOUT
+  - name: CMDCRC_CTRL
+    description: CRC Configuration.
+    byte_offset: 96
+    fieldset: CMDCRC_CTRL
+  - name: CMDCRC
+    description: Command CRC Value.
+    byte_offset: 100
+    access: Read
+    fieldset: CMDCRC
+  - name: SESSION_ID
+    description: Session ID.
+    byte_offset: 104
+    fieldset: SESSION_ID
+  - name: DMA_FIN_ADDR
+    description: Final DMA Address.
+    byte_offset: 112
+    access: Read
+    fieldset: DMA_FIN_ADDR
+  - name: MASTER_ID
+    description: Master ID.
+    byte_offset: 116
+    fieldset: MASTER_ID
+  - name: KIDX2
+    description: Keystore Index 2.
+    byte_offset: 120
+    fieldset: KIDX2
+  - name: ELS_KS
+    description: Status Register.
+    array:
+      len: 20
+      stride: 4
+    byte_offset: 336
+    access: Read
+    fieldset: ELS_KS
+fieldset/CFG:
+  description: Configuration Register.
+  fields:
+  - name: ADCTRL
+    description: Controls the maximum value of a variable delay that will be applied before any ELS AES operation is started.
+    bit_offset: 16
+    bit_size: 10
+fieldset/CMDCFG0:
+  description: Command Configuration.
+  fields:
+  - name: CMDCFG0
+    description: See.
+    bit_offset: 0
+    bit_size: 32
+fieldset/CMDCRC:
+  description: Command CRC Value.
+  fields:
+  - name: CMDCRC
+    description: Indicates the current CRC value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/CMDCRC_CTRL:
+  description: CRC Configuration.
+  fields:
+  - name: CMDCRC_RST
+    description: CRC reset to initial valueCMDCRC_EN and CMDCRC_RST fields act independently.
+    bit_offset: 0
+    bit_size: 1
+    enum: CMDCRC_RST
+  - name: CMDCRC_EN
+    description: CRC enable bit.
+    bit_offset: 1
+    bit_size: 1
+    enum: CMDCRC_EN
+fieldset/CTRL:
+  description: Control Register.
+  fields:
+  - name: ELS_EN
+    description: ELS enable.
+    bit_offset: 0
+    bit_size: 1
+    enum: ELS_EN
+  - name: ELS_START
+    description: Write to 1 to start an ELS operation. Writing 0 has no effect.
+    bit_offset: 1
+    bit_size: 1
+  - name: ELS_RESET
+    description: Write to 1 to perform an ELS synchronous reset. Writing 0 has no effect.
+    bit_offset: 2
+    bit_size: 1
+  - name: ELS_CMD
+    description: ELS Command ID.
+    bit_offset: 3
+    bit_size: 5
+  - name: BYTE_ORDER
+    description: Defines endianness.
+    bit_offset: 8
+    bit_size: 1
+    enum: BYTE_ORDER
+fieldset/DMA_FIN_ADDR:
+  description: Final DMA Address.
+  fields:
+  - name: DMA_FIN_ADDR
+    description: Indicates the final address of system memory that was accessed by ELS during the last command.
+    bit_offset: 0
+    bit_size: 32
+fieldset/DMA_RES0:
+  description: DMA Result 0.
+  fields:
+  - name: ADDR_RES0
+    description: Defines the system start address where the result of the ELS operation is transferred via DMA.
+    bit_offset: 0
+    bit_size: 32
+fieldset/DMA_RES0_LEN:
+  description: DMA Result 0 Length.
+  fields:
+  - name: SIZE_RES0_LEN
+    description: Size in bytes of the data to be transferred.
+    bit_offset: 0
+    bit_size: 32
+fieldset/DMA_SRC:
+  description: DMA Source.
+  fields:
+  - name: ADDR_SRC
+    description: Defines the system address of the start of the data to be transferred to the ELS via DMA.
+    bit_offset: 0
+    bit_size: 32
+fieldset/DMA_SRC0_LEN:
+  description: DMA Source 0 Length.
+  fields:
+  - name: SIZE_SRC0_LEN
+    description: Size in bytes of the data to be transferred from the target defined in SFR DMA_SRC0.
+    bit_offset: 0
+    bit_size: 32
+fieldset/DMA_SRC2_LEN:
+  description: DMA Source 2 Length.
+  fields:
+  - name: SIZE_SRC2_LEN
+    description: Size in bytes of the data to be transferred from the target defined in SFR DMA_SRC2.
+    bit_offset: 0
+    bit_size: 32
+fieldset/ELS_KS:
+  description: Status Register.
+  fields:
+  - name: KSIZE
+    description: Key size.
+    bit_offset: 0
+    bit_size: 2
+    enum: KSIZE
+  - name: KACT
+    description: Key is active.
+    bit_offset: 5
+    bit_size: 1
+  - name: KBASE
+    description: First slot in a multislot key.
+    bit_offset: 6
+    bit_size: 1
+  - name: FGP
+    description: Hardware Feature General Purpose.
+    bit_offset: 7
+    bit_size: 1
+  - name: FRTN
+    description: Hardware Feature Retention.
+    bit_offset: 8
+    bit_size: 1
+  - name: FHWO
+    description: Hardware Feature Output.
+    bit_offset: 9
+    bit_size: 1
+  - name: UKPUK
+    description: CMAC key.
+    bit_offset: 11
+    bit_size: 1
+  - name: UTECDH
+    description: CMAC key.
+    bit_offset: 12
+    bit_size: 1
+  - name: UCMAC
+    description: CMAC key.
+    bit_offset: 13
+    bit_size: 1
+  - name: UKSK
+    description: KSK key.
+    bit_offset: 14
+    bit_size: 1
+  - name: URTF
+    description: Real Time Fingerprint key.
+    bit_offset: 15
+    bit_size: 1
+  - name: UCKDF
+    description: Derivation key for CKDF command.
+    bit_offset: 16
+    bit_size: 1
+  - name: UHKDF
+    description: Derivation key for HKDF command.
+    bit_offset: 17
+    bit_size: 1
+  - name: UECSG
+    description: Ecc signing key.
+    bit_offset: 18
+    bit_size: 1
+  - name: UECDH
+    description: Ecc diffie hellman key.
+    bit_offset: 19
+    bit_size: 1
+  - name: UAES
+    description: Aes key.
+    bit_offset: 20
+    bit_size: 1
+  - name: UHMAC
+    description: Hmac key.
+    bit_offset: 21
+    bit_size: 1
+  - name: UKWK
+    description: Key wrapping key.
+    bit_offset: 22
+    bit_size: 1
+  - name: UKUOK
+    description: Key unwrapping key.
+    bit_offset: 23
+    bit_size: 1
+  - name: UTLSPMS
+    description: TLS Pre Master Secret.
+    bit_offset: 24
+    bit_size: 1
+  - name: UTLSMS
+    description: TLS Master Secret.
+    bit_offset: 25
+    bit_size: 1
+  - name: UKGSRC
+    description: Supply KEYGEN source.
+    bit_offset: 26
+    bit_size: 1
+  - name: UHWO
+    description: Hardware out key.
+    bit_offset: 27
+    bit_size: 1
+  - name: UWRPOK
+    description: Wrap key.
+    bit_offset: 28
+    bit_size: 1
+  - name: UDUK
+    description: Device Unique Key.
+    bit_offset: 29
+    bit_size: 1
+  - name: UPPROT
+    description: Priviledge level.
+    bit_offset: 30
+    bit_size: 2
+fieldset/ERR_STATUS:
+  description: Error Status.
+  fields:
+  - name: BUS_ERR
+    description: Indicates public or private bus access error.
+    bit_offset: 0
+    bit_size: 1
+    enum: BUS_ERR
+  - name: OPN_ERR
+    description: Indicates operational error, that is, ELS has been incorrectly operated.
+    bit_offset: 1
+    bit_size: 1
+    enum: OPN_ERR
+  - name: ALG_ERR
+    description: Indicates algorithm error; an internal algorithm has produced an unexpected result.
+    bit_offset: 2
+    bit_size: 1
+    enum: ALG_ERR
+  - name: ITG_ERR
+    description: Indicates data integrity error, that is, internal data integrity check has failed.
+    bit_offset: 3
+    bit_size: 1
+    enum: ITG_ERR
+  - name: FLT_ERR
+    description: Indicates hardware fault error; an attempt to change the value of an internal register.
+    bit_offset: 4
+    bit_size: 1
+    enum: FLT_ERR
+  - name: PRNG_ERR
+    description: Indicates user read of PRNG_DATOUT when STATUS[PRNG_RDY] is 0.
+    bit_offset: 5
+    bit_size: 1
+    enum: PRNG_ERR
+  - name: ERR_LVL
+    description: 'Indicates the triggered error level: 0, 1 ,2.'
+    bit_offset: 6
+    bit_size: 2
+  - name: DTRNG_ERR
+    description: TRNG unable to gather entropy with the current configuration.
+    bit_offset: 8
+    bit_size: 1
+    enum: DTRNG_ERR
+fieldset/ERR_STATUS_CLR:
+  description: Error Status Clear.
+  fields:
+  - name: ERR_CLR
+    description: ELS error status bit.
+    bit_offset: 0
+    bit_size: 1
+    enum: ERR_CLR
+fieldset/INT_ENABLE:
+  description: Interrupt Enable.
+  fields:
+  - name: INT_EN
+    description: Enables or disables the operation of the ELS interrupt output port.
+    bit_offset: 0
+    bit_size: 1
+    enum: INT_EN
+fieldset/INT_STATUS_CLR:
+  description: Interrupt Status Clear.
+  fields:
+  - name: INT_CLR
+    description: Interrupt status clear bit.
+    bit_offset: 0
+    bit_size: 1
+fieldset/INT_STATUS_SET:
+  description: Interrupt Status Set.
+  fields:
+  - name: INT_SET
+    description: Software triggered interrupt bit.
+    bit_offset: 0
+    bit_size: 1
+fieldset/KIDX0:
+  description: Keystore Index 0.
+  fields:
+  - name: KIDX0
+    description: Selects the base 128-bit section of a key in ELS keystore.
+    bit_offset: 0
+    bit_size: 5
+fieldset/KIDX1:
+  description: Keystore Index 1.
+  fields:
+  - name: KIDX1
+    description: Selects the base 128-bit section of a key in ELS keystore.
+    bit_offset: 0
+    bit_size: 5
+fieldset/KIDX2:
+  description: Keystore Index 2.
+  fields:
+  - name: KIDX2
+    description: Selects the base 128-bit section of a key in ELS keystore.
+    bit_offset: 0
+    bit_size: 5
+fieldset/KPROPIN:
+  description: Key Properties Request.
+  fields:
+  - name: KPROPIN
+    description: Specifies requested properties of the key created by ELS command.
+    bit_offset: 0
+    bit_size: 32
+fieldset/MASTER_ID:
+  description: Master ID.
+  fields:
+  - name: MASTER_ID
+    description: Sets the privileged master ID.
+    bit_offset: 0
+    bit_size: 5
+fieldset/PRNG_DATOUT:
+  description: PRNG SW Read Out.
+  fields:
+  - name: PRNG_DATOUT
+    description: 32-bit wide pseudo-random number.
+    bit_offset: 0
+    bit_size: 32
+fieldset/SESSION_ID:
+  description: Session ID.
+  fields:
+  - name: SESSION_ID
+    description: Indicates the current value of the session ID.
+    bit_offset: 0
+    bit_size: 32
+fieldset/STATUS:
+  description: Status Register.
+  fields:
+  - name: ELS_BUSY
+    description: When set, indicates the ELS is executing a crypto sequence.
+    bit_offset: 0
+    bit_size: 1
+    enum: ELS_BUSY
+  - name: ELS_IRQ
+    description: When set, indicates the ELS has an active interrupt.
+    bit_offset: 1
+    bit_size: 1
+    enum: ELS_IRQ
+  - name: ELS_ERR
+    description: When set, indicates the ELS has detected an internal error.
+    bit_offset: 2
+    bit_size: 1
+    enum: ELS_ERR
+  - name: PRNG_RDY
+    description: When set, indicates the internal PRNG is ready.
+    bit_offset: 3
+    bit_size: 1
+    enum: PRNG_RDY
+  - name: ECDSA_VFY_STATUS
+    description: Signature verify result status.
+    bit_offset: 4
+    bit_size: 2
+    enum: ECDSA_VFY_STATUS
+  - name: PPROT
+    description: Current command privilege level.
+    bit_offset: 6
+    bit_size: 2
+    enum: PPROT
+  - name: DRBG_ENT_LVL
+    description: Entropy quality of the current DRBG instance.
+    bit_offset: 8
+    bit_size: 2
+    enum: DRBG_ENT_LVL
+  - name: DTRNG_BUSY
+    description: When set, it indicates TRNG is gathering entropy.
+    bit_offset: 10
+    bit_size: 1
+    enum: DTRNG_BUSY
+  - name: ELS_LOCKED
+    description: When set, indicates that ELS is locked by a master.
+    bit_offset: 16
+    bit_size: 1
+    enum: ELS_LOCKED
+fieldset/VERSION:
+  description: Version Register.
+  fields:
+  - name: Z
+    description: Specifies the extended release version digit1; possible values are from 0-9.
+    bit_offset: 0
+    bit_size: 4
+  - name: Y2
+    description: Specifies the minor release version digit0; possible values are from 0-9.
+    bit_offset: 4
+    bit_size: 4
+  - name: Y1
+    description: Specifies the minor release version digit1; possible values are from 0-9.
+    bit_offset: 8
+    bit_size: 4
+  - name: X
+    description: Specifies the major release version; possible values are from 1-9.
+    bit_offset: 12
+    bit_size: 4
+  - name: SW_Z
+    description: Specifies the software extended revision version; possible values are from 0-9.
+    bit_offset: 16
+    bit_size: 4
+  - name: SW_Y2
+    description: Specifies the software minor release version digit0; possible values are from 0-9.
+    bit_offset: 20
+    bit_size: 4
+  - name: SW_Y1
+    description: Specifies the software minor release version digit1; possible values are from 0-9.
+    bit_offset: 24
+    bit_size: 4
+  - name: SW_X
+    description: Specifies the software major release version; possible values are from 1-9.
+    bit_offset: 28
+    bit_size: 4
+enum/ALG_ERR:
+  bit_size: 1
+  variants:
+  - name: dis
+    description: No error.
+    value: 0
+  - name: en
+    description: Error occurred.
+    value: 1
+enum/BUS_ERR:
+  bit_size: 1
+  variants:
+  - name: dis
+    description: No error.
+    value: 0
+  - name: en
+    description: Error occurred.
+    value: 1
+enum/BYTE_ORDER:
+  bit_size: 1
+  variants:
+  - name: lit
+    description: Little endian.
+    value: 0
+  - name: big
+    description: Big endian.
+    value: 1
+enum/CMDCRC_EN:
+  bit_size: 1
+  variants:
+  - name: exit
+    description: Disables the CRC command CRC. The CRC command will not be updated on completion of each ELS command.
+    value: 0
+  - name: clr
+    description: Enables the CRC command. The CRC command will be updated on completion of each ELS command.
+    value: 1
+enum/CMDCRC_RST:
+  bit_size: 1
+  variants:
+  - name: exit
+    description: No effect.
+    value: 0
+  - name: clr
+    description: Resets the CRC command to its default value.
+    value: 1
+enum/DRBG_ENT_LVL:
+  bit_size: 2
+  variants:
+  - name: none
+    description: NONE.
+    value: 0
+  - name: low
+    description: LOW, DRBG generates random numbers of low quality entropy.
+    value: 1
+  - name: high
+    description: HIGH, DRBG generates random numbers of high quality entropy.
+    value: 2
+  - name: rfu
+    description: RFU, Reserved for Future Use.
+    value: 3
+enum/DTRNG_BUSY:
+  bit_size: 1
+  variants:
+  - name: notent
+    description: Not gathering entropy.
+    value: 0
+  - name: ent
+    description: Gathering entropy.
+    value: 1
+enum/DTRNG_ERR:
+  bit_size: 1
+  variants:
+  - name: dis
+    description: No error.
+    value: 0
+  - name: en
+    description: TRNG error occurred.
+    value: 1
+enum/ECDSA_VFY_STATUS:
+  bit_size: 2
+  variants:
+  - name: no_v_run
+    description: No verify run.
+    value: 0
+  - name: sig_fail
+    description: Signature verify failed.
+    value: 1
+  - name: sig_pass
+    description: Signature verify passed.
+    value: 2
+  - name: err
+    description: Invalid, Error.
+    value: 3
+enum/ELS_BUSY:
+  bit_size: 1
+  variants:
+  - name: ntcry
+    description: Crypto sequence not executing.
+    value: 0
+  - name: cryp
+    description: Crypto sequence executing.
+    value: 1
+enum/ELS_EN:
+  bit_size: 1
+  variants:
+  - name: dis
+    description: Disabled.
+    value: 0
+  - name: en
+    description: Enabled.
+    value: 1
+enum/ELS_ERR:
+  bit_size: 1
+  variants:
+  - name: nterr
+    description: Internal error not detected.
+    value: 0
+  - name: err
+    description: Internal error detected.
+    value: 1
+enum/ELS_IRQ:
+  bit_size: 1
+  variants:
+  - name: ntint
+    description: No active interrupt.
+    value: 0
+  - name: int
+    description: Active interrupt.
+    value: 1
+enum/ELS_LOCKED:
+  bit_size: 1
+  variants:
+  - name: notl
+    description: Not locked by master.
+    value: 0
+  - name: lock
+    description: Locked by master.
+    value: 1
+enum/ERR_CLR:
+  bit_size: 1
+  variants:
+  - name: exit
+    description: Exits ELS error state.
+    value: 0
+  - name: clr
+    description: Clears ELS error state.
+    value: 1
+enum/FLT_ERR:
+  bit_size: 1
+  variants:
+  - name: dis
+    description: No error.
+    value: 0
+  - name: en
+    description: Error occurred.
+    value: 1
+enum/INT_EN:
+  bit_size: 1
+  variants:
+  - name: dis
+    description: Disables.
+    value: 0
+  - name: en
+    description: Enables.
+    value: 1
+enum/ITG_ERR:
+  bit_size: 1
+  variants:
+  - name: dis
+    description: No error.
+    value: 0
+  - name: en
+    description: Error occurred.
+    value: 1
+enum/KSIZE:
+  bit_size: 2
+  variants:
+  - name: size128
+    description: '128.'
+    value: 0
+  - name: size256
+    description: '256.'
+    value: 1
+enum/OPN_ERR:
+  bit_size: 1
+  variants:
+  - name: dis
+    description: No error.
+    value: 0
+  - name: en
+    description: Error occurred.
+    value: 1
+enum/PPROT:
+  bit_size: 2
+  variants:
+  - name: secnp
+    description: Secure, non-privileged.
+    value: 0
+  - name: secp
+    description: Secure, privileged.
+    value: 1
+  - name: nsecnp
+    description: Non-secure, non-privileged.
+    value: 2
+  - name: nsecp
+    description: Non-secure, privileged.
+    value: 3
+enum/PRNG_ERR:
+  bit_size: 1
+  variants:
+  - name: dis
+    description: No error.
+    value: 0
+  - name: en
+    description: Error occurred.
+    value: 1
+enum/PRNG_RDY:
+  bit_size: 1
+  variants:
+  - name: ntready
+    description: Internal PRNG not ready.
+    value: 0
+  - name: ready
+    description: Internal PRNG ready.
+    value: 1
