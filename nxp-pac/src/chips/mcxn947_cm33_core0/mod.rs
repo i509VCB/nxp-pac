@@ -395,8 +395,9 @@ pub const VBAT0: vbat::Vbat = unsafe { vbat::Vbat::from_ptr(0x40059000 as _) };
 pub const EIM0: eim::Eim = unsafe { eim::Eim::from_ptr(0x4005B000 as _) };
 pub const ERM0: erm::Erm = unsafe { erm::Erm::from_ptr(0x4005C000 as _) };
 pub const INTM0: intm0::Intm0 = unsafe { intm0::Intm0::from_ptr(0x4005D000 as _) };
-pub const EDMA_0_TCD: edma_0_tcd::Edma0Tcd =
-    unsafe { edma_0_tcd::Edma0Tcd::from_ptr(0x40081000 as _) };
+pub const DMA0: dma::Dma16 = unsafe { dma::Dma16::from_ptr(0x40080000 as _) };
+pub const DMA1: dma::Dma16 = unsafe { dma::Dma16::from_ptr(0x400A0000 as _) };
+pub const EDMA_0_TCD: edma_tcd::Tcd16 = unsafe { edma_tcd::Tcd16::from_ptr(0x40081000 as _) };
 pub const SCT0: sct::Sct = unsafe { sct::Sct::from_ptr(0x40091000 as _) };
 pub const LPSPI0: lpspi::Lpspi = unsafe { lpspi::Lpspi::from_ptr(0x40092000 as _) };
 pub const LPSPI1: lpspi::Lpspi = unsafe { lpspi::Lpspi::from_ptr(0x40093000 as _) };
@@ -458,8 +459,7 @@ pub const GPIO3: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4009C000 as _) };
 pub const GPIO3_ALIAS1: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4009D000 as _) };
 pub const GPIO4: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4009E000 as _) };
 pub const GPIO4_ALIAS1: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4009F000 as _) };
-pub const EDMA_1_TCD: edma_1_tcd::Edma1Tcd =
-    unsafe { edma_1_tcd::Edma1Tcd::from_ptr(0x400A1000 as _) };
+pub const EDMA_1_TCD: edma_tcd::Tcd16 = unsafe { edma_tcd::Tcd16::from_ptr(0x400A1000 as _) };
 pub const SEMA42_0: sema42::Sema42 = unsafe { sema42::Sema42::from_ptr(0x400B1000 as _) };
 pub const MAILBOX: mailbox::Mailbox = unsafe { mailbox::Mailbox::from_ptr(0x400B2000 as _) };
 pub const CDOG0: cdog::Cdog = unsafe { cdog::Cdog::from_ptr(0x400BB000 as _) };
@@ -551,10 +551,10 @@ pub mod dac;
 pub mod dac2;
 #[path = "../../meta_peripherals/mcxn/DM.rs"]
 pub mod dm;
-#[path = "../../meta_peripherals/mcxn/EDMA_0_TCD.rs"]
-pub mod edma_0_tcd;
-#[path = "../../meta_peripherals/mcxn/EDMA_1_TCD.rs"]
-pub mod edma_1_tcd;
+#[path = "../../meta_peripherals/mcxn/DMA.rs"]
+pub mod dma;
+#[path = "../../meta_peripherals/mcxn/EDMA_TCD.rs"]
+pub mod edma_tcd;
 #[path = "../../meta_peripherals/mcxn/EIM.rs"]
 pub mod eim;
 #[path = "../../meta_peripherals/mcxn/ELS.rs"]

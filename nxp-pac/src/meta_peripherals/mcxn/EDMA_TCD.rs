@@ -2,29 +2,6 @@
 #![allow(non_snake_case)]
 #![allow(non_upper_case_globals)]
 #![doc = "Peripheral access API (generated using chiptool v0.1.0 (e5ab29f 2026-04-30))"]
-#[doc = "DMA TCD."]
-#[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Edma1Tcd {
-    ptr: *mut u8,
-}
-unsafe impl Send for Edma1Tcd {}
-unsafe impl Sync for Edma1Tcd {}
-impl Edma1Tcd {
-    #[inline(always)]
-    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
-        Self { ptr: ptr as _ }
-    }
-    #[inline(always)]
-    pub const fn as_ptr(&self) -> *mut () {
-        self.ptr as _
-    }
-    #[doc = "Array of registers: CH_CSR, CH_ES, CH_INT, CH_PRI, CH_SBR, CH_MUX, TCD_SADDR, TCD_SOFF, TCD_ATTR, TCD_NBYTES_MLOFFNO, TCD_NBYTES_MLOFFYES, TCD_SLAST_SDA, TCD_DADDR, TCD_CITER_ELINKYES, TCD_CITER_ELINKNO, TCD_DOFF, TCD_DLAST_SGA, TCD_BITER_ELINKYES, TCD_BITER_ELINKNO, TCD_CSR."]
-    #[inline(always)]
-    pub const fn tcd(self, n: usize) -> Tcd {
-        assert!(n < 16usize);
-        unsafe { Tcd::from_ptr(self.ptr.wrapping_add(0x0usize + n * 4096usize) as _) }
-    }
-}
 #[doc = "Array of registers: CH_CSR, CH_ES, CH_INT, CH_PRI, CH_SBR, CH_MUX, TCD_SADDR, TCD_SOFF, TCD_ATTR, TCD_NBYTES_MLOFFNO, TCD_NBYTES_MLOFFYES, TCD_SLAST_SDA, TCD_DADDR, TCD_CITER_ELINKYES, TCD_CITER_ELINKNO, TCD_DOFF, TCD_DLAST_SGA, TCD_BITER_ELINKYES, TCD_BITER_ELINKNO, TCD_CSR."]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct Tcd {
@@ -156,6 +133,29 @@ impl Tcd {
         self,
     ) -> crate::pac::common::Reg<TcdBiterElinkyes, crate::pac::common::RW> {
         unsafe { crate::pac::common::Reg::from_ptr(self.ptr.wrapping_add(0x3eusize) as _) }
+    }
+}
+#[doc = "DMA TCD."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Tcd16 {
+    ptr: *mut u8,
+}
+unsafe impl Send for Tcd16 {}
+unsafe impl Sync for Tcd16 {}
+impl Tcd16 {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "Array of registers: CH_CSR, CH_ES, CH_INT, CH_PRI, CH_SBR, CH_MUX, TCD_SADDR, TCD_SOFF, TCD_ATTR, TCD_NBYTES_MLOFFNO, TCD_NBYTES_MLOFFYES, TCD_SLAST_SDA, TCD_DADDR, TCD_CITER_ELINKYES, TCD_CITER_ELINKNO, TCD_DOFF, TCD_DLAST_SGA, TCD_BITER_ELINKYES, TCD_BITER_ELINKNO, TCD_CSR."]
+    #[inline(always)]
+    pub const fn tcd(self, n: usize) -> Tcd {
+        assert!(n < 16usize);
+        unsafe { Tcd::from_ptr(self.ptr.wrapping_add(0x0usize + n * 4096usize) as _) }
     }
 }
 #[doc = "Channel Control and Status."]
@@ -430,14 +430,14 @@ impl ChInt {
     #[doc = "Interrupt Request."]
     #[must_use]
     #[inline(always)]
-    pub const fn int(&self) -> Int {
+    pub const fn int(&self) -> bool {
         let val = (self.0 >> 0usize) & 0x01;
-        Int::from_bits(val as u8)
+        val != 0
     }
     #[doc = "Interrupt Request."]
     #[inline(always)]
-    pub const fn set_int(&mut self, val: Int) {
-        self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+    pub const fn set_int(&mut self, val: bool) {
+        self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
     }
 }
 impl Default for ChInt {
@@ -454,7 +454,7 @@ impl core::fmt::Debug for ChInt {
 #[cfg(feature = "defmt")]
 impl defmt::Format for ChInt {
     fn format(&self, f: defmt::Formatter) {
-        defmt::write!(f, "ChInt {{ int: {:?} }}", self.int())
+        defmt::write!(f, "ChInt {{ int: {=bool:?} }}", self.int())
     }
 }
 #[doc = "Channel Multiplexor Configuration."]
@@ -652,14 +652,14 @@ impl TcdAttr {
     #[doc = "Destination Data Transfer Size."]
     #[must_use]
     #[inline(always)]
-    pub const fn dsize(&self) -> u8 {
+    pub const fn dsize(&self) -> Size {
         let val = (self.0 >> 0usize) & 0x07;
-        val as u8
+        Size::from_bits(val as u8)
     }
     #[doc = "Destination Data Transfer Size."]
     #[inline(always)]
-    pub const fn set_dsize(&mut self, val: u8) {
-        self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u16) & 0x07) << 0usize);
+    pub const fn set_dsize(&mut self, val: Size) {
+        self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u16) & 0x07) << 0usize);
     }
     #[doc = "Destination Address Modulo."]
     #[must_use]
@@ -676,26 +676,26 @@ impl TcdAttr {
     #[doc = "Source Data Transfer Size."]
     #[must_use]
     #[inline(always)]
-    pub const fn ssize(&self) -> Ssize {
+    pub const fn ssize(&self) -> Size {
         let val = (self.0 >> 8usize) & 0x07;
-        Ssize::from_bits(val as u8)
+        Size::from_bits(val as u8)
     }
     #[doc = "Source Data Transfer Size."]
     #[inline(always)]
-    pub const fn set_ssize(&mut self, val: Ssize) {
+    pub const fn set_ssize(&mut self, val: Size) {
         self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u16) & 0x07) << 8usize);
     }
     #[doc = "Source Address Modulo."]
     #[must_use]
     #[inline(always)]
-    pub const fn smod(&self) -> Smod {
+    pub const fn smod(&self) -> u8 {
         let val = (self.0 >> 11usize) & 0x1f;
-        Smod::from_bits(val as u8)
+        val as u8
     }
     #[doc = "Source Address Modulo."]
     #[inline(always)]
-    pub const fn set_smod(&mut self, val: Smod) {
-        self.0 = (self.0 & !(0x1f << 11usize)) | (((val.to_bits() as u16) & 0x1f) << 11usize);
+    pub const fn set_smod(&mut self, val: u8) {
+        self.0 = (self.0 & !(0x1f << 11usize)) | (((val as u16) & 0x1f) << 11usize);
     }
 }
 impl Default for TcdAttr {
@@ -719,7 +719,7 @@ impl defmt::Format for TcdAttr {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "TcdAttr {{ dsize: {=u8:?}, dmod: {=u8:?}, ssize: {:?}, smod: {:?} }}",
+            "TcdAttr {{ dsize: {:?}, dmod: {=u8:?}, ssize: {:?}, smod: {=u8:?} }}",
             self.dsize(),
             self.dmod(),
             self.ssize(),
@@ -1677,37 +1677,6 @@ impl From<Esg> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Int {
-    #[doc = "Interrupt request for corresponding channel cleared."]
-    InterruptCleared = 0x0,
-    #[doc = "Interrupt request for corresponding channel active."]
-    InterruptActive = 0x01,
-}
-impl Int {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Int {
-        unsafe { core::mem::transmute(val & 0x01) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Int {
-    #[inline(always)]
-    fn from(val: u8) -> Int {
-        Int::from_bits(val)
-    }
-}
-impl From<Int> for u8 {
-    #[inline(always)]
-    fn from(val: Int) -> u8 {
-        Int::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Pal {
     #[doc = "User protection level for DMA transfers."]
     UserProtection = 0x0,
@@ -1770,68 +1739,7 @@ impl From<Sec> for u8 {
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Smod {
-    #[doc = "Source address modulo feature disabled."]
-    Disable = 0x0,
-    #[doc = "Source address modulo feature enabled for any non-zero value \\[1-31\\]."]
-    Enable = 0x01,
-    _RESERVED_2 = 0x02,
-    _RESERVED_3 = 0x03,
-    _RESERVED_4 = 0x04,
-    _RESERVED_5 = 0x05,
-    _RESERVED_6 = 0x06,
-    _RESERVED_7 = 0x07,
-    _RESERVED_8 = 0x08,
-    _RESERVED_9 = 0x09,
-    _RESERVED_a = 0x0a,
-    _RESERVED_b = 0x0b,
-    _RESERVED_c = 0x0c,
-    _RESERVED_d = 0x0d,
-    _RESERVED_e = 0x0e,
-    _RESERVED_f = 0x0f,
-    _RESERVED_10 = 0x10,
-    _RESERVED_11 = 0x11,
-    _RESERVED_12 = 0x12,
-    _RESERVED_13 = 0x13,
-    _RESERVED_14 = 0x14,
-    _RESERVED_15 = 0x15,
-    _RESERVED_16 = 0x16,
-    _RESERVED_17 = 0x17,
-    _RESERVED_18 = 0x18,
-    _RESERVED_19 = 0x19,
-    _RESERVED_1a = 0x1a,
-    _RESERVED_1b = 0x1b,
-    _RESERVED_1c = 0x1c,
-    _RESERVED_1d = 0x1d,
-    _RESERVED_1e = 0x1e,
-    _RESERVED_1f = 0x1f,
-}
-impl Smod {
-    #[inline(always)]
-    pub const fn from_bits(val: u8) -> Smod {
-        unsafe { core::mem::transmute(val & 0x1f) }
-    }
-    #[inline(always)]
-    pub const fn to_bits(self) -> u8 {
-        unsafe { core::mem::transmute(self) }
-    }
-}
-impl From<u8> for Smod {
-    #[inline(always)]
-    fn from(val: u8) -> Smod {
-        Smod::from_bits(val)
-    }
-}
-impl From<Smod> for u8 {
-    #[inline(always)]
-    fn from(val: Smod) -> u8 {
-        Smod::to_bits(val)
-    }
-}
-#[repr(u8)]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum Ssize {
+pub enum Size {
     #[doc = "8-bit."]
     EightBit = 0x0,
     #[doc = "16-bit."]
@@ -1847,9 +1755,9 @@ pub enum Ssize {
     _RESERVED_6 = 0x06,
     _RESERVED_7 = 0x07,
 }
-impl Ssize {
+impl Size {
     #[inline(always)]
-    pub const fn from_bits(val: u8) -> Ssize {
+    pub const fn from_bits(val: u8) -> Size {
         unsafe { core::mem::transmute(val & 0x07) }
     }
     #[inline(always)]
@@ -1857,16 +1765,16 @@ impl Ssize {
         unsafe { core::mem::transmute(self) }
     }
 }
-impl From<u8> for Ssize {
+impl From<u8> for Size {
     #[inline(always)]
-    fn from(val: u8) -> Ssize {
-        Ssize::from_bits(val)
+    fn from(val: u8) -> Size {
+        Size::from_bits(val)
     }
 }
-impl From<Ssize> for u8 {
+impl From<Size> for u8 {
     #[inline(always)]
-    fn from(val: Ssize) -> u8 {
-        Ssize::to_bits(val)
+    fn from(val: Size) -> u8 {
+        Size::to_bits(val)
     }
 }
 #[repr(u8)]

@@ -984,9 +984,21 @@
       "signals": []
     },
     {
+      "name": "DMA0",
+      "address": "0x40080000",
+      "block": "mcxn/DMA::DMA16",
+      "signals": []
+    },
+    {
+      "name": "DMA1",
+      "address": "0x400A0000",
+      "block": "mcxn/DMA::DMA16",
+      "signals": []
+    },
+    {
       "name": "EDMA_0_TCD",
       "address": "0x40081000",
-      "block": "mcxn/EDMA_0_TCD",
+      "block": "mcxn/EDMA_TCD::TCD16",
       "signals": []
     },
     {
@@ -2329,7 +2341,7 @@
     {
       "name": "EDMA_1_TCD",
       "address": "0x400A1000",
-      "block": "mcxn/EDMA_1_TCD",
+      "block": "mcxn/EDMA_TCD::TCD16",
       "signals": []
     },
     {

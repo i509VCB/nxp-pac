@@ -9,11 +9,10 @@ is always GPIOn pin N), and which bit positions actually exist per port
 *is* in the SVD (as the set of PCR<N> registers each PORTn peripheral has -
 ports aren't uniformly 32 pins wide, e.g. PORT1 has 0-23 then jumps to 30-31).
 
-DMA0/DMA1 are deliberately excluded: embassy-mcxn's build.rs (copied from
-embassy-mcxa) expects DMA peripherals to have a `block` string encoding a
-channel count (e.g. "mcxa/DMA::DMA8") and `.unwrap()`s a regex match against
-it. Without real transform data assigning that block/channel-count for
-MCXN947, including DMA0/DMA1 here would make build.rs panic.
+This script no longer reproduces the committed MCXN947.json: it emits no `block`
+keys, and those are now maintained by hand for all 174 peripherals. Running it
+would drop every one of them. It is kept as the provenance record for where the
+names, addresses, interrupt numbers and GPIOn/PORTn pin data came from.
 """
 
 import json
@@ -25,7 +24,6 @@ ROOT = Path(__file__).parent
 SVD = ROOT / "data/mcux-soc-svd/MCXN947/MCXN947_cm33_core0.xml"
 OUT = ROOT / "data/metadata/MCXN947.json"
 
-DMA_RE = re.compile(r"^DMA\d+$", re.IGNORECASE)
 PORT_RE = re.compile(r"^PORT(\d+)$")
 GPIO_RE = re.compile(r"^GPIO(\d+)$")
 PCR_RE = re.compile(r"^PCR(\d+)$")
@@ -59,14 +57,13 @@ for periph in root.find("peripherals").findall("peripheral"):
     base_address_el = periph.find("baseAddress")
     if base_address_el is not None:
         address = int(base_address_el.text, 16)
-        if not DMA_RE.match(name):
-            peripherals.append(
-                {
-                    "name": name,
-                    "address": f"0x{address:08X}",
-                    "signals": [],
-                }
-            )
+        peripherals.append(
+            {
+                "name": name,
+                "address": f"0x{address:08X}",
+                "signals": [],
+            }
+        )
 
     for interrupt in periph.findall("interrupt"):
         # The SVD has inconsistent casing for some interrupt names (e.g.

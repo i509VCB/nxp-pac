@@ -1,3 +1,12 @@
+# File not directly generated from transforms!
+#
+# `block/Dma` from the raw extract is renamed `block/Dma16` (16 channels) so
+# metadata can select it as `mcxn/DMA::DMA16`, following the Dma4/Dma8/Dma12
+# convention in `mcxa/DMA.yaml`. MCXN947's DMA0 and DMA1 both have 16 channels,
+# so one block covers both.
+#
+# This is the eDMA management page. The per-channel TCD pages, one 0x1000 above
+# each management page, live in `mcxn/EDMA_TCD.yaml`.
 block/Dma16:
   description: DMA MP.
   items:

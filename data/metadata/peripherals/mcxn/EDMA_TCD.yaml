@@ -1,4 +1,24 @@
-block/Edma0Tcd:
+# File not directly generated from transforms!
+#
+# Hand-assembled from `raw/MCXN947_cm33_core0/EDMA_{0,1}_TCD.yaml`. The SVD
+# describes MCXN947's two eDMA controllers as two peripherals with identical
+# register maps; kept as two files they generate two distinct `Tcd` types, so a
+# driver cannot write `match dma { 0 => EDMA_0_TCD.tcd(n), 1 => EDMA_1_TCD.tcd(n) }`.
+# Merged here into one shared `block/Tcd` plus a single `block/Tcd16` wrapper
+# that both DMA0 and DMA1 (16 channels each) select as `mcxn/EDMA_TCD::TCD16`.
+# Same arrangement as `mcxa/EDMA_TCD.yaml`.
+#
+# Three enum changes relative to the raw extract, matching what
+# `data/transforms/mcxa/dma.yaml` does for MCXA:
+#   * TCD_ATTR[SSIZE] and TCD_ATTR[DSIZE] are the same 3-bit transfer-size
+#     encoding, but the SVD only enumerates SSIZE. `Ssize` is renamed `Size`
+#     and applied to DSIZE as well, so one conversion serves both.
+#   * TCD_ATTR[SMOD] is a 5-bit modulo size, not a flag. Its `Smod` enum is
+#     dropped: the SVD gives it two variants whose second is documented as
+#     "any non-zero value [1-31]", which no enum can represent.
+#   * CH_INT[INT] is a 1-bit write-1-to-clear flag; its `Int` enum is dropped
+#     in favour of a bool.
+block/Tcd16:
   description: DMA TCD.
   items:
   - name: tcd
@@ -172,7 +192,6 @@ fieldset/ChInt:
     description: Interrupt Request.
     bit_offset: 0
     bit_size: 1
-    enum: Int
 fieldset/ChMux:
   description: Channel Multiplexor Configuration.
   fields:
@@ -226,6 +245,7 @@ fieldset/TcdAttr:
     description: Destination Data Transfer Size.
     bit_offset: 0
     bit_size: 3
+    enum: Size
   - name: dmod
     description: Destination Address Modulo.
     bit_offset: 3
@@ -234,12 +254,11 @@ fieldset/TcdAttr:
     description: Source Data Transfer Size.
     bit_offset: 8
     bit_size: 3
-    enum: Ssize
+    enum: Size
   - name: smod
     description: Source Address Modulo.
     bit_offset: 11
     bit_size: 5
-    enum: Smod
 fieldset/TcdBiterElinkno:
   description: TCD Beginning Major Loop Count (Minor Loop Channel Linking Disabled).
   bit_size: 16
@@ -474,15 +493,6 @@ enum/Esg:
   - name: ScatterGatherFormat
     description: Current channel's TCD specifies scatter/gather format.
     value: 1
-enum/Int:
-  bit_size: 1
-  variants:
-  - name: InterruptCleared
-    description: Interrupt request for corresponding channel cleared.
-    value: 0
-  - name: InterruptActive
-    description: Interrupt request for corresponding channel active.
-    value: 1
 enum/Pal:
   bit_size: 1
   variants:
@@ -501,16 +511,7 @@ enum/Sec:
   - name: SecureProtection
     description: Secure protection level for DMA transfers.
     value: 1
-enum/Smod:
-  bit_size: 5
-  variants:
-  - name: Disable
-    description: Source address modulo feature disabled.
-    value: 0
-  - name: Enable
-    description: Source address modulo feature enabled for any non-zero value [1-31].
-    value: 1
-enum/Ssize:
+enum/Size:
   bit_size: 3
   variants:
   - name: EightBit
