@@ -541,166 +541,199 @@
     {
       "name": "SYSCON0",
       "address": "0x40000000",
+      "block": "mcxn/SYSCON",
       "signals": []
     },
     {
       "name": "PINT0",
       "address": "0x40004000",
+      "block": "mcxn/PINT0",
       "signals": []
     },
     {
       "name": "INPUTMUX0",
       "address": "0x40006000",
+      "block": "mcxn/INPUTMUX0",
       "signals": []
     },
     {
       "name": "CTIMER0",
       "address": "0x4000C000",
+      "block": "mcx/CTIMER",
       "signals": []
     },
     {
       "name": "CTIMER1",
       "address": "0x4000D000",
+      "block": "mcx/CTIMER",
       "signals": []
     },
     {
       "name": "CTIMER2",
       "address": "0x4000E000",
+      "block": "mcx/CTIMER",
       "signals": []
     },
     {
       "name": "CTIMER3",
       "address": "0x4000F000",
+      "block": "mcx/CTIMER",
       "signals": []
     },
     {
       "name": "CTIMER4",
       "address": "0x40010000",
+      "block": "mcx/CTIMER",
       "signals": []
     },
     {
       "name": "FREQME0",
       "address": "0x40011000",
+      "block": "mcxn/FREQME",
       "signals": []
     },
     {
       "name": "UTICK0",
       "address": "0x40012000",
+      "block": "mcxn/UTICK",
       "signals": []
     },
     {
       "name": "MRT0",
       "address": "0x40013000",
+      "block": "mcxn/MRT",
       "signals": []
     },
     {
       "name": "WWDT0",
       "address": "0x40016000",
+      "block": "mcx/WWDT",
       "signals": []
     },
     {
       "name": "WWDT1",
       "address": "0x40017000",
+      "block": "mcx/WWDT",
       "signals": []
     },
     {
       "name": "CACHE64_CTRL0",
       "address": "0x4001B000",
+      "block": "mcxn/CACHE64Ctrl::CACHE64_CTRL",
       "signals": []
     },
     {
       "name": "CACHE64_POLSEL0",
       "address": "0x4001B000",
+      "block": "mcxn/CACHE64Polsel::CACHE64_POLSEL",
       "signals": []
     },
     {
       "name": "I3C0",
       "address": "0x40021000",
+      "block": "mcxn/I3C",
       "signals": []
     },
     {
       "name": "I3C1",
       "address": "0x40022000",
+      "block": "mcxn/I3C",
       "signals": []
     },
     {
       "name": "GDET0",
       "address": "0x40024000",
+      "block": "mcxn/GDET",
       "signals": []
     },
     {
       "name": "GDET1",
       "address": "0x40025000",
+      "block": "mcxn/GDET",
       "signals": []
     },
     {
       "name": "ITRC0",
       "address": "0x40026000",
+      "block": "mcxn/ITRC0",
       "signals": []
     },
     {
       "name": "PKC0",
       "address": "0x4002B000",
+      "block": "mcxn/PKC0",
       "signals": []
     },
     {
       "name": "PUF",
       "address": "0x4002C000",
+      "block": "mcxn/PUF",
       "signals": []
     },
     {
       "name": "PUF_ALIAS1",
       "address": "0x4002D000",
+      "block": "mcxn/PUF",
       "signals": []
     },
     {
       "name": "PUF_ALIAS2",
       "address": "0x4002E000",
+      "block": "mcxn/PUF",
       "signals": []
     },
     {
       "name": "PUF_ALIAS3",
       "address": "0x4002F000",
+      "block": "mcxn/PUF",
       "signals": []
     },
     {
       "name": "PUF_CTRL",
       "address": "0x4002C000",
+      "block": "mcxn/PUF_CTRL",
       "signals": []
     },
     {
       "name": "PUF_CTRL_ALIAS1",
       "address": "0x4002D000",
+      "block": "mcxn/PUF_CTRL",
       "signals": []
     },
     {
       "name": "PUF_CTRL_ALIAS2",
       "address": "0x4002E000",
+      "block": "mcxn/PUF_CTRL",
       "signals": []
     },
     {
       "name": "PUF_CTRL_ALIAS3",
       "address": "0x4002F000",
+      "block": "mcxn/PUF_CTRL",
       "signals": []
     },
     {
       "name": "BSP32_0",
       "address": "0x40032000",
+      "block": "mcxn/BSP32",
       "signals": []
     },
     {
       "name": "SMARTDMA0",
       "address": "0x40033000",
+      "block": "mcxn/SMARTDMA",
       "signals": []
     },
     {
       "name": "PLU0",
       "address": "0x40034000",
+      "block": "mcxn/PLU0",
       "signals": []
     },
     {
       "name": "GPIO5",
       "address": "0x40040000",
+      "block": "mcx/GPIO",
       "signals": [
         {
           "name": "0",
@@ -797,346 +830,415 @@
     {
       "name": "GPIO5_ALIAS1",
       "address": "0x40041000",
+      "block": "mcx/GPIO",
       "signals": []
     },
     {
       "name": "PORT5",
       "address": "0x40042000",
+      "block": "mcx/PORT",
       "signals": []
     },
     {
       "name": "FMU0",
       "address": "0x40043000",
+      "block": "mcxn/FMU",
       "signals": []
     },
     {
       "name": "FMU0TEST",
       "address": "0x40043000",
+      "block": "mcxn/FMU0TEST",
       "signals": []
     },
     {
       "name": "SCG0",
       "address": "0x40044000",
+      "block": "mcxn/SCG",
       "signals": []
     },
     {
       "name": "SPC0",
       "address": "0x40045000",
+      "block": "mcxn/SPC",
       "signals": []
     },
     {
       "name": "WUU0",
       "address": "0x40046000",
+      "block": "mcxn/WUU",
       "signals": []
     },
     {
       "name": "CMC0",
       "address": "0x40048000",
+      "block": "mcxn/CMC",
       "signals": []
     },
     {
       "name": "OSTIMER0",
       "address": "0x40049000",
+      "block": "mcxn/OSTIMER",
       "signals": []
     },
     {
       "name": "LPTMR0",
       "address": "0x4004A000",
+      "block": "mcxn/LPTMR",
       "signals": []
     },
     {
       "name": "LPTMR1",
       "address": "0x4004B000",
+      "block": "mcxn/LPTMR",
       "signals": []
     },
     {
       "name": "RTC0",
       "address": "0x4004C000",
+      "block": "mcx/RTC5xx::Rtc",
       "signals": []
     },
     {
       "name": "RTC_SUBSYSTEM0",
       "address": "0x4004C000",
+      "block": "mcxn/RTC_SUBSYSTEM",
       "signals": []
     },
     {
       "name": "TSI0",
       "address": "0x40050000",
+      "block": "mcxn/TSI",
       "signals": []
     },
     {
       "name": "CMP0",
       "address": "0x40051000",
+      "block": "mcxn/CMP",
       "signals": []
     },
     {
       "name": "CMP1",
       "address": "0x40052000",
+      "block": "mcxn/CMP",
       "signals": []
     },
     {
       "name": "CMP2",
       "address": "0x40053000",
+      "block": "mcxn/CMP",
       "signals": []
     },
     {
       "name": "ELS",
       "address": "0x40054000",
+      "block": "mcxn/ELS",
       "signals": []
     },
     {
       "name": "ELS_ALIAS1",
       "address": "0x40055000",
+      "block": "mcxn/ELS",
       "signals": []
     },
     {
       "name": "ELS_ALIAS2",
       "address": "0x40056000",
+      "block": "mcxn/ELS",
       "signals": []
     },
     {
       "name": "ELS_ALIAS3",
       "address": "0x40057000",
+      "block": "mcxn/ELS",
       "signals": []
     },
     {
       "name": "TDET0",
       "address": "0x40058000",
+      "block": "mcxn/TDET",
       "signals": []
     },
     {
       "name": "VBAT0",
       "address": "0x40059000",
+      "block": "mcxn/VBAT",
       "signals": []
     },
     {
       "name": "EIM0",
       "address": "0x4005B000",
+      "block": "mcxn/EIM",
       "signals": []
     },
     {
       "name": "ERM0",
       "address": "0x4005C000",
+      "block": "mcxn/ERM",
       "signals": []
     },
     {
       "name": "INTM0",
       "address": "0x4005D000",
+      "block": "mcxn/INTM0",
       "signals": []
     },
     {
       "name": "EDMA_0_TCD",
       "address": "0x40081000",
+      "block": "mcxn/EDMA_0_TCD",
       "signals": []
     },
     {
       "name": "SCT0",
       "address": "0x40091000",
+      "block": "mcxn/SCT",
       "signals": []
     },
     {
       "name": "LPSPI0",
       "address": "0x40092000",
+      "block": "mcxn/LPSPI",
       "signals": []
     },
     {
       "name": "LPSPI1",
       "address": "0x40093000",
+      "block": "mcxn/LPSPI",
       "signals": []
     },
     {
       "name": "LPSPI2",
       "address": "0x40094000",
+      "block": "mcxn/LPSPI",
       "signals": []
     },
     {
       "name": "LPSPI3",
       "address": "0x40095000",
+      "block": "mcxn/LPSPI",
       "signals": []
     },
     {
       "name": "LPSPI4",
       "address": "0x400B4000",
+      "block": "mcxn/LPSPI",
       "signals": []
     },
     {
       "name": "LPSPI5",
       "address": "0x400B5000",
+      "block": "mcxn/LPSPI",
       "signals": []
     },
     {
       "name": "LPSPI6",
       "address": "0x400B6000",
+      "block": "mcxn/LPSPI",
       "signals": []
     },
     {
       "name": "LPSPI7",
       "address": "0x400B7000",
+      "block": "mcxn/LPSPI",
       "signals": []
     },
     {
       "name": "LPSPI8",
       "address": "0x400B8000",
+      "block": "mcxn/LPSPI",
       "signals": []
     },
     {
       "name": "LPSPI9",
       "address": "0x400B9000",
+      "block": "mcxn/LPSPI",
       "signals": []
     },
     {
       "name": "LPUART0",
       "address": "0x40092000",
+      "block": "mcxn/LPUART",
       "signals": []
     },
     {
       "name": "LPUART1",
       "address": "0x40093000",
+      "block": "mcxn/LPUART",
       "signals": []
     },
     {
       "name": "LPUART2",
       "address": "0x40094000",
+      "block": "mcxn/LPUART",
       "signals": []
     },
     {
       "name": "LPUART3",
       "address": "0x40095000",
+      "block": "mcxn/LPUART",
       "signals": []
     },
     {
       "name": "LPUART4",
       "address": "0x400B4000",
+      "block": "mcxn/LPUART",
       "signals": []
     },
     {
       "name": "LPUART5",
       "address": "0x400B5000",
+      "block": "mcxn/LPUART",
       "signals": []
     },
     {
       "name": "LPUART6",
       "address": "0x400B6000",
+      "block": "mcxn/LPUART",
       "signals": []
     },
     {
       "name": "LPUART7",
       "address": "0x400B7000",
+      "block": "mcxn/LPUART",
       "signals": []
     },
     {
       "name": "LPUART8",
       "address": "0x400B8000",
+      "block": "mcxn/LPUART",
       "signals": []
     },
     {
       "name": "LPUART9",
       "address": "0x400B9000",
+      "block": "mcxn/LPUART",
       "signals": []
     },
     {
       "name": "LP_FLEXCOMM0",
       "address": "0x40092000",
+      "block": "mcxn/LP_FLEXCOMM",
       "signals": []
     },
     {
       "name": "LP_FLEXCOMM1",
       "address": "0x40093000",
+      "block": "mcxn/LP_FLEXCOMM",
       "signals": []
     },
     {
       "name": "LP_FLEXCOMM2",
       "address": "0x40094000",
+      "block": "mcxn/LP_FLEXCOMM",
       "signals": []
     },
     {
       "name": "LP_FLEXCOMM3",
       "address": "0x40095000",
+      "block": "mcxn/LP_FLEXCOMM",
       "signals": []
     },
     {
       "name": "LP_FLEXCOMM4",
       "address": "0x400B4000",
+      "block": "mcxn/LP_FLEXCOMM",
       "signals": []
     },
     {
       "name": "LP_FLEXCOMM5",
       "address": "0x400B5000",
+      "block": "mcxn/LP_FLEXCOMM",
       "signals": []
     },
     {
       "name": "LP_FLEXCOMM6",
       "address": "0x400B6000",
+      "block": "mcxn/LP_FLEXCOMM",
       "signals": []
     },
     {
       "name": "LP_FLEXCOMM7",
       "address": "0x400B7000",
+      "block": "mcxn/LP_FLEXCOMM",
       "signals": []
     },
     {
       "name": "LP_FLEXCOMM8",
       "address": "0x400B8000",
+      "block": "mcxn/LP_FLEXCOMM",
       "signals": []
     },
     {
       "name": "LP_FLEXCOMM9",
       "address": "0x400B9000",
+      "block": "mcxn/LP_FLEXCOMM",
       "signals": []
     },
     {
       "name": "LPI2C0",
       "address": "0x40092800",
+      "block": "mcxn/LPI2C",
       "signals": []
     },
     {
       "name": "LPI2C1",
       "address": "0x40093800",
+      "block": "mcxn/LPI2C",
       "signals": []
     },
     {
       "name": "LPI2C2",
       "address": "0x40094800",
+      "block": "mcxn/LPI2C",
       "signals": []
     },
     {
       "name": "LPI2C3",
       "address": "0x40095800",
+      "block": "mcxn/LPI2C",
       "signals": []
     },
     {
       "name": "LPI2C4",
       "address": "0x400B4800",
+      "block": "mcxn/LPI2C",
       "signals": []
     },
     {
       "name": "LPI2C5",
       "address": "0x400B5800",
+      "block": "mcxn/LPI2C",
       "signals": []
     },
     {
       "name": "LPI2C6",
       "address": "0x400B6800",
+      "block": "mcxn/LPI2C",
       "signals": []
     },
     {
       "name": "LPI2C7",
       "address": "0x400B7800",
+      "block": "mcxn/LPI2C",
       "signals": []
     },
     {
       "name": "LPI2C8",
       "address": "0x400B8800",
+      "block": "mcxn/LPI2C",
       "signals": []
     },
     {
       "name": "LPI2C9",
       "address": "0x400B9800",
+      "block": "mcxn/LPI2C",
       "signals": []
     },
     {
       "name": "GPIO0",
       "address": "0x40096000",
+      "block": "mcx/GPIO",
       "signals": [
         {
           "name": "0",
@@ -1431,11 +1533,13 @@
     {
       "name": "GPIO0_ALIAS1",
       "address": "0x40097000",
+      "block": "mcx/GPIO",
       "signals": []
     },
     {
       "name": "GPIO1",
       "address": "0x40098000",
+      "block": "mcx/GPIO",
       "signals": [
         {
           "name": "0",
@@ -1676,11 +1780,13 @@
     {
       "name": "GPIO1_ALIAS1",
       "address": "0x40099000",
+      "block": "mcx/GPIO",
       "signals": []
     },
     {
       "name": "GPIO2",
       "address": "0x4009A000",
+      "block": "mcx/GPIO",
       "signals": [
         {
           "name": "0",
@@ -1795,11 +1901,13 @@
     {
       "name": "GPIO2_ALIAS1",
       "address": "0x4009B000",
+      "block": "mcx/GPIO",
       "signals": []
     },
     {
       "name": "GPIO3",
       "address": "0x4009C000",
+      "block": "mcx/GPIO",
       "signals": [
         {
           "name": "0",
@@ -2022,11 +2130,13 @@
     {
       "name": "GPIO3_ALIAS1",
       "address": "0x4009D000",
+      "block": "mcx/GPIO",
       "signals": []
     },
     {
       "name": "GPIO4",
       "address": "0x4009E000",
+      "block": "mcx/GPIO",
       "signals": [
         {
           "name": "0",
@@ -2213,281 +2323,337 @@
     {
       "name": "GPIO4_ALIAS1",
       "address": "0x4009F000",
+      "block": "mcx/GPIO",
       "signals": []
     },
     {
       "name": "EDMA_1_TCD",
       "address": "0x400A1000",
+      "block": "mcxn/EDMA_1_TCD",
       "signals": []
     },
     {
       "name": "SEMA42_0",
       "address": "0x400B1000",
+      "block": "mcxn/SEMA42",
       "signals": []
     },
     {
       "name": "MAILBOX",
       "address": "0x400B2000",
+      "block": "mcxn/MAILBOX",
       "signals": []
     },
     {
       "name": "CDOG0",
       "address": "0x400BB000",
+      "block": "mcxn/CDOG",
       "signals": []
     },
     {
       "name": "CDOG1",
       "address": "0x400BC000",
+      "block": "mcxn/CDOG",
       "signals": []
     },
     {
       "name": "DM0",
       "address": "0x400BD000",
+      "block": "mcxn/DM",
       "signals": []
     },
     {
       "name": "POWERQUAD",
       "address": "0x400BF000",
+      "block": "mcxn/POWERQUAD",
       "signals": []
     },
     {
       "name": "EWM0",
       "address": "0x400C0000",
+      "block": "mcxn/EWM",
       "signals": []
     },
     {
       "name": "CMX_PERFMON0",
       "address": "0x400C1000",
+      "block": "mcxn/CMX_PERFMON",
       "signals": []
     },
     {
       "name": "CMX_PERFMON1",
       "address": "0x400C2000",
+      "block": "mcxn/CMX_PERFMON",
       "signals": []
     },
     {
       "name": "TRDC",
       "address": "0x400C7000",
+      "block": "mcxn/TRDC",
       "signals": []
     },
     {
       "name": "FLEXSPI0",
       "address": "0x400C8000",
+      "block": "mcxn/FLEXSPI",
       "signals": []
     },
     {
       "name": "OTPC0",
       "address": "0x400C9000",
+      "block": "mcxn/OTPC",
       "signals": []
     },
     {
       "name": "CRC0",
       "address": "0x400CB000",
+      "block": "mcxn/CRC",
       "signals": []
     },
     {
       "name": "NPX0",
       "address": "0x400CC000",
+      "block": "mcxn/NPX",
       "signals": []
     },
     {
       "name": "PWM0",
       "address": "0x400CE000",
+      "block": "mcxn/PWM",
       "signals": []
     },
     {
       "name": "PWM1",
       "address": "0x400D0000",
+      "block": "mcxn/PWM",
       "signals": []
     },
     {
       "name": "QDC0",
       "address": "0x400CF000",
+      "block": "mcxn/QDC",
       "signals": []
     },
     {
       "name": "QDC1",
       "address": "0x400D1000",
+      "block": "mcxn/QDC",
       "signals": []
     },
     {
       "name": "EVTG0",
       "address": "0x400D2000",
+      "block": "mcxn/EVTG",
       "signals": []
     },
     {
       "name": "CAN0",
       "address": "0x400D4000",
+      "block": "mcxn/CAN",
       "signals": []
     },
     {
       "name": "CAN1",
       "address": "0x400D8000",
+      "block": "mcxn/CAN",
       "signals": []
     },
     {
       "name": "USBDCD0",
       "address": "0x400DC000",
+      "block": "mcxn/USBDCD",
       "signals": []
     },
     {
       "name": "USBFS0",
       "address": "0x400DD000",
+      "block": "mcxn/USBFS",
       "signals": []
     },
     {
       "name": "ENET0",
       "address": "0x40100000",
+      "block": "mcxn/ENET",
       "signals": []
     },
     {
       "name": "EMVSIM0",
       "address": "0x40103000",
+      "block": "mcxn/EMVSIM",
       "signals": []
     },
     {
       "name": "EMVSIM1",
       "address": "0x40104000",
+      "block": "mcxn/EMVSIM",
       "signals": []
     },
     {
       "name": "FLEXIO0",
       "address": "0x40105000",
+      "block": "mcxn/FLEXIO",
       "signals": []
     },
     {
       "name": "SAI0",
       "address": "0x40106000",
+      "block": "mcxn/SAI",
       "signals": []
     },
     {
       "name": "SAI1",
       "address": "0x40107000",
+      "block": "mcxn/SAI",
       "signals": []
     },
     {
       "name": "SINC0",
       "address": "0x40108000",
+      "block": "mcxn/SINC",
       "signals": []
     },
     {
       "name": "USDHC0",
       "address": "0x40109000",
+      "block": "mcxn/USDHC",
       "signals": []
     },
     {
       "name": "USBPHY",
       "address": "0x4010A000",
+      "block": "mcxn/USBPHY",
       "signals": []
     },
     {
       "name": "USBHS1_PHY_DCD",
       "address": "0x4010A800",
+      "block": "mcxn/USBHS1_PHY_DCD",
       "signals": []
     },
     {
       "name": "USBHS1__USBC",
       "address": "0x4010B000",
+      "block": "mcxn/USBHS1__USBC::USBHS1_USBC",
       "signals": []
     },
     {
       "name": "USBHS1__USBNC",
       "address": "0x4010B200",
+      "block": "mcxn/USBHS1__USBNC::USBHS1_USBNC",
       "signals": []
     },
     {
       "name": "PDM",
       "address": "0x4010C000",
+      "block": "mcxn/PDM",
       "signals": []
     },
     {
       "name": "ADC0",
       "address": "0x4010D000",
+      "block": "mcxn/ADC",
       "signals": []
     },
     {
       "name": "ADC1",
       "address": "0x4010E000",
+      "block": "mcxn/ADC",
       "signals": []
     },
     {
       "name": "DAC0",
       "address": "0x4010F000",
+      "block": "mcx/DAC",
       "signals": []
     },
     {
       "name": "DAC1",
       "address": "0x40112000",
+      "block": "mcx/DAC",
       "signals": []
     },
     {
       "name": "OPAMP0",
       "address": "0x40110000",
+      "block": "mcxn/OPAMP",
       "signals": []
     },
     {
       "name": "OPAMP1",
       "address": "0x40113000",
+      "block": "mcxn/OPAMP",
       "signals": []
     },
     {
       "name": "OPAMP2",
       "address": "0x40115000",
+      "block": "mcxn/OPAMP",
       "signals": []
     },
     {
       "name": "VREF0",
       "address": "0x40111000",
+      "block": "mcxn/VREF",
       "signals": []
     },
     {
       "name": "DAC2",
       "address": "0x40114000",
+      "block": "mcxn/DAC2",
       "signals": []
     },
     {
       "name": "PORT0",
       "address": "0x40116000",
+      "block": "mcx/PORT",
       "signals": []
     },
     {
       "name": "PORT1",
       "address": "0x40117000",
+      "block": "mcx/PORT",
       "signals": []
     },
     {
       "name": "PORT2",
       "address": "0x40118000",
+      "block": "mcx/PORT",
       "signals": []
     },
     {
       "name": "PORT3",
       "address": "0x40119000",
+      "block": "mcx/PORT",
       "signals": []
     },
     {
       "name": "PORT4",
       "address": "0x4011A000",
+      "block": "mcx/PORT",
       "signals": []
     },
     {
       "name": "AHBSC",
       "address": "0x40120000",
+      "block": "mcxn/AHBSC",
       "signals": []
     },
     {
       "name": "AHBSC_ALIAS1",
       "address": "0x40121000",
+      "block": "mcxn/AHBSC",
       "signals": []
     },
     {
       "name": "AHBSC_ALIAS2",
       "address": "0x40122000",
+      "block": "mcxn/AHBSC",
       "signals": []
     },
     {
       "name": "AHBSC_ALIAS3",
       "address": "0x40123000",
+      "block": "mcxn/AHBSC",
       "signals": []
     },
     {
