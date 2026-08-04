@@ -126,7 +126,21 @@
     { "name": "VREFN" }
   ],
   "peripherals": [
-    {"name": "ADC0", "signals": []},
+    {
+      "name": "ADC0",
+      "signals": [
+        { "name": "CH0_A", "pins": [{ "pin": "PIO0_23", "alt": 0 }] },
+        { "name": "CH0_B", "pins": [{ "pin": "PIO0_16", "alt": 0 }] },
+        { "name": "CH1_A", "pins": [{ "pin": "PIO0_10", "alt": 0 }] },
+        { "name": "CH1_B", "pins": [{ "pin": "PIO0_11", "alt": 0 }] },
+        { "name": "CH2_A", "pins": [{ "pin": "PIO0_15", "alt": 0 }] },
+        { "name": "CH2_B", "pins": [{ "pin": "PIO0_12", "alt": 0 }] },
+        { "name": "CH3_A", "pins": [{ "pin": "PIO0_31", "alt": 0 }] },
+        { "name": "CH3_B", "pins": [{ "pin": "PIO1_0", "alt": 0 }] },
+        { "name": "CH4_A", "pins": [{ "pin": "PIO1_8", "alt": 0 }] },
+        { "name": "CH4_B", "pins": [{ "pin": "PIO1_9", "alt": 0 }] }
+      ]
+    },
     {
       "name": "DMA0",
       "signals": [

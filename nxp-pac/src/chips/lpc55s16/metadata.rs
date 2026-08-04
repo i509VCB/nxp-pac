@@ -342,7 +342,98 @@ pub const PERIPHERALS: &[Peripheral] = &[
         name: "ADC0",
         address: 0,
         driver_name: "",
-        signals: &[],
+        signals: &[
+            Signal {
+                name: "CH0_A",
+                pins: &[SignalPin {
+                    pin: "PIO0_23",
+                    alt: 0u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "CH0_B",
+                pins: &[SignalPin {
+                    pin: "PIO0_16",
+                    alt: 0u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "CH1_A",
+                pins: &[SignalPin {
+                    pin: "PIO0_10",
+                    alt: 0u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "CH1_B",
+                pins: &[SignalPin {
+                    pin: "PIO0_11",
+                    alt: 0u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "CH2_A",
+                pins: &[SignalPin {
+                    pin: "PIO0_15",
+                    alt: 0u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "CH2_B",
+                pins: &[SignalPin {
+                    pin: "PIO0_12",
+                    alt: 0u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "CH3_A",
+                pins: &[SignalPin {
+                    pin: "PIO0_31",
+                    alt: 0u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "CH3_B",
+                pins: &[SignalPin {
+                    pin: "PIO1_0",
+                    alt: 0u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "CH4_A",
+                pins: &[SignalPin {
+                    pin: "PIO1_8",
+                    alt: 0u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "CH4_B",
+                pins: &[SignalPin {
+                    pin: "PIO1_9",
+                    alt: 0u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+        ],
         flexcomm: None,
         dma_muxing: &[],
         gate: None,

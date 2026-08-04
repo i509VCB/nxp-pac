@@ -96,6 +96,9 @@ transforms:
     from: syscon::regs::Presetctrlx\d
 
   - !MergeEnums
+    from: iocon::vals::Pio\d+Asw
+    to: iocon::vals::PioAsw
+  - !MergeEnums
     from: iocon::vals::Pio\d+Digimode
     to: iocon::vals::PioDigimode
   - !MergeEnums
@@ -128,6 +131,28 @@ transforms:
     to: iocon::regs::Pio
     main: iocon::regs::Pio013
     check: NoCheck
+
+  - !Add
+    ir:
+      enum/iocon::vals::PioAsw:
+        description: Analog switch input control.
+        bit_size: 1
+        variants:
+          - name: disabled
+            description: Analog switch is disabled.
+            value: 0
+          - name: enabled
+            description: Analog switch is enabled.
+            value: 1
+
+  - !AddFields
+    fieldset: iocon::regs::Pio
+    fields:
+      - name: asw
+        description: "Analog switch input control."
+        bit_offset: 10
+        bit_size: 1
+        enum: iocon::vals::PioAsw
 
   - !MakeRegisterArray
     blocks: iocon::Iocon
