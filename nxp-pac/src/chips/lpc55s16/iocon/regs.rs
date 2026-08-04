@@ -75,6 +75,18 @@ impl Pio {
     pub const fn set_od(&mut self, val: super::vals::PioOd) {
         self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
     }
+    #[doc = "Analog switch input control."]
+    #[must_use]
+    #[inline(always)]
+    pub const fn asw(&self) -> super::vals::PioAsw {
+        let val = (self.0 >> 10usize) & 0x01;
+        super::vals::PioAsw::from_bits(val as u8)
+    }
+    #[doc = "Analog switch input control."]
+    #[inline(always)]
+    pub const fn set_asw(&mut self, val: super::vals::PioAsw) {
+        self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+    }
     #[doc = "Supply Selection bit."]
     #[must_use]
     #[inline(always)]
@@ -151,6 +163,7 @@ impl core::fmt::Debug for Pio {
             .field("invert", &self.invert())
             .field("digimode", &self.digimode())
             .field("od", &self.od())
+            .field("asw", &self.asw())
             .field("ssel", &self.ssel())
             .field("filteroff", &self.filteroff())
             .field("ecs", &self.ecs())
@@ -164,13 +177,14 @@ impl defmt::Format for Pio {
     fn format(&self, f: defmt::Formatter) {
         defmt::write!(
             f,
-            "Pio {{ func: {:?}, mode: {:?}, slew: {:?}, invert: {=bool:?}, digimode: {:?}, od: {:?}, ssel: {:?}, filteroff: {:?}, ecs: {=bool:?}, egp: {:?}, i2cfilter: {:?} }}",
+            "Pio {{ func: {:?}, mode: {:?}, slew: {:?}, invert: {=bool:?}, digimode: {:?}, od: {:?}, asw: {:?}, ssel: {:?}, filteroff: {:?}, ecs: {=bool:?}, egp: {:?}, i2cfilter: {:?} }}",
             self.func(),
             self.mode(),
             self.slew(),
             self.invert(),
             self.digimode(),
             self.od(),
+            self.asw(),
             self.ssel(),
             self.filteroff(),
             self.ecs(),

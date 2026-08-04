@@ -1,3 +1,35 @@
+#[doc = "Analog switch input control."]
+#[repr(u8)]
+#[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+pub enum PioAsw {
+    #[doc = "Analog switch is disabled."]
+    disabled = 0x0,
+    #[doc = "Analog switch is enabled."]
+    enabled = 0x01,
+}
+impl PioAsw {
+    #[inline(always)]
+    pub const fn from_bits(val: u8) -> PioAsw {
+        unsafe { core::mem::transmute(val & 0x01) }
+    }
+    #[inline(always)]
+    pub const fn to_bits(self) -> u8 {
+        unsafe { core::mem::transmute(self) }
+    }
+}
+impl From<u8> for PioAsw {
+    #[inline(always)]
+    fn from(val: u8) -> PioAsw {
+        PioAsw::from_bits(val)
+    }
+}
+impl From<PioAsw> for u8 {
+    #[inline(always)]
+    fn from(val: PioAsw) -> u8 {
+        PioAsw::to_bits(val)
+    }
+}
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
