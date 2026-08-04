@@ -1,3 +1,12 @@
+# File not directly generated from transforms!
+#
+# DATA and GPOLY are 32-bit registers that the hardware also allows to be
+# accessed 8 or 16 bits at a time, and feeding a byte stream through the CRC
+# engine depends on that: an 8-bit write to DATA clocks in exactly one byte.
+# The SVD only describes the 32-bit view plus its byte/half-word subfields, so
+# the narrower accesses are added here as overlapping aliases, matching
+# `mcxa/CRC.yaml`. The descriptive `data`/`gpoly` fieldset views are kept
+# alongside them.
 block/Crc:
   description: CRC.
   items:
@@ -5,10 +14,32 @@ block/Crc:
     description: Data.
     byte_offset: 0
     fieldset: Data
+  - name: data8
+    description: Data, 8-bit access.
+    byte_offset: 0
+    bit_size: 8
+  - name: data16
+    description: Data, 16-bit access.
+    byte_offset: 0
+    bit_size: 16
+  - name: data32
+    description: Data, 32-bit access.
+    byte_offset: 0
   - name: gpoly
     description: Polynomial.
     byte_offset: 4
     fieldset: Gpoly
+  - name: gpoly8
+    description: Polynomial, 8-bit access.
+    byte_offset: 4
+    bit_size: 8
+  - name: gpoly16
+    description: Polynomial, 16-bit access.
+    byte_offset: 4
+    bit_size: 16
+  - name: gpoly32
+    description: Polynomial, 32-bit access.
+    byte_offset: 4
   - name: ctrl
     description: Control.
     byte_offset: 8

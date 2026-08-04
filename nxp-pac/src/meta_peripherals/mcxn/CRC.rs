@@ -23,9 +23,39 @@ impl Crc {
     pub const fn data(self) -> crate::pac::common::Reg<Data, crate::pac::common::RW> {
         unsafe { crate::pac::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
+    #[doc = "Data, 16-bit access."]
+    #[inline(always)]
+    pub const fn data16(self) -> crate::pac::common::Reg<u16, crate::pac::common::RW> {
+        unsafe { crate::pac::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "Data, 32-bit access."]
+    #[inline(always)]
+    pub const fn data32(self) -> crate::pac::common::Reg<u32, crate::pac::common::RW> {
+        unsafe { crate::pac::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "Data, 8-bit access."]
+    #[inline(always)]
+    pub const fn data8(self) -> crate::pac::common::Reg<u8, crate::pac::common::RW> {
+        unsafe { crate::pac::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
     #[doc = "Polynomial."]
     #[inline(always)]
     pub const fn gpoly(self) -> crate::pac::common::Reg<Gpoly, crate::pac::common::RW> {
+        unsafe { crate::pac::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+    #[doc = "Polynomial, 16-bit access."]
+    #[inline(always)]
+    pub const fn gpoly16(self) -> crate::pac::common::Reg<u16, crate::pac::common::RW> {
+        unsafe { crate::pac::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+    #[doc = "Polynomial, 32-bit access."]
+    #[inline(always)]
+    pub const fn gpoly32(self) -> crate::pac::common::Reg<u32, crate::pac::common::RW> {
+        unsafe { crate::pac::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+    #[doc = "Polynomial, 8-bit access."]
+    #[inline(always)]
+    pub const fn gpoly8(self) -> crate::pac::common::Reg<u8, crate::pac::common::RW> {
         unsafe { crate::pac::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "Control."]
