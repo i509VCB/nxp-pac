@@ -548,6 +548,28 @@
       "name": "PINT0",
       "address": "0x40004000",
       "block": "mcxn/PINT0",
+      "dma_muxing": [
+        {
+          "signal": "PINT0INT0",
+          "mux": "DMAMUX",
+          "request": 3
+        },
+        {
+          "signal": "PINT0INT1",
+          "mux": "DMAMUX",
+          "request": 4
+        },
+        {
+          "signal": "PINT0INT2",
+          "mux": "DMAMUX",
+          "request": 5
+        },
+        {
+          "signal": "PINT0INT3",
+          "mux": "DMAMUX",
+          "request": 6
+        }
+      ],
       "signals": []
     },
     {
@@ -560,30 +582,90 @@
       "name": "CTIMER0",
       "address": "0x4000C000",
       "block": "mcx/CTIMER",
+      "dma_muxing": [
+        {
+          "signal": "CTIMER0M0",
+          "mux": "DMAMUX",
+          "request": 7
+        },
+        {
+          "signal": "CTIMER0M1",
+          "mux": "DMAMUX",
+          "request": 8
+        }
+      ],
       "signals": []
     },
     {
       "name": "CTIMER1",
       "address": "0x4000D000",
       "block": "mcx/CTIMER",
+      "dma_muxing": [
+        {
+          "signal": "CTIMER1M0",
+          "mux": "DMAMUX",
+          "request": 9
+        },
+        {
+          "signal": "CTIMER1M1",
+          "mux": "DMAMUX",
+          "request": 10
+        }
+      ],
       "signals": []
     },
     {
       "name": "CTIMER2",
       "address": "0x4000E000",
       "block": "mcx/CTIMER",
+      "dma_muxing": [
+        {
+          "signal": "CTIMER2M0",
+          "mux": "DMAMUX",
+          "request": 11
+        },
+        {
+          "signal": "CTIMER2M1",
+          "mux": "DMAMUX",
+          "request": 12
+        }
+      ],
       "signals": []
     },
     {
       "name": "CTIMER3",
       "address": "0x4000F000",
       "block": "mcx/CTIMER",
+      "dma_muxing": [
+        {
+          "signal": "CTIMER3M0",
+          "mux": "DMAMUX",
+          "request": 13
+        },
+        {
+          "signal": "CTIMER3M1",
+          "mux": "DMAMUX",
+          "request": 14
+        }
+      ],
       "signals": []
     },
     {
       "name": "CTIMER4",
       "address": "0x40010000",
       "block": "mcx/CTIMER",
+      "dma_muxing": [
+        {
+          "signal": "CTIMER4M0",
+          "mux": "DMAMUX",
+          "request": 15
+        },
+        {
+          "signal": "CTIMER4M1",
+          "mux": "DMAMUX",
+          "request": 16
+        }
+      ],
       "signals": []
     },
     {
@@ -632,12 +714,36 @@
       "name": "I3C0",
       "address": "0x40021000",
       "block": "mcxn/I3C",
+      "dma_muxing": [
+        {
+          "signal": "I3C0Rx",
+          "mux": "DMAMUX",
+          "request": 95
+        },
+        {
+          "signal": "I3C0Tx",
+          "mux": "DMAMUX",
+          "request": 96
+        }
+      ],
       "signals": []
     },
     {
       "name": "I3C1",
       "address": "0x40022000",
       "block": "mcxn/I3C",
+      "dma_muxing": [
+        {
+          "signal": "I3C1Rx",
+          "mux": "DMAMUX",
+          "request": 97
+        },
+        {
+          "signal": "I3C1Tx",
+          "mux": "DMAMUX",
+          "request": 98
+        }
+      ],
       "signals": []
     },
     {
@@ -734,6 +840,18 @@
       "name": "GPIO5",
       "address": "0x40040000",
       "block": "mcx/GPIO",
+      "dma_muxing": [
+        {
+          "signal": "GPIO5PinEvent0",
+          "mux": "DMAMUX",
+          "request": 118
+        },
+        {
+          "signal": "GPIO5PinEvent1",
+          "mux": "DMAMUX",
+          "request": 119
+        }
+      ],
       "signals": [
         {
           "name": "0",
@@ -867,6 +985,13 @@
       "name": "WUU0",
       "address": "0x40046000",
       "block": "mcxn/WUU",
+      "dma_muxing": [
+        {
+          "signal": "WUU0WakeUpEvent",
+          "mux": "DMAMUX",
+          "request": 17
+        }
+      ],
       "signals": []
     },
     {
@@ -885,12 +1010,26 @@
       "name": "LPTMR0",
       "address": "0x4004A000",
       "block": "mcxn/LPTMR",
+      "dma_muxing": [
+        {
+          "signal": "LPTMR0CounterMatchEvent",
+          "mux": "DMAMUX",
+          "request": 57
+        }
+      ],
       "signals": []
     },
     {
       "name": "LPTMR1",
       "address": "0x4004B000",
       "block": "mcxn/LPTMR",
+      "dma_muxing": [
+        {
+          "signal": "LPTMR1CounterMatchEvent",
+          "mux": "DMAMUX",
+          "request": 58
+        }
+      ],
       "signals": []
     },
     {
@@ -909,24 +1048,57 @@
       "name": "TSI0",
       "address": "0x40050000",
       "block": "mcxn/TSI",
+      "dma_muxing": [
+        {
+          "signal": "TSI0EndOfScan",
+          "mux": "DMAMUX",
+          "request": 120
+        },
+        {
+          "signal": "TSI0OutOfRange",
+          "mux": "DMAMUX",
+          "request": 121
+        }
+      ],
       "signals": []
     },
     {
       "name": "CMP0",
       "address": "0x40051000",
       "block": "mcxn/CMP",
+      "dma_muxing": [
+        {
+          "signal": "CMP0DmaRequest",
+          "mux": "DMAMUX",
+          "request": 28
+        }
+      ],
       "signals": []
     },
     {
       "name": "CMP1",
       "address": "0x40052000",
       "block": "mcxn/CMP",
+      "dma_muxing": [
+        {
+          "signal": "CMP1DmaRequest",
+          "mux": "DMAMUX",
+          "request": 29
+        }
+      ],
       "signals": []
     },
     {
       "name": "CMP2",
       "address": "0x40053000",
       "block": "mcxn/CMP",
+      "dma_muxing": [
+        {
+          "signal": "CMP2DmaRequest",
+          "mux": "DMAMUX",
+          "request": 30
+        }
+      ],
       "signals": []
     },
     {
@@ -1005,6 +1177,18 @@
       "name": "SCT0",
       "address": "0x40091000",
       "block": "mcxn/SCT",
+      "dma_muxing": [
+        {
+          "signal": "SCT0DmaRequest0",
+          "mux": "DMAMUX",
+          "request": 19
+        },
+        {
+          "signal": "SCT0DmaRequest1",
+          "mux": "DMAMUX",
+          "request": 20
+        }
+      ],
       "signals": []
     },
     {
@@ -1131,60 +1315,180 @@
       "name": "LP_FLEXCOMM0",
       "address": "0x40092000",
       "block": "mcxn/LP_FLEXCOMM",
+      "dma_muxing": [
+        {
+          "signal": "LP_FLEXCOMM0Rx",
+          "mux": "DMAMUX",
+          "request": 69
+        },
+        {
+          "signal": "LP_FLEXCOMM0Tx",
+          "mux": "DMAMUX",
+          "request": 70
+        }
+      ],
       "signals": []
     },
     {
       "name": "LP_FLEXCOMM1",
       "address": "0x40093000",
       "block": "mcxn/LP_FLEXCOMM",
+      "dma_muxing": [
+        {
+          "signal": "LP_FLEXCOMM1Rx",
+          "mux": "DMAMUX",
+          "request": 71
+        },
+        {
+          "signal": "LP_FLEXCOMM1Tx",
+          "mux": "DMAMUX",
+          "request": 72
+        }
+      ],
       "signals": []
     },
     {
       "name": "LP_FLEXCOMM2",
       "address": "0x40094000",
       "block": "mcxn/LP_FLEXCOMM",
+      "dma_muxing": [
+        {
+          "signal": "LP_FLEXCOMM2Rx",
+          "mux": "DMAMUX",
+          "request": 73
+        },
+        {
+          "signal": "LP_FLEXCOMM2Tx",
+          "mux": "DMAMUX",
+          "request": 74
+        }
+      ],
       "signals": []
     },
     {
       "name": "LP_FLEXCOMM3",
       "address": "0x40095000",
       "block": "mcxn/LP_FLEXCOMM",
+      "dma_muxing": [
+        {
+          "signal": "LP_FLEXCOMM3Rx",
+          "mux": "DMAMUX",
+          "request": 75
+        },
+        {
+          "signal": "LP_FLEXCOMM3Tx",
+          "mux": "DMAMUX",
+          "request": 76
+        }
+      ],
       "signals": []
     },
     {
       "name": "LP_FLEXCOMM4",
       "address": "0x400B4000",
       "block": "mcxn/LP_FLEXCOMM",
+      "dma_muxing": [
+        {
+          "signal": "LP_FLEXCOMM4Rx",
+          "mux": "DMAMUX",
+          "request": 77
+        },
+        {
+          "signal": "LP_FLEXCOMM4Tx",
+          "mux": "DMAMUX",
+          "request": 78
+        }
+      ],
       "signals": []
     },
     {
       "name": "LP_FLEXCOMM5",
       "address": "0x400B5000",
       "block": "mcxn/LP_FLEXCOMM",
+      "dma_muxing": [
+        {
+          "signal": "LP_FLEXCOMM5Rx",
+          "mux": "DMAMUX",
+          "request": 79
+        },
+        {
+          "signal": "LP_FLEXCOMM5Tx",
+          "mux": "DMAMUX",
+          "request": 80
+        }
+      ],
       "signals": []
     },
     {
       "name": "LP_FLEXCOMM6",
       "address": "0x400B6000",
       "block": "mcxn/LP_FLEXCOMM",
+      "dma_muxing": [
+        {
+          "signal": "LP_FLEXCOMM6Rx",
+          "mux": "DMAMUX",
+          "request": 81
+        },
+        {
+          "signal": "LP_FLEXCOMM6Tx",
+          "mux": "DMAMUX",
+          "request": 82
+        }
+      ],
       "signals": []
     },
     {
       "name": "LP_FLEXCOMM7",
       "address": "0x400B7000",
       "block": "mcxn/LP_FLEXCOMM",
+      "dma_muxing": [
+        {
+          "signal": "LP_FLEXCOMM7Rx",
+          "mux": "DMAMUX",
+          "request": 83
+        },
+        {
+          "signal": "LP_FLEXCOMM7Tx",
+          "mux": "DMAMUX",
+          "request": 84
+        }
+      ],
       "signals": []
     },
     {
       "name": "LP_FLEXCOMM8",
       "address": "0x400B8000",
       "block": "mcxn/LP_FLEXCOMM",
+      "dma_muxing": [
+        {
+          "signal": "LP_FLEXCOMM8Rx",
+          "mux": "DMAMUX",
+          "request": 85
+        },
+        {
+          "signal": "LP_FLEXCOMM8Tx",
+          "mux": "DMAMUX",
+          "request": 86
+        }
+      ],
       "signals": []
     },
     {
       "name": "LP_FLEXCOMM9",
       "address": "0x400B9000",
       "block": "mcxn/LP_FLEXCOMM",
+      "dma_muxing": [
+        {
+          "signal": "LP_FLEXCOMM9Rx",
+          "mux": "DMAMUX",
+          "request": 87
+        },
+        {
+          "signal": "LP_FLEXCOMM9Tx",
+          "mux": "DMAMUX",
+          "request": 88
+        }
+      ],
       "signals": []
     },
     {
@@ -1251,6 +1555,18 @@
       "name": "GPIO0",
       "address": "0x40096000",
       "block": "mcx/GPIO",
+      "dma_muxing": [
+        {
+          "signal": "GPIO0PinEvent0",
+          "mux": "DMAMUX",
+          "request": 108
+        },
+        {
+          "signal": "GPIO0PinEvent1",
+          "mux": "DMAMUX",
+          "request": 109
+        }
+      ],
       "signals": [
         {
           "name": "0",
@@ -1552,6 +1868,18 @@
       "name": "GPIO1",
       "address": "0x40098000",
       "block": "mcx/GPIO",
+      "dma_muxing": [
+        {
+          "signal": "GPIO1PinEvent0",
+          "mux": "DMAMUX",
+          "request": 110
+        },
+        {
+          "signal": "GPIO1PinEvent1",
+          "mux": "DMAMUX",
+          "request": 111
+        }
+      ],
       "signals": [
         {
           "name": "0",
@@ -1799,6 +2127,18 @@
       "name": "GPIO2",
       "address": "0x4009A000",
       "block": "mcx/GPIO",
+      "dma_muxing": [
+        {
+          "signal": "GPIO2PinEvent0",
+          "mux": "DMAMUX",
+          "request": 112
+        },
+        {
+          "signal": "GPIO2PinEvent1",
+          "mux": "DMAMUX",
+          "request": 113
+        }
+      ],
       "signals": [
         {
           "name": "0",
@@ -1920,6 +2260,18 @@
       "name": "GPIO3",
       "address": "0x4009C000",
       "block": "mcx/GPIO",
+      "dma_muxing": [
+        {
+          "signal": "GPIO3PinEvent0",
+          "mux": "DMAMUX",
+          "request": 114
+        },
+        {
+          "signal": "GPIO3PinEvent1",
+          "mux": "DMAMUX",
+          "request": 115
+        }
+      ],
       "signals": [
         {
           "name": "0",
@@ -2149,6 +2501,18 @@
       "name": "GPIO4",
       "address": "0x4009E000",
       "block": "mcx/GPIO",
+      "dma_muxing": [
+        {
+          "signal": "GPIO4PinEvent0",
+          "mux": "DMAMUX",
+          "request": 116
+        },
+        {
+          "signal": "GPIO4PinEvent1",
+          "mux": "DMAMUX",
+          "request": 117
+        }
+      ],
       "signals": [
         {
           "name": "0",
@@ -2408,6 +2772,18 @@
       "name": "FLEXSPI0",
       "address": "0x400C8000",
       "block": "mcxn/FLEXSPI",
+      "dma_muxing": [
+        {
+          "signal": "FLEXSPI0Rx",
+          "mux": "DMAMUX",
+          "request": 1
+        },
+        {
+          "signal": "FLEXSPI0Tx",
+          "mux": "DMAMUX",
+          "request": 2
+        }
+      ],
       "signals": []
     },
     {
@@ -2432,12 +2808,96 @@
       "name": "PWM0",
       "address": "0x400CE000",
       "block": "mcxn/PWM",
+      "dma_muxing": [
+        {
+          "signal": "FlexPWM0Mcapt0",
+          "mux": "DMAMUX",
+          "request": 39
+        },
+        {
+          "signal": "FlexPWM0Mcapt1",
+          "mux": "DMAMUX",
+          "request": 40
+        },
+        {
+          "signal": "FlexPWM0Mcapt2",
+          "mux": "DMAMUX",
+          "request": 41
+        },
+        {
+          "signal": "FlexPWM0Mcapt3",
+          "mux": "DMAMUX",
+          "request": 42
+        },
+        {
+          "signal": "FlexPWM0Mval0",
+          "mux": "DMAMUX",
+          "request": 43
+        },
+        {
+          "signal": "FlexPWM0Mval1",
+          "mux": "DMAMUX",
+          "request": 44
+        },
+        {
+          "signal": "FlexPWM0Mval2",
+          "mux": "DMAMUX",
+          "request": 45
+        },
+        {
+          "signal": "FlexPWM0Mval3",
+          "mux": "DMAMUX",
+          "request": 46
+        }
+      ],
       "signals": []
     },
     {
       "name": "PWM1",
       "address": "0x400D0000",
       "block": "mcxn/PWM",
+      "dma_muxing": [
+        {
+          "signal": "FlexPWM1Mcapt0",
+          "mux": "DMAMUX",
+          "request": 47
+        },
+        {
+          "signal": "FlexPWM1Mcapt1",
+          "mux": "DMAMUX",
+          "request": 48
+        },
+        {
+          "signal": "FlexPWM1Mcapt2",
+          "mux": "DMAMUX",
+          "request": 49
+        },
+        {
+          "signal": "FlexPWM1Mcapt3",
+          "mux": "DMAMUX",
+          "request": 50
+        },
+        {
+          "signal": "FlexPWM1Mval0",
+          "mux": "DMAMUX",
+          "request": 51
+        },
+        {
+          "signal": "FlexPWM1Mval1",
+          "mux": "DMAMUX",
+          "request": 52
+        },
+        {
+          "signal": "FlexPWM1Mval2",
+          "mux": "DMAMUX",
+          "request": 53
+        },
+        {
+          "signal": "FlexPWM1Mval3",
+          "mux": "DMAMUX",
+          "request": 54
+        }
+      ],
       "signals": []
     },
     {
@@ -2456,18 +2916,74 @@
       "name": "EVTG0",
       "address": "0x400D2000",
       "block": "mcxn/EVTG",
+      "dma_muxing": [
+        {
+          "signal": "EVTG0Out0A",
+          "mux": "DMAMUX",
+          "request": 31
+        },
+        {
+          "signal": "EVTG0Out0B",
+          "mux": "DMAMUX",
+          "request": 32
+        },
+        {
+          "signal": "EVTG0Out1A",
+          "mux": "DMAMUX",
+          "request": 33
+        },
+        {
+          "signal": "EVTG0Out1B",
+          "mux": "DMAMUX",
+          "request": 34
+        },
+        {
+          "signal": "EVTG0Out2A",
+          "mux": "DMAMUX",
+          "request": 35
+        },
+        {
+          "signal": "EVTG0Out2B",
+          "mux": "DMAMUX",
+          "request": 36
+        },
+        {
+          "signal": "EVTG0Out3A",
+          "mux": "DMAMUX",
+          "request": 37
+        },
+        {
+          "signal": "EVTG0Out3B",
+          "mux": "DMAMUX",
+          "request": 38
+        }
+      ],
       "signals": []
     },
     {
       "name": "CAN0",
       "address": "0x400D4000",
       "block": "mcxn/CAN",
+      "dma_muxing": [
+        {
+          "signal": "CAN0",
+          "mux": "DMAMUX",
+          "request": 59
+        }
+      ],
       "signals": []
     },
     {
       "name": "CAN1",
       "address": "0x400D8000",
       "block": "mcxn/CAN",
+      "dma_muxing": [
+        {
+          "signal": "CAN1",
+          "mux": "DMAMUX",
+          "request": 60
+        }
+      ],
       "signals": []
     },
     {
@@ -2492,36 +3008,153 @@
       "name": "EMVSIM0",
       "address": "0x40103000",
       "block": "mcxn/EMVSIM",
+      "dma_muxing": [
+        {
+          "signal": "EMVSIM0Rx",
+          "mux": "DMAMUX",
+          "request": 91
+        },
+        {
+          "signal": "EMVSIM0Tx",
+          "mux": "DMAMUX",
+          "request": 92
+        }
+      ],
       "signals": []
     },
     {
       "name": "EMVSIM1",
       "address": "0x40104000",
       "block": "mcxn/EMVSIM",
+      "dma_muxing": [
+        {
+          "signal": "EMVSIM1Rx",
+          "mux": "DMAMUX",
+          "request": 93
+        },
+        {
+          "signal": "EMVSIM1Tx",
+          "mux": "DMAMUX",
+          "request": 94
+        }
+      ],
       "signals": []
     },
     {
       "name": "FLEXIO0",
       "address": "0x40105000",
       "block": "mcxn/FLEXIO",
+      "dma_muxing": [
+        {
+          "signal": "FLEXIO0SR0",
+          "mux": "DMAMUX",
+          "request": 61
+        },
+        {
+          "signal": "FLEXIO0SR1",
+          "mux": "DMAMUX",
+          "request": 62
+        },
+        {
+          "signal": "FLEXIO0SR2",
+          "mux": "DMAMUX",
+          "request": 63
+        },
+        {
+          "signal": "FLEXIO0SR3",
+          "mux": "DMAMUX",
+          "request": 64
+        },
+        {
+          "signal": "FLEXIO0SR4",
+          "mux": "DMAMUX",
+          "request": 65
+        },
+        {
+          "signal": "FLEXIO0SR5",
+          "mux": "DMAMUX",
+          "request": 66
+        },
+        {
+          "signal": "FLEXIO0SR6",
+          "mux": "DMAMUX",
+          "request": 67
+        },
+        {
+          "signal": "FLEXIO0SR7",
+          "mux": "DMAMUX",
+          "request": 68
+        }
+      ],
       "signals": []
     },
     {
       "name": "SAI0",
       "address": "0x40106000",
       "block": "mcxn/SAI",
+      "dma_muxing": [
+        {
+          "signal": "SAI0Rx",
+          "mux": "DMAMUX",
+          "request": 99
+        },
+        {
+          "signal": "SAI0Tx",
+          "mux": "DMAMUX",
+          "request": 100
+        }
+      ],
       "signals": []
     },
     {
       "name": "SAI1",
       "address": "0x40107000",
       "block": "mcxn/SAI",
+      "dma_muxing": [
+        {
+          "signal": "SAI1Rx",
+          "mux": "DMAMUX",
+          "request": 101
+        },
+        {
+          "signal": "SAI1Tx",
+          "mux": "DMAMUX",
+          "request": 102
+        }
+      ],
       "signals": []
     },
     {
       "name": "SINC0",
       "address": "0x40108000",
       "block": "mcxn/SINC",
+      "dma_muxing": [
+        {
+          "signal": "SINC0Ch0Request",
+          "mux": "DMAMUX",
+          "request": 103
+        },
+        {
+          "signal": "SINC0Ch1Request",
+          "mux": "DMAMUX",
+          "request": 104
+        },
+        {
+          "signal": "SINC0Ch2Request",
+          "mux": "DMAMUX",
+          "request": 105
+        },
+        {
+          "signal": "SINC0Ch3Request",
+          "mux": "DMAMUX",
+          "request": 106
+        },
+        {
+          "signal": "SINC0Ch4Request",
+          "mux": "DMAMUX",
+          "request": 107
+        }
+      ],
       "signals": []
     },
     {
@@ -2558,30 +3191,75 @@
       "name": "PDM",
       "address": "0x4010C000",
       "block": "mcxn/PDM",
+      "dma_muxing": [
+        {
+          "signal": "PDMFifoRequest",
+          "mux": "DMAMUX",
+          "request": 18
+        }
+      ],
       "signals": []
     },
     {
       "name": "ADC0",
       "address": "0x4010D000",
       "block": "mcxn/ADC",
+      "dma_muxing": [
+        {
+          "signal": "ADC0FifoARequest",
+          "mux": "DMAMUX",
+          "request": 21
+        },
+        {
+          "signal": "ADC0FifoBRequest",
+          "mux": "DMAMUX",
+          "request": 22
+        }
+      ],
       "signals": []
     },
     {
       "name": "ADC1",
       "address": "0x4010E000",
       "block": "mcxn/ADC",
+      "dma_muxing": [
+        {
+          "signal": "ADC1FifoARequest",
+          "mux": "DMAMUX",
+          "request": 23
+        },
+        {
+          "signal": "ADC1FifoBRequest",
+          "mux": "DMAMUX",
+          "request": 24
+        }
+      ],
       "signals": []
     },
     {
       "name": "DAC0",
       "address": "0x4010F000",
       "block": "mcx/DAC",
+      "dma_muxing": [
+        {
+          "signal": "DAC0FifoRequest",
+          "mux": "DMAMUX",
+          "request": 25
+        }
+      ],
       "signals": []
     },
     {
       "name": "DAC1",
       "address": "0x40112000",
       "block": "mcx/DAC",
+      "dma_muxing": [
+        {
+          "signal": "DAC1FifoRequest",
+          "mux": "DMAMUX",
+          "request": 26
+        }
+      ],
       "signals": []
     },
     {
@@ -2612,6 +3290,13 @@
       "name": "DAC2",
       "address": "0x40114000",
       "block": "mcxn/DAC2",
+      "dma_muxing": [
+        {
+          "signal": "DAC2FifoRequest",
+          "mux": "DMAMUX",
+          "request": 27
+        }
+      ],
       "signals": []
     },
     {

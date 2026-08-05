@@ -643,7 +643,28 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/PINT0",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "PINT0INT0",
+                mux: "DMAMUX",
+                request: 3,
+            },
+            DmaMux {
+                signal: "PINT0INT1",
+                mux: "DMAMUX",
+                request: 4,
+            },
+            DmaMux {
+                signal: "PINT0INT2",
+                mux: "DMAMUX",
+                request: 5,
+            },
+            DmaMux {
+                signal: "PINT0INT3",
+                mux: "DMAMUX",
+                request: 6,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -661,7 +682,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcx/CTIMER",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "CTIMER0M0",
+                mux: "DMAMUX",
+                request: 7,
+            },
+            DmaMux {
+                signal: "CTIMER0M1",
+                mux: "DMAMUX",
+                request: 8,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -670,7 +702,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcx/CTIMER",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "CTIMER1M0",
+                mux: "DMAMUX",
+                request: 9,
+            },
+            DmaMux {
+                signal: "CTIMER1M1",
+                mux: "DMAMUX",
+                request: 10,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -679,7 +722,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcx/CTIMER",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "CTIMER2M0",
+                mux: "DMAMUX",
+                request: 11,
+            },
+            DmaMux {
+                signal: "CTIMER2M1",
+                mux: "DMAMUX",
+                request: 12,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -688,7 +742,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcx/CTIMER",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "CTIMER3M0",
+                mux: "DMAMUX",
+                request: 13,
+            },
+            DmaMux {
+                signal: "CTIMER3M1",
+                mux: "DMAMUX",
+                request: 14,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -697,7 +762,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcx/CTIMER",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "CTIMER4M0",
+                mux: "DMAMUX",
+                request: 15,
+            },
+            DmaMux {
+                signal: "CTIMER4M1",
+                mux: "DMAMUX",
+                request: 16,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -769,7 +845,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/I3C",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "I3C0Rx",
+                mux: "DMAMUX",
+                request: 95,
+            },
+            DmaMux {
+                signal: "I3C0Tx",
+                mux: "DMAMUX",
+                request: 96,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -778,7 +865,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/I3C",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "I3C1Rx",
+                mux: "DMAMUX",
+                request: 97,
+            },
+            DmaMux {
+                signal: "I3C1Tx",
+                mux: "DMAMUX",
+                request: 98,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -1013,7 +1111,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
             },
         ],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "GPIO5PinEvent0",
+                mux: "DMAMUX",
+                request: 118,
+            },
+            DmaMux {
+                signal: "GPIO5PinEvent1",
+                mux: "DMAMUX",
+                request: 119,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -1076,7 +1185,11 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/WUU",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[DmaMux {
+            signal: "WUU0WakeUpEvent",
+            mux: "DMAMUX",
+            request: 17,
+        }],
         gate: None,
     },
     Peripheral {
@@ -1103,7 +1216,11 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/LPTMR",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[DmaMux {
+            signal: "LPTMR0CounterMatchEvent",
+            mux: "DMAMUX",
+            request: 57,
+        }],
         gate: None,
     },
     Peripheral {
@@ -1112,7 +1229,11 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/LPTMR",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[DmaMux {
+            signal: "LPTMR1CounterMatchEvent",
+            mux: "DMAMUX",
+            request: 58,
+        }],
         gate: None,
     },
     Peripheral {
@@ -1139,7 +1260,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/TSI",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "TSI0EndOfScan",
+                mux: "DMAMUX",
+                request: 120,
+            },
+            DmaMux {
+                signal: "TSI0OutOfRange",
+                mux: "DMAMUX",
+                request: 121,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -1148,7 +1280,11 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/CMP",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[DmaMux {
+            signal: "CMP0DmaRequest",
+            mux: "DMAMUX",
+            request: 28,
+        }],
         gate: None,
     },
     Peripheral {
@@ -1157,7 +1293,11 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/CMP",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[DmaMux {
+            signal: "CMP1DmaRequest",
+            mux: "DMAMUX",
+            request: 29,
+        }],
         gate: None,
     },
     Peripheral {
@@ -1166,7 +1306,11 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/CMP",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[DmaMux {
+            signal: "CMP2DmaRequest",
+            mux: "DMAMUX",
+            request: 30,
+        }],
         gate: None,
     },
     Peripheral {
@@ -1283,7 +1427,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/SCT",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "SCT0DmaRequest0",
+                mux: "DMAMUX",
+                request: 19,
+            },
+            DmaMux {
+                signal: "SCT0DmaRequest1",
+                mux: "DMAMUX",
+                request: 20,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -1472,7 +1627,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/LP_FLEXCOMM",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "LP_FLEXCOMM0Rx",
+                mux: "DMAMUX",
+                request: 69,
+            },
+            DmaMux {
+                signal: "LP_FLEXCOMM0Tx",
+                mux: "DMAMUX",
+                request: 70,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -1481,7 +1647,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/LP_FLEXCOMM",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "LP_FLEXCOMM1Rx",
+                mux: "DMAMUX",
+                request: 71,
+            },
+            DmaMux {
+                signal: "LP_FLEXCOMM1Tx",
+                mux: "DMAMUX",
+                request: 72,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -1490,7 +1667,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/LP_FLEXCOMM",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "LP_FLEXCOMM2Rx",
+                mux: "DMAMUX",
+                request: 73,
+            },
+            DmaMux {
+                signal: "LP_FLEXCOMM2Tx",
+                mux: "DMAMUX",
+                request: 74,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -1499,7 +1687,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/LP_FLEXCOMM",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "LP_FLEXCOMM3Rx",
+                mux: "DMAMUX",
+                request: 75,
+            },
+            DmaMux {
+                signal: "LP_FLEXCOMM3Tx",
+                mux: "DMAMUX",
+                request: 76,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -1508,7 +1707,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/LP_FLEXCOMM",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "LP_FLEXCOMM4Rx",
+                mux: "DMAMUX",
+                request: 77,
+            },
+            DmaMux {
+                signal: "LP_FLEXCOMM4Tx",
+                mux: "DMAMUX",
+                request: 78,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -1517,7 +1727,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/LP_FLEXCOMM",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "LP_FLEXCOMM5Rx",
+                mux: "DMAMUX",
+                request: 79,
+            },
+            DmaMux {
+                signal: "LP_FLEXCOMM5Tx",
+                mux: "DMAMUX",
+                request: 80,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -1526,7 +1747,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/LP_FLEXCOMM",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "LP_FLEXCOMM6Rx",
+                mux: "DMAMUX",
+                request: 81,
+            },
+            DmaMux {
+                signal: "LP_FLEXCOMM6Tx",
+                mux: "DMAMUX",
+                request: 82,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -1535,7 +1767,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/LP_FLEXCOMM",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "LP_FLEXCOMM7Rx",
+                mux: "DMAMUX",
+                request: 83,
+            },
+            DmaMux {
+                signal: "LP_FLEXCOMM7Tx",
+                mux: "DMAMUX",
+                request: 84,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -1544,7 +1787,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/LP_FLEXCOMM",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "LP_FLEXCOMM8Rx",
+                mux: "DMAMUX",
+                request: 85,
+            },
+            DmaMux {
+                signal: "LP_FLEXCOMM8Tx",
+                mux: "DMAMUX",
+                request: 86,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -1553,7 +1807,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/LP_FLEXCOMM",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "LP_FLEXCOMM9Rx",
+                mux: "DMAMUX",
+                request: 87,
+            },
+            DmaMux {
+                signal: "LP_FLEXCOMM9Tx",
+                mux: "DMAMUX",
+                request: 88,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -1941,7 +2206,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
             },
         ],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "GPIO0PinEvent0",
+                mux: "DMAMUX",
+                request: 108,
+            },
+            DmaMux {
+                signal: "GPIO0PinEvent1",
+                mux: "DMAMUX",
+                request: 109,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -2194,7 +2470,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
             },
         ],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "GPIO1PinEvent0",
+                mux: "DMAMUX",
+                request: 110,
+            },
+            DmaMux {
+                signal: "GPIO1PinEvent1",
+                mux: "DMAMUX",
+                request: 111,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -2321,7 +2608,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
             },
         ],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "GPIO2PinEvent0",
+                mux: "DMAMUX",
+                request: 112,
+            },
+            DmaMux {
+                signal: "GPIO2PinEvent1",
+                mux: "DMAMUX",
+                request: 113,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -2556,7 +2854,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
             },
         ],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "GPIO3PinEvent0",
+                mux: "DMAMUX",
+                request: 114,
+            },
+            DmaMux {
+                signal: "GPIO3PinEvent1",
+                mux: "DMAMUX",
+                request: 115,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -2755,7 +3064,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
             },
         ],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "GPIO4PinEvent0",
+                mux: "DMAMUX",
+                request: 116,
+            },
+            DmaMux {
+                signal: "GPIO4PinEvent1",
+                mux: "DMAMUX",
+                request: 117,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -2872,7 +3192,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/FLEXSPI",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "FLEXSPI0Rx",
+                mux: "DMAMUX",
+                request: 1,
+            },
+            DmaMux {
+                signal: "FLEXSPI0Tx",
+                mux: "DMAMUX",
+                request: 2,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -2908,7 +3239,48 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/PWM",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "FlexPWM0Mcapt0",
+                mux: "DMAMUX",
+                request: 39,
+            },
+            DmaMux {
+                signal: "FlexPWM0Mcapt1",
+                mux: "DMAMUX",
+                request: 40,
+            },
+            DmaMux {
+                signal: "FlexPWM0Mcapt2",
+                mux: "DMAMUX",
+                request: 41,
+            },
+            DmaMux {
+                signal: "FlexPWM0Mcapt3",
+                mux: "DMAMUX",
+                request: 42,
+            },
+            DmaMux {
+                signal: "FlexPWM0Mval0",
+                mux: "DMAMUX",
+                request: 43,
+            },
+            DmaMux {
+                signal: "FlexPWM0Mval1",
+                mux: "DMAMUX",
+                request: 44,
+            },
+            DmaMux {
+                signal: "FlexPWM0Mval2",
+                mux: "DMAMUX",
+                request: 45,
+            },
+            DmaMux {
+                signal: "FlexPWM0Mval3",
+                mux: "DMAMUX",
+                request: 46,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -2917,7 +3289,48 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/PWM",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "FlexPWM1Mcapt0",
+                mux: "DMAMUX",
+                request: 47,
+            },
+            DmaMux {
+                signal: "FlexPWM1Mcapt1",
+                mux: "DMAMUX",
+                request: 48,
+            },
+            DmaMux {
+                signal: "FlexPWM1Mcapt2",
+                mux: "DMAMUX",
+                request: 49,
+            },
+            DmaMux {
+                signal: "FlexPWM1Mcapt3",
+                mux: "DMAMUX",
+                request: 50,
+            },
+            DmaMux {
+                signal: "FlexPWM1Mval0",
+                mux: "DMAMUX",
+                request: 51,
+            },
+            DmaMux {
+                signal: "FlexPWM1Mval1",
+                mux: "DMAMUX",
+                request: 52,
+            },
+            DmaMux {
+                signal: "FlexPWM1Mval2",
+                mux: "DMAMUX",
+                request: 53,
+            },
+            DmaMux {
+                signal: "FlexPWM1Mval3",
+                mux: "DMAMUX",
+                request: 54,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -2944,7 +3357,48 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/EVTG",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "EVTG0Out0A",
+                mux: "DMAMUX",
+                request: 31,
+            },
+            DmaMux {
+                signal: "EVTG0Out0B",
+                mux: "DMAMUX",
+                request: 32,
+            },
+            DmaMux {
+                signal: "EVTG0Out1A",
+                mux: "DMAMUX",
+                request: 33,
+            },
+            DmaMux {
+                signal: "EVTG0Out1B",
+                mux: "DMAMUX",
+                request: 34,
+            },
+            DmaMux {
+                signal: "EVTG0Out2A",
+                mux: "DMAMUX",
+                request: 35,
+            },
+            DmaMux {
+                signal: "EVTG0Out2B",
+                mux: "DMAMUX",
+                request: 36,
+            },
+            DmaMux {
+                signal: "EVTG0Out3A",
+                mux: "DMAMUX",
+                request: 37,
+            },
+            DmaMux {
+                signal: "EVTG0Out3B",
+                mux: "DMAMUX",
+                request: 38,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -2953,7 +3407,11 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/CAN",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[DmaMux {
+            signal: "CAN0",
+            mux: "DMAMUX",
+            request: 59,
+        }],
         gate: None,
     },
     Peripheral {
@@ -2962,7 +3420,11 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/CAN",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[DmaMux {
+            signal: "CAN1",
+            mux: "DMAMUX",
+            request: 60,
+        }],
         gate: None,
     },
     Peripheral {
@@ -2998,7 +3460,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/EMVSIM",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "EMVSIM0Rx",
+                mux: "DMAMUX",
+                request: 91,
+            },
+            DmaMux {
+                signal: "EMVSIM0Tx",
+                mux: "DMAMUX",
+                request: 92,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -3007,7 +3480,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/EMVSIM",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "EMVSIM1Rx",
+                mux: "DMAMUX",
+                request: 93,
+            },
+            DmaMux {
+                signal: "EMVSIM1Tx",
+                mux: "DMAMUX",
+                request: 94,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -3016,7 +3500,48 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/FLEXIO",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "FLEXIO0SR0",
+                mux: "DMAMUX",
+                request: 61,
+            },
+            DmaMux {
+                signal: "FLEXIO0SR1",
+                mux: "DMAMUX",
+                request: 62,
+            },
+            DmaMux {
+                signal: "FLEXIO0SR2",
+                mux: "DMAMUX",
+                request: 63,
+            },
+            DmaMux {
+                signal: "FLEXIO0SR3",
+                mux: "DMAMUX",
+                request: 64,
+            },
+            DmaMux {
+                signal: "FLEXIO0SR4",
+                mux: "DMAMUX",
+                request: 65,
+            },
+            DmaMux {
+                signal: "FLEXIO0SR5",
+                mux: "DMAMUX",
+                request: 66,
+            },
+            DmaMux {
+                signal: "FLEXIO0SR6",
+                mux: "DMAMUX",
+                request: 67,
+            },
+            DmaMux {
+                signal: "FLEXIO0SR7",
+                mux: "DMAMUX",
+                request: 68,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -3025,7 +3550,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/SAI",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "SAI0Rx",
+                mux: "DMAMUX",
+                request: 99,
+            },
+            DmaMux {
+                signal: "SAI0Tx",
+                mux: "DMAMUX",
+                request: 100,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -3034,7 +3570,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/SAI",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "SAI1Rx",
+                mux: "DMAMUX",
+                request: 101,
+            },
+            DmaMux {
+                signal: "SAI1Tx",
+                mux: "DMAMUX",
+                request: 102,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -3043,7 +3590,33 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/SINC",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "SINC0Ch0Request",
+                mux: "DMAMUX",
+                request: 103,
+            },
+            DmaMux {
+                signal: "SINC0Ch1Request",
+                mux: "DMAMUX",
+                request: 104,
+            },
+            DmaMux {
+                signal: "SINC0Ch2Request",
+                mux: "DMAMUX",
+                request: 105,
+            },
+            DmaMux {
+                signal: "SINC0Ch3Request",
+                mux: "DMAMUX",
+                request: 106,
+            },
+            DmaMux {
+                signal: "SINC0Ch4Request",
+                mux: "DMAMUX",
+                request: 107,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -3097,7 +3670,11 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/PDM",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[DmaMux {
+            signal: "PDMFifoRequest",
+            mux: "DMAMUX",
+            request: 18,
+        }],
         gate: None,
     },
     Peripheral {
@@ -3106,7 +3683,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/ADC",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "ADC0FifoARequest",
+                mux: "DMAMUX",
+                request: 21,
+            },
+            DmaMux {
+                signal: "ADC0FifoBRequest",
+                mux: "DMAMUX",
+                request: 22,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -3115,7 +3703,18 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/ADC",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[
+            DmaMux {
+                signal: "ADC1FifoARequest",
+                mux: "DMAMUX",
+                request: 23,
+            },
+            DmaMux {
+                signal: "ADC1FifoBRequest",
+                mux: "DMAMUX",
+                request: 24,
+            },
+        ],
         gate: None,
     },
     Peripheral {
@@ -3124,7 +3723,11 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcx/DAC",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[DmaMux {
+            signal: "DAC0FifoRequest",
+            mux: "DMAMUX",
+            request: 25,
+        }],
         gate: None,
     },
     Peripheral {
@@ -3133,7 +3736,11 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcx/DAC",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[DmaMux {
+            signal: "DAC1FifoRequest",
+            mux: "DMAMUX",
+            request: 26,
+        }],
         gate: None,
     },
     Peripheral {
@@ -3178,7 +3785,11 @@ pub const PERIPHERALS: &[Peripheral] = &[
         driver_name: "mcxn/DAC2",
         signals: &[],
         flexcomm: None,
-        dma_muxing: &[],
+        dma_muxing: &[DmaMux {
+            signal: "DAC2FifoRequest",
+            mux: "DMAMUX",
+            request: 27,
+        }],
         gate: None,
     },
     Peripheral {
