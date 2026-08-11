@@ -10564,6 +10564,8 @@
     },
     {
       "name": "USB1",
+      "address": "0x4002E000",
+      "block": "mcxa/USBHS",
       "signals": [
         {
           "name": "OTGn_ID",
@@ -10608,7 +10610,15 @@
       ]
     },
     {
+      "name": "USBNC",
+      "address": "0x4002E200",
+      "block": "mcxa/USBNC",
+      "signals": []
+    },
+    {
       "name": "USB1_HS_PHY",
+      "address": "0x4002F000",
+      "block": "mcxa/USBPHY",
       "signals": []
     },
     {
@@ -11012,8 +11022,9 @@
       "signals": []
     },
     {
-      "name": "eSPI0",
+      "name": "ESPI0",
       "address": "0x4001F000",
+      "block": "mcxa/ESPI",
       "signals": [
         {
           "name": "CLK",

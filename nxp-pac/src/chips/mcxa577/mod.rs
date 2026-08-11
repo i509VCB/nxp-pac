@@ -282,11 +282,15 @@ pub const SGI0: sgi::Sgi = unsafe { sgi::Sgi::from_ptr(0x400EB000 as _) };
 pub const SPC0: spc::Spc = unsafe { spc::Spc::from_ptr(0x400CB000 as _) };
 pub const SYSCON: syscon::Syscon = unsafe { syscon::Syscon::from_ptr(0x40091000 as _) };
 pub const TRNG0: trng::Trng = unsafe { trng::Trng::from_ptr(0x400EC000 as _) };
+pub const USB1: usbhs::Usbhs = unsafe { usbhs::Usbhs::from_ptr(0x4002E000 as _) };
+pub const USBNC: usbnc::Usbnc = unsafe { usbnc::Usbnc::from_ptr(0x4002E200 as _) };
+pub const USB1_HS_PHY: usbphy::Usbphy = unsafe { usbphy::Usbphy::from_ptr(0x4002F000 as _) };
 pub const VBAT0: vbat::Vbat = unsafe { vbat::Vbat::from_ptr(0x40093000 as _) };
 pub const WWDT0: wwdt::Wwdt = unsafe { wwdt::Wwdt::from_ptr(0x4000C000 as _) };
 pub const WWDT1: wwdt::Wwdt = unsafe { wwdt::Wwdt::from_ptr(0x4000D000 as _) };
 pub const EDMA_0_TCD: edma_tcd::Tcd12 = unsafe { edma_tcd::Tcd12::from_ptr(0x40081000 as _) };
 pub const EDMA_1_TCD: edma_tcd::Tcd4 = unsafe { edma_tcd::Tcd4::from_ptr(0x40014000 as _) };
+pub const ESPI0: espi::Espi = unsafe { espi::Espi::from_ptr(0x4001F000 as _) };
 pub const MRCC0: mrcc::Mrcc = unsafe { mrcc::Mrcc::from_ptr(0x40091800 as _) };
 #[path = "../../meta_peripherals/mcxa/ADC.rs"]
 pub mod adc;
@@ -309,6 +313,8 @@ pub mod dac;
 pub mod dma;
 #[path = "../../meta_peripherals/mcxa/EDMA_TCD.rs"]
 pub mod edma_tcd;
+#[path = "../../meta_peripherals/mcxa/ESPI.rs"]
+pub mod espi;
 #[path = "../../meta_peripherals/mcxa/FLEXSPI.rs"]
 pub mod flexspi;
 #[path = "../../meta_peripherals/mcxa/FMU.rs"]
@@ -343,6 +349,12 @@ pub mod spc;
 pub mod syscon;
 #[path = "../../meta_peripherals/mcxa/TRNG.rs"]
 pub mod trng;
+#[path = "../../meta_peripherals/mcxa/USBHS.rs"]
+pub mod usbhs;
+#[path = "../../meta_peripherals/mcxa/USBNC.rs"]
+pub mod usbnc;
+#[path = "../../meta_peripherals/mcxa/USBPHY.rs"]
+pub mod usbphy;
 #[path = "../../meta_peripherals/mcxa/VBAT.rs"]
 pub mod vbat;
 #[path = "../../meta_peripherals/mcxa/WWDT.rs"]
