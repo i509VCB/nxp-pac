@@ -12,6 +12,7 @@ set -euxo pipefail
 CURRENT_DIR="$( dirname -- "${BASH_SOURCE[0]}" )"
 
 pushd $CURRENT_DIR/../../../
+cargo run -p generator -- extract MCXA156
 cargo run -p generator -- extract MCXA256
 cargo run -p generator -- extract MCXA577
 popd
@@ -54,8 +55,10 @@ cp raw/MCXA577/WWDT.yaml mcxa/WWDT.yaml
 cp raw/MCXA256/RTC.yaml mcxa/RTC2xx.yaml
 cp raw/MCXA577/RTC.yaml mcxa/RTC5xx.yaml
 
+cp raw/MCXA156/MRCC.yaml mcxa/MRCC1xx.yaml
 cp raw/MCXA256/MRCC.yaml mcxa/MRCC2xx.yaml
 cp raw/MCXA577/MRCC.yaml mcxa/MRCC5xx.yaml
 
+cp raw/MCXA156/SYSCON.yaml mcxa/SYSCON1xx.yaml
 cp raw/MCXA256/SYSCON.yaml mcxa/SYSCON2xx.yaml
 cp raw/MCXA577/SYSCON.yaml mcxa/SYSCON5xx.yaml

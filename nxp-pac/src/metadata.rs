@@ -1,3 +1,4 @@
+#[cfg_attr(feature = "mcxa156", path = "./chips/mcxa156/metadata.rs")]
 #[cfg_attr(feature = "mcxa256", path = "./chips/mcxa256/metadata.rs")]
 #[cfg_attr(feature = "mcxa577", path = "./chips/mcxa577/metadata.rs")]
 #[cfg_attr(feature = "mimxrt1011", path = "./chips/mimxrt1011/metadata.rs")]

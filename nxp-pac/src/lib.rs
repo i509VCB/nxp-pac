@@ -17,6 +17,7 @@
     feature = "mcxn947_cm33_core1",
     path = "./chips/mcxn947_cm33_core1/mod.rs"
 )]
+#[cfg_attr(feature = "mcxa156", path = "./chips/mcxa156/mod.rs")]
 #[cfg_attr(feature = "mcxa256", path = "./chips/mcxa256/mod.rs")]
 #[cfg_attr(feature = "mcxa577", path = "./chips/mcxa577/mod.rs")]
 // LPC55S16

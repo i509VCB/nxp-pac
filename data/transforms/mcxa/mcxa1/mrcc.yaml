@@ -1,0 +1,36 @@
+transforms:
+  - !Rename
+    from: mrcc0::Mrcc0
+    to: mrcc0::Mrcc
+
+  - !MergeEnums
+    from: mrcc0::Mrcc(.+)(\d+)(.+)
+    to: mrcc0::Mrcc$3
+    skip_unmergeable: true
+
+  # Merge unmergeable per number, but keep the group intact.
+  - !MergeEnums
+    from: mrcc0::Mrcc(.+)(\d+)(.+)
+    to: mrcc0::Mrcc$1$3
+
+  - !MergeFieldsets
+    from: mrcc0::Mrcc(.+)(\d+)(.+)
+    to: mrcc0::Mrcc$1$3
+
+  - !MergeEnums
+    from: mrcc0::Mrcc(.*)Clkdiv(Reset|Halt|Unstab)?
+    to: mrcc0::MrccClkdiv$2
+    
+  
+  - !MergeFieldsets
+    from: mrcc0::MrccFro.*Clkdiv
+    to: mrcc0::MrccClkdivFro
+
+  - !MergeFieldsets
+    from: mrcc0::Mrcc.+Clkdiv #FroHfDivClkdiv does not have reset and halt fields
+    to: mrcc0::MrccClkdiv
+    
+  
+  - !Rename
+    from: mrcc0::Mrcc(.+)
+    to: mrcc0::$1

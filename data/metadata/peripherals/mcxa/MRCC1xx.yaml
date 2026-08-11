@@ -1,0 +1,1411 @@
+block/Mrcc:
+  description: MRCC.
+  items:
+  - name: mrcc_glb_rst0
+    description: Peripheral Reset Control 0.
+    byte_offset: 0
+    fieldset: GlbRst0
+  - name: mrcc_glb_rst0_set
+    description: Peripheral Reset Control Set 0.
+    byte_offset: 4
+    access: Write
+    fieldset: GlbRstSet
+  - name: mrcc_glb_rst0_clr
+    description: Peripheral Reset Control Clear 0.
+    byte_offset: 8
+    access: Write
+    fieldset: GlbRstClr
+  - name: mrcc_glb_rst1
+    description: Peripheral Reset Control 1.
+    byte_offset: 16
+    fieldset: GlbRst1
+  - name: mrcc_glb_rst1_set
+    description: Peripheral Reset Control Set 1.
+    byte_offset: 20
+    access: Write
+    fieldset: GlbRstSet
+  - name: mrcc_glb_rst1_clr
+    description: Peripheral Reset Control Clear 1.
+    byte_offset: 24
+    access: Write
+    fieldset: GlbRstClr
+  - name: mrcc_glb_cc0
+    description: AHB Clock Control 0.
+    byte_offset: 64
+    fieldset: GlbCc0
+  - name: mrcc_glb_cc0_set
+    description: AHB Clock Control Set 0.
+    byte_offset: 68
+    access: Write
+    fieldset: GlbCcSet
+  - name: mrcc_glb_cc0_clr
+    description: AHB Clock Control Clear 0.
+    byte_offset: 72
+    access: Write
+    fieldset: GlbCcClr
+  - name: mrcc_glb_cc1
+    description: AHB Clock Control 1.
+    byte_offset: 80
+    fieldset: GlbCc1
+  - name: mrcc_glb_cc1_set
+    description: AHB Clock Control Set 1.
+    byte_offset: 84
+    access: Write
+    fieldset: GlbCcSet
+  - name: mrcc_glb_cc1_clr
+    description: AHB Clock Control Clear 1.
+    byte_offset: 88
+    access: Write
+    fieldset: GlbCcClr
+  - name: mrcc_glb_acc0
+    description: Control Automatic Clock Gating 0.
+    byte_offset: 128
+    fieldset: GlbAcc0
+  - name: mrcc_glb_acc1
+    description: Control Automatic Clock Gating 1.
+    byte_offset: 132
+    fieldset: GlbAcc1
+  - name: mrcc_i3c0_fclk_clksel
+    description: I3C0_FCLK clock selection control.
+    byte_offset: 160
+    fieldset: I3cFclkClksel
+  - name: mrcc_i3c0_fclk_clkdiv
+    description: I3C0_FCLK clock divider control.
+    byte_offset: 164
+    fieldset: Clkdiv
+  - name: mrcc_ctimer0_clksel
+    description: CTIMER0 clock selection control.
+    byte_offset: 168
+    fieldset: CtimerClksel
+  - name: mrcc_ctimer0_clkdiv
+    description: CTIMER0 clock divider control.
+    byte_offset: 172
+    fieldset: Clkdiv
+  - name: mrcc_ctimer1_clksel
+    description: CTIMER1 clock selection control.
+    byte_offset: 176
+    fieldset: CtimerClksel
+  - name: mrcc_ctimer1_clkdiv
+    description: CTIMER1 clock divider control.
+    byte_offset: 180
+    fieldset: Clkdiv
+  - name: mrcc_ctimer2_clksel
+    description: CTIMER2 clock selection control.
+    byte_offset: 184
+    fieldset: CtimerClksel
+  - name: mrcc_ctimer2_clkdiv
+    description: CTIMER2 clock divider control.
+    byte_offset: 188
+    fieldset: Clkdiv
+  - name: mrcc_ctimer3_clksel
+    description: CTIMER3 clock selection control.
+    byte_offset: 192
+    fieldset: CtimerClksel
+  - name: mrcc_ctimer3_clkdiv
+    description: CTIMER3 clock divider control.
+    byte_offset: 196
+    fieldset: Clkdiv
+  - name: mrcc_ctimer4_clksel
+    description: CTIMER4 clock selection control.
+    byte_offset: 200
+    fieldset: CtimerClksel
+  - name: mrcc_ctimer4_clkdiv
+    description: CTIMER4 clock divider control.
+    byte_offset: 204
+    fieldset: Clkdiv
+  - name: mrcc_wwdt0_clkdiv
+    description: WWDT0 clock divider control.
+    byte_offset: 212
+    fieldset: Clkdiv
+  - name: mrcc_flexio0_clksel
+    description: FLEXIO0 clock selection control.
+    byte_offset: 216
+    fieldset: FlexioClksel
+  - name: mrcc_flexio0_clkdiv
+    description: FLEXIO0 clock divider control.
+    byte_offset: 220
+    fieldset: Clkdiv
+  - name: mrcc_lpi2c0_clksel
+    description: LPI2C0 clock selection control.
+    byte_offset: 224
+    fieldset: Lpi2cClksel
+  - name: mrcc_lpi2c0_clkdiv
+    description: LPI2C0 clock divider control.
+    byte_offset: 228
+    fieldset: Clkdiv
+  - name: mrcc_lpi2c1_clksel
+    description: LPI2C1 clock selection control.
+    byte_offset: 232
+    fieldset: Lpi2cClksel
+  - name: mrcc_lpi2c1_clkdiv
+    description: LPI2C1 clock divider control.
+    byte_offset: 236
+    fieldset: Clkdiv
+  - name: mrcc_lpspi0_clksel
+    description: LPSPI0 clock selection control.
+    byte_offset: 240
+    fieldset: LpspiClksel
+  - name: mrcc_lpspi0_clkdiv
+    description: LPSPI0 clock divider control.
+    byte_offset: 244
+    fieldset: Clkdiv
+  - name: mrcc_lpspi1_clksel
+    description: LPSPI1 clock selection control.
+    byte_offset: 248
+    fieldset: LpspiClksel
+  - name: mrcc_lpspi1_clkdiv
+    description: LPSPI1 clock divider control.
+    byte_offset: 252
+    fieldset: Clkdiv
+  - name: mrcc_lpuart0_clksel
+    description: LPUART0 clock selection control.
+    byte_offset: 256
+    fieldset: LpuartClksel
+  - name: mrcc_lpuart0_clkdiv
+    description: LPUART0 clock divider control.
+    byte_offset: 260
+    fieldset: Clkdiv
+  - name: mrcc_lpuart1_clksel
+    description: LPUART1 clock selection control.
+    byte_offset: 264
+    fieldset: LpuartClksel
+  - name: mrcc_lpuart1_clkdiv
+    description: LPUART1 clock divider control.
+    byte_offset: 268
+    fieldset: Clkdiv
+  - name: mrcc_lpuart2_clksel
+    description: LPUART2 clock selection control.
+    byte_offset: 272
+    fieldset: LpuartClksel
+  - name: mrcc_lpuart2_clkdiv
+    description: LPUART2 clock divider control.
+    byte_offset: 276
+    fieldset: Clkdiv
+  - name: mrcc_lpuart3_clksel
+    description: LPUART3 clock selection control.
+    byte_offset: 280
+    fieldset: LpuartClksel
+  - name: mrcc_lpuart3_clkdiv
+    description: LPUART3 clock divider control.
+    byte_offset: 284
+    fieldset: Clkdiv
+  - name: mrcc_lpuart4_clksel
+    description: LPUART4 clock selection control.
+    byte_offset: 288
+    fieldset: LpuartClksel
+  - name: mrcc_lpuart4_clkdiv
+    description: LPUART4 clock divider control.
+    byte_offset: 292
+    fieldset: Clkdiv
+  - name: mrcc_usb0_clksel
+    description: USB0 clock selection control.
+    byte_offset: 296
+    fieldset: UsbClksel
+  - name: mrcc_lptmr0_clksel
+    description: LPTMR0 clock selection control.
+    byte_offset: 304
+    fieldset: LptmrClksel
+  - name: mrcc_lptmr0_clkdiv
+    description: LPTMR0 clock divider control.
+    byte_offset: 308
+    fieldset: Clkdiv
+  - name: mrcc_ostimer0_clksel
+    description: OSTIMER0 clock selection control.
+    byte_offset: 312
+    fieldset: OstimerClksel
+  - name: mrcc_adc0_clksel
+    description: ADC0 clock selection control.
+    byte_offset: 320
+    fieldset: AdcClksel
+  - name: mrcc_adc0_clkdiv
+    description: ADC0 clock divider control.
+    byte_offset: 324
+    fieldset: Clkdiv
+  - name: mrcc_adc1_clksel
+    description: ADC1 clock selection control.
+    byte_offset: 328
+    fieldset: AdcClksel
+  - name: mrcc_adc1_clkdiv
+    description: ADC1 clock divider control.
+    byte_offset: 332
+    fieldset: Clkdiv
+  - name: mrcc_cmp0_func_clkdiv
+    description: CMP0_FUNC clock divider control.
+    byte_offset: 340
+    fieldset: Clkdiv
+  - name: mrcc_cmp0_rr_clksel
+    description: CMP0_RR clock selection control.
+    byte_offset: 344
+    fieldset: CmpRrClksel
+  - name: mrcc_cmp0_rr_clkdiv
+    description: CMP0_RR clock divider control.
+    byte_offset: 348
+    fieldset: Clkdiv
+  - name: mrcc_cmp1_func_clkdiv
+    description: CMP1_FUNC clock divider control.
+    byte_offset: 356
+    fieldset: Clkdiv
+  - name: mrcc_cmp1_rr_clksel
+    description: CMP1_RR clock selection control.
+    byte_offset: 360
+    fieldset: CmpRrClksel
+  - name: mrcc_cmp1_rr_clkdiv
+    description: CMP1_RR clock divider control.
+    byte_offset: 364
+    fieldset: Clkdiv
+  - name: mrcc_dac0_clksel
+    description: DAC0 clock selection control.
+    byte_offset: 368
+    fieldset: DacClksel
+  - name: mrcc_dac0_clkdiv
+    description: DAC0 clock divider control.
+    byte_offset: 372
+    fieldset: Clkdiv
+  - name: mrcc_flexcan0_clksel
+    description: FLEXCAN0 clock selection control.
+    byte_offset: 376
+    fieldset: FlexcanClksel
+  - name: mrcc_flexcan0_clkdiv
+    description: FLEXCAN0 clock divider control.
+    byte_offset: 380
+    fieldset: Clkdiv
+  - name: mrcc_lpi2c2_clksel
+    description: LPI2C2 clock selection control.
+    byte_offset: 384
+    fieldset: Lpi2cClksel
+  - name: mrcc_lpi2c2_clkdiv
+    description: LPI2C2 clock divider control.
+    byte_offset: 388
+    fieldset: Clkdiv
+  - name: mrcc_lpi2c3_clksel
+    description: LPI2C3 clock selection control.
+    byte_offset: 392
+    fieldset: Lpi2cClksel
+  - name: mrcc_lpi2c3_clkdiv
+    description: LPI2C3 clock divider control.
+    byte_offset: 396
+    fieldset: Clkdiv
+  - name: mrcc_dbg_trace_clksel
+    description: DBG_TRACE clock selection control.
+    byte_offset: 400
+    fieldset: DbgTraceClksel
+  - name: mrcc_dbg_trace_clkdiv
+    description: DBG_TRACE clock divider control.
+    byte_offset: 404
+    fieldset: Clkdiv
+  - name: mrcc_clkout_clksel
+    description: CLKOUT clock selection control.
+    byte_offset: 408
+    fieldset: ClkoutClksel
+  - name: mrcc_clkout_clkdiv
+    description: CLKOUT clock divider control.
+    byte_offset: 412
+    fieldset: Clkdiv
+  - name: mrcc_systick_clksel
+    description: SYSTICK clock selection control.
+    byte_offset: 416
+    fieldset: SystickClksel
+  - name: mrcc_systick_clkdiv
+    description: SYSTICK clock divider control.
+    byte_offset: 420
+    fieldset: Clkdiv
+  - name: mrcc_fro_hf_div_clkdiv
+    description: FRO_HF_DIV clock divider control.
+    byte_offset: 428
+    fieldset: ClkdivFro
+fieldset/AdcClksel:
+  description: ADC0 clock selection control.
+  fields:
+  - name: mux
+    description: Functional Clock Mux Select.
+    bit_offset: 0
+    bit_size: 3
+    enum: AdcClkselMux
+fieldset/Clkdiv:
+  description: ADC0 clock divider control.
+  fields:
+  - name: div
+    description: Functional Clock Divider.
+    bit_offset: 0
+    bit_size: 4
+  - name: reset
+    description: Reset divider counter.
+    bit_offset: 29
+    bit_size: 1
+    enum: ClkdivReset
+  - name: halt
+    description: Halt divider counter.
+    bit_offset: 30
+    bit_size: 1
+    enum: ClkdivHalt
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: ClkdivUnstab
+fieldset/ClkdivFro:
+  description: FRO_HF_DIV clock divider control.
+  fields:
+  - name: div
+    description: Functional Clock Divider.
+    bit_offset: 0
+    bit_size: 4
+  - name: unstab
+    description: Divider status flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: ClkdivUnstab
+fieldset/ClkoutClksel:
+  description: CLKOUT clock selection control.
+  fields:
+  - name: mux
+    description: Functional Clock Mux Select.
+    bit_offset: 0
+    bit_size: 3
+    enum: ClkoutClkselMux
+fieldset/CmpRrClksel:
+  description: CMP0_RR clock selection control.
+  fields:
+  - name: mux
+    description: Functional Clock Mux Select.
+    bit_offset: 0
+    bit_size: 3
+    enum: RrClkselMux
+fieldset/CtimerClksel:
+  description: CTIMER0 clock selection control.
+  fields:
+  - name: mux
+    description: Functional Clock Mux Select.
+    bit_offset: 0
+    bit_size: 3
+    enum: CtimerClkselMux
+fieldset/DacClksel:
+  description: DAC0 clock selection control.
+  fields:
+  - name: mux
+    description: Functional Clock Mux Select.
+    bit_offset: 0
+    bit_size: 3
+    enum: DacClkselMux
+fieldset/DbgTraceClksel:
+  description: DBG_TRACE clock selection control.
+  fields:
+  - name: mux
+    description: Functional Clock Mux Select.
+    bit_offset: 0
+    bit_size: 2
+    enum: DbgTraceClkselMux
+fieldset/FlexcanClksel:
+  description: FLEXCAN0 clock selection control.
+  fields:
+  - name: mux
+    description: Functional Clock Mux Select.
+    bit_offset: 0
+    bit_size: 3
+    enum: FlexcanClkselMux
+fieldset/FlexioClksel:
+  description: FLEXIO0 clock selection control.
+  fields:
+  - name: mux
+    description: Functional Clock Mux Select.
+    bit_offset: 0
+    bit_size: 3
+    enum: FlexioClkselMux
+fieldset/GlbAcc0:
+  description: Control Automatic Clock Gating 0.
+  fields:
+  - name: inputmux0
+    description: INPUTMUX0.
+    bit_offset: 0
+    bit_size: 1
+  - name: i3c0
+    description: I3C0.
+    bit_offset: 1
+    bit_size: 1
+  - name: ctimer0
+    description: CTIMER0.
+    bit_offset: 2
+    bit_size: 1
+  - name: ctimer1
+    description: CTIMER1.
+    bit_offset: 3
+    bit_size: 1
+  - name: ctimer2
+    description: CTIMER2.
+    bit_offset: 4
+    bit_size: 1
+  - name: ctimer3
+    description: CTIMER3.
+    bit_offset: 5
+    bit_size: 1
+  - name: ctimer4
+    description: CTIMER4.
+    bit_offset: 6
+    bit_size: 1
+  - name: freqme
+    description: FREQME.
+    bit_offset: 7
+    bit_size: 1
+  - name: utick0
+    description: UTICK0.
+    bit_offset: 8
+    bit_size: 1
+  - name: wwdt0
+    description: WWDT0.
+    bit_offset: 9
+    bit_size: 1
+  - name: dma0
+    description: DMA.
+    bit_offset: 10
+    bit_size: 1
+  - name: aoi0
+    description: AOI0.
+    bit_offset: 11
+    bit_size: 1
+  - name: crc0
+    description: CRC0.
+    bit_offset: 12
+    bit_size: 1
+  - name: eim0
+    description: EIM0.
+    bit_offset: 13
+    bit_size: 1
+  - name: erm0
+    description: ERM0.
+    bit_offset: 14
+    bit_size: 1
+  - name: fmc
+    description: FMC.
+    bit_offset: 15
+    bit_size: 1
+  - name: aoi1
+    description: AOI1.
+    bit_offset: 16
+    bit_size: 1
+  - name: flexio0
+    description: FLEXIO0.
+    bit_offset: 17
+    bit_size: 1
+  - name: lpi2c0
+    description: LPI2C0.
+    bit_offset: 18
+    bit_size: 1
+  - name: lpi2c1
+    description: LPI2C1.
+    bit_offset: 19
+    bit_size: 1
+  - name: lpspi0
+    description: LPSPI0.
+    bit_offset: 20
+    bit_size: 1
+  - name: lpspi1
+    description: LPSPI1.
+    bit_offset: 21
+    bit_size: 1
+  - name: lpuart0
+    description: LPUART0.
+    bit_offset: 22
+    bit_size: 1
+  - name: lpuart1
+    description: LPUART1.
+    bit_offset: 23
+    bit_size: 1
+  - name: lpuart2
+    description: LPUART2.
+    bit_offset: 24
+    bit_size: 1
+  - name: lpuart3
+    description: LPUART3.
+    bit_offset: 25
+    bit_size: 1
+  - name: lpuart4
+    description: LPUART4.
+    bit_offset: 26
+    bit_size: 1
+  - name: usb0
+    description: USB0.
+    bit_offset: 27
+    bit_size: 1
+  - name: qdc0
+    description: QDC0.
+    bit_offset: 28
+    bit_size: 1
+  - name: qdc1
+    description: QDC1.
+    bit_offset: 29
+    bit_size: 1
+  - name: flexpwm0
+    description: FLEXPWM0.
+    bit_offset: 30
+    bit_size: 1
+  - name: flexpwm1
+    description: FLEXPWM1.
+    bit_offset: 31
+    bit_size: 1
+fieldset/GlbAcc1:
+  description: Control Automatic Clock Gating 1.
+  fields:
+  - name: ostimer0
+    description: OSTIMER0.
+    bit_offset: 0
+    bit_size: 1
+  - name: adc0
+    description: ADC0.
+    bit_offset: 1
+    bit_size: 1
+  - name: adc1
+    description: ADC1.
+    bit_offset: 2
+    bit_size: 1
+  - name: cmp0
+    description: CMP0.
+    bit_offset: 3
+    bit_size: 1
+  - name: cmp1
+    description: CMP1.
+    bit_offset: 4
+    bit_size: 1
+  - name: dac0
+    description: DAC0.
+    bit_offset: 5
+    bit_size: 1
+  - name: opamp0
+    description: OPAMP0.
+    bit_offset: 6
+    bit_size: 1
+  - name: port0
+    description: PORT0.
+    bit_offset: 7
+    bit_size: 1
+  - name: port1
+    description: PORT1.
+    bit_offset: 8
+    bit_size: 1
+  - name: port2
+    description: PORT2.
+    bit_offset: 9
+    bit_size: 1
+  - name: port3
+    description: PORT3.
+    bit_offset: 10
+    bit_size: 1
+  - name: port4
+    description: PORT4.
+    bit_offset: 11
+    bit_size: 1
+  - name: flexcan0
+    description: FLEXCAN0.
+    bit_offset: 12
+    bit_size: 1
+  - name: lpi2c2
+    description: LPI2C2.
+    bit_offset: 13
+    bit_size: 1
+  - name: lpi2c3
+    description: LPI2C3.
+    bit_offset: 14
+    bit_size: 1
+  - name: rama
+    description: RAMA.
+    bit_offset: 18
+    bit_size: 1
+  - name: ramb
+    description: RAMB.
+    bit_offset: 19
+    bit_size: 1
+  - name: gpio0
+    description: GPIO0.
+    bit_offset: 20
+    bit_size: 1
+  - name: gpio1
+    description: GPIO1.
+    bit_offset: 21
+    bit_size: 1
+  - name: gpio2
+    description: GPIO2.
+    bit_offset: 22
+    bit_size: 1
+  - name: gpio3
+    description: GPIO3.
+    bit_offset: 23
+    bit_size: 1
+  - name: gpio4
+    description: GPIO4.
+    bit_offset: 24
+    bit_size: 1
+  - name: romc
+    description: ROMC.
+    bit_offset: 25
+    bit_size: 1
+fieldset/GlbCc0:
+  description: AHB Clock Control 0.
+  fields:
+  - name: inputmux0
+    description: INPUTMUX0.
+    bit_offset: 0
+    bit_size: 1
+  - name: i3c0
+    description: I3C0.
+    bit_offset: 1
+    bit_size: 1
+  - name: ctimer0
+    description: CTIMER0.
+    bit_offset: 2
+    bit_size: 1
+  - name: ctimer1
+    description: CTIMER1.
+    bit_offset: 3
+    bit_size: 1
+  - name: ctimer2
+    description: CTIMER2.
+    bit_offset: 4
+    bit_size: 1
+  - name: ctimer3
+    description: CTIMER3.
+    bit_offset: 5
+    bit_size: 1
+  - name: ctimer4
+    description: CTIMER4.
+    bit_offset: 6
+    bit_size: 1
+  - name: freqme
+    description: FREQME.
+    bit_offset: 7
+    bit_size: 1
+  - name: utick0
+    description: UTICK0.
+    bit_offset: 8
+    bit_size: 1
+  - name: wwdt0
+    description: WWDT0.
+    bit_offset: 9
+    bit_size: 1
+  - name: dma0
+    description: DMA.
+    bit_offset: 10
+    bit_size: 1
+  - name: aoi0
+    description: AOI0.
+    bit_offset: 11
+    bit_size: 1
+  - name: crc0
+    description: CRC0.
+    bit_offset: 12
+    bit_size: 1
+  - name: eim0
+    description: EIM0.
+    bit_offset: 13
+    bit_size: 1
+  - name: erm0
+    description: ERM0.
+    bit_offset: 14
+    bit_size: 1
+  - name: fmc
+    description: FMC.
+    bit_offset: 15
+    bit_size: 1
+  - name: aoi1
+    description: AOI1.
+    bit_offset: 16
+    bit_size: 1
+  - name: flexio0
+    description: FLEXIO0.
+    bit_offset: 17
+    bit_size: 1
+  - name: lpi2c0
+    description: LPI2C0.
+    bit_offset: 18
+    bit_size: 1
+  - name: lpi2c1
+    description: LPI2C1.
+    bit_offset: 19
+    bit_size: 1
+  - name: lpspi0
+    description: LPSPI0.
+    bit_offset: 20
+    bit_size: 1
+  - name: lpspi1
+    description: LPSPI1.
+    bit_offset: 21
+    bit_size: 1
+  - name: lpuart0
+    description: LPUART0.
+    bit_offset: 22
+    bit_size: 1
+  - name: lpuart1
+    description: LPUART1.
+    bit_offset: 23
+    bit_size: 1
+  - name: lpuart2
+    description: LPUART2.
+    bit_offset: 24
+    bit_size: 1
+  - name: lpuart3
+    description: LPUART3.
+    bit_offset: 25
+    bit_size: 1
+  - name: lpuart4
+    description: LPUART4.
+    bit_offset: 26
+    bit_size: 1
+  - name: usb0
+    description: USB0.
+    bit_offset: 27
+    bit_size: 1
+  - name: qdc0
+    description: QDC0.
+    bit_offset: 28
+    bit_size: 1
+  - name: qdc1
+    description: QDC1.
+    bit_offset: 29
+    bit_size: 1
+  - name: flexpwm0
+    description: FLEXPWM0.
+    bit_offset: 30
+    bit_size: 1
+  - name: flexpwm1
+    description: FLEXPWM1.
+    bit_offset: 31
+    bit_size: 1
+fieldset/GlbCc1:
+  description: AHB Clock Control 1.
+  fields:
+  - name: ostimer0
+    description: OSTIMER0.
+    bit_offset: 0
+    bit_size: 1
+  - name: adc0
+    description: ADC0.
+    bit_offset: 1
+    bit_size: 1
+  - name: adc1
+    description: ADC1.
+    bit_offset: 2
+    bit_size: 1
+  - name: cmp0
+    description: CMP0.
+    bit_offset: 3
+    bit_size: 1
+  - name: cmp1
+    description: CMP1.
+    bit_offset: 4
+    bit_size: 1
+  - name: dac0
+    description: DAC0.
+    bit_offset: 5
+    bit_size: 1
+  - name: opamp0
+    description: OPAMP0.
+    bit_offset: 6
+    bit_size: 1
+  - name: port0
+    description: PORT0.
+    bit_offset: 7
+    bit_size: 1
+  - name: port1
+    description: PORT1.
+    bit_offset: 8
+    bit_size: 1
+  - name: port2
+    description: PORT2.
+    bit_offset: 9
+    bit_size: 1
+  - name: port3
+    description: PORT3.
+    bit_offset: 10
+    bit_size: 1
+  - name: port4
+    description: PORT4.
+    bit_offset: 11
+    bit_size: 1
+  - name: flexcan0
+    description: FLEXCAN0.
+    bit_offset: 12
+    bit_size: 1
+  - name: lpi2c2
+    description: LPI2C2.
+    bit_offset: 13
+    bit_size: 1
+  - name: lpi2c3
+    description: LPI2C3.
+    bit_offset: 14
+    bit_size: 1
+  - name: rama
+    description: RAMA.
+    bit_offset: 18
+    bit_size: 1
+  - name: ramb
+    description: RAMB.
+    bit_offset: 19
+    bit_size: 1
+  - name: gpio0
+    description: GPIO0.
+    bit_offset: 20
+    bit_size: 1
+  - name: gpio1
+    description: GPIO1.
+    bit_offset: 21
+    bit_size: 1
+  - name: gpio2
+    description: GPIO2.
+    bit_offset: 22
+    bit_size: 1
+  - name: gpio3
+    description: GPIO3.
+    bit_offset: 23
+    bit_size: 1
+  - name: gpio4
+    description: GPIO4.
+    bit_offset: 24
+    bit_size: 1
+  - name: romc
+    description: ROMC.
+    bit_offset: 25
+    bit_size: 1
+fieldset/GlbCcClr:
+  description: AHB Clock Control Clear 0.
+  fields:
+  - name: data
+    description: Data array value, refer to corresponding position in MRCC_GLB_CCn.
+    bit_offset: 0
+    bit_size: 32
+fieldset/GlbCcSet:
+  description: AHB Clock Control Set 0.
+  fields:
+  - name: data
+    description: Data array value, refer to corresponding position in MRCC_GLB_CCn.
+    bit_offset: 0
+    bit_size: 32
+fieldset/GlbRst0:
+  description: Peripheral Reset Control 0.
+  fields:
+  - name: inputmux0
+    description: INPUTMUX0.
+    bit_offset: 0
+    bit_size: 1
+  - name: i3c0
+    description: I3C0.
+    bit_offset: 1
+    bit_size: 1
+  - name: ctimer0
+    description: CTIMER0.
+    bit_offset: 2
+    bit_size: 1
+  - name: ctimer1
+    description: CTIMER1.
+    bit_offset: 3
+    bit_size: 1
+  - name: ctimer2
+    description: CTIMER2.
+    bit_offset: 4
+    bit_size: 1
+  - name: ctimer3
+    description: CTIMER3.
+    bit_offset: 5
+    bit_size: 1
+  - name: ctimer4
+    description: CTIMER4.
+    bit_offset: 6
+    bit_size: 1
+  - name: freqme
+    description: FREQME.
+    bit_offset: 7
+    bit_size: 1
+  - name: utick0
+    description: UTICK0.
+    bit_offset: 8
+    bit_size: 1
+  - name: dma0
+    description: DMA.
+    bit_offset: 10
+    bit_size: 1
+  - name: aoi0
+    description: AOI0.
+    bit_offset: 11
+    bit_size: 1
+  - name: crc0
+    description: CRC0.
+    bit_offset: 12
+    bit_size: 1
+  - name: eim0
+    description: EIM0.
+    bit_offset: 13
+    bit_size: 1
+  - name: erm0
+    description: ERM0.
+    bit_offset: 14
+    bit_size: 1
+  - name: aoi1
+    description: AOI1.
+    bit_offset: 16
+    bit_size: 1
+  - name: flexio0
+    description: FLEXIO0.
+    bit_offset: 17
+    bit_size: 1
+  - name: lpi2c0
+    description: LPI2C0.
+    bit_offset: 18
+    bit_size: 1
+  - name: lpi2c1
+    description: LPI2C1.
+    bit_offset: 19
+    bit_size: 1
+  - name: lpspi0
+    description: LPSPI0.
+    bit_offset: 20
+    bit_size: 1
+  - name: lpspi1
+    description: LPSPI1.
+    bit_offset: 21
+    bit_size: 1
+  - name: lpuart0
+    description: LPUART0.
+    bit_offset: 22
+    bit_size: 1
+  - name: lpuart1
+    description: LPUART1.
+    bit_offset: 23
+    bit_size: 1
+  - name: lpuart2
+    description: LPUART2.
+    bit_offset: 24
+    bit_size: 1
+  - name: lpuart3
+    description: LPUART3.
+    bit_offset: 25
+    bit_size: 1
+  - name: lpuart4
+    description: LPUART4.
+    bit_offset: 26
+    bit_size: 1
+  - name: usb0
+    description: USB0.
+    bit_offset: 27
+    bit_size: 1
+  - name: qdc0
+    description: QDC0.
+    bit_offset: 28
+    bit_size: 1
+  - name: qdc1
+    description: QDC1.
+    bit_offset: 29
+    bit_size: 1
+  - name: flexpwm0
+    description: FLEXPWM0.
+    bit_offset: 30
+    bit_size: 1
+  - name: flexpwm1
+    description: FLEXPWM1.
+    bit_offset: 31
+    bit_size: 1
+fieldset/GlbRst1:
+  description: Peripheral Reset Control 1.
+  fields:
+  - name: ostimer0
+    description: OSTIMER0.
+    bit_offset: 0
+    bit_size: 1
+  - name: adc0
+    description: ADC0.
+    bit_offset: 1
+    bit_size: 1
+  - name: adc1
+    description: ADC1.
+    bit_offset: 2
+    bit_size: 1
+  - name: cmp1
+    description: CMP1.
+    bit_offset: 4
+    bit_size: 1
+  - name: dac0
+    description: DAC0.
+    bit_offset: 5
+    bit_size: 1
+  - name: opamp0
+    description: OPAMP0.
+    bit_offset: 6
+    bit_size: 1
+  - name: port0
+    description: PORT0.
+    bit_offset: 7
+    bit_size: 1
+  - name: port1
+    description: PORT1.
+    bit_offset: 8
+    bit_size: 1
+  - name: port2
+    description: PORT2.
+    bit_offset: 9
+    bit_size: 1
+  - name: port3
+    description: PORT3.
+    bit_offset: 10
+    bit_size: 1
+  - name: port4
+    description: PORT4.
+    bit_offset: 11
+    bit_size: 1
+  - name: flexcan0
+    description: FLEXCAN0.
+    bit_offset: 12
+    bit_size: 1
+  - name: lpi2c2
+    description: LPI2C2.
+    bit_offset: 13
+    bit_size: 1
+  - name: lpi2c3
+    description: LPI2C3.
+    bit_offset: 14
+    bit_size: 1
+  - name: gpio0
+    description: GPIO0.
+    bit_offset: 20
+    bit_size: 1
+  - name: gpio1
+    description: GPIO1.
+    bit_offset: 21
+    bit_size: 1
+  - name: gpio2
+    description: GPIO2.
+    bit_offset: 22
+    bit_size: 1
+  - name: gpio3
+    description: GPIO3.
+    bit_offset: 23
+    bit_size: 1
+  - name: gpio4
+    description: GPIO4.
+    bit_offset: 24
+    bit_size: 1
+fieldset/GlbRstClr:
+  description: Peripheral Reset Control Clear 0.
+  fields:
+  - name: data
+    description: Data array value, refer to corresponding position in MRCC_GLB_RSTn.
+    bit_offset: 0
+    bit_size: 32
+fieldset/GlbRstSet:
+  description: Peripheral Reset Control Set 0.
+  fields:
+  - name: data
+    description: Data array value, refer to corresponding position in MRCC_GLB_RSTn.
+    bit_offset: 0
+    bit_size: 32
+fieldset/I3cFclkClksel:
+  description: I3C0_FCLK clock selection control.
+  fields:
+  - name: mux
+    description: Functional Clock Mux Select.
+    bit_offset: 0
+    bit_size: 3
+    enum: FclkClkselMux
+fieldset/Lpi2cClksel:
+  description: LPI2C0 clock selection control.
+  fields:
+  - name: mux
+    description: Functional Clock Mux Select.
+    bit_offset: 0
+    bit_size: 3
+    enum: Lpi2cClkselMux
+fieldset/LpspiClksel:
+  description: LPSPI0 clock selection control.
+  fields:
+  - name: mux
+    description: Functional Clock Mux Select.
+    bit_offset: 0
+    bit_size: 3
+    enum: LpspiClkselMux
+fieldset/LptmrClksel:
+  description: LPTMR0 clock selection control.
+  fields:
+  - name: mux
+    description: Functional Clock Mux Select.
+    bit_offset: 0
+    bit_size: 3
+    enum: LptmrClkselMux
+fieldset/LpuartClksel:
+  description: LPUART0 clock selection control.
+  fields:
+  - name: mux
+    description: Functional Clock Mux Select.
+    bit_offset: 0
+    bit_size: 3
+    enum: LpuartClkselMux
+fieldset/OstimerClksel:
+  description: OSTIMER0 clock selection control.
+  fields:
+  - name: mux
+    description: Functional Clock Mux Select.
+    bit_offset: 0
+    bit_size: 2
+    enum: OstimerClkselMux
+fieldset/SystickClksel:
+  description: SYSTICK clock selection control.
+  fields:
+  - name: mux
+    description: Functional Clock Mux Select.
+    bit_offset: 0
+    bit_size: 2
+    enum: SystickClkselMux
+fieldset/UsbClksel:
+  description: USB0 clock selection control.
+  fields:
+  - name: mux
+    description: Functional Clock Mux Select.
+    bit_offset: 0
+    bit_size: 2
+    enum: UsbClkselMux
+enum/AdcClkselMux:
+  bit_size: 3
+  variants:
+  - name: ClkrootFunc0
+    description: FRO_12M.
+    value: 0
+  - name: ClkrootFunc1
+    description: FRO_HF_GATED.
+    value: 1
+  - name: ClkrootFunc3
+    description: CLK_IN.
+    value: 3
+  - name: ClkrootFunc5
+    description: CLK_1M.
+    value: 5
+enum/ClkdivHalt:
+  bit_size: 1
+  variants:
+  - name: On
+    description: Divider clock is running.
+    value: 0
+  - name: Off
+    description: Divider clock is stopped.
+    value: 1
+enum/ClkdivReset:
+  bit_size: 1
+  variants:
+  - name: On
+    description: Divider isn't reset.
+    value: 0
+  - name: Off
+    description: Divider is reset.
+    value: 1
+enum/ClkdivUnstab:
+  bit_size: 1
+  variants:
+  - name: On
+    description: Divider clock is stable.
+    value: 0
+  - name: Off
+    description: Clock frequency isn't stable.
+    value: 1
+enum/ClkoutClkselMux:
+  bit_size: 3
+  variants:
+  - name: Clkroot12m
+    description: FRO_12M.
+    value: 0
+  - name: ClkrootFircDiv
+    description: FRO_HF_DIV.
+    value: 1
+  - name: ClkrootSosc
+    description: CLK_IN.
+    value: 2
+  - name: Clkroot16k
+    description: CLK_16K.
+    value: 3
+  - name: ClkrootSlow
+    description: SLOW_CLK.
+    value: 6
+enum/CtimerClkselMux:
+  bit_size: 3
+  variants:
+  - name: ClkrootFunc0
+    description: FRO_12M.
+    value: 0
+  - name: ClkrootFunc1
+    description: FRO_HF_GATED.
+    value: 1
+  - name: ClkrootFunc3
+    description: CLK_IN.
+    value: 3
+  - name: ClkrootFunc4
+    description: CLK_16K.
+    value: 4
+  - name: ClkrootFunc5
+    description: CLK_1M.
+    value: 5
+enum/DacClkselMux:
+  bit_size: 3
+  variants:
+  - name: ClkrootFunc0
+    description: FRO_12M.
+    value: 0
+  - name: ClkrootFunc2
+    description: FRO_HF_DIV.
+    value: 2
+  - name: ClkrootFunc3
+    description: CLK_IN.
+    value: 3
+  - name: ClkrootFunc5
+    description: CLK_1M.
+    value: 5
+enum/DbgTraceClkselMux:
+  bit_size: 2
+  variants:
+  - name: ClkrootCpu
+    description: CPU_CLK.
+    value: 0
+  - name: Clkroot1m
+    description: CLK_1M.
+    value: 1
+  - name: Clkroot16k
+    description: CLK_16K.
+    value: 2
+enum/FclkClkselMux:
+  bit_size: 3
+  variants:
+  - name: ClkrootFunc0
+    description: FRO_12M.
+    value: 0
+  - name: ClkrootFunc2
+    description: FRO_HF_DIV.
+    value: 2
+  - name: ClkrootFunc3
+    description: CLK_IN.
+    value: 3
+  - name: ClkrootFunc5
+    description: CLK_1M.
+    value: 5
+enum/FlexcanClkselMux:
+  bit_size: 3
+  variants:
+  - name: ClkrootFunc2
+    description: FRO_HF_DIV.
+    value: 2
+  - name: ClkrootFunc3
+    description: CLK_IN.
+    value: 3
+enum/FlexioClkselMux:
+  bit_size: 3
+  variants:
+  - name: ClkrootFunc0
+    description: FRO_12M.
+    value: 0
+  - name: ClkrootFunc1
+    description: FRO_HF_GATED.
+    value: 1
+  - name: ClkrootFunc3
+    description: CLK_IN.
+    value: 3
+  - name: ClkrootFunc5
+    description: CLK_1M.
+    value: 5
+enum/Lpi2cClkselMux:
+  bit_size: 3
+  variants:
+  - name: ClkrootFunc0
+    description: FRO_12M.
+    value: 0
+  - name: ClkrootFunc2
+    description: FRO_HF_DIV.
+    value: 2
+  - name: ClkrootFunc3
+    description: CLK_IN.
+    value: 3
+  - name: ClkrootFunc5
+    description: CLK_1M.
+    value: 5
+enum/LpspiClkselMux:
+  bit_size: 3
+  variants:
+  - name: ClkrootFunc0
+    description: FRO_12M.
+    value: 0
+  - name: ClkrootFunc2
+    description: FRO_HF_DIV.
+    value: 2
+  - name: ClkrootFunc3
+    description: CLK_IN.
+    value: 3
+  - name: ClkrootFunc5
+    description: CLK_1M.
+    value: 5
+enum/LptmrClkselMux:
+  bit_size: 3
+  variants:
+  - name: ClkrootFunc0
+    description: FRO_12M.
+    value: 0
+  - name: ClkrootFunc2
+    description: FRO_HF_DIV.
+    value: 2
+  - name: ClkrootFunc3
+    description: CLK_IN.
+    value: 3
+  - name: ClkrootFunc5
+    description: CLK_1M.
+    value: 5
+enum/LpuartClkselMux:
+  bit_size: 3
+  variants:
+  - name: ClkrootFunc0
+    description: FRO_12M.
+    value: 0
+  - name: ClkrootFunc2
+    description: FRO_HF_DIV.
+    value: 2
+  - name: ClkrootFunc3
+    description: CLK_IN.
+    value: 3
+  - name: ClkrootFunc4
+    description: CLK_16K.
+    value: 4
+  - name: ClkrootFunc5
+    description: CLK_1M.
+    value: 5
+enum/OstimerClkselMux:
+  bit_size: 2
+  variants:
+  - name: Clkroot16k
+    description: CLK_16K.
+    value: 0
+  - name: Clkroot1m
+    description: CLK_1M.
+    value: 2
+enum/RrClkselMux:
+  bit_size: 3
+  variants:
+  - name: ClkrootFunc0
+    description: FRO_12M.
+    value: 0
+  - name: ClkrootFunc2
+    description: FRO_HF_DIV.
+    value: 2
+  - name: ClkrootFunc3
+    description: CLK_IN.
+    value: 3
+  - name: ClkrootFunc5
+    description: CLK_1M.
+    value: 5
+enum/SystickClkselMux:
+  bit_size: 2
+  variants:
+  - name: ClkrootCpu
+    description: CPU_CLK.
+    value: 0
+  - name: Clkroot1m
+    description: CLK_1M.
+    value: 1
+  - name: Clkroot16k
+    description: CLK_16K.
+    value: 2
+enum/UsbClkselMux:
+  bit_size: 2
+  variants:
+  - name: ScgScgFirc48mhzClk
+    description: CLK_48M.
+    value: 1
+  - name: ClkrootSosc
+    description: CLK_IN.
+    value: 2
