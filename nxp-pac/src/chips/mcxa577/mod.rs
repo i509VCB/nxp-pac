@@ -282,6 +282,9 @@ pub const SGI0: sgi::Sgi = unsafe { sgi::Sgi::from_ptr(0x400EB000 as _) };
 pub const SPC0: spc::Spc = unsafe { spc::Spc::from_ptr(0x400CB000 as _) };
 pub const SYSCON: syscon::Syscon = unsafe { syscon::Syscon::from_ptr(0x40091000 as _) };
 pub const TRNG0: trng::Trng = unsafe { trng::Trng::from_ptr(0x400EC000 as _) };
+pub const USB1: usbhs::Usbhs = unsafe { usbhs::Usbhs::from_ptr(0x4002E000 as _) };
+pub const USBNC: usbnc::Usbnc = unsafe { usbnc::Usbnc::from_ptr(0x4002E200 as _) };
+pub const USB1_HS_PHY: usbphy::Usbphy = unsafe { usbphy::Usbphy::from_ptr(0x4002F000 as _) };
 pub const VBAT0: vbat::Vbat = unsafe { vbat::Vbat::from_ptr(0x40093000 as _) };
 pub const WWDT0: wwdt::Wwdt = unsafe { wwdt::Wwdt::from_ptr(0x4000C000 as _) };
 pub const WWDT1: wwdt::Wwdt = unsafe { wwdt::Wwdt::from_ptr(0x4000D000 as _) };
@@ -343,6 +346,12 @@ pub mod spc;
 pub mod syscon;
 #[path = "../../meta_peripherals/mcxa/TRNG.rs"]
 pub mod trng;
+#[path = "../../meta_peripherals/mcxa/USBHS.rs"]
+pub mod usbhs;
+#[path = "../../meta_peripherals/mcxa/USBNC.rs"]
+pub mod usbnc;
+#[path = "../../meta_peripherals/mcxa/USBPHY.rs"]
+pub mod usbphy;
 #[path = "../../meta_peripherals/mcxa/VBAT.rs"]
 pub mod vbat;
 #[path = "../../meta_peripherals/mcxa/WWDT.rs"]

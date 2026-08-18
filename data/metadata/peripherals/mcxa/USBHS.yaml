@@ -1,0 +1,3361 @@
+block/Usbhs:
+  description: USBC.
+  items:
+  - name: ID
+    description: Identification.
+    byte_offset: 0
+    access: Read
+    fieldset: ID
+  - name: HWGENERAL
+    description: Hardware General.
+    byte_offset: 4
+    access: Read
+    fieldset: HWGENERAL
+  - name: HWHOST
+    description: Host Hardware Parameters.
+    byte_offset: 8
+    access: Read
+    fieldset: HWHOST
+  - name: HWDEVICE
+    description: Device Hardware Parameters.
+    byte_offset: 12
+    access: Read
+    fieldset: HWDEVICE
+  - name: HWTXBUF
+    description: TX Buffer Hardware Parameters.
+    byte_offset: 16
+    access: Read
+    fieldset: HWTXBUF
+  - name: HWRXBUF
+    description: RX Buffer Hardware Parameters.
+    byte_offset: 20
+    access: Read
+    fieldset: HWRXBUF
+  - name: GPTIMER0LD
+    description: General Purpose Timer 0 Load.
+    byte_offset: 128
+    fieldset: GPTIMER0LD
+  - name: GPTIMER0CTRL
+    description: General Purpose Timer 0 Controller.
+    byte_offset: 132
+    fieldset: GPTIMER0CTRL
+  - name: GPTIMER1LD
+    description: General Purpose Timer 1 Load.
+    byte_offset: 136
+    fieldset: GPTIMER1LD
+  - name: GPTIMER1CTRL
+    description: General Purpose Timer 1 Controller.
+    byte_offset: 140
+    fieldset: GPTIMER1CTRL
+  - name: SBUSCFG
+    description: System Bus Configuration.
+    byte_offset: 144
+    fieldset: SBUSCFG
+  - name: CAPLENGTH
+    description: Capability Registers Length.
+    byte_offset: 256
+    access: Read
+    bit_size: 8
+    fieldset: CAPLENGTH
+  - name: HCIVERSION
+    description: Host Controller Interface Version.
+    byte_offset: 258
+    access: Read
+    bit_size: 16
+    fieldset: HCIVERSION
+  - name: HCSPARAMS
+    description: Host Controller Structural Parameters.
+    byte_offset: 260
+    access: Read
+    fieldset: HCSPARAMS
+  - name: HCCPARAMS
+    description: Host Controller Capability Parameters.
+    byte_offset: 264
+    access: Read
+    fieldset: HCCPARAMS
+  - name: DCIVERSION
+    description: Device Controller Interface Version.
+    byte_offset: 288
+    access: Read
+    bit_size: 16
+    fieldset: DCIVERSION
+  - name: DCCPARAMS
+    description: Device Controller Capability Parameters.
+    byte_offset: 292
+    access: Read
+    fieldset: DCCPARAMS
+  - name: USBCMD
+    description: USB Command.
+    byte_offset: 320
+    fieldset: USBCMD
+  - name: USBSTS
+    description: USB Status.
+    byte_offset: 324
+    fieldset: USBSTS
+  - name: USBINTR
+    description: Interrupt Enable.
+    byte_offset: 328
+    fieldset: USBINTR
+  - name: FRINDEX
+    description: USB Frame Index.
+    byte_offset: 332
+    fieldset: FRINDEX
+  - name: DEVICEADDR
+    description: Device Address.
+    byte_offset: 340
+    fieldset: DEVICEADDR
+  - name: PERIODICLISTBASE
+    description: Frame List Base Address.
+    byte_offset: 340
+    fieldset: PERIODICLISTBASE
+  - name: ASYNCLISTADDR
+    description: Next Asynchronous Address.
+    byte_offset: 344
+    fieldset: ASYNCLISTADDR
+  - name: ENDPTLISTADDR
+    description: Endpoint List Address.
+    byte_offset: 344
+    fieldset: ENDPTLISTADDR
+  - name: BURSTSIZE
+    description: Programmable Burst Size.
+    byte_offset: 352
+    fieldset: BURSTSIZE
+  - name: TXFILLTUNING
+    description: TX FIFO Fill Tuning.
+    byte_offset: 356
+    fieldset: TXFILLTUNING
+  - name: ENDPTNAK
+    description: Endpoint NAK.
+    byte_offset: 376
+    fieldset: ENDPTNAK
+  - name: ENDPTNAKEN
+    description: Endpoint NAK Enable.
+    byte_offset: 380
+    fieldset: ENDPTNAKEN
+  - name: CONFIGFLAG
+    description: Configure Flag.
+    byte_offset: 384
+    access: Read
+    fieldset: CONFIGFLAG
+  - name: PORTSC1
+    description: Port Status and Control.
+    byte_offset: 388
+    fieldset: PORTSC1
+  - name: OTGSC
+    description: On-The-Go Status and Control.
+    byte_offset: 420
+    fieldset: OTGSC
+  - name: USBMODE
+    description: USB Device Mode.
+    byte_offset: 424
+    fieldset: USBMODE
+  - name: ENDPTSETUPSTAT
+    description: Endpoint Setup Status.
+    byte_offset: 428
+    fieldset: ENDPTSETUPSTAT
+  - name: ENDPTPRIME
+    description: Endpoint Prime.
+    byte_offset: 432
+    fieldset: ENDPTPRIME
+  - name: ENDPTFLUSH
+    description: Endpoint Flush.
+    byte_offset: 436
+    fieldset: ENDPTFLUSH
+  - name: ENDPTSTAT
+    description: Endpoint Status.
+    byte_offset: 440
+    access: Read
+    fieldset: ENDPTSTAT
+  - name: ENDPTCOMPLETE
+    description: Endpoint Complete.
+    byte_offset: 444
+    fieldset: ENDPTCOMPLETE
+  - name: ENDPTCTRL0
+    description: Endpoint Control 0.
+    byte_offset: 448
+    fieldset: ENDPTCTRL0
+  - name: ENDPTCTRL1
+    description: Endpoint Control 1.
+    byte_offset: 452
+    fieldset: ENDPTCTRL1
+  - name: ENDPTCTRL2
+    description: Endpoint Control 2.
+    byte_offset: 456
+    fieldset: ENDPTCTRL2
+  - name: ENDPTCTRL3
+    description: Endpoint Control 3.
+    byte_offset: 460
+    fieldset: ENDPTCTRL3
+  - name: ENDPTCTRL4
+    description: Endpoint Control 4.
+    byte_offset: 464
+    fieldset: ENDPTCTRL4
+  - name: ENDPTCTRL5
+    description: Endpoint Control 5.
+    byte_offset: 468
+    fieldset: ENDPTCTRL5
+  - name: ENDPTCTRL6
+    description: Endpoint Control 6.
+    byte_offset: 472
+    fieldset: ENDPTCTRL6
+  - name: ENDPTCTRL7
+    description: Endpoint Control 7.
+    byte_offset: 476
+    fieldset: ENDPTCTRL7
+fieldset/ASYNCLISTADDR:
+  description: Next Asynchronous Address.
+  fields:
+  - name: ASYBASE
+    description: Link Pointer Low (LPL).
+    bit_offset: 5
+    bit_size: 27
+fieldset/BURSTSIZE:
+  description: Programmable Burst Size.
+  fields:
+  - name: RXPBURST
+    description: Programmable RX Burst Size.
+    bit_offset: 0
+    bit_size: 8
+  - name: TXPBURST
+    description: Programmable TX Burst Size.
+    bit_offset: 8
+    bit_size: 8
+fieldset/CAPLENGTH:
+  description: Capability Registers Length.
+  bit_size: 8
+  fields:
+  - name: CAPLENGTH
+    description: Capability Length.
+    bit_offset: 0
+    bit_size: 8
+fieldset/CONFIGFLAG:
+  description: Configure Flag.
+  fields:
+  - name: CF
+    description: Configure Flag.
+    bit_offset: 0
+    bit_size: 1
+    enum: CF
+fieldset/DCCPARAMS:
+  description: Device Controller Capability Parameters.
+  fields:
+  - name: DEN
+    description: Device Endpoint Number.
+    bit_offset: 0
+    bit_size: 5
+    enum: DEN
+  - name: DC
+    description: Device Capable.
+    bit_offset: 7
+    bit_size: 1
+    enum: DCCPARAMS_DC
+  - name: HC
+    description: Host Capable.
+    bit_offset: 8
+    bit_size: 1
+    enum: DCCPARAMS_HC
+fieldset/DCIVERSION:
+  description: Device Controller Interface Version.
+  bit_size: 16
+  fields:
+  - name: DCIVERSION
+    description: Device Controller Interface Version Number.
+    bit_offset: 0
+    bit_size: 16
+fieldset/DEVICEADDR:
+  description: Device Address.
+  fields:
+  - name: USBADRA
+    description: Device Address Advance.
+    bit_offset: 24
+    bit_size: 1
+  - name: USBADR
+    description: Device Address.
+    bit_offset: 25
+    bit_size: 7
+fieldset/ENDPTCOMPLETE:
+  description: Endpoint Complete.
+  fields:
+  - name: ERCE
+    description: Endpoint Receive Complete Event.
+    bit_offset: 0
+    bit_size: 8
+    enum: ERCE
+  - name: ETCE
+    description: Endpoint Transmit Complete Event.
+    bit_offset: 16
+    bit_size: 8
+    enum: ETCE
+fieldset/ENDPTCTRL0:
+  description: Endpoint Control 0.
+  fields:
+  - name: RXS
+    description: RX Endpoint Stall.
+    bit_offset: 0
+    bit_size: 1
+    enum: ENDPTCTRL0_RXS
+  - name: RXT
+    description: RX Endpoint Type.
+    bit_offset: 2
+    bit_size: 2
+  - name: RXE
+    description: RX Endpoint Enable.
+    bit_offset: 7
+    bit_size: 1
+    enum: ENDPTCTRL0_RXE
+  - name: TXS
+    description: TX Endpoint Stall.
+    bit_offset: 16
+    bit_size: 1
+    enum: ENDPTCTRL0_TXS
+  - name: TXT
+    description: TX Endpoint Type.
+    bit_offset: 18
+    bit_size: 2
+  - name: TXE
+    description: TX Endpoint Enable.
+    bit_offset: 23
+    bit_size: 1
+    enum: ENDPTCTRL0_TXE
+fieldset/ENDPTCTRL1:
+  description: Endpoint Control 1.
+  fields:
+  - name: RXS
+    description: RX Endpoint Stall.
+    bit_offset: 0
+    bit_size: 1
+    enum: ENDPTCTRL1_RXS
+  - name: RXD
+    description: RX Endpoint Data Sink.
+    bit_offset: 1
+    bit_size: 1
+  - name: RXT
+    description: RX Endpoint Type.
+    bit_offset: 2
+    bit_size: 2
+    enum: ENDPTCTRL1_RXT
+  - name: RXI
+    description: RX Data Toggle Inhibit.
+    bit_offset: 5
+    bit_size: 1
+    enum: ENDPTCTRL1_RXI
+  - name: RXR
+    description: RX Data Toggle Reset.
+    bit_offset: 6
+    bit_size: 1
+    enum: ENDPTCTRL1_RXR
+  - name: RXE
+    description: RX Endpoint Enable.
+    bit_offset: 7
+    bit_size: 1
+    enum: ENDPTCTRL1_RXE
+  - name: TXS
+    description: TX Endpoint Stall.
+    bit_offset: 16
+    bit_size: 1
+    enum: ENDPTCTRL1_TXS
+  - name: TXD
+    description: TX Endpoint Data Source.
+    bit_offset: 17
+    bit_size: 1
+  - name: TXT
+    description: TX Endpoint Type.
+    bit_offset: 18
+    bit_size: 2
+    enum: ENDPTCTRL1_TXT
+  - name: TXI
+    description: TX Data Toggle Inhibit.
+    bit_offset: 21
+    bit_size: 1
+    enum: ENDPTCTRL1_TXI
+  - name: TXR
+    description: TX Data Toggle Reset.
+    bit_offset: 22
+    bit_size: 1
+    enum: ENDPTCTRL1_TXR
+  - name: TXE
+    description: TX Endpoint Enable.
+    bit_offset: 23
+    bit_size: 1
+    enum: ENDPTCTRL1_TXE
+fieldset/ENDPTCTRL2:
+  description: Endpoint Control 2.
+  fields:
+  - name: RXS
+    description: RX Endpoint Stall.
+    bit_offset: 0
+    bit_size: 1
+    enum: ENDPTCTRL2_RXS
+  - name: RXD
+    description: RX Endpoint Data Sink.
+    bit_offset: 1
+    bit_size: 1
+  - name: RXT
+    description: RX Endpoint Type.
+    bit_offset: 2
+    bit_size: 2
+    enum: ENDPTCTRL2_RXT
+  - name: RXI
+    description: RX Data Toggle Inhibit.
+    bit_offset: 5
+    bit_size: 1
+    enum: ENDPTCTRL2_RXI
+  - name: RXR
+    description: RX Data Toggle Reset.
+    bit_offset: 6
+    bit_size: 1
+    enum: ENDPTCTRL2_RXR
+  - name: RXE
+    description: RX Endpoint Enable.
+    bit_offset: 7
+    bit_size: 1
+    enum: ENDPTCTRL2_RXE
+  - name: TXS
+    description: TX Endpoint Stall.
+    bit_offset: 16
+    bit_size: 1
+    enum: ENDPTCTRL2_TXS
+  - name: TXD
+    description: TX Endpoint Data Source.
+    bit_offset: 17
+    bit_size: 1
+  - name: TXT
+    description: TX Endpoint Type.
+    bit_offset: 18
+    bit_size: 2
+    enum: ENDPTCTRL2_TXT
+  - name: TXI
+    description: TX Data Toggle Inhibit.
+    bit_offset: 21
+    bit_size: 1
+    enum: ENDPTCTRL2_TXI
+  - name: TXR
+    description: TX Data Toggle Reset.
+    bit_offset: 22
+    bit_size: 1
+    enum: ENDPTCTRL2_TXR
+  - name: TXE
+    description: TX Endpoint Enable.
+    bit_offset: 23
+    bit_size: 1
+    enum: ENDPTCTRL2_TXE
+fieldset/ENDPTCTRL3:
+  description: Endpoint Control 3.
+  fields:
+  - name: RXS
+    description: RX Endpoint Stall.
+    bit_offset: 0
+    bit_size: 1
+    enum: ENDPTCTRL3_RXS
+  - name: RXD
+    description: RX Endpoint Data Sink.
+    bit_offset: 1
+    bit_size: 1
+  - name: RXT
+    description: RX Endpoint Type.
+    bit_offset: 2
+    bit_size: 2
+    enum: ENDPTCTRL3_RXT
+  - name: RXI
+    description: RX Data Toggle Inhibit.
+    bit_offset: 5
+    bit_size: 1
+    enum: ENDPTCTRL3_RXI
+  - name: RXR
+    description: RX Data Toggle Reset.
+    bit_offset: 6
+    bit_size: 1
+    enum: ENDPTCTRL3_RXR
+  - name: RXE
+    description: RX Endpoint Enable.
+    bit_offset: 7
+    bit_size: 1
+    enum: ENDPTCTRL3_RXE
+  - name: TXS
+    description: TX Endpoint Stall.
+    bit_offset: 16
+    bit_size: 1
+    enum: ENDPTCTRL3_TXS
+  - name: TXD
+    description: TX Endpoint Data Source.
+    bit_offset: 17
+    bit_size: 1
+  - name: TXT
+    description: TX Endpoint Type.
+    bit_offset: 18
+    bit_size: 2
+    enum: ENDPTCTRL3_TXT
+  - name: TXI
+    description: TX Data Toggle Inhibit.
+    bit_offset: 21
+    bit_size: 1
+    enum: ENDPTCTRL3_TXI
+  - name: TXR
+    description: TX Data Toggle Reset.
+    bit_offset: 22
+    bit_size: 1
+    enum: ENDPTCTRL3_TXR
+  - name: TXE
+    description: TX Endpoint Enable.
+    bit_offset: 23
+    bit_size: 1
+    enum: ENDPTCTRL3_TXE
+fieldset/ENDPTCTRL4:
+  description: Endpoint Control 4.
+  fields:
+  - name: RXS
+    description: RX Endpoint Stall.
+    bit_offset: 0
+    bit_size: 1
+    enum: ENDPTCTRL4_RXS
+  - name: RXD
+    description: RX Endpoint Data Sink.
+    bit_offset: 1
+    bit_size: 1
+  - name: RXT
+    description: RX Endpoint Type.
+    bit_offset: 2
+    bit_size: 2
+    enum: ENDPTCTRL4_RXT
+  - name: RXI
+    description: RX Data Toggle Inhibit.
+    bit_offset: 5
+    bit_size: 1
+    enum: ENDPTCTRL4_RXI
+  - name: RXR
+    description: RX Data Toggle Reset.
+    bit_offset: 6
+    bit_size: 1
+    enum: ENDPTCTRL4_RXR
+  - name: RXE
+    description: RX Endpoint Enable.
+    bit_offset: 7
+    bit_size: 1
+    enum: ENDPTCTRL4_RXE
+  - name: TXS
+    description: TX Endpoint Stall.
+    bit_offset: 16
+    bit_size: 1
+    enum: ENDPTCTRL4_TXS
+  - name: TXD
+    description: TX Endpoint Data Source.
+    bit_offset: 17
+    bit_size: 1
+  - name: TXT
+    description: TX Endpoint Type.
+    bit_offset: 18
+    bit_size: 2
+    enum: ENDPTCTRL4_TXT
+  - name: TXI
+    description: TX Data Toggle Inhibit.
+    bit_offset: 21
+    bit_size: 1
+    enum: ENDPTCTRL4_TXI
+  - name: TXR
+    description: TX Data Toggle Reset.
+    bit_offset: 22
+    bit_size: 1
+    enum: ENDPTCTRL4_TXR
+  - name: TXE
+    description: TX Endpoint Enable.
+    bit_offset: 23
+    bit_size: 1
+    enum: ENDPTCTRL4_TXE
+fieldset/ENDPTCTRL5:
+  description: Endpoint Control 5.
+  fields:
+  - name: RXS
+    description: RX Endpoint Stall.
+    bit_offset: 0
+    bit_size: 1
+    enum: ENDPTCTRL5_RXS
+  - name: RXD
+    description: RX Endpoint Data Sink.
+    bit_offset: 1
+    bit_size: 1
+  - name: RXT
+    description: RX Endpoint Type.
+    bit_offset: 2
+    bit_size: 2
+    enum: ENDPTCTRL5_RXT
+  - name: RXI
+    description: RX Data Toggle Inhibit.
+    bit_offset: 5
+    bit_size: 1
+    enum: ENDPTCTRL5_RXI
+  - name: RXR
+    description: RX Data Toggle Reset.
+    bit_offset: 6
+    bit_size: 1
+    enum: ENDPTCTRL5_RXR
+  - name: RXE
+    description: RX Endpoint Enable.
+    bit_offset: 7
+    bit_size: 1
+    enum: ENDPTCTRL5_RXE
+  - name: TXS
+    description: TX Endpoint Stall.
+    bit_offset: 16
+    bit_size: 1
+    enum: ENDPTCTRL5_TXS
+  - name: TXD
+    description: TX Endpoint Data Source.
+    bit_offset: 17
+    bit_size: 1
+  - name: TXT
+    description: TX Endpoint Type.
+    bit_offset: 18
+    bit_size: 2
+    enum: ENDPTCTRL5_TXT
+  - name: TXI
+    description: TX Data Toggle Inhibit.
+    bit_offset: 21
+    bit_size: 1
+    enum: ENDPTCTRL5_TXI
+  - name: TXR
+    description: TX Data Toggle Reset.
+    bit_offset: 22
+    bit_size: 1
+    enum: ENDPTCTRL5_TXR
+  - name: TXE
+    description: TX Endpoint Enable.
+    bit_offset: 23
+    bit_size: 1
+    enum: ENDPTCTRL5_TXE
+fieldset/ENDPTCTRL6:
+  description: Endpoint Control 6.
+  fields:
+  - name: RXS
+    description: RX Endpoint Stall.
+    bit_offset: 0
+    bit_size: 1
+    enum: ENDPTCTRL6_RXS
+  - name: RXD
+    description: RX Endpoint Data Sink.
+    bit_offset: 1
+    bit_size: 1
+  - name: RXT
+    description: RX Endpoint Type.
+    bit_offset: 2
+    bit_size: 2
+    enum: ENDPTCTRL6_RXT
+  - name: RXI
+    description: RX Data Toggle Inhibit.
+    bit_offset: 5
+    bit_size: 1
+    enum: ENDPTCTRL6_RXI
+  - name: RXR
+    description: RX Data Toggle Reset.
+    bit_offset: 6
+    bit_size: 1
+    enum: ENDPTCTRL6_RXR
+  - name: RXE
+    description: RX Endpoint Enable.
+    bit_offset: 7
+    bit_size: 1
+    enum: ENDPTCTRL6_RXE
+  - name: TXS
+    description: TX Endpoint Stall.
+    bit_offset: 16
+    bit_size: 1
+    enum: ENDPTCTRL6_TXS
+  - name: TXD
+    description: TX Endpoint Data Source.
+    bit_offset: 17
+    bit_size: 1
+  - name: TXT
+    description: TX Endpoint Type.
+    bit_offset: 18
+    bit_size: 2
+    enum: ENDPTCTRL6_TXT
+  - name: TXI
+    description: TX Data Toggle Inhibit.
+    bit_offset: 21
+    bit_size: 1
+    enum: ENDPTCTRL6_TXI
+  - name: TXR
+    description: TX Data Toggle Reset.
+    bit_offset: 22
+    bit_size: 1
+    enum: ENDPTCTRL6_TXR
+  - name: TXE
+    description: TX Endpoint Enable.
+    bit_offset: 23
+    bit_size: 1
+    enum: ENDPTCTRL6_TXE
+fieldset/ENDPTCTRL7:
+  description: Endpoint Control 7.
+  fields:
+  - name: RXS
+    description: RX Endpoint Stall.
+    bit_offset: 0
+    bit_size: 1
+    enum: ENDPTCTRL7_RXS
+  - name: RXD
+    description: RX Endpoint Data Sink.
+    bit_offset: 1
+    bit_size: 1
+  - name: RXT
+    description: RX Endpoint Type.
+    bit_offset: 2
+    bit_size: 2
+    enum: ENDPTCTRL7_RXT
+  - name: RXI
+    description: RX Data Toggle Inhibit.
+    bit_offset: 5
+    bit_size: 1
+    enum: ENDPTCTRL7_RXI
+  - name: RXR
+    description: RX Data Toggle Reset.
+    bit_offset: 6
+    bit_size: 1
+    enum: ENDPTCTRL7_RXR
+  - name: RXE
+    description: RX Endpoint Enable.
+    bit_offset: 7
+    bit_size: 1
+    enum: ENDPTCTRL7_RXE
+  - name: TXS
+    description: TX Endpoint Stall.
+    bit_offset: 16
+    bit_size: 1
+    enum: ENDPTCTRL7_TXS
+  - name: TXD
+    description: TX Endpoint Data Source.
+    bit_offset: 17
+    bit_size: 1
+  - name: TXT
+    description: TX Endpoint Type.
+    bit_offset: 18
+    bit_size: 2
+    enum: ENDPTCTRL7_TXT
+  - name: TXI
+    description: TX Data Toggle Inhibit.
+    bit_offset: 21
+    bit_size: 1
+    enum: ENDPTCTRL7_TXI
+  - name: TXR
+    description: TX Data Toggle Reset.
+    bit_offset: 22
+    bit_size: 1
+    enum: ENDPTCTRL7_TXR
+  - name: TXE
+    description: TX Endpoint Enable.
+    bit_offset: 23
+    bit_size: 1
+    enum: ENDPTCTRL7_TXE
+fieldset/ENDPTFLUSH:
+  description: Endpoint Flush.
+  fields:
+  - name: FERB
+    description: Flush Endpoint Receive Buffer.
+    bit_offset: 0
+    bit_size: 8
+  - name: FETB
+    description: Flush Endpoint Transmit Buffer.
+    bit_offset: 16
+    bit_size: 8
+fieldset/ENDPTLISTADDR:
+  description: Endpoint List Address.
+  fields:
+  - name: EPBASE
+    description: Endpoint List Pointer (Low).
+    bit_offset: 11
+    bit_size: 21
+fieldset/ENDPTNAK:
+  description: Endpoint NAK.
+  fields:
+  - name: EPRN
+    description: RX Endpoint NAK Flag.
+    bit_offset: 0
+    bit_size: 8
+    enum: EPRN
+  - name: EPTN
+    description: TX Endpoint NAK Flag.
+    bit_offset: 16
+    bit_size: 8
+    enum: EPTN
+fieldset/ENDPTNAKEN:
+  description: Endpoint NAK Enable.
+  fields:
+  - name: EPRNE
+    description: RX Endpoint NAK Enable.
+    bit_offset: 0
+    bit_size: 8
+  - name: EPTNE
+    description: TX Endpoint NAK Enable.
+    bit_offset: 16
+    bit_size: 8
+fieldset/ENDPTPRIME:
+  description: Endpoint Prime.
+  fields:
+  - name: PERB
+    description: Prime Endpoint Receive Buffer.
+    bit_offset: 0
+    bit_size: 8
+  - name: PETB
+    description: Prime Endpoint Transmit Buffer.
+    bit_offset: 16
+    bit_size: 8
+fieldset/ENDPTSETUPSTAT:
+  description: Endpoint Setup Status.
+  fields:
+  - name: ENDPTSETUPSTAT
+    description: Endpoint Setup Status Flag.
+    bit_offset: 0
+    bit_size: 16
+    enum: ENDPTSETUPSTAT_FLAG
+fieldset/ENDPTSTAT:
+  description: Endpoint Status.
+  fields:
+  - name: ERBR
+    description: Endpoint Receive Buffer Ready.
+    bit_offset: 0
+    bit_size: 8
+  - name: ETBR
+    description: Endpoint Transmit Buffer Ready.
+    bit_offset: 16
+    bit_size: 8
+fieldset/FRINDEX:
+  description: USB Frame Index.
+  fields:
+  - name: FRINDEX
+    description: Frame Index.
+    bit_offset: 0
+    bit_size: 14
+    enum: FRINDEX_VALUE
+fieldset/GPTIMER0CTRL:
+  description: General Purpose Timer 0 Controller.
+  fields:
+  - name: GPTCNT
+    description: General Purpose Timer Counter.
+    bit_offset: 0
+    bit_size: 24
+  - name: GPTMODE
+    description: General Purpose Timer Mode.
+    bit_offset: 24
+    bit_size: 1
+    enum: GPTIMER0CTRL_GPTMODE
+  - name: GPTRST
+    description: General Purpose Timer Reset.
+    bit_offset: 30
+    bit_size: 1
+    enum: GPTIMER0CTRL_GPTRST
+  - name: GPTRUN
+    description: General Purpose Timer Run.
+    bit_offset: 31
+    bit_size: 1
+    enum: GPTIMER0CTRL_GPTRUN
+fieldset/GPTIMER0LD:
+  description: General Purpose Timer 0 Load.
+  fields:
+  - name: GPTLD
+    description: General Purpose Timer Load Value.
+    bit_offset: 0
+    bit_size: 24
+fieldset/GPTIMER1CTRL:
+  description: General Purpose Timer 1 Controller.
+  fields:
+  - name: GPTCNT
+    description: General Purpose Timer Counter.
+    bit_offset: 0
+    bit_size: 24
+  - name: GPTMODE
+    description: General Purpose Timer Mode.
+    bit_offset: 24
+    bit_size: 1
+    enum: GPTIMER1CTRL_GPTMODE
+  - name: GPTRST
+    description: General Purpose Timer Reset.
+    bit_offset: 30
+    bit_size: 1
+    enum: GPTIMER1CTRL_GPTRST
+  - name: GPTRUN
+    description: General Purpose Timer Run.
+    bit_offset: 31
+    bit_size: 1
+    enum: GPTIMER1CTRL_GPTRUN
+fieldset/GPTIMER1LD:
+  description: General Purpose Timer 1 Load.
+  fields:
+  - name: GPTLD
+    description: General Purpose Timer Load Value.
+    bit_offset: 0
+    bit_size: 24
+fieldset/HCCPARAMS:
+  description: Host Controller Capability Parameters.
+  fields:
+  - name: ADC
+    description: Addressing Capability.
+    bit_offset: 0
+    bit_size: 1
+  - name: PFL
+    description: Programmable Frame List Flag.
+    bit_offset: 1
+    bit_size: 1
+  - name: ASP
+    description: Asynchronous Schedule Park Capability.
+    bit_offset: 2
+    bit_size: 1
+  - name: IST
+    description: Isochronous Scheduling Threshold.
+    bit_offset: 4
+    bit_size: 4
+  - name: EECP
+    description: EHCI Extended Capabilities Pointer.
+    bit_offset: 8
+    bit_size: 8
+fieldset/HCIVERSION:
+  description: Host Controller Interface Version.
+  bit_size: 16
+  fields:
+  - name: HCIVERSION
+    description: Host Controller Interface Version Number.
+    bit_offset: 0
+    bit_size: 16
+fieldset/HCSPARAMS:
+  description: Host Controller Structural Parameters.
+  fields:
+  - name: N_PORTS
+    description: Number of Ports.
+    bit_offset: 0
+    bit_size: 4
+  - name: PPC
+    description: Port Power Control.
+    bit_offset: 4
+    bit_size: 1
+    enum: PPC
+  - name: N_PCC
+    description: Number of Ports per Companion Controller.
+    bit_offset: 8
+    bit_size: 4
+  - name: N_CC
+    description: Number of Companion Controller (N_CC).
+    bit_offset: 12
+    bit_size: 4
+    enum: N_CC
+  - name: PI
+    description: Port Indicators (P_INDICATOR).
+    bit_offset: 16
+    bit_size: 1
+  - name: N_PTT
+    description: Number of Ports per Transaction Translator (N_PTT).
+    bit_offset: 20
+    bit_size: 4
+  - name: N_TT
+    description: Number of Transaction Translators (N_TT).
+    bit_offset: 24
+    bit_size: 4
+fieldset/HWDEVICE:
+  description: Device Hardware Parameters.
+  fields:
+  - name: DC
+    description: Device Capable.
+    bit_offset: 0
+    bit_size: 1
+    enum: HWDEVICE_DC
+  - name: DEVEP
+    description: Device Endpoint Number.
+    bit_offset: 1
+    bit_size: 5
+fieldset/HWGENERAL:
+  description: Hardware General.
+  fields:
+  - name: PHYW
+    description: PHY Width.
+    bit_offset: 4
+    bit_size: 2
+    enum: PHYW
+  - name: PHYM
+    description: Transceiver Type.
+    bit_offset: 6
+    bit_size: 4
+    enum: PHYM
+  - name: SM
+    description: Serial Interface Mode Capability.
+    bit_offset: 10
+    bit_size: 2
+    enum: SM
+  - name: LPM
+    description: Link Power Management Capability.
+    bit_offset: 12
+    bit_size: 1
+    enum: LPM
+fieldset/HWHOST:
+  description: Host Hardware Parameters.
+  fields:
+  - name: HC
+    description: Host Capable.
+    bit_offset: 0
+    bit_size: 1
+    enum: HWHOST_HC
+  - name: NPORT
+    description: Number of Ports.
+    bit_offset: 1
+    bit_size: 3
+fieldset/HWRXBUF:
+  description: RX Buffer Hardware Parameters.
+  fields:
+  - name: RXBURST
+    description: RX Burst.
+    bit_offset: 0
+    bit_size: 8
+  - name: RXADD
+    description: RX Add.
+    bit_offset: 8
+    bit_size: 8
+fieldset/HWTXBUF:
+  description: TX Buffer Hardware Parameters.
+  fields:
+  - name: TXBURST
+    description: TX Burst.
+    bit_offset: 0
+    bit_size: 8
+  - name: TXCHANADD
+    description: TX Channel Add.
+    bit_offset: 16
+    bit_size: 8
+fieldset/ID:
+  description: Identification.
+  fields:
+  - name: ID
+    description: Configuration Number.
+    bit_offset: 0
+    bit_size: 6
+  - name: NID
+    description: Complement Version.
+    bit_offset: 8
+    bit_size: 6
+  - name: REVISION
+    description: Revision Number.
+    bit_offset: 16
+    bit_size: 8
+fieldset/OTGSC:
+  description: On-The-Go Status and Control.
+  fields:
+  - name: VD
+    description: VBUS Discharge.
+    bit_offset: 0
+    bit_size: 1
+  - name: VC
+    description: VBUS Charge.
+    bit_offset: 1
+    bit_size: 1
+  - name: HAAR
+    description: Hardware Assist Auto Reset.
+    bit_offset: 2
+    bit_size: 1
+    enum: HAAR
+  - name: OT
+    description: OTG Termination.
+    bit_offset: 3
+    bit_size: 1
+  - name: DP
+    description: Data Pulsing.
+    bit_offset: 4
+    bit_size: 1
+  - name: IDPU
+    description: ID Pullup.
+    bit_offset: 5
+    bit_size: 1
+  - name: HADP
+    description: Hardware Assist Data Pulse.
+    bit_offset: 6
+    bit_size: 1
+    enum: HADP
+  - name: HABA
+    description: Hardware Assist B-Disconnect to A-connect.
+    bit_offset: 7
+    bit_size: 1
+    enum: HABA
+  - name: ID
+    description: USB ID.
+    bit_offset: 8
+    bit_size: 1
+    enum: OTG_ID
+  - name: AVV
+    description: A VBUS Valid.
+    bit_offset: 9
+    bit_size: 1
+  - name: ASV
+    description: A Session Valid.
+    bit_offset: 10
+    bit_size: 1
+  - name: BSV
+    description: B Session Valid.
+    bit_offset: 11
+    bit_size: 1
+  - name: BSE
+    description: B Session End.
+    bit_offset: 12
+    bit_size: 1
+  - name: TOG_1MS
+    description: 1 Millisecond Timer Toggle.
+    bit_offset: 13
+    bit_size: 1
+  - name: DPS
+    description: Data Bus Pulsing Status.
+    bit_offset: 14
+    bit_size: 1
+  - name: IDIS
+    description: USB ID Interrupt Status.
+    bit_offset: 16
+    bit_size: 1
+  - name: AVVIS
+    description: A VBUS Valid Interrupt Status.
+    bit_offset: 17
+    bit_size: 1
+  - name: ASVIS
+    description: A Session Valid Interrupt Status.
+    bit_offset: 18
+    bit_size: 1
+  - name: BSVIS
+    description: B Session Valid Interrupt Status.
+    bit_offset: 19
+    bit_size: 1
+  - name: BSEIS
+    description: B Session End Interrupt Status.
+    bit_offset: 20
+    bit_size: 1
+  - name: STATUS_1MS
+    description: 1 Millisecond Timer Interrupt Status.
+    bit_offset: 21
+    bit_size: 1
+  - name: DPIS
+    description: Data Pulse Interrupt Status.
+    bit_offset: 22
+    bit_size: 1
+  - name: IDIE
+    description: USB ID Interrupt Enable.
+    bit_offset: 24
+    bit_size: 1
+  - name: AVVIE
+    description: A VBUS Valid Interrupt Enable.
+    bit_offset: 25
+    bit_size: 1
+  - name: ASVIE
+    description: A Session Valid Interrupt Enable.
+    bit_offset: 26
+    bit_size: 1
+  - name: BSVIE
+    description: B Session Valid Interrupt Enable.
+    bit_offset: 27
+    bit_size: 1
+  - name: BSEIE
+    description: B Session End Interrupt Enable.
+    bit_offset: 28
+    bit_size: 1
+  - name: EN_1MS
+    description: 1 Millisecond Timer Interrupt Enable.
+    bit_offset: 29
+    bit_size: 1
+  - name: DPIE
+    description: Data Pulse Interrupt Enable.
+    bit_offset: 30
+    bit_size: 1
+fieldset/PERIODICLISTBASE:
+  description: Frame List Base Address.
+  fields:
+  - name: BASEADR
+    description: Base Address (Low).
+    bit_offset: 12
+    bit_size: 20
+fieldset/PORTSC1:
+  description: Port Status and Control.
+  fields:
+  - name: CCS
+    description: Current Connect Status.
+    bit_offset: 0
+    bit_size: 1
+    enum: CCS
+  - name: CSC
+    description: Connect Status Change Flag.
+    bit_offset: 1
+    bit_size: 1
+    enum: CSC
+  - name: PE
+    description: Port Enable and Disable.
+    bit_offset: 2
+    bit_size: 1
+    enum: PE
+  - name: PEC
+    description: Port Enable and Disable Change Flag.
+    bit_offset: 3
+    bit_size: 1
+    enum: PEC
+  - name: OCA
+    description: Overcurrent Active.
+    bit_offset: 4
+    bit_size: 1
+    enum: OCA
+  - name: OCC
+    description: Overcurrent Change Flag.
+    bit_offset: 5
+    bit_size: 1
+    enum: OCC
+  - name: FPR
+    description: Force Port Resume.
+    bit_offset: 6
+    bit_size: 1
+    enum: FPR
+  - name: SUSP
+    description: Suspend.
+    bit_offset: 7
+    bit_size: 1
+    enum: SUSP
+  - name: PR
+    description: Port Reset.
+    bit_offset: 8
+    bit_size: 1
+    enum: PR
+  - name: HSP
+    description: High-Speed Port.
+    bit_offset: 9
+    bit_size: 1
+    enum: HSP
+  - name: LS
+    description: Line Status.
+    bit_offset: 10
+    bit_size: 2
+    enum: LS
+  - name: PP
+    description: Port Power (PP).
+    bit_offset: 12
+    bit_size: 1
+    enum: PP
+  - name: PO
+    description: Port Owner.
+    bit_offset: 13
+    bit_size: 1
+  - name: PIC
+    description: Port Indicator Control.
+    bit_offset: 14
+    bit_size: 2
+    enum: PIC
+  - name: PTC
+    description: Port Test Control.
+    bit_offset: 16
+    bit_size: 4
+    enum: PTC
+  - name: WKCN
+    description: Wake on Connect Enable (WKCNNT_E).
+    bit_offset: 20
+    bit_size: 1
+    enum: WKCN
+  - name: WKDC
+    description: Wake on Disconnect Enable (WKDSCNNT_E).
+    bit_offset: 21
+    bit_size: 1
+    enum: WKDC
+  - name: WKOC
+    description: Wake on Overcurrent Enable (WKOC).
+    bit_offset: 22
+    bit_size: 1
+  - name: PHCD
+    description: PHY Low-Power Suspend - Clock Disable (PLPSCD).
+    bit_offset: 23
+    bit_size: 1
+    enum: PHCD
+  - name: PFSC
+    description: Port Force Full Speed Connect.
+    bit_offset: 24
+    bit_size: 1
+    enum: PFSC
+  - name: PTS_2
+    description: Parallel Transceiver Select 2.
+    bit_offset: 25
+    bit_size: 1
+  - name: PSPD
+    description: Port Speed.
+    bit_offset: 26
+    bit_size: 2
+    enum: PSPD
+  - name: PTW
+    description: Parallel Transceiver Width.
+    bit_offset: 28
+    bit_size: 1
+    enum: PTW
+  - name: STS
+    description: Serial Transceiver Select.
+    bit_offset: 29
+    bit_size: 1
+    enum: STS
+  - name: PTS_1
+    description: Parallel Transceiver Select 1.
+    bit_offset: 30
+    bit_size: 2
+fieldset/SBUSCFG:
+  description: System Bus Configuration.
+  fields:
+  - name: AHBBRST
+    description: AHB Manager Interface Burst Configuration.
+    bit_offset: 0
+    bit_size: 3
+    enum: AHBBRST
+fieldset/TXFILLTUNING:
+  description: TX FIFO Fill Tuning.
+  fields:
+  - name: TXSCHOH
+    description: Scheduler Overhead.
+    bit_offset: 0
+    bit_size: 7
+  - name: TXSCHHEALTH
+    description: Scheduler Health Counter.
+    bit_offset: 8
+    bit_size: 5
+  - name: TXFIFOTHRES
+    description: FIFO Burst Threshold.
+    bit_offset: 16
+    bit_size: 6
+fieldset/USBCMD:
+  description: USB Command.
+  fields:
+  - name: RS
+    description: Run/Stop.
+    bit_offset: 0
+    bit_size: 1
+    enum: RS
+  - name: RST
+    description: Controller Reset.
+    bit_offset: 1
+    bit_size: 1
+  - name: FS_1
+    description: Frame List Size 1.
+    bit_offset: 2
+    bit_size: 2
+  - name: PSE
+    description: Periodic Schedule Enable.
+    bit_offset: 4
+    bit_size: 1
+    enum: PSE
+  - name: ASE
+    description: Asynchronous Schedule Enable.
+    bit_offset: 5
+    bit_size: 1
+    enum: ASE
+  - name: IAA
+    description: Interrupt on Async Advance Doorbell.
+    bit_offset: 6
+    bit_size: 1
+  - name: ASP
+    description: Asynchronous Schedule Park Mode Count.
+    bit_offset: 8
+    bit_size: 2
+  - name: ASPE
+    description: Asynchronous Schedule Park Mode Enable.
+    bit_offset: 11
+    bit_size: 1
+    enum: ASPE
+  - name: SUTW
+    description: Setup Trip Wire (Device mode only).
+    bit_offset: 13
+    bit_size: 1
+  - name: ATDTW
+    description: Add dTD Trip Wire (Device mode only).
+    bit_offset: 14
+    bit_size: 1
+  - name: FS_2
+    description: Frame List Size 2 (Host mode only).
+    bit_offset: 15
+    bit_size: 1
+  - name: ITC
+    description: Interrupt Threshold Control.
+    bit_offset: 16
+    bit_size: 8
+    enum: ITC
+fieldset/USBINTR:
+  description: Interrupt Enable.
+  fields:
+  - name: UE
+    description: USB Interrupt Enable.
+    bit_offset: 0
+    bit_size: 1
+    enum: UE
+  - name: UEE
+    description: USB Error Interrupt Enable.
+    bit_offset: 1
+    bit_size: 1
+    enum: UEE
+  - name: PCE
+    description: Port Change Detect Interrupt Enable.
+    bit_offset: 2
+    bit_size: 1
+    enum: PCE
+  - name: FRE
+    description: Frame List Rollover Interrupt Enable.
+    bit_offset: 3
+    bit_size: 1
+    enum: FRE
+  - name: SEE
+    description: System Error Interrupt Enable.
+    bit_offset: 4
+    bit_size: 1
+    enum: SEE
+  - name: AAE
+    description: Asynchronous Advance Interrupt Enable.
+    bit_offset: 5
+    bit_size: 1
+    enum: AAE
+  - name: URE
+    description: USB Reset Interrupt Enable.
+    bit_offset: 6
+    bit_size: 1
+    enum: URE
+  - name: SRE
+    description: SOF Received Interrupt Enable.
+    bit_offset: 7
+    bit_size: 1
+    enum: SRE
+  - name: SLE
+    description: Sleep Interrupt Enable.
+    bit_offset: 8
+    bit_size: 1
+    enum: SLE
+  - name: NAKE
+    description: NAK Interrupt Enable.
+    bit_offset: 16
+    bit_size: 1
+    enum: NAKE
+  - name: UAIE
+    description: USB Host Asynchronous Interrupt Enable.
+    bit_offset: 18
+    bit_size: 1
+    enum: UAIE
+  - name: UPIE
+    description: USB Host Periodic Interrupt Enable.
+    bit_offset: 19
+    bit_size: 1
+    enum: UPIE
+  - name: TIE0
+    description: General Purpose Timer 0 Interrupt Enable.
+    bit_offset: 24
+    bit_size: 1
+    enum: TIE0
+  - name: TIE1
+    description: General Purpose Timer 1 Interrupt Enable.
+    bit_offset: 25
+    bit_size: 1
+    enum: TIE1
+  - name: LPM_L1_EXITIE
+    description: L1 Exit Interrupt Enable.
+    bit_offset: 28
+    bit_size: 1
+    enum: LPM_L1_EXITIE
+  - name: LPM_L1_ENTRYIE
+    description: L1 Entry Interrupt Enable.
+    bit_offset: 29
+    bit_size: 1
+    enum: LPM_L1_ENTRYIE
+  - name: LPM_DEV_RCVDIE
+    description: Device Received Extension Token Interrupt Enable.
+    bit_offset: 30
+    bit_size: 1
+    enum: LPM_DEV_RCVDIE
+  - name: LPM_HST_COMPIE
+    description: Host Completed LPM Transaction Interrupt Enable.
+    bit_offset: 31
+    bit_size: 1
+    enum: LPM_HST_COMPIE
+fieldset/USBMODE:
+  description: USB Device Mode.
+  fields:
+  - name: CM
+    description: Controller Mode.
+    bit_offset: 0
+    bit_size: 2
+    enum: CM
+  - name: ES
+    description: Endian Select.
+    bit_offset: 2
+    bit_size: 1
+    enum: ES
+  - name: SLOM
+    description: Setup Lockout Mode.
+    bit_offset: 3
+    bit_size: 1
+    enum: SLOM
+  - name: SDIS
+    description: Stream Disable Mode.
+    bit_offset: 4
+    bit_size: 1
+    enum: SDIS
+fieldset/USBSTS:
+  description: USB Status.
+  fields:
+  - name: UI
+    description: USB Interrupt (USBINT) Flag.
+    bit_offset: 0
+    bit_size: 1
+    enum: UI
+  - name: UEI
+    description: USB Error Interrupt (USBERRINT) Flag.
+    bit_offset: 1
+    bit_size: 1
+    enum: UEI
+  - name: PCI
+    description: Port Change Detect Flag.
+    bit_offset: 2
+    bit_size: 1
+    enum: PCI
+  - name: FRI
+    description: Frame List Rollover Flag.
+    bit_offset: 3
+    bit_size: 1
+    enum: FRI
+  - name: SEI
+    description: System Error Flag.
+    bit_offset: 4
+    bit_size: 1
+    enum: SEI
+  - name: AAI
+    description: Interrupt on Asynchronous Advance Flag.
+    bit_offset: 5
+    bit_size: 1
+    enum: AAI
+  - name: URI
+    description: USB Reset Received.
+    bit_offset: 6
+    bit_size: 1
+    enum: URI
+  - name: SRI
+    description: SOF Received Flag.
+    bit_offset: 7
+    bit_size: 1
+    enum: SRI
+  - name: SLI
+    description: Device Controller Suspend Flag.
+    bit_offset: 8
+    bit_size: 1
+    enum: SLI
+  - name: ULPII
+    description: ULPI Interrupt Flag.
+    bit_offset: 10
+    bit_size: 1
+    enum: ULPII
+  - name: HCH
+    description: HC Halted.
+    bit_offset: 12
+    bit_size: 1
+  - name: RCL
+    description: Reclamation.
+    bit_offset: 13
+    bit_size: 1
+    enum: RCL
+  - name: PS
+    description: Periodic Schedule Status.
+    bit_offset: 14
+    bit_size: 1
+    enum: PS
+  - name: AS
+    description: Asynchronous Schedule Status.
+    bit_offset: 15
+    bit_size: 1
+    enum: AS
+  - name: NAKI
+    description: NAK Interrupt.
+    bit_offset: 16
+    bit_size: 1
+  - name: UAI
+    description: USB Host Asynchronous Interrupt Flag.
+    bit_offset: 18
+    bit_size: 1
+    enum: UAI
+  - name: UPI
+    description: USB Host Periodic Interrupt Flag.
+    bit_offset: 19
+    bit_size: 1
+    enum: UPI
+  - name: TI0
+    description: General Purpose Timer Interrupt 0 (GPTINT0) Flag.
+    bit_offset: 24
+    bit_size: 1
+    enum: TI0
+  - name: TI1
+    description: General Purpose Timer Interrupt 1 (GPTINT1) Flag.
+    bit_offset: 25
+    bit_size: 1
+    enum: TI1
+  - name: LPM_L1_EXITI
+    description: L1 Exit Interrupt Flag.
+    bit_offset: 28
+    bit_size: 1
+    enum: LPM_L1_EXITI
+  - name: LPM_L1_ENTRYI
+    description: L1 Entry Interrupt Flag.
+    bit_offset: 29
+    bit_size: 1
+    enum: LPM_L1_ENTRYI
+  - name: LPM_DEV_RCVDI
+    description: Device Received Extension Token Interrupt Flag.
+    bit_offset: 30
+    bit_size: 1
+    enum: LPM_DEV_RCVDI
+  - name: LPM_HST_COMPI
+    description: Host Completes the LPM Transaction Interrupt Flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: LPM_HST_COMPI
+enum/AAE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/AAI:
+  bit_size: 1
+  variants:
+  - name: INT_NO
+    description: Interrupt did not occur.
+    value: 0
+  - name: INT_YES
+    description: Interrupt occurred.
+    value: 1
+enum/AHBBRST:
+  bit_size: 3
+  variants:
+  - name: INCR_BURST
+    description: Incremental burst of unspecified length only.
+    value: 0
+  - name: INCR4_BURST
+    description: INCR4 burst, then single transfer.
+    value: 1
+  - name: INCR8_BURST
+    description: INCR8 burst, INCR4 burst, then single transfer.
+    value: 2
+  - name: INCR16_BURST
+    description: INCR16 burst, INCR8 burst, INCR4 burst, then single transfer.
+    value: 3
+  - name: INCR4_UNSPEC
+    description: INCR4 burst, then incremental burst of unspecified length.
+    value: 5
+  - name: INCR8_4_UNSPEC
+    description: INCR8 burst, INCR4 burst, then incremental burst of unspecified length.
+    value: 6
+  - name: INCR16_8_4_UNSPEC
+    description: INCR16 burst, INCR8 burst, INCR4 burst, then incremental burst of unspecified length.
+    value: 7
+enum/AS:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disabled.
+    value: 0
+  - name: ENABLE
+    description: Enabled.
+    value: 1
+enum/ASE:
+  bit_size: 1
+  variants:
+  - name: DONT_PROCESS_ASYNC
+    description: Do not process the asynchronous schedule.
+    value: 0
+  - name: ACCESS_ASYNC
+    description: Access the asynchronous schedule.
+    value: 1
+enum/ASPE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/CCS:
+  bit_size: 1
+  variants:
+  - name: DEVICE_UNAVAILABLE
+    description: No device present or attached.
+    value: 0
+  - name: DEVICE_AVAILABLE
+    description: Device present and attached.
+    value: 1
+enum/CF:
+  bit_size: 1
+  variants:
+  - name: PORT_ROUTING_CLASSIC_HOST
+    description: Port routing to classic host controller.
+    value: 0
+  - name: PORT_ROUTING_HOST
+    description: Port routing to this host controller.
+    value: 1
+enum/CM:
+  bit_size: 2
+  variants:
+  - name: IDL
+    description: Idle (default for host and device combination).
+    value: 0
+  - name: DEVICE_CONTR
+    description: Device controller (default for device-only controller).
+    value: 2
+  - name: HOST_CONTR
+    description: Host controller (default for host-only controller).
+    value: 3
+enum/CSC:
+  bit_size: 1
+  variants:
+  - name: NO_CHANGE
+    description: No change occurred.
+    value: 0
+  - name: CHANGE
+    description: Change occurred.
+    value: 1
+enum/DCCPARAMS_DC:
+  bit_size: 1
+  variants:
+  - name: NOT_DC
+    description: Not device capable.
+    value: 0
+  - name: DC
+    description: Device capable.
+    value: 1
+enum/DCCPARAMS_HC:
+  bit_size: 1
+  variants:
+  - name: NOT_HC
+    description: Not host capable.
+    value: 0
+  - name: HC
+    description: Host capable.
+    value: 1
+enum/DEN:
+  bit_size: 5
+  variants:
+  - name: NOT_DEN
+    description: Not device capable.
+    value: 0
+  - name: DEN
+    description: Device capable.
+    value: 1
+enum/ENDPTCTRL0_RXE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENDPTCTRL0_RXS:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Endpoint OK.
+    value: 0
+  - name: ENABLE
+    description: Endpoint stalled.
+    value: 1
+enum/ENDPTCTRL0_TXE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENDPTCTRL0_TXS:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Endpoint OK.
+    value: 0
+  - name: ENABLE
+    description: Endpoint stalled.
+    value: 1
+enum/ENDPTCTRL1_RXE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENDPTCTRL1_RXI:
+  bit_size: 1
+  variants:
+  - name: ENABLE
+    description: Allow.
+    value: 0
+  - name: INHIBIT
+    description: Inhibit.
+    value: 1
+enum/ENDPTCTRL1_RXR:
+  bit_size: 1
+  variants:
+  - name: NO_RESET
+    description: Does not reset.
+    value: 0
+  - name: RESET
+    description: Resets.
+    value: 1
+enum/ENDPTCTRL1_RXS:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Endpoint OK.
+    value: 0
+  - name: ENABLE
+    description: Endpoint stalled.
+    value: 1
+enum/ENDPTCTRL1_RXT:
+  bit_size: 2
+  variants:
+  - name: CTL
+    description: Control.
+    value: 0
+  - name: ISO
+    description: Isochronous.
+    value: 1
+  - name: BLK
+    description: Bulk.
+    value: 2
+  - name: IRQ
+    description: Interrupt.
+    value: 3
+enum/ENDPTCTRL1_TXE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENDPTCTRL1_TXI:
+  bit_size: 1
+  variants:
+  - name: ENABLE
+    description: Allow.
+    value: 0
+  - name: INHIBIT
+    description: Inhibit.
+    value: 1
+enum/ENDPTCTRL1_TXR:
+  bit_size: 1
+  variants:
+  - name: NO_RESET
+    description: Does not reset.
+    value: 0
+  - name: RESET
+    description: Resets.
+    value: 1
+enum/ENDPTCTRL1_TXS:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Endpoint OK.
+    value: 0
+  - name: ENABLE
+    description: Endpoint stalled.
+    value: 1
+enum/ENDPTCTRL1_TXT:
+  bit_size: 2
+  variants:
+  - name: CTL
+    description: Control.
+    value: 0
+  - name: ISO
+    description: Isochronous.
+    value: 1
+  - name: BLK
+    description: Bulk.
+    value: 2
+  - name: IRQ
+    description: Interrupt.
+    value: 3
+enum/ENDPTCTRL2_RXE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENDPTCTRL2_RXI:
+  bit_size: 1
+  variants:
+  - name: ENABLE
+    description: Allow.
+    value: 0
+  - name: INHIBIT
+    description: Inhibit.
+    value: 1
+enum/ENDPTCTRL2_RXR:
+  bit_size: 1
+  variants:
+  - name: NO_RESET
+    description: Does not reset.
+    value: 0
+  - name: RESET
+    description: Resets.
+    value: 1
+enum/ENDPTCTRL2_RXS:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Endpoint OK.
+    value: 0
+  - name: ENABLE
+    description: Endpoint stalled.
+    value: 1
+enum/ENDPTCTRL2_RXT:
+  bit_size: 2
+  variants:
+  - name: CTL
+    description: Control.
+    value: 0
+  - name: ISO
+    description: Isochronous.
+    value: 1
+  - name: BLK
+    description: Bulk.
+    value: 2
+  - name: IRQ
+    description: Interrupt.
+    value: 3
+enum/ENDPTCTRL2_TXE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENDPTCTRL2_TXI:
+  bit_size: 1
+  variants:
+  - name: ENABLE
+    description: Allow.
+    value: 0
+  - name: INHIBIT
+    description: Inhibit.
+    value: 1
+enum/ENDPTCTRL2_TXR:
+  bit_size: 1
+  variants:
+  - name: NO_RESET
+    description: Does not reset.
+    value: 0
+  - name: RESET
+    description: Resets.
+    value: 1
+enum/ENDPTCTRL2_TXS:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Endpoint OK.
+    value: 0
+  - name: ENABLE
+    description: Endpoint stalled.
+    value: 1
+enum/ENDPTCTRL2_TXT:
+  bit_size: 2
+  variants:
+  - name: CTL
+    description: Control.
+    value: 0
+  - name: ISO
+    description: Isochronous.
+    value: 1
+  - name: BLK
+    description: Bulk.
+    value: 2
+  - name: IRQ
+    description: Interrupt.
+    value: 3
+enum/ENDPTCTRL3_RXE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENDPTCTRL3_RXI:
+  bit_size: 1
+  variants:
+  - name: ENABLE
+    description: Allow.
+    value: 0
+  - name: INHIBIT
+    description: Inhibit.
+    value: 1
+enum/ENDPTCTRL3_RXR:
+  bit_size: 1
+  variants:
+  - name: NO_RESET
+    description: Does not reset.
+    value: 0
+  - name: RESET
+    description: Resets.
+    value: 1
+enum/ENDPTCTRL3_RXS:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Endpoint OK.
+    value: 0
+  - name: ENABLE
+    description: Endpoint stalled.
+    value: 1
+enum/ENDPTCTRL3_RXT:
+  bit_size: 2
+  variants:
+  - name: CTL
+    description: Control.
+    value: 0
+  - name: ISO
+    description: Isochronous.
+    value: 1
+  - name: BLK
+    description: Bulk.
+    value: 2
+  - name: IRQ
+    description: Interrupt.
+    value: 3
+enum/ENDPTCTRL3_TXE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENDPTCTRL3_TXI:
+  bit_size: 1
+  variants:
+  - name: ENABLE
+    description: Allow.
+    value: 0
+  - name: INHIBIT
+    description: Inhibit.
+    value: 1
+enum/ENDPTCTRL3_TXR:
+  bit_size: 1
+  variants:
+  - name: NO_RESET
+    description: Does not reset.
+    value: 0
+  - name: RESET
+    description: Resets.
+    value: 1
+enum/ENDPTCTRL3_TXS:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Endpoint OK.
+    value: 0
+  - name: ENABLE
+    description: Endpoint stalled.
+    value: 1
+enum/ENDPTCTRL3_TXT:
+  bit_size: 2
+  variants:
+  - name: CTL
+    description: Control.
+    value: 0
+  - name: ISO
+    description: Isochronous.
+    value: 1
+  - name: BLK
+    description: Bulk.
+    value: 2
+  - name: IRQ
+    description: Interrupt.
+    value: 3
+enum/ENDPTCTRL4_RXE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENDPTCTRL4_RXI:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENDPTCTRL4_RXR:
+  bit_size: 1
+  variants:
+  - name: NO_RESET
+    description: Does not reset.
+    value: 0
+  - name: RESET
+    description: Resets.
+    value: 1
+enum/ENDPTCTRL4_RXS:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Endpoint OK.
+    value: 0
+  - name: ENABLE
+    description: Endpoint stalled.
+    value: 1
+enum/ENDPTCTRL4_RXT:
+  bit_size: 2
+  variants:
+  - name: CTL
+    description: Control.
+    value: 0
+  - name: ISO
+    description: Isochronous.
+    value: 1
+  - name: BLK
+    description: Bulk.
+    value: 2
+  - name: IRQ
+    description: Interrupt.
+    value: 3
+enum/ENDPTCTRL4_TXE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENDPTCTRL4_TXI:
+  bit_size: 1
+  variants:
+  - name: ENABLE
+    description: Allow.
+    value: 0
+  - name: INHIBIT
+    description: Inhibit.
+    value: 1
+enum/ENDPTCTRL4_TXR:
+  bit_size: 1
+  variants:
+  - name: NO_RESET
+    description: Does not reset.
+    value: 0
+  - name: RESET
+    description: Resets.
+    value: 1
+enum/ENDPTCTRL4_TXS:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Endpoint OK.
+    value: 0
+  - name: ENABLE
+    description: Endpoint stalled.
+    value: 1
+enum/ENDPTCTRL4_TXT:
+  bit_size: 2
+  variants:
+  - name: CTL
+    description: Control.
+    value: 0
+  - name: ISO
+    description: Isochronous.
+    value: 1
+  - name: BLK
+    description: Bulk.
+    value: 2
+  - name: IRQ
+    description: Interrupt.
+    value: 3
+enum/ENDPTCTRL5_RXE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENDPTCTRL5_RXI:
+  bit_size: 1
+  variants:
+  - name: ENABLE
+    description: Allow.
+    value: 0
+  - name: INHIBIT
+    description: Inhibit.
+    value: 1
+enum/ENDPTCTRL5_RXR:
+  bit_size: 1
+  variants:
+  - name: NO_RESET
+    description: Does not reset.
+    value: 0
+  - name: RESET
+    description: Resets.
+    value: 1
+enum/ENDPTCTRL5_RXS:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Endpoint OK.
+    value: 0
+  - name: ENABLE
+    description: Endpoint stalled.
+    value: 1
+enum/ENDPTCTRL5_RXT:
+  bit_size: 2
+  variants:
+  - name: CTL
+    description: Control.
+    value: 0
+  - name: ISO
+    description: Isochronous.
+    value: 1
+  - name: BLK
+    description: Bulk.
+    value: 2
+  - name: IRQ
+    description: Interrupt.
+    value: 3
+enum/ENDPTCTRL5_TXE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENDPTCTRL5_TXI:
+  bit_size: 1
+  variants:
+  - name: ENABLE
+    description: Allow.
+    value: 0
+  - name: INHIBIT
+    description: Inhibit.
+    value: 1
+enum/ENDPTCTRL5_TXR:
+  bit_size: 1
+  variants:
+  - name: NO_RESET
+    description: Does not reset.
+    value: 0
+  - name: RESET
+    description: Resets.
+    value: 1
+enum/ENDPTCTRL5_TXS:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Endpoint OK.
+    value: 0
+  - name: ENABLE
+    description: Endpoint stalled.
+    value: 1
+enum/ENDPTCTRL5_TXT:
+  bit_size: 2
+  variants:
+  - name: CTL
+    description: Control.
+    value: 0
+  - name: ISO
+    description: Isochronous.
+    value: 1
+  - name: BLK
+    description: Bulk.
+    value: 2
+  - name: IRQ
+    description: Interrupt.
+    value: 3
+enum/ENDPTCTRL6_RXE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENDPTCTRL6_RXI:
+  bit_size: 1
+  variants:
+  - name: ENABLE
+    description: Allow.
+    value: 0
+  - name: INHIBIT
+    description: Inhibit.
+    value: 1
+enum/ENDPTCTRL6_RXR:
+  bit_size: 1
+  variants:
+  - name: NO_RESET
+    description: Does not reset.
+    value: 0
+  - name: RESET
+    description: Resets.
+    value: 1
+enum/ENDPTCTRL6_RXS:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Endpoint OK.
+    value: 0
+  - name: ENABLE
+    description: Endpoint stalled.
+    value: 1
+enum/ENDPTCTRL6_RXT:
+  bit_size: 2
+  variants:
+  - name: CTL
+    description: Control.
+    value: 0
+  - name: ISO
+    description: Isochronous.
+    value: 1
+  - name: BLK
+    description: Bulk.
+    value: 2
+  - name: IRQ
+    description: Interrupt.
+    value: 3
+enum/ENDPTCTRL6_TXE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENDPTCTRL6_TXI:
+  bit_size: 1
+  variants:
+  - name: ENABLE
+    description: Allow.
+    value: 0
+  - name: INHIBIT
+    description: Inhibit.
+    value: 1
+enum/ENDPTCTRL6_TXR:
+  bit_size: 1
+  variants:
+  - name: NO_RESET
+    description: Does not reset.
+    value: 0
+  - name: RESET
+    description: Resets.
+    value: 1
+enum/ENDPTCTRL6_TXS:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Endpoint OK.
+    value: 0
+  - name: ENABLE
+    description: Endpoint stalled.
+    value: 1
+enum/ENDPTCTRL6_TXT:
+  bit_size: 2
+  variants:
+  - name: CTL
+    description: Control.
+    value: 0
+  - name: ISO
+    description: Isochronous.
+    value: 1
+  - name: BLK
+    description: Bulk.
+    value: 2
+  - name: IRQ
+    description: Interrupt.
+    value: 3
+enum/ENDPTCTRL7_RXE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENDPTCTRL7_RXI:
+  bit_size: 1
+  variants:
+  - name: ENABLE
+    description: Allow.
+    value: 0
+  - name: INHIBIT
+    description: Inhibit.
+    value: 1
+enum/ENDPTCTRL7_RXR:
+  bit_size: 1
+  variants:
+  - name: NO_RESET
+    description: Does not reset.
+    value: 0
+  - name: RESET
+    description: Resets.
+    value: 1
+enum/ENDPTCTRL7_RXS:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Endpoint OK.
+    value: 0
+  - name: ENABLE
+    description: Endpoint stalled.
+    value: 1
+enum/ENDPTCTRL7_RXT:
+  bit_size: 2
+  variants:
+  - name: CTL
+    description: Control.
+    value: 0
+  - name: ISO
+    description: Isochronous.
+    value: 1
+  - name: BLK
+    description: Bulk.
+    value: 2
+  - name: IRQ
+    description: Interrupt.
+    value: 3
+enum/ENDPTCTRL7_TXE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/ENDPTCTRL7_TXI:
+  bit_size: 1
+  variants:
+  - name: ENABLE
+    description: Allow.
+    value: 0
+  - name: INHIBIT
+    description: Inhibit.
+    value: 1
+enum/ENDPTCTRL7_TXR:
+  bit_size: 1
+  variants:
+  - name: NO_RESET
+    description: Does not reset.
+    value: 0
+  - name: RESET
+    description: Resets.
+    value: 1
+enum/ENDPTCTRL7_TXS:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Endpoint OK.
+    value: 0
+  - name: ENABLE
+    description: Endpoint stalled.
+    value: 1
+enum/ENDPTCTRL7_TXT:
+  bit_size: 2
+  variants:
+  - name: CTL
+    description: Control.
+    value: 0
+  - name: ISO
+    description: Isochronous.
+    value: 1
+  - name: BLK
+    description: Bulk.
+    value: 2
+  - name: IRQ
+    description: Interrupt.
+    value: 3
+enum/ENDPTSETUPSTAT_FLAG:
+  bit_size: 16
+  variants:
+  - name: NOTREC
+    description: Not received.
+    value: 0
+  - name: RECVD
+    description: Received.
+    value: 1
+enum/EPRN:
+  bit_size: 8
+  variants:
+  - name: NONACK
+    description: No NACK.
+    value: 0
+  - name: NACK
+    description: NACK.
+    value: 1
+enum/EPTN:
+  bit_size: 8
+  variants:
+  - name: NONACK
+    description: No NACK.
+    value: 0
+  - name: NACK
+    description: NACK.
+    value: 1
+enum/ERCE:
+  bit_size: 8
+  variants:
+  - name: TRANSNOTCOMP
+    description: Transmit incomplete.
+    value: 0
+  - name: TRANSCOMP
+    description: Transmit complete.
+    value: 1
+enum/ES:
+  bit_size: 1
+  variants:
+  - name: LITTLE_ENDIAN
+    description: Little endian (default).
+    value: 0
+  - name: BIG_ENDIAN
+    description: Big endian.
+    value: 1
+enum/ETCE:
+  bit_size: 8
+  variants:
+  - name: TRANSNOTCOMP
+    description: Transmit incomplete.
+    value: 0
+  - name: TRANSCOMP
+    description: Transmit complete.
+    value: 1
+enum/FPR:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: No resume (K-state) detected or driven on port.
+    value: 0
+  - name: ENABLE
+    description: Resume detected or driven on port.
+    value: 1
+enum/FRE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/FRI:
+  bit_size: 1
+  variants:
+  - name: ROLL_NO
+    description: Frame list index did not roll over.
+    value: 0
+  - name: ROLL_YES
+    description: Frame list index rolled over.
+    value: 1
+enum/FRINDEX_VALUE:
+  bit_size: 14
+  variants:
+  - name: FRINDEX_1024
+    description: (1024) 12.
+    value: 0
+  - name: FRINDEX_512
+    description: (512) 11.
+    value: 1
+  - name: FRINDEX_256
+    description: (256) 10.
+    value: 2
+  - name: FRINDEX_128
+    description: (128) 9.
+    value: 3
+  - name: FRINDEX_64
+    description: (64) 8.
+    value: 4
+  - name: FRINDEX_32
+    description: (32) 7.
+    value: 5
+  - name: FRINDEX_16
+    description: (16) 6.
+    value: 6
+  - name: FRINDEX_8
+    description: (8) 5.
+    value: 7
+enum/GPTIMER0CTRL_GPTMODE:
+  bit_size: 1
+  variants:
+  - name: ONE_SHOT
+    description: One Shot mode.
+    value: 0
+  - name: REPEAT
+    description: Repeat mode.
+    value: 1
+enum/GPTIMER0CTRL_GPTRST:
+  bit_size: 1
+  variants:
+  - name: NO_ACTION
+    description: No action.
+    value: 0
+  - name: LOAD_CNTR
+    description: Load counter value.
+    value: 1
+enum/GPTIMER0CTRL_GPTRUN:
+  bit_size: 1
+  variants:
+  - name: STOP_CNTR
+    description: Stopped counting.
+    value: 0
+  - name: RUN
+    description: Running.
+    value: 1
+enum/GPTIMER1CTRL_GPTMODE:
+  bit_size: 1
+  variants:
+  - name: ONE_SHOT
+    description: One Shot mode.
+    value: 0
+  - name: REPEAT
+    description: Repeat mode.
+    value: 1
+enum/GPTIMER1CTRL_GPTRST:
+  bit_size: 1
+  variants:
+  - name: NO_ACTION
+    description: No action.
+    value: 0
+  - name: LOAD_CNTR
+    description: Load counter value.
+    value: 1
+enum/GPTIMER1CTRL_GPTRUN:
+  bit_size: 1
+  variants:
+  - name: STOP_CNTR
+    description: Stopped counting.
+    value: 0
+  - name: RUN
+    description: Running.
+    value: 1
+enum/HAAR:
+  bit_size: 1
+  variants:
+  - name: HAAR_0
+    description: Disable.
+    value: 0
+  - name: HAAR_1
+    description: Enable.
+    value: 1
+enum/HABA:
+  bit_size: 1
+  variants:
+  - name: HABA_0
+    description: Disable.
+    value: 0
+  - name: HABA_1
+    description: Enable.
+    value: 1
+enum/HADP:
+  bit_size: 1
+  variants:
+  - name: HADP_0
+    description: Disable.
+    value: 0
+  - name: HADP_1
+    description: Enable.
+    value: 1
+enum/HSP:
+  bit_size: 1
+  variants:
+  - name: NOTHS
+    description: Not in HS mode.
+    value: 0
+  - name: HS
+    description: In HS mode.
+    value: 1
+enum/HWDEVICE_DC:
+  bit_size: 1
+  variants:
+  - name: DEVICE_OP_DIS
+    description: Not supported.
+    value: 0
+  - name: DEVICE_OP_EN
+    description: Supported.
+    value: 1
+enum/HWHOST_HC:
+  bit_size: 1
+  variants:
+  - name: HOST_OP_DIS
+    description: Not supported.
+    value: 0
+  - name: HOST_OP_EN
+    description: Supported.
+    value: 1
+enum/OTG_ID:
+  bit_size: 1
+  variants:
+  - name: DEV_A
+    description: A device.
+    value: 0
+  - name: DEV_B
+    description: B device.
+    value: 1
+enum/ITC:
+  bit_size: 8
+  variants:
+  - name: IMMEDIATE
+    description: Immediate (no threshold).
+    value: 0
+  - name: MICROFRAME_1
+    description: 1 microframe.
+    value: 1
+  - name: MICROFRAME_2
+    description: 2 microframes.
+    value: 2
+  - name: MICROFRAME_4
+    description: 4 microframes.
+    value: 4
+  - name: MICROFRAME_8
+    description: 8 microframes.
+    value: 8
+  - name: MICROFRAME_16
+    description: 16 microframes.
+    value: 16
+  - name: MICROFRAME_32
+    description: 32 microframes.
+    value: 32
+  - name: MICROFRAME_64
+    description: 64 microframes.
+    value: 64
+enum/LPM:
+  bit_size: 1
+  variants:
+  - name: LPM_NO
+    description: Not supported.
+    value: 0
+  - name: LPM_EN
+    description: Supported.
+    value: 1
+enum/LPM_DEV_RCVDI:
+  bit_size: 1
+  variants:
+  - name: INT_NO
+    description: Interrupt did not occur.
+    value: 0
+  - name: INT_YES
+    description: Interrupt occurred.
+    value: 1
+enum/LPM_DEV_RCVDIE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/LPM_HST_COMPI:
+  bit_size: 1
+  variants:
+  - name: INT_NO
+    description: Interrupt did not occur.
+    value: 0
+  - name: INT_YES
+    description: Interrupt occurred.
+    value: 1
+enum/LPM_HST_COMPIE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/LPM_L1_ENTRYI:
+  bit_size: 1
+  variants:
+  - name: INT_NO
+    description: Interrupt did not occur.
+    value: 0
+  - name: INT_YES
+    description: Interrupt occurred.
+    value: 1
+enum/LPM_L1_ENTRYIE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/LPM_L1_EXITI:
+  bit_size: 1
+  variants:
+  - name: INT_NO
+    description: Interrupt did not occur.
+    value: 0
+  - name: INT_YES
+    description: Interrupt occurred.
+    value: 1
+enum/LPM_L1_EXITIE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/LS:
+  bit_size: 2
+  variants:
+  - name: SE0
+    description: SE0.
+    value: 0
+  - name: K_STATE
+    description: K-state.
+    value: 1
+  - name: J_STATE
+    description: J-state.
+    value: 2
+  - name: UNDEFINED
+    description: Undefined.
+    value: 3
+enum/NAKE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/N_CC:
+  bit_size: 4
+  variants:
+  - name: NO_COMP_CONTROLLER
+    description: No internal companion controller exists.
+    value: 0
+  - name: COMP_CONTROLLER
+    description: Internal companion controllers exist.
+    value: 1
+enum/OCA:
+  bit_size: 1
+  variants:
+  - name: NO_OVERCURRENT
+    description: No overcurrent condition exists.
+    value: 0
+  - name: OVERCURRENT
+    description: Overcurrent condition exists.
+    value: 1
+enum/OCC:
+  bit_size: 1
+  variants:
+  - name: NO_CHANGE
+    description: No change occurred.
+    value: 0
+  - name: CHANGE
+    description: Change occurred.
+    value: 1
+enum/PCE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/PCI:
+  bit_size: 1
+  variants:
+  - name: DETECT_NO
+    description: Port change not detected.
+    value: 0
+  - name: DETECT_YES
+    description: Port change detected.
+    value: 1
+enum/PE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/PEC:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: No change occurred.
+    value: 0
+  - name: ENABLE
+    description: Change occurred.
+    value: 1
+enum/PFSC:
+  bit_size: 1
+  variants:
+  - name: NORMAL
+    description: Normal operation.
+    value: 0
+  - name: FULL_SPEED
+    description: Forced to full speed.
+    value: 1
+enum/PHCD:
+  bit_size: 1
+  variants:
+  - name: PHY_CLK_EN
+    description: Enable.
+    value: 0
+  - name: PHY_CLK_DIS
+    description: Disable.
+    value: 1
+enum/PHYM:
+  bit_size: 4
+  variants:
+  - name: UTMI
+    description: UTMI/UMTI+.
+    value: 0
+  - name: ULPI_DDR
+    description: ULPI DDR.
+    value: 1
+  - name: ULPI
+    description: ULPI.
+    value: 2
+  - name: SERIAL
+    description: Serial only.
+    value: 3
+  - name: SW_RST_UTMI
+    description: 'Software programmable: reset to UTMI/UTMI+.'
+    value: 4
+  - name: SW_RST_ULPI_DDR
+    description: 'Software programmable: reset to ULPI DDR.'
+    value: 5
+  - name: SW_RST_ULPI
+    description: 'Software programmable: reset to ULPI.'
+    value: 6
+  - name: SW_RST_SERIAL
+    description: 'Software programmable: reset to Serial.'
+    value: 7
+  - name: ICUSB
+    description: IC-USB.
+    value: 8
+  - name: SW_RST_ICUSB
+    description: 'Software programmable: reset to IC-USB.'
+    value: 9
+  - name: HSIC
+    description: HSIC.
+    value: 10
+  - name: SW_RST_HSIC
+    description: 'Software programmable: reset to HSIC.'
+    value: 11
+enum/PHYW:
+  bit_size: 2
+  variants:
+  - name: DATA_BUS_8
+    description: 8-bit wide data bus (software nonprogrammable).
+    value: 0
+  - name: DATA_BUS_16
+    description: 16-bit wide data bus (software nonprogrammable).
+    value: 1
+  - name: SW_RST_8
+    description: Reset to 8-bit wide data bus (software programmable).
+    value: 2
+  - name: SW_RST_16
+    description: Reset to 16-bit wide data bus (software programmable).
+    value: 3
+enum/PIC:
+  bit_size: 2
+  variants:
+  - name: PORT_INDICATOR_OFF
+    description: Port indicators are off.
+    value: 0
+  - name: PORT_IND_AMBER
+    description: Amber.
+    value: 1
+  - name: PORT_IND_GREEN
+    description: Green.
+    value: 2
+  - name: UNDEFINED
+    description: Undefined.
+    value: 3
+enum/PP:
+  bit_size: 1
+  variants:
+  - name: OFF
+    description: Off.
+    value: 0
+  - name: ON
+    description: On.
+    value: 1
+enum/PPC:
+  bit_size: 1
+  variants:
+  - name: NO_SWITCHES
+    description: No port power switches.
+    value: 0
+  - name: PORT_SWITCHES
+    description: Port power switches exist.
+    value: 1
+enum/PR:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Port not in reset.
+    value: 0
+  - name: ENABLE
+    description: Port in reset.
+    value: 1
+enum/PS:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disabled.
+    value: 0
+  - name: ENABLE
+    description: Enabled.
+    value: 1
+enum/PSE:
+  bit_size: 1
+  variants:
+  - name: DONT_PROCESS_PT
+    description: Do not process the periodic schedule.
+    value: 0
+  - name: PROCESS_PT_PERIODICLISTBASE
+    description: Process the periodic schedule.
+    value: 1
+enum/PSPD:
+  bit_size: 2
+  variants:
+  - name: FS
+    description: FS.
+    value: 0
+  - name: LS
+    description: LS.
+    value: 1
+  - name: HS
+    description: HS.
+    value: 2
+  - name: UNDEFINED
+    description: Undefined.
+    value: 3
+enum/PTC:
+  bit_size: 4
+  variants:
+  - name: TST_MODE_DIS
+    description: TEST_MODE_DISABLE.
+    value: 0
+  - name: J_STATE
+    description: J_STATE.
+    value: 1
+  - name: K_STATE
+    description: K_STATE.
+    value: 2
+  - name: SE0
+    description: SE0 (host) or NAK (device).
+    value: 3
+  - name: PCKT
+    description: Packet.
+    value: 4
+  - name: HS
+    description: FORCE_ENABLE_HS.
+    value: 5
+  - name: FS
+    description: FORCE_ENABLE_FS.
+    value: 6
+  - name: LS
+    description: FORCE_ENABLE_LS.
+    value: 7
+enum/PTW:
+  bit_size: 1
+  variants:
+  - name: UTMI_8
+    description: 8-bit UTMI interface (60 MHz).
+    value: 0
+  - name: UTMI_16
+    description: 16-bit UTMI interface (30 MHz).
+    value: 1
+enum/RCL:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Does not detect.
+    value: 0
+  - name: ENABLE
+    description: Detects.
+    value: 1
+enum/RS:
+  bit_size: 1
+  variants:
+  - name: STOP
+    description: Stopped executing.
+    value: 0
+  - name: RUN
+    description: Running.
+    value: 1
+enum/SDIS:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/SEE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/SEI:
+  bit_size: 1
+  variants:
+  - name: INT_NO
+    description: Error response did not occur.
+    value: 0
+  - name: INT_YES
+    description: Error response occurred.
+    value: 1
+enum/SLE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/SLI:
+  bit_size: 1
+  variants:
+  - name: SUS_NO
+    description: Did not enter Suspended state.
+    value: 0
+  - name: SUS_YES
+    description: Entered Suspended state.
+    value: 1
+enum/SLOM:
+  bit_size: 1
+  variants:
+  - name: LOCKOUT_ON
+    description: On (default).
+    value: 0
+  - name: LOCKOUT_OFF
+    description: Off.
+    value: 1
+enum/SM:
+  bit_size: 2
+  variants:
+  - name: SERIAL_ENGINE_NO
+    description: No serial engine; always use parallel signaling.
+    value: 0
+  - name: SERIAL_ENGINE_EN
+    description: Serial engine present; always use serial signaling for FS and LS.
+    value: 1
+  - name: SW_RST_PARALLEL
+    description: Software programmable; reset to use parallel signaling for FS and LS.
+    value: 2
+  - name: SW_RST_SERIAL_ENG
+    description: Software programmable; reset to use serial signaling for FS and LS.
+    value: 3
+enum/SRE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/SRI:
+  bit_size: 1
+  variants:
+  - name: SOF_NO
+    description: SOF not received.
+    value: 0
+  - name: SOF_YES
+    description: SOF received.
+    value: 1
+enum/STS:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Parallel interface signals.
+    value: 0
+  - name: ENABLE
+    description: Serial interface engine.
+    value: 1
+enum/SUSP:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Port not in Suspended state.
+    value: 0
+  - name: ENABLE
+    description: Port in Suspended state.
+    value: 1
+enum/TI0:
+  bit_size: 1
+  variants:
+  - name: INT_NO
+    description: Interrupt did not occur.
+    value: 0
+  - name: INT_YES
+    description: Interrupt occurred.
+    value: 1
+enum/TI1:
+  bit_size: 1
+  variants:
+  - name: INT_NO
+    description: Interrupt did not occur.
+    value: 0
+  - name: INT_YES
+    description: Interrupt occurred.
+    value: 1
+enum/TIE0:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/TIE1:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/UAI:
+  bit_size: 1
+  variants:
+  - name: INT_NO
+    description: Interrupt did not occur.
+    value: 0
+  - name: INT_YES
+    description: Interrupt occurred.
+    value: 1
+enum/UAIE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/UE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/UEE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/UEI:
+  bit_size: 1
+  variants:
+  - name: INT_NO
+    description: Interrupt did not occur.
+    value: 0
+  - name: INT_YES
+    description: Interrupt occurred.
+    value: 1
+enum/UI:
+  bit_size: 1
+  variants:
+  - name: INT_NO
+    description: Interrupt did not occur.
+    value: 0
+  - name: INT_YES
+    description: Interrupt occurred.
+    value: 1
+enum/ULPII:
+  bit_size: 1
+  variants:
+  - name: EVENT_NO
+    description: Event completion did not occur.
+    value: 0
+  - name: EVENT_YES
+    description: Event completion occurred.
+    value: 1
+enum/UPI:
+  bit_size: 1
+  variants:
+  - name: INT_NO
+    description: Interrupt did not occur.
+    value: 0
+  - name: INT_YES
+    description: Interrupt occurred.
+    value: 1
+enum/UPIE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/URE:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/URI:
+  bit_size: 1
+  variants:
+  - name: USB_NO
+    description: USB reset not received.
+    value: 0
+  - name: USB_YES
+    description: USB reset received.
+    value: 1
+enum/WKCN:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
+enum/WKDC:
+  bit_size: 1
+  variants:
+  - name: DISABLE
+    description: Disable.
+    value: 0
+  - name: ENABLE
+    description: Enable.
+    value: 1
