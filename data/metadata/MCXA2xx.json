@@ -3542,7 +3542,7 @@
     {
       "name": "DAC0",
       "address": "0x400B4000",
-      "block": "mcxa/DAC",
+      "block": "mcx/DAC",
       "signals": [
         {
           "name": "OUT",

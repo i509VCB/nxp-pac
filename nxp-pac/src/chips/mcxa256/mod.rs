@@ -267,7 +267,7 @@ pub mod common;
 pub mod crc;
 #[path = "../../meta_peripherals/mcx/CTIMER.rs"]
 pub mod ctimer;
-#[path = "../../meta_peripherals/mcxa/DAC.rs"]
+#[path = "../../meta_peripherals/mcx/DAC.rs"]
 pub mod dac;
 #[path = "../../meta_peripherals/mcxa/DMA.rs"]
 pub mod dma;

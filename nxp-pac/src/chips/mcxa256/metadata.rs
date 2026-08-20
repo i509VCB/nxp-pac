@@ -4064,7 +4064,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "DAC0",
         address: 0x400B4000,
-        driver_name: "mcxa/DAC",
+        driver_name: "mcx/DAC",
         signals: &[Signal {
             name: "OUT",
             pins: &[SignalPin {

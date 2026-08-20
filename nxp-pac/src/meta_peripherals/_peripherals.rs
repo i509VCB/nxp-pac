@@ -1,6 +1,7 @@
 #[doc = r" List of all nxp-pac peripherals, whether they are used or not."]
 pub const META_PERIPHERALS: &[&str] = &[
     "mcx/CTIMER",
+    "mcx/DAC",
     "mcx/GPIO",
     "mcx/PORT",
     "mcx/RTC5xx",
