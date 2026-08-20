@@ -1,0 +1,161 @@
+block/Channel:
+  description: 'Array of registers: INTVAL, TIMER, CTRL, STAT.'
+  items:
+  - name: intval
+    description: Time Interval Value.
+    byte_offset: 0
+    fieldset: Intval
+  - name: timer
+    description: Timer.
+    byte_offset: 4
+    access: Read
+    fieldset: Timer
+  - name: ctrl
+    description: Control.
+    byte_offset: 8
+    fieldset: Ctrl
+  - name: stat
+    description: Status.
+    byte_offset: 12
+    fieldset: Stat
+block/Mrt:
+  description: Multi-Rate Timer (MRT).
+  items:
+  - name: channel
+    description: 'Array of registers: INTVAL, TIMER, CTRL, STAT.'
+    array:
+      len: 4
+      stride: 16
+    byte_offset: 0
+    block: Channel
+  - name: modcfg
+    description: Module Configuration.
+    byte_offset: 240
+    fieldset: Modcfg
+  - name: idle_ch
+    description: Idle Channel.
+    byte_offset: 244
+    access: Read
+    fieldset: IdleCh
+  - name: irq_flag
+    description: Global Interrupt Flag.
+    byte_offset: 248
+    fieldset: IrqFlag
+fieldset/Ctrl:
+  description: Control.
+  fields:
+  - name: inten
+    description: Interrupt request.
+    bit_offset: 0
+    bit_size: 1
+  - name: mode
+    description: MRT Operating mode.
+    bit_offset: 1
+    bit_size: 2
+    enum: Mode
+fieldset/IdleCh:
+  description: Idle Channel.
+  fields:
+  - name: chan
+    description: Idle Channel.
+    bit_offset: 4
+    bit_size: 4
+fieldset/Intval:
+  description: Time Interval Value.
+  fields:
+  - name: ivalue
+    description: Time Interval Load Value.
+    bit_offset: 0
+    bit_size: 24
+  - name: load
+    description: Force Load Enable.
+    bit_offset: 31
+    bit_size: 1
+fieldset/IrqFlag:
+  description: Global Interrupt Flag.
+  fields:
+  - name: gflag0
+    description: Interrupt Flag.
+    bit_offset: 0
+    bit_size: 1
+  - name: gflag1
+    description: Interrupt Flag.
+    bit_offset: 1
+    bit_size: 1
+  - name: gflag2
+    description: Interrupt Flag.
+    bit_offset: 2
+    bit_size: 1
+  - name: gflag3
+    description: Interrupt Flag.
+    bit_offset: 3
+    bit_size: 1
+fieldset/Modcfg:
+  description: Module Configuration.
+  fields:
+  - name: noc
+    description: Number of Channels.
+    bit_offset: 0
+    bit_size: 4
+  - name: nob
+    description: Number of Bits.
+    bit_offset: 4
+    bit_size: 5
+  - name: multitask
+    description: MULTITASK.
+    bit_offset: 31
+    bit_size: 1
+    enum: Multitask
+fieldset/Stat:
+  description: Status.
+  fields:
+  - name: intflag
+    description: Interrupt Flag.
+    bit_offset: 0
+    bit_size: 1
+  - name: run
+    description: Timer n State.
+    bit_offset: 1
+    bit_size: 1
+    enum: Run
+  - name: inuse
+    description: Channel-In-Use flag.
+    bit_offset: 2
+    bit_size: 1
+fieldset/Timer:
+  description: Timer.
+  fields:
+  - name: value
+    description: Current Timer Value.
+    bit_offset: 0
+    bit_size: 24
+enum/Mode:
+  bit_size: 2
+  variants:
+  - name: RepeatInterruptMode
+    description: Repeat Interrupt mode.
+    value: 0
+  - name: OneShotInterruptMode
+    description: One-Shot Interrupt mode.
+    value: 1
+  - name: OneShotStallMode
+    description: One-Shot Stall mode.
+    value: 2
+enum/Multitask:
+  bit_size: 1
+  variants:
+  - name: HardwareStatusMode
+    description: Hardware status mode.
+    value: 0
+  - name: MultiTaskMode
+    description: Multitask mode.
+    value: 1
+enum/Run:
+  bit_size: 1
+  variants:
+  - name: IdleState
+    description: Idle state.
+    value: 0
+  - name: Running
+    description: Running.
+    value: 1

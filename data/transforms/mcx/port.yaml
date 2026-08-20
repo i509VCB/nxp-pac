@@ -1,0 +1,138 @@
+transforms:
+  # TODO: PORT5-only EFT (Electrical Fast Transient) detection (EDFR/EDIER/
+  # EDCR), independent of GPIO's own ICR-based interrupt mechanism (which
+  # MCXA also has, via gpio.yaml). No MCXA equivalent exists to merge
+  # against, and since ports have different pin counts, their per-pin
+  # bitfields don't match across instances the same way `calib` doesn't
+  # below. Not used by any driver yet - dropped rather than fighting the
+  # mismatched merge. Revisit if we ever need PORT-level EFT detection.
+  - !DeleteRegisters
+    block: port\d+::Port\d*
+    from: (edfr|edier|edcr)
+
+  - !DeleteFieldsets
+    from: port\d+::(Edfr|Edier|Edcr)
+
+  # Pick a prototype Pcr register and apply it to all ports for all Pcr registers.
+  # Some ports do not have some Pcr registers, but we will ignore that in the PAC and fix that in the HAL.
+  - !Rename
+    from: port0::Pcr2
+    to: port::Pcr
+
+  - !ModifyRegisters
+    blocks: port\d+::Port\d*
+    registers: pcr\d+
+    fieldset: port::Pcr
+
+  - !DeleteFieldsets
+    from: port\d+::Pcr\d+
+
+  # Merge all Mux into the most capable variant of it with bitsize = 4.
+  # In the HAL we will enforce this constraint, but for the PAC this only makes the types more complex.
+  - !DeleteEnums
+    from: port\d+::Pcr(\d+)Mux
+    bit_size: 1
+  - !DeleteEnums
+    from: port\d+::Pcr(\d+)Mux
+    bit_size: 2
+  - !DeleteEnums
+    from: port\d+::Pcr(\d+)Mux
+    bit_size: 3
+  - !MergeEnums
+    from: port\d+::Pcr(\d+)Mux
+    to: port::Mux
+
+  - !DeleteEnumVariants
+    enum: port::Mux
+    from: .*
+
+  - !AddEnumVariants
+    enum: port::Mux
+    variants:
+      - { name: Mux0, value: 0 }
+      - { name: Mux1, value: 1 }
+      - { name: Mux2, value: 2 }
+      - { name: Mux3, value: 3 }
+      - { name: Mux4, value: 4 }
+      - { name: Mux5, value: 5 }
+      - { name: Mux6, value: 6 }
+      - { name: Mux7, value: 7 }
+      - { name: Mux8, value: 8 }
+      - { name: Mux9, value: 9 }
+      - { name: Mux10, value: 10 }
+      - { name: Mux11, value: 11 }
+      - { name: Mux12, value: 12 }
+      - { name: Mux13, value: 13 }
+
+  - !MergeEnums
+    from: port\d+::(.+)
+    to: port::$1
+
+  - !MergeFieldsets
+    from: port\d+::(.+)
+    to: port::$1
+
+  # For now, delete half-supported drive-strength
+  - !DeleteRegisters
+    block: port\d+::Port\d*
+    from: calib\d+
+
+  # Roughly merge all port blocks together.
+  #
+  # check: NoCheck (not the original Layout) - unlike MCXA, MCXN's ports
+  # genuinely have different numbers of populated Pcr registers:
+  #   PORT0: pcr0-31 (full)
+  #   PORT1: pcr0-23, pcr30-31 (gap at 24-29)
+  #   PORT2: pcr0-11
+  #   PORT3: pcr0-23
+  #   PORT4: pcr0-7, pcr12-23 (gap at 8-11)
+  #   PORT5: pcr0-9
+  # so a strict layout check would reject the merge. We accept missing
+  # pcr(N) registers on the narrower ports; the HAL is responsible for only
+  # exposing pins that actually exist per port (already true - see
+  # embassy-mcxn's impl_gpio_pin! invocations, generated per-pin from real
+  # SVD data).
+  - !MergeBlocks
+    from: port\d*::Port\d*
+    to: port0::Port0
+    main: port0::Port0
+    check: NoCheck
+
+  - !Rename
+    from: port0::(.*)
+    to: port::$1
+    type: All
+
+  - !Rename
+    from: port::Port0
+    to: port::Port
+    type: Block
+
+  - !MergeEnums
+    from: port::Gpwe\d+
+    to: port::Gpwe
+
+  # Delete uncommon fields that we will not expose in the HAL regardless.
+  # In the future, you may consider re-adding them.
+  - !DeleteFields
+    fieldset: port::Pcr(\d+)
+    from: (dse1|pfe|pv)
+
+  - !DeleteEnums
+    from: port::Pcr(\d+)(Dse1|Pfe)
+  - !DeleteEnums
+    from: port::Pv
+
+  - !MergeEnums
+    from: port::Pcr(\d+)(.+)
+    to: port::$2
+
+  - !MakeRegisterArray
+    blocks: port::Port
+    from: pcr(\d+)
+    to: pcr
+
+  - !MakeFieldArray
+    fieldsets: port::Gpc(l|h)r
+    from: gpwe(\d+)
+    to: gpwe

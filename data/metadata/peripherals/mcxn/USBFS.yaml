@@ -1,0 +1,1752 @@
+block/Endpoint:
+  description: 'Array of registers: ENDPT.'
+  items:
+  - name: endpt
+    description: Endpoint Control.
+    byte_offset: 0
+    bit_size: 8
+    fieldset: Endpt
+block/Usbfs:
+  description: USBFS.
+  items:
+  - name: perid
+    description: Peripheral ID.
+    byte_offset: 0
+    access: Read
+    bit_size: 8
+    fieldset: Perid
+  - name: idcomp
+    description: Peripheral ID Complement.
+    byte_offset: 4
+    access: Read
+    bit_size: 8
+    fieldset: Idcomp
+  - name: rev
+    description: Peripheral Revision.
+    byte_offset: 8
+    access: Read
+    bit_size: 8
+    fieldset: Rev
+  - name: addinfo
+    description: Peripheral Additional Information.
+    byte_offset: 12
+    access: Read
+    bit_size: 8
+    fieldset: Addinfo
+  - name: otgistat
+    description: OTG Interrupt Status.
+    byte_offset: 16
+    bit_size: 8
+    fieldset: Otgistat
+  - name: otgicr
+    description: OTG Interrupt Control.
+    byte_offset: 20
+    bit_size: 8
+    fieldset: Otgicr
+  - name: otgstat
+    description: OTG Status.
+    byte_offset: 24
+    access: Read
+    bit_size: 8
+    fieldset: Otgstat
+  - name: otgctl
+    description: OTG Control.
+    byte_offset: 28
+    bit_size: 8
+    fieldset: Otgctl
+  - name: istat
+    description: Interrupt Status.
+    byte_offset: 128
+    bit_size: 8
+    fieldset: Istat
+  - name: inten
+    description: Interrupt Enable.
+    byte_offset: 132
+    bit_size: 8
+    fieldset: Inten
+  - name: errstat
+    description: Error Interrupt Status.
+    byte_offset: 136
+    bit_size: 8
+    fieldset: Errstat
+  - name: erren
+    description: Error Interrupt Enable.
+    byte_offset: 140
+    bit_size: 8
+    fieldset: Erren
+  - name: stat
+    description: Status.
+    byte_offset: 144
+    access: Read
+    bit_size: 8
+    fieldset: Stat
+  - name: ctl
+    description: Control.
+    byte_offset: 148
+    bit_size: 8
+    fieldset: Ctl
+  - name: addr
+    description: Address.
+    byte_offset: 152
+    bit_size: 8
+    fieldset: Addr
+  - name: bdtpage1
+    description: BDT Page 1.
+    byte_offset: 156
+    bit_size: 8
+    fieldset: Bdtpage1
+  - name: frmnuml
+    description: Frame Number Register Low.
+    byte_offset: 160
+    access: Read
+    bit_size: 8
+    fieldset: Frmnuml
+  - name: frmnumh
+    description: Frame Number Register High.
+    byte_offset: 164
+    access: Read
+    bit_size: 8
+    fieldset: Frmnumh
+  - name: token
+    description: Token.
+    byte_offset: 168
+    bit_size: 8
+    fieldset: Token
+  - name: softhld
+    description: SOF Threshold.
+    byte_offset: 172
+    bit_size: 8
+    fieldset: Softhld
+  - name: bdtpage2
+    description: BDT Page 2.
+    byte_offset: 176
+    bit_size: 8
+    fieldset: Bdtpage2
+  - name: bdtpage3
+    description: BDT Page 3.
+    byte_offset: 180
+    bit_size: 8
+    fieldset: Bdtpage3
+  - name: endpoint
+    description: 'Array of registers: ENDPT.'
+    array:
+      len: 16
+      stride: 4
+    byte_offset: 192
+    block: Endpoint
+  - name: usbctrl
+    description: USB Control.
+    byte_offset: 256
+    bit_size: 8
+    fieldset: Usbctrl
+  - name: observe
+    description: USB OTG Observe.
+    byte_offset: 260
+    access: Read
+    bit_size: 8
+    fieldset: Observe
+  - name: control
+    description: USB OTG Control.
+    byte_offset: 264
+    bit_size: 8
+    fieldset: Control
+  - name: usbtrc0
+    description: USB Transceiver Control 0.
+    byte_offset: 268
+    bit_size: 8
+    fieldset: Usbtrc0
+  - name: usbfrmadjust
+    description: Frame Adjust.
+    byte_offset: 276
+    bit_size: 8
+    fieldset: Usbfrmadjust
+  - name: keep_alive_ctrl
+    description: Keep Alive Mode Control.
+    byte_offset: 292
+    bit_size: 8
+    fieldset: KeepAliveCtrl
+  - name: keep_alive_wkctrl
+    description: Keep Alive Mode Wakeup Control.
+    byte_offset: 296
+    bit_size: 8
+    fieldset: KeepAliveWkctrl
+  - name: miscctrl
+    description: Miscellaneous Control.
+    byte_offset: 300
+    bit_size: 8
+    fieldset: Miscctrl
+  - name: stall_il_dis
+    description: Peripheral Mode Stall Disable for Endpoints 7 to 0 in IN Direction.
+    byte_offset: 304
+    bit_size: 8
+    fieldset: StallIlDis
+  - name: stall_ih_dis
+    description: Peripheral Mode Stall Disable for Endpoints 15 to 8 in IN Direction.
+    byte_offset: 308
+    bit_size: 8
+    fieldset: StallIhDis
+  - name: stall_ol_dis
+    description: Peripheral Mode Stall Disable for Endpoints 7 to 0 in OUT Direction.
+    byte_offset: 312
+    bit_size: 8
+    fieldset: StallOlDis
+  - name: stall_oh_dis
+    description: Peripheral Mode Stall Disable for Endpoints 15 to 8 in OUT Direction.
+    byte_offset: 316
+    bit_size: 8
+    fieldset: StallOhDis
+  - name: clk_recover_ctrl
+    description: USB Clock Recovery Control.
+    byte_offset: 320
+    bit_size: 8
+    fieldset: ClkRecoverCtrl
+  - name: clk_recover_irc_en
+    description: FIRC Oscillator Enable.
+    byte_offset: 324
+    bit_size: 8
+    fieldset: ClkRecoverIrcEn
+  - name: clk_recover_int_en
+    description: Clock Recovery Combined Interrupt Enable.
+    byte_offset: 340
+    bit_size: 8
+    fieldset: ClkRecoverIntEn
+  - name: clk_recover_int_status
+    description: Clock Recovery Separated Interrupt Status.
+    byte_offset: 348
+    bit_size: 8
+    fieldset: ClkRecoverIntStatus
+fieldset/Addinfo:
+  description: Peripheral Additional Information.
+  bit_size: 8
+  fields:
+  - name: iehost
+    description: Host Mode Enable.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Addr:
+  description: Address.
+  bit_size: 8
+  fields:
+  - name: addr
+    description: USB Address.
+    bit_offset: 0
+    bit_size: 7
+  - name: lsen
+    description: Low Speed Enable.
+    bit_offset: 7
+    bit_size: 1
+fieldset/Bdtpage1:
+  description: BDT Page 1.
+  bit_size: 8
+  fields:
+  - name: bdtba
+    description: BDT Base Address.
+    bit_offset: 1
+    bit_size: 7
+fieldset/Bdtpage2:
+  description: BDT Page 2.
+  bit_size: 8
+  fields:
+  - name: bdtba
+    description: BDT Base Address.
+    bit_offset: 0
+    bit_size: 8
+fieldset/Bdtpage3:
+  description: BDT Page 3.
+  bit_size: 8
+  fields:
+  - name: bdtba
+    description: BDT Base Address.
+    bit_offset: 0
+    bit_size: 8
+fieldset/ClkRecoverCtrl:
+  description: USB Clock Recovery Control.
+  bit_size: 8
+  fields:
+  - name: trim_init_val_sel
+    description: Selects the source for the initial FIRC trim fine value used after a reset.
+    bit_offset: 3
+    bit_size: 1
+    enum: TrimInitValSel
+  - name: restart_ifrtrim_en
+    description: Restart from IFR Trim Value.
+    bit_offset: 5
+    bit_size: 1
+    enum: RestartIfrtrimEn
+  - name: reset_resume_rough_en
+    description: Reset or Resume to Rough Phase Enable.
+    bit_offset: 6
+    bit_size: 1
+    enum: ResetResumeRoughEn
+  - name: clock_recover_en
+    description: Crystal-Less USB Enable.
+    bit_offset: 7
+    bit_size: 1
+    enum: ClockRecoverEn
+fieldset/ClkRecoverIntEn:
+  description: Clock Recovery Combined Interrupt Enable.
+  bit_size: 8
+  fields:
+  - name: ovf_error_en
+    description: Overflow error interrupt enable.
+    bit_offset: 4
+    bit_size: 1
+    enum: OvfErrorEn
+fieldset/ClkRecoverIntStatus:
+  description: Clock Recovery Separated Interrupt Status.
+  bit_size: 8
+  fields:
+  - name: ovf_error
+    description: Overflow Error Interrupt Status Flag.
+    bit_offset: 4
+    bit_size: 1
+    enum: OvfError
+fieldset/ClkRecoverIrcEn:
+  description: FIRC Oscillator Enable.
+  bit_size: 8
+  fields:
+  - name: irc_en
+    description: Fast IRC enable.
+    bit_offset: 1
+    bit_size: 1
+    enum: IrcEn
+fieldset/Control:
+  description: USB OTG Control.
+  bit_size: 8
+  fields:
+  - name: vbus_source_sel
+    description: VBUS Monitoring Source Select.
+    bit_offset: 0
+    bit_size: 1
+  - name: sess_vld
+    description: VBUS Session Valid status.
+    bit_offset: 1
+    bit_size: 1
+    enum: SessVld
+  - name: dppullupnonotg
+    description: DP Pullup in Non-OTG Device Mode.
+    bit_offset: 4
+    bit_size: 1
+    enum: Dppullupnonotg
+fieldset/Ctl:
+  description: Control.
+  bit_size: 8
+  fields:
+  - name: usbensofen
+    description: USB Enable.
+    bit_offset: 0
+    bit_size: 1
+    enum: Usbensofen
+  - name: oddrst
+    description: Odd Reset.
+    bit_offset: 1
+    bit_size: 1
+  - name: resume
+    description: Resume.
+    bit_offset: 2
+    bit_size: 1
+  - name: hostmodeen
+    description: Host Mode Enable.
+    bit_offset: 3
+    bit_size: 1
+    enum: Hostmodeen
+  - name: reset
+    description: Reset Signaling Enable.
+    bit_offset: 4
+    bit_size: 1
+  - name: txsuspendtokenbusy
+    description: TXD Suspend And Token Busy.
+    bit_offset: 5
+    bit_size: 1
+  - name: se0
+    description: Live USB Single-Ended Zero signal.
+    bit_offset: 6
+    bit_size: 1
+  - name: jstate
+    description: Live USB Differential Receiver JSTATE Signal.
+    bit_offset: 7
+    bit_size: 1
+fieldset/Endpt:
+  description: Endpoint Control.
+  bit_size: 8
+  fields:
+  - name: ephshk
+    description: Endpoint Handshaking Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: epstall
+    description: Endpoint Stalled.
+    bit_offset: 1
+    bit_size: 1
+  - name: eptxen
+    description: Endpoint for TX transfers enable.
+    bit_offset: 2
+    bit_size: 1
+  - name: eprxen
+    description: Endpoint for RX transfers enable.
+    bit_offset: 3
+    bit_size: 1
+  - name: epctldis
+    description: Control Transfer Disable.
+    bit_offset: 4
+    bit_size: 1
+    enum: Epctldis
+  - name: retrydis
+    description: Retry Disable.
+    bit_offset: 6
+    bit_size: 1
+    enum: Retrydis
+  - name: hostwohub
+    description: Host Without A Hub.
+    bit_offset: 7
+    bit_size: 1
+    enum: Hostwohub
+fieldset/Erren:
+  description: Error Interrupt Enable.
+  bit_size: 8
+  fields:
+  - name: piderren
+    description: PIDERR Interrupt Enable.
+    bit_offset: 0
+    bit_size: 1
+    enum: Piderren
+  - name: crc5eofen
+    description: CRC5/EOF Interrupt Enable.
+    bit_offset: 1
+    bit_size: 1
+    enum: Crc5eofen
+  - name: crc16en
+    description: CRC16 Interrupt Enable.
+    bit_offset: 2
+    bit_size: 1
+    enum: Crc16en
+  - name: dfn8en
+    description: DFN8 (Data Field Not Integer Number of Bytes) Interrupt Enable.
+    bit_offset: 3
+    bit_size: 1
+    enum: Dfn8en
+  - name: btoerren
+    description: BTOERR (Bus Timeout Error) Interrupt Enable.
+    bit_offset: 4
+    bit_size: 1
+    enum: Btoerren
+  - name: dmaerren
+    description: DMAERR Interrupt Enable.
+    bit_offset: 5
+    bit_size: 1
+    enum: Dmaerren
+  - name: ownerren
+    description: OWNERR Interrupt Enable.
+    bit_offset: 6
+    bit_size: 1
+    enum: Ownerren
+  - name: btserren
+    description: BTSERR (Bit Stuff Error) Interrupt Enable.
+    bit_offset: 7
+    bit_size: 1
+    enum: Btserren
+fieldset/Errstat:
+  description: Error Interrupt Status.
+  bit_size: 8
+  fields:
+  - name: piderr
+    description: PID Error Flag.
+    bit_offset: 0
+    bit_size: 1
+    enum: Piderr
+  - name: crc5eof
+    description: CRC5 Error or End of Frame Error Flag.
+    bit_offset: 1
+    bit_size: 1
+    enum: Crc5eof
+  - name: crc16
+    description: CRC16 Error Flag.
+    bit_offset: 2
+    bit_size: 1
+    enum: Crc16
+  - name: dfn8
+    description: Data Field Not 8 Bits Flag.
+    bit_offset: 3
+    bit_size: 1
+    enum: Dfn8
+  - name: btoerr
+    description: Bus Turnaround Timeout Error Flag.
+    bit_offset: 4
+    bit_size: 1
+    enum: Btoerr
+  - name: dmaerr
+    description: DMA Access Error Flag.
+    bit_offset: 5
+    bit_size: 1
+    enum: Dmaerr
+  - name: ownerr
+    description: BD Unavailable Error Flag.
+    bit_offset: 6
+    bit_size: 1
+    enum: Ownerr
+  - name: btserr
+    description: Bit Stuff Error Flag.
+    bit_offset: 7
+    bit_size: 1
+    enum: Btserr
+fieldset/Frmnumh:
+  description: Frame Number Register High.
+  bit_size: 8
+  fields:
+  - name: frm
+    description: Frame Number, Bits 8-10.
+    bit_offset: 0
+    bit_size: 3
+fieldset/Frmnuml:
+  description: Frame Number Register Low.
+  bit_size: 8
+  fields:
+  - name: frm
+    description: Frame Number, Bits 0-7.
+    bit_offset: 0
+    bit_size: 8
+fieldset/Idcomp:
+  description: Peripheral ID Complement.
+  bit_size: 8
+  fields:
+  - name: nid
+    description: Negative Peripheral ID.
+    bit_offset: 0
+    bit_size: 6
+fieldset/Inten:
+  description: Interrupt Enable.
+  bit_size: 8
+  fields:
+  - name: usbrsten
+    description: USBRST Interrupt Enable.
+    bit_offset: 0
+    bit_size: 1
+    enum: Usbrsten
+  - name: erroren
+    description: ERROR Interrupt Enable.
+    bit_offset: 1
+    bit_size: 1
+    enum: Erroren
+  - name: softoken
+    description: SOFTOK Interrupt Enable.
+    bit_offset: 2
+    bit_size: 1
+    enum: Softoken
+  - name: tokdneen
+    description: TOKDNE Interrupt Enable.
+    bit_offset: 3
+    bit_size: 1
+    enum: Tokdneen
+  - name: sleepen
+    description: SLEEP Interrupt Enable.
+    bit_offset: 4
+    bit_size: 1
+    enum: Sleepen
+  - name: resumeen
+    description: RESUME Interrupt Enable.
+    bit_offset: 5
+    bit_size: 1
+    enum: Resumeen
+  - name: attachen
+    description: ATTACH Interrupt Enable.
+    bit_offset: 6
+    bit_size: 1
+    enum: Attachen
+  - name: stallen
+    description: STALL Interrupt Enable.
+    bit_offset: 7
+    bit_size: 1
+    enum: Stallen
+fieldset/Istat:
+  description: Interrupt Status.
+  bit_size: 8
+  fields:
+  - name: usbrst
+    description: USB Reset Flag.
+    bit_offset: 0
+    bit_size: 1
+    enum: Usbrst
+  - name: error
+    description: Error Flag.
+    bit_offset: 1
+    bit_size: 1
+    enum: Error
+  - name: softok
+    description: Start Of Frame (SOF) Token Flag.
+    bit_offset: 2
+    bit_size: 1
+    enum: Softok
+  - name: tokdne
+    description: Current Token Processing Flag.
+    bit_offset: 3
+    bit_size: 1
+    enum: Tokdne
+  - name: sleep
+    description: Sleep Flag.
+    bit_offset: 4
+    bit_size: 1
+    enum: Sleep
+  - name: resume
+    description: Resume Flag.
+    bit_offset: 5
+    bit_size: 1
+    enum: Resume
+  - name: attach
+    description: Attach Interrupt Flag.
+    bit_offset: 6
+    bit_size: 1
+    enum: Attach
+  - name: stall
+    description: Stall Interrupt Flag.
+    bit_offset: 7
+    bit_size: 1
+    enum: Stall
+fieldset/KeepAliveCtrl:
+  description: Keep Alive Mode Control.
+  bit_size: 8
+  fields:
+  - name: keep_alive_en
+    description: Keep Alive Mode Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: own_overrd_en
+    description: OWN Bit Override Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: stop_ack_dly_en
+    description: Stop Acknowledge Delay Enable.
+    bit_offset: 2
+    bit_size: 1
+    enum: StopAckDlyEn
+  - name: wake_req_en
+    description: Wakeup Request Enable.
+    bit_offset: 3
+    bit_size: 1
+    enum: WakeReqEn
+  - name: wake_int_en
+    description: Wakeup Interrupt Enable.
+    bit_offset: 4
+    bit_size: 1
+  - name: keep_alive_sts
+    description: Keep Alive Status.
+    bit_offset: 6
+    bit_size: 1
+    enum: KeepAliveSts
+  - name: wake_int_sts
+    description: Wakeup Interrupt Status Flag.
+    bit_offset: 7
+    bit_size: 1
+    enum: WakeIntSts
+fieldset/KeepAliveWkctrl:
+  description: Keep Alive Mode Wakeup Control.
+  bit_size: 8
+  fields:
+  - name: wake_on_this
+    description: Token PID for the wakeup request.
+    bit_offset: 0
+    bit_size: 4
+    enum: WakeOnThis
+  - name: wake_endpt
+    description: Endpoint address for the wakeup request.
+    bit_offset: 4
+    bit_size: 4
+fieldset/Miscctrl:
+  description: Miscellaneous Control.
+  bit_size: 8
+  fields:
+  - name: sofdynthld
+    description: Dynamic SOF Threshold Compare mode.
+    bit_offset: 0
+    bit_size: 1
+    enum: Sofdynthld
+  - name: sofbusset
+    description: SOF_TOK Interrupt Generation Mode Select.
+    bit_offset: 1
+    bit_size: 1
+    enum: Sofbusset
+  - name: ownerrisodis
+    description: OWN Error Detect for ISO IN and ISO OUT Disable.
+    bit_offset: 2
+    bit_size: 1
+    enum: Ownerrisodis
+  - name: vredg_en
+    description: VREGIN Rising Edge Interrupt Enable.
+    bit_offset: 3
+    bit_size: 1
+    enum: VredgEn
+  - name: vfedg_en
+    description: VREGIN Falling Edge Interrupt Enable.
+    bit_offset: 4
+    bit_size: 1
+    enum: VfedgEn
+  - name: stl_adj_en
+    description: USB Peripheral Mode Stall Adjust Enable.
+    bit_offset: 7
+    bit_size: 1
+    enum: StlAdjEn
+fieldset/Observe:
+  description: USB OTG Observe.
+  bit_size: 8
+  fields:
+  - name: dmpd
+    description: D- Pulldown.
+    bit_offset: 4
+    bit_size: 1
+    enum: Dmpd
+  - name: dppd
+    description: D+ Pulldown.
+    bit_offset: 6
+    bit_size: 1
+    enum: Dppd
+  - name: dppu
+    description: D+ Pullup.
+    bit_offset: 7
+    bit_size: 1
+    enum: Dppu
+fieldset/Otgctl:
+  description: OTG Control.
+  bit_size: 8
+  fields:
+  - name: otgen
+    description: On-The-Go Pullup and Pulldown Resistor Enable.
+    bit_offset: 2
+    bit_size: 1
+    enum: Otgen
+  - name: dmlow
+    description: D- Data Line Pulldown Resistor Enable.
+    bit_offset: 4
+    bit_size: 1
+    enum: Dmlow
+  - name: dplow
+    description: D+ Data Line pulldown Resistor Enable.
+    bit_offset: 5
+    bit_size: 1
+    enum: Dplow
+  - name: dphigh
+    description: D+ Data Line Pullup Resistor Enable.
+    bit_offset: 7
+    bit_size: 1
+    enum: Dphigh
+fieldset/Otgicr:
+  description: OTG Interrupt Control.
+  bit_size: 8
+  fields:
+  - name: linestateen
+    description: Line State Change Interrupt Enable.
+    bit_offset: 5
+    bit_size: 1
+    enum: Linestateen
+  - name: onemsecen
+    description: 1-Millisecond Interrupt Enable.
+    bit_offset: 6
+    bit_size: 1
+    enum: Onemsecen
+fieldset/Otgistat:
+  description: OTG Interrupt Status.
+  bit_size: 8
+  fields:
+  - name: line_state_chg
+    description: Line State Change Interrupt Flag.
+    bit_offset: 5
+    bit_size: 1
+    enum: LineStateChg
+  - name: onemsec
+    description: One Millisecond Timer Timeout Flag.
+    bit_offset: 6
+    bit_size: 1
+    enum: Onemsec
+fieldset/Otgstat:
+  description: OTG Status.
+  bit_size: 8
+  fields:
+  - name: linestatestable
+    description: Line State Stable.
+    bit_offset: 5
+    bit_size: 1
+    enum: Linestatestable
+  - name: onemsec
+    description: Reserved for 1 ms count.
+    bit_offset: 6
+    bit_size: 1
+fieldset/Perid:
+  description: Peripheral ID.
+  bit_size: 8
+  fields:
+  - name: id
+    description: Peripheral Identification.
+    bit_offset: 0
+    bit_size: 6
+fieldset/Rev:
+  description: Peripheral Revision.
+  bit_size: 8
+  fields:
+  - name: rev
+    description: Revision.
+    bit_offset: 0
+    bit_size: 8
+fieldset/Softhld:
+  description: SOF Threshold.
+  bit_size: 8
+  fields:
+  - name: cnt
+    description: SOF Count Threshold.
+    bit_offset: 0
+    bit_size: 8
+fieldset/StallIhDis:
+  description: Peripheral Mode Stall Disable for Endpoints 15 to 8 in IN Direction.
+  bit_size: 8
+  fields:
+  - name: stall_i_dis
+    description: Disable Endpoint IN Direction.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 8
+      stride: 1
+    enum: StallIDisHi
+fieldset/StallIlDis:
+  description: Peripheral Mode Stall Disable for Endpoints 7 to 0 in IN Direction.
+  bit_size: 8
+  fields:
+  - name: stall_i_dis
+    description: Disable Endpoint IN Direction.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 8
+      stride: 1
+    enum: StallIDisLo
+fieldset/StallOhDis:
+  description: Peripheral Mode Stall Disable for Endpoints 15 to 8 in OUT Direction.
+  bit_size: 8
+  fields:
+  - name: stall_o_dis
+    description: Disable Endpoint OUT Direction.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 8
+      stride: 1
+    enum: StallODisHi
+fieldset/StallOlDis:
+  description: Peripheral Mode Stall Disable for Endpoints 7 to 0 in OUT Direction.
+  bit_size: 8
+  fields:
+  - name: stall_o_dis
+    description: Disable Endpoint OUT Direction.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 8
+      stride: 1
+    enum: StallODisLo
+fieldset/Stat:
+  description: Status.
+  bit_size: 8
+  fields:
+  - name: odd
+    description: Odd Bank.
+    bit_offset: 2
+    bit_size: 1
+    enum: Odd
+  - name: tx
+    description: Transmit Indicator.
+    bit_offset: 3
+    bit_size: 1
+    enum: Tx
+  - name: endp
+    description: Endpoint address.
+    bit_offset: 4
+    bit_size: 4
+fieldset/Token:
+  description: Token.
+  bit_size: 8
+  fields:
+  - name: tokenendpt
+    description: Token Endpoint Address.
+    bit_offset: 0
+    bit_size: 4
+  - name: tokenpid
+    description: Token Type.
+    bit_offset: 4
+    bit_size: 4
+    enum: Tokenpid
+fieldset/Usbctrl:
+  description: USB Control.
+  bit_size: 8
+  fields:
+  - name: dpdm_lane_reverse
+    description: DP and DM Lane Reversal Control.
+    bit_offset: 2
+    bit_size: 1
+    enum: DpdmLaneReverse
+  - name: host_ls_eop
+    description: Host-Mode-Only Low-Speed Device EOP Signaling.
+    bit_offset: 3
+    bit_size: 1
+    enum: HostLsEop
+  - name: uartsel
+    description: UART Select.
+    bit_offset: 4
+    bit_size: 1
+    enum: Uartsel
+  - name: uartchls
+    description: UART Signal Channel Select.
+    bit_offset: 5
+    bit_size: 1
+    enum: Uartchls
+  - name: pde
+    description: Pulldown Enable.
+    bit_offset: 6
+    bit_size: 1
+    enum: Pde
+  - name: susp
+    description: Suspend.
+    bit_offset: 7
+    bit_size: 1
+    enum: Susp
+fieldset/Usbfrmadjust:
+  description: Frame Adjust.
+  bit_size: 8
+  fields:
+  - name: adj
+    description: Frame Adjustment.
+    bit_offset: 0
+    bit_size: 8
+fieldset/Usbtrc0:
+  description: USB Transceiver Control 0.
+  bit_size: 8
+  fields:
+  - name: usb_resume_int
+    description: USB Asynchronous Interrupt.
+    bit_offset: 0
+    bit_size: 1
+    enum: UsbResumeInt
+  - name: sync_det
+    description: Synchronous USB Interrupt Detect.
+    bit_offset: 1
+    bit_size: 1
+    enum: SyncDet
+  - name: usb_clk_recovery_int
+    description: Combined USB Clock Recovery interrupt status.
+    bit_offset: 2
+    bit_size: 1
+  - name: vredg_det
+    description: VREGIN Rising Edge Interrupt Detect.
+    bit_offset: 3
+    bit_size: 1
+    enum: VredgDet
+  - name: vfedg_det
+    description: VREGIN Falling Edge Interrupt Detect.
+    bit_offset: 4
+    bit_size: 1
+    enum: VfedgDet
+  - name: usbresmen
+    description: Asynchronous Resume Interrupt Enable.
+    bit_offset: 5
+    bit_size: 1
+    enum: Usbresmen
+  - name: vregin_sts
+    description: VREGIN Status.
+    bit_offset: 6
+    bit_size: 1
+  - name: usbreset
+    description: USB Reset.
+    bit_offset: 7
+    bit_size: 1
+    enum: Usbreset
+enum/Attach:
+  bit_size: 1
+  variants:
+  - name: IntNo
+    description: Not detected.
+    value: 0
+  - name: IntYes
+    description: Detected.
+    value: 1
+enum/Attachen:
+  bit_size: 1
+  variants:
+  - name: DisAttachInt
+    description: Disable.
+    value: 0
+  - name: EnAttachInt
+    description: Enable.
+    value: 1
+enum/Btoerr:
+  bit_size: 1
+  variants:
+  - name: IntNo
+    description: Not timed out.
+    value: 0
+  - name: IntYes
+    description: Timed out.
+    value: 1
+enum/Btoerren:
+  bit_size: 1
+  variants:
+  - name: DisBtoerrInt
+    description: Disable.
+    value: 0
+  - name: EnBtoerrInt
+    description: Enable.
+    value: 1
+enum/Btserr:
+  bit_size: 1
+  variants:
+  - name: IntNo
+    description: Packet not rejected due to the error.
+    value: 0
+  - name: IntYes
+    description: Packet rejected due to the error.
+    value: 1
+enum/Btserren:
+  bit_size: 1
+  variants:
+  - name: DisBtserrenInt
+    description: Disable.
+    value: 0
+  - name: EnBtserrenInt
+    description: Enable.
+    value: 1
+enum/ClockRecoverEn:
+  bit_size: 1
+  variants:
+  - name: DisClkRecover
+    description: Disable.
+    value: 0
+  - name: EnClkRecover
+    description: Enable.
+    value: 1
+enum/Crc16:
+  bit_size: 1
+  variants:
+  - name: IntNo
+    description: Not rejected.
+    value: 0
+  - name: IntYes
+    description: Rejected.
+    value: 1
+enum/Crc16en:
+  bit_size: 1
+  variants:
+  - name: DisCrc16Int
+    description: Disable.
+    value: 0
+  - name: EnCrc16Int
+    description: Enable.
+    value: 1
+enum/Crc5eof:
+  bit_size: 1
+  variants:
+  - name: IntNo
+    description: Interrupt did not occur.
+    value: 0
+  - name: IntYes
+    description: Interrupt occurred.
+    value: 1
+enum/Crc5eofen:
+  bit_size: 1
+  variants:
+  - name: DisCrc5Int
+    description: Disable.
+    value: 0
+  - name: EnCrc5Int
+    description: Enable.
+    value: 1
+enum/Dfn8:
+  bit_size: 1
+  variants:
+  - name: IntNo
+    description: Integer number of bytes.
+    value: 0
+  - name: IntYes
+    description: Not an integer number of bytes.
+    value: 1
+enum/Dfn8en:
+  bit_size: 1
+  variants:
+  - name: DisDfn8Int
+    description: Disable.
+    value: 0
+  - name: EnDfn8Int
+    description: Enable.
+    value: 1
+enum/Dmaerr:
+  bit_size: 1
+  variants:
+  - name: IntNo
+    description: Interrupt did not occur.
+    value: 0
+  - name: IntYes
+    description: Interrupt occurred.
+    value: 1
+enum/Dmaerren:
+  bit_size: 1
+  variants:
+  - name: DisDmaerrInt
+    description: Disable.
+    value: 0
+  - name: EnDmaerrInt
+    description: Enable.
+    value: 1
+enum/Dmlow:
+  bit_size: 1
+  variants:
+  - name: DisDmPulldown
+    description: Disable.
+    value: 0
+  - name: EnDmPulldown
+    description: Enable.
+    value: 1
+enum/Dmpd:
+  bit_size: 1
+  variants:
+  - name: DmPdDisStat
+    description: Disabled.
+    value: 0
+  - name: DmPdEnStat
+    description: Enabled.
+    value: 1
+enum/DpdmLaneReverse:
+  bit_size: 1
+  variants:
+  - name: DpDmStandard
+    description: Standard USB DP and DM package pin assignment.
+    value: 0
+  - name: DpDmReversed
+    description: Reverse roles of USB DP and DM package pins.
+    value: 1
+enum/Dphigh:
+  bit_size: 1
+  variants:
+  - name: DisDpPullup
+    description: Disable.
+    value: 0
+  - name: EnDpPullup
+    description: Enable.
+    value: 1
+enum/Dplow:
+  bit_size: 1
+  variants:
+  - name: DisDpPulldown
+    description: Disable.
+    value: 0
+  - name: EnDpPulldown
+    description: Enable.
+    value: 1
+enum/Dppd:
+  bit_size: 1
+  variants:
+  - name: DpPdDisStat
+    description: Disabled.
+    value: 0
+  - name: DpPdEnStat
+    description: Enabled.
+    value: 1
+enum/Dppu:
+  bit_size: 1
+  variants:
+  - name: DpPuDisStat
+    description: Disabled.
+    value: 0
+  - name: DpPuEnStat
+    description: Enabled.
+    value: 1
+enum/Dppullupnonotg:
+  bit_size: 1
+  variants:
+  - name: DisDeviceDpPu
+    description: Disable.
+    value: 0
+  - name: EnDeviceDpPu
+    description: Enabled.
+    value: 1
+enum/Epctldis:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Enable.
+    value: 0
+  - name: Disable
+    description: Disable.
+    value: 1
+enum/Error:
+  bit_size: 1
+  variants:
+  - name: IntNo
+    description: Error did not occur.
+    value: 0
+  - name: IntYes
+    description: Error occurred.
+    value: 1
+enum/Erroren:
+  bit_size: 1
+  variants:
+  - name: DisErrorInt
+    description: Disable.
+    value: 0
+  - name: EnErrorInt
+    description: Enable.
+    value: 1
+enum/HostLsEop:
+  bit_size: 1
+  variants:
+  - name: HostFsResumeEop
+    description: Full-speed device or a low-speed device through a hub.
+    value: 0
+  - name: HostLsResumeEop
+    description: Directly-connected low-speed device.
+    value: 1
+enum/Hostmodeen:
+  bit_size: 1
+  variants:
+  - name: EnDeviceMode
+    description: USBFS operates in Device mode.
+    value: 0
+  - name: EnHostMode
+    description: USBFS operates in Host mode. In Host mode, USBFS performs USB transactions under the programmed control of the host processor.
+    value: 1
+enum/Hostwohub:
+  bit_size: 1
+  variants:
+  - name: LsThruHub
+    description: Connected using a hub (USBFS generates PRE_PID as required).
+    value: 0
+  - name: LsDirectConnect
+    description: Connected directly to host without a hub, or was used to attach.
+    value: 1
+enum/IrcEn:
+  bit_size: 1
+  variants:
+  - name: DisIrc
+    description: Disable.
+    value: 0
+  - name: EnIrc
+    description: Enable.
+    value: 1
+enum/KeepAliveSts:
+  bit_size: 1
+  variants:
+  - name: KeepAliveDisStat
+    description: Not in Keep Alive mode.
+    value: 0
+  - name: KeepAliveEnStat
+    description: In Keep Alive mode.
+    value: 1
+enum/LineStateChg:
+  bit_size: 1
+  variants:
+  - name: IntNo
+    description: Interrupt did not occur.
+    value: 0
+  - name: IntYes
+    description: Interrupt occurred.
+    value: 1
+enum/Linestateen:
+  bit_size: 1
+  variants:
+  - name: DisLinestInt
+    description: Disable.
+    value: 0
+  - name: EnLinestInt
+    description: Enable.
+    value: 1
+enum/Linestatestable:
+  bit_size: 1
+  variants:
+  - name: LinestNotStable
+    description: Unstable.
+    value: 0
+  - name: LinestStable
+    description: Stable.
+    value: 1
+enum/Odd:
+  bit_size: 1
+  variants:
+  - name: NotInOddBank
+    description: Not in the odd bank.
+    value: 0
+  - name: OddBank
+    description: In the odd bank.
+    value: 1
+enum/Onemsec:
+  bit_size: 1
+  variants:
+  - name: IntNo
+    description: Not timed out.
+    value: 0
+  - name: IntYes
+    description: Timed out.
+    value: 1
+enum/Onemsecen:
+  bit_size: 1
+  variants:
+  - name: DisTimerInt
+    description: Disable.
+    value: 0
+  - name: EnTimerInt
+    description: Enable.
+    value: 1
+enum/Otgen:
+  bit_size: 1
+  variants:
+  - name: ConfigResistorsCtl
+    description: If USBENSOFEN is 1 and HOSTMODEEN is 0 in the Control Register (CTL), then the D+ Data line pullup resistors are enabled. If HOSTMODEEN is 1, then the D+ and D- Data line pulldown resistors are engaged.
+    value: 0
+  - name: ConfigResistorsHere
+    description: Uses the pullup and pulldown controls in this register.
+    value: 1
+enum/OvfError:
+  bit_size: 1
+  variants:
+  - name: IntNo
+    description: Interrupt did not occur.
+    value: 0
+  - name: IntYes
+    description: Unmasked interrupt occurred.
+    value: 1
+enum/OvfErrorEn:
+  bit_size: 1
+  variants:
+  - name: MaskOvfErrInt
+    description: The interrupt is masked.
+    value: 0
+  - name: EnOvfErrInt
+    description: The interrupt is enabled.
+    value: 1
+enum/Ownerr:
+  bit_size: 1
+  variants:
+  - name: IntNo
+    description: Interrupt did not occur.
+    value: 0
+  - name: IntYes
+    description: Interrupt occurred.
+    value: 1
+enum/Ownerren:
+  bit_size: 1
+  variants:
+  - name: DisOwnerrInt
+    description: Disable.
+    value: 0
+  - name: EnOwnerrInt
+    description: Enable.
+    value: 1
+enum/Ownerrisodis:
+  bit_size: 1
+  variants:
+  - name: DisOwnErrorDetectIso
+    description: Enable.
+    value: 0
+  - name: EnOwnErrorDetectIso
+    description: Disable.
+    value: 1
+enum/Pde:
+  bit_size: 1
+  variants:
+  - name: DisPulldowns
+    description: Disable on D+ and D-.
+    value: 0
+  - name: EnPulldowns
+    description: Enable on D+ and D-.
+    value: 1
+enum/Piderr:
+  bit_size: 1
+  variants:
+  - name: IntNo
+    description: Did not fail.
+    value: 0
+  - name: IntYes
+    description: Failed.
+    value: 1
+enum/Piderren:
+  bit_size: 1
+  variants:
+  - name: DisPiderrInt
+    description: Disable.
+    value: 0
+  - name: EnPiderrInt
+    description: Enable.
+    value: 1
+enum/ResetResumeRoughEn:
+  bit_size: 1
+  variants:
+  - name: KeepTrimFineOnReset
+    description: Always works in tracking phase after the first time rough phase, to track transition.
+    value: 0
+  - name: UseIfrTrimFineOnReset
+    description: Go back to rough stage whenever a bus reset or bus resume occurs.
+    value: 1
+enum/RestartIfrtrimEn:
+  bit_size: 1
+  variants:
+  - name: LoadTrimFineMid
+    description: Trim fine adjustment always works based on the previous updated trim fine value.
+    value: 0
+  - name: LoadTrimFineIfr
+    description: Trim fine restarts from the IFR trim value whenever you detect bus_reset or bus_resume or deassert module enable.
+    value: 1
+enum/Resume:
+  bit_size: 1
+  variants:
+  - name: IntNo
+    description: Interrupt did not occur.
+    value: 0
+  - name: IntYes
+    description: Interrupt occurred.
+    value: 1
+enum/Resumeen:
+  bit_size: 1
+  variants:
+  - name: DisResumeInt
+    description: Disable.
+    value: 0
+  - name: EnResumeInt
+    description: Enable.
+    value: 1
+enum/Retrydis:
+  bit_size: 1
+  variants:
+  - name: Retried
+    description: Retried NAK'ed transactions in hardware.
+    value: 0
+  - name: DoNotRetried
+    description: Do not retry NAK'ed transactions. When a transaction is NAK'ed, the BDT PID field is updated with the NAK PID, and the TOKEN_DNE interrupt becomes 1.
+    value: 1
+enum/SessVld:
+  bit_size: 1
+  variants:
+  - name: SessVldLow
+    description: Below.
+    value: 0
+  - name: SessVldHigh
+    description: Above.
+    value: 1
+enum/Sleep:
+  bit_size: 1
+  variants:
+  - name: IntNo
+    description: Interrupt did not occur.
+    value: 0
+  - name: IntYes
+    description: Interrupt occurred.
+    value: 1
+enum/Sleepen:
+  bit_size: 1
+  variants:
+  - name: DisSleepInt
+    description: Disable.
+    value: 0
+  - name: EnSleepInt
+    description: Enable.
+    value: 1
+enum/Sofbusset:
+  bit_size: 1
+  variants:
+  - name: SofTokIntFromThreshold
+    description: According to the SOF threshold value.
+    value: 0
+  - name: SofTokIntCounter0
+    description: When the SOF counter reaches 0.
+    value: 1
+enum/Sofdynthld:
+  bit_size: 1
+  variants:
+  - name: UseDynSofThreshold
+    description: When the byte-times SOF threshold is reached.
+    value: 0
+  - name: UseFixedSofThreshold
+    description: When 8 byte-times SOF threshold is reached or overstepped.
+    value: 1
+enum/Softok:
+  bit_size: 1
+  variants:
+  - name: IntNo
+    description: Did not receive.
+    value: 0
+  - name: IntYes
+    description: Received.
+    value: 1
+enum/Softoken:
+  bit_size: 1
+  variants:
+  - name: DisSoftokInt
+    description: Disable.
+    value: 0
+  - name: EnSoftokInt
+    description: Enable.
+    value: 1
+enum/Stall:
+  bit_size: 1
+  variants:
+  - name: IntNo
+    description: Interrupt did not occur.
+    value: 0
+  - name: IntYes
+    description: Interrupt occurred.
+    value: 1
+enum/StallIDisHi:
+  bit_size: 1
+  variants:
+  - name: EnEpInStall
+    description: Enable.
+    value: 0
+  - name: DisEpInStall
+    description: Disable.
+    value: 1
+enum/StallIDisLo:
+  bit_size: 1
+  variants:
+  - name: EnEpInStall
+    description: Enable.
+    value: 0
+  - name: DisEpInStall
+    description: Disable.
+    value: 1
+enum/StallODisHi:
+  bit_size: 1
+  variants:
+  - name: EnEpOutStall
+    description: Enable.
+    value: 0
+  - name: DisEpOutStall
+    description: Disable.
+    value: 1
+enum/StallODisLo:
+  bit_size: 1
+  variants:
+  - name: EnEpOutStall
+    description: Enable.
+    value: 0
+  - name: DisEpOutStall
+    description: Disable.
+    value: 1
+enum/Stallen:
+  bit_size: 1
+  variants:
+  - name: DisStallInt
+    description: Disable.
+    value: 0
+  - name: EnStallInt
+    description: Enable.
+    value: 1
+enum/StlAdjEn:
+  bit_size: 1
+  variants:
+  - name: StallBothInOut
+    description: If ENDPTn[END_STALL] = 1, both IN and OUT directions for the associated endpoint stalls.
+    value: 0
+  - name: StallSingleDirection
+    description: If ENDPTn[END_STALL] = 1, the STALL_xx_DIS registers control which directions for the associated endpoint stalls.
+    value: 1
+enum/StopAckDlyEn:
+  bit_size: 1
+  variants:
+  - name: EnterKeepAliveOnIdle
+    description: Enter KEEP_ALIVE mode immediately when there is no USB AHB transfer.
+    value: 0
+  - name: EnterKeepAliveImmediate
+    description: Enter KEEP_ALIVE mode until the USB core is idle and there is no USB AHB transfer.
+    value: 1
+enum/Susp:
+  bit_size: 1
+  variants:
+  - name: XcvrNotSuspend
+    description: Not in Suspend state.
+    value: 0
+  - name: XcvrSuspend
+    description: In Suspend state.
+    value: 1
+enum/SyncDet:
+  bit_size: 1
+  variants:
+  - name: NoSyncInt
+    description: Not detected.
+    value: 0
+  - name: SyncIntDetected
+    description: Detected.
+    value: 1
+enum/Tokdne:
+  bit_size: 1
+  variants:
+  - name: IntNo
+    description: Not processed.
+    value: 0
+  - name: IntYes
+    description: Processed.
+    value: 1
+enum/Tokdneen:
+  bit_size: 1
+  variants:
+  - name: DisTokdneInt
+    description: Disable.
+    value: 0
+  - name: EnTokdneInt
+    description: Enable.
+    value: 1
+enum/Tokenpid:
+  bit_size: 4
+  variants:
+  - name: EnOutToken
+    description: OUT token. USBFS performs an OUT (TX) transaction.
+    value: 1
+  - name: EnInToken
+    description: IN token. USBFS performs an IN (RX) transaction.
+    value: 9
+  - name: EnSetupToken
+    description: SETUP token. USBFS performs a SETUP (TX) transaction.
+    value: 13
+enum/TrimInitValSel:
+  bit_size: 1
+  variants:
+  - name: InitTrimFineMid
+    description: Mid-scale.
+    value: 0
+  - name: InitTrimFineIfr
+    description: IFR.
+    value: 1
+enum/Tx:
+  bit_size: 1
+  variants:
+  - name: RxTransaction
+    description: Receive.
+    value: 0
+  - name: TxTransaction
+    description: Transmit.
+    value: 1
+enum/Uartchls:
+  bit_size: 1
+  variants:
+  - name: UartDpTx
+    description: USB DP and DM signals are used as UART TX/RX.
+    value: 0
+  - name: UartDmTx
+    description: USB DP and DM signals are used as UART RX/TX.
+    value: 1
+enum/Uartsel:
+  bit_size: 1
+  variants:
+  - name: UsbMode
+    description: USB DP and DM external package pins are used for USB signaling.
+    value: 0
+  - name: UartMode
+    description: USB DP and DM external package pins are used for UART signaling.
+    value: 1
+enum/UsbResumeInt:
+  bit_size: 1
+  variants:
+  - name: NoAsyncInt
+    description: Not generated.
+    value: 0
+  - name: SyncIntGenerated
+    description: Generated because of the USB asynchronous interrupt.
+    value: 1
+enum/Usbensofen:
+  bit_size: 1
+  variants:
+  - name: DisUsbSof
+    description: Disable.
+    value: 0
+  - name: EnUsbSof
+    description: Enable.
+    value: 1
+enum/Usbreset:
+  bit_size: 1
+  variants:
+  - name: NormalOperation
+    description: Normal USBFS operation.
+    value: 0
+  - name: ForceHardReset
+    description: Returns USBFS to its reset state.
+    value: 1
+enum/Usbresmen:
+  bit_size: 1
+  variants:
+  - name: DisAsyncWakeup
+    description: Disable.
+    value: 0
+  - name: EnAsyncWakeup
+    description: Enable.
+    value: 1
+enum/Usbrst:
+  bit_size: 1
+  variants:
+  - name: IntNo
+    description: Not detected.
+    value: 0
+  - name: IntYes
+    description: Detected.
+    value: 1
+enum/Usbrsten:
+  bit_size: 1
+  variants:
+  - name: DisUsbrstInt
+    description: Disable.
+    value: 0
+  - name: EnUsbrstInt
+    description: Enable.
+    value: 1
+enum/VfedgDet:
+  bit_size: 1
+  variants:
+  - name: NoVregFeInt
+    description: Not detected.
+    value: 0
+  - name: VregFeIntDetected
+    description: Detected.
+    value: 1
+enum/VfedgEn:
+  bit_size: 1
+  variants:
+  - name: DisVreginFeInt
+    description: Disable.
+    value: 0
+  - name: EnVreginFeInt
+    description: Enable.
+    value: 1
+enum/VredgDet:
+  bit_size: 1
+  variants:
+  - name: NoVregReInt
+    description: Not detected.
+    value: 0
+  - name: VregReIntDetected
+    description: Detected.
+    value: 1
+enum/VredgEn:
+  bit_size: 1
+  variants:
+  - name: DisVreginReInt
+    description: Disable.
+    value: 0
+  - name: EnVreginReInt
+    description: Enable.
+    value: 1
+enum/WakeIntSts:
+  bit_size: 1
+  variants:
+  - name: IntNo
+    description: Interrupt did not occur.
+    value: 0
+  - name: IntYes
+    description: Interrupt occurred.
+    value: 1
+enum/WakeOnThis:
+  bit_size: 4
+  variants:
+  - name: WakeOnOutSetup
+    description: Wake up after receiving OUT or SETUP token packet.
+    value: 1
+  - name: WakeOnSetupOnly
+    description: Wake up after receiving SETUP token packet. All other values are reserved.
+    value: 13
+enum/WakeReqEn:
+  bit_size: 1
+  variants:
+  - name: DisWakeRequest
+    description: Disable.
+    value: 0
+  - name: EnWakeRequest
+    description: Enable.
+    value: 1

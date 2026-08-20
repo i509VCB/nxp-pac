@@ -1,0 +1,107 @@
+block/CmxPerfmon:
+  description: CMX Performance Monitor.
+  items:
+  - name: pmcr
+    description: Performance Monitor Control.
+    byte_offset: 0
+    fieldset: Pmcr
+  - name: pmectr_hi
+    description: Performance Monitor Event Counter.
+    array:
+      len: 3
+      stride: 8
+    byte_offset: 24
+    access: Read
+    bit_size: 8
+    fieldset: PmectrHi
+  - name: pmectr_lo
+    description: Performance Monitor Event Counter.
+    array:
+      len: 3
+      stride: 8
+    byte_offset: 28
+    access: Read
+    fieldset: PmectrLo
+fieldset/Pmcr:
+  description: Performance Monitor Control.
+  fields:
+  - name: menb
+    description: Module Is Enabled.
+    bit_offset: 0
+    bit_size: 1
+  - name: ssc
+    description: Start and Stop Control.
+    bit_offset: 1
+    bit_size: 3
+    enum: Ssc
+  - name: cmode
+    description: Count Mode.
+    bit_offset: 4
+    bit_size: 2
+    enum: Cmode
+  - name: rectr
+    description: Reset Event Counter.
+    bit_offset: 8
+    bit_size: 1
+    array:
+      len: 3
+      stride: 1
+    enum: Rectr
+  - name: selevt
+    description: Select Event.
+    bit_offset: 11
+    bit_size: 7
+    array:
+      len: 3
+      stride: 7
+fieldset/PmectrHi:
+  description: Performance Monitor Event Counter.
+  bit_size: 8
+  fields:
+  - name: ectr
+    description: Event Counter.
+    bit_offset: 0
+    bit_size: 8
+fieldset/PmectrLo:
+  description: Performance Monitor Event Counter.
+  fields:
+  - name: ectr
+    description: Event Counter.
+    bit_offset: 0
+    bit_size: 32
+enum/Cmode:
+  bit_size: 2
+  variants:
+  - name: UserAndPriv
+    description: Counted in both User and Privileged modes.
+    value: 0
+  - name: UserOnly
+    description: Counted only in User mode.
+    value: 2
+  - name: PrivOnly
+    description: Counted only in Privileged mode.
+    value: 3
+enum/Rectr:
+  bit_size: 1
+  variants:
+  - name: Run
+    description: Run normally.
+    value: 0
+  - name: Reset
+    description: Reset.
+    value: 1
+enum/Ssc:
+  bit_size: 3
+  variants:
+  - name: Idle
+    description: Idle or no-op.
+    value: 0
+  - name: Lstop
+    description: Local stop.
+    value: 1
+  - name: Lstart2
+    description: Local start.
+    value: 2
+  - name: Lstart3
+    description: Local start.
+    value: 3

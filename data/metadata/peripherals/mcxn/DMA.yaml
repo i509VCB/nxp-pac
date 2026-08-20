@@ -1,0 +1,299 @@
+# File not directly generated from transforms!
+#
+# `block/Dma` from the raw extract is renamed `block/Dma16` (16 channels) so
+# metadata can select it as `mcxn/DMA::DMA16`, following the Dma4/Dma8/Dma12
+# convention in `mcxa/DMA.yaml`. MCXN947's DMA0 and DMA1 both have 16 channels,
+# so one block covers both.
+#
+# This is the eDMA management page. The per-channel TCD pages, one 0x1000 above
+# each management page, live in `mcxn/EDMA_TCD.yaml`.
+block/Dma16:
+  description: DMA MP.
+  items:
+  - name: mp_csr
+    description: Management Page Control.
+    byte_offset: 0
+    fieldset: MpCsr
+  - name: mp_es
+    description: Management Page Error Status.
+    byte_offset: 4
+    access: Read
+    fieldset: MpEs
+  - name: mp_int
+    description: Management Page Interrupt Request Status.
+    byte_offset: 8
+    access: Read
+    fieldset: MpInt
+  - name: mp_hrs
+    description: Management Page Hardware Request Status.
+    byte_offset: 12
+    access: Read
+    fieldset: MpHrs
+  - name: ch_grpri
+    description: Channel Arbitration Group.
+    array:
+      len: 16
+      stride: 4
+    byte_offset: 256
+    fieldset: ChGrpri
+fieldset/ChGrpri:
+  description: Channel Arbitration Group.
+  fields:
+  - name: grpri
+    description: Arbitration Group For Channel n.
+    bit_offset: 0
+    bit_size: 5
+fieldset/MpCsr:
+  description: Management Page Control.
+  fields:
+  - name: edbg
+    description: Enable Debug.
+    bit_offset: 1
+    bit_size: 1
+  - name: erca
+    description: Enable Round Robin Channel Arbitration.
+    bit_offset: 2
+    bit_size: 1
+  - name: hae
+    description: Halt After Error.
+    bit_offset: 4
+    bit_size: 1
+    enum: Hae
+  - name: halt
+    description: Halt DMA Operations.
+    bit_offset: 5
+    bit_size: 1
+    enum: Halt
+  - name: gclc
+    description: Global Channel Linking Control.
+    bit_offset: 6
+    bit_size: 1
+  - name: gmrc
+    description: Global Master ID Replication Control.
+    bit_offset: 7
+    bit_size: 1
+  - name: ecx
+    description: Cancel Transfer With Error.
+    bit_offset: 8
+    bit_size: 1
+    enum: MpCsrEcx
+  - name: cx
+    description: Cancel Transfer.
+    bit_offset: 9
+    bit_size: 1
+    enum: Cx
+  - name: active_id
+    description: Active Channel ID.
+    bit_offset: 24
+    bit_size: 4
+  - name: active
+    description: DMA Active Status.
+    bit_offset: 31
+    bit_size: 1
+    enum: Active
+fieldset/MpEs:
+  description: Management Page Error Status.
+  fields:
+  - name: dbe
+    description: Destination Bus Error.
+    bit_offset: 0
+    bit_size: 1
+    enum: Dbe
+  - name: sbe
+    description: Source Bus Error.
+    bit_offset: 1
+    bit_size: 1
+    enum: Sbe
+  - name: sge
+    description: Scatter/Gather Configuration Error.
+    bit_offset: 2
+    bit_size: 1
+    enum: Sge
+  - name: nce
+    description: NBYTES/CITER Configuration Error.
+    bit_offset: 3
+    bit_size: 1
+    enum: Nce
+  - name: doe
+    description: Destination Offset Error.
+    bit_offset: 4
+    bit_size: 1
+    enum: Doe
+  - name: dae
+    description: Destination Address Error.
+    bit_offset: 5
+    bit_size: 1
+    enum: Dae
+  - name: soe
+    description: Source Offset Error.
+    bit_offset: 6
+    bit_size: 1
+    enum: Soe
+  - name: sae
+    description: Source Address Error.
+    bit_offset: 7
+    bit_size: 1
+    enum: Sae
+  - name: ecx
+    description: Transfer Canceled.
+    bit_offset: 8
+    bit_size: 1
+    enum: MpEsEcx
+  - name: errchn
+    description: Error Channel Number or Canceled Channel Number.
+    bit_offset: 24
+    bit_size: 4
+  - name: vld
+    description: Valid.
+    bit_offset: 31
+    bit_size: 1
+    enum: Vld
+fieldset/MpHrs:
+  description: Management Page Hardware Request Status.
+  fields:
+  - name: hrs
+    description: Hardware Request Status.
+    bit_offset: 0
+    bit_size: 32
+fieldset/MpInt:
+  description: Management Page Interrupt Request Status.
+  fields:
+  - name: int
+    description: Interrupt Request Status.
+    bit_offset: 0
+    bit_size: 16
+enum/Active:
+  bit_size: 1
+  variants:
+  - name: Idle
+    description: eDMA is idle.
+    value: 0
+  - name: Execution
+    description: eDMA is executing a channel.
+    value: 1
+enum/Cx:
+  bit_size: 1
+  variants:
+  - name: NormalOperation
+    description: Normal operation.
+    value: 0
+  - name: DataTransferCancel
+    description: Cancel the remaining data transfer.
+    value: 1
+enum/Dae:
+  bit_size: 1
+  variants:
+  - name: NoError
+    description: No destination address configuration error.
+    value: 0
+  - name: ConfigurationError
+    description: Last recorded error was a configuration error detected in the TCDn_DADDR field.
+    value: 1
+enum/Dbe:
+  bit_size: 1
+  variants:
+  - name: NoError
+    description: No destination bus error.
+    value: 0
+  - name: BusError
+    description: Last recorded error was a bus error on a destination write.
+    value: 1
+enum/Doe:
+  bit_size: 1
+  variants:
+  - name: NoError
+    description: No destination offset configuration error.
+    value: 0
+  - name: ConfigurationError
+    description: Last recorded error was a configuration error detected in the TCDn_DOFF field.
+    value: 1
+enum/Hae:
+  bit_size: 1
+  variants:
+  - name: NormalOperation
+    description: Normal operation.
+    value: 0
+  - name: Halt
+    description: Any error causes the HALT field to be set to 1.
+    value: 1
+enum/Halt:
+  bit_size: 1
+  variants:
+  - name: NormalOperation
+    description: Normal operation.
+    value: 0
+  - name: Stall
+    description: Stall the start of any new channels.
+    value: 1
+enum/MpCsrEcx:
+  bit_size: 1
+  variants:
+  - name: NormalOperation
+    description: Normal operation.
+    value: 0
+  - name: Cancel
+    description: Cancel the remaining data transfer.
+    value: 1
+enum/MpEsEcx:
+  bit_size: 1
+  variants:
+  - name: NoCanceledTransfers
+    description: No canceled transfers.
+    value: 0
+  - name: CanceledTransfer
+    description: Last recorded entry was a canceled transfer by the error cancel transfer input.
+    value: 1
+enum/Nce:
+  bit_size: 1
+  variants:
+  - name: NoError
+    description: No NBYTES/CITER configuration error.
+    value: 0
+  - name: ConfigurationError
+    description: The last recorded error was NBYTES equal to zero or a CITER not equal to BITER error.
+    value: 1
+enum/Sae:
+  bit_size: 1
+  variants:
+  - name: NoError
+    description: No source address configuration error.
+    value: 0
+  - name: ConfigurationError
+    description: Last recorded error was a configuration error detected in the TCDn_SADDR field.
+    value: 1
+enum/Sbe:
+  bit_size: 1
+  variants:
+  - name: NoError
+    description: No source bus error.
+    value: 0
+  - name: BusError
+    description: Last recorded error was a bus error on a source read.
+    value: 1
+enum/Sge:
+  bit_size: 1
+  variants:
+  - name: NoError
+    description: No scatter/gather configuration error.
+    value: 0
+  - name: ConfigurationError
+    description: Last recorded error was a configuration error detected in the TCDn_DLAST_SGA field.
+    value: 1
+enum/Soe:
+  bit_size: 1
+  variants:
+  - name: NoError
+    description: No source offset configuration error.
+    value: 0
+  - name: ConfigurationError
+    description: Last recorded error was a configuration error detected in the TCDn_SOFF field.
+    value: 1
+enum/Vld:
+  bit_size: 1
+  variants:
+  - name: NoFieldSetOne
+    description: No CHn_ES[ERR] fields are set to 1.
+    value: 0
+  - name: AtleastOneField
+    description: At least one CHn_ES[ERR] field is set to 1, indicating a valid error exists that software has not cleared.
+    value: 1

@@ -1,0 +1,91 @@
+block/Intm0:
+  description: INTM.
+  items:
+  - name: intm_mm
+    description: Monitor Mode.
+    byte_offset: 0
+    fieldset: IntmMm
+  - name: intm_iack
+    description: Interrupt Acknowledge.
+    byte_offset: 4
+    access: Write
+    fieldset: IntmIack
+  - name: mon
+    description: Monitoring.
+    array:
+      len: 4
+      stride: 16
+    byte_offset: 8
+    block: Mon
+block/Mon:
+  description: Monitoring.
+  items:
+  - name: intm_irqsel
+    description: Interrupt Request Select for Monitor mon_index.
+    byte_offset: 0
+    fieldset: IntmIrqsel
+  - name: intm_latency
+    description: Interrupt Latency for Monitor mon_index.
+    byte_offset: 4
+    fieldset: IntmLatency
+  - name: intm_timer
+    description: Timer for Monitor mon_index.
+    byte_offset: 8
+    fieldset: IntmTimer
+  - name: intm_status
+    description: Status for Monitor mon_index.
+    byte_offset: 12
+    access: Read
+    fieldset: IntmStatus
+fieldset/IntmIack:
+  description: Interrupt Acknowledge.
+  fields:
+  - name: irq
+    description: Interrupt Request.
+    bit_offset: 0
+    bit_size: 10
+fieldset/IntmIrqsel:
+  description: Interrupt Request Select for Monitor mon_index.
+  fields:
+  - name: irq
+    description: Interrupt Request.
+    bit_offset: 0
+    bit_size: 10
+fieldset/IntmLatency:
+  description: Interrupt Latency for Monitor mon_index.
+  fields:
+  - name: lat
+    description: Latency.
+    bit_offset: 0
+    bit_size: 24
+fieldset/IntmMm:
+  description: Monitor Mode.
+  fields:
+  - name: mm
+    description: Monitor Mode.
+    bit_offset: 0
+    bit_size: 1
+fieldset/IntmStatus:
+  description: Status for Monitor mon_index.
+  fields:
+  - name: status
+    description: Monitor status.
+    bit_offset: 0
+    bit_size: 1
+    enum: Status
+fieldset/IntmTimer:
+  description: Timer for Monitor mon_index.
+  fields:
+  - name: timer
+    description: Timer.
+    bit_offset: 0
+    bit_size: 24
+enum/Status:
+  bit_size: 1
+  variants:
+  - name: St02
+    description: Did not exceed.
+    value: 0
+  - name: St01
+    description: Exceeded.
+    value: 1

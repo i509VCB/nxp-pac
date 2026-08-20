@@ -1,0 +1,1498 @@
+block/Usbhs1Usbc:
+  description: USB.
+  items:
+  - name: id
+    description: Identification.
+    byte_offset: 0
+    access: Read
+    fieldset: Id
+  - name: hwgeneral
+    description: Hardware General.
+    byte_offset: 4
+    access: Read
+    fieldset: Hwgeneral
+  - name: hwhost
+    description: Host Hardware Parameters.
+    byte_offset: 8
+    access: Read
+    fieldset: Hwhost
+  - name: hwdevice
+    description: Device Hardware Parameters.
+    byte_offset: 12
+    access: Read
+    fieldset: Hwdevice
+  - name: hwtxbuf
+    description: TX Buffer Hardware Parameters.
+    byte_offset: 16
+    access: Read
+    fieldset: Hwtxbuf
+  - name: hwrxbuf
+    description: RX Buffer Hardware Parameters.
+    byte_offset: 20
+    access: Read
+    fieldset: Hwrxbuf
+  - name: gptimer0ld
+    description: 'General Purpose Timer #0 Load.'
+    byte_offset: 128
+    fieldset: Gptimer0ld
+  - name: gptimer0ctrl
+    description: 'General Purpose Timer #0 Controller.'
+    byte_offset: 132
+    fieldset: Gptimer0ctrl
+  - name: gptimer1ld
+    description: 'General Purpose Timer #1 Load.'
+    byte_offset: 136
+    fieldset: Gptimer1ld
+  - name: gptimer1ctrl
+    description: 'General Purpose Timer #1 Controller.'
+    byte_offset: 140
+    fieldset: Gptimer1ctrl
+  - name: sbuscfg
+    description: System Bus Config.
+    byte_offset: 144
+    fieldset: Sbuscfg
+  - name: caplength
+    description: Capability Registers Length.
+    byte_offset: 256
+    access: Read
+    bit_size: 8
+    fieldset: Caplength
+  - name: hciversion
+    description: Host Controller Interface Version.
+    byte_offset: 258
+    access: Read
+    bit_size: 16
+    fieldset: Hciversion
+  - name: hcsparams
+    description: Host Controller Structural Parameters.
+    byte_offset: 260
+    access: Read
+    fieldset: Hcsparams
+  - name: hccparams
+    description: Host Controller Capability Parameters.
+    byte_offset: 264
+    access: Read
+    fieldset: Hccparams
+  - name: dciversion
+    description: Device Controller Interface Version.
+    byte_offset: 288
+    access: Read
+    bit_size: 16
+    fieldset: Dciversion
+  - name: dccparams
+    description: Device Controller Capability Parameters.
+    byte_offset: 292
+    access: Read
+    fieldset: Dccparams
+  - name: usbcmd
+    description: USB Command.
+    byte_offset: 320
+    fieldset: Usbcmd
+  - name: usbsts
+    description: USB Status.
+    byte_offset: 324
+    fieldset: Usbsts
+  - name: usbintr
+    description: Interrupt Enable.
+    byte_offset: 328
+    fieldset: Usbintr
+  - name: frindex
+    description: USB Frame Index.
+    byte_offset: 332
+    fieldset: Frindex
+  - name: deviceaddr
+    description: Device Address.
+    byte_offset: 340
+    fieldset: Deviceaddr
+  - name: periodiclistbase
+    description: Frame List Base Address.
+    byte_offset: 340
+    fieldset: Periodiclistbase
+  - name: asynclistaddr
+    description: Next Asynch. Address.
+    byte_offset: 344
+    fieldset: Asynclistaddr
+  - name: endptlistaddr
+    description: Endpoint List Address.
+    byte_offset: 344
+    fieldset: Endptlistaddr
+  - name: burstsize
+    description: Programmable Burst Size.
+    byte_offset: 352
+    fieldset: Burstsize
+  - name: txfilltuning
+    description: TX FIFO Fill Tuning.
+    byte_offset: 356
+    fieldset: Txfilltuning
+  - name: endptnak
+    description: Endpoint NAK.
+    byte_offset: 376
+    fieldset: Endptnak
+  - name: endptnaken
+    description: Endpoint NAK Enable.
+    byte_offset: 380
+    fieldset: Endptnaken
+  - name: configflag
+    description: Configure Flag.
+    byte_offset: 384
+    access: Read
+    fieldset: Configflag
+  - name: portsc1
+    description: Port Status & Control.
+    byte_offset: 388
+    fieldset: Portsc1
+  - name: otgsc
+    description: On-The-Go Status & Control.
+    byte_offset: 420
+    fieldset: Otgsc
+  - name: usbmode
+    description: USB Device Mode.
+    byte_offset: 424
+    fieldset: Usbmode
+  - name: endptsetupstat
+    description: Endpoint Setup Status.
+    byte_offset: 428
+    fieldset: Endptsetupstat
+  - name: endptprime
+    description: Endpoint Prime.
+    byte_offset: 432
+    fieldset: Endptprime
+  - name: endptflush
+    description: Endpoint Flush.
+    byte_offset: 436
+    fieldset: Endptflush
+  - name: endptstat
+    description: Endpoint Status.
+    byte_offset: 440
+    access: Read
+    fieldset: Endptstat
+  - name: endptcomplete
+    description: Endpoint Complete.
+    byte_offset: 444
+    fieldset: Endptcomplete
+  - name: endptctrl0
+    description: Endpoint Control 0.
+    byte_offset: 448
+    fieldset: Endptctrl0
+  - name: endptctrl
+    description: Endpoint Control.
+    array:
+      len: 7
+      stride: 4
+    byte_offset: 452
+    fieldset: Endptctrl
+fieldset/Asynclistaddr:
+  description: Next Asynch. Address.
+  fields:
+  - name: asybase
+    description: Link Pointer Low (LPL).
+    bit_offset: 5
+    bit_size: 27
+fieldset/Burstsize:
+  description: Programmable Burst Size.
+  fields:
+  - name: rxpburst
+    description: Programmable RX Burst Size.
+    bit_offset: 0
+    bit_size: 8
+  - name: txpburst
+    description: Programmable TX Burst Size.
+    bit_offset: 8
+    bit_size: 8
+fieldset/Caplength:
+  description: Capability Registers Length.
+  bit_size: 8
+  fields:
+  - name: caplength
+    description: These bits are used as an offset to add to register base to find the beginning of the Operational Register. Default value is '40h'.
+    bit_offset: 0
+    bit_size: 8
+fieldset/Configflag:
+  description: Configure Flag.
+  fields:
+  - name: cf
+    description: Configure Flag.
+    bit_offset: 0
+    bit_size: 1
+    enum: Cf
+fieldset/Dccparams:
+  description: Device Controller Capability Parameters.
+  fields:
+  - name: den
+    description: Device Endpoint Number.
+    bit_offset: 0
+    bit_size: 5
+  - name: dc
+    description: Device Capable.
+    bit_offset: 7
+    bit_size: 1
+  - name: hc
+    description: Host Capable.
+    bit_offset: 8
+    bit_size: 1
+fieldset/Dciversion:
+  description: Device Controller Interface Version.
+  bit_size: 16
+  fields:
+  - name: dciversion
+    description: Device Controller Interface Version Number.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Deviceaddr:
+  description: Device Address.
+  fields:
+  - name: usbadra
+    description: Device Address Advance.
+    bit_offset: 24
+    bit_size: 1
+  - name: usbadr
+    description: Device Address.
+    bit_offset: 25
+    bit_size: 7
+fieldset/Endptcomplete:
+  description: Endpoint Complete.
+  fields:
+  - name: erce
+    description: Endpoint Receive Complete Event.
+    bit_offset: 0
+    bit_size: 8
+  - name: etce
+    description: Endpoint Transmit Complete Event.
+    bit_offset: 16
+    bit_size: 8
+fieldset/Endptctrl0:
+  description: Endpoint Control 0.
+  fields:
+  - name: rxs
+    description: RX Endpoint Stall.
+    bit_offset: 0
+    bit_size: 1
+  - name: rxt
+    description: RX Endpoint Type.
+    bit_offset: 2
+    bit_size: 2
+    enum: Endptctrl0Rxt
+  - name: rxe
+    description: RX Endpoint Enable.
+    bit_offset: 7
+    bit_size: 1
+  - name: txs
+    description: TX Endpoint Stall.
+    bit_offset: 16
+    bit_size: 1
+  - name: txt
+    description: TX Endpoint Type.
+    bit_offset: 18
+    bit_size: 2
+    enum: Endptctrl0Txt
+  - name: txe
+    description: TX Endpoint Enable.
+    bit_offset: 23
+    bit_size: 1
+fieldset/Endptctrl:
+  description: Endpoint Control.
+  fields:
+  - name: rxs
+    description: RX Endpoint Stall.
+    bit_offset: 0
+    bit_size: 1
+  - name: rxd
+    description: RX Endpoint Data Sink.
+    bit_offset: 1
+    bit_size: 1
+  - name: rxt
+    description: RX Endpoint Type.
+    bit_offset: 2
+    bit_size: 2
+    enum: EndptctrlRxt
+  - name: rxi
+    description: RX Data Toggle Inhibit.
+    bit_offset: 5
+    bit_size: 1
+  - name: rxr
+    description: RX Data Toggle Reset (WS).
+    bit_offset: 6
+    bit_size: 1
+  - name: rxe
+    description: RX Endpoint Enable.
+    bit_offset: 7
+    bit_size: 1
+  - name: txs
+    description: TX Endpoint Stall.
+    bit_offset: 16
+    bit_size: 1
+  - name: txd
+    description: TX Endpoint Data Source.
+    bit_offset: 17
+    bit_size: 1
+  - name: txt
+    description: TX Endpoint Type.
+    bit_offset: 18
+    bit_size: 2
+    enum: EndptctrlTxt
+  - name: txi
+    description: TX Data Toggle Inhibit.
+    bit_offset: 21
+    bit_size: 1
+    enum: EndptctrlTxi
+  - name: txr
+    description: TX Data Toggle Reset (WS).
+    bit_offset: 22
+    bit_size: 1
+  - name: txe
+    description: TX Endpoint Enable.
+    bit_offset: 23
+    bit_size: 1
+fieldset/Endptflush:
+  description: Endpoint Flush.
+  fields:
+  - name: ferb
+    description: Flush Endpoint Receive Buffer.
+    bit_offset: 0
+    bit_size: 8
+  - name: fetb
+    description: Flush Endpoint Transmit Buffer.
+    bit_offset: 16
+    bit_size: 8
+fieldset/Endptlistaddr:
+  description: Endpoint List Address.
+  fields:
+  - name: epbase
+    description: Endpoint List Pointer (Low).
+    bit_offset: 11
+    bit_size: 21
+fieldset/Endptnak:
+  description: Endpoint NAK.
+  fields:
+  - name: eprn
+    description: RX Endpoint NAK.
+    bit_offset: 0
+    bit_size: 8
+  - name: eptn
+    description: TX Endpoint NAK.
+    bit_offset: 16
+    bit_size: 8
+fieldset/Endptnaken:
+  description: Endpoint NAK Enable.
+  fields:
+  - name: eprne
+    description: RX Endpoint NAK Enable.
+    bit_offset: 0
+    bit_size: 8
+  - name: eptne
+    description: TX Endpoint NAK Enable.
+    bit_offset: 16
+    bit_size: 8
+fieldset/Endptprime:
+  description: Endpoint Prime.
+  fields:
+  - name: perb
+    description: Prime Endpoint Receive Buffer.
+    bit_offset: 0
+    bit_size: 8
+  - name: petb
+    description: Prime Endpoint Transmit Buffer.
+    bit_offset: 16
+    bit_size: 8
+fieldset/Endptsetupstat:
+  description: Endpoint Setup Status.
+  fields:
+  - name: endptsetupstat
+    description: Setup Endpoint Status.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Endptstat:
+  description: Endpoint Status.
+  fields:
+  - name: erbr
+    description: Endpoint Receive Buffer Ready.
+    bit_offset: 0
+    bit_size: 8
+  - name: etbr
+    description: Endpoint Transmit Buffer Ready.
+    bit_offset: 16
+    bit_size: 8
+fieldset/Frindex:
+  description: USB Frame Index.
+  fields:
+  - name: frindex
+    description: Frame Index.
+    bit_offset: 0
+    bit_size: 14
+    enum: FrindexVal
+fieldset/Gptimer0ctrl:
+  description: 'General Purpose Timer #0 Controller.'
+  fields:
+  - name: gptcnt
+    description: General Purpose Timer Counter.
+    bit_offset: 0
+    bit_size: 24
+  - name: gptmode
+    description: General Purpose Timer Mode.
+    bit_offset: 24
+    bit_size: 1
+    enum: Gptimer0ctrlGptmode
+  - name: gptrst
+    description: General Purpose Timer Reset.
+    bit_offset: 30
+    bit_size: 1
+    enum: Gptimer0ctrlGptrst
+  - name: gptrun
+    description: General Purpose Timer Run.
+    bit_offset: 31
+    bit_size: 1
+    enum: Gptimer0ctrlGptrun
+fieldset/Gptimer0ld:
+  description: 'General Purpose Timer #0 Load.'
+  fields:
+  - name: gptld
+    description: General Purpose Timer Load Value.
+    bit_offset: 0
+    bit_size: 24
+fieldset/Gptimer1ctrl:
+  description: 'General Purpose Timer #1 Controller.'
+  fields:
+  - name: gptcnt
+    description: General Purpose Timer Counter.
+    bit_offset: 0
+    bit_size: 24
+  - name: gptmode
+    description: General Purpose Timer Mode.
+    bit_offset: 24
+    bit_size: 1
+    enum: Gptimer1ctrlGptmode
+  - name: gptrst
+    description: General Purpose Timer Reset.
+    bit_offset: 30
+    bit_size: 1
+    enum: Gptimer1ctrlGptrst
+  - name: gptrun
+    description: General Purpose Timer Run.
+    bit_offset: 31
+    bit_size: 1
+    enum: Gptimer1ctrlGptrun
+fieldset/Gptimer1ld:
+  description: 'General Purpose Timer #1 Load.'
+  fields:
+  - name: gptld
+    description: General Purpose Timer Load Value.
+    bit_offset: 0
+    bit_size: 24
+fieldset/Hccparams:
+  description: Host Controller Capability Parameters.
+  fields:
+  - name: adc
+    description: 64-bit Addressing Capability.
+    bit_offset: 0
+    bit_size: 1
+  - name: pfl
+    description: Programmable Frame List Flag.
+    bit_offset: 1
+    bit_size: 1
+  - name: asp
+    description: Asynchronous Schedule Park Capability.
+    bit_offset: 2
+    bit_size: 1
+  - name: ist
+    description: Isochronous Scheduling Threshold.
+    bit_offset: 4
+    bit_size: 4
+  - name: eecp
+    description: EHCI Extended Capabilities Pointer.
+    bit_offset: 8
+    bit_size: 8
+fieldset/Hciversion:
+  description: Host Controller Interface Version.
+  bit_size: 16
+  fields:
+  - name: hciversion
+    description: Host Controller Interface Version Number.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Hcsparams:
+  description: Host Controller Structural Parameters.
+  fields:
+  - name: n_ports
+    description: Number of Downstream Ports.
+    bit_offset: 0
+    bit_size: 4
+  - name: ppc
+    description: Port Power Control.
+    bit_offset: 4
+    bit_size: 1
+  - name: n_pcc
+    description: Number of Ports per Companion Controller.
+    bit_offset: 8
+    bit_size: 4
+  - name: n_cc
+    description: Number of Companion Controller.
+    bit_offset: 12
+    bit_size: 4
+    enum: NCc
+  - name: pi
+    description: Port Indicators (P INDICATOR).
+    bit_offset: 16
+    bit_size: 1
+  - name: n_ptt
+    description: Number of Ports per Transaction Translator.
+    bit_offset: 20
+    bit_size: 4
+  - name: n_tt
+    description: Number of Transaction Translators.
+    bit_offset: 24
+    bit_size: 4
+fieldset/Hwdevice:
+  description: Device Hardware Parameters.
+  fields:
+  - name: dc
+    description: Device Capable.
+    bit_offset: 0
+    bit_size: 1
+    enum: Dc
+  - name: devep
+    description: Device Endpoint Number.
+    bit_offset: 1
+    bit_size: 5
+fieldset/Hwgeneral:
+  description: Hardware General.
+  fields:
+  - name: phyw
+    description: Data width of the transceiver connected to the controller core.
+    bit_offset: 4
+    bit_size: 2
+    enum: Phyw
+  - name: phym
+    description: Transceiver Type.
+    bit_offset: 6
+    bit_size: 3
+    enum: Phym
+  - name: sm
+    description: Serial interface mode capability.
+    bit_offset: 9
+    bit_size: 2
+    enum: Sm
+fieldset/Hwhost:
+  description: Host Hardware Parameters.
+  fields:
+  - name: hc
+    description: Host Capable.
+    bit_offset: 0
+    bit_size: 1
+    enum: Hc
+  - name: nport
+    description: The Number of downstream ports supported by the host controller is (NPORT+1).
+    bit_offset: 1
+    bit_size: 3
+fieldset/Hwrxbuf:
+  description: RX Buffer Hardware Parameters.
+  fields:
+  - name: rxburst
+    description: Default burst size for memory to RX buffer transfer.
+    bit_offset: 0
+    bit_size: 8
+  - name: rxadd
+    description: Buffer total size for all receive endpoints is (2^RXADD).
+    bit_offset: 8
+    bit_size: 8
+fieldset/Hwtxbuf:
+  description: TX Buffer Hardware Parameters.
+  fields:
+  - name: txburst
+    description: Default burst size for memory to TX buffer transfer.
+    bit_offset: 0
+    bit_size: 8
+  - name: txchanadd
+    description: 'TX FIFO Buffer size is: (2^TXCHANADD) * 4 Bytes.'
+    bit_offset: 16
+    bit_size: 8
+fieldset/Id:
+  description: Identification.
+  fields:
+  - name: id
+    description: Configuration Number.
+    bit_offset: 0
+    bit_size: 6
+  - name: nid
+    description: Complement Version of ID.
+    bit_offset: 8
+    bit_size: 6
+  - name: revision
+    description: Revision Number of the Controller Core.
+    bit_offset: 16
+    bit_size: 8
+fieldset/Otgsc:
+  description: On-The-Go Status & Control.
+  fields:
+  - name: vd
+    description: VBUS Discharge.
+    bit_offset: 0
+    bit_size: 1
+  - name: vc
+    description: VBUS Charge.
+    bit_offset: 1
+    bit_size: 1
+  - name: ot
+    description: OTG Termination.
+    bit_offset: 3
+    bit_size: 1
+  - name: dp
+    description: Data Pulsing.
+    bit_offset: 4
+    bit_size: 1
+  - name: idpu
+    description: ID Pullup.
+    bit_offset: 5
+    bit_size: 1
+  - name: id
+    description: USB ID.
+    bit_offset: 8
+    bit_size: 1
+  - name: avv
+    description: A VBus Valid.
+    bit_offset: 9
+    bit_size: 1
+  - name: asv
+    description: A Session Valid.
+    bit_offset: 10
+    bit_size: 1
+  - name: bsv
+    description: B Session Valid.
+    bit_offset: 11
+    bit_size: 1
+  - name: bse
+    description: B Session End.
+    bit_offset: 12
+    bit_size: 1
+  - name: tog_1ms
+    description: 1 Millisecond Timer Toggle.
+    bit_offset: 13
+    bit_size: 1
+  - name: dps
+    description: Data Bus Pulsing Status.
+    bit_offset: 14
+    bit_size: 1
+  - name: idis
+    description: USB ID Interrupt Status.
+    bit_offset: 16
+    bit_size: 1
+  - name: avvis
+    description: A VBus Valid Interrupt Status.
+    bit_offset: 17
+    bit_size: 1
+  - name: asvis
+    description: A Session Valid Interrupt Status.
+    bit_offset: 18
+    bit_size: 1
+  - name: bsvis
+    description: B Session Valid Interrupt Status.
+    bit_offset: 19
+    bit_size: 1
+  - name: bseis
+    description: B Session End Interrupt Status.
+    bit_offset: 20
+    bit_size: 1
+  - name: status_1ms
+    description: 1 Millisecond Timer Interrupt Status.
+    bit_offset: 21
+    bit_size: 1
+  - name: dpis
+    description: Data Pulse Interrupt Status.
+    bit_offset: 22
+    bit_size: 1
+  - name: idie
+    description: USB ID Interrupt Enable.
+    bit_offset: 24
+    bit_size: 1
+  - name: avvie
+    description: A VBus Valid Interrupt Enable.
+    bit_offset: 25
+    bit_size: 1
+  - name: asvie
+    description: A Session Valid Interrupt Enable.
+    bit_offset: 26
+    bit_size: 1
+  - name: bsvie
+    description: B Session Valid Interrupt Enable.
+    bit_offset: 27
+    bit_size: 1
+  - name: bseie
+    description: B Session End Interrupt Enable.
+    bit_offset: 28
+    bit_size: 1
+  - name: en_1ms
+    description: 1 Millisecond Timer Interrupt Enable.
+    bit_offset: 29
+    bit_size: 1
+  - name: dpie
+    description: Data Pulse Interrupt Enable.
+    bit_offset: 30
+    bit_size: 1
+fieldset/Periodiclistbase:
+  description: Frame List Base Address.
+  fields:
+  - name: baseadr
+    description: Base Address (Low).
+    bit_offset: 12
+    bit_size: 20
+fieldset/Portsc1:
+  description: Port Status & Control.
+  fields:
+  - name: ccs
+    description: Current Connect Status.
+    bit_offset: 0
+    bit_size: 1
+  - name: csc
+    description: Connect Status Change.
+    bit_offset: 1
+    bit_size: 1
+  - name: pe
+    description: Port Enabled/Disabled.
+    bit_offset: 2
+    bit_size: 1
+  - name: pec
+    description: Port Enable/Disable Change.
+    bit_offset: 3
+    bit_size: 1
+  - name: oca
+    description: Over-Current Active.
+    bit_offset: 4
+    bit_size: 1
+  - name: occ
+    description: Over-current Change.
+    bit_offset: 5
+    bit_size: 1
+  - name: fpr
+    description: Force Port Resume.
+    bit_offset: 6
+    bit_size: 1
+  - name: susp
+    description: Suspend.
+    bit_offset: 7
+    bit_size: 1
+  - name: pr
+    description: Port Reset.
+    bit_offset: 8
+    bit_size: 1
+  - name: hsp
+    description: High-Speed Port.
+    bit_offset: 9
+    bit_size: 1
+  - name: ls
+    description: Line Status.
+    bit_offset: 10
+    bit_size: 2
+    enum: Ls
+  - name: pp
+    description: Port Power.
+    bit_offset: 12
+    bit_size: 1
+  - name: po
+    description: Port Owner.
+    bit_offset: 13
+    bit_size: 1
+  - name: pic
+    description: Port Indicator Control.
+    bit_offset: 14
+    bit_size: 2
+    enum: Pic
+  - name: ptc
+    description: Port Test Control.
+    bit_offset: 16
+    bit_size: 4
+    enum: Ptc
+  - name: wkcn
+    description: Wake on Connect Enable (WKCNNT_E).
+    bit_offset: 20
+    bit_size: 1
+  - name: wkdc
+    description: Wake on Disconnect Enable (WKDSCNNT_E).
+    bit_offset: 21
+    bit_size: 1
+  - name: wkoc
+    description: Wake on Over-current Enable (WKOC_E).
+    bit_offset: 22
+    bit_size: 1
+  - name: phcd
+    description: PHY Low Power Suspend - Clock Disable (PLPSCD).
+    bit_offset: 23
+    bit_size: 1
+    enum: Phcd
+  - name: pfsc
+    description: Port Force Full Speed Connect.
+    bit_offset: 24
+    bit_size: 1
+    enum: Pfsc
+  - name: pts_2
+    description: Parallel Transceiver Select.
+    bit_offset: 25
+    bit_size: 1
+  - name: pspd
+    description: Port Speed.
+    bit_offset: 26
+    bit_size: 2
+    enum: Pspd
+  - name: ptw
+    description: Parallel Transceiver Width - Read/Write.
+    bit_offset: 28
+    bit_size: 1
+    enum: Ptw
+  - name: sts
+    description: Serial Transceiver Select.
+    bit_offset: 29
+    bit_size: 1
+  - name: pts_1
+    description: Parallel Transceiver Select.
+    bit_offset: 30
+    bit_size: 2
+fieldset/Sbuscfg:
+  description: System Bus Config.
+  fields:
+  - name: ahbbrst
+    description: AHB master interface Burst configuration.
+    bit_offset: 0
+    bit_size: 3
+    enum: Ahbbrst
+fieldset/Txfilltuning:
+  description: TX FIFO Fill Tuning.
+  fields:
+  - name: txschoh
+    description: Scheduler Overhead.
+    bit_offset: 0
+    bit_size: 7
+  - name: txschhealth
+    description: Scheduler Health Counter.
+    bit_offset: 8
+    bit_size: 5
+  - name: txfifothres
+    description: FIFO Burst Threshold.
+    bit_offset: 16
+    bit_size: 6
+fieldset/Usbcmd:
+  description: USB Command.
+  fields:
+  - name: rs
+    description: Run/Stop.
+    bit_offset: 0
+    bit_size: 1
+  - name: rst
+    description: Controller Reset.
+    bit_offset: 1
+    bit_size: 1
+  - name: fs_1
+    description: Frame List Size.
+    bit_offset: 2
+    bit_size: 2
+  - name: pse
+    description: Periodic Schedule Enable.
+    bit_offset: 4
+    bit_size: 1
+    enum: Pse
+  - name: ase
+    description: Asynchronous Schedule Enable.
+    bit_offset: 5
+    bit_size: 1
+    enum: Ase
+  - name: iaa
+    description: Interrupt on Async Advance Doorbell.
+    bit_offset: 6
+    bit_size: 1
+  - name: asp
+    description: Asynchronous Schedule Park Mode Count.
+    bit_offset: 8
+    bit_size: 2
+  - name: aspe
+    description: Asynchronous Schedule Park Mode Enable.
+    bit_offset: 11
+    bit_size: 1
+  - name: sutw
+    description: Setup TripWire [device mode only].
+    bit_offset: 13
+    bit_size: 1
+  - name: atdtw
+    description: Add dTD TripWire[device mode only].
+    bit_offset: 14
+    bit_size: 1
+  - name: fs_2
+    description: Frame List Size [host mode only].
+    bit_offset: 15
+    bit_size: 1
+  - name: itc
+    description: Interrupt Threshold Control.
+    bit_offset: 16
+    bit_size: 8
+    enum: Itc
+fieldset/Usbintr:
+  description: Interrupt Enable.
+  fields:
+  - name: ue
+    description: USB Interrupt Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: uee
+    description: USB Error Interrupt Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: pce
+    description: Port Change Detect Interrupt Enable.
+    bit_offset: 2
+    bit_size: 1
+  - name: fre
+    description: Frame List Rollover Interrupt Enable.
+    bit_offset: 3
+    bit_size: 1
+  - name: see
+    description: System Error Interrupt Enable.
+    bit_offset: 4
+    bit_size: 1
+  - name: aae
+    description: Async Advance Interrupt Enable.
+    bit_offset: 5
+    bit_size: 1
+  - name: ure
+    description: USB Reset Interrupt Enable.
+    bit_offset: 6
+    bit_size: 1
+  - name: sre
+    description: SOF Received Interrupt Enable.
+    bit_offset: 7
+    bit_size: 1
+  - name: sle
+    description: Sleep Interrupt Enable.
+    bit_offset: 8
+    bit_size: 1
+  - name: nake
+    description: NAK Interrupt Enable.
+    bit_offset: 16
+    bit_size: 1
+  - name: uaie
+    description: USB Host Asynchronous Interrupt Enable.
+    bit_offset: 18
+    bit_size: 1
+  - name: upie
+    description: USB Host Periodic Interrupt Enable.
+    bit_offset: 19
+    bit_size: 1
+  - name: tie0
+    description: 'General Purpose Timer #0 Interrupt Enable.'
+    bit_offset: 24
+    bit_size: 1
+  - name: tie1
+    description: 'General Purpose Timer #1 Interrupt Enable.'
+    bit_offset: 25
+    bit_size: 1
+fieldset/Usbmode:
+  description: USB Device Mode.
+  fields:
+  - name: cm
+    description: Controller Mode.
+    bit_offset: 0
+    bit_size: 2
+    enum: Cm
+  - name: es
+    description: Endian Select.
+    bit_offset: 2
+    bit_size: 1
+    enum: Es
+  - name: slom
+    description: Setup Lockout Mode.
+    bit_offset: 3
+    bit_size: 1
+    enum: Slom
+  - name: sdis
+    description: Stream Disable Mode.
+    bit_offset: 4
+    bit_size: 1
+fieldset/Usbsts:
+  description: USB Status.
+  fields:
+  - name: ui
+    description: USB Interrupt (USBINT).
+    bit_offset: 0
+    bit_size: 1
+  - name: uei
+    description: USB Error Interrupt (USBERRINT).
+    bit_offset: 1
+    bit_size: 1
+  - name: pci
+    description: Port Change Detect.
+    bit_offset: 2
+    bit_size: 1
+  - name: fri
+    description: Frame List Rollover.
+    bit_offset: 3
+    bit_size: 1
+  - name: sei
+    description: System Error.
+    bit_offset: 4
+    bit_size: 1
+  - name: aai
+    description: Interrupt on Async Advance.
+    bit_offset: 5
+    bit_size: 1
+  - name: uri
+    description: USB Reset Received.
+    bit_offset: 6
+    bit_size: 1
+  - name: sri
+    description: SOF Received.
+    bit_offset: 7
+    bit_size: 1
+  - name: sli
+    description: DCSuspend.
+    bit_offset: 8
+    bit_size: 1
+  - name: ulpii
+    description: ULPI Interrupt.
+    bit_offset: 10
+    bit_size: 1
+  - name: hch
+    description: HCHaIted.
+    bit_offset: 12
+    bit_size: 1
+  - name: rcl
+    description: Reclamation.
+    bit_offset: 13
+    bit_size: 1
+  - name: ps
+    description: Periodic Schedule Status.
+    bit_offset: 14
+    bit_size: 1
+  - name: as_
+    description: Asynchronous Schedule Status.
+    bit_offset: 15
+    bit_size: 1
+  - name: naki
+    description: NAK Interrupt Bit.
+    bit_offset: 16
+    bit_size: 1
+  - name: ti0
+    description: General Purpose Timer Interrupt 0 (GPTINT0).
+    bit_offset: 24
+    bit_size: 1
+  - name: ti1
+    description: General Purpose Timer Interrupt 1 (GPTINT1).
+    bit_offset: 25
+    bit_size: 1
+enum/Ahbbrst:
+  bit_size: 3
+  variants:
+  - name: IncrBurst
+    description: Incremental burst of unspecified length only.
+    value: 0
+  - name: Incr4Burst
+    description: INCR4 burst, then single transfer.
+    value: 1
+  - name: Incr8Burst
+    description: INCR8 burst, INCR4 burst, then single transfer.
+    value: 2
+  - name: Incr16Burst
+    description: INCR16 burst, INCR8 burst, INCR4 burst, then single transfer.
+    value: 3
+  - name: Incr4Unspec
+    description: INCR4 burst, then incremental burst of unspecified length.
+    value: 5
+  - name: Incr84Unspec
+    description: INCR8 burst, INCR4 burst, then incremental burst of unspecified length.
+    value: 6
+  - name: Incr1684Unspec
+    description: INCR16 burst, INCR8 burst, INCR4 burst, then incremental burst of unspecified length.
+    value: 7
+enum/Ase:
+  bit_size: 1
+  variants:
+  - name: DontProcessAsync
+    description: Do not process the Asynchronous Schedule.
+    value: 0
+  - name: AccessAsync
+    description: Use the ASYNCLISTADDR register to access the Asynchronous Schedule.
+    value: 1
+enum/Cf:
+  bit_size: 1
+  variants:
+  - name: PortRoutingClassicHost
+    description: Port routing control logic default-routes each port to an implementation dependent classic host controller.
+    value: 0
+  - name: PortRoutingHost
+    description: Port routing control logic default-routes all ports to this host controller.
+    value: 1
+enum/Cm:
+  bit_size: 2
+  variants:
+  - name: Idl
+    description: Idle [Default for combination host/device].
+    value: 0
+  - name: DeviceContr
+    description: Device Controller [Default for device only controller].
+    value: 2
+  - name: HostContr
+    description: Host Controller [Default for host only controller].
+    value: 3
+enum/Dc:
+  bit_size: 1
+  variants:
+  - name: DeviceOpDis
+    description: Not supported.
+    value: 0
+  - name: DeviceOpEn
+    description: Supported.
+    value: 1
+enum/Endptctrl0Rxt:
+  bit_size: 2
+  variants:
+  - name: Ctrl
+    description: Control.
+    value: 0
+enum/Endptctrl0Txt:
+  bit_size: 2
+  variants:
+  - name: Ctrl
+    description: Control.
+    value: 0
+enum/EndptctrlRxt:
+  bit_size: 2
+  variants:
+  - name: Ctl
+    description: Control.
+    value: 0
+  - name: Iso
+    description: Isochronous.
+    value: 1
+  - name: Blk
+    description: Bulk.
+    value: 2
+  - name: Irq
+    description: Interrupt.
+    value: 3
+enum/EndptctrlTxi:
+  bit_size: 1
+  variants:
+  - name: PidEn
+    description: PID sequencing enabled.
+    value: 0
+  - name: PidDis
+    description: PID sequencing disabled.
+    value: 1
+enum/EndptctrlTxt:
+  bit_size: 2
+  variants:
+  - name: Ctl
+    description: Control.
+    value: 0
+  - name: Iso
+    description: Isochronous.
+    value: 1
+  - name: Blk
+    description: Bulk.
+    value: 2
+  - name: Irq
+    description: Interrupt.
+    value: 3
+enum/Es:
+  bit_size: 1
+  variants:
+  - name: LittleEndian
+    description: Little Endian.
+    value: 0
+  - name: BigEndian
+    description: Big Endian.
+    value: 1
+enum/FrindexVal:
+  bit_size: 14
+  variants:
+  - name: Frindex1024
+    description: (1024) 12.
+    value: 0
+  - name: Frindex512
+    description: (512) 11.
+    value: 1
+  - name: Frindex256
+    description: (256) 10.
+    value: 2
+  - name: Frindex128
+    description: (128) 9.
+    value: 3
+  - name: Frindex64
+    description: (64) 8.
+    value: 4
+  - name: Frindex32
+    description: (32) 7.
+    value: 5
+  - name: Frindex16
+    description: (16) 6.
+    value: 6
+  - name: Frindex8
+    description: (8) 5.
+    value: 7
+enum/Gptimer0ctrlGptmode:
+  bit_size: 1
+  variants:
+  - name: OneShot
+    description: One Shot Mode.
+    value: 0
+  - name: Repeat
+    description: Repeat Mode.
+    value: 1
+enum/Gptimer0ctrlGptrst:
+  bit_size: 1
+  variants:
+  - name: NoAction
+    description: No action.
+    value: 0
+  - name: LoadCntr
+    description: Load counter value from GPTLD bits in n_GPTIMER0LD.
+    value: 1
+enum/Gptimer0ctrlGptrun:
+  bit_size: 1
+  variants:
+  - name: StopCntr
+    description: Stop counting.
+    value: 0
+  - name: Run
+    description: Run.
+    value: 1
+enum/Gptimer1ctrlGptmode:
+  bit_size: 1
+  variants:
+  - name: OneShot
+    description: One Shot Mode.
+    value: 0
+  - name: Repeat
+    description: Repeat Mode.
+    value: 1
+enum/Gptimer1ctrlGptrst:
+  bit_size: 1
+  variants:
+  - name: NoAction
+    description: No action.
+    value: 0
+  - name: LoadCntr
+    description: Load counter value from GPTLD bits in USB_n_GPTIMER0LD.
+    value: 1
+enum/Gptimer1ctrlGptrun:
+  bit_size: 1
+  variants:
+  - name: StopCntr
+    description: Stop counting.
+    value: 0
+  - name: Run
+    description: Run.
+    value: 1
+enum/Hc:
+  bit_size: 1
+  variants:
+  - name: HostOpDis
+    description: Not supported.
+    value: 0
+  - name: HostOpEn
+    description: Supported.
+    value: 1
+enum/Itc:
+  bit_size: 8
+  variants:
+  - name: Immediate
+    description: Immediate (no threshold).
+    value: 0
+  - name: Microframe1
+    description: 1 micro-frame.
+    value: 1
+  - name: Microframe2
+    description: 2 micro-frames.
+    value: 2
+  - name: Microframe4
+    description: 4 micro-frames.
+    value: 4
+  - name: Microframe8
+    description: 8 micro-frames.
+    value: 8
+  - name: Microframe16
+    description: 16 micro-frames.
+    value: 16
+  - name: Microframe32
+    description: 32 micro-frames.
+    value: 32
+  - name: Microframe64
+    description: 64 micro-frames.
+    value: 64
+enum/Ls:
+  bit_size: 2
+  variants:
+  - name: Se0
+    description: SE0.
+    value: 0
+  - name: KState
+    description: K-state.
+    value: 1
+  - name: JState
+    description: J-state.
+    value: 2
+  - name: Undefined
+    description: Undefined.
+    value: 3
+enum/NCc:
+  bit_size: 4
+  variants:
+  - name: NoCompController
+    description: There is no internal Companion Controller and port-ownership hand-off is not supported.
+    value: 0
+  - name: CompController
+    description: There are internal companion controller(s) and port-ownership hand-offs is supported.
+    value: 1
+enum/Pfsc:
+  bit_size: 1
+  variants:
+  - name: Normal
+    description: Normal operation.
+    value: 0
+  - name: FullSpeed
+    description: Forced to full speed.
+    value: 1
+enum/Phcd:
+  bit_size: 1
+  variants:
+  - name: PhyClkEn
+    description: Enable PHY clock.
+    value: 0
+  - name: PhyClkDis
+    description: Disable PHY clock.
+    value: 1
+enum/Phym:
+  bit_size: 3
+  variants:
+  - name: Utmi
+    description: UTMI/UMTI+.
+    value: 0
+  - name: UlpiDdr
+    description: ULPI DDR.
+    value: 1
+  - name: Ulpi
+    description: ULPI.
+    value: 2
+  - name: Serial
+    description: Serial Only.
+    value: 3
+  - name: SwRstUtmi
+    description: Software programmable - reset to UTMI/UTMI+.
+    value: 4
+  - name: SwRstUlpiDdr
+    description: Software programmable - reset to ULPI DDR.
+    value: 5
+  - name: SwRstUlpi
+    description: Software programmable - reset to ULPI.
+    value: 6
+  - name: SwRstSerial
+    description: Software programmable - reset to Serial.
+    value: 7
+enum/Phyw:
+  bit_size: 2
+  variants:
+  - name: DataBus8
+    description: 8 bit wide data bus (Software non-programmable).
+    value: 0
+  - name: DataBus16
+    description: 16 bit wide data bus (Software non-programmable).
+    value: 1
+  - name: SwRst8
+    description: Reset to 8 bit wide data bus (Software programmable).
+    value: 2
+  - name: SwRst16
+    description: Reset to 16 bit wide data bus (Software programmable).
+    value: 3
+enum/Pic:
+  bit_size: 2
+  variants:
+  - name: PortIndicatorOff
+    description: Port indicators are off.
+    value: 0
+  - name: PortIndAmber
+    description: Amber.
+    value: 1
+  - name: PortIndGreen
+    description: Green.
+    value: 2
+  - name: Undefined
+    description: Undefined.
+    value: 3
+enum/Pse:
+  bit_size: 1
+  variants:
+  - name: DontProcessPt
+    description: Do not process the Periodic Schedule.
+    value: 0
+  - name: ProcessPtPeriodiclistbase
+    description: Use the PERIODICLISTBASE register to access the Periodic Schedule.
+    value: 1
+enum/Pspd:
+  bit_size: 2
+  variants:
+  - name: Fs
+    description: Full Speed.
+    value: 0
+  - name: Ls
+    description: Low Speed.
+    value: 1
+  - name: Hs
+    description: High Speed.
+    value: 2
+  - name: Undefined
+    description: Undefined.
+    value: 3
+enum/Ptc:
+  bit_size: 4
+  variants:
+  - name: TstModeDis
+    description: TEST_MODE_DISABLE.
+    value: 0
+  - name: JState
+    description: J_STATE.
+    value: 1
+  - name: KState
+    description: K_STATE.
+    value: 2
+  - name: Se0
+    description: SE0 (host) / NAK (device).
+    value: 3
+  - name: Pckt
+    description: Packet.
+    value: 4
+  - name: Hs
+    description: FORCE_ENABLE_HS.
+    value: 5
+  - name: Fs
+    description: FORCE_ENABLE_FS.
+    value: 6
+  - name: Ls
+    description: FORCE_ENABLE_LS.
+    value: 7
+enum/Ptw:
+  bit_size: 1
+  variants:
+  - name: Utmi8
+    description: Select the 8-bit UTMI interface [60 MHz].
+    value: 0
+  - name: Utmi16
+    description: Select the 16-bit UTMI interface [30 MHz].
+    value: 1
+enum/Slom:
+  bit_size: 1
+  variants:
+  - name: LockoutOn
+    description: Setup Lockouts On (default);.
+    value: 0
+  - name: LockoutOff
+    description: Setup Lockouts Off.
+    value: 1
+enum/Sm:
+  bit_size: 2
+  variants:
+  - name: SerialEngineNo
+    description: No Serial Engine, always use parallel signalling.
+    value: 0
+  - name: SerialEngineEn
+    description: Serial Engine present, always use serial signalling for FS/LS.
+    value: 1
+  - name: SwRstParallel
+    description: Software programmable - Reset to use parallel signalling for FS/LS.
+    value: 2
+  - name: SwRstSerialEng
+    description: Software programmable - Reset to use serial signalling for FS/LS.
+    value: 3

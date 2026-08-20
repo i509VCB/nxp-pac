@@ -1,0 +1,171 @@
+block/Vref:
+  description: VREF.
+  items:
+  - name: verid
+    description: Version ID.
+    byte_offset: 0
+    access: Read
+    fieldset: Verid
+  - name: csr
+    description: Control and Status.
+    byte_offset: 8
+    fieldset: Csr
+  - name: utrim
+    description: User Trim.
+    byte_offset: 16
+    fieldset: Utrim
+fieldset/Csr:
+  description: Control and Status.
+  fields:
+  - name: hcbgen
+    description: HC Bandgap Enabled.
+    bit_offset: 0
+    bit_size: 1
+    enum: Hcbgen
+  - name: lpbgen
+    description: Low-Power Bandgap Enable.
+    bit_offset: 1
+    bit_size: 1
+    enum: Lpbgen
+  - name: lpbg_buf_en
+    description: Low-Power Bandgap Buffer Enable.
+    bit_offset: 2
+    bit_size: 1
+    enum: LpbgBufEn
+  - name: chopen
+    description: Chop Oscillator Enable.
+    bit_offset: 3
+    bit_size: 1
+    enum: Chopen
+  - name: icompen
+    description: Current Compensation Enable.
+    bit_offset: 4
+    bit_size: 1
+    enum: Icompen
+  - name: regen
+    description: Regulator Enable.
+    bit_offset: 5
+    bit_size: 1
+    enum: Regen
+  - name: hi_pwr_lv
+    description: High-Power Level.
+    bit_offset: 11
+    bit_size: 1
+    enum: HiPwrLv
+  - name: buf21en
+    description: Internal Buffer21 Enable.
+    bit_offset: 16
+    bit_size: 1
+    enum: Buf21en
+  - name: vrefst
+    description: Internal HC Voltage Reference Stable.
+    bit_offset: 31
+    bit_size: 1
+    enum: Vrefst
+fieldset/Utrim:
+  description: User Trim.
+  fields:
+  - name: trim2v1
+    description: VREF 2.1 V Trim.
+    bit_offset: 0
+    bit_size: 4
+  - name: vreftrim
+    description: VREF Trim.
+    bit_offset: 8
+    bit_size: 6
+fieldset/Verid:
+  description: Version ID.
+  fields:
+  - name: feature
+    description: Feature Specification Number.
+    bit_offset: 0
+    bit_size: 16
+  - name: minor
+    description: Minor Version Number.
+    bit_offset: 16
+    bit_size: 8
+  - name: major
+    description: Major Version Number.
+    bit_offset: 24
+    bit_size: 8
+enum/Buf21en:
+  bit_size: 1
+  variants:
+  - name: Dis
+    description: Disables.
+    value: 0
+  - name: Ena
+    description: Enables.
+    value: 1
+enum/Chopen:
+  bit_size: 1
+  variants:
+  - name: Dis
+    description: Disables.
+    value: 0
+  - name: Ena
+    description: Enables.
+    value: 1
+enum/Hcbgen:
+  bit_size: 1
+  variants:
+  - name: Dis
+    description: Disables.
+    value: 0
+  - name: Ena
+    description: Enables.
+    value: 1
+enum/HiPwrLv:
+  bit_size: 1
+  variants:
+  - name: Low
+    description: Low-power.
+    value: 0
+  - name: High
+    description: High-power.
+    value: 1
+enum/Icompen:
+  bit_size: 1
+  variants:
+  - name: Dis
+    description: Disables.
+    value: 0
+  - name: Ena
+    description: Enables.
+    value: 1
+enum/LpbgBufEn:
+  bit_size: 1
+  variants:
+  - name: Dis
+    description: Disables.
+    value: 0
+  - name: Ena
+    description: Enables.
+    value: 1
+enum/Lpbgen:
+  bit_size: 1
+  variants:
+  - name: Dis
+    description: Disables.
+    value: 0
+  - name: Ena
+    description: Enables.
+    value: 1
+enum/Regen:
+  bit_size: 1
+  variants:
+  - name: Dis
+    description: Disables.
+    value: 0
+  - name: Ena
+    description: Enables.
+    value: 1
+enum/Vrefst:
+  bit_size: 1
+  variants:
+  - name: DisNotstable
+    description: Disabled and unstable.
+    value: 0
+  - name: Stable
+    description: Stable.
+    value: 1

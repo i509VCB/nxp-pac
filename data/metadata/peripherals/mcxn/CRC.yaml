@@ -1,0 +1,161 @@
+# File not directly generated from transforms!
+#
+# DATA and GPOLY are 32-bit registers that the hardware also allows to be
+# accessed 8 or 16 bits at a time, and feeding a byte stream through the CRC
+# engine depends on that: an 8-bit write to DATA clocks in exactly one byte.
+# The SVD only describes the 32-bit view plus its byte/half-word subfields, so
+# the narrower accesses are added here as overlapping aliases, matching
+# `mcxa/CRC.yaml`. The descriptive `data`/`gpoly` fieldset views are kept
+# alongside them.
+block/Crc:
+  description: CRC.
+  items:
+  - name: data
+    description: Data.
+    byte_offset: 0
+    fieldset: Data
+  - name: data8
+    description: Data, 8-bit access.
+    byte_offset: 0
+    bit_size: 8
+  - name: data16
+    description: Data, 16-bit access.
+    byte_offset: 0
+    bit_size: 16
+  - name: data32
+    description: Data, 32-bit access.
+    byte_offset: 0
+  - name: gpoly
+    description: Polynomial.
+    byte_offset: 4
+    fieldset: Gpoly
+  - name: gpoly8
+    description: Polynomial, 8-bit access.
+    byte_offset: 4
+    bit_size: 8
+  - name: gpoly16
+    description: Polynomial, 16-bit access.
+    byte_offset: 4
+    bit_size: 16
+  - name: gpoly32
+    description: Polynomial, 32-bit access.
+    byte_offset: 4
+  - name: ctrl
+    description: Control.
+    byte_offset: 8
+    fieldset: Ctrl
+fieldset/Ctrl:
+  description: Control.
+  fields:
+  - name: tcrc
+    description: TCRC.
+    bit_offset: 24
+    bit_size: 1
+    enum: Tcrc
+  - name: was
+    description: Write as Seed.
+    bit_offset: 25
+    bit_size: 1
+    enum: Was
+  - name: fxor
+    description: Complement Read of CRC Data Register.
+    bit_offset: 26
+    bit_size: 1
+    enum: Fxor
+  - name: totr
+    description: Transpose Type for Read.
+    bit_offset: 28
+    bit_size: 2
+    enum: Totr
+  - name: tot
+    description: Transpose Type for Write.
+    bit_offset: 30
+    bit_size: 2
+    enum: Tot
+fieldset/Data:
+  description: Data.
+  fields:
+  - name: ll
+    description: Lower Part of Low Byte.
+    bit_offset: 0
+    bit_size: 8
+  - name: lu
+    description: Upper Part of Low Byte.
+    bit_offset: 8
+    bit_size: 8
+  - name: hl
+    description: Lower Part of High Byte.
+    bit_offset: 16
+    bit_size: 8
+  - name: hu
+    description: Upper Part of High Byte.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Gpoly:
+  description: Polynomial.
+  fields:
+  - name: low
+    description: Low Half-Word.
+    bit_offset: 0
+    bit_size: 16
+  - name: high
+    description: High Half-Word.
+    bit_offset: 16
+    bit_size: 16
+enum/Fxor:
+  bit_size: 1
+  variants:
+  - name: Noxor
+    description: Disables XOR on reading data.
+    value: 0
+  - name: Invert
+    description: Inverts or complements the read value of the CRC Data.
+    value: 1
+enum/Tcrc:
+  bit_size: 1
+  variants:
+  - name: B16
+    description: 16 bits.
+    value: 0
+  - name: B32
+    description: 32 bits.
+    value: 1
+enum/Tot:
+  bit_size: 2
+  variants:
+  - name: Notrnps
+    description: No transposition.
+    value: 0
+  - name: BtsTrnps
+    description: Bits in bytes are transposed, but bytes are not transposed.
+    value: 1
+  - name: BytsBtsTrnps
+    description: Both bits in bytes and bytes are transposed.
+    value: 2
+  - name: BytsTrnps
+    description: Only bytes are transposed, no bits in a byte are transposed.
+    value: 3
+enum/Totr:
+  bit_size: 2
+  variants:
+  - name: Notrnps
+    description: No transposition.
+    value: 0
+  - name: BtsTrnps
+    description: Bits in bytes are transposed, but bytes are not transposed.
+    value: 1
+  - name: BytsBtsTrnps
+    description: Both bits in bytes and bytes are transposed.
+    value: 2
+  - name: BytsTrnps
+    description: Only bytes are transposed, no bits in a byte are transposed.
+    value: 3
+enum/Was:
+  bit_size: 1
+  variants:
+  - name: Data
+    description: Data values.
+    value: 0
+  - name: Seed
+    description: Seed values.
+    value: 1

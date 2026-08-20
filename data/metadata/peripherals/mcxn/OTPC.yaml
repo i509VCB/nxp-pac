@@ -1,0 +1,414 @@
+block/Otpc:
+  description: OTPC.
+  items:
+  - name: verid
+    description: Version ID.
+    byte_offset: 0
+    access: Read
+    fieldset: Verid
+  - name: param
+    description: Parameters.
+    byte_offset: 4
+    access: Read
+    fieldset: Param
+  - name: sr
+    description: Status.
+    byte_offset: 8
+    fieldset: Sr
+  - name: rwc
+    description: Read and Write Control.
+    byte_offset: 16
+    fieldset: Rwc
+  - name: rlc
+    description: Reload Control.
+    byte_offset: 20
+    fieldset: Rlc
+  - name: pcr
+    description: Power Control.
+    byte_offset: 24
+    fieldset: Pcr
+  - name: wdata
+    description: Write Data.
+    byte_offset: 32
+    fieldset: Wdata
+  - name: rdata
+    description: Read Data.
+    byte_offset: 36
+    access: Read
+    fieldset: Rdata
+  - name: timing1
+    description: Timing1.
+    byte_offset: 48
+    fieldset: Timing1
+  - name: timing2
+    description: Timing2.
+    byte_offset: 52
+    fieldset: Timing2
+  - name: lock
+    description: Lock.
+    byte_offset: 512
+    fieldset: Lock
+  - name: secure
+    description: Secure.
+    byte_offset: 516
+    access: Read
+    fieldset: Secure
+  - name: secure_inv
+    description: Inverted Secure.
+    byte_offset: 520
+    access: Read
+    fieldset: SecureInv
+  - name: dbg_key
+    description: Debug and Key.
+    byte_offset: 524
+    access: Read
+    fieldset: DbgKey
+  - name: misc_cfg
+    description: MISC Config.
+    byte_offset: 528
+    fieldset: MiscCfg
+  - name: phantom_cfg
+    description: PHANTOM Config.
+    byte_offset: 532
+    fieldset: PhantomCfg
+  - name: flex_cfg0
+    description: Flexible Config 0.
+    byte_offset: 536
+    fieldset: FlexCfg0
+  - name: flex_cfg1
+    description: Flexible Config 1.
+    byte_offset: 540
+    fieldset: FlexCfg1
+fieldset/DbgKey:
+  description: Debug and Key.
+  fields:
+  - name: dat
+    description: Data.
+    bit_offset: 0
+    bit_size: 32
+fieldset/FlexCfg0:
+  description: Flexible Config 0.
+  fields:
+  - name: dat
+    description: Data.
+    bit_offset: 0
+    bit_size: 32
+fieldset/FlexCfg1:
+  description: Flexible Config 1.
+  fields:
+  - name: dat
+    description: Data.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Lock:
+  description: Lock.
+  fields:
+  - name: nxp_part_cfg_lock
+    description: NXP Part Config Lock.
+    bit_offset: 0
+    bit_size: 3
+  - name: nxp_ext_lock
+    description: NXP EXT Lock.
+    bit_offset: 3
+    bit_size: 3
+  - name: boot_cfg_lock
+    description: Boot config Lock.
+    bit_offset: 9
+    bit_size: 3
+  - name: prince_cfg_lock
+    description: Prince Config Lock.
+    bit_offset: 12
+    bit_size: 3
+  - name: oscaa_key_lock
+    description: OSCAA Key Lock.
+    bit_offset: 15
+    bit_size: 3
+  - name: cust_lock0
+    description: CUST Lock 0.
+    bit_offset: 18
+    bit_size: 3
+  - name: cust_lock1
+    description: CUST Lock 1.
+    bit_offset: 21
+    bit_size: 3
+  - name: cust_lock2
+    description: CUST Lock 2.
+    bit_offset: 24
+    bit_size: 3
+  - name: cust_lock3
+    description: CUST Lock 3.
+    bit_offset: 27
+    bit_size: 3
+fieldset/MiscCfg:
+  description: MISC Config.
+  fields:
+  - name: dat
+    description: Data.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Param:
+  description: Parameters.
+  fields:
+  - name: num_fuse
+    description: Number of fuse bytes.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Pcr:
+  description: Power Control.
+  fields:
+  - name: hvreq
+    description: Strong switch request.
+    bit_offset: 0
+    bit_size: 1
+    enum: Hvreq
+  - name: lvreq
+    description: Weak switch request.
+    bit_offset: 1
+    bit_size: 1
+    enum: Lvreq
+  - name: pdreq
+    description: Power down request.
+    bit_offset: 2
+    bit_size: 1
+    enum: Pdreq
+fieldset/PhantomCfg:
+  description: PHANTOM Config.
+  fields:
+  - name: dat
+    description: Data.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Rdata:
+  description: Read Data.
+  fields:
+  - name: dat
+    description: Read data.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Rlc:
+  description: Reload Control.
+  fields:
+  - name: reload_shadows
+    description: Reload shadow registers.
+    bit_offset: 0
+    bit_size: 1
+    enum: ReloadShadows
+fieldset/Rwc:
+  description: Read and Write Control.
+  fields:
+  - name: addr
+    description: EFUSE address.
+    bit_offset: 0
+    bit_size: 7
+  - name: wr_all1s
+    description: Write all 1s.
+    bit_offset: 12
+    bit_size: 1
+    enum: WrAll1s
+  - name: read_efuse
+    description: Read EFUSE.
+    bit_offset: 13
+    bit_size: 1
+    enum: ReadEfuse
+  - name: read_update
+    description: Read update.
+    bit_offset: 14
+    bit_size: 1
+  - name: wr_unlock
+    description: Write Unlock.
+    bit_offset: 16
+    bit_size: 16
+fieldset/Secure:
+  description: Secure.
+  fields:
+  - name: dat
+    description: Data.
+    bit_offset: 0
+    bit_size: 32
+fieldset/SecureInv:
+  description: Inverted Secure.
+  fields:
+  - name: dat
+    description: Data.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Sr:
+  description: Status.
+  fields:
+  - name: busy
+    description: Busy status.
+    bit_offset: 0
+    bit_size: 1
+  - name: error
+    description: Error flag.
+    bit_offset: 1
+    bit_size: 1
+  - name: ecc_sf
+    description: ECC single fault.
+    bit_offset: 2
+    bit_size: 1
+  - name: ecc_df
+    description: ECC double fault.
+    bit_offset: 3
+    bit_size: 1
+  - name: tri_f
+    description: Triple voting fault.
+    bit_offset: 4
+    bit_size: 1
+  - name: rd_fuse_lock
+    description: Read fuse lock error.
+    bit_offset: 8
+    bit_size: 1
+  - name: wr_fuse_lock
+    description: Write fuse lock error.
+    bit_offset: 9
+    bit_size: 1
+  - name: rd_reg_lock
+    description: Read register lock error.
+    bit_offset: 10
+    bit_size: 1
+  - name: wr_reg_lock
+    description: Write register lock error.
+    bit_offset: 11
+    bit_size: 1
+  - name: wr_reg_busy
+    description: Write register when busy error.
+    bit_offset: 12
+    bit_size: 1
+  - name: wr_power_off
+    description: Write when power off error.
+    bit_offset: 13
+    bit_size: 1
+  - name: fsm
+    description: Finite-state machine error.
+    bit_offset: 16
+    bit_size: 1
+  - name: flc
+    description: Fuse load counter error.
+    bit_offset: 17
+    bit_size: 1
+  - name: adc
+    description: Address and data compare error.
+    bit_offset: 18
+    bit_size: 1
+  - name: irc
+    description: Inverted register compare error.
+    bit_offset: 19
+    bit_size: 1
+  - name: fsc
+    description: Fuse and shadow register compare error.
+    bit_offset: 20
+    bit_size: 1
+fieldset/Timing1:
+  description: Timing1.
+  fields:
+  - name: taddr
+    description: Address to STROBE setup and hold time.
+    bit_offset: 0
+    bit_size: 4
+  - name: trelax
+    description: CSB, PGENB and LOAD to STROBE setup and hold time.
+    bit_offset: 4
+    bit_size: 4
+  - name: trd
+    description: Read strobe pulse width time.
+    bit_offset: 8
+    bit_size: 6
+  - name: tps
+    description: PS to CSB setup and hold time between power switch and chip select assertion.
+    bit_offset: 16
+    bit_size: 6
+  - name: tpd
+    description: PD to CSB setup time between power down signal deassertion and chip select signal assertion.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Timing2:
+  description: Timing2.
+  fields:
+  - name: tpgm
+    description: Typical program strobe pulse width time.
+    bit_offset: 0
+    bit_size: 12
+fieldset/Verid:
+  description: Version ID.
+  fields:
+  - name: feature
+    description: Feature Specification Number.
+    bit_offset: 0
+    bit_size: 16
+    enum: Feature
+  - name: minor
+    description: Minor Version Number.
+    bit_offset: 16
+    bit_size: 8
+  - name: major
+    description: Major Version Number.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Wdata:
+  description: Write Data.
+  fields:
+  - name: dat
+    description: Write data.
+    bit_offset: 0
+    bit_size: 32
+enum/Feature:
+  bit_size: 16
+  variants:
+  - name: Standard
+    description: Standard feature set.
+    value: 0
+enum/Hvreq:
+  bit_size: 1
+  variants:
+  - name: TurnOff
+    description: Turn off.
+    value: 0
+  - name: TurnOn
+    description: Turn on.
+    value: 1
+enum/Lvreq:
+  bit_size: 1
+  variants:
+  - name: TurnOff
+    description: Turn off.
+    value: 0
+  - name: TurnOn
+    description: Turn on.
+    value: 1
+enum/Pdreq:
+  bit_size: 1
+  variants:
+  - name: NoAction
+    description: PD pin is set to low when OTPC is in idle state. It means EFUSE hardmacro is in standby mode. Idle state means OTPC is not in read and program modes.
+    value: 0
+  - name: PowerDn
+    description: PD pin is set to high when OTPC is in idle state. It means EFUSE hardmacro is in power down mode.
+    value: 1
+enum/ReadEfuse:
+  bit_size: 1
+  variants:
+  - name: Program
+    description: Starts program operation when the WR_UNLOCK value is 0x9527; otherwise, takes no action.
+    value: 0
+  - name: Read
+    description: Starts read operation.
+    value: 1
+enum/ReloadShadows:
+  bit_size: 1
+  variants:
+  - name: NoAction
+    description: No action (when writing) or reload complete (when reading).
+    value: 0
+  - name: Reload
+    description: Reload.
+    value: 1
+enum/WrAll1s:
+  bit_size: 1
+  variants:
+  - name: UseWdata
+    description: Uses the WDATA value.
+    value: 0
+  - name: UseAll1s
+    description: Writes all 1s.
+    value: 1

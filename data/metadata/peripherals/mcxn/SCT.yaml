@@ -1,0 +1,875 @@
+block/Event:
+  description: 'Array of registers: EV_STATE, EV_CTRL.'
+  items:
+  - name: ev_state
+    description: Event n State.
+    byte_offset: 0
+    fieldset: EvState
+  - name: ev_ctrl
+    description: Event n Control.
+    byte_offset: 4
+    fieldset: EvCtrl
+block/Out:
+  description: 'Array of registers: OUT_SET, OUT_CLR.'
+  items:
+  - name: out_set
+    description: Output n Set.
+    byte_offset: 0
+    fieldset: OutSet
+  - name: out_clr
+    description: Output n Clear.
+    byte_offset: 4
+    fieldset: OutClr
+block/Sct:
+  description: SCT.
+  items:
+  - name: config
+    description: SCT Configuration.
+    byte_offset: 0
+    fieldset: Config
+  - name: ctrl
+    description: SCT Control.
+    byte_offset: 4
+    fieldset: Ctrl
+  - name: limit
+    description: SCT Limit Event Select.
+    byte_offset: 8
+    fieldset: Limit
+  - name: halt
+    description: Halt Event Select.
+    byte_offset: 12
+    fieldset: Halt
+  - name: stop
+    description: Stop Event Select.
+    byte_offset: 16
+    fieldset: Stop
+  - name: start
+    description: Start Event Select.
+    byte_offset: 20
+    fieldset: Start
+  - name: dither
+    description: Dither Condition.
+    byte_offset: 24
+    fieldset: Dither
+  - name: count
+    description: Counter Value.
+    byte_offset: 64
+    fieldset: Count
+  - name: state
+    description: State Variable.
+    byte_offset: 68
+    fieldset: State
+  - name: input
+    description: Input State.
+    byte_offset: 72
+    access: Read
+    fieldset: Input
+  - name: regmode
+    description: Match and Capture Register Mode.
+    byte_offset: 76
+    fieldset: Regmode
+  - name: output
+    description: Output State.
+    byte_offset: 80
+    fieldset: Output
+  - name: outputdirctrl
+    description: Output Counter Direction Control.
+    byte_offset: 84
+    fieldset: Outputdirctrl
+  - name: res
+    description: Output Conflict Resolution.
+    byte_offset: 88
+    fieldset: Res
+  - name: dmareq0
+    description: DMA Request 0.
+    byte_offset: 92
+    fieldset: Dmareq0
+  - name: dmareq1
+    description: DMA Request 1.
+    byte_offset: 96
+    fieldset: Dmareq1
+  - name: even
+    description: Event Interrupt Enable.
+    byte_offset: 240
+    fieldset: Even
+  - name: evflag
+    description: Event Flag.
+    byte_offset: 244
+    fieldset: Evflag
+  - name: conen
+    description: Conflict Interrupt Enable.
+    byte_offset: 248
+    fieldset: Conen
+  - name: conflag
+    description: Conflict Flag.
+    byte_offset: 252
+    fieldset: Conflag
+  - name: cap
+    description: Capture Value.
+    array:
+      len: 16
+      stride: 4
+    byte_offset: 256
+    fieldset: Cap
+  - name: match_
+    description: Match Value.
+    array:
+      len: 16
+      stride: 4
+    byte_offset: 256
+    fieldset: Match
+  - name: fracmat
+    description: Fractional Match.
+    array:
+      len: 6
+      stride: 4
+    byte_offset: 320
+    fieldset: Fracmat
+  - name: capctrl
+    description: Capture Control.
+    array:
+      len: 16
+      stride: 4
+    byte_offset: 512
+    fieldset: Capctrl
+  - name: matchrel
+    description: Match Reload Value.
+    array:
+      len: 16
+      stride: 4
+    byte_offset: 512
+    fieldset: Matchrel
+  - name: fracmatrel
+    description: Fractional Match Reload.
+    array:
+      len: 6
+      stride: 4
+    byte_offset: 576
+    fieldset: Fracmatrel
+  - name: event
+    description: 'Array of registers: EV_STATE, EV_CTRL.'
+    array:
+      len: 16
+      stride: 8
+    byte_offset: 768
+    block: Event
+  - name: out
+    description: 'Array of registers: OUT_SET, OUT_CLR.'
+    array:
+      len: 10
+      stride: 8
+    byte_offset: 1280
+    block: Out
+fieldset/Cap:
+  description: Capture Value.
+  fields:
+  - name: ca_pn_l
+    description: Capture Low.
+    bit_offset: 0
+    bit_size: 16
+  - name: ca_pn_h
+    description: Capture High.
+    bit_offset: 16
+    bit_size: 16
+fieldset/Capctrl:
+  description: Capture Control.
+  fields:
+  - name: capco_nn_l
+    description: Capture Control Low.
+    bit_offset: 0
+    bit_size: 16
+  - name: capco_nn_h
+    description: Capture Control High.
+    bit_offset: 16
+    bit_size: 16
+fieldset/Conen:
+  description: Conflict Interrupt Enable.
+  fields:
+  - name: ncen
+    description: No Change Conflict Event and Interrupt Enable.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 10
+      stride: 1
+fieldset/Config:
+  description: SCT Configuration.
+  fields:
+  - name: unify
+    description: SCT Operation.
+    bit_offset: 0
+    bit_size: 1
+    enum: Unify
+  - name: clkmode
+    description: SCT Clock Mode.
+    bit_offset: 1
+    bit_size: 2
+    enum: Clkmode
+  - name: cksel
+    description: SCT Clock Select.
+    bit_offset: 3
+    bit_size: 4
+    enum: Cksel
+  - name: noreload_l
+    description: No Reload Lower Match.
+    bit_offset: 7
+    bit_size: 1
+    enum: NoreloadL
+  - name: noreload_h
+    description: No Reload Higher Match.
+    bit_offset: 8
+    bit_size: 1
+    enum: NoreloadH
+  - name: insync
+    description: Input Synchronization.
+    bit_offset: 9
+    bit_size: 8
+  - name: autolimit_l
+    description: Auto Limit Lower.
+    bit_offset: 17
+    bit_size: 1
+  - name: autolimit_h
+    description: Auto Limit Higher.
+    bit_offset: 18
+    bit_size: 1
+fieldset/Conflag:
+  description: Conflict Flag.
+  fields:
+  - name: ncflag
+    description: No Change Conflict Event Flag.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 10
+      stride: 1
+  - name: buserrl
+    description: Bus Error Low or Unified.
+    bit_offset: 30
+    bit_size: 1
+  - name: buserrh
+    description: Bus Error High.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Count:
+  description: Counter Value.
+  fields:
+  - name: ctr_l
+    description: Counter Low.
+    bit_offset: 0
+    bit_size: 16
+  - name: ctr_h
+    description: Counter High.
+    bit_offset: 16
+    bit_size: 16
+fieldset/Ctrl:
+  description: SCT Control.
+  fields:
+  - name: down_l
+    description: Down Counter Low.
+    bit_offset: 0
+    bit_size: 1
+    enum: DownL
+  - name: stop_l
+    description: Stop Counter Low.
+    bit_offset: 1
+    bit_size: 1
+  - name: halt_l
+    description: Halt Counter Low.
+    bit_offset: 2
+    bit_size: 1
+  - name: clrctr_l
+    description: Clear Counter Low.
+    bit_offset: 3
+    bit_size: 1
+  - name: bidir_l
+    description: Bidirectional Select Low.
+    bit_offset: 4
+    bit_size: 1
+    enum: BidirL
+  - name: pre_l
+    description: Prescaler for Low Counter.
+    bit_offset: 5
+    bit_size: 8
+  - name: down_h
+    description: Down Counter High.
+    bit_offset: 16
+    bit_size: 1
+    enum: DownH
+  - name: stop_h
+    description: Stop Counter High.
+    bit_offset: 17
+    bit_size: 1
+  - name: halt_h
+    description: Halt Counter High.
+    bit_offset: 18
+    bit_size: 1
+  - name: clrctr_h
+    description: Clear Counter High.
+    bit_offset: 19
+    bit_size: 1
+  - name: bidir_h
+    description: Bidirectional Select High.
+    bit_offset: 20
+    bit_size: 1
+    enum: BidirH
+  - name: pre_h
+    description: Prescaler for High Counter.
+    bit_offset: 21
+    bit_size: 8
+fieldset/Dither:
+  description: Dither Condition.
+  fields:
+  - name: dither_l
+    description: Dither Low.
+    bit_offset: 0
+    bit_size: 16
+  - name: dither_h
+    description: Dither High.
+    bit_offset: 16
+    bit_size: 16
+fieldset/Dmareq0:
+  description: DMA Request 0.
+  fields:
+  - name: dev
+    description: DMA Request Event.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 16
+      stride: 1
+  - name: drl0
+    description: DMA Request Low 0.
+    bit_offset: 30
+    bit_size: 1
+  - name: drq0
+    description: DMA Request 0 State.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Dmareq1:
+  description: DMA Request 1.
+  fields:
+  - name: dev
+    description: DMA Request Event.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 16
+      stride: 1
+  - name: drl1
+    description: DMA Request Low 1.
+    bit_offset: 30
+    bit_size: 1
+  - name: drq1
+    description: DMA Request 1 State.
+    bit_offset: 31
+    bit_size: 1
+fieldset/EvCtrl:
+  description: Event n Control.
+  fields:
+  - name: matchsel
+    description: Match Select.
+    bit_offset: 0
+    bit_size: 4
+  - name: hevent
+    description: High Event.
+    bit_offset: 4
+    bit_size: 1
+    enum: Hevent
+  - name: outsel
+    description: Input and Output Select.
+    bit_offset: 5
+    bit_size: 1
+    enum: Outsel
+  - name: iosel
+    description: Input or Output Signal Select.
+    bit_offset: 6
+    bit_size: 4
+  - name: iocond
+    description: Input or Output Condition.
+    bit_offset: 10
+    bit_size: 2
+    enum: Iocond
+  - name: combmode
+    description: Combination Mode.
+    bit_offset: 12
+    bit_size: 2
+    enum: Combmode
+  - name: stateld
+    description: State Load.
+    bit_offset: 14
+    bit_size: 1
+    enum: Stateld
+  - name: statev
+    description: State Value.
+    bit_offset: 15
+    bit_size: 5
+  - name: matchmem
+    description: Match Mem.
+    bit_offset: 20
+    bit_size: 1
+  - name: direction
+    description: Direction.
+    bit_offset: 21
+    bit_size: 2
+    enum: Direction
+fieldset/EvState:
+  description: Event n State.
+  fields:
+  - name: statems_kn
+    description: Event State Mask.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Even:
+  description: Event Interrupt Enable.
+  fields:
+  - name: ien
+    description: Event Interrupt Enable.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 16
+      stride: 1
+fieldset/Evflag:
+  description: Event Flag.
+  fields:
+  - name: flag
+    description: Event Flag.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 16
+      stride: 1
+fieldset/Fracmat:
+  description: Fractional Match.
+  fields:
+  - name: fracmat_l
+    description: Fractional Match Low.
+    bit_offset: 0
+    bit_size: 4
+  - name: fracmat_h
+    description: Fractional Match High.
+    bit_offset: 16
+    bit_size: 4
+fieldset/Fracmatrel:
+  description: Fractional Match Reload.
+  fields:
+  - name: relfrac_l
+    description: Reload Fractional Match Low.
+    bit_offset: 0
+    bit_size: 4
+  - name: relfrac_h
+    description: Reload Fractional Match High.
+    bit_offset: 16
+    bit_size: 4
+fieldset/Halt:
+  description: Halt Event Select.
+  fields:
+  - name: haltmsk_l
+    description: Halt Event Low.
+    bit_offset: 0
+    bit_size: 16
+  - name: haltmsk_h
+    description: Halt Event High.
+    bit_offset: 16
+    bit_size: 16
+fieldset/Input:
+  description: Input State.
+  fields:
+  - name: ain
+    description: Input state.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 16
+      stride: 1
+  - name: sin
+    description: Input state.
+    bit_offset: 16
+    bit_size: 1
+    array:
+      len: 16
+      stride: 1
+fieldset/Limit:
+  description: SCT Limit Event Select.
+  fields:
+  - name: limmsk_l
+    description: Limit Event Counter Low.
+    bit_offset: 0
+    bit_size: 16
+  - name: limmsk_h
+    description: Limit Event Counter High.
+    bit_offset: 16
+    bit_size: 16
+fieldset/Match:
+  description: Match Value.
+  fields:
+  - name: matc_hn_l
+    description: Match Low.
+    bit_offset: 0
+    bit_size: 16
+  - name: matc_hn_h
+    description: Match High.
+    bit_offset: 16
+    bit_size: 16
+fieldset/Matchrel:
+  description: Match Reload Value.
+  fields:
+  - name: reloa_dn_l
+    description: Reload Low.
+    bit_offset: 0
+    bit_size: 16
+  - name: reloa_dn_h
+    description: Reload High.
+    bit_offset: 16
+    bit_size: 16
+fieldset/OutClr:
+  description: Output n Clear.
+  fields:
+  - name: clr
+    description: Clear Output.
+    bit_offset: 0
+    bit_size: 16
+fieldset/OutSet:
+  description: Output n Set.
+  fields:
+  - name: set
+    description: Set Output.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Output:
+  description: Output State.
+  fields:
+  - name: out
+    description: Output Low and High.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 10
+      stride: 1
+    enum: OutVal
+fieldset/Outputdirctrl:
+  description: Output Counter Direction Control.
+  fields:
+  - name: setclr
+    description: Set and Clear Operation on Output.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 10
+      stride: 2
+    enum: Setclr
+fieldset/Regmode:
+  description: Match and Capture Register Mode.
+  fields:
+  - name: regmod_l
+    description: Register Mode Low.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 16
+      stride: 1
+    enum: RegmodL
+  - name: regmod_h
+    description: Register Mode High.
+    bit_offset: 16
+    bit_size: 1
+    array:
+      len: 16
+      stride: 1
+    enum: RegmodH
+fieldset/Res:
+  description: Output Conflict Resolution.
+  fields:
+  - name: ores
+    description: Output Resolution.
+    bit_offset: 0
+    bit_size: 2
+    array:
+      len: 10
+      stride: 2
+    enum: Ores
+fieldset/Start:
+  description: Start Event Select.
+  fields:
+  - name: startmsk_l
+    description: Start Event Low.
+    bit_offset: 0
+    bit_size: 16
+  - name: startmsk_h
+    description: Start Event High.
+    bit_offset: 16
+    bit_size: 16
+fieldset/State:
+  description: State Variable.
+  fields:
+  - name: state_l
+    description: State Variable Low.
+    bit_offset: 0
+    bit_size: 5
+  - name: state_h
+    description: State Variable High.
+    bit_offset: 16
+    bit_size: 5
+fieldset/Stop:
+  description: Stop Event Select.
+  fields:
+  - name: stopmsk_l
+    description: Stop Event Low.
+    bit_offset: 0
+    bit_size: 16
+  - name: stopmsk_h
+    description: Stop Event High.
+    bit_offset: 16
+    bit_size: 16
+enum/BidirH:
+  bit_size: 1
+  variants:
+  - name: Up
+    description: Up.
+    value: 0
+  - name: UpDown
+    description: Up-down.
+    value: 1
+enum/BidirL:
+  bit_size: 1
+  variants:
+  - name: Up
+    description: Up.
+    value: 0
+  - name: UpDown
+    description: Up-down.
+    value: 1
+enum/Cksel:
+  bit_size: 4
+  variants:
+  - name: Input0RisingEdges
+    description: Rising edges on input 0.
+    value: 0
+  - name: Input0FallingEdges
+    description: Falling edges on input 0.
+    value: 1
+  - name: Input1RisingEdges
+    description: Rising edges on input 1.
+    value: 2
+  - name: Input1FallingEdges
+    description: Falling edges on input 1.
+    value: 3
+  - name: Input2RisingEdges
+    description: Rising edges on input 2.
+    value: 4
+  - name: Input2FallingEdges
+    description: Falling edges on input 2.
+    value: 5
+  - name: Input3RisingEdges
+    description: Rising edges on input 3.
+    value: 6
+  - name: Input3FallingEdges
+    description: Falling edges on input 3.
+    value: 7
+  - name: Input4RisingEdges
+    description: Rising edges on input 4.
+    value: 8
+  - name: Input4FallingEdges
+    description: Falling edges on input 4.
+    value: 9
+  - name: Input5RisingEdges
+    description: Rising edges on input 5.
+    value: 10
+  - name: Input5FallingEdges
+    description: Falling edges on input 5.
+    value: 11
+  - name: Input6RisingEdges
+    description: Rising edges on input 6.
+    value: 12
+  - name: Input6FallingEdges
+    description: Falling edges on input 6.
+    value: 13
+  - name: Input7RisingEdges
+    description: Rising edges on input 7.
+    value: 14
+  - name: Input7FallingEdges
+    description: Falling edges on input 7.
+    value: 15
+enum/Clkmode:
+  bit_size: 2
+  variants:
+  - name: SystemClockMode
+    description: System Clock mode.
+    value: 0
+  - name: SampledSystemClockMode
+    description: Sampled System Clock mode.
+    value: 1
+  - name: SctInputClockMode
+    description: SCT Input Clock mode.
+    value: 2
+  - name: AsynchronousMode
+    description: Asynchronous mode.
+    value: 3
+enum/Combmode:
+  bit_size: 2
+  variants:
+  - name: Or
+    description: OR (the event occurs when either the specified match or I/O condition occurs).
+    value: 0
+  - name: Match
+    description: MATCH (uses the specified match only).
+    value: 1
+  - name: Io
+    description: IO (uses the specified I/O condition only).
+    value: 2
+  - name: And
+    description: AND (the event occurs when the specified match and I/O condition occur simultaneously).
+    value: 3
+enum/Direction:
+  bit_size: 2
+  variants:
+  - name: DirectionIndependent
+    description: Direction independent (event triggered regardless of the count direction).
+    value: 0
+  - name: CountingUp
+    description: Counting up (event triggered only during up-counting when CTRL[BIDIR] = 1).
+    value: 1
+  - name: CountingDown
+    description: Counting down (event triggered only during down-counting when CTRL[BIDIR] = 1).
+    value: 2
+enum/DownH:
+  bit_size: 1
+  variants:
+  - name: Up
+    description: Up.
+    value: 0
+  - name: Down
+    description: Down.
+    value: 1
+enum/DownL:
+  bit_size: 1
+  variants:
+  - name: Up
+    description: Up.
+    value: 0
+  - name: Down
+    description: Down.
+    value: 1
+enum/Hevent:
+  bit_size: 1
+  variants:
+  - name: LCounter
+    description: Low counter (selects the L state and the L match register that the MATCHSEL field specifies).
+    value: 0
+  - name: HCounter
+    description: High counter (selects the H state and the H match register that the MATCHSEL field specifies).
+    value: 1
+enum/Iocond:
+  bit_size: 2
+  variants:
+  - name: Low
+    description: Low.
+    value: 0
+  - name: Rise
+    description: Rise.
+    value: 1
+  - name: Fall
+    description: Fall.
+    value: 2
+  - name: High
+    description: High.
+    value: 3
+enum/NoreloadH:
+  bit_size: 1
+  variants:
+  - name: ReloadH
+    description: Reloaded.
+    value: 0
+  - name: NoReloadH
+    description: Not reloaded.
+    value: 1
+enum/NoreloadL:
+  bit_size: 1
+  variants:
+  - name: Reload
+    description: Reloaded.
+    value: 0
+  - name: NoReload
+    description: Not reloaded.
+    value: 1
+enum/Ores:
+  bit_size: 2
+  variants:
+  - name: NoChange
+    description: No change.
+    value: 0
+  - name: Set
+    description: Set output (or clear, based on OUTPUTDIRCTRL[SETCLRn]).
+    value: 1
+  - name: Clear
+    description: Clear output (or set, based on OUTPUTDIRCTRL[SETCLRn]).
+    value: 2
+  - name: ToggleOutput
+    description: Toggle output.
+    value: 3
+enum/OutVal:
+  bit_size: 1
+  variants:
+  - name: Low
+    description: Forces the corresponding output low.
+    value: 0
+  - name: High
+    description: Forces the corresponding output high.
+    value: 1
+enum/Outsel:
+  bit_size: 1
+  variants:
+  - name: Input
+    description: Inputs.
+    value: 0
+  - name: Output
+    description: Outputs.
+    value: 1
+enum/RegmodH:
+  bit_size: 1
+  variants:
+  - name: Match
+    description: Match.
+    value: 0
+  - name: Capture
+    description: Capture.
+    value: 1
+enum/RegmodL:
+  bit_size: 1
+  variants:
+  - name: Match
+    description: Match.
+    value: 0
+  - name: Capture
+    description: Capture.
+    value: 1
+enum/Setclr:
+  bit_size: 2
+  variants:
+  - name: Independent
+    description: Not dependent on the direction of any counter.
+    value: 0
+  - name: LReversed
+    description: Reversed when counter L or the unified counter is counting down.
+    value: 1
+  - name: HReversed
+    description: Reversed when counter H is counting down (do not use this value when CONFIG[UNIFY] = 1).
+    value: 2
+enum/Stateld:
+  bit_size: 1
+  variants:
+  - name: Add
+    description: Value of STATEV added to that of STATE (the carry out is ignored).
+    value: 0
+  - name: Load
+    description: Value of STATEV loaded into that of STATE.
+    value: 1
+enum/Unify:
+  bit_size: 1
+  variants:
+  - name: DualCounter
+    description: Dual counters, COUNTER_L and COUNTER_H.
+    value: 0
+  - name: UnifiedCounter
+    description: Unified counter.
+    value: 1

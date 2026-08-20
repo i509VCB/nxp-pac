@@ -1,0 +1,492 @@
+block/Powerquad:
+  description: PowerQuad.
+  items:
+  - name: outbase
+    description: Output Base.
+    byte_offset: 0
+    fieldset: Outbase
+  - name: outformat
+    description: Output Format.
+    byte_offset: 4
+    fieldset: Outformat
+  - name: tmpbase
+    description: Temporary Base.
+    byte_offset: 8
+    fieldset: Tmpbase
+  - name: tmpformat
+    description: Temporary Format.
+    byte_offset: 12
+    fieldset: Tmpformat
+  - name: inabase
+    description: Input A Base.
+    byte_offset: 16
+    fieldset: Inabase
+  - name: inaformat
+    description: Input A Format.
+    byte_offset: 20
+    fieldset: Inaformat
+  - name: inbbase
+    description: Input B Base.
+    byte_offset: 24
+    fieldset: Inbbase
+  - name: inbformat
+    description: Input B Format.
+    byte_offset: 28
+    fieldset: Inbformat
+  - name: control
+    description: Control.
+    byte_offset: 256
+    fieldset: Control
+  - name: length
+    description: Length.
+    byte_offset: 260
+    fieldset: Length
+  - name: cppre
+    description: Coprocessor Prescale.
+    byte_offset: 264
+    fieldset: Cppre
+  - name: misc
+    description: Miscellaneous.
+    byte_offset: 268
+    fieldset: Misc
+  - name: cursory
+    description: Cursory.
+    byte_offset: 272
+    fieldset: Cursory
+  - name: cordic_x
+    description: CORDIC Input X.
+    byte_offset: 384
+    fieldset: CordicX
+  - name: cordic_y
+    description: CORDIC Input Y.
+    byte_offset: 388
+    fieldset: CordicY
+  - name: cordic_z
+    description: CORDIC Input Z.
+    byte_offset: 392
+    fieldset: CordicZ
+  - name: errstat
+    description: Error Status.
+    byte_offset: 396
+    fieldset: Errstat
+  - name: intren
+    description: Interrupt Enable.
+    byte_offset: 400
+    fieldset: Intren
+  - name: eventen
+    description: Event Enable.
+    byte_offset: 404
+    fieldset: Eventen
+  - name: intrstat
+    description: Interrupt Status.
+    byte_offset: 408
+    fieldset: Intrstat
+  - name: gpreg
+    description: General Purpose Register Bank n.
+    array:
+      len: 16
+      stride: 4
+    byte_offset: 512
+    fieldset: Gpreg
+  - name: compreg
+    description: Compute Register Bank n.
+    array:
+      len: 8
+      stride: 4
+    byte_offset: 576
+    fieldset: Compreg
+fieldset/Compreg:
+  description: Compute Register Bank n.
+  fields:
+  - name: compreg
+    description: Compute bank.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Control:
+  description: Control.
+  fields:
+  - name: decode_opcode
+    description: Decode Opcode.
+    bit_offset: 0
+    bit_size: 4
+  - name: decode_machine
+    description: Decode Machine.
+    bit_offset: 4
+    bit_size: 4
+    enum: DecodeMachine
+  - name: inst_busy
+    description: Instruction Busy.
+    bit_offset: 31
+    bit_size: 1
+fieldset/CordicX:
+  description: CORDIC Input X.
+  fields:
+  - name: cordic_x
+    description: CORDIC Input X.
+    bit_offset: 0
+    bit_size: 32
+fieldset/CordicY:
+  description: CORDIC Input Y.
+  fields:
+  - name: cordic_y
+    description: CORDIC Input Y.
+    bit_offset: 0
+    bit_size: 32
+fieldset/CordicZ:
+  description: CORDIC Input Z.
+  fields:
+  - name: cordic_z
+    description: CORDIC Input Z.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Cppre:
+  description: Coprocessor Prescale.
+  fields:
+  - name: cppre_in
+    description: Prescaling Input.
+    bit_offset: 0
+    bit_size: 8
+  - name: cppre_out
+    description: Postscaling Output.
+    bit_offset: 8
+    bit_size: 8
+  - name: cppre_sat
+    description: Saturation.
+    bit_offset: 16
+    bit_size: 1
+  - name: cppre_sat8
+    description: Saturation 8.
+    bit_offset: 17
+    bit_size: 1
+    enum: CppreSat8
+fieldset/Cursory:
+  description: Cursory.
+  fields:
+  - name: cursory
+    description: Cursory Mode.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Errstat:
+  description: Error Status.
+  fields:
+  - name: overflow
+    description: Floating-point Overflow.
+    bit_offset: 0
+    bit_size: 1
+  - name: nan
+    description: Floating-Point Not-a-Number (NaN).
+    bit_offset: 1
+    bit_size: 1
+  - name: fixedoverflow
+    description: Fixed-point Overflow.
+    bit_offset: 2
+    bit_size: 1
+  - name: underflow
+    description: Underflow.
+    bit_offset: 3
+    bit_size: 1
+  - name: buserror
+    description: Bus Error.
+    bit_offset: 4
+    bit_size: 1
+fieldset/Eventen:
+  description: Event Enable.
+  fields:
+  - name: event_oflow
+    description: Event Trigger on Floating-point Overflow.
+    bit_offset: 0
+    bit_size: 1
+  - name: event_nan
+    description: Event Trigger on Floating-Point NaN.
+    bit_offset: 1
+    bit_size: 1
+  - name: event_fixed
+    description: Event Trigger on Fixed-point Overflow.
+    bit_offset: 2
+    bit_size: 1
+  - name: event_uflow
+    description: Event Trigger on Underflow.
+    bit_offset: 3
+    bit_size: 1
+  - name: event_berr
+    description: Event Trigger on AHBM Bus Error.
+    bit_offset: 4
+    bit_size: 1
+  - name: event_comp
+    description: Event Trigger on Instruction Completion.
+    bit_offset: 7
+    bit_size: 1
+fieldset/Gpreg:
+  description: General Purpose Register Bank n.
+  fields:
+  - name: gpreg
+    description: General Purpose Bank.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Inabase:
+  description: Input A Base.
+  fields:
+  - name: inabase
+    description: Input A Base.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Inaformat:
+  description: Input A Format.
+  fields:
+  - name: ina_formatint
+    description: Input A Internal Format.
+    bit_offset: 0
+    bit_size: 2
+    enum: InaFormatint
+  - name: ina_formatext
+    description: Input A External Format.
+    bit_offset: 4
+    bit_size: 2
+    enum: InaFormatext
+  - name: ina_scaler
+    description: Input A Scaler Value.
+    bit_offset: 8
+    bit_size: 8
+fieldset/Inbbase:
+  description: Input B Base.
+  fields:
+  - name: inbbase
+    description: Input B Base.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Inbformat:
+  description: Input B Format.
+  fields:
+  - name: inb_formatint
+    description: Input B Internal Format.
+    bit_offset: 0
+    bit_size: 2
+    enum: InbFormatint
+  - name: inb_formatext
+    description: Input B External Format.
+    bit_offset: 4
+    bit_size: 2
+    enum: InbFormatext
+  - name: inb_scaler
+    description: Input B Scaler.
+    bit_offset: 8
+    bit_size: 8
+fieldset/Intren:
+  description: Interrupt Enable.
+  fields:
+  - name: intr_oflow
+    description: Interrupt Floating-point Overflow.
+    bit_offset: 0
+    bit_size: 1
+  - name: intr_nan
+    description: Interrupt Floating-point NaN.
+    bit_offset: 1
+    bit_size: 1
+  - name: intr_fixed
+    description: Interrupt on Fixed-point Overflow.
+    bit_offset: 2
+    bit_size: 1
+  - name: intr_uflow
+    description: Interrupt on Underflow.
+    bit_offset: 3
+    bit_size: 1
+  - name: intr_berr
+    description: Interrupt on AHBM Bus Error.
+    bit_offset: 4
+    bit_size: 1
+  - name: intr_comp
+    description: Interrupt on Instruction Completion.
+    bit_offset: 7
+    bit_size: 1
+fieldset/Intrstat:
+  description: Interrupt Status.
+  fields:
+  - name: intr_stat
+    description: Interrupt Status.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Length:
+  description: Length.
+  fields:
+  - name: inst_length
+    description: Instruction length.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Misc:
+  description: Miscellaneous.
+  fields:
+  - name: inst_misc
+    description: Scaling Factor.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Outbase:
+  description: Output Base.
+  fields:
+  - name: outbase
+    description: Output Region Base Address.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Outformat:
+  description: Output Format.
+  fields:
+  - name: out_formatint
+    description: Output Internal Format.
+    bit_offset: 0
+    bit_size: 2
+    enum: OutFormatint
+  - name: out_formatext
+    description: Output External Format.
+    bit_offset: 4
+    bit_size: 2
+    enum: OutFormatext
+  - name: out_scaler
+    description: 8-bit Scaling Value for Result Data.
+    bit_offset: 8
+    bit_size: 8
+fieldset/Tmpbase:
+  description: Temporary Base.
+  fields:
+  - name: tmpbase
+    description: Base Address for the Temporary Region.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Tmpformat:
+  description: Temporary Format.
+  fields:
+  - name: tmp_formatint
+    description: Temporary Internal Format.
+    bit_offset: 0
+    bit_size: 2
+    enum: TmpFormatint
+  - name: tmp_formatext
+    description: Temporary External Format.
+    bit_offset: 4
+    bit_size: 2
+    enum: TmpFormatext
+  - name: tmp_scaler
+    description: Scaling Value for Temporary Data.
+    bit_offset: 8
+    bit_size: 8
+enum/CppreSat8:
+  bit_size: 1
+  variants:
+  - name: Sat8Bits
+    description: 8 bits.
+    value: 0
+  - name: Sat16Bits
+    description: 16 bits.
+    value: 1
+enum/DecodeMachine:
+  bit_size: 4
+  variants:
+  - name: Coprocessor
+    description: Coprocessor.
+    value: 0
+  - name: Matrix
+    description: Matrix engine.
+    value: 1
+  - name: Transform
+    description: Transform engine.
+    value: 2
+  - name: Filter
+    description: Filter engine.
+    value: 3
+  - name: Cordic
+    description: CORDIC engine.
+    value: 5
+enum/InaFormatext:
+  bit_size: 2
+  variants:
+  - name: Q15
+    description: Q15 16-bit fixed-point integer.
+    value: 0
+  - name: Q31
+    description: Q31 32-bit fixed-point integer.
+    value: 1
+  - name: Float
+    description: F32 32-bit floating-point format.
+    value: 2
+enum/InaFormatint:
+  bit_size: 2
+  variants:
+  - name: Q15
+    description: Q15 16-bit fixed-point integer.
+    value: 0
+  - name: Q31
+    description: Q31 32-bit fixed-point integer.
+    value: 1
+  - name: Float
+    description: F32 32-bit floating-point format.
+    value: 2
+enum/InbFormatext:
+  bit_size: 2
+  variants:
+  - name: Q15
+    description: Q15 16-bit fixed-point integer.
+    value: 0
+  - name: Q31
+    description: Q31 32-bit fixed-point integer.
+    value: 1
+  - name: Float
+    description: F32 32-bit floating-point format.
+    value: 2
+enum/InbFormatint:
+  bit_size: 2
+  variants:
+  - name: Q15
+    description: Q15 16-bit fixed-point integer.
+    value: 0
+  - name: Q31
+    description: Q31 32-bit fixed-point integer.
+    value: 1
+  - name: Float
+    description: F32 32-bit floating-point format.
+    value: 2
+enum/OutFormatext:
+  bit_size: 2
+  variants:
+  - name: Q15
+    description: Q15 16-bit fixed-point integer.
+    value: 0
+  - name: Q31
+    description: Q31 32-bit fixed-point integer.
+    value: 1
+  - name: Float
+    description: F32 32-bit floating-point format.
+    value: 2
+enum/OutFormatint:
+  bit_size: 2
+  variants:
+  - name: Q15
+    description: Q15 16-bit fixed-point integer.
+    value: 0
+  - name: Q31
+    description: Q31 32-bit fixed-point integer.
+    value: 1
+  - name: Float
+    description: F32 32-bit floating-point format.
+    value: 2
+enum/TmpFormatext:
+  bit_size: 2
+  variants:
+  - name: Q15
+    description: Q15 16-bit fixed-point integer.
+    value: 0
+  - name: Q31
+    description: Q31 32-bit fixed-point integer.
+    value: 1
+  - name: Float
+    description: F32 32-bit floating-point format.
+    value: 2
+enum/TmpFormatint:
+  bit_size: 2
+  variants:
+  - name: Q15
+    description: Q15 16-bit fixed-point integer.
+    value: 0
+  - name: Q31
+    description: Q31 32-bit fixed-point integer.
+    value: 1
+  - name: Float
+    description: F32 32-bit floating-point format.
+    value: 2

@@ -1,0 +1,1316 @@
+block/Sai:
+  description: SAI.
+  items:
+  - name: verid
+    description: Version ID.
+    byte_offset: 0
+    access: Read
+    fieldset: Verid
+  - name: param
+    description: Parameter.
+    byte_offset: 4
+    access: Read
+    fieldset: Param
+  - name: tcsr
+    description: Transmit Control.
+    byte_offset: 8
+    fieldset: Tcsr
+  - name: tcr1
+    description: Transmit Configuration 1.
+    byte_offset: 12
+    fieldset: Tcr1
+  - name: tcr2
+    description: Transmit Configuration 2.
+    byte_offset: 16
+    fieldset: Tcr2
+  - name: tcr3
+    description: Transmit Configuration 3.
+    byte_offset: 20
+    fieldset: Tcr3
+  - name: tcr4
+    description: Transmit Configuration 4.
+    byte_offset: 24
+    fieldset: Tcr4
+  - name: tcr5
+    description: Transmit Configuration 5.
+    byte_offset: 28
+    fieldset: Tcr5
+  - name: tdr
+    description: Transmit Data.
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 32
+    fieldset: Tdr
+  - name: tfr
+    description: Transmit FIFO.
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 64
+    access: Read
+    fieldset: Tfr
+  - name: tmr
+    description: Transmit Mask.
+    byte_offset: 96
+    fieldset: Tmr
+  - name: rcsr
+    description: Receive Control.
+    byte_offset: 136
+    fieldset: Rcsr
+  - name: rcr1
+    description: Receive Configuration 1.
+    byte_offset: 140
+    fieldset: Rcr1
+  - name: rcr2
+    description: Receive Configuration 2.
+    byte_offset: 144
+    fieldset: Rcr2
+  - name: rcr3
+    description: Receive Configuration 3.
+    byte_offset: 148
+    fieldset: Rcr3
+  - name: rcr4
+    description: Receive Configuration 4.
+    byte_offset: 152
+    fieldset: Rcr4
+  - name: rcr5
+    description: Receive Configuration 5.
+    byte_offset: 156
+    fieldset: Rcr5
+  - name: rdr
+    description: Receive Data.
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 160
+    access: Read
+    fieldset: Rdr
+  - name: rfr
+    description: Receive FIFO.
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 192
+    access: Read
+    fieldset: Rfr
+  - name: rmr
+    description: Receive Mask.
+    byte_offset: 224
+    fieldset: Rmr
+  - name: mcr
+    description: MCLK Control.
+    byte_offset: 256
+    fieldset: Mcr
+fieldset/Mcr:
+  description: MCLK Control.
+  fields:
+  - name: div
+    description: MCLK Post Divide.
+    bit_offset: 0
+    bit_size: 8
+  - name: diven
+    description: MCLK Post Divide Enable.
+    bit_offset: 23
+    bit_size: 1
+  - name: msel
+    description: MCLK Select.
+    bit_offset: 24
+    bit_size: 2
+    enum: McrMsel
+  - name: moe
+    description: MCLK Output Enable.
+    bit_offset: 30
+    bit_size: 1
+    enum: Moe
+fieldset/Param:
+  description: Parameter.
+  fields:
+  - name: dataline
+    description: Number of Data Lines.
+    bit_offset: 0
+    bit_size: 4
+  - name: fifo
+    description: FIFO Size.
+    bit_offset: 8
+    bit_size: 4
+  - name: frame
+    description: Frame Size.
+    bit_offset: 16
+    bit_size: 4
+fieldset/Rcr1:
+  description: Receive Configuration 1.
+  fields:
+  - name: rfw
+    description: Receive FIFO Watermark.
+    bit_offset: 0
+    bit_size: 3
+    enum: Rfw
+fieldset/Rcr2:
+  description: Receive Configuration 2.
+  fields:
+  - name: div
+    description: Bit Clock Divide.
+    bit_offset: 0
+    bit_size: 8
+  - name: byp
+    description: Bit Clock Bypass.
+    bit_offset: 23
+    bit_size: 1
+  - name: bcd
+    description: Bit Clock Direction.
+    bit_offset: 24
+    bit_size: 1
+    enum: Rcr2Bcd
+  - name: bcp
+    description: Bit Clock Polarity.
+    bit_offset: 25
+    bit_size: 1
+    enum: Rcr2Bcp
+  - name: msel
+    description: MCLK Select.
+    bit_offset: 26
+    bit_size: 2
+    enum: Rcr2Msel
+  - name: bci
+    description: Bit Clock Input.
+    bit_offset: 28
+    bit_size: 1
+    enum: Rcr2Bci
+  - name: bcs
+    description: Bit Clock Swap.
+    bit_offset: 29
+    bit_size: 1
+    enum: Rcr2Bcs
+  - name: sync
+    description: Synchronous Mode.
+    bit_offset: 30
+    bit_size: 2
+    enum: Rcr2Sync
+fieldset/Rcr3:
+  description: Receive Configuration 3.
+  fields:
+  - name: wdfl
+    description: Word Flag Configuration.
+    bit_offset: 0
+    bit_size: 5
+    enum: Wdfl
+  - name: rce
+    description: Receive Channel Enable.
+    bit_offset: 16
+    bit_size: 2
+  - name: cfr
+    description: Channel FIFO Reset.
+    bit_offset: 24
+    bit_size: 2
+fieldset/Rcr4:
+  description: Receive Configuration 4.
+  fields:
+  - name: fsd
+    description: Frame Sync Direction.
+    bit_offset: 0
+    bit_size: 1
+    enum: Rcr4Fsd
+  - name: fsp
+    description: Frame Sync Polarity.
+    bit_offset: 1
+    bit_size: 1
+    enum: Rcr4Fsp
+  - name: ondem
+    description: On-Demand Mode.
+    bit_offset: 2
+    bit_size: 1
+  - name: fse
+    description: Frame Sync Early.
+    bit_offset: 3
+    bit_size: 1
+  - name: mf
+    description: MSB First.
+    bit_offset: 4
+    bit_size: 1
+  - name: sywd
+    description: Sync Width.
+    bit_offset: 8
+    bit_size: 5
+    enum: Sywd
+  - name: frsz
+    description: Frame Size.
+    bit_offset: 16
+    bit_size: 5
+    enum: Frsz
+  - name: fpack
+    description: FIFO Packing Mode.
+    bit_offset: 24
+    bit_size: 2
+    enum: Rcr4Fpack
+  - name: fcomb
+    description: FIFO Combine Mode.
+    bit_offset: 26
+    bit_size: 2
+    enum: Rcr4Fcomb
+  - name: fcont
+    description: FIFO Continue on Error.
+    bit_offset: 28
+    bit_size: 1
+fieldset/Rcr5:
+  description: Receive Configuration 5.
+  fields:
+  - name: fbt
+    description: First Bit Shifted.
+    bit_offset: 8
+    bit_size: 5
+    enum: Rcr5Fbt
+  - name: w0w
+    description: Word 0 Width.
+    bit_offset: 16
+    bit_size: 5
+    enum: Rcr5W0w
+  - name: wnw
+    description: Word N Width.
+    bit_offset: 24
+    bit_size: 5
+    enum: Rcr5Wnw
+fieldset/Rcsr:
+  description: Receive Control.
+  fields:
+  - name: frde
+    description: FIFO Request DMA Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: fwde
+    description: FIFO Warning DMA Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: frie
+    description: FIFO Request Interrupt Enable.
+    bit_offset: 8
+    bit_size: 1
+  - name: fwie
+    description: FIFO Warning Interrupt Enable.
+    bit_offset: 9
+    bit_size: 1
+  - name: feie
+    description: FIFO Error Interrupt Enable.
+    bit_offset: 10
+    bit_size: 1
+  - name: seie
+    description: Sync Error Interrupt Enable.
+    bit_offset: 11
+    bit_size: 1
+  - name: wsie
+    description: Word Start Interrupt Enable.
+    bit_offset: 12
+    bit_size: 1
+  - name: frf
+    description: FIFO Request Flag.
+    bit_offset: 16
+    bit_size: 1
+    enum: RcsrFrf
+  - name: fwf
+    description: FIFO Warning Flag.
+    bit_offset: 17
+    bit_size: 1
+  - name: fef
+    description: FIFO Error Flag.
+    bit_offset: 18
+    bit_size: 1
+  - name: sef
+    description: Sync Error Flag.
+    bit_offset: 19
+    bit_size: 1
+  - name: wsf
+    description: Word Start Flag.
+    bit_offset: 20
+    bit_size: 1
+  - name: sr
+    description: Software Reset.
+    bit_offset: 24
+    bit_size: 1
+    enum: RcsrSr
+  - name: fr
+    description: FIFO Reset.
+    bit_offset: 25
+    bit_size: 1
+    enum: RcsrFr
+  - name: bce
+    description: Bit Clock Enable.
+    bit_offset: 28
+    bit_size: 1
+  - name: dbge
+    description: Debug Enable.
+    bit_offset: 29
+    bit_size: 1
+  - name: stope
+    description: Stop Enable.
+    bit_offset: 30
+    bit_size: 1
+  - name: re
+    description: Receiver Enable.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Rdr:
+  description: Receive Data.
+  fields:
+  - name: rdr
+    description: Receive Data.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Rfr:
+  description: Receive FIFO.
+  fields:
+  - name: rfp
+    description: Read FIFO Pointer.
+    bit_offset: 0
+    bit_size: 4
+  - name: rcp
+    description: Read Channel Pointer.
+    bit_offset: 15
+    bit_size: 1
+  - name: wfp
+    description: Write FIFO Pointer.
+    bit_offset: 16
+    bit_size: 4
+fieldset/Rmr:
+  description: Receive Mask.
+  fields:
+  - name: rwm
+    description: Receive Word Mask.
+    bit_offset: 0
+    bit_size: 32
+    enum: Rwm
+fieldset/Tcr1:
+  description: Transmit Configuration 1.
+  fields:
+  - name: tfw
+    description: Transmit FIFO Watermark.
+    bit_offset: 0
+    bit_size: 3
+    enum: Tfw
+fieldset/Tcr2:
+  description: Transmit Configuration 2.
+  fields:
+  - name: div
+    description: Bit Clock Divide.
+    bit_offset: 0
+    bit_size: 8
+  - name: byp
+    description: Bit Clock Bypass.
+    bit_offset: 23
+    bit_size: 1
+  - name: bcd
+    description: Bit Clock Direction.
+    bit_offset: 24
+    bit_size: 1
+    enum: Tcr2Bcd
+  - name: bcp
+    description: Bit Clock Polarity.
+    bit_offset: 25
+    bit_size: 1
+    enum: Tcr2Bcp
+  - name: msel
+    description: MCLK Select.
+    bit_offset: 26
+    bit_size: 2
+    enum: Tcr2Msel
+  - name: bci
+    description: Bit Clock Input.
+    bit_offset: 28
+    bit_size: 1
+  - name: bcs
+    description: Bit Clock Swap.
+    bit_offset: 29
+    bit_size: 1
+  - name: sync
+    description: Synchronous Mode.
+    bit_offset: 30
+    bit_size: 2
+    enum: Tcr2Sync
+fieldset/Tcr3:
+  description: Transmit Configuration 3.
+  fields:
+  - name: wdfl
+    description: Word Flag Configuration.
+    bit_offset: 0
+    bit_size: 5
+  - name: tce
+    description: Transmit Channel Enable.
+    bit_offset: 16
+    bit_size: 2
+  - name: cfr
+    description: Channel FIFO Reset.
+    bit_offset: 24
+    bit_size: 2
+fieldset/Tcr4:
+  description: Transmit Configuration 4.
+  fields:
+  - name: fsd
+    description: Frame Sync Direction.
+    bit_offset: 0
+    bit_size: 1
+    enum: Tcr4Fsd
+  - name: fsp
+    description: Frame Sync Polarity.
+    bit_offset: 1
+    bit_size: 1
+    enum: Tcr4Fsp
+  - name: ondem
+    description: On-Demand Mode.
+    bit_offset: 2
+    bit_size: 1
+    enum: Tcr4Ondem
+  - name: fse
+    description: Frame Sync Early.
+    bit_offset: 3
+    bit_size: 1
+  - name: mf
+    description: MSB First.
+    bit_offset: 4
+    bit_size: 1
+  - name: chmod
+    description: Channel Mode.
+    bit_offset: 5
+    bit_size: 1
+    enum: Chmod
+  - name: sywd
+    description: Sync Width.
+    bit_offset: 8
+    bit_size: 5
+  - name: frsz
+    description: Frame Size.
+    bit_offset: 16
+    bit_size: 5
+  - name: fpack
+    description: FIFO Packing Mode.
+    bit_offset: 24
+    bit_size: 2
+    enum: Tcr4Fpack
+  - name: fcomb
+    description: FIFO Combine Mode.
+    bit_offset: 26
+    bit_size: 2
+    enum: Tcr4Fcomb
+  - name: fcont
+    description: FIFO Continue on Error.
+    bit_offset: 28
+    bit_size: 1
+fieldset/Tcr5:
+  description: Transmit Configuration 5.
+  fields:
+  - name: fbt
+    description: First Bit Shifted.
+    bit_offset: 8
+    bit_size: 5
+    enum: Tcr5Fbt
+  - name: w0w
+    description: Word 0 Width.
+    bit_offset: 16
+    bit_size: 5
+    enum: Tcr5W0w
+  - name: wnw
+    description: Word N Width.
+    bit_offset: 24
+    bit_size: 5
+    enum: Tcr5Wnw
+fieldset/Tcsr:
+  description: Transmit Control.
+  fields:
+  - name: frde
+    description: FIFO Request DMA Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: fwde
+    description: FIFO Warning DMA Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: frie
+    description: FIFO Request Interrupt Enable.
+    bit_offset: 8
+    bit_size: 1
+  - name: fwie
+    description: FIFO Warning Interrupt Enable.
+    bit_offset: 9
+    bit_size: 1
+  - name: feie
+    description: FIFO Error Interrupt Enable.
+    bit_offset: 10
+    bit_size: 1
+  - name: seie
+    description: Sync Error Interrupt Enable.
+    bit_offset: 11
+    bit_size: 1
+  - name: wsie
+    description: Word Start Interrupt Enable.
+    bit_offset: 12
+    bit_size: 1
+  - name: frf
+    description: FIFO Request Flag.
+    bit_offset: 16
+    bit_size: 1
+  - name: fwf
+    description: FIFO Warning Flag.
+    bit_offset: 17
+    bit_size: 1
+  - name: fef
+    description: FIFO Error Flag.
+    bit_offset: 18
+    bit_size: 1
+  - name: sef
+    description: Sync Error Flag.
+    bit_offset: 19
+    bit_size: 1
+  - name: wsf
+    description: Word Start Flag.
+    bit_offset: 20
+    bit_size: 1
+  - name: sr
+    description: Software Reset.
+    bit_offset: 24
+    bit_size: 1
+  - name: fr
+    description: FIFO Reset.
+    bit_offset: 25
+    bit_size: 1
+    enum: TcsrFr
+  - name: bce
+    description: Bit Clock Enable.
+    bit_offset: 28
+    bit_size: 1
+  - name: dbge
+    description: Debug Enable.
+    bit_offset: 29
+    bit_size: 1
+  - name: stope
+    description: Stop Enable.
+    bit_offset: 30
+    bit_size: 1
+  - name: te
+    description: Transmitter Enable.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Tdr:
+  description: Transmit Data.
+  fields:
+  - name: tdr
+    description: Transmit Data.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Tfr:
+  description: Transmit FIFO.
+  fields:
+  - name: rfp
+    description: Read FIFO Pointer.
+    bit_offset: 0
+    bit_size: 4
+  - name: wfp
+    description: Write FIFO Pointer.
+    bit_offset: 16
+    bit_size: 4
+  - name: wcp
+    description: Write Channel Pointer.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Tmr:
+  description: Transmit Mask.
+  fields:
+  - name: twm
+    description: Transmit Word Mask.
+    bit_offset: 0
+    bit_size: 32
+    enum: Twm
+fieldset/Verid:
+  description: Version ID.
+  fields:
+  - name: feature
+    description: Feature Specification Number.
+    bit_offset: 0
+    bit_size: 16
+    enum: Feature
+  - name: minor
+    description: Minor Version Number.
+    bit_offset: 16
+    bit_size: 8
+  - name: major
+    description: Major Version Number.
+    bit_offset: 24
+    bit_size: 8
+enum/Chmod:
+  bit_size: 1
+  variants:
+  - name: TdmMode
+    description: TDM mode.
+    value: 0
+  - name: OutputMode
+    description: Output mode.
+    value: 1
+enum/Feature:
+  bit_size: 16
+  variants:
+  - name: Std
+    description: Standard feature set.
+    value: 0
+enum/Frsz:
+  bit_size: 5
+  variants:
+  - name: OneWord
+    description: '1.'
+    value: 0
+  - name: TwoWords
+    description: '2.'
+    value: 1
+  - name: NWords2
+    description: (FRSZ value + 1).
+    value: 2
+  - name: NWords3
+    description: (FRSZ value + 1).
+    value: 3
+  - name: NWords4
+    description: (FRSZ value + 1).
+    value: 4
+  - name: NWords5
+    description: (FRSZ value + 1).
+    value: 5
+  - name: NWords6
+    description: (FRSZ value + 1).
+    value: 6
+  - name: NWords7
+    description: (FRSZ value + 1).
+    value: 7
+  - name: NWords8
+    description: (FRSZ value + 1).
+    value: 8
+  - name: NWords9
+    description: (FRSZ value + 1).
+    value: 9
+  - name: MaxWords
+    description: '32.'
+    value: 31
+enum/McrMsel:
+  bit_size: 2
+  variants:
+  - name: Mclk1
+    description: Controller clock (MCLK) option 1.
+    value: 0
+  - name: Mclk2
+    description: Controller clock (MCLK) option 2.
+    value: 2
+  - name: Mclk3
+    description: Controller clock (MCLK) option 3.
+    value: 3
+enum/Moe:
+  bit_size: 1
+  variants:
+  - name: Input
+    description: Input.
+    value: 0
+  - name: Output
+    description: Output.
+    value: 1
+enum/Rcr2Bcd:
+  bit_size: 1
+  variants:
+  - name: ExtTargetMode
+    description: Generated externally in Target mode.
+    value: 0
+  - name: IntControllerMode
+    description: Generated internally in Controller mode.
+    value: 1
+enum/Rcr2Bci:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: Disable.
+    value: 0
+  - name: ClockedAsIfExtGenerated
+    description: Enable.
+    value: 1
+enum/Rcr2Bcp:
+  bit_size: 1
+  variants:
+  - name: ActiveHigh
+    description: Active high.
+    value: 0
+  - name: ActiveLow
+    description: Active low.
+    value: 1
+enum/Rcr2Bcs:
+  bit_size: 1
+  variants:
+  - name: Normal
+    description: Use the normal bit clock source.
+    value: 0
+  - name: SwapBitClkSource
+    description: Swap the bit clock source.
+    value: 1
+enum/Rcr2Msel:
+  bit_size: 2
+  variants:
+  - name: BusClock
+    description: Bus clock.
+    value: 0
+  - name: Mclk1
+    description: Controller clock (MCLK) option 1.
+    value: 1
+  - name: Mclk2
+    description: Controller clock (MCLK) option 2.
+    value: 2
+  - name: Mclk3
+    description: Controller clock (MCLK) option 3.
+    value: 3
+enum/Rcr2Sync:
+  bit_size: 2
+  variants:
+  - name: Async
+    description: Asynchronous mode.
+    value: 0
+  - name: SyncWTx
+    description: Synchronous with transmitter.
+    value: 1
+  - name: SyncWAnotherSaiRx
+    description: Synchronous with another SAI receiver.
+    value: 2
+  - name: SyncWAnotherSaiTx
+    description: Synchronous with another SAI transmitter.
+    value: 3
+enum/Rcr4Fcomb:
+  bit_size: 2
+  variants:
+  - name: Disabled
+    description: Disable.
+    value: 0
+  - name: EnaOnFifoWrites
+    description: Enable on FIFO writes (from receive shift registers).
+    value: 1
+  - name: EnaOnFifoReads
+    description: Enable on FIFO reads (by software).
+    value: 2
+  - name: EnaOnFifoWritesReads
+    description: Enable on FIFO writes (from receive shift registers) and reads (by software).
+    value: 3
+enum/Rcr4Fpack:
+  bit_size: 2
+  variants:
+  - name: Disabled
+    description: Disable.
+    value: 0
+  - name: EightBitPacking
+    description: Enable 8-bit FIFO packing.
+    value: 2
+  - name: SixteenBitPacking
+    description: Enable 16-bit FIFO packing.
+    value: 3
+enum/Rcr4Fsd:
+  bit_size: 1
+  variants:
+  - name: ExtTargetMode
+    description: Generated externally in Target mode.
+    value: 0
+  - name: IntControllerMode
+    description: Generated internally in Controller mode.
+    value: 1
+enum/Rcr4Fsp:
+  bit_size: 1
+  variants:
+  - name: ActiveHigh
+    description: Active high.
+    value: 0
+  - name: ActiveLow
+    description: Active low.
+    value: 1
+enum/Rcr5Fbt:
+  bit_size: 5
+  variants:
+  - name: Index0
+    description: '0.'
+    value: 0
+  - name: Index1
+    description: FBT value.
+    value: 1
+  - name: Index2
+    description: FBT value.
+    value: 2
+  - name: Index3
+    description: FBT value.
+    value: 3
+  - name: Index4
+    description: FBT value.
+    value: 4
+  - name: Index5
+    description: FBT value.
+    value: 5
+  - name: Index6
+    description: FBT value.
+    value: 6
+  - name: Index7
+    description: FBT value.
+    value: 7
+  - name: Index8
+    description: FBT value.
+    value: 8
+  - name: Index9
+    description: FBT value.
+    value: 9
+  - name: Index31
+    description: '31.'
+    value: 31
+enum/Rcr5W0w:
+  bit_size: 5
+  variants:
+  - name: Min
+    description: '1.'
+    value: 0
+  - name: Two
+    description: '2.'
+    value: 1
+  - name: ThreeThirtyone2
+    description: (W0W value + 1).
+    value: 2
+  - name: ThreeThirtyone3
+    description: (W0W value + 1).
+    value: 3
+  - name: ThreeThirtyone4
+    description: (W0W value + 1).
+    value: 4
+  - name: ThreeThirtyone5
+    description: (W0W value + 1).
+    value: 5
+  - name: ThreeThirtyone6
+    description: (W0W value + 1).
+    value: 6
+  - name: ThreeThirtyone7
+    description: (W0W value + 1).
+    value: 7
+  - name: ThreeThirtyone8
+    description: (W0W value + 1).
+    value: 8
+  - name: ThreeThirtyone9
+    description: (W0W value + 1).
+    value: 9
+  - name: Max
+    description: '32.'
+    value: 31
+enum/Rcr5Wnw:
+  bit_size: 5
+  variants:
+  - name: Eight
+    description: '8.'
+    value: 7
+  - name: Nine
+    description: '9.'
+    value: 8
+  - name: TenThirtyone9
+    description: (WNW value + 1).
+    value: 9
+  - name: TenThirtyone10
+    description: (WNW value + 1).
+    value: 10
+  - name: TenThirtyone11
+    description: (WNW value + 1).
+    value: 11
+  - name: TenThirtyone12
+    description: (WNW value + 1).
+    value: 12
+  - name: TenThirtyone13
+    description: (WNW value + 1).
+    value: 13
+  - name: TenThirtyone14
+    description: (WNW value + 1).
+    value: 14
+  - name: TenThirtyone15
+    description: (WNW value + 1).
+    value: 15
+  - name: TenThirtyone16
+    description: (WNW value + 1).
+    value: 16
+  - name: Max
+    description: '32.'
+    value: 31
+enum/RcsrFr:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: No effect.
+    value: 0
+  - name: FifoReset
+    description: Reset.
+    value: 1
+enum/RcsrFrf:
+  bit_size: 1
+  variants:
+  - name: BelowWatermark
+    description: Watermark not reached.
+    value: 0
+  - name: WatermarkReached
+    description: Watermark reached.
+    value: 1
+enum/RcsrSr:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: No effect.
+    value: 0
+  - name: SwReset
+    description: Software reset.
+    value: 1
+enum/Rfw:
+  bit_size: 3
+  variants:
+  - name: Min
+    description: '1.'
+    value: 0
+  - name: Two
+    description: '2.'
+    value: 1
+  - name: Watermark2
+    description: (RFW value + 1).
+    value: 2
+  - name: Watermark3
+    description: (RFW value + 1).
+    value: 3
+  - name: Watermark4
+    description: (RFW value + 1).
+    value: 4
+  - name: Watermark5
+    description: (RFW value + 1).
+    value: 5
+  - name: Watermark6
+    description: (RFW value + 1).
+    value: 6
+  - name: Max
+    description: '8.'
+    value: 7
+enum/Rwm:
+  bit_size: 32
+  variants:
+  - name: WordNEnabled
+    description: Enable.
+    value: 0
+  - name: WordNMasked
+    description: Mask.
+    value: 1
+enum/Sywd:
+  bit_size: 5
+  variants:
+  - name: Min
+    description: '1.'
+    value: 0
+  - name: TwoClocks
+    description: '2.'
+    value: 1
+  - name: NClocks2
+    description: (SYWD value + 1).
+    value: 2
+  - name: NClocks3
+    description: (SYWD value + 1).
+    value: 3
+  - name: NClocks4
+    description: (SYWD value + 1).
+    value: 4
+  - name: NClocks5
+    description: (SYWD value + 1).
+    value: 5
+  - name: NClocks6
+    description: (SYWD value + 1).
+    value: 6
+  - name: NClocks7
+    description: (SYWD value + 1).
+    value: 7
+  - name: NClocks8
+    description: (SYWD value + 1).
+    value: 8
+  - name: NClocks9
+    description: (SYWD value + 1).
+    value: 9
+  - name: ThirtytwoClocks
+    description: '32.'
+    value: 31
+enum/Tcr2Bcd:
+  bit_size: 1
+  variants:
+  - name: ExtInTarget
+    description: Generate externally in Target mode.
+    value: 0
+  - name: IntInController
+    description: Generate internally in Controller mode.
+    value: 1
+enum/Tcr2Bcp:
+  bit_size: 1
+  variants:
+  - name: ActiveHigh
+    description: Active high.
+    value: 0
+  - name: ActiveLow
+    description: Active low.
+    value: 1
+enum/Tcr2Msel:
+  bit_size: 2
+  variants:
+  - name: BusClock
+    description: Bus clock.
+    value: 0
+  - name: Mclk1
+    description: Controller clock (MCLK) option 1.
+    value: 1
+  - name: Mclk2
+    description: Controller clock (MCLK) option 2.
+    value: 2
+  - name: Mclk3
+    description: Controller clock (MCLK) option 3.
+    value: 3
+enum/Tcr2Sync:
+  bit_size: 2
+  variants:
+  - name: Async
+    description: Asynchronous mode.
+    value: 0
+  - name: SyncWRx
+    description: Synchronous with receiver.
+    value: 1
+  - name: SyncWTx
+    description: Synchronous with another SAI transmitter.
+    value: 2
+  - name: SyncWAnotherSaiRx
+    description: Synchronous with another SAI receiver.
+    value: 3
+enum/Tcr4Fcomb:
+  bit_size: 2
+  variants:
+  - name: Disabled
+    description: Disable.
+    value: 0
+  - name: EnabledOnFifoReads
+    description: Enable on FIFO reads (from transmit shift registers).
+    value: 1
+  - name: EnabledOnFifoWrites
+    description: Enable on FIFO writes (by software).
+    value: 2
+  - name: EnabledOnFifoReadsWrites
+    description: Enable on FIFO reads (from transmit shift registers) and writes (by software).
+    value: 3
+enum/Tcr4Fpack:
+  bit_size: 2
+  variants:
+  - name: Disabled
+    description: Disable FIFO packing.
+    value: 0
+  - name: EightBitFifoPacking
+    description: Enable 8-bit FIFO packing.
+    value: 2
+  - name: SixteenBitFifoPacking
+    description: Enable 16-bit FIFO packing.
+    value: 3
+enum/Tcr4Fsd:
+  bit_size: 1
+  variants:
+  - name: ExtInTargetMode
+    description: Generated externally in Target mode.
+    value: 0
+  - name: IntInControllerMode
+    description: Generated internally in Controller mode.
+    value: 1
+enum/Tcr4Fsp:
+  bit_size: 1
+  variants:
+  - name: ActiveHigh
+    description: Active high.
+    value: 0
+  - name: ActiveLow
+    description: Active low.
+    value: 1
+enum/Tcr4Ondem:
+  bit_size: 1
+  variants:
+  - name: ContinuousFrameSync
+    description: Generated continuously.
+    value: 0
+  - name: OnDemandFrameSync
+    description: Generated after the FIFO warning flag is cleared.
+    value: 1
+enum/Tcr5Fbt:
+  bit_size: 5
+  variants:
+  - name: Index0
+    description: '0.'
+    value: 0
+  - name: Index1
+    description: FBT.
+    value: 1
+  - name: Index2
+    description: FBT.
+    value: 2
+  - name: Index3
+    description: FBT.
+    value: 3
+  - name: Index4
+    description: FBT.
+    value: 4
+  - name: Index5
+    description: FBT.
+    value: 5
+  - name: Index6
+    description: FBT.
+    value: 6
+  - name: Index7
+    description: FBT.
+    value: 7
+  - name: Index8
+    description: FBT.
+    value: 8
+  - name: Index9
+    description: FBT.
+    value: 9
+  - name: Index31
+    description: '31.'
+    value: 31
+enum/Tcr5W0w:
+  bit_size: 5
+  variants:
+  - name: Eight
+    description: '8.'
+    value: 7
+  - name: Nine
+    description: '9.'
+    value: 8
+  - name: TenThirtyone9
+    description: (W0W value + 1).
+    value: 9
+  - name: TenThirtyone10
+    description: (W0W value + 1).
+    value: 10
+  - name: TenThirtyone11
+    description: (W0W value + 1).
+    value: 11
+  - name: TenThirtyone12
+    description: (W0W value + 1).
+    value: 12
+  - name: TenThirtyone13
+    description: (W0W value + 1).
+    value: 13
+  - name: TenThirtyone14
+    description: (W0W value + 1).
+    value: 14
+  - name: TenThirtyone15
+    description: (W0W value + 1).
+    value: 15
+  - name: TenThirtyone16
+    description: (W0W value + 1).
+    value: 16
+  - name: Max
+    description: '32.'
+    value: 31
+enum/Tcr5Wnw:
+  bit_size: 5
+  variants:
+  - name: Eight
+    description: '8.'
+    value: 7
+  - name: Nine
+    description: '9.'
+    value: 8
+  - name: TenThirtyone9
+    description: (WNW value + 1).
+    value: 9
+  - name: TenThirtyone10
+    description: (WNW value + 1).
+    value: 10
+  - name: TenThirtyone11
+    description: (WNW value + 1).
+    value: 11
+  - name: TenThirtyone12
+    description: (WNW value + 1).
+    value: 12
+  - name: TenThirtyone13
+    description: (WNW value + 1).
+    value: 13
+  - name: TenThirtyone14
+    description: (WNW value + 1).
+    value: 14
+  - name: TenThirtyone15
+    description: (WNW value + 1).
+    value: 15
+  - name: TenThirtyone16
+    description: (WNW value + 1).
+    value: 16
+  - name: Max
+    description: '32.'
+    value: 31
+enum/TcsrFr:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: No effect.
+    value: 0
+  - name: Reset
+    description: FIFO reset.
+    value: 1
+enum/Tfw:
+  bit_size: 3
+  variants:
+  - name: Min
+    description: '1.'
+    value: 0
+  - name: Two
+    description: '2.'
+    value: 1
+  - name: WatermarkValue2
+    description: (TFW +1).
+    value: 2
+  - name: WatermarkValue3
+    description: (TFW +1).
+    value: 3
+  - name: WatermarkValue4
+    description: (TFW +1).
+    value: 4
+  - name: WatermarkValue5
+    description: (TFW +1).
+    value: 5
+  - name: WatermarkValue6
+    description: (TFW +1).
+    value: 6
+  - name: Max
+    description: '8.'
+    value: 7
+enum/Twm:
+  bit_size: 32
+  variants:
+  - name: WordNEnabled
+    description: Enable.
+    value: 0
+  - name: WordNMasked
+    description: Mask.
+    value: 1
+enum/Wdfl:
+  bit_size: 5
+  variants:
+  - name: Word1
+    description: Word 1.
+    value: 0
+  - name: Word2
+    description: Word 2.
+    value: 1
+  - name: WordN2
+    description: Word (WDFL value + 1).
+    value: 2
+  - name: WordN3
+    description: Word (WDFL value + 1).
+    value: 3
+  - name: WordN4
+    description: Word (WDFL value + 1).
+    value: 4
+  - name: WordN5
+    description: Word (WDFL value + 1).
+    value: 5
+  - name: WordN6
+    description: Word (WDFL value + 1).
+    value: 6
+  - name: WordN7
+    description: Word (WDFL value + 1).
+    value: 7
+  - name: WordN8
+    description: Word (WDFL value + 1).
+    value: 8
+  - name: WordN9
+    description: Word (WDFL value + 1).
+    value: 9
+  - name: WordMax
+    description: Word 32.
+    value: 31

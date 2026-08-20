@@ -1,0 +1,214 @@
+block/CtxValidIvArray:
+  description: 'Array of registers: VMAPCTX_WD%s, BIVCTX_WD%s.'
+  items:
+  - name: vmapctx_wd
+    description: Bitmap of Valid Control for Memory Context n.
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 0
+    fieldset: VmapctxWd
+  - name: bivctx_wd
+    description: Block Initial Vector for Memory Context n.
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 8
+    access: Write
+    fieldset: BivctxWd
+block/Npx:
+  description: NPX.
+  items:
+  - name: npxcr
+    description: NPX Control Register.
+    byte_offset: 0
+    fieldset: Npxcr
+  - name: npxsr
+    description: NPX Status Register.
+    byte_offset: 8
+    access: Read
+    fieldset: Npxsr
+  - name: cacmsk
+    description: Flash Cache Obfuscation Mask.
+    byte_offset: 16
+    access: Write
+    fieldset: Cacmsk
+  - name: remap
+    description: Data Remap.
+    byte_offset: 32
+    fieldset: Remap
+  - name: ctx_valid_iv_array
+    description: 'Array of registers: VMAPCTX_WD%s, BIVCTX_WD%s.'
+    array:
+      len: 4
+      stride: 16
+    byte_offset: 64
+    block: CtxValidIvArray
+fieldset/BivctxWd:
+  description: Block Initial Vector for Memory Context n.
+  fields:
+  - name: biv_wd0
+    description: Block Initial Vector Word0.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Cacmsk:
+  description: Flash Cache Obfuscation Mask.
+  fields:
+  - name: obmask
+    description: Obfuscation Mask.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Npxcr:
+  description: NPX Control Register.
+  fields:
+  - name: gee
+    description: Global Encryption Enable.
+    bit_offset: 0
+    bit_size: 1
+    enum: Gee
+  - name: gde
+    description: Global Decryption Enable.
+    bit_offset: 2
+    bit_size: 1
+    enum: Gde
+  - name: glk
+    description: Global Lock Enable.
+    bit_offset: 4
+    bit_size: 1
+    enum: Glk
+  - name: mlk
+    description: Mask Lock Enable.
+    bit_offset: 6
+    bit_size: 1
+    enum: Mlk
+  - name: ctxlk
+    description: Lock Enable for Context n.
+    bit_offset: 8
+    bit_size: 1
+    array:
+      len: 4
+      stride: 2
+    enum: Ctxlk
+fieldset/Npxsr:
+  description: NPX Status Register.
+  fields:
+  - name: numctx
+    description: Number of implemented memory contexts.
+    bit_offset: 0
+    bit_size: 4
+    enum: Numctx
+  - name: v
+    description: Key n Valid.
+    bit_offset: 8
+    bit_size: 1
+    array:
+      len: 4
+      stride: 1
+    enum: V
+fieldset/Remap:
+  description: Data Remap.
+  fields:
+  - name: remaplk
+    description: Remap Lock Enable.
+    bit_offset: 0
+    bit_size: 1
+    enum: Remaplk
+  - name: lim
+    description: LIM Remapping Address.
+    bit_offset: 16
+    bit_size: 5
+  - name: limdp
+    description: LIMDP Remapping Address.
+    bit_offset: 24
+    bit_size: 5
+fieldset/VmapctxWd:
+  description: Bitmap of Valid Control for Memory Context n.
+  fields:
+  - name: val
+    description: Block valid enable for encryption/decryption.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 32
+      stride: 1
+enum/Ctxlk:
+  bit_size: 1
+  variants:
+  - name: LockDisabled
+    description: 'Lock disabled: VMAPCTXn remains read-write.'
+    value: 0
+  - name: LockEnabled
+    description: 'Lock enabled: cannot write to VMAPCTXn (becomes read-only).'
+    value: 1
+enum/Gde:
+  bit_size: 1
+  variants:
+  - name: DecryptionDisabled
+    description: Global decryption disabled. NPX on-the-fly decryption is globally disabled. Subsequent reads return 0.
+    value: 0
+  - name: DecryptionEnabled
+    description: Global decryption enabled. NPX on-the-fly decryption is globally enabled. Subsequent reads return 1.
+    value: 1
+enum/Gee:
+  bit_size: 1
+  variants:
+  - name: EncryptionDisabled
+    description: Global encryption disabled. NPX on-the-fly encryption is disabled. Subsequent reads return 0.
+    value: 0
+  - name: EncryptionEnabled
+    description: Global encryption enabled. NPX on-the-fly encryption is enabled if the flash access hits in a valid memory context. Subsequent reads return 1.
+    value: 1
+enum/Glk:
+  bit_size: 1
+  variants:
+  - name: LockDisabled
+    description: Lock disabled. Subsequent reads return 0.
+    value: 0
+  - name: LockEnabled
+    description: 'Lock enabled: cannot write to VMAPCTXn, NPXCR, or CACMSK. Subsequent reads return 1.'
+    value: 1
+enum/Mlk:
+  bit_size: 1
+  variants:
+  - name: LockDisabled
+    description: Lock disabled. Subsequent reads return 0.
+    value: 0
+  - name: LockEnabled
+    description: 'Lock enabled: cannot write to mask. Subsequent reads return 1.'
+    value: 1
+enum/Numctx:
+  bit_size: 4
+  variants:
+  - name: ZeroCtx
+    description: No (zero) implemented memory contexts.
+    value: 0
+  - name: OneCtx
+    description: 1 implemented memory contexts.
+    value: 1
+  - name: TwoCtx
+    description: 2 implemented memory contexts.
+    value: 2
+  - name: ThreeCtx
+    description: 3 implemented memory contexts.
+    value: 3
+  - name: FourCtx
+    description: 4 implemented memory contexts.
+    value: 4
+enum/Remaplk:
+  bit_size: 1
+  variants:
+  - name: LockDisabled
+    description: 'Lock disabled: can write to REMAP.'
+    value: 0
+  - name: LockEnabled
+    description: 'Lock enabled: cannot write to REMAP.'
+    value: 1
+enum/V:
+  bit_size: 1
+  variants:
+  - name: KeyNotvalid
+    description: Not valid.
+    value: 0
+  - name: KeyValid
+    description: Valid.
+    value: 1

@@ -1,0 +1,2677 @@
+block/Usdhc:
+  description: uSDHC.
+  items:
+  - name: ds_addr
+    description: DMA System Address.
+    byte_offset: 0
+    fieldset: DsAddr
+  - name: blk_att
+    description: Block Attributes.
+    byte_offset: 4
+    fieldset: BlkAtt
+  - name: cmd_arg
+    description: Command Argument.
+    byte_offset: 8
+    fieldset: CmdArg
+  - name: cmd_xfr_typ
+    description: Command Transfer Type.
+    byte_offset: 12
+    fieldset: CmdXfrTyp
+  - name: cmd_rsp
+    description: Command Response.
+    byte_offset: 16
+    access: Read
+    array:
+      len: 4
+      stride: 4
+    fieldset: CmdRsp
+  - name: data_buff_acc_port
+    description: Data Buffer Access Port.
+    byte_offset: 32
+    fieldset: DataBuffAccPort
+  - name: pres_state
+    description: Present State.
+    byte_offset: 36
+    access: Read
+    fieldset: PresState
+  - name: prot_ctrl
+    description: Protocol Control.
+    byte_offset: 40
+    fieldset: ProtCtrl
+  - name: sys_ctrl
+    description: System Control.
+    byte_offset: 44
+    fieldset: SysCtrl
+  - name: int_status
+    description: Interrupt Status.
+    byte_offset: 48
+    fieldset: IntStatus
+  - name: int_status_en
+    description: Interrupt Status Enable.
+    byte_offset: 52
+    fieldset: IntStatusEn
+  - name: int_signal_en
+    description: Interrupt Signal Enable.
+    byte_offset: 56
+    fieldset: IntSignalEn
+  - name: autocmd12_err_status
+    description: Auto CMD12 Error Status.
+    byte_offset: 60
+    fieldset: Autocmd12ErrStatus
+  - name: host_ctrl_cap
+    description: Host Controller Capabilities.
+    byte_offset: 64
+    fieldset: HostCtrlCap
+  - name: wtmk_lvl
+    description: Watermark Level.
+    byte_offset: 68
+    fieldset: WtmkLvl
+  - name: mix_ctrl
+    description: Mixer Control.
+    byte_offset: 72
+    fieldset: MixCtrl
+  - name: force_event
+    description: Force Event.
+    byte_offset: 80
+    fieldset: ForceEvent
+  - name: adma_err_status
+    description: ADMA Error Status.
+    byte_offset: 84
+    access: Read
+    fieldset: AdmaErrStatus
+  - name: adma_sys_addr
+    description: ADMA System Address.
+    byte_offset: 88
+    fieldset: AdmaSysAddr
+  - name: dll_ctrl
+    description: DLL (Delay Line) Control.
+    byte_offset: 96
+    fieldset: DllCtrl
+  - name: dll_status
+    description: DLL Status.
+    byte_offset: 100
+    access: Read
+    fieldset: DllStatus
+  - name: clk_tune_ctrl_status
+    description: CLK Tuning Control and Status.
+    byte_offset: 104
+    fieldset: ClkTuneCtrlStatus
+  - name: vend_spec
+    description: Vendor Specific Register.
+    byte_offset: 192
+    fieldset: VendSpec
+  - name: mmc_boot
+    description: eMMC Boot.
+    byte_offset: 196
+    fieldset: MmcBoot
+  - name: vend_spec2
+    description: Vendor Specific 2 Register.
+    byte_offset: 200
+    fieldset: VendSpec2
+  - name: tuning_ctrl
+    description: Tuning Control.
+    byte_offset: 204
+    fieldset: TuningCtrl
+fieldset/AdmaErrStatus:
+  description: ADMA Error Status.
+  fields:
+  - name: admaes
+    description: ADMA error state (when ADMA error is occurred).
+    bit_offset: 0
+    bit_size: 2
+  - name: admalme
+    description: ADMA length mismatch error.
+    bit_offset: 2
+    bit_size: 1
+    enum: Admalme
+  - name: admadce
+    description: ADMA descriptor error.
+    bit_offset: 3
+    bit_size: 1
+    enum: Admadce
+fieldset/AdmaSysAddr:
+  description: ADMA System Address.
+  fields:
+  - name: ads_addr
+    description: ADMA system address.
+    bit_offset: 2
+    bit_size: 30
+fieldset/Autocmd12ErrStatus:
+  description: Auto CMD12 Error Status.
+  fields:
+  - name: ac12ne
+    description: Auto CMD12 not executed.
+    bit_offset: 0
+    bit_size: 1
+    enum: Ac12ne
+  - name: ac12toe
+    description: Auto CMD12 / 23 timeout error.
+    bit_offset: 1
+    bit_size: 1
+    enum: Ac12toe
+  - name: ac12ce
+    description: Auto CMD12 / 23 CRC error.
+    bit_offset: 2
+    bit_size: 1
+    enum: Ac12ce
+  - name: ac12ebe
+    description: Auto CMD12 / 23 end bit error.
+    bit_offset: 3
+    bit_size: 1
+    enum: Ac12ebe
+  - name: ac12ie
+    description: Auto CMD12 / 23 index error.
+    bit_offset: 4
+    bit_size: 1
+    enum: Ac12ie
+  - name: cnibac12e
+    description: Command not issued by Auto CMD12 error.
+    bit_offset: 7
+    bit_size: 1
+    enum: Cnibac12e
+  - name: execute_tuning
+    description: Execute tuning.
+    bit_offset: 22
+    bit_size: 1
+    enum: ExecuteTuning
+  - name: smp_clk_sel
+    description: Sample clock select.
+    bit_offset: 23
+    bit_size: 1
+    enum: Autocmd12ErrStatusSmpClkSel
+fieldset/BlkAtt:
+  description: Block Attributes.
+  fields:
+  - name: blksize
+    description: Transfer block size.
+    bit_offset: 0
+    bit_size: 13
+    enum: Blksize
+  - name: blkcnt
+    description: Blocks count for current transfer.
+    bit_offset: 16
+    bit_size: 16
+    enum: Blkcnt
+fieldset/ClkTuneCtrlStatus:
+  description: CLK Tuning Control and Status.
+  fields:
+  - name: dly_cell_set_post
+    description: Delay cells on the feedback clock between CLK_OUT and CLK_POST.
+    bit_offset: 0
+    bit_size: 4
+  - name: dly_cell_set_out
+    description: Delay cells on the feedback clock between CLK_PRE and CLK_OUT.
+    bit_offset: 4
+    bit_size: 4
+  - name: dly_cell_set_pre
+    description: delay cells on the feedback clock between the feedback clock and CLK_PRE.
+    bit_offset: 8
+    bit_size: 7
+  - name: nxt_err
+    description: NXT error.
+    bit_offset: 15
+    bit_size: 1
+  - name: tap_sel_post
+    description: Delay cells added on the feedback clock between CLK_OUT and CLK_POST.
+    bit_offset: 16
+    bit_size: 4
+  - name: tap_sel_out
+    description: Delay cells added on the feedback clock between CLK_PRE and CLK_OUT.
+    bit_offset: 20
+    bit_size: 4
+  - name: tap_sel_pre
+    description: TAP_SEL_PRE.
+    bit_offset: 24
+    bit_size: 7
+  - name: pre_err
+    description: PRE error.
+    bit_offset: 31
+    bit_size: 1
+fieldset/CmdArg:
+  description: Command Argument.
+  fields:
+  - name: cmdarg
+    description: Command argument.
+    bit_offset: 0
+    bit_size: 32
+fieldset/CmdRsp:
+  description: Command Response.
+  fields:
+  - name: cmdrsp
+    description: Command response.
+    bit_offset: 0
+    bit_size: 32
+fieldset/CmdXfrTyp:
+  description: Command Transfer Type.
+  fields:
+  - name: dmaen
+    description: DMAEN.
+    bit_offset: 0
+    bit_size: 1
+    enum: CmdXfrTypDmaen
+  - name: bcen
+    description: BCEN.
+    bit_offset: 1
+    bit_size: 1
+    enum: CmdXfrTypBcen
+  - name: ac12en
+    description: AC12EN.
+    bit_offset: 2
+    bit_size: 1
+    enum: CmdXfrTypAc12en
+  - name: ddr_en
+    description: DDR_EN.
+    bit_offset: 3
+    bit_size: 1
+    enum: DdrEn
+  - name: dtdsel
+    description: DTDSEL.
+    bit_offset: 4
+    bit_size: 1
+    enum: CmdXfrTypDtdsel
+  - name: msbsel
+    description: MSBSEL.
+    bit_offset: 5
+    bit_size: 1
+    enum: CmdXfrTypMsbsel
+  - name: nibble_pos
+    description: NIBBLE_POS.
+    bit_offset: 6
+    bit_size: 1
+    enum: NibblePos
+  - name: ac23en
+    description: AC23EN.
+    bit_offset: 7
+    bit_size: 1
+    enum: Ac23en
+  - name: rsptyp
+    description: Response type select.
+    bit_offset: 16
+    bit_size: 2
+    enum: Rsptyp
+  - name: cccen
+    description: Command CRC check enable.
+    bit_offset: 19
+    bit_size: 1
+    enum: Cccen
+  - name: cicen
+    description: Command index check enable.
+    bit_offset: 20
+    bit_size: 1
+    enum: Cicen
+  - name: dpsel
+    description: Data present select.
+    bit_offset: 21
+    bit_size: 1
+    enum: Dpsel
+  - name: cmdtyp
+    description: Command type.
+    bit_offset: 22
+    bit_size: 2
+    enum: Cmdtyp
+  - name: cmdinx
+    description: Command index.
+    bit_offset: 24
+    bit_size: 6
+fieldset/DataBuffAccPort:
+  description: Data Buffer Access Port.
+  fields:
+  - name: datcont
+    description: Data content.
+    bit_offset: 0
+    bit_size: 32
+fieldset/DllCtrl:
+  description: DLL (Delay Line) Control.
+  fields:
+  - name: dll_ctrl_enable
+    description: DLL and delay chain.
+    bit_offset: 0
+    bit_size: 1
+  - name: dll_ctrl_reset
+    description: DLL reset.
+    bit_offset: 1
+    bit_size: 1
+  - name: dll_ctrl_slv_force_upd
+    description: DLL slave delay line.
+    bit_offset: 2
+    bit_size: 1
+  - name: dll_ctrl_slv_dly_target0
+    description: DLL slave delay target0.
+    bit_offset: 3
+    bit_size: 4
+  - name: dll_ctrl_gate_update
+    description: DLL gate update.
+    bit_offset: 7
+    bit_size: 1
+  - name: dll_ctrl_slv_override
+    description: DLL slave override.
+    bit_offset: 8
+    bit_size: 1
+  - name: dll_ctrl_slv_override_val
+    description: DLL slave override val.
+    bit_offset: 9
+    bit_size: 7
+  - name: dll_ctrl_slv_dly_target1
+    description: DLL slave delay target1.
+    bit_offset: 16
+    bit_size: 3
+  - name: dll_ctrl_slv_update_int
+    description: Slave delay line update interval.
+    bit_offset: 20
+    bit_size: 8
+  - name: dll_ctrl_ref_update_int
+    description: DLL control loop update interval.
+    bit_offset: 28
+    bit_size: 4
+fieldset/DllStatus:
+  description: DLL Status.
+  fields:
+  - name: dll_sts_slv_lock
+    description: Slave delay-line lock status.
+    bit_offset: 0
+    bit_size: 1
+  - name: dll_sts_ref_lock
+    description: Reference DLL lock status.
+    bit_offset: 1
+    bit_size: 1
+  - name: dll_sts_slv_sel
+    description: Slave delay line select status.
+    bit_offset: 2
+    bit_size: 7
+  - name: dll_sts_ref_sel
+    description: Reference delay line select taps.
+    bit_offset: 9
+    bit_size: 7
+fieldset/DsAddr:
+  description: DMA System Address.
+  fields:
+  - name: ds_addr
+    description: System address.
+    bit_offset: 0
+    bit_size: 32
+fieldset/ForceEvent:
+  description: Force Event.
+  fields:
+  - name: fevtac12ne
+    description: Force event auto command 12 not executed.
+    bit_offset: 0
+    bit_size: 1
+  - name: fevtac12toe
+    description: Force event auto command 12 time out error.
+    bit_offset: 1
+    bit_size: 1
+  - name: fevtac12ce
+    description: Force event auto command 12 CRC error.
+    bit_offset: 2
+    bit_size: 1
+  - name: fevtac12ebe
+    description: Force event Auto Command 12 end bit error.
+    bit_offset: 3
+    bit_size: 1
+  - name: fevtac12ie
+    description: Force event Auto Command 12 index error.
+    bit_offset: 4
+    bit_size: 1
+  - name: fevtcnibac12e
+    description: Force event command not executed by Auto Command 12 error.
+    bit_offset: 7
+    bit_size: 1
+  - name: fevtctoe
+    description: Force event command time out error.
+    bit_offset: 16
+    bit_size: 1
+  - name: fevtcce
+    description: Force event command CRC error.
+    bit_offset: 17
+    bit_size: 1
+  - name: fevtcebe
+    description: Force event command end bit error.
+    bit_offset: 18
+    bit_size: 1
+  - name: fevtcie
+    description: Force event command index error.
+    bit_offset: 19
+    bit_size: 1
+  - name: fevtdtoe
+    description: Force event data time out error.
+    bit_offset: 20
+    bit_size: 1
+  - name: fevtdce
+    description: Force event data CRC error.
+    bit_offset: 21
+    bit_size: 1
+  - name: fevtdebe
+    description: Force event data end bit error.
+    bit_offset: 22
+    bit_size: 1
+  - name: fevtac12e
+    description: Force event Auto Command 12 error.
+    bit_offset: 24
+    bit_size: 1
+  - name: fevttne
+    description: Force tuning error.
+    bit_offset: 26
+    bit_size: 1
+  - name: fevtdmae
+    description: Force event DMA error.
+    bit_offset: 28
+    bit_size: 1
+  - name: fevtcint
+    description: Force event card interrupt.
+    bit_offset: 31
+    bit_size: 1
+fieldset/HostCtrlCap:
+  description: Host Controller Capabilities.
+  fields:
+  - name: sdr50_support
+    description: SDR50 support.
+    bit_offset: 0
+    bit_size: 1
+  - name: sdr104_support
+    description: SDR104 support.
+    bit_offset: 1
+    bit_size: 1
+  - name: ddr50_support
+    description: DDR50 support.
+    bit_offset: 2
+    bit_size: 1
+  - name: use_tuning_sdr50
+    description: Use Tuning for SDR50.
+    bit_offset: 13
+    bit_size: 1
+    enum: UseTuningSdr50
+  - name: mbl
+    description: Max block length.
+    bit_offset: 16
+    bit_size: 3
+    enum: Mbl
+  - name: admas
+    description: ADMA support.
+    bit_offset: 20
+    bit_size: 1
+    enum: Admas
+  - name: hss
+    description: High speed support.
+    bit_offset: 21
+    bit_size: 1
+    enum: Hss
+  - name: dmas
+    description: DMA support.
+    bit_offset: 22
+    bit_size: 1
+    enum: Dmas
+  - name: srs
+    description: Suspend / resume support.
+    bit_offset: 23
+    bit_size: 1
+    enum: Srs
+  - name: vs33
+    description: Voltage support 3.3 V.
+    bit_offset: 24
+    bit_size: 1
+    enum: Vs33
+  - name: vs30
+    description: Voltage support 3.0 V.
+    bit_offset: 25
+    bit_size: 1
+    enum: Vs30
+  - name: vs18
+    description: Voltage support 1.8 V.
+    bit_offset: 26
+    bit_size: 1
+    enum: Vs18
+fieldset/IntSignalEn:
+  description: Interrupt Signal Enable.
+  fields:
+  - name: ccien
+    description: Command complete interrupt enable.
+    bit_offset: 0
+    bit_size: 1
+    enum: Ccien
+  - name: tcien
+    description: Transfer complete interrupt enable.
+    bit_offset: 1
+    bit_size: 1
+    enum: Tcien
+  - name: bgeien
+    description: Block gap event interrupt enable.
+    bit_offset: 2
+    bit_size: 1
+    enum: Bgeien
+  - name: dintien
+    description: DMA interrupt enable.
+    bit_offset: 3
+    bit_size: 1
+    enum: Dintien
+  - name: bwrien
+    description: Buffer write ready interrupt enable.
+    bit_offset: 4
+    bit_size: 1
+    enum: Bwrien
+  - name: brrien
+    description: Buffer read ready interrupt enable.
+    bit_offset: 5
+    bit_size: 1
+    enum: Brrien
+  - name: cinsien
+    description: Card insertion interrupt enable.
+    bit_offset: 6
+    bit_size: 1
+    enum: Cinsien
+  - name: crmien
+    description: Card removal interrupt enable.
+    bit_offset: 7
+    bit_size: 1
+    enum: Crmien
+  - name: cintien
+    description: Card interrupt enable.
+    bit_offset: 8
+    bit_size: 1
+    enum: Cintien
+  - name: rteien
+    description: Re-tuning event interrupt enable.
+    bit_offset: 12
+    bit_size: 1
+    enum: Rteien
+  - name: tpien
+    description: Tuning Pass interrupt enable.
+    bit_offset: 14
+    bit_size: 1
+    enum: Tpien
+  - name: ctoeien
+    description: Command timeout error interrupt enable.
+    bit_offset: 16
+    bit_size: 1
+    enum: Ctoeien
+  - name: cceien
+    description: Command CRC error interrupt enable.
+    bit_offset: 17
+    bit_size: 1
+    enum: Cceien
+  - name: cebeien
+    description: Command end bit error interrupt enable.
+    bit_offset: 18
+    bit_size: 1
+    enum: Cebeien
+  - name: cieien
+    description: Command index error interrupt enable.
+    bit_offset: 19
+    bit_size: 1
+    enum: Cieien
+  - name: dtoeien
+    description: Data timeout error interrupt enable.
+    bit_offset: 20
+    bit_size: 1
+    enum: Dtoeien
+  - name: dceien
+    description: Data CRC error interrupt enable.
+    bit_offset: 21
+    bit_size: 1
+    enum: Dceien
+  - name: debeien
+    description: Data end bit error interrupt enable.
+    bit_offset: 22
+    bit_size: 1
+    enum: Debeien
+  - name: ac12eien
+    description: Auto CMD12 error interrupt enable.
+    bit_offset: 24
+    bit_size: 1
+    enum: Ac12eien
+  - name: tneien
+    description: Tuning error interrupt enable.
+    bit_offset: 26
+    bit_size: 1
+    enum: Tneien
+  - name: dmaeien
+    description: DMA error interrupt enable.
+    bit_offset: 28
+    bit_size: 1
+    enum: Dmaeien
+fieldset/IntStatus:
+  description: Interrupt Status.
+  fields:
+  - name: cc
+    description: Command complete.
+    bit_offset: 0
+    bit_size: 1
+    enum: Cc
+  - name: tc
+    description: Transfer complete.
+    bit_offset: 1
+    bit_size: 1
+    enum: Tc
+  - name: bge
+    description: Block gap event.
+    bit_offset: 2
+    bit_size: 1
+    enum: Bge
+  - name: dint
+    description: DMA interrupt.
+    bit_offset: 3
+    bit_size: 1
+    enum: Dint
+  - name: bwr
+    description: Buffer write ready.
+    bit_offset: 4
+    bit_size: 1
+    enum: Bwr
+  - name: brr
+    description: Buffer read ready.
+    bit_offset: 5
+    bit_size: 1
+    enum: Brr
+  - name: cins
+    description: Card insertion.
+    bit_offset: 6
+    bit_size: 1
+    enum: Cins
+  - name: crm
+    description: Card removal.
+    bit_offset: 7
+    bit_size: 1
+    enum: Crm
+  - name: cint
+    description: Card interrupt.
+    bit_offset: 8
+    bit_size: 1
+    enum: Cint
+  - name: rte
+    description: 'Re-tuning event: (only for SD3.0 SDR104 mode).'
+    bit_offset: 12
+    bit_size: 1
+    enum: Rte
+  - name: tp
+    description: Tuning pass:(only for SD3.0 SDR104 mode).
+    bit_offset: 14
+    bit_size: 1
+  - name: err_int_status
+    description: Error Interrupt Status.
+    bit_offset: 15
+    bit_size: 1
+  - name: ctoe
+    description: Command timeout error.
+    bit_offset: 16
+    bit_size: 1
+    enum: Ctoe
+  - name: cce
+    description: Command CRC error.
+    bit_offset: 17
+    bit_size: 1
+    enum: Cce
+  - name: cebe
+    description: Command end bit error.
+    bit_offset: 18
+    bit_size: 1
+    enum: Cebe
+  - name: cie
+    description: Command index error.
+    bit_offset: 19
+    bit_size: 1
+    enum: Cie
+  - name: dtoe
+    description: Data timeout error.
+    bit_offset: 20
+    bit_size: 1
+    enum: Dtoe
+  - name: dce
+    description: Data CRC error.
+    bit_offset: 21
+    bit_size: 1
+    enum: Dce
+  - name: debe
+    description: Data end bit error.
+    bit_offset: 22
+    bit_size: 1
+    enum: Debe
+  - name: ac12e
+    description: Auto CMD12 error.
+    bit_offset: 24
+    bit_size: 1
+    enum: Ac12e
+  - name: tne
+    description: 'Tuning error: (only for SD3.0 SDR104 mode).'
+    bit_offset: 26
+    bit_size: 1
+  - name: dmae
+    description: DMA error.
+    bit_offset: 28
+    bit_size: 1
+    enum: Dmae
+fieldset/IntStatusEn:
+  description: Interrupt Status Enable.
+  fields:
+  - name: ccsen
+    description: Command complete status enable.
+    bit_offset: 0
+    bit_size: 1
+    enum: Ccsen
+  - name: tcsen
+    description: Transfer complete status enable.
+    bit_offset: 1
+    bit_size: 1
+    enum: Tcsen
+  - name: bgesen
+    description: Block gap event status enable.
+    bit_offset: 2
+    bit_size: 1
+    enum: Bgesen
+  - name: dintsen
+    description: DMA interrupt status enable.
+    bit_offset: 3
+    bit_size: 1
+    enum: Dintsen
+  - name: bwrsen
+    description: Buffer write ready status enable.
+    bit_offset: 4
+    bit_size: 1
+    enum: Bwrsen
+  - name: brrsen
+    description: Buffer read ready status enable.
+    bit_offset: 5
+    bit_size: 1
+    enum: Brrsen
+  - name: cinssen
+    description: Card insertion status enable.
+    bit_offset: 6
+    bit_size: 1
+    enum: Cinssen
+  - name: crmsen
+    description: Card removal status enable.
+    bit_offset: 7
+    bit_size: 1
+    enum: Crmsen
+  - name: cintsen
+    description: Card interrupt status enable.
+    bit_offset: 8
+    bit_size: 1
+    enum: Cintsen
+  - name: rtesen
+    description: Re-tuning event status enable.
+    bit_offset: 12
+    bit_size: 1
+    enum: Rtesen
+  - name: tpsen
+    description: Tuning pass status enable.
+    bit_offset: 14
+    bit_size: 1
+    enum: Tpsen
+  - name: ctoesen
+    description: Command timeout error status enable.
+    bit_offset: 16
+    bit_size: 1
+    enum: Ctoesen
+  - name: ccesen
+    description: Command CRC error status enable.
+    bit_offset: 17
+    bit_size: 1
+    enum: Ccesen
+  - name: cebesen
+    description: Command end bit error status enable.
+    bit_offset: 18
+    bit_size: 1
+    enum: Cebesen
+  - name: ciesen
+    description: Command index error status enable.
+    bit_offset: 19
+    bit_size: 1
+    enum: Ciesen
+  - name: dtoesen
+    description: Data timeout error status enable.
+    bit_offset: 20
+    bit_size: 1
+    enum: Dtoesen
+  - name: dcesen
+    description: Data CRC error status enable.
+    bit_offset: 21
+    bit_size: 1
+    enum: Dcesen
+  - name: debesen
+    description: Data end bit error status enable.
+    bit_offset: 22
+    bit_size: 1
+    enum: Debesen
+  - name: ac12esen
+    description: Auto CMD12 error status enable.
+    bit_offset: 24
+    bit_size: 1
+    enum: Ac12esen
+  - name: tnesen
+    description: Tuning error status enable.
+    bit_offset: 26
+    bit_size: 1
+    enum: Tnesen
+  - name: dmaesen
+    description: DMA error status enable.
+    bit_offset: 28
+    bit_size: 1
+    enum: Dmaesen
+fieldset/MixCtrl:
+  description: Mixer Control.
+  fields:
+  - name: dmaen
+    description: DMA enable.
+    bit_offset: 0
+    bit_size: 1
+    enum: MixCtrlDmaen
+  - name: bcen
+    description: Block count enable.
+    bit_offset: 1
+    bit_size: 1
+    enum: MixCtrlBcen
+  - name: ac12en
+    description: Auto CMD12 enable.
+    bit_offset: 2
+    bit_size: 1
+    enum: MixCtrlAc12en
+  - name: ddr_en
+    description: Dual data rate mode selection.
+    bit_offset: 3
+    bit_size: 1
+  - name: dtdsel
+    description: Data transfer direction select.
+    bit_offset: 4
+    bit_size: 1
+    enum: MixCtrlDtdsel
+  - name: msbsel
+    description: Multi / Single block select.
+    bit_offset: 5
+    bit_size: 1
+    enum: MixCtrlMsbsel
+  - name: nibble_pos
+    description: Nibble position indication.
+    bit_offset: 6
+    bit_size: 1
+  - name: ac23en
+    description: Auto CMD23 enable.
+    bit_offset: 7
+    bit_size: 1
+  - name: exe_tune
+    description: 'Execute tuning: (Only used for SD3.0, SDR104 mode).'
+    bit_offset: 22
+    bit_size: 1
+    enum: ExeTune
+  - name: smp_clk_sel
+    description: Clock selection.
+    bit_offset: 23
+    bit_size: 1
+    enum: MixCtrlSmpClkSel
+  - name: auto_tune_en
+    description: Auto tuning enable (Only used for SD3.0, SDR104 mode).
+    bit_offset: 24
+    bit_size: 1
+    enum: AutoTuneEn
+  - name: fbclk_sel
+    description: Feedback clock source selection (Only used for SD3.0, SDR104 mode).
+    bit_offset: 25
+    bit_size: 1
+    enum: FbclkSel
+fieldset/MmcBoot:
+  description: eMMC Boot.
+  fields:
+  - name: dtocv_ack
+    description: Boot ACK time out.
+    bit_offset: 0
+    bit_size: 4
+    enum: DtocvAck
+  - name: boot_ack
+    description: BOOT ACK.
+    bit_offset: 4
+    bit_size: 1
+    enum: BootAck
+  - name: boot_mode
+    description: Boot mode.
+    bit_offset: 5
+    bit_size: 1
+    enum: BootMode
+  - name: boot_en
+    description: Boot enable.
+    bit_offset: 6
+    bit_size: 1
+    enum: BootEn
+  - name: auto_sabg_en
+    description: Auto stop at block gap.
+    bit_offset: 7
+    bit_size: 1
+  - name: disable_time_out
+    description: Time out.
+    bit_offset: 8
+    bit_size: 1
+    enum: DisableTimeOut
+  - name: boot_blk_cnt
+    description: Stop At Block Gap value of automatic mode.
+    bit_offset: 16
+    bit_size: 16
+fieldset/PresState:
+  description: Present State.
+  fields:
+  - name: cihb
+    description: Command inhibit (CMD).
+    bit_offset: 0
+    bit_size: 1
+    enum: Cihb
+  - name: cdihb
+    description: Command Inhibit Data (DATA).
+    bit_offset: 1
+    bit_size: 1
+    enum: Cdihb
+  - name: dla
+    description: Data line active.
+    bit_offset: 2
+    bit_size: 1
+    enum: Dla
+  - name: sdstb
+    description: SD clock stable.
+    bit_offset: 3
+    bit_size: 1
+    enum: Sdstb
+  - name: wta
+    description: Write transfer active.
+    bit_offset: 8
+    bit_size: 1
+    enum: Wta
+  - name: rta
+    description: Read transfer active.
+    bit_offset: 9
+    bit_size: 1
+    enum: Rta
+  - name: bwen
+    description: Buffer write enable.
+    bit_offset: 10
+    bit_size: 1
+    enum: Bwen
+  - name: bren
+    description: Buffer read enable.
+    bit_offset: 11
+    bit_size: 1
+    enum: Bren
+  - name: rtr
+    description: Re-Tuning Request (only for SD3.0 SDR104 mode).
+    bit_offset: 12
+    bit_size: 1
+    enum: Rtr
+  - name: tscd
+    description: Tap select change done.
+    bit_offset: 15
+    bit_size: 1
+    enum: Tscd
+  - name: cinst
+    description: Card inserted.
+    bit_offset: 16
+    bit_size: 1
+    enum: Cinst
+  - name: clsl
+    description: CMD line signal level.
+    bit_offset: 23
+    bit_size: 1
+  - name: dlsl
+    description: DATA[7:0] line signal level.
+    bit_offset: 24
+    bit_size: 8
+    enum: Dlsl
+fieldset/ProtCtrl:
+  description: Protocol Control.
+  fields:
+  - name: dtw
+    description: Data transfer width.
+    bit_offset: 1
+    bit_size: 2
+    enum: Dtw
+  - name: d3cd
+    description: DATA3 as card detection pin.
+    bit_offset: 3
+    bit_size: 1
+    enum: D3cd
+  - name: emode
+    description: Endian mode.
+    bit_offset: 4
+    bit_size: 2
+    enum: Emode
+  - name: dmasel
+    description: DMA select.
+    bit_offset: 8
+    bit_size: 2
+    enum: Dmasel
+  - name: sabgreq
+    description: Stop at block gap request.
+    bit_offset: 16
+    bit_size: 1
+    enum: Sabgreq
+  - name: creq
+    description: Continue request.
+    bit_offset: 17
+    bit_size: 1
+    enum: Creq
+  - name: rwctl
+    description: Read wait control.
+    bit_offset: 18
+    bit_size: 1
+    enum: Rwctl
+  - name: iabg
+    description: Interrupt at block gap.
+    bit_offset: 19
+    bit_size: 1
+    enum: Iabg
+  - name: rd_done_no_8clk
+    description: Read performed number 8 clock.
+    bit_offset: 20
+    bit_size: 1
+  - name: wecint
+    description: Wakeup event enable on card interrupt.
+    bit_offset: 24
+    bit_size: 1
+    enum: Wecint
+  - name: wecins
+    description: Wakeup event enable on SD card insertion.
+    bit_offset: 25
+    bit_size: 1
+    enum: Wecins
+  - name: wecrm
+    description: Wakeup event enable on SD card removal.
+    bit_offset: 26
+    bit_size: 1
+    enum: Wecrm
+  - name: burst_len_en
+    description: BURST length enable for INCR, INCR4 / INCR8 / INCR16, INCR4-WRAP / INCR8-WRAP / INCR16-WRAP.
+    bit_offset: 27
+    bit_size: 3
+    enum: BurstLenEn
+  - name: non_exact_blk_rd
+    description: Non-exact block read.
+    bit_offset: 30
+    bit_size: 1
+    enum: NonExactBlkRd
+fieldset/SysCtrl:
+  description: System Control.
+  fields:
+  - name: dvs
+    description: Divisor.
+    bit_offset: 4
+    bit_size: 4
+    enum: Dvs
+  - name: sdclkfs
+    description: SDCLK frequency select.
+    bit_offset: 8
+    bit_size: 8
+  - name: dtocv
+    description: Data timeout counter value.
+    bit_offset: 16
+    bit_size: 4
+    enum: Dtocv
+  - name: rst_fifo
+    description: Reset the async FIFO.
+    bit_offset: 22
+    bit_size: 1
+  - name: ipp_rst_n
+    description: Hardware reset.
+    bit_offset: 23
+    bit_size: 1
+  - name: rsta
+    description: Software reset for all.
+    bit_offset: 24
+    bit_size: 1
+    enum: Rsta
+  - name: rstc
+    description: Software reset for CMD line.
+    bit_offset: 25
+    bit_size: 1
+    enum: Rstc
+  - name: rstd
+    description: Software reset for data line.
+    bit_offset: 26
+    bit_size: 1
+    enum: Rstd
+  - name: inita
+    description: Initialization active.
+    bit_offset: 27
+    bit_size: 1
+  - name: rstt
+    description: Reset tuning.
+    bit_offset: 28
+    bit_size: 1
+fieldset/TuningCtrl:
+  description: Tuning Control.
+  fields:
+  - name: tuning_start_tap
+    description: Tuning start.
+    bit_offset: 0
+    bit_size: 7
+  - name: dis_cmd_chk_for_std_tuning
+    description: Disable command check for standard tuning.
+    bit_offset: 7
+    bit_size: 1
+  - name: tuning_counter
+    description: Tuning counter.
+    bit_offset: 8
+    bit_size: 8
+  - name: tuning_step
+    description: TUNING_STEP.
+    bit_offset: 16
+    bit_size: 3
+  - name: tuning_window
+    description: Data window.
+    bit_offset: 20
+    bit_size: 3
+  - name: std_tuning_en
+    description: Standard tuning circuit and procedure enable.
+    bit_offset: 24
+    bit_size: 1
+fieldset/VendSpec:
+  description: Vendor Specific Register.
+  fields:
+  - name: ac12_wr_chkbusy_en
+    description: Check busy enable.
+    bit_offset: 3
+    bit_size: 1
+    enum: Ac12WrChkbusyEn
+  - name: frc_sdclk_on
+    description: Force CLK.
+    bit_offset: 8
+    bit_size: 1
+    enum: FrcSdclkOn
+  - name: crc_chk_dis
+    description: CRC Check Disable.
+    bit_offset: 15
+    bit_size: 1
+    enum: CrcChkDis
+  - name: cmd_byte_en
+    description: Register byte access for CMD_XFR_TYP.
+    bit_offset: 31
+    bit_size: 1
+    enum: CmdByteEn
+fieldset/VendSpec2:
+  description: Vendor Specific 2 Register.
+  fields:
+  - name: card_int_d3_test
+    description: Card interrupt detection test.
+    bit_offset: 3
+    bit_size: 1
+    enum: CardIntD3Test
+  - name: tuning_bit_en
+    description: Tuning bit enable.
+    bit_offset: 4
+    bit_size: 2
+    enum: TuningBitEn
+  - name: tuning_cmd_en
+    description: Tuning command enable.
+    bit_offset: 6
+    bit_size: 1
+    enum: TuningCmdEn
+  - name: acmd23_argu2_en
+    description: Argument2 register enable for ACMD23.
+    bit_offset: 12
+    bit_size: 1
+    enum: Acmd23Argu2En
+  - name: en_32k_clk
+    description: Select the clock source for host card detection.
+    bit_offset: 15
+    bit_size: 1
+    enum: En32kClk
+fieldset/WtmkLvl:
+  description: Watermark Level.
+  fields:
+  - name: rd_wml
+    description: Read watermark level.
+    bit_offset: 0
+    bit_size: 8
+  - name: rd_brst_len
+    description: Read burst length due to system restriction, the actual burst length might not exceed 16.
+    bit_offset: 8
+    bit_size: 5
+  - name: wr_wml
+    description: Write watermark level.
+    bit_offset: 16
+    bit_size: 8
+  - name: wr_brst_len
+    description: Write burst length due to system restriction, the actual burst length might not exceed 16.
+    bit_offset: 24
+    bit_size: 5
+enum/Ac12WrChkbusyEn:
+  bit_size: 1
+  variants:
+  - name: Ac12WrChkbusyEnA
+    description: Do not check busy after auto CMD12 for write data packet.
+    value: 0
+  - name: Ac12WrChkbusyEnB
+    description: Check busy after auto CMD12 for write data packet.
+    value: 1
+enum/Ac12ce:
+  bit_size: 1
+  variants:
+  - name: Ac12ceB
+    description: No CRC error.
+    value: 0
+  - name: Ac12ceA
+    description: CRC error met in Auto CMD12/23 response.
+    value: 1
+enum/Ac12e:
+  bit_size: 1
+  variants:
+  - name: Ac12eA
+    description: No error.
+    value: 0
+  - name: Ac12eB
+    description: Error.
+    value: 1
+enum/Ac12ebe:
+  bit_size: 1
+  variants:
+  - name: Ac12ebeB
+    description: No error.
+    value: 0
+  - name: Ac12ebeA
+    description: End bit error generated.
+    value: 1
+enum/Ac12eien:
+  bit_size: 1
+  variants:
+  - name: Ac12eienB
+    description: Masked.
+    value: 0
+  - name: Ac12eienA
+    description: Enabled.
+    value: 1
+enum/Ac12esen:
+  bit_size: 1
+  variants:
+  - name: Ac12esenA
+    description: Masked.
+    value: 0
+  - name: Ac12esenB
+    description: Enabled.
+    value: 1
+enum/Ac12ie:
+  bit_size: 1
+  variants:
+  - name: Ac12ieB
+    description: No error.
+    value: 0
+  - name: Ac12ieA
+    description: Error, the CMD index in response is not CMD12/23.
+    value: 1
+enum/Ac12ne:
+  bit_size: 1
+  variants:
+  - name: Ac12neB
+    description: Executed.
+    value: 0
+  - name: Ac12neA
+    description: Not executed.
+    value: 1
+enum/Ac12toe:
+  bit_size: 1
+  variants:
+  - name: Ac12toeB
+    description: No error.
+    value: 0
+  - name: Ac12toeA
+    description: Time out.
+    value: 1
+enum/Ac23en:
+  bit_size: 1
+  variants:
+  - name: CmdXfrTyp7B
+    description: Disable.
+    value: 0
+  - name: CmdXfrTyp7A
+    description: Enable.
+    value: 1
+enum/Acmd23Argu2En:
+  bit_size: 1
+  variants:
+  - name: Acmd23Argu2EnB
+    description: Disable.
+    value: 0
+  - name: Acmd23Argu2EnA
+    description: Argument2 register enable for ACMD23 sharing with SDMA system address register. Default is enabled.
+    value: 1
+enum/Admadce:
+  bit_size: 1
+  variants:
+  - name: AdmadceB
+    description: No error.
+    value: 0
+  - name: AdmadceA
+    description: Error.
+    value: 1
+enum/Admalme:
+  bit_size: 1
+  variants:
+  - name: AdmaesB
+    description: No error.
+    value: 0
+  - name: AdmaesA
+    description: Error.
+    value: 1
+enum/Admas:
+  bit_size: 1
+  variants:
+  - name: AdmasB
+    description: Advanced DMA not supported.
+    value: 0
+  - name: AdmasA
+    description: Advanced DMA supported.
+    value: 1
+enum/AutoTuneEn:
+  bit_size: 1
+  variants:
+  - name: AutotuneB
+    description: Disable auto tuning.
+    value: 0
+  - name: AutoTuneA
+    description: Enable auto tuning.
+    value: 1
+enum/Autocmd12ErrStatusSmpClkSel:
+  bit_size: 1
+  variants:
+  - name: SmpClkB
+    description: Fixed clock is used to sample data.
+    value: 0
+  - name: SmpClkA
+    description: Tuned clock is used to sample data.
+    value: 1
+enum/Bge:
+  bit_size: 1
+  variants:
+  - name: BgeB
+    description: No block gap event.
+    value: 0
+  - name: BgeA
+    description: Transaction stopped at block gap.
+    value: 1
+enum/Bgeien:
+  bit_size: 1
+  variants:
+  - name: BgienA
+    description: Masked.
+    value: 0
+  - name: BgienB
+    description: Enabled.
+    value: 1
+enum/Bgesen:
+  bit_size: 1
+  variants:
+  - name: BgesenA
+    description: Masked.
+    value: 0
+  - name: BgesenB
+    description: Enabled.
+    value: 1
+enum/Blkcnt:
+  bit_size: 16
+  variants:
+  - name: BlkcntD
+    description: Stop count.
+    value: 0
+  - name: BlkcntC
+    description: 1 block.
+    value: 1
+  - name: BlkcntB
+    description: 2 blocks.
+    value: 2
+  - name: BlkcntA
+    description: 65535 blocks.
+    value: 65535
+enum/Blksize:
+  bit_size: 13
+  variants:
+  - name: BlkAttI
+    description: No data transfer.
+    value: 0
+  - name: BlkAttH
+    description: 1 byte.
+    value: 1
+  - name: BlkAttG
+    description: 2 bytes.
+    value: 2
+  - name: BlkAttF
+    description: 3 bytes.
+    value: 3
+  - name: BlkAttE
+    description: 4 bytes.
+    value: 4
+  - name: BlkAttD
+    description: 511 bytes.
+    value: 511
+  - name: BlkAttC
+    description: 512 bytes.
+    value: 512
+  - name: BlkAttB
+    description: 2048 bytes.
+    value: 2048
+  - name: BlkAttA
+    description: 4096 bytes.
+    value: 4096
+enum/BootAck:
+  bit_size: 1
+  variants:
+  - name: BootAckA
+    description: No ack.
+    value: 0
+  - name: BootAckB
+    description: Ack.
+    value: 1
+enum/BootEn:
+  bit_size: 1
+  variants:
+  - name: BootEnA
+    description: Fast boot disable.
+    value: 0
+  - name: BootEnB
+    description: Fast boot enable.
+    value: 1
+enum/BootMode:
+  bit_size: 1
+  variants:
+  - name: BootModeA
+    description: Normal boot.
+    value: 0
+  - name: BootModeB
+    description: Alternative boot.
+    value: 1
+enum/Bren:
+  bit_size: 1
+  variants:
+  - name: BrenB
+    description: Read disable.
+    value: 0
+  - name: BrenA
+    description: Read enable.
+    value: 1
+enum/Brr:
+  bit_size: 1
+  variants:
+  - name: BrrB
+    description: Not ready to read buffer.
+    value: 0
+  - name: BrrA
+    description: Ready to read buffer.
+    value: 1
+enum/Brrien:
+  bit_size: 1
+  variants:
+  - name: BrrienB
+    description: Masked.
+    value: 0
+  - name: BrrienA
+    description: Enabled.
+    value: 1
+enum/Brrsen:
+  bit_size: 1
+  variants:
+  - name: BrrsenA
+    description: Masked.
+    value: 0
+  - name: BrrenB
+    description: Enabled.
+    value: 1
+enum/BurstLenEn:
+  bit_size: 3
+  variants:
+  - name: BurstA
+    description: Burst length is enabled for INCR.
+    value: 1
+enum/Bwen:
+  bit_size: 1
+  variants:
+  - name: BwenB
+    description: Write disable.
+    value: 0
+  - name: BwenA
+    description: Write enable.
+    value: 1
+enum/Bwr:
+  bit_size: 1
+  variants:
+  - name: BwrB
+    description: Not ready to write buffer.
+    value: 0
+  - name: BwrA
+    description: Ready to write buffer.
+    value: 1
+enum/Bwrien:
+  bit_size: 1
+  variants:
+  - name: BwrienA
+    description: Masked.
+    value: 0
+  - name: BwrienB
+    description: Enabled.
+    value: 1
+enum/Bwrsen:
+  bit_size: 1
+  variants:
+  - name: BwrsenA
+    description: Masked.
+    value: 0
+  - name: BwrsenB
+    description: Enabled.
+    value: 1
+enum/CardIntD3Test:
+  bit_size: 1
+  variants:
+  - name: CardIntD3A
+    description: Check the card interrupt only when DATA3 is high.
+    value: 0
+  - name: CardIntD3B
+    description: Check the card interrupt by ignoring the status of DATA3.
+    value: 1
+enum/Cc:
+  bit_size: 1
+  variants:
+  - name: CcB
+    description: Command not complete.
+    value: 0
+  - name: CcA
+    description: Command complete.
+    value: 1
+enum/Cccen:
+  bit_size: 1
+  variants:
+  - name: CccenB
+    description: Disables command CRC check.
+    value: 0
+  - name: CccenA
+    description: Enables command CRC check.
+    value: 1
+enum/Cce:
+  bit_size: 1
+  variants:
+  - name: CceA
+    description: No error.
+    value: 0
+  - name: CceB
+    description: CRC error generated.
+    value: 1
+enum/Cceien:
+  bit_size: 1
+  variants:
+  - name: CceienB
+    description: Masked.
+    value: 0
+  - name: CceienA
+    description: Enabled.
+    value: 1
+enum/Ccesen:
+  bit_size: 1
+  variants:
+  - name: CcesenA
+    description: Masked.
+    value: 0
+  - name: CcesenB
+    description: Enabled.
+    value: 1
+enum/Ccien:
+  bit_size: 1
+  variants:
+  - name: CcienA
+    description: Masked.
+    value: 0
+  - name: CcienB
+    description: Enabled.
+    value: 1
+enum/Ccsen:
+  bit_size: 1
+  variants:
+  - name: CcsenA
+    description: Masked.
+    value: 0
+  - name: CcsenB
+    description: Enabled.
+    value: 1
+enum/Cdihb:
+  bit_size: 1
+  variants:
+  - name: CdihbB
+    description: Can issue command that uses the DATA line.
+    value: 0
+  - name: CdihbA
+    description: Cannot issue command that uses the DATA line.
+    value: 1
+enum/Cebe:
+  bit_size: 1
+  variants:
+  - name: CebeA
+    description: No error.
+    value: 0
+  - name: CebeB
+    description: End bit error generated.
+    value: 1
+enum/Cebeien:
+  bit_size: 1
+  variants:
+  - name: CebeienB
+    description: Masked.
+    value: 0
+  - name: CebeienA
+    description: Enabled.
+    value: 1
+enum/Cebesen:
+  bit_size: 1
+  variants:
+  - name: CebesenA
+    description: Masked.
+    value: 0
+  - name: CebesenB
+    description: Enabled.
+    value: 1
+enum/Cicen:
+  bit_size: 1
+  variants:
+  - name: CicenB
+    description: Disable command index check.
+    value: 0
+  - name: CicenA
+    description: Enables command index check.
+    value: 1
+enum/Cie:
+  bit_size: 1
+  variants:
+  - name: CieA
+    description: No error.
+    value: 0
+  - name: CieB
+    description: Error.
+    value: 1
+enum/Cieien:
+  bit_size: 1
+  variants:
+  - name: CieienB
+    description: Masked.
+    value: 0
+  - name: CieienA
+    description: Enabled.
+    value: 1
+enum/Ciesen:
+  bit_size: 1
+  variants:
+  - name: CiesenA
+    description: Masked.
+    value: 0
+  - name: CiesenB
+    description: Enabled.
+    value: 1
+enum/Cihb:
+  bit_size: 1
+  variants:
+  - name: CihbA
+    description: Can issue command using only CMD line.
+    value: 0
+  - name: CihbB
+    description: Cannot issue command.
+    value: 1
+enum/Cins:
+  bit_size: 1
+  variants:
+  - name: BwrB
+    description: Card state unstable or removed.
+    value: 0
+  - name: BwrA
+    description: Card inserted.
+    value: 1
+enum/Cinsien:
+  bit_size: 1
+  variants:
+  - name: CinsienA
+    description: Masked.
+    value: 0
+  - name: CinsienB
+    description: Enabled.
+    value: 1
+enum/Cinssen:
+  bit_size: 1
+  variants:
+  - name: CinsenA
+    description: Masked.
+    value: 0
+  - name: CinsenB
+    description: Enabled.
+    value: 1
+enum/Cinst:
+  bit_size: 1
+  variants:
+  - name: CinstA
+    description: Power on reset or no card.
+    value: 0
+  - name: CinstB
+    description: Card inserted.
+    value: 1
+enum/Cint:
+  bit_size: 1
+  variants:
+  - name: CintA
+    description: No card interrupt.
+    value: 0
+  - name: CintB
+    description: Generate card interrupt.
+    value: 1
+enum/Cintien:
+  bit_size: 1
+  variants:
+  - name: CintienB
+    description: Masked.
+    value: 0
+  - name: CintienA
+    description: Enabled.
+    value: 1
+enum/Cintsen:
+  bit_size: 1
+  variants:
+  - name: CintsenA
+    description: Masked.
+    value: 0
+  - name: CintsenB
+    description: Enabled.
+    value: 1
+enum/CmdByteEn:
+  bit_size: 1
+  variants:
+  - name: CmdByteEnA
+    description: Disable. MIX_CTRL[7:0] is read/write and CMD_XFR_TYP[7:0] is read-only.
+    value: 0
+  - name: CmdByteEnB
+    description: Enable. MIX_CTRL[7:0] is read-only and CMD_XFR_TYP[7:0] is read/write.
+    value: 1
+enum/CmdXfrTypAc12en:
+  bit_size: 1
+  variants:
+  - name: CmdXfrTyp2B
+    description: Disable.
+    value: 0
+  - name: CmdXfrTyp2A
+    description: Enable.
+    value: 1
+enum/CmdXfrTypBcen:
+  bit_size: 1
+  variants:
+  - name: CmdXfrTyp1B
+    description: Disable.
+    value: 0
+  - name: CmdXfrTyp1A
+    description: Enable.
+    value: 1
+enum/CmdXfrTypDmaen:
+  bit_size: 1
+  variants:
+  - name: CmdXfrTyp0b
+    description: Disable.
+    value: 0
+  - name: CmdXfrTyp0a
+    description: Enable.
+    value: 1
+enum/CmdXfrTypDtdsel:
+  bit_size: 1
+  variants:
+  - name: CmdXfrTyp4B
+    description: Disable.
+    value: 0
+  - name: CmdXfrTyp4A
+    description: Enable.
+    value: 1
+enum/CmdXfrTypMsbsel:
+  bit_size: 1
+  variants:
+  - name: CmdXfrTyp5B
+    description: Disable.
+    value: 0
+  - name: CmdXfrTyp5A
+    description: Enable.
+    value: 1
+enum/Cmdtyp:
+  bit_size: 2
+  variants:
+  - name: CmdtypD
+    description: Normal other commands.
+    value: 0
+  - name: CmdtypC
+    description: Suspend CMD52 for writing bus suspend in CCCR.
+    value: 1
+  - name: CmdtypB
+    description: Resume CMD52 for writing function select in CCCR.
+    value: 2
+  - name: CmdtypA
+    description: Abort CMD12, CMD52 for writing I/O Abort in CCCR.
+    value: 3
+enum/Cnibac12e:
+  bit_size: 1
+  variants:
+  - name: Cnibac12eB
+    description: No error.
+    value: 0
+  - name: Cnibac12eA
+    description: Not issued.
+    value: 1
+enum/CrcChkDis:
+  bit_size: 1
+  variants:
+  - name: CrcChkDisA
+    description: Check CRC16 for every read data packet and check CRC fields for every write data packet.
+    value: 0
+  - name: CrcChkDisB
+    description: Ignore CRC16 check for every read data packet and ignore CRC fields check for every write data packet.
+    value: 1
+enum/Creq:
+  bit_size: 1
+  variants:
+  - name: CreqB
+    description: No effect.
+    value: 0
+  - name: CreqA
+    description: Restart.
+    value: 1
+enum/Crm:
+  bit_size: 1
+  variants:
+  - name: CrmA
+    description: Card state unstable or inserted.
+    value: 0
+  - name: CrmB
+    description: Card removed.
+    value: 1
+enum/Crmien:
+  bit_size: 1
+  variants:
+  - name: CrmienA
+    description: Masked.
+    value: 0
+  - name: CrmienB
+    description: Enabled.
+    value: 1
+enum/Crmsen:
+  bit_size: 1
+  variants:
+  - name: CrmsenA
+    description: Masked.
+    value: 0
+  - name: CrmsenB
+    description: Enabled.
+    value: 1
+enum/Ctoe:
+  bit_size: 1
+  variants:
+  - name: CtoeA
+    description: No error.
+    value: 0
+  - name: CtoeB
+    description: Time out.
+    value: 1
+enum/Ctoeien:
+  bit_size: 1
+  variants:
+  - name: CtoeienB
+    description: Masked.
+    value: 0
+  - name: CtoeienA
+    description: Enabled.
+    value: 1
+enum/Ctoesen:
+  bit_size: 1
+  variants:
+  - name: CtosenA
+    description: Masked.
+    value: 0
+  - name: CtosenB
+    description: Enabled.
+    value: 1
+enum/D3cd:
+  bit_size: 1
+  variants:
+  - name: D3cdB
+    description: DATA3 does not monitor card insertion.
+    value: 0
+  - name: D3cdA
+    description: DATA3 as card detection pin.
+    value: 1
+enum/Dce:
+  bit_size: 1
+  variants:
+  - name: DceA
+    description: No error.
+    value: 0
+  - name: DceB
+    description: Error.
+    value: 1
+enum/Dceien:
+  bit_size: 1
+  variants:
+  - name: DceienB
+    description: Masked.
+    value: 0
+  - name: DceienA
+    description: Enabled.
+    value: 1
+enum/Dcesen:
+  bit_size: 1
+  variants:
+  - name: DcesenA
+    description: Masked.
+    value: 0
+  - name: DcesenB
+    description: Enabled.
+    value: 1
+enum/DdrEn:
+  bit_size: 1
+  variants:
+  - name: CmdXfrTyp3B
+    description: Disable.
+    value: 0
+  - name: CmdXfrTyp3A
+    description: Enable.
+    value: 1
+enum/Debe:
+  bit_size: 1
+  variants:
+  - name: DebeA
+    description: No error.
+    value: 0
+  - name: DebeB
+    description: Error.
+    value: 1
+enum/Debeien:
+  bit_size: 1
+  variants:
+  - name: DebeienB
+    description: Masked.
+    value: 0
+  - name: DebeienA
+    description: Enabled.
+    value: 1
+enum/Debesen:
+  bit_size: 1
+  variants:
+  - name: DbesenA
+    description: Masked.
+    value: 0
+  - name: DbesenB
+    description: Enabled.
+    value: 1
+enum/Dint:
+  bit_size: 1
+  variants:
+  - name: DintB
+    description: No DMA interrupt.
+    value: 0
+  - name: DintA
+    description: DMA interrupt is generated.
+    value: 1
+enum/Dintien:
+  bit_size: 1
+  variants:
+  - name: DintienB
+    description: Masked.
+    value: 0
+  - name: DintienA
+    description: Enabled.
+    value: 1
+enum/Dintsen:
+  bit_size: 1
+  variants:
+  - name: DintsenA
+    description: Masked.
+    value: 0
+  - name: DintsenB
+    description: Enabled.
+    value: 1
+enum/DisableTimeOut:
+  bit_size: 1
+  variants:
+  - name: DisableTimeoutA
+    description: Enable time out.
+    value: 0
+  - name: DisableTimeoutB
+    description: Disable time out.
+    value: 1
+enum/Dla:
+  bit_size: 1
+  variants:
+  - name: DlaA
+    description: DATA line inactive.
+    value: 0
+  - name: DlaB
+    description: DATA line active.
+    value: 1
+enum/Dlsl:
+  bit_size: 8
+  variants:
+  - name: Data0
+    description: Data 0 line signal level.
+    value: 1
+  - name: Data1
+    description: Data 1 line signal level.
+    value: 2
+  - name: Data2
+    description: Data 2 line signal level.
+    value: 4
+  - name: Data3
+    description: Data 3 line signal level.
+    value: 8
+  - name: Data4
+    description: Data 4 line signal level.
+    value: 16
+  - name: Data5
+    description: Data 5 line signal level.
+    value: 32
+  - name: Data6
+    description: Data 6 line signal level.
+    value: 64
+  - name: Data7
+    description: Data 7 line signal level.
+    value: 128
+enum/Dmae:
+  bit_size: 1
+  variants:
+  - name: DmaeA
+    description: No error.
+    value: 0
+  - name: DmaeB
+    description: Error.
+    value: 1
+enum/Dmaeien:
+  bit_size: 1
+  variants:
+  - name: DmaeienB
+    description: Masked.
+    value: 0
+  - name: DmaeienA
+    description: Enable.
+    value: 1
+enum/Dmaesen:
+  bit_size: 1
+  variants:
+  - name: DmasenB
+    description: Masked.
+    value: 0
+  - name: DmasenA
+    description: Enabled.
+    value: 1
+enum/Dmas:
+  bit_size: 1
+  variants:
+  - name: DmasB
+    description: DMA not supported.
+    value: 0
+  - name: DmasA
+    description: DMA supported.
+    value: 1
+enum/Dmasel:
+  bit_size: 2
+  variants:
+  - name: DmaselA
+    description: No DMA or simple DMA is selected.
+    value: 0
+  - name: DmaselB
+    description: ADMA1 is selected.
+    value: 1
+  - name: DmaselC
+    description: ADMA2 is selected.
+    value: 2
+enum/Dpsel:
+  bit_size: 1
+  variants:
+  - name: DpselB
+    description: No data present.
+    value: 0
+  - name: DpselA
+    description: Data present.
+    value: 1
+enum/Dtocv:
+  bit_size: 4
+  variants:
+  - name: DtocvX
+    description: SDCLK x 2 32.
+    value: 0
+  - name: DtocvW
+    description: SDCLK x 2 33.
+    value: 1
+  - name: DtocvV
+    description: SDCLK x 2 18.
+    value: 2
+  - name: DtocvU
+    description: SDCLK x 2 19.
+    value: 3
+  - name: DtocvT
+    description: SDCLK x 2 29, recommend to use for supported speed modes except SDR104 mode.
+    value: 13
+  - name: DtocvS
+    description: SDCLK x 2 30, recommend to use for SDR104 mode.
+    value: 14
+enum/DtocvAck:
+  bit_size: 4
+  variants:
+  - name: DtocvAckA
+    description: SDCLK x 2^14.
+    value: 0
+  - name: DtocvAckB
+    description: SDCLK x 2^15.
+    value: 1
+  - name: DtocvAckC
+    description: SDCLK x 2^16.
+    value: 2
+  - name: DtocvAckD
+    description: SDCLK x 2^17.
+    value: 3
+  - name: DtocvAckE
+    description: SDCLK x 2^18.
+    value: 4
+  - name: DtocvAckF
+    description: SDCLK x 2^19.
+    value: 5
+  - name: DtocvAckG
+    description: SDCLK x 2^20.
+    value: 6
+  - name: DtocvAckH
+    description: SDCLK x 2^21.
+    value: 7
+  - name: DtocvAckI
+    description: SDCLK x 2^28.
+    value: 14
+  - name: DtocvAckJ
+    description: SDCLK x 2^29.
+    value: 15
+enum/Dtoe:
+  bit_size: 1
+  variants:
+  - name: DtoeA
+    description: No error.
+    value: 0
+  - name: DtoeB
+    description: Time out.
+    value: 1
+enum/Dtoeien:
+  bit_size: 1
+  variants:
+  - name: DtoeienB
+    description: Masked.
+    value: 0
+  - name: DtoeienA
+    description: Enabled.
+    value: 1
+enum/Dtoesen:
+  bit_size: 1
+  variants:
+  - name: DtoesenA
+    description: Masked.
+    value: 0
+  - name: DtoesenB
+    description: Enabled.
+    value: 1
+enum/Dtw:
+  bit_size: 2
+  variants:
+  - name: DtwC
+    description: 1-bit mode.
+    value: 0
+  - name: DtwB
+    description: 4-bit mode.
+    value: 1
+  - name: DtwA
+    description: 8-bit mode.
+    value: 2
+enum/Dvs:
+  bit_size: 4
+  variants:
+  - name: DvsA
+    description: Divide-by-1.
+    value: 0
+  - name: DvsB
+    description: Divide-by-2.
+    value: 1
+  - name: DvsC
+    description: Divide-by-15.
+    value: 14
+  - name: DvsD
+    description: Divide-by-16.
+    value: 15
+enum/Emode:
+  bit_size: 2
+  variants:
+  - name: EmodeA
+    description: Big endian mode.
+    value: 0
+  - name: EmodeB
+    description: Half word big endian mode.
+    value: 1
+  - name: EmodeC
+    description: Little endian mode.
+    value: 2
+enum/En32kClk:
+  bit_size: 1
+  variants:
+  - name: CdClkSelA
+    description: Use the peripheral clock (ipg_clk) for card detection.
+    value: 0
+  - name: CdClkSelB
+    description: Use the low power clock (ipg_clk_lp) for card detection.
+    value: 1
+enum/ExeTune:
+  bit_size: 1
+  variants:
+  - name: ExeTuneD
+    description: Not tuned or tuning completed.
+    value: 0
+  - name: ExeTuneC
+    description: Execute tuning.
+    value: 1
+enum/ExecuteTuning:
+  bit_size: 1
+  variants:
+  - name: ExTunB
+    description: Tuning procedure is aborted.
+    value: 0
+  - name: ExTunA
+    description: Start tuning procedure.
+    value: 1
+enum/FbclkSel:
+  bit_size: 1
+  variants:
+  - name: FbclkB
+    description: Feedback clock comes from the loopback CLK.
+    value: 0
+  - name: FbclkA
+    description: Feedback clock comes from the ipp_card_clk_out.
+    value: 1
+enum/FrcSdclkOn:
+  bit_size: 1
+  variants:
+  - name: FrcSdclkOnA
+    description: CLK active or inactive is fully controlled by the hardware.
+    value: 0
+  - name: FrcSdclkOnB
+    description: Force CLK active.
+    value: 1
+enum/Hss:
+  bit_size: 1
+  variants:
+  - name: HssB
+    description: High speed not supported.
+    value: 0
+  - name: HssA
+    description: High speed supported.
+    value: 1
+enum/Iabg:
+  bit_size: 1
+  variants:
+  - name: IabgB
+    description: Disables interrupt at block gap.
+    value: 0
+  - name: IabgA
+    description: Enables interrupt at block gap.
+    value: 1
+enum/Mbl:
+  bit_size: 3
+  variants:
+  - name: MblA
+    description: 512 bytes.
+    value: 0
+  - name: MblB
+    description: 1024 bytes.
+    value: 1
+  - name: MblC
+    description: 2048 bytes.
+    value: 2
+  - name: MblD
+    description: 4096 bytes.
+    value: 3
+enum/MixCtrlAc12en:
+  bit_size: 1
+  variants:
+  - name: Ac12enB
+    description: Disable.
+    value: 0
+  - name: Ac12enA
+    description: Enable.
+    value: 1
+enum/MixCtrlBcen:
+  bit_size: 1
+  variants:
+  - name: BcenB
+    description: Disable.
+    value: 0
+  - name: BcenA
+    description: Enable.
+    value: 1
+enum/MixCtrlDmaen:
+  bit_size: 1
+  variants:
+  - name: DmainB
+    description: Disable.
+    value: 0
+  - name: DmainA
+    description: Enable.
+    value: 1
+enum/MixCtrlDtdsel:
+  bit_size: 1
+  variants:
+  - name: DtdselB
+    description: Write (Host to card).
+    value: 0
+  - name: DtdselA
+    description: Read (Card to host).
+    value: 1
+enum/MixCtrlMsbsel:
+  bit_size: 1
+  variants:
+  - name: MsbselB
+    description: Single block.
+    value: 0
+  - name: MsbselA
+    description: Multiple blocks.
+    value: 1
+enum/MixCtrlSmpClkSel:
+  bit_size: 1
+  variants:
+  - name: SmpselB
+    description: Fixed clock is used to sample data / cmd.
+    value: 0
+  - name: SmpselA
+    description: Tuned clock is used to sample data / cmd.
+    value: 1
+enum/NibblePos:
+  bit_size: 1
+  variants:
+  - name: CmdXfrTyp6B
+    description: Disable.
+    value: 0
+  - name: CmdXfrTyp6A
+    description: Enable.
+    value: 1
+enum/NonExactBlkRd:
+  bit_size: 1
+  variants:
+  - name: ExactB
+    description: The block read is exact block read. Host driver does not need to issue abort command to terminate this multi-block read.
+    value: 0
+  - name: ExactA
+    description: The block read is non-exact block read. Host driver needs to issue abort command to terminate this multi-block read.
+    value: 1
+enum/Rsptyp:
+  bit_size: 2
+  variants:
+  - name: RsptypA
+    description: No response.
+    value: 0
+  - name: RsptypB
+    description: Response length 136.
+    value: 1
+  - name: RsptypC
+    description: Response length 48.
+    value: 2
+  - name: RsptypD
+    description: Response length 48, check busy after response.
+    value: 3
+enum/Rsta:
+  bit_size: 1
+  variants:
+  - name: RstaB
+    description: No reset.
+    value: 0
+  - name: RstaA
+    description: Reset.
+    value: 1
+enum/Rstc:
+  bit_size: 1
+  variants:
+  - name: RstcB
+    description: No reset.
+    value: 0
+  - name: RstcA
+    description: Reset.
+    value: 1
+enum/Rstd:
+  bit_size: 1
+  variants:
+  - name: RstdB
+    description: No reset.
+    value: 0
+  - name: RstdA
+    description: Reset.
+    value: 1
+enum/Rta:
+  bit_size: 1
+  variants:
+  - name: RtaB
+    description: No valid data.
+    value: 0
+  - name: RtaA
+    description: Transferring data.
+    value: 1
+enum/Rte:
+  bit_size: 1
+  variants:
+  - name: RteA
+    description: Re-tuning is not required.
+    value: 0
+  - name: RteB
+    description: Re-tuning should be performed.
+    value: 1
+enum/Rteien:
+  bit_size: 1
+  variants:
+  - name: RteienO
+    description: Masked.
+    value: 0
+  - name: RteienN
+    description: Enabled.
+    value: 1
+enum/Rtesen:
+  bit_size: 1
+  variants:
+  - name: RtesenA
+    description: Masked.
+    value: 0
+  - name: RtesenB
+    description: Enabled.
+    value: 1
+enum/Rtr:
+  bit_size: 1
+  variants:
+  - name: RtrB
+    description: Fixed or well tuned sampling clock.
+    value: 0
+  - name: RtrA
+    description: Sampling clock needs re-tuning.
+    value: 1
+enum/Rwctl:
+  bit_size: 1
+  variants:
+  - name: RwctlB
+    description: Disables read wait control and stop SD clock at block gap when SABGREQ field is set.
+    value: 0
+  - name: RwctlA
+    description: Enables read wait control and assert read wait without stopping SD clock at block gap when SABGREQ field is set.
+    value: 1
+enum/Sabgreq:
+  bit_size: 1
+  variants:
+  - name: SabgreqB
+    description: Transfer.
+    value: 0
+  - name: SabgreqA
+    description: Stop.
+    value: 1
+enum/Sdstb:
+  bit_size: 1
+  variants:
+  - name: SdstbB
+    description: Clock is changing frequency and not stable.
+    value: 0
+  - name: SdstbA
+    description: Clock is stable.
+    value: 1
+enum/Srs:
+  bit_size: 1
+  variants:
+  - name: SrsB
+    description: Not supported.
+    value: 0
+  - name: SrsA
+    description: Supported.
+    value: 1
+enum/Tc:
+  bit_size: 1
+  variants:
+  - name: TcB
+    description: Transfer does not complete.
+    value: 0
+  - name: TcA
+    description: Transfer complete.
+    value: 1
+enum/Tcien:
+  bit_size: 1
+  variants:
+  - name: TcienA
+    description: Masked.
+    value: 0
+  - name: TcienB
+    description: Enabled.
+    value: 1
+enum/Tcsen:
+  bit_size: 1
+  variants:
+  - name: TcsenB
+    description: Masked.
+    value: 0
+  - name: TcsenA
+    description: Enabled.
+    value: 1
+enum/Tneien:
+  bit_size: 1
+  variants:
+  - name: TneienB
+    description: Masked.
+    value: 0
+  - name: TneienA
+    description: Enabled.
+    value: 1
+enum/Tnesen:
+  bit_size: 1
+  variants:
+  - name: TnesenA
+    description: Masked.
+    value: 0
+  - name: TnesenB
+    description: Enabled.
+    value: 1
+enum/Tpien:
+  bit_size: 1
+  variants:
+  - name: TpienR
+    description: Masked.
+    value: 0
+  - name: TpienQ
+    description: Enabled.
+    value: 1
+enum/Tpsen:
+  bit_size: 1
+  variants:
+  - name: TpsenA
+    description: Masked.
+    value: 0
+  - name: TpsenB
+    description: Enabled.
+    value: 1
+enum/Tscd:
+  bit_size: 1
+  variants:
+  - name: TscdB
+    description: Delay cell select change is not finished.
+    value: 0
+  - name: TscdA
+    description: Delay cell select change is finished.
+    value: 1
+enum/TuningBitEn:
+  bit_size: 2
+  variants:
+  - name: TuningBitEn0
+    description: Enable Tuning circuit for DATA[3:0].
+    value: 0
+  - name: TuningBitEn1
+    description: Enable Tuning circuit for DATA[7:0].
+    value: 1
+  - name: TuningBitEn2
+    description: Enable Tuning circuit for DATA[0].
+    value: 2
+  - name: TuningBitEn3
+    description: Invalid.
+    value: 3
+enum/TuningCmdEn:
+  bit_size: 1
+  variants:
+  - name: TuningCmdEnA
+    description: Auto tuning circuit does not check the CMD line.
+    value: 0
+  - name: TuningCmdEnB
+    description: Auto tuning circuit checks the CMD line.
+    value: 1
+enum/UseTuningSdr50:
+  bit_size: 1
+  variants:
+  - name: UseTuningB
+    description: SDR50 does not support tuning.
+    value: 0
+  - name: UseTuningA
+    description: SDR50 supports tuning.
+    value: 1
+enum/Vs18:
+  bit_size: 1
+  variants:
+  - name: Vs18B
+    description: 1.8 V not supported.
+    value: 0
+  - name: Vs18A
+    description: 1.8 V supported.
+    value: 1
+enum/Vs30:
+  bit_size: 1
+  variants:
+  - name: Vs30B
+    description: 3.0 V not supported.
+    value: 0
+  - name: Vs30A
+    description: 3.0 V supported.
+    value: 1
+enum/Vs33:
+  bit_size: 1
+  variants:
+  - name: Vs33B
+    description: 3.3 V not supported.
+    value: 0
+  - name: Vs33A
+    description: 3.3 V supported.
+    value: 1
+enum/Wecins:
+  bit_size: 1
+  variants:
+  - name: WecinsB
+    description: Disable wakeup event enable on SD card insertion.
+    value: 0
+  - name: WecinsA
+    description: Enable wakeup event enable on SD card insertion.
+    value: 1
+enum/Wecint:
+  bit_size: 1
+  variants:
+  - name: WecintA
+    description: Disables wakeup event enable on card interrupt.
+    value: 0
+  - name: WecintB
+    description: Enables wakeup event enable on card interrupt.
+    value: 1
+enum/Wecrm:
+  bit_size: 1
+  variants:
+  - name: WecrmB
+    description: Disables wakeup event enable on SD card removal.
+    value: 0
+  - name: WecrmA
+    description: Enables wakeup event enable on SD card removal.
+    value: 1
+enum/Wta:
+  bit_size: 1
+  variants:
+  - name: WtaB
+    description: No valid data.
+    value: 0
+  - name: WtaA
+    description: Transferring data.
+    value: 1

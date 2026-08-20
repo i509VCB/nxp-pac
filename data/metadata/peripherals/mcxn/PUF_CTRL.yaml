@@ -1,0 +1,198 @@
+block/PufCtrl:
+  description: PUF Key Context Management.
+  items:
+  - name: config
+    description: PUF command blocking configuration.
+    byte_offset: 256
+    fieldset: Config
+  - name: sec_lock
+    description: Security level lock.
+    byte_offset: 260
+    fieldset: SecLock
+  - name: app_ctx_mask
+    description: Application defined context mask.
+    byte_offset: 264
+    fieldset: AppCtxMask
+fieldset/AppCtxMask:
+  description: Application defined context mask.
+  fields:
+  - name: app_ctx_mask
+    description: Application defined context.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Config:
+  description: PUF command blocking configuration.
+  fields:
+  - name: dis_puf_enroll
+    description: Disable PUF enroll command.
+    bit_offset: 1
+    bit_size: 1
+    enum: DisPufEnroll
+  - name: dis_puf_start
+    description: Disable PUF start command.
+    bit_offset: 2
+    bit_size: 1
+    enum: DisPufStart
+  - name: dis_puf_stop
+    description: Disable PUF stop command.
+    bit_offset: 5
+    bit_size: 1
+    enum: DisPufStop
+  - name: dis_puf_get_key
+    description: Disable PUF get key command.
+    bit_offset: 6
+    bit_size: 1
+    enum: DisPufGetKey
+  - name: dis_puf_unwrap_key
+    description: Disable PUF unwrap key command.
+    bit_offset: 7
+    bit_size: 1
+    enum: DisPufUnwrapKey
+  - name: dis_puf_gen_wrap_key
+    description: Disable PUF generate and wrap key command.
+    bit_offset: 8
+    bit_size: 1
+    enum: DisPufGenWrapKey
+  - name: dis_puf_wrap_key
+    description: Disable PUF wrap key command.
+    bit_offset: 9
+    bit_size: 1
+    enum: DisPufWrapKey
+  - name: dis_puf_gen_random_number
+    description: Disable PUF generate and wrap key command.
+    bit_offset: 15
+    bit_size: 1
+    enum: DisPufGenRandomNumber
+  - name: dis_puf_test
+    description: Disable PUF test command.
+    bit_offset: 31
+    bit_size: 1
+    enum: DisPufTest
+fieldset/SecLock:
+  description: Security level lock.
+  fields:
+  - name: sec_level
+    description: Security Level.
+    bit_offset: 0
+    bit_size: 2
+    enum: SecLevel
+  - name: anti_pole_sec_level
+    description: Anti-pole of security level.
+    bit_offset: 2
+    bit_size: 2
+    enum: AntiPoleSecLevel
+  - name: pattern
+    description: Pattern.
+    bit_offset: 4
+    bit_size: 12
+enum/AntiPoleSecLevel:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Secure and privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Secure and non-privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Non-secure and privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Non-secure and non-privileged Master.
+    value: 3
+enum/DisPufEnroll:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Command enabled.
+    value: 0
+  - name: Disable
+    description: Command disabled.
+    value: 1
+enum/DisPufGenRandomNumber:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Command enabled.
+    value: 0
+  - name: Disable
+    description: Command disabled.
+    value: 1
+enum/DisPufGenWrapKey:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Command enabled.
+    value: 0
+  - name: Disable
+    description: Command disabled.
+    value: 1
+enum/DisPufGetKey:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Command enabled.
+    value: 0
+  - name: Disable
+    description: Command disabled.
+    value: 1
+enum/DisPufStart:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Command enabled.
+    value: 0
+  - name: Disable
+    description: Command disabled.
+    value: 1
+enum/DisPufStop:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Command enabled.
+    value: 0
+  - name: Disable
+    description: Command disabled.
+    value: 1
+enum/DisPufTest:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Command enabled.
+    value: 0
+  - name: Disable
+    description: Command disabled.
+    value: 1
+enum/DisPufUnwrapKey:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Command enabled.
+    value: 0
+  - name: Disable
+    description: Command disabled.
+    value: 1
+enum/DisPufWrapKey:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Command enabled.
+    value: 0
+  - name: Disable
+    description: Command disabled.
+    value: 1
+enum/SecLevel:
+  bit_size: 2
+  variants:
+  - name: NonsecureNonprivMaster
+    description: Non-secure and non-privileged Master.
+    value: 0
+  - name: NonsecurePrivMaster
+    description: Non-secure and privileged Master.
+    value: 1
+  - name: SecureNonprivMaster
+    description: Secure and non-privileged Master.
+    value: 2
+  - name: SecurePrivMaster
+    description: Secure and privileged Master.
+    value: 3

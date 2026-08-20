@@ -1,0 +1,1413 @@
+block/Lpuart:
+  description: LPUART.
+  items:
+  - name: verid
+    description: Version ID.
+    byte_offset: 0
+    access: Read
+    fieldset: Verid
+  - name: param
+    description: Parameter.
+    byte_offset: 4
+    access: Read
+    fieldset: Param
+  - name: global
+    description: Global.
+    byte_offset: 8
+    fieldset: Global
+  - name: pincfg
+    description: Pin Configuration.
+    byte_offset: 12
+    fieldset: Pincfg
+  - name: baud
+    description: Baud Rate.
+    byte_offset: 16
+    fieldset: Baud
+  - name: stat
+    description: Status.
+    byte_offset: 20
+    fieldset: Stat
+  - name: ctrl
+    description: Control.
+    byte_offset: 24
+    fieldset: Ctrl
+  - name: data
+    description: Data.
+    byte_offset: 28
+    fieldset: Data
+  - name: match_
+    description: Match Address.
+    byte_offset: 32
+    fieldset: Match
+  - name: modir
+    description: MODEM IrDA.
+    byte_offset: 36
+    fieldset: Modir
+  - name: fifo
+    description: FIFO.
+    byte_offset: 40
+    fieldset: Fifo
+  - name: water
+    description: Watermark.
+    byte_offset: 44
+    fieldset: Water
+  - name: dataro
+    description: Data Read-Only.
+    byte_offset: 48
+    access: Read
+    fieldset: Dataro
+  - name: mcr
+    description: MODEM Control.
+    byte_offset: 64
+    fieldset: Mcr
+  - name: msr
+    description: MODEM Status.
+    byte_offset: 68
+    fieldset: Msr
+  - name: reir
+    description: Receiver Extended Idle.
+    byte_offset: 72
+    fieldset: Reir
+  - name: teir
+    description: Transmitter Extended Idle.
+    byte_offset: 76
+    fieldset: Teir
+  - name: hdcr
+    description: Half Duplex Control.
+    byte_offset: 80
+    fieldset: Hdcr
+  - name: tocr
+    description: Timeout Control.
+    byte_offset: 88
+    fieldset: Tocr
+  - name: tosr
+    description: Timeout Status.
+    byte_offset: 92
+    fieldset: Tosr
+  - name: timeout
+    description: Timeout N.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 96
+    fieldset: Timeout
+  - name: tcbr
+    description: Transmit Command Burst.
+    array:
+      len: 128
+      stride: 4
+    byte_offset: 512
+    access: Write
+    fieldset: Tcbr
+  - name: tdbr
+    description: Transmit Data Burst.
+    array:
+      len: 256
+      stride: 4
+    byte_offset: 1024
+    access: Write
+    fieldset: Tdbr
+fieldset/Baud:
+  description: Baud Rate.
+  fields:
+  - name: sbr
+    description: Baud Rate Modulo Divisor.
+    bit_offset: 0
+    bit_size: 13
+  - name: sbns
+    description: Stop Bit Number Select.
+    bit_offset: 13
+    bit_size: 1
+    enum: Sbns
+  - name: rxedgie
+    description: RX Input Active Edge Interrupt Enable.
+    bit_offset: 14
+    bit_size: 1
+  - name: lbkdie
+    description: LIN Break Detect Interrupt Enable.
+    bit_offset: 15
+    bit_size: 1
+  - name: resyncdis
+    description: Resynchronization Disable.
+    bit_offset: 16
+    bit_size: 1
+    enum: Resyncdis
+  - name: bothedge
+    description: Both Edge Sampling.
+    bit_offset: 17
+    bit_size: 1
+  - name: matcfg
+    description: Match Configuration.
+    bit_offset: 18
+    bit_size: 2
+    enum: Matcfg
+  - name: ridmae
+    description: Receiver Idle DMA Enable.
+    bit_offset: 20
+    bit_size: 1
+  - name: rdmae
+    description: Receiver Full DMA Enable.
+    bit_offset: 21
+    bit_size: 1
+  - name: tdmae
+    description: Transmitter DMA Enable.
+    bit_offset: 23
+    bit_size: 1
+  - name: osr
+    description: Oversampling Ratio.
+    bit_offset: 24
+    bit_size: 5
+    enum: Osr
+  - name: m10
+    description: 10-Bit Mode Select.
+    bit_offset: 29
+    bit_size: 1
+  - name: maen2
+    description: Match Address Mode Enable 2.
+    bit_offset: 30
+    bit_size: 1
+  - name: maen1
+    description: Match Address Mode Enable 1.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Ctrl:
+  description: Control.
+  fields:
+  - name: pt
+    description: Parity Type.
+    bit_offset: 0
+    bit_size: 1
+    enum: Pt
+  - name: pe
+    description: Parity Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: ilt
+    description: Idle Line Type Select.
+    bit_offset: 2
+    bit_size: 1
+    enum: Ilt
+  - name: wake
+    description: Receiver Wake-Up Method Select.
+    bit_offset: 3
+    bit_size: 1
+    enum: Wake
+  - name: m
+    description: 9-Bit Or 8-Bit Mode Select.
+    bit_offset: 4
+    bit_size: 1
+    enum: M
+  - name: rsrc
+    description: Receiver Source Select.
+    bit_offset: 5
+    bit_size: 1
+    enum: Rsrc
+  - name: dozeen
+    description: Doze Mode.
+    bit_offset: 6
+    bit_size: 1
+    enum: Dozeen
+  - name: loops
+    description: Loop Mode Select.
+    bit_offset: 7
+    bit_size: 1
+    enum: Loops
+  - name: idlecfg
+    description: Idle Configuration.
+    bit_offset: 8
+    bit_size: 3
+    enum: Idlecfg
+  - name: m7
+    description: 7-Bit Mode Select.
+    bit_offset: 11
+    bit_size: 1
+    enum: M7
+  - name: ma2ie
+    description: Match 2 (MA2F) Interrupt Enable.
+    bit_offset: 14
+    bit_size: 1
+  - name: ma1ie
+    description: Match 1 (MA1F) Interrupt Enable.
+    bit_offset: 15
+    bit_size: 1
+  - name: sbk
+    description: Send Break.
+    bit_offset: 16
+    bit_size: 1
+    enum: Sbk
+  - name: rwu
+    description: Receiver Wake-Up Control.
+    bit_offset: 17
+    bit_size: 1
+    enum: Rwu
+  - name: re
+    description: Receiver Enable.
+    bit_offset: 18
+    bit_size: 1
+  - name: te
+    description: Transmitter Enable.
+    bit_offset: 19
+    bit_size: 1
+  - name: ilie
+    description: Idle Line Interrupt Enable.
+    bit_offset: 20
+    bit_size: 1
+  - name: rie
+    description: Receiver Interrupt Enable.
+    bit_offset: 21
+    bit_size: 1
+  - name: tcie
+    description: Transmission Complete Interrupt Enable.
+    bit_offset: 22
+    bit_size: 1
+  - name: tie
+    description: Transmit Interrupt Enable.
+    bit_offset: 23
+    bit_size: 1
+  - name: peie
+    description: Parity Error Interrupt Enable.
+    bit_offset: 24
+    bit_size: 1
+  - name: feie
+    description: Framing Error Interrupt Enable.
+    bit_offset: 25
+    bit_size: 1
+  - name: neie
+    description: Noise Error Interrupt Enable.
+    bit_offset: 26
+    bit_size: 1
+  - name: orie
+    description: Overrun Interrupt Enable.
+    bit_offset: 27
+    bit_size: 1
+  - name: txinv
+    description: Transmit Data Inversion.
+    bit_offset: 28
+    bit_size: 1
+  - name: txdir
+    description: TXD Pin Direction in Single-Wire Mode.
+    bit_offset: 29
+    bit_size: 1
+    enum: Txdir
+  - name: r9t8
+    description: Receive Bit 9 Transmit Bit 8.
+    bit_offset: 30
+    bit_size: 1
+  - name: r8t9
+    description: Receive Bit 8 Transmit Bit 9.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Data:
+  description: Data.
+  fields:
+  - name: r0t0
+    description: Read receive FIFO bit 0 or write transmit FIFO bit 0.
+    bit_offset: 0
+    bit_size: 1
+  - name: r1t1
+    description: Read receive FIFO bit 1 or write transmit FIFO bit 1.
+    bit_offset: 1
+    bit_size: 1
+  - name: r2t2
+    description: Read receive FIFO bit 2 or write transmit FIFO bit 2.
+    bit_offset: 2
+    bit_size: 1
+  - name: r3t3
+    description: Read receive FIFO bit 3 or write transmit FIFO bit 3.
+    bit_offset: 3
+    bit_size: 1
+  - name: r4t4
+    description: Read receive FIFO bit 4 or write transmit FIFO bit 4.
+    bit_offset: 4
+    bit_size: 1
+  - name: r5t5
+    description: Read receive FIFO bit 5 or write transmit FIFO bit 5.
+    bit_offset: 5
+    bit_size: 1
+  - name: r6t6
+    description: Read receive FIFO bit 6 or write transmit FIFO bit 6.
+    bit_offset: 6
+    bit_size: 1
+  - name: r7t7
+    description: Read receive FIFO bit 7 or write transmit FIFO bit 7.
+    bit_offset: 7
+    bit_size: 1
+  - name: r8t8
+    description: Read receive FIFO bit 8 or write transmit FIFO bit 8.
+    bit_offset: 8
+    bit_size: 1
+  - name: r9t9
+    description: Read receive FIFO bit 9 or write transmit FIFO bit 9.
+    bit_offset: 9
+    bit_size: 1
+  - name: linbrk
+    description: LIN Break.
+    bit_offset: 10
+    bit_size: 1
+  - name: idline
+    description: Idle Line.
+    bit_offset: 11
+    bit_size: 1
+  - name: rxempt
+    description: Receive Buffer Empty.
+    bit_offset: 12
+    bit_size: 1
+  - name: fretsc
+    description: Frame Error Transmit Special Character.
+    bit_offset: 13
+    bit_size: 1
+  - name: paritye
+    description: Parity Error.
+    bit_offset: 14
+    bit_size: 1
+  - name: noisy
+    description: Noisy Data Received.
+    bit_offset: 15
+    bit_size: 1
+fieldset/Dataro:
+  description: Data Read-Only.
+  fields:
+  - name: data
+    description: Receive Data.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Fifo:
+  description: FIFO.
+  fields:
+  - name: rxfifosize
+    description: Receive FIFO Buffer Depth.
+    bit_offset: 0
+    bit_size: 3
+    enum: Rxfifosize
+  - name: rxfe
+    description: Receive FIFO Enable.
+    bit_offset: 3
+    bit_size: 1
+  - name: txfifosize
+    description: Transmit FIFO Buffer Depth.
+    bit_offset: 4
+    bit_size: 3
+    enum: Txfifosize
+  - name: txfe
+    description: Transmit FIFO Enable.
+    bit_offset: 7
+    bit_size: 1
+  - name: rxufe
+    description: Receive FIFO Underflow Interrupt Enable.
+    bit_offset: 8
+    bit_size: 1
+  - name: txofe
+    description: Transmit FIFO Overflow Interrupt Enable.
+    bit_offset: 9
+    bit_size: 1
+  - name: rxiden
+    description: Receiver Idle Empty Enable.
+    bit_offset: 10
+    bit_size: 3
+    enum: Rxiden
+  - name: rxflush
+    description: Receive FIFO Flush.
+    bit_offset: 14
+    bit_size: 1
+    enum: Rxflush
+  - name: txflush
+    description: Transmit FIFO Flush.
+    bit_offset: 15
+    bit_size: 1
+    enum: Txflush
+  - name: rxuf
+    description: Receiver FIFO Underflow Flag.
+    bit_offset: 16
+    bit_size: 1
+  - name: txof
+    description: Transmitter FIFO Overflow Flag.
+    bit_offset: 17
+    bit_size: 1
+  - name: rxempt
+    description: Receive FIFO Or Buffer Empty.
+    bit_offset: 22
+    bit_size: 1
+  - name: txempt
+    description: Transmit FIFO Or Buffer Empty.
+    bit_offset: 23
+    bit_size: 1
+fieldset/Global:
+  description: Global.
+  fields:
+  - name: rst
+    description: Software Reset.
+    bit_offset: 1
+    bit_size: 1
+    enum: Rst
+fieldset/Hdcr:
+  description: Half Duplex Control.
+  fields:
+  - name: txstall
+    description: Transmit Stall.
+    bit_offset: 0
+    bit_size: 1
+    enum: Txstall
+  - name: rxsel
+    description: Receive Select.
+    bit_offset: 1
+    bit_size: 1
+    enum: Rxsel
+  - name: rxwrmsk
+    description: Receive FIFO Write Mask.
+    bit_offset: 2
+    bit_size: 1
+    enum: Rxwrmsk
+  - name: rxmsk
+    description: Receive Mask.
+    bit_offset: 3
+    bit_size: 1
+    enum: Rxmsk
+  - name: rtsext
+    description: RTS Extended.
+    bit_offset: 8
+    bit_size: 8
+fieldset/Match:
+  description: Match Address.
+  fields:
+  - name: ma1
+    description: Match Address 1.
+    bit_offset: 0
+    bit_size: 10
+  - name: ma2
+    description: Match Address 2.
+    bit_offset: 16
+    bit_size: 10
+fieldset/Mcr:
+  description: MODEM Control.
+  fields:
+  - name: cts
+    description: Clear To Send.
+    bit_offset: 0
+    bit_size: 1
+  - name: dsr
+    description: Data Set Ready.
+    bit_offset: 1
+    bit_size: 1
+  - name: rin
+    description: Ring Indicator.
+    bit_offset: 2
+    bit_size: 1
+  - name: dcd
+    description: Data Carrier Detect.
+    bit_offset: 3
+    bit_size: 1
+  - name: dtr
+    description: Data Terminal Ready.
+    bit_offset: 8
+    bit_size: 1
+    enum: Dtr
+  - name: rts
+    description: Request To Send.
+    bit_offset: 9
+    bit_size: 1
+    enum: Rts
+fieldset/Modir:
+  description: MODEM IrDA.
+  fields:
+  - name: txctse
+    description: Transmitter CTS Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: txrtse
+    description: Transmitter RTS Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: txrtspol
+    description: Transmitter RTS Polarity.
+    bit_offset: 2
+    bit_size: 1
+    enum: Txrtspol
+  - name: rxrtse
+    description: Receiver RTS Enable.
+    bit_offset: 3
+    bit_size: 1
+  - name: txctsc
+    description: Transmit CTS Configuration.
+    bit_offset: 4
+    bit_size: 1
+    enum: Txctsc
+  - name: txctssrc
+    description: Transmit CTS Source.
+    bit_offset: 5
+    bit_size: 1
+    enum: Txctssrc
+  - name: rtswater
+    description: Receive RTS Configuration.
+    bit_offset: 8
+    bit_size: 3
+  - name: tnp
+    description: Transmitter Narrow Pulse.
+    bit_offset: 16
+    bit_size: 2
+    enum: Tnp
+  - name: iren
+    description: IR Enable.
+    bit_offset: 18
+    bit_size: 1
+fieldset/Msr:
+  description: MODEM Status.
+  fields:
+  - name: dcts
+    description: Delta Clear To Send.
+    bit_offset: 0
+    bit_size: 1
+  - name: ddsr
+    description: Delta Data Set Ready.
+    bit_offset: 1
+    bit_size: 1
+  - name: dri
+    description: Delta Ring Indicator.
+    bit_offset: 2
+    bit_size: 1
+  - name: ddcd
+    description: Delta Data Carrier Detect.
+    bit_offset: 3
+    bit_size: 1
+  - name: cts
+    description: Clear To Send.
+    bit_offset: 4
+    bit_size: 1
+    enum: MsrCts
+  - name: dsr
+    description: Data Set Ready.
+    bit_offset: 5
+    bit_size: 1
+    enum: MsrDsr
+  - name: rin
+    description: Ring Indicator.
+    bit_offset: 6
+    bit_size: 1
+    enum: MsrRin
+  - name: dcd
+    description: Data Carrier Detect.
+    bit_offset: 7
+    bit_size: 1
+    enum: MsrDcd
+fieldset/Param:
+  description: Parameter.
+  fields:
+  - name: txfifo
+    description: Transmit FIFO Size.
+    bit_offset: 0
+    bit_size: 8
+  - name: rxfifo
+    description: Receive FIFO Size.
+    bit_offset: 8
+    bit_size: 8
+fieldset/Pincfg:
+  description: Pin Configuration.
+  fields:
+  - name: trgsel
+    description: Trigger Select.
+    bit_offset: 0
+    bit_size: 2
+    enum: Trgsel
+fieldset/Reir:
+  description: Receiver Extended Idle.
+  fields:
+  - name: idtime
+    description: Idle Time.
+    bit_offset: 0
+    bit_size: 14
+fieldset/Stat:
+  description: Status.
+  fields:
+  - name: lbkfe
+    description: LIN Break Flag Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: ame
+    description: Address Mark Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: msf
+    description: MODEM Status Flag.
+    bit_offset: 8
+    bit_size: 1
+  - name: tsf
+    description: Timeout Status Flag.
+    bit_offset: 9
+    bit_size: 1
+  - name: ma2f
+    description: Match 2 Flag.
+    bit_offset: 14
+    bit_size: 1
+  - name: ma1f
+    description: Match 1 Flag.
+    bit_offset: 15
+    bit_size: 1
+  - name: pf
+    description: Parity Error Flag.
+    bit_offset: 16
+    bit_size: 1
+  - name: fe
+    description: Framing Error Flag.
+    bit_offset: 17
+    bit_size: 1
+  - name: nf
+    description: Noise Flag.
+    bit_offset: 18
+    bit_size: 1
+  - name: or
+    description: Receiver Overrun Flag.
+    bit_offset: 19
+    bit_size: 1
+  - name: idle
+    description: Idle Line Flag.
+    bit_offset: 20
+    bit_size: 1
+  - name: rdrf
+    description: Receive Data Register Full Flag.
+    bit_offset: 21
+    bit_size: 1
+  - name: tc
+    description: Transmission Complete Flag.
+    bit_offset: 22
+    bit_size: 1
+    enum: Tc
+  - name: tdre
+    description: Transmit Data Register Empty Flag.
+    bit_offset: 23
+    bit_size: 1
+    enum: Tdre
+  - name: raf
+    description: Receiver Active Flag.
+    bit_offset: 24
+    bit_size: 1
+    enum: Raf
+  - name: lbkde
+    description: LIN Break Detection Enable.
+    bit_offset: 25
+    bit_size: 1
+  - name: brk13
+    description: Break Character Generation Length.
+    bit_offset: 26
+    bit_size: 1
+    enum: Brk13
+  - name: rwuid
+    description: Receive Wake Up Idle Detect.
+    bit_offset: 27
+    bit_size: 1
+    enum: Rwuid
+  - name: rxinv
+    description: Receive Data Inversion.
+    bit_offset: 28
+    bit_size: 1
+  - name: msbf
+    description: MSB First.
+    bit_offset: 29
+    bit_size: 1
+    enum: Msbf
+  - name: rxedgif
+    description: RXD Pin Active Edge Interrupt Flag.
+    bit_offset: 30
+    bit_size: 1
+  - name: lbkdif
+    description: LIN Break Detect Interrupt Flag.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Tcbr:
+  description: Transmit Command Burst.
+  fields:
+  - name: data
+    description: Data.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Tdbr:
+  description: Transmit Data Burst.
+  fields:
+  - name: data0
+    description: Data0.
+    bit_offset: 0
+    bit_size: 8
+  - name: data1
+    description: Data1.
+    bit_offset: 8
+    bit_size: 8
+  - name: data2
+    description: Data2.
+    bit_offset: 16
+    bit_size: 8
+  - name: data3
+    description: Data3.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Teir:
+  description: Transmitter Extended Idle.
+  fields:
+  - name: idtime
+    description: Idle Time.
+    bit_offset: 0
+    bit_size: 14
+fieldset/Timeout:
+  description: Timeout N.
+  fields:
+  - name: timeout
+    description: Timeout Value.
+    bit_offset: 0
+    bit_size: 14
+  - name: cfg
+    description: Idle Configuration.
+    bit_offset: 30
+    bit_size: 2
+    enum: Cfg
+fieldset/Tocr:
+  description: Timeout Control.
+  fields:
+  - name: toen
+    description: Timeout Enable.
+    bit_offset: 0
+    bit_size: 4
+  - name: toie
+    description: Timeout Interrupt Enable.
+    bit_offset: 8
+    bit_size: 4
+fieldset/Tosr:
+  description: Timeout Status.
+  fields:
+  - name: toz
+    description: Timeout Zero.
+    bit_offset: 0
+    bit_size: 4
+  - name: tof
+    description: Timeout Flag.
+    bit_offset: 8
+    bit_size: 4
+    enum: Tof
+fieldset/Verid:
+  description: Version ID.
+  fields:
+  - name: feature
+    description: Feature Identification Number.
+    bit_offset: 0
+    bit_size: 16
+    enum: Feature
+  - name: minor
+    description: Minor Version Number.
+    bit_offset: 16
+    bit_size: 8
+  - name: major
+    description: Major Version Number.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Water:
+  description: Watermark.
+  fields:
+  - name: txwater
+    description: Transmit Watermark.
+    bit_offset: 0
+    bit_size: 3
+  - name: txcount
+    description: Transmit Counter.
+    bit_offset: 8
+    bit_size: 4
+  - name: rxwater
+    description: Receive Watermark.
+    bit_offset: 16
+    bit_size: 3
+  - name: rxcount
+    description: Receive Counter.
+    bit_offset: 24
+    bit_size: 4
+enum/Brk13:
+  bit_size: 1
+  variants:
+  - name: Short
+    description: 9 to 13 bit times.
+    value: 0
+  - name: Long
+    description: 12 to 15 bit times.
+    value: 1
+enum/Cfg:
+  bit_size: 2
+  variants:
+  - name: CntChar
+    description: Becomes 1 after timeout characters are received.
+    value: 0
+  - name: CntIdle
+    description: Becomes 1 when idle for timeout bit clocks.
+    value: 1
+  - name: CntBusyIdle
+    description: Becomes 1 when idle for timeout bit clocks following the next character.
+    value: 2
+  - name: CntCharIdle
+    description: Becomes 1 when idle for at least timeout bit clocks, but a new character is detected before the extended idle timeout is reached.
+    value: 3
+enum/Dozeen:
+  bit_size: 1
+  variants:
+  - name: Enabled
+    description: Enable.
+    value: 0
+  - name: Disabled
+    description: Disable.
+    value: 1
+enum/Dtr:
+  bit_size: 1
+  variants:
+  - name: LogicOne
+    description: Logic one.
+    value: 0
+  - name: LogicZero
+    description: Logic zero.
+    value: 1
+enum/Feature:
+  bit_size: 16
+  variants:
+  - name: Standard
+    description: Standard feature set.
+    value: 1
+  - name: Modem
+    description: Standard feature set with MODEM and IrDA support.
+    value: 3
+  - name: ModemIdle
+    description: Enhanced feature set with full MODEM, IrDA, and enhanced idle detection.
+    value: 7
+enum/Idlecfg:
+  bit_size: 3
+  variants:
+  - name: Idle1
+    description: '1.'
+    value: 0
+  - name: Idle2
+    description: '2.'
+    value: 1
+  - name: Idle4
+    description: '4.'
+    value: 2
+  - name: Idle8
+    description: '8.'
+    value: 3
+  - name: Idle16
+    description: '16.'
+    value: 4
+  - name: Idle32
+    description: '32.'
+    value: 5
+  - name: Idle64
+    description: '64.'
+    value: 6
+  - name: Idle128
+    description: '128.'
+    value: 7
+enum/Ilt:
+  bit_size: 1
+  variants:
+  - name: FromStart
+    description: After the start bit.
+    value: 0
+  - name: FromStop
+    description: After the stop bit.
+    value: 1
+enum/Loops:
+  bit_size: 1
+  variants:
+  - name: Noffect
+    description: 'Normal operation: RXD and TXD use separate pins.'
+    value: 0
+  - name: Loopback
+    description: Loop mode or Single-Wire mode.
+    value: 1
+enum/M:
+  bit_size: 1
+  variants:
+  - name: Data8
+    description: 8-bit.
+    value: 0
+  - name: Data9
+    description: 9-bit.
+    value: 1
+enum/M7:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: 8-bit to 10-bit.
+    value: 0
+  - name: Data7
+    description: 7-bit.
+    value: 1
+enum/Matcfg:
+  bit_size: 2
+  variants:
+  - name: AddrMatch
+    description: Address match wake-up.
+    value: 0
+  - name: IdleMatch
+    description: Idle match wake-up.
+    value: 1
+  - name: OnoffMatch
+    description: Match on and match off.
+    value: 2
+  - name: RwuMatch
+    description: Enables RWU on data match and match on or off for the transmitter CTS input.
+    value: 3
+enum/Msbf:
+  bit_size: 1
+  variants:
+  - name: LsbFirst
+    description: LSB.
+    value: 0
+  - name: MsbFirst
+    description: MSB.
+    value: 1
+enum/MsrCts:
+  bit_size: 1
+  variants:
+  - name: LogicOne
+    description: Logic one.
+    value: 0
+  - name: LogicZero
+    description: Logic zero.
+    value: 1
+enum/MsrDcd:
+  bit_size: 1
+  variants:
+  - name: LogicOne
+    description: Logic one.
+    value: 0
+  - name: LogicZero
+    description: Logic zero.
+    value: 1
+enum/MsrDsr:
+  bit_size: 1
+  variants:
+  - name: LogicOne
+    description: Logic one.
+    value: 0
+  - name: LogicZero
+    description: Logic zero.
+    value: 1
+enum/MsrRin:
+  bit_size: 1
+  variants:
+  - name: LogicOne
+    description: Logic one.
+    value: 0
+  - name: LogicZero
+    description: Logic zero.
+    value: 1
+enum/Osr:
+  bit_size: 5
+  variants:
+  - name: Default
+    description: Results in an OSR of 16.
+    value: 0
+  - name: Osr4
+    description: Results in an OSR of 4 (requires BAUD[BOTHEDGE] to be 1).
+    value: 3
+  - name: Osr5
+    description: Results in an OSR of 5 (requires BAUD[BOTHEDGE] to be 1).
+    value: 4
+  - name: Osr6
+    description: Results in an OSR of 6 (requires BAUD[BOTHEDGE] to be 1).
+    value: 5
+  - name: Osr7
+    description: Results in an OSR of 7 (requires BAUD[BOTHEDGE] to be 1).
+    value: 6
+  - name: Osr8
+    description: Results in an OSR of 8.
+    value: 7
+  - name: Osr9
+    description: Results in an OSR of 9.
+    value: 8
+  - name: Osr10
+    description: Results in an OSR of 10.
+    value: 9
+  - name: Osr11
+    description: Results in an OSR of 11.
+    value: 10
+  - name: Osr12
+    description: Results in an OSR of 12.
+    value: 11
+  - name: Osr13
+    description: Results in an OSR of 13.
+    value: 12
+  - name: Osr14
+    description: Results in an OSR of 14.
+    value: 13
+  - name: Osr15
+    description: Results in an OSR of 15.
+    value: 14
+  - name: Osr16
+    description: Results in an OSR of 16.
+    value: 15
+  - name: Osr17
+    description: Results in an OSR of 17.
+    value: 16
+  - name: Osr18
+    description: Results in an OSR of 18.
+    value: 17
+  - name: Osr19
+    description: Results in an OSR of 19.
+    value: 18
+  - name: Osr20
+    description: Results in an OSR of 20.
+    value: 19
+  - name: Osr21
+    description: Results in an OSR of 21.
+    value: 20
+  - name: Osr22
+    description: Results in an OSR of 22.
+    value: 21
+  - name: Osr23
+    description: Results in an OSR of 23.
+    value: 22
+  - name: Osr24
+    description: Results in an OSR of 24.
+    value: 23
+  - name: Osr25
+    description: Results in an OSR of 25.
+    value: 24
+  - name: Osr26
+    description: Results in an OSR of 26.
+    value: 25
+  - name: Osr27
+    description: Results in an OSR of 27.
+    value: 26
+  - name: Osr28
+    description: Results in an OSR of 28.
+    value: 27
+  - name: Osr29
+    description: Results in an OSR of 29.
+    value: 28
+  - name: Osr30
+    description: Results in an OSR of 30.
+    value: 29
+  - name: Osr31
+    description: Results in an OSR of 31.
+    value: 30
+  - name: Osr32
+    description: Results in an OSR of 32.
+    value: 31
+enum/Pt:
+  bit_size: 1
+  variants:
+  - name: Even
+    description: Even parity.
+    value: 0
+  - name: Odd
+    description: Odd parity.
+    value: 1
+enum/Raf:
+  bit_size: 1
+  variants:
+  - name: Idle
+    description: Idle, waiting for a start bit.
+    value: 0
+  - name: Active
+    description: Receiver active (RXD pin input not idle).
+    value: 1
+enum/Resyncdis:
+  bit_size: 1
+  variants:
+  - name: Resync
+    description: Enable.
+    value: 0
+  - name: NoResync
+    description: Disable.
+    value: 1
+enum/Rsrc:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: Internal Loopback mode.
+    value: 0
+  - name: Onewire
+    description: Single-wire mode.
+    value: 1
+enum/Rst:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: Not reset.
+    value: 0
+  - name: Reset
+    description: Reset.
+    value: 1
+enum/Rts:
+  bit_size: 1
+  variants:
+  - name: LogicOne
+    description: Logic one.
+    value: 0
+  - name: LogicZero
+    description: Logic zero.
+    value: 1
+enum/Rwu:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: Normal receiver operation.
+    value: 0
+  - name: RxWakeup
+    description: LPUART receiver in standby, waiting for a wake-up condition.
+    value: 1
+enum/Rwuid:
+  bit_size: 1
+  variants:
+  - name: IdleNotset
+    description: STAT[IDLE] does not become 1.
+    value: 0
+  - name: IdleSet
+    description: STAT[IDLE] becomes 1.
+    value: 1
+enum/Rxfifosize:
+  bit_size: 3
+  variants:
+  - name: Fifo1
+    description: '1.'
+    value: 0
+  - name: Fifo4
+    description: '4.'
+    value: 1
+  - name: Fifo8
+    description: '8.'
+    value: 2
+  - name: Fifo16
+    description: '16.'
+    value: 3
+  - name: Fifo32
+    description: '32.'
+    value: 4
+  - name: Fifo64
+    description: '64.'
+    value: 5
+  - name: Fifo128
+    description: '128.'
+    value: 6
+  - name: Fifo256
+    description: '256.'
+    value: 7
+enum/Rxflush:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: No effect.
+    value: 0
+  - name: RxfifoRst
+    description: All data flushed out.
+    value: 1
+enum/Rxiden:
+  bit_size: 3
+  variants:
+  - name: Disabled
+    description: Disable STAT[RDRF] to become 1 because of partially filled FIFO when the receiver is idle.
+    value: 0
+  - name: Idle1
+    description: Enable STAT[RDRF] to become 1 because of partially filled FIFO when the receiver is idle for one character.
+    value: 1
+  - name: Idle2
+    description: Enable STAT[RDRF] to become 1 because of partially filled FIFO when the receiver is idle for two characters.
+    value: 2
+  - name: Idle4
+    description: Enable STAT[RDRF] to become 1 because of partially filled FIFO when the receiver is idle for four characters.
+    value: 3
+  - name: Idle8
+    description: Enable STAT[RDRF] to become 1 because of partially filled FIFO when the receiver is idle for eight characters.
+    value: 4
+  - name: Idle16
+    description: Enable STAT[RDRF] to become 1 because of partially filled FIFO when the receiver is idle for 16 characters.
+    value: 5
+  - name: Idle32
+    description: Enable STAT[RDRF] to become 1 because of partially filled FIFO when the receiver is idle for 32 characters.
+    value: 6
+  - name: Idle64
+    description: Enable STAT[RDRF] to become 1 because of partially filled FIFO when the receiver is idle for 64 characters.
+    value: 7
+enum/Rxmsk:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: Do not mask.
+    value: 0
+  - name: TxRts
+    description: Mask.
+    value: 1
+enum/Rxsel:
+  bit_size: 1
+  variants:
+  - name: PinRxd
+    description: RXD.
+    value: 0
+  - name: PinTxd
+    description: TXD.
+    value: 1
+enum/Rxwrmsk:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: Do not mask.
+    value: 0
+  - name: TxRts
+    description: Mask.
+    value: 1
+enum/Sbk:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: Normal transmitter operation.
+    value: 0
+  - name: TxBreak
+    description: Queue break character(s) to be sent.
+    value: 1
+enum/Sbns:
+  bit_size: 1
+  variants:
+  - name: One
+    description: One stop bit.
+    value: 0
+  - name: Two
+    description: Two stop bits.
+    value: 1
+enum/Tc:
+  bit_size: 1
+  variants:
+  - name: Active
+    description: Transmitter active.
+    value: 0
+  - name: Complete
+    description: Transmitter idle.
+    value: 1
+enum/Tdre:
+  bit_size: 1
+  variants:
+  - name: Txdata
+    description: Greater than watermark.
+    value: 0
+  - name: NoTxdata
+    description: Equal to or less than watermark.
+    value: 1
+enum/Tnp:
+  bit_size: 2
+  variants:
+  - name: OneSample
+    description: 1 / OSR.
+    value: 0
+  - name: TwoSample
+    description: 2 / OSR.
+    value: 1
+  - name: ThreeSample
+    description: 3 / OSR.
+    value: 2
+  - name: FourSample
+    description: 4 / OSR.
+    value: 3
+enum/Tof:
+  bit_size: 4
+  variants:
+  - name: NotOccurred
+    description: Not occurred.
+    value: 0
+  - name: Occurred
+    description: Occurred.
+    value: 1
+enum/Trgsel:
+  bit_size: 2
+  variants:
+  - name: Disabled
+    description: Input trigger disabled.
+    value: 0
+  - name: TrgRxd
+    description: Input trigger used instead of the RXD pin input.
+    value: 1
+  - name: TrgCts
+    description: Input trigger used instead of the CTS_B pin input.
+    value: 2
+  - name: TrgTxd
+    description: Input trigger used to modulate the TXD pin output, which (after TXINV configuration) is internally ANDed with the input trigger.
+    value: 3
+enum/Txctsc:
+  bit_size: 1
+  variants:
+  - name: Start
+    description: Sampled at the start of each character.
+    value: 0
+  - name: Idle
+    description: Sampled when the transmitter is idle.
+    value: 1
+enum/Txctssrc:
+  bit_size: 1
+  variants:
+  - name: Cts
+    description: The CTS_B pin.
+    value: 0
+  - name: Match
+    description: An internal connection to the receiver address match result.
+    value: 1
+enum/Txdir:
+  bit_size: 1
+  variants:
+  - name: TxInput
+    description: Input.
+    value: 0
+  - name: TxOutput
+    description: Output.
+    value: 1
+enum/Txfifosize:
+  bit_size: 3
+  variants:
+  - name: Fifo1
+    description: '1.'
+    value: 0
+  - name: Fifo4
+    description: '4.'
+    value: 1
+  - name: Fifo8
+    description: '8.'
+    value: 2
+  - name: Fifo16
+    description: '16.'
+    value: 3
+  - name: Fifo32
+    description: '32.'
+    value: 4
+  - name: Fifo64
+    description: '64.'
+    value: 5
+  - name: Fifo128
+    description: '128.'
+    value: 6
+  - name: Fifo256
+    description: '256.'
+    value: 7
+enum/Txflush:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: No effect.
+    value: 0
+  - name: TxfifoRst
+    description: All data flushed out.
+    value: 1
+enum/Txrtspol:
+  bit_size: 1
+  variants:
+  - name: Low
+    description: Active low.
+    value: 0
+  - name: High
+    description: Active high.
+    value: 1
+enum/Txstall:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: No effect.
+    value: 0
+  - name: RxActive
+    description: Does not become busy.
+    value: 1
+enum/Wake:
+  bit_size: 1
+  variants:
+  - name: Idle
+    description: Idle.
+    value: 0
+  - name: Mark
+    description: Mark.
+    value: 1

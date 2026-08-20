@@ -1,0 +1,693 @@
+block/Puf:
+  description: PUF.
+  items:
+  - name: cr
+    description: Control.
+    byte_offset: 0
+    fieldset: Cr
+  - name: orr
+    description: Operation Result.
+    byte_offset: 4
+    access: Read
+    fieldset: Orr
+  - name: sr
+    description: Status.
+    byte_offset: 8
+    fieldset: Sr
+  - name: ar
+    description: Allow.
+    byte_offset: 12
+    access: Read
+    fieldset: Ar
+  - name: ier
+    description: Interrupt Enable.
+    byte_offset: 16
+    fieldset: Ier
+  - name: imr
+    description: Interrupt Mask.
+    byte_offset: 20
+    fieldset: Imr
+  - name: isr
+    description: Interrupt Status.
+    byte_offset: 24
+    fieldset: Isr
+  - name: data_dest
+    description: Data Destination.
+    byte_offset: 32
+    fieldset: DataDest
+  - name: data_src
+    description: Data Source.
+    byte_offset: 36
+    fieldset: DataSrc
+  - name: dir
+    description: Data Input.
+    byte_offset: 160
+    access: Write
+    fieldset: Dir
+  - name: dor
+    description: Data Output.
+    byte_offset: 168
+    access: Read
+    fieldset: Dor
+  - name: misc
+    description: Miscellaneous.
+    byte_offset: 192
+    fieldset: Misc
+  - name: if_sr
+    description: Interface Status.
+    byte_offset: 208
+    fieldset: IfSr
+  - name: psr
+    description: PUF Score.
+    byte_offset: 220
+    access: Read
+    fieldset: Psr
+  - name: hw_ruc0
+    description: Hardware Restrict User Context 0.
+    byte_offset: 224
+    access: Read
+    fieldset: HwRuc0
+  - name: hw_ruc1
+    description: Hardware Restrict User Context 1.
+    byte_offset: 228
+    access: Read
+    fieldset: HwRuc1
+  - name: hw_info
+    description: Hardware Information.
+    byte_offset: 244
+    access: Read
+    fieldset: HwInfo
+  - name: hw_id
+    description: Hardware Identifier.
+    byte_offset: 248
+    access: Read
+    fieldset: HwId
+  - name: hw_ver
+    description: Hardware Version.
+    byte_offset: 252
+    access: Read
+    fieldset: HwVer
+  - name: sram_cfg
+    description: SRAM Configuration.
+    byte_offset: 768
+    fieldset: SramCfg
+  - name: sram_status
+    description: Status.
+    byte_offset: 772
+    access: Read
+    fieldset: SramStatus
+  - name: sram_int_clr_enable
+    description: Interrupt Enable Clear.
+    byte_offset: 984
+    access: Write
+    fieldset: SramIntClrEnable
+  - name: sram_int_set_enable
+    description: Interrupt Enable Set.
+    byte_offset: 988
+    access: Write
+    fieldset: SramIntSetEnable
+  - name: sram_int_status
+    description: Interrupt Status.
+    byte_offset: 992
+    access: Read
+    fieldset: SramIntStatus
+  - name: sram_int_enable
+    description: Interrupt Enable.
+    byte_offset: 996
+    access: Read
+    fieldset: SramIntEnable
+  - name: sram_int_clr_status
+    description: Interrupt Status Clear.
+    byte_offset: 1000
+    access: Write
+    fieldset: SramIntClrStatus
+  - name: sram_int_set_status
+    description: Interrupt Status set.
+    byte_offset: 1004
+    access: Write
+    fieldset: SramIntSetStatus
+fieldset/Ar:
+  description: Allow.
+  fields:
+  - name: allow_enroll
+    description: Enroll operation.
+    bit_offset: 1
+    bit_size: 1
+  - name: allow_start
+    description: Start operation.
+    bit_offset: 2
+    bit_size: 1
+  - name: allow_reconstruct
+    description: Reconstruct operation.
+    bit_offset: 3
+    bit_size: 1
+  - name: allow_stop
+    description: Stop operation.
+    bit_offset: 5
+    bit_size: 1
+  - name: allow_get_key
+    description: Get Key operation.
+    bit_offset: 6
+    bit_size: 1
+  - name: allow_unwrap
+    description: Unwrap operation.
+    bit_offset: 7
+    bit_size: 1
+  - name: allow_wrap_generated_random
+    description: Wrap Generated Random operation.
+    bit_offset: 8
+    bit_size: 1
+  - name: allow_wrap
+    description: Wrap operation.
+    bit_offset: 9
+    bit_size: 1
+  - name: allow_generate_random
+    description: Generate Random operation.
+    bit_offset: 15
+    bit_size: 1
+  - name: allow_test_memory
+    description: no description available.
+    bit_offset: 30
+    bit_size: 1
+  - name: allow_test_puf
+    description: Test PUF operation.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Cr:
+  description: Control.
+  fields:
+  - name: zeroize
+    description: Zeroize operation.
+    bit_offset: 0
+    bit_size: 1
+  - name: enroll
+    description: Enroll operation.
+    bit_offset: 1
+    bit_size: 1
+  - name: start
+    description: Start operation.
+    bit_offset: 2
+    bit_size: 1
+  - name: reconstruct
+    description: Reconstruct operation.
+    bit_offset: 3
+    bit_size: 1
+  - name: stop
+    description: Stop operation.
+    bit_offset: 5
+    bit_size: 1
+  - name: get_key
+    description: Get Key operation.
+    bit_offset: 6
+    bit_size: 1
+  - name: unwrap
+    description: Unwrap operation.
+    bit_offset: 7
+    bit_size: 1
+  - name: wrap_generated_random
+    description: Wrap Generated Random operation.
+    bit_offset: 8
+    bit_size: 1
+  - name: wrap
+    description: Wrap operation.
+    bit_offset: 9
+    bit_size: 1
+  - name: generate_random
+    description: Generate Random operation.
+    bit_offset: 15
+    bit_size: 1
+  - name: test_memory
+    description: Test memory operation.
+    bit_offset: 30
+    bit_size: 1
+  - name: test_puf
+    description: Test PUF operation.
+    bit_offset: 31
+    bit_size: 1
+fieldset/DataDest:
+  description: Data Destination.
+  fields:
+  - name: dest_dor
+    description: Key available via the DOR register.
+    bit_offset: 0
+    bit_size: 1
+  - name: dest_so
+    description: Key available to ELS.
+    bit_offset: 1
+    bit_size: 1
+fieldset/DataSrc:
+  description: Data Source.
+  fields:
+  - name: src_dir
+    description: Data provided via the DIR register.
+    bit_offset: 0
+    bit_size: 1
+  - name: src_si
+    description: Data provided via the SI interface.
+    bit_offset: 1
+    bit_size: 1
+fieldset/Dir:
+  description: Data Input.
+  fields:
+  - name: di
+    description: Input data.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Dor:
+  description: Data Output.
+  fields:
+  - name: do_
+    description: Output data.
+    bit_offset: 0
+    bit_size: 32
+fieldset/HwId:
+  description: Hardware Identifier.
+  fields:
+  - name: hw_id
+    description: Provides the hardware identifier.
+    bit_offset: 0
+    bit_size: 32
+fieldset/HwInfo:
+  description: Hardware Information.
+  fields:
+  - name: config_wrap
+    description: Wrap configuration.
+    bit_offset: 24
+    bit_size: 1
+    enum: ConfigWrap
+  - name: config_type
+    description: PUF configuration.
+    bit_offset: 28
+    bit_size: 4
+    enum: ConfigType
+fieldset/HwRuc0:
+  description: Hardware Restrict User Context 0.
+  fields:
+  - name: lc_state
+    description: Life cycle state based restrictions.
+    bit_offset: 0
+    bit_size: 8
+    enum: LcState
+  - name: boot_state
+    description: Temporal boot state.
+    bit_offset: 8
+    bit_size: 16
+  - name: cpu0_debug
+    description: Disable key access when debugger is attached to CPU0 after power-up.
+    bit_offset: 24
+    bit_size: 1
+  - name: coolflux_debug
+    description: Disable key access when debugger is attached to COOLFLUX after power-up.
+    bit_offset: 25
+    bit_size: 1
+  - name: dsp_debug
+    description: DSP debug status.
+    bit_offset: 26
+    bit_size: 1
+  - name: access_level
+    description: Restrict the key access based on TrustZone security level.
+    bit_offset: 28
+    bit_size: 4
+fieldset/HwRuc1:
+  description: Hardware Restrict User Context 1.
+  fields:
+  - name: app_ctx
+    description: Application customizable context.
+    bit_offset: 0
+    bit_size: 32
+fieldset/HwVer:
+  description: Hardware Version.
+  fields:
+  - name: hw_rev
+    description: Provides the hardware version, patch part.
+    bit_offset: 0
+    bit_size: 8
+  - name: hw_version_minor
+    description: Provides the hardware version, minor part.
+    bit_offset: 8
+    bit_size: 8
+  - name: hw_version_major
+    description: Provides the hardware version, major part.
+    bit_offset: 16
+    bit_size: 8
+fieldset/Ier:
+  description: Interrupt Enable.
+  fields:
+  - name: int_en
+    description: Interrupt enable.
+    bit_offset: 0
+    bit_size: 1
+fieldset/IfSr:
+  description: Interface Status.
+  fields:
+  - name: apb_error
+    description: APB error.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Imr:
+  description: Interrupt Mask.
+  fields:
+  - name: int_en_busy
+    description: Busy interrupt.
+    bit_offset: 0
+    bit_size: 1
+  - name: int_en_ok
+    description: Ok interrupt.
+    bit_offset: 1
+    bit_size: 1
+  - name: int_en_error
+    description: Error interrupt.
+    bit_offset: 2
+    bit_size: 1
+  - name: int_en_zeroized
+    description: Zeroized interrupt.
+    bit_offset: 3
+    bit_size: 1
+  - name: int_en_rejected
+    description: Rejected interrupt.
+    bit_offset: 4
+    bit_size: 1
+  - name: int_en_di_request
+    description: Data in request interrupt.
+    bit_offset: 5
+    bit_size: 1
+  - name: int_en_do_request
+    description: Data out request interrupt.
+    bit_offset: 6
+    bit_size: 1
+fieldset/Isr:
+  description: Interrupt Status.
+  fields:
+  - name: int_busy
+    description: Negative edge occurred on Busy.
+    bit_offset: 0
+    bit_size: 1
+  - name: int_ok
+    description: Positive edge occurred on Ok.
+    bit_offset: 1
+    bit_size: 1
+  - name: int_error
+    description: Positive edge occurred on Error.
+    bit_offset: 2
+    bit_size: 1
+  - name: int_zeroized
+    description: Positive edge occurred on Zeroized.
+    bit_offset: 3
+    bit_size: 1
+  - name: int_rejected
+    description: Positive edge occurred on Rejected.
+    bit_offset: 4
+    bit_size: 1
+  - name: int_di_request
+    description: Positive edge occurred on di_request.
+    bit_offset: 5
+    bit_size: 1
+  - name: int_do_request
+    description: Positive edge occurred on do_request.
+    bit_offset: 6
+    bit_size: 1
+fieldset/Misc:
+  description: Miscellaneous.
+  fields:
+  - name: data_endianness
+    description: Defines the endianness of data in DIR and DOR:.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Orr:
+  description: Operation Result.
+  fields:
+  - name: result_code
+    description: Result code of last operation.
+    bit_offset: 0
+    bit_size: 8
+    enum: ResultCode
+  - name: last_operation
+    description: Last operation type.
+    bit_offset: 24
+    bit_size: 8
+    enum: LastOperation
+fieldset/Psr:
+  description: PUF Score.
+  fields:
+  - name: puf_score
+    description: Provides the PUF score obtained during the last Test PUF, Enroll or Start operation.
+    bit_offset: 0
+    bit_size: 4
+fieldset/Sr:
+  description: Status.
+  fields:
+  - name: busy
+    description: Operation in progress.
+    bit_offset: 0
+    bit_size: 1
+  - name: ok
+    description: Last operation successful.
+    bit_offset: 1
+    bit_size: 1
+  - name: error
+    description: Last operation failed.
+    bit_offset: 2
+    bit_size: 1
+  - name: zeroized
+    description: Zeroized or Locked state.
+    bit_offset: 3
+    bit_size: 1
+  - name: rejected
+    description: Operation rejected.
+    bit_offset: 4
+    bit_size: 1
+  - name: di_request
+    description: Indicates the request for data in transfer via the DIR register.
+    bit_offset: 5
+    bit_size: 1
+  - name: do_request
+    description: Indicates the request for data out transfer via the DOR register.
+    bit_offset: 6
+    bit_size: 1
+fieldset/SramCfg:
+  description: SRAM Configuration.
+  fields:
+  - name: enable
+    description: PUF SRAM Controller activation.
+    bit_offset: 0
+    bit_size: 1
+  - name: ckgating
+    description: PUF SRAM Clock Gating control.
+    bit_offset: 2
+    bit_size: 1
+fieldset/SramIntClrEnable:
+  description: Interrupt Enable Clear.
+  fields:
+  - name: ready
+    description: READY Interrupt Enable clear.
+    bit_offset: 0
+    bit_size: 1
+  - name: apb_err
+    description: APB_ERR Interrupt Enable clear.
+    bit_offset: 1
+    bit_size: 1
+fieldset/SramIntClrStatus:
+  description: Interrupt Status Clear.
+  fields:
+  - name: ready
+    description: READY Interrupt Status clear.
+    bit_offset: 0
+    bit_size: 1
+  - name: apb_err
+    description: APB_ERR Interrupt Status Clear.
+    bit_offset: 1
+    bit_size: 1
+    enum: SramIntClrStatusApbErr
+fieldset/SramIntEnable:
+  description: Interrupt Enable.
+  fields:
+  - name: ready
+    description: READY Interrupt Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: sram_apb_err
+    description: APB_ERR Interrupt Enable.
+    bit_offset: 1
+    bit_size: 1
+fieldset/SramIntSetEnable:
+  description: Interrupt Enable Set.
+  fields:
+  - name: ready
+    description: READY Interrupt Enable set.
+    bit_offset: 0
+    bit_size: 1
+  - name: apb_err
+    description: APB_ERR Interrupt Enable set.
+    bit_offset: 1
+    bit_size: 1
+fieldset/SramIntSetStatus:
+  description: Interrupt Status set.
+  fields:
+  - name: ready
+    description: READY Interrupt Status set.
+    bit_offset: 0
+    bit_size: 1
+  - name: apb_err
+    description: APB_ERR Interrupt Status Set.
+    bit_offset: 1
+    bit_size: 1
+    enum: SramIntSetStatusApbErr
+fieldset/SramIntStatus:
+  description: Interrupt Status.
+  fields:
+  - name: ready
+    description: READY Interrupt Status.
+    bit_offset: 0
+    bit_size: 1
+  - name: apb_err
+    description: APB_ERR Interrupt Status.
+    bit_offset: 1
+    bit_size: 1
+fieldset/SramStatus:
+  description: Status.
+  fields:
+  - name: ready
+    description: PUF SRAM Controller State.
+    bit_offset: 0
+    bit_size: 1
+enum/ConfigType:
+  bit_size: 4
+  variants:
+  - name: Safe
+    description: Indicates that PUF configuration is Safe.
+    value: 1
+  - name: Plus
+    description: Indicates that PUF configuration is Plus.
+    value: 2
+enum/ConfigWrap:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Indicates that Wrap is not included.
+    value: 0
+  - name: Disable
+    description: Indicates that Wrap is included.
+    value: 1
+enum/LastOperation:
+  bit_size: 8
+  variants:
+  - name: LoProgress
+    description: Indicates that the operation is in progress.
+    value: 0
+  - name: LoEnroll
+    description: Indicates that the last operation was Enroll.
+    value: 1
+  - name: LoStart
+    description: Indicates that the last operation was Start.
+    value: 2
+  - name: LoReconstruct
+    description: Indicates that the last operation was Reconstruct.
+    value: 3
+  - name: LoStop
+    description: Indicates that the last operation was Stop.
+    value: 5
+  - name: LoGetKey
+    description: Indicates that the last operation was Get Key.
+    value: 6
+  - name: LoUnwrap
+    description: Indicates that the last operation was Unwrap.
+    value: 7
+  - name: LoWrapGenRnd
+    description: Indicates that the last operation was Wrap Generated Random.
+    value: 8
+  - name: LoWrap
+    description: Indicates that the last operation was Wrap.
+    value: 9
+  - name: LoGenRnd
+    description: Indicates that the last operation was Generate Random.
+    value: 15
+  - name: LoTestMemory
+    description: Indicates that the last operation was Test Memory.
+    value: 30
+  - name: LoTestPuf
+    description: Indicates that the last operation was Test PUF.
+    value: 31
+  - name: LoInitialization
+    description: Indicates that the last operation was Initialization.
+    value: 32
+  - name: LoZeroize
+    description: Indicates that the last operation was Zeroize.
+    value: 47
+enum/LcState:
+  bit_size: 8
+  variants:
+  - name: OemOpen
+    description: OEM Develop.
+    value: 3
+  - name: OemSecureWorld
+    description: OEM Develop 2.
+    value: 7
+  - name: OemClosed
+    description: OEM In-field.
+    value: 15
+  - name: OemFieldReturn
+    description: OEM Field return.
+    value: 31
+  - name: FieldReturnNxp
+    description: NXP Field Return/Failure Analysis.
+    value: 63
+  - name: OemLocked
+    description: In-field Locked.
+    value: 207
+  - name: OemShredded
+    description: Bricked.
+    value: 255
+enum/ResultCode:
+  bit_size: 8
+  variants:
+  - name: Ok
+    description: Indicates that the last operation was successful or operation is in progress.
+    value: 0
+  - name: ErrProduct
+    description: Indicates that the AC is not for the current product/version.
+    value: 240
+  - name: ErrProductPh2
+    description: Indicates that the AC in the second phase is not for the current product/version.
+    value: 241
+  - name: ErrTransfer
+    description: Indicates that the AC is corrupted.
+    value: 242
+  - name: ErrTransferPh2
+    description: Indicates that the AC in the second phase is corrupted.
+    value: 243
+  - name: ErrAuth
+    description: Indicates that the authentication of the provided AC failed.
+    value: 244
+  - name: ErrAuthPh2
+    description: Indicates that the authentication of the provided AC failed in the second phase.
+    value: 245
+  - name: ErrPufQuality
+    description: Indicates that the SRAM PUF quality verification fails.
+    value: 246
+  - name: ErrContext
+    description: Indicates that the incorrect or unsupported context is provided.
+    value: 247
+  - name: ErrDestination
+    description: Indicates that a data destination was set that is not allowed according to other settings and the current PUF state.
+    value: 248
+  - name: Failure
+    description: Indicates that the PUF SRAM access has failed.
+    value: 255
+enum/SramIntClrStatusApbErr:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: No effect.
+    value: 0
+  - name: Enable
+    description: Clears the APB_ERR bit field in register INT_STATUS. Automatically reset by the Hardware.
+    value: 1
+enum/SramIntSetStatusApbErr:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: No effect.
+    value: 0
+  - name: Enable
+    description: Clears the APB_ERR bit field in register INT_STATUS. Automatically reset by the Hardware.
+    value: 1

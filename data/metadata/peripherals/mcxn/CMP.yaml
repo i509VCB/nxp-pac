@@ -1,0 +1,724 @@
+block/Cmp:
+  description: LPCMP.
+  items:
+  - name: verid
+    description: Version ID.
+    byte_offset: 0
+    access: Read
+    fieldset: Verid
+  - name: param
+    description: Parameter.
+    byte_offset: 4
+    access: Read
+    fieldset: Param
+  - name: ccr0
+    description: Comparator Control Register 0.
+    byte_offset: 8
+    fieldset: Ccr0
+  - name: ccr1
+    description: Comparator Control Register 1.
+    byte_offset: 12
+    fieldset: Ccr1
+  - name: ccr2
+    description: Comparator Control Register 2.
+    byte_offset: 16
+    fieldset: Ccr2
+  - name: dcr
+    description: DAC Control.
+    byte_offset: 24
+    fieldset: Dcr
+  - name: ier
+    description: Interrupt Enable.
+    byte_offset: 28
+    fieldset: Ier
+  - name: csr
+    description: Comparator Status.
+    byte_offset: 32
+    fieldset: Csr
+  - name: rrcr0
+    description: Round Robin Control Register 0.
+    byte_offset: 36
+    fieldset: Rrcr0
+  - name: rrcr1
+    description: Round Robin Control Register 1.
+    byte_offset: 40
+    fieldset: Rrcr1
+  - name: rrcsr
+    description: Round Robin Control and Status.
+    byte_offset: 44
+    fieldset: Rrcsr
+  - name: rrsr
+    description: Round Robin Status.
+    byte_offset: 48
+    fieldset: Rrsr
+  - name: rrcr2
+    description: Round Robin Control Register 2.
+    byte_offset: 56
+    fieldset: Rrcr2
+fieldset/Ccr0:
+  description: Comparator Control Register 0.
+  fields:
+  - name: cmp_en
+    description: Comparator Enable.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Ccr1:
+  description: Comparator Control Register 1.
+  fields:
+  - name: window_en
+    description: Windowing Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: sample_en
+    description: Sampling Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: dma_en
+    description: DMA Enable.
+    bit_offset: 2
+    bit_size: 1
+  - name: cout_inv
+    description: Comparator Invert.
+    bit_offset: 3
+    bit_size: 1
+  - name: cout_sel
+    description: Comparator Output Select.
+    bit_offset: 4
+    bit_size: 1
+    enum: CoutSel
+  - name: cout_pen
+    description: Comparator Output Pin Enable.
+    bit_offset: 5
+    bit_size: 1
+  - name: couta_owen
+    description: COUTA_OW Enable.
+    bit_offset: 6
+    bit_size: 1
+    enum: CoutaOwen
+  - name: couta_ow
+    description: COUTA Output Level for Closed Window.
+    bit_offset: 7
+    bit_size: 1
+    enum: CoutaOw
+  - name: window_inv
+    description: WINDOW/SAMPLE Signal Invert.
+    bit_offset: 8
+    bit_size: 1
+  - name: window_cls
+    description: COUT Event Window Close.
+    bit_offset: 9
+    bit_size: 1
+  - name: evt_sel
+    description: COUT Event Select.
+    bit_offset: 10
+    bit_size: 2
+    enum: EvtSel
+  - name: func_clk_sel
+    description: Functional Clock Source Select.
+    bit_offset: 12
+    bit_size: 2
+    enum: FuncClkSel
+  - name: filt_cnt
+    description: Filter Sample Count.
+    bit_offset: 16
+    bit_size: 3
+    enum: FiltCnt
+  - name: filt_per
+    description: Filter Sample Period.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Ccr2:
+  description: Comparator Control Register 2.
+  fields:
+  - name: cmp_hpmd
+    description: CMP High Power Mode Select.
+    bit_offset: 0
+    bit_size: 1
+    enum: CmpHpmd
+  - name: cmp_npmd
+    description: CMP Nano Power Mode Select.
+    bit_offset: 1
+    bit_size: 1
+  - name: hystctr
+    description: Comparator Hysteresis Control.
+    bit_offset: 4
+    bit_size: 2
+    enum: Hystctr
+  - name: psel
+    description: Plus Input MUX Select.
+    bit_offset: 16
+    bit_size: 3
+    enum: Psel
+  - name: msel
+    description: Minus Input MUX Select.
+    bit_offset: 20
+    bit_size: 3
+    enum: Msel
+fieldset/Csr:
+  description: Comparator Status.
+  fields:
+  - name: cfr
+    description: Analog Comparator Flag Rising.
+    bit_offset: 0
+    bit_size: 1
+  - name: cff
+    description: Analog Comparator Flag Falling.
+    bit_offset: 1
+    bit_size: 1
+  - name: rrf
+    description: Round-Robin Flag.
+    bit_offset: 2
+    bit_size: 1
+  - name: cout
+    description: Analog Comparator Output.
+    bit_offset: 8
+    bit_size: 1
+fieldset/Dcr:
+  description: DAC Control.
+  fields:
+  - name: dac_en
+    description: DAC Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: dac_hpmd
+    description: DAC High Power Mode.
+    bit_offset: 1
+    bit_size: 1
+  - name: vrsel
+    description: DAC Reference High Voltage Source Select.
+    bit_offset: 8
+    bit_size: 1
+    enum: Vrsel
+  - name: dac_data
+    description: DAC Output Voltage Select.
+    bit_offset: 16
+    bit_size: 8
+fieldset/Ier:
+  description: Interrupt Enable.
+  fields:
+  - name: cfr_ie
+    description: Comparator Flag Rising Interrupt Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: cff_ie
+    description: Comparator Flag Falling Interrupt Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: rrf_ie
+    description: Round-Robin Flag Interrupt Enable.
+    bit_offset: 2
+    bit_size: 1
+fieldset/Param:
+  description: Parameter.
+  fields:
+  - name: dac_res
+    description: DAC Resolution.
+    bit_offset: 0
+    bit_size: 4
+    enum: DacRes
+fieldset/Rrcr0:
+  description: Round Robin Control Register 0.
+  fields:
+  - name: rr_en
+    description: Round-Robin Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: rr_trg_sel
+    description: Round-Robin Trigger Select.
+    bit_offset: 1
+    bit_size: 1
+    enum: RrTrgSel
+  - name: rr_nsam
+    description: Number of Sample Clocks.
+    bit_offset: 8
+    bit_size: 2
+    enum: RrNsam
+  - name: rr_clk_sel
+    description: Round Robin Clock Source Select.
+    bit_offset: 12
+    bit_size: 2
+    enum: RrClkSel
+  - name: rr_initmod
+    description: Initialization Delay Modulus.
+    bit_offset: 16
+    bit_size: 6
+    enum: RrInitmod
+  - name: rr_sample_cnt
+    description: Number of Sample for One Channel.
+    bit_offset: 24
+    bit_size: 4
+    enum: RrSampleCnt
+  - name: rr_sample_threshold
+    description: Sample Time Threshold.
+    bit_offset: 28
+    bit_size: 4
+    enum: RrSampleThreshold
+fieldset/Rrcr1:
+  description: Round Robin Control Register 1.
+  fields:
+  - name: rr_chen
+    description: Channel Input Enable in Trigger Mode.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 8
+      stride: 1
+  - name: fixp
+    description: Fixed Port.
+    bit_offset: 16
+    bit_size: 1
+    enum: Fixp
+  - name: fixch
+    description: Fixed Channel Select.
+    bit_offset: 20
+    bit_size: 3
+    enum: Fixch
+fieldset/Rrcr2:
+  description: Round Robin Control Register 2.
+  fields:
+  - name: rr_timer_reload
+    description: Number of Sample Clocks.
+    bit_offset: 0
+    bit_size: 28
+  - name: rr_timer_en
+    description: Round-Robin Internal Timer Enable.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Rrcsr:
+  description: Round Robin Control and Status.
+  fields:
+  - name: rr_chout
+    description: Comparison Result for Channel.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 8
+      stride: 1
+fieldset/Rrsr:
+  description: Round Robin Status.
+  fields:
+  - name: rr_chf
+    description: Channel Input Changed Flag.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 8
+      stride: 1
+fieldset/Verid:
+  description: Version ID.
+  fields:
+  - name: feature
+    description: Feature Specification Number.
+    bit_offset: 0
+    bit_size: 16
+    enum: Feature
+  - name: minor
+    description: Minor Version Number.
+    bit_offset: 16
+    bit_size: 8
+  - name: major
+    description: Major Version Number.
+    bit_offset: 24
+    bit_size: 8
+enum/CmpHpmd:
+  bit_size: 1
+  variants:
+  - name: Low
+    description: Low power (speed) comparison mode.
+    value: 0
+  - name: High
+    description: High power (speed) comparison mode.
+    value: 1
+enum/CoutSel:
+  bit_size: 1
+  variants:
+  - name: Cout
+    description: Use COUT (filtered).
+    value: 0
+  - name: Couta
+    description: Use COUTA (unfiltered).
+    value: 1
+enum/CoutaOw:
+  bit_size: 1
+  variants:
+  - name: Couta0
+    description: COUTA is 0.
+    value: 0
+  - name: Couta1
+    description: COUTA is 1.
+    value: 1
+enum/CoutaOwen:
+  bit_size: 1
+  variants:
+  - name: Sampled
+    description: COUTA holds the last sampled value.
+    value: 0
+  - name: CoutaOw
+    description: Enables the COUTA signal value to be defined by COUTA_OW.
+    value: 1
+enum/DacRes:
+  bit_size: 4
+  variants:
+  - name: Reso4
+    description: 4-bit DAC.
+    value: 0
+  - name: Reso6
+    description: 6-bit DAC.
+    value: 1
+  - name: Reso8
+    description: 8-bit DAC.
+    value: 2
+  - name: Reso10
+    description: 10-bit DAC.
+    value: 3
+  - name: Reso12
+    description: 12-bit DAC.
+    value: 4
+  - name: Reso14
+    description: 14-bit DAC.
+    value: 5
+  - name: Reso16
+    description: 16-bit DAC.
+    value: 6
+enum/EvtSel:
+  bit_size: 2
+  variants:
+  - name: Rising
+    description: Rising edge.
+    value: 0
+  - name: Falling
+    description: Falling edge.
+    value: 1
+  - name: Both
+    description: Both edges.
+    value: 2
+enum/Feature:
+  bit_size: 16
+  variants:
+  - name: RoundRobin
+    description: Round robin feature.
+    value: 1
+enum/FiltCnt:
+  bit_size: 3
+  variants:
+  - name: Bypassed
+    description: 'Filter is bypassed: COUT = COUTA.'
+    value: 0
+  - name: Sample1
+    description: 1 consecutive sample (Comparator output is simply sampled.).
+    value: 1
+  - name: Sample2
+    description: 2 consecutive samples.
+    value: 2
+  - name: Sample3
+    description: 3 consecutive samples.
+    value: 3
+  - name: Sample4
+    description: 4 consecutive samples.
+    value: 4
+  - name: Sample5
+    description: 5 consecutive samples.
+    value: 5
+  - name: Sample6
+    description: 6 consecutive samples.
+    value: 6
+  - name: Sample7
+    description: 7 consecutive samples.
+    value: 7
+enum/Fixch:
+  bit_size: 3
+  variants:
+  - name: FixCh0
+    description: Channel 0.
+    value: 0
+  - name: FixCh1
+    description: Channel 1.
+    value: 1
+  - name: FixCh2
+    description: Channel 2.
+    value: 2
+  - name: FixCh3
+    description: Channel 3.
+    value: 3
+  - name: FixCh4
+    description: Channel 4.
+    value: 4
+  - name: FixCh5
+    description: Channel 5.
+    value: 5
+  - name: FixCh6
+    description: Channel 6.
+    value: 6
+  - name: FixCh7
+    description: Channel 7.
+    value: 7
+enum/Fixp:
+  bit_size: 1
+  variants:
+  - name: FixPlus
+    description: Fix the plus port. Sweep only the inputs to the minus port.
+    value: 0
+  - name: FixMinus
+    description: Fix the minus port. Sweep only the inputs to the plus port.
+    value: 1
+enum/FuncClkSel:
+  bit_size: 2
+  variants:
+  - name: Func0
+    description: Select functional clock source 0.
+    value: 0
+  - name: Func1
+    description: Select functional clock source 1.
+    value: 1
+  - name: Func2
+    description: Select functional clock source 2.
+    value: 2
+  - name: Func3
+    description: Select functional clock source 3.
+    value: 3
+enum/Hystctr:
+  bit_size: 2
+  variants:
+  - name: Level0
+    description: 'Level 0: Analog comparator hysteresis 0 mV.'
+    value: 0
+  - name: Level1
+    description: 'Level 1: Analog comparator hysteresis 10 mV.'
+    value: 1
+  - name: Level2
+    description: 'Level 2: Analog comparator hysteresis 20 mV.'
+    value: 2
+  - name: Level3
+    description: 'Level 3: Analog comparator hysteresis 30 mV.'
+    value: 3
+enum/Msel:
+  bit_size: 3
+  variants:
+  - name: Input0
+    description: Input 0m.
+    value: 0
+  - name: Input1
+    description: Input 1m.
+    value: 1
+  - name: Input2
+    description: Input 2m.
+    value: 2
+  - name: Input3
+    description: Input 3m.
+    value: 3
+  - name: Input4
+    description: Input 4m.
+    value: 4
+  - name: Input5
+    description: Input 5m.
+    value: 5
+  - name: Input7
+    description: Internal DAC output.
+    value: 7
+enum/Psel:
+  bit_size: 3
+  variants:
+  - name: Input0
+    description: Input 0p.
+    value: 0
+  - name: Input1
+    description: Input 1p.
+    value: 1
+  - name: Input2
+    description: Input 2p.
+    value: 2
+  - name: Input3
+    description: Input 3p.
+    value: 3
+  - name: Input4
+    description: Input 4p.
+    value: 4
+  - name: Input5
+    description: Input 5p.
+    value: 5
+  - name: Input7
+    description: Internal DAC output.
+    value: 7
+enum/RrClkSel:
+  bit_size: 2
+  variants:
+  - name: Rr0
+    description: Select Round Robin clock Source 0.
+    value: 0
+  - name: Rr1
+    description: Select Round Robin clock Source 1.
+    value: 1
+  - name: Rr2
+    description: Select Round Robin clock Source 2.
+    value: 2
+  - name: Rr3
+    description: Select Round Robin clock Source 3.
+    value: 3
+enum/RrInitmod:
+  bit_size: 6
+  variants:
+  - name: Mod63
+    description: 63 cycles (same as 111111b).
+    value: 0
+  - name: Mod1631
+    description: 1 to 63 cycles.
+    value: 1
+  - name: Mod1632
+    description: 1 to 63 cycles.
+    value: 2
+  - name: Mod1633
+    description: 1 to 63 cycles.
+    value: 3
+  - name: Mod1634
+    description: 1 to 63 cycles.
+    value: 4
+  - name: Mod1635
+    description: 1 to 63 cycles.
+    value: 5
+  - name: Mod1636
+    description: 1 to 63 cycles.
+    value: 6
+  - name: Mod1637
+    description: 1 to 63 cycles.
+    value: 7
+  - name: Mod1638
+    description: 1 to 63 cycles.
+    value: 8
+  - name: Mod1639
+    description: 1 to 63 cycles.
+    value: 9
+enum/RrNsam:
+  bit_size: 2
+  variants:
+  - name: Wait0
+    description: 0 clock.
+    value: 0
+  - name: Wait1
+    description: 1 clock.
+    value: 1
+  - name: Wait2
+    description: 2 clocks.
+    value: 2
+  - name: Wait3
+    description: 3 clocks.
+    value: 3
+enum/RrSampleCnt:
+  bit_size: 4
+  variants:
+  - name: Sample0
+    description: 1 samples.
+    value: 0
+  - name: Sample1
+    description: 2 samples.
+    value: 1
+  - name: Sample2
+    description: 3 samples.
+    value: 2
+  - name: Sample3
+    description: 4 samples.
+    value: 3
+  - name: Sample4
+    description: 5 samples.
+    value: 4
+  - name: Sample5
+    description: 6 samples.
+    value: 5
+  - name: Sample6
+    description: 7 samples.
+    value: 6
+  - name: Sample7
+    description: 8 samples.
+    value: 7
+  - name: Sample8
+    description: 9 samples.
+    value: 8
+  - name: Sample9
+    description: 10 samples.
+    value: 9
+  - name: Sample10
+    description: 11 samples.
+    value: 10
+  - name: Sample11
+    description: 12 samples.
+    value: 11
+  - name: Sample12
+    description: 13 samples.
+    value: 12
+  - name: Sample13
+    description: 14 samples.
+    value: 13
+  - name: Sample14
+    description: 15 samples.
+    value: 14
+  - name: Sample15
+    description: 16 samples.
+    value: 15
+enum/RrSampleThreshold:
+  bit_size: 4
+  variants:
+  - name: Sample0
+    description: At least 1 sampled "1", the final result is "1".
+    value: 0
+  - name: Sample1
+    description: At least 2 sampled "1", the final result is "1".
+    value: 1
+  - name: Sample2
+    description: At least 3 sampled "1", the final result is "1".
+    value: 2
+  - name: Sample3
+    description: At least 4 sampled "1", the final result is "1".
+    value: 3
+  - name: Sample4
+    description: At least 5 sampled "1", the final result is "1".
+    value: 4
+  - name: Sample5
+    description: At least 6 sampled "1", the final result is "1".
+    value: 5
+  - name: Sample6
+    description: At least 7 sampled "1", the final result is "1".
+    value: 6
+  - name: Sample7
+    description: At least 8 sampled "1", the final result is "1".
+    value: 7
+  - name: Sample8
+    description: At least 9 sampled "1", the final result is "1".
+    value: 8
+  - name: Sample9
+    description: At least 10 sampled "1", the final result is "1".
+    value: 9
+  - name: Sample10
+    description: At least 11 sampled "1", the final result is "1".
+    value: 10
+  - name: Sample11
+    description: At least 12 sampled "1", the final result is "1".
+    value: 11
+  - name: Sample12
+    description: At least 13 sampled "1", the final result is "1".
+    value: 12
+  - name: Sample13
+    description: At least 14 sampled "1", the final result is "1".
+    value: 13
+  - name: Sample14
+    description: At least 15 sampled "1", the final result is "1".
+    value: 14
+  - name: Sample15
+    description: At least 16 sampled "1", the final result is "1".
+    value: 15
+enum/RrTrgSel:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: External trigger.
+    value: 0
+  - name: Disable
+    description: Internal trigger.
+    value: 1
+enum/Vrsel:
+  bit_size: 1
+  variants:
+  - name: Vref0
+    description: VREFH0.
+    value: 0
+  - name: Vref1
+    description: VREFH1.
+    value: 1

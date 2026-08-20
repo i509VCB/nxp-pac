@@ -1,0 +1,107 @@
+block/Eim:
+  description: EIM.
+  items:
+  - name: eimcr
+    description: Error Injection Module Configuration Register.
+    byte_offset: 0
+    fieldset: Eimcr
+  - name: eichen
+    description: Error Injection Channel Enable register.
+    byte_offset: 4
+    fieldset: Eichen
+  - name: eichd_word0
+    description: Error Injection Channel Descriptor, Word0.
+    array:
+      len: 7
+      stride: 64
+    byte_offset: 256
+    fieldset: EichdWord0
+  - name: eichd7_word0
+    description: Error Injection Channel Descriptor 7, Word0.
+    byte_offset: 704
+    fieldset: Eichd7Word0
+  - name: eichd8_word0
+    description: Error Injection Channel Descriptor 8, Word0.
+    byte_offset: 768
+    fieldset: Eichd8Word0
+  - name: eichd_word1
+    description: Error Injection Channel Descriptor, Word1.
+    array:
+      len: 9
+      stride: 64
+    byte_offset: 260
+    fieldset: EichdWord1
+fieldset/EichdWord0:
+  description: Error Injection Channel Descriptor, Word0.
+  fields:
+  - name: chkbit_mask
+    description: Checkbit Mask.
+    bit_offset: 25
+    bit_size: 7
+fieldset/Eichd7Word0:
+  description: Error Injection Channel Descriptor 7, Word0.
+  fields:
+  - name: chkbit_mask
+    description: Checkbit Mask.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Eichd8Word0:
+  description: Error Injection Channel Descriptor 8, Word0.
+  fields:
+  - name: chkbit_mask
+    description: Checkbit Mask.
+    bit_offset: 28
+    bit_size: 4
+fieldset/EichdWord1:
+  description: Error Injection Channel Descriptor, Word1.
+  fields:
+  - name: b0_3data_mask
+    description: Data Mask Bytes 0-3.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Eichen:
+  description: Error Injection Channel Enable register.
+  fields:
+  - name: eich8en
+    description: Error Injection Channel 8 Enable.
+    bit_offset: 23
+    bit_size: 1
+  - name: eich7en
+    description: Error Injection Channel 7 Enable.
+    bit_offset: 24
+    bit_size: 1
+  - name: eich6en
+    description: Error Injection Channel 6 Enable.
+    bit_offset: 25
+    bit_size: 1
+  - name: eich5en
+    description: Error Injection Channel 5 Enable.
+    bit_offset: 26
+    bit_size: 1
+  - name: eich4en
+    description: Error Injection Channel 4 Enable.
+    bit_offset: 27
+    bit_size: 1
+  - name: eich3en
+    description: Error Injection Channel 3 Enable.
+    bit_offset: 28
+    bit_size: 1
+  - name: eich2en
+    description: Error Injection Channel 2 Enable.
+    bit_offset: 29
+    bit_size: 1
+  - name: eich1en
+    description: Error Injection Channel 1 Enable.
+    bit_offset: 30
+    bit_size: 1
+  - name: eich0en
+    description: Error Injection Channel 0 Enable.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Eimcr:
+  description: Error Injection Module Configuration Register.
+  fields:
+  - name: geien
+    description: Global Error Injection Enable.
+    bit_offset: 0
+    bit_size: 1

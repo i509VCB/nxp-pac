@@ -1,0 +1,3081 @@
+block/Can:
+  description: CAN.
+  items:
+  - name: mcr
+    description: Module Configuration.
+    byte_offset: 0
+    fieldset: Mcr
+  - name: ctrl1
+    description: Control 1.
+    byte_offset: 4
+    fieldset: Ctrl1
+  - name: timer
+    description: Free-Running Timer.
+    byte_offset: 8
+    fieldset: Timer
+  - name: rxmgmask
+    description: RX Message Buffers Global Mask.
+    byte_offset: 16
+    fieldset: Rxmgmask
+  - name: rx14mask
+    description: Receive 14 Mask.
+    byte_offset: 20
+    fieldset: Rx14mask
+  - name: rx15mask
+    description: Receive 15 Mask.
+    byte_offset: 24
+    fieldset: Rx15mask
+  - name: ecr
+    description: Error Counter.
+    byte_offset: 28
+    fieldset: Ecr
+  - name: esr1
+    description: Error and Status 1.
+    byte_offset: 32
+    fieldset: Esr1
+  - name: imask1
+    description: Interrupt Masks 1.
+    byte_offset: 40
+    fieldset: Imask1
+  - name: iflag1
+    description: Interrupt Flags 1.
+    byte_offset: 48
+    fieldset: Iflag1
+  - name: ctrl2
+    description: Control 2.
+    byte_offset: 52
+    fieldset: Ctrl2
+  - name: esr2
+    description: Error and Status 2.
+    byte_offset: 56
+    access: Read
+    fieldset: Esr2
+  - name: crcr
+    description: Cyclic Redundancy Check.
+    byte_offset: 68
+    access: Read
+    fieldset: Crcr
+  - name: rxfgmask
+    description: Legacy RX FIFO Global Mask.
+    byte_offset: 72
+    fieldset: Rxfgmask
+  - name: rxfir
+    description: Legacy RX FIFO Information.
+    byte_offset: 76
+    access: Read
+    fieldset: Rxfir
+  - name: cbt
+    description: CAN Bit Timing.
+    byte_offset: 80
+    fieldset: Cbt
+  - description: Message Buffer CS Register.
+    name: cs
+    byte_offset: 128
+    fieldset: Cs
+    array:
+      len: 32
+      stride: 16
+  - description: Message Buffer CS Register.
+    name: mb_16b_cs
+    byte_offset: 128
+    fieldset: Mb16bCs
+    array:
+      len: 21
+      stride: 24
+  - description: Message Buffer CS Register.
+    name: mb_32b_cs
+    byte_offset: 128
+    fieldset: Mb32bCs
+    array:
+      len: 12
+      stride: 40
+  - description: Message Buffer CS Register.
+    name: mb_64b_cs
+    byte_offset: 128
+    fieldset: Mb64bCs
+    array:
+      len: 7
+      stride: 72
+  - description: Message Buffer CS Register.
+    name: mb_8b_cs
+    byte_offset: 128
+    fieldset: Mb8bCs
+    array:
+      len: 32
+      stride: 16
+  - description: Message Buffer ID Register.
+    name: id
+    byte_offset: 132
+    fieldset: Id
+    array:
+      len: 32
+      stride: 16
+  - description: Message Buffer ID Register.
+    name: mb_16b_id
+    byte_offset: 132
+    fieldset: Mb16bId
+    array:
+      len: 21
+      stride: 24
+  - description: Message Buffer ID Register.
+    name: mb_32b_id
+    byte_offset: 132
+    fieldset: Mb32bId
+    array:
+      len: 12
+      stride: 40
+  - description: Message Buffer ID Register.
+    name: mb_64b_id
+    byte_offset: 132
+    fieldset: Mb64bId
+    array:
+      len: 7
+      stride: 72
+  - description: Message Buffer ID Register.
+    name: mb_8b_id
+    byte_offset: 132
+    fieldset: Mb8bId
+    array:
+      len: 32
+      stride: 16
+  - description: Message Buffer WORD_16B Register.
+    name: mb_16b_word0
+    byte_offset: 136
+    fieldset: Mb16bWord0
+    array:
+      len: 21
+      stride: 24
+  - description: Message Buffer WORD_32B Register.
+    name: mb_32b_word0
+    byte_offset: 136
+    fieldset: Mb32bWord0
+    array:
+      len: 12
+      stride: 40
+  - description: Message Buffer WORD_64B Register.
+    name: mb_64b_word0
+    byte_offset: 136
+    fieldset: Mb64bWord0
+    array:
+      len: 7
+      stride: 72
+  - description: Message Buffer WORD_8B Register.
+    name: mb_8b_word0
+    byte_offset: 136
+    fieldset: Mb8bWord0
+    array:
+      len: 32
+      stride: 16
+  - description: Message Buffer WORD0 Register.
+    name: word0
+    byte_offset: 136
+    fieldset: Word0
+    array:
+      len: 32
+      stride: 16
+  - description: Message Buffer WORD_16B Register.
+    name: mb_16b_word1
+    byte_offset: 140
+    fieldset: Mb16bWord1
+    array:
+      len: 21
+      stride: 24
+  - description: Message Buffer WORD_32B Register.
+    name: mb_32b_word1
+    byte_offset: 140
+    fieldset: Mb32bWord1
+    array:
+      len: 12
+      stride: 40
+  - description: Message Buffer WORD_64B Register.
+    name: mb_64b_word1
+    byte_offset: 140
+    fieldset: Mb64bWord1
+    array:
+      len: 7
+      stride: 72
+  - description: Message Buffer WORD_8B Register.
+    name: mb_8b_word1
+    byte_offset: 140
+    fieldset: Mb8bWord1
+    array:
+      len: 32
+      stride: 16
+  - description: Message Buffer WORD1 Register.
+    name: word1
+    byte_offset: 140
+    fieldset: Word1
+    array:
+      len: 32
+      stride: 16
+  - description: Message Buffer WORD_16B Register.
+    name: mb_16b_word2
+    byte_offset: 144
+    fieldset: Mb16bWord2
+    array:
+      len: 21
+      stride: 24
+  - description: Message Buffer WORD_32B Register.
+    name: mb_32b_word2
+    byte_offset: 144
+    fieldset: Mb32bWord2
+    array:
+      len: 12
+      stride: 40
+  - description: Message Buffer WORD_64B Register.
+    name: mb_64b_word2
+    byte_offset: 144
+    fieldset: Mb64bWord2
+    array:
+      len: 7
+      stride: 72
+  - description: Message Buffer WORD_16B Register.
+    name: mb_16b_word3
+    byte_offset: 148
+    fieldset: Mb16bWord3
+    array:
+      len: 21
+      stride: 24
+  - description: Message Buffer WORD_32B Register.
+    name: mb_32b_word3
+    byte_offset: 148
+    fieldset: Mb32bWord3
+    array:
+      len: 12
+      stride: 40
+  - description: Message Buffer WORD_64B Register.
+    name: mb_64b_word3
+    byte_offset: 148
+    fieldset: Mb64bWord3
+    array:
+      len: 7
+      stride: 72
+  - description: Message Buffer WORD_32B Register.
+    name: mb_32b_word4
+    byte_offset: 152
+    fieldset: Mb32bWord4
+    array:
+      len: 12
+      stride: 40
+  - description: Message Buffer WORD_64B Register.
+    name: mb_64b_word4
+    byte_offset: 152
+    fieldset: Mb64bWord4
+    array:
+      len: 7
+      stride: 72
+  - description: Message Buffer WORD_32B Register.
+    name: mb_32b_word5
+    byte_offset: 156
+    fieldset: Mb32bWord5
+    array:
+      len: 12
+      stride: 40
+  - description: Message Buffer WORD_64B Register.
+    name: mb_64b_word5
+    byte_offset: 156
+    fieldset: Mb64bWord5
+    array:
+      len: 7
+      stride: 72
+  - description: Message Buffer WORD_32B Register.
+    name: mb_32b_word6
+    byte_offset: 160
+    fieldset: Mb32bWord6
+    array:
+      len: 12
+      stride: 40
+  - description: Message Buffer WORD_64B Register.
+    name: mb_64b_word6
+    byte_offset: 160
+    fieldset: Mb64bWord6
+    array:
+      len: 7
+      stride: 72
+  - description: Message Buffer WORD_32B Register.
+    name: mb_32b_word7
+    byte_offset: 164
+    fieldset: Mb32bWord7
+    array:
+      len: 12
+      stride: 40
+  - description: Message Buffer WORD_64B Register.
+    name: mb_64b_word7
+    byte_offset: 164
+    fieldset: Mb64bWord7
+    array:
+      len: 7
+      stride: 72
+  - description: Message Buffer WORD_64B Register.
+    name: mb_64b_word8
+    byte_offset: 168
+    fieldset: Mb64bWord8
+    array:
+      len: 7
+      stride: 72
+  - description: Message Buffer WORD_64B Register.
+    name: mb_64b_word9
+    byte_offset: 172
+    fieldset: Mb64bWord9
+    array:
+      len: 7
+      stride: 72
+  - description: Message Buffer WORD_64B Register.
+    name: mb_64b_word10
+    byte_offset: 176
+    fieldset: Mb64bWord10
+    array:
+      len: 7
+      stride: 72
+  - description: Message Buffer WORD_64B Register.
+    name: mb_64b_word11
+    byte_offset: 180
+    fieldset: Mb64bWord11
+    array:
+      len: 7
+      stride: 72
+  - description: Message Buffer WORD_64B Register.
+    name: mb_64b_word12
+    byte_offset: 184
+    fieldset: Mb64bWord12
+    array:
+      len: 7
+      stride: 72
+  - description: Message Buffer WORD_64B Register.
+    name: mb_64b_word13
+    byte_offset: 188
+    fieldset: Mb64bWord13
+    array:
+      len: 7
+      stride: 72
+  - description: Message Buffer WORD_64B Register.
+    name: mb_64b_word14
+    byte_offset: 192
+    fieldset: Mb64bWord14
+    array:
+      len: 7
+      stride: 72
+  - description: Message Buffer WORD_64B Register.
+    name: mb_64b_word15
+    byte_offset: 196
+    fieldset: Mb64bWord15
+    array:
+      len: 7
+      stride: 72
+  - name: rximr
+    description: Receive Individual Mask.
+    array:
+      len: 32
+      stride: 4
+    byte_offset: 2176
+    fieldset: Rximr
+  - name: ctrl1_pn
+    description: Pretended Networking Control 1.
+    byte_offset: 2816
+    fieldset: Ctrl1Pn
+  - name: ctrl2_pn
+    description: Pretended Networking Control 2.
+    byte_offset: 2820
+    fieldset: Ctrl2Pn
+  - name: wu_mtc
+    description: Pretended Networking Wake-Up Match.
+    byte_offset: 2824
+    fieldset: WuMtc
+  - name: flt_id1
+    description: Pretended Networking ID Filter 1.
+    byte_offset: 2828
+    fieldset: FltId1
+  - name: flt_dlc
+    description: Pretended Networking Data Length Code (DLC) Filter.
+    byte_offset: 2832
+    fieldset: FltDlc
+  - name: pl1_lo
+    description: Pretended Networking Payload Low Filter 1.
+    byte_offset: 2836
+    fieldset: Pl1Lo
+  - name: pl1_hi
+    description: Pretended Networking Payload High Filter 1.
+    byte_offset: 2840
+    fieldset: Pl1Hi
+  - name: flt_id2_idmask
+    description: Pretended Networking ID Filter 2 or ID Mask.
+    byte_offset: 2844
+    fieldset: FltId2Idmask
+  - name: pl2_plmask_lo
+    description: Pretended Networking Payload Low Filter 2 and Payload Low Mask.
+    byte_offset: 2848
+    fieldset: Pl2PlmaskLo
+  - name: pl2_plmask_hi
+    description: Pretended Networking Payload High Filter 2 and Payload High Mask.
+    byte_offset: 2852
+    fieldset: Pl2PlmaskHi
+  - name: wmb
+    description: 'Array of registers: WMB_CS, WMB_ID, WMB_D03, WMB_D47.'
+    array:
+      len: 4
+      stride: 16
+    byte_offset: 2880
+    block: Wmb
+  - name: eprs
+    description: Enhanced CAN Bit Timing Prescalers.
+    byte_offset: 3056
+    fieldset: Eprs
+  - name: encbt
+    description: Enhanced Nominal CAN Bit Timing.
+    byte_offset: 3060
+    fieldset: Encbt
+  - name: edcbt
+    description: Enhanced Data Phase CAN Bit Timing.
+    byte_offset: 3064
+    fieldset: Edcbt
+  - name: etdc
+    description: Enhanced Transceiver Delay Compensation.
+    byte_offset: 3068
+    fieldset: Etdc
+  - name: fdctrl
+    description: CAN FD Control.
+    byte_offset: 3072
+    fieldset: Fdctrl
+  - name: fdcbt
+    description: CAN FD Bit Timing.
+    byte_offset: 3076
+    fieldset: Fdcbt
+  - name: fdcrc
+    description: CAN FD CRC.
+    byte_offset: 3080
+    access: Read
+    fieldset: Fdcrc
+  - name: erfcr
+    description: Enhanced RX FIFO Control.
+    byte_offset: 3084
+    fieldset: Erfcr
+  - name: erfier
+    description: Enhanced RX FIFO Interrupt Enable.
+    byte_offset: 3088
+    fieldset: Erfier
+  - name: erfsr
+    description: Enhanced RX FIFO Status.
+    byte_offset: 3092
+    fieldset: Erfsr
+  - name: erffel
+    description: Enhanced RX FIFO Filter Element.
+    array:
+      len: 32
+      stride: 4
+    byte_offset: 12288
+    fieldset: Erffel
+block/Wmb:
+  description: 'Array of registers: WMB_CS, WMB_ID, WMB_D03, WMB_D47.'
+  items:
+  - name: wmb_cs
+    description: Wake-Up Message Buffer.
+    byte_offset: 0
+    access: Read
+    fieldset: WmbCs
+  - name: wmb_id
+    description: Wake-Up Message Buffer for ID.
+    byte_offset: 4
+    access: Read
+    fieldset: WmbId
+  - name: wmb_d03
+    description: Wake-Up Message Buffer for Data 0-3.
+    byte_offset: 8
+    access: Read
+    fieldset: WmbD03
+  - name: wmb_d47
+    description: Wake-Up Message Buffer Register Data 4-7.
+    byte_offset: 12
+    access: Read
+    fieldset: WmbD47
+fieldset/Cbt:
+  description: CAN Bit Timing.
+  fields:
+  - name: epseg2
+    description: Extended Phase Segment 2.
+    bit_offset: 0
+    bit_size: 5
+  - name: epseg1
+    description: Extended Phase Segment 1.
+    bit_offset: 5
+    bit_size: 5
+  - name: epropseg
+    description: Extended Propagation Segment.
+    bit_offset: 10
+    bit_size: 6
+  - name: erjw
+    description: Extended Resync Jump Width.
+    bit_offset: 16
+    bit_size: 5
+  - name: epresdiv
+    description: Extended Prescaler Division Factor.
+    bit_offset: 21
+    bit_size: 10
+  - name: btf
+    description: Bit Timing Format Enable.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Crcr:
+  description: Cyclic Redundancy Check.
+  fields:
+  - name: txcrc
+    description: Transmitted CRC value.
+    bit_offset: 0
+    bit_size: 15
+  - name: mbcrc
+    description: CRC Message Buffer.
+    bit_offset: 16
+    bit_size: 7
+fieldset/Cs:
+  description: Message Buffer CS Register.
+  fields:
+  - name: time_stamp
+    description: Free-Running Counter Time stamp. This 16-bit field is a copy of the Free-Running Timer, captured for Tx and Rx frames at the time when the beginning of the Identifier field appears on the CAN bus.
+    bit_offset: 0
+    bit_size: 16
+  - name: dlc
+    description: Length of the data to be stored/transmitted.
+    bit_offset: 16
+    bit_size: 4
+  - name: rtr
+    description: Remote Transmission Request. One/zero for remote/data frame.
+    bit_offset: 20
+    bit_size: 1
+  - name: ide
+    description: ID Extended. One/zero for extended/standard format frame.
+    bit_offset: 21
+    bit_size: 1
+  - name: srr
+    description: Substitute Remote Request. Contains a fixed recessive bit.
+    bit_offset: 22
+    bit_size: 1
+  - name: code
+    description: Message Buffer Code. This 4-bit field can be accessed (read or write) by the CPU and by the FlexCAN module itself, as part of the message buffer matching and arbitration process.
+    bit_offset: 24
+    bit_size: 4
+  - name: esi
+    description: Error State Indicator. This bit indicates if the transmitting node is error active or error passive.
+    bit_offset: 29
+    bit_size: 1
+  - name: brs
+    description: Bit Rate Switch. This bit defines whether the bit rate is switched inside a CAN FD format frame.
+    bit_offset: 30
+    bit_size: 1
+  - name: edl
+    description: Extended Data Length. This bit distinguishes between CAN format and CAN FD format frames. The EDL bit must not be set for Message Buffers configured to RANSWER with code field 0b1010.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Ctrl1:
+  description: Control 1.
+  fields:
+  - name: propseg
+    description: Propagation Segment.
+    bit_offset: 0
+    bit_size: 3
+  - name: lom
+    description: Listen-Only Mode.
+    bit_offset: 3
+    bit_size: 1
+    enum: Lom
+  - name: lbuf
+    description: Lowest Buffer Transmitted First.
+    bit_offset: 4
+    bit_size: 1
+    enum: Lbuf
+  - name: tsyn
+    description: Timer Sync.
+    bit_offset: 5
+    bit_size: 1
+    enum: Tsyn
+  - name: boffrec
+    description: Bus Off Recovery.
+    bit_offset: 6
+    bit_size: 1
+    enum: Boffrec
+  - name: smp
+    description: CAN Bit Sampling.
+    bit_offset: 7
+    bit_size: 1
+    enum: Smp
+  - name: rwrnmsk
+    description: RX Warning Interrupt Mask.
+    bit_offset: 10
+    bit_size: 1
+    enum: Rwrnmsk
+  - name: twrnmsk
+    description: TX Warning Interrupt Mask.
+    bit_offset: 11
+    bit_size: 1
+    enum: Twrnmsk
+  - name: lpb
+    description: Loopback Mode.
+    bit_offset: 12
+    bit_size: 1
+    enum: Lpb
+  - name: errmsk
+    description: Error Interrupt Mask.
+    bit_offset: 14
+    bit_size: 1
+    enum: Errmsk
+  - name: boffmsk
+    description: Bus Off Interrupt Mask.
+    bit_offset: 15
+    bit_size: 1
+    enum: Boffmsk
+  - name: pseg2
+    description: Phase Segment 2.
+    bit_offset: 16
+    bit_size: 3
+  - name: pseg1
+    description: Phase Segment 1.
+    bit_offset: 19
+    bit_size: 3
+  - name: rjw
+    description: Resync Jump Width.
+    bit_offset: 22
+    bit_size: 2
+  - name: presdiv
+    description: Prescaler Division Factor.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Ctrl1Pn:
+  description: Pretended Networking Control 1.
+  fields:
+  - name: fcs
+    description: Filtering Combination Selection.
+    bit_offset: 0
+    bit_size: 2
+    enum: Fcs
+  - name: idfs
+    description: ID Filtering Selection.
+    bit_offset: 2
+    bit_size: 2
+    enum: Idfs
+  - name: plfs
+    description: Payload Filtering Selection.
+    bit_offset: 4
+    bit_size: 2
+    enum: Plfs
+  - name: nmatch
+    description: Number of Messages Matching the Same Filtering Criteria.
+    bit_offset: 8
+    bit_size: 8
+    enum: Nmatch
+  - name: wumf_msk
+    description: Wake-up by Matching Flag Mask.
+    bit_offset: 16
+    bit_size: 1
+  - name: wtof_msk
+    description: Wake-up by Timeout Flag Mask.
+    bit_offset: 17
+    bit_size: 1
+fieldset/Ctrl2:
+  description: Control 2.
+  fields:
+  - name: edfltdis
+    description: Edge Filter Disable.
+    bit_offset: 11
+    bit_size: 1
+    enum: Edfltdis
+  - name: isocanfden
+    description: ISO CAN FD Enable.
+    bit_offset: 12
+    bit_size: 1
+    enum: Isocanfden
+  - name: bte
+    description: Bit Timing Expansion Enable.
+    bit_offset: 13
+    bit_size: 1
+  - name: prexcen
+    description: Protocol Exception Enable.
+    bit_offset: 14
+    bit_size: 1
+  - name: eacen
+    description: Entire Frame Arbitration Field Comparison Enable for RX Message Buffers.
+    bit_offset: 16
+    bit_size: 1
+    enum: Eacen
+  - name: rrs
+    description: Remote Request Storing.
+    bit_offset: 17
+    bit_size: 1
+    enum: Rrs
+  - name: mrp
+    description: Message Buffers Reception Priority.
+    bit_offset: 18
+    bit_size: 1
+    enum: Mrp
+  - name: tasd
+    description: Transmission Arbitration Start Delay.
+    bit_offset: 19
+    bit_size: 5
+  - name: rffn
+    description: Number of Legacy Receive FIFO Filters.
+    bit_offset: 24
+    bit_size: 4
+  - name: boffdonemsk
+    description: Bus Off Done Interrupt Mask.
+    bit_offset: 30
+    bit_size: 1
+  - name: errmsk_fast
+    description: Error Interrupt Mask for Errors Detected in the Data Phase of Fast CAN FD Frames.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Ctrl2Pn:
+  description: Pretended Networking Control 2.
+  fields:
+  - name: matchto
+    description: Timeout for No Message Matching the Filtering Criteria.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Ecr:
+  description: Error Counter.
+  fields:
+  - name: txerrcnt
+    description: Transmit Error Counter.
+    bit_offset: 0
+    bit_size: 8
+  - name: rxerrcnt
+    description: Receive Error Counter.
+    bit_offset: 8
+    bit_size: 8
+  - name: txerrcnt_fast
+    description: Transmit Error Counter for Fast Bits.
+    bit_offset: 16
+    bit_size: 8
+  - name: rxerrcnt_fast
+    description: Receive Error Counter for Fast Bits.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Edcbt:
+  description: Enhanced Data Phase CAN Bit Timing.
+  fields:
+  - name: dtseg1
+    description: Data Phase Segment 1.
+    bit_offset: 0
+    bit_size: 5
+  - name: dtseg2
+    description: Data Phase Time Segment 2.
+    bit_offset: 12
+    bit_size: 4
+  - name: drjw
+    description: Data Phase Resynchronization Jump Width.
+    bit_offset: 22
+    bit_size: 4
+fieldset/Encbt:
+  description: Enhanced Nominal CAN Bit Timing.
+  fields:
+  - name: ntseg1
+    description: Nominal Time Segment 1.
+    bit_offset: 0
+    bit_size: 8
+  - name: ntseg2
+    description: Nominal Time Segment 2.
+    bit_offset: 12
+    bit_size: 7
+  - name: nrjw
+    description: Nominal Resynchronization Jump Width.
+    bit_offset: 22
+    bit_size: 7
+fieldset/Eprs:
+  description: Enhanced CAN Bit Timing Prescalers.
+  fields:
+  - name: enpresdiv
+    description: Extended Nominal Prescaler Division Factor.
+    bit_offset: 0
+    bit_size: 10
+  - name: edpresdiv
+    description: Extended Data Phase Prescaler Division Factor.
+    bit_offset: 16
+    bit_size: 10
+fieldset/Erfcr:
+  description: Enhanced RX FIFO Control.
+  fields:
+  - name: erfwm
+    description: Enhanced RX FIFO Watermark.
+    bit_offset: 0
+    bit_size: 5
+  - name: nfe
+    description: Number of Enhanced RX FIFO Filter Elements.
+    bit_offset: 8
+    bit_size: 6
+  - name: nexif
+    description: Number of Extended ID Filter Elements.
+    bit_offset: 16
+    bit_size: 7
+  - name: dmalw
+    description: DMA Last Word.
+    bit_offset: 26
+    bit_size: 5
+  - name: erfen
+    description: Enhanced RX FIFO enable.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Erffel:
+  description: Enhanced RX FIFO Filter Element.
+  fields:
+  - name: fel
+    description: Filter Element Bits.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Erfier:
+  description: Enhanced RX FIFO Interrupt Enable.
+  fields:
+  - name: erfdaie
+    description: Enhanced RX FIFO Data Available Interrupt Enable.
+    bit_offset: 28
+    bit_size: 1
+  - name: erfwmiie
+    description: Enhanced RX FIFO Watermark Indication Interrupt Enable.
+    bit_offset: 29
+    bit_size: 1
+  - name: erfovfie
+    description: Enhanced RX FIFO Overflow Interrupt Enable.
+    bit_offset: 30
+    bit_size: 1
+  - name: erfufwie
+    description: Enhanced RX FIFO Underflow Interrupt Enable.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Erfsr:
+  description: Enhanced RX FIFO Status.
+  fields:
+  - name: erfel
+    description: Enhanced RX FIFO Elements.
+    bit_offset: 0
+    bit_size: 6
+  - name: erff
+    description: Enhanced RX FIFO Full Flag.
+    bit_offset: 16
+    bit_size: 1
+  - name: erfe
+    description: Enhanced RX FIFO Empty Flag.
+    bit_offset: 17
+    bit_size: 1
+  - name: erfclr
+    description: Enhanced RX FIFO Clear.
+    bit_offset: 27
+    bit_size: 1
+    enum: Erfclr
+  - name: erfda
+    description: Enhanced RX FIFO Data Available Flag.
+    bit_offset: 28
+    bit_size: 1
+  - name: erfwmi
+    description: Enhanced RX FIFO Watermark Indication Flag.
+    bit_offset: 29
+    bit_size: 1
+    enum: Erfwmi
+  - name: erfovf
+    description: Enhanced RX FIFO Overflow Flag.
+    bit_offset: 30
+    bit_size: 1
+  - name: erfufw
+    description: Enhanced RX FIFO Underflow Flag.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Esr1:
+  description: Error and Status 1.
+  fields:
+  - name: wakint
+    description: Wake-up Interrupt Flag.
+    bit_offset: 0
+    bit_size: 1
+  - name: errint
+    description: Error Interrupt Flag.
+    bit_offset: 1
+    bit_size: 1
+  - name: boffint
+    description: Bus Off Interrupt Flag.
+    bit_offset: 2
+    bit_size: 1
+  - name: rx
+    description: FlexCAN in Reception Flag.
+    bit_offset: 3
+    bit_size: 1
+  - name: fltconf
+    description: Fault Confinement State.
+    bit_offset: 4
+    bit_size: 2
+    enum: Fltconf
+  - name: tx
+    description: FlexCAN In Transmission.
+    bit_offset: 6
+    bit_size: 1
+    enum: Tx
+  - name: idle
+    description: Idle.
+    bit_offset: 7
+    bit_size: 1
+    enum: Idle
+  - name: rxwrn
+    description: RX Error Warning Flag.
+    bit_offset: 8
+    bit_size: 1
+    enum: Rxwrn
+  - name: txwrn
+    description: TX Error Warning Flag.
+    bit_offset: 9
+    bit_size: 1
+    enum: Txwrn
+  - name: stferr
+    description: Stuffing Error Flag.
+    bit_offset: 10
+    bit_size: 1
+    enum: Stferr
+  - name: frmerr
+    description: Form Error Flag.
+    bit_offset: 11
+    bit_size: 1
+    enum: Frmerr
+  - name: crcerr
+    description: Cyclic Redundancy Check Error Flag.
+    bit_offset: 12
+    bit_size: 1
+    enum: Crcerr
+  - name: ackerr
+    description: Acknowledge Error Flag.
+    bit_offset: 13
+    bit_size: 1
+    enum: Ackerr
+  - name: bit0err
+    description: Bit0 Error Flag.
+    bit_offset: 14
+    bit_size: 1
+    enum: Bit0err
+  - name: bit1err
+    description: Bit1 Error Flag.
+    bit_offset: 15
+    bit_size: 1
+    enum: Bit1err
+  - name: rwrnint
+    description: RX Warning Interrupt Flag.
+    bit_offset: 16
+    bit_size: 1
+    enum: Rwrnint
+  - name: twrnint
+    description: TX Warning Interrupt Flag.
+    bit_offset: 17
+    bit_size: 1
+    enum: Twrnint
+  - name: synch
+    description: CAN Synchronization Status Flag.
+    bit_offset: 18
+    bit_size: 1
+    enum: Synch
+  - name: boffdoneint
+    description: Bus Off Done Interrupt Flag.
+    bit_offset: 19
+    bit_size: 1
+    enum: Boffdoneint
+  - name: errint_fast
+    description: Fast Error Interrupt Flag.
+    bit_offset: 20
+    bit_size: 1
+    enum: ErrintFast
+  - name: errovr
+    description: Error Overrun Flag.
+    bit_offset: 21
+    bit_size: 1
+    enum: Errovr
+  - name: stferr_fast
+    description: Fast Stuffing Error Flag.
+    bit_offset: 26
+    bit_size: 1
+    enum: StferrFast
+  - name: frmerr_fast
+    description: Fast Form Error Flag.
+    bit_offset: 27
+    bit_size: 1
+    enum: FrmerrFast
+  - name: crcerr_fast
+    description: Fast Cyclic Redundancy Check Error Flag.
+    bit_offset: 28
+    bit_size: 1
+    enum: CrcerrFast
+  - name: bit0err_fast
+    description: Fast Bit0 Error Flag.
+    bit_offset: 30
+    bit_size: 1
+    enum: Bit0errFast
+  - name: bit1err_fast
+    description: Fast Bit1 Error Flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: Bit1errFast
+fieldset/Esr2:
+  description: Error and Status 2.
+  fields:
+  - name: imb
+    description: Inactive Message Buffer.
+    bit_offset: 13
+    bit_size: 1
+    enum: Imb
+  - name: vps
+    description: Valid Priority Status.
+    bit_offset: 14
+    bit_size: 1
+  - name: lptm
+    description: Lowest Priority TX Message Buffer.
+    bit_offset: 16
+    bit_size: 7
+fieldset/Etdc:
+  description: Enhanced Transceiver Delay Compensation.
+  fields:
+  - name: etdcval
+    description: Enhanced Transceiver Delay Compensation Value.
+    bit_offset: 0
+    bit_size: 8
+  - name: etdcfail
+    description: Transceiver Delay Compensation Fail.
+    bit_offset: 15
+    bit_size: 1
+    enum: Etdcfail
+  - name: etdcoff
+    description: Enhanced Transceiver Delay Compensation Offset.
+    bit_offset: 16
+    bit_size: 7
+  - name: tdmdis
+    description: Transceiver Delay Measurement Disable.
+    bit_offset: 30
+    bit_size: 1
+    enum: Tdmdis
+  - name: etdcen
+    description: Transceiver Delay Compensation Enable.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Fdcbt:
+  description: CAN FD Bit Timing.
+  fields:
+  - name: fpseg2
+    description: Fast Phase Segment 2.
+    bit_offset: 0
+    bit_size: 3
+  - name: fpseg1
+    description: Fast Phase Segment 1.
+    bit_offset: 5
+    bit_size: 3
+  - name: fpropseg
+    description: Fast Propagation Segment.
+    bit_offset: 10
+    bit_size: 5
+  - name: frjw
+    description: Fast Resync Jump Width.
+    bit_offset: 16
+    bit_size: 3
+  - name: fpresdiv
+    description: Fast Prescaler Division Factor.
+    bit_offset: 20
+    bit_size: 10
+fieldset/Fdcrc:
+  description: CAN FD CRC.
+  fields:
+  - name: fd_txcrc
+    description: Extended Transmitted CRC value.
+    bit_offset: 0
+    bit_size: 21
+  - name: fd_mbcrc
+    description: CRC Message Buffer Number for FD_TXCRC.
+    bit_offset: 24
+    bit_size: 7
+fieldset/Fdctrl:
+  description: CAN FD Control.
+  fields:
+  - name: tdcval
+    description: Transceiver Delay Compensation Value.
+    bit_offset: 0
+    bit_size: 6
+  - name: tdcoff
+    description: Transceiver Delay Compensation Offset.
+    bit_offset: 8
+    bit_size: 5
+  - name: tdcfail
+    description: Transceiver Delay Compensation Fail.
+    bit_offset: 14
+    bit_size: 1
+    enum: Tdcfail
+  - name: tdcen
+    description: Transceiver Delay Compensation Enable.
+    bit_offset: 15
+    bit_size: 1
+  - name: mbdsr0
+    description: Message Buffer Data Size for Region 0.
+    bit_offset: 16
+    bit_size: 2
+    enum: Mbdsr0
+  - name: fdrate
+    description: Bit Rate Switch Enable.
+    bit_offset: 31
+    bit_size: 1
+    enum: Fdrate
+fieldset/FltDlc:
+  description: Pretended Networking Data Length Code (DLC) Filter.
+  fields:
+  - name: flt_dlc_hi
+    description: Upper Limit for Length of Data Bytes Filter.
+    bit_offset: 0
+    bit_size: 4
+  - name: flt_dlc_lo
+    description: Lower Limit for Length of Data Bytes Filter.
+    bit_offset: 16
+    bit_size: 4
+fieldset/FltId1:
+  description: Pretended Networking ID Filter 1.
+  fields:
+  - name: flt_id1
+    description: ID Filter 1 for Pretended Networking filtering.
+    bit_offset: 0
+    bit_size: 29
+  - name: flt_rtr
+    description: Remote Transmission Request Filter.
+    bit_offset: 29
+    bit_size: 1
+    enum: FltRtr
+  - name: flt_ide
+    description: ID Extended Filter.
+    bit_offset: 30
+    bit_size: 1
+    enum: FltIde
+fieldset/FltId2Idmask:
+  description: Pretended Networking ID Filter 2 or ID Mask.
+  fields:
+  - name: flt_id2_idmask
+    description: ID Filter 2 for Pretended Networking Filtering or ID Mask Bits for Pretended Networking ID Filtering.
+    bit_offset: 0
+    bit_size: 29
+  - name: rtr_msk
+    description: Remote Transmission Request Mask.
+    bit_offset: 29
+    bit_size: 1
+    enum: RtrMsk
+  - name: ide_msk
+    description: ID Extended Mask.
+    bit_offset: 30
+    bit_size: 1
+    enum: IdeMsk
+fieldset/Id:
+  description: Message Buffer ID Register.
+  fields:
+  - name: ext
+    description: Contains extended (LOW word) identifier of message buffer.
+    bit_offset: 0
+    bit_size: 18
+  - name: std
+    description: Contains standard/extended (HIGH word) identifier of message buffer.
+    bit_offset: 18
+    bit_size: 11
+  - name: prio
+    description: Local priority. This 3-bit fieldis only used when LPRIO_EN bit is set in MCR and it only makes sense for Tx buffers. These bits are not transmitted. They are appended to the regular ID to define the transmission priority.
+    bit_offset: 29
+    bit_size: 3
+fieldset/Iflag1:
+  description: Interrupt Flags 1.
+  fields:
+  - name: buf0i
+    description: Buffer MB0 Interrupt or Clear Legacy FIFO bit.
+    bit_offset: 0
+    bit_size: 1
+    enum: Buf0i
+  - name: buf4to1i
+    description: Buffer MBi Interrupt or Reserved.
+    bit_offset: 1
+    bit_size: 4
+  - name: buf5i
+    description: Buffer MB5 Interrupt or Frames available in Legacy RX FIFO.
+    bit_offset: 5
+    bit_size: 1
+    enum: Buf5i
+  - name: buf6i
+    description: Buffer MB6 Interrupt or Legacy RX FIFO Warning.
+    bit_offset: 6
+    bit_size: 1
+    enum: Buf6i
+  - name: buf7i
+    description: Buffer MB7 Interrupt or Legacy RX FIFO Overflow.
+    bit_offset: 7
+    bit_size: 1
+    enum: Buf7i
+  - name: buf31to8i
+    description: Buffer MBi Interrupt.
+    bit_offset: 8
+    bit_size: 24
+fieldset/Imask1:
+  description: Interrupt Masks 1.
+  fields:
+  - name: buf31to0m
+    description: Buffer MBi Mask.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Mb16bCs:
+  description: Message Buffer CS Register.
+  fields:
+  - name: time_stamp
+    description: Free-Running Counter Time stamp. This 16-bit field is a copy of the Free-Running Timer, captured for Tx and Rx frames at the time when the beginning of the Identifier field appears on the CAN bus.
+    bit_offset: 0
+    bit_size: 16
+  - name: dlc
+    description: Length of the data to be stored/transmitted.
+    bit_offset: 16
+    bit_size: 4
+  - name: rtr
+    description: Remote Transmission Request. One/zero for remote/data frame.
+    bit_offset: 20
+    bit_size: 1
+  - name: ide
+    description: ID Extended. One/zero for extended/standard format frame.
+    bit_offset: 21
+    bit_size: 1
+  - name: srr
+    description: Substitute Remote Request. Contains a fixed recessive bit.
+    bit_offset: 22
+    bit_size: 1
+  - name: code
+    description: Message Buffer Code. This 4-bit field can be accessed (read or write) by the CPU and by the FlexCAN module itself, as part of the message buffer matching and arbitration process.
+    bit_offset: 24
+    bit_size: 4
+  - name: esi
+    description: Error State Indicator. This bit indicates if the transmitting node is error active or error passive.
+    bit_offset: 29
+    bit_size: 1
+  - name: brs
+    description: Bit Rate Switch. This bit defines whether the bit rate is switched inside a CAN FD format frame.
+    bit_offset: 30
+    bit_size: 1
+  - name: edl
+    description: Extended Data Length. This bit distinguishes between CAN format and CAN FD format frames. The EDL bit must not be set for Message Buffers configured to RANSWER with code field 0b1010.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Mb16bId:
+  description: Message Buffer ID Register.
+  fields:
+  - name: ext
+    description: Contains extended (LOW word) identifier of message buffer.
+    bit_offset: 0
+    bit_size: 18
+  - name: std
+    description: Contains standard/extended (HIGH word) identifier of message buffer.
+    bit_offset: 18
+    bit_size: 11
+  - name: prio
+    description: Local priority. This 3-bit fieldis only used when LPRIO_EN bit is set in MCR and it only makes sense for Tx buffers. These bits are not transmitted. They are appended to the regular ID to define the transmission priority.
+    bit_offset: 29
+    bit_size: 3
+fieldset/Mb16bWord0:
+  description: Message Buffer WORD_16B Register.
+  fields:
+  - name: data_byte_3
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_2
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_1
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_0
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb16bWord1:
+  description: Message Buffer WORD_16B Register.
+  fields:
+  - name: data_byte_7
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_6
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_5
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_4
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb16bWord2:
+  description: Message Buffer WORD_16B Register.
+  fields:
+  - name: data_byte_11
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_10
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_9
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_8
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb16bWord3:
+  description: Message Buffer WORD_16B Register.
+  fields:
+  - name: data_byte_15
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_14
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_13
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_12
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb32bCs:
+  description: Message Buffer CS Register.
+  fields:
+  - name: time_stamp
+    description: Free-Running Counter Time stamp. This 16-bit field is a copy of the Free-Running Timer, captured for Tx and Rx frames at the time when the beginning of the Identifier field appears on the CAN bus.
+    bit_offset: 0
+    bit_size: 16
+  - name: dlc
+    description: Length of the data to be stored/transmitted.
+    bit_offset: 16
+    bit_size: 4
+  - name: rtr
+    description: Remote Transmission Request. One/zero for remote/data frame.
+    bit_offset: 20
+    bit_size: 1
+  - name: ide
+    description: ID Extended. One/zero for extended/standard format frame.
+    bit_offset: 21
+    bit_size: 1
+  - name: srr
+    description: Substitute Remote Request. Contains a fixed recessive bit.
+    bit_offset: 22
+    bit_size: 1
+  - name: code
+    description: Message Buffer Code. This 4-bit field can be accessed (read or write) by the CPU and by the FlexCAN module itself, as part of the message buffer matching and arbitration process.
+    bit_offset: 24
+    bit_size: 4
+  - name: esi
+    description: Error State Indicator. This bit indicates if the transmitting node is error active or error passive.
+    bit_offset: 29
+    bit_size: 1
+  - name: brs
+    description: Bit Rate Switch. This bit defines whether the bit rate is switched inside a CAN FD format frame.
+    bit_offset: 30
+    bit_size: 1
+  - name: edl
+    description: Extended Data Length. This bit distinguishes between CAN format and CAN FD format frames. The EDL bit must not be set for Message Buffers configured to RANSWER with code field 0b1010.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Mb32bId:
+  description: Message Buffer ID Register.
+  fields:
+  - name: ext
+    description: Contains extended (LOW word) identifier of message buffer.
+    bit_offset: 0
+    bit_size: 18
+  - name: std
+    description: Contains standard/extended (HIGH word) identifier of message buffer.
+    bit_offset: 18
+    bit_size: 11
+  - name: prio
+    description: Local priority. This 3-bit fieldis only used when LPRIO_EN bit is set in MCR and it only makes sense for Tx buffers. These bits are not transmitted. They are appended to the regular ID to define the transmission priority.
+    bit_offset: 29
+    bit_size: 3
+fieldset/Mb32bWord0:
+  description: Message Buffer WORD_32B Register.
+  fields:
+  - name: data_byte_3
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_2
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_1
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_0
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb32bWord1:
+  description: Message Buffer WORD_32B Register.
+  fields:
+  - name: data_byte_7
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_6
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_5
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_4
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb32bWord2:
+  description: Message Buffer WORD_32B Register.
+  fields:
+  - name: data_byte_11
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_10
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_9
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_8
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb32bWord3:
+  description: Message Buffer WORD_32B Register.
+  fields:
+  - name: data_byte_15
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_14
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_13
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_12
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb32bWord4:
+  description: Message Buffer WORD_32B Register.
+  fields:
+  - name: data_byte_19
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_18
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_17
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_16
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb32bWord5:
+  description: Message Buffer WORD_32B Register.
+  fields:
+  - name: data_byte_23
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_22
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_21
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_20
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb32bWord6:
+  description: Message Buffer WORD_32B Register.
+  fields:
+  - name: data_byte_27
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_26
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_25
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_24
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb32bWord7:
+  description: Message Buffer WORD_32B Register.
+  fields:
+  - name: data_byte_31
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_30
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_29
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_28
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb64bCs:
+  description: Message Buffer CS Register.
+  fields:
+  - name: time_stamp
+    description: Free-Running Counter Time stamp. This 16-bit field is a copy of the Free-Running Timer, captured for Tx and Rx frames at the time when the beginning of the Identifier field appears on the CAN bus.
+    bit_offset: 0
+    bit_size: 16
+  - name: dlc
+    description: Length of the data to be stored/transmitted.
+    bit_offset: 16
+    bit_size: 4
+  - name: rtr
+    description: Remote Transmission Request. One/zero for remote/data frame.
+    bit_offset: 20
+    bit_size: 1
+  - name: ide
+    description: ID Extended. One/zero for extended/standard format frame.
+    bit_offset: 21
+    bit_size: 1
+  - name: srr
+    description: Substitute Remote Request. Contains a fixed recessive bit.
+    bit_offset: 22
+    bit_size: 1
+  - name: code
+    description: Message Buffer Code. This 4-bit field can be accessed (read or write) by the CPU and by the FlexCAN module itself, as part of the message buffer matching and arbitration process.
+    bit_offset: 24
+    bit_size: 4
+  - name: esi
+    description: Error State Indicator. This bit indicates if the transmitting node is error active or error passive.
+    bit_offset: 29
+    bit_size: 1
+  - name: brs
+    description: Bit Rate Switch. This bit defines whether the bit rate is switched inside a CAN FD format frame.
+    bit_offset: 30
+    bit_size: 1
+  - name: edl
+    description: Extended Data Length. This bit distinguishes between CAN format and CAN FD format frames. The EDL bit must not be set for Message Buffers configured to RANSWER with code field 0b1010.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Mb64bId:
+  description: Message Buffer ID Register.
+  fields:
+  - name: ext
+    description: Contains extended (LOW word) identifier of message buffer.
+    bit_offset: 0
+    bit_size: 18
+  - name: std
+    description: Contains standard/extended (HIGH word) identifier of message buffer.
+    bit_offset: 18
+    bit_size: 11
+  - name: prio
+    description: Local priority. This 3-bit fieldis only used when LPRIO_EN bit is set in MCR and it only makes sense for Tx buffers. These bits are not transmitted. They are appended to the regular ID to define the transmission priority.
+    bit_offset: 29
+    bit_size: 3
+fieldset/Mb64bWord0:
+  description: Message Buffer WORD_64B Register.
+  fields:
+  - name: data_byte_3
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_2
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_1
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_0
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb64bWord1:
+  description: Message Buffer WORD_64B Register.
+  fields:
+  - name: data_byte_7
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_6
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_5
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_4
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb64bWord10:
+  description: Message Buffer WORD_64B Register.
+  fields:
+  - name: data_byte_43
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_42
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_41
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_40
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb64bWord11:
+  description: Message Buffer WORD_64B Register.
+  fields:
+  - name: data_byte_47
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_46
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_45
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_44
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb64bWord12:
+  description: Message Buffer WORD_64B Register.
+  fields:
+  - name: data_byte_51
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_50
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_49
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_48
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb64bWord13:
+  description: Message Buffer WORD_64B Register.
+  fields:
+  - name: data_byte_55
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_54
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_53
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_52
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb64bWord14:
+  description: Message Buffer WORD_64B Register.
+  fields:
+  - name: data_byte_59
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_58
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_57
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_56
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb64bWord15:
+  description: Message Buffer WORD_64B Register.
+  fields:
+  - name: data_byte_63
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_62
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_61
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_60
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb64bWord2:
+  description: Message Buffer WORD_64B Register.
+  fields:
+  - name: data_byte_11
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_10
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_9
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_8
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb64bWord3:
+  description: Message Buffer WORD_64B Register.
+  fields:
+  - name: data_byte_15
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_14
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_13
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_12
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb64bWord4:
+  description: Message Buffer WORD_64B Register.
+  fields:
+  - name: data_byte_19
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_18
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_17
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_16
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb64bWord5:
+  description: Message Buffer WORD_64B Register.
+  fields:
+  - name: data_byte_23
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_22
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_21
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_20
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb64bWord6:
+  description: Message Buffer WORD_64B Register.
+  fields:
+  - name: data_byte_27
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_26
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_25
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_24
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb64bWord7:
+  description: Message Buffer WORD_64B Register.
+  fields:
+  - name: data_byte_31
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_30
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_29
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_28
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb64bWord8:
+  description: Message Buffer WORD_64B Register.
+  fields:
+  - name: data_byte_35
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_34
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_33
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_32
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb64bWord9:
+  description: Message Buffer WORD_64B Register.
+  fields:
+  - name: data_byte_39
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_38
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_37
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_36
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb8bCs:
+  description: Message Buffer CS Register.
+  fields:
+  - name: time_stamp
+    description: Free-Running Counter Time stamp. This 16-bit field is a copy of the Free-Running Timer, captured for Tx and Rx frames at the time when the beginning of the Identifier field appears on the CAN bus.
+    bit_offset: 0
+    bit_size: 16
+  - name: dlc
+    description: Length of the data to be stored/transmitted.
+    bit_offset: 16
+    bit_size: 4
+  - name: rtr
+    description: Remote Transmission Request. One/zero for remote/data frame.
+    bit_offset: 20
+    bit_size: 1
+  - name: ide
+    description: ID Extended. One/zero for extended/standard format frame.
+    bit_offset: 21
+    bit_size: 1
+  - name: srr
+    description: Substitute Remote Request. Contains a fixed recessive bit.
+    bit_offset: 22
+    bit_size: 1
+  - name: code
+    description: Message Buffer Code. This 4-bit field can be accessed (read or write) by the CPU and by the FlexCAN module itself, as part of the message buffer matching and arbitration process.
+    bit_offset: 24
+    bit_size: 4
+  - name: esi
+    description: Error State Indicator. This bit indicates if the transmitting node is error active or error passive.
+    bit_offset: 29
+    bit_size: 1
+  - name: brs
+    description: Bit Rate Switch. This bit defines whether the bit rate is switched inside a CAN FD format frame.
+    bit_offset: 30
+    bit_size: 1
+  - name: edl
+    description: Extended Data Length. This bit distinguishes between CAN format and CAN FD format frames. The EDL bit must not be set for Message Buffers configured to RANSWER with code field 0b1010.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Mb8bId:
+  description: Message Buffer ID Register.
+  fields:
+  - name: ext
+    description: Contains extended (LOW word) identifier of message buffer.
+    bit_offset: 0
+    bit_size: 18
+  - name: std
+    description: Contains standard/extended (HIGH word) identifier of message buffer.
+    bit_offset: 18
+    bit_size: 11
+  - name: prio
+    description: Local priority. This 3-bit fieldis only used when LPRIO_EN bit is set in MCR and it only makes sense for Tx buffers. These bits are not transmitted. They are appended to the regular ID to define the transmission priority.
+    bit_offset: 29
+    bit_size: 3
+fieldset/Mb8bWord0:
+  description: Message Buffer WORD_8B Register.
+  fields:
+  - name: data_byte_3
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_2
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_1
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_0
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mb8bWord1:
+  description: Message Buffer WORD_8B Register.
+  fields:
+  - name: data_byte_7
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_6
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_5
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_4
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Mcr:
+  description: Module Configuration.
+  fields:
+  - name: maxmb
+    description: Number of the Last Message Buffer.
+    bit_offset: 0
+    bit_size: 7
+  - name: idam
+    description: ID Acceptance Mode.
+    bit_offset: 8
+    bit_size: 2
+    enum: Idam
+  - name: fden
+    description: CAN FD Operation Enable.
+    bit_offset: 11
+    bit_size: 1
+    enum: Fden
+  - name: aen
+    description: Abort Enable.
+    bit_offset: 12
+    bit_size: 1
+    enum: Aen
+  - name: lprioen
+    description: Local Priority Enable.
+    bit_offset: 13
+    bit_size: 1
+    enum: Lprioen
+  - name: pnet_en
+    description: Pretended Networking Enable.
+    bit_offset: 14
+    bit_size: 1
+    enum: PnetEn
+  - name: dma
+    description: DMA Enable.
+    bit_offset: 15
+    bit_size: 1
+    enum: Dma
+  - name: irmq
+    description: Individual RX Masking and Queue Enable.
+    bit_offset: 16
+    bit_size: 1
+    enum: Irmq
+  - name: srxdis
+    description: Self-Reception Disable.
+    bit_offset: 17
+    bit_size: 1
+    enum: Srxdis
+  - name: waksrc
+    description: Wake-Up Source.
+    bit_offset: 19
+    bit_size: 1
+  - name: lpmack
+    description: Low-Power Mode Acknowledge.
+    bit_offset: 20
+    bit_size: 1
+    enum: Lpmack
+  - name: wrnen
+    description: Warning Interrupt Enable.
+    bit_offset: 21
+    bit_size: 1
+    enum: Wrnen
+  - name: slfwak
+    description: Self Wake-up.
+    bit_offset: 22
+    bit_size: 1
+    enum: Slfwak
+  - name: frzack
+    description: Freeze Mode Acknowledge.
+    bit_offset: 24
+    bit_size: 1
+    enum: Frzack
+  - name: softrst
+    description: Soft Reset.
+    bit_offset: 25
+    bit_size: 1
+    enum: Softrst
+  - name: wakmsk
+    description: Wake-up Interrupt Mask.
+    bit_offset: 26
+    bit_size: 1
+    enum: Wakmsk
+  - name: notrdy
+    description: FlexCAN Not Ready.
+    bit_offset: 27
+    bit_size: 1
+    enum: Notrdy
+  - name: halt
+    description: Halt FlexCAN.
+    bit_offset: 28
+    bit_size: 1
+    enum: Halt
+  - name: rfen
+    description: Legacy RX FIFO Enable.
+    bit_offset: 29
+    bit_size: 1
+    enum: Rfen
+  - name: frz
+    description: Freeze Enable.
+    bit_offset: 30
+    bit_size: 1
+    enum: Frz
+  - name: mdis
+    description: Module Disable.
+    bit_offset: 31
+    bit_size: 1
+    enum: Mdis
+fieldset/Pl1Hi:
+  description: Pretended Networking Payload High Filter 1.
+  fields:
+  - name: data_byte_7
+    description: Data byte 7.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_6
+    description: Data byte 6.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_5
+    description: Data byte 5.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_4
+    description: Data byte 4.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Pl1Lo:
+  description: Pretended Networking Payload Low Filter 1.
+  fields:
+  - name: data_byte_3
+    description: Data byte 3.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_2
+    description: Data byte 2.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_1
+    description: Data byte 1.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_0
+    description: Data byte 0.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Pl2PlmaskHi:
+  description: Pretended Networking Payload High Filter 2 and Payload High Mask.
+  fields:
+  - name: data_byte_7
+    description: Data Byte 7.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_6
+    description: Data Byte 6.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_5
+    description: Data Byte 5.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_4
+    description: Data Byte 4.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Pl2PlmaskLo:
+  description: Pretended Networking Payload Low Filter 2 and Payload Low Mask.
+  fields:
+  - name: data_byte_3
+    description: Data Byte 3.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_2
+    description: Data Byte 2.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_1
+    description: Data Byte 1.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_0
+    description: Data Byte 0.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Rx14mask:
+  description: Receive 14 Mask.
+  fields:
+  - name: rx14m
+    description: RX Buffer 14 Mask Bits.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Rx15mask:
+  description: Receive 15 Mask.
+  fields:
+  - name: rx15m
+    description: RX Buffer 15 Mask Bits.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Rxfgmask:
+  description: Legacy RX FIFO Global Mask.
+  fields:
+  - name: fgm
+    description: Legacy RX FIFO Global Mask Bits.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Rxfir:
+  description: Legacy RX FIFO Information.
+  fields:
+  - name: idhit
+    description: Identifier Acceptance Filter Hit Indicator.
+    bit_offset: 0
+    bit_size: 9
+fieldset/Rximr:
+  description: Receive Individual Mask.
+  fields:
+  - name: mi
+    description: Individual Mask Bits.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Rxmgmask:
+  description: RX Message Buffers Global Mask.
+  fields:
+  - name: mg
+    description: Global Mask for RX Message Buffers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Timer:
+  description: Free-Running Timer.
+  fields:
+  - name: timer
+    description: Timer Value.
+    bit_offset: 0
+    bit_size: 16
+fieldset/WmbCs:
+  description: Wake-Up Message Buffer.
+  fields:
+  - name: dlc
+    description: Length of Data in Bytes.
+    bit_offset: 16
+    bit_size: 4
+  - name: rtr
+    description: Remote Transmission Request.
+    bit_offset: 20
+    bit_size: 1
+  - name: ide
+    description: ID Extended Bit.
+    bit_offset: 21
+    bit_size: 1
+    enum: Ide
+  - name: srr
+    description: Substitute Remote Request.
+    bit_offset: 22
+    bit_size: 1
+    enum: Srr
+fieldset/WmbD03:
+  description: Wake-Up Message Buffer for Data 0-3.
+  fields:
+  - name: data_byte_3
+    description: Data Byte 3.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_2
+    description: Data Byte 2.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_1
+    description: Data Byte 1.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_0
+    description: Data Byte 0.
+    bit_offset: 24
+    bit_size: 8
+fieldset/WmbD47:
+  description: Wake-Up Message Buffer Register Data 4-7.
+  fields:
+  - name: data_byte_7
+    description: Data Byte 7.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_6
+    description: Data Byte 6.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_5
+    description: Data Byte 5.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_4
+    description: Data Byte 4.
+    bit_offset: 24
+    bit_size: 8
+fieldset/WmbId:
+  description: Wake-Up Message Buffer for ID.
+  fields:
+  - name: id
+    description: Received ID in Pretended Networking Mode.
+    bit_offset: 0
+    bit_size: 29
+fieldset/Word0:
+  description: Message Buffer WORD0 Register.
+  fields:
+  - name: data_byte_3
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_2
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_1
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_0
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Word1:
+  description: Message Buffer WORD1 Register.
+  fields:
+  - name: data_byte_7
+    description: Data byte 0 of Rx/Tx frame.
+    bit_offset: 0
+    bit_size: 8
+  - name: data_byte_6
+    description: Data byte 1 of Rx/Tx frame.
+    bit_offset: 8
+    bit_size: 8
+  - name: data_byte_5
+    description: Data byte 2 of Rx/Tx frame.
+    bit_offset: 16
+    bit_size: 8
+  - name: data_byte_4
+    description: Data byte 3 of Rx/Tx frame.
+    bit_offset: 24
+    bit_size: 8
+fieldset/WuMtc:
+  description: Pretended Networking Wake-Up Match.
+  fields:
+  - name: mcounter
+    description: Number of Matches in Pretended Networking.
+    bit_offset: 8
+    bit_size: 8
+  - name: wumf
+    description: Wake-up by Match Flag.
+    bit_offset: 16
+    bit_size: 1
+  - name: wtof
+    description: Wake-up by Timeout Flag Bit.
+    bit_offset: 17
+    bit_size: 1
+enum/Ackerr:
+  bit_size: 1
+  variants:
+  - name: AckErrorNo
+    description: No error.
+    value: 0
+  - name: AckErrorYes
+    description: Error occurred since last read of this register.
+    value: 1
+enum/Aen:
+  bit_size: 1
+  variants:
+  - name: AbortDisabled
+    description: Disabled.
+    value: 0
+  - name: AbortEnabled
+    description: Enabled.
+    value: 1
+enum/Bit0err:
+  bit_size: 1
+  variants:
+  - name: Bit0ErrorNo
+    description: No such occurrence.
+    value: 0
+  - name: Bit0ErrorYes
+    description: At least one bit sent as dominant is received as recessive.
+    value: 1
+enum/Bit0errFast:
+  bit_size: 1
+  variants:
+  - name: Bit0ErrorNo
+    description: No such occurrence.
+    value: 0
+  - name: Bit0ErrorYes
+    description: At least one bit transmitted as dominant is received as recessive.
+    value: 1
+enum/Bit1err:
+  bit_size: 1
+  variants:
+  - name: Bit1ErrorNo
+    description: No such occurrence.
+    value: 0
+  - name: Bit1ErrorYes
+    description: At least one bit sent as recessive is received as dominant.
+    value: 1
+enum/Bit1errFast:
+  bit_size: 1
+  variants:
+  - name: Bit1ErrorNo
+    description: No such occurrence.
+    value: 0
+  - name: Bit1ErrorYes
+    description: At least one bit transmitted as recessive is received as dominant.
+    value: 1
+enum/Boffdoneint:
+  bit_size: 1
+  variants:
+  - name: BusOffNotDone
+    description: No such occurrence.
+    value: 0
+  - name: BusOffDone
+    description: FlexCAN module has completed Bus Off process.
+    value: 1
+enum/Boffmsk:
+  bit_size: 1
+  variants:
+  - name: BusOffIntDisabled
+    description: Interrupt disabled.
+    value: 0
+  - name: BusOffIntEnabled
+    description: Interrupt enabled.
+    value: 1
+enum/Boffrec:
+  bit_size: 1
+  variants:
+  - name: AutoRecoverEnabled
+    description: Enabled.
+    value: 0
+  - name: AutoRecoverDisabled
+    description: Disabled.
+    value: 1
+enum/Buf0i:
+  bit_size: 1
+  variants:
+  - name: BufferTxRxNotComplete
+    description: MB0 has no occurrence of successfully completed transmission or reception.
+    value: 0
+  - name: BufferTxRxComplete
+    description: MB0 has successfully completed transmission or reception.
+    value: 1
+enum/Buf5i:
+  bit_size: 1
+  variants:
+  - name: Id1
+    description: No occurrence of completed transmission or reception, or no frames available.
+    value: 0
+  - name: Id2
+    description: MB5 completed transmission or reception, or frames available.
+    value: 1
+enum/Buf6i:
+  bit_size: 1
+  variants:
+  - name: Id1
+    description: No occurrence of MB6 completing transmission or reception, or FIFO not almost full.
+    value: 0
+  - name: Id2
+    description: MB6 completed transmission or reception, or FIFO almost full.
+    value: 1
+enum/Buf7i:
+  bit_size: 1
+  variants:
+  - name: Id1
+    description: No occurrence of MB7 completing transmission or reception, or no FIFO overflow.
+    value: 0
+  - name: Id2
+    description: MB7 completed transmission or reception, or FIFO overflow.
+    value: 1
+enum/Crcerr:
+  bit_size: 1
+  variants:
+  - name: CrcErrorNo
+    description: No error.
+    value: 0
+  - name: CrcErrorYes
+    description: Error occurred since last read of this register.
+    value: 1
+enum/CrcerrFast:
+  bit_size: 1
+  variants:
+  - name: CrcErrorNo
+    description: No such occurrence.
+    value: 0
+  - name: CrcErrorYes
+    description: A CRC error occurred since last read of this register.
+    value: 1
+enum/Dma:
+  bit_size: 1
+  variants:
+  - name: Id1
+    description: Disable.
+    value: 0
+  - name: Id2
+    description: Enable.
+    value: 1
+enum/Eacen:
+  bit_size: 1
+  variants:
+  - name: RtrCompareNo
+    description: Disable.
+    value: 0
+  - name: RtrCompareYes
+    description: Enable.
+    value: 1
+enum/Edfltdis:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Enabled.
+    value: 0
+  - name: Disable
+    description: Disabled.
+    value: 1
+enum/Erfclr:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: No effect.
+    value: 0
+  - name: Clear
+    description: Clear enhanced RX FIFO content.
+    value: 1
+enum/Erfwmi:
+  bit_size: 1
+  variants:
+  - name: WatermarkNo
+    description: No such occurrence.
+    value: 0
+  - name: WatermarkYes
+    description: Number of messages in FIFO is greater than the watermark.
+    value: 1
+enum/ErrintFast:
+  bit_size: 1
+  variants:
+  - name: ErrorsDataPhaseNo
+    description: No such occurrence.
+    value: 0
+  - name: ErrorsDataPhaseYes
+    description: Error flag set in the data phase of CAN FD frames that have BRS = 1.
+    value: 1
+enum/Errmsk:
+  bit_size: 1
+  variants:
+  - name: ErrorIntDisabled
+    description: Interrupt disabled.
+    value: 0
+  - name: ErrorIntEnabled
+    description: Interrupt enabled.
+    value: 1
+enum/Errovr:
+  bit_size: 1
+  variants:
+  - name: OverrunNotOccurred
+    description: No overrun.
+    value: 0
+  - name: OverrunOccurred
+    description: Overrun.
+    value: 1
+enum/Etdcfail:
+  bit_size: 1
+  variants:
+  - name: InRange
+    description: In range.
+    value: 0
+  - name: OutOfRange
+    description: Out of range.
+    value: 1
+enum/Fcs:
+  bit_size: 2
+  variants:
+  - name: IdFiltering
+    description: Message ID filtering only.
+    value: 0
+  - name: IdPayloadFiltering
+    description: Message ID filtering and payload filtering.
+    value: 1
+  - name: IdFilteringNumber
+    description: Message ID filtering occurring a specified number of times.
+    value: 2
+  - name: IdPayloadFilteringNumber
+    description: Message ID filtering and payload filtering a specified number of times.
+    value: 3
+enum/Fden:
+  bit_size: 1
+  variants:
+  - name: CanFdDisabled
+    description: Disable.
+    value: 0
+  - name: CanFdEnabled
+    description: Enable.
+    value: 1
+enum/Fdrate:
+  bit_size: 1
+  variants:
+  - name: Nominal
+    description: Disable.
+    value: 0
+  - name: BitRateSwitching
+    description: Enable.
+    value: 1
+enum/FltIde:
+  bit_size: 1
+  variants:
+  - name: Standard
+    description: Standard.
+    value: 0
+  - name: Extended
+    description: Extended.
+    value: 1
+enum/FltRtr:
+  bit_size: 1
+  variants:
+  - name: Reject
+    description: Reject remote frame (accept data frame).
+    value: 0
+  - name: Accept
+    description: Accept remote frame.
+    value: 1
+enum/Fltconf:
+  bit_size: 2
+  variants:
+  - name: ErrorActive
+    description: Error Active.
+    value: 0
+  - name: ErrorPassive
+    description: Error Passive.
+    value: 1
+  - name: BusOff
+    description: Bus Off.
+    value: 2
+enum/Frmerr:
+  bit_size: 1
+  variants:
+  - name: FormErrorNo
+    description: No error.
+    value: 0
+  - name: FormErrorYes
+    description: Error occurred since last read of this register.
+    value: 1
+enum/FrmerrFast:
+  bit_size: 1
+  variants:
+  - name: FormErrorNo
+    description: No such occurrence.
+    value: 0
+  - name: FormErrorYes
+    description: A form error occurred since last read of this register.
+    value: 1
+enum/Frz:
+  bit_size: 1
+  variants:
+  - name: FreezeModeDisabled
+    description: Disable.
+    value: 0
+  - name: FreezeModeEnabled
+    description: Enable.
+    value: 1
+enum/Frzack:
+  bit_size: 1
+  variants:
+  - name: FreezeModeNo
+    description: Not in Freeze mode, prescaler running.
+    value: 0
+  - name: FreezeModeYes
+    description: In Freeze mode, prescaler stopped.
+    value: 1
+enum/Halt:
+  bit_size: 1
+  variants:
+  - name: HaltDisable
+    description: No request.
+    value: 0
+  - name: HaltEnable
+    description: Enter Freeze mode, if MCR[FRZ] = 1.
+    value: 1
+enum/Idam:
+  bit_size: 2
+  variants:
+  - name: OneFullId
+    description: 'Format A: One full ID (standard and extended) per ID filter table element.'
+    value: 0
+  - name: TwoFullId
+    description: 'Format B: Two full standard IDs or two partial 14-bit (standard and extended) IDs per ID filter table element.'
+    value: 1
+  - name: FourPartialId
+    description: 'Format C: Four partial 8-bit standard IDs per ID filter table element.'
+    value: 2
+  - name: AllFramesRejected
+    description: 'Format D: All frames rejected.'
+    value: 3
+enum/Ide:
+  bit_size: 1
+  variants:
+  - name: Standard
+    description: Standard.
+    value: 0
+  - name: Extended
+    description: Extended.
+    value: 1
+enum/IdeMsk:
+  bit_size: 1
+  variants:
+  - name: FrameFormatNo
+    description: The corresponding bit in the filter is "don't care.".
+    value: 0
+  - name: FrameFormatYes
+    description: The corresponding bit in the filter is checked.
+    value: 1
+enum/Idfs:
+  bit_size: 2
+  variants:
+  - name: MatchExact
+    description: Match ID contents to an exact target value.
+    value: 0
+  - name: MatchGte
+    description: Match an ID value greater than or equal to a specified target value.
+    value: 1
+  - name: MatchLte
+    description: Match an ID value smaller than or equal to a specified target value.
+    value: 2
+  - name: MatchRange
+    description: Match an ID value within a range of values, inclusive.
+    value: 3
+enum/Idle:
+  bit_size: 1
+  variants:
+  - name: CanBusNotIdle
+    description: Not IDLE.
+    value: 0
+  - name: CanBusIdle
+    description: IDLE.
+    value: 1
+enum/Imb:
+  bit_size: 1
+  variants:
+  - name: InactiveMailboxNo
+    description: Message buffer indicated by ESR2[LPTM] is not inactive.
+    value: 0
+  - name: InactiveMailboxYes
+    description: At least one message buffer is inactive.
+    value: 1
+enum/Irmq:
+  bit_size: 1
+  variants:
+  - name: IndividualRxMaskingDisabled
+    description: Disable.
+    value: 0
+  - name: IndividualRxMaskingEnabled
+    description: Enable.
+    value: 1
+enum/Isocanfden:
+  bit_size: 1
+  variants:
+  - name: NonIso
+    description: Disable.
+    value: 0
+  - name: Iso
+    description: Enable.
+    value: 1
+enum/Lbuf:
+  bit_size: 1
+  variants:
+  - name: HighestBufferFirst
+    description: Buffer with highest priority is transmitted first.
+    value: 0
+  - name: LowestBufferFirst
+    description: Lowest number buffer is transmitted first.
+    value: 1
+enum/Lom:
+  bit_size: 1
+  variants:
+  - name: ListenOnlyModeDisabled
+    description: Listen-Only mode is deactivated.
+    value: 0
+  - name: ListenOnlyModeEnabled
+    description: FlexCAN module operates in Listen-Only mode.
+    value: 1
+enum/Lpb:
+  bit_size: 1
+  variants:
+  - name: LoopbackDisabled
+    description: Disabled.
+    value: 0
+  - name: LoopbackEnabled
+    description: Enabled.
+    value: 1
+enum/Lpmack:
+  bit_size: 1
+  variants:
+  - name: LowPowerNo
+    description: Not in a low-power mode.
+    value: 0
+  - name: LowPowerYes
+    description: In a low-power mode.
+    value: 1
+enum/Lprioen:
+  bit_size: 1
+  variants:
+  - name: LocalPriorityDisabled
+    description: Disable.
+    value: 0
+  - name: LocalPriorityEnabled
+    description: Enable.
+    value: 1
+enum/Mbdsr0:
+  bit_size: 2
+  variants:
+  - name: R08Bytes
+    description: 8 bytes.
+    value: 0
+  - name: R016Bytes
+    description: 16 bytes.
+    value: 1
+  - name: R032Bytes
+    description: 32 bytes.
+    value: 2
+  - name: R064Bytes
+    description: 64 bytes.
+    value: 3
+enum/Mdis:
+  bit_size: 1
+  variants:
+  - name: FlexcanEnabled
+    description: Enable.
+    value: 0
+  - name: FlexcanDisabled
+    description: Disable.
+    value: 1
+enum/Mrp:
+  bit_size: 1
+  variants:
+  - name: Id1
+    description: Matching starts from Legacy RX FIFO or Enhanced RX FIFO and continues on message buffers.
+    value: 0
+  - name: Id3
+    description: Matching starts from message buffers and continues on Legacy RX FIFO or Enhanced RX FIFO.
+    value: 1
+enum/Nmatch:
+  bit_size: 8
+  variants:
+  - name: Match1
+    description: Once.
+    value: 1
+  - name: Match2
+    description: Twice.
+    value: 2
+  - name: Match255
+    description: 255 times.
+    value: 255
+enum/Notrdy:
+  bit_size: 1
+  variants:
+  - name: Id1
+    description: FlexCAN is in Normal mode, Listen-Only mode, or Loopback mode.
+    value: 0
+  - name: Id4
+    description: FlexCAN is in Disable mode, Stop mode, or Freeze mode.
+    value: 1
+enum/Plfs:
+  bit_size: 2
+  variants:
+  - name: MatchExact
+    description: Match payload contents to an exact target value.
+    value: 0
+  - name: MatchGte
+    description: Match a payload value greater than or equal to a specified target value.
+    value: 1
+  - name: MatchLte
+    description: Match a payload value smaller than or equal to a specified target value.
+    value: 2
+  - name: MatchRange
+    description: Match upon a payload value within a range of values, inclusive.
+    value: 3
+enum/PnetEn:
+  bit_size: 1
+  variants:
+  - name: PnDisabled
+    description: Disable.
+    value: 0
+  - name: PnEnabled
+    description: Enable.
+    value: 1
+enum/Rfen:
+  bit_size: 1
+  variants:
+  - name: Id1
+    description: Disable.
+    value: 0
+  - name: Id2
+    description: Enable.
+    value: 1
+enum/Rrs:
+  bit_size: 1
+  variants:
+  - name: RemoteResponseFrameNotGenerated
+    description: Generated.
+    value: 0
+  - name: RemoteResponseFrameGenerated
+    description: Stored.
+    value: 1
+enum/RtrMsk:
+  bit_size: 1
+  variants:
+  - name: FrameTypeNo
+    description: The corresponding bit in the filter is "don't care.".
+    value: 0
+  - name: FrameTypeYes
+    description: The corresponding bit in the filter is checked.
+    value: 1
+enum/Rwrnint:
+  bit_size: 1
+  variants:
+  - name: RxWarningIntNo
+    description: No such occurrence.
+    value: 0
+  - name: RxWarningIntYes
+    description: RX error counter changed from less than 96 to greater than or equal to 96.
+    value: 1
+enum/Rwrnmsk:
+  bit_size: 1
+  variants:
+  - name: RxWarningIntDisabled
+    description: Disabled.
+    value: 0
+  - name: RxWarningIntEnabled
+    description: Enabled.
+    value: 1
+enum/Rxwrn:
+  bit_size: 1
+  variants:
+  - name: RxerrcntLt96
+    description: No such occurrence.
+    value: 0
+  - name: RxerrcntGte96
+    description: RXERRCNT is greater than or equal to 96.
+    value: 1
+enum/Slfwak:
+  bit_size: 1
+  variants:
+  - name: SelfWakeupDisabled
+    description: Disable.
+    value: 0
+  - name: SelfWakeupEnabled
+    description: Enable.
+    value: 1
+enum/Smp:
+  bit_size: 1
+  variants:
+  - name: OneSample
+    description: One sample is used to determine the bit value.
+    value: 0
+  - name: ThreeSample
+    description: 'Three samples are used to determine the value of the received bit: the regular one (sample point) and two preceding samples. A majority rule is used.'
+    value: 1
+enum/Softrst:
+  bit_size: 1
+  variants:
+  - name: SoftrstNoResetRequest
+    description: No reset.
+    value: 0
+  - name: SoftrstResetRegisters
+    description: Soft reset affects reset registers.
+    value: 1
+enum/Srr:
+  bit_size: 1
+  variants:
+  - name: Dominant
+    description: Dominant.
+    value: 0
+  - name: Recessive
+    description: Recessive.
+    value: 1
+enum/Srxdis:
+  bit_size: 1
+  variants:
+  - name: SelfReceptionEnabled
+    description: Enable.
+    value: 0
+  - name: SelfReceptionDisabled
+    description: Disable.
+    value: 1
+enum/Stferr:
+  bit_size: 1
+  variants:
+  - name: StuffingErrorNo
+    description: No error.
+    value: 0
+  - name: StuffingErrorYes
+    description: Error occurred since last read of this register.
+    value: 1
+enum/StferrFast:
+  bit_size: 1
+  variants:
+  - name: StuffingErrorNo
+    description: No such occurrence.
+    value: 0
+  - name: StuffingErrorYes
+    description: A stuffing error occurred since last read of this register.
+    value: 1
+enum/Synch:
+  bit_size: 1
+  variants:
+  - name: CanBusSyncNo
+    description: Not synchronized.
+    value: 0
+  - name: CanBusSyncYes
+    description: Synchronized.
+    value: 1
+enum/Tdcfail:
+  bit_size: 1
+  variants:
+  - name: InRange
+    description: In range.
+    value: 0
+  - name: OutOfRange
+    description: Out of range.
+    value: 1
+enum/Tdmdis:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Enable.
+    value: 0
+  - name: Disable
+    description: Disable.
+    value: 1
+enum/Tsyn:
+  bit_size: 1
+  variants:
+  - name: TimerSyncDisabled
+    description: Disable.
+    value: 0
+  - name: TimerSyncEnabled
+    description: Enable.
+    value: 1
+enum/Twrnint:
+  bit_size: 1
+  variants:
+  - name: TxWarningIntNo
+    description: No such occurrence.
+    value: 0
+  - name: TxWarningIntYes
+    description: TX error counter changed from less than 96 to greater than or equal to 96.
+    value: 1
+enum/Twrnmsk:
+  bit_size: 1
+  variants:
+  - name: TxWarningIntDisabled
+    description: Disabled.
+    value: 0
+  - name: TxWarningIntEnabled
+    description: Enabled.
+    value: 1
+enum/Tx:
+  bit_size: 1
+  variants:
+  - name: TransmitMessageNo
+    description: Not transmitting.
+    value: 0
+  - name: TransmitMessageYes
+    description: Transmitting.
+    value: 1
+enum/Txwrn:
+  bit_size: 1
+  variants:
+  - name: TxerrcntLt96
+    description: No such occurrence.
+    value: 0
+  - name: TxerrcntGte96
+    description: TXERRCNT is 96 or greater.
+    value: 1
+enum/Wakmsk:
+  bit_size: 1
+  variants:
+  - name: WakeupInterruptDisabled
+    description: Disabled.
+    value: 0
+  - name: WakeupInterruptEnabled
+    description: Enabled.
+    value: 1
+enum/Wrnen:
+  bit_size: 1
+  variants:
+  - name: TwrnintRwrnintInactive
+    description: Disable.
+    value: 0
+  - name: TwrnintRwrnintActive
+    description: Enable.
+    value: 1

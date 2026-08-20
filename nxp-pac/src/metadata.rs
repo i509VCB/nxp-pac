@@ -16,6 +16,14 @@
     feature = "lpc55s69_cm33_core1",
     path = "./chips/lpc55s69_cm33_core1/metadata.rs"
 )]
+#[cfg_attr(
+    feature = "mcxn947_cm33_core0",
+    path = "./chips/mcxn947_cm33_core0/metadata.rs"
+)]
+#[cfg_attr(
+    feature = "mcxn947_cm33_core1",
+    path = "./chips/mcxn947_cm33_core1/metadata.rs"
+)]
 mod _generated;
 
 #[path = "./meta_peripherals/_peripherals.rs"]

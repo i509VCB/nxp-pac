@@ -1,0 +1,30 @@
+transforms:
+  # Fix badly OCR'd typo
+  - !RenameEnumVariants
+    enum: ctimer::Mr[0-9](.+)
+    from: Mris([0-9])
+    to: Mr1S$1
+
+  - !RenameEnumVariants
+    enum: ctimer::Mr[0-9](.+)
+    from: Mr[0-9]([A-Za-z_]+[0-9])
+    to: Mr$1
+
+  - !DeleteEnums
+    from: ctimer::Cap\d+(.+)
+
+  - !DeleteEnums
+    from: ctimer::Mr.+
+    
+  - !DeleteEnums
+    from: ctimer::Em\d+
+
+  - !MergeEnums
+    from: ctimer::Emc(\d+)
+    to: ctimer::Emc
+    skip_unmergeable: false
+
+  - !MergeEnums
+    from: ctimer::Pwmen(\d+)
+    to: ctimer::Pwmen
+    skip_unmergeable: false

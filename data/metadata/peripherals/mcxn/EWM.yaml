@@ -1,0 +1,103 @@
+block/Ewm:
+  description: EWM.
+  items:
+  - name: ctrl
+    description: Control.
+    byte_offset: 0
+    bit_size: 8
+    fieldset: Ctrl
+  - name: serv
+    description: Service.
+    byte_offset: 1
+    bit_size: 8
+    fieldset: Serv
+  - name: cmpl
+    description: Compare Low.
+    byte_offset: 2
+    bit_size: 8
+    fieldset: Cmpl
+  - name: cmph
+    description: Compare High.
+    byte_offset: 3
+    bit_size: 8
+    fieldset: Cmph
+  - name: clkctrl
+    description: Clock Control.
+    byte_offset: 4
+    bit_size: 8
+    fieldset: Clkctrl
+  - name: clkprescaler
+    description: Clock Prescaler.
+    byte_offset: 5
+    bit_size: 8
+    fieldset: Clkprescaler
+fieldset/Clkctrl:
+  description: Clock Control.
+  bit_size: 8
+  fields:
+  - name: clksel
+    description: Clock Select.
+    bit_offset: 0
+    bit_size: 2
+fieldset/Clkprescaler:
+  description: Clock Prescaler.
+  bit_size: 8
+  fields:
+  - name: clk_div
+    description: Clock Divider.
+    bit_offset: 0
+    bit_size: 8
+fieldset/Cmph:
+  description: Compare High.
+  bit_size: 8
+  fields:
+  - name: compareh
+    description: Compare High.
+    bit_offset: 0
+    bit_size: 8
+fieldset/Cmpl:
+  description: Compare Low.
+  bit_size: 8
+  fields:
+  - name: comparel
+    description: Compare Low.
+    bit_offset: 0
+    bit_size: 8
+fieldset/Ctrl:
+  description: Control.
+  bit_size: 8
+  fields:
+  - name: ewmen
+    description: EWM Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: assin
+    description: Assertion State Select.
+    bit_offset: 1
+    bit_size: 1
+  - name: inen
+    description: Input Enable.
+    bit_offset: 2
+    bit_size: 1
+  - name: inten
+    description: Interrupt Enable.
+    bit_offset: 3
+    bit_size: 1
+    enum: Inten
+fieldset/Serv:
+  description: Service.
+  bit_size: 8
+  fields:
+  - name: service
+    description: Service.
+    bit_offset: 0
+    bit_size: 8
+enum/Inten:
+  bit_size: 1
+  variants:
+  - name: Zero
+    description: Deasserts interrupt requests.
+    value: 0
+  - name: IntReq
+    description: Generates interrupt requests.
+    value: 1

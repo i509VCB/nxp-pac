@@ -1,0 +1,501 @@
+block/Usbhs1PhyDcd:
+  description: USBDCD.
+  items:
+  - name: control
+    description: Control.
+    byte_offset: 0
+    fieldset: Control
+  - name: clock
+    description: Clock.
+    byte_offset: 4
+    fieldset: Clock
+  - name: status
+    description: Status.
+    byte_offset: 8
+    access: Read
+    fieldset: Status
+  - name: signal_override
+    description: Signal Override.
+    byte_offset: 12
+    fieldset: SignalOverride
+  - name: timer0
+    description: TIMER0.
+    byte_offset: 16
+    fieldset: Timer0
+  - name: timer1
+    description: TIMER1.
+    byte_offset: 20
+    fieldset: Timer1
+  - name: timer2_bc11
+    description: TIMER2_BC11.
+    byte_offset: 24
+    fieldset: Timer2Bc11
+  - name: timer2_bc12
+    description: TIMER2_BC12.
+    byte_offset: 24
+    fieldset: Timer2Bc12
+fieldset/Clock:
+  description: Clock.
+  fields:
+  - name: clock_unit
+    description: Unit of Measurement Encoding for Clock Speed.
+    bit_offset: 0
+    bit_size: 1
+    enum: ClockUnit
+  - name: clock_speed
+    description: Numerical Value of Clock Speed in Binary.
+    bit_offset: 2
+    bit_size: 10
+fieldset/Control:
+  description: Control.
+  fields:
+  - name: iack
+    description: Interrupt Acknowledge.
+    bit_offset: 0
+    bit_size: 1
+    enum: Iack
+  - name: if_
+    description: Interrupt Flag.
+    bit_offset: 8
+    bit_size: 1
+    enum: If
+  - name: ie
+    description: Interrupt Enable.
+    bit_offset: 16
+    bit_size: 1
+    enum: Ie
+  - name: bc12
+    description: Battery Charging Revision 1.2 Compatibility.
+    bit_offset: 17
+    bit_size: 1
+    enum: Bc12
+  - name: start
+    description: Start Change Detection Sequence.
+    bit_offset: 24
+    bit_size: 1
+  - name: sr
+    description: Software Reset.
+    bit_offset: 25
+    bit_size: 1
+    enum: Sr
+fieldset/SignalOverride:
+  description: Signal Override.
+  fields:
+  - name: ps
+    description: Phase Selection.
+    bit_offset: 0
+    bit_size: 3
+    enum: Ps
+fieldset/Status:
+  description: Status.
+  fields:
+  - name: seq_res
+    description: Charger Detection Sequence Results.
+    bit_offset: 16
+    bit_size: 2
+    enum: SeqRes
+  - name: seq_stat
+    description: Charger Detection Sequence Status.
+    bit_offset: 18
+    bit_size: 2
+    enum: SeqStat
+  - name: err
+    description: Error Flag.
+    bit_offset: 20
+    bit_size: 1
+  - name: to
+    description: Timeout Flag.
+    bit_offset: 21
+    bit_size: 1
+  - name: active
+    description: Active Status Indicator.
+    bit_offset: 22
+    bit_size: 1
+    enum: Active
+fieldset/Timer0:
+  description: TIMER0.
+  fields:
+  - name: tunitcon
+    description: Unit Connection Timer Elapse (in ms).
+    bit_offset: 0
+    bit_size: 12
+  - name: tseq_init
+    description: Sequence Initiation Time.
+    bit_offset: 16
+    bit_size: 10
+    enum: TseqInit
+fieldset/Timer1:
+  description: TIMER1.
+  fields:
+  - name: tvdpsrc_on
+    description: Time Period Comparator Enabled.
+    bit_offset: 0
+    bit_size: 10
+    enum: TvdpsrcOn
+  - name: tdcd_dbnc
+    description: Time Period to Debounce D+ Signal.
+    bit_offset: 16
+    bit_size: 10
+    enum: TdcdDbnc
+fieldset/Timer2Bc11:
+  description: TIMER2_BC11.
+  fields:
+  - name: check_dm
+    description: Time Before Check of D- Line.
+    bit_offset: 0
+    bit_size: 4
+    enum: CheckDm
+  - name: tvdpsrc_con
+    description: Time Period Before Enabling D+ Pullup.
+    bit_offset: 16
+    bit_size: 10
+    enum: TvdpsrcCon
+fieldset/Timer2Bc12:
+  description: TIMER2_BC12.
+  fields:
+  - name: tvdmsrc_on
+    description: TVDMSRC_ON.
+    bit_offset: 0
+    bit_size: 10
+    enum: TvdmsrcOn
+  - name: twait_after_prd
+    description: TWAIT_AFTER_PRD.
+    bit_offset: 16
+    bit_size: 10
+    enum: TwaitAfterPrd
+enum/Active:
+  bit_size: 1
+  variants:
+  - name: SeqNotRunning
+    description: The sequence is not running.
+    value: 0
+  - name: SeqRunning
+    description: The sequence is running.
+    value: 1
+enum/Bc12:
+  bit_size: 1
+  variants:
+  - name: Bc11
+    description: Compatible with BC1.1.
+    value: 0
+  - name: Bc12
+    description: Compatible with BC1.2 (default).
+    value: 1
+enum/CheckDm:
+  bit_size: 4
+  variants:
+  - name: Ms1
+    description: 1 ms - 15 ms.
+    value: 1
+  - name: Ms2
+    description: 1 ms - 15 ms.
+    value: 2
+  - name: Ms3
+    description: 1 ms - 15 ms.
+    value: 3
+  - name: Ms4
+    description: 1 ms - 15 ms.
+    value: 4
+  - name: Ms5
+    description: 1 ms - 15 ms.
+    value: 5
+  - name: Ms6
+    description: 1 ms - 15 ms.
+    value: 6
+  - name: Ms7
+    description: 1 ms - 15 ms.
+    value: 7
+  - name: Ms8
+    description: 1 ms - 15 ms.
+    value: 8
+  - name: Ms9
+    description: 1 ms - 15 ms.
+    value: 9
+  - name: Ms10
+    description: 1 ms - 15 ms.
+    value: 10
+enum/ClockUnit:
+  bit_size: 1
+  variants:
+  - name: KhzClk
+    description: kHz Speed (between 4 kHz and 1023 kHz).
+    value: 0
+  - name: MhzClk
+    description: MHz Speed (between 1 MHz and 1023 MHz).
+    value: 1
+enum/Iack:
+  bit_size: 1
+  variants:
+  - name: IntNoclear
+    description: Do not clear the interrupt.
+    value: 0
+  - name: IntClear
+    description: Clear the IF field (interrupt flag).
+    value: 1
+enum/Ie:
+  bit_size: 1
+  variants:
+  - name: DisInt
+    description: Disable interrupts to the system.
+    value: 0
+  - name: EnInt
+    description: Enable interrupts to the system.
+    value: 1
+enum/If:
+  bit_size: 1
+  variants:
+  - name: IntPend
+    description: No interrupt is pending.
+    value: 0
+  - name: IntNopend
+    description: An interrupt is pending.
+    value: 1
+enum/Ps:
+  bit_size: 3
+  variants:
+  - name: NoOverride
+    description: No overrides. Field must remain at this value during normal USB data communication to prevent unexpected conditions on USB_DP and USB_DM pins. (Default).
+    value: 0
+  - name: PriDetOverride
+    description: Enables VDP_SRC voltage source for the USB_DP pin and IDM_SINK current source for the USB_DM pin.
+    value: 2
+  - name: CdpAdvert
+    description: Enables VDM_SRC voltage source only.
+    value: 4
+enum/SeqRes:
+  bit_size: 2
+  variants:
+  - name: NoResult
+    description: No results to report.
+    value: 0
+  - name: ConnSdp
+    description: Attached to an SDP. Must comply with USB 2.0 by drawing only 2.5 mA (max) until connected.
+    value: 1
+  - name: ConnCp
+    description: 'Attached to a charging port. The exact meaning depends on the STATUS[SEQ_STAT] field (value 0: Attached to either a CDP or a DCP. The charger type detection has not completed. value 1: Attached to a CDP. The charger type detection has completed.).'
+    value: 2
+  - name: ConnDcp
+    description: Attached to a DCP.
+    value: 3
+enum/SeqStat:
+  bit_size: 2
+  variants:
+  - name: NoDataPinConn
+    description: The module is either not enabled, or the module is enabled but the data pins have not yet been detected.
+    value: 0
+  - name: DataPinConn
+    description: Data pin contact detection is complete.
+    value: 1
+  - name: CpDetDone
+    description: Charging port detection is complete.
+    value: 2
+  - name: CtDetDone
+    description: Charger type detection is complete.
+    value: 3
+enum/Sr:
+  bit_size: 1
+  variants:
+  - name: NoReset
+    description: Do not perform a software reset.
+    value: 0
+  - name: SwReset
+    description: Perform a software reset.
+    value: 1
+enum/TdcdDbnc:
+  bit_size: 10
+  variants:
+  - name: Ms1
+    description: 1 ms - 1023 ms.
+    value: 1
+  - name: Ms2
+    description: 1 ms - 1023 ms.
+    value: 2
+  - name: Ms3
+    description: 1 ms - 1023 ms.
+    value: 3
+  - name: Ms4
+    description: 1 ms - 1023 ms.
+    value: 4
+  - name: Ms5
+    description: 1 ms - 1023 ms.
+    value: 5
+  - name: Ms6
+    description: 1 ms - 1023 ms.
+    value: 6
+  - name: Ms7
+    description: 1 ms - 1023 ms.
+    value: 7
+  - name: Ms8
+    description: 1 ms - 1023 ms.
+    value: 8
+  - name: Ms9
+    description: 1 ms - 1023 ms.
+    value: 9
+  - name: Ms10
+    description: 1 ms - 1023 ms.
+    value: 10
+enum/TseqInit:
+  bit_size: 10
+  variants:
+  - name: Ms0
+    description: 0 ms - 1023 ms.
+    value: 0
+  - name: Ms1
+    description: 0 ms - 1023 ms.
+    value: 1
+  - name: Ms2
+    description: 0 ms - 1023 ms.
+    value: 2
+  - name: Ms3
+    description: 0 ms - 1023 ms.
+    value: 3
+  - name: Ms4
+    description: 0 ms - 1023 ms.
+    value: 4
+  - name: Ms5
+    description: 0 ms - 1023 ms.
+    value: 5
+  - name: Ms6
+    description: 0 ms - 1023 ms.
+    value: 6
+  - name: Ms7
+    description: 0 ms - 1023 ms.
+    value: 7
+  - name: Ms8
+    description: 0 ms - 1023 ms.
+    value: 8
+  - name: Ms9
+    description: 0 ms - 1023 ms.
+    value: 9
+enum/TvdmsrcOn:
+  bit_size: 10
+  variants:
+  - name: Ms0
+    description: 0 ms - 40 ms.
+    value: 0
+  - name: Ms1
+    description: 0 ms - 40 ms.
+    value: 1
+  - name: Ms2
+    description: 0 ms - 40 ms.
+    value: 2
+  - name: Ms3
+    description: 0 ms - 40 ms.
+    value: 3
+  - name: Ms4
+    description: 0 ms - 40 ms.
+    value: 4
+  - name: Ms5
+    description: 0 ms - 40 ms.
+    value: 5
+  - name: Ms6
+    description: 0 ms - 40 ms.
+    value: 6
+  - name: Ms7
+    description: 0 ms - 40 ms.
+    value: 7
+  - name: Ms8
+    description: 0 ms - 40 ms.
+    value: 8
+  - name: Ms9
+    description: 0 ms - 40 ms.
+    value: 9
+enum/TvdpsrcCon:
+  bit_size: 10
+  variants:
+  - name: Ms1
+    description: 1 ms - 1023 ms.
+    value: 1
+  - name: Ms2
+    description: 1 ms - 1023 ms.
+    value: 2
+  - name: Ms3
+    description: 1 ms - 1023 ms.
+    value: 3
+  - name: Ms4
+    description: 1 ms - 1023 ms.
+    value: 4
+  - name: Ms5
+    description: 1 ms - 1023 ms.
+    value: 5
+  - name: Ms6
+    description: 1 ms - 1023 ms.
+    value: 6
+  - name: Ms7
+    description: 1 ms - 1023 ms.
+    value: 7
+  - name: Ms8
+    description: 1 ms - 1023 ms.
+    value: 8
+  - name: Ms9
+    description: 1 ms - 1023 ms.
+    value: 9
+  - name: Ms10
+    description: 1 ms - 1023 ms.
+    value: 10
+enum/TvdpsrcOn:
+  bit_size: 10
+  variants:
+  - name: Ms1
+    description: 1 ms - 1023 ms.
+    value: 1
+  - name: Ms2
+    description: 1 ms - 1023 ms.
+    value: 2
+  - name: Ms3
+    description: 1 ms - 1023 ms.
+    value: 3
+  - name: Ms4
+    description: 1 ms - 1023 ms.
+    value: 4
+  - name: Ms5
+    description: 1 ms - 1023 ms.
+    value: 5
+  - name: Ms6
+    description: 1 ms - 1023 ms.
+    value: 6
+  - name: Ms7
+    description: 1 ms - 1023 ms.
+    value: 7
+  - name: Ms8
+    description: 1 ms - 1023 ms.
+    value: 8
+  - name: Ms9
+    description: 1 ms - 1023 ms.
+    value: 9
+  - name: Ms10
+    description: 1 ms - 1023 ms.
+    value: 10
+enum/TwaitAfterPrd:
+  bit_size: 10
+  variants:
+  - name: Ms1
+    description: 1 ms - 1023 ms.
+    value: 1
+  - name: Ms2
+    description: 1 ms - 1023 ms.
+    value: 2
+  - name: Ms3
+    description: 1 ms - 1023 ms.
+    value: 3
+  - name: Ms4
+    description: 1 ms - 1023 ms.
+    value: 4
+  - name: Ms5
+    description: 1 ms - 1023 ms.
+    value: 5
+  - name: Ms6
+    description: 1 ms - 1023 ms.
+    value: 6
+  - name: Ms7
+    description: 1 ms - 1023 ms.
+    value: 7
+  - name: Ms8
+    description: 1 ms - 1023 ms.
+    value: 8
+  - name: Ms9
+    description: 1 ms - 1023 ms.
+    value: 9
+  - name: Ms10
+    description: 1 ms - 1023 ms.
+    value: 10

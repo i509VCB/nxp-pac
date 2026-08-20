@@ -1,0 +1,1493 @@
+block/Channel:
+  description: Prefetch configuration array.
+  items:
+  - name: ccr
+    description: Channel n Control.
+    byte_offset: 0
+    fieldset: Ccr
+  - name: cdr
+    description: Channel n Data Rate.
+    byte_offset: 4
+    fieldset: Cdr
+  - name: ccfr
+    description: Channel n Configuration.
+    byte_offset: 8
+    fieldset: Ccfr
+  - name: cprot
+    description: Channel n Protection.
+    byte_offset: 12
+    fieldset: Cprot
+  - name: cbias
+    description: Channel n Bias.
+    byte_offset: 16
+    fieldset: Cbias
+  - name: clolmt
+    description: Channel n Low Limit.
+    byte_offset: 20
+    fieldset: Clolmt
+  - name: chilmt
+    description: Channel n High Limit.
+    byte_offset: 24
+    fieldset: Chilmt
+  - name: crdata
+    description: Channel n Result Data.
+    byte_offset: 28
+    access: Read
+    fieldset: Crdata
+  - name: cmpdata
+    description: Channel n Multipurpose Data.
+    byte_offset: 32
+    fieldset: Cmpdata
+  - name: cacfr
+    description: Channel n Advanced Configuration.
+    byte_offset: 36
+    fieldset: Cacfr
+  - name: csr
+    description: Channel n Status.
+    byte_offset: 40
+    fieldset: Csr
+  - name: cdbgr
+    description: Channel n Debug.
+    byte_offset: 44
+    access: Read
+    fieldset: Cdbgr
+block/Sinc:
+  description: SINC.
+  items:
+  - name: verid
+    description: Version ID.
+    byte_offset: 0
+    access: Read
+    fieldset: Verid
+  - name: parameter
+    description: Parameters.
+    byte_offset: 4
+    fieldset: Parameter
+  - name: mcr
+    description: Main Control.
+    byte_offset: 8
+    fieldset: Mcr
+  - name: nie
+    description: Normal Interrupt Enable.
+    byte_offset: 12
+    fieldset: Nie
+  - name: eie
+    description: Error Interrupt Enable.
+    byte_offset: 16
+    fieldset: Eie
+  - name: fifoie
+    description: FIFO And CAD Error Interrupt Enable.
+    byte_offset: 20
+    fieldset: Fifoie
+  - name: nis
+    description: Normal Interrupt Status.
+    byte_offset: 24
+    fieldset: Nis
+  - name: eis
+    description: Error Interrupt Status.
+    byte_offset: 28
+    fieldset: Eis
+  - name: fifois
+    description: FIFO And CAD Error Interrupt Status.
+    byte_offset: 32
+    fieldset: Fifois
+  - name: sr
+    description: Status.
+    byte_offset: 36
+    access: Read
+    fieldset: Sr
+  - name: channel
+    description: Prefetch configuration array.
+    array:
+      len: 5
+      stride: 48
+    byte_offset: 56
+    block: Channel
+fieldset/Cacfr:
+  description: Channel n Advanced Configuration.
+  fields:
+  - name: admasel
+    description: Alternate DMA Source Selection.
+    bit_offset: 12
+    bit_size: 4
+    enum: Admasel
+  - name: hpfa
+    description: HPF DC Remover Alpha Coefficient.
+    bit_offset: 16
+    bit_size: 4
+  - name: ibdly
+    description: Input Modulator Bitstream Delay.
+    bit_offset: 20
+    bit_size: 4
+    enum: Ibdly
+fieldset/Cbias:
+  description: Channel n Bias.
+  fields:
+  - name: bias
+    description: Bias Value.
+    bit_offset: 8
+    bit_size: 24
+fieldset/Ccfr:
+  description: Channel n Configuration.
+  fields:
+  - name: pfsft
+    description: PF Shift.
+    bit_offset: 0
+    bit_size: 5
+  - name: rdfmt
+    description: Result Data Format.
+    bit_offset: 6
+    bit_size: 1
+    enum: Rdfmt
+  - name: fifowmk
+    description: FIFO Watermark.
+    bit_offset: 10
+    bit_size: 3
+  - name: ibfmt
+    description: Input Bit Format.
+    bit_offset: 16
+    bit_size: 2
+    enum: Ibfmt
+  - name: icsel
+    description: Input Clock Select.
+    bit_offset: 18
+    bit_size: 3
+    enum: Icsel
+  - name: icesel
+    description: Input Clock Edge Select.
+    bit_offset: 21
+    bit_size: 3
+    enum: Icesel
+  - name: itsel
+    description: Input Trigger Select.
+    bit_offset: 24
+    bit_size: 2
+    enum: Itsel
+  - name: ibsel
+    description: Input Bit Select.
+    bit_offset: 26
+    bit_size: 2
+    enum: Ibsel
+  - name: itlvl
+    description: Input Trigger Level Type.
+    bit_offset: 28
+    bit_size: 1
+    enum: Itlvl
+  - name: zcop
+    description: Zero Cross Option.
+    bit_offset: 30
+    bit_size: 2
+    enum: Zcop
+fieldset/Ccr:
+  description: Channel n Control.
+  fields:
+  - name: chen
+    description: Channel Enable.
+    bit_offset: 0
+    bit_size: 1
+    enum: Chen
+  - name: pfen
+    description: PF Enable.
+    bit_offset: 1
+    bit_size: 1
+    enum: Pfen
+  - name: dmaen
+    description: DMA Enable.
+    bit_offset: 3
+    bit_size: 1
+    enum: Dmaen
+  - name: scden
+    description: Short Circuit Detect Enable.
+    bit_offset: 8
+    bit_size: 1
+    enum: Scden
+  - name: caden
+    description: Clock Absence Detect Enable.
+    bit_offset: 9
+    bit_size: 1
+    enum: Caden
+  - name: zcden
+    description: Zero Cross Detect Enable.
+    bit_offset: 12
+    bit_size: 1
+    enum: Zcden
+  - name: lmten
+    description: Limit Enable.
+    bit_offset: 13
+    bit_size: 1
+    enum: Lmten
+  - name: fifoen
+    description: FIFO Enable.
+    bit_offset: 14
+    bit_size: 1
+    enum: Fifoen
+  - name: dbgsel
+    description: Debug Output Selection.
+    bit_offset: 20
+    bit_size: 4
+    enum: Dbgsel
+fieldset/Cdbgr:
+  description: Channel n Debug.
+  fields:
+  - name: dbgdata
+    description: Debug Data.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Cdr:
+  description: Channel n Data Rate.
+  fields:
+  - name: pfosr
+    description: PF OSR.
+    bit_offset: 0
+    bit_size: 11
+  - name: pford
+    description: PF Order.
+    bit_offset: 11
+    bit_size: 2
+    enum: Pford
+  - name: pfcm
+    description: PF Conversion Mode.
+    bit_offset: 14
+    bit_size: 2
+    enum: Pfcm
+fieldset/Chilmt:
+  description: Channel n High Limit.
+  fields:
+  - name: hilmt
+    description: High Limit Threshold.
+    bit_offset: 8
+    bit_size: 24
+fieldset/Clolmt:
+  description: Channel n Low Limit.
+  fields:
+  - name: lolmt
+    description: Low Limit Threshold.
+    bit_offset: 8
+    bit_size: 24
+fieldset/Cmpdata:
+  description: Channel n Multipurpose Data.
+  fields:
+  - name: mpdata
+    description: Multipurpose Data.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Cprot:
+  description: Channel n Protection.
+  fields:
+  - name: scdlmt
+    description: SCD Limit Threshold.
+    bit_offset: 0
+    bit_size: 8
+    enum: Scdlmt
+  - name: scdcm
+    description: SCD Conversion Mode.
+    bit_offset: 11
+    bit_size: 1
+    enum: Scdcm
+  - name: scdop
+    description: SCD Option.
+    bit_offset: 12
+    bit_size: 2
+    enum: Scdop
+  - name: lmtop
+    description: Limit Detection Option.
+    bit_offset: 14
+    bit_size: 2
+    enum: Lmtop
+  - name: cadlmt
+    description: CAD Limit Threshold.
+    bit_offset: 16
+    bit_size: 4
+    enum: Cadlmt
+  - name: cadbk
+    description: CAD Break Signal.
+    bit_offset: 26
+    bit_size: 1
+    enum: Cadbk
+  - name: scdbk
+    description: SCD Break Signal.
+    bit_offset: 27
+    bit_size: 1
+    enum: Scdbk
+  - name: llmtbk
+    description: Low Limit Break Signal.
+    bit_offset: 29
+    bit_size: 1
+    enum: Llmtbk
+  - name: wlmtbk
+    description: Window Limit Break Signal.
+    bit_offset: 30
+    bit_size: 1
+    enum: Wlmtbk
+  - name: hlmtbk
+    description: High Limit Break Signal.
+    bit_offset: 31
+    bit_size: 1
+    enum: Hlmtbk
+fieldset/Crdata:
+  description: Channel n Result Data.
+  fields:
+  - name: rdata
+    description: Result Data.
+    bit_offset: 8
+    bit_size: 24
+fieldset/Csr:
+  description: Channel n Status.
+  fields:
+  - name: fifoavil
+    description: FIFO Available Data.
+    bit_offset: 0
+    bit_size: 5
+  - name: psrdy
+    description: Parallel or Serial Data Ready.
+    bit_offset: 7
+    bit_size: 1
+    enum: Psrdy
+  - name: pfsat
+    description: Primary CIC Saturation Flag.
+    bit_offset: 8
+    bit_size: 1
+    enum: Pfsat
+  - name: hpfsat
+    description: HPF Saturation Flag.
+    bit_offset: 9
+    bit_size: 1
+    enum: Hpfsat
+  - name: sftsat
+    description: Shift Saturation Flag.
+    bit_offset: 10
+    bit_size: 1
+    enum: Sftsat
+  - name: biassat
+    description: Bias Saturation Flag.
+    bit_offset: 11
+    bit_size: 1
+    enum: Biassat
+  - name: rdrs
+    description: Result Data Direct Read Status.
+    bit_offset: 12
+    bit_size: 1
+    enum: Rdrs
+  - name: srds
+    description: Start Read Debug Data Sync.
+    bit_offset: 13
+    bit_size: 1
+    enum: Srds
+  - name: dbgrs
+    description: Debug Data Read Status.
+    bit_offset: 14
+    bit_size: 2
+    enum: Dbgrs
+  - name: cnum
+    description: Number Of Conversions.
+    bit_offset: 16
+    bit_size: 7
+  - name: cnum_ov
+    description: Overflow In Number Of Conversions.
+    bit_offset: 23
+    bit_size: 1
+    enum: CnumOv
+fieldset/Eie:
+  description: Error Interrupt Enable.
+  fields:
+  - name: scdie
+    description: Short Circuit Detected Interrupt Enable.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Scdie
+  - name: wlmtie
+    description: Window Limit Interrupt Enable.
+    bit_offset: 8
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Wlmtie
+  - name: llmtie
+    description: Low Limit Interrupt Enable.
+    bit_offset: 16
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Llmtie
+  - name: hlmtie
+    description: High Limit Interrupt Enable.
+    bit_offset: 24
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Hlmtie
+fieldset/Eis:
+  description: Error Interrupt Status.
+  fields:
+  - name: scd
+    description: Short Circuit Detected Flag.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Scd
+  - name: wlmt
+    description: Window Limit Flag.
+    bit_offset: 8
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Wlmt
+  - name: llmt
+    description: Low Limit Flag.
+    bit_offset: 16
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Llmt
+  - name: hlmt
+    description: High Limit Flag.
+    bit_offset: 24
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Hlmt
+fieldset/Fifoie:
+  description: FIFO And CAD Error Interrupt Enable.
+  fields:
+  - name: funfie
+    description: FIFO Underflow Interrupt Enable.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Funfie
+  - name: fovfie
+    description: FIFO Overflow Interrupt Enable.
+    bit_offset: 8
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Fovfie
+  - name: cadie
+    description: Clock Absence Interrupt Enable.
+    bit_offset: 16
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Cadie
+  - name: satie
+    description: Saturation Interrupt Enable.
+    bit_offset: 24
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Satie
+fieldset/Fifois:
+  description: FIFO And CAD Error Interrupt Status.
+  fields:
+  - name: funf
+    description: FIFO Underflow Flag.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Funf
+  - name: fovf
+    description: FIFO Overflow Flag.
+    bit_offset: 8
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Fovf
+  - name: cad
+    description: Clock Absence Flag.
+    bit_offset: 16
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Cad
+  - name: sat
+    description: Saturation Flag.
+    bit_offset: 24
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Sat
+fieldset/Mcr:
+  description: Main Control.
+  fields:
+  - name: strig
+    description: Software Trigger For Channel n.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Strig
+  - name: dozen
+    description: Doze Or Stop Enable.
+    bit_offset: 10
+    bit_size: 1
+    enum: Dozen
+  - name: rst
+    description: Software Reset.
+    bit_offset: 13
+    bit_size: 1
+    enum: Rst
+  - name: men
+    description: Master Enable.
+    bit_offset: 15
+    bit_size: 1
+    enum: Men
+  - name: mclkdiv
+    description: Modulator Clock Divider.
+    bit_offset: 16
+    bit_size: 8
+    enum: Mclkdiv
+  - name: prescale
+    description: Prescale Before Clock Divider.
+    bit_offset: 25
+    bit_size: 2
+    enum: Prescale
+  - name: mclkdis
+    description: Disable Modulator Clock n Output.
+    bit_offset: 27
+    bit_size: 1
+    array:
+      len: 3
+      stride: 1
+    enum: Mclkdis
+fieldset/Nie:
+  description: Normal Interrupt Enable.
+  fields:
+  - name: cocie
+    description: Conversion Complete Interrupt Enable.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Cocie
+  - name: chfie
+    description: Data Output Ready Interrupt Enable.
+    bit_offset: 8
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Chfie
+  - name: zcdie
+    description: Zero Cross Detected Interrupt Enable.
+    bit_offset: 16
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Zcdie
+fieldset/Nis:
+  description: Normal Interrupt Status.
+  fields:
+  - name: coc
+    description: Conversion Complete Flag.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Coc
+  - name: chf
+    description: Data Output Ready Flag.
+    bit_offset: 8
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Chf
+  - name: zcd
+    description: Zero Cross Detected Flag.
+    bit_offset: 16
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Zcd
+fieldset/Parameter:
+  description: Parameters.
+  fields:
+  - name: fifo_depth
+    description: FIFO Depth.
+    bit_offset: 0
+    bit_size: 5
+  - name: flt_num
+    description: Filter Channel Number.
+    bit_offset: 8
+    bit_size: 4
+  - name: pf_ord_sel
+    description: PF Order Select.
+    bit_offset: 19
+    bit_size: 2
+    enum: PfOrdSel
+fieldset/Sr:
+  description: Status.
+  fields:
+  - name: cip
+    description: Conversion In Progress.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Cip
+  - name: chrdy
+    description: Channel Ready For Conversion.
+    bit_offset: 8
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Chrdy
+  - name: fifoempty
+    description: FIFO Empty.
+    bit_offset: 16
+    bit_size: 1
+    array:
+      len: 5
+      stride: 1
+    enum: Fifoempty
+  - name: mclkrdy
+    description: Modulator Clock n Ready.
+    bit_offset: 24
+    bit_size: 1
+    array:
+      len: 3
+      stride: 1
+    enum: Mclkrdy
+fieldset/Verid:
+  description: Version ID.
+  fields:
+  - name: feature
+    description: Feature Specification Code.
+    bit_offset: 0
+    bit_size: 16
+  - name: minor
+    description: Minor Version Number.
+    bit_offset: 16
+    bit_size: 8
+    enum: Minor
+  - name: major
+    description: Major Version Number.
+    bit_offset: 24
+    bit_size: 8
+    enum: Major
+enum/Admasel:
+  bit_size: 4
+  variants:
+  - name: Disabled
+    description: Alternate DMA disabled.
+    value: 0
+  - name: PfConvComplete
+    description: PF conversion complete.
+    value: 1
+  - name: PfDataReady
+    description: PF data output ready.
+    value: 2
+  - name: Zcd
+    description: Zero crossing detected.
+    value: 3
+  - name: Scd
+    description: Short circuit detected.
+    value: 4
+  - name: WindowLmt
+    description: Window limit detected.
+    value: 5
+  - name: LowLmt
+    description: Low limit detected.
+    value: 6
+  - name: HighLmt
+    description: High limit.
+    value: 7
+  - name: FifoUf
+    description: FIFO underflow.
+    value: 8
+  - name: FifoOf
+    description: FIFO overflow.
+    value: 9
+  - name: ClkAbs
+    description: Clock absence.
+    value: 10
+  - name: Sat
+    description: Saturation.
+    value: 11
+enum/Biassat:
+  bit_size: 1
+  variants:
+  - name: SatNo
+    description: Did not occur.
+    value: 0
+  - name: SatYes
+    description: Occurred.
+    value: 1
+enum/Cad:
+  bit_size: 1
+  variants:
+  - name: CadNo
+    description: Clock present.
+    value: 0
+  - name: CadYes
+    description: Clock absent.
+    value: 1
+enum/Cadbk:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Caden:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Cadie:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Cadlmt:
+  bit_size: 4
+  variants:
+  - name: Disables
+    description: Disables CAD.
+    value: 0
+enum/Chen:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Chf:
+  bit_size: 1
+  variants:
+  - name: OvflwNo
+    description: No overflow; data not available.
+    value: 0
+  - name: OvflwYes
+    description: Overflow; data available.
+    value: 1
+enum/Chfie:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Chrdy:
+  bit_size: 1
+  variants:
+  - name: ReadyNo
+    description: Not ready.
+    value: 0
+  - name: ReadyYes
+    description: Ready.
+    value: 1
+enum/Cip:
+  bit_size: 1
+  variants:
+  - name: ConvNo
+    description: Not in progress.
+    value: 0
+  - name: ConvYes
+    description: In progress.
+    value: 1
+enum/CnumOv:
+  bit_size: 1
+  variants:
+  - name: OflwNo
+    description: No overflow.
+    value: 0
+  - name: OflwYes
+    description: Overflow.
+    value: 1
+enum/Coc:
+  bit_size: 1
+  variants:
+  - name: CocNo
+    description: Not finished; data not available.
+    value: 0
+  - name: CocYes
+    description: Finished; data available.
+    value: 1
+enum/Cocie:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Dbgrs:
+  bit_size: 2
+  variants:
+  - name: Valid
+    description: Valid.
+    value: 0
+  - name: Invalid1
+    description: Invalid.
+    value: 1
+  - name: Invalid2
+    description: Invalid.
+    value: 2
+  - name: Invalid3
+    description: Invalid.
+    value: 3
+enum/Dbgsel:
+  bit_size: 4
+  variants:
+  - name: Rslt
+    description: Final data from the PF (24 bits).
+    value: 0
+  - name: Pfbis
+    description: Offset data (24 bits).
+    value: 1
+  - name: Pfsft
+    description: Shifted data from the PF (24 bits).
+    value: 2
+  - name: Hpf
+    description: DC remover (HPF) data (32 bits).
+    value: 3
+  - name: Pfcic
+    description: Raw data from the PF's CIC filter.
+    value: 4
+  - name: Scd
+    description: Historical data from SCD.
+    value: 6
+  - name: Mm
+    description: Data from the Manchester decoder.
+    value: 7
+  - name: Cad
+    description: Data from CAD.
+    value: 8
+  - name: Fifo
+    description: Number of available entries in the FIFO.
+    value: 9
+  - name: Ps
+    description: Status of the parallel or serial data converter.
+    value: 10
+enum/Dmaen:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Dozen:
+  bit_size: 1
+  variants:
+  - name: Enabled
+    description: Enables.
+    value: 0
+  - name: Disabled
+    description: Disables.
+    value: 1
+enum/Fifoempty:
+  bit_size: 1
+  variants:
+  - name: EmptyNo
+    description: Not empty.
+    value: 0
+  - name: EmptyYes
+    description: Empty.
+    value: 1
+enum/Fifoen:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Fovf:
+  bit_size: 1
+  variants:
+  - name: FovfNo
+    description: Did not occur.
+    value: 0
+  - name: FovfYes
+    description: Occurred.
+    value: 1
+enum/Fovfie:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Funf:
+  bit_size: 1
+  variants:
+  - name: FunfNo
+    description: Did not occur.
+    value: 0
+  - name: FunfYes
+    description: Occurred.
+    value: 1
+enum/Funfie:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Hlmt:
+  bit_size: 1
+  variants:
+  - name: HlmtNo
+    description: Not exceeded.
+    value: 0
+  - name: HlmtYes
+    description: Exceeded.
+    value: 1
+enum/Hlmtbk:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Hlmtie:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Hpfsat:
+  bit_size: 1
+  variants:
+  - name: SatNo
+    description: Did not occur.
+    value: 0
+  - name: SatYes
+    description: Occurred.
+    value: 1
+enum/Ibdly:
+  bit_size: 4
+  variants:
+  - name: Disabled
+    description: Disabled.
+    value: 0
+enum/Ibfmt:
+  bit_size: 2
+  variants:
+  - name: E1b
+    description: External bitstream from the MBIT[n] signal.
+    value: 0
+  - name: Emb
+    description: External Manchester code; ICESEL selects the rise or fall decoder.
+    value: 1
+  - name: Ipb
+    description: Internal 16-bit parallel data from MPDATA.
+    value: 2
+  - name: Isb
+    description: Internal 32-bit serial data from MPDATA.
+    value: 3
+enum/Ibsel:
+  bit_size: 2
+  variants:
+  - name: Epb
+    description: External bitstream from the MBIT[n] signal.
+    value: 0
+  - name: Esb
+    description: Alternate internal bitstream from the INP[n] signal.
+    value: 1
+  - name: Grp
+    description: Grouped bitstream shared with an adjacent channel; the adjacent channel's IBSEL field determines the input.
+    value: 3
+enum/Icesel:
+  bit_size: 3
+  variants:
+  - name: Pos
+    description: Positive edge.
+    value: 1
+  - name: Neg
+    description: Negative edge.
+    value: 2
+  - name: Both
+    description: Both edges.
+    value: 3
+  - name: Opos
+    description: Every other odd positive edge.
+    value: 4
+  - name: Epos
+    description: Every other even positive edge.
+    value: 5
+  - name: Oneg
+    description: Every other odd negative edge.
+    value: 6
+  - name: Eneg
+    description: Every other even negative edge.
+    value: 7
+enum/Icsel:
+  bit_size: 3
+  variants:
+  - name: MclkOut0
+    description: MCLK_OUT0 with internal routeback.
+    value: 0
+  - name: MclkOut1
+    description: MCLK_OUT1 with internal routeback.
+    value: 1
+  - name: MclkOut2
+    description: MCLK_OUT2 with internal routeback.
+    value: 2
+  - name: Ext
+    description: External modulator clock dedicated to this channel.
+    value: 3
+  - name: Grp
+    description: Grouped clock shared with an adjacent channel; the adjacent channel's ICSEL field determines the input clock.
+    value: 7
+enum/Itlvl:
+  bit_size: 1
+  variants:
+  - name: Edge
+    description: Edge.
+    value: 0
+  - name: Level
+    description: Level.
+    value: 1
+enum/Itsel:
+  bit_size: 2
+  variants:
+  - name: Sw
+    description: Software.
+    value: 0
+  - name: Hw
+    description: Hardware trigger dedicated to the channel.
+    value: 1
+  - name: Gp
+    description: Grouped trigger shared with an adjacent channel; the adjacent channel's ITSEL field determines the trigger.
+    value: 3
+enum/Llmt:
+  bit_size: 1
+  variants:
+  - name: LlmtNo
+    description: Not exceeded.
+    value: 0
+  - name: LlmtYes
+    description: Exceeded.
+    value: 1
+enum/Llmtbk:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Llmtie:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Lmten:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Lmtop:
+  bit_size: 2
+  variants:
+  - name: Both
+    description: Both high and low limits.
+    value: 0
+  - name: High
+    description: High limit.
+    value: 1
+  - name: Low
+    description: Low limit.
+    value: 2
+  - name: Window
+    description: Windowed value.
+    value: 3
+enum/Major:
+  bit_size: 8
+  variants:
+  - name: Ver1
+    description: 1.x.
+    value: 1
+  - name: Ver2
+    description: 2.x.
+    value: 2
+enum/Mclkdis:
+  bit_size: 1
+  variants:
+  - name: Enabled
+    description: Enabled when MEN = 1.
+    value: 0
+  - name: Disabled
+    description: Disabled regardless of MEN value.
+    value: 1
+enum/Mclkdiv:
+  bit_size: 8
+  variants:
+  - name: Prohibited
+    description: Prohibited.
+    value: 0
+enum/Mclkrdy:
+  bit_size: 1
+  variants:
+  - name: ReadyNo
+    description: Not ready.
+    value: 0
+  - name: ReadyYes
+    description: Ready.
+    value: 1
+enum/Men:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Minor:
+  bit_size: 8
+  variants:
+  - name: Ver20
+    description: x.0.
+    value: 0
+enum/PfOrdSel:
+  bit_size: 2
+  variants:
+  - name: Order3
+    description: '3.'
+    value: 2
+  - name: Order2
+    description: '2.'
+    value: 3
+enum/Pfcm:
+  bit_size: 2
+  variants:
+  - name: Single
+    description: Single.
+    value: 0
+  - name: Continuous
+    description: Continuous.
+    value: 1
+  - name: Always
+    description: Always.
+    value: 2
+  - name: Fix
+    description: Fixed number.
+    value: 3
+enum/Pfen:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Pford:
+  bit_size: 2
+  variants:
+  - name: Fastsinc
+    description: FastSinc.
+    value: 0
+  - name: Order1
+    description: First order.
+    value: 1
+  - name: Order2
+    description: Second order.
+    value: 2
+  - name: Order3
+    description: Third order.
+    value: 3
+enum/Pfsat:
+  bit_size: 1
+  variants:
+  - name: SatNo
+    description: Did not occur.
+    value: 0
+  - name: SatYes
+    description: Occurred.
+    value: 1
+enum/Prescale:
+  bit_size: 2
+  variants:
+  - name: PrescaleNo
+    description: No prescale.
+    value: 0
+  - name: Prescale2
+    description: '2.'
+    value: 1
+  - name: Prescale4
+    description: '4.'
+    value: 2
+  - name: Prescale8
+    description: '8.'
+    value: 3
+enum/Psrdy:
+  bit_size: 1
+  variants:
+  - name: ReadyNo
+    description: Not ready.
+    value: 0
+  - name: ReadyYes
+    description: Ready.
+    value: 1
+enum/Rdfmt:
+  bit_size: 1
+  variants:
+  - name: Signed
+    description: Left justified, signed.
+    value: 0
+  - name: Unsigned
+    description: Left justified, unsigned.
+    value: 1
+enum/Rdrs:
+  bit_size: 1
+  variants:
+  - name: Valid
+    description: Valid.
+    value: 0
+  - name: Invalid
+    description: Invalid.
+    value: 1
+enum/Rst:
+  bit_size: 1
+  variants:
+  - name: ResetNo
+    description: Do not reset.
+    value: 0
+  - name: ResetYes
+    description: Reset.
+    value: 1
+enum/Sat:
+  bit_size: 1
+  variants:
+  - name: SatNo
+    description: Not saturated.
+    value: 0
+  - name: SatYes
+    description: Saturated.
+    value: 1
+enum/Satie:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Scd:
+  bit_size: 1
+  variants:
+  - name: ScNo
+    description: Not detected.
+    value: 0
+  - name: ScYes
+    description: Detected.
+    value: 1
+enum/Scdbk:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Scdcm:
+  bit_size: 1
+  variants:
+  - name: Always
+    description: Constantly when CnCR[CHEN] = MCR[MEN] = 1.
+    value: 0
+  - name: DuringConv
+    description: Only when the PF is performing a conversion.
+    value: 1
+enum/Scden:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Scdie:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Scdlmt:
+  bit_size: 8
+  variants:
+  - name: Disables0
+    description: Disables SCD.
+    value: 0
+  - name: Disables1
+    description: Disables SCD.
+    value: 1
+enum/Scdop:
+  bit_size: 2
+  variants:
+  - name: Both
+    description: Both 0 and 1.
+    value: 0
+  - name: One
+    description: Only 1.
+    value: 1
+  - name: Zero
+    description: Only 0.
+    value: 2
+enum/Sftsat:
+  bit_size: 1
+  variants:
+  - name: SatNo
+    description: Did not occur.
+    value: 0
+  - name: SatYes
+    description: Occurred.
+    value: 1
+enum/Srds:
+  bit_size: 1
+  variants:
+  - name: DataValid
+    description: Data valid.
+    value: 0
+  - name: InProgress
+    description: Procedure in progress.
+    value: 1
+enum/Strig:
+  bit_size: 1
+  variants:
+  - name: NoEffect
+    description: No effect.
+    value: 0
+  - name: Trigger
+    description: Trigger.
+    value: 1
+enum/Wlmt:
+  bit_size: 1
+  variants:
+  - name: WlmtNo
+    description: Not exceeded.
+    value: 0
+  - name: WlmtYes
+    description: Exceeded.
+    value: 1
+enum/Wlmtbk:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Wlmtie:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Zcd:
+  bit_size: 1
+  variants:
+  - name: ZcNo
+    description: Not detected.
+    value: 0
+  - name: ZcYes
+    description: Detected.
+    value: 1
+enum/Zcden:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Zcdie:
+  bit_size: 1
+  variants:
+  - name: Disables
+    description: Disables.
+    value: 0
+  - name: Enables
+    description: Enables.
+    value: 1
+enum/Zcop:
+  bit_size: 2
+  variants:
+  - name: Both
+    description: Both rise and fall.
+    value: 0
+  - name: Fall
+    description: Fall.
+    value: 1
+  - name: Rise
+    description: Rise.
+    value: 2

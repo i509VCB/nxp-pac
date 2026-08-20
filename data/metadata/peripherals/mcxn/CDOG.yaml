@@ -1,0 +1,394 @@
+block/Cdog:
+  description: CDOG.
+  items:
+  - name: control
+    description: Control Register.
+    byte_offset: 0
+    fieldset: Control
+  - name: reload
+    description: Instruction Timer Reload Register.
+    byte_offset: 4
+    fieldset: Reload
+  - name: instruction_timer
+    description: Instruction Timer Register.
+    byte_offset: 8
+    access: Read
+    fieldset: InstructionTimer
+  - name: status
+    description: Status 1 Register.
+    byte_offset: 16
+    access: Read
+    fieldset: Status
+  - name: status2
+    description: Status 2 Register.
+    byte_offset: 20
+    access: Read
+    fieldset: Status2
+  - name: flags
+    description: Flags Register.
+    byte_offset: 24
+    fieldset: Flags
+  - name: persistent
+    description: Persistent Data Storage Register.
+    byte_offset: 28
+    fieldset: Persistent
+  - name: start
+    description: START Command Register.
+    byte_offset: 32
+    access: Write
+    fieldset: Start
+  - name: stop
+    description: STOP Command Register.
+    byte_offset: 36
+    access: Write
+    fieldset: Stop
+  - name: restart
+    description: RESTART Command Register.
+    byte_offset: 40
+    access: Write
+    fieldset: Restart
+  - name: add
+    description: ADD Command Register.
+    byte_offset: 44
+    access: Write
+    fieldset: Add
+  - name: add1
+    description: ADD1 Command Register.
+    byte_offset: 48
+    access: Write
+    fieldset: Add1
+  - name: add16
+    description: ADD16 Command Register.
+    byte_offset: 52
+    access: Write
+    fieldset: Add16
+  - name: add256
+    description: ADD256 Command Register.
+    byte_offset: 56
+    access: Write
+    fieldset: Add256
+  - name: sub
+    description: SUB Command Register.
+    byte_offset: 60
+    access: Write
+    fieldset: Sub
+  - name: sub1
+    description: SUB1 Command Register.
+    byte_offset: 64
+    access: Write
+    fieldset: Sub1
+  - name: sub16
+    description: SUB16 Command Register.
+    byte_offset: 68
+    access: Write
+    fieldset: Sub16
+  - name: sub256
+    description: SUB256 Command Register.
+    byte_offset: 72
+    access: Write
+    fieldset: Sub256
+  - name: assert16
+    description: ASSERT16 Command Register.
+    byte_offset: 76
+    access: Write
+    fieldset: Assert16
+fieldset/Add:
+  description: ADD Command Register.
+  fields:
+  - name: ad
+    description: ADD Write Value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Add1:
+  description: ADD1 Command Register.
+  fields:
+  - name: ad1
+    description: ADD 1.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Add16:
+  description: ADD16 Command Register.
+  fields:
+  - name: ad16
+    description: ADD 16.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Add256:
+  description: ADD256 Command Register.
+  fields:
+  - name: ad256
+    description: ADD 256.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Assert16:
+  description: ASSERT16 Command Register.
+  fields:
+  - name: ast16
+    description: ASSERT16 Command.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Control:
+  description: Control Register.
+  fields:
+  - name: lock_ctrl
+    description: Lock control.
+    bit_offset: 0
+    bit_size: 2
+    enum: LockCtrl
+  - name: timeout_ctrl
+    description: TIMEOUT fault control.
+    bit_offset: 2
+    bit_size: 3
+    enum: TimeoutCtrl
+  - name: miscompare_ctrl
+    description: MISCOMPARE fault control.
+    bit_offset: 5
+    bit_size: 3
+    enum: MiscompareCtrl
+  - name: sequence_ctrl
+    description: SEQUENCE fault control.
+    bit_offset: 8
+    bit_size: 3
+    enum: SequenceCtrl
+  - name: state_ctrl
+    description: STATE fault control.
+    bit_offset: 14
+    bit_size: 3
+    enum: StateCtrl
+  - name: address_ctrl
+    description: ADDRESS fault control.
+    bit_offset: 17
+    bit_size: 3
+    enum: AddressCtrl
+  - name: irq_pause
+    description: IRQ pause control.
+    bit_offset: 28
+    bit_size: 2
+    enum: IrqPause
+  - name: debug_halt_ctrl
+    description: DEBUG_HALT control.
+    bit_offset: 30
+    bit_size: 2
+    enum: DebugHaltCtrl
+fieldset/Flags:
+  description: Flags Register.
+  fields:
+  - name: to_flag
+    description: TIMEOUT fault flag.
+    bit_offset: 0
+    bit_size: 1
+  - name: miscom_flag
+    description: MISCOMPARE fault flag.
+    bit_offset: 1
+    bit_size: 1
+  - name: seq_flag
+    description: SEQUENCE fault flag.
+    bit_offset: 2
+    bit_size: 1
+  - name: cnt_flag
+    description: CONTROL fault flag.
+    bit_offset: 3
+    bit_size: 1
+  - name: state_flag
+    description: STATE fault flag.
+    bit_offset: 4
+    bit_size: 1
+  - name: addr_flag
+    description: ADDRESS fault flag.
+    bit_offset: 5
+    bit_size: 1
+  - name: por_flag
+    description: Power-on reset flag.
+    bit_offset: 16
+    bit_size: 1
+fieldset/InstructionTimer:
+  description: Instruction Timer Register.
+  fields:
+  - name: instim
+    description: Current value of the Instruction Timer.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Persistent:
+  description: Persistent Data Storage Register.
+  fields:
+  - name: persis
+    description: Persistent Storage.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Reload:
+  description: Instruction Timer Reload Register.
+  fields:
+  - name: rload
+    description: Instruction Timer reload value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Restart:
+  description: RESTART Command Register.
+  fields:
+  - name: rstrt
+    description: Restart command.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Start:
+  description: START Command Register.
+  fields:
+  - name: strt
+    description: Start command.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Status:
+  description: Status 1 Register.
+  fields:
+  - name: numtof
+    description: Number of TIMEOUT faults since the last POR.
+    bit_offset: 0
+    bit_size: 8
+  - name: nummiscompf
+    description: Number of MISCOMPARE faults since the last POR.
+    bit_offset: 8
+    bit_size: 8
+  - name: numilseqf
+    description: Number of SEQUENCE faults since the last POR.
+    bit_offset: 16
+    bit_size: 8
+  - name: curst
+    description: Current State.
+    bit_offset: 28
+    bit_size: 4
+fieldset/Status2:
+  description: Status 2 Register.
+  fields:
+  - name: numcntf
+    description: Number of CONTROL faults since the last POR.
+    bit_offset: 0
+    bit_size: 8
+  - name: numillstf
+    description: Number of STATE faults since the last POR.
+    bit_offset: 8
+    bit_size: 8
+  - name: numilla
+    description: Number of ADDRESS faults since the last POR.
+    bit_offset: 16
+    bit_size: 8
+fieldset/Stop:
+  description: STOP Command Register.
+  fields:
+  - name: stp
+    description: Stop command.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Sub:
+  description: SUB Command Register.
+  fields:
+  - name: sb
+    description: Subtract Write Value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Sub1:
+  description: SUB1 Command Register.
+  fields:
+  - name: sb1
+    description: Subtract 1.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Sub16:
+  description: SUB16 Command Register.
+  fields:
+  - name: sb16
+    description: Subtract 16.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Sub256:
+  description: SUB256 Command Register.
+  fields:
+  - name: sb256
+    description: Subtract 256.
+    bit_offset: 0
+    bit_size: 32
+enum/AddressCtrl:
+  bit_size: 3
+  variants:
+  - name: EnableReset
+    description: Enable reset.
+    value: 1
+  - name: EnableInterrupt
+    description: Enable interrupt.
+    value: 2
+  - name: DisableBoth
+    description: Disable both reset and interrupt.
+    value: 4
+enum/DebugHaltCtrl:
+  bit_size: 2
+  variants:
+  - name: RunTimer
+    description: Keep the timer running.
+    value: 1
+  - name: PauseTimer
+    description: Stop the timer.
+    value: 2
+enum/IrqPause:
+  bit_size: 2
+  variants:
+  - name: RunTimer
+    description: Keep the timer running.
+    value: 1
+  - name: PauseTimer
+    description: Stop the timer.
+    value: 2
+enum/LockCtrl:
+  bit_size: 2
+  variants:
+  - name: Locked
+    description: Locked.
+    value: 1
+  - name: Unlocked
+    description: Unlocked.
+    value: 2
+enum/MiscompareCtrl:
+  bit_size: 3
+  variants:
+  - name: EnableReset
+    description: Enable reset.
+    value: 1
+  - name: EnableInterrupt
+    description: Enable interrupt.
+    value: 2
+  - name: DisableBoth
+    description: Disable both reset and interrupt.
+    value: 4
+enum/SequenceCtrl:
+  bit_size: 3
+  variants:
+  - name: EnableReset
+    description: Enable reset.
+    value: 1
+  - name: EnableInterrupt
+    description: Enable interrupt.
+    value: 2
+  - name: DisableBoth
+    description: Disable both reset and interrupt.
+    value: 4
+enum/StateCtrl:
+  bit_size: 3
+  variants:
+  - name: EnableReset
+    description: Enable reset.
+    value: 1
+  - name: EnableInterrupt
+    description: Enable interrupt.
+    value: 2
+  - name: DisableBoth
+    description: Disable both reset and interrupt.
+    value: 4
+enum/TimeoutCtrl:
+  bit_size: 3
+  variants:
+  - name: EnableReset
+    description: Enable reset.
+    value: 1
+  - name: EnableInterrupt
+    description: Enable interrupt.
+    value: 2
+  - name: DisableBoth
+    description: Disable both reset and interrupt.
+    value: 4

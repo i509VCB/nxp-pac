@@ -1,0 +1,326 @@
+block/Lut:
+  description: 'Array of registers: LUT_INP_MUX%s.'
+  items:
+  - name: lut_inp_mux
+    description: Input select register for LUTn (0 to 25), Inputx (5 inputs).
+    array:
+      len: 5
+      stride: 4
+    byte_offset: 0
+    fieldset: LutInpMux
+block/Plu0:
+  description: Programmable Logic Unit (PLU).
+  items:
+  - name: lut
+    description: 'Array of registers: LUT_INP_MUX%s.'
+    array:
+      len: 26
+      stride: 32
+    byte_offset: 0
+    block: Lut
+  - name: lut_truth
+    description: PLU LUT truth table.
+    array:
+      len: 26
+      stride: 4
+    byte_offset: 2048
+    fieldset: LutTruth
+  - name: outputs
+    description: PLU outputs.
+    byte_offset: 2304
+    access: Read
+    fieldset: Outputs
+  - name: wakeint_ctrl
+    description: Wakeup interrupt control.
+    byte_offset: 2308
+    fieldset: WakeintCtrl
+  - name: output_mux
+    description: PLU output multiplexer.
+    array:
+      len: 8
+      stride: 4
+    byte_offset: 3072
+    fieldset: OutputMux
+fieldset/LutInpMux:
+  description: Input select register for LUTn (0 to 25), Inputx (5 inputs).
+  fields:
+  - name: lu_tn_in_px
+    description: Selects the input source to be connected to LUTn_INPx.
+    bit_offset: 0
+    bit_size: 6
+    enum: LuTnInPx
+fieldset/LutTruth:
+  description: PLU LUT truth table.
+  fields:
+  - name: lut_truth
+    description: LUT truth table.
+    bit_offset: 0
+    bit_size: 32
+fieldset/OutputMux:
+  description: PLU output multiplexer.
+  fields:
+  - name: output
+    description: Selects the source to be connected to PLU output n.
+    bit_offset: 0
+    bit_size: 5
+    enum: Output
+fieldset/Outputs:
+  description: PLU outputs.
+  fields:
+  - name: output_state
+    description: Output state.
+    bit_offset: 0
+    bit_size: 8
+fieldset/WakeintCtrl:
+  description: Wakeup interrupt control.
+  fields:
+  - name: mask
+    description: Interrupt mask.
+    bit_offset: 0
+    bit_size: 8
+  - name: filter_mode
+    description: Filter Mode.
+    bit_offset: 8
+    bit_size: 2
+    enum: FilterMode
+  - name: filter_clksel
+    description: Filter clock select.
+    bit_offset: 10
+    bit_size: 2
+    enum: FilterClksel
+  - name: latch_enable
+    description: Latch the interrupt.
+    bit_offset: 12
+    bit_size: 1
+  - name: intr_clear
+    description: Write to clear wakeint_latched.
+    bit_offset: 13
+    bit_size: 1
+enum/FilterClksel:
+  bit_size: 2
+  variants:
+  - name: Fro1mhz
+    description: Selects the 1 MHz low-power oscillator as the filter clock.
+    value: 0
+  - name: Fro12mhz
+    description: Selects the 12 MHz FRO as the filter clock.
+    value: 1
+enum/FilterMode:
+  bit_size: 2
+  variants:
+  - name: Bypass
+    description: Bypass mode.
+    value: 0
+  - name: Filter1clk
+    description: Filter 1 clock period.
+    value: 1
+  - name: Filter2clk
+    description: Filter 2 clock period.
+    value: 2
+  - name: Filter3clk
+    description: Filter 3 clock period.
+    value: 3
+enum/LuTnInPx:
+  bit_size: 6
+  variants:
+  - name: PluInputs0
+    description: PLU primary inputs 0.
+    value: 0
+  - name: PluInputs1
+    description: PLU primary inputs 1.
+    value: 1
+  - name: PluInputs2
+    description: PLU primary inputs 2.
+    value: 2
+  - name: PluInputs3
+    description: PLU primary inputs 3.
+    value: 3
+  - name: PluInputs4
+    description: PLU primary inputs 4.
+    value: 4
+  - name: PluInputs5
+    description: PLU primary inputs 5.
+    value: 5
+  - name: LutOutputs0
+    description: Output of LUT0.
+    value: 6
+  - name: LutOutputs1
+    description: Output of LUT1.
+    value: 7
+  - name: LutOutputs2
+    description: Output of LUT2.
+    value: 8
+  - name: LutOutputs3
+    description: Output of LUT3.
+    value: 9
+  - name: LutOutputs4
+    description: Output of LUT4.
+    value: 10
+  - name: LutOutputs5
+    description: Output of LUT5.
+    value: 11
+  - name: LutOutputs6
+    description: Output of LUT6.
+    value: 12
+  - name: LutOutputs7
+    description: Output of LUT7.
+    value: 13
+  - name: LutOutputs8
+    description: Output of LUT8.
+    value: 14
+  - name: LutOutputs9
+    description: Output of LUT9.
+    value: 15
+  - name: LutOutputs10
+    description: Output of LUT10.
+    value: 16
+  - name: LutOutputs11
+    description: Output of LUT11.
+    value: 17
+  - name: LutOutputs12
+    description: Output of LUT12.
+    value: 18
+  - name: LutOutputs13
+    description: Output of LUT13.
+    value: 19
+  - name: LutOutputs14
+    description: Output of LUT14.
+    value: 20
+  - name: LutOutputs15
+    description: Output of LUT15.
+    value: 21
+  - name: LutOutputs16
+    description: Output of LUT16.
+    value: 22
+  - name: LutOutputs17
+    description: Output of LUT17.
+    value: 23
+  - name: LutOutputs18
+    description: Output of LUT18.
+    value: 24
+  - name: LutOutputs19
+    description: Output of LUT19.
+    value: 25
+  - name: LutOutputs20
+    description: Output of LUT20.
+    value: 26
+  - name: LutOutputs21
+    description: Output of LUT21.
+    value: 27
+  - name: LutOutputs22
+    description: Output of LUT22.
+    value: 28
+  - name: LutOutputs23
+    description: Output of LUT23.
+    value: 29
+  - name: LutOutputs24
+    description: Output of LUT24.
+    value: 30
+  - name: LutOutputs25
+    description: Output of LUT25.
+    value: 31
+  - name: State0
+    description: State[0].
+    value: 32
+  - name: State1
+    description: State[1].
+    value: 33
+  - name: State2
+    description: State[2].
+    value: 34
+  - name: State3
+    description: State[3].
+    value: 35
+enum/Output:
+  bit_size: 5
+  variants:
+  - name: PluOutput0
+    description: LUT output 0.
+    value: 0
+  - name: PluOutput1
+    description: LUT output 1.
+    value: 1
+  - name: PluOutput2
+    description: LUT output 2.
+    value: 2
+  - name: PluOutput3
+    description: LUT output 3.
+    value: 3
+  - name: PluOutput4
+    description: LUT output 4.
+    value: 4
+  - name: PluOutput5
+    description: LUT output 5.
+    value: 5
+  - name: PluOutput6
+    description: LUT output 6.
+    value: 6
+  - name: PluOutput7
+    description: LUT output 7.
+    value: 7
+  - name: PluOutput8
+    description: LUT output 8.
+    value: 8
+  - name: PluOutput9
+    description: LUT output 9.
+    value: 9
+  - name: PluOutput10
+    description: LUT output 10.
+    value: 10
+  - name: PluOutput11
+    description: LUT output 11.
+    value: 11
+  - name: PluOutput12
+    description: LUT output 12.
+    value: 12
+  - name: PluOutput13
+    description: LUT output 13.
+    value: 13
+  - name: PluOutput14
+    description: LUT output 14.
+    value: 14
+  - name: PluOutput15
+    description: LUT output 15.
+    value: 15
+  - name: PluOutput16
+    description: LUT output 16.
+    value: 16
+  - name: PluOutput17
+    description: LUT output 17.
+    value: 17
+  - name: PluOutput18
+    description: LUT output 18.
+    value: 18
+  - name: PluOutput19
+    description: LUT output 19.
+    value: 19
+  - name: PluOutput20
+    description: LUT output 20.
+    value: 20
+  - name: PluOutput21
+    description: LUT output 21.
+    value: 21
+  - name: PluOutput22
+    description: LUT output 22.
+    value: 22
+  - name: PluOutput23
+    description: LUT output 23.
+    value: 23
+  - name: PluOutput24
+    description: LUT output 24.
+    value: 24
+  - name: PluOutput25
+    description: LUT output 25.
+    value: 25
+  - name: State0
+    description: State[0].
+    value: 26
+  - name: State1
+    description: State[1].
+    value: 27
+  - name: State2
+    description: State[2].
+    value: 28
+  - name: State3
+    description: State[3].
+    value: 29

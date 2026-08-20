@@ -1,0 +1,257 @@
+block/Erm:
+  description: ERM.
+  items:
+  - name: cr0
+    description: ERM Configuration Register 0.
+    byte_offset: 0
+    fieldset: Cr0
+  - name: cr1
+    description: ERM Configuration Register 1.
+    byte_offset: 4
+    fieldset: Cr1
+  - name: sr0
+    description: ERM Status Register 0.
+    byte_offset: 16
+    fieldset: Sr0
+  - name: sr1
+    description: ERM Status Register 1.
+    byte_offset: 20
+    fieldset: Sr1
+  - name: ear
+    description: ERM Memory Error Address Register.
+    array:
+      len: 7
+      stride: 16
+    byte_offset: 256
+    access: Read
+    fieldset: Ear
+  - name: syn
+    description: ERM Memory Syndrome Register.
+    array:
+      len: 7
+      stride: 16
+    byte_offset: 260
+    access: Read
+    fieldset: Syn
+  - name: corr_err_cnt
+    description: ERM Memory Correctable Error Count Register.
+    array:
+      len: 10
+      stride: 16
+    byte_offset: 264
+    fieldset: CorrErrCnt
+  - name: syn8
+    description: ERM Memory 8 Syndrome Register.
+    byte_offset: 388
+    access: Read
+    fieldset: Syn8
+fieldset/CorrErrCnt:
+  description: ERM Memory Correctable Error Count Register.
+  fields:
+  - name: count
+    description: Memory n Correctable Error Count.
+    bit_offset: 0
+    bit_size: 8
+fieldset/Cr0:
+  description: ERM Configuration Register 0.
+  fields:
+  - name: encie7
+    description: ENCIE7.
+    bit_offset: 2
+    bit_size: 1
+  - name: escie7
+    description: ESCIE7.
+    bit_offset: 3
+    bit_size: 1
+  - name: encie6
+    description: ENCIE6.
+    bit_offset: 6
+    bit_size: 1
+  - name: escie6
+    description: ESCIE6.
+    bit_offset: 7
+    bit_size: 1
+  - name: encie5
+    description: ENCIE5.
+    bit_offset: 10
+    bit_size: 1
+  - name: escie5
+    description: ESCIE5.
+    bit_offset: 11
+    bit_size: 1
+  - name: encie4
+    description: ENCIE4.
+    bit_offset: 14
+    bit_size: 1
+  - name: escie4
+    description: ESCIE4.
+    bit_offset: 15
+    bit_size: 1
+  - name: encie3
+    description: ENCIE3.
+    bit_offset: 18
+    bit_size: 1
+  - name: escie3
+    description: ESCIE3.
+    bit_offset: 19
+    bit_size: 1
+  - name: encie2
+    description: ENCIE2.
+    bit_offset: 22
+    bit_size: 1
+  - name: escie2
+    description: ESCIE2.
+    bit_offset: 23
+    bit_size: 1
+  - name: encie1
+    description: ENCIE1.
+    bit_offset: 26
+    bit_size: 1
+  - name: escie1
+    description: ESCIE1.
+    bit_offset: 27
+    bit_size: 1
+  - name: encie0
+    description: ENCIE0.
+    bit_offset: 30
+    bit_size: 1
+  - name: escie0
+    description: ESCIE0.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Cr1:
+  description: ERM Configuration Register 1.
+  fields:
+  - name: encie9
+    description: ENCIE9.
+    bit_offset: 26
+    bit_size: 1
+  - name: escie9
+    description: ESCIE9.
+    bit_offset: 27
+    bit_size: 1
+  - name: encie8
+    description: ENCIE8.
+    bit_offset: 30
+    bit_size: 1
+  - name: escie8
+    description: ESCIE8.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Ear:
+  description: ERM Memory Error Address Register.
+  fields:
+  - name: ear
+    description: EAR.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Sr0:
+  description: ERM Status Register 0.
+  fields:
+  - name: nce7
+    description: NCE7.
+    bit_offset: 2
+    bit_size: 1
+  - name: sbc7
+    description: SBC7.
+    bit_offset: 3
+    bit_size: 1
+  - name: nce6
+    description: NCE6.
+    bit_offset: 6
+    bit_size: 1
+  - name: sbc6
+    description: SBC6.
+    bit_offset: 7
+    bit_size: 1
+  - name: nce5
+    description: NCE5.
+    bit_offset: 10
+    bit_size: 1
+  - name: sbc5
+    description: SBC5.
+    bit_offset: 11
+    bit_size: 1
+    enum: Sbc5
+  - name: nce4
+    description: NCE4.
+    bit_offset: 14
+    bit_size: 1
+  - name: sbc4
+    description: SBC4.
+    bit_offset: 15
+    bit_size: 1
+  - name: nce3
+    description: NCE3.
+    bit_offset: 18
+    bit_size: 1
+  - name: sbc3
+    description: SBC3.
+    bit_offset: 19
+    bit_size: 1
+  - name: nce2
+    description: NCE2.
+    bit_offset: 22
+    bit_size: 1
+  - name: sbc2
+    description: SBC2.
+    bit_offset: 23
+    bit_size: 1
+  - name: nce1
+    description: NCE1.
+    bit_offset: 26
+    bit_size: 1
+  - name: sbc1
+    description: SBC1.
+    bit_offset: 27
+    bit_size: 1
+  - name: nce0
+    description: NCE0.
+    bit_offset: 30
+    bit_size: 1
+  - name: sbc0
+    description: SBC0.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Sr1:
+  description: ERM Status Register 1.
+  fields:
+  - name: nce9
+    description: NCE9.
+    bit_offset: 26
+    bit_size: 1
+  - name: sbc9
+    description: SBC9.
+    bit_offset: 27
+    bit_size: 1
+  - name: nce8
+    description: NCE8.
+    bit_offset: 30
+    bit_size: 1
+  - name: sbc8
+    description: SBC8.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Syn:
+  description: ERM Memory Syndrome Register.
+  fields:
+  - name: syndrome
+    description: SYNDROME.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Syn8:
+  description: ERM Memory 8 Syndrome Register.
+  fields:
+  - name: syndrome
+    description: SYNDROME.
+    bit_offset: 24
+    bit_size: 8
+enum/Sbc5:
+  bit_size: 1
+  variants:
+  - name: NoEvent
+    description: No single-bit correction event on Memory 5 detected.
+    value: 0
+  - name: CorrEvent
+    description: Single-bit correction event on Memory 5 detected.
+    value: 1

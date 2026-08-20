@@ -1,0 +1,321 @@
+block/Fmu:
+  description: Flash.
+  items:
+  - name: fstat
+    description: Flash Status Register.
+    byte_offset: 0
+    fieldset: Fstat
+  - name: fcnfg
+    description: Flash Configuration Register.
+    byte_offset: 4
+    fieldset: Fcnfg
+  - name: fctrl
+    description: Flash Control Register.
+    byte_offset: 8
+    fieldset: Fctrl
+  - name: fccob
+    description: Flash Common Command Object Registers.
+    array:
+      len: 8
+      stride: 4
+    byte_offset: 16
+    fieldset: Fccob
+fieldset/Fccob:
+  description: Flash Common Command Object Registers.
+  fields:
+  - name: cco_bn
+    description: CCOBn.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Fcnfg:
+  description: Flash Configuration Register.
+  fields:
+  - name: ccie
+    description: Command Complete Interrupt Enable.
+    bit_offset: 7
+    bit_size: 1
+    enum: Ccie
+  - name: ersreq
+    description: Mass Erase Request.
+    bit_offset: 8
+    bit_size: 1
+    enum: Ersreq
+  - name: dfdie
+    description: Double Bit Fault Detect Interrupt Enable.
+    bit_offset: 16
+    bit_size: 1
+    enum: Dfdie
+  - name: ersien0
+    description: Erase IFR Sector Enable - Block 0.
+    bit_offset: 24
+    bit_size: 4
+    enum: Ersien0
+  - name: ersien1
+    description: Erase IFR Sector Enable - Block 1 (for dual block configs).
+    bit_offset: 28
+    bit_size: 4
+    enum: Ersien1
+fieldset/Fctrl:
+  description: Flash Control Register.
+  fields:
+  - name: rwsc
+    description: Read Wait-State Control.
+    bit_offset: 0
+    bit_size: 4
+  - name: fdfd
+    description: Force Double Bit Fault Detect.
+    bit_offset: 16
+    bit_size: 1
+    enum: Fdfd
+  - name: abtreq
+    description: Abort Request.
+    bit_offset: 24
+    bit_size: 1
+    enum: Abtreq
+fieldset/Fstat:
+  description: Flash Status Register.
+  fields:
+  - name: fail
+    description: Command Fail Flag.
+    bit_offset: 0
+    bit_size: 1
+    enum: Fail
+  - name: cmdabt
+    description: Command Abort Flag.
+    bit_offset: 2
+    bit_size: 1
+    enum: Cmdabt
+  - name: pviol
+    description: Command Protection Violation Flag.
+    bit_offset: 4
+    bit_size: 1
+    enum: Pviol
+  - name: accerr
+    description: Command Access Error Flag.
+    bit_offset: 5
+    bit_size: 1
+    enum: Accerr
+  - name: cwsabt
+    description: Command Write Sequence Abort Flag.
+    bit_offset: 6
+    bit_size: 1
+    enum: Cwsabt
+  - name: ccif
+    description: Command Complete Interrupt Flag.
+    bit_offset: 7
+    bit_size: 1
+    enum: Ccif
+  - name: cmdprt
+    description: Command protection level.
+    bit_offset: 8
+    bit_size: 2
+    enum: Cmdprt
+  - name: cmdp
+    description: Command protection status flag.
+    bit_offset: 11
+    bit_size: 1
+    enum: Cmdp
+  - name: cmddid
+    description: Command domain ID.
+    bit_offset: 12
+    bit_size: 4
+  - name: dfdif
+    description: Double Bit Fault Detect Interrupt Flag.
+    bit_offset: 16
+    bit_size: 1
+    enum: Dfdif
+  - name: salv_used
+    description: Salvage Used for Erase operation.
+    bit_offset: 17
+    bit_size: 1
+    enum: SalvUsed
+  - name: pewen
+    description: Program-Erase Write Enable Control.
+    bit_offset: 24
+    bit_size: 2
+    enum: Pewen
+  - name: perdy
+    description: Program-Erase Ready Control/Status Flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: Perdy
+enum/Abtreq:
+  bit_size: 1
+  variants:
+  - name: Abtreq0
+    description: No request to abort a command write sequence.
+    value: 0
+  - name: Abtreq1
+    description: Request to abort a command write sequence.
+    value: 1
+enum/Accerr:
+  bit_size: 1
+  variants:
+  - name: Accerr0
+    description: No access error detected.
+    value: 0
+  - name: Accerr1
+    description: Access error detected.
+    value: 1
+enum/Ccie:
+  bit_size: 1
+  variants:
+  - name: Ccie0
+    description: Command complete interrupt disabled.
+    value: 0
+  - name: Ccie1
+    description: Command complete interrupt enabled.
+    value: 1
+enum/Ccif:
+  bit_size: 1
+  variants:
+  - name: Ccif0
+    description: Flash command, initialization, or power mode recovery in progress.
+    value: 0
+  - name: Ccif1
+    description: Flash command, initialization, or power mode recovery has completed.
+    value: 1
+enum/Cmdabt:
+  bit_size: 1
+  variants:
+  - name: Cmdabt0
+    description: No command abort detected.
+    value: 0
+  - name: Cmdabt1
+    description: Command abort detected.
+    value: 1
+enum/Cmdp:
+  bit_size: 1
+  variants:
+  - name: Cmdp0
+    description: Command protection level and domain ID are stale.
+    value: 0
+  - name: Cmdp1
+    description: Command protection level (CMDPRT) and domain ID (CMDDID) are set.
+    value: 1
+enum/Cmdprt:
+  bit_size: 2
+  variants:
+  - name: Cmdprt00
+    description: Secure, normal access.
+    value: 0
+  - name: Cmdprt01
+    description: Secure, privileged access.
+    value: 1
+  - name: Cmdprt10
+    description: Nonsecure, normal access.
+    value: 2
+  - name: Cmdprt11
+    description: Nonsecure, privileged access.
+    value: 3
+enum/Cwsabt:
+  bit_size: 1
+  variants:
+  - name: Cwsabt0
+    description: Command write sequence not aborted.
+    value: 0
+  - name: Cwsabt1
+    description: Command write sequence aborted.
+    value: 1
+enum/Dfdie:
+  bit_size: 1
+  variants:
+  - name: Dfdie0
+    description: Double bit fault detect interrupt disabled.
+    value: 0
+  - name: Dfdie1
+    description: Double bit fault detect interrupt enabled.
+    value: 1
+enum/Dfdif:
+  bit_size: 1
+  variants:
+  - name: Dfdif0
+    description: Double bit fault not detected during a valid flash read access.
+    value: 0
+  - name: Dfdif1
+    description: Double bit fault detected (or FCTRL[FDFD] is set) during a valid flash read access.
+    value: 1
+enum/Ersien0:
+  bit_size: 4
+  variants:
+  - name: Ersien00
+    description: Block 0 IFR Sector X is protected from erase by ERSSCR command.
+    value: 0
+  - name: Ersien01
+    description: Block 0 IFR Sector X is not protected from erase by ERSSCR command.
+    value: 1
+enum/Ersien1:
+  bit_size: 4
+  variants:
+  - name: Ersien10
+    description: Block 1 IFR Sector X is protected from erase by ERSSCR command.
+    value: 0
+  - name: Ersien11
+    description: Block 1 IFR Sector X is not protected from erase by ERSSCR command.
+    value: 1
+enum/Ersreq:
+  bit_size: 1
+  variants:
+  - name: Ersreq0
+    description: No request or request complete.
+    value: 0
+  - name: Ersreq1
+    description: Request to run the Mass Erase operation.
+    value: 1
+enum/Fail:
+  bit_size: 1
+  variants:
+  - name: Fail0
+    description: Error not detected.
+    value: 0
+  - name: Fail1
+    description: Error detected.
+    value: 1
+enum/Fdfd:
+  bit_size: 1
+  variants:
+  - name: Fdfd0
+    description: FSTAT[DFDIF] sets only if a double bit fault is detected during a valid flash read access from the platform flash controller.
+    value: 0
+  - name: Fdfd1
+    description: FSTAT[DFDIF] sets during any valid flash read access from the platform flash controller. An interrupt request is generated if the DFDIE bit is set.
+    value: 1
+enum/Perdy:
+  bit_size: 1
+  variants:
+  - name: Perdy0
+    description: Program or sector erase command operation not stalled.
+    value: 0
+  - name: Perdy1
+    description: Program or sector erase command operation ready to execute.
+    value: 1
+enum/Pewen:
+  bit_size: 2
+  variants:
+  - name: Pewen00
+    description: Writes are not enabled.
+    value: 0
+  - name: Pewen01
+    description: Writes are enabled for one flash or IFR phrase (phrase programming, sector erase).
+    value: 1
+  - name: Pewen10
+    description: Writes are enabled for one flash or IFR page (page programming).
+    value: 2
+enum/Pviol:
+  bit_size: 1
+  variants:
+  - name: Pviol0
+    description: No protection violation detected.
+    value: 0
+  - name: Pviol1
+    description: Protection violation detected.
+    value: 1
+enum/SalvUsed:
+  bit_size: 1
+  variants:
+  - name: SalvUsed0
+    description: Salvage not used during last operation.
+    value: 0
+  - name: SalvUsed1
+    description: Salvage used during the last erase operation.
+    value: 1

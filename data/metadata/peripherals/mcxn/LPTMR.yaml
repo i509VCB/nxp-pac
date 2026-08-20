@@ -1,0 +1,247 @@
+block/Lptmr:
+  description: LPTMR.
+  items:
+  - name: csr
+    description: Control Status.
+    byte_offset: 0
+    fieldset: Csr
+  - name: psr
+    description: Prescaler and Glitch Filter.
+    byte_offset: 4
+    fieldset: Psr
+  - name: cmr
+    description: Compare.
+    byte_offset: 8
+    fieldset: Cmr
+  - name: cnr
+    description: Counter.
+    byte_offset: 12
+    fieldset: Cnr
+fieldset/Cmr:
+  description: Compare.
+  fields:
+  - name: compare
+    description: Compare Value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Cnr:
+  description: Counter.
+  fields:
+  - name: counter
+    description: Counter Value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Csr:
+  description: Control Status.
+  fields:
+  - name: ten
+    description: Timer Enable.
+    bit_offset: 0
+    bit_size: 1
+    enum: Ten
+  - name: tms
+    description: Timer Mode Select.
+    bit_offset: 1
+    bit_size: 1
+    enum: Tms
+  - name: tfc
+    description: Timer Free-Running Counter.
+    bit_offset: 2
+    bit_size: 1
+    enum: Tfc
+  - name: tpp
+    description: Timer Pin Polarity.
+    bit_offset: 3
+    bit_size: 1
+    enum: Tpp
+  - name: tps
+    description: Timer Pin Select.
+    bit_offset: 4
+    bit_size: 2
+    enum: Tps
+  - name: tie
+    description: Timer Interrupt Enable.
+    bit_offset: 6
+    bit_size: 1
+    enum: Tie
+  - name: tcf
+    description: Timer Compare Flag.
+    bit_offset: 7
+    bit_size: 1
+    enum: Tcf
+  - name: tdre
+    description: Timer DMA Request Enable.
+    bit_offset: 8
+    bit_size: 1
+    enum: Tdre
+fieldset/Psr:
+  description: Prescaler and Glitch Filter.
+  fields:
+  - name: pcs
+    description: Prescaler and Glitch Filter Clock Select.
+    bit_offset: 0
+    bit_size: 2
+    enum: Pcs
+  - name: pbyp
+    description: Prescaler and Glitch Filter Bypass.
+    bit_offset: 2
+    bit_size: 1
+    enum: Pbyp
+  - name: prescale
+    description: Prescaler and Glitch Filter Value.
+    bit_offset: 3
+    bit_size: 4
+    enum: Prescale
+enum/Pbyp:
+  bit_size: 1
+  variants:
+  - name: Pbyp0
+    description: Prescaler and glitch filter enable.
+    value: 0
+  - name: Pbyp1
+    description: Prescaler and glitch filter bypass.
+    value: 1
+enum/Pcs:
+  bit_size: 2
+  variants:
+  - name: Pcs00
+    description: Clock 0.
+    value: 0
+  - name: Pcs01
+    description: Clock 1.
+    value: 1
+  - name: Pcs10
+    description: Clock 2.
+    value: 2
+  - name: Pcs11
+    description: Clock 3.
+    value: 3
+enum/Prescale:
+  bit_size: 4
+  variants:
+  - name: Prescale0000
+    description: Prescaler divides the prescaler clock by 2; glitch filter does not support this configuration.
+    value: 0
+  - name: Prescale0001
+    description: Prescaler divides the prescaler clock by 4; glitch filter recognizes change on input pin after two rising clock edges.
+    value: 1
+  - name: Prescale0010
+    description: Prescaler divides the prescaler clock by 8; glitch filter recognizes change on input pin after four rising clock edges.
+    value: 2
+  - name: Prescale0011
+    description: Prescaler divides the prescaler clock by 16; glitch filter recognizes change on input pin after eight rising clock edges.
+    value: 3
+  - name: Prescale0100
+    description: Prescaler divides the prescaler clock by 32; glitch filter recognizes change on input pin after 16 rising clock edges.
+    value: 4
+  - name: Prescale0101
+    description: Prescaler divides the prescaler clock by 64; glitch filter recognizes change on input pin after 32 rising clock edges.
+    value: 5
+  - name: Prescale0110
+    description: Prescaler divides the prescaler clock by 128; glitch filter recognizes change on input pin after 64 rising clock edges.
+    value: 6
+  - name: Prescale0111
+    description: Prescaler divides the prescaler clock by 256; glitch filter recognizes change on input pin after 128 rising clock edges.
+    value: 7
+  - name: Prescale1000
+    description: Prescaler divides the prescaler clock by 512; glitch filter recognizes change on input pin after 256 rising clock edges.
+    value: 8
+  - name: Prescale1001
+    description: Prescaler divides the prescaler clock by 1024; glitch filter recognizes change on input pin after 512 rising clock edges.
+    value: 9
+  - name: Prescale1010
+    description: Prescaler divides the prescaler clock by 2048; glitch filter recognizes change on input pin after 1024 rising clock edges.
+    value: 10
+  - name: Prescale1011
+    description: Prescaler divides the prescaler clock by 4096; glitch filter recognizes change on input pin after 2048 rising clock edges.
+    value: 11
+  - name: Prescale1100
+    description: Prescaler divides the prescaler clock by 8192; glitch filter recognizes change on input pin after 4096 rising clock edges.
+    value: 12
+  - name: Prescale1101
+    description: Prescaler divides the prescaler clock by 16,384; glitch filter recognizes change on input pin after 8192 rising clock edges.
+    value: 13
+  - name: Prescale1110
+    description: Prescaler divides the prescaler clock by 32,768; glitch filter recognizes change on input pin after 16,384 rising clock edges.
+    value: 14
+  - name: Prescale1111
+    description: Prescaler divides the prescaler clock by 65,536; glitch filter recognizes change on input pin after 32,768 rising clock edges.
+    value: 15
+enum/Tcf:
+  bit_size: 1
+  variants:
+  - name: Tcf0
+    description: CNR != (CMR + 1).
+    value: 0
+  - name: Tcf1
+    description: CNR = (CMR + 1).
+    value: 1
+enum/Tdre:
+  bit_size: 1
+  variants:
+  - name: Trde0
+    description: Disable.
+    value: 0
+  - name: Trde1
+    description: Enable.
+    value: 1
+enum/Ten:
+  bit_size: 1
+  variants:
+  - name: Ten0
+    description: Disable.
+    value: 0
+  - name: Ten1
+    description: Enable.
+    value: 1
+enum/Tfc:
+  bit_size: 1
+  variants:
+  - name: Tfc0
+    description: Reset when TCF asserts.
+    value: 0
+  - name: Tfc1
+    description: Reset on overflow.
+    value: 1
+enum/Tie:
+  bit_size: 1
+  variants:
+  - name: Tie0
+    description: Disable.
+    value: 0
+  - name: Tie1
+    description: Enable.
+    value: 1
+enum/Tms:
+  bit_size: 1
+  variants:
+  - name: Tms0
+    description: Time Counter.
+    value: 0
+  - name: Tms1
+    description: Pulse Counter.
+    value: 1
+enum/Tpp:
+  bit_size: 1
+  variants:
+  - name: Tpp0
+    description: Active-high.
+    value: 0
+  - name: Tpp1
+    description: Active-low.
+    value: 1
+enum/Tps:
+  bit_size: 2
+  variants:
+  - name: Tps00
+    description: Input 0.
+    value: 0
+  - name: Tps01
+    description: Input 1.
+    value: 1
+  - name: Tps10
+    description: Input 2.
+    value: 2
+  - name: Tps11
+    description: Input 3.
+    value: 3
