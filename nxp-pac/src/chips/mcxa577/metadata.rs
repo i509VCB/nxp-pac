@@ -9915,7 +9915,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "RTC0",
         address: 0x400EE000,
-        driver_name: "mcxa/RTC5xx::RTC",
+        driver_name: "mcx/RTC5xx::RTC",
         signals: &[Signal {
             name: "CLKOUT",
             pins: &[SignalPin {

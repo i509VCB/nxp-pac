@@ -331,7 +331,7 @@ pub mod mrcc;
 pub mod ostimer;
 #[path = "../../meta_peripherals/mcx/PORT.rs"]
 pub mod port;
-#[path = "../../meta_peripherals/mcxa/RTC5xx.rs"]
+#[path = "../../meta_peripherals/mcx/RTC5xx.rs"]
 pub mod rtc5xx;
 #[path = "../../meta_peripherals/mcxa/SCG.rs"]
 pub mod scg;

@@ -8637,7 +8637,7 @@
     {
       "name": "RTC0",
       "address": "0x400EE000",
-      "block": "mcxa/RTC5xx::RTC",
+      "block": "mcx/RTC5xx::RTC",
       "signals": [
         {
           "name": "CLKOUT",

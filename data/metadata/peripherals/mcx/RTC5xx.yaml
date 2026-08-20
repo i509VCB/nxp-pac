@@ -323,27 +323,27 @@ fieldset/Filter01Cfg:
     description: Tamper Filter 1 Clock Select.
     bit_offset: 4
     bit_size: 3
-    enum: ClkSel1
+    enum: ClkSel
   - name: pol1
     description: Tamper Detect Input Bit 1 Polarity Control.
     bit_offset: 7
     bit_size: 1
-    enum: Pol1
+    enum: Pol
   - name: fil_dur0
     description: Tamper Detect Bit 0 Filter Duration.
     bit_offset: 8
     bit_size: 4
-    enum: FilDur0
+    enum: FilDur
   - name: clk_sel0
     description: Tamper Filter 0 Clock Select.
     bit_offset: 12
     bit_size: 3
-    enum: ClkSel0
+    enum: ClkSel
   - name: pol0
     description: Tamper Detect Input Bit 0 Polarity Control.
     bit_offset: 15
     bit_size: 1
-    enum: Pol0
+    enum: Pol
 fieldset/Filter23Cfg:
   description: Tamper 23 Filter Configuration.
   bit_size: 16
@@ -352,32 +352,32 @@ fieldset/Filter23Cfg:
     description: Tamper Detect Bit 3 Filter Duration.
     bit_offset: 0
     bit_size: 4
-    enum: FilDur3
+    enum: FilDur
   - name: clk_sel3
     description: Tamper Filter 3 Clock Select.
     bit_offset: 4
     bit_size: 3
-    enum: ClkSel3
+    enum: ClkSel
   - name: pol3
     description: Tamper Detect Input Bit 3 Polarity Control.
     bit_offset: 7
     bit_size: 1
-    enum: Pol3
+    enum: Pol
   - name: fil_dur2
     description: Tamper Detect Bit 2 Filter Duration.
     bit_offset: 8
     bit_size: 4
-    enum: FilDur2
+    enum: FilDur
   - name: clk_sel2
     description: Tamper Filter 2 Clock Select.
     bit_offset: 12
     bit_size: 3
-    enum: ClkSel2
+    enum: ClkSel
   - name: pol2
     description: Tamper Detect Input Bit 2 Polarity Control.
     bit_offset: 15
     bit_size: 1
-    enum: Pol2
+    enum: Pol
 fieldset/Filter45Cfg:
   description: Tamper 05 Filter Configuration.
   bit_size: 16
@@ -386,27 +386,27 @@ fieldset/Filter45Cfg:
     description: Tamper Detect Bit 5 Filter Duration.
     bit_offset: 0
     bit_size: 4
-    enum: FilDur5
+    enum: FilDur
   - name: clk_sel5
     description: Tamper Filter 5 Clock Select.
     bit_offset: 4
     bit_size: 3
-    enum: ClkSel5
+    enum: ClkSelLimited
   - name: pol5
     description: Tamper Detect Input Bit 5 Polarity Control.
     bit_offset: 7
     bit_size: 1
-    enum: Pol5
+    enum: Pol
   - name: fil_dur4
     description: Tamper Detect Bit 4 Filter Duration.
     bit_offset: 8
     bit_size: 4
-    enum: FilDur4
+    enum: FilDur
   - name: clk_sel4
     description: Tamper Filter 4 Clock Select.
     bit_offset: 12
     bit_size: 3
-    enum: ClkSel4
+    enum: ClkSelLimited
   - name: pol4
     description: Tamper Detect Input Bit 4 Polarity Control.
     bit_offset: 15
@@ -420,32 +420,32 @@ fieldset/Filter67Cfg:
     description: Tamper Detect Bit 7 Filter Duration.
     bit_offset: 0
     bit_size: 4
-    enum: FilDur7
+    enum: FilDur
   - name: clk_sel7
     description: Tamper Filter 7 Clock Select.
     bit_offset: 4
     bit_size: 3
-    enum: ClkSel7
+    enum: ClkSelLimited
   - name: pol7
     description: Tamper Detect Input Bit 7 Polarity Control.
     bit_offset: 7
     bit_size: 1
-    enum: Pol7
+    enum: Pol
   - name: fil_dur6
     description: Tamper Detect Bit 6 Filter Duration.
     bit_offset: 8
     bit_size: 4
-    enum: FilDur6
+    enum: FilDur
   - name: clk_sel6
     description: Tamper Filter 6 Clock Select.
     bit_offset: 12
     bit_size: 3
-    enum: ClkSel6
+    enum: ClkSelLimited
   - name: pol6
     description: Tamper Detect Input Bit 6 Polarity Control.
     bit_offset: 15
     bit_size: 1
-    enum: Pol6
+    enum: Pol
 fieldset/Hourmin:
   description: Hours and Minutes Counters.
   bit_size: 16
@@ -721,7 +721,7 @@ enum/BusErr:
   - name: Asserted
     description: Read or write accesses occurred when STATUS[INVAL_BIT] was asserted.
     value: 1
-enum/ClkSel0:
+enum/ClkSel:
   bit_size: 3
   variants:
   - name: Clk32khz
@@ -748,122 +748,14 @@ enum/ClkSel0:
   - name: Clk2hz
     description: 2 Hz clock.
     value: 7
-enum/ClkSel1:
-  bit_size: 3
-  variants:
-  - name: Clk32khz
-    description: 32/16 kHz clock.
-    value: 0
-  - name: Clk512hz
-    description: 512 Hz clock.
-    value: 1
-  - name: Clk128hz
-    description: 128 Hz clock.
-    value: 2
-  - name: Clk64hz
-    description: 64 Hz clock.
-    value: 3
-  - name: Clk16hz
-    description: 16 Hz clock.
-    value: 4
-  - name: Clk8hz
-    description: 8 Hz clock.
-    value: 5
-  - name: Clk4hz
-    description: 4 Hz clock.
-    value: 6
-  - name: Clk2hz
-    description: 2 Hz clock.
-    value: 7
-enum/ClkSel2:
-  bit_size: 3
-  variants:
-  - name: Clk32khz
-    description: 32/16 kHz clock.
-    value: 0
-  - name: Clk512hz
-    description: 512 Hz clock.
-    value: 1
-  - name: Clk128hz
-    description: 128 Hz clock.
-    value: 2
-  - name: Clk64hz
-    description: 64 Hz clock.
-    value: 3
-  - name: Clk16hz
-    description: 16 Hz clock.
-    value: 4
-  - name: Clk8hz
-    description: 8 Hz clock.
-    value: 5
-  - name: Clk4hz
-    description: 4 Hz clock.
-    value: 6
-  - name: Clk2hz
-    description: 2 Hz clock.
-    value: 7
-enum/ClkSel3:
-  bit_size: 3
-  variants:
-  - name: Clk32khz
-    description: 32/16 kHz clock.
-    value: 0
-  - name: Clk512hz
-    description: 512 Hz clock.
-    value: 1
-  - name: Clk128hz
-    description: 128 Hz clock.
-    value: 2
-  - name: Clk64hz
-    description: 64 Hz clock.
-    value: 3
-  - name: Clk16hz
-    description: 16 Hz clock.
-    value: 4
-  - name: Clk8hz
-    description: 8 Hz clock.
-    value: 5
-  - name: Clk4hz
-    description: 4 Hz clock.
-    value: 6
-  - name: Clk2hz
-    description: 2 Hz clock.
-    value: 7
-enum/ClkSel4:
+enum/ClkSelLimited:
   bit_size: 3
   variants:
   - name: Clk32768khz
-    description: Clock to tamper filter 4 is 32.768/16.384 kHz (Oscillator clock) Tamper filter duration is 45.5us (i.e. 1.5 clock) to 1.95ms (64 clocks) in increments of 30.5us.
+    description: Clock to tamper filter is 32.768/16.384 kHz (Oscillator clock) Tamper filter duration is 45.5us (i.e. 1.5 clock) to 1.95ms (64 clocks) in increments of 30.5us.
     value: 0
   - name: Clk512hz
-    description: Clock to tamper filter 4 is 512 Hz Tamper filter duration is 2.85ms (i.e. 1.5 clock) to 125ms (64 clocks) in increments of 1.95ms.
-    value: 1
-enum/ClkSel5:
-  bit_size: 3
-  variants:
-  - name: Clk32768khz
-    description: Clock to tamper filter 5 is 32.768/16.384 kHz (Oscillator clock) Tamper filter duration is 45.5us (i.e. 1.5 clock) to 1.95ms (64 clocks) in increments of 30.5us.
-    value: 0
-  - name: Clk512hz
-    description: Clock to tamper filter 5 is 512 Hz Tamper filter duration is 2.85ms (i.e. 1.5 clock) to 125ms (64 clocks) in increments of 1.95ms.
-    value: 1
-enum/ClkSel6:
-  bit_size: 3
-  variants:
-  - name: Clk32768khz
-    description: Clock to tamper filter 6 is 32.768/16.384 kHz (Oscillator clock) Tamper filter duration is 45.5us (i.e. 1.5 clock) to 1.95ms (64 clocks) in increments of 30.5us.
-    value: 0
-  - name: Clk512hz
-    description: Clock to tamper filter 6 is 512 Hz Tamper filter duration is 2.85ms (i.e. 1.5 clock) to 125ms (64 clocks) in increments of 1.95ms.
-    value: 1
-enum/ClkSel7:
-  bit_size: 3
-  variants:
-  - name: Clk32768khz
-    description: Clock to tamper filter 7 is 32.768/16.384 kHz (Oscillator clock) Tamper filter duration is 45.5us (i.e. 1.5 clock) to 1.95ms (64 clocks) in increments of 30.5us.
-    value: 0
-  - name: Clk512hz
-    description: Clock to tamper filter 7 is 512 Hz Tamper filter duration is 2.85ms (i.e. 1.5 clock) to 125ms (64 clocks) in increments of 1.95ms.
+    description: Clock to tamper filter is 512 Hz Tamper filter duration is 2.85ms (i.e. 1.5 clock) to 125ms (64 clocks) in increments of 1.95ms.
     value: 1
 enum/DwnCntrInvalBit:
   bit_size: 1
@@ -874,7 +766,7 @@ enum/DwnCntrInvalBit:
   - name: Invalid
     description: Count down timer (if running) is changing value and cannot be read or written.
     value: 1
-enum/FilDur0:
+enum/FilDur:
   bit_size: 4
   variants:
   - name: Disabled
@@ -940,204 +832,6 @@ enum/FilDur1:
   - name: Enabled9
     description: Number of tamper filter clock cycles to be counted when tamper is asserted.
     value: 9
-enum/FilDur2:
-  bit_size: 4
-  variants:
-  - name: Disabled
-    description: Filtering operation disabled.
-    value: 0
-  - name: NumberOfClkCyclesEnabled1
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 1
-  - name: NumberOfClkCyclesEnabled2
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 2
-  - name: NumberOfClkCyclesEnabled3
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 3
-  - name: NumberOfClkCyclesEnabled4
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 4
-  - name: NumberOfClkCyclesEnabled5
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 5
-  - name: NumberOfClkCyclesEnabled6
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 6
-  - name: NumberOfClkCyclesEnabled7
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 7
-  - name: NumberOfClkCyclesEnabled8
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 8
-  - name: NumberOfClkCyclesEnabled9
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 9
-enum/FilDur3:
-  bit_size: 4
-  variants:
-  - name: Disabled
-    description: Filtering operation disabled.
-    value: 0
-  - name: NumberOfClkCyclesEnabled1
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 1
-  - name: NumberOfClkCyclesEnabled2
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 2
-  - name: NumberOfClkCyclesEnabled3
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 3
-  - name: NumberOfClkCyclesEnabled4
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 4
-  - name: NumberOfClkCyclesEnabled5
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 5
-  - name: NumberOfClkCyclesEnabled6
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 6
-  - name: NumberOfClkCyclesEnabled7
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 7
-  - name: NumberOfClkCyclesEnabled8
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 8
-  - name: NumberOfClkCyclesEnabled9
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 9
-enum/FilDur4:
-  bit_size: 4
-  variants:
-  - name: Disabled
-    description: Filtering operation disabled.
-    value: 0
-  - name: NumberOfClkCyclesEnabled1
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 1
-  - name: NumberOfClkCyclesEnabled2
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 2
-  - name: NumberOfClkCyclesEnabled3
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 3
-  - name: NumberOfClkCyclesEnabled4
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 4
-  - name: NumberOfClkCyclesEnabled5
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 5
-  - name: NumberOfClkCyclesEnabled6
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 6
-  - name: NumberOfClkCyclesEnabled7
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 7
-  - name: NumberOfClkCyclesEnabled8
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 8
-  - name: NumberOfClkCyclesEnabled9
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 9
-enum/FilDur5:
-  bit_size: 4
-  variants:
-  - name: Disabled
-    description: Filtering operation disabled.
-    value: 0
-  - name: NumberOfClkCyclesEnabled1
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 1
-  - name: NumberOfClkCyclesEnabled2
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 2
-  - name: NumberOfClkCyclesEnabled3
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 3
-  - name: NumberOfClkCyclesEnabled4
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 4
-  - name: NumberOfClkCyclesEnabled5
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 5
-  - name: NumberOfClkCyclesEnabled6
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 6
-  - name: NumberOfClkCyclesEnabled7
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 7
-  - name: NumberOfClkCyclesEnabled8
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 8
-  - name: NumberOfClkCyclesEnabled9
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 9
-enum/FilDur6:
-  bit_size: 4
-  variants:
-  - name: Disabled
-    description: Filtering operation disabled.
-    value: 0
-  - name: NumberOfClkCyclesEnabled1
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 1
-  - name: NumberOfClkCyclesEnabled2
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 2
-  - name: NumberOfClkCyclesEnabled3
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 3
-  - name: NumberOfClkCyclesEnabled4
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 4
-  - name: NumberOfClkCyclesEnabled5
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 5
-  - name: NumberOfClkCyclesEnabled6
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 6
-  - name: NumberOfClkCyclesEnabled7
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 7
-  - name: NumberOfClkCyclesEnabled8
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 8
-  - name: NumberOfClkCyclesEnabled9
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 9
-enum/FilDur7:
-  bit_size: 4
-  variants:
-  - name: Disabled
-    description: Filtering operation disabled.
-    value: 0
-  - name: NumberOfClkCyclesEnabled1
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 1
-  - name: NumberOfClkCyclesEnabled2
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 2
-  - name: NumberOfClkCyclesEnabled3
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 3
-  - name: NumberOfClkCyclesEnabled4
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 4
-  - name: NumberOfClkCyclesEnabled5
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 5
-  - name: NumberOfClkCyclesEnabled6
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 6
-  - name: NumberOfClkCyclesEnabled7
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 7
-  - name: NumberOfClkCyclesEnabled8
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 8
-  - name: NumberOfClkCyclesEnabled9
-    description: Number of tamper filter clock cycles to be counted when tamper is asserted.
-    value: 9
 enum/LfsrClkSel:
   bit_size: 3
   variants:
@@ -1165,41 +859,14 @@ enum/LfsrClkSel:
   - name: Clk2hz
     description: 2 Hz.
     value: 7
-enum/Pol0:
+enum/Pol:
   bit_size: 1
   variants:
   - name: ActiveHigh
-    description: Tamper detect input bit 0 is active high.
+    description: Tamper detect input is active high.
     value: 0
   - name: ActiveLow
-    description: Tamper detect input bit 0 is active low.
-    value: 1
-enum/Pol1:
-  bit_size: 1
-  variants:
-  - name: ActiveHigh
-    description: Tamper detect input bit 1 is active high.
-    value: 0
-  - name: ActiveLow
-    description: Tamper detect input bit 1 is active low.
-    value: 1
-enum/Pol2:
-  bit_size: 1
-  variants:
-  - name: ActiveHigh
-    description: Tamper detect input bit 2 is active high.
-    value: 0
-  - name: ActiveLow
-    description: Tamper detect input bit 2 is active low.
-    value: 1
-enum/Pol3:
-  bit_size: 1
-  variants:
-  - name: ActiveHigh
-    description: Tamper detect input bit 3 is active high.
-    value: 0
-  - name: ActiveLow
-    description: Tamper detect input bit 3 is active low.
+    description: Tamper detect input is active low.
     value: 1
 enum/Pol4:
   bit_size: 1
@@ -1209,33 +876,6 @@ enum/Pol4:
     value: 0
   - name: ActiveLow
     description: Tamper detect input bit 4 is active low.
-    value: 1
-enum/Pol5:
-  bit_size: 1
-  variants:
-  - name: ActiveHigh
-    description: Tamper detect input bit 5 is active high.
-    value: 0
-  - name: ActiveLow
-    description: Tamper detect input bit 5 is active low.
-    value: 1
-enum/Pol6:
-  bit_size: 1
-  variants:
-  - name: ActiveHigh
-    description: Tamper detect input bit 6 is active high.
-    value: 0
-  - name: ActiveLow
-    description: Tamper detect input bit 6 is active low.
-    value: 1
-enum/Pol7:
-  bit_size: 1
-  variants:
-  - name: ActiveHigh
-    description: Tamper detect input bit 7 is active high.
-    value: 0
-  - name: ActiveLow
-    description: Tamper detect input bit 7 is active low.
     value: 1
 enum/Swr:
   bit_size: 1
