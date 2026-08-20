@@ -1426,7 +1426,7 @@
     {
       "name": "CTIMER0",
       "address": "0x40004000",
-      "block": "mcxa/CTIMER",
+      "block": "mcx/CTIMER",
       "signals": [
         {
           "name": "INP0",
@@ -1890,7 +1890,7 @@
     {
       "name": "CTIMER1",
       "address": "0x40005000",
-      "block": "mcxa/CTIMER",
+      "block": "mcx/CTIMER",
       "signals": [
         {
           "name": "INP0",
@@ -2294,7 +2294,7 @@
     {
       "name": "CTIMER2",
       "address": "0x40006000",
-      "block": "mcxa/CTIMER",
+      "block": "mcx/CTIMER",
       "signals": [
         {
           "name": "INP0",
@@ -2714,7 +2714,7 @@
     {
       "name": "CTIMER3",
       "address": "0x40007000",
-      "block": "mcxa/CTIMER",
+      "block": "mcx/CTIMER",
       "signals": [
         {
           "name": "INP0",
@@ -3130,7 +3130,7 @@
     {
       "name": "CTIMER4",
       "address": "0x40008000",
-      "block": "mcxa/CTIMER",
+      "block": "mcx/CTIMER",
       "signals": [
         {
           "name": "INP0",
@@ -5051,7 +5051,7 @@
     {
       "name": "GPIO0",
       "address": "0x40102000",
-      "block": "mcxa/GPIO",
+      "block": "mcx/GPIO",
       "signals": [
         {
           "name": "0",
@@ -5285,7 +5285,7 @@
     {
       "name": "GPIO1",
       "address": "0x40103000",
-      "block": "mcxa/GPIO",
+      "block": "mcx/GPIO",
       "signals": [
         {
           "name": "0",
@@ -5510,7 +5510,7 @@
     {
       "name": "GPIO2",
       "address": "0x40104000",
-      "block": "mcxa/GPIO",
+      "block": "mcx/GPIO",
       "signals": [
         {
           "name": "0",
@@ -5771,7 +5771,7 @@
     {
       "name": "GPIO3",
       "address": "0x40105000",
-      "block": "mcxa/GPIO",
+      "block": "mcx/GPIO",
       "signals": [
         {
           "name": "0",
@@ -6077,7 +6077,7 @@
     {
       "name": "GPIO4",
       "address": "0x40106000",
-      "block": "mcxa/GPIO",
+      "block": "mcx/GPIO",
       "signals": [
         {
           "name": "0",
@@ -7541,7 +7541,7 @@
     {
       "name": "PORT0",
       "address": "0x400BC000",
-      "block": "mcxa/PORT",
+      "block": "mcx/PORT",
       "signals": [],
       "gate": {
         "enable": "mrcc_glb_cc1",
@@ -7551,7 +7551,7 @@
     {
       "name": "PORT1",
       "address": "0x400BD000",
-      "block": "mcxa/PORT",
+      "block": "mcx/PORT",
       "signals": [],
       "gate": {
         "enable": "mrcc_glb_cc1",
@@ -7561,7 +7561,7 @@
     {
       "name": "PORT2",
       "address": "0x400BE000",
-      "block": "mcxa/PORT",
+      "block": "mcx/PORT",
       "signals": [],
       "gate": {
         "enable": "mrcc_glb_cc1",
@@ -7571,7 +7571,7 @@
     {
       "name": "PORT3",
       "address": "0x400BF000",
-      "block": "mcxa/PORT",
+      "block": "mcx/PORT",
       "signals": [],
       "gate": {
         "enable": "mrcc_glb_cc1",
@@ -7581,7 +7581,7 @@
     {
       "name": "PORT4",
       "address": "0x400C0000",
-      "block": "mcxa/PORT",
+      "block": "mcx/PORT",
       "signals": [],
       "gate": {
         "enable": "mrcc_glb_cc1",
@@ -9340,7 +9340,7 @@
     {
       "name": "WWDT0",
       "address": "0x4000C000",
-      "block": "mcxa/WWDT",
+      "block": "mcx/WWDT",
       "signals": [],
       "gate": {
         "enable": "mrcc_glb_acc0",

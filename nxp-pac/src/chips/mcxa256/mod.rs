@@ -265,7 +265,7 @@ pub mod cmc;
 pub mod common;
 #[path = "../../meta_peripherals/mcxa/CRC.rs"]
 pub mod crc;
-#[path = "../../meta_peripherals/mcxa/CTIMER.rs"]
+#[path = "../../meta_peripherals/mcx/CTIMER.rs"]
 pub mod ctimer;
 #[path = "../../meta_peripherals/mcxa/DAC.rs"]
 pub mod dac;
@@ -279,7 +279,7 @@ pub mod flexio;
 pub mod flexpwm;
 #[path = "../../meta_peripherals/mcxa/FMU.rs"]
 pub mod fmu;
-#[path = "../../meta_peripherals/mcxa/GPIO.rs"]
+#[path = "../../meta_peripherals/mcx/GPIO.rs"]
 pub mod gpio;
 #[path = "../../meta_peripherals/mcxa/I3C.rs"]
 pub mod i3c;
@@ -295,7 +295,7 @@ pub mod lpuart;
 pub mod mrcc;
 #[path = "../../meta_peripherals/mcxa/OSTIMER.rs"]
 pub mod ostimer;
-#[path = "../../meta_peripherals/mcxa/PORT.rs"]
+#[path = "../../meta_peripherals/mcx/PORT.rs"]
 pub mod port;
 #[path = "../../meta_peripherals/mcxa/RTC2xx.rs"]
 pub mod rtc2xx;
@@ -313,5 +313,5 @@ pub mod trng;
 pub mod usb;
 #[path = "../../meta_peripherals/mcxa/VBAT.rs"]
 pub mod vbat;
-#[path = "../../meta_peripherals/mcxa/WWDT.rs"]
+#[path = "../../meta_peripherals/mcx/WWDT.rs"]
 pub mod wwdt;

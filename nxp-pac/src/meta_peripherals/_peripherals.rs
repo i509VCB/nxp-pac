@@ -1,12 +1,15 @@
 #[doc = r" List of all nxp-pac peripherals, whether they are used or not."]
 pub const META_PERIPHERALS: &[&str] = &[
+    "mcx/CTIMER",
+    "mcx/GPIO",
+    "mcx/PORT",
+    "mcx/WWDT",
     "mcxa/ADC",
     "mcxa/AHBSC",
     "mcxa/CAN",
     "mcxa/CDOG",
     "mcxa/CMC",
     "mcxa/CRC",
-    "mcxa/CTIMER",
     "mcxa/DAC",
     "mcxa/DMA",
     "mcxa/EDMA_TCD",
@@ -14,7 +17,6 @@ pub const META_PERIPHERALS: &[&str] = &[
     "mcxa/FLEXPWM",
     "mcxa/FLEXSPI",
     "mcxa/FMU",
-    "mcxa/GPIO",
     "mcxa/I3C",
     "mcxa/INPUTMUX",
     "mcxa/LPI2C",
@@ -24,7 +26,6 @@ pub const META_PERIPHERALS: &[&str] = &[
     "mcxa/MRCC2xx",
     "mcxa/MRCC5xx",
     "mcxa/OSTIMER",
-    "mcxa/PORT",
     "mcxa/RTC2xx",
     "mcxa/RTC5xx",
     "mcxa/SCG",
@@ -35,5 +36,4 @@ pub const META_PERIPHERALS: &[&str] = &[
     "mcxa/TRNG",
     "mcxa/USB",
     "mcxa/VBAT",
-    "mcxa/WWDT",
 ];

@@ -1516,7 +1516,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "CTIMER0",
         address: 0x40004000,
-        driver_name: "mcxa/CTIMER",
+        driver_name: "mcx/CTIMER",
         signals: &[
             Signal {
                 name: "INP0",
@@ -2116,7 +2116,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "CTIMER1",
         address: 0x40005000,
-        driver_name: "mcxa/CTIMER",
+        driver_name: "mcx/CTIMER",
         signals: &[
             Signal {
                 name: "INP0",
@@ -2641,7 +2641,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "CTIMER2",
         address: 0x40006000,
-        driver_name: "mcxa/CTIMER",
+        driver_name: "mcx/CTIMER",
         signals: &[
             Signal {
                 name: "INP0",
@@ -3186,7 +3186,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "CTIMER3",
         address: 0x40007000,
-        driver_name: "mcxa/CTIMER",
+        driver_name: "mcx/CTIMER",
         signals: &[
             Signal {
                 name: "INP0",
@@ -3736,7 +3736,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "CTIMER4",
         address: 0x40008000,
-        driver_name: "mcxa/CTIMER",
+        driver_name: "mcx/CTIMER",
         signals: &[
             Signal {
                 name: "INP0",
@@ -5705,7 +5705,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "GPIO0",
         address: 0x40048000,
-        driver_name: "mcxa/GPIO",
+        driver_name: "mcx/GPIO",
         signals: &[
             Signal {
                 name: "0",
@@ -5976,7 +5976,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "GPIO1",
         address: 0x4004A000,
-        driver_name: "mcxa/GPIO",
+        driver_name: "mcx/GPIO",
         signals: &[
             Signal {
                 name: "0",
@@ -6202,7 +6202,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "GPIO2",
         address: 0x4004C000,
-        driver_name: "mcxa/GPIO",
+        driver_name: "mcx/GPIO",
         signals: &[
             Signal {
                 name: "0",
@@ -6500,7 +6500,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "GPIO3",
         address: 0x4004E000,
-        driver_name: "mcxa/GPIO",
+        driver_name: "mcx/GPIO",
         signals: &[
             Signal {
                 name: "0",
@@ -6771,7 +6771,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "GPIO4",
         address: 0x40050000,
-        driver_name: "mcxa/GPIO",
+        driver_name: "mcx/GPIO",
         signals: &[
             Signal {
                 name: "0",
@@ -6916,7 +6916,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "GPIO5",
         address: 0x400DF000,
-        driver_name: "mcxa/GPIO",
+        driver_name: "mcx/GPIO",
         signals: &[
             Signal {
                 name: "0",
@@ -9798,7 +9798,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "PORT0",
         address: 0x400BC000,
-        driver_name: "mcxa/PORT",
+        driver_name: "mcx/PORT",
         signals: &[],
         flexcomm: None,
         dma_muxing: &[],
@@ -9812,7 +9812,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "PORT1",
         address: 0x400BD000,
-        driver_name: "mcxa/PORT",
+        driver_name: "mcx/PORT",
         signals: &[],
         flexcomm: None,
         dma_muxing: &[],
@@ -9826,7 +9826,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "PORT2",
         address: 0x400BE000,
-        driver_name: "mcxa/PORT",
+        driver_name: "mcx/PORT",
         signals: &[],
         flexcomm: None,
         dma_muxing: &[],
@@ -9840,7 +9840,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "PORT3",
         address: 0x400BF000,
-        driver_name: "mcxa/PORT",
+        driver_name: "mcx/PORT",
         signals: &[],
         flexcomm: None,
         dma_muxing: &[],
@@ -9854,7 +9854,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "PORT4",
         address: 0x400C0000,
-        driver_name: "mcxa/PORT",
+        driver_name: "mcx/PORT",
         signals: &[],
         flexcomm: None,
         dma_muxing: &[],
@@ -9868,7 +9868,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "PORT5",
         address: 0x400E3000,
-        driver_name: "mcxa/PORT",
+        driver_name: "mcx/PORT",
         signals: &[],
         flexcomm: None,
         dma_muxing: &[],
@@ -12734,7 +12734,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "WWDT0",
         address: 0x4000C000,
-        driver_name: "mcxa/WWDT",
+        driver_name: "mcx/WWDT",
         signals: &[],
         flexcomm: None,
         dma_muxing: &[],
@@ -12748,7 +12748,7 @@ pub const PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "WWDT1",
         address: 0x4000D000,
-        driver_name: "mcxa/WWDT",
+        driver_name: "mcx/WWDT",
         signals: &[],
         flexcomm: None,
         dma_muxing: &[],
