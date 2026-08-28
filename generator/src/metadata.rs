@@ -1,6 +1,6 @@
-use std::{fmt::Write, fs, path::Path};
+use std::{collections::BTreeMap, fmt::Write, fs, path::Path};
 
-use anyhow::{Context, anyhow, bail};
+use anyhow::{Context, anyhow, bail, ensure};
 use chiptool::commands::{ExtractShared, extract_all::ExtractAll};
 use indexmap::IndexMap;
 use proc_macro2::{Literal, TokenStream};
@@ -63,6 +63,9 @@ pub struct Peripheral {
     #[serde(default)]
     pub dma_muxing: Vec<DmaMux>,
     pub only_in: Option<String>,
+    /// Generate the PAC instance but do not advertise a HAL driver mapping.
+    #[serde(default)]
+    pub pac_only: bool,
     pub gate: Option<Gate>,
 }
 
@@ -96,6 +99,14 @@ impl Peripheral {
             rust_mod_name: mod_name.to_lowercase(),
             rust_type_name: inflections::Inflect::to_pascal_case(type_name),
         }))
+    }
+}
+
+fn runtime_driver_name(peripheral: &Peripheral) -> &str {
+    if peripheral.pac_only {
+        ""
+    } else {
+        peripheral.peripheral_block.as_deref().unwrap_or_default()
     }
 }
 
@@ -255,7 +266,7 @@ fn generate_metadata(name: &str, metadata: &Metadata) -> TokenStream {
             None => quote! { 0 },
         };
 
-        let driver_name = peripheral.peripheral_block.as_deref().unwrap_or_default();
+        let driver_name = runtime_driver_name(peripheral);
 
         let gate = match peripheral.gate.as_ref() {
             Some(Gate {
@@ -273,8 +284,8 @@ fn generate_metadata(name: &str, metadata: &Metadata) -> TokenStream {
                     None => quote! { None },
                 };
                 let bit = match bit.clone() {
-                    Some(bit) => { bit },
-                    None => { name.to_lowercase() }
+                    Some(bit) => bit,
+                    None => name.to_lowercase(),
                 };
 
                 quote! {
@@ -420,30 +431,41 @@ pub fn extract_peripherals(
     .with_context(|| format!("Error generating peripheral yamls for {core}"))?;
 
     let path_regex = regex::Regex::new("^(.+)__.+$")?;
-    for entry in fs::read_dir(post_transforms_dir).context("reading post-transforms subdir")? {
-        let entry = entry?;
+    let mut entries = fs::read_dir(post_transforms_dir)
+        .context("reading post-transforms subdir")?
+        .collect::<Result<Vec<_>, _>>()?;
+    entries.sort_by_key(|entry| entry.file_name());
 
+    // chiptool emits one IR fragment per block. Multiple blocks may share a
+    // namespace, so combine them before stripping that namespace. Writing each
+    // fragment directly would silently leave only the last block.
+    let mut modules = BTreeMap::<String, chiptool::ir::IR>::new();
+    for entry in entries {
         let filename: String = entry.file_name().to_string_lossy().into_owned();
         let name = path_regex
             .captures(&filename)
             .and_then(|c| c.get(1))
             .ok_or_else(|| anyhow!("Failed strip namespace from filename {:?}", &entry))?;
 
-        let from: chiptool::transform::common::RegexSet = serde_yaml::from_str("(.*)::(.+)")?;
+        let ir: chiptool::ir::IR = serde_yaml::from_reader(fs::File::open(entry.path())?)?;
+        merge_ir_fragment(
+            modules.entry(name.as_str().to_uppercase()).or_default(),
+            ir,
+            name.as_str(),
+        )?;
+    }
 
-        let mut ir: chiptool::ir::IR = serde_yaml::from_reader(fs::File::open(entry.path())?)?;
+    let from: chiptool::transform::common::RegexSet = serde_yaml::from_str("(.*)::(.+)")?;
+    for (name, mut ir) in modules {
         chiptool::transform::rename::Rename {
-            from,
+            from: from.clone(),
             to: "$2".to_string(),
             r#type: chiptool::transform::rename::RenameType::All,
         }
         .run(&mut ir)?;
 
         let data = serde_yaml::to_string(&ir)?;
-        fs::write(
-            output_dir.join(format!("{}.yaml", name.as_str().to_uppercase())),
-            data.as_bytes(),
-        )?;
+        fs::write(output_dir.join(format!("{name}.yaml")), data.as_bytes())?;
     }
 
     let svd_contents = fs::read_to_string(svd).context("Read SVD")?;
@@ -512,4 +534,113 @@ pub fn extract_peripherals(
     .context("writing _addresses.json")?;
 
     Ok(())
+}
+
+fn merge_ir_fragment(
+    target: &mut chiptool::ir::IR,
+    fragment: chiptool::ir::IR,
+    namespace: &str,
+) -> anyhow::Result<()> {
+    merge_ir_map(&mut target.devices, fragment.devices, namespace, "device")?;
+    merge_ir_map(&mut target.blocks, fragment.blocks, namespace, "block")?;
+    merge_ir_map(
+        &mut target.fieldsets,
+        fragment.fieldsets,
+        namespace,
+        "fieldset",
+    )?;
+    merge_ir_map(&mut target.enums, fragment.enums, namespace, "enum")?;
+    Ok(())
+}
+
+fn merge_ir_map<T: PartialEq>(
+    target: &mut BTreeMap<String, T>,
+    fragment: BTreeMap<String, T>,
+    namespace: &str,
+    kind: &str,
+) -> anyhow::Result<()> {
+    for (name, value) in fragment {
+        if let Some(existing) = target.get(&name) {
+            ensure!(
+                existing == &value,
+                "conflicting {kind} {name} while combining extracted namespace {namespace}"
+            );
+        } else {
+            target.insert(name, value);
+        }
+    }
+    Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use chiptool::ir::{Block, FieldSet, IR};
+
+    use super::{Peripheral, merge_ir_fragment, runtime_driver_name};
+
+    fn block(description: &str) -> Block {
+        Block {
+            extends: None,
+            description: Some(description.into()),
+            items: Vec::new(),
+        }
+    }
+
+    fn fieldset(description: &str) -> FieldSet {
+        FieldSet {
+            extends: None,
+            description: Some(description.into()),
+            bit_size: 32,
+            fields: Vec::new(),
+        }
+    }
+
+    fn peripheral(pac_only: bool) -> Peripheral {
+        Peripheral {
+            name: "GPIO0".into(),
+            peripheral_block: Some("mcxa/GPIO".into()),
+            rust_module_name: None,
+            peripheral_address: Some("0x4000_0000".into()),
+            signals: Vec::new(),
+            flexcomm: None,
+            dma_muxing: Vec::new(),
+            only_in: None,
+            pac_only,
+            gate: None,
+        }
+    }
+
+    #[test]
+    fn pac_only_uses_existing_empty_driver_name_convention() {
+        assert_eq!(runtime_driver_name(&peripheral(true)), "");
+        assert_eq!(runtime_driver_name(&peripheral(false)), "mcxa/GPIO");
+    }
+
+    #[test]
+    fn namespace_fragment_merge_deduplicates_equal_types_and_keeps_distinct_blocks() {
+        let mut target = IR::new();
+        target.blocks.insert("port::Port".into(), block("PORT"));
+        target.fieldsets.insert("port::Pcr".into(), fieldset("PCR"));
+        let mut fragment = IR::new();
+        fragment.blocks.insert("port::Port1".into(), block("PORT"));
+        fragment
+            .fieldsets
+            .insert("port::Pcr".into(), fieldset("PCR"));
+
+        merge_ir_fragment(&mut target, fragment, "port").expect("equal shared types merge");
+        assert!(target.blocks.contains_key("port::Port"));
+        assert!(target.blocks.contains_key("port::Port1"));
+    }
+
+    #[test]
+    fn namespace_fragment_merge_rejects_conflicting_duplicate_types() {
+        let mut target = IR::new();
+        target.blocks.insert("port::Port".into(), block("first"));
+        let mut fragment = IR::new();
+        fragment.blocks.insert("port::Port".into(), block("second"));
+
+        let error = merge_ir_fragment(&mut target, fragment, "port")
+            .expect_err("conflicting duplicate must fail closed");
+        assert!(format!("{error:#}").contains("conflicting block port::Port"));
+    }
 }

@@ -51,6 +51,9 @@ jobs:
       - name: Run generate on all chips
         run: |
           cargo run -p generator --locked -- generate
+      - name: Check generated output is current
+        run: |
+          git diff --exit-code -- nxp-pac
 
   check:
     runs-on: ubuntu-latest

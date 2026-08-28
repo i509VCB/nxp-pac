@@ -133,6 +133,11 @@
           "description": "A regular expression to specify which chips this peripheral is available for. This can be used to define a superset chip and share most mappings with subset chips",
           "type": "string"
         },
+        "pac_only": {
+          "description": "Generate this peripheral in the PAC but leave its runtime driver_name empty so HAL generation does not advertise unsupported driver integration",
+          "type": "boolean",
+          "default": false
+        },
         "gate": {
           "description": "Clock & reset control for the peripheral",
           "type": "object",

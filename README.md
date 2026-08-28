@@ -4,9 +4,21 @@ This is the workspace for the nxp-pac crate and supporting utilities.
 
 ## Cloning
 
-If you want to regenerate the pac, you need to clone with `--recursive`.
+The SVD submodule intentionally declares `update = none`, so a normal
+`--recursive` clone does not populate it. Before regenerating, explicitly
+check out the repository-pinned SVD revision:
 
-If you forgot this, you can use `git submodule update --checkout --init` to fetch the submodules.
+```sh
+git submodule update --init --recursive --checkout data/mcux-soc-svd
+```
+
+Generate every supported PAC from the repository root and verify that the
+committed output is current:
+
+```sh
+cargo run -p generator --locked -- generate
+git diff --exit-code -- nxp-pac
+```
 
 ## PAC vs MetaPAC
 
