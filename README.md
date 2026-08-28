@@ -13,11 +13,12 @@ git submodule update --init --recursive --checkout data/mcux-soc-svd
 ```
 
 Generate every supported PAC from the repository root and verify that the
-committed output is current:
+committed output is current. The status command must print nothing; unlike a
+plain `git diff`, it also detects newly generated untracked files.
 
 ```sh
 cargo run -p generator --locked -- generate
-git diff --exit-code -- nxp-pac
+git status --porcelain=v1 --untracked-files=all -- nxp-pac
 ```
 
 ## PAC vs MetaPAC

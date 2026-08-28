@@ -42,7 +42,7 @@ jobs:
       - name: Checkout submodules
         if: steps.cache-submodules.outputs.cache-hit != 'true'
         run: |
-          git submodule update --init --force --depth=1 --checkout
+          git submodule update --init --recursive --force --depth=1 --checkout data/mcux-soc-svd
       - name: Cache Dependencies
         uses: Swatinem/rust-cache@v2.9.1
       - name: Install Dependencies
@@ -53,7 +53,7 @@ jobs:
           cargo run -p generator --locked -- generate
       - name: Check generated output is current
         run: |
-          git diff --exit-code -- nxp-pac
+          test -z "$(git status --porcelain=v1 --untracked-files=all -- nxp-pac)"
 
   check:
     runs-on: ubuntu-latest
