@@ -9,6 +9,7 @@ use std::{
 
 use anyhow::{Context, anyhow, ensure};
 use chiptool::ir::{Array, Block, BlockItemInner, IR};
+use regex::Regex;
 use serde::Deserialize;
 use sha2::{Digest, Sha256};
 use svd_parser::svd::{Device, Peripheral};
@@ -26,80 +27,232 @@ const HAL_ENABLED_PERIPHERALS: [&str; 8] = [
 struct SourceLock {
     schema: u8,
     chip: String,
+    svd: LockedGitInput,
+    dma_header: LockedGitInput,
+}
+
+#[derive(Deserialize)]
+#[serde(deny_unknown_fields)]
+struct LockedGitInput {
+    repository_path: String,
     repository: String,
     revision: String,
     path: String,
     sha256: String,
+    license_expression: String,
+    copyright_notices: Vec<String>,
+}
+
+#[derive(Deserialize)]
+#[serde(deny_unknown_fields)]
+struct InterruptArtifact {
+    nvic_prio_bits: u32,
+    interrupts: BTreeMap<String, u32>,
 }
 // MCXA156 does not publish request-source enumerations in its SVD. These are
 // the exact entries carried from its manifest-pinned PERI_DMA.h; the
 // reconciliation evidence records that source and hash explicitly.
-const CARRIED_DMA_REQUESTS: &[(&str, &str, u8)] = &[
-    ("WUU0", "WUU0WakeUpEvent", 1),
-    ("CAN0", "CAN0", 2),
-    ("LPI2C2", "LPI2C2Rx", 3),
-    ("LPI2C2", "LPI2C2Tx", 4),
-    ("LPI2C3", "LPI2C3Rx", 5),
-    ("LPI2C3", "LPI2C3Tx", 6),
-    ("I3C0", "I3C0Rx", 7),
-    ("I3C0", "I3C0Tx", 8),
-    ("LPI2C0", "LPI2C0Rx", 11),
-    ("LPI2C0", "LPI2C0Tx", 12),
-    ("LPI2C1", "LPI2C1Rx", 13),
-    ("LPI2C1", "LPI2C1Tx", 14),
-    ("LPSPI0", "LPSPI0Rx", 15),
-    ("LPSPI0", "LPSPI0Tx", 16),
-    ("LPSPI1", "LPSPI1Rx", 17),
-    ("LPSPI1", "LPSPI1Tx", 18),
-    ("LPUART0", "LPUART0Rx", 21),
-    ("LPUART0", "LPUART0Tx", 22),
-    ("LPUART1", "LPUART1Rx", 23),
-    ("LPUART1", "LPUART1Tx", 24),
-    ("LPUART2", "LPUART2Rx", 25),
-    ("LPUART2", "LPUART2Tx", 26),
-    ("LPUART3", "LPUART3Rx", 27),
-    ("LPUART3", "LPUART3Tx", 28),
-    ("LPUART4", "LPUART4Rx", 29),
-    ("LPUART4", "LPUART4Tx", 30),
-    ("CTIMER0", "CTIMER0M0", 31),
-    ("CTIMER0", "CTIMER0M1", 32),
-    ("CTIMER1", "CTIMER1M0", 33),
-    ("CTIMER1", "CTIMER1M1", 34),
-    ("CTIMER2", "CTIMER2M0", 35),
-    ("CTIMER2", "CTIMER2M1", 36),
-    ("CTIMER3", "CTIMER3M0", 37),
-    ("CTIMER3", "CTIMER3M1", 38),
-    ("CTIMER4", "CTIMER4M0", 39),
-    ("CTIMER4", "CTIMER4M1", 40),
-    ("FLEX_PWM0", "FlexPWM0Mcapt0", 41),
-    ("FLEX_PWM0", "FlexPWM0Mcapt1", 42),
-    ("FLEX_PWM0", "FlexPWM0Mcapt2", 43),
-    ("FLEX_PWM0", "FlexPWM0Mval0", 45),
-    ("FLEX_PWM0", "FlexPWM0Mval1", 46),
-    ("FLEX_PWM0", "FlexPWM0Mval2", 47),
-    ("LPTMR0", "LPTMR0CounterMatchEvent", 49),
-    ("ADC0", "ADC0FifoRequest", 51),
-    ("ADC1", "ADC1FifoRequest", 52),
-    ("CMP0", "CMP0DmaRequest", 53),
-    ("CMP1", "CMP1DmaRequest", 54),
-    ("DAC0", "DAC0FifoRequest", 56),
-    ("GPIO0", "GPIO0PinEvent0", 60),
-    ("GPIO1", "GPIO1PinEvent0", 61),
-    ("GPIO2", "GPIO2PinEvent0", 62),
-    ("GPIO3", "GPIO3PinEvent0", 63),
-    ("GPIO4", "GPIO4PinEvent0", 64),
-    ("EQDC0", "BUFFER", 65),
-    ("EQDC1", "BUFFER", 66),
-    ("FLEXIO0", "FLEXIO0SR0", 71),
-    ("FLEXIO0", "FLEXIO0SR1", 72),
-    ("FLEXIO0", "FLEXIO0SR2", 73),
-    ("FLEXIO0", "FLEXIO0SR3", 74),
-    ("FLEX_PWM1", "FlexPWM1Mcapt0", 79),
-    ("FLEX_PWM1", "FlexPWM1Mcapt1", 80),
-    ("FLEX_PWM1", "FlexPWM1Mcapt2", 81),
-    ("FLEX_PWM1", "FlexPWM1Mval0", 83),
-    ("FLEX_PWM1", "FlexPWM1Mval1", 84),
-    ("FLEX_PWM1", "FlexPWM1Mval2", 85),
+const CARRIED_DMA_REQUESTS: &[(&str, &str, &str, u8)] = &[
+    ("kDma0RequestWUU0", "WUU0", "WUU0WakeUpEvent", 1),
+    ("kDma0RequestMuxFlexCan0DmaRequest", "CAN0", "CAN0", 2),
+    ("kDma0RequestLPI2C2Rx", "LPI2C2", "LPI2C2Rx", 3),
+    ("kDma0RequestLPI2C2Tx", "LPI2C2", "LPI2C2Tx", 4),
+    ("kDma0RequestLPI2C3Rx", "LPI2C3", "LPI2C3Rx", 5),
+    ("kDma0RequestLPI2C3Tx", "LPI2C3", "LPI2C3Tx", 6),
+    ("kDma0RequestMuxI3c0Rx", "I3C0", "I3C0Rx", 7),
+    ("kDma0RequestMuxI3c0Tx", "I3C0", "I3C0Tx", 8),
+    ("kDma0RequestLPI2C0Rx", "LPI2C0", "LPI2C0Rx", 11),
+    ("kDma0RequestLPI2C0Tx", "LPI2C0", "LPI2C0Tx", 12),
+    ("kDma0RequestLPI2C1Rx", "LPI2C1", "LPI2C1Rx", 13),
+    ("kDma0RequestLPI2C1Tx", "LPI2C1", "LPI2C1Tx", 14),
+    ("kDma0RequestLPSPI0Rx", "LPSPI0", "LPSPI0Rx", 15),
+    ("kDma0RequestLPSPI0Tx", "LPSPI0", "LPSPI0Tx", 16),
+    ("kDma0RequestLPSPI1Rx", "LPSPI1", "LPSPI1Rx", 17),
+    ("kDma0RequestLPSPI1Tx", "LPSPI1", "LPSPI1Tx", 18),
+    ("kDma0RequestLPUART0Rx", "LPUART0", "LPUART0Rx", 21),
+    ("kDma0RequestLPUART0Tx", "LPUART0", "LPUART0Tx", 22),
+    ("kDma0RequestLPUART1Rx", "LPUART1", "LPUART1Rx", 23),
+    ("kDma0RequestLPUART1Tx", "LPUART1", "LPUART1Tx", 24),
+    ("kDma0RequestLPUART2Rx", "LPUART2", "LPUART2Rx", 25),
+    ("kDma0RequestLPUART2Tx", "LPUART2", "LPUART2Tx", 26),
+    ("kDma0RequestLPUART3Rx", "LPUART3", "LPUART3Rx", 27),
+    ("kDma0RequestLPUART3Tx", "LPUART3", "LPUART3Tx", 28),
+    ("kDma0RequestLPUART4Rx", "LPUART4", "LPUART4Rx", 29),
+    ("kDma0RequestLPUART4Tx", "LPUART4", "LPUART4Tx", 30),
+    ("kDma0RequestMuxCtimer0M0", "CTIMER0", "CTIMER0M0", 31),
+    ("kDma0RequestMuxCtimer0M1", "CTIMER0", "CTIMER0M1", 32),
+    ("kDma0RequestMuxCtimer1M0", "CTIMER1", "CTIMER1M0", 33),
+    ("kDma0RequestMuxCtimer1M1", "CTIMER1", "CTIMER1M1", 34),
+    ("kDma0RequestMuxCtimer2M0", "CTIMER2", "CTIMER2M0", 35),
+    ("kDma0RequestMuxCtimer2M1", "CTIMER2", "CTIMER2M1", 36),
+    ("kDma0RequestMuxCtimer3M0", "CTIMER3", "CTIMER3M0", 37),
+    ("kDma0RequestMuxCtimer3M1", "CTIMER3", "CTIMER3M1", 38),
+    ("kDma0RequestMuxCtimer4M0", "CTIMER4", "CTIMER4M0", 39),
+    ("kDma0RequestMuxCtimer4M1", "CTIMER4", "CTIMER4M1", 40),
+    (
+        "kDma0RequestMuxFlexPWM0ReqCapt0",
+        "FLEX_PWM0",
+        "FlexPWM0Mcapt0",
+        41,
+    ),
+    (
+        "kDma0RequestMuxFlexPWM0ReqCapt1",
+        "FLEX_PWM0",
+        "FlexPWM0Mcapt1",
+        42,
+    ),
+    (
+        "kDma0RequestMuxFlexPWM0ReqCapt2",
+        "FLEX_PWM0",
+        "FlexPWM0Mcapt2",
+        43,
+    ),
+    (
+        "kDma0RequestMuxFlexPWM0ReqVal0",
+        "FLEX_PWM0",
+        "FlexPWM0Mval0",
+        45,
+    ),
+    (
+        "kDma0RequestMuxFlexPWM0ReqVal1",
+        "FLEX_PWM0",
+        "FlexPWM0Mval1",
+        46,
+    ),
+    (
+        "kDma0RequestMuxFlexPWM0ReqVal2",
+        "FLEX_PWM0",
+        "FlexPWM0Mval2",
+        47,
+    ),
+    (
+        "kDma0RequestMuxLptmr0",
+        "LPTMR0",
+        "LPTMR0CounterMatchEvent",
+        49,
+    ),
+    (
+        "kDma0RequestMuxAdc0FifoRequest",
+        "ADC0",
+        "ADC0FifoRequest",
+        51,
+    ),
+    (
+        "kDma0RequestMuxAdc1FifoRequest",
+        "ADC1",
+        "ADC1FifoRequest",
+        52,
+    ),
+    (
+        "kDma0RequestMuxHsCmp0DmaRequest",
+        "CMP0",
+        "CMP0DmaRequest",
+        53,
+    ),
+    (
+        "kDma0RequestMuxHsCmp1DmaRequest",
+        "CMP1",
+        "CMP1DmaRequest",
+        54,
+    ),
+    (
+        "kDma0RequestMuxDac0FifoRequest",
+        "DAC0",
+        "DAC0FifoRequest",
+        56,
+    ),
+    (
+        "kDma0RequestMuxGpio0PinEventRequest0",
+        "GPIO0",
+        "GPIO0PinEvent0",
+        60,
+    ),
+    (
+        "kDma0RequestMuxGpio1PinEventRequest0",
+        "GPIO1",
+        "GPIO1PinEvent0",
+        61,
+    ),
+    (
+        "kDma0RequestMuxGpio2PinEventRequest0",
+        "GPIO2",
+        "GPIO2PinEvent0",
+        62,
+    ),
+    (
+        "kDma0RequestMuxGpio3PinEventRequest0",
+        "GPIO3",
+        "GPIO3PinEvent0",
+        63,
+    ),
+    (
+        "kDma0RequestMuxGpio4PinEventRequest0",
+        "GPIO4",
+        "GPIO4PinEvent0",
+        64,
+    ),
+    ("kDma0RequestMuxQdc0", "EQDC0", "BUFFER", 65),
+    ("kDma0RequestMuxQdc1", "EQDC1", "BUFFER", 66),
+    (
+        "kDma0RequestMuxFlexIO0ShiftRegister0Request",
+        "FLEXIO0",
+        "FLEXIO0SR0",
+        71,
+    ),
+    (
+        "kDma0RequestMuxFlexIO0ShiftRegister1Request",
+        "FLEXIO0",
+        "FLEXIO0SR1",
+        72,
+    ),
+    (
+        "kDma0RequestMuxFlexIO0ShiftRegister2Request",
+        "FLEXIO0",
+        "FLEXIO0SR2",
+        73,
+    ),
+    (
+        "kDma0RequestMuxFlexIO0ShiftRegister3Request",
+        "FLEXIO0",
+        "FLEXIO0SR3",
+        74,
+    ),
+    (
+        "kDma0RequestMuxFlexPWM1ReqCapt0",
+        "FLEX_PWM1",
+        "FlexPWM1Mcapt0",
+        79,
+    ),
+    (
+        "kDma0RequestMuxFlexPWM1ReqCapt1",
+        "FLEX_PWM1",
+        "FlexPWM1Mcapt1",
+        80,
+    ),
+    (
+        "kDma0RequestMuxFlexPWM1ReqCapt2",
+        "FLEX_PWM1",
+        "FlexPWM1Mcapt2",
+        81,
+    ),
+    (
+        "kDma0RequestMuxFlexPWM1ReqVal0",
+        "FLEX_PWM1",
+        "FlexPWM1Mval0",
+        83,
+    ),
+    (
+        "kDma0RequestMuxFlexPWM1ReqVal1",
+        "FLEX_PWM1",
+        "FlexPWM1Mval1",
+        84,
+    ),
+    (
+        "kDma0RequestMuxFlexPWM1ReqVal2",
+        "FLEX_PWM1",
+        "FlexPWM1Mval2",
+        85,
+    ),
 ];
 
 /// Number of source facts checked by an MCXA156 source validation pass.
@@ -118,7 +271,11 @@ pub struct SourceValidationCoverage {
 pub fn validate_mcxa156(current: &Path) -> anyhow::Result<SourceValidationCoverage> {
     let source = TempDir::with_prefix("nxp-pac-mcxa156-source-")
         .context("creating temporary MCXA156 source directory")?;
-    let svd_path = materialize_locked_mcxa156_svd(current, &source)?;
+    let lock = read_mcxa156_source_lock(current)?;
+    validate_retained_license(current, &lock)?;
+    let svd_path = materialize_locked_input(current, &lock.svd, &source, "MCXA156.xml")?;
+    let dma_header_path =
+        materialize_locked_input(current, &lock.dma_header, &source, "PERI_DMA.h")?;
     let metadata_path = current.join("data/metadata/MCXA156.json");
     let peripheral_dir = current.join("data/source-peripherals");
 
@@ -136,8 +293,11 @@ pub fn validate_mcxa156(current: &Path) -> anyhow::Result<SourceValidationCovera
         .with_context(|| format!("reading metadata {}", metadata_path.display()))?;
     let metadata: Metadata = serde_json::from_str(&metadata_contents)
         .with_context(|| format!("parsing metadata {}", metadata_path.display()))?;
+    let dma_header = fs::read_to_string(&dma_header_path)
+        .with_context(|| format!("reading locked DMA header {}", dma_header_path.display()))?;
 
     let coverage = validate_complete_inventory(&device, &metadata, &peripheral_dir)?;
+    validate_dma_requests(&metadata, &dma_header)?;
     validate_reproducible_register_artifacts(current, &svd_path)?;
 
     tracing::info!(
@@ -153,7 +313,8 @@ pub fn validate_mcxa156(current: &Path) -> anyhow::Result<SourceValidationCovera
 pub fn extract_mcxa156(current: &Path, output: &Path) -> anyhow::Result<()> {
     let source = TempDir::with_prefix("nxp-pac-mcxa156-source-")
         .context("creating temporary MCXA156 source directory")?;
-    let svd_path = materialize_locked_mcxa156_svd(current, &source)?;
+    let lock = read_mcxa156_source_lock(current)?;
+    let svd_path = materialize_locked_input(current, &lock.svd, &source, "MCXA156.xml")?;
     extract_mcxa156_from_svd(current, &svd_path, output)
 }
 
@@ -167,10 +328,7 @@ fn extract_mcxa156_from_svd(current: &Path, svd_path: &Path, output: &Path) -> a
     .context("extracting MCXA156 source artifacts")
 }
 
-fn materialize_locked_mcxa156_svd(
-    current: &Path,
-    temp: &TempDir,
-) -> anyhow::Result<std::path::PathBuf> {
+fn read_mcxa156_source_lock(current: &Path) -> anyhow::Result<SourceLock> {
     let lock_path = current.join("data/source-locks/MCXA156.json");
     let lock_contents = fs::read_to_string(&lock_path)
         .with_context(|| format!("reading MCXA156 source lock {}", lock_path.display()))?;
@@ -182,17 +340,57 @@ fn materialize_locked_mcxa156_svd(
         lock.chip == "MCXA156",
         "MCXA156 source lock names a different chip"
     );
+    Ok(lock)
+}
+
+fn materialize_locked_input(
+    current: &Path,
+    input: &LockedGitInput,
+    temp: &TempDir,
+    output_name: &str,
+) -> anyhow::Result<std::path::PathBuf> {
     ensure!(
-        lock.revision.len() == 40 && lock.revision.bytes().all(|byte| byte.is_ascii_hexdigit()),
+        input.revision.len() == 40 && input.revision.bytes().all(|byte| byte.is_ascii_hexdigit()),
         "MCXA156 source lock revision must be a full Git object ID"
     );
     ensure!(
-        lock.sha256.len() == 64 && lock.sha256.bytes().all(|byte| byte.is_ascii_hexdigit()),
+        input.sha256.len() == 64 && input.sha256.bytes().all(|byte| byte.is_ascii_hexdigit()),
         "MCXA156 source lock SHA-256 must be a full digest"
     );
+    ensure!(
+        input.license_expression == "BSD-3-Clause",
+        "MCXA156 source input is not licensed BSD-3-Clause"
+    );
+    ensure!(
+        !input.copyright_notices.is_empty()
+            && input
+                .copyright_notices
+                .iter()
+                .all(|notice| !notice.trim().is_empty()),
+        "MCXA156 source input omits its copyright notice"
+    );
 
-    let repository = current.join("data/mcux-soc-svd");
-    let object = format!("{}:{}", lock.revision, lock.path);
+    let repository = current.join(&input.repository_path);
+    let remote = Command::new("git")
+        .arg("-C")
+        .arg(&repository)
+        .args(["remote", "get-url", "origin"])
+        .output()
+        .context("reading locked MCXA156 input repository origin")?;
+    ensure!(
+        remote.status.success(),
+        "locked MCXA156 input repository has no origin remote: {}",
+        String::from_utf8_lossy(&remote.stderr).trim()
+    );
+    let actual_repository = String::from_utf8(remote.stdout)
+        .context("locked MCXA156 input repository URL is not UTF-8")?;
+    ensure!(
+        normalize_repository(&actual_repository) == normalize_repository(&input.repository),
+        "locked MCXA156 input repository differs: expected {}, got {}",
+        input.repository,
+        actual_repository.trim()
+    );
+    let object = format!("{}:{}", input.revision, input.path);
     let output = Command::new("git")
         .arg("-C")
         .arg(&repository)
@@ -204,21 +402,54 @@ fn materialize_locked_mcxa156_svd(
         "locked MCXA156 source object is unavailable: {}; fetch it with `git -C {} fetch --depth=1 {} {}`",
         String::from_utf8_lossy(&output.stderr).trim(),
         repository.display(),
-        lock.repository,
-        lock.revision
+        input.repository,
+        input.revision
     );
 
     let actual_sha256 = format!("{:x}", Sha256::digest(&output.stdout));
     ensure!(
-        actual_sha256 == lock.sha256,
-        "locked MCXA156 SVD SHA-256 mismatch: expected {}, got {}",
-        lock.sha256,
+        actual_sha256 == input.sha256,
+        "locked MCXA156 input SHA-256 mismatch: expected {}, got {}",
+        input.sha256,
         actual_sha256
     );
 
-    let svd_path = temp.child("MCXA156.xml");
-    fs::write(&svd_path, output.stdout).context("writing temporary locked MCXA156 SVD")?;
-    Ok(svd_path)
+    let output_path = temp.child(output_name);
+    fs::write(&output_path, output.stdout).context("writing temporary locked MCXA156 input")?;
+    Ok(output_path)
+}
+
+fn normalize_repository(value: &str) -> &str {
+    value.trim().trim_end_matches(".git")
+}
+
+fn validate_retained_license(current: &Path, lock: &SourceLock) -> anyhow::Result<()> {
+    let notice_path = current.join("data/source-peripherals/NOTICE-MCXA156");
+    let license_path = current.join("data/source-peripherals/LICENSE-BSD-3-Clause");
+    let notice = fs::read_to_string(&notice_path)
+        .with_context(|| format!("reading retained notice {}", notice_path.display()))?;
+    let license = fs::read_to_string(&license_path)
+        .with_context(|| format!("reading retained license {}", license_path.display()))?;
+
+    for input in [&lock.svd, &lock.dma_header] {
+        ensure!(
+            input.license_expression == "BSD-3-Clause",
+            "MCXA156 retained source is not BSD-3-Clause"
+        );
+        for copyright in &input.copyright_notices {
+            ensure!(
+                notice.contains(copyright),
+                "MCXA156 retained notice omits {copyright:?}"
+            );
+        }
+    }
+    ensure!(
+        notice.contains("SPDX-License-Identifier: BSD-3-Clause")
+            && license.contains("Redistribution and use in source and binary forms")
+            && license.contains("THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS"),
+        "MCXA156 BSD-3-Clause notice or terms are incomplete"
+    );
+    Ok(())
 }
 
 fn validate_complete_inventory(
@@ -292,6 +523,67 @@ fn validate_complete_inventory(
         "MCXA156 HAL-enabled peripheral inventory differs; expected: {expected_hal_enabled:?}; actual: {hal_enabled:?}"
     );
 
+    validate_interrupts(metadata, peripheral_dir)?;
+
+    Ok(SourceValidationCoverage {
+        peripheral_instances: metadata_names.len(),
+        register_instances,
+    })
+}
+
+fn validate_interrupts(metadata: &Metadata, peripheral_dir: &Path) -> anyhow::Result<()> {
+    let artifact_path = peripheral_dir.join("MCXA156/_interrupts.json");
+    let artifact_contents = fs::read_to_string(&artifact_path)
+        .with_context(|| format!("reading interrupt artifact {}", artifact_path.display()))?;
+    let artifact: InterruptArtifact = serde_json::from_str(&artifact_contents)
+        .with_context(|| format!("parsing interrupt artifact {}", artifact_path.display()))?;
+    let metadata_interrupts = metadata
+        .interrupts
+        .iter()
+        .map(|(name, number)| (name.clone(), *number))
+        .collect::<BTreeMap<_, _>>();
+    ensure!(
+        metadata.nvic_prio_bits == artifact.nvic_prio_bits,
+        "MCXA156 NVIC priority bits differ from the locked-SVD artifact: metadata {}, source {}",
+        metadata.nvic_prio_bits,
+        artifact.nvic_prio_bits
+    );
+    ensure!(
+        metadata_interrupts == artifact.interrupts,
+        "MCXA156 interrupt inventory differs from the locked-SVD artifact"
+    );
+    Ok(())
+}
+
+fn validate_dma_requests(metadata: &Metadata, header: &str) -> anyhow::Result<()> {
+    let entry = Regex::new(r"(?m)^\s*(kDma0Request[A-Za-z0-9_]+)\s*=\s*([0-9]+)U,")?;
+    let mut header_requests = BTreeMap::new();
+    for captures in entry.captures_iter(header) {
+        let name = captures.get(1).expect("DMA name capture").as_str();
+        if name == "kDma0RequestDisabled" {
+            continue;
+        }
+        let request = captures
+            .get(2)
+            .expect("DMA request capture")
+            .as_str()
+            .parse::<u8>()
+            .with_context(|| format!("parsing DMA request {name}"))?;
+        ensure!(
+            header_requests.insert(name, request).is_none(),
+            "locked PERI_DMA.h contains duplicate request {name}"
+        );
+    }
+
+    let expected_header_requests = CARRIED_DMA_REQUESTS
+        .iter()
+        .map(|(source_name, _, _, request)| (*source_name, *request))
+        .collect::<BTreeMap<_, _>>();
+    ensure!(
+        header_requests == expected_header_requests,
+        "locked PERI_DMA.h request inventory differs; expected: {expected_header_requests:?}; actual: {header_requests:?}"
+    );
+
     let dma_requests = metadata
         .peripherals
         .iter()
@@ -308,17 +600,13 @@ fn validate_complete_inventory(
         .collect::<BTreeSet<_>>();
     let expected_dma_requests = CARRIED_DMA_REQUESTS
         .iter()
-        .map(|(peripheral, signal, request)| (*peripheral, *signal, "DMA3", *request))
+        .map(|(_, peripheral, signal, request)| (*peripheral, *signal, "DMA3", *request))
         .collect::<BTreeSet<_>>();
     ensure!(
         dma_requests == expected_dma_requests,
-        "MCXA156 carried DMA request inventory differs; expected: {expected_dma_requests:?}; actual: {dma_requests:?}"
+        "MCXA156 DMA request inventory differs from locked PERI_DMA.h mapping; expected: {expected_dma_requests:?}; actual: {dma_requests:?}"
     );
-
-    Ok(SourceValidationCoverage {
-        peripheral_instances: metadata_names.len(),
-        register_instances,
-    })
+    Ok(())
 }
 
 fn validate_peripheral(
@@ -374,9 +662,7 @@ fn validate_peripheral(
     if svd_peripheral.name.starts_with("PORT") {
         validate_sparse_port_registers(svd_peripheral, block)?;
     }
-    if svd_peripheral.name == "CAN0" {
-        validate_expanded_register_offsets(svd_peripheral, &ir, block)?;
-    }
+    validate_expanded_register_offsets(svd_peripheral, &ir, block)?;
     Ok(())
 }
 
@@ -385,30 +671,55 @@ fn validate_expanded_register_offsets(
     ir: &IR,
     block: &Block,
 ) -> anyhow::Result<()> {
-    let mut source_offsets = peripheral
+    let source_registers = peripheral
         .all_registers()
-        .map(|register| register.address_offset)
-        .collect::<Vec<_>>();
-    source_offsets.sort_unstable();
+        .map(|register| {
+            (
+                register.address_offset,
+                register.properties.size.unwrap_or(32),
+            )
+        })
+        .fold(BTreeMap::new(), |mut counts, register| {
+            *counts.entry(register).or_insert(0usize) += 1;
+            counts
+        });
 
-    let mut generated_offsets = Vec::new();
-    collect_register_offsets(ir, block, 0, &mut generated_offsets)?;
-    generated_offsets.sort_unstable();
+    let mut generated_registers = BTreeMap::new();
+    collect_registers(ir, block, 0, &mut generated_registers)?;
+    let generated_offsets = generated_registers
+        .keys()
+        .map(|(offset, _)| *offset)
+        .collect::<BTreeSet<_>>();
+    let source_offsets = source_registers
+        .keys()
+        .map(|(offset, _)| *offset)
+        .collect::<BTreeSet<_>>();
+    let missing = source_registers
+        .iter()
+        .filter_map(|(register, source_count)| {
+            let generated_count = generated_registers.get(register).copied().unwrap_or(0);
+            (generated_count < *source_count).then_some((*register, *source_count, generated_count))
+        })
+        .collect::<Vec<_>>();
+    let extra_offsets = generated_offsets
+        .difference(&source_offsets)
+        .copied()
+        .collect::<Vec<_>>();
     ensure!(
-        generated_offsets == source_offsets,
-        "MCXA156 {} generated register offsets differ from the complete locked SVD inventory; source count: {}; generated count: {}",
+        missing.is_empty() && extra_offsets.is_empty(),
+        "MCXA156 {} generated registers do not cover every locked-SVD address/width pair; missing pairs: {missing:?}; extra offsets: {extra_offsets:?}; source count: {}; generated count: {}",
         peripheral.name,
-        source_offsets.len(),
-        generated_offsets.len()
+        source_registers.values().sum::<usize>(),
+        generated_registers.values().sum::<usize>()
     );
     Ok(())
 }
 
-fn collect_register_offsets(
+fn collect_registers(
     ir: &IR,
     block: &Block,
     base_offset: u32,
-    offsets: &mut Vec<u32>,
+    registers: &mut BTreeMap<(u32, u32), usize>,
 ) -> anyhow::Result<()> {
     for item in &block.items {
         let array_offsets = match &item.array {
@@ -421,7 +732,11 @@ fn collect_register_offsets(
         for array_offset in array_offsets {
             let item_offset = base_offset + item.byte_offset + array_offset;
             match &item.inner {
-                BlockItemInner::Register(_) => offsets.push(item_offset),
+                BlockItemInner::Register(register) => {
+                    *registers
+                        .entry((item_offset, register.bit_size))
+                        .or_insert(0) += 1;
+                }
                 BlockItemInner::Block(nested) => {
                     let nested_block = ir.blocks.get(&nested.block).ok_or_else(|| {
                         anyhow!(
@@ -429,7 +744,7 @@ fn collect_register_offsets(
                             nested.block
                         )
                     })?;
-                    collect_register_offsets(ir, nested_block, item_offset, offsets)?;
+                    collect_registers(ir, nested_block, item_offset, registers)?;
                 }
             }
         }
@@ -560,7 +875,9 @@ mod tests {
 
     fn mcxa156_device(root: &Path) -> Device {
         let temp = TempDir::with_prefix("nxp-pac-mcxa156-test-").expect("create source temp");
-        let svd = materialize_locked_mcxa156_svd(root, &temp).expect("materialize locked SVD");
+        let lock = read_mcxa156_source_lock(root).expect("read source lock");
+        let svd = materialize_locked_input(root, &lock.svd, &temp, "MCXA156.xml")
+            .expect("materialize locked SVD");
         let xml = fs::read_to_string(svd).expect("read MCXA156 SVD");
         svd_parser::parse_with_config(
             &xml,
@@ -575,6 +892,15 @@ mod tests {
         let json = fs::read_to_string(root.join("data/metadata/MCXA156.json"))
             .expect("read MCXA156 metadata");
         serde_json::from_str(&json).expect("parse MCXA156 metadata")
+    }
+
+    fn mcxa156_dma_header(root: &Path) -> String {
+        let temp =
+            TempDir::with_prefix("nxp-pac-mcxa156-dma-test-").expect("create DMA source temp");
+        let lock = read_mcxa156_source_lock(root).expect("read source lock");
+        let header = materialize_locked_input(root, &lock.dma_header, &temp, "PERI_DMA.h")
+            .expect("materialize locked DMA header");
+        fs::read_to_string(header).expect("read locked DMA header")
     }
 
     #[test]
@@ -626,7 +952,6 @@ mod tests {
     #[test]
     fn rejects_carried_dma_request_drift() {
         let root = repository_root();
-        let device = mcxa156_device(&root);
         let mut metadata = mcxa156_metadata(&root);
         metadata
             .peripherals
@@ -636,10 +961,77 @@ mod tests {
             .dma_muxing[0]
             .request = 20;
 
-        let error =
-            validate_complete_inventory(&device, &metadata, &root.join("data/source-peripherals"))
-                .expect_err("DMA request drift must be rejected");
-        assert!(format!("{error:#}").contains("carried DMA request inventory"));
+        let error = validate_dma_requests(&metadata, &mcxa156_dma_header(&root))
+            .expect_err("DMA request drift must be rejected");
+        assert!(format!("{error:#}").contains("locked PERI_DMA.h mapping"));
+    }
+
+    #[test]
+    fn rejects_coordinated_metadata_and_dma_mapping_drift() {
+        let root = repository_root();
+        let mut metadata = mcxa156_metadata(&root);
+        metadata
+            .peripherals
+            .iter_mut()
+            .find(|peripheral| peripheral.name == "LPUART0")
+            .expect("LPUART0 metadata")
+            .dma_muxing[0]
+            .request = 20;
+        let header = mcxa156_dma_header(&root).replace(
+            "kDma0RequestLPUART0Rx           = 21U",
+            "kDma0RequestLPUART0Rx           = 20U",
+        );
+
+        let error = validate_dma_requests(&metadata, &header)
+            .expect_err("coordinated mapping drift must be rejected by the locked header");
+        assert!(format!("{error:#}").contains("PERI_DMA.h request inventory differs"));
+    }
+
+    #[test]
+    fn rejects_missing_retained_copyright_notice() {
+        let root = repository_root();
+        let mut lock = read_mcxa156_source_lock(&root).expect("read source lock");
+        lock.svd
+            .copyright_notices
+            .push("Copyright deliberately absent".into());
+
+        let error = validate_retained_license(&root, &lock)
+            .expect_err("missing retained copyright must be rejected");
+        assert!(format!("{error:#}").contains("retained notice omits"));
+    }
+
+    #[test]
+    fn rejects_source_repository_drift() {
+        let root = repository_root();
+        let temp =
+            TempDir::with_prefix("nxp-pac-mcxa156-repository-test-").expect("create source temp");
+        let mut lock = read_mcxa156_source_lock(&root).expect("read source lock");
+        lock.svd.repository = "https://example.invalid/unrelated".into();
+
+        let error = materialize_locked_input(&root, &lock.svd, &temp, "MCXA156.xml")
+            .expect_err("repository drift must be rejected");
+        assert!(format!("{error:#}").contains("input repository differs"));
+    }
+
+    #[test]
+    fn rejects_interrupt_and_priority_drift() {
+        let root = repository_root();
+        let mut interrupt_metadata = mcxa156_metadata(&root);
+        *interrupt_metadata
+            .interrupts
+            .get_mut("LPUART0")
+            .expect("LPUART0 interrupt") = 32;
+        let interrupt_error =
+            validate_interrupts(&interrupt_metadata, &root.join("data/source-peripherals"))
+                .expect_err("interrupt drift must be rejected");
+        assert!(format!("{interrupt_error:#}").contains("interrupt inventory differs"));
+
+        let mut priority_metadata = mcxa156_metadata(&root);
+        priority_metadata.nvic_prio_bits = 4;
+        let priority_error =
+            validate_interrupts(&priority_metadata, &root.join("data/source-peripherals"))
+                .expect_err("priority drift must be rejected");
+        assert!(format!("{priority_error:#}").contains("NVIC priority bits differ"));
     }
 
     #[test]
@@ -664,6 +1056,30 @@ mod tests {
 
         let error = validate_expanded_register_offsets(source, &ir, block)
             .expect_err("incomplete CAN register inventory must be rejected");
-        assert!(format!("{error:#}").contains("complete locked SVD inventory"));
+        assert!(format!("{error:#}").contains("do not cover every locked-SVD"));
+    }
+
+    #[test]
+    fn rejects_missing_full_width_register_view() {
+        let root = repository_root();
+        let device = mcxa156_device(&root);
+        let source = device
+            .peripherals
+            .iter()
+            .find(|peripheral| peripheral.name == "CRC0")
+            .expect("CRC0 source peripheral");
+        let yaml = fs::File::open(root.join("data/source-peripherals/MCXA156/CRC.yaml"))
+            .expect("open MCXA156 CRC metadata");
+        let mut ir: IR = serde_yaml::from_reader(yaml).expect("parse MCXA156 CRC metadata");
+        ir.blocks
+            .get_mut("Crc")
+            .expect("CRC block")
+            .items
+            .retain(|item| item.name != "data32");
+        let block = ir.blocks.get("Crc").expect("CRC block");
+
+        let error = validate_expanded_register_offsets(source, &ir, block)
+            .expect_err("a narrow alias must not hide a missing full-width source register");
+        assert!(format!("{error:#}").contains("missing pairs"));
     }
 }

@@ -1,4 +1,4 @@
-use std::{env, path::PathBuf};
+use std::env;
 
 use anyhow::{Result, bail};
 use clap::Parser;
@@ -9,10 +9,6 @@ pub struct ExtractSource {
     /// Source-only chip to extract.
     #[clap(required = true)]
     pub chip: String,
-
-    /// Parent output directory for the extracted chip artifacts.
-    #[clap(short, long, default_value = "./data/source-peripherals")]
-    pub output: PathBuf,
 }
 
 pub fn extract_source(args: ExtractSource) -> Result<()> {
@@ -21,5 +17,7 @@ pub fn extract_source(args: ExtractSource) -> Result<()> {
     }
 
     let current = env::current_dir()?;
-    crate::source_validation::extract_mcxa156(&current, &args.output)
+    crate::source_validation::extract_mcxa156(&current, &current.join("data/source-peripherals"))?;
+    crate::source_validation::validate_mcxa156(&current)?;
+    Ok(())
 }

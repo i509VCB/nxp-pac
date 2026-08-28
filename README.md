@@ -27,6 +27,9 @@ source artifacts with:
 
 ```sh
 git -C data/mcux-soc-svd fetch --depth=1 https://github.com/nxp-mcuxpresso/mcux-soc-svd cd86b0793d7e467055a2d84c441c81e3d0aef93d
+git init data/source-cache/mcux-devices-mcx
+git -C data/source-cache/mcux-devices-mcx remote add origin https://github.com/nxp-mcuxpresso/mcux-devices-mcx
+git -C data/source-cache/mcux-devices-mcx fetch --depth=1 origin f560437f1a3b629869fb38e268fea91f553e3094
 cargo run -p generator --locked -- extract-source MCXA156
 git status --porcelain=v1 --untracked-files=all -- data/source-peripherals/MCXA156
 ```

@@ -1,0 +1,20 @@
+MCXA156 source-derived register and DMA artifacts
+
+Copyright 2016-2026 NXP
+Copyright 1997-2016 Freescale Semiconductor, Inc.
+Copyright 2016-2025 NXP
+SPDX-License-Identifier: BSD-3-Clause
+
+The MCXA156 register artifacts are derived from
+nxp-mcuxpresso/mcux-soc-svd@cd86b0793d7e467055a2d84c441c81e3d0aef93d:
+MCXA156/MCXA156.xml using the checked-in MCXA156 transforms.
+
+The MCXA156 DMA metadata is derived from
+nxp-mcuxpresso/mcux-devices-mcx@f560437f1a3b629869fb38e268fea91f553e3094:
+MCXA/periph1/PERI_DMA.h.
+
+The exact paths, SHA-256 digests, license expressions, and copyright notices
+are recorded in data/source-locks/MCXA156.json. See LICENSE-BSD-3-Clause in
+this directory for the retained license terms. These notice/license files are
+outside the regenerated MCXA156 artifact directory so extraction cannot remove
+them.

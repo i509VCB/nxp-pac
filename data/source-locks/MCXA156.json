@@ -1,8 +1,25 @@
 {
   "schema": 1,
   "chip": "MCXA156",
-  "repository": "https://github.com/nxp-mcuxpresso/mcux-soc-svd",
-  "revision": "cd86b0793d7e467055a2d84c441c81e3d0aef93d",
-  "path": "MCXA156/MCXA156.xml",
-  "sha256": "6f0da8b623578892908b8f08cba4f3e8417ad0fee247ca4f19f6ed4888066866"
+  "svd": {
+    "repository_path": "data/mcux-soc-svd",
+    "repository": "https://github.com/nxp-mcuxpresso/mcux-soc-svd",
+    "revision": "cd86b0793d7e467055a2d84c441c81e3d0aef93d",
+    "path": "MCXA156/MCXA156.xml",
+    "sha256": "6f0da8b623578892908b8f08cba4f3e8417ad0fee247ca4f19f6ed4888066866",
+    "license_expression": "BSD-3-Clause",
+    "copyright_notices": ["Copyright 2016-2026 NXP"]
+  },
+  "dma_header": {
+    "repository_path": "data/source-cache/mcux-devices-mcx",
+    "repository": "https://github.com/nxp-mcuxpresso/mcux-devices-mcx",
+    "revision": "f560437f1a3b629869fb38e268fea91f553e3094",
+    "path": "MCXA/periph1/PERI_DMA.h",
+    "sha256": "edb17c8361cf8cffd9adcb49571d6e60de7f1d72605bfe93c5d937f9231dfa45",
+    "license_expression": "BSD-3-Clause",
+    "copyright_notices": [
+      "Copyright 1997-2016 Freescale Semiconductor, Inc.",
+      "Copyright 2016-2025 NXP"
+    ]
+  }
 }
