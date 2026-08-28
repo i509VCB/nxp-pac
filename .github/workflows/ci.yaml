@@ -77,6 +77,7 @@ jobs:
           - mimxrt685s_cm33
           - mcxn947_cm33_core0
           - mcxn947_cm33_core1
+          - mcxa156
           - mcxa256
           - mcxa577
           - lpc55s16
@@ -98,6 +99,7 @@ jobs:
           - mimxrt1011
           - mimxrt1062
           - mimxrt1064
+          - mcxa156
           - mcxa256
           - mcxa577
           - lpc55s16

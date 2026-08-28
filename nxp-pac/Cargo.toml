@@ -54,6 +54,7 @@ mimxrt685s_cm33 = []
 ## MCX
 mcxn947_cm33_core0 = []
 mcxn947_cm33_core1 = []
+mcxa156 = []
 mcxa256 = []
 mcxa577 = []
 

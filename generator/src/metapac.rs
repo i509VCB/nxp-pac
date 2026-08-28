@@ -1,18 +1,23 @@
-use std::{collections::HashSet, fs, path::Path, str::FromStr};
+use std::{
+    collections::HashSet,
+    fs,
+    path::{Path, PathBuf},
+    str::FromStr,
+};
 
-use anyhow::Context;
+use anyhow::{Context, bail};
 use chiptool::commands::{GenerateShared, ModulePath, gen_block::GenBlock, gen_common::GenCommon};
 use indexmap::IndexSet;
 use proc_macro2::{Ident, Literal, Span, TokenStream};
 use quote::quote;
-use rayon::iter::{ParallelBridge, ParallelIterator};
+use rayon::iter::{IntoParallelIterator, ParallelIterator};
 
 use crate::metadata::{BlockPath, Metadata};
 
 /// Take all yamls and export them to the pac after being transformed to Rust code using chiptool
 pub fn generate_meta_peripherals(current: &Path) -> anyhow::Result<()> {
     let pac_peri_dir = current.join("nxp-pac/src/meta_peripherals");
-    let yaml_peri_dir = current.join("data/metadata/peripherals");
+    let yaml_peri_dirs = meta_peripheral_roots(current);
 
     if !pac_peri_dir.exists() {
         fs::create_dir_all(&pac_peri_dir)?;
@@ -24,23 +29,10 @@ pub fn generate_meta_peripherals(current: &Path) -> anyhow::Result<()> {
         let _ = fs::remove_file(file.path());
     }
 
-    let drivers = read_dir_all::read_dir_all(&yaml_peri_dir)?
-        .par_bridge()
-        .map(|entry| {
-            let entry = entry?;
-            let entry_path = entry.path().to_path_buf();
-
-            let relative_entry_path = entry_path.strip_prefix(&yaml_peri_dir)?;
-            if relative_entry_path.starts_with("raw")
-                || relative_entry_path
-                    .components()
-                    .any(|component| component.as_os_str() == "post-transforms")
-                || entry_path.is_dir()
-                || entry_path.extension().map(|e| e.to_string_lossy()) != Some("yaml".into())
-            {
-                return Ok(None);
-            }
-
+    let entries = collect_meta_peripheral_sources(&yaml_peri_dirs)?;
+    let drivers = entries
+        .into_par_iter()
+        .map(|(entry_path, relative_entry_path)| {
             tracing::info!("{}", relative_entry_path.display());
             let driver_name = {
                 let mut path = relative_entry_path.to_path_buf();
@@ -49,7 +41,7 @@ pub fn generate_meta_peripherals(current: &Path) -> anyhow::Result<()> {
                     .replace(std::path::MAIN_SEPARATOR_STR, "/") // Use consistent separators
             };
 
-            let mut output_path = pac_peri_dir.join(relative_entry_path);
+            let mut output_path = pac_peri_dir.join(&relative_entry_path);
             output_path.set_extension("rs");
             fs::create_dir_all(
                 output_path
@@ -58,8 +50,7 @@ pub fn generate_meta_peripherals(current: &Path) -> anyhow::Result<()> {
             )?;
 
             chiptool::commands::gen_block::gen_block(GenBlock {
-                input: entry
-                    .path()
+                input: entry_path
                     .canonicalize()
                     .context("Canonicalizing entry path")?,
                 output: output_path.clone(),
@@ -77,14 +68,52 @@ pub fn generate_meta_peripherals(current: &Path) -> anyhow::Result<()> {
                 format!("Error formatting block {}", relative_entry_path.display())
             })?;
 
-            Ok(Some(driver_name))
+            Ok(driver_name)
         })
-        .filter_map(|x| x.transpose())
         .collect::<Result<Vec<String>, anyhow::Error>>()?;
 
     generate_meta_peripherals_mod(current, drivers)?;
 
     Ok(())
+}
+
+fn meta_peripheral_roots(current: &Path) -> [PathBuf; 2] {
+    [
+        current.join("data/metadata/peripherals"),
+        current.join("data/source-peripherals"),
+    ]
+}
+
+fn collect_meta_peripheral_sources(roots: &[PathBuf]) -> anyhow::Result<Vec<(PathBuf, PathBuf)>> {
+    let mut sources = Vec::new();
+    let mut relative_paths = HashSet::new();
+
+    for root in roots {
+        for entry in read_dir_all::read_dir_all(root)? {
+            let entry_path = entry?.path().to_path_buf();
+            let relative_entry_path = entry_path.strip_prefix(root)?.to_path_buf();
+            if relative_entry_path.starts_with("raw")
+                || relative_entry_path
+                    .components()
+                    .any(|component| component.as_os_str() == "post-transforms")
+                || entry_path.is_dir()
+                || entry_path.extension().map(|e| e.to_string_lossy()) != Some("yaml".into())
+            {
+                continue;
+            }
+
+            if !relative_paths.insert(relative_entry_path.clone()) {
+                bail!(
+                    "duplicate MetaPAC peripheral input {}",
+                    relative_entry_path.display()
+                );
+            }
+            sources.push((entry_path, relative_entry_path));
+        }
+    }
+
+    sources.sort_by(|left, right| left.1.cmp(&right.1));
+    Ok(sources)
 }
 
 /// Generate a file in meta_peripherals listing all peripherals.
@@ -124,7 +153,7 @@ pub fn generate_core(current: &Path, core: &str, mut metadata: Metadata) -> anyh
     fs::create_dir_all(&core_dir).context("creating chip dir")?;
 
     // Remove all peripherals that are defined, but don't have a metaperipheral mapped.
-    let yaml_peri_dir = current.join("data/metadata/peripherals");
+    let yaml_peri_dirs = meta_peripheral_roots(current);
     metadata.peripherals.retain(|p| {
         let peripheral_block = match p.parse_block_path() {
             Ok(Some(peripheral_block)) => peripheral_block,
@@ -141,13 +170,9 @@ pub fn generate_core(current: &Path, core: &str, mut metadata: Metadata) -> anyh
             }
         };
 
-        if fs::exists(
-            yaml_peri_dir
-                .join(&peripheral_block.path)
-                .with_extension("yaml"),
-        )
-        .unwrap_or(false)
-        {
+        if yaml_peri_dirs.iter().any(|root| {
+            fs::exists(root.join(&peripheral_block.path).with_extension("yaml")).unwrap_or(false)
+        }) {
             true
         } else {
             tracing::warn!(
@@ -371,4 +396,55 @@ fn export_common_rs(chip_dir: &Path) -> anyhow::Result<()> {
         output: chip_dir.join("common.rs"),
     })
     .context("Error generating common")
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use temp_dir::TempDir;
+
+    #[test]
+    fn peripheral_sources_combine_distinct_roots() {
+        let temp = TempDir::with_prefix("nxp-pac-metapac-roots-").expect("create temp dir");
+        let legacy = temp.child("legacy");
+        let locked = temp.child("locked");
+        fs::create_dir_all(legacy.join("family")).expect("create legacy root");
+        fs::create_dir_all(locked.join("device")).expect("create locked root");
+        fs::write(legacy.join("family/GPIO.yaml"), "blocks: {}\n").expect("write legacy YAML");
+        fs::write(locked.join("device/PORT.yaml"), "blocks: {}\n").expect("write locked YAML");
+
+        let sources = collect_meta_peripheral_sources(&[legacy, locked]).expect("collect sources");
+        let relative_paths = sources
+            .into_iter()
+            .map(|(_, relative)| relative)
+            .collect::<Vec<_>>();
+
+        assert_eq!(
+            relative_paths,
+            [
+                PathBuf::from("device/PORT.yaml"),
+                PathBuf::from("family/GPIO.yaml")
+            ]
+        );
+    }
+
+    #[test]
+    fn peripheral_sources_reject_cross_root_collisions() {
+        let temp = TempDir::with_prefix("nxp-pac-metapac-collision-").expect("create temp dir");
+        let first = temp.child("first");
+        let second = temp.child("second");
+        fs::create_dir_all(first.join("device")).expect("create first root");
+        fs::create_dir_all(second.join("device")).expect("create second root");
+        fs::write(first.join("device/GPIO.yaml"), "blocks: {}\n").expect("write first YAML");
+        fs::write(second.join("device/GPIO.yaml"), "blocks: {}\n").expect("write second YAML");
+
+        let error = collect_meta_peripheral_sources(&[first, second])
+            .expect_err("duplicate relative source path must fail");
+
+        assert!(
+            error
+                .to_string()
+                .contains("duplicate MetaPAC peripheral input")
+        );
+    }
 }
