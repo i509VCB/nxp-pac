@@ -1,0 +1,183 @@
+block/Glikey:
+  description: GLIKEY.
+  items:
+  - name: ctrl_0
+    description: Control Register 0 SFR.
+    byte_offset: 0
+    fieldset: Ctrl0
+  - name: ctrl_1
+    description: Control Register 1 SFR.
+    byte_offset: 4
+    fieldset: Ctrl1
+  - name: intr_ctrl
+    description: Interrupt Control.
+    byte_offset: 8
+    fieldset: IntrCtrl
+  - name: status
+    description: Status.
+    byte_offset: 12
+    access: Read
+    fieldset: Status
+  - name: version
+    description: IP Version.
+    byte_offset: 252
+    access: Read
+    fieldset: Version
+fieldset/Ctrl0:
+  description: Control Register 0 SFR.
+  fields:
+  - name: write_index
+    description: Write Index.
+    bit_offset: 0
+    bit_size: 8
+  - name: reserved15
+    description: Reserved for Future Use.
+    bit_offset: 8
+    bit_size: 8
+  - name: wr_en_0
+    description: Write Enable 0.
+    bit_offset: 16
+    bit_size: 2
+  - name: sft_rst
+    description: Soft reset for the core reset (SFR configuration will be preseved).This register reads as 0.
+    bit_offset: 18
+    bit_size: 1
+  - name: reserved31
+    description: Reserved for Future Use.
+    bit_offset: 19
+    bit_size: 13
+fieldset/Ctrl1:
+  description: Control Register 1 SFR.
+  fields:
+  - name: read_index
+    description: Index status, Writing an index value to this register will request the block to return the lock status of this index.
+    bit_offset: 0
+    bit_size: 8
+  - name: reserved15
+    description: Reserved for Future Use.
+    bit_offset: 8
+    bit_size: 8
+  - name: wr_en_1
+    description: Write Enable One.
+    bit_offset: 16
+    bit_size: 2
+  - name: sfr_lock
+    description: LOCK register for GLIKEY.
+    bit_offset: 18
+    bit_size: 4
+  - name: reserved31
+    description: Reserved for Future Use.
+    bit_offset: 22
+    bit_size: 10
+fieldset/IntrCtrl:
+  description: Interrupt Control.
+  fields:
+  - name: int_en
+    description: Interrupt Enable. Writing a 1, Interrupt asserts on Interrupt output port.
+    bit_offset: 0
+    bit_size: 1
+  - name: int_clr
+    description: Interrupt Clear. Writing a 1 to this register creates a single interrupt clear pulse. This register reads as 0.
+    bit_offset: 1
+    bit_size: 1
+  - name: int_set
+    description: Interrupt Set. Writing a 1 to this register asserts the interrupt. This register reads as 0.
+    bit_offset: 2
+    bit_size: 1
+  - name: reserved31
+    description: Reserved for Future Use.
+    bit_offset: 3
+    bit_size: 29
+fieldset/Status:
+  description: Status.
+  fields:
+  - name: int_status
+    description: Interrupt Status.
+    bit_offset: 0
+    bit_size: 1
+  - name: lock_status
+    description: Provides the current lock status of indexes.
+    bit_offset: 1
+    bit_size: 1
+    enum: LockStatus
+  - name: error_status
+    description: Status of the Error.
+    bit_offset: 2
+    bit_size: 3
+    enum: ErrorStatus
+  - name: reserved18
+    description: Reserved for Future Use.
+    bit_offset: 5
+    bit_size: 14
+  - name: fsm_state
+    description: Status of FSM.
+    bit_offset: 19
+    bit_size: 13
+fieldset/Version:
+  description: IP Version.
+  fields:
+  - name: reserved3
+    description: Reserved.
+    bit_offset: 0
+    bit_size: 4
+  - name: reserved7
+    description: Reserved.
+    bit_offset: 4
+    bit_size: 4
+  - name: reserved11
+    description: Reserved.
+    bit_offset: 8
+    bit_size: 4
+  - name: reserved15
+    description: Reserved.
+    bit_offset: 12
+    bit_size: 4
+  - name: milestone
+    description: Release milestone. 00-PREL, 01-BR, 10-SI, 11-GO.
+    bit_offset: 16
+    bit_size: 2
+  - name: fsm_config
+    description: 0:4 step, 1:8 step.
+    bit_offset: 18
+    bit_size: 1
+  - name: index_config
+    description: Configured number of addressable indexes.
+    bit_offset: 19
+    bit_size: 8
+  - name: reserved31
+    description: Reserved for Future Use.
+    bit_offset: 27
+    bit_size: 5
+enum/ErrorStatus:
+  bit_size: 3
+  variants:
+  - name: Stat0
+    description: No error.
+    value: 0
+  - name: Stat1
+    description: FSM error has occurred.
+    value: 1
+  - name: Stat2
+    description: Write index out of the bound (OOB) error.
+    value: 2
+  - name: Stat3
+    description: Write index OOB and FSM error.
+    value: 3
+  - name: Stat4
+    description: Read index OOB error.
+    value: 4
+  - name: Stat5
+    description: Write index and read index OOB error.
+    value: 6
+  - name: Stat6
+    description: Read index OOB, write index OOB, and FSM error.
+    value: 7
+enum/LockStatus:
+  bit_size: 1
+  variants:
+  - name: Lock0
+    description: Current read index is not locked.
+    value: 0
+  - name: Lock1
+    description: Current read index is locked.
+    value: 1

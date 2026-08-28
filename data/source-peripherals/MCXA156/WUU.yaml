@@ -1,0 +1,2136 @@
+block/Wuu:
+  description: Low-Leakage Wakeup Unit.
+  items:
+  - name: verid
+    description: Version ID.
+    byte_offset: 0
+    access: Read
+    fieldset: Verid
+  - name: param
+    description: Parameter.
+    byte_offset: 4
+    access: Read
+    fieldset: Param
+  - name: pe1
+    description: Pin Enable 1.
+    byte_offset: 8
+    fieldset: Pe1
+  - name: pe2
+    description: Pin Enable 2.
+    byte_offset: 12
+    fieldset: Pe2
+  - name: me
+    description: Module Interrupt Enable.
+    byte_offset: 24
+    fieldset: Me
+  - name: de
+    description: Module DMA/Trigger Enable.
+    byte_offset: 28
+    fieldset: De
+  - name: pf
+    description: Pin Flag.
+    byte_offset: 32
+    fieldset: Pf
+  - name: filt
+    description: Pin Filter.
+    byte_offset: 48
+    fieldset: Filt
+  - name: pdc1
+    description: Pin DMA/Trigger Configuration 1.
+    byte_offset: 56
+    fieldset: Pdc1
+  - name: pdc2
+    description: Pin DMA/Trigger Configuration 2.
+    byte_offset: 60
+    fieldset: Pdc2
+  - name: fdc
+    description: Pin Filter DMA/Trigger Configuration.
+    byte_offset: 72
+    fieldset: Fdc
+  - name: pmc
+    description: Pin Mode Configuration.
+    byte_offset: 80
+    fieldset: Pmc
+  - name: fmc
+    description: Pin Filter Mode Configuration.
+    byte_offset: 88
+    fieldset: Fmc
+fieldset/De:
+  description: Module DMA/Trigger Enable.
+  fields:
+  - name: wude4
+    description: DMA/Trigger Wake-up Enable for Module 4.
+    bit_offset: 4
+    bit_size: 1
+  - name: wude6
+    description: DMA/Trigger Wake-up Enable for Module 6.
+    bit_offset: 6
+    bit_size: 1
+  - name: wude8
+    description: DMA/Trigger Wake-up Enable for Module 8.
+    bit_offset: 8
+    bit_size: 1
+fieldset/Fdc:
+  description: Pin Filter DMA/Trigger Configuration.
+  fields:
+  - name: filtc1
+    description: Filter Configuration for FILTn.
+    bit_offset: 0
+    bit_size: 2
+    enum: Filtc1
+  - name: filtc2
+    description: Filter Configuration for FILTn.
+    bit_offset: 2
+    bit_size: 2
+    enum: Filtc2
+fieldset/Filt:
+  description: Pin Filter.
+  fields:
+  - name: filtsel1
+    description: Filter 1 Pin Select.
+    bit_offset: 0
+    bit_size: 5
+  - name: filte1
+    description: Filter 1 Enable.
+    bit_offset: 5
+    bit_size: 2
+    enum: Filte1
+  - name: filtf1
+    description: Filter 1 Flag.
+    bit_offset: 7
+    bit_size: 1
+  - name: filtsel2
+    description: Filter 2 Pin Select.
+    bit_offset: 8
+    bit_size: 5
+  - name: filte2
+    description: Filter 2 Enable.
+    bit_offset: 13
+    bit_size: 2
+    enum: Filte2
+  - name: filtf2
+    description: Filter 2 Flag.
+    bit_offset: 15
+    bit_size: 1
+fieldset/Fmc:
+  description: Pin Filter Mode Configuration.
+  fields:
+  - name: filtm1
+    description: Filter Mode for FILTn.
+    bit_offset: 0
+    bit_size: 1
+    enum: Filtm1
+  - name: filtm2
+    description: Filter Mode for FILTn.
+    bit_offset: 1
+    bit_size: 1
+    enum: Filtm2
+fieldset/Me:
+  description: Module Interrupt Enable.
+  fields:
+  - name: wume0
+    description: Module Interrupt Wake-up Enable for Module 0.
+    bit_offset: 0
+    bit_size: 1
+  - name: wume2
+    description: Module Interrupt Wake-up Enable for Module 2.
+    bit_offset: 2
+    bit_size: 1
+  - name: wume6
+    description: Module Interrupt Wake-up Enable for Module 6.
+    bit_offset: 6
+    bit_size: 1
+  - name: wume8
+    description: Module Interrupt Wake-up Enable for Module 8.
+    bit_offset: 8
+    bit_size: 1
+fieldset/Param:
+  description: Parameter.
+  fields:
+  - name: filters
+    description: Filter Number.
+    bit_offset: 0
+    bit_size: 8
+  - name: dmas
+    description: DMA Number.
+    bit_offset: 8
+    bit_size: 8
+  - name: modules
+    description: Module Number.
+    bit_offset: 16
+    bit_size: 8
+  - name: pins
+    description: Pin Number.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Pdc1:
+  description: Pin DMA/Trigger Configuration 1.
+  fields:
+  - name: reserved0
+    description: Reserved.
+    bit_offset: 0
+    bit_size: 2
+    enum: Pdc1Reserved0
+  - name: reserved1
+    description: Reserved.
+    bit_offset: 2
+    bit_size: 2
+    enum: Pdc1Reserved1
+  - name: wupdc2
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 4
+    bit_size: 2
+    enum: Wupdc2
+  - name: reserved3
+    description: Reserved.
+    bit_offset: 6
+    bit_size: 2
+    enum: Pdc1Reserved3
+  - name: reserved4
+    description: Reserved.
+    bit_offset: 8
+    bit_size: 2
+    enum: Pdc1Reserved4
+  - name: reserved5
+    description: Reserved.
+    bit_offset: 10
+    bit_size: 2
+    enum: Pdc1Reserved5
+  - name: wupdc6
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 12
+    bit_size: 2
+    enum: Wupdc6
+  - name: wupdc7
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 14
+    bit_size: 2
+    enum: Wupdc7
+  - name: wupdc8
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 16
+    bit_size: 2
+    enum: Wupdc8
+  - name: wupdc9
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 18
+    bit_size: 2
+    enum: Wupdc9
+  - name: wupdc10
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 20
+    bit_size: 2
+    enum: Wupdc10
+  - name: wupdc11
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 22
+    bit_size: 2
+    enum: Wupdc11
+  - name: wupdc12
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 24
+    bit_size: 2
+    enum: Wupdc12
+  - name: reserved13
+    description: Reserved.
+    bit_offset: 26
+    bit_size: 2
+    enum: Pdc1Reserved13
+  - name: reserved14
+    description: Reserved.
+    bit_offset: 28
+    bit_size: 2
+    enum: Pdc1Reserved14
+  - name: reserved15
+    description: Reserved.
+    bit_offset: 30
+    bit_size: 2
+    enum: Pdc1Reserved15
+fieldset/Pdc2:
+  description: Pin DMA/Trigger Configuration 2.
+  fields:
+  - name: wupdc16
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 0
+    bit_size: 2
+    enum: Wupdc16
+  - name: wupdc17
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 2
+    bit_size: 2
+    enum: Wupdc17
+  - name: wupdc18
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 4
+    bit_size: 2
+    enum: Wupdc18
+  - name: wupdc19
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 6
+    bit_size: 2
+    enum: Wupdc19
+  - name: wupdc20
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 8
+    bit_size: 2
+    enum: Wupdc20
+  - name: reserved21
+    description: Reserved.
+    bit_offset: 10
+    bit_size: 2
+    enum: Pdc2Reserved21
+  - name: wupdc22
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 12
+    bit_size: 2
+    enum: Wupdc22
+  - name: wupdc23
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 14
+    bit_size: 2
+    enum: Wupdc23
+  - name: wupdc24
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 16
+    bit_size: 2
+    enum: Wupdc24
+  - name: wupdc25
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 18
+    bit_size: 2
+    enum: Wupdc25
+  - name: wupdc26
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 20
+    bit_size: 2
+    enum: Wupdc26
+  - name: wupdc27
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 22
+    bit_size: 2
+    enum: Wupdc27
+  - name: wupdc28
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 24
+    bit_size: 2
+    enum: Wupdc28
+  - name: wupdc29
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 26
+    bit_size: 2
+    enum: Wupdc29
+  - name: wupdc30
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 28
+    bit_size: 2
+    enum: Wupdc30
+  - name: wupdc31
+    description: Wake-up Pin Configuration for WUU_Pn.
+    bit_offset: 30
+    bit_size: 2
+    enum: Wupdc31
+fieldset/Pe1:
+  description: Pin Enable 1.
+  fields:
+  - name: reserved0
+    description: Reserved.
+    bit_offset: 0
+    bit_size: 2
+    enum: Pe1Reserved0
+  - name: reserved1
+    description: Reserved.
+    bit_offset: 2
+    bit_size: 2
+    enum: Pe1Reserved1
+  - name: wupe2
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 4
+    bit_size: 2
+    enum: Wupe2
+  - name: reserved3
+    description: Reserved.
+    bit_offset: 6
+    bit_size: 2
+    enum: Pe1Reserved3
+  - name: reserved4
+    description: Reserved.
+    bit_offset: 8
+    bit_size: 2
+    enum: Pe1Reserved4
+  - name: reserved5
+    description: Reserved.
+    bit_offset: 10
+    bit_size: 2
+    enum: Pe1Reserved5
+  - name: wupe6
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 12
+    bit_size: 2
+    enum: Wupe6
+  - name: wupe7
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 14
+    bit_size: 2
+    enum: Wupe7
+  - name: wupe8
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 16
+    bit_size: 2
+    enum: Wupe8
+  - name: wupe9
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 18
+    bit_size: 2
+    enum: Wupe9
+  - name: wupe10
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 20
+    bit_size: 2
+    enum: Wupe10
+  - name: wupe11
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 22
+    bit_size: 2
+    enum: Wupe11
+  - name: wupe12
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 24
+    bit_size: 2
+    enum: Wupe12
+  - name: reserved13
+    description: Reserved.
+    bit_offset: 26
+    bit_size: 2
+    enum: Pe1Reserved13
+  - name: reserved14
+    description: Reserved.
+    bit_offset: 28
+    bit_size: 2
+    enum: Pe1Reserved14
+  - name: reserved15
+    description: Reserved.
+    bit_offset: 30
+    bit_size: 2
+    enum: Pe1Reserved15
+fieldset/Pe2:
+  description: Pin Enable 2.
+  fields:
+  - name: wupe16
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 0
+    bit_size: 2
+    enum: Wupe16
+  - name: wupe17
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 2
+    bit_size: 2
+    enum: Wupe17
+  - name: wupe18
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 4
+    bit_size: 2
+    enum: Wupe18
+  - name: wupe19
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 6
+    bit_size: 2
+    enum: Wupe19
+  - name: wupe20
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 8
+    bit_size: 2
+    enum: Wupe20
+  - name: reserved21
+    description: Reserved.
+    bit_offset: 10
+    bit_size: 2
+    enum: Pe2Reserved21
+  - name: wupe22
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 12
+    bit_size: 2
+    enum: Wupe22
+  - name: wupe23
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 14
+    bit_size: 2
+    enum: Wupe23
+  - name: wupe24
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 16
+    bit_size: 2
+    enum: Wupe24
+  - name: wupe25
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 18
+    bit_size: 2
+    enum: Wupe25
+  - name: wupe26
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 20
+    bit_size: 2
+    enum: Wupe26
+  - name: wupe27
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 22
+    bit_size: 2
+    enum: Wupe27
+  - name: wupe28
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 24
+    bit_size: 2
+    enum: Wupe28
+  - name: wupe29
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 26
+    bit_size: 2
+    enum: Wupe29
+  - name: wupe30
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 28
+    bit_size: 2
+    enum: Wupe30
+  - name: wupe31
+    description: Wake-up Pin Enable for WUU_Pn.
+    bit_offset: 30
+    bit_size: 2
+    enum: Wupe31
+fieldset/Pf:
+  description: Pin Flag.
+  fields:
+  - name: reserved0
+    description: Reserved.
+    bit_offset: 0
+    bit_size: 1
+  - name: reserved1
+    description: Reserved.
+    bit_offset: 1
+    bit_size: 1
+  - name: wuf2
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 2
+    bit_size: 1
+  - name: reserved3
+    description: Reserved.
+    bit_offset: 3
+    bit_size: 1
+  - name: reserved4
+    description: Reserved.
+    bit_offset: 4
+    bit_size: 1
+  - name: reserved5
+    description: Reserved.
+    bit_offset: 5
+    bit_size: 1
+  - name: wuf6
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 6
+    bit_size: 1
+  - name: wuf7
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 7
+    bit_size: 1
+  - name: wuf8
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 8
+    bit_size: 1
+  - name: wuf9
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 9
+    bit_size: 1
+  - name: wuf10
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 10
+    bit_size: 1
+  - name: wuf11
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 11
+    bit_size: 1
+  - name: wuf12
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 12
+    bit_size: 1
+  - name: reserved13
+    description: Reserved.
+    bit_offset: 13
+    bit_size: 1
+  - name: reserved14
+    description: Reserved.
+    bit_offset: 14
+    bit_size: 1
+  - name: reserved15
+    description: Reserved.
+    bit_offset: 15
+    bit_size: 1
+  - name: wuf16
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 16
+    bit_size: 1
+  - name: wuf17
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 17
+    bit_size: 1
+  - name: wuf18
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 18
+    bit_size: 1
+  - name: wuf19
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 19
+    bit_size: 1
+  - name: wuf20
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 20
+    bit_size: 1
+  - name: reserved21
+    description: Reserved.
+    bit_offset: 21
+    bit_size: 1
+  - name: wuf22
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 22
+    bit_size: 1
+  - name: wuf23
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 23
+    bit_size: 1
+  - name: wuf24
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 24
+    bit_size: 1
+  - name: wuf25
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 25
+    bit_size: 1
+  - name: wuf26
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 26
+    bit_size: 1
+  - name: wuf27
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 27
+    bit_size: 1
+  - name: wuf28
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 28
+    bit_size: 1
+  - name: wuf29
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 29
+    bit_size: 1
+  - name: wuf30
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 30
+    bit_size: 1
+  - name: wuf31
+    description: Wake-up Flag for WUU_Pn.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Pmc:
+  description: Pin Mode Configuration.
+  fields:
+  - name: reserved0
+    description: Reserved.
+    bit_offset: 0
+    bit_size: 1
+    enum: PmcReserved0
+  - name: reserved1
+    description: Reserved.
+    bit_offset: 1
+    bit_size: 1
+    enum: PmcReserved1
+  - name: wupmc2
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 2
+    bit_size: 1
+    enum: Wupmc2
+  - name: reserved3
+    description: Reserved.
+    bit_offset: 3
+    bit_size: 1
+    enum: PmcReserved3
+  - name: reserved4
+    description: Reserved.
+    bit_offset: 4
+    bit_size: 1
+    enum: PmcReserved4
+  - name: reserved5
+    description: Reserved.
+    bit_offset: 5
+    bit_size: 1
+    enum: PmcReserved5
+  - name: wupmc6
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 6
+    bit_size: 1
+    enum: Wupmc6
+  - name: wupmc7
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 7
+    bit_size: 1
+    enum: Wupmc7
+  - name: wupmc8
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 8
+    bit_size: 1
+    enum: Wupmc8
+  - name: wupmc9
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 9
+    bit_size: 1
+    enum: Wupmc9
+  - name: wupmc10
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 10
+    bit_size: 1
+    enum: Wupmc10
+  - name: wupmc11
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 11
+    bit_size: 1
+    enum: Wupmc11
+  - name: wupmc12
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 12
+    bit_size: 1
+    enum: Wupmc12
+  - name: reserved13
+    description: Reserved.
+    bit_offset: 13
+    bit_size: 1
+    enum: PmcReserved13
+  - name: reserved14
+    description: Reserved.
+    bit_offset: 14
+    bit_size: 1
+    enum: PmcReserved14
+  - name: reserved15
+    description: Reserved.
+    bit_offset: 15
+    bit_size: 1
+    enum: PmcReserved15
+  - name: wupmc16
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 16
+    bit_size: 1
+    enum: Wupmc16
+  - name: wupmc17
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 17
+    bit_size: 1
+    enum: Wupmc17
+  - name: wupmc18
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 18
+    bit_size: 1
+    enum: Wupmc18
+  - name: wupmc19
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 19
+    bit_size: 1
+    enum: Wupmc19
+  - name: wupmc20
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 20
+    bit_size: 1
+    enum: Wupmc20
+  - name: reserved21
+    description: Reserved.
+    bit_offset: 21
+    bit_size: 1
+    enum: PmcReserved21
+  - name: wupmc22
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 22
+    bit_size: 1
+    enum: Wupmc22
+  - name: wupmc23
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 23
+    bit_size: 1
+    enum: Wupmc23
+  - name: wupmc24
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 24
+    bit_size: 1
+    enum: Wupmc24
+  - name: wupmc25
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 25
+    bit_size: 1
+    enum: Wupmc25
+  - name: wupmc26
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 26
+    bit_size: 1
+    enum: Wupmc26
+  - name: wupmc27
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 27
+    bit_size: 1
+    enum: Wupmc27
+  - name: wupmc28
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 28
+    bit_size: 1
+    enum: Wupmc28
+  - name: wupmc29
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 29
+    bit_size: 1
+    enum: Wupmc29
+  - name: wupmc30
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 30
+    bit_size: 1
+    enum: Wupmc30
+  - name: wupmc31
+    description: Wake-up Pin Mode Configuration for WUU_Pn.
+    bit_offset: 31
+    bit_size: 1
+    enum: Wupmc31
+fieldset/Verid:
+  description: Version ID.
+  fields:
+  - name: feature
+    description: Feature Specification Number.
+    bit_offset: 0
+    bit_size: 16
+    enum: Feature
+  - name: minor
+    description: Minor Version Number.
+    bit_offset: 16
+    bit_size: 8
+  - name: major
+    description: Major Version Number.
+    bit_offset: 24
+    bit_size: 8
+enum/Feature:
+  bit_size: 16
+  variants:
+  - name: Standard
+    description: Standard features implemented.
+    value: 0
+  - name: FiltAllPwr
+    description: Support for DMA/Trigger generation from wake-up pins and filters enabled. Support for external pin/filter detection during all power modes enabled.
+    value: 1
+enum/Filtc1:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+enum/Filtc2:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+enum/Filte1:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (Detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (Detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (Detect on any edge).
+    value: 3
+enum/Filte2:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (Detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (Detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (Detect on any edge).
+    value: 3
+enum/Filtm1:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during Power Down/Deep Power Down mode.
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes.
+    value: 1
+enum/Filtm2:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during Power Down/Deep Power Down mode.
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes.
+    value: 1
+enum/Pdc1Reserved0:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Not supported.
+    value: 0
+  - name: DmaReq
+    description: Not supported.
+    value: 1
+  - name: Trigger
+    description: Not supported.
+    value: 2
+  - name: Res
+    description: Not supported.
+    value: 3
+enum/Pdc1Reserved1:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Not supported.
+    value: 0
+  - name: DmaReq
+    description: Not supported.
+    value: 1
+  - name: Trigger
+    description: Not supported.
+    value: 2
+  - name: Res
+    description: Not supported.
+    value: 3
+enum/Pdc1Reserved13:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Not supported.
+    value: 0
+  - name: DmaReq
+    description: Not supported.
+    value: 1
+  - name: Trigger
+    description: Not supported.
+    value: 2
+  - name: Res
+    description: Not supported.
+    value: 3
+enum/Pdc1Reserved14:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Not supported.
+    value: 0
+  - name: DmaReq
+    description: Not supported.
+    value: 1
+  - name: Trigger
+    description: Not supported.
+    value: 2
+  - name: Res
+    description: Not supported.
+    value: 3
+enum/Pdc1Reserved15:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Not supported.
+    value: 0
+  - name: DmaReq
+    description: Not supported.
+    value: 1
+  - name: Trigger
+    description: Not supported.
+    value: 2
+  - name: Res
+    description: Not supported.
+    value: 3
+enum/Pdc1Reserved3:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Not supported.
+    value: 0
+  - name: DmaReq
+    description: Not supported.
+    value: 1
+  - name: Trigger
+    description: Not supported.
+    value: 2
+  - name: Res
+    description: Not supported.
+    value: 3
+enum/Pdc1Reserved4:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Not supported.
+    value: 0
+  - name: DmaReq
+    description: Not supported.
+    value: 1
+  - name: Trigger
+    description: Not supported.
+    value: 2
+  - name: Res
+    description: Not supported.
+    value: 3
+enum/Pdc1Reserved5:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Not supported.
+    value: 0
+  - name: DmaReq
+    description: Not supported.
+    value: 1
+  - name: Trigger
+    description: Not supported.
+    value: 2
+  - name: Res
+    description: Not supported.
+    value: 3
+enum/Pdc2Reserved21:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Not supported.
+    value: 0
+  - name: DmaReq
+    description: Not supported.
+    value: 1
+  - name: Trigger
+    description: Not supported.
+    value: 2
+  - name: Res
+    description: Not supported.
+    value: 3
+enum/Pe1Reserved0:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Not supported.
+    value: 0
+  - name: EnRiseHi
+    description: Not supported.
+    value: 1
+  - name: EnFallLo
+    description: Not supported.
+    value: 2
+  - name: EnAny
+    description: Not supported.
+    value: 3
+enum/Pe1Reserved1:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Not supported.
+    value: 0
+  - name: EnRiseHi
+    description: Not supported.
+    value: 1
+  - name: EnFallLo
+    description: Not supported.
+    value: 2
+  - name: EnAny
+    description: Not supported.
+    value: 3
+enum/Pe1Reserved13:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Not supported.
+    value: 0
+  - name: EnRiseHi
+    description: Not supported.
+    value: 1
+  - name: EnFallLo
+    description: Not supported.
+    value: 2
+  - name: EnAny
+    description: Not supported.
+    value: 3
+enum/Pe1Reserved14:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Not supported.
+    value: 0
+  - name: EnRiseHi
+    description: Not supported.
+    value: 1
+  - name: EnFallLo
+    description: Not supported.
+    value: 2
+  - name: EnAny
+    description: Not supported.
+    value: 3
+enum/Pe1Reserved15:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Not supported.
+    value: 0
+  - name: EnRiseHi
+    description: Not supported.
+    value: 1
+  - name: EnFallLo
+    description: Not supported.
+    value: 2
+  - name: EnAny
+    description: Not supported.
+    value: 3
+enum/Pe1Reserved3:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Not supported.
+    value: 0
+  - name: EnRiseHi
+    description: Not supported.
+    value: 1
+  - name: EnFallLo
+    description: Not supported.
+    value: 2
+  - name: EnAny
+    description: Not supported.
+    value: 3
+enum/Pe1Reserved4:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Not supported.
+    value: 0
+  - name: EnRiseHi
+    description: Not supported.
+    value: 1
+  - name: EnFallLo
+    description: Not supported.
+    value: 2
+  - name: EnAny
+    description: Not supported.
+    value: 3
+enum/Pe1Reserved5:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Not supported.
+    value: 0
+  - name: EnRiseHi
+    description: Not supported.
+    value: 1
+  - name: EnFallLo
+    description: Not supported.
+    value: 2
+  - name: EnAny
+    description: Not supported.
+    value: 3
+enum/Pe2Reserved21:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Not supported.
+    value: 0
+  - name: EnRiseHi
+    description: Not supported.
+    value: 1
+  - name: EnFallLo
+    description: Not supported.
+    value: 2
+  - name: EnAny
+    description: Not supported.
+    value: 3
+enum/PmcReserved0:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Not supported.
+    value: 0
+  - name: AnyPwr
+    description: Not supported.
+    value: 1
+enum/PmcReserved1:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Not supported.
+    value: 0
+  - name: AnyPwr
+    description: Not supported.
+    value: 1
+enum/PmcReserved13:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Not supported.
+    value: 0
+  - name: AnyPwr
+    description: Not supported.
+    value: 1
+enum/PmcReserved14:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Not supported.
+    value: 0
+  - name: AnyPwr
+    description: Not supported.
+    value: 1
+enum/PmcReserved15:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Not supported.
+    value: 0
+  - name: AnyPwr
+    description: Not supported.
+    value: 1
+enum/PmcReserved21:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Not supported.
+    value: 0
+  - name: AnyPwr
+    description: Not supported.
+    value: 1
+enum/PmcReserved3:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Not supported.
+    value: 0
+  - name: AnyPwr
+    description: Not supported.
+    value: 1
+enum/PmcReserved4:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Not supported.
+    value: 0
+  - name: AnyPwr
+    description: Not supported.
+    value: 1
+enum/PmcReserved5:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Not supported.
+    value: 0
+  - name: AnyPwr
+    description: Not supported.
+    value: 1
+enum/Wupdc10:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupdc11:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupdc12:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupdc16:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupdc17:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupdc18:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupdc19:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupdc2:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupdc20:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupdc22:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupdc23:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupdc24:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupdc25:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupdc26:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupdc27:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupdc28:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupdc29:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupdc30:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupdc31:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupdc6:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupdc7:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupdc8:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupdc9:
+  bit_size: 2
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: DmaReq
+    description: DMA request.
+    value: 1
+  - name: Trigger
+    description: Trigger event.
+    value: 2
+  - name: Res
+    description: Reserved.
+    value: 3
+enum/Wupe10:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupe11:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupe12:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupe16:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupe17:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupe18:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupe19:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupe2:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupe20:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupe22:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupe23:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupe24:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupe25:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupe26:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupe27:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupe28:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupe29:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupe30:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupe31:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupe6:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupe7:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupe8:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupe9:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: EnRiseHi
+    description: Enable (detect on rising edge or high level).
+    value: 1
+  - name: EnFallLo
+    description: Enable (detect on falling edge or low level).
+    value: 2
+  - name: EnAny
+    description: Enable (detect on any edge).
+    value: 3
+enum/Wupmc10:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1
+enum/Wupmc11:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1
+enum/Wupmc12:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1
+enum/Wupmc16:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1
+enum/Wupmc17:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1
+enum/Wupmc18:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1
+enum/Wupmc19:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1
+enum/Wupmc2:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1
+enum/Wupmc20:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1
+enum/Wupmc22:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1
+enum/Wupmc23:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1
+enum/Wupmc24:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1
+enum/Wupmc25:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1
+enum/Wupmc26:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1
+enum/Wupmc27:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1
+enum/Wupmc28:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1
+enum/Wupmc29:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1
+enum/Wupmc30:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1
+enum/Wupmc31:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1
+enum/Wupmc6:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1
+enum/Wupmc7:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1
+enum/Wupmc8:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1
+enum/Wupmc9:
+  bit_size: 1
+  variants:
+  - name: LowPwrOnly
+    description: Active only during a low-leakage mode. You can modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 0
+  - name: AnyPwr
+    description: Active during all power modes. Do not modify the corresponding fields within Pin Enable (PEn) or Pin DMA/Trigger Configuration (PDCn).
+    value: 1

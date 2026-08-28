@@ -1,0 +1,1131 @@
+{
+  "$schema": "./schema.json",
+  "$comment": "Complete MCXA156 SVD-backed peripheral inventory. Pin topology remains intentionally limited to the three BSP-evidenced FRDM board pins and is not a package bond-out claim.",
+  "chips": [
+    "MCXA156VFT",
+    "MCXA156VLH",
+    "MCXA156VLL",
+    "MCXA156VMP",
+    "MCXA156VPJ"
+  ],
+  "pins": [
+    {
+      "name": "P0_2",
+      "supply": "VDD"
+    },
+    {
+      "name": "P0_3",
+      "supply": "VDD"
+    },
+    {
+      "name": "P3_13",
+      "supply": "VDD"
+    }
+  ],
+  "nvic_prio_bits": 3,
+  "interrupts": {
+    "RESERVED16": 0,
+    "CMC": 1,
+    "DMA_CH0": 2,
+    "DMA_CH1": 3,
+    "DMA_CH2": 4,
+    "DMA_CH3": 5,
+    "DMA_CH4": 6,
+    "DMA_CH5": 7,
+    "DMA_CH6": 8,
+    "DMA_CH7": 9,
+    "ERM0_SINGLE_BIT": 10,
+    "ERM0_MULTI_BIT": 11,
+    "FMU0": 12,
+    "GLIKEY0": 13,
+    "MBC0": 14,
+    "SCG0": 15,
+    "SPC0": 16,
+    "VBAT0": 17,
+    "WUU0": 18,
+    "CAN0": 19,
+    "RESERVED36": 20,
+    "RESERVED37": 21,
+    "RESERVED38": 22,
+    "FLEXIO": 23,
+    "I3C0": 24,
+    "RESERVED41": 25,
+    "LPI2C0": 26,
+    "LPI2C1": 27,
+    "LPSPI0": 28,
+    "LPSPI1": 29,
+    "RESERVED46": 30,
+    "LPUART0": 31,
+    "LPUART1": 32,
+    "LPUART2": 33,
+    "LPUART3": 34,
+    "LPUART4": 35,
+    "USB0": 36,
+    "RESERVED53": 37,
+    "CDOG0": 38,
+    "CTIMER0": 39,
+    "CTIMER1": 40,
+    "CTIMER2": 41,
+    "CTIMER3": 42,
+    "CTIMER4": 43,
+    "FLEXPWM0_RELOAD_ERROR": 44,
+    "FLEXPWM0_FAULT": 45,
+    "FLEXPWM0_SUBMODULE0": 46,
+    "FLEXPWM0_SUBMODULE1": 47,
+    "FLEXPWM0_SUBMODULE2": 48,
+    "RESERVED65": 49,
+    "QDC0_COMPARE": 50,
+    "QDC0_HOME": 51,
+    "QDC0_WATCHDOG": 52,
+    "QDC0_INDEX": 53,
+    "FREQME0": 54,
+    "LPTMR0": 55,
+    "RESERVED72": 56,
+    "OS_EVENT": 57,
+    "WAKETIMER0": 58,
+    "UTICK0": 59,
+    "WWDT0": 60,
+    "RESERVED77": 61,
+    "ADC0": 62,
+    "ADC1": 63,
+    "CMP0": 64,
+    "CMP1": 65,
+    "RESERVED82": 66,
+    "DAC0": 67,
+    "RESERVED84": 68,
+    "RESERVED85": 69,
+    "RESERVED86": 70,
+    "GPIO0": 71,
+    "GPIO1": 72,
+    "GPIO2": 73,
+    "GPIO3": 74,
+    "GPIO4": 75,
+    "RESERVED92": 76,
+    "LPI2C2": 77,
+    "LPI2C3": 78,
+    "FLEXPWM1_RELOAD_ERROR": 79,
+    "FLEXPWM1_FAULT": 80,
+    "FLEXPWM1_SUBMODULE0": 81,
+    "FLEXPWM1_SUBMODULE1": 82,
+    "FLEXPWM1_SUBMODULE2": 83,
+    "RESERVED100": 84,
+    "QDC1_COMPARE": 85,
+    "QDC1_HOME": 86,
+    "QDC1_WATCHDOG": 87,
+    "QDC1_INDEX": 88
+  },
+  "peripherals": [
+    {
+      "name": "INPUTMUX0",
+      "address": "0x40001000",
+      "block": "MCXA156/INPUTMUX::Inputmux",
+      "module": "INPUTMUX",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "I3C0",
+      "address": "0x40002000",
+      "block": "MCXA156/I3C::I3c",
+      "module": "I3C",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "I3C0Rx",
+          "mux": "DMA3",
+          "request": 7
+        },
+        {
+          "signal": "I3C0Tx",
+          "mux": "DMA3",
+          "request": 8
+        }
+      ]
+    },
+    {
+      "name": "CTIMER0",
+      "address": "0x40004000",
+      "block": "MCXA156/CTIMER::Ctimer",
+      "module": "CTIMER",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "CTIMER0M0",
+          "mux": "DMA3",
+          "request": 31
+        },
+        {
+          "signal": "CTIMER0M1",
+          "mux": "DMA3",
+          "request": 32
+        }
+      ]
+    },
+    {
+      "name": "CTIMER1",
+      "address": "0x40005000",
+      "block": "MCXA156/CTIMER::Ctimer",
+      "module": "CTIMER",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "CTIMER1M0",
+          "mux": "DMA3",
+          "request": 33
+        },
+        {
+          "signal": "CTIMER1M1",
+          "mux": "DMA3",
+          "request": 34
+        }
+      ]
+    },
+    {
+      "name": "CTIMER2",
+      "address": "0x40006000",
+      "block": "MCXA156/CTIMER::Ctimer",
+      "module": "CTIMER",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "CTIMER2M0",
+          "mux": "DMA3",
+          "request": 35
+        },
+        {
+          "signal": "CTIMER2M1",
+          "mux": "DMA3",
+          "request": 36
+        }
+      ]
+    },
+    {
+      "name": "CTIMER3",
+      "address": "0x40007000",
+      "block": "MCXA156/CTIMER::Ctimer",
+      "module": "CTIMER",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "CTIMER3M0",
+          "mux": "DMA3",
+          "request": 37
+        },
+        {
+          "signal": "CTIMER3M1",
+          "mux": "DMA3",
+          "request": 38
+        }
+      ]
+    },
+    {
+      "name": "CTIMER4",
+      "address": "0x40008000",
+      "block": "MCXA156/CTIMER::Ctimer",
+      "module": "CTIMER",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "CTIMER4M0",
+          "mux": "DMA3",
+          "request": 39
+        },
+        {
+          "signal": "CTIMER4M1",
+          "mux": "DMA3",
+          "request": 40
+        }
+      ]
+    },
+    {
+      "name": "FREQME0",
+      "address": "0x40009000",
+      "block": "MCXA156/FREQME::Freqme",
+      "module": "FREQME",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "UTICK0",
+      "address": "0x4000B000",
+      "block": "MCXA156/UTICK::Utick",
+      "module": "UTICK",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "WWDT0",
+      "address": "0x4000C000",
+      "block": "MCXA156/WWDT::Wwdt",
+      "module": "WWDT",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "DMA0",
+      "address": "0x40080000",
+      "block": "MCXA156/DMA::DMA8",
+      "module": "DMA",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "EDMA_0_TCD",
+      "address": "0x40081000",
+      "block": "MCXA156/EDMA_0_TCD::TCD8",
+      "module": "EDMA_0_TCD",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "AOI0",
+      "address": "0x40089000",
+      "block": "MCXA156/AOI::Aoi",
+      "module": "AOI",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "AOI1",
+      "address": "0x40097000",
+      "block": "MCXA156/AOI::Aoi",
+      "module": "AOI",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "CRC0",
+      "address": "0x4008A000",
+      "block": "MCXA156/CRC::Crc",
+      "module": "CRC",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "CMC",
+      "address": "0x4008B000",
+      "block": "MCXA156/CMC::Cmc",
+      "module": "CMC",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "EIM0",
+      "address": "0x4008C000",
+      "block": "MCXA156/EIM::Eim",
+      "module": "EIM",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "ERM0",
+      "address": "0x4008D000",
+      "block": "MCXA156/ERM::Erm",
+      "module": "ERM",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "MBC0",
+      "address": "0x4008E000",
+      "block": "MCXA156/MBC::Mbc",
+      "module": "MBC",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "SCG0",
+      "address": "0x4008F000",
+      "block": "MCXA156/SCG::Scg",
+      "module": "SCG",
+      "signals": [],
+      "pac_only": false
+    },
+    {
+      "name": "SPC0",
+      "address": "0x40090000",
+      "block": "MCXA156/SPC::Spc",
+      "module": "SPC",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "MRCC0",
+      "address": "0x40091000",
+      "block": "MCXA156/MRCC::Mrcc",
+      "module": "MRCC",
+      "signals": [],
+      "pac_only": false
+    },
+    {
+      "name": "SYSCON",
+      "address": "0x40091000",
+      "block": "MCXA156/SYSCON::Syscon",
+      "module": "SYSCON",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "GLIKEY0",
+      "address": "0x40091D00",
+      "block": "MCXA156/GLIKEY::Glikey",
+      "module": "GLIKEY",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "WUU0",
+      "address": "0x40092000",
+      "block": "MCXA156/WUU::Wuu",
+      "module": "WUU",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "WUU0WakeUpEvent",
+          "mux": "DMA3",
+          "request": 1
+        }
+      ]
+    },
+    {
+      "name": "VBAT0",
+      "address": "0x40093000",
+      "block": "MCXA156/VBAT::Vbat",
+      "module": "VBAT",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "FMC0",
+      "address": "0x40094000",
+      "block": "MCXA156/FMC::Fmc",
+      "module": "FMC",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "FMU0",
+      "address": "0x40095000",
+      "block": "MCXA156/FMU::Fmu",
+      "module": "FMU",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "FMU0TEST",
+      "address": "0x40096000",
+      "block": "MCXA156/FMU0TEST::Fmu0test",
+      "module": "FMU0TEST",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "FLEXIO0",
+      "address": "0x40099000",
+      "block": "MCXA156/FLEXIO::Flexio",
+      "module": "FLEXIO",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "FLEXIO0SR0",
+          "mux": "DMA3",
+          "request": 71
+        },
+        {
+          "signal": "FLEXIO0SR1",
+          "mux": "DMA3",
+          "request": 72
+        },
+        {
+          "signal": "FLEXIO0SR2",
+          "mux": "DMA3",
+          "request": 73
+        },
+        {
+          "signal": "FLEXIO0SR3",
+          "mux": "DMA3",
+          "request": 74
+        }
+      ]
+    },
+    {
+      "name": "LPI2C0",
+      "address": "0x4009A000",
+      "block": "MCXA156/LPI2C::Lpi2c",
+      "module": "LPI2C",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "LPI2C0Rx",
+          "mux": "DMA3",
+          "request": 11
+        },
+        {
+          "signal": "LPI2C0Tx",
+          "mux": "DMA3",
+          "request": 12
+        }
+      ]
+    },
+    {
+      "name": "LPI2C1",
+      "address": "0x4009B000",
+      "block": "MCXA156/LPI2C::Lpi2c",
+      "module": "LPI2C",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "LPI2C1Rx",
+          "mux": "DMA3",
+          "request": 13
+        },
+        {
+          "signal": "LPI2C1Tx",
+          "mux": "DMA3",
+          "request": 14
+        }
+      ]
+    },
+    {
+      "name": "LPI2C2",
+      "address": "0x400D4000",
+      "block": "MCXA156/LPI2C::Lpi2c",
+      "module": "LPI2C",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "LPI2C2Rx",
+          "mux": "DMA3",
+          "request": 3
+        },
+        {
+          "signal": "LPI2C2Tx",
+          "mux": "DMA3",
+          "request": 4
+        }
+      ]
+    },
+    {
+      "name": "LPI2C3",
+      "address": "0x400D5000",
+      "block": "MCXA156/LPI2C::Lpi2c",
+      "module": "LPI2C",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "LPI2C3Rx",
+          "mux": "DMA3",
+          "request": 5
+        },
+        {
+          "signal": "LPI2C3Tx",
+          "mux": "DMA3",
+          "request": 6
+        }
+      ]
+    },
+    {
+      "name": "LPSPI0",
+      "address": "0x4009C000",
+      "block": "MCXA156/LPSPI::Lpspi",
+      "module": "LPSPI",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "LPSPI0Rx",
+          "mux": "DMA3",
+          "request": 15
+        },
+        {
+          "signal": "LPSPI0Tx",
+          "mux": "DMA3",
+          "request": 16
+        }
+      ]
+    },
+    {
+      "name": "LPSPI1",
+      "address": "0x4009D000",
+      "block": "MCXA156/LPSPI::Lpspi",
+      "module": "LPSPI",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "LPSPI1Rx",
+          "mux": "DMA3",
+          "request": 17
+        },
+        {
+          "signal": "LPSPI1Tx",
+          "mux": "DMA3",
+          "request": 18
+        }
+      ]
+    },
+    {
+      "name": "LPUART0",
+      "address": "0x4009F000",
+      "block": "MCXA156/LPUART::Lpuart",
+      "module": "LPUART",
+      "signals": [
+        {
+          "name": "RXD",
+          "pins": [
+            {
+              "pin": "P0_2",
+              "alt": 2
+            }
+          ]
+        },
+        {
+          "name": "TXD",
+          "pins": [
+            {
+              "pin": "P0_3",
+              "alt": 2
+            }
+          ]
+        }
+      ],
+      "gate": {
+        "enable": "mrcc_glb_cc0",
+        "reset": "mrcc_glb_rst0",
+        "config": "LpuartConfig"
+      },
+      "dma_muxing": [
+        {
+          "signal": "LPUART0Rx",
+          "mux": "DMA3",
+          "request": 21
+        },
+        {
+          "signal": "LPUART0Tx",
+          "mux": "DMA3",
+          "request": 22
+        }
+      ],
+      "pac_only": false
+    },
+    {
+      "name": "LPUART1",
+      "address": "0x400A0000",
+      "block": "MCXA156/LPUART::Lpuart",
+      "module": "LPUART",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "LPUART1Rx",
+          "mux": "DMA3",
+          "request": 23
+        },
+        {
+          "signal": "LPUART1Tx",
+          "mux": "DMA3",
+          "request": 24
+        }
+      ]
+    },
+    {
+      "name": "LPUART2",
+      "address": "0x400A1000",
+      "block": "MCXA156/LPUART::Lpuart",
+      "module": "LPUART",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "LPUART2Rx",
+          "mux": "DMA3",
+          "request": 25
+        },
+        {
+          "signal": "LPUART2Tx",
+          "mux": "DMA3",
+          "request": 26
+        }
+      ]
+    },
+    {
+      "name": "LPUART3",
+      "address": "0x400A2000",
+      "block": "MCXA156/LPUART::Lpuart",
+      "module": "LPUART",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "LPUART3Rx",
+          "mux": "DMA3",
+          "request": 27
+        },
+        {
+          "signal": "LPUART3Tx",
+          "mux": "DMA3",
+          "request": 28
+        }
+      ]
+    },
+    {
+      "name": "LPUART4",
+      "address": "0x400A3000",
+      "block": "MCXA156/LPUART::Lpuart",
+      "module": "LPUART",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "LPUART4Rx",
+          "mux": "DMA3",
+          "request": 29
+        },
+        {
+          "signal": "LPUART4Tx",
+          "mux": "DMA3",
+          "request": 30
+        }
+      ]
+    },
+    {
+      "name": "USB0",
+      "address": "0x400A4000",
+      "block": "MCXA156/USB::Usb",
+      "module": "USB",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "EQDC0",
+      "address": "0x400A7000",
+      "block": "MCXA156/QDC::Qdc",
+      "module": "QDC",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "BUFFER",
+          "mux": "DMA3",
+          "request": 65
+        }
+      ]
+    },
+    {
+      "name": "EQDC1",
+      "address": "0x400A8000",
+      "block": "MCXA156/QDC::Qdc",
+      "module": "QDC",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "BUFFER",
+          "mux": "DMA3",
+          "request": 66
+        }
+      ]
+    },
+    {
+      "name": "FLEX_PWM0",
+      "address": "0x400A9000",
+      "block": "MCXA156/FLEXPWM::Flexpwm",
+      "module": "FLEXPWM",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "FlexPWM0Mcapt0",
+          "mux": "DMA3",
+          "request": 41
+        },
+        {
+          "signal": "FlexPWM0Mcapt1",
+          "mux": "DMA3",
+          "request": 42
+        },
+        {
+          "signal": "FlexPWM0Mcapt2",
+          "mux": "DMA3",
+          "request": 43
+        },
+        {
+          "signal": "FlexPWM0Mval0",
+          "mux": "DMA3",
+          "request": 45
+        },
+        {
+          "signal": "FlexPWM0Mval1",
+          "mux": "DMA3",
+          "request": 46
+        },
+        {
+          "signal": "FlexPWM0Mval2",
+          "mux": "DMA3",
+          "request": 47
+        }
+      ]
+    },
+    {
+      "name": "FLEX_PWM1",
+      "address": "0x400AA000",
+      "block": "MCXA156/FLEXPWM::Flexpwm",
+      "module": "FLEXPWM",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "FlexPWM1Mcapt0",
+          "mux": "DMA3",
+          "request": 79
+        },
+        {
+          "signal": "FlexPWM1Mcapt1",
+          "mux": "DMA3",
+          "request": 80
+        },
+        {
+          "signal": "FlexPWM1Mcapt2",
+          "mux": "DMA3",
+          "request": 81
+        },
+        {
+          "signal": "FlexPWM1Mval0",
+          "mux": "DMA3",
+          "request": 83
+        },
+        {
+          "signal": "FlexPWM1Mval1",
+          "mux": "DMA3",
+          "request": 84
+        },
+        {
+          "signal": "FlexPWM1Mval2",
+          "mux": "DMA3",
+          "request": 85
+        }
+      ]
+    },
+    {
+      "name": "LPTMR0",
+      "address": "0x400AB000",
+      "block": "MCXA156/LPTMR::Lptmr",
+      "module": "LPTMR",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "LPTMR0CounterMatchEvent",
+          "mux": "DMA3",
+          "request": 49
+        }
+      ]
+    },
+    {
+      "name": "OSTIMER0",
+      "address": "0x400AD000",
+      "block": "MCXA156/OSTIMER::Ostimer",
+      "signals": [],
+      "gate": {
+        "enable": "mrcc_glb_cc1",
+        "reset": "mrcc_glb_rst1",
+        "config": "OsTimerConfig"
+      },
+      "pac_only": false
+    },
+    {
+      "name": "WAKETIMER0",
+      "address": "0x400AE000",
+      "block": "MCXA156/WAKETIMER::Waketimer",
+      "module": "WAKETIMER",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "ADC0",
+      "address": "0x400AF000",
+      "block": "MCXA156/ADC::Adc",
+      "module": "ADC",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "ADC0FifoRequest",
+          "mux": "DMA3",
+          "request": 51
+        }
+      ]
+    },
+    {
+      "name": "ADC1",
+      "address": "0x400B0000",
+      "block": "MCXA156/ADC::Adc",
+      "module": "ADC",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "ADC1FifoRequest",
+          "mux": "DMA3",
+          "request": 52
+        }
+      ]
+    },
+    {
+      "name": "CMP0",
+      "address": "0x400B1000",
+      "block": "MCXA156/CMP::Cmp",
+      "module": "CMP",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "CMP0DmaRequest",
+          "mux": "DMA3",
+          "request": 53
+        }
+      ]
+    },
+    {
+      "name": "CMP1",
+      "address": "0x400B2000",
+      "block": "MCXA156/CMP::Cmp",
+      "module": "CMP",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "CMP1DmaRequest",
+          "mux": "DMA3",
+          "request": 54
+        }
+      ]
+    },
+    {
+      "name": "DAC0",
+      "address": "0x400B4000",
+      "block": "MCXA156/DAC::Dac",
+      "module": "DAC",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "DAC0FifoRequest",
+          "mux": "DMA3",
+          "request": 56
+        }
+      ]
+    },
+    {
+      "name": "OPAMP0",
+      "address": "0x400B7000",
+      "block": "MCXA156/OPAMP::Opamp",
+      "module": "OPAMP",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "PORT0",
+      "address": "0x400BC000",
+      "block": "MCXA156/PORT::Port",
+      "module": "PORT",
+      "signals": [],
+      "gate": {
+        "enable": "mrcc_glb_cc1",
+        "reset": "mrcc_glb_rst1"
+      },
+      "pac_only": false
+    },
+    {
+      "name": "PORT1",
+      "address": "0x400BD000",
+      "block": "MCXA156/PORT::Port1",
+      "module": "PORT",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "PORT2",
+      "address": "0x400BE000",
+      "block": "MCXA156/PORT::Port2",
+      "module": "PORT",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "PORT3",
+      "address": "0x400BF000",
+      "block": "MCXA156/PORT::Port3",
+      "module": "PORT",
+      "signals": [],
+      "gate": {
+        "enable": "mrcc_glb_cc1",
+        "reset": "mrcc_glb_rst1"
+      },
+      "pac_only": false
+    },
+    {
+      "name": "PORT4",
+      "address": "0x400C0000",
+      "block": "MCXA156/PORT::Port4",
+      "module": "PORT",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "CAN0",
+      "address": "0x400CC000",
+      "block": "MCXA156/CAN::Can",
+      "module": "CAN",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "CAN0",
+          "mux": "DMA3",
+          "request": 2
+        }
+      ]
+    },
+    {
+      "name": "CDOG0",
+      "address": "0x40100000",
+      "block": "MCXA156/CDOG::Cdog",
+      "module": "CDOG",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "DBGMAILBOX",
+      "address": "0x40101000",
+      "block": "MCXA156/DBGMAILBOX::Dbgmailbox",
+      "module": "DBGMAILBOX",
+      "signals": [],
+      "pac_only": true
+    },
+    {
+      "name": "GPIO0",
+      "address": "0x40102000",
+      "block": "MCXA156/GPIO::Gpio",
+      "module": "GPIO",
+      "signals": [
+        {
+          "name": "2",
+          "pins": [
+            {
+              "pin": "P0_2",
+              "alt": 0
+            }
+          ]
+        },
+        {
+          "name": "3",
+          "pins": [
+            {
+              "pin": "P0_3",
+              "alt": 0
+            }
+          ]
+        }
+      ],
+      "gate": {
+        "enable": "mrcc_glb_cc1",
+        "reset": "mrcc_glb_rst1"
+      },
+      "pac_only": false,
+      "dma_muxing": [
+        {
+          "signal": "GPIO0PinEvent0",
+          "mux": "DMA3",
+          "request": 60
+        }
+      ]
+    },
+    {
+      "name": "GPIO1",
+      "address": "0x40103000",
+      "block": "MCXA156/GPIO::Gpio",
+      "module": "GPIO",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "GPIO1PinEvent0",
+          "mux": "DMA3",
+          "request": 61
+        }
+      ]
+    },
+    {
+      "name": "GPIO2",
+      "address": "0x40104000",
+      "block": "MCXA156/GPIO::Gpio",
+      "module": "GPIO",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "GPIO2PinEvent0",
+          "mux": "DMA3",
+          "request": 62
+        }
+      ]
+    },
+    {
+      "name": "GPIO3",
+      "address": "0x40105000",
+      "block": "MCXA156/GPIO::Gpio",
+      "module": "GPIO",
+      "signals": [
+        {
+          "name": "13",
+          "pins": [
+            {
+              "pin": "P3_13",
+              "alt": 0
+            }
+          ]
+        }
+      ],
+      "gate": {
+        "enable": "mrcc_glb_cc1",
+        "reset": "mrcc_glb_rst1"
+      },
+      "pac_only": false,
+      "dma_muxing": [
+        {
+          "signal": "GPIO3PinEvent0",
+          "mux": "DMA3",
+          "request": 63
+        }
+      ]
+    },
+    {
+      "name": "GPIO4",
+      "address": "0x40106000",
+      "block": "MCXA156/GPIO::Gpio",
+      "module": "GPIO",
+      "signals": [],
+      "pac_only": true,
+      "dma_muxing": [
+        {
+          "signal": "GPIO4PinEvent0",
+          "mux": "DMA3",
+          "request": 64
+        }
+      ]
+    }
+  ]
+}

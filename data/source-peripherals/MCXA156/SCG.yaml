@@ -1,0 +1,844 @@
+block/Scg:
+  description: System Clock Generator.
+  items:
+  - name: verid
+    description: Version ID Register.
+    byte_offset: 0
+    access: Read
+    fieldset: Verid
+  - name: param
+    description: Parameter Register.
+    byte_offset: 4
+    access: Read
+    fieldset: Param
+  - name: trim_lock
+    description: Trim Lock register.
+    byte_offset: 8
+    fieldset: TrimLock
+  - name: csr
+    description: Clock Status Register.
+    byte_offset: 16
+    access: Read
+    fieldset: Csr
+  - name: rccr
+    description: Run Clock Control Register.
+    byte_offset: 20
+    fieldset: Rccr
+  - name: sosccsr
+    description: SOSC Control Status Register.
+    byte_offset: 256
+    fieldset: Sosccsr
+  - name: sosccfg
+    description: SOSC Configuration Register.
+    byte_offset: 264
+    fieldset: Sosccfg
+  - name: sirccsr
+    description: SIRC Control Status Register.
+    byte_offset: 512
+    fieldset: Sirccsr
+  - name: sirctcfg
+    description: SIRC Trim Configuration Register.
+    byte_offset: 524
+    fieldset: Sirctcfg
+  - name: sirctrim
+    description: SIRC Trim Register.
+    byte_offset: 528
+    fieldset: Sirctrim
+  - name: sircstat
+    description: SIRC Auto-trimming Status Register.
+    byte_offset: 536
+    fieldset: Sircstat
+  - name: firccsr
+    description: FIRC Control Status Register.
+    byte_offset: 768
+    fieldset: Firccsr
+  - name: firccfg
+    description: FIRC Configuration Register.
+    byte_offset: 776
+    fieldset: Firccfg
+  - name: firctcfg
+    description: FIRC Trim Configuration Register.
+    byte_offset: 780
+    fieldset: Firctcfg
+  - name: firctrim
+    description: FIRC Trim Register.
+    byte_offset: 784
+    fieldset: Firctrim
+  - name: fircstat
+    description: FIRC Auto-trimming Status Register.
+    byte_offset: 792
+    fieldset: Fircstat
+  - name: fircatc1
+    description: FIRC Auto-trimming Counter 1.
+    byte_offset: 796
+    fieldset: Fircatc1
+  - name: fircatc2
+    description: FIRC Auto-trimming Counter 2.
+    byte_offset: 800
+    fieldset: Fircatc2
+  - name: fircatc3
+    description: FIRC Auto-trimming Counter 3.
+    byte_offset: 804
+    fieldset: Fircatc3
+  - name: fircatc4
+    description: FIRC Auto-trimming Counter 4.
+    byte_offset: 808
+    fieldset: Fircatc4
+  - name: fircatc5
+    description: FIRC Auto-trimming Counter 5.
+    byte_offset: 812
+    fieldset: Fircatc5
+  - name: fircatc6
+    description: FIRC Auto-trimming Counter 6.
+    byte_offset: 816
+    fieldset: Fircatc6
+  - name: fircatc7
+    description: FIRC Auto-trimming Counter 7.
+    byte_offset: 820
+    fieldset: Fircatc7
+  - name: fircatc8
+    description: FIRC Auto-trimming Counter 8.
+    byte_offset: 824
+    fieldset: Fircatc8
+  - name: fircatc9
+    description: FIRC Auto-trimming Counter 9.
+    byte_offset: 828
+    fieldset: Fircatc9
+  - name: fircatc10
+    description: FIRC Auto-trimming Counter 10.
+    byte_offset: 832
+    fieldset: Fircatc10
+  - name: fircatc11
+    description: FIRC Auto-trimming Counter 11.
+    byte_offset: 836
+    fieldset: Fircatc11
+  - name: rosccsr
+    description: ROSC Control Status Register.
+    byte_offset: 1024
+    fieldset: Rosccsr
+fieldset/Csr:
+  description: Clock Status Register.
+  fields:
+  - name: scs
+    description: System Clock Source.
+    bit_offset: 24
+    bit_size: 3
+    enum: Scs
+fieldset/Fircatc1:
+  description: FIRC Auto-trimming Counter 1.
+  fields:
+  - name: idealc_sosc
+    description: Ideal Counter SOSC.
+    bit_offset: 0
+    bit_size: 16
+  - name: samcyc_sosc
+    description: Sample Cycle SOSC.
+    bit_offset: 16
+    bit_size: 8
+  - name: setcyc_sosc
+    description: Setup Cycle SOSC.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Fircatc10:
+  description: FIRC Auto-trimming Counter 10.
+  fields:
+  - name: finemaxc_sof
+    description: Fine Trim Maximum Counter SOF.
+    bit_offset: 0
+    bit_size: 20
+fieldset/Fircatc11:
+  description: FIRC Auto-trimming Counter 11.
+  fields:
+  - name: fineminc_sof
+    description: Fine Trim Minimum Counter SOF.
+    bit_offset: 0
+    bit_size: 20
+fieldset/Fircatc2:
+  description: FIRC Auto-trimming Counter 2.
+  fields:
+  - name: coarminc_sosc
+    description: Coarse Trim Minimum Counter SOSC.
+    bit_offset: 0
+    bit_size: 16
+  - name: coarmaxc_sosc
+    description: Coarse Trim Maximum Counter SOSC.
+    bit_offset: 16
+    bit_size: 16
+fieldset/Fircatc3:
+  description: FIRC Auto-trimming Counter 3.
+  fields:
+  - name: fineminc_sosc
+    description: Fine Trim Minimum Counter SOSC.
+    bit_offset: 0
+    bit_size: 16
+  - name: finemaxc_sosc
+    description: Fine Trim Maximum Counter SOSC.
+    bit_offset: 16
+    bit_size: 16
+fieldset/Fircatc4:
+  description: FIRC Auto-trimming Counter 4.
+  fields:
+  - name: idealc_rosc
+    description: Ideal Counter ROSC.
+    bit_offset: 0
+    bit_size: 16
+  - name: setcyc_rosc
+    description: Setup Cycle ROSC.
+    bit_offset: 16
+    bit_size: 8
+  - name: samcyc_rosc
+    description: Sample Cycle ROSC.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Fircatc5:
+  description: FIRC Auto-trimming Counter 5.
+  fields:
+  - name: coarminc_rosc
+    description: Coarse Trim Minimum Counter ROSC.
+    bit_offset: 0
+    bit_size: 16
+  - name: coarmaxc_rosc
+    description: Coarse Trim Maximum Counter ROSC.
+    bit_offset: 16
+    bit_size: 16
+fieldset/Fircatc6:
+  description: FIRC Auto-trimming Counter 6.
+  fields:
+  - name: fineminc_rosc
+    description: Fine Trim Minimum Counter ROSC.
+    bit_offset: 0
+    bit_size: 16
+  - name: finemaxc_rosc
+    description: Fine Trim Maximum Counter ROSC.
+    bit_offset: 16
+    bit_size: 16
+fieldset/Fircatc7:
+  description: FIRC Auto-trimming Counter 7.
+  fields:
+  - name: idealc_sof
+    description: Ideal Counter SOF.
+    bit_offset: 0
+    bit_size: 20
+  - name: setcyc_sof
+    description: Setup Cycle SOF.
+    bit_offset: 24
+    bit_size: 4
+  - name: samcyc_sof
+    description: Sample Cycle SOF.
+    bit_offset: 28
+    bit_size: 4
+fieldset/Fircatc8:
+  description: FIRC Auto-trimming Counter 8.
+  fields:
+  - name: coarmaxc_sof
+    description: Coarse Trim Maximum Counter SOF.
+    bit_offset: 0
+    bit_size: 20
+fieldset/Fircatc9:
+  description: FIRC Auto-trimming Counter 9.
+  fields:
+  - name: coarminc_sof
+    description: Coarse Trim Minimum Counter SOF.
+    bit_offset: 0
+    bit_size: 20
+fieldset/Firccfg:
+  description: FIRC Configuration Register.
+  fields:
+  - name: freq_sel
+    description: Frequency Range.
+    bit_offset: 1
+    bit_size: 3
+    enum: FreqSel
+fieldset/Firccsr:
+  description: FIRC Control Status Register.
+  fields:
+  - name: fircen
+    description: FIRC Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: fircsten
+    description: FIRC Stop Enable.
+    bit_offset: 1
+    bit_size: 1
+    enum: Fircsten
+  - name: firc_sclk_periph_en
+    description: FIRC 48 MHz Clock to peripherals Enable.
+    bit_offset: 4
+    bit_size: 1
+  - name: firc_fclk_periph_en
+    description: FRO_HF Clock to peripherals Enable.
+    bit_offset: 5
+    bit_size: 1
+  - name: firctren
+    description: FRO_HF Trim Enable.
+    bit_offset: 8
+    bit_size: 1
+  - name: firctrup
+    description: FIRC Trim Update.
+    bit_offset: 9
+    bit_size: 1
+  - name: trim_lock
+    description: FIRC TRIM LOCK.
+    bit_offset: 10
+    bit_size: 1
+    enum: FirccsrTrimLock
+  - name: coarse_trim_bypass
+    description: Coarse Auto Trim Bypass.
+    bit_offset: 11
+    bit_size: 1
+  - name: lk
+    description: Lock Register.
+    bit_offset: 23
+    bit_size: 1
+    enum: FirccsrLk
+  - name: fircvld
+    description: FIRC Valid status.
+    bit_offset: 24
+    bit_size: 1
+    enum: Fircvld
+  - name: fircsel
+    description: FIRC Selected.
+    bit_offset: 25
+    bit_size: 1
+  - name: fircerr
+    description: FIRC Clock Error.
+    bit_offset: 26
+    bit_size: 1
+    enum: Fircerr
+  - name: fircerr_ie
+    description: FIRC Clock Error Interrupt Enable.
+    bit_offset: 27
+    bit_size: 1
+    enum: FircerrIe
+  - name: fircacc_ie
+    description: FIRC Accurate Interrupt Enable.
+    bit_offset: 30
+    bit_size: 1
+    enum: FircaccIe
+  - name: fircacc
+    description: FIRC Frequency Accurate.
+    bit_offset: 31
+    bit_size: 1
+    enum: Fircacc
+fieldset/Fircstat:
+  description: FIRC Auto-trimming Status Register.
+  fields:
+  - name: trimfine
+    description: Trim Fine.
+    bit_offset: 0
+    bit_size: 8
+  - name: trimcoar
+    description: Trim Coarse.
+    bit_offset: 8
+    bit_size: 6
+fieldset/Firctcfg:
+  description: FIRC Trim Configuration Register.
+  fields:
+  - name: trimsrc
+    description: Trim Source.
+    bit_offset: 0
+    bit_size: 2
+    enum: FirctcfgTrimsrc
+  - name: trimdiv
+    description: FIRC Trim Pre-divider.
+    bit_offset: 16
+    bit_size: 7
+fieldset/Firctrim:
+  description: FIRC Trim Register.
+  fields:
+  - name: trimfine
+    description: Trim Fine.
+    bit_offset: 0
+    bit_size: 8
+  - name: trimcoar
+    description: Trim Coarse.
+    bit_offset: 8
+    bit_size: 6
+  - name: trimtemp
+    description: Trim Temperature.
+    bit_offset: 16
+    bit_size: 4
+  - name: trimstart
+    description: Trim Start.
+    bit_offset: 24
+    bit_size: 6
+fieldset/Param:
+  description: Parameter Register.
+  fields:
+  - name: soscclkpres
+    description: SOSC Clock Present.
+    bit_offset: 1
+    bit_size: 1
+  - name: sircclkpres
+    description: SIRC Clock Present.
+    bit_offset: 2
+    bit_size: 1
+  - name: fircclkpres
+    description: FIRC Clock Present.
+    bit_offset: 3
+    bit_size: 1
+  - name: roscclkpres
+    description: ROSC Clock Present.
+    bit_offset: 4
+    bit_size: 1
+fieldset/Rccr:
+  description: Run Clock Control Register.
+  fields:
+  - name: scs
+    description: System Clock Source.
+    bit_offset: 24
+    bit_size: 3
+    enum: Scs
+fieldset/Rosccsr:
+  description: ROSC Control Status Register.
+  fields:
+  - name: lk
+    description: Lock Register.
+    bit_offset: 23
+    bit_size: 1
+    enum: RosccsrLk
+  - name: roscvld
+    description: ROSC Valid.
+    bit_offset: 24
+    bit_size: 1
+    enum: Roscvld
+  - name: roscsel
+    description: ROSC Selected.
+    bit_offset: 25
+    bit_size: 1
+  - name: roscerr
+    description: ROSC Clock Error.
+    bit_offset: 26
+    bit_size: 1
+    enum: Roscerr
+fieldset/Sirccsr:
+  description: SIRC Control Status Register.
+  fields:
+  - name: sircsten
+    description: SIRC Stop Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: sirc_clk_periph_en
+    description: SIRC Clock to Peripherals Enable.
+    bit_offset: 5
+    bit_size: 1
+  - name: sirctren
+    description: SIRC 12 MHz Trim Enable (SIRCCFG[RANGE]=1).
+    bit_offset: 8
+    bit_size: 1
+  - name: sirctrup
+    description: SIRC Trim Update.
+    bit_offset: 9
+    bit_size: 1
+  - name: trim_lock
+    description: SIRC TRIM LOCK.
+    bit_offset: 10
+    bit_size: 1
+    enum: SirccsrTrimLock
+  - name: coarse_trim_bypass
+    description: Coarse Auto Trim Bypass.
+    bit_offset: 11
+    bit_size: 1
+  - name: lk
+    description: Lock Register.
+    bit_offset: 23
+    bit_size: 1
+    enum: SirccsrLk
+  - name: sircvld
+    description: SIRC Valid.
+    bit_offset: 24
+    bit_size: 1
+    enum: Sircvld
+  - name: sircsel
+    description: SIRC Selected.
+    bit_offset: 25
+    bit_size: 1
+  - name: sircerr
+    description: SIRC Clock Error.
+    bit_offset: 26
+    bit_size: 1
+    enum: Sircerr
+  - name: sircerr_ie
+    description: SIRC Clock Error Interrupt Enable.
+    bit_offset: 27
+    bit_size: 1
+    enum: SircerrIe
+fieldset/Sircstat:
+  description: SIRC Auto-trimming Status Register.
+  fields:
+  - name: ccotrim
+    description: CCO Trim.
+    bit_offset: 0
+    bit_size: 6
+  - name: cltrim
+    description: CL Trim.
+    bit_offset: 8
+    bit_size: 6
+fieldset/Sirctcfg:
+  description: SIRC Trim Configuration Register.
+  fields:
+  - name: trimsrc
+    description: Trim Source.
+    bit_offset: 0
+    bit_size: 2
+    enum: SirctcfgTrimsrc
+  - name: trimdiv
+    description: SIRC Trim Pre-divider.
+    bit_offset: 16
+    bit_size: 7
+fieldset/Sirctrim:
+  description: SIRC Trim Register.
+  fields:
+  - name: ccotrim
+    description: CCO Trim.
+    bit_offset: 0
+    bit_size: 6
+  - name: cltrim
+    description: CL Trim.
+    bit_offset: 8
+    bit_size: 6
+  - name: tctrim
+    description: Trim Temp.
+    bit_offset: 16
+    bit_size: 5
+  - name: fvchtrim
+    description: Calibrates the replica voltage in FSU for CCO to get well frequency at initial period.
+    bit_offset: 24
+    bit_size: 5
+fieldset/Sosccfg:
+  description: SOSC Configuration Register.
+  fields:
+  - name: erefs
+    description: External Reference Select.
+    bit_offset: 2
+    bit_size: 1
+    enum: Erefs
+  - name: range
+    description: SOSC Range Select.
+    bit_offset: 4
+    bit_size: 2
+    enum: Range
+fieldset/Sosccsr:
+  description: SOSC Control Status Register.
+  fields:
+  - name: soscen
+    description: SOSC Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: soscsten
+    description: SOSC Stop Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: sosccm
+    description: SOSC Clock Monitor Enable.
+    bit_offset: 16
+    bit_size: 1
+  - name: sosccmre
+    description: SOSC Clock Monitor Reset Enable.
+    bit_offset: 17
+    bit_size: 1
+    enum: Sosccmre
+  - name: lk
+    description: Lock Register.
+    bit_offset: 23
+    bit_size: 1
+    enum: SosccsrLk
+  - name: soscvld
+    description: SOSC Valid.
+    bit_offset: 24
+    bit_size: 1
+  - name: soscsel
+    description: SOSC Selected.
+    bit_offset: 25
+    bit_size: 1
+  - name: soscerr
+    description: SOSC Clock Error.
+    bit_offset: 26
+    bit_size: 1
+    enum: Soscerr
+  - name: soscvld_ie
+    description: SOSC Valid Interrupt Enable.
+    bit_offset: 30
+    bit_size: 1
+  - name: sosc_safe_en
+    description: SOSC clock safety enable.
+    bit_offset: 31
+    bit_size: 1
+fieldset/TrimLock:
+  description: Trim Lock register.
+  fields:
+  - name: trim_unlock
+    description: TRIM_UNLOCK.
+    bit_offset: 0
+    bit_size: 1
+    enum: TrimUnlock
+  - name: ifr_disable
+    description: IFR_DISABLE.
+    bit_offset: 1
+    bit_size: 1
+    enum: IfrDisable
+  - name: trim_lock_key
+    description: TRIM_LOCK_KEY.
+    bit_offset: 16
+    bit_size: 16
+fieldset/Verid:
+  description: Version ID Register.
+  fields:
+  - name: version
+    description: SCG Version Number.
+    bit_offset: 0
+    bit_size: 32
+enum/Erefs:
+  bit_size: 1
+  variants:
+  - name: External
+    description: External reference clock selected.
+    value: 0
+  - name: Internal
+    description: Internal crystal oscillator of OSC selected.
+    value: 1
+enum/Fircacc:
+  bit_size: 1
+  variants:
+  - name: NotEnabledOrNotValid
+    description: FIRC is not enabled or clock is not accurate.
+    value: 0
+  - name: EnabledAndValid
+    description: FIRC is enabled and output clock is accurate after some preparation time which is obtained by counting FRO_HF clock.
+    value: 1
+enum/FircaccIe:
+  bit_size: 1
+  variants:
+  - name: Fircaccnot
+    description: FIRCACC interrupt is not enabled.
+    value: 0
+  - name: Fircaccyes
+    description: FIRCACC interrupt is enabled.
+    value: 1
+enum/FirccsrLk:
+  bit_size: 1
+  variants:
+  - name: WriteEnabled
+    description: Control Status Register can be written.
+    value: 0
+  - name: WriteDisabled
+    description: Control Status Register cannot be written.
+    value: 1
+enum/FirccsrTrimLock:
+  bit_size: 1
+  variants:
+  - name: FircNotLocked
+    description: FIRC auto trim not locked to target frequency range.
+    value: 0
+  - name: FircLocked
+    description: FIRC auto trim locked to target frequency range.
+    value: 1
+enum/Fircerr:
+  bit_size: 1
+  variants:
+  - name: ErrorNotDetected
+    description: Error not detected with the FIRC trimming.
+    value: 0
+  - name: ErrorDetected
+    description: Error detected with the FIRC trimming.
+    value: 1
+enum/FircerrIe:
+  bit_size: 1
+  variants:
+  - name: ErrorNotDetected
+    description: FIRCERR interrupt is not enabled.
+    value: 0
+  - name: ErrorDetected
+    description: FIRCERR interrupt is enabled.
+    value: 1
+enum/Fircsten:
+  bit_size: 1
+  variants:
+  - name: DisabledInStopModes
+    description: FIRC is disabled in Deep Sleep mode.
+    value: 0
+  - name: EnabledInStopModes
+    description: FIRC is enabled in Deep Sleep mode.
+    value: 1
+enum/FirctcfgTrimsrc:
+  bit_size: 2
+  variants:
+  - name: Usb0
+    description: USB0 Start of Frame (1 KHz). This option does not use TRIMDIV.
+    value: 0
+  - name: Sosc
+    description: SOSC. This option requires that SOSC be divided using the TRIMDIV field to get a frequency of 1 MHz.
+    value: 2
+enum/Fircvld:
+  bit_size: 1
+  variants:
+  - name: NotEnabledOrNotValid
+    description: FIRC is not enabled or clock is not valid.
+    value: 0
+  - name: EnabledAndValid
+    description: FIRC is enabled and output clock is valid. The clock is valid after there is an output clock from the FIRC analog.
+    value: 1
+enum/FreqSel:
+  bit_size: 3
+  variants:
+  - name: Firc45_48mhz
+    value: 1
+  - name: Firc60_64mhz
+    value: 3
+  - name: Firc90_96mhz
+    value: 5
+  - name: Firc180_192mhz
+    value: 7
+enum/IfrDisable:
+  bit_size: 1
+  variants:
+  - name: Enabled
+    description: IFR write access to SCG trim registers not disabled. The SCG Trim registers are reprogrammed with the IFR values after any system reset.
+    value: 0
+  - name: Disabled
+    description: IFR write access to SCG trim registers during system reset is blocked.
+    value: 1
+enum/Range:
+  bit_size: 2
+  variants:
+  - name: Freq16to20mHz
+    description: Frequency range select of 8-16 MHz.
+    value: 0
+  - name: LowFreq
+    description: Frequency range select of 16-25 MHz.
+    value: 1
+  - name: MediumFreq
+    description: Frequency range select of 25-40 MHz.
+    value: 2
+  - name: HighFreq
+    description: Frequency range select of 40-50 MHz.
+    value: 3
+enum/RosccsrLk:
+  bit_size: 1
+  variants:
+  - name: WriteEnabled
+    description: Control Status Register can be written.
+    value: 0
+  - name: WriteDisabled
+    description: Control Status Register cannot be written.
+    value: 1
+enum/Roscerr:
+  bit_size: 1
+  variants:
+  - name: DisabledOrNoError
+    description: ROSC Clock has not detected an error.
+    value: 0
+  - name: EnabledAndError
+    description: ROSC Clock has detected an error.
+    value: 1
+enum/Roscvld:
+  bit_size: 1
+  variants:
+  - name: DisabledOrNotValid
+    description: ROSC is not enabled or clock is not valid.
+    value: 0
+  - name: EnabledAndValid
+    description: ROSC is enabled and output clock is valid.
+    value: 1
+enum/Scs:
+  bit_size: 3
+  variants:
+  - name: Sosc
+    description: SOSC.
+    value: 1
+  - name: Sirc
+    description: SIRC.
+    value: 2
+  - name: Firc
+    description: FIRC.
+    value: 3
+  - name: Rosc
+    description: ROSC.
+    value: 4
+enum/SirccsrLk:
+  bit_size: 1
+  variants:
+  - name: WriteEnabled
+    description: Control Status Register can be written.
+    value: 0
+  - name: WriteDisabled
+    description: Control Status Register cannot be written.
+    value: 1
+enum/SirccsrTrimLock:
+  bit_size: 1
+  variants:
+  - name: SircNotLocked
+    description: SIRC auto trim not locked to target frequency range.
+    value: 0
+  - name: SircLocked
+    description: SIRC auto trim locked to target frequency range.
+    value: 1
+enum/Sircerr:
+  bit_size: 1
+  variants:
+  - name: ErrorNotDetected
+    description: Error not detected with the SIRC trimming.
+    value: 0
+  - name: ErrorDetected
+    description: Error detected with the SIRC trimming.
+    value: 1
+enum/SircerrIe:
+  bit_size: 1
+  variants:
+  - name: ErrorNotDetected
+    description: SIRCERR interrupt is not enabled.
+    value: 0
+  - name: ErrorDetected
+    description: SIRCERR interrupt is enabled.
+    value: 1
+enum/SirctcfgTrimsrc:
+  bit_size: 2
+  variants:
+  - name: Sosc
+    description: SOSC. This option requires that SOSC be divided using the TRIMDIV field to get a frequency of 1 MHz.
+    value: 2
+enum/Sircvld:
+  bit_size: 1
+  variants:
+  - name: DisabledOrNotValid
+    description: SIRC is not enabled or clock is not valid.
+    value: 0
+  - name: EnabledAndValid
+    description: SIRC is enabled and output clock is valid.
+    value: 1
+enum/Sosccmre:
+  bit_size: 1
+  variants:
+  - name: GenerateInterrupt
+    description: Clock monitor generates an interrupt when an error is detected.
+    value: 0
+  - name: GenerateReset
+    description: Clock monitor generates a reset when an error is detected.
+    value: 1
+enum/SosccsrLk:
+  bit_size: 1
+  variants:
+  - name: WriteEnabled
+    description: This Control Status Register can be written.
+    value: 0
+  - name: WriteDisabled
+    description: This Control Status Register cannot be written.
+    value: 1
+enum/Soscerr:
+  bit_size: 1
+  variants:
+  - name: DisabledOrNoError
+    description: SOSC Clock Monitor is disabled or has not detected an error.
+    value: 0
+  - name: EnabledAndError
+    description: SOSC Clock Monitor is enabled and detected an error.
+    value: 1
+enum/TrimUnlock:
+  bit_size: 1
+  variants:
+  - name: Locked
+    description: SCG Trim Registers locked and not writable.
+    value: 0
+  - name: NotLocked
+    description: SCG Trim registers unlocked and writable.
+    value: 1

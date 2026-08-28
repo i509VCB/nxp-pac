@@ -1,0 +1,479 @@
+block/Cmc:
+  description: CMC.
+  items:
+  - name: verid
+    description: Version ID.
+    byte_offset: 0
+    access: Read
+    fieldset: Verid
+  - name: ckctrl
+    description: Clock Control.
+    byte_offset: 16
+    fieldset: Ckctrl
+  - name: ckstat
+    description: Clock Status.
+    byte_offset: 20
+    fieldset: Ckstat
+  - name: pmprot
+    description: Power Mode Protection.
+    byte_offset: 24
+    fieldset: Pmprot
+  - name: gpmctrl
+    description: Global Power Mode Control.
+    byte_offset: 28
+    fieldset: Gpmctrl
+  - name: pmctrlmain
+    description: Power Mode Control.
+    byte_offset: 32
+    fieldset: Pmctrlmain
+  - name: srs
+    description: System Reset Status.
+    byte_offset: 128
+    access: Read
+    fieldset: Srs
+  - name: rpc
+    description: Reset Pin Control.
+    byte_offset: 132
+    fieldset: Rpc
+  - name: ssrs
+    description: Sticky System Reset Status.
+    byte_offset: 136
+    fieldset: Ssrs
+  - name: srie
+    description: System Reset Interrupt Enable.
+    byte_offset: 140
+    fieldset: Srie
+  - name: srif
+    description: System Reset Interrupt Flag.
+    byte_offset: 144
+    fieldset: Srif
+  - name: rstcnt
+    description: Reset Count Register.
+    byte_offset: 156
+    access: Read
+    fieldset: Rstcnt
+  - name: mr0
+    description: Mode.
+    byte_offset: 160
+    fieldset: Mr0
+  - name: fm0
+    description: Force Mode.
+    byte_offset: 176
+    fieldset: Fm0
+  - name: flashcr
+    description: Flash Control.
+    byte_offset: 224
+    fieldset: Flashcr
+  - name: corectl
+    description: Core Control.
+    byte_offset: 272
+    fieldset: Corectl
+  - name: dbgctl
+    description: Debug Control.
+    byte_offset: 288
+    fieldset: Dbgctl
+fieldset/Ckctrl:
+  description: Clock Control.
+  fields:
+  - name: ckmode
+    description: Clocking Mode.
+    bit_offset: 0
+    bit_size: 4
+    enum: Ckmode
+  - name: lock
+    description: Lock.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Ckstat:
+  description: Clock Status.
+  fields:
+  - name: ckmode
+    description: Low Power Status.
+    bit_offset: 0
+    bit_size: 4
+    enum: Ckmode
+  - name: wakeup
+    description: Wake-up Source.
+    bit_offset: 8
+    bit_size: 8
+  - name: valid
+    description: Clock Status Valid.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Corectl:
+  description: Core Control.
+  fields:
+  - name: npie
+    description: Non-maskable Pin Interrupt Enable.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Dbgctl:
+  description: Debug Control.
+  fields:
+  - name: sod
+    description: Sleep Or Debug.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Flashcr:
+  description: Flash Control.
+  fields:
+  - name: flashdis
+    description: Flash Disable.
+    bit_offset: 0
+    bit_size: 1
+  - name: flashdoze
+    description: Flash Doze.
+    bit_offset: 1
+    bit_size: 1
+  - name: flashwake
+    description: Flash Wake.
+    bit_offset: 2
+    bit_size: 1
+fieldset/Fm0:
+  description: Force Mode.
+  fields:
+  - name: forcecfg
+    description: Boot Configuration.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Gpmctrl:
+  description: Global Power Mode Control.
+  fields:
+  - name: lpmode
+    description: Low-Power Mode.
+    bit_offset: 0
+    bit_size: 4
+fieldset/Mr0:
+  description: Mode.
+  fields:
+  - name: ispmode_n
+    description: In System Programming Mode.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Pmctrlmain:
+  description: Power Mode Control.
+  fields:
+  - name: lpmode
+    description: Low-Power Mode.
+    bit_offset: 0
+    bit_size: 4
+    enum: PmctrlmainLpmode
+fieldset/Pmprot:
+  description: Power Mode Protection.
+  fields:
+  - name: lpmode
+    description: Low-Power Mode.
+    bit_offset: 0
+    bit_size: 4
+    enum: PmprotLpmode
+  - name: lock
+    description: Lock Register.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Rpc:
+  description: Reset Pin Control.
+  fields:
+  - name: filtcfg
+    description: Reset Filter Configuration.
+    bit_offset: 0
+    bit_size: 5
+  - name: filten
+    description: Filter Enable.
+    bit_offset: 8
+    bit_size: 1
+  - name: lpfen
+    description: Low-Power Filter Enable.
+    bit_offset: 9
+    bit_size: 1
+fieldset/Rstcnt:
+  description: Reset Count Register.
+  fields:
+  - name: count
+    description: Count.
+    bit_offset: 0
+    bit_size: 8
+fieldset/Srie:
+  description: System Reset Interrupt Enable.
+  fields:
+  - name: pin
+    description: Pin Reset.
+    bit_offset: 8
+    bit_size: 1
+  - name: dap
+    description: DAP Reset.
+    bit_offset: 9
+    bit_size: 1
+  - name: lpack
+    description: Low Power Acknowledge Timeout Reset.
+    bit_offset: 11
+    bit_size: 1
+  - name: scg
+    description: System Clock Generation Reset.
+    bit_offset: 12
+    bit_size: 1
+  - name: wwdt0
+    description: Windowed Watchdog 0 Reset.
+    bit_offset: 13
+    bit_size: 1
+  - name: sw
+    description: Software Reset.
+    bit_offset: 14
+    bit_size: 1
+  - name: lockup
+    description: Lockup Reset.
+    bit_offset: 15
+    bit_size: 1
+  - name: cdog0
+    description: Code Watchdog 0 Reset.
+    bit_offset: 26
+    bit_size: 1
+fieldset/Srif:
+  description: System Reset Interrupt Flag.
+  fields:
+  - name: pin
+    description: Pin Reset.
+    bit_offset: 8
+    bit_size: 1
+  - name: dap
+    description: DAP Reset.
+    bit_offset: 9
+    bit_size: 1
+  - name: lpack
+    description: Low Power Acknowledge Timeout Reset.
+    bit_offset: 11
+    bit_size: 1
+  - name: wwdt0
+    description: Windowed Watchdog 0 Reset.
+    bit_offset: 13
+    bit_size: 1
+  - name: sw
+    description: Software Reset.
+    bit_offset: 14
+    bit_size: 1
+  - name: lockup
+    description: Lockup Reset.
+    bit_offset: 15
+    bit_size: 1
+  - name: cdog0
+    description: Code Watchdog 0 Reset.
+    bit_offset: 26
+    bit_size: 1
+fieldset/Srs:
+  description: System Reset Status.
+  fields:
+  - name: wakeup
+    description: Wake-up Reset.
+    bit_offset: 0
+    bit_size: 1
+  - name: por
+    description: Power-on Reset.
+    bit_offset: 1
+    bit_size: 1
+  - name: vd
+    description: Voltage Detect Reset.
+    bit_offset: 2
+    bit_size: 1
+  - name: warm
+    description: Warm Reset.
+    bit_offset: 4
+    bit_size: 1
+  - name: fatal
+    description: Fatal Reset.
+    bit_offset: 5
+    bit_size: 1
+  - name: pin
+    description: Pin Reset.
+    bit_offset: 8
+    bit_size: 1
+  - name: dap
+    description: Debug Access Port Reset.
+    bit_offset: 9
+    bit_size: 1
+  - name: rstack
+    description: Reset Timeout.
+    bit_offset: 10
+    bit_size: 1
+  - name: lpack
+    description: Low Power Acknowledge Timeout Reset.
+    bit_offset: 11
+    bit_size: 1
+  - name: scg
+    description: System Clock Generation Reset.
+    bit_offset: 12
+    bit_size: 1
+  - name: wwdt0
+    description: Windowed Watchdog 0 Reset.
+    bit_offset: 13
+    bit_size: 1
+  - name: sw
+    description: Software Reset.
+    bit_offset: 14
+    bit_size: 1
+  - name: lockup
+    description: Lockup Reset.
+    bit_offset: 15
+    bit_size: 1
+  - name: cdog0
+    description: Code Watchdog 0 Reset.
+    bit_offset: 26
+    bit_size: 1
+  - name: jtag
+    description: JTAG System Reset.
+    bit_offset: 28
+    bit_size: 1
+fieldset/Ssrs:
+  description: Sticky System Reset Status.
+  fields:
+  - name: wakeup
+    description: Wake-up Reset.
+    bit_offset: 0
+    bit_size: 1
+  - name: por
+    description: Power-on Reset.
+    bit_offset: 1
+    bit_size: 1
+  - name: vd
+    description: Voltage Detect Reset.
+    bit_offset: 2
+    bit_size: 1
+  - name: warm
+    description: Warm Reset.
+    bit_offset: 4
+    bit_size: 1
+  - name: fatal
+    description: Fatal Reset.
+    bit_offset: 5
+    bit_size: 1
+  - name: pin
+    description: Pin Reset.
+    bit_offset: 8
+    bit_size: 1
+  - name: dap
+    description: DAP Reset.
+    bit_offset: 9
+    bit_size: 1
+  - name: rstack
+    description: Reset Timeout.
+    bit_offset: 10
+    bit_size: 1
+  - name: lpack
+    description: Low Power Acknowledge Timeout Reset.
+    bit_offset: 11
+    bit_size: 1
+  - name: scg
+    description: System Clock Generation Reset.
+    bit_offset: 12
+    bit_size: 1
+  - name: wwdt0
+    description: Windowed Watchdog 0 Reset.
+    bit_offset: 13
+    bit_size: 1
+  - name: sw
+    description: Software Reset.
+    bit_offset: 14
+    bit_size: 1
+  - name: lockup
+    description: Lockup Reset.
+    bit_offset: 15
+    bit_size: 1
+  - name: cdog0
+    description: Code Watchdog 0 Reset.
+    bit_offset: 26
+    bit_size: 1
+  - name: jtag
+    description: JTAG System Reset.
+    bit_offset: 28
+    bit_size: 1
+fieldset/Verid:
+  description: Version ID.
+  fields:
+  - name: feature
+    description: Feature Specification Number.
+    bit_offset: 0
+    bit_size: 16
+  - name: minor
+    description: Minor Version Number.
+    bit_offset: 16
+    bit_size: 8
+  - name: major
+    description: Major Version Number.
+    bit_offset: 24
+    bit_size: 8
+enum/Ckmode:
+  bit_size: 4
+  variants:
+  - name: Ckmode0000
+    description: Core clock is on.
+    value: 0
+  - name: Ckmode0001
+    description: Core clock is off.
+    value: 1
+  - name: Ckmode1111
+    description: Core, platform, and peripheral clocks are off, and core enters Low-Power mode.
+    value: 15
+enum/PmctrlmainLpmode:
+  bit_size: 4
+  variants:
+  - name: Lpmode0000
+    description: Active/Sleep.
+    value: 0
+  - name: Lpmode0001
+    description: Deep Sleep.
+    value: 1
+  - name: Lpmode0011
+    description: Power Down.
+    value: 3
+  - name: Lpmode1111
+    description: Deep-Power Down.
+    value: 15
+enum/PmprotLpmode:
+  bit_size: 4
+  variants:
+  - name: Disabled
+    description: Not allowed.
+    value: 0
+  - name: En
+    description: Allowed.
+    value: 1
+  - name: En1
+    description: Allowed.
+    value: 2
+  - name: En2
+    description: Allowed.
+    value: 3
+  - name: En3
+    description: Allowed.
+    value: 4
+  - name: En4
+    description: Allowed.
+    value: 5
+  - name: En5
+    description: Allowed.
+    value: 6
+  - name: En6
+    description: Allowed.
+    value: 7
+  - name: En7
+    description: Allowed.
+    value: 8
+  - name: En8
+    description: Allowed.
+    value: 9
+  - name: En9
+    description: Allowed.
+    value: 10
+  - name: En10
+    description: Allowed.
+    value: 11
+  - name: En11
+    description: Allowed.
+    value: 12
+  - name: En12
+    description: Allowed.
+    value: 13
+  - name: En13
+    description: Allowed.
+    value: 14
+  - name: En14
+    description: Allowed.
+    value: 15

@@ -1,0 +1,90 @@
+transforms:
+  # Normalize field types while preserving each port's exact sparse register
+  # layout. Missing PCRs are reserved according to the locked MCXA156 SVD and
+  # must not be materialized as a common 32-entry array.
+  - !Rename
+    from: port0::Pcr2
+    to: port::Pcr
+
+  - !ModifyRegisters
+    blocks: port\d+::Port\d*
+    registers: pcr\d+
+    fieldset: port::Pcr
+
+  - !DeleteFieldsets
+    from: port\d+::Pcr\d+
+
+  - !DeleteEnums
+    from: port\d+::Pcr(\d+)Mux
+    bit_size: 1
+  - !DeleteEnums
+    from: port\d+::Pcr(\d+)Mux
+    bit_size: 2
+  - !DeleteEnums
+    from: port\d+::Pcr(\d+)Mux
+    bit_size: 3
+  - !MergeEnums
+    from: port\d+::Pcr(\d+)Mux
+    to: port::Mux
+
+  - !DeleteEnumVariants
+    enum: port::Mux
+    from: .*
+
+  - !AddEnumVariants
+    enum: port::Mux
+    variants:
+      - { name: Mux0, value: 0 }
+      - { name: Mux1, value: 1 }
+      - { name: Mux2, value: 2 }
+      - { name: Mux3, value: 3 }
+      - { name: Mux4, value: 4 }
+      - { name: Mux5, value: 5 }
+      - { name: Mux6, value: 6 }
+      - { name: Mux7, value: 7 }
+      - { name: Mux8, value: 8 }
+      - { name: Mux9, value: 9 }
+      - { name: Mux10, value: 10 }
+      - { name: Mux11, value: 11 }
+      - { name: Mux12, value: 12 }
+      - { name: Mux13, value: 13 }
+
+  - !MergeEnums
+    from: port\d+::(.+)
+    to: port::$1
+
+  - !MergeFieldsets
+    from: port\d+::(.+)
+    to: port::$1
+
+  - !Rename
+    from: port0::Port0
+    to: port::Port
+    type: Block
+
+  - !Rename
+    from: port([1-4])::Port\d*
+    to: port::Port$1
+    type: Block
+
+  - !MergeEnums
+    from: port::Gpwe\d+
+    to: port::Gpwe
+
+  - !DeleteFields
+    fieldset: port::Pcr(\d+)
+    from: (dse1|pfe|pv)
+
+  - !DeleteEnums
+    from: port::Pcr(\d+)(Dse1|Pfe)
+  - !DeleteEnums
+    from: port::Pv
+
+  - !MergeEnums
+    from: port::Pcr(\d+)(.+)
+    to: port::$2
+
+  - !MakeFieldArray
+    fieldsets: port::Gpc(l|h)r
+    from: gpwe(\d+)
+    to: gpwe

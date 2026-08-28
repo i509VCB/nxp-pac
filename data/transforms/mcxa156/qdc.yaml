@@ -1,0 +1,7 @@
+transforms:
+  # The SVD uses REV for both a 16-bit register fieldset and the reverse-
+  # direction enum. Keep both concepts while avoiding a Rust type collision.
+  - !Rename
+    from: qdc::Rev
+    to: qdc::Reverse
+    type: Enum

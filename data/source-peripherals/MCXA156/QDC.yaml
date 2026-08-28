@@ -1,0 +1,1276 @@
+block/Qdc:
+  description: Quadrature_Decoder.
+  items:
+  - name: ctrl
+    description: Control Register.
+    byte_offset: 0
+    bit_size: 16
+    fieldset: Ctrl
+  - name: ctrl2
+    description: Control 2 Register.
+    byte_offset: 2
+    bit_size: 16
+    fieldset: Ctrl2
+  - name: filt
+    description: Input Filter Register.
+    byte_offset: 4
+    bit_size: 16
+    fieldset: Filt
+  - name: lastedge
+    description: Last Edge Time Register.
+    byte_offset: 6
+    access: Read
+    bit_size: 16
+    fieldset: Lastedge
+  - name: posdper
+    description: Position Difference Period Counter Register.
+    byte_offset: 8
+    access: Read
+    bit_size: 16
+    fieldset: Posdper
+  - name: posdperbfr
+    description: Position Difference Period Buffer Register.
+    byte_offset: 10
+    access: Read
+    bit_size: 16
+    fieldset: Posdperbfr
+  - name: upos
+    description: Upper Position Counter Register.
+    byte_offset: 12
+    bit_size: 16
+    fieldset: Upos
+  - name: lpos
+    description: Lower Position Counter Register.
+    byte_offset: 14
+    bit_size: 16
+    fieldset: Lpos
+  - name: posd
+    description: Position Difference Counter Register.
+    byte_offset: 16
+    bit_size: 16
+    fieldset: Posd
+  - name: posdh
+    description: Position Difference Hold Register.
+    byte_offset: 18
+    access: Read
+    bit_size: 16
+    fieldset: Posdh
+  - name: uposh
+    description: Upper Position Hold Register.
+    byte_offset: 20
+    access: Read
+    bit_size: 16
+    fieldset: Uposh
+  - name: lposh
+    description: Lower Position Hold Register.
+    byte_offset: 22
+    access: Read
+    bit_size: 16
+    fieldset: Lposh
+  - name: lastedgeh
+    description: Last Edge Time Hold Register.
+    byte_offset: 24
+    access: Read
+    bit_size: 16
+    fieldset: Lastedgeh
+  - name: posdperh
+    description: Position Difference Period Hold Register.
+    byte_offset: 26
+    access: Read
+    bit_size: 16
+    fieldset: Posdperh
+  - name: revh
+    description: Revolution Hold Register.
+    byte_offset: 28
+    access: Read
+    bit_size: 16
+    fieldset: Revh
+  - name: rev
+    description: Revolution Counter Register.
+    byte_offset: 30
+    bit_size: 16
+    fieldset: Rev
+  - name: uinit
+    description: Upper Initialization Register.
+    byte_offset: 32
+    bit_size: 16
+    fieldset: Uinit
+  - name: linit
+    description: Lower Initialization Register.
+    byte_offset: 34
+    bit_size: 16
+    fieldset: Linit
+  - name: umod
+    description: Upper Modulus Register.
+    byte_offset: 36
+    bit_size: 16
+    fieldset: Umod
+  - name: lmod
+    description: Lower Modulus Register.
+    byte_offset: 38
+    bit_size: 16
+    fieldset: Lmod
+  - name: ucomp0
+    description: Upper Position Compare Register 0.
+    byte_offset: 40
+    bit_size: 16
+    fieldset: Ucomp0
+  - name: lcomp0
+    description: Lower Position Compare Register 0.
+    byte_offset: 42
+    bit_size: 16
+    fieldset: Lcomp0
+  - name: ucomp1
+    description: Upper Position Compare 1.
+    byte_offset: 44
+    access: Write
+    bit_size: 16
+    fieldset: Ucomp1
+  - name: uposh1
+    description: Upper Position Holder Register 1.
+    byte_offset: 44
+    access: Read
+    bit_size: 16
+    fieldset: Uposh1
+  - name: lcomp1
+    description: Lower Position Compare 1.
+    byte_offset: 46
+    access: Write
+    bit_size: 16
+    fieldset: Lcomp1
+  - name: lposh1
+    description: Lower Position Holder Register 1.
+    byte_offset: 46
+    access: Read
+    bit_size: 16
+    fieldset: Lposh1
+  - name: ucomp2
+    description: Upper Position Compare 2.
+    byte_offset: 48
+    access: Write
+    bit_size: 16
+    fieldset: Ucomp2
+  - name: uposh2
+    description: Upper Position Holder Register 3.
+    byte_offset: 48
+    access: Read
+    bit_size: 16
+    fieldset: Uposh2
+  - name: lcomp2
+    description: Lower Position Compare 2.
+    byte_offset: 50
+    access: Write
+    bit_size: 16
+    fieldset: Lcomp2
+  - name: lposh2
+    description: Lower Position Holder Register 2.
+    byte_offset: 50
+    access: Read
+    bit_size: 16
+    fieldset: Lposh2
+  - name: ucomp3
+    description: Upper Position Compare 3.
+    byte_offset: 52
+    access: Write
+    bit_size: 16
+    fieldset: Ucomp3
+  - name: uposh3
+    description: Upper Position Holder Register 3.
+    byte_offset: 52
+    access: Read
+    bit_size: 16
+    fieldset: Uposh3
+  - name: lcomp3
+    description: Lower Position Compare 3.
+    byte_offset: 54
+    access: Write
+    bit_size: 16
+    fieldset: Lcomp3
+  - name: lposh3
+    description: Lower Position Holder Register 3.
+    byte_offset: 54
+    access: Read
+    bit_size: 16
+    fieldset: Lposh3
+  - name: intctrl
+    description: Interrupt Control Register.
+    byte_offset: 56
+    bit_size: 16
+    fieldset: Intctrl
+  - name: wtr
+    description: Watchdog Timeout Register.
+    byte_offset: 58
+    bit_size: 16
+    fieldset: Wtr
+  - name: imr
+    description: Input Monitor Register.
+    byte_offset: 60
+    bit_size: 16
+    fieldset: Imr
+  - name: tst
+    description: Test Register.
+    byte_offset: 62
+    bit_size: 16
+    fieldset: Tst
+  - name: uverid
+    description: Upper VERID.
+    byte_offset: 80
+    access: Read
+    bit_size: 16
+    fieldset: Uverid
+  - name: lverid
+    description: Lower VERID.
+    byte_offset: 82
+    access: Read
+    bit_size: 16
+    fieldset: Lverid
+fieldset/Ctrl:
+  description: Control Register.
+  bit_size: 16
+  fields:
+  - name: ldok
+    description: Load Okay.
+    bit_offset: 0
+    bit_size: 1
+    enum: Ldok
+  - name: dmaen
+    description: DMA Enable.
+    bit_offset: 1
+    bit_size: 1
+    enum: Dmaen
+  - name: wde
+    description: Watchdog Enable.
+    bit_offset: 2
+    bit_size: 1
+    enum: Wde
+  - name: wdie
+    description: Watchdog Timeout Interrupt Enable.
+    bit_offset: 3
+    bit_size: 1
+    enum: Wdie
+  - name: wdirq
+    description: Watchdog Timeout Interrupt Request.
+    bit_offset: 4
+    bit_size: 1
+    enum: Wdirq
+  - name: xne
+    description: Select Positive/Negative Edge of INDEX/PRESET Pulse.
+    bit_offset: 5
+    bit_size: 1
+    enum: Xne
+  - name: xip
+    description: INDEX Triggered Initialization of Position Counters UPOS and LPOS.
+    bit_offset: 6
+    bit_size: 1
+    enum: Xip
+  - name: xie
+    description: INDEX/PRESET Pulse Interrupt Enable.
+    bit_offset: 7
+    bit_size: 1
+    enum: Xie
+  - name: xirq
+    description: INDEX/PRESET Pulse Interrupt Request.
+    bit_offset: 8
+    bit_size: 1
+    enum: Xirq
+  - name: ph1
+    description: Enable Single Phase Mode.
+    bit_offset: 9
+    bit_size: 1
+    enum: Ph1
+  - name: rev
+    description: Enable Reverse Direction Counting.
+    bit_offset: 10
+    bit_size: 1
+    enum: Reverse
+  - name: swip
+    description: Software-Triggered Initialization of Position Counters UPOS and LPOS.
+    bit_offset: 11
+    bit_size: 1
+    enum: Swip
+  - name: hne
+    description: Use Negative Edge of HOME/ENABLE Input.
+    bit_offset: 12
+    bit_size: 1
+    enum: Hne
+  - name: hip
+    description: Enable HOME to Initialize Position Counter UPOS/LPOS.
+    bit_offset: 13
+    bit_size: 1
+    enum: Hip
+  - name: hie
+    description: HOME/ENABLE Interrupt Enable.
+    bit_offset: 14
+    bit_size: 1
+    enum: Hie
+  - name: hirq
+    description: HOME/ENABLE Signal Transition Interrupt Request.
+    bit_offset: 15
+    bit_size: 1
+    enum: Hirq
+fieldset/Ctrl2:
+  description: Control 2 Register.
+  bit_size: 16
+  fields:
+  - name: updhld
+    description: Update Hold Registers.
+    bit_offset: 0
+    bit_size: 1
+  - name: updpos
+    description: Update Position Registers.
+    bit_offset: 1
+    bit_size: 1
+  - name: opmode
+    description: Operation Mode Select.
+    bit_offset: 2
+    bit_size: 1
+    enum: Opmode
+  - name: ldmod
+    description: Buffered Register Load (Update) Mode Select.
+    bit_offset: 3
+    bit_size: 1
+    enum: Ldmod
+  - name: revmod
+    description: Revolution Counter Modulus Enable.
+    bit_offset: 8
+    bit_size: 1
+    enum: Revmod
+  - name: outctl
+    description: Output Control.
+    bit_offset: 9
+    bit_size: 1
+    enum: Outctl
+  - name: pmen
+    description: Period measurement function enable.
+    bit_offset: 10
+    bit_size: 1
+    enum: Pmen
+  - name: emip
+    description: Enables/disables the position counter to be initialized by Index Event Edge Mark.
+    bit_offset: 11
+    bit_size: 1
+    enum: Emip
+  - name: initpos
+    description: Initial Position Register.
+    bit_offset: 12
+    bit_size: 1
+    enum: Initpos
+  - name: once
+    description: Count Once.
+    bit_offset: 13
+    bit_size: 1
+    enum: Once
+  - name: cmode
+    description: Counting Mode.
+    bit_offset: 14
+    bit_size: 2
+fieldset/Filt:
+  description: Input Filter Register.
+  bit_size: 16
+  fields:
+  - name: filt_per
+    description: Input Filter Sample Period.
+    bit_offset: 0
+    bit_size: 8
+  - name: filt_cnt
+    description: Input Filter Sample Count.
+    bit_offset: 8
+    bit_size: 3
+  - name: filt_cs
+    description: Filter Clock Source selection.
+    bit_offset: 11
+    bit_size: 1
+    enum: FiltCs
+  - name: prsc
+    description: Prescaler.
+    bit_offset: 12
+    bit_size: 4
+fieldset/Imr:
+  description: Input Monitor Register.
+  bit_size: 16
+  fields:
+  - name: home_enable
+    description: HOME_ENABLE.
+    bit_offset: 0
+    bit_size: 1
+  - name: index_preset
+    description: INDEX_PRESET.
+    bit_offset: 1
+    bit_size: 1
+  - name: phb
+    description: PHB.
+    bit_offset: 2
+    bit_size: 1
+  - name: pha
+    description: PHA.
+    bit_offset: 3
+    bit_size: 1
+  - name: fhom_ena
+    description: filter operation on HOME/ENABLE input.
+    bit_offset: 4
+    bit_size: 1
+  - name: find_pre
+    description: filter operation on INDEX/PRESET input.
+    bit_offset: 5
+    bit_size: 1
+  - name: fphb
+    description: filter operation on PHASEB input.
+    bit_offset: 6
+    bit_size: 1
+  - name: fpha
+    description: filter operation on PHASEA input.
+    bit_offset: 7
+    bit_size: 1
+  - name: cmpf0
+    description: Position Compare 0 Flag Output.
+    bit_offset: 8
+    bit_size: 1
+    enum: Cmpf0
+  - name: cmp1f
+    description: Position Compare1 Flag Output.
+    bit_offset: 9
+    bit_size: 1
+    enum: Cmp1f
+  - name: cmp2f
+    description: Position Compare2 Flag Output.
+    bit_offset: 10
+    bit_size: 1
+    enum: Cmp2f
+  - name: cmp3f
+    description: Position Compare3 Flag Output.
+    bit_offset: 11
+    bit_size: 1
+    enum: Cmp3f
+  - name: dirh
+    description: Count Direction Flag Hold.
+    bit_offset: 14
+    bit_size: 1
+  - name: dir
+    description: Count Direction Flag Output.
+    bit_offset: 15
+    bit_size: 1
+    enum: Dir
+fieldset/Intctrl:
+  description: Interrupt Control Register.
+  bit_size: 16
+  fields:
+  - name: sabie
+    description: Simultaneous PHASEA and PHASEB Change Interrupt Enable.
+    bit_offset: 0
+    bit_size: 1
+    enum: Sabie
+  - name: sabirq
+    description: Simultaneous PHASEA and PHASEB Change Interrupt Request.
+    bit_offset: 1
+    bit_size: 1
+    enum: Sabirq
+  - name: dirie
+    description: Count direction change interrupt enable.
+    bit_offset: 2
+    bit_size: 1
+    enum: Dirie
+  - name: dirirq
+    description: Count direction change interrupt.
+    bit_offset: 3
+    bit_size: 1
+    enum: Dirirq
+  - name: ruie
+    description: Roll-under Interrupt Enable.
+    bit_offset: 4
+    bit_size: 1
+    enum: Ruie
+  - name: ruirq
+    description: Roll-under Interrupt Request.
+    bit_offset: 5
+    bit_size: 1
+    enum: Ruirq
+  - name: roie
+    description: Roll-over Interrupt Enable.
+    bit_offset: 6
+    bit_size: 1
+    enum: Roie
+  - name: roirq
+    description: Roll-over Interrupt Request.
+    bit_offset: 7
+    bit_size: 1
+    enum: Roirq
+  - name: cmp0ie
+    description: Compare 0 Interrupt Enable.
+    bit_offset: 8
+    bit_size: 1
+    enum: Cmp0ie
+  - name: cmp0irq
+    description: Compare 0 Interrupt Request.
+    bit_offset: 9
+    bit_size: 1
+    enum: Cmp0irq
+  - name: cmp1ie
+    description: Compare1 Interrupt Enable.
+    bit_offset: 10
+    bit_size: 1
+    enum: Cmp1ie
+  - name: cmp1irq
+    description: Compare1 Interrupt Request.
+    bit_offset: 11
+    bit_size: 1
+    enum: Cmp1irq
+  - name: cmp2ie
+    description: Compare2 Interrupt Enable.
+    bit_offset: 12
+    bit_size: 1
+    enum: Cmp2ie
+  - name: cmp2irq
+    description: Compare2 Interrupt Request.
+    bit_offset: 13
+    bit_size: 1
+    enum: Cmp2irq
+  - name: cmp3ie
+    description: Compare3 Interrupt Enable.
+    bit_offset: 14
+    bit_size: 1
+    enum: Cmp3ie
+  - name: cmp3irq
+    description: Compare3 Interrupt Request.
+    bit_offset: 15
+    bit_size: 1
+    enum: Cmp3irq
+fieldset/Lastedge:
+  description: Last Edge Time Register.
+  bit_size: 16
+  fields:
+  - name: lastedge
+    description: Last Edge Time Counter.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Lastedgeh:
+  description: Last Edge Time Hold Register.
+  bit_size: 16
+  fields:
+  - name: lastedgeh
+    description: Last Edge Time Hold.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Lcomp0:
+  description: Lower Position Compare Register 0.
+  bit_size: 16
+  fields:
+  - name: lcomp0
+    description: LCOMP0.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Lcomp1:
+  description: Lower Position Compare 1.
+  bit_size: 16
+  fields:
+  - name: lcomp1
+    description: LCOMP1.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Lcomp2:
+  description: Lower Position Compare 2.
+  bit_size: 16
+  fields:
+  - name: lcomp2
+    description: LCOMP2.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Lcomp3:
+  description: Lower Position Compare 3.
+  bit_size: 16
+  fields:
+  - name: lcomp3
+    description: LCOMP3.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Linit:
+  description: Lower Initialization Register.
+  bit_size: 16
+  fields:
+  - name: init
+    description: INIT.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Lmod:
+  description: Lower Modulus Register.
+  bit_size: 16
+  fields:
+  - name: mod_
+    description: MOD.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Lpos:
+  description: Lower Position Counter Register.
+  bit_size: 16
+  fields:
+  - name: pos
+    description: POS.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Lposh:
+  description: Lower Position Hold Register.
+  bit_size: 16
+  fields:
+  - name: lposh
+    description: POSH.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Lposh1:
+  description: Lower Position Holder Register 1.
+  bit_size: 16
+  fields:
+  - name: lposh1
+    description: LPOSH1.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Lposh2:
+  description: Lower Position Holder Register 2.
+  bit_size: 16
+  fields:
+  - name: lposh2
+    description: LPOSH2.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Lposh3:
+  description: Lower Position Holder Register 3.
+  bit_size: 16
+  fields:
+  - name: lposh3
+    description: LPOSH3.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Lverid:
+  description: Lower VERID.
+  bit_size: 16
+  fields:
+  - name: lverid
+    description: LVERID.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Posd:
+  description: Position Difference Counter Register.
+  bit_size: 16
+  fields:
+  - name: posd
+    description: POSD.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Posdh:
+  description: Position Difference Hold Register.
+  bit_size: 16
+  fields:
+  - name: posdh
+    description: POSDH.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Posdper:
+  description: Position Difference Period Counter Register.
+  bit_size: 16
+  fields:
+  - name: posdper
+    description: Position difference period.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Posdperbfr:
+  description: Position Difference Period Buffer Register.
+  bit_size: 16
+  fields:
+  - name: posdperbfr
+    description: Position difference period buffer.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Posdperh:
+  description: Position Difference Period Hold Register.
+  bit_size: 16
+  fields:
+  - name: posdperh
+    description: Position difference period hold.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Rev:
+  description: Revolution Counter Register.
+  bit_size: 16
+  fields:
+  - name: rev
+    description: REV.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Revh:
+  description: Revolution Hold Register.
+  bit_size: 16
+  fields:
+  - name: revh
+    description: REVH.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Tst:
+  description: Test Register.
+  bit_size: 16
+  fields:
+  - name: test_count
+    description: TEST_COUNT.
+    bit_offset: 0
+    bit_size: 8
+  - name: test_period
+    description: TEST_PERIOD.
+    bit_offset: 8
+    bit_size: 5
+  - name: qdn
+    description: Quadrature Decoder Negative Signal.
+    bit_offset: 13
+    bit_size: 1
+    enum: Qdn
+  - name: tce
+    description: Test Counter Enable.
+    bit_offset: 14
+    bit_size: 1
+    enum: Tce
+  - name: ten
+    description: Test Mode Enable.
+    bit_offset: 15
+    bit_size: 1
+    enum: Ten
+fieldset/Ucomp0:
+  description: Upper Position Compare Register 0.
+  bit_size: 16
+  fields:
+  - name: ucomp0
+    description: UCOMP0.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Ucomp1:
+  description: Upper Position Compare 1.
+  bit_size: 16
+  fields:
+  - name: ucomp1
+    description: UCOMP1.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Ucomp2:
+  description: Upper Position Compare 2.
+  bit_size: 16
+  fields:
+  - name: ucomp2
+    description: UCOMP2.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Ucomp3:
+  description: Upper Position Compare 3.
+  bit_size: 16
+  fields:
+  - name: ucomp3
+    description: UCOMP3.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Uinit:
+  description: Upper Initialization Register.
+  bit_size: 16
+  fields:
+  - name: init
+    description: INIT.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Umod:
+  description: Upper Modulus Register.
+  bit_size: 16
+  fields:
+  - name: mod_
+    description: MOD.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Upos:
+  description: Upper Position Counter Register.
+  bit_size: 16
+  fields:
+  - name: pos
+    description: POS.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Uposh:
+  description: Upper Position Hold Register.
+  bit_size: 16
+  fields:
+  - name: posh
+    description: POSH.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Uposh1:
+  description: Upper Position Holder Register 1.
+  bit_size: 16
+  fields:
+  - name: uposh1
+    description: UPOSH1.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Uposh2:
+  description: Upper Position Holder Register 3.
+  bit_size: 16
+  fields:
+  - name: uposh2
+    description: UPOSH2.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Uposh3:
+  description: Upper Position Holder Register 3.
+  bit_size: 16
+  fields:
+  - name: uposh3
+    description: UPOSH3.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Uverid:
+  description: Upper VERID.
+  bit_size: 16
+  fields:
+  - name: uverid
+    description: UVERID.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Wtr:
+  description: Watchdog Timeout Register.
+  bit_size: 16
+  fields:
+  - name: wdog
+    description: WDOG.
+    bit_offset: 0
+    bit_size: 16
+enum/Cmp0ie:
+  bit_size: 1
+  variants:
+  - name: Cmp0ie0
+    description: Disabled.
+    value: 0
+  - name: Cmp0ie1
+    description: Enabled.
+    value: 1
+enum/Cmp0irq:
+  bit_size: 1
+  variants:
+  - name: Cmp0irq0
+    description: No match has occurred (the position counter does not match the COMP0 value).
+    value: 0
+  - name: Cmp0irq1
+    description: COMP match has occurred (the position counter matches the COMP0 value).
+    value: 1
+enum/Cmp1f:
+  bit_size: 1
+  variants:
+  - name: Cmp1f0
+    description: When the position counter is less than value of COMP1 register.
+    value: 0
+  - name: Cmp1f1
+    description: When the position counter is greater or equal than value of COMP1 register.
+    value: 1
+enum/Cmp1ie:
+  bit_size: 1
+  variants:
+  - name: Cmp1ie0
+    description: Disabled.
+    value: 0
+  - name: Cmp1ie1
+    description: Enabled.
+    value: 1
+enum/Cmp1irq:
+  bit_size: 1
+  variants:
+  - name: Cmp1irq0
+    description: No match has occurred (the position counter does not match the COMP1 value).
+    value: 0
+  - name: Cmp1irq1
+    description: COMP1 match has occurred (the position counter matches the COMP1 value).
+    value: 1
+enum/Cmp2f:
+  bit_size: 1
+  variants:
+  - name: Cmp2f0
+    description: When the position counter is less than value of COMP2 register.
+    value: 0
+  - name: Cmp2f1
+    description: When the position counter is greater or equal than value of COMP2 register.
+    value: 1
+enum/Cmp2ie:
+  bit_size: 1
+  variants:
+  - name: Cmp2ie0
+    description: Disabled.
+    value: 0
+  - name: Cmp2ie1
+    description: Enabled.
+    value: 1
+enum/Cmp2irq:
+  bit_size: 1
+  variants:
+  - name: Cmp2irq0
+    description: No match has occurred (the position counter does not match the COMP2 value).
+    value: 0
+  - name: Cmp2irq1
+    description: COMP2 match has occurred (the position counter matches the COMP2 value).
+    value: 1
+enum/Cmp3f:
+  bit_size: 1
+  variants:
+  - name: Cmp3f0
+    description: When the position counter value is less than value of COMP3 register.
+    value: 0
+  - name: Cmp3f1
+    description: When the position counter is greater or equal than value of COMP3 register.
+    value: 1
+enum/Cmp3ie:
+  bit_size: 1
+  variants:
+  - name: Cmp3ie0
+    description: Disabled.
+    value: 0
+  - name: Cmp3ie1
+    description: Enabled.
+    value: 1
+enum/Cmp3irq:
+  bit_size: 1
+  variants:
+  - name: Cmp3irq0
+    description: No match has occurred (the position counter does not match the COMP3 value).
+    value: 0
+  - name: Cmp3irq1
+    description: COMP3 match has occurred (the position counter matches the COMP3 value).
+    value: 1
+enum/Cmpf0:
+  bit_size: 1
+  variants:
+  - name: Cmpf00
+    description: When the position counter is less than value of COMP0 register.
+    value: 0
+  - name: Cmpf01
+    description: When the position counter is greater or equal than value of COMP0 register.
+    value: 1
+enum/Dir:
+  bit_size: 1
+  variants:
+  - name: Dir0
+    description: Current count was in the down direction.
+    value: 0
+  - name: Dir1
+    description: Current count was in the up direction.
+    value: 1
+enum/Dirie:
+  bit_size: 1
+  variants:
+  - name: Dirie0
+    description: Disabled.
+    value: 0
+  - name: Dirie1
+    description: Enabled.
+    value: 1
+enum/Dirirq:
+  bit_size: 1
+  variants:
+  - name: Dirirq0
+    description: Count direction unchanged.
+    value: 0
+  - name: Dirirq1
+    description: Count direction changed.
+    value: 1
+enum/Dmaen:
+  bit_size: 1
+  variants:
+  - name: Dmaen0
+    description: DMA is disabled.
+    value: 0
+  - name: Dmaen1
+    description: DMA is enabled. DMA request asserts automatically when the values in the outer-set of buffered compare registers (UCOMP0/LCOMP0;UCOMP1/LCOMP1;UCOMP2/LCOMP2;UCOMP3/LCOMP3), initial registers(UINIT/LINIT) and modulus registers (UMOD/LMOD) are loaded into the inner-set of buffer and then LDOK is cleared automatically. After the completion of this DMA transfer, LDOK is set automatically, it ensures outer-set values can be loaded into inner-set which in turn triggers DMA again.
+    value: 1
+enum/Emip:
+  bit_size: 1
+  variants:
+  - name: Emip0
+    description: disables the position counter to be initialized by Index Event Edge Mark.
+    value: 0
+  - name: Emip1
+    description: enables the position counter to be initialized by Index Event Edge Mark.
+    value: 1
+enum/FiltCs:
+  bit_size: 1
+  variants:
+  - name: FiltCs0
+    description: Peripheral Clock.
+    value: 0
+  - name: FiltCs1
+    description: Prescaled peripheral clock by PRSC.
+    value: 1
+enum/Hie:
+  bit_size: 1
+  variants:
+  - name: Hie0
+    description: Disabled.
+    value: 0
+  - name: Hie1
+    description: Enabled.
+    value: 1
+enum/Hip:
+  bit_size: 1
+  variants:
+  - name: Hip0
+    description: No action.
+    value: 0
+  - name: Hip1
+    description: HOME signal initializes the position counter.
+    value: 1
+enum/Hirq:
+  bit_size: 1
+  variants:
+  - name: Hirq0
+    description: No transition on the HOME/ENABLE signal has occurred.
+    value: 0
+  - name: Hirq1
+    description: A transition on the HOME/ENABLE signal has occurred.
+    value: 1
+enum/Hne:
+  bit_size: 1
+  variants:
+  - name: Hne0
+    description: When CTRL[OPMODE] = 0,use HOME positive edge to trigger initialization of position counters. When CTRL[OPMODE] = 1,use ENABLE high level to enable POS/POSD/WDG/REV counters.
+    value: 0
+  - name: Hne1
+    description: When CTRL[OPMODE] = 0,use HOME negative edge to trigger initialization of position counters. When CTRL[OPMODE] = 1,use ENABLE low level to enable POS/POSD/WDG/REV counters.
+    value: 1
+enum/Initpos:
+  bit_size: 1
+  variants:
+  - name: Initpos0
+    description: Don't initialize position counter on rising edge of TRIGGER.
+    value: 0
+  - name: Initpos1
+    description: Initialize position counter on rising edge of TRIGGER.
+    value: 1
+enum/Ldmod:
+  bit_size: 1
+  variants:
+  - name: Ldmod0
+    description: Buffered registers are loaded and take effect immediately upon CTRL[LDOK] is set.
+    value: 0
+  - name: Ldmod1
+    description: Buffered registers are loaded and take effect at the next roll-over or roll-under if CTRL[LDOK] is set.
+    value: 1
+enum/Ldok:
+  bit_size: 1
+  variants:
+  - name: Ldok0
+    description: No loading action taken. Users can write new values to buffered registers (writing into outer-set of these buffered registers).
+    value: 0
+  - name: Ldok1
+    description: Outer-set values are ready to be loaded into inner-set and take effect. The loading time point depends on CTRL2[LDMOD].
+    value: 1
+enum/Once:
+  bit_size: 1
+  variants:
+  - name: Once0
+    description: Position counter counts repeatedly.
+    value: 0
+  - name: Once1
+    description: Position counter counts until roll-over or roll-under, then stop.
+    value: 1
+enum/Opmode:
+  bit_size: 1
+  variants:
+  - name: Opmode0
+    description: 'Decode Mode: Input nodes INDEX/PRESET and HOME/ENABLE are assigned to function of INDEX and HOME.'
+    value: 0
+  - name: Opmode1
+    description: 'Count Mode: Input nodes INDEX/PRESET and HOME/ENABLE are assigned to functions of PRESET and ENABLE. In this mode: (1)only when ENABLE=1, all counters (position/position difference/revolution/watchdog) can run, when ENABLE=0, all counters (position/position difference/revolution/watchdog) can''t run. (2) the rising edge of PRESET input can initialize position/revolution/watchdog counters (position counter initialization also need referring to bit CTRL[REV]).'
+    value: 1
+enum/Outctl:
+  bit_size: 1
+  variants:
+  - name: Outctl0
+    description: POS_MATCH[x](x range is 0-3) is asserted when the Position Counter is equal to according compare value (UCOMPx/LCOMPx)(x range is 0-3), and de-asserted when the Position Counter not equal to the compare value (UCOMPx/LCOMPx)(x range is 0-3).
+    value: 0
+  - name: Outctl1
+    description: All POS_MATCH[x](x range is 0-3) are asserted a pulse, when the UPOS, LPOS, REV, or POSD registers are read.
+    value: 1
+enum/Ph1:
+  bit_size: 1
+  variants:
+  - name: Ph10
+    description: Standard quadrature decoder, where PHASEA and PHASEB represent a two-phase quadrature signal.
+    value: 0
+  - name: Ph11
+    description: Single phase mode, bypass the quadrature decoder, refer to CTRL2[CMODE] description.
+    value: 1
+enum/Pmen:
+  bit_size: 1
+  variants:
+  - name: Pmen0
+    description: Period measurement functions are not used. POSD is loaded to POSDH and then cleared whenever POSD, UPOS, LPOS or REV is read.
+    value: 0
+  - name: Pmen1
+    description: Period measurement functions are used. POSD is loaded into POSDH and then cleared only when POSD is read.
+    value: 1
+enum/Qdn:
+  bit_size: 1
+  variants:
+  - name: Qdn0
+    description: Generates a positive quadrature decoder signal.
+    value: 0
+  - name: Qdn1
+    description: Generates a negative quadrature decoder signal.
+    value: 1
+enum/Reverse:
+  bit_size: 1
+  variants:
+  - name: Rev0
+    description: Count normally and the position counter initialization uses upper/lower initialization register UINIT/LINIT.
+    value: 0
+  - name: Rev1
+    description: Count in the reverse direction and the position counter initialization uses upper/lower modulus register UMOD/LMOD.
+    value: 1
+enum/Revmod:
+  bit_size: 1
+  variants:
+  - name: Revmod0
+    description: Use INDEX pulse to increment/decrement revolution counter (REV).
+    value: 0
+  - name: Revmod1
+    description: Use modulus counting roll-over/under to increment/decrement revolution counter (REV).
+    value: 1
+enum/Roie:
+  bit_size: 1
+  variants:
+  - name: Roie
+    description: Disabled.
+    value: 0
+  - name: Roie1
+    description: Enabled.
+    value: 1
+enum/Roirq:
+  bit_size: 1
+  variants:
+  - name: Roirq0
+    description: No roll-over has occurred.
+    value: 0
+  - name: Roirq1
+    description: Roll-over has occurred.
+    value: 1
+enum/Ruie:
+  bit_size: 1
+  variants:
+  - name: Ruie0
+    description: Disabled.
+    value: 0
+  - name: Ruie1
+    description: Enabled.
+    value: 1
+enum/Ruirq:
+  bit_size: 1
+  variants:
+  - name: Ruirq0
+    description: No roll-under has occurred.
+    value: 0
+  - name: Ruirq1
+    description: Roll-under has occurred.
+    value: 1
+enum/Sabie:
+  bit_size: 1
+  variants:
+  - name: Sabie0
+    description: Disabled.
+    value: 0
+  - name: Sabie1
+    description: Enabled.
+    value: 1
+enum/Sabirq:
+  bit_size: 1
+  variants:
+  - name: Sabirq0
+    description: No simultaneous change of PHASEA and PHASEB has occurred.
+    value: 0
+  - name: Sabirq1
+    description: A simultaneous change of PHASEA and PHASEB has occurred.
+    value: 1
+enum/Swip:
+  bit_size: 1
+  variants:
+  - name: Swip0
+    description: No action.
+    value: 0
+  - name: Swip1
+    description: Initialize position counter.
+    value: 1
+enum/Tce:
+  bit_size: 1
+  variants:
+  - name: Tce0
+    description: Disabled.
+    value: 0
+  - name: Tce1
+    description: Enabled.
+    value: 1
+enum/Ten:
+  bit_size: 1
+  variants:
+  - name: Ten0
+    description: Disabled.
+    value: 0
+  - name: Ten1
+    description: Enabled.
+    value: 1
+enum/Wde:
+  bit_size: 1
+  variants:
+  - name: Wde0
+    description: Disabled.
+    value: 0
+  - name: Wde1
+    description: Enabled.
+    value: 1
+enum/Wdie:
+  bit_size: 1
+  variants:
+  - name: Wdie0
+    description: Disabled.
+    value: 0
+  - name: Wdie1
+    description: Enabled.
+    value: 1
+enum/Wdirq:
+  bit_size: 1
+  variants:
+  - name: Wdirq0
+    description: No Watchdog timeout interrupt has occurred.
+    value: 0
+  - name: Wdirq1
+    description: Watchdog timeout interrupt has occurred.
+    value: 1
+enum/Xie:
+  bit_size: 1
+  variants:
+  - name: Xie0
+    description: Disabled.
+    value: 0
+  - name: Xie1
+    description: Enabled.
+    value: 1
+enum/Xip:
+  bit_size: 1
+  variants:
+  - name: Xip0
+    description: INDEX pulse does not initialize the position counter.
+    value: 0
+  - name: Xip1
+    description: INDEX pulse initializes the position counter.
+    value: 1
+enum/Xirq:
+  bit_size: 1
+  variants:
+  - name: Xirq0
+    description: INDEX/PRESET pulse has not occurred.
+    value: 0
+  - name: Xirq1
+    description: INDEX/PRESET pulse has occurred.
+    value: 1
+enum/Xne:
+  bit_size: 1
+  variants:
+  - name: Xne0
+    description: Use positive edge of INDEX/PRESET pulse.
+    value: 0
+  - name: Xne1
+    description: Use negative edge of INDEX/PRESET pulse.
+    value: 1

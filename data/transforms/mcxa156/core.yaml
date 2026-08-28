@@ -1,0 +1,17 @@
+transforms:
+  # These architectural blocks are supplied by cortex-m, like NVIC and SCB.
+  - !DeleteEnumsUsedIn
+    fieldsets: (s_cn_scb|sys_tick)::.*
+
+  - !DeleteRegisters
+    block: (s_cn_scb|sys_tick)::.*
+    from: .*
+
+  - !Delete
+    from: (s_cn_scb|sys_tick)::.*
+
+  - !Delete
+    from: s_cn_scb::SCnScb
+
+  - !Delete
+    from: sys_tick::SysTick

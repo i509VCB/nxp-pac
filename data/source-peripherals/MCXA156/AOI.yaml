@@ -1,0 +1,1355 @@
+block/Aoi:
+  description: AOI.
+  items:
+  - name: bfcrt010
+    description: Boolean Function Term 0 and 1 Configuration for EVENT0.
+    byte_offset: 0
+    bit_size: 16
+    fieldset: Bfcrt010
+  - name: bfcrt230
+    description: Boolean Function Term 2 and 3 Configuration for EVENT0.
+    byte_offset: 2
+    bit_size: 16
+    fieldset: Bfcrt230
+  - name: bfcrt011
+    description: Boolean Function Term 0 and 1 Configuration for EVENT1.
+    byte_offset: 4
+    bit_size: 16
+    fieldset: Bfcrt011
+  - name: bfcrt231
+    description: Boolean Function Term 2 and 3 Configuration for EVENT1.
+    byte_offset: 6
+    bit_size: 16
+    fieldset: Bfcrt231
+  - name: bfcrt012
+    description: Boolean Function Term 0 and 1 Configuration for EVENT2.
+    byte_offset: 8
+    bit_size: 16
+    fieldset: Bfcrt012
+  - name: bfcrt232
+    description: Boolean Function Term 2 and 3 Configuration for EVENT2.
+    byte_offset: 10
+    bit_size: 16
+    fieldset: Bfcrt232
+  - name: bfcrt013
+    description: Boolean Function Term 0 and 1 Configuration for EVENT3.
+    byte_offset: 12
+    bit_size: 16
+    fieldset: Bfcrt013
+  - name: bfcrt233
+    description: Boolean Function Term 2 and 3 Configuration for EVENT3.
+    byte_offset: 14
+    bit_size: 16
+    fieldset: Bfcrt233
+fieldset/Bfcrt010:
+  description: Boolean Function Term 0 and 1 Configuration for EVENT0.
+  bit_size: 16
+  fields:
+  - name: pt1_dc
+    description: Product Term 1, Input D Configuration.
+    bit_offset: 0
+    bit_size: 2
+    enum: Bfcrt010Pt1Dc
+  - name: pt1_cc
+    description: Product Term 1, Input C Configuration.
+    bit_offset: 2
+    bit_size: 2
+    enum: Bfcrt010Pt1Cc
+  - name: pt1_bc
+    description: Product Term 1, Input B Configuration.
+    bit_offset: 4
+    bit_size: 2
+    enum: Bfcrt010Pt1Bc
+  - name: pt1_ac
+    description: Product Term 1, Input A Configuration.
+    bit_offset: 6
+    bit_size: 2
+    enum: Bfcrt010Pt1Ac
+  - name: pt0_dc
+    description: Product Term 0, Input D Configuration.
+    bit_offset: 8
+    bit_size: 2
+    enum: Bfcrt010Pt0Dc
+  - name: pt0_cc
+    description: Product Term 0, Input C Configuration.
+    bit_offset: 10
+    bit_size: 2
+    enum: Bfcrt010Pt0Cc
+  - name: pt0_bc
+    description: Product Term 0, Input B Configuration.
+    bit_offset: 12
+    bit_size: 2
+    enum: Bfcrt010Pt0Bc
+  - name: pt0_ac
+    description: Product Term 0, Input A Configuration.
+    bit_offset: 14
+    bit_size: 2
+    enum: Bfcrt010Pt0Ac
+fieldset/Bfcrt011:
+  description: Boolean Function Term 0 and 1 Configuration for EVENT1.
+  bit_size: 16
+  fields:
+  - name: pt1_dc
+    description: Product Term 1, Input D Configuration.
+    bit_offset: 0
+    bit_size: 2
+    enum: Bfcrt011Pt1Dc
+  - name: pt1_cc
+    description: Product Term 1, Input C Configuration.
+    bit_offset: 2
+    bit_size: 2
+    enum: Bfcrt011Pt1Cc
+  - name: pt1_bc
+    description: Product Term 1, Input B Configuration.
+    bit_offset: 4
+    bit_size: 2
+    enum: Bfcrt011Pt1Bc
+  - name: pt1_ac
+    description: Product Term 1, Input A Configuration.
+    bit_offset: 6
+    bit_size: 2
+    enum: Bfcrt011Pt1Ac
+  - name: pt0_dc
+    description: Product Term 0, Input D Configuration.
+    bit_offset: 8
+    bit_size: 2
+    enum: Bfcrt011Pt0Dc
+  - name: pt0_cc
+    description: Product Term 0, Input C Configuration.
+    bit_offset: 10
+    bit_size: 2
+    enum: Bfcrt011Pt0Cc
+  - name: pt0_bc
+    description: Product Term 0, Input B Configuration.
+    bit_offset: 12
+    bit_size: 2
+    enum: Bfcrt011Pt0Bc
+  - name: pt0_ac
+    description: Product Term 0, Input A Configuration.
+    bit_offset: 14
+    bit_size: 2
+    enum: Bfcrt011Pt0Ac
+fieldset/Bfcrt012:
+  description: Boolean Function Term 0 and 1 Configuration for EVENT2.
+  bit_size: 16
+  fields:
+  - name: pt1_dc
+    description: Product Term 1, Input D Configuration.
+    bit_offset: 0
+    bit_size: 2
+    enum: Bfcrt012Pt1Dc
+  - name: pt1_cc
+    description: Product Term 1, Input C Configuration.
+    bit_offset: 2
+    bit_size: 2
+    enum: Bfcrt012Pt1Cc
+  - name: pt1_bc
+    description: Product Term 1, Input B Configuration.
+    bit_offset: 4
+    bit_size: 2
+    enum: Bfcrt012Pt1Bc
+  - name: pt1_ac
+    description: Product Term 1, Input A Configuration.
+    bit_offset: 6
+    bit_size: 2
+    enum: Bfcrt012Pt1Ac
+  - name: pt0_dc
+    description: Product Term 0, Input D Configuration.
+    bit_offset: 8
+    bit_size: 2
+    enum: Bfcrt012Pt0Dc
+  - name: pt0_cc
+    description: Product Term 0, Input C Configuration.
+    bit_offset: 10
+    bit_size: 2
+    enum: Bfcrt012Pt0Cc
+  - name: pt0_bc
+    description: Product Term 0, Input B Configuration.
+    bit_offset: 12
+    bit_size: 2
+    enum: Bfcrt012Pt0Bc
+  - name: pt0_ac
+    description: Product Term 0, Input A Configuration.
+    bit_offset: 14
+    bit_size: 2
+    enum: Bfcrt012Pt0Ac
+fieldset/Bfcrt013:
+  description: Boolean Function Term 0 and 1 Configuration for EVENT3.
+  bit_size: 16
+  fields:
+  - name: pt1_dc
+    description: Product Term 1, Input D Configuration.
+    bit_offset: 0
+    bit_size: 2
+    enum: Bfcrt013Pt1Dc
+  - name: pt1_cc
+    description: Product Term 1, Input C Configuration.
+    bit_offset: 2
+    bit_size: 2
+    enum: Bfcrt013Pt1Cc
+  - name: pt1_bc
+    description: Product Term 1, Input B Configuration.
+    bit_offset: 4
+    bit_size: 2
+    enum: Bfcrt013Pt1Bc
+  - name: pt1_ac
+    description: Product Term 1, Input A Configuration.
+    bit_offset: 6
+    bit_size: 2
+    enum: Bfcrt013Pt1Ac
+  - name: pt0_dc
+    description: Product Term 0, Input D Configuration.
+    bit_offset: 8
+    bit_size: 2
+    enum: Bfcrt013Pt0Dc
+  - name: pt0_cc
+    description: Product Term 0, Input C Configuration.
+    bit_offset: 10
+    bit_size: 2
+    enum: Bfcrt013Pt0Cc
+  - name: pt0_bc
+    description: Product Term 0, Input B Configuration.
+    bit_offset: 12
+    bit_size: 2
+    enum: Bfcrt013Pt0Bc
+  - name: pt0_ac
+    description: Product Term 0, Input A Configuration.
+    bit_offset: 14
+    bit_size: 2
+    enum: Bfcrt013Pt0Ac
+fieldset/Bfcrt230:
+  description: Boolean Function Term 2 and 3 Configuration for EVENT0.
+  bit_size: 16
+  fields:
+  - name: pt3_dc
+    description: Product Term 3, Input D Configuration.
+    bit_offset: 0
+    bit_size: 2
+    enum: Bfcrt230Pt3Dc
+  - name: pt3_cc
+    description: Product Term 3, Input C Configuration.
+    bit_offset: 2
+    bit_size: 2
+    enum: Bfcrt230Pt3Cc
+  - name: pt3_bc
+    description: Product Term 3, Input B Configuration.
+    bit_offset: 4
+    bit_size: 2
+    enum: Bfcrt230Pt3Bc
+  - name: pt3_ac
+    description: Product Term 3, Input A Configuration.
+    bit_offset: 6
+    bit_size: 2
+    enum: Bfcrt230Pt3Ac
+  - name: pt2_dc
+    description: Product Term 2, Input D Configuration.
+    bit_offset: 8
+    bit_size: 2
+    enum: Bfcrt230Pt2Dc
+  - name: pt2_cc
+    description: Product Term 2, Input C Configuration.
+    bit_offset: 10
+    bit_size: 2
+    enum: Bfcrt230Pt2Cc
+  - name: pt2_bc
+    description: Product Term 2, Input B Configuration.
+    bit_offset: 12
+    bit_size: 2
+    enum: Bfcrt230Pt2Bc
+  - name: pt2_ac
+    description: Product Term 2, Input A Configuration.
+    bit_offset: 14
+    bit_size: 2
+    enum: Bfcrt230Pt2Ac
+fieldset/Bfcrt231:
+  description: Boolean Function Term 2 and 3 Configuration for EVENT1.
+  bit_size: 16
+  fields:
+  - name: pt3_dc
+    description: Product Term 3, Input D Configuration.
+    bit_offset: 0
+    bit_size: 2
+    enum: Bfcrt231Pt3Dc
+  - name: pt3_cc
+    description: Product Term 3, Input C Configuration.
+    bit_offset: 2
+    bit_size: 2
+    enum: Bfcrt231Pt3Cc
+  - name: pt3_bc
+    description: Product Term 3, Input B Configuration.
+    bit_offset: 4
+    bit_size: 2
+    enum: Bfcrt231Pt3Bc
+  - name: pt3_ac
+    description: Product Term 3, Input A Configuration.
+    bit_offset: 6
+    bit_size: 2
+    enum: Bfcrt231Pt3Ac
+  - name: pt2_dc
+    description: Product Term 2, Input D Configuration.
+    bit_offset: 8
+    bit_size: 2
+    enum: Bfcrt231Pt2Dc
+  - name: pt2_cc
+    description: Product Term 2, Input C Configuration.
+    bit_offset: 10
+    bit_size: 2
+    enum: Bfcrt231Pt2Cc
+  - name: pt2_bc
+    description: Product Term 2, Input B Configuration.
+    bit_offset: 12
+    bit_size: 2
+    enum: Bfcrt231Pt2Bc
+  - name: pt2_ac
+    description: Product Term 2, Input A Configuration.
+    bit_offset: 14
+    bit_size: 2
+    enum: Bfcrt231Pt2Ac
+fieldset/Bfcrt232:
+  description: Boolean Function Term 2 and 3 Configuration for EVENT2.
+  bit_size: 16
+  fields:
+  - name: pt3_dc
+    description: Product Term 3, Input D Configuration.
+    bit_offset: 0
+    bit_size: 2
+    enum: Bfcrt232Pt3Dc
+  - name: pt3_cc
+    description: Product Term 3, Input C Configuration.
+    bit_offset: 2
+    bit_size: 2
+    enum: Bfcrt232Pt3Cc
+  - name: pt3_bc
+    description: Product Term 3, Input B Configuration.
+    bit_offset: 4
+    bit_size: 2
+    enum: Bfcrt232Pt3Bc
+  - name: pt3_ac
+    description: Product Term 3, Input A Configuration.
+    bit_offset: 6
+    bit_size: 2
+    enum: Bfcrt232Pt3Ac
+  - name: pt2_dc
+    description: Product Term 2, Input D Configuration.
+    bit_offset: 8
+    bit_size: 2
+    enum: Bfcrt232Pt2Dc
+  - name: pt2_cc
+    description: Product Term 2, Input C Configuration.
+    bit_offset: 10
+    bit_size: 2
+    enum: Bfcrt232Pt2Cc
+  - name: pt2_bc
+    description: Product Term 2, Input B Configuration.
+    bit_offset: 12
+    bit_size: 2
+    enum: Bfcrt232Pt2Bc
+  - name: pt2_ac
+    description: Product Term 2, Input A Configuration.
+    bit_offset: 14
+    bit_size: 2
+    enum: Bfcrt232Pt2Ac
+fieldset/Bfcrt233:
+  description: Boolean Function Term 2 and 3 Configuration for EVENT3.
+  bit_size: 16
+  fields:
+  - name: pt3_dc
+    description: Product Term 3, Input D Configuration.
+    bit_offset: 0
+    bit_size: 2
+    enum: Bfcrt233Pt3Dc
+  - name: pt3_cc
+    description: Product Term 3, Input C Configuration.
+    bit_offset: 2
+    bit_size: 2
+    enum: Bfcrt233Pt3Cc
+  - name: pt3_bc
+    description: Product Term 3, Input B Configuration.
+    bit_offset: 4
+    bit_size: 2
+    enum: Bfcrt233Pt3Bc
+  - name: pt3_ac
+    description: Product Term 3, Input A Configuration.
+    bit_offset: 6
+    bit_size: 2
+    enum: Bfcrt233Pt3Ac
+  - name: pt2_dc
+    description: Product Term 2, Input D Configuration.
+    bit_offset: 8
+    bit_size: 2
+    enum: Bfcrt233Pt2Dc
+  - name: pt2_cc
+    description: Product Term 2, Input C Configuration.
+    bit_offset: 10
+    bit_size: 2
+    enum: Bfcrt233Pt2Cc
+  - name: pt2_bc
+    description: Product Term 2, Input B Configuration.
+    bit_offset: 12
+    bit_size: 2
+    enum: Bfcrt233Pt2Bc
+  - name: pt2_ac
+    description: Product Term 2, Input A Configuration.
+    bit_offset: 14
+    bit_size: 2
+    enum: Bfcrt233Pt2Ac
+enum/Bfcrt010Pt0Ac:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input A to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input A.
+    value: 1
+  - name: Complement
+    description: Complement input A.
+    value: 2
+  - name: Force1
+    description: Force input A to become 1.
+    value: 3
+enum/Bfcrt010Pt0Bc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input B to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input B.
+    value: 1
+  - name: Complement
+    description: Complement input B.
+    value: 2
+  - name: Force1
+    description: Force input B to become 1.
+    value: 3
+enum/Bfcrt010Pt0Cc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input C to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input C.
+    value: 1
+  - name: Complement
+    description: Complement input C.
+    value: 2
+  - name: Force1
+    description: Force input C to become 1.
+    value: 3
+enum/Bfcrt010Pt0Dc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input D to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input D.
+    value: 1
+  - name: Complement
+    description: Complement input D.
+    value: 2
+  - name: Force1
+    description: Force input D to become 1.
+    value: 3
+enum/Bfcrt010Pt1Ac:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input A to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input A.
+    value: 1
+  - name: Complement
+    description: Complement input A.
+    value: 2
+  - name: Force1
+    description: Force input A to become 1.
+    value: 3
+enum/Bfcrt010Pt1Bc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input B to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input B.
+    value: 1
+  - name: Complement
+    description: Complement input B.
+    value: 2
+  - name: Force1
+    description: Force input B to become 1.
+    value: 3
+enum/Bfcrt010Pt1Cc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input C to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input C.
+    value: 1
+  - name: Complement
+    description: Complement input C.
+    value: 2
+  - name: Force1
+    description: Force input C to become 1.
+    value: 3
+enum/Bfcrt010Pt1Dc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input D to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input D.
+    value: 1
+  - name: Complement
+    description: Complement input D.
+    value: 2
+  - name: Force1
+    description: Force input D to become 1.
+    value: 3
+enum/Bfcrt011Pt0Ac:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input A to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input A.
+    value: 1
+  - name: Complement
+    description: Complement input A.
+    value: 2
+  - name: Force1
+    description: Force input A to become 1.
+    value: 3
+enum/Bfcrt011Pt0Bc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input B to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input B.
+    value: 1
+  - name: Complement
+    description: Complement input B.
+    value: 2
+  - name: Force1
+    description: Force input B to become 1.
+    value: 3
+enum/Bfcrt011Pt0Cc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input C to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input C.
+    value: 1
+  - name: Complement
+    description: Complement input C.
+    value: 2
+  - name: Force1
+    description: Force input C to become 1.
+    value: 3
+enum/Bfcrt011Pt0Dc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input D to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input D.
+    value: 1
+  - name: Complement
+    description: Complement input D.
+    value: 2
+  - name: Force1
+    description: Force input D to become 1.
+    value: 3
+enum/Bfcrt011Pt1Ac:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input A to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input A.
+    value: 1
+  - name: Complement
+    description: Complement input A.
+    value: 2
+  - name: Force1
+    description: Force input A to become 1.
+    value: 3
+enum/Bfcrt011Pt1Bc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input B to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input B.
+    value: 1
+  - name: Complement
+    description: Complement input B.
+    value: 2
+  - name: Force1
+    description: Force input B to become 1.
+    value: 3
+enum/Bfcrt011Pt1Cc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input C to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input C.
+    value: 1
+  - name: Complement
+    description: Complement input C.
+    value: 2
+  - name: Force1
+    description: Force input C to become 1.
+    value: 3
+enum/Bfcrt011Pt1Dc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input D to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input D.
+    value: 1
+  - name: Complement
+    description: Complement input D.
+    value: 2
+  - name: Force1
+    description: Force input D to become 1.
+    value: 3
+enum/Bfcrt012Pt0Ac:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input A to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input A.
+    value: 1
+  - name: Complement
+    description: Complement input A.
+    value: 2
+  - name: Force1
+    description: Force input A to become 1.
+    value: 3
+enum/Bfcrt012Pt0Bc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input B to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input B.
+    value: 1
+  - name: Complement
+    description: Complement input B.
+    value: 2
+  - name: Force1
+    description: Force input B to become 1.
+    value: 3
+enum/Bfcrt012Pt0Cc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input C to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input C.
+    value: 1
+  - name: Complement
+    description: Complement input C.
+    value: 2
+  - name: Force1
+    description: Force input C to become 1.
+    value: 3
+enum/Bfcrt012Pt0Dc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input D to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input D.
+    value: 1
+  - name: Complement
+    description: Complement input D.
+    value: 2
+  - name: Force1
+    description: Force input D to become 1.
+    value: 3
+enum/Bfcrt012Pt1Ac:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input A to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input A.
+    value: 1
+  - name: Complement
+    description: Complement input A.
+    value: 2
+  - name: Force1
+    description: Force input A to become 1.
+    value: 3
+enum/Bfcrt012Pt1Bc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input B to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input B.
+    value: 1
+  - name: Complement
+    description: Complement input B.
+    value: 2
+  - name: Force1
+    description: Force input B to become 1.
+    value: 3
+enum/Bfcrt012Pt1Cc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input C to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input C.
+    value: 1
+  - name: Complement
+    description: Complement input C.
+    value: 2
+  - name: Force1
+    description: Force input C to become 1.
+    value: 3
+enum/Bfcrt012Pt1Dc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input D to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input D.
+    value: 1
+  - name: Complement
+    description: Complement input D.
+    value: 2
+  - name: Force1
+    description: Force input D to become 1.
+    value: 3
+enum/Bfcrt013Pt0Ac:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input A to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input A.
+    value: 1
+  - name: Complement
+    description: Complement input A.
+    value: 2
+  - name: Force1
+    description: Force input A to become 1.
+    value: 3
+enum/Bfcrt013Pt0Bc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input B to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input B.
+    value: 1
+  - name: Complement
+    description: Complement input B.
+    value: 2
+  - name: Force1
+    description: Force input B to become 1.
+    value: 3
+enum/Bfcrt013Pt0Cc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input C to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input C.
+    value: 1
+  - name: Complement
+    description: Complement input C.
+    value: 2
+  - name: Force1
+    description: Force input C to become 1.
+    value: 3
+enum/Bfcrt013Pt0Dc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input D to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input D.
+    value: 1
+  - name: Complement
+    description: Complement input D.
+    value: 2
+  - name: Force1
+    description: Force input D to become 1.
+    value: 3
+enum/Bfcrt013Pt1Ac:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input A to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input A.
+    value: 1
+  - name: Complement
+    description: Complement input A.
+    value: 2
+  - name: Force1
+    description: Force input A to become 1.
+    value: 3
+enum/Bfcrt013Pt1Bc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input B to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input B.
+    value: 1
+  - name: Complement
+    description: Complement input B.
+    value: 2
+  - name: Force1
+    description: Force input B to become 1.
+    value: 3
+enum/Bfcrt013Pt1Cc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input C to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input C.
+    value: 1
+  - name: Complement
+    description: Complement input C.
+    value: 2
+  - name: Force1
+    description: Force input C to become 1.
+    value: 3
+enum/Bfcrt013Pt1Dc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input D to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input D.
+    value: 1
+  - name: Complement
+    description: Complement input D.
+    value: 2
+  - name: Force1
+    description: Force input D to become 1.
+    value: 3
+enum/Bfcrt230Pt2Ac:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input A to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input A.
+    value: 1
+  - name: Complement
+    description: Complement input A.
+    value: 2
+  - name: Force1
+    description: Force input A to become 1.
+    value: 3
+enum/Bfcrt230Pt2Bc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input B to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input B.
+    value: 1
+  - name: Complement
+    description: Complement input B.
+    value: 2
+  - name: Force1
+    description: Force input B to become 1.
+    value: 3
+enum/Bfcrt230Pt2Cc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input C to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input C.
+    value: 1
+  - name: Complement
+    description: Complement input C.
+    value: 2
+  - name: Force1
+    description: Force input C to become 1.
+    value: 3
+enum/Bfcrt230Pt2Dc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input D to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input D.
+    value: 1
+  - name: Complement
+    description: Complement input D.
+    value: 2
+  - name: Force1
+    description: Force input D to become 1.
+    value: 3
+enum/Bfcrt230Pt3Ac:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input A to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input A.
+    value: 1
+  - name: Complement
+    description: Complement input A.
+    value: 2
+  - name: Force1
+    description: Force input to become 1.
+    value: 3
+enum/Bfcrt230Pt3Bc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input B to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input B.
+    value: 1
+  - name: Complement
+    description: Complement input B.
+    value: 2
+  - name: Force1
+    description: Force input B to become 1.
+    value: 3
+enum/Bfcrt230Pt3Cc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input C to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input C.
+    value: 1
+  - name: Complement
+    description: Complement input C.
+    value: 2
+  - name: Force1
+    description: Force input C to become 1.
+    value: 3
+enum/Bfcrt230Pt3Dc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input D to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input D.
+    value: 1
+  - name: Complement
+    description: Complement input D.
+    value: 2
+  - name: Force1
+    description: Force input D to become 1.
+    value: 3
+enum/Bfcrt231Pt2Ac:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input A to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input A.
+    value: 1
+  - name: Complement
+    description: Complement input A.
+    value: 2
+  - name: Force1
+    description: Force input A to become 1.
+    value: 3
+enum/Bfcrt231Pt2Bc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input B to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input B.
+    value: 1
+  - name: Complement
+    description: Complement input B.
+    value: 2
+  - name: Force1
+    description: Force input B to become 1.
+    value: 3
+enum/Bfcrt231Pt2Cc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input C to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input C.
+    value: 1
+  - name: Complement
+    description: Complement input C.
+    value: 2
+  - name: Force1
+    description: Force input C to become 1.
+    value: 3
+enum/Bfcrt231Pt2Dc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input D to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input D.
+    value: 1
+  - name: Complement
+    description: Complement input D.
+    value: 2
+  - name: Force1
+    description: Force input D to become 1.
+    value: 3
+enum/Bfcrt231Pt3Ac:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input A to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input A.
+    value: 1
+  - name: Complement
+    description: Complement input A.
+    value: 2
+  - name: Force1
+    description: Force input to become 1.
+    value: 3
+enum/Bfcrt231Pt3Bc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input B to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input B.
+    value: 1
+  - name: Complement
+    description: Complement input B.
+    value: 2
+  - name: Force1
+    description: Force input B to become 1.
+    value: 3
+enum/Bfcrt231Pt3Cc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input C to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input C.
+    value: 1
+  - name: Complement
+    description: Complement input C.
+    value: 2
+  - name: Force1
+    description: Force input C to become 1.
+    value: 3
+enum/Bfcrt231Pt3Dc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input D to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input D.
+    value: 1
+  - name: Complement
+    description: Complement input D.
+    value: 2
+  - name: Force1
+    description: Force input D to become 1.
+    value: 3
+enum/Bfcrt232Pt2Ac:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input A to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input A.
+    value: 1
+  - name: Complement
+    description: Complement input A.
+    value: 2
+  - name: Force1
+    description: Force input A to become 1.
+    value: 3
+enum/Bfcrt232Pt2Bc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input B to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input B.
+    value: 1
+  - name: Complement
+    description: Complement input B.
+    value: 2
+  - name: Force1
+    description: Force input B to become 1.
+    value: 3
+enum/Bfcrt232Pt2Cc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input C to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input C.
+    value: 1
+  - name: Complement
+    description: Complement input C.
+    value: 2
+  - name: Force1
+    description: Force input C to become 1.
+    value: 3
+enum/Bfcrt232Pt2Dc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input D to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input D.
+    value: 1
+  - name: Complement
+    description: Complement input D.
+    value: 2
+  - name: Force1
+    description: Force input D to become 1.
+    value: 3
+enum/Bfcrt232Pt3Ac:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input A to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input A.
+    value: 1
+  - name: Complement
+    description: Complement input A.
+    value: 2
+  - name: Force1
+    description: Force input to become 1.
+    value: 3
+enum/Bfcrt232Pt3Bc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input B to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input B.
+    value: 1
+  - name: Complement
+    description: Complement input B.
+    value: 2
+  - name: Force1
+    description: Force input B to become 1.
+    value: 3
+enum/Bfcrt232Pt3Cc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input C to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input C.
+    value: 1
+  - name: Complement
+    description: Complement input C.
+    value: 2
+  - name: Force1
+    description: Force input C to become 1.
+    value: 3
+enum/Bfcrt232Pt3Dc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input D to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input D.
+    value: 1
+  - name: Complement
+    description: Complement input D.
+    value: 2
+  - name: Force1
+    description: Force input D to become 1.
+    value: 3
+enum/Bfcrt233Pt2Ac:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input A to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input A.
+    value: 1
+  - name: Complement
+    description: Complement input A.
+    value: 2
+  - name: Force1
+    description: Force input A to become 1.
+    value: 3
+enum/Bfcrt233Pt2Bc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input B to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input B.
+    value: 1
+  - name: Complement
+    description: Complement input B.
+    value: 2
+  - name: Force1
+    description: Force input B to become 1.
+    value: 3
+enum/Bfcrt233Pt2Cc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input C to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input C.
+    value: 1
+  - name: Complement
+    description: Complement input C.
+    value: 2
+  - name: Force1
+    description: Force input C to become 1.
+    value: 3
+enum/Bfcrt233Pt2Dc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input D to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input D.
+    value: 1
+  - name: Complement
+    description: Complement input D.
+    value: 2
+  - name: Force1
+    description: Force input D to become 1.
+    value: 3
+enum/Bfcrt233Pt3Ac:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input A to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input A.
+    value: 1
+  - name: Complement
+    description: Complement input A.
+    value: 2
+  - name: Force1
+    description: Force input to become 1.
+    value: 3
+enum/Bfcrt233Pt3Bc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input B to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input B.
+    value: 1
+  - name: Complement
+    description: Complement input B.
+    value: 2
+  - name: Force1
+    description: Force input B to become 1.
+    value: 3
+enum/Bfcrt233Pt3Cc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input C to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input C.
+    value: 1
+  - name: Complement
+    description: Complement input C.
+    value: 2
+  - name: Force1
+    description: Force input C to become 1.
+    value: 3
+enum/Bfcrt233Pt3Dc:
+  bit_size: 2
+  variants:
+  - name: Force0
+    description: Force input D to become 0.
+    value: 0
+  - name: Pass
+    description: Pass input D.
+    value: 1
+  - name: Complement
+    description: Complement input D.
+    value: 2
+  - name: Force1
+    description: Force input D to become 1.
+    value: 3

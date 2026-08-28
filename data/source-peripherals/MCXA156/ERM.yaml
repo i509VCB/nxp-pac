@@ -1,0 +1,95 @@
+block/Erm:
+  description: Error Reporting Module.
+  items:
+  - name: cr0
+    description: ERM Configuration Register 0.
+    byte_offset: 0
+    fieldset: Cr0
+  - name: sr0
+    description: ERM Status Register 0.
+    byte_offset: 16
+    fieldset: Sr0
+  - name: ear0
+    description: ERM Memory 0 Error Address Register.
+    byte_offset: 256
+    access: Read
+    fieldset: Ear0
+  - name: syn0
+    description: ERM Memory 0 Syndrome Register.
+    byte_offset: 260
+    access: Read
+    fieldset: Syn0
+  - name: corr_err_cnt0
+    description: ERM Memory 0 Correctable Error Count Register.
+    byte_offset: 264
+    fieldset: CorrErrCnt0
+  - name: corr_err_cnt1
+    description: ERM Memory 1 Correctable Error Count Register.
+    byte_offset: 280
+    fieldset: CorrErrCnt1
+fieldset/CorrErrCnt0:
+  description: ERM Memory 0 Correctable Error Count Register.
+  fields:
+  - name: count
+    description: Memory n Correctable Error Count.
+    bit_offset: 0
+    bit_size: 8
+fieldset/CorrErrCnt1:
+  description: ERM Memory 1 Correctable Error Count Register.
+  fields:
+  - name: count
+    description: Memory n Correctable Error Count.
+    bit_offset: 0
+    bit_size: 8
+fieldset/Cr0:
+  description: ERM Configuration Register 0.
+  fields:
+  - name: encie1
+    description: ENCIE1.
+    bit_offset: 26
+    bit_size: 1
+  - name: escie1
+    description: ESCIE1.
+    bit_offset: 27
+    bit_size: 1
+  - name: encie0
+    description: ENCIE0.
+    bit_offset: 30
+    bit_size: 1
+  - name: escie0
+    description: ESCIE0.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Ear0:
+  description: ERM Memory 0 Error Address Register.
+  fields:
+  - name: ear
+    description: EAR.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Sr0:
+  description: ERM Status Register 0.
+  fields:
+  - name: nce1
+    description: NCE1.
+    bit_offset: 26
+    bit_size: 1
+  - name: sbc1
+    description: SBC1.
+    bit_offset: 27
+    bit_size: 1
+  - name: nce0
+    description: NCE0.
+    bit_offset: 30
+    bit_size: 1
+  - name: sbc0
+    description: SBC0.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Syn0:
+  description: ERM Memory 0 Syndrome Register.
+  fields:
+  - name: syndrome
+    description: SYNDROME.
+    bit_offset: 24
+    bit_size: 8

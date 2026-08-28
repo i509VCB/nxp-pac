@@ -1,0 +1,672 @@
+block/Mbc:
+  description: TRDC.
+  items:
+  - name: mbc0_mem0_glbcfg
+    description: MBC Global Configuration Register.
+    byte_offset: 0
+    access: Read
+    fieldset: Mem0Glbcfg
+  - name: mbc0_mem1_glbcfg
+    description: MBC Global Configuration Register.
+    byte_offset: 4
+    access: Read
+    fieldset: Mem1Glbcfg
+  - name: mbc0_mem2_glbcfg
+    description: MBC Global Configuration Register.
+    byte_offset: 8
+    access: Read
+    fieldset: Mem2Glbcfg
+  - name: mbc0_mem3_glbcfg
+    description: MBC Global Configuration Register.
+    byte_offset: 12
+    fieldset: Mem3Glbcfg
+  - name: mbc0_memn_glbac0
+    description: MBC Global Access Control.
+    byte_offset: 32
+    fieldset: MemnGlbac0
+  - name: mbc0_memn_glbac1
+    description: MBC Global Access Control.
+    byte_offset: 36
+    fieldset: MemnGlbac1
+  - name: mbc0_memn_glbac2
+    description: MBC Global Access Control.
+    byte_offset: 40
+    fieldset: MemnGlbac2
+  - name: mbc0_memn_glbac3
+    description: MBC Global Access Control.
+    byte_offset: 44
+    fieldset: MemnGlbac3
+  - name: mbc0_memn_glbac4
+    description: MBC Global Access Control.
+    byte_offset: 48
+    fieldset: MemnGlbac4
+  - name: mbc0_memn_glbac5
+    description: MBC Global Access Control.
+    byte_offset: 52
+    fieldset: MemnGlbac5
+  - name: mbc0_memn_glbac6
+    description: MBC Global Access Control.
+    byte_offset: 56
+    fieldset: MemnGlbac6
+  - name: mbc0_memn_glbac7
+    description: MBC Global Access Control.
+    byte_offset: 60
+    fieldset: MemnGlbac7
+  - name: mbc0_dom0_mem0_blk_cfg_wn
+    description: MBC Memory Block Configuration Word.
+    array:
+      len: 8
+      stride: 4
+    byte_offset: 64
+    fieldset: MemnBlkCfgW
+  - name: mbc0_dom0_mem1_blk_cfg_w0
+    description: MBC Memory Block Configuration Word.
+    byte_offset: 384
+    fieldset: MemnBlkCfgW
+  - name: mbc0_dom0_mem2_blk_cfg_w0
+    description: MBC Memory Block Configuration Word.
+    byte_offset: 424
+    fieldset: MemnBlkCfgW
+fieldset/Mem0Glbcfg:
+  description: MBC Global Configuration Register.
+  fields:
+  - name: nblks
+    description: Number of blocks in this memory.
+    bit_offset: 0
+    bit_size: 10
+  - name: size_log2
+    description: Log2 size per block.
+    bit_offset: 16
+    bit_size: 5
+fieldset/Mem1Glbcfg:
+  description: MBC Global Configuration Register.
+  fields:
+  - name: nblks
+    description: Number of blocks in this memory.
+    bit_offset: 0
+    bit_size: 10
+  - name: size_log2
+    description: Log2 size per block.
+    bit_offset: 16
+    bit_size: 5
+fieldset/Mem2Glbcfg:
+  description: MBC Global Configuration Register.
+  fields:
+  - name: nblks
+    description: Number of blocks in this memory.
+    bit_offset: 0
+    bit_size: 10
+  - name: size_log2
+    description: Log2 size per block.
+    bit_offset: 16
+    bit_size: 5
+fieldset/Mem3Glbcfg:
+  description: MBC Global Configuration Register.
+  fields:
+  - name: nblks
+    description: Number of blocks in this memory.
+    bit_offset: 0
+    bit_size: 10
+  - name: size_log2
+    description: Log2 size per block.
+    bit_offset: 16
+    bit_size: 5
+  - name: clre
+    description: Clear Error.
+    bit_offset: 30
+    bit_size: 2
+fieldset/MemnBlkCfgW:
+  description: MBC Memory Block Configuration Word.
+  fields:
+  - name: mbacsel0
+    description: Memory Block Access Control Select for block B.
+    bit_offset: 0
+    bit_size: 3
+    enum: Mbacsel
+  - name: nse0
+    description: NonSecure Enable for block B.
+    bit_offset: 3
+    bit_size: 1
+    enum: Nse
+  - name: mbacsel1
+    description: Memory Block Access Control Select for block B.
+    bit_offset: 4
+    bit_size: 3
+    enum: Mbacsel
+  - name: nse1
+    description: NonSecure Enable for block B.
+    bit_offset: 7
+    bit_size: 1
+    enum: Nse
+  - name: mbacsel2
+    description: Memory Block Access Control Select for block B.
+    bit_offset: 8
+    bit_size: 3
+    enum: Mbacsel
+  - name: nse2
+    description: NonSecure Enable for block B.
+    bit_offset: 11
+    bit_size: 1
+    enum: Nse
+  - name: mbacsel3
+    description: Memory Block Access Control Select for block B.
+    bit_offset: 12
+    bit_size: 3
+    enum: Mbacsel
+  - name: nse3
+    description: NonSecure Enable for block B.
+    bit_offset: 15
+    bit_size: 1
+    enum: Nse
+  - name: mbacsel4
+    description: Memory Block Access Control Select for block B.
+    bit_offset: 16
+    bit_size: 3
+    enum: Mbacsel
+  - name: nse4
+    description: NonSecure Enable for block B.
+    bit_offset: 19
+    bit_size: 1
+    enum: Nse
+  - name: mbacsel5
+    description: Memory Block Access Control Select for block B.
+    bit_offset: 20
+    bit_size: 3
+    enum: Mbacsel
+  - name: nse5
+    description: NonSecure Enable for block B.
+    bit_offset: 23
+    bit_size: 1
+    enum: Nse
+  - name: mbacsel6
+    description: Memory Block Access Control Select for block B.
+    bit_offset: 24
+    bit_size: 3
+    enum: Mbacsel
+  - name: nse6
+    description: NonSecure Enable for block B.
+    bit_offset: 27
+    bit_size: 1
+    enum: Nse
+  - name: mbacsel7
+    description: Memory Block Access Control Select for block B.
+    bit_offset: 28
+    bit_size: 3
+    enum: Mbacsel
+  - name: nse7
+    description: NonSecure Enable for block B.
+    bit_offset: 31
+    bit_size: 1
+    enum: Nse
+fieldset/MemnGlbac0:
+  description: MBC Global Access Control.
+  fields:
+  - name: nux
+    description: NonsecureUser Execute.
+    bit_offset: 0
+    bit_size: 1
+  - name: nuw
+    description: NonsecureUser Write.
+    bit_offset: 1
+    bit_size: 1
+  - name: nur
+    description: NonsecureUser Read.
+    bit_offset: 2
+    bit_size: 1
+  - name: npx
+    description: NonsecurePriv Execute.
+    bit_offset: 4
+    bit_size: 1
+  - name: npw
+    description: NonsecurePriv Write.
+    bit_offset: 5
+    bit_size: 1
+  - name: npr
+    description: NonsecurePriv Read.
+    bit_offset: 6
+    bit_size: 1
+  - name: sux
+    description: SecureUser Execute.
+    bit_offset: 8
+    bit_size: 1
+  - name: suw
+    description: SecureUser Write.
+    bit_offset: 9
+    bit_size: 1
+  - name: sur
+    description: SecureUser Read.
+    bit_offset: 10
+    bit_size: 1
+  - name: spx
+    description: SecurePriv Execute.
+    bit_offset: 12
+    bit_size: 1
+  - name: spw
+    description: SecurePriv Write.
+    bit_offset: 13
+    bit_size: 1
+  - name: spr
+    description: SecurePriv Read.
+    bit_offset: 14
+    bit_size: 1
+fieldset/MemnGlbac1:
+  description: MBC Global Access Control.
+  fields:
+  - name: nux
+    description: NonsecureUser Execute.
+    bit_offset: 0
+    bit_size: 1
+  - name: nuw
+    description: NonsecureUser Write.
+    bit_offset: 1
+    bit_size: 1
+  - name: nur
+    description: NonsecureUser Read.
+    bit_offset: 2
+    bit_size: 1
+  - name: npx
+    description: NonsecurePriv Execute.
+    bit_offset: 4
+    bit_size: 1
+  - name: npw
+    description: NonsecurePriv Write.
+    bit_offset: 5
+    bit_size: 1
+  - name: npr
+    description: NonsecurePriv Read.
+    bit_offset: 6
+    bit_size: 1
+  - name: sux
+    description: SecureUser Execute.
+    bit_offset: 8
+    bit_size: 1
+  - name: suw
+    description: SecureUser Write.
+    bit_offset: 9
+    bit_size: 1
+  - name: sur
+    description: SecureUser Read.
+    bit_offset: 10
+    bit_size: 1
+  - name: spx
+    description: SecurePriv Execute.
+    bit_offset: 12
+    bit_size: 1
+  - name: spw
+    description: SecurePriv Write.
+    bit_offset: 13
+    bit_size: 1
+  - name: spr
+    description: SecurePriv Read.
+    bit_offset: 14
+    bit_size: 1
+  - name: lk
+    description: LOCK.
+    bit_offset: 31
+    bit_size: 1
+fieldset/MemnGlbac2:
+  description: MBC Global Access Control.
+  fields:
+  - name: nux
+    description: NonsecureUser Execute.
+    bit_offset: 0
+    bit_size: 1
+  - name: nuw
+    description: NonsecureUser Write.
+    bit_offset: 1
+    bit_size: 1
+  - name: nur
+    description: NonsecureUser Read.
+    bit_offset: 2
+    bit_size: 1
+  - name: npx
+    description: NonsecurePriv Execute.
+    bit_offset: 4
+    bit_size: 1
+  - name: npw
+    description: NonsecurePriv Write.
+    bit_offset: 5
+    bit_size: 1
+  - name: npr
+    description: NonsecurePriv Read.
+    bit_offset: 6
+    bit_size: 1
+  - name: sux
+    description: SecureUser Execute.
+    bit_offset: 8
+    bit_size: 1
+  - name: suw
+    description: SecureUser Write.
+    bit_offset: 9
+    bit_size: 1
+  - name: sur
+    description: SecureUser Read.
+    bit_offset: 10
+    bit_size: 1
+  - name: spx
+    description: SecurePriv Execute.
+    bit_offset: 12
+    bit_size: 1
+  - name: spw
+    description: SecurePriv Write.
+    bit_offset: 13
+    bit_size: 1
+  - name: spr
+    description: SecurePriv Read.
+    bit_offset: 14
+    bit_size: 1
+  - name: lk
+    description: LOCK.
+    bit_offset: 31
+    bit_size: 1
+fieldset/MemnGlbac3:
+  description: MBC Global Access Control.
+  fields:
+  - name: nux
+    description: NonsecureUser Execute.
+    bit_offset: 0
+    bit_size: 1
+  - name: nuw
+    description: NonsecureUser Write.
+    bit_offset: 1
+    bit_size: 1
+  - name: nur
+    description: NonsecureUser Read.
+    bit_offset: 2
+    bit_size: 1
+  - name: npx
+    description: NonsecurePriv Execute.
+    bit_offset: 4
+    bit_size: 1
+  - name: npw
+    description: NonsecurePriv Write.
+    bit_offset: 5
+    bit_size: 1
+  - name: npr
+    description: NonsecurePriv Read.
+    bit_offset: 6
+    bit_size: 1
+  - name: sux
+    description: SecureUser Execute.
+    bit_offset: 8
+    bit_size: 1
+  - name: suw
+    description: SecureUser Write.
+    bit_offset: 9
+    bit_size: 1
+  - name: sur
+    description: SecureUser Read.
+    bit_offset: 10
+    bit_size: 1
+  - name: spx
+    description: SecurePriv Execute.
+    bit_offset: 12
+    bit_size: 1
+  - name: spw
+    description: SecurePriv Write.
+    bit_offset: 13
+    bit_size: 1
+  - name: spr
+    description: SecurePriv Read.
+    bit_offset: 14
+    bit_size: 1
+  - name: lk
+    description: LOCK.
+    bit_offset: 31
+    bit_size: 1
+fieldset/MemnGlbac4:
+  description: MBC Global Access Control.
+  fields:
+  - name: nux
+    description: NonsecureUser Execute.
+    bit_offset: 0
+    bit_size: 1
+  - name: nuw
+    description: NonsecureUser Write.
+    bit_offset: 1
+    bit_size: 1
+  - name: nur
+    description: NonsecureUser Read.
+    bit_offset: 2
+    bit_size: 1
+  - name: npx
+    description: NonsecurePriv Execute.
+    bit_offset: 4
+    bit_size: 1
+  - name: npw
+    description: NonsecurePriv Write.
+    bit_offset: 5
+    bit_size: 1
+  - name: npr
+    description: NonsecurePriv Read.
+    bit_offset: 6
+    bit_size: 1
+  - name: sux
+    description: SecureUser Execute.
+    bit_offset: 8
+    bit_size: 1
+  - name: suw
+    description: SecureUser Write.
+    bit_offset: 9
+    bit_size: 1
+  - name: sur
+    description: SecureUser Read.
+    bit_offset: 10
+    bit_size: 1
+  - name: spx
+    description: SecurePriv Execute.
+    bit_offset: 12
+    bit_size: 1
+  - name: spw
+    description: SecurePriv Write.
+    bit_offset: 13
+    bit_size: 1
+  - name: spr
+    description: SecurePriv Read.
+    bit_offset: 14
+    bit_size: 1
+  - name: lk
+    description: LOCK.
+    bit_offset: 31
+    bit_size: 1
+fieldset/MemnGlbac5:
+  description: MBC Global Access Control.
+  fields:
+  - name: nux
+    description: NonsecureUser Execute.
+    bit_offset: 0
+    bit_size: 1
+  - name: nuw
+    description: NonsecureUser Write.
+    bit_offset: 1
+    bit_size: 1
+  - name: nur
+    description: NonsecureUser Read.
+    bit_offset: 2
+    bit_size: 1
+  - name: npx
+    description: NonsecurePriv Execute.
+    bit_offset: 4
+    bit_size: 1
+  - name: npw
+    description: NonsecurePriv Write.
+    bit_offset: 5
+    bit_size: 1
+  - name: npr
+    description: NonsecurePriv Read.
+    bit_offset: 6
+    bit_size: 1
+  - name: sux
+    description: SecureUser Execute.
+    bit_offset: 8
+    bit_size: 1
+  - name: suw
+    description: SecureUser Write.
+    bit_offset: 9
+    bit_size: 1
+  - name: sur
+    description: SecureUser Read.
+    bit_offset: 10
+    bit_size: 1
+  - name: spx
+    description: SecurePriv Execute.
+    bit_offset: 12
+    bit_size: 1
+  - name: spw
+    description: SecurePriv Write.
+    bit_offset: 13
+    bit_size: 1
+  - name: spr
+    description: SecurePriv Read.
+    bit_offset: 14
+    bit_size: 1
+  - name: lk
+    description: LOCK.
+    bit_offset: 31
+    bit_size: 1
+fieldset/MemnGlbac6:
+  description: MBC Global Access Control.
+  fields:
+  - name: nux
+    description: NonsecureUser Execute.
+    bit_offset: 0
+    bit_size: 1
+  - name: nuw
+    description: NonsecureUser Write.
+    bit_offset: 1
+    bit_size: 1
+  - name: nur
+    description: NonsecureUser Read.
+    bit_offset: 2
+    bit_size: 1
+  - name: npx
+    description: NonsecurePriv Execute.
+    bit_offset: 4
+    bit_size: 1
+  - name: npw
+    description: NonsecurePriv Write.
+    bit_offset: 5
+    bit_size: 1
+  - name: npr
+    description: NonsecurePriv Read.
+    bit_offset: 6
+    bit_size: 1
+  - name: sux
+    description: SecureUser Execute.
+    bit_offset: 8
+    bit_size: 1
+  - name: suw
+    description: SecureUser Write.
+    bit_offset: 9
+    bit_size: 1
+  - name: sur
+    description: SecureUser Read.
+    bit_offset: 10
+    bit_size: 1
+  - name: spx
+    description: SecurePriv Execute.
+    bit_offset: 12
+    bit_size: 1
+  - name: spw
+    description: SecurePriv Write.
+    bit_offset: 13
+    bit_size: 1
+  - name: spr
+    description: SecurePriv Read.
+    bit_offset: 14
+    bit_size: 1
+  - name: lk
+    description: LOCK.
+    bit_offset: 31
+    bit_size: 1
+fieldset/MemnGlbac7:
+  description: MBC Global Access Control.
+  fields:
+  - name: nux
+    description: NonsecureUser Execute.
+    bit_offset: 0
+    bit_size: 1
+  - name: nuw
+    description: NonsecureUser Write.
+    bit_offset: 1
+    bit_size: 1
+  - name: nur
+    description: NonsecureUser Read.
+    bit_offset: 2
+    bit_size: 1
+  - name: npx
+    description: NonsecurePriv Execute.
+    bit_offset: 4
+    bit_size: 1
+  - name: npw
+    description: NonsecurePriv Write.
+    bit_offset: 5
+    bit_size: 1
+  - name: npr
+    description: NonsecurePriv Read.
+    bit_offset: 6
+    bit_size: 1
+  - name: sux
+    description: SecureUser Execute.
+    bit_offset: 8
+    bit_size: 1
+  - name: suw
+    description: SecureUser Write.
+    bit_offset: 9
+    bit_size: 1
+  - name: sur
+    description: SecureUser Read.
+    bit_offset: 10
+    bit_size: 1
+  - name: spx
+    description: SecurePriv Execute.
+    bit_offset: 12
+    bit_size: 1
+  - name: spw
+    description: SecurePriv Write.
+    bit_offset: 13
+    bit_size: 1
+  - name: spr
+    description: SecurePriv Read.
+    bit_offset: 14
+    bit_size: 1
+  - name: lk
+    description: LOCK.
+    bit_offset: 31
+    bit_size: 1
+enum/Mbacsel:
+  bit_size: 3
+  variants:
+  - name: Glbac0
+    description: select MBC_MEMN_GLBAC0 access control policy for block B.
+    value: 0
+  - name: Glbac1
+    description: select MBC_MEMN_GLBAC1 access control policy for block B.
+    value: 1
+  - name: Glbac2
+    description: select MBC_MEMN_GLBAC2 access control policy for block B.
+    value: 2
+  - name: Glbac3
+    description: select MBC_MEMN_GLBAC3 access control policy for block B.
+    value: 3
+  - name: Glbac4
+    description: select MBC_MEMN_GLBAC4 access control policy for block B.
+    value: 4
+  - name: Glbac5
+    description: select MBC_MEMN_GLBAC5 access control policy for block B.
+    value: 5
+  - name: Glbac6
+    description: select MBC_MEMN_GLBAC6 access control policy for block B.
+    value: 6
+  - name: Glbac7
+    description: select MBC_MEMN_GLBAC7 access control policy for block B.
+    value: 7
+enum/Nse:
+  bit_size: 1
+  variants:
+  - name: Allowed
+    description: Secure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww[MBACSEL]), nonsecure accesses to block B are not allowed.
+    value: 0
+  - name: Notallowed
+    description: Secure accesses to block B are not allowed, nonsecure accesses to block B are based on corresponding MBACSEL field in this register (MBCm_DOMd_MEMs_BLK_CFG_Ww[MBACSEL]).
+    value: 1

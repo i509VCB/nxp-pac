@@ -1,2 +1,5 @@
 # Generated output is committed with LF regardless of the generator host.
 nxp-pac/** text eol=lf
+
+# Extracted source inputs are also reproducible across host platforms.
+data/source-peripherals/** text eol=lf

@@ -1,0 +1,121 @@
+block/Wwdt:
+  description: Windowed Watchdog Timer.
+  items:
+  - name: mod_
+    description: Mode.
+    byte_offset: 0
+    fieldset: Mod
+  - name: tc
+    description: Timer Constant.
+    byte_offset: 4
+    fieldset: Tc
+  - name: feed
+    description: Feed Sequence.
+    byte_offset: 8
+    access: Write
+    fieldset: Feed
+  - name: tv
+    description: Timer Value.
+    byte_offset: 12
+    access: Read
+    fieldset: Tv
+  - name: warnint
+    description: Warning Interrupt Compare Value.
+    byte_offset: 20
+    fieldset: Warnint
+  - name: window
+    description: Window Compare Value.
+    byte_offset: 24
+    fieldset: Window
+fieldset/Feed:
+  description: Feed Sequence.
+  fields:
+  - name: feed
+    description: Feed Value.
+    bit_offset: 0
+    bit_size: 8
+fieldset/Mod:
+  description: Mode.
+  fields:
+  - name: wden
+    description: Watchdog Enable.
+    bit_offset: 0
+    bit_size: 1
+    enum: Wden
+  - name: wdreset
+    description: Watchdog Reset Enable.
+    bit_offset: 1
+    bit_size: 1
+    enum: Wdreset
+  - name: wdtof
+    description: Watchdog Timeout Flag.
+    bit_offset: 2
+    bit_size: 1
+  - name: wdint
+    description: Warning Interrupt Flag.
+    bit_offset: 3
+    bit_size: 1
+  - name: wdprotect
+    description: Watchdog Update Mode.
+    bit_offset: 4
+    bit_size: 1
+    enum: Wdprotect
+  - name: lock
+    description: Lock.
+    bit_offset: 5
+    bit_size: 1
+fieldset/Tc:
+  description: Timer Constant.
+  fields:
+  - name: count
+    description: Watchdog Timeout Value.
+    bit_offset: 0
+    bit_size: 24
+fieldset/Tv:
+  description: Timer Value.
+  fields:
+  - name: count
+    description: Counter Timer Value.
+    bit_offset: 0
+    bit_size: 24
+fieldset/Warnint:
+  description: Warning Interrupt Compare Value.
+  fields:
+  - name: warnint
+    description: Watchdog Warning Interrupt Compare Value.
+    bit_offset: 0
+    bit_size: 10
+fieldset/Window:
+  description: Window Compare Value.
+  fields:
+  - name: window
+    description: Watchdog Window Value.
+    bit_offset: 0
+    bit_size: 24
+enum/Wden:
+  bit_size: 1
+  variants:
+  - name: Stop
+    description: Timer stopped.
+    value: 0
+  - name: Run
+    description: Timer running.
+    value: 1
+enum/Wdprotect:
+  bit_size: 1
+  variants:
+  - name: Flexible
+    description: Flexible.
+    value: 0
+  - name: Threshold
+    description: Threshold.
+    value: 1
+enum/Wdreset:
+  bit_size: 1
+  variants:
+  - name: Interrupt
+    description: Interrupt.
+    value: 0
+  - name: Reset
+    description: Reset.
+    value: 1

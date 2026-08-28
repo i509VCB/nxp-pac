@@ -1,0 +1,1064 @@
+block/Flexio:
+  description: Flexible I/O.
+  items:
+  - name: verid
+    description: Version ID.
+    byte_offset: 0
+    access: Read
+    fieldset: Verid
+  - name: param
+    description: Parameter.
+    byte_offset: 4
+    access: Read
+    fieldset: Param
+  - name: ctrl
+    description: FLEXIO Control.
+    byte_offset: 8
+    fieldset: Ctrl
+  - name: pin
+    description: Pin State.
+    byte_offset: 12
+    access: Read
+    fieldset: Pin
+  - name: shiftstat
+    description: Shifter Status.
+    byte_offset: 16
+    fieldset: Shiftstat
+  - name: shifterr
+    description: Shifter Error.
+    byte_offset: 20
+    fieldset: Shifterr
+  - name: timstat
+    description: Timer Status Flag.
+    byte_offset: 24
+    fieldset: Timstat
+  - name: shiftsien
+    description: Shifter Status Interrupt Enable.
+    byte_offset: 32
+    fieldset: Shiftsien
+  - name: shifteien
+    description: Shifter Error Interrupt Enable.
+    byte_offset: 36
+    fieldset: Shifteien
+  - name: timien
+    description: Timer Interrupt Enable.
+    byte_offset: 40
+    fieldset: Timien
+  - name: shiftsden
+    description: Shifter Status DMA Enable.
+    byte_offset: 48
+    fieldset: Shiftsden
+  - name: timersden
+    description: Timer Status DMA Enable.
+    byte_offset: 56
+    fieldset: Timersden
+  - name: shiftstate
+    description: Shifter State.
+    byte_offset: 64
+    fieldset: Shiftstate
+  - name: trgstat
+    description: Trigger Status.
+    byte_offset: 72
+    fieldset: Trgstat
+  - name: trigien
+    description: External Trigger Interrupt Enable.
+    byte_offset: 76
+    fieldset: Trigien
+  - name: pinstat
+    description: Pin Status.
+    byte_offset: 80
+    fieldset: Pinstat
+  - name: pinien
+    description: Pin Interrupt Enable.
+    byte_offset: 84
+    fieldset: Pinien
+  - name: pinren
+    description: Pin Rising Edge Enable.
+    byte_offset: 88
+    fieldset: Pinren
+  - name: pinfen
+    description: Pin Falling Edge Enable.
+    byte_offset: 92
+    fieldset: Pinfen
+  - name: pinoutd
+    description: Pin Output Data.
+    byte_offset: 96
+    fieldset: Pinoutd
+  - name: pinoute
+    description: Pin Output Enable.
+    byte_offset: 100
+    fieldset: Pinoute
+  - name: pinoutdis
+    description: Pin Output Disable.
+    byte_offset: 104
+    fieldset: Pinoutdis
+  - name: pinoutclr
+    description: Pin Output Clear.
+    byte_offset: 108
+    fieldset: Pinoutclr
+  - name: pinoutset
+    description: Pin Output Set.
+    byte_offset: 112
+    fieldset: Pinoutset
+  - name: pinouttog
+    description: Pin Output Toggle.
+    byte_offset: 116
+    fieldset: Pinouttog
+  - name: shiftctl
+    description: Shifter Control.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 128
+    fieldset: Shiftctl
+  - name: shiftcfg
+    description: Shifter Configuration.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 256
+    fieldset: Shiftcfg
+  - name: shiftbuf
+    description: Shifter Buffer.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 512
+    fieldset: Shiftbuf
+  - name: shiftbufbis
+    description: Shifter Buffer Bit Swapped.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 640
+    fieldset: Shiftbufbis
+  - name: shiftbufbys
+    description: Shifter Buffer Byte Swapped.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 768
+    fieldset: Shiftbufbys
+  - name: shiftbufbbs
+    description: Shifter Buffer Bit Byte Swapped.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 896
+    fieldset: Shiftbufbbs
+  - name: timctl
+    description: Timer Control.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 1024
+    fieldset: Timctl
+  - name: timcfg
+    description: Timer Configuration.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 1152
+    fieldset: Timcfg
+  - name: timcmp
+    description: Timer Compare.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 1280
+    fieldset: Timcmp
+  - name: shiftbufnbs
+    description: Shifter Buffer Nibble Byte Swapped.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 1664
+    fieldset: Shiftbufnbs
+  - name: shiftbufhws
+    description: Shifter Buffer Halfword Swapped.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 1792
+    fieldset: Shiftbufhws
+  - name: shiftbufnis
+    description: Shifter Buffer Nibble Swapped.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 1920
+    fieldset: Shiftbufnis
+  - name: shiftbufoes
+    description: Shifter Buffer Odd Even Swapped.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 2048
+    fieldset: Shiftbufoes
+  - name: shiftbufeos
+    description: Shifter Buffer Even Odd Swapped.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 2176
+    fieldset: Shiftbufeos
+  - name: shiftbufhbs
+    description: Shifter Buffer Halfword Byte Swapped.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 2304
+    fieldset: Shiftbufhbs
+fieldset/Ctrl:
+  description: FLEXIO Control.
+  fields:
+  - name: flexen
+    description: FLEXIO Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: swrst
+    description: Software Reset.
+    bit_offset: 1
+    bit_size: 1
+  - name: fastacc
+    description: Fast Access.
+    bit_offset: 2
+    bit_size: 1
+    enum: Fastacc
+  - name: dbge
+    description: Debug Enable.
+    bit_offset: 30
+    bit_size: 1
+    enum: Dbge
+  - name: dozen
+    description: Doze Enable.
+    bit_offset: 31
+    bit_size: 1
+    enum: Dozen
+fieldset/Param:
+  description: Parameter.
+  fields:
+  - name: shifter
+    description: Shifter Number.
+    bit_offset: 0
+    bit_size: 8
+  - name: timer
+    description: Timer Number.
+    bit_offset: 8
+    bit_size: 8
+  - name: pin
+    description: Pin Number.
+    bit_offset: 16
+    bit_size: 8
+  - name: trigger
+    description: Trigger Number.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Pin:
+  description: Pin State.
+  fields:
+  - name: pdi
+    description: Pin Data Input.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Pinfen:
+  description: Pin Falling Edge Enable.
+  fields:
+  - name: pfe
+    description: Pin Falling Edge.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Pinien:
+  description: Pin Interrupt Enable.
+  fields:
+  - name: psie
+    description: Pin Status Interrupt Enable.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Pinoutclr:
+  description: Pin Output Clear.
+  fields:
+  - name: outclr
+    description: Output Clear.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Pinoutd:
+  description: Pin Output Data.
+  fields:
+  - name: outd
+    description: Output Data.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Pinoutdis:
+  description: Pin Output Disable.
+  fields:
+  - name: outdis
+    description: Output Disable.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Pinoute:
+  description: Pin Output Enable.
+  fields:
+  - name: oute
+    description: Output Enable.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Pinoutset:
+  description: Pin Output Set.
+  fields:
+  - name: outset
+    description: Output Set.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Pinouttog:
+  description: Pin Output Toggle.
+  fields:
+  - name: outtog
+    description: Output Toggle.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Pinren:
+  description: Pin Rising Edge Enable.
+  fields:
+  - name: pre
+    description: Pin Rising Edge.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Pinstat:
+  description: Pin Status.
+  fields:
+  - name: psf
+    description: Pin Status Flag.
+    bit_offset: 0
+    bit_size: 32
+    enum: Psf
+fieldset/Shiftbuf:
+  description: Shifter Buffer.
+  fields:
+  - name: shiftbuf
+    description: Shift Buffer.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Shiftbufbbs:
+  description: Shifter Buffer Bit Byte Swapped.
+  fields:
+  - name: shiftbufbbs
+    description: Shift Buffer.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Shiftbufbis:
+  description: Shifter Buffer Bit Swapped.
+  fields:
+  - name: shiftbufbis
+    description: Shift Buffer.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Shiftbufbys:
+  description: Shifter Buffer Byte Swapped.
+  fields:
+  - name: shiftbufbys
+    description: Shift Buffer.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Shiftbufeos:
+  description: Shifter Buffer Even Odd Swapped.
+  fields:
+  - name: shiftbufeos
+    description: Shift Buffer.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Shiftbufhbs:
+  description: Shifter Buffer Halfword Byte Swapped.
+  fields:
+  - name: shiftbufhbs
+    description: Shift Buffer.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Shiftbufhws:
+  description: Shifter Buffer Halfword Swapped.
+  fields:
+  - name: shiftbufhws
+    description: Shift Buffer.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Shiftbufnbs:
+  description: Shifter Buffer Nibble Byte Swapped.
+  fields:
+  - name: shiftbufnbs
+    description: Shift Buffer.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Shiftbufnis:
+  description: Shifter Buffer Nibble Swapped.
+  fields:
+  - name: shiftbufnis
+    description: Shift Buffer.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Shiftbufoes:
+  description: Shifter Buffer Odd Even Swapped.
+  fields:
+  - name: shiftbufoes
+    description: Shift Buffer.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Shiftcfg:
+  description: Shifter Configuration.
+  fields:
+  - name: sstart
+    description: Shifter Start.
+    bit_offset: 0
+    bit_size: 2
+    enum: Sstart
+  - name: sstop
+    description: Shifter Stop.
+    bit_offset: 4
+    bit_size: 2
+    enum: Sstop
+  - name: insrc
+    description: Input Source.
+    bit_offset: 8
+    bit_size: 1
+    enum: Insrc
+  - name: latst
+    description: Late Store.
+    bit_offset: 9
+    bit_size: 1
+    enum: Latst
+  - name: ssize
+    description: Shifter Size.
+    bit_offset: 12
+    bit_size: 1
+    enum: Ssize
+  - name: pwidth
+    description: Parallel Width.
+    bit_offset: 16
+    bit_size: 5
+fieldset/Shiftctl:
+  description: Shifter Control.
+  fields:
+  - name: smod
+    description: Shifter Mode.
+    bit_offset: 0
+    bit_size: 3
+    enum: Smod
+  - name: pinpol
+    description: Shifter Pin Polarity.
+    bit_offset: 7
+    bit_size: 1
+    enum: ShiftctlPinpol
+  - name: pinsel
+    description: Shifter Pin Select.
+    bit_offset: 8
+    bit_size: 5
+  - name: pincfg
+    description: Shifter Pin Configuration.
+    bit_offset: 16
+    bit_size: 2
+    enum: ShiftctlPincfg
+  - name: timpol
+    description: Timer Polarity.
+    bit_offset: 23
+    bit_size: 1
+    enum: Timpol
+  - name: timsel
+    description: Timer Select.
+    bit_offset: 24
+    bit_size: 2
+fieldset/Shifteien:
+  description: Shifter Error Interrupt Enable.
+  fields:
+  - name: seie
+    description: Shifter Error Interrupt Enable.
+    bit_offset: 0
+    bit_size: 4
+fieldset/Shifterr:
+  description: Shifter Error.
+  fields:
+  - name: sef
+    description: Shifter Error Flag.
+    bit_offset: 0
+    bit_size: 4
+    enum: Sef
+fieldset/Shiftsden:
+  description: Shifter Status DMA Enable.
+  fields:
+  - name: ssde
+    description: Shifter Status DMA Enable.
+    bit_offset: 0
+    bit_size: 4
+fieldset/Shiftsien:
+  description: Shifter Status Interrupt Enable.
+  fields:
+  - name: ssie
+    description: Shifter Status Interrupt Enable.
+    bit_offset: 0
+    bit_size: 4
+fieldset/Shiftstat:
+  description: Shifter Status.
+  fields:
+  - name: ssf
+    description: Shifter Status Flag.
+    bit_offset: 0
+    bit_size: 4
+    enum: Ssf
+fieldset/Shiftstate:
+  description: Shifter State.
+  fields:
+  - name: state
+    description: Current State Pointer.
+    bit_offset: 0
+    bit_size: 3
+fieldset/Timcfg:
+  description: Timer Configuration.
+  fields:
+  - name: tstart
+    description: Timer Start.
+    bit_offset: 1
+    bit_size: 1
+  - name: tstop
+    description: Timer Stop.
+    bit_offset: 4
+    bit_size: 2
+    enum: Tstop
+  - name: timena
+    description: Timer Enable.
+    bit_offset: 8
+    bit_size: 3
+    enum: Timena
+  - name: timdis
+    description: Timer Disable.
+    bit_offset: 12
+    bit_size: 3
+    enum: Timdis
+  - name: timrst
+    description: Timer Reset.
+    bit_offset: 16
+    bit_size: 3
+    enum: Timrst
+  - name: timdec
+    description: Timer Decrement.
+    bit_offset: 20
+    bit_size: 3
+    enum: Timdec
+  - name: timout
+    description: Timer Output.
+    bit_offset: 24
+    bit_size: 2
+    enum: Timout
+fieldset/Timcmp:
+  description: Timer Compare.
+  fields:
+  - name: cmp
+    description: Timer Compare Value.
+    bit_offset: 0
+    bit_size: 16
+fieldset/Timctl:
+  description: Timer Control.
+  fields:
+  - name: timod
+    description: Timer Mode.
+    bit_offset: 0
+    bit_size: 3
+    enum: Timod
+  - name: onetim
+    description: Timer One Time Operation.
+    bit_offset: 5
+    bit_size: 1
+  - name: pinins
+    description: Timer Pin Input Select.
+    bit_offset: 6
+    bit_size: 1
+    enum: Pinins
+  - name: pinpol
+    description: Timer Pin Polarity.
+    bit_offset: 7
+    bit_size: 1
+    enum: TimctlPinpol
+  - name: pinsel
+    description: Timer Pin Select.
+    bit_offset: 8
+    bit_size: 5
+  - name: pincfg
+    description: Timer Pin Configuration.
+    bit_offset: 16
+    bit_size: 2
+    enum: TimctlPincfg
+  - name: trgsrc
+    description: Trigger Source.
+    bit_offset: 22
+    bit_size: 1
+    enum: Trgsrc
+  - name: trgpol
+    description: Trigger Polarity.
+    bit_offset: 23
+    bit_size: 1
+    enum: Trgpol
+  - name: trgsel
+    description: Trigger Select.
+    bit_offset: 24
+    bit_size: 6
+fieldset/Timersden:
+  description: Timer Status DMA Enable.
+  fields:
+  - name: tsde
+    description: Timer Status DMA Enable.
+    bit_offset: 0
+    bit_size: 4
+fieldset/Timien:
+  description: Timer Interrupt Enable.
+  fields:
+  - name: teie
+    description: Timer Status Interrupt Enable.
+    bit_offset: 0
+    bit_size: 4
+fieldset/Timstat:
+  description: Timer Status Flag.
+  fields:
+  - name: tsf
+    description: Timer Status Flag.
+    bit_offset: 0
+    bit_size: 4
+    enum: Tsf
+fieldset/Trgstat:
+  description: Trigger Status.
+  fields:
+  - name: etsf
+    description: External Trigger Status Flag.
+    bit_offset: 0
+    bit_size: 4
+    enum: Etsf
+fieldset/Trigien:
+  description: External Trigger Interrupt Enable.
+  fields:
+  - name: trie
+    description: External Trigger Interrupt Enable.
+    bit_offset: 0
+    bit_size: 4
+fieldset/Verid:
+  description: Version ID.
+  fields:
+  - name: feature
+    description: Feature Specification Number.
+    bit_offset: 0
+    bit_size: 16
+    enum: Feature
+  - name: minor
+    description: Minor Version Number.
+    bit_offset: 16
+    bit_size: 8
+  - name: major
+    description: Major Version Number.
+    bit_offset: 24
+    bit_size: 8
+enum/Dbge:
+  bit_size: 1
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: Emable
+    description: Enable.
+    value: 1
+enum/Dozen:
+  bit_size: 1
+  variants:
+  - name: Enable
+    description: Enable.
+    value: 0
+  - name: Disable
+    description: Disable.
+    value: 1
+enum/Etsf:
+  bit_size: 4
+  variants:
+  - name: Clr
+    description: Clear.
+    value: 0
+  - name: Set
+    description: Set.
+    value: 1
+enum/Fastacc:
+  bit_size: 1
+  variants:
+  - name: Normal
+    description: Normal.
+    value: 0
+  - name: Fast
+    description: Fast.
+    value: 1
+enum/Feature:
+  bit_size: 16
+  variants:
+  - name: Standard
+    description: Standard features implemented.
+    value: 0
+  - name: StateLogicParallel
+    description: State, logic, and parallel modes supported.
+    value: 1
+  - name: Pinctrl
+    description: Pin control registers supported.
+    value: 2
+  - name: StateLogicParallelPinctrl
+    description: State, logic, and parallel modes, plus pin control registers supported.
+    value: 3
+enum/Insrc:
+  bit_size: 1
+  variants:
+  - name: Pin
+    description: Pin.
+    value: 0
+  - name: ShifterNplus1
+    description: Shifter n+1 output.
+    value: 1
+enum/Latst:
+  bit_size: 1
+  variants:
+  - name: Preshift
+    description: Store the pre-shift register state.
+    value: 0
+  - name: Postshift
+    description: Store the post-shift register state.
+    value: 1
+enum/Pinins:
+  bit_size: 1
+  variants:
+  - name: Pinsel
+    description: PINSEL selects timer pin input and output.
+    value: 0
+  - name: Pinselplus1
+    description: PINSEL + 1 selects the timer pin input; timer pin output remains selected by PINSEL.
+    value: 1
+enum/Psf:
+  bit_size: 32
+  variants:
+  - name: Clr
+    description: Clear.
+    value: 0
+  - name: Set
+    description: Set.
+    value: 1
+enum/Sef:
+  bit_size: 4
+  variants:
+  - name: Clr
+    description: Clear.
+    value: 0
+  - name: Set
+    description: Set.
+    value: 1
+enum/ShiftctlPincfg:
+  bit_size: 2
+  variants:
+  - name: Disable
+    description: Shifter pin output disabled.
+    value: 0
+  - name: OpendBidirouten
+    description: Shifter pin open-drain or bidirectional output enable.
+    value: 1
+  - name: BidirOutdata
+    description: Shifter pin bidirectional output data.
+    value: 2
+  - name: Output
+    description: Shifter pin output.
+    value: 3
+enum/ShiftctlPinpol:
+  bit_size: 1
+  variants:
+  - name: ActiveHigh
+    description: Active high.
+    value: 0
+  - name: ActiveLow
+    description: Active low.
+    value: 1
+enum/Smod:
+  bit_size: 3
+  variants:
+  - name: Disable
+    description: Disable.
+    value: 0
+  - name: Receive
+    description: Receive mode; capture the current shifter content into SHIFTBUF on expiration of the timer.
+    value: 1
+  - name: Transmit
+    description: Transmit mode; load SHIFTBUF contents into the shifter on expiration of the timer.
+    value: 2
+  - name: Matchstore
+    description: Match Store mode; shifter data is compared to SHIFTBUF content on expiration of the timer.
+    value: 4
+  - name: Matchcont
+    description: Match Continuous mode; shifter data is continuously compared to SHIFTBUF contents.
+    value: 5
+  - name: State
+    description: State mode; SHIFTBUF contents store programmable state attributes.
+    value: 6
+  - name: Logic
+    description: Logic mode; SHIFTBUF contents implement programmable logic lookup table.
+    value: 7
+enum/Ssf:
+  bit_size: 4
+  variants:
+  - name: Clr
+    description: Clear.
+    value: 0
+  - name: Set
+    description: Set.
+    value: 1
+enum/Ssize:
+  bit_size: 1
+  variants:
+  - name: Width32
+    description: 32-bit.
+    value: 0
+  - name: Width24
+    description: 24-bit.
+    value: 1
+enum/Sstart:
+  bit_size: 2
+  variants:
+  - name: Value00
+    description: Start bit disabled for Transmitter, Receiver, and Match Store modes; Transmitter mode loads data on enable.
+    value: 0
+  - name: Value01
+    description: Start bit disabled for Transmitter, Receiver, and Match Store modes; Transmitter mode loads data on first shift.
+    value: 1
+  - name: Value10
+    description: Transmitter mode outputs start bit value 0 before loading data on first shift; if start bit is not 0, Receiver and Match Store modes set error flag.
+    value: 2
+  - name: Value11
+    description: Transmitter mode outputs start bit value 1 before loading data on first shift; if start bit is not 1, Receiver and Match Store modes set error flag.
+    value: 3
+enum/Sstop:
+  bit_size: 2
+  variants:
+  - name: Value00
+    description: Stop bit disabled for Transmitter, Receiver, and Match Store modes.
+    value: 0
+  - name: Value01
+    description: Stop bit disabled for Transmitter, Receiver, and Match Store modes; when timer is in stop condition, Receiver and Match Store modes store receive data on the configured shift edge.
+    value: 1
+  - name: Value10
+    description: Transmitter mode outputs stop bit value 0 in Match Store mode; if stop bit is not 0, Receiver and Match Store modes set error flag (when timer is in stop condition, these modes also store receive data on the configured shift edge).
+    value: 2
+  - name: Value11
+    description: Transmitter mode outputs stop bit value 1 in Match Store mode; if stop bit is not 1, Receiver and Match Store modes set error flag (when timer is in stop condition, these modes also store receive data on the configured shift edge).
+    value: 3
+enum/TimctlPincfg:
+  bit_size: 2
+  variants:
+  - name: Outdisable
+    description: Timer pin output disabled.
+    value: 0
+  - name: OpendBidirouten
+    description: Timer pin open-drain or bidirectional output enable.
+    value: 1
+  - name: BidirOutdata
+    description: Timer pin bidirectional output data.
+    value: 2
+  - name: Output
+    description: Timer pin output.
+    value: 3
+enum/TimctlPinpol:
+  bit_size: 1
+  variants:
+  - name: ActiveHigh
+    description: Active high.
+    value: 0
+  - name: ActiveLow
+    description: Active low.
+    value: 1
+enum/Timdec:
+  bit_size: 3
+  variants:
+  - name: FlexioClkShiftclkTmrOut
+    description: Decrement counter on FLEXIO clock; shift clock equals timer output.
+    value: 0
+  - name: TrigEdgeShiftclkTmrOut
+    description: Decrement counter on trigger input (both edges); shift clock equals timer output.
+    value: 1
+  - name: PinEdgeShiftclkTmrOut
+    description: Decrement counter on pin input (both edges); shift clock equals pin input.
+    value: 2
+  - name: TrigEdgeShiftclkTrigIn
+    description: Decrement counter on trigger input (both edges); shift clock equals trigger input.
+    value: 3
+  - name: FlexioClkDiv16ShiftclkTmrOut
+    description: Decrement counter on FLEXIO clock divided by 16; shift clock equals timer output.
+    value: 4
+  - name: FlexioClkDiv256ShiftclkTmrOut
+    description: Decrement counter on FLEXIO clock divided by 256; shift clock equals timer output.
+    value: 5
+  - name: PinRiseShiftclkPinIn
+    description: Decrement counter on pin input (rising edge); shift clock equals pin input.
+    value: 6
+  - name: TrigRiseShiftclkTrigIn
+    description: Decrement counter on trigger input (rising edge); shift clock equals trigger input.
+    value: 7
+enum/Timdis:
+  bit_size: 3
+  variants:
+  - name: Never
+    description: Timer never disabled.
+    value: 0
+  - name: TmrNminus1
+    description: Timer disabled on timer n-1 disable.
+    value: 1
+  - name: TmrCmp
+    description: Timer disabled on timer compare (upper 8 bits match and decrement).
+    value: 2
+  - name: TmrCmpTriglow
+    description: Timer disabled on timer compare (upper 8 bits match and decrement) and trigger low.
+    value: 3
+  - name: PinEdge
+    description: Timer disabled on pin rising or falling edge.
+    value: 4
+  - name: PinEdgeTrighi
+    description: Timer disabled on pin rising or falling edge provided trigger is high.
+    value: 5
+  - name: TrigFalledge
+    description: Timer disabled on trigger falling edge.
+    value: 6
+enum/Timena:
+  bit_size: 3
+  variants:
+  - name: Enable
+    description: Timer always enabled.
+    value: 0
+  - name: TmrNminus1En
+    description: Timer enabled on timer n-1 enable.
+    value: 1
+  - name: TmrTrighiEn
+    description: Timer enabled on trigger high.
+    value: 2
+  - name: TmrTrigPinHiEn
+    description: Timer enabled on trigger high and pin high.
+    value: 3
+  - name: TmrPinriseEn
+    description: Timer enabled on pin rising edge.
+    value: 4
+  - name: TmrPinriseTrighiEn
+    description: Timer enabled on pin rising edge and trigger high.
+    value: 5
+  - name: TmrTrigriseEn
+    description: Timer enabled on trigger rising edge.
+    value: 6
+  - name: TmrTrigedgeEn
+    description: Timer enabled on trigger rising or falling edge.
+    value: 7
+enum/Timod:
+  bit_size: 3
+  variants:
+  - name: Disable
+    description: Timer disabled.
+    value: 0
+  - name: Dual8bitBaud
+    description: Dual 8-bit counters baud mode.
+    value: 1
+  - name: Dual8bitPwmH
+    description: Dual 8-bit counters PWM high mode.
+    value: 2
+  - name: Single16bit
+    description: Single 16-bit counter mode.
+    value: 3
+  - name: Single16bitDisable
+    description: Single 16-bit counter disable mode.
+    value: 4
+  - name: Dual8bitWord
+    description: Dual 8-bit counters word mode.
+    value: 5
+  - name: Dual8bitPwmL
+    description: Dual 8-bit counters PWM low mode.
+    value: 6
+  - name: Single16bitInCapture
+    description: Single 16-bit input capture mode.
+    value: 7
+enum/Timout:
+  bit_size: 2
+  variants:
+  - name: One
+    description: Logic one when enabled; not affected by timer reset.
+    value: 0
+  - name: Zero
+    description: Logic zero when enabled; not affected by timer reset.
+    value: 1
+  - name: OneTmrreset
+    description: Logic one when enabled and on timer reset.
+    value: 2
+  - name: ZeroTmrreset
+    description: Logic zero when enabled and on timer reset.
+    value: 3
+enum/Timpol:
+  bit_size: 1
+  variants:
+  - name: Posedge
+    description: Positive edge.
+    value: 0
+  - name: Negedge
+    description: Negative edge.
+    value: 1
+enum/Timrst:
+  bit_size: 3
+  variants:
+  - name: Never
+    description: Never reset timer.
+    value: 0
+  - name: TmrOutHi
+    description: Timer reset on timer output high.
+    value: 1
+  - name: PinEqTmrOut
+    description: Timer reset on timer pin equal to timer output.
+    value: 2
+  - name: TrigEqTmrOut
+    description: Timer reset on timer trigger equal to timer output.
+    value: 3
+  - name: PinRiseEdge
+    description: Timer reset on timer pin rising edge.
+    value: 4
+  - name: TrigRiseEdge
+    description: Timer reset on trigger rising edge.
+    value: 6
+  - name: TrigEdge
+    description: Timer reset on trigger rising or falling edge.
+    value: 7
+enum/Trgpol:
+  bit_size: 1
+  variants:
+  - name: ActiveHigh
+    description: Active high.
+    value: 0
+  - name: ActiveLow
+    description: Active low.
+    value: 1
+enum/Trgsrc:
+  bit_size: 1
+  variants:
+  - name: ExtTrig
+    description: External.
+    value: 0
+  - name: InternalTrig
+    description: Internal.
+    value: 1
+enum/Tsf:
+  bit_size: 4
+  variants:
+  - name: Clr
+    description: Clear.
+    value: 0
+  - name: Set
+    description: Set.
+    value: 1
+enum/Tstop:
+  bit_size: 2
+  variants:
+  - name: StopDisable
+    description: Disabled.
+    value: 0
+  - name: EnableTmrcmp
+    description: Enabled on timer compare.
+    value: 1
+  - name: EnableTmrdisable
+    description: Enabled on timer disable.
+    value: 2
+  - name: EnableTmrCmpDis
+    description: Enabled on timer compare and timer disable.
+    value: 3

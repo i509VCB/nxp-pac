@@ -4,6 +4,7 @@ use itertools::Itertools;
 use crate::ChipDescription;
 
 pub mod extract;
+pub mod extract_source;
 pub mod generate;
 
 fn select_chip(chip_name: &str) -> Result<&'static ChipDescription> {

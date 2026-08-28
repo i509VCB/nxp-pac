@@ -1,0 +1,448 @@
+block/Gpio:
+  description: GPIO.
+  items:
+  - name: verid
+    description: Version ID.
+    byte_offset: 0
+    access: Read
+    fieldset: Verid
+  - name: param
+    description: Parameter.
+    byte_offset: 4
+    access: Read
+    fieldset: Param
+  - name: pdor
+    description: Port Data Output.
+    byte_offset: 64
+    fieldset: Pdor
+  - name: psor
+    description: Port Set Output.
+    byte_offset: 68
+    fieldset: Psor
+  - name: pcor
+    description: Port Clear Output.
+    byte_offset: 72
+    fieldset: Pcor
+  - name: ptor
+    description: Port Toggle Output.
+    byte_offset: 76
+    fieldset: Ptor
+  - name: pdir
+    description: Port Data Input.
+    byte_offset: 80
+    access: Read
+    fieldset: Pdir
+  - name: pddr
+    description: Port Data Direction.
+    byte_offset: 84
+    fieldset: Pddr
+  - name: pidr
+    description: Port Input Disable.
+    byte_offset: 88
+    fieldset: Pidr
+  - name: pdr
+    description: Pin Data.
+    array:
+      len: 32
+      stride: 1
+    byte_offset: 96
+    bit_size: 8
+    fieldset: Pdr
+  - name: icr
+    description: Interrupt Control 0.
+    array:
+      len: 32
+      stride: 4
+    byte_offset: 128
+    fieldset: Icr
+  - name: giclr
+    description: Global Interrupt Control Low.
+    byte_offset: 256
+    fieldset: Giclr
+  - name: gichr
+    description: Global Interrupt Control High.
+    byte_offset: 260
+    fieldset: Gichr
+  - name: isfr
+    description: Interrupt Status Flag.
+    array:
+      len: 1
+      stride: 0
+    byte_offset: 288
+    fieldset: Isfr
+fieldset/Gichr:
+  description: Global Interrupt Control High.
+  fields:
+  - name: giwe
+    description: Global Interrupt Write Enable.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 16
+      stride: 1
+  - name: giwd
+    description: Global Interrupt Write Data.
+    bit_offset: 16
+    bit_size: 16
+fieldset/Giclr:
+  description: Global Interrupt Control Low.
+  fields:
+  - name: giwe
+    description: Global Interrupt Write Enable.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 16
+      stride: 1
+  - name: giwd
+    description: Global Interrupt Write Data.
+    bit_offset: 16
+    bit_size: 16
+fieldset/Icr:
+  description: Interrupt Control 0.
+  fields:
+  - name: irqc
+    description: Interrupt Configuration.
+    bit_offset: 16
+    bit_size: 4
+    enum: Irqc
+  - name: isf
+    description: Interrupt Status Flag.
+    bit_offset: 24
+    bit_size: 1
+    enum: Isf
+fieldset/Isfr:
+  description: Interrupt Status Flag.
+  fields:
+  - name: isf0
+    description: Interrupt Status Flag.
+    bit_offset: 0
+    bit_size: 1
+  - name: isf1
+    description: Interrupt Status Flag.
+    bit_offset: 1
+    bit_size: 1
+  - name: isf2
+    description: Interrupt Status Flag.
+    bit_offset: 2
+    bit_size: 1
+  - name: isf3
+    description: Interrupt Status Flag.
+    bit_offset: 3
+    bit_size: 1
+  - name: isf4
+    description: Interrupt Status Flag.
+    bit_offset: 4
+    bit_size: 1
+  - name: isf5
+    description: Interrupt Status Flag.
+    bit_offset: 5
+    bit_size: 1
+  - name: isf6
+    description: Interrupt Status Flag.
+    bit_offset: 6
+    bit_size: 1
+  - name: isf7
+    description: Interrupt Status Flag.
+    bit_offset: 7
+    bit_size: 1
+  - name: isf8
+    description: Interrupt Status Flag.
+    bit_offset: 8
+    bit_size: 1
+  - name: isf9
+    description: Interrupt Status Flag.
+    bit_offset: 9
+    bit_size: 1
+  - name: isf10
+    description: Interrupt Status Flag.
+    bit_offset: 10
+    bit_size: 1
+  - name: isf11
+    description: Interrupt Status Flag.
+    bit_offset: 11
+    bit_size: 1
+  - name: isf12
+    description: Interrupt Status Flag.
+    bit_offset: 12
+    bit_size: 1
+  - name: isf13
+    description: Interrupt Status Flag.
+    bit_offset: 13
+    bit_size: 1
+  - name: isf14
+    description: Interrupt Status Flag.
+    bit_offset: 14
+    bit_size: 1
+  - name: isf15
+    description: Interrupt Status Flag.
+    bit_offset: 15
+    bit_size: 1
+  - name: isf16
+    description: Interrupt Status Flag.
+    bit_offset: 16
+    bit_size: 1
+  - name: isf17
+    description: Interrupt Status Flag.
+    bit_offset: 17
+    bit_size: 1
+  - name: isf18
+    description: Interrupt Status Flag.
+    bit_offset: 18
+    bit_size: 1
+  - name: isf19
+    description: Interrupt Status Flag.
+    bit_offset: 19
+    bit_size: 1
+  - name: isf20
+    description: Interrupt Status Flag.
+    bit_offset: 20
+    bit_size: 1
+  - name: isf21
+    description: Interrupt Status Flag.
+    bit_offset: 21
+    bit_size: 1
+  - name: isf22
+    description: Interrupt Status Flag.
+    bit_offset: 22
+    bit_size: 1
+  - name: isf23
+    description: Interrupt Status Flag.
+    bit_offset: 23
+    bit_size: 1
+  - name: isf24
+    description: Interrupt Status Flag.
+    bit_offset: 24
+    bit_size: 1
+  - name: isf25
+    description: Interrupt Status Flag.
+    bit_offset: 25
+    bit_size: 1
+  - name: isf26
+    description: Interrupt Status Flag.
+    bit_offset: 26
+    bit_size: 1
+  - name: isf27
+    description: Interrupt Status Flag.
+    bit_offset: 27
+    bit_size: 1
+  - name: isf28
+    description: Interrupt Status Flag.
+    bit_offset: 28
+    bit_size: 1
+  - name: isf29
+    description: Interrupt Status Flag.
+    bit_offset: 29
+    bit_size: 1
+  - name: isf30
+    description: Interrupt Status Flag.
+    bit_offset: 30
+    bit_size: 1
+  - name: isf31
+    description: Interrupt Status Flag.
+    bit_offset: 31
+    bit_size: 1
+fieldset/Param:
+  description: Parameter.
+  fields:
+  - name: irqnum
+    description: Interrupt Number.
+    bit_offset: 0
+    bit_size: 4
+fieldset/Pcor:
+  description: Port Clear Output.
+  fields:
+  - name: ptco
+    description: Port Clear Output.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 32
+      stride: 1
+    enum: Ptco
+fieldset/Pddr:
+  description: Port Data Direction.
+  fields:
+  - name: pdd
+    description: Port Data Direction.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 32
+      stride: 1
+    enum: Pdd
+fieldset/Pdir:
+  description: Port Data Input.
+  fields:
+  - name: pdi
+    description: Port Data Input.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 32
+      stride: 1
+fieldset/Pdor:
+  description: Port Data Output.
+  fields:
+  - name: pdo
+    description: Port Data Output.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 32
+      stride: 1
+fieldset/Pdr:
+  description: Pin Data.
+  bit_size: 8
+  fields:
+  - name: pd
+    description: Pin Data (I/O).
+    bit_offset: 0
+    bit_size: 1
+    enum: Pd
+fieldset/Pidr:
+  description: Port Input Disable.
+  fields:
+  - name: pid
+    description: Port Input Disable.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 32
+      stride: 1
+    enum: Pid
+fieldset/Psor:
+  description: Port Set Output.
+  fields:
+  - name: ptso
+    description: Port Set Output.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 32
+      stride: 1
+    enum: Ptso
+fieldset/Ptor:
+  description: Port Toggle Output.
+  fields:
+  - name: ptto
+    description: Port Toggle Output.
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 32
+      stride: 1
+fieldset/Verid:
+  description: Version ID.
+  fields:
+  - name: feature
+    description: Feature Specification Number.
+    bit_offset: 0
+    bit_size: 16
+  - name: minor
+    description: Minor Version Number.
+    bit_offset: 16
+    bit_size: 8
+  - name: major
+    description: Major Version Number.
+    bit_offset: 24
+    bit_size: 8
+enum/Irqc:
+  bit_size: 4
+  variants:
+  - name: Irqc0
+    description: ISF is disabled.
+    value: 0
+  - name: Irqc1
+    description: ISF and DMA request on rising edge.
+    value: 1
+  - name: Irqc2
+    description: ISF and DMA request on falling edge.
+    value: 2
+  - name: Irqc3
+    description: ISF and DMA request on either edge.
+    value: 3
+  - name: Irqc5
+    description: ISF sets on rising edge.
+    value: 5
+  - name: Irqc6
+    description: ISF sets on falling edge.
+    value: 6
+  - name: Irqc7
+    description: ISF sets on either edge.
+    value: 7
+  - name: Irqc8
+    description: ISF and interrupt when logic 0.
+    value: 8
+  - name: Irqc9
+    description: ISF and interrupt on rising edge.
+    value: 9
+  - name: Irqc10
+    description: ISF and interrupt on falling edge.
+    value: 10
+  - name: Irqc11
+    description: ISF and Interrupt on either edge.
+    value: 11
+  - name: Irqc12
+    description: ISF and interrupt when logic 1.
+    value: 12
+  - name: Irqc13
+    description: Enable active-high trigger output; ISF on rising edge (pin state is ORed with other enabled triggers to generate the output trigger for use by other peripherals).
+    value: 13
+  - name: Irqc14
+    description: Enable active-low trigger output; ISF on falling edge (pin state is inverted and ORed with other enabled triggers to generate the output trigger for use by other peripherals).
+    value: 14
+enum/Isf:
+  bit_size: 1
+  variants:
+  - name: Isf0
+    description: Not detected.
+    value: 0
+  - name: Isf1
+    description: Detected.
+    value: 1
+enum/Pd:
+  bit_size: 1
+  variants:
+  - name: Pd0
+    description: Logic zero.
+    value: 0
+  - name: Pd1
+    description: Logic one.
+    value: 1
+enum/Pdd:
+  bit_size: 1
+  variants:
+  - name: Pdd0
+    description: Input.
+    value: 0
+  - name: Pdd1
+    description: Output.
+    value: 1
+enum/Pid:
+  bit_size: 1
+  variants:
+  - name: Pid0
+    description: Configured for general-purpose input.
+    value: 0
+  - name: Pid1
+    description: Disabled for general-purpose input.
+    value: 1
+enum/Ptco:
+  bit_size: 1
+  variants:
+  - name: Ptco0
+    description: No change.
+    value: 0
+  - name: Ptco1
+    description: Corresponding field in PDOR becomes 0.
+    value: 1
+enum/Ptso:
+  bit_size: 1
+  variants:
+  - name: Ptso0
+    description: No change.
+    value: 0
+  - name: Ptso1
+    description: Corresponding field in PDOR becomes 1.
+    value: 1

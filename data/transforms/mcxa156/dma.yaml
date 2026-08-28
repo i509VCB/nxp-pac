@@ -1,0 +1,12 @@
+transforms:
+  # Preserve the family metadata convention that encodes the channel count in
+  # each DMA controller and TCD block type.
+  - !Rename
+    from: dma::Dma
+    to: dma::Dma8
+    type: Block
+
+  - !Rename
+    from: edma_0_tcd::Edma0Tcd
+    to: edma_0_tcd::Tcd8
+    type: Block

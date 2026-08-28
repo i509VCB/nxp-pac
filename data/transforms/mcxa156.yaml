@@ -1,0 +1,34 @@
+includes:
+  - sanitize.yaml
+
+  - cm33.yaml
+  - mcxa156/core.yaml
+  - useless.yaml
+
+  - mcxa/adc.yaml
+  - mcxa/cdog.yaml
+  - mcxa/cmc.yaml
+  - mcxa/crc.yaml
+  - mcxa/ctimer.yaml
+  - mcxa/dac.yaml
+  - mcxa/dma.yaml
+  - mcxa/flexpwm.yaml
+  - mcxa/gpio.yaml
+  - mcxa156/gpio.yaml
+  - mcxa/i3c.yaml
+  - mcxa/inputmux.yaml
+  - mcxa/lpi2c.yaml
+  - mcxa/lpspi.yaml
+  - mcxa/lpuart.yaml
+  - mcxa/mbc.yaml
+  - mcxa/ostimer.yaml
+  - mcxa156/port.yaml
+  - mcxa156/qdc.yaml
+  - mcxa/scg.yaml
+  - mcxa/spc.yaml
+  - mcxa/wwdt.yaml
+
+  - remove-suffix.yaml
+  - mcxa156/dma.yaml
+transforms:
+  - !Sort

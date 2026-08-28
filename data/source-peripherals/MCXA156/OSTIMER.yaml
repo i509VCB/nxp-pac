@@ -1,0 +1,96 @@
+block/Ostimer:
+  description: OSTIMER.
+  items:
+  - name: evtimerl
+    description: EVTIMER Low.
+    byte_offset: 0
+    access: Read
+    fieldset: Evtimerl
+  - name: evtimerh
+    description: EVTIMER High.
+    byte_offset: 4
+    access: Read
+    fieldset: Evtimerh
+  - name: capture_l
+    description: Local Capture Low for CPU.
+    byte_offset: 8
+    access: Read
+    fieldset: CaptureL
+  - name: capture_h
+    description: Local Capture High for CPU.
+    byte_offset: 12
+    access: Read
+    fieldset: CaptureH
+  - name: match_l
+    description: Local Match Low for CPU.
+    byte_offset: 16
+    fieldset: MatchL
+  - name: match_h
+    description: Local Match High for CPU.
+    byte_offset: 20
+    fieldset: MatchH
+  - name: osevent_ctrl
+    description: OSTIMER Control for CPU.
+    byte_offset: 28
+    fieldset: OseventCtrl
+fieldset/CaptureH:
+  description: Local Capture High for CPU.
+  fields:
+  - name: capture_value
+    description: EVTimer Capture Value.
+    bit_offset: 0
+    bit_size: 10
+fieldset/CaptureL:
+  description: Local Capture Low for CPU.
+  fields:
+  - name: capture_value
+    description: EVTimer Capture Value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Evtimerh:
+  description: EVTIMER High.
+  fields:
+  - name: evtimer_count_value
+    description: EVTimer Count Value.
+    bit_offset: 0
+    bit_size: 10
+fieldset/Evtimerl:
+  description: EVTIMER Low.
+  fields:
+  - name: evtimer_count_value
+    description: EVTimer Count Value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/MatchH:
+  description: Local Match High for CPU.
+  fields:
+  - name: match_value
+    description: EVTimer Match Value.
+    bit_offset: 0
+    bit_size: 10
+fieldset/MatchL:
+  description: Local Match Low for CPU.
+  fields:
+  - name: match_value
+    description: EVTimer Match Value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/OseventCtrl:
+  description: OSTIMER Control for CPU.
+  fields:
+  - name: ostimer_intrflag
+    description: Interrupt Flag.
+    bit_offset: 0
+    bit_size: 1
+  - name: ostimer_intena
+    description: Interrupt or Wake-Up Request.
+    bit_offset: 1
+    bit_size: 1
+  - name: match_wr_rdy
+    description: EVTimer Match Write Ready.
+    bit_offset: 2
+    bit_size: 1
+  - name: debug_en
+    description: Debug Enable.
+    bit_offset: 3
+    bit_size: 1

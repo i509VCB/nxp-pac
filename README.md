@@ -21,6 +21,16 @@ cargo run -p generator --locked -- generate
 git status --porcelain=v1 --untracked-files=all -- nxp-pac
 ```
 
+Source-only chips can lock a different revision without moving the shared
+submodule or changing existing PAC inputs. Recreate and validate the MCXA156
+source artifacts with:
+
+```sh
+git -C data/mcux-soc-svd fetch --depth=1 https://github.com/nxp-mcuxpresso/mcux-soc-svd cd86b0793d7e467055a2d84c441c81e3d0aef93d
+cargo run -p generator --locked -- extract-source MCXA156
+git status --porcelain=v1 --untracked-files=all -- data/source-peripherals/MCXA156
+```
+
 ## PAC vs MetaPAC
 
 This crate is in transition from generating the PAC from the NXP provided SVD files, to a metapac approach where the SVD is only used to extract general peripheral definition files.

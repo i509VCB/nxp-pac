@@ -13,6 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - name: Checkout generator and locked MCXA156 sources
+        run: |
+          git submodule update --init --recursive --force --depth=1 --checkout data/mcux-soc-svd
+          git -C data/mcux-soc-svd fetch --depth=1 https://github.com/nxp-mcuxpresso/mcux-soc-svd cd86b0793d7e467055a2d84c441c81e3d0aef93d
       - name: Cache Dependencies
         uses: Swatinem/rust-cache@v2.9.1
       - name: Check

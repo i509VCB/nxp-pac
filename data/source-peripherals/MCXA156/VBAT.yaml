@@ -1,0 +1,88 @@
+block/Vbat:
+  description: VBAT.
+  items:
+  - name: verid
+    description: Version ID.
+    byte_offset: 0
+    access: Read
+    fieldset: Verid
+  - name: froctla
+    description: FRO16K Control A.
+    byte_offset: 512
+    fieldset: Froctla
+  - name: frolcka
+    description: FRO16K Lock A.
+    byte_offset: 536
+    fieldset: Frolcka
+  - name: froclke
+    description: FRO16K Clock Enable.
+    byte_offset: 544
+    fieldset: Froclke
+  - name: wakeup
+    description: 'Array of registers: WAKEUPA.'
+    array:
+      len: 2
+      stride: 8
+    byte_offset: 1792
+    block: Wakeup
+  - name: waklcka
+    description: Wakeup Lock A.
+    byte_offset: 2040
+    fieldset: Waklcka
+block/Wakeup:
+  description: 'Array of registers: WAKEUPA.'
+  items:
+  - name: wakeupa
+    description: Wakeup 0 Register A.
+    byte_offset: 0
+    fieldset: Wakeupa
+fieldset/Froclke:
+  description: FRO16K Clock Enable.
+  fields:
+  - name: clke
+    description: Clock Enable.
+    bit_offset: 0
+    bit_size: 2
+fieldset/Froctla:
+  description: FRO16K Control A.
+  fields:
+  - name: fro_en
+    description: FRO16K Enable.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Frolcka:
+  description: FRO16K Lock A.
+  fields:
+  - name: lock
+    description: Lock.
+    bit_offset: 0
+    bit_size: 1
+fieldset/Verid:
+  description: Version ID.
+  fields:
+  - name: feature
+    description: Feature Specification Number.
+    bit_offset: 0
+    bit_size: 16
+  - name: minor
+    description: Minor Version Number.
+    bit_offset: 16
+    bit_size: 8
+  - name: major
+    description: Major Version Number.
+    bit_offset: 24
+    bit_size: 8
+fieldset/Wakeupa:
+  description: Wakeup 0 Register A.
+  fields:
+  - name: reg
+    description: Register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Waklcka:
+  description: Wakeup Lock A.
+  fields:
+  - name: lock
+    description: Lock.
+    bit_offset: 0
+    bit_size: 1

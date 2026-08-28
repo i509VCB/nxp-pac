@@ -15,6 +15,7 @@
 use clap::Parser;
 use generator::commands::{
     extract::{Extract, extract},
+    extract_source::{ExtractSource, extract_source},
     generate::{Generate, generate},
 };
 use tracing::level_filters::LevelFilter;
@@ -30,6 +31,7 @@ struct Opts {
 enum Subcommand {
     Generate(Generate),
     Extract(Extract),
+    ExtractSource(ExtractSource),
 }
 
 fn main() -> anyhow::Result<()> {
@@ -47,5 +49,6 @@ fn main() -> anyhow::Result<()> {
     match opts.subcommand {
         Subcommand::Generate(args) => generate(args),
         Subcommand::Extract(args) => extract(args),
+        Subcommand::ExtractSource(args) => extract_source(args),
     }
 }

@@ -2,6 +2,7 @@ pub mod commands;
 pub mod metadata;
 pub mod metapac;
 pub mod pac;
+pub mod source_validation;
 pub mod util;
 
 pub struct ChipDescription {

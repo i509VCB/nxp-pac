@@ -1,0 +1,4204 @@
+block/Fmu0test:
+  description: FlashTest.
+  items:
+  - name: fstat
+    description: Flash Status Register.
+    byte_offset: 0
+    fieldset: Fstat
+  - name: fcnfg
+    description: Flash Configuration Register.
+    byte_offset: 4
+    fieldset: Fcnfg
+  - name: fctrl
+    description: Flash Control Register.
+    byte_offset: 8
+    fieldset: Fctrl
+  - name: ftest
+    description: Flash Test Register.
+    byte_offset: 12
+    access: Read
+    fieldset: Ftest
+  - name: fccob0
+    description: Flash Command Control 0 Register.
+    byte_offset: 16
+    fieldset: Fccob0
+  - name: fccob1
+    description: Flash Command Control 1 Register.
+    byte_offset: 20
+    fieldset: Fccob1
+  - name: fccob2
+    description: Flash Command Control 2 Register.
+    byte_offset: 24
+    fieldset: Fccob2
+  - name: fccob3
+    description: Flash Command Control 3 Register.
+    byte_offset: 28
+    fieldset: Fccob3
+  - name: fccob4
+    description: Flash Command Control 4 Register.
+    byte_offset: 32
+    fieldset: Fccob4
+  - name: fccob5
+    description: Flash Command Control 5 Register.
+    byte_offset: 36
+    fieldset: Fccob5
+  - name: fccob6
+    description: Flash Command Control 6 Register.
+    byte_offset: 40
+    fieldset: Fccob6
+  - name: fccob7
+    description: Flash Command Control 7 Register.
+    byte_offset: 44
+    fieldset: Fccob7
+  - name: reset_status
+    description: FMU Initialization Tracking Register.
+    byte_offset: 256
+    fieldset: ResetStatus
+  - name: mctl
+    description: FMU Control Register.
+    byte_offset: 260
+    fieldset: Mctl
+  - name: bsel_gen
+    description: FMU Block Select Generation Register.
+    byte_offset: 264
+    access: Read
+    fieldset: BselGen
+  - name: pwr_opt
+    description: Power Mode Options Register.
+    byte_offset: 268
+    fieldset: PwrOpt
+  - name: cmd_check
+    description: FMU Command Check Register.
+    byte_offset: 272
+    access: Read
+    fieldset: CmdCheck
+  - name: bsel
+    description: FMU Block Select Register.
+    byte_offset: 288
+    fieldset: Bsel
+  - name: msize
+    description: FMU Memory Size Register.
+    byte_offset: 292
+    fieldset: Msize
+  - name: flash_rd_add
+    description: Flash Read Address Register.
+    byte_offset: 296
+    fieldset: FlashRdAdd
+  - name: flash_stop_add
+    description: Flash Stop Address Register.
+    byte_offset: 304
+    fieldset: FlashStopAdd
+  - name: flash_rd_ctrl
+    description: Flash Read Control Register.
+    byte_offset: 308
+    fieldset: FlashRdCtrl
+  - name: mm_addr
+    description: Memory Map Address Register.
+    byte_offset: 312
+    fieldset: MmAddr
+  - name: mm_wdata
+    description: Memory Map Write Data Register.
+    byte_offset: 320
+    fieldset: MmWdata
+  - name: mm_ctl
+    description: Memory Map Control Register.
+    byte_offset: 324
+    fieldset: MmCtl
+  - name: uint_ctl
+    description: User Interface Control Register.
+    byte_offset: 328
+    fieldset: UintCtl
+  - name: rd_data0
+    description: Read Data 0 Register.
+    byte_offset: 332
+    fieldset: RdData0
+  - name: rd_data1
+    description: Read Data 1 Register.
+    byte_offset: 336
+    fieldset: RdData1
+  - name: rd_data2
+    description: Read Data 2 Register.
+    byte_offset: 340
+    fieldset: RdData2
+  - name: rd_data3
+    description: Read Data 3 Register.
+    byte_offset: 344
+    fieldset: RdData3
+  - name: parity
+    description: Parity Register.
+    byte_offset: 348
+    fieldset: Parity
+  - name: rd_path_ctrl_status
+    description: Read Path Control and Status Register.
+    byte_offset: 352
+    fieldset: RdPathCtrlStatus
+  - name: smw_din0
+    description: SMW DIN 0 Register.
+    byte_offset: 356
+    fieldset: SmwDin0
+  - name: smw_din1
+    description: SMW DIN 1 Register.
+    byte_offset: 360
+    fieldset: SmwDin1
+  - name: smw_din2
+    description: SMW DIN 2 Register.
+    byte_offset: 364
+    fieldset: SmwDin2
+  - name: smw_din3
+    description: SMW DIN 3 Register.
+    byte_offset: 368
+    fieldset: SmwDin3
+  - name: smw_addr
+    description: SMW Address Register.
+    byte_offset: 372
+    fieldset: SmwAddr
+  - name: smw_cmd_wait
+    description: SMW Command and Wait Register.
+    byte_offset: 376
+    fieldset: SmwCmdWait
+  - name: smw_status
+    description: SMW Status Register.
+    byte_offset: 380
+    access: Read
+    fieldset: SmwStatus
+  - name: soctrim0_0
+    description: SoC Trim Phrase 0 Word 0 Register.
+    byte_offset: 384
+    fieldset: Soctrim00
+  - name: soctrim0_1
+    description: SoC Trim Phrase 0 Word 1 Register.
+    byte_offset: 388
+    fieldset: Soctrim01
+  - name: soctrim0_2
+    description: SoC Trim Phrase 0 Word 2 Register.
+    byte_offset: 392
+    fieldset: Soctrim02
+  - name: soctrim0_3
+    description: SoC Trim Phrase 0 Word 3 Register.
+    byte_offset: 396
+    fieldset: Soctrim03
+  - name: soctrim1_0
+    description: SoC Trim Phrase 1 Word 0 Register.
+    byte_offset: 400
+    fieldset: Soctrim10
+  - name: soctrim1_1
+    description: SoC Trim Phrase 1 Word 1 Register.
+    byte_offset: 404
+    fieldset: Soctrim11
+  - name: soctrim1_2
+    description: SoC Trim Phrase 1 Word 2 Register.
+    byte_offset: 408
+    fieldset: Soctrim12
+  - name: soctrim1_3
+    description: SoC Trim Phrase 1 Word 3 Register.
+    byte_offset: 412
+    fieldset: Soctrim13
+  - name: soctrim2_0
+    description: SoC Trim Phrase 2 Word 0 Register.
+    byte_offset: 416
+    fieldset: Soctrim20
+  - name: soctrim2_1
+    description: SoC Trim Phrase 2 Word 1 Register.
+    byte_offset: 420
+    fieldset: Soctrim21
+  - name: soctrim2_2
+    description: SoC Trim Phrase 2 Word 2 Register.
+    byte_offset: 424
+    fieldset: Soctrim22
+  - name: soctrim2_3
+    description: SoC Trim Phrase 2 Word 3 Register.
+    byte_offset: 428
+    fieldset: Soctrim23
+  - name: soctrim3_0
+    description: SoC Trim Phrase 3 Word 0 Register.
+    byte_offset: 432
+    fieldset: Soctrim30
+  - name: soctrim3_1
+    description: SoC Trim Phrase 3 Word 1 Register.
+    byte_offset: 436
+    fieldset: Soctrim31
+  - name: soctrim3_2
+    description: SoC Trim Phrase 3 Word 2 Register.
+    byte_offset: 440
+    fieldset: Soctrim32
+  - name: soctrim3_3
+    description: SoC Trim Phrase 3 Word 3 Register.
+    byte_offset: 444
+    fieldset: Soctrim33
+  - name: soctrim4_0
+    description: SoC Trim Phrase 4 Word 0 Register.
+    byte_offset: 448
+    fieldset: Soctrim40
+  - name: soctrim4_1
+    description: SoC Trim Phrase 4 Word 1 Register.
+    byte_offset: 452
+    fieldset: Soctrim41
+  - name: soctrim4_2
+    description: SoC Trim Phrase 4 Word 2 Register.
+    byte_offset: 456
+    fieldset: Soctrim42
+  - name: soctrim4_3
+    description: SoC Trim Phrase 4 Word 3 Register.
+    byte_offset: 460
+    fieldset: Soctrim43
+  - name: soctrim5_0
+    description: SoC Trim Phrase 5 Word 0 Register.
+    byte_offset: 464
+    fieldset: Soctrim50
+  - name: soctrim5_1
+    description: SoC Trim Phrase 5 Word 1 Register.
+    byte_offset: 468
+    fieldset: Soctrim51
+  - name: soctrim5_2
+    description: SoC Trim Phrase 5 Word 2 Register.
+    byte_offset: 472
+    fieldset: Soctrim52
+  - name: soctrim5_3
+    description: SoC Trim Phrase 5 Word 3 Register.
+    byte_offset: 476
+    fieldset: Soctrim53
+  - name: soctrim6_0
+    description: SoC Trim Phrase 6 Word 0 Register.
+    byte_offset: 480
+    fieldset: Soctrim60
+  - name: soctrim6_1
+    description: SoC Trim Phrase 6 Word 1 Register.
+    byte_offset: 484
+    fieldset: Soctrim61
+  - name: soctrim6_2
+    description: SoC Trim Phrase 6 Word 2 Register.
+    byte_offset: 488
+    fieldset: Soctrim62
+  - name: soctrim6_3
+    description: SoC Trim Phrase 6 Word 3 Register.
+    byte_offset: 492
+    fieldset: Soctrim63
+  - name: soctrim7_0
+    description: SoC Trim Phrase 7 Word 0 Register.
+    byte_offset: 496
+    fieldset: Soctrim70
+  - name: soctrim7_1
+    description: SoC Trim Phrase 7 Word 1 Register.
+    byte_offset: 500
+    fieldset: Soctrim71
+  - name: soctrim7_2
+    description: SoC Trim Phrase 7 Word 2 Register.
+    byte_offset: 504
+    fieldset: Soctrim72
+  - name: soctrim7_3
+    description: SoC Trim Phrase 7 Word 3 Register.
+    byte_offset: 508
+    fieldset: Soctrim73
+  - name: r_ip_config
+    description: BIST Configuration Register.
+    byte_offset: 516
+    fieldset: RIpConfig
+  - name: r_testcode
+    description: BIST Test Code Register.
+    byte_offset: 520
+    fieldset: RTestcode
+  - name: r_dft_ctrl
+    description: BIST DFT Control Register.
+    byte_offset: 524
+    fieldset: RDftCtrl
+  - name: r_adr_ctrl
+    description: BIST Address Control Register.
+    byte_offset: 528
+    fieldset: RAdrCtrl
+  - name: r_data_ctrl0
+    description: BIST Data Control 0 Register.
+    byte_offset: 532
+    fieldset: RDataCtrl0
+  - name: r_pin_ctrl
+    description: BIST Pin Control Register.
+    byte_offset: 536
+    fieldset: RPinCtrl
+  - name: r_cnt_loop_ctrl
+    description: BIST Loop Count Control Register.
+    byte_offset: 540
+    fieldset: RCntLoopCtrl
+  - name: r_timer_ctrl
+    description: BIST Timer Control Register.
+    byte_offset: 544
+    fieldset: RTimerCtrl
+  - name: r_test_ctrl
+    description: BIST Test Control Register.
+    byte_offset: 548
+    fieldset: RTestCtrl
+  - name: r_abort_loop
+    description: BIST Abort Loop Register.
+    byte_offset: 552
+    fieldset: RAbortLoop
+  - name: r_adr_query
+    description: BIST Address Query Register.
+    byte_offset: 556
+    access: Read
+    fieldset: RAdrQuery
+  - name: r_dout_query0
+    description: BIST DOUT Query 0 Register.
+    byte_offset: 560
+    access: Read
+    fieldset: RDoutQuery0
+  - name: r_smw_query
+    description: BIST SMW Query Register.
+    byte_offset: 572
+    access: Read
+    fieldset: RSmwQuery
+  - name: r_smw_setting0
+    description: BIST SMW Setting 0 Register.
+    byte_offset: 576
+    fieldset: RSmwSetting0
+  - name: r_smw_setting1
+    description: BIST SMW Setting 1 Register.
+    byte_offset: 580
+    fieldset: RSmwSetting1
+  - name: r_smp_whv0
+    description: BIST SMP WHV Setting 0 Register.
+    byte_offset: 584
+    fieldset: RSmpWhv0
+  - name: r_smp_whv1
+    description: BIST SMP WHV Setting 1 Register.
+    byte_offset: 588
+    fieldset: RSmpWhv1
+  - name: r_sme_whv0
+    description: BIST SME WHV Setting 0 Register.
+    byte_offset: 592
+    fieldset: RSmeWhv0
+  - name: r_sme_whv1
+    description: BIST SME WHV Setting 1 Register.
+    byte_offset: 596
+    fieldset: RSmeWhv1
+  - name: r_smw_setting2
+    description: BIST SMW Setting 2 Register.
+    byte_offset: 600
+    fieldset: RSmwSetting2
+  - name: r_d_misr0
+    description: BIST DIN MISR 0 Register.
+    byte_offset: 604
+    access: Read
+    fieldset: RDMisr0
+  - name: r_a_misr0
+    description: BIST Address MISR 0 Register.
+    byte_offset: 608
+    access: Read
+    fieldset: RAMisr0
+  - name: r_c_misr0
+    description: BIST Control MISR 0 Register.
+    byte_offset: 612
+    access: Read
+    fieldset: RCMisr0
+  - name: r_smw_setting3
+    description: BIST SMW Setting 3 Register.
+    byte_offset: 616
+    fieldset: RSmwSetting3
+  - name: r_data_ctrl1
+    description: BIST Data Control 1 Register.
+    byte_offset: 620
+    fieldset: RDataCtrl1
+  - name: r_data_ctrl2
+    description: BIST Data Control 2 Register.
+    byte_offset: 624
+    fieldset: RDataCtrl2
+  - name: r_data_ctrl3
+    description: BIST Data Control 3 Register.
+    byte_offset: 628
+    fieldset: RDataCtrl3
+  - name: r_repair0_0
+    description: BIST Repair 0 for Block 0 Register.
+    byte_offset: 640
+    access: Read
+    fieldset: RRepair00
+  - name: r_repair0_1
+    description: BIST Repair 1 Block 0 Register.
+    byte_offset: 644
+    access: Read
+    fieldset: RRepair01
+  - name: r_repair1_0
+    description: BIST Repair 0 Block 1 Register.
+    byte_offset: 648
+    access: Read
+    fieldset: RRepair10
+  - name: r_repair1_1
+    description: BIST Repair 1 Block 1 Register.
+    byte_offset: 652
+    access: Read
+    fieldset: RRepair11
+  - name: r_data_ctrl0_ex
+    description: BIST Data Control 0 Extension Register.
+    byte_offset: 788
+    fieldset: RDataCtrl0Ex
+  - name: r_timer_ctrl_ex
+    description: BIST Timer Control Extension Register.
+    byte_offset: 800
+    fieldset: RTimerCtrlEx
+  - name: r_dout_query1
+    description: BIST DOUT Query 1 Register.
+    byte_offset: 816
+    access: Read
+    fieldset: RDoutQuery1
+  - name: r_d_misr1
+    description: BIST DIN MISR 1 Register.
+    byte_offset: 860
+    access: Read
+    fieldset: RDMisr1
+  - name: r_a_misr1
+    description: BIST Address MISR 1 Register.
+    byte_offset: 864
+    access: Read
+    fieldset: RAMisr1
+  - name: r_c_misr1
+    description: BIST Control MISR 1 Register.
+    byte_offset: 868
+    access: Read
+    fieldset: RCMisr1
+  - name: r_data_ctrl1_ex
+    description: BIST Data Control 1 Extension Register.
+    byte_offset: 876
+    fieldset: RDataCtrl1Ex
+  - name: r_data_ctrl2_ex
+    description: BIST Data Control 2 Extension Register.
+    byte_offset: 880
+    fieldset: RDataCtrl2Ex
+  - name: r_data_ctrl3_ex
+    description: BIST Data Control 3 Extension Register.
+    byte_offset: 884
+    fieldset: RDataCtrl3Ex
+  - name: smw_timer_option
+    description: SMW Timer Option Register.
+    byte_offset: 1024
+    fieldset: SmwTimerOption
+  - name: smw_setting_option0
+    description: SMW Setting Option 0 Register.
+    byte_offset: 1028
+    fieldset: SmwSettingOption0
+  - name: smw_setting_option2
+    description: SMW Setting Option 2 Register.
+    byte_offset: 1032
+    fieldset: SmwSettingOption2
+  - name: smw_setting_option3
+    description: SMW Setting Option 3 Register.
+    byte_offset: 1036
+    fieldset: SmwSettingOption3
+  - name: smw_smp_whv_option0
+    description: SMW SMP WHV Option 0 Register.
+    byte_offset: 1040
+    fieldset: SmwSmpWhvOption0
+  - name: smw_sme_whv_option0
+    description: SMW SME WHV Option 0 Register.
+    byte_offset: 1044
+    fieldset: SmwSmeWhvOption0
+  - name: smw_setting_option1
+    description: SMW Setting Option 1 Register.
+    byte_offset: 1048
+    fieldset: SmwSettingOption1
+  - name: smw_smp_whv_option1
+    description: SMW SMP WHV Option 1 Register.
+    byte_offset: 1052
+    fieldset: SmwSmpWhvOption1
+  - name: smw_sme_whv_option1
+    description: SMW SME WHV Option 1 Register.
+    byte_offset: 1056
+    fieldset: SmwSmeWhvOption1
+  - name: repair0_0
+    description: FMU Repair 0 Block 0 Register.
+    byte_offset: 1280
+    fieldset: Repair00
+  - name: repair0_1
+    description: FMU Repair 1 Block 0 Register.
+    byte_offset: 1284
+    fieldset: Repair01
+  - name: repair1_0
+    description: FMU Repair 0 Block 1 Register.
+    byte_offset: 1288
+    fieldset: Repair10
+  - name: repair1_1
+    description: FMU Repair 1 Block 1 Register.
+    byte_offset: 1292
+    fieldset: Repair11
+  - name: smw_hb_signals
+    description: SMW HB Signals Register.
+    byte_offset: 1536
+    fieldset: SmwHbSignals
+  - name: bist_dump_ctrl
+    description: BIST Datadump Control Register.
+    byte_offset: 1540
+    fieldset: BistDumpCtrl
+  - name: atx_pin_ctrl
+    description: ATX Pin Control Register.
+    byte_offset: 1548
+    fieldset: AtxPinCtrl
+  - name: failcnt
+    description: Fail Count Register.
+    byte_offset: 1552
+    fieldset: Failcnt
+  - name: pgm_pulse_cnt0
+    description: Block 0 Program Pulse Count Register.
+    byte_offset: 1556
+    fieldset: PgmPulseCnt0
+  - name: pgm_pulse_cnt1
+    description: Block 1 Program Pulse Count Register.
+    byte_offset: 1560
+    fieldset: PgmPulseCnt1
+  - name: ers_pulse_cnt
+    description: Erase Pulse Count Register.
+    byte_offset: 1564
+    fieldset: ErsPulseCnt
+  - name: max_pulse_cnt
+    description: Maximum Pulse Count Register.
+    byte_offset: 1568
+    fieldset: MaxPulseCnt
+  - name: port_ctrl
+    description: Port Control Register.
+    byte_offset: 1572
+    fieldset: PortCtrl
+fieldset/AtxPinCtrl:
+  description: ATX Pin Control Register.
+  fields:
+  - name: tm_to_atx
+    description: TM to ATX.
+    bit_offset: 0
+    bit_size: 8
+    enum: TmToAtx
+fieldset/BistDumpCtrl:
+  description: BIST Datadump Control Register.
+  fields:
+  - name: bist_done
+    description: BIST Done.
+    bit_offset: 16
+    bit_size: 1
+    enum: BistDone
+  - name: bist_fail
+    description: BIST Fail.
+    bit_offset: 17
+    bit_size: 1
+    enum: BistFail
+  - name: datadump
+    description: Data Dump Enable.
+    bit_offset: 18
+    bit_size: 1
+  - name: datadump_trig
+    description: Data Dump Trigger.
+    bit_offset: 19
+    bit_size: 1
+  - name: datadump_patt
+    description: Data Dump Pattern Select.
+    bit_offset: 20
+    bit_size: 2
+    enum: DatadumpPatt
+  - name: datadump_mrgen
+    description: Data Dump Margin Enable.
+    bit_offset: 22
+    bit_size: 1
+    enum: DatadumpMrgen
+  - name: datadump_mrgtype
+    description: Data Dump Margin Type.
+    bit_offset: 23
+    bit_size: 1
+    enum: DatadumpMrgtype
+fieldset/Bsel:
+  description: FMU Block Select Register.
+  fields:
+  - name: sbsel
+    description: Slave Block Select.
+    bit_offset: 0
+    bit_size: 2
+  - name: mbsel
+    description: Master Block Select.
+    bit_offset: 8
+    bit_size: 2
+fieldset/BselGen:
+  description: FMU Block Select Generation Register.
+  fields:
+  - name: sbsel_gen
+    description: Generated SBSEL.
+    bit_offset: 0
+    bit_size: 2
+  - name: mbsel_gen
+    description: Generated MBSEL.
+    bit_offset: 8
+    bit_size: 2
+fieldset/CmdCheck:
+  description: FMU Command Check Register.
+  fields:
+  - name: alignfail_phr
+    description: Phrase Alignment Fail.
+    bit_offset: 0
+    bit_size: 1
+    enum: AlignfailPhr
+  - name: alignfail_pg
+    description: Page Alignment Fail.
+    bit_offset: 1
+    bit_size: 1
+    enum: AlignfailPg
+  - name: alignfail_scr
+    description: Sector Alignment Fail.
+    bit_offset: 2
+    bit_size: 1
+    enum: AlignfailScr
+  - name: alignfail_blk
+    description: Block Alignment Fail.
+    bit_offset: 3
+    bit_size: 1
+    enum: AlignfailBlk
+  - name: addr_fail
+    description: Address Fail.
+    bit_offset: 4
+    bit_size: 1
+    enum: AddrFail
+  - name: ifr_cmd
+    description: IFR Command.
+    bit_offset: 5
+    bit_size: 1
+    enum: IfrCmd
+  - name: all_cmd
+    description: All Blocks Command.
+    bit_offset: 6
+    bit_size: 1
+    enum: AllCmd
+  - name: range_fail
+    description: Address Range Fail.
+    bit_offset: 7
+    bit_size: 1
+    enum: RangeFail
+  - name: scr_align_chk
+    description: Sector Alignment Check.
+    bit_offset: 8
+    bit_size: 1
+    enum: ScrAlignChk
+  - name: option_fail
+    description: Option Check Fail.
+    bit_offset: 9
+    bit_size: 1
+    enum: OptionFail
+  - name: illegal_cmd
+    description: Illegal Command.
+    bit_offset: 10
+    bit_size: 1
+    enum: IllegalCmd
+fieldset/ErsPulseCnt:
+  description: Erase Pulse Count Register.
+  fields:
+  - name: ers_cnt0
+    description: Block 0 Erase Pulse Count.
+    bit_offset: 0
+    bit_size: 16
+  - name: ers_cnt1
+    description: Block 1 Erase Pulse Count.
+    bit_offset: 16
+    bit_size: 16
+fieldset/Failcnt:
+  description: Fail Count Register.
+  fields:
+  - name: failcnt
+    description: Fail Count.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Fccob0:
+  description: Flash Command Control 0 Register.
+  fields:
+  - name: cmdcode
+    description: Command code.
+    bit_offset: 0
+    bit_size: 8
+fieldset/Fccob1:
+  description: Flash Command Control 1 Register.
+  fields:
+  - name: cmdopt
+    description: Command options.
+    bit_offset: 0
+    bit_size: 8
+fieldset/Fccob2:
+  description: Flash Command Control 2 Register.
+  fields:
+  - name: cmdaddr
+    description: Command starting address.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Fccob3:
+  description: Flash Command Control 3 Register.
+  fields:
+  - name: cmdaddre
+    description: Command ending address.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Fccob4:
+  description: Flash Command Control 4 Register.
+  fields:
+  - name: cmddata0
+    description: Command data word 0.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Fccob5:
+  description: Flash Command Control 5 Register.
+  fields:
+  - name: cmddata1
+    description: Command data word 1.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Fccob6:
+  description: Flash Command Control 6 Register.
+  fields:
+  - name: cmddata2
+    description: Command data word 2.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Fccob7:
+  description: Flash Command Control 7 Register.
+  fields:
+  - name: cmddata3
+    description: Command data word 3.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Fcnfg:
+  description: Flash Configuration Register.
+  fields:
+  - name: ccie
+    description: Command Complete Interrupt Enable.
+    bit_offset: 7
+    bit_size: 1
+    enum: Ccie
+  - name: ersreq
+    description: Mass Erase (Erase All) Request.
+    bit_offset: 8
+    bit_size: 1
+    enum: Ersreq
+  - name: dfdie
+    description: Double Bit Fault Detect Interrupt Enable.
+    bit_offset: 16
+    bit_size: 1
+    enum: Dfdie
+  - name: ersien0
+    description: Erase IFR Sector Enable - Block 0.
+    bit_offset: 24
+    bit_size: 4
+    enum: Ersien0
+  - name: ersien1
+    description: Erase IFR Sector Enable - Block 1 (for dual block configs).
+    bit_offset: 28
+    bit_size: 4
+    enum: Ersien1
+fieldset/Fctrl:
+  description: Flash Control Register.
+  fields:
+  - name: rwsc
+    description: Read Wait-State Control.
+    bit_offset: 0
+    bit_size: 4
+    enum: Rwsc
+  - name: lsactive
+    description: Low Speed Active Mode.
+    bit_offset: 8
+    bit_size: 1
+    enum: Lsactive
+  - name: fdfd
+    description: Force Double Bit Fault Detect.
+    bit_offset: 16
+    bit_size: 1
+    enum: Fdfd
+  - name: abtreq
+    description: Abort Request.
+    bit_offset: 24
+    bit_size: 1
+    enum: Abtreq
+fieldset/FlashRdAdd:
+  description: Flash Read Address Register.
+  fields:
+  - name: flash_rd_add
+    description: Flash Read Address.
+    bit_offset: 0
+    bit_size: 32
+fieldset/FlashRdCtrl:
+  description: Flash Read Control Register.
+  fields:
+  - name: flash_rd
+    description: Flash Read Enable.
+    bit_offset: 0
+    bit_size: 1
+    enum: FlashRd
+  - name: wide_load
+    description: Wide Load Enable.
+    bit_offset: 1
+    bit_size: 1
+    enum: WideLoad
+  - name: single_rd
+    description: Single Flash Read.
+    bit_offset: 2
+    bit_size: 1
+    enum: SingleRd
+fieldset/FlashStopAdd:
+  description: Flash Stop Address Register.
+  fields:
+  - name: flash_stop_add
+    description: Flash Stop Address.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Fstat:
+  description: Flash Status Register.
+  fields:
+  - name: fail
+    description: Command Fail Flag.
+    bit_offset: 0
+    bit_size: 1
+    enum: Fail
+  - name: cmdabt
+    description: Command Abort Flag.
+    bit_offset: 2
+    bit_size: 1
+    enum: Cmdabt
+  - name: pviol
+    description: Command Protection Violation Flag.
+    bit_offset: 4
+    bit_size: 1
+    enum: Pviol
+  - name: accerr
+    description: Command Access Error Flag.
+    bit_offset: 5
+    bit_size: 1
+    enum: Accerr
+  - name: cwsabt
+    description: Command Write Sequence Abort Flag.
+    bit_offset: 6
+    bit_size: 1
+    enum: Cwsabt
+  - name: ccif
+    description: Command Complete Interrupt Flag.
+    bit_offset: 7
+    bit_size: 1
+    enum: Ccif
+  - name: cmdprt
+    description: Command Protection Level.
+    bit_offset: 8
+    bit_size: 2
+    enum: Cmdprt
+  - name: cmdp
+    description: Command Protection Status Flag.
+    bit_offset: 11
+    bit_size: 1
+    enum: Cmdp
+  - name: cmddid
+    description: Command Domain ID.
+    bit_offset: 12
+    bit_size: 4
+  - name: dfdif
+    description: Double Bit Fault Detect Interrupt Flag.
+    bit_offset: 16
+    bit_size: 1
+    enum: Dfdif
+  - name: salv_used
+    description: Salvage Used for Erase operation.
+    bit_offset: 17
+    bit_size: 1
+    enum: SalvUsed
+  - name: pewen
+    description: Program-Erase Write Enable Control.
+    bit_offset: 24
+    bit_size: 2
+    enum: Pewen
+  - name: perdy
+    description: Program/Erase Ready Control/Status Flag.
+    bit_offset: 31
+    bit_size: 1
+    enum: Perdy
+fieldset/Ftest:
+  description: Flash Test Register.
+  fields:
+  - name: tmectl
+    description: Test Mode Entry Control.
+    bit_offset: 0
+    bit_size: 1
+    enum: Tmectl
+  - name: tmewr
+    description: Test Mode Entry Writable.
+    bit_offset: 1
+    bit_size: 1
+    enum: Tmewr
+  - name: tme
+    description: Test Mode Entry.
+    bit_offset: 2
+    bit_size: 1
+    enum: Tme
+  - name: tmode
+    description: Test Mode Status.
+    bit_offset: 3
+    bit_size: 1
+    enum: Tmode
+  - name: tmelock
+    description: Test Mode Entry Lock.
+    bit_offset: 4
+    bit_size: 1
+    enum: Tmelock
+fieldset/MaxPulseCnt:
+  description: Maximum Pulse Count Register.
+  fields:
+  - name: last_pcnt
+    description: Last SMW Operation's Pulse Count.
+    bit_offset: 0
+    bit_size: 9
+  - name: max_ers_cnt
+    description: Maximum Erase Pulse Count.
+    bit_offset: 16
+    bit_size: 9
+  - name: max_pgm_cnt
+    description: Maximum Program Pulse Count.
+    bit_offset: 27
+    bit_size: 5
+fieldset/Mctl:
+  description: FMU Control Register.
+  fields:
+  - name: corehld
+    description: Core Hold.
+    bit_offset: 0
+    bit_size: 1
+    enum: Corehld
+  - name: lsact_en
+    description: LSACTIVE Feature Enable.
+    bit_offset: 2
+    bit_size: 1
+    enum: LsactEn
+  - name: lsactwren
+    description: LSACTIVE Write Enable.
+    bit_offset: 3
+    bit_size: 1
+    enum: Lsactwren
+  - name: master_repair_en
+    description: Master Repair Enable.
+    bit_offset: 4
+    bit_size: 1
+    enum: MasterRepairEn
+  - name: rfcmden
+    description: RF Active Command Enable Control.
+    bit_offset: 5
+    bit_size: 1
+    enum: Rfcmden
+  - name: cwsabten
+    description: Command Write Sequence Abort Enable.
+    bit_offset: 6
+    bit_size: 1
+    enum: Cwsabten
+  - name: mrgrddis
+    description: Margin Read Disable.
+    bit_offset: 7
+    bit_size: 1
+    enum: Mrgrddis
+  - name: mrgrd0
+    description: Margin Read Setting for Program.
+    bit_offset: 8
+    bit_size: 4
+  - name: mrgrd1
+    description: Margin Read Setting for Erase.
+    bit_offset: 12
+    bit_size: 4
+  - name: ersaack
+    description: Mass Erase (Erase All) Acknowledge.
+    bit_offset: 16
+    bit_size: 1
+    enum: Ersaack
+  - name: scan_obs
+    description: Scan Observability Control.
+    bit_offset: 19
+    bit_size: 1
+    enum: ScanObs
+  - name: bist_ctl
+    description: BIST IP Control.
+    bit_offset: 20
+    bit_size: 1
+    enum: BistCtl
+  - name: smwr_ctl
+    description: SMWR IP Control.
+    bit_offset: 21
+    bit_size: 1
+    enum: SmwrCtl
+  - name: salv_dis
+    description: Salvage Disable.
+    bit_offset: 24
+    bit_size: 1
+    enum: SalvDis
+  - name: soc_ecc_ctl
+    description: SOC ECC Control.
+    bit_offset: 25
+    bit_size: 1
+    enum: SocEccCtl
+  - name: fmu_ecc_ctl
+    description: FMU ECC Control.
+    bit_offset: 26
+    bit_size: 1
+    enum: FmuEccCtl
+  - name: bist_pwr_dis
+    description: BIST Power Mode Disable.
+    bit_offset: 29
+    bit_size: 1
+    enum: BistPwrDis
+  - name: osc_h
+    description: Oscillator control.
+    bit_offset: 31
+    bit_size: 1
+    enum: OscH
+fieldset/MmAddr:
+  description: Memory Map Address Register.
+  fields:
+  - name: mm_addr
+    description: Memory Map Address.
+    bit_offset: 0
+    bit_size: 32
+fieldset/MmCtl:
+  description: Memory Map Control Register.
+  fields:
+  - name: mm_sel
+    description: Register Access Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: mm_rd
+    description: Register R/W Control.
+    bit_offset: 1
+    bit_size: 1
+    enum: MmRd
+  - name: bist_on
+    description: BIST on.
+    bit_offset: 2
+    bit_size: 1
+    enum: BistOn
+  - name: force_sw_clk
+    description: Force Switch Clock.
+    bit_offset: 3
+    bit_size: 1
+    enum: ForceSwClk
+fieldset/MmWdata:
+  description: Memory Map Write Data Register.
+  fields:
+  - name: mm_wdata
+    description: Memory Map Write Data.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Msize:
+  description: FMU Memory Size Register.
+  fields:
+  - name: maxaddr0
+    description: Size of Flash Block 0.
+    bit_offset: 0
+    bit_size: 8
+fieldset/Parity:
+  description: Parity Register.
+  fields:
+  - name: parity
+    description: Read data [136:128].
+    bit_offset: 0
+    bit_size: 9
+fieldset/PgmPulseCnt0:
+  description: Block 0 Program Pulse Count Register.
+  fields:
+  - name: pgm_cnt0
+    description: Program Pulse Count.
+    bit_offset: 0
+    bit_size: 32
+fieldset/PgmPulseCnt1:
+  description: Block 1 Program Pulse Count Register.
+  fields:
+  - name: pgm_cnt1
+    description: Program Pulse Count.
+    bit_offset: 0
+    bit_size: 32
+fieldset/PortCtrl:
+  description: Port Control Register.
+  fields:
+  - name: bdone_sel
+    description: BIST Done Select.
+    bit_offset: 0
+    bit_size: 2
+    enum: BdoneSel
+  - name: bsdo_sel
+    description: BIST Serial Data Output Select.
+    bit_offset: 2
+    bit_size: 2
+    enum: BsdoSel
+fieldset/PwrOpt:
+  description: Power Mode Options Register.
+  fields:
+  - name: pd_cdiv
+    description: Power Down Clock Divider Setting.
+    bit_offset: 0
+    bit_size: 8
+  - name: slm_count
+    description: Sleep Recovery Timer Count.
+    bit_offset: 16
+    bit_size: 10
+  - name: pd_timer_en
+    description: Power Down BIST Timer Enable.
+    bit_offset: 31
+    bit_size: 1
+    enum: PdTimerEn
+fieldset/RAMisr0:
+  description: BIST Address MISR 0 Register.
+  fields:
+  - name: adrsig0
+    description: Address Signature.
+    bit_offset: 0
+    bit_size: 32
+fieldset/RAMisr1:
+  description: BIST Address MISR 1 Register.
+  fields:
+  - name: adrsig1
+    description: MISR Address Signature High.
+    bit_offset: 0
+    bit_size: 8
+fieldset/RAbortLoop:
+  description: BIST Abort Loop Register.
+  fields:
+  - name: abort_loop
+    description: Abort Loop.
+    bit_offset: 0
+    bit_size: 1
+    enum: AbortLoop
+fieldset/RAdrCtrl:
+  description: BIST Address Control Register.
+  fields:
+  - name: grpsel
+    description: Data Group Select.
+    bit_offset: 0
+    bit_size: 4
+    enum: Grpsel
+  - name: xadr
+    description: BIST XADR.
+    bit_offset: 4
+    bit_size: 12
+  - name: yadr
+    description: BIST YADR.
+    bit_offset: 16
+    bit_size: 5
+  - name: prog_attr
+    description: Program Attribute.
+    bit_offset: 21
+    bit_size: 3
+    enum: ProgAttr
+fieldset/RAdrQuery:
+  description: BIST Address Query Register.
+  fields:
+  - name: yadrfail
+    description: Failing YADR.
+    bit_offset: 0
+    bit_size: 5
+  - name: xadrfail
+    description: Failing XADR.
+    bit_offset: 5
+    bit_size: 12
+fieldset/RCMisr0:
+  description: BIST Control MISR 0 Register.
+  fields:
+  - name: ctrlsig0
+    description: Control Signature.
+    bit_offset: 0
+    bit_size: 32
+fieldset/RCMisr1:
+  description: BIST Control MISR 1 Register.
+  fields:
+  - name: ctrlsig1
+    description: MISR Control Signature High.
+    bit_offset: 0
+    bit_size: 8
+fieldset/RCntLoopCtrl:
+  description: BIST Loop Count Control Register.
+  fields:
+  - name: loopcnt
+    description: Loop Count Control.
+    bit_offset: 0
+    bit_size: 12
+  - name: loopopt
+    description: Loop Option.
+    bit_offset: 12
+    bit_size: 3
+    enum: Loopopt
+  - name: loopunit
+    description: Loop Time Unit.
+    bit_offset: 15
+    bit_size: 3
+    enum: Loopunit
+  - name: loopdly
+    description: Loop Time Delay Scalar.
+    bit_offset: 18
+    bit_size: 7
+fieldset/RDMisr0:
+  description: BIST DIN MISR 0 Register.
+  fields:
+  - name: datasig0
+    description: Data Signature.
+    bit_offset: 0
+    bit_size: 32
+fieldset/RDMisr1:
+  description: BIST DIN MISR 1 Register.
+  fields:
+  - name: datasig1
+    description: MISR Data Signature High.
+    bit_offset: 0
+    bit_size: 8
+fieldset/RDataCtrl0:
+  description: BIST Data Control 0 Register.
+  fields:
+  - name: data0
+    description: BIST Data 0 Low.
+    bit_offset: 0
+    bit_size: 32
+fieldset/RDataCtrl0Ex:
+  description: BIST Data Control 0 Extension Register.
+  fields:
+  - name: data0x
+    description: BIST Data 0 High.
+    bit_offset: 0
+    bit_size: 3
+fieldset/RDataCtrl1:
+  description: BIST Data Control 1 Register.
+  fields:
+  - name: data1
+    description: BIST Data 1 Low.
+    bit_offset: 0
+    bit_size: 32
+fieldset/RDataCtrl1Ex:
+  description: BIST Data Control 1 Extension Register.
+  fields:
+  - name: data1x
+    description: BIST Data 1 High.
+    bit_offset: 0
+    bit_size: 3
+fieldset/RDataCtrl2:
+  description: BIST Data Control 2 Register.
+  fields:
+  - name: data2
+    description: BIST Data 2 Low.
+    bit_offset: 0
+    bit_size: 32
+fieldset/RDataCtrl2Ex:
+  description: BIST Data Control 2 Extension Register.
+  fields:
+  - name: data2x
+    description: BIST Data 2 High.
+    bit_offset: 0
+    bit_size: 3
+fieldset/RDataCtrl3:
+  description: BIST Data Control 3 Register.
+  fields:
+  - name: data3
+    description: BIST Data 3 Low.
+    bit_offset: 0
+    bit_size: 32
+fieldset/RDataCtrl3Ex:
+  description: BIST Data Control 3 Extension Register.
+  fields:
+  - name: data3x
+    description: BIST Data 3 High.
+    bit_offset: 0
+    bit_size: 3
+fieldset/RDftCtrl:
+  description: BIST DFT Control Register.
+  fields:
+  - name: dft_xadr
+    description: DFT XADR Pattern.
+    bit_offset: 0
+    bit_size: 4
+    enum: DftXadr
+  - name: dft_yadr
+    description: DFT YADR Pattern.
+    bit_offset: 4
+    bit_size: 4
+    enum: DftYadr
+  - name: dft_data
+    description: DFT Data Pattern.
+    bit_offset: 8
+    bit_size: 4
+    enum: DftData
+  - name: cmp_mask
+    description: Data Compare Mask.
+    bit_offset: 12
+    bit_size: 2
+    enum: CmpMask
+  - name: dft_data_src
+    description: DFT Data Source.
+    bit_offset: 14
+    bit_size: 1
+    enum: DftDataSrc
+fieldset/RDoutQuery0:
+  description: BIST DOUT Query 0 Register.
+  fields:
+  - name: doutfail
+    description: Failing DOUT Low.
+    bit_offset: 0
+    bit_size: 32
+fieldset/RDoutQuery1:
+  description: BIST DOUT Query 1 Register.
+  fields:
+  - name: dout
+    description: Failing DOUT High.
+    bit_offset: 0
+    bit_size: 3
+fieldset/RIpConfig:
+  description: BIST Configuration Register.
+  fields:
+  - name: ipsel0
+    description: Block 0 Select Control.
+    bit_offset: 0
+    bit_size: 2
+    enum: Ipsel0
+  - name: ipsel1
+    description: Block 1 Select Control.
+    bit_offset: 2
+    bit_size: 2
+    enum: Ipsel1
+  - name: bist_cdivl
+    description: Clock Divide Scalar for Long Pulse.
+    bit_offset: 4
+    bit_size: 8
+  - name: cdivs
+    description: Number of clock cycles to generate short pulse.
+    bit_offset: 12
+    bit_size: 3
+  - name: bist_tvfy
+    description: Timer adjust for verify.
+    bit_offset: 15
+    bit_size: 5
+  - name: tstctl
+    description: BIST self-test control.
+    bit_offset: 20
+    bit_size: 2
+    enum: Tstctl
+  - name: dbgctl
+    description: Debug feature control.
+    bit_offset: 22
+    bit_size: 1
+    enum: Dbgctl
+  - name: bist_clk_sel
+    description: BIST Clock Select.
+    bit_offset: 23
+    bit_size: 1
+  - name: smwtst
+    description: SMWR DOUT Function Control.
+    bit_offset: 24
+    bit_size: 2
+    enum: Smwtst
+  - name: eccen
+    description: BIST ECC Control.
+    bit_offset: 26
+    bit_size: 1
+    enum: Eccen
+fieldset/RPinCtrl:
+  description: BIST Pin Control Register.
+  fields:
+  - name: mas1
+    description: Mass Erase.
+    bit_offset: 0
+    bit_size: 1
+  - name: ifren
+    description: IFR Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: ifren1
+    description: IFR1 Enable.
+    bit_offset: 2
+    bit_size: 1
+  - name: reden
+    description: Redundancy Block Enable.
+    bit_offset: 3
+    bit_size: 1
+  - name: lve
+    description: Low Voltage Enable.
+    bit_offset: 4
+    bit_size: 1
+  - name: pv
+    description: Program Verify Enable.
+    bit_offset: 5
+    bit_size: 1
+  - name: ev
+    description: Erase Verify Enable.
+    bit_offset: 6
+    bit_size: 1
+  - name: wipgm
+    description: Program Current.
+    bit_offset: 7
+    bit_size: 2
+  - name: whv
+    description: High Voltage Level.
+    bit_offset: 9
+    bit_size: 4
+  - name: wmv
+    description: Medium Voltage Level.
+    bit_offset: 13
+    bit_size: 3
+  - name: xe
+    description: X Address Enable.
+    bit_offset: 16
+    bit_size: 1
+  - name: ye
+    description: Y Address Enable.
+    bit_offset: 17
+    bit_size: 1
+  - name: se
+    description: Sense Amp Enable.
+    bit_offset: 18
+    bit_size: 1
+  - name: erase
+    description: Erase Mode.
+    bit_offset: 19
+    bit_size: 1
+  - name: prog
+    description: Program Mode.
+    bit_offset: 20
+    bit_size: 1
+  - name: nvstr
+    description: NVM Store.
+    bit_offset: 21
+    bit_size: 1
+  - name: slm
+    description: Sleep Mode Enable.
+    bit_offset: 22
+    bit_size: 1
+  - name: recall
+    description: Recall Trim Code.
+    bit_offset: 23
+    bit_size: 1
+  - name: hem
+    description: HEM Control.
+    bit_offset: 24
+    bit_size: 1
+fieldset/RRepair00:
+  description: BIST Repair 0 for Block 0 Register.
+  fields:
+  - name: rdis0_0
+    description: Control Repair 0 in Block 0.
+    bit_offset: 0
+    bit_size: 1
+    enum: RRepair00Rdis00
+  - name: radr0_0
+    description: XADR for Repair 0 in Block 0.
+    bit_offset: 1
+    bit_size: 8
+fieldset/RRepair01:
+  description: BIST Repair 1 Block 0 Register.
+  fields:
+  - name: rdis0_1
+    description: Control Repair 1 in Block 0.
+    bit_offset: 0
+    bit_size: 1
+    enum: RRepair01Rdis01
+  - name: radr0_1
+    description: XADR for Repair 1 in Block 0.
+    bit_offset: 1
+    bit_size: 8
+fieldset/RRepair10:
+  description: BIST Repair 0 Block 1 Register.
+  fields:
+  - name: rdis1_0
+    description: Control Repair 0 in Block 1.
+    bit_offset: 0
+    bit_size: 1
+    enum: RRepair10Rdis10
+  - name: radr1_0
+    description: XADR for Repair 0 in Block 1.
+    bit_offset: 1
+    bit_size: 8
+fieldset/RRepair11:
+  description: BIST Repair 1 Block 1 Register.
+  fields:
+  - name: rdis1_1
+    description: Control Repair 1 in Block 1.
+    bit_offset: 0
+    bit_size: 1
+    enum: RRepair11Rdis11
+  - name: radr1_1
+    description: XADR for Repair 1 in Block 1.
+    bit_offset: 1
+    bit_size: 8
+fieldset/RSmeWhv0:
+  description: BIST SME WHV Setting 0 Register.
+  fields:
+  - name: smewhv0
+    description: SME WHV Parameter Set 0.
+    bit_offset: 0
+    bit_size: 32
+fieldset/RSmeWhv1:
+  description: BIST SME WHV Setting 1 Register.
+  fields:
+  - name: smewhv1
+    description: SME WHV Parameter Set 1.
+    bit_offset: 0
+    bit_size: 32
+fieldset/RSmpWhv0:
+  description: BIST SMP WHV Setting 0 Register.
+  fields:
+  - name: smpwhv0
+    description: SMP WHV Parameter Set 0.
+    bit_offset: 0
+    bit_size: 32
+fieldset/RSmpWhv1:
+  description: BIST SMP WHV Setting 1 Register.
+  fields:
+  - name: smpwhv1
+    description: SMP WHV Parameter Set 1.
+    bit_offset: 0
+    bit_size: 32
+fieldset/RSmwQuery:
+  description: BIST SMW Query Register.
+  fields:
+  - name: smwloop
+    description: SMW Total Loop Count.
+    bit_offset: 0
+    bit_size: 10
+  - name: smwlast
+    description: SMW Last Voltage Setting.
+    bit_offset: 10
+    bit_size: 9
+fieldset/RSmwSetting0:
+  description: BIST SMW Setting 0 Register.
+  fields:
+  - name: smwparm0
+    description: SMW Parameter Set 0.
+    bit_offset: 0
+    bit_size: 31
+fieldset/RSmwSetting1:
+  description: BIST SMW Setting 1 Register.
+  fields:
+  - name: smwparm1
+    description: SMW Parameter Set 1.
+    bit_offset: 0
+    bit_size: 28
+fieldset/RSmwSetting2:
+  description: BIST SMW Setting 2 Register.
+  fields:
+  - name: smwparm2
+    description: SMW Parameter Set 2.
+    bit_offset: 0
+    bit_size: 29
+fieldset/RSmwSetting3:
+  description: BIST SMW Setting 3 Register.
+  fields:
+  - name: smwparm3
+    description: SMW Parameter Set 3.
+    bit_offset: 0
+    bit_size: 17
+fieldset/RTestCtrl:
+  description: BIST Test Control Register.
+  fields:
+  - name: busy
+    description: BIST Busy Status.
+    bit_offset: 0
+    bit_size: 1
+    enum: Busy
+  - name: debug
+    description: BIST Debug Status.
+    bit_offset: 1
+    bit_size: 1
+  - name: status0
+    description: BIST Status 0.
+    bit_offset: 2
+    bit_size: 1
+    enum: Status0
+  - name: status1
+    description: BIST status 1.
+    bit_offset: 3
+    bit_size: 1
+    enum: Status1
+  - name: debugrun
+    description: BIST Continue Debug Run.
+    bit_offset: 4
+    bit_size: 1
+  - name: startrun
+    description: Run New BIST Operation.
+    bit_offset: 5
+    bit_size: 1
+  - name: cmdindex
+    description: BIST Command Index (code).
+    bit_offset: 6
+    bit_size: 10
+  - name: disable_ip1
+    description: BIST Disable IP1.
+    bit_offset: 16
+    bit_size: 1
+fieldset/RTestcode:
+  description: BIST Test Code Register.
+  fields:
+  - name: testcode
+    description: Used to store test code information before running TMR-RST/TMRSET BIST command.
+    bit_offset: 0
+    bit_size: 6
+fieldset/RTimerCtrl:
+  description: BIST Timer Control Register.
+  fields:
+  - name: tnvsunit
+    description: Tnvs Time Unit.
+    bit_offset: 0
+    bit_size: 3
+    enum: Tnvsunit
+  - name: tnvsdly
+    description: Tnvs Time Delay Scalar.
+    bit_offset: 3
+    bit_size: 4
+  - name: tnvhunit
+    description: Tnvh Time Unit.
+    bit_offset: 7
+    bit_size: 3
+    enum: Tnvhunit
+  - name: tnvhdly
+    description: Tnvh Time Delay Scalar.
+    bit_offset: 10
+    bit_size: 4
+  - name: tpgsunit
+    description: Tpgs Time Unit.
+    bit_offset: 14
+    bit_size: 3
+    enum: Tpgsunit
+  - name: tpgsdly
+    description: Tpgs Time Delay Scalar.
+    bit_offset: 17
+    bit_size: 4
+  - name: trcvunit
+    description: Trcv Time Unit.
+    bit_offset: 21
+    bit_size: 3
+    enum: Trcvunit
+  - name: trcvdly
+    description: Trcv Time Delay Scalar.
+    bit_offset: 24
+    bit_size: 4
+  - name: tlvsunit
+    description: Tlvs Time Unit.
+    bit_offset: 28
+    bit_size: 3
+    enum: Tlvsunit
+  - name: tlvsdly_l
+    description: Tlvs Time Delay Scalar Low.
+    bit_offset: 31
+    bit_size: 1
+fieldset/RTimerCtrlEx:
+  description: BIST Timer Control Extension Register.
+  fields:
+  - name: tlvsdly_h
+    description: Tlvs Time Delay Scalar High.
+    bit_offset: 0
+    bit_size: 3
+fieldset/RdData0:
+  description: Read Data 0 Register.
+  fields:
+  - name: rd_data0
+    description: Read Data 0.
+    bit_offset: 0
+    bit_size: 32
+fieldset/RdData1:
+  description: Read Data 1 Register.
+  fields:
+  - name: rd_data1
+    description: Read Data 1.
+    bit_offset: 0
+    bit_size: 32
+fieldset/RdData2:
+  description: Read Data 2 Register.
+  fields:
+  - name: rd_data2
+    description: Read Data 2.
+    bit_offset: 0
+    bit_size: 32
+fieldset/RdData3:
+  description: Read Data 3 Register.
+  fields:
+  - name: rd_data3
+    description: Read Data 3.
+    bit_offset: 0
+    bit_size: 32
+fieldset/RdPathCtrlStatus:
+  description: Read Path Control and Status Register.
+  fields:
+  - name: rd_capt
+    description: Read Capture Clock Periods.
+    bit_offset: 0
+    bit_size: 8
+  - name: se_size
+    description: SE Clock Periods.
+    bit_offset: 8
+    bit_size: 8
+  - name: ecc_enableb
+    description: ECC Decoder Control.
+    bit_offset: 16
+    bit_size: 1
+    enum: EccEnableb
+  - name: misr_en
+    description: MISR Enable.
+    bit_offset: 17
+    bit_size: 1
+    enum: MisrEn
+  - name: cpy_par_en
+    description: Copy Parity Enable.
+    bit_offset: 18
+    bit_size: 1
+    enum: CpyParEn
+  - name: bist_mux_to_smw
+    description: BIST Mux to SMW.
+    bit_offset: 19
+    bit_size: 1
+    enum: BistMuxToSmw
+  - name: ad_set
+    description: Multi-Cycle Address Setup Time.
+    bit_offset: 20
+    bit_size: 4
+  - name: wr_path_en
+    description: Write Path Enable.
+    bit_offset: 24
+    bit_size: 1
+    enum: WrPathEn
+  - name: wr_path_ecc_en
+    description: Write Path ECC Enable.
+    bit_offset: 25
+    bit_size: 1
+    enum: WrPathEccEn
+  - name: dberr_reg
+    description: Double-Bit Error.
+    bit_offset: 26
+    bit_size: 1
+    enum: DberrReg
+  - name: sberr_reg
+    description: Single-Bit Error.
+    bit_offset: 27
+    bit_size: 1
+    enum: SberrReg
+  - name: cpy_phrase_en
+    description: Copy Phrase Enable.
+    bit_offset: 28
+    bit_size: 1
+    enum: CpyPhraseEn
+  - name: smw_array1_smw0_sel
+    description: SMW_ARRAY1_SMW0_SEL.
+    bit_offset: 29
+    bit_size: 1
+    enum: SmwArray1Smw0Sel
+  - name: bist_ecc_en
+    description: BIST ECC Enable.
+    bit_offset: 30
+    bit_size: 1
+    enum: BistEccEn
+  - name: last_read
+    description: Last Read.
+    bit_offset: 31
+    bit_size: 1
+    enum: LastRead
+fieldset/Repair00:
+  description: FMU Repair 0 Block 0 Register.
+  fields:
+  - name: rdis0_0
+    description: RDIS0_0.
+    bit_offset: 0
+    bit_size: 1
+    enum: Repair00Rdis00
+  - name: radr0_0
+    description: RADR0_0.
+    bit_offset: 1
+    bit_size: 8
+fieldset/Repair01:
+  description: FMU Repair 1 Block 0 Register.
+  fields:
+  - name: rdis0_1
+    description: RDIS0_1.
+    bit_offset: 0
+    bit_size: 1
+    enum: Repair01Rdis01
+  - name: radr0_1
+    description: RADR0_1.
+    bit_offset: 1
+    bit_size: 8
+fieldset/Repair10:
+  description: FMU Repair 0 Block 1 Register.
+  fields:
+  - name: rdis1_0
+    description: RDIS1_0.
+    bit_offset: 0
+    bit_size: 1
+    enum: Repair10Rdis10
+  - name: radr1_0
+    description: RADR1_0.
+    bit_offset: 1
+    bit_size: 8
+fieldset/Repair11:
+  description: FMU Repair 1 Block 1 Register.
+  fields:
+  - name: rdis1_1
+    description: RDIS1_1.
+    bit_offset: 0
+    bit_size: 1
+    enum: Repair11Rdis11
+  - name: radr1_1
+    description: RADR1_1.
+    bit_offset: 1
+    bit_size: 8
+fieldset/ResetStatus:
+  description: FMU Initialization Tracking Register.
+  fields:
+  - name: ary_trim_done
+    description: Array Trim Complete.
+    bit_offset: 0
+    bit_size: 1
+    enum: AryTrimDone
+  - name: fmu_parm_en
+    description: Status of the C0DE_C0DEh check to enable loading of the FMU parameters.
+    bit_offset: 1
+    bit_size: 1
+    enum: FmuParmEn
+  - name: fmu_parm_done
+    description: FMU Register Load Complete.
+    bit_offset: 2
+    bit_size: 1
+    enum: FmuParmDone
+  - name: soc_trim_en
+    description: Status of the C0DE_C0DEh check to enable loading of the SoC trim settings.
+    bit_offset: 3
+    bit_size: 1
+    enum: SocTrimEn
+  - name: soc_trim_ecc
+    description: Status of the C0DE_C0DEh check for enabling ECC decoder during reads of SoC trim settings.
+    bit_offset: 4
+    bit_size: 1
+    enum: SocTrimEcc
+  - name: soc_trim_done
+    description: SoC Trim Complete.
+    bit_offset: 5
+    bit_size: 1
+    enum: SocTrimDone
+  - name: rpr_done
+    description: Array Repair Complete.
+    bit_offset: 6
+    bit_size: 1
+    enum: RprDone
+  - name: init_done
+    description: Initialization Done.
+    bit_offset: 7
+    bit_size: 1
+    enum: InitDone
+  - name: rst_sf_err
+    description: ECC Single Fault during Reset Recovery.
+    bit_offset: 8
+    bit_size: 1
+    enum: RstSfErr
+  - name: rst_df_err
+    description: ECC Double Fault during Reset Recovery.
+    bit_offset: 9
+    bit_size: 1
+    enum: RstDfErr
+  - name: soc_trim_df_err
+    description: ECC Double Fault during load of SoC Trim phrases.
+    bit_offset: 10
+    bit_size: 8
+  - name: rst_patch_ld
+    description: Reset Patch Required.
+    bit_offset: 18
+    bit_size: 1
+    enum: RstPatchLd
+  - name: recall_data_mismatch
+    description: Recall Data Mismatch.
+    bit_offset: 19
+    bit_size: 1
+    enum: RecallDataMismatch
+fieldset/SmwAddr:
+  description: SMW Address Register.
+  fields:
+  - name: smw_addr
+    description: SMW Address.
+    bit_offset: 0
+    bit_size: 32
+fieldset/SmwCmdWait:
+  description: SMW Command and Wait Register.
+  fields:
+  - name: cmd
+    description: SMW Command.
+    bit_offset: 0
+    bit_size: 3
+    enum: Cmd
+  - name: wait_en
+    description: SMW Wait Enable.
+    bit_offset: 3
+    bit_size: 1
+    enum: WaitEn
+  - name: wait_auto_set
+    description: SMW Wait Auto Set.
+    bit_offset: 4
+    bit_size: 1
+fieldset/SmwDin0:
+  description: SMW DIN 0 Register.
+  fields:
+  - name: smw_din0
+    description: SMW DIN 0.
+    bit_offset: 0
+    bit_size: 32
+fieldset/SmwDin1:
+  description: SMW DIN 1 Register.
+  fields:
+  - name: smw_din1
+    description: SMW DIN 1.
+    bit_offset: 0
+    bit_size: 32
+fieldset/SmwDin2:
+  description: SMW DIN 2 Register.
+  fields:
+  - name: smw_din2
+    description: SMW DIN 2.
+    bit_offset: 0
+    bit_size: 32
+fieldset/SmwDin3:
+  description: SMW DIN 3 Register.
+  fields:
+  - name: smw_din3
+    description: SMW DIN 3.
+    bit_offset: 0
+    bit_size: 32
+fieldset/SmwHbSignals:
+  description: SMW HB Signals Register.
+  fields:
+  - name: smw_array
+    description: SMW Region Select.
+    bit_offset: 0
+    bit_size: 3
+    enum: SmwArray
+  - name: user_ifren1
+    description: IFR1 Enable.
+    bit_offset: 3
+    bit_size: 1
+    enum: UserIfren1
+  - name: user_pv
+    description: Program Verify.
+    bit_offset: 4
+    bit_size: 1
+    enum: UserPv
+  - name: user_ev
+    description: Erase Verify.
+    bit_offset: 5
+    bit_size: 1
+    enum: UserEv
+  - name: user_ifren
+    description: IFR Enable.
+    bit_offset: 6
+    bit_size: 1
+    enum: UserIfren
+  - name: user_reden
+    description: Repair Read Enable.
+    bit_offset: 7
+    bit_size: 1
+    enum: UserReden
+  - name: user_hem
+    description: High Endurance Enable.
+    bit_offset: 8
+    bit_size: 1
+    enum: UserHem
+fieldset/SmwSettingOption0:
+  description: SMW Setting Option 0 Register.
+  fields:
+  - name: mv_init
+    description: Medium Voltage Level Select Initial.
+    bit_offset: 14
+    bit_size: 3
+  - name: mv_end
+    description: Medium Voltage Level Select Final.
+    bit_offset: 17
+    bit_size: 3
+  - name: mv_misc
+    description: Medium Voltage Control Misc.
+    bit_offset: 20
+    bit_size: 4
+  - name: ipgm_init
+    description: Program Current Control Initial.
+    bit_offset: 24
+    bit_size: 2
+  - name: ipgm_end
+    description: Program Current Control Final.
+    bit_offset: 26
+    bit_size: 2
+  - name: ipgm_misc
+    description: Program Current Control Misc.
+    bit_offset: 28
+    bit_size: 3
+fieldset/SmwSettingOption1:
+  description: SMW Setting Option 1 Register.
+  fields:
+  - name: ters_ctrl0
+    description: Ters Control.
+    bit_offset: 0
+    bit_size: 3
+    enum: TersCtrl0
+  - name: tpgm_ctrl
+    description: Tpgm Control.
+    bit_offset: 3
+    bit_size: 2
+    enum: TpgmCtrl
+  - name: tnvs_ctrl
+    description: Tnvs Control.
+    bit_offset: 5
+    bit_size: 3
+    enum: TnvsCtrl
+  - name: tnvh_ctrl
+    description: Tnvh Control.
+    bit_offset: 8
+    bit_size: 3
+    enum: TnvhCtrl
+  - name: tpgs_ctrl
+    description: Tpgs Control.
+    bit_offset: 11
+    bit_size: 3
+    enum: TpgsCtrl
+  - name: max_erase
+    description: Number of Erase Shots.
+    bit_offset: 14
+    bit_size: 9
+  - name: max_prog
+    description: Number of Program Shots.
+    bit_offset: 23
+    bit_size: 5
+fieldset/SmwSettingOption2:
+  description: SMW Setting Option 2 Register.
+  fields:
+  - name: thvs_ctrl
+    description: Thvs control.
+    bit_offset: 0
+    bit_size: 3
+  - name: trcv_ctrl
+    description: Trcv Control.
+    bit_offset: 3
+    bit_size: 3
+  - name: xtra_ers
+    description: Number of Post Shots for SME.
+    bit_offset: 6
+    bit_size: 2
+  - name: xtra_pgm
+    description: Number of Post Shots for SMP.
+    bit_offset: 8
+    bit_size: 2
+  - name: whv_cntr
+    description: WHV Counter.
+    bit_offset: 10
+    bit_size: 8
+  - name: post_ters
+    description: Post Ters Time.
+    bit_offset: 18
+    bit_size: 3
+    enum: PostTers
+  - name: post_tpgm
+    description: Post Tpgm Time.
+    bit_offset: 21
+    bit_size: 2
+    enum: PostTpgm
+  - name: vfy_opt
+    description: Verify Option.
+    bit_offset: 23
+    bit_size: 2
+    enum: VfyOpt
+  - name: tpgm_opt
+    description: Tpgm Option.
+    bit_offset: 25
+    bit_size: 2
+    enum: TpgmOpt
+  - name: mask0_opt
+    description: MASK0_OPT.
+    bit_offset: 27
+    bit_size: 1
+    enum: Mask0Opt
+  - name: dis_prer
+    description: Disable pre-PV Read before First Program Shot.
+    bit_offset: 28
+    bit_size: 1
+    enum: DisPrer
+fieldset/SmwSettingOption3:
+  description: SMW Setting Option 3 Register.
+  fields:
+  - name: hem_whv_cntr
+    description: WHV_COUNTER for HEM-erase Cycle.
+    bit_offset: 0
+    bit_size: 8
+  - name: hem_max_ers
+    description: HEM Max Erase Shot Count.
+    bit_offset: 8
+    bit_size: 9
+fieldset/SmwSmeWhvOption0:
+  description: SMW SME WHV Option 0 Register.
+  fields:
+  - name: sme_whv_opt0
+    description: Smart Erase WHV Option Low.
+    bit_offset: 0
+    bit_size: 32
+fieldset/SmwSmeWhvOption1:
+  description: SMW SME WHV Option 1 Register.
+  fields:
+  - name: sme_whv_opt1
+    description: Smart Erase WHV Option High.
+    bit_offset: 0
+    bit_size: 32
+fieldset/SmwSmpWhvOption0:
+  description: SMW SMP WHV Option 0 Register.
+  fields:
+  - name: smp_whv_opt0
+    description: Smart Program WHV Option Low.
+    bit_offset: 0
+    bit_size: 32
+fieldset/SmwSmpWhvOption1:
+  description: SMW SMP WHV Option 1 Register.
+  fields:
+  - name: smp_whv_opt1
+    description: Smart Program WHV Option High.
+    bit_offset: 0
+    bit_size: 32
+fieldset/SmwStatus:
+  description: SMW Status Register.
+  fields:
+  - name: smw_err
+    description: SMW Error.
+    bit_offset: 0
+    bit_size: 1
+    enum: SmwErr
+  - name: smw_busy
+    description: SMW Busy.
+    bit_offset: 1
+    bit_size: 1
+    enum: SmwBusy
+  - name: bist_busy
+    description: BIST Busy.
+    bit_offset: 2
+    bit_size: 1
+    enum: BistBusy
+fieldset/SmwTimerOption:
+  description: SMW Timer Option Register.
+  fields:
+  - name: smw_cdivl
+    description: Clock Divide Scalar for Long Pulse.
+    bit_offset: 0
+    bit_size: 8
+  - name: smw_tvfy
+    description: Timer Adjust for Verify.
+    bit_offset: 8
+    bit_size: 5
+fieldset/Soctrim00:
+  description: SoC Trim Phrase 0 Word 0 Register.
+  fields:
+  - name: trim0_0
+    description: TRIM0_0.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim01:
+  description: SoC Trim Phrase 0 Word 1 Register.
+  fields:
+  - name: trim0_1
+    description: TRIM0_1.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim02:
+  description: SoC Trim Phrase 0 Word 2 Register.
+  fields:
+  - name: trim0_2
+    description: TRIM0_2.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim03:
+  description: SoC Trim Phrase 0 Word 3 Register.
+  fields:
+  - name: trim0_3
+    description: TRIM0_3.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim10:
+  description: SoC Trim Phrase 1 Word 0 Register.
+  fields:
+  - name: trim1_0
+    description: TRIM1_0.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim11:
+  description: SoC Trim Phrase 1 Word 1 Register.
+  fields:
+  - name: trim1_1
+    description: TRIM1_1.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim12:
+  description: SoC Trim Phrase 1 Word 2 Register.
+  fields:
+  - name: trim1_2
+    description: TRIM1_2.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim13:
+  description: SoC Trim Phrase 1 Word 3 Register.
+  fields:
+  - name: trim1_3
+    description: TRIM1_3.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim20:
+  description: SoC Trim Phrase 2 Word 0 Register.
+  fields:
+  - name: trim2_0
+    description: TRIM2_0.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim21:
+  description: SoC Trim Phrase 2 Word 1 Register.
+  fields:
+  - name: trim2_1
+    description: TRIM2_1.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim22:
+  description: SoC Trim Phrase 2 Word 2 Register.
+  fields:
+  - name: trim2_2
+    description: TRIM2_2.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim23:
+  description: SoC Trim Phrase 2 Word 3 Register.
+  fields:
+  - name: trim2_3
+    description: TRIM2_3.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim30:
+  description: SoC Trim Phrase 3 Word 0 Register.
+  fields:
+  - name: trim3_0
+    description: TRIM3_0.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim31:
+  description: SoC Trim Phrase 3 Word 1 Register.
+  fields:
+  - name: trim3_1
+    description: TRIM3_1.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim32:
+  description: SoC Trim Phrase 3 Word 2 Register.
+  fields:
+  - name: trim3_2
+    description: TRIM3_2.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim33:
+  description: SoC Trim Phrase 3 Word 3 Register.
+  fields:
+  - name: trim3_3
+    description: TRIM3_3.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim40:
+  description: SoC Trim Phrase 4 Word 0 Register.
+  fields:
+  - name: trim4_0
+    description: TRIM4_0.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim41:
+  description: SoC Trim Phrase 4 Word 1 Register.
+  fields:
+  - name: trim4_1
+    description: TRIM4_1.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim42:
+  description: SoC Trim Phrase 4 Word 2 Register.
+  fields:
+  - name: trim4_2
+    description: TRIM4_2.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim43:
+  description: SoC Trim Phrase 4 Word 3 Register.
+  fields:
+  - name: trim4_3
+    description: TRIM4_3.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim50:
+  description: SoC Trim Phrase 5 Word 0 Register.
+  fields:
+  - name: trim5_0
+    description: TRIM5_0.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim51:
+  description: SoC Trim Phrase 5 Word 1 Register.
+  fields:
+  - name: trim5_1
+    description: TRIM5_1.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim52:
+  description: SoC Trim Phrase 5 Word 2 Register.
+  fields:
+  - name: trim5_2
+    description: TRIM5_2.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim53:
+  description: SoC Trim Phrase 5 Word 3 Register.
+  fields:
+  - name: trim5_3
+    description: TRIM5_3.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim60:
+  description: SoC Trim Phrase 6 Word 0 Register.
+  fields:
+  - name: trim6_0
+    description: TRIM6_0.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim61:
+  description: SoC Trim Phrase 6 Word 1 Register.
+  fields:
+  - name: trim6_1
+    description: TRIM6_1.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim62:
+  description: SoC Trim Phrase 6 Word 2 Register.
+  fields:
+  - name: trim6_2
+    description: TRIM6_2.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim63:
+  description: SoC Trim Phrase 6 Word 3 Register.
+  fields:
+  - name: trim6_3
+    description: TRIM6_3.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim70:
+  description: SoC Trim Phrase 7 Word 0 Register.
+  fields:
+  - name: trim7_0
+    description: TRIM7_0.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim71:
+  description: SoC Trim Phrase 7 Word 1 Register.
+  fields:
+  - name: trim7_1
+    description: TRIM7_1.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim72:
+  description: SoC Trim Phrase 7 Word 2 Register.
+  fields:
+  - name: trim7_2
+    description: TRIM7_2.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Soctrim73:
+  description: SoC Trim Phrase 7 Word 3 Register.
+  fields:
+  - name: trim7_3
+    description: TRIM7_3.
+    bit_offset: 0
+    bit_size: 32
+fieldset/UintCtl:
+  description: User Interface Control Register.
+  fields:
+  - name: set_fail
+    description: Set Fail On Exit.
+    bit_offset: 0
+    bit_size: 1
+    enum: SetFail
+  - name: dberr
+    description: Double-Bit ECC Fault Detect.
+    bit_offset: 1
+    bit_size: 1
+    enum: Dberr
+enum/AbortLoop:
+  bit_size: 1
+  variants:
+  - name: Zz335
+    description: No effect.
+    value: 0
+  - name: Zz336
+    description: Abort BIST loop commands and force the loop counter to return to 0x0.
+    value: 1
+enum/Abtreq:
+  bit_size: 1
+  variants:
+  - name: Zz39
+    description: No request to abort a command write sequence.
+    value: 0
+  - name: Zz40
+    description: Request to abort a command write sequence.
+    value: 1
+enum/Accerr:
+  bit_size: 1
+  variants:
+  - name: Zz21
+    description: No access error detected.
+    value: 0
+  - name: Zz22
+    description: Access error detected.
+    value: 1
+enum/AddrFail:
+  bit_size: 1
+  variants:
+  - name: Zz141
+    description: The address is within the flash or IFR address space.
+    value: 0
+  - name: Zz142
+    description: The address is outside the flash or IFR address space.
+    value: 1
+enum/AlignfailBlk:
+  bit_size: 1
+  variants:
+  - name: Zz143
+    description: The address is block-aligned.
+    value: 0
+  - name: Zz144
+    description: The address is not block-aligned.
+    value: 1
+enum/AlignfailPg:
+  bit_size: 1
+  variants:
+  - name: Zz147
+    description: The address is page-aligned.
+    value: 0
+  - name: Zz148
+    description: The address is not page-aligned.
+    value: 1
+enum/AlignfailPhr:
+  bit_size: 1
+  variants:
+  - name: Zz149
+    description: The address is phrase-aligned.
+    value: 0
+  - name: Zz150
+    description: The address is not phrase-aligned.
+    value: 1
+enum/AlignfailScr:
+  bit_size: 1
+  variants:
+  - name: Zz145
+    description: The address is sector-aligned.
+    value: 0
+  - name: Zz146
+    description: The address is not sector-aligned.
+    value: 1
+enum/AllCmd:
+  bit_size: 1
+  variants:
+  - name: Zz137
+    description: The command operates on a single flash block.
+    value: 0
+  - name: Zz138
+    description: The command operates on all flash blocks.
+    value: 1
+enum/AryTrimDone:
+  bit_size: 1
+  variants:
+  - name: Zz93
+    description: Recall register load operation has not been completed.
+    value: 0
+  - name: Zz94
+    description: Recall register load operation has completed.
+    value: 1
+enum/BdoneSel:
+  bit_size: 2
+  variants:
+  - name: Zz453
+    description: Select internal bist_done signal from current module instantiation.
+    value: 0
+  - name: Zz454
+    description: Select ipt_bist_fail signal from current module instantiation.
+    value: 1
+  - name: Zz455
+    description: Select ipt_bist_done signal from other module instantiation.
+    value: 2
+  - name: Zz456
+    description: Select AND of internal bist_done signal from current module instantiation with ipt_bist_done signal from other module instantiation.
+    value: 3
+enum/BistBusy:
+  bit_size: 1
+  variants:
+  - name: Zz201
+    description: BIST Command not active.
+    value: 0
+  - name: Zz202
+    description: BIST Command is active.
+    value: 1
+enum/BistCtl:
+  bit_size: 1
+  variants:
+  - name: Zz107
+    description: BIST IP disabled.
+    value: 0
+  - name: Zz108
+    description: BIST IP enabled.
+    value: 1
+enum/BistDone:
+  bit_size: 1
+  variants:
+  - name: Zz439
+    description: The BIST (or data dump) is running.
+    value: 0
+  - name: Zz440
+    description: The BIST (or data dump) has completed.
+    value: 1
+enum/BistEccEn:
+  bit_size: 1
+  variants:
+  - name: Zz169
+    description: ECC correction disabled.
+    value: 0
+  - name: Zz170
+    description: ECC correction enabled.
+    value: 1
+enum/BistFail:
+  bit_size: 1
+  variants:
+  - name: Zz437
+    description: The last BIST operation completed successfully (or could not fail).
+    value: 0
+  - name: Zz438
+    description: The last BIST operation failed.
+    value: 1
+enum/BistMuxToSmw:
+  bit_size: 1
+  variants:
+  - name: Zz183
+    description: BIST drives fields.
+    value: 0
+  - name: Zz184
+    description: SMW registers drive fields.
+    value: 1
+enum/BistOn:
+  bit_size: 1
+  variants:
+  - name: Zz159
+    description: BIST enable not forced by user interface.
+    value: 0
+  - name: Zz160
+    description: BIST enable control by user interface.
+    value: 1
+enum/BistPwrDis:
+  bit_size: 1
+  variants:
+  - name: Zz97
+    description: BIST DFT logic has full control of SLM and LVE when BIST is enabled (including during commands).
+    value: 0
+  - name: Zz98
+    description: BIST DFT logic has no control of SLM and LVE; power mode RTL is in complete control of SLM and LVE values.
+    value: 1
+enum/BsdoSel:
+  bit_size: 2
+  variants:
+  - name: Zz449
+    description: Select internal bist_sdo signal from current module instantiation.
+    value: 0
+  - name: Zz450
+    description: Select ipt_bist_done signal from current module instantiation.
+    value: 1
+  - name: Zz451
+    description: Select ipt_bist_sdo signal from other module instantiation.
+    value: 2
+  - name: Zz452
+    description: Select ipt_bist_done signal from other module instantiation.
+    value: 3
+enum/Busy:
+  bit_size: 1
+  variants:
+  - name: Zz333
+    description: BIST is idle.
+    value: 0
+  - name: Zz334
+    description: BIST is busy.
+    value: 1
+enum/Ccie:
+  bit_size: 1
+  variants:
+  - name: Zz37
+    description: Command complete interrupt disabled.
+    value: 0
+  - name: Zz38
+    description: Command complete interrupt enabled. An interrupt request is generated whenever the FSTAT[CCIF] flag is set.
+    value: 1
+enum/Ccif:
+  bit_size: 1
+  variants:
+  - name: Zz17
+    description: Flash command or initialization in progress.
+    value: 0
+  - name: Zz18
+    description: Flash command or initialization has completed.
+    value: 1
+enum/Cmd:
+  bit_size: 3
+  variants:
+  - name: Zz193
+    description: IDLE.
+    value: 0
+  - name: Zz194
+    description: ABORT.
+    value: 1
+  - name: Zz195
+    description: SME2 to one-shot mass erase.
+    value: 2
+  - name: Zz196
+    description: SME3 to sector erase on selected array.
+    value: 3
+  - name: Zz197
+    description: SMP1 to program phrase or page on selected array with shot disabled on previously programmed bit.
+    value: 4
+  - name: Zz199
+    description: SMP2 to program phrase or page on selected array to repair cells of weak program after power loss.
+    value: 6
+enum/Cmdabt:
+  bit_size: 1
+  variants:
+  - name: Zz25
+    description: No command abort detected.
+    value: 0
+  - name: Zz26
+    description: Command abort detected.
+    value: 1
+enum/Cmdp:
+  bit_size: 1
+  variants:
+  - name: Zz11
+    description: Command protection level and domain ID are stale.
+    value: 0
+  - name: Zz12
+    description: Command protection level (CMDPRT) and domain ID (CMDDID) are set.
+    value: 1
+enum/Cmdprt:
+  bit_size: 2
+  variants:
+  - name: Zz13
+    description: Secure, normal access.
+    value: 0
+  - name: Zz14
+    description: Secure, privileged access.
+    value: 1
+  - name: Zz15
+    description: Nonsecure, normal access.
+    value: 2
+  - name: Zz16
+    description: Nonsecure, privileged access.
+    value: 3
+enum/CmpMask:
+  bit_size: 2
+  variants:
+  - name: Zz229
+    description: Expected data is compared to DOUT.
+    value: 0
+  - name: Zz230
+    description: Expected data (only 0s are considered) are compared to DOUT.
+    value: 1
+  - name: Zz231
+    description: Expected data (only 1s are considered) are compared to DOUT.
+    value: 2
+enum/Corehld:
+  bit_size: 1
+  variants:
+  - name: Zz125
+    description: CPU access is allowed.
+    value: 0
+  - name: Zz126
+    description: CPU access must be blocked.
+    value: 1
+enum/CpyParEn:
+  bit_size: 1
+  variants:
+  - name: Zz185
+    description: Copy parity disabled.
+    value: 0
+  - name: Zz186
+    description: Copy parity enabled.
+    value: 1
+enum/CpyPhraseEn:
+  bit_size: 1
+  variants:
+  - name: Zz173
+    description: Copy Flash read data disabled.
+    value: 0
+  - name: Zz174
+    description: Copy Flash read data enabled.
+    value: 1
+enum/Cwsabt:
+  bit_size: 1
+  variants:
+  - name: Zz19
+    description: Command write sequence not aborted.
+    value: 0
+  - name: Zz20
+    description: Command write sequence aborted.
+    value: 1
+enum/Cwsabten:
+  bit_size: 1
+  variants:
+  - name: Zz115
+    description: CWS abort feature is disabled.
+    value: 0
+  - name: Zz116
+    description: CWS abort feature is enabled.
+    value: 1
+enum/DatadumpMrgen:
+  bit_size: 1
+  variants:
+  - name: Zz431
+    description: Normal read pulse shape.
+    value: 0
+  - name: Zz432
+    description: Margin read pulse shape.
+    value: 1
+enum/DatadumpMrgtype:
+  bit_size: 1
+  variants:
+  - name: Zz429
+    description: DIN method used.
+    value: 0
+  - name: Zz430
+    description: TM method used.
+    value: 1
+enum/DatadumpPatt:
+  bit_size: 2
+  variants:
+  - name: Zz433
+    description: All ones.
+    value: 0
+  - name: Zz434
+    description: All zeroes.
+    value: 1
+  - name: Zz435
+    description: Checkerboard.
+    value: 2
+  - name: Zz436
+    description: Inverse checkerboard.
+    value: 3
+enum/Dberr:
+  bit_size: 1
+  variants:
+  - name: Zz163
+    description: No double-bit fault detected during UINT-driven read sequence.
+    value: 0
+  - name: Zz164
+    description: Double-bit fault detected during UINT-driven read sequence.
+    value: 1
+enum/DberrReg:
+  bit_size: 1
+  variants:
+  - name: Zz177
+    description: Double-bit fault not detected.
+    value: 0
+  - name: Zz178
+    description: Double-bit fault detected on previous UINT flash read.
+    value: 1
+enum/Dbgctl:
+  bit_size: 1
+  variants:
+  - name: Zz213
+    description: Default.
+    value: 0
+  - name: Zz214
+    description: Enable debug feature to collect failure address and data.
+    value: 1
+enum/Dfdie:
+  bit_size: 1
+  variants:
+  - name: Zz33
+    description: Double bit fault detect interrupt disabled.
+    value: 0
+  - name: Zz34
+    description: Double bit fault detect interrupt enabled; an interrupt request is generated whenever the FSTAT[DFDIF] flag is set.
+    value: 1
+enum/Dfdif:
+  bit_size: 1
+  variants:
+  - name: Zz9
+    description: Double bit fault not detected during a valid flash read access from the FMC.
+    value: 0
+  - name: Zz10
+    description: Double bit fault detected (or FCTRL[FDFD] is set) during a valid flash read access from the FMC.
+    value: 1
+enum/DftData:
+  bit_size: 4
+  variants:
+  - name: Zz232
+    description: CKBD pattern. For READ operations only, compare DOUT with checkerboard data pattern for each read cycle.
+    value: 0
+  - name: Zz233
+    description: ICKBD pattern. For READ operations only, compare DOUT with inverse checkerboard data pattern for each read cycle.
+    value: 1
+  - name: Zz234
+    description: Diagonal pattern. Used for READ operations only, compare DOUT to diagonal pattern.
+    value: 2
+  - name: Zz235
+    description: Fixed data pattern. For READ operations, comparison to DOUT for selected groups; refer to R_ADR_CTRL[GRPSEL] for modules with multiple groups.
+    value: 3
+  - name: Zz236
+    description: Random data pattern which will be generated based on the initial seed set in R_DATA; for READ operations, used for DOUT comparison of selected groups. For PROG operations, used to control DIN of selected groups.
+    value: 4
+  - name: Zz237
+    description: DOUT based pattern. For READ operations only, DOUT of selected group will be latched in R_DATA. If more than one group is selected in R_ADR_CTRL[GRPSEL], the group with the lower index will be latched.
+    value: 5
+  - name: Zz238
+    description: R_DATA based pattern. For READ operations, expected DOUT value of selected groups equals to R_DATA when XADR[0]==YADR[0] or ~R_DATA when XADR[0]!=YADR[0]. For PROG operations, DIN of selected groups equals R_DATA when XADR[0]==YADR[0] or ~R_DATA when XADR[0]!=YADR[0].
+    value: 6
+  - name: Zz239
+    description: SCAN-IO pattern. For READ operations, control expected DOUT value of selected groups to SCAN-IO data pattern. For PROG operations, control DIN of selected groups to SCAN-IO data pattern.
+    value: 7
+  - name: Zz240
+    description: REPAIR set. For PROG operation to IFR1(7,1) and IFR1(7,2), R_REPAIR0_0 and R_REPAIR0_1 or R_REPAIR1_0 and R_REPAIR1_1 will control DIN. For READ operation on IFR1(7,1) and IFR1(7,2), DOUT will be compared against R_REPAIR0_0 and R_REPAIR0_1 or R_REPAIR1_0 andR_REPAIR1_1. When this option is selected, only one flash block can be selected.
+    value: 8
+  - name: Zz241
+    description: REPAIR load. For READ operation only, DOUT from IFR1(7,1) and IFR1(7,2) is loaded to R_REPAIR0 and R_REPAIR1.
+    value: 9
+enum/DftDataSrc:
+  bit_size: 1
+  variants:
+  - name: Zz227
+    description: '{R_DATA_CTRL0,R_DATA_CTRL_EX[2:0],R_DATA_CTRL0,R_DATA_CTRL_EX[2:0],R_DATA_CTRL0,R_DATA_CTRL_EX[2:0],R_DATA_CTRL0} is used.'
+    value: 0
+  - name: Zz228
+    description: '{R_DATA_CTRL3,R_DATA_CTRL2_EX[2:0],R_DATA_CTRL2,R_DATA_CTRL1_EX[2:0],R_DATA_CTRL1,R_DATA_CTRL_EX[2:0],R_DATA_CTRL0} is used.'
+    value: 1
+enum/DftXadr:
+  bit_size: 4
+  variants:
+  - name: Zz252
+    description: XADR fixed, no change at all.
+    value: 0
+  - name: Zz253
+    description: XADR increased by 1 after row. For READ operation, XADR increases by 1 after reading the last word of row. For PROG operation, XADR increases by 1 after NVSTR falls.
+    value: 1
+  - name: Zz254
+    description: XADR increased for diagonal. For PROG-DIAGONAL operation, XADR is increased to create diagonal pattern.
+    value: 2
+  - name: Zz255
+    description: XADR increased by sector. During ERASE operation, XADR increased by number of rows in a sector when NVSTR falls.
+    value: 3
+  - name: Zz256
+    description: XADR inversed. XADR is inversed after reading one word or after programming one row when NVSTR falls.
+    value: 4
+  - name: Zz257
+    description: XADR increased by 2 after row. For READ operation, XADR is increased by 2 after reading the last word of a row. For PROG operation, XADR is increased by 2 when NVSTR falls.
+    value: 5
+  - name: Zz258
+    description: XADR[0] inversed. XADR[0] is inversed after reading one word or after programming one row when NVSTR falls.
+    value: 6
+  - name: Zz259
+    description: XADR increased by 1. For READ operations only, XADR increased by 1 after each read cycle.
+    value: 7
+  - name: Zz260
+    description: XADR decreased by 1 after row. For READ operations only, XADR is decreased by 1 after YADR decreases to 0.
+    value: 8
+  - name: Zz261
+    description: XADR decreased by 1. For READ operations only, XADR is decreased by 1 after each read cycle.
+    value: 9
+enum/DftYadr:
+  bit_size: 4
+  variants:
+  - name: Zz242
+    description: YADR fixed, no change at all.
+    value: 0
+  - name: Zz243
+    description: YADR for ICKBD. For PROG and READ operations, YADR changed to generate inverse checkerboard pattern.
+    value: 1
+  - name: Zz244
+    description: YADR for CKBD. For PROG and READ operations, YADR changed to generate checkerboard pattern.
+    value: 2
+  - name: Zz245
+    description: YADR increased by 1. For READ operations, YADR increased by 1 after each read cycle. For PROG operations, YADR increased by 1 after YE falls.
+    value: 3
+  - name: Zz246
+    description: YADR increased for diagonal. For PROG-DIAGONAL operation, YADR is increased to create diagonal pattern.
+    value: 4
+  - name: Zz247
+    description: YADR inversed. YADR is inversed after reading one word or after programming one word when YE falls.
+    value: 5
+  - name: Zz248
+    description: YADR[0] inversed. YADR[0] is inversed after reading one word or after programming one word when YE falls.
+    value: 6
+  - name: Zz249
+    description: YADR increased by 1 after last row. For READ operations only, YADR is increased by 1 after XADR reaches last row.
+    value: 7
+  - name: Zz250
+    description: YADR decreased by 1. For READ operations only, YADR is decreased by 1 after each read cycle.
+    value: 8
+  - name: Zz251
+    description: YADR decreased by 1 after first row. For READ operations only, YADR is decreased by 1 after XADR decreases to 0.
+    value: 9
+enum/DisPrer:
+  bit_size: 1
+  variants:
+  - name: Zz345
+    description: Enable pre-PV read before first program shot.
+    value: 0
+  - name: Zz346
+    description: Disable pre-PV read before first program shot.
+    value: 1
+enum/EccEnableb:
+  bit_size: 1
+  variants:
+  - name: Zz189
+    description: ECC decoder enabled (default).
+    value: 0
+  - name: Zz190
+    description: ECC decoder disabled.
+    value: 1
+enum/Eccen:
+  bit_size: 1
+  variants:
+  - name: Zz207
+    description: Default mode (no ECC encode or decode).
+    value: 0
+  - name: Zz208
+    description: Enable ECC encode/decode.
+    value: 1
+enum/Ersaack:
+  bit_size: 1
+  variants:
+  - name: Zz111
+    description: Mass Erase operation is not active (operation has completed or has not started).
+    value: 0
+  - name: Zz112
+    description: Mass Erase operation is active (controller acknowledges that the soc_ersall_req input is asserted and will continue with the operation).
+    value: 1
+enum/Ersien0:
+  bit_size: 4
+  variants:
+  - name: Zz31
+    description: Block 0 IFR Sector X is protected from erase by ERSSCR command.
+    value: 0
+  - name: Zz32
+    description: Block 0 IFR Sector X is not protected from erase by ERSSCR command.
+    value: 1
+enum/Ersien1:
+  bit_size: 4
+  variants:
+  - name: Zz29
+    description: Block 1 IFR Sector X is protected from erase by ERSSCR command.
+    value: 0
+  - name: Zz30
+    description: Block 1 IFR Sector X is not protected from erase by ERSSCR command.
+    value: 1
+enum/Ersreq:
+  bit_size: 1
+  variants:
+  - name: Zz35
+    description: No request or request complete.
+    value: 0
+  - name: Zz36
+    description: Request to run the Mass Erase operation.
+    value: 1
+enum/Fail:
+  bit_size: 1
+  variants:
+  - name: Zz27
+    description: Error not detected.
+    value: 0
+  - name: Zz28
+    description: Error detected.
+    value: 1
+enum/Fdfd:
+  bit_size: 1
+  variants:
+  - name: Zz41
+    description: FSTAT[DFDIF] sets only if a double bit fault is detected during a valid flash read access from the FMC.
+    value: 0
+  - name: Zz42
+    description: FSTAT[DFDIF] sets during any valid flash read access from the FMC; an interrupt request is generated if the DFDIE bit is set.
+    value: 1
+enum/FlashRd:
+  bit_size: 1
+  variants:
+  - name: Zz155
+    description: Manual flash read not enabled.(default).
+    value: 0
+  - name: Zz156
+    description: Manual flash read enabled.
+    value: 1
+enum/FmuEccCtl:
+  bit_size: 1
+  variants:
+  - name: Zz99
+    description: ECC is enabled for FMU program operations.
+    value: 0
+  - name: Zz100
+    description: ECC is disabled for FMU program operations.
+    value: 1
+enum/FmuParmDone:
+  bit_size: 1
+  variants:
+  - name: Zz89
+    description: FMU registers have not been loaded.
+    value: 0
+  - name: Zz90
+    description: FMU registers have been loaded.
+    value: 1
+enum/FmuParmEn:
+  bit_size: 1
+  variants:
+  - name: Zz91
+    description: C0DE_C0DEh check not attempted.
+    value: 0
+  - name: Zz92
+    description: C0DE_C0DEh check completed.
+    value: 1
+enum/ForceSwClk:
+  bit_size: 1
+  variants:
+  - name: Zz157
+    description: Switch clock not forced on (gated normally).
+    value: 0
+  - name: Zz158
+    description: Switch clock forced on.
+    value: 1
+enum/Grpsel:
+  bit_size: 4
+  variants:
+  - name: Zz270
+    description: Select no data.
+    value: 0
+  - name: Zz271
+    description: Select data slice [34:0].
+    value: 1
+  - name: Zz272
+    description: Select data slice [69:35].
+    value: 2
+  - name: Zz273
+    description: Select data slice [104:70].
+    value: 4
+  - name: Zz274
+    description: Select data slice [136:105].
+    value: 8
+  - name: Zz275
+    description: Select data [136:0].
+    value: 15
+enum/IfrCmd:
+  bit_size: 1
+  variants:
+  - name: Zz139
+    description: The command operates on a main flash address.
+    value: 0
+  - name: Zz140
+    description: The command operates on an IFR address.
+    value: 1
+enum/IllegalCmd:
+  bit_size: 1
+  variants:
+  - name: Zz129
+    description: Command is legal.
+    value: 0
+  - name: Zz130
+    description: Command is illegal.
+    value: 1
+enum/InitDone:
+  bit_size: 1
+  variants:
+  - name: Zz79
+    description: All initialization steps did not complete.
+    value: 0
+  - name: Zz80
+    description: All initialization steps completed.
+    value: 1
+enum/Ipsel0:
+  bit_size: 2
+  variants:
+  - name: Zz223
+    description: Unselect block 0.
+    value: 0
+  - name: Zz224
+    description: not used, reserved.
+    value: 1
+  - name: Zz225
+    description: Enable block 0 test, repair off (default).
+    value: 2
+  - name: Zz226
+    description: Enable block 0 test, repair on.
+    value: 3
+enum/Ipsel1:
+  bit_size: 2
+  variants:
+  - name: Zz219
+    description: Unselect block 1.
+    value: 0
+  - name: Zz220
+    description: not used, reserved.
+    value: 1
+  - name: Zz221
+    description: Enable block 1 test, repair off (default).
+    value: 2
+  - name: Zz222
+    description: Enable block 1 test, repair on.
+    value: 3
+enum/LastRead:
+  bit_size: 1
+  variants:
+  - name: Zz167
+    description: Latest read not last in multi-address operation.
+    value: 0
+  - name: Zz168
+    description: Latest read last in multi-address operation.
+    value: 1
+enum/Loopopt:
+  bit_size: 3
+  variants:
+  - name: Zz284
+    description: Loop is disabled; selected BIST operation is run once.
+    value: 0
+  - name: Zz285
+    description: Loop is enabled; XADR increments by 1 XADR increments by 1 for each new loop. Stops when total loop count meets LOOPCNT+1.
+    value: 1
+  - name: Zz286
+    description: Loop is enabled; YADR increments by 1 YADR increments by 1 for each new loop. Stops when total loop count meets LOOPCNT+1.
+    value: 2
+  - name: Zz287
+    description: Loop is enabled; XADR increments by 2 XADR increments by 2 for each new loop. Stops when total loop count meets LOOPCNT+1.
+    value: 3
+  - name: Zz288
+    description: Loop is enabled; XADR increments by sector XADR increments by 16 for each new loop. Stops when total loop count meets LOOPCNT+1.
+    value: 4
+enum/Loopunit:
+  bit_size: 3
+  variants:
+  - name: Zz276
+    description: Clock cycles.
+    value: 0
+  - name: Zz277
+    description: 0.5 usec.
+    value: 1
+  - name: Zz278
+    description: 1 usec.
+    value: 2
+  - name: Zz279
+    description: 10 usec.
+    value: 3
+  - name: Zz280
+    description: 100 usec.
+    value: 4
+  - name: Zz281
+    description: 1 msec.
+    value: 5
+  - name: Zz282
+    description: 10 msec.
+    value: 6
+  - name: Zz283
+    description: 100 msec.
+    value: 7
+enum/LsactEn:
+  bit_size: 1
+  variants:
+  - name: Zz123
+    description: 'LSACTIVE feature disabled completely: FCTRL[LSACTIVE] is forced low and no longer writable, LVE cannot assert at the TSMC array interface.'
+    value: 0
+  - name: Zz124
+    description: LSACTIVE feature fully enabled and controllable by SoC and internal UINT SM.
+    value: 1
+enum/Lsactive:
+  bit_size: 1
+  variants:
+  - name: Zz43
+    description: Full speed active mode requested.
+    value: 0
+  - name: Zz44
+    description: Low speed active mode requested.
+    value: 1
+enum/Lsactwren:
+  bit_size: 1
+  variants:
+  - name: Zz121
+    description: Unrestricted write access allowed.
+    value: 0
+  - name: Zz122
+    description: Write access while CMP set must match CMDDID and CMDPRT.
+    value: 1
+enum/Mask0Opt:
+  bit_size: 1
+  variants:
+  - name: Zz347
+    description: Mask programmed bits passing PV until extra shot.
+    value: 0
+  - name: Zz348
+    description: Always program bits even if they pass PV.
+    value: 1
+enum/MasterRepairEn:
+  bit_size: 1
+  variants:
+  - name: Zz119
+    description: Repair disabled.
+    value: 0
+  - name: Zz120
+    description: Repair enable determined by bit 0 of each REPAIR register.
+    value: 1
+enum/MisrEn:
+  bit_size: 1
+  variants:
+  - name: Zz187
+    description: MISR option disabled (default).
+    value: 0
+  - name: Zz188
+    description: MISR option enabled.
+    value: 1
+enum/MmRd:
+  bit_size: 1
+  variants:
+  - name: Zz161
+    description: Write to register.
+    value: 0
+  - name: Zz162
+    description: Read register.
+    value: 1
+enum/Mrgrddis:
+  bit_size: 1
+  variants:
+  - name: Zz113
+    description: Margin Read Settings are enabled.
+    value: 0
+  - name: Zz114
+    description: Margin Read Settings are disabled.
+    value: 1
+enum/OptionFail:
+  bit_size: 1
+  variants:
+  - name: Zz131
+    description: Option check passes for read command or command is not a read command.
+    value: 0
+  - name: Zz132
+    description: Option check fails for read command.
+    value: 1
+enum/OscH:
+  bit_size: 1
+  variants:
+  - name: Zz95
+    description: Use APB clock.
+    value: 0
+  - name: Zz96
+    description: Use a known fixed-frequency clock, e.g. 12 MHz.
+    value: 1
+enum/PdTimerEn:
+  bit_size: 1
+  variants:
+  - name: Zz127
+    description: BIST timer is not triggered during Power Down recovery.
+    value: 0
+  - name: Zz128
+    description: BIST timer is triggered during Power Down recovery (default behavior).
+    value: 1
+enum/Perdy:
+  bit_size: 1
+  variants:
+  - name: Zz1
+    description: Program or sector erase command operation is not stalled.
+    value: 0
+  - name: Zz2
+    description: Program or sector erase command operation is stalled.
+    value: 1
+enum/Pewen:
+  bit_size: 2
+  variants:
+  - name: Zz3
+    description: Writes are not enabled.
+    value: 0
+  - name: Zz4
+    description: Writes are enabled for one flash or IFR phrase (phrase programming, sector erase).
+    value: 1
+  - name: Zz5
+    description: Writes are enabled for one flash or IFR page (page programming).
+    value: 2
+enum/PostTers:
+  bit_size: 3
+  variants:
+  - name: Zz361
+    description: 50 usec.
+    value: 0
+  - name: Zz362
+    description: 100 usec.
+    value: 1
+  - name: Zz363
+    description: 200 usec.
+    value: 2
+  - name: Zz364
+    description: 300 usec.
+    value: 3
+  - name: Zz365
+    description: 500 usec.
+    value: 4
+  - name: Zz366
+    description: 1 msec.
+    value: 5
+  - name: Zz367
+    description: 1.5 msec.
+    value: 6
+  - name: Zz368
+    description: 2 msec.
+    value: 7
+enum/PostTpgm:
+  bit_size: 2
+  variants:
+  - name: Zz357
+    description: 1 usec.
+    value: 0
+  - name: Zz358
+    description: 2 usec.
+    value: 1
+  - name: Zz359
+    description: 4 usec.
+    value: 2
+  - name: Zz360
+    description: 8 usec.
+    value: 3
+enum/ProgAttr:
+  bit_size: 3
+  variants:
+  - name: Zz262
+    description: One YE pulse will program one data slice group.
+    value: 0
+  - name: Zz263
+    description: One YE pulse will program two data slice groups.
+    value: 1
+  - name: Zz264
+    description: One YE pulse will program three data slice groups (reserved).
+    value: 2
+  - name: Zz265
+    description: One YE pulse will program four data slice groups.
+    value: 3
+  - name: Zz266
+    description: One YE pulse will program five data slice groups (reserved).
+    value: 4
+  - name: Zz267
+    description: One YE pulse will program six data slice groups (reserved).
+    value: 5
+  - name: Zz268
+    description: One YE pulse will program seven data slice groups (reserved).
+    value: 6
+  - name: Zz269
+    description: One YE pulse will program eight data slice groups (reserved).
+    value: 7
+enum/Pviol:
+  bit_size: 1
+  variants:
+  - name: Zz23
+    description: No protection violation detected.
+    value: 0
+  - name: Zz24
+    description: Protection violation detected.
+    value: 1
+enum/RRepair00Rdis00:
+  bit_size: 1
+  variants:
+  - name: Zz337
+    description: Repair address is valid.
+    value: 0
+  - name: Zz338
+    description: Repair address is not valid.
+    value: 1
+enum/RRepair01Rdis01:
+  bit_size: 1
+  variants:
+  - name: Zz339
+    description: Repair address is valid.
+    value: 0
+  - name: Zz340
+    description: Repair address is not valid.
+    value: 1
+enum/RRepair10Rdis10:
+  bit_size: 1
+  variants:
+  - name: Zz341
+    description: Repair address is valid.
+    value: 0
+  - name: Zz342
+    description: Repair address is not valid.
+    value: 1
+enum/RRepair11Rdis11:
+  bit_size: 1
+  variants:
+  - name: Zz343
+    description: Repair address is valid.
+    value: 0
+  - name: Zz344
+    description: Repair address is not valid.
+    value: 1
+enum/RangeFail:
+  bit_size: 1
+  variants:
+  - name: Zz135
+    description: The address range is valid.
+    value: 0
+  - name: Zz136
+    description: The address range is invalid.
+    value: 1
+enum/RecallDataMismatch:
+  bit_size: 1
+  variants:
+  - name: Zz71
+    description: Data read towards end of reset matched data read for Recall.
+    value: 0
+  - name: Zz72
+    description: Data read towards end of reset did not match data read for recall.
+    value: 1
+enum/Repair00Rdis00:
+  bit_size: 1
+  variants:
+  - name: Zz405
+    description: Repair address is valid.
+    value: 0
+  - name: Zz406
+    description: Repair address is not valid.
+    value: 1
+enum/Repair01Rdis01:
+  bit_size: 1
+  variants:
+  - name: Zz407
+    description: Repair address is valid.
+    value: 0
+  - name: Zz408
+    description: Repair address is not valid.
+    value: 1
+enum/Repair10Rdis10:
+  bit_size: 1
+  variants:
+  - name: Zz409
+    description: Repair address is valid.
+    value: 0
+  - name: Zz410
+    description: Repair address is not valid.
+    value: 1
+enum/Repair11Rdis11:
+  bit_size: 1
+  variants:
+  - name: Zz411
+    description: Repair address is valid.
+    value: 0
+  - name: Zz412
+    description: Repair address is not valid.
+    value: 1
+enum/Rfcmden:
+  bit_size: 1
+  variants:
+  - name: Zz117
+    description: Flash commands blocked (CCIF not writable).
+    value: 0
+  - name: Zz118
+    description: Flash commands allowed.
+    value: 1
+enum/RprDone:
+  bit_size: 1
+  variants:
+  - name: Zz81
+    description: Repair registers have not been loaded.
+    value: 0
+  - name: Zz82
+    description: Repair registers have been loaded.
+    value: 1
+enum/RstDfErr:
+  bit_size: 1
+  variants:
+  - name: Zz75
+    description: No double-bit faults detected during initialization.
+    value: 0
+  - name: Zz76
+    description: Double-bit ECC fault was detected during initialization.
+    value: 1
+enum/RstPatchLd:
+  bit_size: 1
+  variants:
+  - name: Zz73
+    description: No patch required to be loaded during reset.
+    value: 0
+  - name: Zz74
+    description: Patch loaded during reset.
+    value: 1
+enum/RstSfErr:
+  bit_size: 1
+  variants:
+  - name: Zz77
+    description: No single-bit faults detected during initialization.
+    value: 0
+  - name: Zz78
+    description: At least one single ECC fault was detected during initialization.
+    value: 1
+enum/Rwsc:
+  bit_size: 4
+  variants:
+  - name: Zz45
+    description: no additional wait-states are added (single cycle access).
+    value: 0
+  - name: Zz46
+    description: 1 additional wait-state is added.
+    value: 1
+  - name: Zz47
+    description: 2 additional wait-states are added.
+    value: 2
+  - name: Zz48
+    description: 3 additional wait-states are added.
+    value: 3
+  - name: Zz49
+    description: 4 additional wait-states are added.
+    value: 4
+  - name: Zz50
+    description: 5 additional wait-states are added.
+    value: 5
+  - name: Zz51
+    description: 6 additional wait-states are added.
+    value: 6
+  - name: Zz52
+    description: 7 additional wait-states are added.
+    value: 7
+  - name: Zz53
+    description: 8 additional wait-states are added.
+    value: 8
+  - name: Zz54
+    description: 9 additional wait-states are added.
+    value: 9
+  - name: Zz55
+    description: 10 additional wait-states are added.
+    value: 10
+  - name: Zz56
+    description: 11 additional wait-states are added.
+    value: 11
+  - name: Zz57
+    description: 12 additional wait-states are added.
+    value: 12
+  - name: Zz58
+    description: 13 additional wait-states are added.
+    value: 13
+  - name: Zz59
+    description: 14 additional wait-states are added.
+    value: 14
+  - name: Zz60
+    description: 15 additional wait-states are added.
+    value: 15
+enum/SalvDis:
+  bit_size: 1
+  variants:
+  - name: Zz103
+    description: Salvage enabled (ECC used during erase verify).
+    value: 0
+  - name: Zz104
+    description: Salvage disabled (ECC not used during erase verify).
+    value: 1
+enum/SalvUsed:
+  bit_size: 1
+  variants:
+  - name: Zz7
+    description: Salvage not used during the last operation.
+    value: 0
+  - name: Zz8
+    description: Salvage used during the last erase operation.
+    value: 1
+enum/SberrReg:
+  bit_size: 1
+  variants:
+  - name: Zz175
+    description: Single-bit fault not detected.
+    value: 0
+  - name: Zz176
+    description: Single-bit fault detected on previous UINT flash read.
+    value: 1
+enum/ScanObs:
+  bit_size: 1
+  variants:
+  - name: Zz109
+    description: Normal functional behavior.
+    value: 0
+  - name: Zz110
+    description: Enables observation of signals that may otherwise be ATPG untestable.
+    value: 1
+enum/ScrAlignChk:
+  bit_size: 1
+  variants:
+  - name: Zz133
+    description: No sector alignment check.
+    value: 0
+  - name: Zz134
+    description: Sector alignment check.
+    value: 1
+enum/SetFail:
+  bit_size: 1
+  variants:
+  - name: Zz165
+    description: FAIL flag should not be set on command exit (no failure detected).
+    value: 0
+  - name: Zz166
+    description: FAIL flag should be set on command exit.
+    value: 1
+enum/SingleRd:
+  bit_size: 1
+  variants:
+  - name: Zz151
+    description: Normal UINT operation.
+    value: 0
+  - name: Zz152
+    description: UINT configured for single cycle reads.
+    value: 1
+enum/SmwArray:
+  bit_size: 3
+  variants:
+  - name: Zz425
+    description: Main array.
+    value: 0
+  - name: Zz426
+    description: IFR space only or main (and REDEN space) with IFR space for mass erase.
+    value: 1
+  - name: Zz427
+    description: IFR1 space.
+    value: 2
+  - name: Zz428
+    description: REDEN space.
+    value: 4
+enum/SmwArray1Smw0Sel:
+  bit_size: 1
+  variants:
+  - name: Zz171
+    description: Select block 0.
+    value: 0
+  - name: Zz172
+    description: Select block 1.
+    value: 1
+enum/SmwBusy:
+  bit_size: 1
+  variants:
+  - name: Zz203
+    description: SMW command not active.
+    value: 0
+  - name: Zz204
+    description: SMW command is active.
+    value: 1
+enum/SmwErr:
+  bit_size: 1
+  variants:
+  - name: Zz205
+    description: Error not detected.
+    value: 0
+  - name: Zz206
+    description: Error detected.
+    value: 1
+enum/SmwrCtl:
+  bit_size: 1
+  variants:
+  - name: Zz105
+    description: SMWR IP disabled.
+    value: 0
+  - name: Zz106
+    description: SMWR IP enabled.
+    value: 1
+enum/Smwtst:
+  bit_size: 2
+  variants:
+  - name: Zz209
+    description: Default.
+    value: 0
+  - name: Zz210
+    description: Enable SMWR self-test mode, DOUT from macro will be forced to all 0.
+    value: 1
+  - name: Zz211
+    description: Enable SMWR self-test mode, DOUT from macro will be forced to all 1.
+    value: 2
+enum/SocEccCtl:
+  bit_size: 1
+  variants:
+  - name: Zz101
+    description: ECC is enabled for SOC read access.
+    value: 0
+  - name: Zz102
+    description: ECC is disabled for SOC read access.
+    value: 1
+enum/SocTrimDone:
+  bit_size: 1
+  variants:
+  - name: Zz83
+    description: SoC Trim registers have not been updated.
+    value: 0
+  - name: Zz84
+    description: All SoC Trim registers have been updated.
+    value: 1
+enum/SocTrimEcc:
+  bit_size: 1
+  variants:
+  - name: Zz85
+    description: C0DE_C0DEh check failed.
+    value: 0
+  - name: Zz86
+    description: C0DE_C0DEh check passed.
+    value: 1
+enum/SocTrimEn:
+  bit_size: 1
+  variants:
+  - name: Zz87
+    description: C0DE_C0DEh check not attempted.
+    value: 0
+  - name: Zz88
+    description: C0DE_C0DEh check completed.
+    value: 1
+enum/Status0:
+  bit_size: 1
+  variants:
+  - name: Zz331
+    description: BIST test passed on flash block 0.
+    value: 0
+  - name: Zz332
+    description: BIST test failed on flash block 0.
+    value: 1
+enum/Status1:
+  bit_size: 1
+  variants:
+  - name: Zz329
+    description: BIST test passed on flash block 1.
+    value: 0
+  - name: Zz330
+    description: BIST test failed on flash block 1.
+    value: 1
+enum/TersCtrl0:
+  bit_size: 3
+  variants:
+  - name: Zz397
+    description: 50 usec.
+    value: 0
+  - name: Zz398
+    description: 100 usec.
+    value: 1
+  - name: Zz399
+    description: 200 usec.
+    value: 2
+  - name: Zz400
+    description: 300 usec.
+    value: 3
+  - name: Zz401
+    description: 500 usec.
+    value: 4
+  - name: Zz402
+    description: 1 msec.
+    value: 5
+  - name: Zz403
+    description: 1.5 msec.
+    value: 6
+  - name: Zz404
+    description: 2 msec.
+    value: 7
+enum/Tlvsunit:
+  bit_size: 3
+  variants:
+  - name: Zz289
+    description: Clock cycles.
+    value: 0
+  - name: Zz290
+    description: 0.5 usec.
+    value: 1
+  - name: Zz291
+    description: 1 usec.
+    value: 2
+  - name: Zz292
+    description: 10 usec.
+    value: 3
+  - name: Zz293
+    description: 100 usec.
+    value: 4
+  - name: Zz294
+    description: 1 msec.
+    value: 5
+  - name: Zz295
+    description: 10 msec.
+    value: 6
+  - name: Zz296
+    description: 100 msec.
+    value: 7
+enum/TmToAtx:
+  bit_size: 8
+  variants:
+  - name: Zz441
+    description: TM[0] to ATX0.
+    value: 1
+  - name: Zz442
+    description: TM[1] to ATX0.
+    value: 2
+  - name: Zz443
+    description: TM[2] to ATX0.
+    value: 4
+  - name: Zz444
+    description: TM[3] to ATX0.
+    value: 8
+  - name: Zz445
+    description: TM[0] to ATX1.
+    value: 16
+  - name: Zz446
+    description: TM[1] to ATX1.
+    value: 32
+  - name: Zz447
+    description: TM[2] to ATX1.
+    value: 64
+  - name: Zz448
+    description: TM[3] to ATX1.
+    value: 128
+enum/Tme:
+  bit_size: 1
+  variants:
+  - name: Zz65
+    description: Test mode entry not requested.
+    value: 0
+  - name: Zz66
+    description: Test mode entry requested.
+    value: 1
+enum/Tmectl:
+  bit_size: 1
+  variants:
+  - name: Zz69
+    description: FTEST register always reads 0 and writes to FTEST are ignored.
+    value: 0
+  - name: Zz70
+    description: FTEST register is readable and can be written to enable writability of TME.
+    value: 1
+enum/Tmelock:
+  bit_size: 1
+  variants:
+  - name: Zz61
+    description: FTEST register not locked from accepting writes.
+    value: 0
+  - name: Zz62
+    description: FTEST register locked from accepting writes.
+    value: 1
+enum/Tmewr:
+  bit_size: 1
+  variants:
+  - name: Zz67
+    description: TME bit is not writable.
+    value: 0
+  - name: Zz68
+    description: TME bit is writable.
+    value: 1
+enum/Tmode:
+  bit_size: 1
+  variants:
+  - name: Zz63
+    description: Test mode not active.
+    value: 0
+  - name: Zz64
+    description: Test mode active.
+    value: 1
+enum/TnvhCtrl:
+  bit_size: 3
+  variants:
+  - name: Zz377
+    description: 2 usec.
+    value: 0
+  - name: Zz378
+    description: 2.5 usec.
+    value: 1
+  - name: Zz379
+    description: 3 usec.
+    value: 2
+  - name: Zz380
+    description: 3.5 usec.
+    value: 3
+  - name: Zz381
+    description: 4 usec.
+    value: 4
+  - name: Zz382
+    description: 4.5 usec.
+    value: 5
+  - name: Zz383
+    description: 5 usec.
+    value: 6
+  - name: Zz384
+    description: 5.5 usec.
+    value: 7
+enum/Tnvhunit:
+  bit_size: 3
+  variants:
+  - name: Zz313
+    description: Clock cycles.
+    value: 0
+  - name: Zz314
+    description: 0.5 usec.
+    value: 1
+  - name: Zz315
+    description: 1 usec.
+    value: 2
+  - name: Zz316
+    description: 10 usec.
+    value: 3
+  - name: Zz317
+    description: 100 usec.
+    value: 4
+  - name: Zz318
+    description: 1 msec.
+    value: 5
+  - name: Zz319
+    description: 10 msec.
+    value: 6
+  - name: Zz320
+    description: 100 msec.
+    value: 7
+enum/TnvsCtrl:
+  bit_size: 3
+  variants:
+  - name: Zz385
+    description: 5 usec.
+    value: 0
+  - name: Zz386
+    description: 8 usec.
+    value: 1
+  - name: Zz387
+    description: 11 usec.
+    value: 2
+  - name: Zz388
+    description: 14 usec.
+    value: 3
+  - name: Zz389
+    description: 17 usec.
+    value: 4
+  - name: Zz390
+    description: 20 usec.
+    value: 5
+  - name: Zz391
+    description: 23 usec.
+    value: 6
+  - name: Zz392
+    description: 26 usec.
+    value: 7
+enum/Tnvsunit:
+  bit_size: 3
+  variants:
+  - name: Zz321
+    description: Clock cycles.
+    value: 0
+  - name: Zz322
+    description: 0.5 usec.
+    value: 1
+  - name: Zz323
+    description: 1 usec.
+    value: 2
+  - name: Zz324
+    description: 10 usec.
+    value: 3
+  - name: Zz325
+    description: 100 usec.
+    value: 4
+  - name: Zz326
+    description: 1 msec.
+    value: 5
+  - name: Zz327
+    description: 10 msec.
+    value: 6
+  - name: Zz328
+    description: 100 msec.
+    value: 7
+enum/TpgmCtrl:
+  bit_size: 2
+  variants:
+  - name: Zz393
+    description: 1 usec.
+    value: 0
+  - name: Zz394
+    description: 2 usec.
+    value: 1
+  - name: Zz395
+    description: 4 usec.
+    value: 2
+  - name: Zz396
+    description: 8 usec.
+    value: 3
+enum/TpgmOpt:
+  bit_size: 2
+  variants:
+  - name: Zz349
+    description: Fixed Tpgm for all shots, except post shot.
+    value: 0
+  - name: Zz350
+    description: Increase Tpgm option by 1 for each loop until Tpgm reaches 4 usec.
+    value: 1
+  - name: Zz351
+    description: Increase Tpgm option by 1 for each loop until Tpgm reaches 8 usec.
+    value: 2
+  - name: Zz352
+    description: Unused.
+    value: 3
+enum/TpgsCtrl:
+  bit_size: 3
+  variants:
+  - name: Zz369
+    description: 1 usec.
+    value: 0
+  - name: Zz370
+    description: 2 usec.
+    value: 1
+  - name: Zz371
+    description: 3 usec.
+    value: 2
+  - name: Zz372
+    description: 4 usec.
+    value: 3
+  - name: Zz373
+    description: 5 usec.
+    value: 4
+  - name: Zz374
+    description: 6 usec.
+    value: 5
+  - name: Zz375
+    description: 7 usec.
+    value: 6
+  - name: Zz376
+    description: 8 usec.
+    value: 7
+enum/Tpgsunit:
+  bit_size: 3
+  variants:
+  - name: Zz305
+    description: Clock cycles.
+    value: 0
+  - name: Zz306
+    description: 0.5 usec.
+    value: 1
+  - name: Zz307
+    description: 1 usec.
+    value: 2
+  - name: Zz308
+    description: 10 usec.
+    value: 3
+  - name: Zz309
+    description: 100 usec.
+    value: 4
+  - name: Zz310
+    description: 1 msec.
+    value: 5
+  - name: Zz311
+    description: 10 msec.
+    value: 6
+  - name: Zz312
+    description: 100 msec.
+    value: 7
+enum/Trcvunit:
+  bit_size: 3
+  variants:
+  - name: Zz297
+    description: Clock cycles.
+    value: 0
+  - name: Zz298
+    description: 0.5 usec.
+    value: 1
+  - name: Zz299
+    description: 1 usec.
+    value: 2
+  - name: Zz300
+    description: 10 usec.
+    value: 3
+  - name: Zz301
+    description: 100 usec.
+    value: 4
+  - name: Zz302
+    description: 1 msec.
+    value: 5
+  - name: Zz303
+    description: 10 msec.
+    value: 6
+  - name: Zz304
+    description: 100 msec.
+    value: 7
+enum/Tstctl:
+  bit_size: 2
+  variants:
+  - name: Zz215
+    description: Default, disable both BIST self-test and MISR.
+    value: 0
+  - name: Zz216
+    description: Enable BIST self-test mode DOUT from macro will be forced to '0', and disable MISR.
+    value: 1
+  - name: Zz217
+    description: Enable MISR.
+    value: 2
+  - name: Zz218
+    description: Enable both BIST self-test mode and MISR.
+    value: 3
+enum/UserEv:
+  bit_size: 1
+  variants:
+  - name: Zz419
+    description: EV input to the flash array is driven LOW.
+    value: 0
+  - name: Zz420
+    description: EV input to the flash array is driven HIGH.
+    value: 1
+enum/UserHem:
+  bit_size: 1
+  variants:
+  - name: Zz413
+    description: HEM input to SMW / BIST PIN_CTRL[24] is driven LOW.
+    value: 0
+  - name: Zz414
+    description: HEM input to SMW / BIST PIN_CTRL[24] is driven HIGH.
+    value: 1
+enum/UserIfren:
+  bit_size: 1
+  variants:
+  - name: Zz417
+    description: IFREN input to the flash array is driven LOW.
+    value: 0
+  - name: Zz418
+    description: IFREN input to the flash array is driven HIGH.
+    value: 1
+enum/UserIfren1:
+  bit_size: 1
+  variants:
+  - name: Zz423
+    description: IFREN1 input to the flash array is driven LOW.
+    value: 0
+  - name: Zz424
+    description: IFREN1 input to the flash array is driven HIGH.
+    value: 1
+enum/UserPv:
+  bit_size: 1
+  variants:
+  - name: Zz421
+    description: PV input to the flash array is driven LOW.
+    value: 0
+  - name: Zz422
+    description: PV input to the flash array is driven HIGH.
+    value: 1
+enum/UserReden:
+  bit_size: 1
+  variants:
+  - name: Zz415
+    description: REDEN input to the flash array is driven LOW.
+    value: 0
+  - name: Zz416
+    description: REDEN input to the flash array is driven HIGH.
+    value: 1
+enum/VfyOpt:
+  bit_size: 2
+  variants:
+  - name: Zz353
+    description: Skip verify for post shot only, verify for all other shots.
+    value: 0
+  - name: Zz354
+    description: Skip verify for the 1st and post shots.
+    value: 1
+  - name: Zz355
+    description: Skip the 1st, 2nd, and post shots.
+    value: 2
+  - name: Zz356
+    description: Skip verify for all shots.
+    value: 3
+enum/WaitEn:
+  bit_size: 1
+  variants:
+  - name: Zz191
+    description: Wait feature disabled.
+    value: 0
+  - name: Zz192
+    description: Wait feature enabled.
+    value: 1
+enum/WideLoad:
+  bit_size: 1
+  variants:
+  - name: Zz153
+    description: Wide load mode disabled (default).
+    value: 0
+  - name: Zz154
+    description: Wide load mode enabled.
+    value: 1
+enum/WrPathEccEn:
+  bit_size: 1
+  variants:
+  - name: Zz179
+    description: ECC encoding disabled.
+    value: 0
+  - name: Zz180
+    description: ECC encoding enabled.
+    value: 1
+enum/WrPathEn:
+  bit_size: 1
+  variants:
+  - name: Zz181
+    description: Writes to BIST setting registers driven by MM_WDATA.
+    value: 0
+  - name: Zz182
+    description: Writes to BIST setting registers driven by SMW_DIN.
+    value: 1

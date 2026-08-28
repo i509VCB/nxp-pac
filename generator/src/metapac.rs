@@ -32,6 +32,9 @@ pub fn generate_meta_peripherals(current: &Path) -> anyhow::Result<()> {
 
             let relative_entry_path = entry_path.strip_prefix(&yaml_peri_dir)?;
             if relative_entry_path.starts_with("raw")
+                || relative_entry_path
+                    .components()
+                    .any(|component| component.as_os_str() == "post-transforms")
                 || entry_path.is_dir()
                 || entry_path.extension().map(|e| e.to_string_lossy()) != Some("yaml".into())
             {

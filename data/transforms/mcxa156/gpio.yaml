@@ -1,0 +1,19 @@
+transforms:
+  # The MCXA156 SVD repeats identical interrupt-control definitions for every
+  # pin. Normalize them to the indexed API used across the MCXA HAL.
+  - !MergeEnums
+    from: gpio::Icr\d+Irqc
+    to: gpio::Irqc
+
+  - !MergeEnums
+    from: gpio::Icr\d+Isf
+    to: gpio::Isf
+
+  - !MergeFieldsets
+    from: gpio::Icr\d+
+    to: gpio::Icr
+
+  - !MakeRegisterArray
+    blocks: gpio::Gpio
+    from: icr(\d+)
+    to: icr

@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "chip": "MCXA156",
+  "repository": "https://github.com/nxp-mcuxpresso/mcux-soc-svd",
+  "revision": "cd86b0793d7e467055a2d84c441c81e3d0aef93d",
+  "path": "MCXA156/MCXA156.xml",
+  "sha256": "6f0da8b623578892908b8f08cba4f3e8417ad0fee247ca4f19f6ed4888066866"
+}

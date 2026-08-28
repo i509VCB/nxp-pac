@@ -1,0 +1,444 @@
+block/Ctimer:
+  description: Standard Counter or Timer.
+  items:
+  - name: ir
+    description: Interrupt.
+    byte_offset: 0
+    fieldset: Ir
+  - name: tcr
+    description: Timer Control.
+    byte_offset: 4
+    fieldset: Tcr
+  - name: tc
+    description: Timer Counter.
+    byte_offset: 8
+    fieldset: Tc
+  - name: pr
+    description: Prescale.
+    byte_offset: 12
+    fieldset: Pr
+  - name: pc
+    description: Prescale Counter.
+    byte_offset: 16
+    fieldset: Pc
+  - name: mcr
+    description: Match Control.
+    byte_offset: 20
+    fieldset: Mcr
+  - name: mr
+    description: Match.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 24
+    fieldset: Mr
+  - name: ccr
+    description: Capture Control.
+    byte_offset: 40
+    fieldset: Ccr
+  - name: cr
+    description: Capture.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 44
+    access: Read
+    fieldset: Cr
+  - name: emr
+    description: External Match.
+    byte_offset: 60
+    fieldset: Emr
+  - name: ctcr
+    description: Count Control.
+    byte_offset: 112
+    fieldset: Ctcr
+  - name: pwmc
+    description: PWM Control.
+    byte_offset: 116
+    fieldset: Pwmc
+  - name: msr
+    description: Match Shadow.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 120
+    fieldset: Msr
+fieldset/Ccr:
+  description: Capture Control.
+  fields:
+  - name: cap0re
+    description: Rising Edge of Capture Channel 0.
+    bit_offset: 0
+    bit_size: 1
+  - name: cap0fe
+    description: Falling Edge of Capture Channel 0.
+    bit_offset: 1
+    bit_size: 1
+  - name: cap0i
+    description: Generate Interrupt on Channel 0 Capture Event.
+    bit_offset: 2
+    bit_size: 1
+  - name: cap1re
+    description: Rising Edge of Capture Channel 1.
+    bit_offset: 3
+    bit_size: 1
+  - name: cap1fe
+    description: Falling Edge of Capture Channel 1.
+    bit_offset: 4
+    bit_size: 1
+  - name: cap1i
+    description: Generate Interrupt on Channel 1 Capture Event.
+    bit_offset: 5
+    bit_size: 1
+  - name: cap2re
+    description: Rising Edge of Capture Channel 2.
+    bit_offset: 6
+    bit_size: 1
+  - name: cap2fe
+    description: Falling Edge of Capture Channel 2.
+    bit_offset: 7
+    bit_size: 1
+  - name: cap2i
+    description: Generate Interrupt on Channel 2 Capture Event.
+    bit_offset: 8
+    bit_size: 1
+  - name: cap3re
+    description: Rising Edge of Capture Channel 3.
+    bit_offset: 9
+    bit_size: 1
+  - name: cap3fe
+    description: Falling Edge of Capture Channel 3.
+    bit_offset: 10
+    bit_size: 1
+  - name: cap3i
+    description: Generate Interrupt on Channel 3 Capture Event.
+    bit_offset: 11
+    bit_size: 1
+fieldset/Cr:
+  description: Capture.
+  fields:
+  - name: cap
+    description: Timer Counter Capture Value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Ctcr:
+  description: Count Control.
+  fields:
+  - name: ctmode
+    description: Counter Timer Mode.
+    bit_offset: 0
+    bit_size: 2
+    enum: Ctmode
+  - name: cinsel
+    description: Count Input Select.
+    bit_offset: 2
+    bit_size: 2
+    enum: Cinsel
+  - name: encc
+    description: Capture Channel Enable.
+    bit_offset: 4
+    bit_size: 1
+  - name: selcc
+    description: Edge Select.
+    bit_offset: 5
+    bit_size: 3
+    enum: Selcc
+fieldset/Emr:
+  description: External Match.
+  fields:
+  - name: em0
+    description: External Match 0.
+    bit_offset: 0
+    bit_size: 1
+  - name: em1
+    description: External Match 1.
+    bit_offset: 1
+    bit_size: 1
+  - name: em2
+    description: External Match 2.
+    bit_offset: 2
+    bit_size: 1
+  - name: em3
+    description: External Match 3.
+    bit_offset: 3
+    bit_size: 1
+  - name: emc0
+    description: External Match Control 0.
+    bit_offset: 4
+    bit_size: 2
+    enum: Emc
+  - name: emc1
+    description: External Match Control 1.
+    bit_offset: 6
+    bit_size: 2
+    enum: Emc
+  - name: emc2
+    description: External Match Control 2.
+    bit_offset: 8
+    bit_size: 2
+    enum: Emc
+  - name: emc3
+    description: External Match Control 3.
+    bit_offset: 10
+    bit_size: 2
+    enum: Emc
+fieldset/Ir:
+  description: Interrupt.
+  fields:
+  - name: mr0int
+    description: Interrupt Flag for Match Channel 0 Event.
+    bit_offset: 0
+    bit_size: 1
+  - name: mr1int
+    description: Interrupt Flag for Match Channel 1 Event.
+    bit_offset: 1
+    bit_size: 1
+  - name: mr2int
+    description: Interrupt Flag for Match Channel 2 Event.
+    bit_offset: 2
+    bit_size: 1
+  - name: mr3int
+    description: Interrupt Flag for Match Channel 3 Event.
+    bit_offset: 3
+    bit_size: 1
+  - name: cr0int
+    description: Interrupt Flag for Capture Channel 0 Event.
+    bit_offset: 4
+    bit_size: 1
+  - name: cr1int
+    description: Interrupt Flag for Capture Channel 1 Event.
+    bit_offset: 5
+    bit_size: 1
+  - name: cr2int
+    description: Interrupt Flag for Capture Channel 2 Event.
+    bit_offset: 6
+    bit_size: 1
+  - name: cr3int
+    description: Interrupt Flag for Capture Channel 3 Event.
+    bit_offset: 7
+    bit_size: 1
+fieldset/Mcr:
+  description: Match Control.
+  fields:
+  - name: mr0i
+    description: Interrupt on MR0.
+    bit_offset: 0
+    bit_size: 1
+  - name: mr0r
+    description: Reset on MR0.
+    bit_offset: 1
+    bit_size: 1
+  - name: mr0s
+    description: Stop on MR0.
+    bit_offset: 2
+    bit_size: 1
+  - name: mr1i
+    description: Interrupt on MR1.
+    bit_offset: 3
+    bit_size: 1
+  - name: mr1r
+    description: Reset on MR1.
+    bit_offset: 4
+    bit_size: 1
+  - name: mr1s
+    description: Stop on MR1.
+    bit_offset: 5
+    bit_size: 1
+  - name: mr2i
+    description: Interrupt on MR2.
+    bit_offset: 6
+    bit_size: 1
+  - name: mr2r
+    description: Reset on MR2.
+    bit_offset: 7
+    bit_size: 1
+  - name: mr2s
+    description: Stop on MR2.
+    bit_offset: 8
+    bit_size: 1
+  - name: mr3i
+    description: Interrupt on MR3.
+    bit_offset: 9
+    bit_size: 1
+  - name: mr3r
+    description: Reset on MR3.
+    bit_offset: 10
+    bit_size: 1
+  - name: mr3s
+    description: Stop on MR3.
+    bit_offset: 11
+    bit_size: 1
+  - name: mr0rl
+    description: Reload MR.
+    bit_offset: 24
+    bit_size: 1
+  - name: mr1rl
+    description: Reload MR.
+    bit_offset: 25
+    bit_size: 1
+  - name: mr2rl
+    description: Reload MR.
+    bit_offset: 26
+    bit_size: 1
+  - name: mr3rl
+    description: Reload MR.
+    bit_offset: 27
+    bit_size: 1
+fieldset/Mr:
+  description: Match.
+  fields:
+  - name: match_
+    description: Timer Counter Match Value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Msr:
+  description: Match Shadow.
+  fields:
+  - name: match_shadow
+    description: Timer Counter Match Shadow Value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Pc:
+  description: Prescale Counter.
+  fields:
+  - name: pcval
+    description: Prescale Counter Value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Pr:
+  description: Prescale.
+  fields:
+  - name: prval
+    description: Prescale Reload Value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Pwmc:
+  description: PWM Control.
+  fields:
+  - name: pwmen0
+    description: PWM Mode Enable for Channel 0.
+    bit_offset: 0
+    bit_size: 1
+    enum: Pwmen
+  - name: pwmen1
+    description: PWM Mode Enable for Channel 1.
+    bit_offset: 1
+    bit_size: 1
+    enum: Pwmen
+  - name: pwmen2
+    description: PWM Mode Enable for Channel 2.
+    bit_offset: 2
+    bit_size: 1
+    enum: Pwmen
+  - name: pwmen3
+    description: PWM Mode Enable for Channel 3.
+    bit_offset: 3
+    bit_size: 1
+    enum: Pwmen
+fieldset/Tc:
+  description: Timer Counter.
+  fields:
+  - name: tcval
+    description: Timer Counter Value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/Tcr:
+  description: Timer Control.
+  fields:
+  - name: cen
+    description: Counter Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: crst
+    description: Counter Reset Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: agcen
+    description: Allow Global Count Enable.
+    bit_offset: 4
+    bit_size: 1
+  - name: atcen
+    description: Allow Trigger Count Enable.
+    bit_offset: 5
+    bit_size: 1
+enum/Cinsel:
+  bit_size: 2
+  variants:
+  - name: Channel0
+    description: Channel 0, CAPn[0] for CTIMERn.
+    value: 0
+  - name: Channel1
+    description: Channel 1, CAPn[1] for CTIMERn.
+    value: 1
+  - name: Channel2
+    description: Channel 2, CAPn[2] for CTIMERn.
+    value: 2
+  - name: Channel3
+    description: Channel 3, CAPn[3] for CTIMERn.
+    value: 3
+enum/Ctmode:
+  bit_size: 2
+  variants:
+  - name: Timer
+    description: Timer mode.
+    value: 0
+  - name: CounterRisingEdge
+    description: Counter mode rising edge.
+    value: 1
+  - name: CounterFallingEdge
+    description: Counter mode falling edge.
+    value: 2
+  - name: CounterDualEdge
+    description: Counter mode dual edge.
+    value: 3
+enum/Emc:
+  bit_size: 2
+  variants:
+  - name: DoNothing
+    description: Does nothing.
+    value: 0
+  - name: Clear
+    description: Goes low.
+    value: 1
+  - name: Set
+    description: Goes high.
+    value: 2
+  - name: Toggle
+    description: Toggles.
+    value: 3
+enum/Pwmen:
+  bit_size: 1
+  variants:
+  - name: Match
+    description: Disable.
+    value: 0
+  - name: Pwm
+    description: Enable.
+    value: 1
+enum/Selcc:
+  bit_size: 3
+  variants:
+  - name: Channel0Rising
+    description: Capture channel 0 rising edge.
+    value: 0
+  - name: Channel0Falling
+    description: Capture channel 0 falling edge.
+    value: 1
+  - name: Channel1Rising
+    description: Capture channel 1 rising edge.
+    value: 2
+  - name: Channel1Falling
+    description: Capture channel 1 falling edge.
+    value: 3
+  - name: Channel2Rising
+    description: Capture channel 2 rising edge.
+    value: 4
+  - name: Channel2Falling
+    description: Capture channel 2 falling edge.
+    value: 5
+  - name: Channel3Rising
+    description: Capture channel 3 rising edge.
+    value: 6
+  - name: Channel3Falling
+    description: Capture channel 3 falling edge.
+    value: 7

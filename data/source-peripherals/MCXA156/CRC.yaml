@@ -1,0 +1,108 @@
+block/Crc:
+  description: CRC.
+  items:
+  - name: data16
+    byte_offset: 0
+    bit_size: 16
+  - name: data32
+    byte_offset: 0
+  - name: data8
+    byte_offset: 0
+    bit_size: 8
+  - name: gpoly16
+    byte_offset: 4
+    bit_size: 16
+  - name: gpoly32
+    byte_offset: 4
+  - name: gpoly8
+    byte_offset: 4
+    bit_size: 8
+  - name: ctrl
+    description: Control.
+    byte_offset: 8
+    fieldset: Ctrl
+fieldset/Ctrl:
+  description: Control.
+  fields:
+  - name: tcrc
+    description: TCRC.
+    bit_offset: 24
+    bit_size: 1
+    enum: Tcrc
+  - name: was
+    description: Write as Seed.
+    bit_offset: 25
+    bit_size: 1
+    enum: Was
+  - name: fxor
+    description: Complement Read of CRC Data Register.
+    bit_offset: 26
+    bit_size: 1
+    enum: Fxor
+  - name: totr
+    description: Transpose Type for Read.
+    bit_offset: 28
+    bit_size: 2
+    enum: Totr
+  - name: tot
+    description: Transpose Type for Write.
+    bit_offset: 30
+    bit_size: 2
+    enum: Tot
+enum/Fxor:
+  bit_size: 1
+  variants:
+  - name: Noxor
+    description: Disables XOR on reading data.
+    value: 0
+  - name: Invert
+    description: Inverts or complements the read value of the CRC Data.
+    value: 1
+enum/Tcrc:
+  bit_size: 1
+  variants:
+  - name: B16
+    description: 16 bits.
+    value: 0
+  - name: B32
+    description: 32 bits.
+    value: 1
+enum/Tot:
+  bit_size: 2
+  variants:
+  - name: Notrnps
+    description: No transposition.
+    value: 0
+  - name: BtsTrnps
+    description: Bits in bytes are transposed, but bytes are not transposed.
+    value: 1
+  - name: BytsBtsTrnps
+    description: Both bits in bytes and bytes are transposed.
+    value: 2
+  - name: BytsTrnps
+    description: Only bytes are transposed, no bits in a byte are transposed.
+    value: 3
+enum/Totr:
+  bit_size: 2
+  variants:
+  - name: Notrnps
+    description: No transposition.
+    value: 0
+  - name: BtsTrnps
+    description: Bits in bytes are transposed, but bytes are not transposed.
+    value: 1
+  - name: BytsBtsTrnps
+    description: Both bits in bytes and bytes are transposed.
+    value: 2
+  - name: BytsTrnps
+    description: Only bytes are transposed, no bits in a byte are transposed.
+    value: 3
+enum/Was:
+  bit_size: 1
+  variants:
+  - name: Data
+    description: Data values.
+    value: 0
+  - name: Seed
+    description: Seed values.
+    value: 1
