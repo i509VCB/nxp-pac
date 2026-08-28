@@ -18,6 +18,9 @@ jobs:
       - name: Check
         run: |
           cargo check -p generator --locked
+      - name: Test
+        run: |
+          cargo test -p generator --locked
       - name: Clippy
         run: |
           cargo clippy -p generator --locked -- -D warnings
