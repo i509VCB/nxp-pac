@@ -1,0 +1,13 @@
+includes:
+  - sanitize.yaml
+
+  - cm33.yaml
+  - useless.yaml
+
+  # Map the SVD's RGPIO register group to the family's canonical GPIO
+  # namespace and block name.
+  - mcxa/gpio.yaml
+
+  - remove-suffix.yaml
+transforms:
+  - !Sort
